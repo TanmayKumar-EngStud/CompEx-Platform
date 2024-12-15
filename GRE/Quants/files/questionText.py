@@ -5,10 +5,10 @@ from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 load_dotenv()
 
 
-assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["QuestionGen"]
+assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["questionText"]
 
 
-class QuestionGen:
+class QuestionText:
     def __init__(self):
         self.llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
@@ -20,6 +20,6 @@ class QuestionGen:
         response = self.llm.invoke({"content":input_data})
         return [message.content[0].text.value for message in response][0]
 
-questionGen = QuestionGen()
+questionText = QuestionText()
 
-print(questionGen.generate_question("<[Percentages]> - <2> - <Word Problem>"))
+print(questionText.generate_question("<[Percentages]> - <2> - <Word Problem>"))
