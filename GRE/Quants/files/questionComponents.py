@@ -14,11 +14,12 @@ class QuestionGraph:
             return "", ""
 
 class QuestionText:
-    def __init__(self, llm, thread_id= False):
+    def __init__(self, llm, thread_id= None):
         self.llm = llm
         self.thread_id = thread_id
 
     def generate_questionText(self, input_data):
+        response= None
         if(self.thread_id is not None):
             response = self.llm.invoke({"content":f"questionText: {input_data}", "thread_id": self.thread_id})
         else:

@@ -10,13 +10,12 @@ class DataSufficiencyQuestionGeneration:
         if("graph" in self.prompt.lower()):
             questionGraph = QuestionGraph(self.llm, self.prompt)
             self.thread_id, self.questionData["graph"] = questionGraph.generate_questionGraph()
-        else:
-            self.thread_id = None
-            self.questionData["graph"] = None
         if(self.thread_id is not None):
             questionText = QuestionText(self.llm, self.thread_id)
             self.questionData["thread_id"], self.questionData["question"] = questionText.generate_questionText(self.prompt)
-
+        else:
+            questionText = QuestionText(self.llm)
+            self.questionData["thread_id"], self.questionData["question"] = questionText.generate_questionText(self.prompt)
         questionTitle = QuestionTitle(self.llm, self.questionData["thread_id"])
         self.questionData["title"] = questionTitle.generate_questionTitle()
 

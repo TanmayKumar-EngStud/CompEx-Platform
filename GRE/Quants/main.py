@@ -9,7 +9,7 @@ load_dotenv()
 assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Quants-Simple-Questions"]
 assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Quants-Parent-Child-Questions"]
 assistant_id_data_sufficiency_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Quants-Data-Sufficiency-Questions"]
-prompt = "<[Percentages]> - <1> - <straight forward> - < Data Sufficiency>"
+prompt = "<[Percentages]> - <1> - <straight forward> - < Data Sufficiency> - <bar graph>"
 llm = None
 if ("data sufficiency" in prompt.lower()):
    llm = OpenAIAssistantRunnable(
