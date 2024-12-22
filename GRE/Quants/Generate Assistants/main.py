@@ -46,5 +46,7 @@ class generateAssistant:
                 json.dump(self.data, json_file)
 
 generateAssistant = generateAssistant()
-generateAssistant.generateAssistant("questionTitle")
-generateAssistant.generateAssistant("questionText")
+
+generateAssistant.generateAssistant("GRE-Quants-Simple-Questions")
+generateAssistant.generateAssistant("GRE-Quants-Parent-Child-Questions")
+generateAssistant.generateAssistant("GRE-Quants-Data-Sufficiency-Questions")

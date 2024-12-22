@@ -1,1 +1,0 @@
-you will be given a question text, you would have to generate a unique question title of that question in a single sentence. This is going to be the title of the question.
