@@ -248,4 +248,5 @@ Output format:- {"title": "question title"}
 Mode 3: questionSolution
 Here based on the previous question, you would have to state the reason about which option out of "A", "B", "C", "D", "E" is correct, and why it is correct.
 input format:- "questionSolution"
-Output format:- {"solution": "reasoning for the correct option", "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient."} in answer don't give the option, just give the option value! because cross checking of the correct answer will always be case sensitive so you need to be careful with that
+Output format:- {"solution": "reasoning for the correct option", "answer": "A"} 
+always give answer in the format of "A", "B", "C", "D", "E".

@@ -214,21 +214,19 @@ output format:
    "relation": "you need to give a short relation description between the list of graph/table generated, this will help the questionText to further generate the question text properly and with the reference of the relation between the graph/table generated."
 }
 
-# parentQuestionTitle Mode
+# questionTitle Mode
 1. Definition
-A model component designed exclusively to generate parent question title for the question based on the graph/table description generated, it should be a short and unique title such that it uniquely identifies the specific parent question data.
-
-2. Input Format
-input:- "mode:- parentQuestionTitle"
-output:- {"title": "unique title for the parent question"}
-
+basically the questionTitle is itself going to be a parent question title.
+input: "mode: questionTitle"
+output: {"title": "unique title for the parent question"}
 # childQuestionText Mode
 1. Definition
 child question text should be generated based on graph description, graph data and graph type, question should ask the value which is not present in the graph data, and question should ask questions which are related to the input prompt given.
+Child questions should be on data interpretation from the graph/table data that requires multiple steps of calculations, Try to ask question from the graph/table data in word problem way which as good GRE vocabulary words.
 
 2. Input Format
-input:- "mode:- childQuestionText input:- <Tags[]> - <Difficulty> - <Question Style> - <Type>"
-output:- {"child-questionNumber": 1, "text": "unique text for the child question"}
+input:- "mode:- childQuestionText"
+output:- { "question": "unique text for the child question"}
 
 # childQuestionTitle Mode
 1. Definition
@@ -243,9 +241,10 @@ output:- {"title": "unique title for the child question"}
 the solution of previous child question should be generated use question graph data and graph description to find the solution of the question,
 in order to do every calculation you must use code interpretor, and for showing the math you must use latex, all the latex code should be present in the ~~latex~~ code block.
 If there is a decimal, you have to always round it to 2 decimal places.
+In solution use html tags to make the solution more readable. for all the math equations place it in the ~~latex~~ code block
 2. Input Format
 input:- "mode:- childQuestionSolution; question: questionNumber"
-output:- {"solution": "unique solution for the child question", "answer": "answer of the question that should be present in the options"}
+output:- {"solution": "unique solution for the child question ~~2x+3=5~~ ", "answer": "answer of the question that should be present in the options"}
 example:-
 
 # childQuestionOptions Mode
@@ -255,9 +254,8 @@ and fetch the final answer if those calculation mistakes were done. This is how 
 After fetching all the fake options return the options in the following format:-
 {
    "options": ["option1", "option2", "option3", "option4"],
-   "answer": "answer of the question that should be present in the options"
-}
+} // one of the options provided should be the correct answer of the question.
 
 2. Input Format
 input:- "mode:- childQuestionOptions; optionNumber: 4" //since option number is 4, so 4 options will be generated
-output:- {"options": ["option1", "option2", "option3", "option4"], "answer": "answer of the question that should be present in the options"}
+output:- { "options": ["option1", "option2", "option3", "option4"] } // one of the options provided should be the correct answer of the question answer and correct options are case sensitive.

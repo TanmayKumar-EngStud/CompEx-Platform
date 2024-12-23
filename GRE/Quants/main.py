@@ -4,12 +4,14 @@ from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 from files.simpleQuestionGeneration import SimpleQuestionGeneration
 from files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration
+from files.parentChildQuestionGeneration import ParentChildQuestionGeneration
 load_dotenv()
 
 assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Quants-Simple-Questions"]
 assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Quants-Parent-Child-Questions"]
 assistant_id_data_sufficiency_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Quants-Data-Sufficiency-Questions"]
-prompt = "<[Percentages]> - <1> - <straight forward> - < Data Sufficiency> - <bar graph>"
+prompt = "<[Percentages]> - <1> - <straight forward> - <Problem Solving> - <bar graph>"
+
 llm = None
 if ("data sufficiency" in prompt.lower()):
    llm = OpenAIAssistantRunnable(
@@ -22,13 +24,20 @@ if ("data sufficiency" in prompt.lower()):
    print(json.dumps(questionData, indent=4))
 
 elif ("graph" in prompt.lower() or "table" in prompt.lower()):
+   # Parent Child Question Generation
+   print("Parent Child Question Generation")
    llm = OpenAIAssistantRunnable(
       model="gpt-4o-mini",
       api_key=os.getenv("OPENAI_API_KEY"),
       assistant_id=assistant_id_parent_child_questions
    )
+   parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
+   questionData = parentChildQuestionGeneration.generate_question()
+   print(json.dumps(questionData, indent=4))
+
 else:
    # Simple Question Generation
+   print("Simple Question Generation")
    llm = OpenAIAssistantRunnable(
       model="gpt-4o-mini",
       api_key=os.getenv("OPENAI_API_KEY"),

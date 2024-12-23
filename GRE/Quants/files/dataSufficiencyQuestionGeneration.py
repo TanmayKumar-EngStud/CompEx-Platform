@@ -9,7 +9,7 @@ class DataSufficiencyQuestionGeneration:
     def generate_question(self):
         if("graph" in self.prompt.lower()):
             questionGraph = QuestionGraph(self.llm, self.prompt)
-            self.thread_id, self.questionData["graph"] = questionGraph.generate_questionGraph()
+            self.thread_id, self.questionData["graph"], self.questionData["type"], self.questionData["description"] = questionGraph.generate_questionGraph()
         if(self.thread_id is not None):
             questionText = QuestionText(self.llm, self.thread_id)
             self.questionData["thread_id"], self.questionData["question"] = questionText.generate_questionText(self.prompt)
