@@ -33,7 +33,7 @@ class generateAssistant:
             print(f"Assistant with Assistant ID {self.assistant_id} updated successfully")
         else:
             self.assistant = OpenAIAssistantRunnable.create_assistant(
-                name=f"GRE-Q-{self.model_name}",
+                name=f"GRE-V-{self.model_name}",
                 instructions=self.system_prompt,
                 tools=[],
                 model="gpt-4o-mini",
@@ -41,6 +41,8 @@ class generateAssistant:
             )
             self.assistant_id = self.assistant.assistant_id
             print(f"Assistant with Assistant ID {self.assistant_id} created successfully")
+            with open(self.output_file_path, "r") as f:
+                self.data = json.load(f)
             self.data[self.model_name] = self.assistant_id
             with open(self.output_file_path, "w") as json_file:
                 json.dump(self.data, json_file)
