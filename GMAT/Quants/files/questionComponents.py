@@ -1,9 +1,10 @@
 import json, re
 
 def refine_response(response_text): 
-    json_string = response_text.replace("'", "\'")
-    json_string = re.sub(r',\s*]', '}', json_string)
-    json_string = re.sub(r',\s*}', ']', json_string)
+    json_string = re.sub(r'\s+', ' ', response_text.strip())
+    json_string = json_string.replace('\\', '\\\\')
+    json_string = re.sub(r',\s*}', '}', json_string)
+    json_string = re.sub(r',\s*]', ']', json_string)
     return json_string
 class ParentChildQuestion:
     def __init__(self, llm, prompt, thread_id=None):
@@ -90,11 +91,11 @@ class SimpleQuestion:
             print(f"Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
             print(f"JSON parsing error: {str(e)}")
             return "", ""
-    def generate_questionOptions(self, num_options=4):
-      response = self.llm.invoke({"content":f"QuestionOptions: {num_options}", "thread_id": self.thread_id})
+    def generate_questionOptions(self):
+      response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
       try:
          raw_response = response[0].content[0].text.value
-         json_string = refine_response(raw_response)
+         json_string = refine_response(raw_response.replace("'", '"'))
          message = json.loads(json_string)
          options = [str(opt) for opt in message["options"]]
          return options
@@ -102,3 +103,48 @@ class SimpleQuestion:
          print(f"Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
          print(f"JSON parsing error: {str(e)}")
          return []
+      
+class DataSufficiencyQuestion:
+    def __init__(self, llm, prompt, thread_id= None):
+        self.llm = llm
+        self.prompt = prompt
+        self.thread_id = thread_id
+    def generate_questionGraph(self):
+        response = self.llm.invoke({"content":f"questionGraph: {self.prompt}"})
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            self.thread_id = response[0].thread_id if response else "error! thread_id not found! (questionComponent@l:115)"
+            return self.thread_id, message["graph/table"]
+        except Exception as e:
+            print(f"Error: message received for questionGraph is: \n{response[0].content[0].text.value}\n\n")
+            return "", ""
+    def generate_questionText(self):
+        if(self.thread_id is not None):
+            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
+        else:
+            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
+            self.thread_id = response[0].thread_id if response else "error! thread_id not found! (questionComponent@l:125)"
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return self.thread_id, message["question"], message["statements"]
+        except Exception as e:
+            print(f"Error: message received for questionText is: \n{response[0].content[0].text.value}\n\n")
+            return ""
+    def generate_questionTitle(self):
+        response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return message["title"]
+        except Exception as e:
+            print(f"Error: message received for questionTitle is: \n{response[0].content[0].text.value}\n\n")
+            return ""
+    def generate_questionSolution(self):
+        response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return message["solution"], str(message["answer"])
+        except Exception as e:
+            print(f"Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
+            return "", ""
+
+
