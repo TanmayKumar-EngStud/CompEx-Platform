@@ -53,6 +53,6 @@ class generateAssistant:
 
 generateAssistant = generateAssistant()
 
-generateAssistant.generateAssistant("GRE-Quants-Simple-Questions")
-generateAssistant.generateAssistant("GRE-Quants-Parent-Child-Questions")
-generateAssistant.generateAssistant("GRE-Quants-Data-Sufficiency-Questions")
+generateAssistant.generateAssistant("GMAT-Quants-Simple-Questions")
+generateAssistant.generateAssistant("GMAT-Quants-Data-Sufficiency-Questions")
+generateAssistant.generateAssistant("GMAT-Quants-Parent-Child-Questions")

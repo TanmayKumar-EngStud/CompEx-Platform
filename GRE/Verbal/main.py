@@ -10,7 +10,7 @@ assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__fi
 assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Verbal-Parent-Child-Questions"]
 
 prompt = "<history> - <rc-m> - <4> - <2>"
-
+child_prompts = ["<Main idea> - <4> - <3>", "<Inference> - <4> - <2>", "<Cause> - <5> - <1>"]
 llm = None
 
 if ("<rc-" in prompt):
@@ -21,7 +21,8 @@ if ("<rc-" in prompt):
       assistant_id=assistant_id_parent_child_questions
    )
    parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
-   questionData = parentChildQuestionGeneration.generate_question()
+   
+   questionData = parentChildQuestionGeneration.generate_question(child_prompts)
    print(json.dumps(questionData, indent=4))
 else:
    # simple question generation

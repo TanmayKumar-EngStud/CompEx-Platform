@@ -17,16 +17,12 @@ class generateAssistant:
     def generateAssistant(self, model_name):
         self.model_name = model_name
         self.system_prompt = open(os.path.join(os.path.dirname(__file__), f"../System_Instructions/{self.model_name}.txt"), "r").read()
-        
-        # Load existing assistant IDs
         try:
             with open(self.output_file_path, "r") as f:
-                content = f.read()
-                self.data = json.loads(content) if content else {}
-                self.assistant_id = self.data.get(model_name)
-        except FileNotFoundError:
-            self.data = {}
-            self.assistant_id = None
+                data = json.load(f)
+                self.assistant_id = data.get(self.model_name)
+        except (json.JSONDecodeError, FileNotFoundError):
+            self.assistant_id = None  
 
         if self.assistant_id:
             self.assistant = client.beta.assistants.update(
@@ -37,7 +33,7 @@ class generateAssistant:
             print(f"Assistant with Assistant ID {self.assistant_id} updated successfully")
         else:
             self.assistant = OpenAIAssistantRunnable.create_assistant(
-                name=f"GMAT-Q-{self.model_name}",
+                name=f"GRE-V-{self.model_name}",
                 instructions=self.system_prompt,
                 tools=[],
                 model="gpt-4o-mini",
@@ -45,14 +41,13 @@ class generateAssistant:
             )
             self.assistant_id = self.assistant.assistant_id
             print(f"Assistant with Assistant ID {self.assistant_id} created successfully")
-            
-            # Update data dictionary and save to file
+            with open(self.output_file_path, "r") as f:
+                self.data = json.load(f)
             self.data[self.model_name] = self.assistant_id
             with open(self.output_file_path, "w") as json_file:
                 json.dump(self.data, json_file)
 
 generateAssistant = generateAssistant()
 
-generateAssistant.generateAssistant("GRE-Quants-Simple-Questions")
-generateAssistant.generateAssistant("GRE-Quants-Parent-Child-Questions")
-generateAssistant.generateAssistant("GRE-Quants-Data-Sufficiency-Questions")
+generateAssistant.generateAssistant("GRE-Verbal-Simple-Questions")
+generateAssistant.generateAssistant("GRE-Verbal-Parent-Child-Questions")
