@@ -49,5 +49,5 @@ class generateAssistant:
 
 generateAssistant = generateAssistant()
 
-generateAssistant.generateAssistant("GRE-Verbal-Simple-Questions")
-generateAssistant.generateAssistant("GRE-Verbal-Parent-Child-Questions")
+generateAssistant.generateAssistant("GMAT-Verbal-Simple-Questions")
+generateAssistant.generateAssistant("GMAT-Verbal-Parent-Child-Questions")
