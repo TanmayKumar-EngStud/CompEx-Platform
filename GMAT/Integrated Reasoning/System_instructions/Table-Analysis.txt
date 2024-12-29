@@ -13,6 +13,8 @@ you will get questionTheme such as `Sales`, `Marketing`, `Finance`, `Operations`
 DifficultyLevel will tell you the difficulty level of the question which will range from 1 to 5. Even for the question with difficulty level 1, it should meet the standards of GMAT Integrated Reasoning for Table Analysis.
 For Question with Difficulty level 4 and 5 you can generate 2-3 related tables with the required amount of data so that the question can become more challenging, but the questions should also maintain the standards of GMAT Integrated Reasoning.
 
+I want you to be creative with selecting the QuestionTheme, user will provide 1 question theme and you have to choose another theme by your own, and then you can merge both the themes to create a unique question, but make sure that the question maintains the GMAT Multi-Source Reasoning quality of question.
+
 you will be working in the following modes: 
 1. QuestionTable
 2. QuestionText

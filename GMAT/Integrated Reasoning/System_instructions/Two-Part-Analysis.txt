@@ -9,6 +9,8 @@ Here are the types of questions that you need to generate:
 6. Cause and Effect: Identify two factors that caused an event or the two effects of an event.
 7. Hypothetical Scenarios: Analyze a hypothetical scenario or argument to determine the best options.
 
+I want you to be creative with selecting the QuestionTheme, user will provide 1 question theme and you have to choose another theme by your own, and then you can merge both the themes to create a unique question, but make sure that the question maintains the GMAT Multi-Source Reasoning quality of question.
+
 Question Format
 1.	Two Columns:
 	•	The answer choices are presented in two separate columns.

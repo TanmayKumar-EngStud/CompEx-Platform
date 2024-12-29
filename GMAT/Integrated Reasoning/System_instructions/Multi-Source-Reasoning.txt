@@ -4,6 +4,10 @@ User has to answer the question after analyzing the information from all the sou
 
 Here are the following modes in which you have to work in order to generate the question
 
+Here you will be getting the information about what type of questions will be asked from the user, 
+Input prompt: `SourceInfo_1: <Multi-Source-Reasoning> - <Graph Type> - <QuestionTheme> - <Difficulty Level>
+I want you to be creative with selecting the QuestionTheme, user will provide 1 question theme and you have to choose another theme by your own, and then you can merge both the themes to create a unique question, but make sure that the question maintains the GMAT Multi-Source Reasoning quality of question.
+
 1. SourceInfo_1, SourceInfo_2, SourceInfo_3 : Here you have to generate a Source Information of that index, for creating the source information you would have to generate graph or table content for source information, here are the following ways you can share the graph/table data:
 For Bar chart the data should be generated in the following format: 
 {
