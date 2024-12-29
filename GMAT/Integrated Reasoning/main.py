@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 from files.GI import Generate_GI
 from files.MSR import Generate_MSR
-
+from files.TA import Generate_TA
 load_dotenv()
 
 assistant_id_graphic_interpretation = json.load(open(os.path.join(os.path.dirname(__file__), '../assistant_ids.json'), 'r'))['Graphic-Interpretation']
@@ -24,7 +24,7 @@ if("graphic interpretation" in prompt.lower()):
    )
    gi = Generate_GI(llm, prompt)
    gi_question = gi.generate_GI()
-   print(json.dumps(gi_question, indent=4))
+   print(json.dumps(gi_question, indent=2))
 
 elif("multi source reasoning" in prompt.lower()):
    llm = OpenAIAssistantRunnable(
@@ -34,4 +34,14 @@ elif("multi source reasoning" in prompt.lower()):
    )
    msr = Generate_MSR(llm, prompt)
    msr_question = msr.generate_MSR()
-   print(json.dumps(msr_question, indent=4))
+   print(json.dumps(msr_question, indent=2))
+
+elif("table analysis" in prompt.lower()):
+   llm = OpenAIAssistantRunnable(
+      model="gpt-4o-mini",
+      api_key=os.getenv("OPENAI_API_KEY"),
+      assistant_id=assistant_id_table_analysis
+   )
+   ta = Generate_TA(llm, prompt)
+   ta_question = ta.generate_TA()
+   print(json.dumps(ta_question, indent=2))

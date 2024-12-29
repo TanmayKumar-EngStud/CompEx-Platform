@@ -11,7 +11,7 @@ class Generate_MSR:
         self.questionData["sources"] = []
         for source_index in range(1, 4):
             source = {}
-            source["thread_id"], source["source"] = msr.generate_SourceInfo(source_index)
+            self.questionData["thread_id"], source = msr.generate_SourceInfo(source_index)
             self.questionData["sources"].append(source)
         self.questionData["questions"] = []
         for source_index in range(1, 4):
@@ -20,7 +20,10 @@ class Generate_MSR:
             question["title"] = msr.generate_QuestionTitle(source_index)
             question["solution"] = msr.generate_QuestionSolution(source_index)
             options, correct_option = msr.generate_QuestionOptions(source_index)
-            question["options"] = random.shuffle(list(options.values()))
+            option_list = list(options.values())
+            random.shuffle(option_list)
+            question["options"] = option_list
+
             question["answer"] = options[correct_option]
             self.questionData["questions"].append(question)
 
