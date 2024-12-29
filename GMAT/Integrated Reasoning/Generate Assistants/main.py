@@ -33,7 +33,7 @@ class generateAssistant:
             print(f"Assistant with Assistant ID {self.assistant_id} updated successfully")
         else:
             self.assistant = OpenAIAssistantRunnable.create_assistant(
-                name=f"GRE-V-{self.model_name}",
+                name=f"GMAT-IR-{self.model_name}",
                 instructions=self.system_prompt,
                 tools=[],
                 model="gpt-4o-mini",
@@ -49,5 +49,7 @@ class generateAssistant:
 
 generateAssistant = generateAssistant()
 
-generateAssistant.generateAssistant("GRE-Verbal-Simple-Questions")
-generateAssistant.generateAssistant("GRE-Verbal-Parent-Child-Questions")
+generateAssistant.generateAssistant("Two-Part-Analysis")
+generateAssistant.generateAssistant("Multi-Source-Reasoning")
+generateAssistant.generateAssistant("Graphic-Interpretation")
+generateAssistant.generateAssistant("Table-Analysis")

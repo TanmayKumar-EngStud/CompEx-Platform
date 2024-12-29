@@ -10,7 +10,7 @@ load_dotenv()
 assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Verbal-Simple-Questions"]
 assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Verbal-Parent-Child-Questions"]
 
-prompt = "<Science and Technology> - <Critical Reasoning> - <Cause and Effect> - <1>"
+prompt = "<Science and Technology> - <rc-s> - <1> - <1>"
 
 if("rc" in prompt.lower()):
    llm = OpenAIAssistantRunnable(
