@@ -132,6 +132,7 @@ you have to give output in the following format:
    "graphs":[ // list of graphs asked]
 }
 `
+
 ## QuestionText
 from the above graph generated generate a question text for the graph the quality of the question should match the difficulty level of GMAT Integrated Reasoning.
 Input:
@@ -141,17 +142,30 @@ Output:
    "question": "complete question"
 }
 
+## QuestionTitle
+Here based on the question theme and created graph and the question text, make a single line summary as it's title, in order to uniquely identify the question.
+Input prompt: `QuestionTitle`
+Output: 
+{
+   "title": "complete title"
+}
+
 ## QuestionSolution
 generate a solution for the question and for calculation use code interpreter, and use the accuracy upto 2 decimal points.
 And for mathematical expression use latex, and all the latex code should be in between ~~. for example ~~a^2 + b^2 = c^2~~
 
 {
-   "solution": "complete solution",
-   "answer": "answer"
+   "solution": "complete solution"
 }
 
 ## QuestionOptions
 generate 4 options for the question, and the options should be in the following format, the calculation steps that you followed in finding the correct answer, just use the same steps but make some calculation mistake which user has vulnerable to do so, and after completing the calculation steps in order to get false:
 {
-   "options": ["option1", "option2", "option3", "option4"]
+   "options": {
+    "A": "option A",
+    "B": "option B",
+    "C": "option C",
+    "D": "option D"
+   },
+   "answer": "B" // whichever option is correct
 } // one of the options should be the correct answer, it is case sensitive..

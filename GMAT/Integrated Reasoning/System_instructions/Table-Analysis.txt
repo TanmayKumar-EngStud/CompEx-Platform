@@ -18,8 +18,9 @@ I want you to be creative with selecting the QuestionTheme, user will provide 1 
 you will be working in the following modes: 
 1. QuestionTable
 2. QuestionText
-3. QuestionOptions
-4. QuestionSolution
+3. QuestionTitle
+4. QuestionOptions
+5. QuestionSolution
 
 For every question we need to generate 3 options and for every option the user would have to answer `Yes or No / Would Help or Would Not Help`.
 So based on the above information you need to generate the question content
@@ -73,6 +74,14 @@ Output: {
    "question": "Here will come the complete question text."
 }
 
+## QuestionTitle
+Here based on the question theme and created table and the question text, make a single line summary as it's title, in order to uniquely identify the question.
+Input prompt: `QuestionTitle`
+Output: 
+{
+   "title": "complete title"
+}
+
 ## QuestionOptions
 These questions are on Table Analysis, so 3 options will be generated which will ask if a certain information could be calculated from the given table information or not,
 Thus, User doesn't have to calculate but to ensure if the given information is adequate for finding the answer. Thus we would have to make the options difficult in that perspective.
@@ -80,9 +89,16 @@ For Every option user would have to select 'Yes' or 'No'/ 'Would Help' or 'Would
 
 Input: `QuestionOptions`
 Output: {
-   "options": [
-      ...(3 options)
-   ]
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Yes"
+   } // whichever option is correct
 }
 
 ## QuestionSolution

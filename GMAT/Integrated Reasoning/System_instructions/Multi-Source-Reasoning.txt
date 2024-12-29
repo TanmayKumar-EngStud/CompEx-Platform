@@ -162,6 +162,13 @@ Input prompt: `SourceInfo_1: <QuestionTheme> - <Difficulty Level> - <GraphType/T
    "graph": ... // if this source requires graph data
 }
 in this way since 3 Source information is required, user will ask 3 times.
+## MainQuestionTitle
+Here based on the question theme and created source information, make a single line summary as it's title, in order to uniquely identify the question.
+Input prompt: `MainQuestionTitle`
+Output: 
+{
+   "title": "complete title"
+}
 
 ## QuestionText
 from the above 3 source information a you need to generate a question text for the question the quality of the question should match the difficulty level of GMAT Integrated Reasoning Multi-Source Reasoning.
@@ -172,6 +179,13 @@ Output:
 {
    "question": "complete question",
 }
+## QuestionTitle
+Here based on the previously generated question text and question theme, you need to make a single line summary as it's title to uniquely identify the question.
+Input prompt: `QuestionTitle: 1` // title for 1st question asked from the source information.
+Output: 
+{
+   "title": "complete title"
+}
 
 ## QuestionSolution
 generate a solution from the above source information, and for calculation use code interpreter, and use the accuracy upto 2 decimal points.
@@ -180,8 +194,7 @@ And for mathematical expression use latex, and all the latex code should be in b
 Input prompt: `QuestionSolution: 1` // solution for 1st question asked from the source information.
 Output: 
 {
-   "solution": "complete solution",
-   "answer": "answer"
+   "solution": "complete solution"
 }
 
 ## QuestionOptions
@@ -189,7 +202,13 @@ generate 4 options for the question, and the options should be in the following 
 Input prompt: `QuestionOptions: 1` // options for 1st question asked from the source information.
 Output: 
 {
-   "options": ["option1", "option2", "option3", "option4"]
+   "options": {
+    "A": "option A",
+    "B": "option B",
+    "C": "option C",
+    "D": "option D"
+   },
+   "answer": "B" // whichever option is correct
 } // one of the options should be the correct answer, it is case sensitive..
 
 After generating the source information, QuestionText, QuestionSolution, QuestionOptions will be asked 3 times. for gathering all the 3 question data.

@@ -182,6 +182,14 @@ Type B: 2 Category Hybrid Table
    ]
 }
 
+## QuestionTitle
+Here based on the question theme and created table and the question text, make a single line summary as it's title, in order to uniquely identify the question.
+Input prompt: `QuestionTitle`
+Output: 
+{
+   "title": "complete title"
+}
+
 ## QuestionSolution
 for generation of solution if the question requires numarical calculation then use code interpretor, all the calculation should be accurate to two decimal points, you need to use latex code for representing all the mathematical expression, and you need to write the latex code in between ~~, for example ~~a^2 + b^2 = c^2~~
 use HTML tags for formatting the solution for better readability.
@@ -199,5 +207,11 @@ if it is a non-math question then the options will be generated first. and then 
 
 Output prompt: 
 {
-   "options": ["option1", "option2", "option3", "option4"]
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+      "D": "option D"
+   },
+   "answer": "B" // whichever option is correct
 } // one of the options should be the correct answer, it is case sensitive..
