@@ -98,7 +98,11 @@ class TA:
         self.prompt = prompt
         self.thread_id = thread_id
     def generate_QuestionTable(self):
-        response = self.llm.invoke({"content":f"QuestionTable", "thread_id": self.thread_id})
+        if(self.thread_id):
+            response = self.llm.invoke({"content":f"QuestionTable", "thread_id": self.thread_id})
+        else:
+            response = self.llm.invoke({"content":f"QuestionTable"})
+            self.thread_id = response[0].thread_id if response else "error! thread_id not found for TA (questionComponent@l:131)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["table"]
@@ -129,3 +133,37 @@ class TA:
         except Exception as e:
             print(f"Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
             return "", ""
+        
+class TPA:
+    def __init__(self, llm, prompt, thread_id= None):
+        self.llm = llm
+        self.prompt = prompt
+        self.thread_id = thread_id
+    def generate_QuestionText(self):
+        if(self.thread_id):
+            response = self.llm.invoke({"content":f"QuestionText", "thread_id": self.thread_id})
+        else:
+            response = self.llm.invoke({"content":f"QuestionText"})
+            self.thread_id = response[0].thread_id if response else "error! thread_id not found for TPA (questionComponent@l:131)"
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return message["part1"], message["part2"], message["question"], message["type"]
+        except Exception as e:
+            print(f"Error: message received for QuestionText is: \n{response[0].content[0].text.value}\n\n")
+            return "", "", "", ""
+    def generate_QuestionSolution(self):
+        response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return message["solution"], str(message["answer"])
+        except Exception as e:
+            print(f"Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
+            return "", ""
+    def generate_QuestionOptions(self):
+        response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return message["options"]
+        except Exception as e:
+            print(f"Error: message received for QuestionOptions is: \n{response[0].content[0].text.value}\n\n")
+            return []
