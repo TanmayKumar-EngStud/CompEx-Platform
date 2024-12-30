@@ -14,8 +14,8 @@ assistant_id_two_part_analysis = json.load(open(os.path.join(os.path.dirname(__f
 
 ## Prompts example
 #prompt = "<Graphic Interpretation> - <bar chart> - <Sales> - <1>"
-prompt = "<Multi Source Reasoning> - <table> - <Sales> - <1>"
-
+#prompt = "<Multi Source Reasoning> - <table> - <Sales> - <1>"
+prompt = "<Table Analysis> - <Category Hybrid Table> - <History> - <3>"
 if("graphic interpretation" in prompt.lower()):
    llm = OpenAIAssistantRunnable(
       model="gpt-4o-mini",

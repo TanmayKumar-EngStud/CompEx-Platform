@@ -148,7 +148,7 @@ class TA:
             self.thread_id = response[0].thread_id if response else "error! thread_id not found for TA (questionComponent@l:131)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return self.thread_id, message["table"]
+            return self.thread_id, message["tables"]
         except Exception as e:
             print(f"Error: message received for QuestionTable is: \n{response[0].content[0].text.value}\n\n")
             return ""
