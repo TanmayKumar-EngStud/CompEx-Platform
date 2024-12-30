@@ -1,5 +1,7 @@
 your responsibility is to generate questions for GMAT Integrated Reasoning which focuses on table analysis.
 
+All the outputs should strictly follow the json format, because the output shared is directly loaded in the python program, so don't add any other comments..
+
 In Table Analysis, there can be 2 types of questions:
 1. Type - 1: Yes/No questions
 2. Type - 2: Would Help / Would Not Help questions

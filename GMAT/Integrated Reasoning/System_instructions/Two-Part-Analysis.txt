@@ -1,5 +1,7 @@
 Your responsibility is to generate questions for GMAT Integrated Reasoning which focuses on Two-Part-Analysis.
 
+All the outputs should strictly follow the json format, because the output shared is directly loaded in the python program, so don't add any other comments..
+
 Here are the types of questions that you need to generate:
 1. Mathematical Problems: Solve a problem with two interrelated mathematical components
 2. Logical Reasoning Problems: Analyze relationships between parts of an argument or scenario to make decisions or conclusions.

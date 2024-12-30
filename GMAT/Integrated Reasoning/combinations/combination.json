@@ -1,0 +1,92 @@
+{
+    "combination number": 7,
+    "graphic interpretation": {
+        "graphType": [
+            "bar chart",
+            "pie chart",
+            "line chart",
+            "scatter plot",
+            "quantitative venn diagram",
+            "qualitative venn diagram"
+        ],
+        "questionTheme": [
+            "economics",
+            "finance",
+            "marketing",
+            "politics",
+            "business",
+            "history",
+            "science and technology"
+        ],
+        "difficultyLevel": 5
+    },
+    "multi source reasoning": {
+        "graphType": [
+            "bar chart",
+            "pie chart",
+            "line chart",
+            "scatter plot",
+            "quantitative venn diagram",
+            "qualitative venn diagram"
+        ],
+        "questionTheme": [
+            "economics",
+            "business",
+            "history",
+            "science and technology"
+        ],
+        "difficultyLevel": 5
+    },
+    "table analysis": {
+        "tableType": [
+            "2 category table",
+            "2 category hybrid table"
+        ],
+        "questionType": [
+            "Yes/No",
+            "Would Help / Would Not Help"
+        ],
+        "questionTheme": [
+            "sales",
+            "marketing",
+            "finance",
+            "operations",
+            "human resources",
+            "technology",
+            "environment",
+            "health",
+            "education",
+            "government",
+            "international relations",
+            "science",
+            "engineering",
+            "art",
+            "culture",
+            "sports",
+            "entertainment"
+        ],
+        "difficultyLevel": 5
+    },
+    "two part analysis": {
+        "questionTheme": [
+            "economics",
+            "finance",
+            "marketing",
+            "politics",
+            "business",
+            "history",
+            "science and technology"
+        ],
+        "difficultyLevel": 5,
+        "graph/table": [
+            "bar chart",
+            "pie chart",
+            "line chart",
+            "scatter plot",
+            "quantitative venn diagram",
+            "qualitative venn diagram",
+            "2 category table",
+            "2 category hybrid table"
+        ]
+    }
+}
