@@ -192,16 +192,16 @@ class TPA:
         self.thread_id = thread_id
     def generate_QuestionText(self):
         if(self.thread_id):
-            response = self.llm.invoke({"content":f"QuestionText", "thread_id": self.thread_id})
+            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
         else:
-            response = self.llm.invoke({"content":f"QuestionText"})
+            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
             self.thread_id = response[0].thread_id if response else "error! thread_id not found for TPA (questionComponent@l:131)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["part1"], message["part2"], message["question"], message["type"]
+            return self.thread_id, message["part1"], message["part2"], message["question"], message["type"]
         except Exception as e:
             print(f"Error: message received for QuestionText is: \n{response[0].content[0].text.value}\n\n")
-            return "", "", "", ""
+            return "", "", "", "", ""
     def generate_QuestionTitle(self):
         response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
         try:
