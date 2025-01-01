@@ -18,5 +18,7 @@ class ParentChildQuestionGeneration:
             childQuestionData["title"] = questionContent.generate_childQuestionTitle(i)
             childQuestionData["solution"], childQuestionData["answer"] = questionContent.generate_childSolution(i)
             childQuestionData["options"] = questionContent.generate_childOptions(i)
+            childQuestionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
+            childQuestionData["tag"] = self.prompt.split(" - ")[0].strip("<>").strip("[]").split(",")
             self.questionData["childQuestions"].append(childQuestionData)
         return self.questionData

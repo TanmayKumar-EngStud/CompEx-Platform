@@ -25,12 +25,9 @@ class Combination:
                 filtered_topics = []
 
                 for key, values in details.items():
-                    if isinstance(values, list):
-                        length = len(values)
-                        idx = math.floor(self.combination_number / initiator)% length
-                    elif isinstance(values, int):
-                        idx = math.floor(self.combination_number / initiator)% values
                     if key == "questionStyle":
+                        length = len(values)
+                        idx = math.floor(self.combination_number / initiator) % length
                         question_style_selected = values[idx]
                         string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
                         initiator *= length
@@ -57,9 +54,7 @@ class Combination:
                     elif key == "questionTheme" and "Word Problems" in question_style_selected:
                         idx_1, idx_2 = self.pair_combination(len(values), self.combination_number)
                         string += (f" - <{values[idx_1]}, {values[idx_2]}>").replace("*", "").replace("$", "")
-                    else:
-                        if isinstance(values, int):
-                            string += (f" - <{idx+1}>").replace("*", "").replace("$", "")
+
                 prompt.append(string)
 
         self.combination_number += 1

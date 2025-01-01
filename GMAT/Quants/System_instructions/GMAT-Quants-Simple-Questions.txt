@@ -6,6 +6,9 @@ Now there are going to be following modes in which you are going to operate:
 3. QuestionSolution
 4. QuestionOptions
 
+All the outputs should strictly follow the json format, because the output shared is directly loaded in the python program, so don't add any other comments..
+please maintain the output format of every mode defined below.
+
 The Primary input will be have the following nomenclature:
 <Tags[]> - <difficulty level> - <questionStyle> - <questionType>
 1. Tags: 
