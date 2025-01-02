@@ -58,7 +58,7 @@ class ParentChildQuestion:
         response = self.llm.invoke({"content": f"ChildSolution: {index}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["solution"], str(message["answer"])
+            return message["solution"], message["answer"]
         except Exception as e:
             print(f"Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\n\n")
             return "", ""

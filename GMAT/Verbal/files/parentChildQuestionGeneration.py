@@ -1,10 +1,37 @@
-import random
+import random, math,os, json
+
 from files.questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
-    def __init__(self, llm, prompt, child_prompt= []):
+    def generate_child_prompt(self, idx):
+        child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))
+        prompts = []
+        t = child_prompt["combination number"]
+        indexes = []
+        for i in range(idx):
+            option = child_prompt["reading comprehension"]
+            idx = t%len(option)
+            counter = 0
+            for j in indexes:
+                if j <= idx+counter:
+                    counter += 1
+            indexes.append((idx+counter)%len(option))
+            t = math.floor(t/len(option))
+            prompts.append(f"{option[idx]}")
+        child_prompt["combination number"] += 1
+        json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
+        print(f"indexes: {indexes}")
+        return prompts
+    def __init__(self, llm, prompt):
         self.llm = llm
         self.prompt = prompt
-        self.child_prompt = child_prompt
+        child_question_numbers = 0
+        if "rc-s" in self.prompt.lower():
+            child_question_numbers = 2
+        elif "rc-m" in self.prompt.lower():
+            child_question_numbers = 3
+        elif "rc-l" in self.prompt.lower():
+            child_question_numbers = 4
+        self.child_prompt = self.generate_child_prompt(child_question_numbers)
         self.questionData = {}
     def generate_question(self):
         questionContent = ParentChildQuestion(self.llm, self.prompt)

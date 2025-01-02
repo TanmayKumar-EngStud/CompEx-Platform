@@ -16,46 +16,20 @@ class Combination:
         return idx_1, idx_2 % length
     
     def generate_combination(self):
-        prompt = []
-        for section_name, details in self.combination.items():
-            if section_name != "combination number":
-                string = f"{section_name}"
-                initiator = 1
-                question_style_selected = ""
-                filtered_topics = []
-
-                for key, values in details.items():
-                    if key == "questionStyle":
-                        length = len(values)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        question_style_selected = values[idx]
-                        string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
-
-                    elif key == "questionTopic":
-                        if "Geometric Properties" in question_style_selected:
-                            filtered_topics = [topic for topic in values if '*' in topic]
-                        elif "Data Interpretation" in question_style_selected:
-                            filtered_topics = [topic for topic in values if '$' in topic]
-                        else:
-                            filtered_topics = values
-                        
-                        length = len(filtered_topics)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        string += (f" - <{filtered_topics[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
-
-                    elif key == "tableType" and "Data Interpretation" in question_style_selected:
-                        length = len(values)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
-
-                    elif key == "questionTheme" and "Word Problems" in question_style_selected:
-                        idx_1, idx_2 = self.pair_combination(len(values), self.combination_number)
-                        string += (f" - <{values[idx_1]}, {values[idx_2]}>").replace("*", "").replace("$", "")
-
-                prompt.append(string)
+        prompt = ""
+        initiator = self.combination_number
+        for key, values in self.combination.items():
+            if key != "combination number":
+                if isinstance(values, list):
+                    length = len(values)
+                elif isinstance(values, int):
+                    length = values
+                idx =initiator % length
+                if isinstance(values, list):
+                    prompt += (f" - <{values[idx]}>")
+                else:
+                    prompt += (f" - <{idx+1}>")
+                initiator = math.floor(initiator/length)
 
         self.combination_number += 1
         self.combination["combination number"] = self.combination_number
