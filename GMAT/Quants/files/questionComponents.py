@@ -20,7 +20,6 @@ class ParentChildQuestion:
         except Exception as e:
             print(f"Error: message received for questionGraph is: \n{response[0].content[0].text.value}\n\n")
             return "", ""
-    
     def generate_parentTitle(self):
         response = self.llm.invoke({"content": f"ParentTitle", "thread_id": self.thread_id})
         try:
@@ -49,18 +48,18 @@ class ParentChildQuestion:
         response = self.llm.invoke({"content": f"ChildOptions: {index}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["options"]
+            return message["options"], message["answer"]
         except Exception as e:
             print(f"Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\n\n")
-            return []
+            return {}, ""
     def generate_childSolution(self, index):
         response = self.llm.invoke({"content": f"ChildSolution: {index}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["solution"], str(message["answer"])
+            return message["solution"]
         except Exception as e:
             print(f"Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\n\n")
-            return "", ""
+            return ""
 
 class SimpleQuestion:
     def __init__(self, llm, thread_id= None):
@@ -95,23 +94,22 @@ class SimpleQuestion:
                 message = response_text
             else:
                 message = json.loads(response_text)    
-            return message["solution"], str(message["answer"])
+            return message["solution"]
         except Exception as e:
             print(f"Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
             print(f"JSON parsing error: {str(e)}")
-            return "", ""
+            return ""
     def generate_questionOptions(self):
       response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
       try:
          raw_response = response[0].content[0].text.value
          json_string = refine_response(raw_response.replace("'", '"'))
          message = json.loads(json_string)
-         options = [str(opt) for opt in message["options"]]
-         return options
+         return message["options"], message["answer"]
       except Exception as e:
          print(f"Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
          print(f"JSON parsing error: {str(e)}")
-         return []
+         return {}, ""
       
 class DataSufficiencyQuestion:
     def __init__(self, llm, prompt, thread_id= None):

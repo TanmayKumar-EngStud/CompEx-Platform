@@ -67,8 +67,7 @@ Input:
 `QuestionSolution`
 Output: 
 {
-   "solution": "here the complete solution will come",
-   "answer", "answer"
+   "solution": "here the complete solution will come"
 }
 
 ## QuestionOptions:
@@ -82,5 +81,11 @@ Input:
 `QuestionOptions`
 Output: 
 {
-   "options": ['flase option1', 'flase option2', 'flase option3', 'flase option4', 'correctAnswer']
-} // the correct answer could be present in any position of the list, it is case sensitive, thus the correct answer should be in the same format as the answer in the questionSolution.
+   "options": {
+      "A": "option1",
+      "B": "option2",
+      "C": "option3",
+      "D": "option4"
+   },
+   "answer": "A"
+} // one of the options should be the correct answer.

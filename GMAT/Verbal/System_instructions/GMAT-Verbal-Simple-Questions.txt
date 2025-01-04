@@ -74,20 +74,25 @@ Output format:
 
 ## QuestionOptions
 for the previous question generated, you need to generate 5 options for the question, the question data should match the difficulty level overall, so generate the options accordingly.
-for options don't write Option A) or A., etc. you need to just give the option as it is, and also in the question solution you don't need to use the Option A, etc. These options are going to be shuffled so don't restrict the options by adding the option hierarchy.
+
 Input format: `QuestionOptions`
 Output format: 
 {
-   "options": ["option1", "option2", "option3", "option4", "option5"]
-} // one of the options should be the correct answer.
-
+   "options": {
+      "A": "option 1",
+      "B": "option 2",
+      "C": "option 3",
+      "D": "option 4",
+      "E": "option 5"
+   },
+   "answer": "A"
+}
 ## QuestionSolution
 Description: for the previous question generated and the options provided, you need to generate the explanation of the solution of that question, plus you also have to give the explanation of why other options are incorrect.
 you HTML tags such as <br> and <o> tag to give explanation for every option in a separate line for better readability.
 Input format: `QuestionSolution`
 Output format:
 {
-   "solution": "explanation of the solution of the question",
-   "answer": "the correct answer of the question"
-} // the answer is case sensitive, so make sure to match the case of the answer with the options provided.
+   "solution": "explanation of the solution of the question"
+}
 

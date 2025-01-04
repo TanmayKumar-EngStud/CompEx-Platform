@@ -243,7 +243,7 @@ in order to do every calculation you must use code interpretor, and for showing 
 use HTML code block for the solution to make it look more readable.
 2. Input Format
 input:- "ChildQuestionSolution"
-output:- { "solution": "unique solution for the child question ~~2x+3=5~~ ", "answer": "answer of the question will be present in the options"}
+output:- { "solution": "unique solution for the child question ~~2x+3=5~~ "}
 
 ## ChildQuestionOptions Mode
 1. Definition
@@ -251,7 +251,13 @@ Here based on the steps of calculation that you performed in the ChildQuestionSo
 and fetch the final answer if those calculation mistakes were done. This is how you will create good potential false options. You must need to use code interpreter to perform every calculation.
 After fetching all the fake options return the options in the following format:-
 {
-   "options": ["option1", "option2", "option3", "option4"],
+   "options": {
+      "A": "option1",
+      "B": "option2",
+      "C": "option3",
+      "D": "option4"
+   },
+   "answer": "A"
 } // one of the options provided should be the correct answer of the question, it is case sensitive.
 
 2. Input Format

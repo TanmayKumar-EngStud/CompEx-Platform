@@ -244,7 +244,7 @@ If there is a decimal, you have to always round it to 2 decimal places.
 In solution use html tags to make the solution more readable. for all the math equations place it in the ~~latex~~ code block
 2. Input Format
 input:- "mode:- childQuestionSolution; question: questionNumber"
-output:- {"solution": "unique solution for the child question ~~2x+3=5~~ ", "answer": "answer of the question that will be present in the options"}
+output:- {"solution": "unique solution for the child question ~~2x+3=5~~ "}
 
 
 # childQuestionOptions Mode
@@ -253,9 +253,11 @@ Here based on the steps of calculation that you performed in the childQuestionSo
 and fetch the final answer if those calculation mistakes were done. This is how you will create good potential false options. You must need to use code interpreter to perform every calculation.
 After fetching all the fake options return the options in the following format:-
 {
-   "options": ["option1", "option2", "option3", "option4"],
-} // one of the options provided should be the correct answer of the question.
-
-2. Input Format
-input:- "mode:- childQuestionOptions; optionNumber: 4" //since option number is 4, so 4 options will be generated
-output:- { "options": ["option1", "option2", "option3", "option4"] } // one of the options provided should be the correct answer of the question answer and correct options are case sensitive.
+   "options": {
+    "A": "1st option",
+    "B": "2nd option",
+    "C": "3rd option",
+    "D": "4th option",
+   },
+   "answer": "A" // whichever option is correct, should come here
+}

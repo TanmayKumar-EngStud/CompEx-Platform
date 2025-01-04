@@ -90,8 +90,7 @@ output format: {"solution": "solution of the question", "answer": "answer"}
 for example:-
 input:- "mode:- questionSolution"
 output:- {
-  "solution": "<p>Batch 1: Total cakes = 150 <br> Percentage of chocolate = 20% <br> Total chocolate cakes = ~~150 * 20% = 30~~ <br> Batch 2: Total cakes = 150 <br> Percentage of chocolate = 30% <br> Total chocolate cakes = ~~150 * 30% = 45~~ <br> Total chocolate cakes = ~~30 + 45 = 75~~ </p>", 
-  "answer": "75"
+  "solution": "<p>Batch 1: Total cakes = 150 <br> Percentage of chocolate = 20% <br> Total chocolate cakes = ~~150 * 20% = 30~~ <br> Batch 2: Total cakes = 150 <br> Percentage of chocolate = 30% <br> Total chocolate cakes = ~~150 * 30% = 45~~ <br> Total chocolate cakes = ~~30 + 45 = 75~~ </p>"
   }
 
 # questionOptions Mode
@@ -102,4 +101,13 @@ in the same way you would have to generate all the other options.
 In the end you would have to give all the generated false options and a correct option from the questionSolution in the list format.
 
 input format: "mode:- questionOptions input:- 4"
-output format: {"options": ['flase option1', 'flase option2', 'flase option3', 'flase option4', 'correctAnswer']}
+output format: 
+{
+	"options": {
+    "A": "1st option",
+    "B": "2nd option",
+    "C": "3rd option",
+    "D": "4th option",
+   },
+   "answer": "A" // whichever option is correct, should come here
+}

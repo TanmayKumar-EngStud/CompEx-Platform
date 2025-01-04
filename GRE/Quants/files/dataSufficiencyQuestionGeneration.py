@@ -1,4 +1,4 @@
-from files.questionComponents import QuestionText, QuestionTitle, QuestionSolution, QuestionGraph 
+from files.questionComponents import DataSufficiencyQuestion
 
 class DataSufficiencyQuestionGeneration:
     def __init__(self, llm, prompt):
@@ -7,20 +7,14 @@ class DataSufficiencyQuestionGeneration:
         self.questionData = {}
         self.thread_id = None
     def generate_question(self):
+        dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.prompt)
         if("graph" in self.prompt.lower()):
-            questionGraph = QuestionGraph(self.llm, self.prompt)
-            self.thread_id, self.questionData["graph"], self.questionData["type"], self.questionData["description"] = questionGraph.generate_questionGraph()
-        if(self.thread_id is not None):
-            questionText = QuestionText(self.llm, self.thread_id)
-            self.questionData["thread_id"], self.questionData["question"] = questionText.generate_questionText(self.prompt)
-        else:
-            questionText = QuestionText(self.llm)
-            self.questionData["thread_id"], self.questionData["question"] = questionText.generate_questionText(self.prompt)
-        questionTitle = QuestionTitle(self.llm, self.questionData["thread_id"])
-        self.questionData["title"] = questionTitle.generate_questionTitle()
+            self.thread_id, self.questionData["graph"], self.questionData["type"], self.questionData["description"] = dataSufficiencyQuestion.generate_questionGraph()
+       
+        self.questionData["thread_id"], self.questionData["question"], self.questionData["statements"] = dataSufficiencyQuestion.generate_questionText()
+        self.questionData["title"] = dataSufficiencyQuestion.generate_questionTitle()
 
-        questionSolution = QuestionSolution(self.llm, self.questionData["thread_id"])
-        self.questionData["solution"], self.questionData["answer"] = questionSolution.generate_questionSolution()
+        self.questionData["solution"], self.questionData["answer"] = dataSufficiencyQuestion.generate_questionSolution()
         self.questionData["options"] = ["Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient", "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient", "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient", "EITHER statement ALONE is sufficient", "Statements (1) and (2) TOGETHER are NOT sufficient"]
         self.questionData["answer"] = self.questionData["options"][ord(self.questionData["answer"]) - ord("A")]
         return self.questionData
