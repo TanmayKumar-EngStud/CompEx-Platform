@@ -64,28 +64,33 @@ Input will be `QuestionOptions`
 for TC-1:
 Output:
 {
-   "options": ["option 1", "option 2", "option 3", "option 4", "option 5", "option6"] # out of 6, exactly 1 option should fit correctly into the blank sentence
+   "options": {"A": "option 1", "B": "option 2", "C": "option 3", "D": "option 4", "E": "option 5", "F": "option 6"}, // out of 6, exactly 1 option should fit correctly into the blank sentence
+   "answer": "A"
 }
 for TC-2:
 Output:
 {
-   "options": [["option 1", "option 2", "option 3", "option 4"], ["option 5", "option6", "option7", "option8"]] # out of 8, exactly 2 options should fit correctly into the blank sentence one option from each list for every blank in the double blank question.
+   "options": [{"A": "option 1", "B": "option 2", "C": "option 3", "D": "option 4"}, {"E": "option 5", "F": "option 6", "G": "option 7", "H": "option 8"}] # out of 8, exactly 2 options should fit correctly into the blank sentence one option from each list for every blank in the double blank question.
+   "answer": ["A", "F"]
 }
 for TC-3:
 Output:
 {
-   "options": [["option 1", "option 2", "option 3"], ["option 4", "option5", "option6"], ["option 7", "option8", "option9"]] # out of 9, exactly 3 options should fit correctly into the blank sentence one option from each list for every blank in the triple blank question.
+   "options": [{"A": "option 1", "B": "option 2", "C": "option 3"}, {"D": "option 4", "E": "option 5", "F": "option 6"}, {"G": "option 7", "H": "option 8", "I": "option 9"}] # out of 9, exactly 3 options should fit correctly into the blank sentence one option from each list for every blank in the triple blank question.
+   "answer": ["A", "F", "I"]
 }
 for SE questions the output pattern will be:-
 Output:
 {
-   "options": ["option 1", "option 2", "option 3", "option 4", "option 5", "option 6"] # out of 6, exactly 2 options should fit correctly into the blank sentence
+   "options": {"A": "option 1", "B": "option 2", "C": "option 3", "D": "option 4", "E": "option 5", "F": "option 6"}, # out of 6, exactly 2 options should fit correctly into the blank sentence
+   "answer": ["A", "F"]
 }
 
 for CR questions the output pattern will be:-
 Output:
 {
-   "options": ["option 1", "option 2", "option 3", "option 4", "option 5", "option 6"] # out of 6, exactly 1 option should be correct. This will not be a fill in the blank question, it will be more like a reference from context with higher order thinking.
+   "options": {"A": "option 1", "B": "option 2", "C": "option 3", "D": "option 4", "E": "option 5", "F": "option 6"}, # out of 6, exactly 1 option should be correct. This will not be a fill in the blank question, it will be more like a reference from context with higher order thinking.
+   "answer": "A"
 }
 
 ## QuestionSolution: 
@@ -93,8 +98,7 @@ This one should explain what should be the correct answer for the previous quest
 But for Text completion 2 and Text completion 3 questions you should discuss the reasoning behind the correct option and why some of the other possible options are actually not correct.
 Output:
 {
-   "solution": "<p>explanation of the correct option (use html tags for bold, italic, underline, etc to make it more readable and give explanation of other options in points, bold the option if the option texts are small, and separate the option discussion by a line, For TC-2 and TC-3 questions give explanation of the option from the option group with a separate gap) and also keep the solution short and concise</p>", 
-   "answer": ["list of correct options from the question options [this is case sensitive]"]
+   "solution": "<p>explanation of the correct option (use html tags for bold, italic, underline, etc to make it more readable and give explanation of other options in points, bold the option if the option texts are small, and separate the option discussion by a line, For TC-2 and TC-3 questions give explanation of the option from the option group with a separate gap) and also keep the solution short and concise</p>"
 }
 
 please note that all the output response should be of json format.

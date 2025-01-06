@@ -60,7 +60,8 @@ Input:
 `ChildOptions: <Child question number>`
 Output: 
 {
-   options: ["option 1", "option 2", "option 3", "option 4"]
+   "options": {"A": "option 1", "B": "option 2", "C": "option 3", "D": "option 4"},
+   "answer": "B"
 }
 
 5. ChildSolution:
@@ -70,8 +71,7 @@ Input:
 `ChildSolution: <Child question number>`
 Output: 
 {
-   solution: "solution of the question use html tags to make it more readable, do discussion about every option in a separate line, but also keep it concise",
-   answer: ["list of options which are correct for that question, it is case sensitive"]
+   solution: "solution of the question use html tags to make it more readable, do discussion about every option in a separate line, but also keep it concise"
 }
 
 For every ParentQuestion, there will be multiple ChildQuestions thus to maintain the consistency, the Child question number will be provided in the input.

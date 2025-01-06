@@ -12,6 +12,6 @@ class SimpleQuestionGeneration:
       self.questionData["title"] = questionContent.generate_questionTitle()
       self.questionData["options"] = questionContent.generate_questionOptions(3)
       self.questionData["solution"], self.questionData["answer"] = questionContent.generate_questionSolution()
-      self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
+      self.questionData["difficulty"] = int(self.prompt.split(" - ")[3].strip("<>"))
       self.questionData["tag"] = self.prompt.split(" - ")[0].strip("<>").strip("[]").split(",")
       return self.questionData

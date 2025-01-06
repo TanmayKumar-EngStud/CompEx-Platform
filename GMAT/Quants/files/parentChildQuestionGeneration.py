@@ -16,8 +16,12 @@ class ParentChildQuestionGeneration:
             childQuestionData = {}
             childQuestionData["question"] = questionContent.generate_childQuestion(i, self.child_prompt[i] if self.child_prompt else "")
             childQuestionData["title"] = questionContent.generate_childQuestionTitle(i)
-            childQuestionData["solution"], childQuestionData["answer"] = questionContent.generate_childSolution(i)
-            childQuestionData["options"] = questionContent.generate_childOptions(i)
+            childQuestionData["solution"] = questionContent.generate_childSolution(i)
+            options, answer = questionContent.generate_childOptions(i)
+            childQuestionData["answer"] = options[answer]
+            options_list = list(options.values())
+            random.shuffle(options_list)
+            childQuestionData["options"] = options_list
             childQuestionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
             childQuestionData["tag"] = self.prompt.split(" - ")[0].strip("<>").strip("[]").split(",")
             self.questionData["childQuestions"].append(childQuestionData)

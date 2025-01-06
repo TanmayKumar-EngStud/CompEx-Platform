@@ -1,0 +1,27 @@
+{
+    "combination number": 5,
+    "questionTheme": [
+        "Economics",
+        "Finance",
+        "Science and Technology",
+        "Sports",
+        "philosophy",
+        "History",
+        "Geography",
+        "Art",
+        "Literature",
+        "Fiction"
+    ],
+    "questionType": [
+        "rc-s",
+        "rc-m",
+        "rc-l",
+        "sentence equivalence",
+        "critical reasoning",
+        "tc-1",
+        "tc-2",
+        "tc-3"
+    ],
+    "difficulty": 5,
+    "vocabulary": 3
+}
