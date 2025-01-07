@@ -25,6 +25,20 @@ class ParentChildQuestionGeneration:
         self.prompt = prompt
         self.questionData = {}
 
+    def shuffle_options(self,options):
+        option_list = []
+        if isinstance(options, dict):
+            # Shuffle the values of the dictionary
+            option_list = list(options.values())
+            random.shuffle(option_list)
+        elif isinstance(options, list):
+            # Shuffle values of each inner dictionary and convert to list of lists
+            for inner_dict in options:
+                shuffled_values = list(inner_dict.values())
+                random.shuffle(shuffled_values)
+                option_list.append(shuffled_values)
+        return option_list
+
     def generate_question(self):
         parentChildQuestion = ParentChildQuestion(self.llm, self.prompt)
         self.questionData["passages"] = parentChildQuestion.generate_passages()
@@ -43,7 +57,19 @@ class ParentChildQuestionGeneration:
         for i in range(total_child_questions):
             childQuestionData = {}
             childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i, child_prompts[i])
-            childQuestionData["options"] = parentChildQuestion.generate_childOptions(i)
-            childQuestionData["solution"], childQuestionData["answer"] = parentChildQuestion.generate_childSolution(i)
+            options, answer = parentChildQuestion.generate_childOptions(i)
+            if(isinstance(answer, str)):
+                childQuestionData["answer"] = options[answer]
+            else:
+                answers = []
+                i=0
+                for ans in answer:
+                    answers.append(options[i][ans])
+                    i+=1
+                childQuestionData["answer"] = answers
+            childQuestionData["options"] = self.shuffle_options(options)
+            childQuestionData["solution"] = parentChildQuestion.generate_childSolution(i)
+            childQuestionData["tag"] = [child_prompts[i]]
             self.questionData["childQuestions"].append(childQuestionData)
+            self.questionData["tag"] = self.prompt.split(" - ")[2].strip("<>").strip("[]").split(",")+[child_prompt for child_prompt in child_prompts]
         return self.questionData

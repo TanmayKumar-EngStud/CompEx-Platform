@@ -1,5 +1,5 @@
 {
-    "combination number": 5,
+    "combination number": 9,
     "questionTheme": [
         "Economics",
         "Finance",
@@ -14,13 +14,13 @@
     ],
     "questionType": [
         "rc-s",
+        "tc-3",
         "rc-m",
         "rc-l",
         "sentence equivalence",
         "critical reasoning",
         "tc-1",
-        "tc-2",
-        "tc-3"
+        "tc-2"
     ],
     "difficulty": 5,
     "vocabulary": 3
