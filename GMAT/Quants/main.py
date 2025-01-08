@@ -1,4 +1,9 @@
+import sys
 import os
+
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
@@ -8,7 +13,7 @@ from files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGener
 from combinations.combination import Combination
 
 load_dotenv()
-class GMATQuants:
+class GMAT_Q:
    def __init__(self):
       combination = Combination()
       self.assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Quants-Simple-Questions"]
@@ -52,8 +57,8 @@ class GMATQuants:
          questionData = simpleQuestionGeneration.generate_question()
          return questionData
 
-gmatQuants = GMATQuants()
-print(f"generating questions...")
-questions = gmatQuants.generate_questions()
-print(f"questions generated")
-print(f"questions:- \n{json.dumps(questions, indent=2)}\n\n")
+# gmatQuants = GMAT_Q()
+# print(f"generating questions...")
+# questions = gmatQuants.generate_questions()
+# print(f"questions generated")
+# print(f"questions:- \n{json.dumps(questions, indent=2)}\n\n")

@@ -1,4 +1,9 @@
+import sys
 import os
+
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
@@ -14,7 +19,7 @@ assistant_id_multi_source_reasoning = json.load(open(os.path.join(os.path.dirnam
 assistant_id_table_analysis = json.load(open(os.path.join(os.path.dirname(__file__), '../assistant_ids.json'), 'r'))['Table-Analysis']
 assistant_id_two_part_analysis = json.load(open(os.path.join(os.path.dirname(__file__), '../assistant_ids.json'), 'r'))['Two-Part-Analysis']
 
-class IR:
+class GMAT_IR:
    def __init__(self):
       
       self.combination = Combination()
@@ -66,8 +71,8 @@ class IR:
          tpa_question = tpa.generate_TPA()
          return tpa_question
 
-ir = IR()
-print(f"generating questions...")
-questions = ir.generate_IR()
-print(f"Generated Questions:- \n{json.dumps(questions, indent=2)}\n\n")
-print(f"questions generated")
+# ir = GMAT_IR()
+# print(f"generating questions...")
+# questions = ir.generate_IR()
+# print(f"Generated Questions:- \n{json.dumps(questions, indent=2)}\n\n")
+# print(f"questions generated")

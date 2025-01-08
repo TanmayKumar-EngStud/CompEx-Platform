@@ -1,4 +1,9 @@
+import sys
 import os
+
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
@@ -11,7 +16,7 @@ from files.parentChildQuestionGeneration import ParentChildQuestionGeneration
 
 load_dotenv()
 
-class QuantsQuestionGeneration:
+class GRE_Q:
    def __init__(self):
       self.combination = Combination()
       self.prompts = self.combination.generate_combination()
@@ -63,8 +68,8 @@ class QuantsQuestionGeneration:
          return questionData
 
 
-quantsQuestionGeneration = QuantsQuestionGeneration()
-print(f"generating questions")
-questions = quantsQuestionGeneration.generate_questions()
-print(f"questions generated")
-print(json.dumps(questions, indent=4))
+# quantsQuestionGeneration = GRE_Q()
+# print(f"generating questions")
+# questions = quantsQuestionGeneration.generate_questions()
+# print(f"questions generated")
+# print(json.dumps(questions, indent=4))
