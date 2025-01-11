@@ -1,17 +1,11 @@
-import sys
-import os
-
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-import json
+import json, os
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-from files.GI import Generate_GI
-from files.MSR import Generate_MSR
-from files.TA import Generate_TA
-from files.TPA import Generate_TPA
-from combinations.combiantion import Combination
+from GMAT.Integrated_Reasoning.files.GI import Generate_GI
+from GMAT.Integrated_Reasoning.files.MSR import Generate_MSR
+from GMAT.Integrated_Reasoning.files.TA import Generate_TA
+from GMAT.Integrated_Reasoning.files.TPA import Generate_TPA
+from GMAT.Integrated_Reasoning.combinations.combiantion import Combination
 load_dotenv()
 
 assistant_id_graphic_interpretation = json.load(open(os.path.join(os.path.dirname(__file__), '../assistant_ids.json'), 'r'))['Graphic-Interpretation']
@@ -40,7 +34,9 @@ class GMAT_IR:
             assistant_id=assistant_id_graphic_interpretation
          )
          gi = Generate_GI(llm, prompt)
-         return gi.generate_GI()
+         gi_question = gi.generate_GI()
+         gi_question["prompt"] = prompt
+         return gi_question
 
       elif("multi source reasoning" in prompt.lower()):
          llm = OpenAIAssistantRunnable(
@@ -50,6 +46,7 @@ class GMAT_IR:
          )
          msr = Generate_MSR(llm, prompt)
          msr_question = msr.generate_MSR()
+         msr_question["prompt"] = prompt
          return msr_question
 
       elif("table analysis" in prompt.lower()):
@@ -60,6 +57,7 @@ class GMAT_IR:
          )
          ta = Generate_TA(llm, prompt)
          ta_question = ta.generate_TA()
+         ta_question["prompt"] = prompt
          return ta_question
       elif("two part analysis" in prompt.lower()):
          llm = OpenAIAssistantRunnable(
@@ -69,6 +67,7 @@ class GMAT_IR:
          )
          tpa = Generate_TPA(llm, prompt)
          tpa_question = tpa.generate_TPA()
+         tpa_question["prompt"] = prompt
          return tpa_question
 
 # ir = GMAT_IR()

@@ -1,15 +1,9 @@
-import sys
-import os
-
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-import json
+import json, os
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-from files.simpleQuestionGeneration import SimpleQuestionGeneration
-from files.parentChildQuestionGeneration import ParentChildQuestionGeneration
-from combinations.combination import Combination
+from GRE.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration
+from GRE.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration
+from GRE.Verbal.combinations.combination import Combination
 load_dotenv()
 
 assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GRE-Verbal-Simple-Questions"]

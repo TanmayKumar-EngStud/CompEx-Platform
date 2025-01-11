@@ -1,5 +1,5 @@
 import random
-from files.questionComponents import TA
+from GMAT.Integrated_Reasoning.files.questionComponents import TA
 
 class Generate_TA:
     def __init__(self, llm, prompt):

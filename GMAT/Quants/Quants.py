@@ -1,18 +1,14 @@
-import sys
-import os
-
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-import json
+import json, os
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-from files.simpleQuestionGeneration import SimpleQuestionGeneration
-from files.parentChildQuestionGeneration import ParentChildQuestionGeneration
-from files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration
-from combinations.combination import Combination
+
+from GMAT.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration
+from GMAT.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration
+from GMAT.Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration
+from GMAT.Quants.combinations.combination import Combination
 
 load_dotenv()
+
 class GMAT_Q:
    def __init__(self):
       combination = Combination()
@@ -37,6 +33,7 @@ class GMAT_Q:
          )
          dataSufficiencyQuestionGeneration = DataSufficiencyQuestionGeneration(llm, prompt)
          questionData = dataSufficiencyQuestionGeneration.generate_question()
+         questionData["prompt"] = prompt
          return questionData
       elif ("graph" in prompt.lower()):
          llm = OpenAIAssistantRunnable(
@@ -46,6 +43,7 @@ class GMAT_Q:
          )
          parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
          questionData = parentChildQuestionGeneration.generate_question()
+         questionData["prompt"] = prompt
          return questionData
       else:
          llm = OpenAIAssistantRunnable(
@@ -55,6 +53,7 @@ class GMAT_Q:
          )
          simpleQuestionGeneration = SimpleQuestionGeneration(llm, prompt)
          questionData = simpleQuestionGeneration.generate_question()
+         questionData["prompt"] = prompt
          return questionData
 
 # gmatQuants = GMAT_Q()

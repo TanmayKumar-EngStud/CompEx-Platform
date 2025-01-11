@@ -1,4 +1,4 @@
-from files.questionComponents import SimpleQuestion
+from GRE.Quants.files.questionComponents import SimpleQuestion
 import random
 class SimpleQuestionGeneration:
     def __init__(self, llm, prompt):

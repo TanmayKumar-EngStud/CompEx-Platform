@@ -1,15 +1,9 @@
-import sys
-import os
-
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-import json
+import json, os
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-from files.simpleQuestionGeneration import SimpleQuestionGeneration
-from files.parentChildQuestionGeneration import ParentChildQuestionGeneration
-from combinations.combination import Combination
+from GMAT.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration
+from GMAT.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration
+from GMAT.Verbal.combinations.combination import Combination
 load_dotenv()
 
 class GMAT_V:
@@ -29,7 +23,7 @@ class GMAT_V:
          )
          parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
          questionData = parentChildQuestionGeneration.generate_question()
-         print("Parent Child Question Generation")
+         questionData["prompt"] = prompt
          return questionData
       else:
          llm = OpenAIAssistantRunnable(
@@ -39,7 +33,7 @@ class GMAT_V:
          )
          simpleQuestionGeneration = SimpleQuestionGeneration(llm, prompt)
          questionData = simpleQuestionGeneration.generate_question()
-         print("Simple Question Generation")
+         questionData["prompt"] = prompt
          return questionData
       
 # verbalQuestionGeneration = GMAT_V()

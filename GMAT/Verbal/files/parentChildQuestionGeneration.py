@@ -1,6 +1,6 @@
 import random, math,os, json
 
-from files.questionComponents import ParentChildQuestion
+from GMAT.Verbal.files.questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx):
         child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))

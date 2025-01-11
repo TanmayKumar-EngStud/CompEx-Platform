@@ -1,4 +1,4 @@
-from files.questionComponents import DataSufficiencyQuestion
+from GMAT.Quants.files.questionComponents import DataSufficiencyQuestion
 
 class DataSufficiencyQuestionGeneration:
     def __init__(self, llm, prompt):

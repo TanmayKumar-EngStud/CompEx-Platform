@@ -1,4 +1,4 @@
-from files.questionComponents import TPA
+from GMAT.Integrated_Reasoning.files.questionComponents import TPA
 import random
 class Generate_TPA:
     def __init__(self, llm, prompt):

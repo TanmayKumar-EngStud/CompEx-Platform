@@ -1,5 +1,5 @@
 import random
-from files.questionComponents import ParentChildQuestion
+from GMAT.Quants.files.questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
     def __init__(self, llm, prompt, child_prompt= []):
         self.llm = llm

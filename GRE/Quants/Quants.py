@@ -1,18 +1,12 @@
-import sys
-import os
-
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-import json
+import json, os
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 
-from combinations.combination import Combination
+from GRE.Quants.combinations.combination import Combination
 
-from files.simpleQuestionGeneration import SimpleQuestionGeneration
-from files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration
-from files.parentChildQuestionGeneration import ParentChildQuestionGeneration
+from GRE.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration
+from GRE.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration
+from GRE.Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration
 
 load_dotenv()
 
@@ -41,6 +35,7 @@ class GRE_Q:
          )
          data_sufficiency_question_generation = DataSufficiencyQuestionGeneration(llm, prompt)
          questionData = data_sufficiency_question_generation.generate_question()
+         questionData["prompt"] = prompt
          return questionData
 
       elif ("graph" in prompt.lower() or "table" in prompt.lower()):
@@ -53,6 +48,7 @@ class GRE_Q:
          )
          parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
          questionData = parentChildQuestionGeneration.generate_question()
+         questionData["prompt"] = prompt
          return questionData
 
       else:
@@ -65,6 +61,7 @@ class GRE_Q:
          )
          simpleQuestionGeneration = SimpleQuestionGeneration(llm, prompt)
          questionData = simpleQuestionGeneration.generate_question()
+         questionData["prompt"] = prompt
          return questionData
 
 

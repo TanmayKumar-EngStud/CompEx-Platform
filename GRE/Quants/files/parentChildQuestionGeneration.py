@@ -1,4 +1,4 @@
-from files.questionComponents import ParentChildQuestion
+from GRE.Quants.files.questionComponents import ParentChildQuestion
 import json
 import random
 class ParentChildQuestionGeneration:

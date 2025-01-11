@@ -1,5 +1,5 @@
 import random
-from files.questionComponents import MSR
+from GMAT.Integrated_Reasoning.files.questionComponents import MSR
 
 class Generate_MSR:
     def __init__(self, llm, prompt):

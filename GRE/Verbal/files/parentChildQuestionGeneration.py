@@ -1,4 +1,4 @@
-from files.questionComponents import ParentChildQuestion
+from GRE.Verbal.files.questionComponents import ParentChildQuestion
 import random, math, os, json
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx):

@@ -1,5 +1,5 @@
 import random
-from files.questionComponents import GI 
+from GMAT.Integrated_Reasoning.files.questionComponents import GI 
 
 class Generate_GI:
     def __init__(self, llm, prompt):
