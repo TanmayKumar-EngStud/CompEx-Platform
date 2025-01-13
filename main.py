@@ -19,16 +19,10 @@ class QuestionGenerator:
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                if isinstance(generator, GMAT_IR):
-                    return generator.generate_IR()
-                elif isinstance(generator, GMAT_Q):
+                if isinstance(generator, (GMAT_IR, GMAT_Q, GMAT_V, GRE_Q, GRE_V)):
                     return generator.generate_questions()
-                elif isinstance(generator, GMAT_V):
-                    return generator.generate_question()
-                elif isinstance(generator, GRE_Q):
-                    return generator.generate_questions()
-                elif isinstance(generator, GRE_V):
-                    return generator.generate_questions()
+                else:
+                    raise ValueError(f"Unsupported generator type: {type(generator)}")
             except Exception as e:
                 if attempt == max_retries - 1:
                     print(f"Failed to generate question after {max_retries} attempts: {str(e)}")
@@ -50,31 +44,26 @@ class QuestionGenerator:
             # Generate GMAT IR questions
             ir_futures = [
                 executor.submit(self.generate_question_with_retry, self.GMAT_IR)
-                for _ in range(len(self.GMAT_IR.combination_prompt))
             ]
             
             # Generate GMAT Quant questions
             gmat_q_futures = [
                 executor.submit(self.generate_question_with_retry, self.GMAT_Q)
-                for _ in range(len(self.GMAT_Q.prompts))
             ]
 
             # Generate GMAT Verbal questions  
             gmat_v_futures = [
                 executor.submit(self.generate_question_with_retry, self.GMAT_V)
-                for _ in range(len(self.GMAT_V.prompt))
             ]
 
             # Generate GRE Quant questions
             gre_q_futures = [
                 executor.submit(self.generate_question_with_retry, self.GRE_Q)
-                for _ in range(len(self.GRE_Q.prompts))
             ]
 
             # Generate GRE Verbal questions
             gre_v_futures = [
                 executor.submit(self.generate_question_with_retry, self.GRE_V)
-                for _ in range(len(self.GRE_V.prompt))
             ]
 
             # Collect results
@@ -93,4 +82,5 @@ def main():
     return results
 
 if __name__ == "__main__":
-    main()
+    questions = main()
+    print(f"Here are the list of questions that are generated: \n {json.dumps(questions, indent=2)}")

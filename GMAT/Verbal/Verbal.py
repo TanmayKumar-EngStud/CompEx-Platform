@@ -12,7 +12,7 @@ class GMAT_V:
       self.prompt = combination.generate_combination()
       self.assistant_id_simple_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Verbal-Simple-Questions"]
       self.assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Verbal-Parent-Child-Questions"]
-   def generate_question(self):
+   def generate_questions(self):
       prompt = self.prompt
       print(f"GMAT Verbal: generating parent child question")
       if("rc" in prompt.lower()):

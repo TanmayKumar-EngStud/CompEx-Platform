@@ -19,7 +19,7 @@ class GMAT_IR:
       self.combination = Combination()
       self.combination_prompt = self.combination.generate_combination()
 
-   def generate_IR(self):
+   def generate_questions(self):
       questions = []
       for prompt in self.combination_prompt:
          question = self.generate_Question(prompt)
@@ -28,7 +28,7 @@ class GMAT_IR:
 
    def generate_Question(self, prompt):
       if("graphic interpretation" in prompt.lower()):
-         print("generating graphic interpretation question")
+         print("GMAT IR: generating graphic interpretation question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -40,7 +40,7 @@ class GMAT_IR:
          return gi_question
 
       elif("multi source reasoning" in prompt.lower()):
-         print("generating multi source reasoning question")
+         print("GMAT IR: generating multi source reasoning question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -52,7 +52,7 @@ class GMAT_IR:
          return msr_question
 
       elif("table analysis" in prompt.lower()):
-         print("generating table analysis question")
+         print("GMAT IR: generating table analysis question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -63,7 +63,7 @@ class GMAT_IR:
          ta_question["prompt"] = prompt
          return ta_question
       elif("two part analysis" in prompt.lower()):
-         print("generating two part analysis question")
+         print("GMAT IR: generating two part analysis question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),

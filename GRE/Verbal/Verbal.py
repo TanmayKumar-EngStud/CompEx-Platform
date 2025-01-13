@@ -19,7 +19,7 @@ class GRE_V:
    
     def generate_questions(self):
        questions = []
-       print(f"prompt: {json.dumps(self.prompt, indent=2)}")
+      #  print(f"prompt: {json.dumps(self.prompt, indent=2)}")
        questions.append(self.generate_question(self.prompt, self.llm))
        return questions
     
