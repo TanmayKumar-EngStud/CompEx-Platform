@@ -17,7 +17,7 @@ class ParentChildQuestion:
             self.thread_id = response[0].thread_id if response else "error! thread_id not found! (Verbal/files/questionComponent@l:17)"
             return message["passages"]
         except Exception as e:
-            print(f"Error: message received for parentChildQuestion(generate_passages) is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_passages) is: \n{response[0].content[0].text.value}\n\n")
             return []
     def generate_parentTitle(self):
         response = self.llm.invoke({"content": f"ParentTitle", "thread_id": self.thread_id})
@@ -25,7 +25,7 @@ class ParentChildQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]
         except Exception as e:
-            print(f"Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response[0].content[0].text.value}\n\n")
             return ""
     def generate_childQuestion(self, index, child_prompt=""):
         response = self.llm.invoke({"content": f"ChildQuestion: {index} of {child_prompt}", "thread_id": self.thread_id})
@@ -33,7 +33,7 @@ class ParentChildQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["question"]
         except Exception as e:
-            print(f"Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\n\n")
             return ""
     def generate_childOptions(self, index):
         response = self.llm.invoke({"content": f"ChildOptions: {index}", "thread_id": self.thread_id})
@@ -41,7 +41,7 @@ class ParentChildQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["options"], message["answer"]
         except Exception as e:
-            print(f"Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\n\n")
             return {}, ""
     def generate_childSolution(self, index):
         response = self.llm.invoke({"content": f"ChildSolution: {index}", "thread_id": self.thread_id})
@@ -49,7 +49,7 @@ class ParentChildQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["solution"]
         except Exception as e:
-            print(f"Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\n\n")
             return ""
 
 class SimpleQuestion:
@@ -64,7 +64,7 @@ class SimpleQuestion:
             self.thread_id = response[0].thread_id if response else "error! thread_id not found! (questionComponent@l:30)"
             return self.thread_id, message["question"]
         except Exception as e:
-            print(f"Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}\n\n")
+            print(f"GRE Verbal, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}\n\n")
             print(f"Exception details: {str(e)}")
             return "", ""
     def generate_questionTitle(self):
@@ -75,7 +75,7 @@ class SimpleQuestion:
             return message["title"]
         except Exception as e:
             # message received is:
-            print(f"Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}\n\n")
+            print(f"GRE Verbal, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}\n\n")
             return ""
     def generate_questionSolution(self):
         response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
@@ -87,7 +87,7 @@ class SimpleQuestion:
                 message = json.loads(response_text)    
             return message["solution"]
         except Exception as e:
-            print(f"Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Verbal, Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
             print(f"JSON parsing error: {str(e)}")
             return ""
     def generate_questionOptions(self, num_options=4):
@@ -98,6 +98,6 @@ class SimpleQuestion:
          message = json.loads(json_string)
          return message["options"], message["answer"]
       except Exception as e:
-         print(f"Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
+         print(f"GRE Verbal, Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
          print(f"JSON parsing error: {str(e)}")
          return {}, ""
