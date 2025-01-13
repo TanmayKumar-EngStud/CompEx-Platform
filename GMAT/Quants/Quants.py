@@ -26,6 +26,7 @@ class GMAT_Q:
    def generate_question(self, prompt):
       
       if ("data sufficiency" in prompt.lower()):
+         print("generating data sufficiency question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -36,6 +37,7 @@ class GMAT_Q:
          questionData["prompt"] = prompt
          return questionData
       elif ("graph" in prompt.lower()):
+         print("generating parent child question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -46,6 +48,7 @@ class GMAT_Q:
          questionData["prompt"] = prompt
          return questionData
       else:
+         print("generating simple question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),

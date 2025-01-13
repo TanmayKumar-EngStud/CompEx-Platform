@@ -40,7 +40,7 @@ class GRE_Q:
 
       elif ("graph" in prompt.lower() or "table" in prompt.lower()):
          # Parent Child Question Generation
-         # print("Parent Child Question Generation")
+         print("GRE Quants: generating parent child question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -53,7 +53,7 @@ class GRE_Q:
 
       else:
          # Simple Question Generation
-         # print("Simple Question Generation")
+         print("GRE Quants: generating simple question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
