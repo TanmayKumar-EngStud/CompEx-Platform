@@ -14,7 +14,7 @@ class GMAT_V:
       self.assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Verbal-Parent-Child-Questions"]
    def generate_question(self):
       prompt = self.prompt
-      print(prompt)
+      # print(prompt)
       if("rc" in prompt.lower()):
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",

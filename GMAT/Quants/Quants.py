@@ -16,7 +16,7 @@ class GMAT_Q:
       self.assistant_id_data_sufficiency_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Quants-Data-Sufficiency-Questions"]
       self.assistant_id_parent_child_questions = json.load(open(os.path.join(os.path.dirname(__file__), "../assistant_ids.json"), "r"))["GMAT-Quants-Parent-Child-Questions"]
       self.prompts = combination.generate_combination()
-      print(self.prompts)
+      # print(self.prompts)
    def generate_questions(self):
       questions = []
       for prompt in self.prompts:

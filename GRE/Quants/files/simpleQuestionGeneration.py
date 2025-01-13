@@ -15,7 +15,7 @@ class SimpleQuestionGeneration:
       self.questionData["answer"] = options[answer]
       option_list = list(options.values())
       random.shuffle(option_list)
-      print(f"option_list: {option_list}")
+    #   print(f"option_list: {option_list}")
       self.questionData["options"] = option_list
       self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
       self.questionData["tag"] = self.prompt.split(" - ")[0].strip("<>").strip("[]").split(",")

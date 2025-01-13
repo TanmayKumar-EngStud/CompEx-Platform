@@ -19,7 +19,7 @@ class ParentChildQuestionGeneration:
             prompts.append(f"{option[idx]}")
         child_prompt["combination number"] += 1
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
-        print(f"indexes: {indexes}")
+        # print(f"indexes: {indexes}")
         return prompts
     def __init__(self, llm, prompt):
         self.llm = llm
