@@ -1,0 +1,36 @@
+{
+   "examtypes": {
+      "GRE": {
+         "id": 1,
+         "description": "Graduate Record Examination",
+         "sections": {
+            "Quants": {
+               "id": 1,
+               "description": "GRE Quantitative Questions"
+            },
+            "Verbal": {
+               "id": 2,
+               "description": "GRE Verbal Ability Questions"
+            }
+         }
+      },
+      "GMAT": {
+         "id": 2,
+         "description": "Graduate Management Admission Test",
+         "sections": {
+            "Quants": {
+               "id": 3,
+               "description": "GMAT Qunatitative Questions"
+            },
+            "Verbal": {
+               "id": 4,
+               "description": "GMAT Verbal Ability Questions"
+            },
+            "Integrated Reasoning": {
+               "id": 5,
+               "description": "GMAT Integrated Reasoning Questions"
+            }
+         }
+      }
+   }
+}

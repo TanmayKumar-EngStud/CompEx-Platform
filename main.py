@@ -1,11 +1,53 @@
-from concurrent.futures import ThreadPoolExecutor
-from typing import List, Dict, Any
+from datetime import datetime
+from prisma import Prisma
 import json
 from GMAT.Integrated_Reasoning.IR import GMAT_IR
 from GMAT.Quants.Quants import GMAT_Q
 from GMAT.Verbal.Verbal import GMAT_V
 from GRE.Quants.Quants import GRE_Q
 from GRE.Verbal.Verbal import GRE_V
+from typing import List, Dict, Any
+
+# Initialize Prisma client
+db = Prisma(auto_register=True)
+
+def initialize_primary_tables():
+    with open('PrimaryTablesDefinitions.json', 'r') as f:
+        definitions = json.load(f)
+
+    for exam_name, exam_data in definitions['examtypes'].items():
+        # Check if exam type exists
+        existing_exam = db.examtypes.find_first(
+            where={'examtypeid': exam_data['id']}
+        )
+        if not existing_exam:
+            exam_type = db.examtypes.create({
+                'examtypeid': exam_data['id'],
+                'name': exam_name,
+                'description': exam_data['description']
+            })
+            print(f"Exam type {exam_name} created successfully")
+            for section_name, section_data in exam_data['sections'].items():
+                section = db.sections.create({
+                    'sectionid': section_data['id'],
+                    'examtypeid': exam_type.examtypeid,
+                    'name': section_name,
+                    'description': section_data['description']
+                })
+
+def setPrimaryUser():
+    existing_user = db.users.find_first()
+    if not existing_user:
+        db.users.create({
+            'userid': 1,
+            'username': 'admin',
+            'password': 'admin',
+            'email': 'admin@compex.com',
+            'registrationdate': datetime.now()
+        })
+        print("Primary user created successfully")
+    else:
+        print("Primary user already exists")
 
 class QuestionGenerator:
     def __init__(self):
@@ -30,49 +72,15 @@ class QuestionGenerator:
                 print(f"Attempt {attempt + 1} failed, retrying...")
                 continue
         return {"error": "Max retries exceeded"}
-
+    
     def generate_questions(self) -> Dict[str, List[Dict[str, Any]]]:
         results = {
-            "GMAT_IR": [],
-            "GMAT_Q": [],
-            "GMAT_V": [], 
-            "GRE_Q": [],
-            "GRE_V": []
+            "GMAT_IR": self.generate_question_with_retry(self.GMAT_IR),
+            "GMAT_Q": self.generate_question_with_retry(self.GMAT_Q),
+            "GMAT_V": self.generate_question_with_retry(self.GMAT_V),
+            "GRE_Q": self.generate_question_with_retry(self.GRE_Q),
+            "GRE_V": self.generate_question_with_retry(self.GRE_V),
         }
-
-        with ThreadPoolExecutor() as executor:
-            # Generate GMAT IR questions
-            ir_futures = [
-                executor.submit(self.generate_question_with_retry, self.GMAT_IR)
-            ]
-            
-            # Generate GMAT Quant questions
-            gmat_q_futures = [
-                executor.submit(self.generate_question_with_retry, self.GMAT_Q)
-            ]
-
-            # Generate GMAT Verbal questions  
-            gmat_v_futures = [
-                executor.submit(self.generate_question_with_retry, self.GMAT_V)
-            ]
-
-            # Generate GRE Quant questions
-            gre_q_futures = [
-                executor.submit(self.generate_question_with_retry, self.GRE_Q)
-            ]
-
-            # Generate GRE Verbal questions
-            gre_v_futures = [
-                executor.submit(self.generate_question_with_retry, self.GRE_V)
-            ]
-
-            # Collect results
-            results["GMAT_IR"] = [f.result() for f in ir_futures]
-            results["GMAT_Q"] = [f.result() for f in gmat_q_futures]
-            results["GMAT_V"] = [f.result() for f in gmat_v_futures]
-            results["GRE_Q"] = [f.result() for f in gre_q_futures]
-            results["GRE_V"] = [f.result() for f in gre_v_futures]
-
         return results
 
 def main():
@@ -82,5 +90,13 @@ def main():
     return results
 
 if __name__ == "__main__":
-    questions = main()
-    print(f"Here are the list of questions that are generated: \n {json.dumps(questions, indent=2)}")
+    db.connect()
+    print(f"DB connected: {db.is_connected()}")
+    try:
+        initialize_primary_tables()
+        setPrimaryUser()
+        questions = main()
+        print(f"Here are the list of questions that are generated: \n {questions}")
+    finally:
+        db.disconnect()
+        print(f"DB connected after disconnect: {db.is_connected()}")
