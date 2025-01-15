@@ -6,6 +6,7 @@ from GMAT.Quants.Quants import GMAT_Q
 from GMAT.Verbal.Verbal import GMAT_V
 from GRE.Quants.Quants import GRE_Q
 from GRE.Verbal.Verbal import GRE_V
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any
 
 # Initialize Prisma client
@@ -56,31 +57,44 @@ class QuestionGenerator:
         self.GMAT_V = GMAT_V()
         self.GRE_Q = GRE_Q()
         self.GRE_V = GRE_V()
-        
-    def generate_question_with_retry(self, generator) -> Dict[str, Any]:
+        self.generators = [
+            ("GMAT_IR", self.GMAT_IR),
+            ("GMAT_Q", self.GMAT_Q),
+            ("GMAT_V", self.GMAT_V),
+            ("GRE_Q", self.GRE_Q),
+            ("GRE_V", self.GRE_V)
+        ]
+
+    def generate_question_with_retry(self, generator_tuple) -> Dict[str, Any]:
         max_retries = 3
+        name, generator = generator_tuple
         for attempt in range(max_retries):
             try:
                 if isinstance(generator, (GMAT_IR, GMAT_Q, GMAT_V, GRE_Q, GRE_V)):
-                    return generator.generate_questions()
+                    result = generator.generate_questions()
+                    return (name, result)
                 else:
                     raise ValueError(f"Unsupported generator type: {type(generator)}")
             except Exception as e:
                 if attempt == max_retries - 1:
                     print(f"Failed to generate question after {max_retries} attempts: {str(e)}")
-                    return {"error": str(e)}
+                    return (name, {"error": str(e)})
                 print(f"Attempt {attempt + 1} failed, retrying...")
                 continue
-        return {"error": "Max retries exceeded"}
+        return (name, {"error": "Max retries exceeded"})
     
     def generate_questions(self) -> Dict[str, List[Dict[str, Any]]]:
-        results = {
-            "GMAT_IR": self.generate_question_with_retry(self.GMAT_IR),
-            "GMAT_Q": self.generate_question_with_retry(self.GMAT_Q),
-            "GMAT_V": self.generate_question_with_retry(self.GMAT_V),
-            "GRE_Q": self.generate_question_with_retry(self.GRE_Q),
-            "GRE_V": self.generate_question_with_retry(self.GRE_V),
-        }
+        results = {}
+        with ThreadPoolExecutor(max_workers = len(self.generators)) as executor:
+            future_to_generator = {executor.submit(self.generate_question_with_retry, gen): gen[0] for gen in self.generators}
+            for future in as_completed(future_to_generator):
+                name = future_to_generator[future]
+                try:
+                    gen_name, gen_result = future.result()
+                    results[gen_name] = gen_result
+                except Exception as e:
+                    print(f"Unhanfled exception for {name}: {str(e)}")
+                    results[name] = {"error": str(e)}
         return results
 
 def main():
