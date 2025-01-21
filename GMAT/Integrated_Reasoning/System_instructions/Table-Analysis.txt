@@ -107,10 +107,28 @@ Output: {
 Here you need to give explanation for all 3 the options if the option is 'Yes' or 'no'.
 You don't have to show the calculation, but you need to put more emphasis on how the information in the QuestionText and Table(s) are enough/not enough for finding the value asked in the option.
 
+For any mathematical expressions in the solution, use LaTeX with the following guidelines:
+1. All LaTeX expressions MUST be enclosed between ~~ markers
+2. Use standard LaTeX commands for mathematical operations:
+   - Fractions: \\frac{numerator}{denominator}
+   - Square roots: \\sqrt{expression}
+   - Subscripts: x_{subscript}
+   - Superscripts: x^{power}
+   - Greek letters: \\alpha, \\beta, etc.
+3. For percentages, always use \\% instead of the % symbol
+4. For dollar amounts, use \\$ instead of the $ symbol
+5. For text within math mode, use \\text{your text here}
+6. For parentheses in math mode, use \\left( and \\right)
+7. Avoid using single backslashes except for standard LaTeX commands
+8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
+
+Example of proper LaTeX usage:
+~~\\text{Average} = \\left(\\frac{\\sum \\text{Values}}{\\text{Count}}\\right)~~
+
 Input: `QuestionSolution`
 Output:{
-   "solution": ["explanation for option 1", "explanation for option 2", "explanation for option 3"],
-   "answer": ["answer for option 1", "answer for option 2", "answer for option 3"] // this could be 'Yes/No' or 'Would Help/Would Not Help' this is case sensitive
+   "solution": ["explanation for option 1 with properly formatted LaTeX", "explanation for option 2 with properly formatted LaTeX", "explanation for option 3 with properly formatted LaTeX"],
+   "answer": ["Yes", "No", "Yes"] // or ["Would Help", "Would Not Help", "Would Help"] depending on question type
 }
 
 Important Additional Note,

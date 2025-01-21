@@ -18,7 +18,7 @@ class SimpleQuestionGeneration:
    def getTagAtIndex(self, indexes):
       tags = []
       for index in indexes:
-         tags.append(x for x in self.prompt.split(" - ")[index].strip("<>").strip("[]").split(","))
+         tags.extend([x.strip() for x in self.prompt.split(" - ")[index].strip("<>").strip("[]").split(",")])
       return tags
    
    def generate_question(self):

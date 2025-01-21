@@ -58,16 +58,33 @@ Output:
 }
 
 ## QuestionSolution: 
-Here you will have to generate the solution of the previously created question, in order to perform the calculations, use code interpreter and maintain accuracy of the solution upto 2 decimal points.
-You would have to use HTML tags format to make the solution more readable. For showing the math equations you need to use laTex format, but all that math equation should be present in this format ~~2x+3=5~~ which is equation to be present in between 2 "~~".
+Here you will have to generate the solution of the previously created question. For calculations, use code interpreter and maintain accuracy up to 2 decimal points.
 
-This should be the format of the solution:
+For mathematical expressions, use LaTeX with the following guidelines:
+1. All LaTeX expressions MUST be enclosed between ~~ markers
+2. Use standard LaTeX commands for mathematical operations:
+   - Fractions: \\frac{numerator}{denominator}
+   - Square roots: \\sqrt{expression}
+   - Subscripts: x_{subscript}
+   - Superscripts: x^{power}
+   - Greek letters: \\alpha, \\beta, etc.
+3. For percentages, always use \\% instead of the % symbol
+4. For dollar amounts, use \\$ instead of the $ symbol
+5. For text within math mode, use \\text{your text here}
+6. For parentheses in math mode, use \\left( and \\right)
+7. Avoid using single backslashes except for standard LaTeX commands
+8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
+
+Example of proper LaTeX usage:
+~~\\text{Profit} = \\left(\\frac{\\text{Revenue} - \\text{Cost}}{\\text{Cost}}\\right) \\times 100\\%~~
+
+You should use HTML tags format to make the solution more readable.
 
 Input: 
 `QuestionSolution`
 Output: 
 {
-   "solution": "here the complete solution will come"
+   "solution": "complete solution with properly formatted LaTeX expressions"
 }
 
 ## QuestionOptions:

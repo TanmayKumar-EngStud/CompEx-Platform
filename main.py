@@ -1,6 +1,10 @@
+import warnings
+warnings.filterwarnings('ignore', message='Importing debug from langchain root module is no longer supported')
+
 from datetime import datetime
 from prisma import Prisma
 import json
+import pickle
 from GMAT.Integrated_Reasoning.IR import GMAT_IR
 from GMAT.Quants.Quants import GMAT_Q
 from GMAT.Verbal.Verbal import GMAT_V
@@ -9,47 +13,7 @@ from GRE.Verbal.Verbal import GRE_V
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any
 import time
-
-# Initialize Prisma client
-db = Prisma(auto_register=True)
-
-def initialize_primary_tables():
-    with open('PrimaryTablesDefinitions.json', 'r') as f:
-        definitions = json.load(f)
-
-    for exam_name, exam_data in definitions['examtypes'].items():
-        # Check if exam type exists
-        existing_exam = db.examtypes.find_first(
-            where={'examtypeid': exam_data['id']}
-        )
-        if not existing_exam:
-            exam_type = db.examtypes.create({
-                'examtypeid': exam_data['id'],
-                'name': exam_name,
-                'description': exam_data['description']
-            })
-            print(f"Exam type {exam_name} created successfully")
-            for section_name, section_data in exam_data['sections'].items():
-                section = db.sections.create({
-                    'sectionid': section_data['id'],
-                    'examtypeid': exam_type.examtypeid,
-                    'name': section_name,
-                    'description': section_data['description']
-                })
-
-def setPrimaryUser():
-    existing_user = db.users.find_first()
-    if not existing_user:
-        db.users.create({
-            'userid': 1,
-            'username': 'admin',
-            'password': 'admin',
-            'email': 'admin@compex.com',
-            'registrationdate': datetime.now()
-        })
-        print("Primary user created successfully")
-    else:
-        print("Primary user already exists")
+from db import DB
 
 class QuestionGenerator:
     def __init__(self):
@@ -74,8 +38,6 @@ class QuestionGenerator:
                 if isinstance(generator, (GMAT_IR, GMAT_Q, GMAT_V, GRE_Q, GRE_V)):
                     result = generator.generate_questions()
                     return (name, result)
-                else:
-                    raise ValueError(f"Unsupported generator type: {type(generator)}")
             except Exception as e:
                 if attempt == max_retries - 1:
                     print(f"Failed to generate question after {max_retries} attempts: {str(e)}")
@@ -86,7 +48,7 @@ class QuestionGenerator:
     
     def generate_questions(self) -> Dict[str, List[Dict[str, Any]]]:
         results = {}
-        with ThreadPoolExecutor(max_workers = len(self.generators)) as executor:
+        with ThreadPoolExecutor(max_workers=len(self.generators)) as executor:
             future_to_generator = {executor.submit(self.generate_question_with_retry, gen): gen[0] for gen in self.generators}
             for future in as_completed(future_to_generator):
                 name = future_to_generator[future]
@@ -94,9 +56,22 @@ class QuestionGenerator:
                     gen_name, gen_result = future.result()
                     results[gen_name] = gen_result
                 except Exception as e:
-                    print(f"Unhanfled exception for {name}: {str(e)}")
+                    print(f"Unhandled exception for {name}: {str(e)}")
                     results[name] = {"error": str(e)}
         return results
+
+def convert_generators_to_lists(data):
+    """Convert any generator objects in the data structure to lists"""
+    if isinstance(data, dict):
+        return {key: convert_generators_to_lists(value) for key, value in data.items()}
+    elif isinstance(data, list):
+        return [convert_generators_to_lists(item) for item in list(data)]
+    elif hasattr(data, '__iter__') and not isinstance(data, (str, bytes, bytearray)):
+        try:
+            return list(data)
+        except:
+            return data
+    return data
 
 def main():
     generator = QuestionGenerator()
@@ -105,15 +80,73 @@ def main():
     return results
 
 if __name__ == "__main__":
+    # Initialize single Prisma client
+    db = Prisma(auto_register=True)
     db.connect()
     start_time = time.time()
     print(f"DB connected: {db.is_connected()}")
+    
     try:
-        initialize_primary_tables()
-        setPrimaryUser()
+        # Initialize DB handler with existing Prisma client
+        db_handler = DB(db)
+        
+        # Generate and register questions
         questions = main()
-        print(questions)
+        print(f"questions generated \n {questions}\n\n")
+        
+        # Save generated questions to files with robust error handling
+        def save_questions_to_files(questions_data):
+            import os  # Import at the start of the function
+            
+            # First convert any generators to lists
+            questions_data = convert_generators_to_lists(questions_data)
+            
+            # First save to a temporary pickle file
+            temp_pkl_path = "data_temp.pkl"
+            try:
+                with open(temp_pkl_path, "wb") as f:
+                    pickle.dump(questions_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+                
+                # Verify the pickle file by loading it
+                with open(temp_pkl_path, "rb") as f:
+                    loaded_data = pickle.load(f)
+                
+                # If verification successful, rename to final file
+                if os.path.exists("data.pkl"):
+                    os.rename("data.pkl", "data.pkl.bak")  # Create backup of existing file
+                os.rename(temp_pkl_path, "data.pkl")
+                print("Questions saved to data.pkl successfully")
+                
+                # Also save as JSON for human-readable backup
+                with open("data.json", "w", encoding='utf-8') as f:
+                    json.dump(questions_data, f, indent=2, ensure_ascii=False)
+                print("Questions saved to data.json successfully")
+                
+                # Verify the saved data matches original
+                if str(loaded_data) == str(questions_data):
+                    print("Data verification successful - saved data matches original")
+                else:
+                    print("Warning: Saved data verification failed - contents may not match exactly")
+                    
+            except Exception as e:
+                print(f"Error saving questions to file: {str(e)}")
+                if os.path.exists(temp_pkl_path):
+                    os.remove(temp_pkl_path)  # Clean up temp file if it exists
+                raise
+        
+        # Save the questions
+        save_questions_to_files(questions)
+        
+        print("\nGenerated questions:")
+        print(json.dumps(questions, indent=2))
+        
+        print("\nRegistering questions in database...")
+        db_handler.register_questions(questions)
+        print("Questions registered successfully")
 
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        raise
     finally:
         db.disconnect()
         print(f"DB connected after disconnect: {db.is_connected()}")

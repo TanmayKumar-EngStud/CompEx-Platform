@@ -102,7 +102,7 @@ table will be of the following types:-
 	7.	Frequency Tables: List the number of occurrences of different values in a dataset, helping to understand the distribution of data points.
 	8.	Contingency Tables: Also known as cross-tabulations, these tables display the frequency distribution of variables to study the relationship between them.
 Output format of the following table types:-
-When requesting ChatGPT to generate various types of tables in JSON format, it’s essential to structure the output appropriately to facilitate easy parsing and visualization. Below are examples of JSON formats for different table types:
+When requesting ChatGPT to generate various types of tables in JSON format, it's essential to structure the output appropriately to facilitate easy parsing and visualization. Below are examples of JSON formats for different table types:
 
 1. Standard Data Table
 
@@ -247,8 +247,27 @@ Output format:- {"title": "question title"}
 
 Mode 3: questionSolution
 Here based on the previous question, you would have to state the reason about which option out of "A", "B", "C", "D", "E" is correct, and why it is correct.
+
+For any mathematical expressions in the solution, use LaTeX with the following guidelines:
+1. All LaTeX expressions MUST be enclosed between ~~ markers
+2. Use standard LaTeX commands for mathematical operations:
+   - Fractions: \\frac{numerator}{denominator}
+   - Square roots: \\sqrt{expression}
+   - Subscripts: x_{subscript}
+   - Superscripts: x^{power}
+   - Greek letters: \\alpha, \\beta, etc.
+3. For percentages, always use \\% instead of the % symbol
+4. For dollar amounts, use \\$ instead of the $ symbol
+5. For text within math mode, use \\text{your text here}
+6. For parentheses in math mode, use \\left( and \\right)
+7. Avoid using single backslashes except for standard LaTeX commands
+8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
+
+Example of proper LaTeX usage:
+~~\\text{Value} = \\sqrt{\\text{Statement 1}} + \\left(\\frac{\\text{Statement 2}}{2}\\right)~~
+
 input format:- "questionSolution"
-Output format:- {"solution": "reasoning for the correct option", "answer": "A"} 
+Output format:- {"solution": "reasoning for the correct option with properly formatted LaTeX expressions", "answer": "A"} 
 always give answer in the format of "A", "B", "C", "D", "E".
 
 Important Additional Note,

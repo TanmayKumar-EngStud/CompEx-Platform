@@ -191,12 +191,28 @@ Output:
 
 ## QuestionSolution
 generate a solution from the above source information, and for calculation use code interpreter, and use the accuracy upto 2 decimal points.
-And for mathematical expression use latex, and all the latex code should be in between ~~. for example ~~a^2 + b^2 = c^2~~
+For mathematical expressions, use LaTeX with the following guidelines:
+1. All LaTeX expressions MUST be enclosed between ~~ markers
+2. Use standard LaTeX commands for mathematical operations:
+   - Fractions: \\frac{numerator}{denominator}
+   - Square roots: \\sqrt{expression}
+   - Subscripts: x_{subscript}
+   - Superscripts: x^{power}
+   - Greek letters: \\alpha, \\beta, etc.
+3. For percentages, always use \\% instead of the % symbol
+4. For dollar amounts, use \\$ instead of the $ symbol
+5. For text within math mode, use \\text{your text here}
+6. For parentheses in math mode, use \\left( and \\right)
+7. Avoid using single backslashes except for standard LaTeX commands
+8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
+
+Example of proper LaTeX usage:
+~~\\text{Percentage} = \\left(\\frac{\\text{Final} - \\text{Initial}}{\\text{Initial}}\\right) \\times 100\\%~~
 
 Input prompt: `QuestionSolution: 1` // solution for 1st question asked from the source information.
 Output: 
 {
-   "solution": "complete solution"
+   "solution": "complete solution with properly formatted LaTeX expressions"
 }
 
 ## QuestionOptions

@@ -94,7 +94,7 @@ table will be of the following types:-
 	7.	Frequency Tables: List the number of occurrences of different values in a dataset, helping to understand the distribution of data points.
 	8.	Contingency Tables: Also known as cross-tabulations, these tables display the frequency distribution of variables to study the relationship between them.
 Output format of the following table types:-
-When requesting ChatGPT to generate various types of tables in JSON format, it’s essential to structure the output appropriately to facilitate easy parsing and visualization. Below are examples of JSON formats for different table types:
+When requesting ChatGPT to generate various types of tables in JSON format, it's essential to structure the output appropriately to facilitate easy parsing and visualization. Below are examples of JSON formats for different table types:
 
 1. Standard Data Table
 
@@ -238,14 +238,32 @@ output:- {"title": "unique title for the child question"}
 
 # childQuestionSolution Mode
 1. Definition
-the solution of previous child question should be generated use question graph data and graph description to find the solution of the question,
-in order to do every calculation you must use code interpretor, and for showing the math you must use latex, all the latex code should be present in the ~~latex~~ code block.
-If there is a decimal, you have to always round it to 2 decimal places.
-In solution use html tags to make the solution more readable. for all the math equations place it in the ~~latex~~ code block
+the solution of previous child question should be generated use question graph data and graph description to find the solution of the question.
+For calculations, you must use code interpreter with accuracy up to 2 decimal places.
+
+For mathematical expressions, use LaTeX with the following guidelines:
+1. All LaTeX expressions MUST be enclosed between ~~ markers
+2. Use standard LaTeX commands for mathematical operations:
+   - Fractions: \\frac{numerator}{denominator}
+   - Square roots: \\sqrt{expression}
+   - Subscripts: x_{subscript}
+   - Superscripts: x^{power}
+   - Greek letters: \\alpha, \\beta, etc.
+3. For percentages, always use \\% instead of the % symbol
+4. For dollar amounts, use \\$ instead of the $ symbol
+5. For text within math mode, use \\text{your text here}
+6. For parentheses in math mode, use \\left( and \\right)
+7. Avoid using single backslashes except for standard LaTeX commands
+8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
+
+Example of proper LaTeX usage:
+~~\\text{Growth Rate} = \\left(\\frac{\\text{New Value} - \\text{Original Value}}{\\text{Original Value}}\\right) \\times 100\\%~~
+
+In solution use html tags to make the solution more readable.
+
 2. Input Format
 input:- "mode:- childQuestionSolution; question: questionNumber"
-output:- {"solution": "unique solution for the child question ~~2x+3=5~~ "}
-
+output:- {"solution": "unique solution for the child question with properly formatted LaTeX expressions"}
 
 # childQuestionOptions Mode
 1. Definition
