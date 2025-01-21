@@ -8,6 +8,7 @@ from GRE.Quants.Quants import GRE_Q
 from GRE.Verbal.Verbal import GRE_V
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any
+import time
 
 # Initialize Prisma client
 db = Prisma(auto_register=True)
@@ -105,12 +106,16 @@ def main():
 
 if __name__ == "__main__":
     db.connect()
+    start_time = time.time()
     print(f"DB connected: {db.is_connected()}")
     try:
         initialize_primary_tables()
         setPrimaryUser()
         questions = main()
-        print(f"Here are the list of questions that are generated: \n {questions}")
+        print(questions)
+
     finally:
         db.disconnect()
         print(f"DB connected after disconnect: {db.is_connected()}")
+        end_time = time.time()
+        print(f"Total time taken: {end_time - start_time} seconds")

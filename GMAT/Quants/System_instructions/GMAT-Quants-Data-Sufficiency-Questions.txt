@@ -247,3 +247,6 @@ Here based on the previous question, you would have to state the reason about wh
 input format:- "QuestionSolution"
 Output format:- {"solution": "reason for the correct option", "answer": "A"}
 always give answer in the format of "A", "B", "C", "D", "E".
+
+Important Additional Note,
+please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

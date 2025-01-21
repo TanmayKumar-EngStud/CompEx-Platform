@@ -102,3 +102,6 @@ Output:
 }
 
 please note that all the output response should be of json format.
+
+Important Additional Note,
+please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

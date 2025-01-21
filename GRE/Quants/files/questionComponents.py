@@ -1,11 +1,69 @@
 import json, re
 
-def refine_response(response_text): 
-    json_string = re.sub(r'\s+', ' ', response_text.strip())
-    json_string = json_string.replace('\\', '\\\\')
-    json_string = re.sub(r',\s*}', '}', json_string)
-    json_string = re.sub(r',\s*]', ']', json_string)
-    return json_string
+def refine_response(response_text):
+    try:
+        # First try to parse as JSON directly
+        json.loads(response_text)
+        return response_text
+    except json.JSONDecodeError:
+        try:
+            # Look for JSON-like structure between curly braces
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                json_string = json_match.group(0)
+            else:
+                return None
+
+            # Clean up the extracted JSON string
+            json_string = re.sub(r'\s+', ' ', json_string.strip())
+            
+            # Step 1: Handle LaTeX-style expressions by replacing backslashes with placeholders
+            placeholders = {
+                '\\text': '{{TEXT}}',
+                '\\left': '{{LEFT}}',
+                '\\right': '{{RIGHT}}',
+                '\\(': '{{LATEX_START}}',
+                '\\)': '{{LATEX_END}}',
+                '\\$': '{{DOLLAR}}',
+                '\\%': '{{PERCENT}}'
+            }
+            for key, value in placeholders.items():
+                json_string = json_string.replace(key, value)
+            
+            # Step 2: Handle quotes
+            # Replace escaped double quotes first
+            json_string = json_string.replace('\\"', '{{ESCAPED_QUOTE}}')
+            # Replace single quotes with double quotes
+            json_string = re.sub(r"(?<!\\)'", '"', json_string)
+            # Replace key-value single quotes patterns
+            json_string = re.sub(r":\s*'", ': "', json_string)
+            json_string = re.sub(r"'\s*,", '",', json_string)
+            json_string = re.sub(r"'\s*}", '"}', json_string)
+            json_string = re.sub(r"'\s*]", '"]', json_string)
+            
+            # Step 3: Restore all placeholders
+            reverse_placeholders = {v: k for k, v in placeholders.items()}
+            reverse_placeholders['{{ESCAPED_QUOTE}}'] = '\\"'
+            for key, value in reverse_placeholders.items():
+                json_string = json_string.replace(key, value)
+            
+            # Clean up trailing commas
+            json_string = re.sub(r',\s*}', '}', json_string)
+            json_string = re.sub(r',\s*]', ']', json_string)
+
+            # Final validation
+            parsed_json = json.loads(json_string)
+            return json_string
+        except json.JSONDecodeError as je:
+            print(f"JSON validation failed: {str(je)}")
+            print(f"Position: {je.pos}")
+            print(f"Line: {je.lineno}, Column: {je.colno}")
+            print(f"Document: {json_string[max(0, je.pos-50):min(len(json_string), je.pos+50)]}")
+            return None
+        except Exception as e:
+            print(f"Processing failed: {str(e)}")
+            print(f"Problematic text: {response_text[:200]}...")
+            return None
 class ParentChildQuestion:
     def __init__(self, llm, prompt, thread_id=None):
         self.llm = llm

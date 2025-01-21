@@ -112,3 +112,6 @@ Output:{
    "solution": ["explanation for option 1", "explanation for option 2", "explanation for option 3"],
    "answer": ["answer for option 1", "answer for option 2", "answer for option 3"] // this could be 'Yes/No' or 'Would Help/Would Not Help' this is case sensitive
 }
+
+Important Additional Note,
+please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

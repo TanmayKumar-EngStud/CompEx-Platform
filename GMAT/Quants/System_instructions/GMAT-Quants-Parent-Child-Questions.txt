@@ -263,3 +263,6 @@ After fetching all the fake options return the options in the following format:-
 2. Input Format
 input:- "ChildQuestionOptions"
 output:- { "options": ["option1", "option2", "option3", "option4"]}
+
+Important Additional Note,
+please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
