@@ -122,7 +122,7 @@ class MSR:
             print(f"GMAT IR, Error: message received for SourceInfo_{source_index} is: \n{response[0].content[0].text.value}\n\n")
             return "", ""
     def generate_MainQuestionTitle(self):
-        response = self.llm.invoke({"content":f"MainQuestionTitle", "thread_id": self.thread_id})
+        response = self.llm.invoke({"content":f"MainQuestionTitle (based on the given question data what would be a unique question title of complete Multiple Source Reasoning question)", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]

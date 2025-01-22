@@ -72,6 +72,14 @@ class ParentChildQuestion:
         except Exception as e:
             print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\n\n")
             return ""
+    def generate_childQuestionTitle(self, index):
+        response = self.llm.invoke({"content": f"ChildTitle: {index}", "thread_id": self.thread_id})
+        try:
+            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+            return message["title"]
+        except Exception as e:
+            print(f"GRE Verbal, Error: message received for parentChildQuestion(generate_childQuestionTitle) is: \n{response[0].content[0].text.value}\n\n")
+            return ""
     def generate_childOptions(self, index):
         response = self.llm.invoke({"content": f"ChildOptions: {index}", "thread_id": self.thread_id})
         try:

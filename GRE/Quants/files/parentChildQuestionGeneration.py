@@ -27,5 +27,5 @@ class ParentChildQuestionGeneration:
             childQuestionData["options"] = option_list
             self.questionData["childQuestions"].append(childQuestionData)
         self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
-        self.questionData["tag"] = self.prompt.split(" - ")[0].strip("<>").strip("[]").split(",")
+        self.questionData["tag"] = ["PS", self.prompt.split(" - ")[3].strip("<>").strip("[]").split(",")]
         return self.questionData

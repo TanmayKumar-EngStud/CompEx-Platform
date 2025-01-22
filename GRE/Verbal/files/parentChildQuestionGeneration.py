@@ -15,7 +15,8 @@ class ParentChildQuestionGeneration:
                     counter += 1
             indexes.append((idx+counter)%len(option))
             t = math.floor(t/len(option))
-            prompts.append(f"{option[idx]}")
+            difficulty = random.randint(1, 5)
+            prompts.append(f"{option[idx]} - {difficulty}")
         child_prompt["combination number"] += 1
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         # print(f"indexes: {indexes}")
@@ -52,11 +53,13 @@ class ParentChildQuestionGeneration:
             total_child_questions = 4
         
         child_prompts = self.generate_child_prompt(total_child_questions)
+        self.questionData["tag"] = self.prompt.split(" - ")[2].strip("<>").strip("[]").split(",")
         # print(f"child_prompts: {child_prompts}")
         self.questionData["childQuestions"] = []
         for i in range(total_child_questions):
             childQuestionData = {}
             childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i, child_prompts[i])
+            childQuestionData["title"] = parentChildQuestion.generate_childQuestionTitle(i)
             options, answer = parentChildQuestion.generate_childOptions(i)
             if(isinstance(answer, str)):
                 childQuestionData["answer"] = options[answer]
@@ -69,7 +72,8 @@ class ParentChildQuestionGeneration:
                 childQuestionData["answer"] = answers
             childQuestionData["options"] = self.shuffle_options(options)
             childQuestionData["solution"] = parentChildQuestion.generate_childSolution(i)
-            childQuestionData["tag"] = [child_prompts[i]]
+            childQuestionData["tags"] = [child_prompts[i].split("-")[0].strip().strip()]
+            childQuestionData["difficulty"] = int(child_prompts[i].split("-")[1].strip().strip())
+            self.questionData["tags"].extend(childQuestionData["tag"])
             self.questionData["childQuestions"].append(childQuestionData)
-            self.questionData["tag"] = self.prompt.split(" - ")[2].strip("<>").strip("[]").split(",")+[child_prompt for child_prompt in child_prompts]
         return self.questionData

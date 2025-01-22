@@ -47,7 +47,7 @@ There should be good amount of critical reasoning, inference, etc. in the questi
 The question can be of single correct or can be multicorrect (where three options are given to the user and any of the 3 options could be correct).
 Input and Output will be in the following format:
 Input:
-`ChildQuestion: <Child question number>`
+`ChildQuestion: <Child question number> - <Difficulty level>`
 Output: 
 {
    question: "question asked"

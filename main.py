@@ -15,6 +15,7 @@ from typing import List, Dict, Any
 import time
 from db import DB
 
+pkl_path = "generatedContent/"
 class QuestionGenerator:
     def __init__(self):
         self.GMAT_IR = GMAT_IR()
@@ -102,7 +103,10 @@ if __name__ == "__main__":
             questions_data = convert_generators_to_lists(questions_data)
             
             # First save to a temporary pickle file
-            temp_pkl_path = "data_temp.pkl"
+            file_name = f"data-{datetime.now().strftime('%d-%H-%M-%S')}.pkl"
+            representation_file_name = f"data-{datetime.now().strftime('%d-%H-%M-%S')}.json"
+            temp_pkl_path = f"{pkl_path}{file_name}_temp.pkl"
+
             try:
                 with open(temp_pkl_path, "wb") as f:
                     pickle.dump(questions_data, f, protocol=pickle.HIGHEST_PROTOCOL)
@@ -112,15 +116,15 @@ if __name__ == "__main__":
                     loaded_data = pickle.load(f)
                 
                 # If verification successful, rename to final file
-                if os.path.exists("data.pkl"):
-                    os.rename("data.pkl", "data.pkl.bak")  # Create backup of existing file
-                os.rename(temp_pkl_path, "data.pkl")
-                print("Questions saved to data.pkl successfully")
+                if os.path.exists(f"{pkl_path}{file_name}"):
+                    os.rename(f"{pkl_path}{file_name}", f"{pkl_path}{file_name}.bak")  # Create backup of existing file
+                os.rename(temp_pkl_path, f"{pkl_path}{file_name}")
+                print(f"Questions saved to {file_name} successfully")
                 
                 # Also save as JSON for human-readable backup
-                with open("data.json", "w", encoding='utf-8') as f:
+                with open(f"generations/{representation_file_name}", "w", encoding='utf-8') as f:
                     json.dump(questions_data, f, indent=2, ensure_ascii=False)
-                print("Questions saved to data.json successfully")
+                print(f"Questions saved to {representation_file_name} successfully")
                 
                 # Verify the saved data matches original
                 if str(loaded_data) == str(questions_data):

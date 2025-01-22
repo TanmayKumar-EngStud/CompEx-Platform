@@ -18,5 +18,5 @@ class Generate_TA:
         self.questionData["options"] = option_list
         self.questionData["answer"]= {options[key]: answers[key] for key in options}
         self.questionData["tags"] = ["TA", self.prompt.split("-")[2].strip().strip('<>').strip()]
-        self.questionData["difficulty"] = self.prompt.split("-")[3].strip().strip('<>').strip()
+        self.questionData["difficulty"] = int(self.prompt.split("-")[4].strip().strip('<>').strip())
         return self.questionData

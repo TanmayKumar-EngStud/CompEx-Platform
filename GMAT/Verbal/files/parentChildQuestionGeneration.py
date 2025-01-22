@@ -16,10 +16,11 @@ class ParentChildQuestionGeneration:
                     counter += 1
             indexes.append((idx+counter)%len(option))
             t = math.floor(t/len(option))
-            prompts.append(f"{option[idx]}")
+            difficulty = random.randint(1, 5)
+            prompts.append(f"{option[idx]} - <{difficulty}>")
         child_prompt["combination number"] += 1
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
-        # print(f"indexes: {indexes}")
+        
         return prompts
     def __init__(self, llm, prompt):
         self.llm = llm
@@ -38,6 +39,7 @@ class ParentChildQuestionGeneration:
         self.questionData["thread_id"], self.questionData["passage"] = questionContent.generate_parentPassage()
         self.questionData["title"] = questionContent.generate_parentTitle()
         self.questionData["childQuestions"] = []
+        self.questionData["tags"] = [self.prompt.split(" - ")[2].strip().strip('<>').strip()] 
         child_question_numbers = len(self.child_prompt) if self.child_prompt else random.randint(2, 4)
         for i in range(child_question_numbers):
             childQuestionData = {}
@@ -49,5 +51,8 @@ class ParentChildQuestionGeneration:
             random.shuffle(options_list)
             childQuestionData["options"] = options_list
             childQuestionData["solution"] = questionContent.generate_childSolution(i)
+            childQuestionData["difficulty"] = int(self.child_prompt[i].split("-")[1].strip().strip('<>').strip())
+            childQuestionData["tags"] = [self.child_prompt[i].split("-")[0].strip().strip()]
+            self.questionData["tags"].extend(childQuestionData["tags"])
             self.questionData["childQuestions"].append(childQuestionData)
         return self.questionData

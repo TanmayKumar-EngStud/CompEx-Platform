@@ -467,4 +467,40 @@ class DB:
     def __del__(self):
         """Destructor to ensure database connection is closed"""
         if hasattr(self, 'db') and self.db.is_connected():
-            self.db.disconnect() 
+            self.db.disconnect()
+
+    def delete_all_questions(self):
+        """Delete all question content from the database while preserving primary tables"""
+        try:
+            # Delete in order to respect foreign key constraints
+            print("Deleting question content...")
+            
+            # First delete the many-to-many relationships
+            print("- Deleting problem tags...")
+            self.db.problemtags.delete_many()
+            
+            print("- Deleting problem set tags...")
+            self.db.problemssettags.delete_many()
+            
+            # Delete options
+            print("- Deleting problem options...")
+            self.db.problemoptions.delete_many()
+            
+            # Delete problems
+            print("- Deleting problems...")
+            self.db.problems.delete_many()
+            
+            # Delete problem sets
+            print("- Deleting problem sets...")
+            self.db.problemsset.delete_many()
+            
+            # Delete tags (but not exam types and sections)
+            print("- Deleting tags...")
+            self.db.tags.delete_many()
+            
+            print("✓ Successfully deleted all question content")
+            
+        except Exception as e:
+            print(f"Error deleting question content: {str(e)}")
+            raise
+    

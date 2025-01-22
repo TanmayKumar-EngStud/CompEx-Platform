@@ -23,10 +23,11 @@ class Generate_MSR:
             option_list = list(options.values())
             random.shuffle(option_list)
             question["options"] = option_list
-
+            question["tags"] = [self.prompt.split("-")[2].strip().strip('<>').strip()]
+            question["difficulty"] = int(self.prompt.split("-")[3].strip().strip('<>').strip())
             question["answer"] = options[correct_option]
             self.questionData["questions"].append(question)
-
+        self.questionData["title"] = msr.generate_MainQuestionTitle()
         self.questionData["tags"] = ["MSR", self.prompt.split("-")[2].strip().strip('<>').strip()]
-        self.questionData["difficulty"] = self.prompt.split("-")[3].strip().strip('<>').strip()
+        self.questionData["difficulty"] = int(self.prompt.split("-")[3].strip().strip('<>').strip())
         return self.questionData

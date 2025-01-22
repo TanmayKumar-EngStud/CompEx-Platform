@@ -20,5 +20,6 @@ class Generate_TPA:
         random.shuffle(option_list)
         self.questionData["options"] = option_list
         self.questionData["answer"]= options[answer]
-        self.questionData["tags"] = ["TPA", self.prompt.split("-")[2].strip().strip('<>').strip()]
+        self.questionData["tags"] = ["TPA"]
+        self.questionData["difficulty"] = int(self.prompt.split("-")[2].strip().strip('<>').strip())
         return self.questionData
