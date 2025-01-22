@@ -217,39 +217,86 @@ class TPA:
         self.llm = llm
         self.prompt = prompt
         self.thread_id = thread_id
+        self.max_retries = 3
+
+    def _retry_generate(self, func, *args):
+        for attempt in range(self.max_retries):
+            result = func(*args)
+            if result and all(v is not None for v in (result if isinstance(result, tuple) else [result])):
+                return result
+            print(f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+        return None
+
     def generate_QuestionText(self):
-        if(self.thread_id):
-            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
-        else:
-            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
-            self.thread_id = response[0].thread_id if response else "GMAT IR, Error! thread_id not found for TPA (questionComponent@l:131)"
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return self.thread_id, message["part1"], message["part2"], message["question"], message["type"]
-        except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionText is: \n{response[0].content[0].text.value}\n\n")
-            return "", "", "", "", ""
+        def _generate():
+            if(self.thread_id):
+                response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
+            else:
+                response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
+                self.thread_id = response[0].thread_id if response else None
+            
+            try:
+                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+                if not all(k in message for k in ["part1", "part2", "question", "type"]):
+                    return None
+                if not isinstance(message["part1"], dict) or not isinstance(message["part2"], dict):
+                    return None
+                if not all(k in message["part1"] for k in ["description", "graph", "table"]):
+                    return None
+                if not all(k in message["part2"] for k in ["description", "graph", "table"]):
+                    return None
+                if not message["part1"]["description"] or not message["part2"]["description"]:
+                    return None
+                return self.thread_id, message["part1"], message["part2"], message["question"], message["type"]
+            except Exception as e:
+                print(f"Error in generate_QuestionText: {str(e)}")
+                return None
+
+        result = self._retry_generate(_generate)
+        if not result:
+            raise Exception("Failed to generate valid question text after maximum retries")
+        return result
+
     def generate_QuestionTitle(self):
-        response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["title"]
-        except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionTitle is: \n{response[0].content[0].text.value}\n\n")
-            return ""
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
+            try:
+                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+                return message["title"] if message.get("title") else None
+            except:
+                return None
+
+        result = self._retry_generate(_generate)
+        if not result:
+            raise Exception("Failed to generate valid title after maximum retries")
+        return result
+
     def generate_QuestionSolution(self):
-        response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["solution"]
-        except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
-            return ""
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
+            try:
+                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+                return message["solution"] if message.get("solution") else None
+            except:
+                return None
+
+        result = self._retry_generate(_generate)
+        if not result:
+            raise Exception("Failed to generate valid solution after maximum retries")
+        return result
+
     def generate_QuestionOptions(self):
-        response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["options"], message["answer"]
-        except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionOptions is: \n{response[0].content[0].text.value}\n\n")
-            return [], ""
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
+            try:
+                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
+                if not message.get("options") or not message.get("answer"):
+                    return None
+                return message["options"], message["answer"]
+            except:
+                return None
+
+        result = self._retry_generate(_generate)
+        if not result:
+            raise Exception("Failed to generate valid options after maximum retries")
+        return result

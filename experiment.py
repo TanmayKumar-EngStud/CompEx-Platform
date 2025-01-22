@@ -32,7 +32,7 @@ def save_questions_to_files(questions_data):
 def main():
     try:
         # Load questions from pickle file
-        with open("data.pkl", "rb") as f:
+        with open("__generatedContent/data-22-15-13-24.pkl", "rb") as f:
             questions = pickle.load(f)
         
         print("✓ Successfully loaded questions from data.pkl")

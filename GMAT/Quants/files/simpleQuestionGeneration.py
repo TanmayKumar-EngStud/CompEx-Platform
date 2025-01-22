@@ -32,5 +32,5 @@ class SimpleQuestionGeneration:
       self.questionData["options"] = options_list
       self.questionData["answer"] = options[answer]
       self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
-      self.questionData["tag"] = self.getTagAtIndex([0, 1, 3])
+      self.questionData["tags"] = self.getTagAtIndex([0, 1, 3])
       return self.questionData

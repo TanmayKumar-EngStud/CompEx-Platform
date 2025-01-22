@@ -9,11 +9,25 @@ class Combination:
         self.combination_number = self.combination["combination number"]
     
     def pair_combination(self, length, combination_number):
-        idx_1 = math.floor((combination_number - 1) / (length - 1))
-        idx_2 = math.floor((combination_number - 1) % (length - 1))
-        if idx_2 >= idx_1:
-            idx_2 += 1
-        return idx_1, idx_2 % length
+        """
+        Generate a pair of valid indices for the given length and combination number.
+        Ensures indices are within bounds and not equal to each other.
+        """
+        if length < 2:
+            return 0, 0  # Handle edge case of insufficient length
+            
+        # Ensure combination_number is positive
+        combination_number = max(1, combination_number)
+        
+        # Calculate indices ensuring they're within bounds
+        idx_1 = (combination_number - 1) % length
+        idx_2 = ((combination_number - 1) // length) % length
+        
+        # Ensure indices are different
+        if idx_1 == idx_2:
+            idx_2 = (idx_2 + 1) % length
+            
+        return idx_1, idx_2
     
     def generate_combination(self):
         prompt = ""
@@ -24,7 +38,7 @@ class Combination:
                     length = len(values)
                 elif isinstance(values, int):
                     length = values
-                idx =initiator % length
+                idx = initiator % length
                 if isinstance(values, list):
                     prompt += (f" - <{values[idx]}>")
                 else:

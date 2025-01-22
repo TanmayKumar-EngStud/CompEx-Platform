@@ -1,0 +1,418 @@
+{
+   "GRE_Q": [
+      {
+         "thread_id": "thread_4VXbcKtVezcEhDCJeflE2fLM",
+         "question": "A logistics company is analyzing the cost efficiency of two different shipping models based on their polynomial cost functions. Let Model A's cost function be represented as \\text{C_A}(x) = 5x^2 + 10x + 20, where x is the number of packages shipped. Model B's cost function is represented as \\text{C_B}(x) = 8x^2 + 15x + 10. To determine which model is more cost-efficient for shipping packages, is it true that there is a specific number of packages shipped for which Model A will always be cheaper than Model B? \n\n1. The cost functions of both Model A and Model B were evaluated and compared for specific values of x from 1 to 10, showing that Model A was cheaper when x was equal to or less than 2 and Model B was cheaper for other values. \n\n2. It is known that the leading coefficient of Model A is less than that of Model B.",
+         "statements": [
+            "Statement 1: The cost functions of both Model A and Model B were evaluated and compared for specific values of x from 1 to 10, showing that Model A was cheaper when x was equal to or less than 2 and Model B was cheaper for other values.",
+            "Statement 2: It is known that the leading coefficient of Model A is less than that of Model B."
+         ],
+         "title": "Cost Efficiency Analysis of Shipping Models in a Logistics Company",
+         "solution": "To determine whether there is a specific number of packages shipped for which Model A will always be cheaper than Model B, we need to analyze the statements. \\text{Statement 1} provides specific evaluations of the cost functions for \\text{x} from 1 to 10, indicating that Model A is cheaper only for \\text{x} = 2 and that Model B is cheaper for values of \\text{x} greater than 2. This suggests that Model A may not always be the cheaper option as the number of packages increases. \\text{Statement 2} indicates that the leading coefficient of Model A (5) is less than that of Model B (8), which implies that as \\text{x} increases significantly, Model A's cost will grow slower than Model B's. However, this doesn't provide sufficient evidence that there exists a specific number where one is always cheaper. In conclusion, both statements together do not confirm a consistent number of packages for which Model A is always cheaper than Model B. Thus, the answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+         "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+         "options": [
+            "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+            "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+            "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+            "EITHER statement ALONE is sufficient",
+            "Statements (1) and (2) TOGETHER are NOT sufficient"
+         ],
+         "difficulty": 3,
+         "tags": ["DS", "Functions and Polynomials"],
+         "prompt": "data sufficiency - <Word Problems&> - <3> - <Functions and Polynomials> - <Logistics and Operations, Government Policies and Regulations>"
+      },
+      {
+         "thread_id": "thread_vpet6a7RHuVuOenGIiyTdccq",
+         "question": "In a city that enforces a new regulation mandating a reduction in carbon emissions, a city bus system has reevaluated its operational strategy. Previously, the bus system operated at a cost of $C = 5x^2 + 3x + 200$, where `x` represents the number of buses deployed in hundreds. However, contrastingly, to comply with the new policy, the system has to reduce costs by 20%. To accommodate this, the management estimates that each reduction of 2 buses will save an additional $Y = 10x + 50$ in operational costs per 100 buses per annum. Given this, how many buses must the management deploy to maintain compliance without exceeding the cut-off cost, while also ensuring that the total number of buses deployed remains an integer? Assume the new total operational cost must be less than or equal to $160,000 and no negative buses can be deployed.",
+         "title": "Determining Compliance Costs for a City Bus System under New Emission Regulations",
+         "solution": "1. The cost function is given as C = 5x^2 + 3x + 200, where x represents the number of buses in hundreds. \n2. The current operational cost without reduction is C = 5x^2 + 3x + 200. \n3. The budget after the 20% reduction on $200,000 is calculated as follows: \n   Reduced cost = $200,000 * 0.80 = $160,000. \n4. We need to find x such that C ≤ reduced cost ($160,000). \n5. Testing integer values from 0 to 9 (0 to 900 buses): \n6. The maximum integer x that satisfies the budget constraints is 9 (or 900 buses). \n7. Thus, the management must deploy a maximum of 900 buses to comply with the new policy.\n8. Therefore, the final answer is 900 buses.",
+         "options": ["950 buses", "800 buses", "900 buses", "1000 buses"],
+         "answer": "900 buses",
+         "difficulty": 3,
+         "tag": [
+            "problem solving",
+            "Word Problems&",
+            "Functions and Polynomials"
+         ],
+         "prompt": "problem solving - <Word Problems&> - <3> - <Functions and Polynomials> - <Logistics and Operations, Government Policies and Regulations>"
+      }
+   ],
+   "GMAT_V": [
+      {
+         "thread_id": "thread_DU5DR1zNsktlf2zQhng52Dcp",
+         "passage": [
+            "<p>The landscape of education has dramatically shifted in recent years, with technology transforming how students engage with learning materials and interact with instructors. Online learning platforms have emerged as viable alternatives to traditional classroom settings, offering a range of courses that cater to diverse learning styles. In particular, adaptive learning technologies have gained traction, personalizing the educational experience for individual learners by assessing their strengths and weaknesses through ongoing assessments. This data-driven approach allows for customized learning pathways, thus enabling students to progress at their own pace.</p><p>Moreover, the incorporation of collaborative tools—such as discussion forums and video conferencing—facilitates interaction among students and instructors, promoting a sense of community even in a virtual environment. Research has indicated that this form of engagement can enhance understanding and retention of course material. However, challenges remain, such as ensuring equitable access to technology and maintaining student motivation in an online format. In order to fully harness the potential of these advancements, educators must also adapt their methods to engage and inspire students in innovative ways.</p>"
+         ],
+         "title": "Transforming Education: The Impact of Technology on Learning",
+         "childQuestions": [
+            {
+               "question": "What assumption can be made about the effectiveness of adaptive learning technologies in education based on the passage?",
+               "title": "Assumptions Behind Adaptive Learning Technologies",
+               "answer": "Students using adaptive learning technologies are likely to perform better academically than those in traditional settings.",
+               "options": [
+                  "Adaptive learning technologies can eliminate the need for any instructor involvement.",
+                  "Students using adaptive learning technologies are likely to perform better academically than those in traditional settings.",
+                  "Adaptive learning technologies provide a one-size-fits-all approach to education.",
+                  "All students have equal access to the technology required for adaptive learning."
+               ],
+               "solution": "<p>The correct option is <strong>B</strong>: 'Students using adaptive learning technologies are likely to perform better academically than those in traditional settings.' This is a reasonable assumption based on the passage, which emphasizes that adaptive learning personalizes education and allows students to progress at their own pace, suggesting improved academic outcomes.</p><p>Option <strong>A</strong>: 'Adaptive learning technologies provide a one-size-fits-all approach to education.' is incorrect because the passage clearly states that adaptive learning is designed to cater to individual learning styles and needs, which contradicts the idea of a one-size-fits-all approach.</p><p>Option <strong>C</strong>: 'All students have equal access to the technology required for adaptive learning.' is incorrect as the passage mentions challenges related to ensuring equitable access to technology, indicating that not all students may have equal access.</p><p>Option <strong>D</strong>: 'Adaptive learning technologies can eliminate the need for any instructor involvement.' is incorrect because the passage highlights the importance of instructors adapting their methods to engage and inspire students, suggesting that instructor involvement remains crucial in the educational process.</p>",
+               "difficulty": 3,
+               "tags": ["Assumption Question"]
+            },
+            {
+               "question": "Which of the following statements, if true, would most strengthen the argument that adaptive learning technologies enhance student engagement?",
+               "title": "Strengthening the Case for Adaptive Learning Technologies",
+               "answer": "Students report higher satisfaction rates with adaptive learning courses compared to traditional classroom settings.",
+               "options": [
+                  "Many instructors prefer traditional teaching methods over adaptive learning technologies.",
+                  "Adaptive learning technologies require the same amount of time commitment as traditional courses.",
+                  "Students report higher satisfaction rates with adaptive learning courses compared to traditional classroom settings.",
+                  "Adaptive learning technologies have been shown to decrease interaction between students and instructors."
+               ],
+               "solution": "<p>The correct option is <strong>A</strong>: 'Students report higher satisfaction rates with adaptive learning courses compared to traditional classroom settings.' This statement directly supports the argument that adaptive learning technologies enhance student engagement, as higher satisfaction is often associated with increased motivation and active participation in the learning process.</p><p>Option <strong>B</strong>: 'Adaptive learning technologies require the same amount of time commitment as traditional courses.' does not strengthen the argument because it does not provide any evidence regarding student engagement or satisfaction; it merely compares time commitments.</p><p>Option <strong>C</strong>: 'Many instructors prefer traditional teaching methods over adaptive learning technologies.'weakens the argument by suggesting that instructors may not believe in the effectiveness of adaptive learning technologies, which could affect student engagement negatively.</p><p>Option <strong>D</strong>: 'Adaptive learning technologies have been shown to decrease interaction between students and instructors.' directly contradicts the premise that such technologies enhance engagement, thereby weakening the argument rather than strengthening it.</p>",
+               "difficulty": 3,
+               "tags": ["Strengthen Question"]
+            },
+            {
+               "question": "What is the main idea of the passage regarding the role of technology in education?",
+               "title": "Exploring the Role of Technology in Modern Education",
+               "answer": "The integration of technology in education offers personalized and adaptive learning experiences.",
+               "options": [
+                  "The integration of technology in education offers personalized and adaptive learning experiences.",
+                  "Technology has completely replaced traditional teaching methods in education.",
+                  "Technology has created a significant divide in educational access among students.",
+                  "Online learning platforms are less effective than traditional classroom settings."
+               ],
+               "solution": "<p>The correct option is <strong>B</strong>: 'The integration of technology in education offers personalized and adaptive learning experiences.' This encapsulates the main idea of the passage, which discusses how technology, especially adaptive learning technologies, enhances the educational experience by catering to individual student needs and allowing personalized learning pathways.</p><p>Option <strong>A</strong>: 'Technology has completely replaced traditional teaching methods in education.' is incorrect since the passage does not suggest a complete replacement; rather, it highlights the coexistence of traditional and modern methods.</p><p>Option <strong>C</strong>: 'Online learning platforms are less effective than traditional classroom settings.' is not supported by the passage, which emphasizes the positive aspects of online learning and adaptive technologies, thereby indicating their potential effectiveness.</p><p>Option <strong>D</strong>: 'Technology has created a significant divide in educational access among students.' While the passage acknowledges challenges regarding equitable access, it focuses on the benefits of technology in enhancing learning, making this option not reflective of the passage's main idea.</p>",
+               "difficulty": 4,
+               "tags": ["Main Idea Question"]
+            }
+         ],
+         "tags": [
+            "rc-m",
+            "Assumption Question",
+            "Strengthen Question",
+            "Main Idea Question"
+         ],
+         "prompt": " - <Education and Learning> - <rc-m> - <1> - <1>"
+      }
+   ],
+   "GMAT_Q": [
+      {
+         "thread_id": "thread_JIGA8ZcSIM7A96g1TfpoT58s",
+         "question": "In a triangle ABC, let the angles A, B, and C be defined as follows: Angle A is twice angle B, and angle C is the supplementary angle to the sum of angles A and B. Given that the triangle is not a right triangle, are the angles A, B, and C sufficient to determine the specific type of triangle (i.e., acute, obtuse, or right)?",
+         "statements": [
+            "Statement (1): The measure of angle A is 80 degrees.",
+            "Statement (2): The measure of angle B is 30 degrees."
+         ],
+         "title": "Determining Triangle Type with Angles A, B, and C",
+         "solution": "Statement (1) alone provides the measure of angle A, but without knowing angle B, we cannot determine if the triangle is acute or obtuse. Statement (2) alone provides the measure of angle B, but again, it doesn't specify any measure for angle A, leaving it insufficient to determine the triangle type. Together, statements (1) and (2) give us the measures of both angles A and B, allowing us to find angle C as well and determine the type of triangle. Thus, both statements together are sufficient, but neither alone is adequate.",
+         "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+         "options": [
+            "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+            "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+            "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+            "EITHER statement ALONE is sufficient",
+            "Statements (1) and (2) TOGETHER are NOT sufficient"
+         ],
+         "difficulty": 3,
+         "tag": ["data sufficiency"],
+         "prompt": "data sufficiency - <Geometric Properties> - <3> - <Lines and Angles>"
+      },
+      {
+         "thread_id": "thread_P0GfzkDFJ154vqMi7AU8hysi",
+         "question": "In the bustling city of Numeropolis, a unique annual flower festival is held, attracting flower enthusiasts from around the world. This year, it was reported that 3000 visitors attended the festival on Saturday, and 500 more visitors arrived on Sunday than on Saturday. Among these visitors, 60% of them were local residents, while the remaining came from various countries. Each visitor from abroad spent an average of {{BACKSLASH}}$40 on flowers, whereas the local residents spent {{BACKSLASH}}$25 each. After calculating the total revenue from flower sales over the two days, the festival organizers noticed that the total local resident attendance was the same on both days. If the attendance on Saturday was the exact same as the local population that attended from abroad the following day, how much money did the festival generate over the weekend from visitors?",
+         "title": "Calculating Revenue from Attendance at the Numeropolis Flower Festival",
+         "solution": "To calculate the total revenue generated by the Numeropolis Flower Festival, we need to first determine the number of visitors for both days and their respective expenditures. \n\n1. **Calculate the total number of visitors over the weekend**:\n   - Saturday visitors = 3000\n   - Sunday visitors = 3000 + 500 = 3500\n   - Total visitors = 3000 + 3500 = 6500\n\n2. **Calculate the number of local residents and foreign visitors**:\n   - Local residents (60%) = 0.60 \\times 6500 = 3900\n   - Foreign visitors (40%) = 0.40 \\times 6500 = 2600\n\n3. **Calculate the revenue from local residents**:\n   - Revenue from locals = 3900 \\times 25 = 97500\n\n4. **Calculate the revenue from foreign visitors**:\n   - Revenue from foreigners = 2600 \\times 40 = 104000\n\n5. **Total revenue for the weekend**:\n   - Total revenue = 97500 + 104000 = 201500\n\nThus, the festival generated a total of \\$201,500 over the weekend.",
+         "options": ["$206500", "$201500", "$196500", "$191500"],
+         "answer": "$201500",
+         "difficulty": 2,
+         "tag": ["problem solving", "Word Problems&", "Statistics"],
+         "prompt": "problem solving - <Word Problems&> - <2> - <Statistics>"
+      }
+   ],
+   "GRE_V": {
+      "error": "'tags'"
+   },
+   "GMAT_IR": [
+      {
+         "thread_id": "thread_HZsPVaQRXtfdcCZEH5Ox3MoM",
+         "graphs": [
+            {
+               "graph": "quantitative venn diagram",
+               "title": "Historical and Economic Contributions",
+               "description": "This Venn diagram illustrates the contributions in the fields of history and economics.",
+               "data": [
+                  {
+                     "sets": ["A"],
+                     "values": 50
+                  },
+                  {
+                     "sets": ["B"],
+                     "values": 40
+                  },
+                  {
+                     "sets": ["A & B"],
+                     "values": 20
+                  }
+               ]
+            }
+         ],
+         "question": "In the Venn diagram depicting the contributions in the fields of history and economics, if the number representing contributions solely in history is 50 and the number representing contributions in both history and economics is 20, how many contributions are made exclusively in economics?",
+         "title": "Contributions in History and Economics: Venn Diagram Analysis",
+         "solution": "To find the number of contributions made exclusively in economics, we use the formula: \n\n1. Let \\( A \\) be the contributions in history = 50 \n2. Let \\( B \\) be the contributions in economics (unknown) \n3. Contributions in both fields = 20 \n\nUsing the formula: \\( B = \\text{Total Economics} - \\text{(Only Economics + Both)} \\) \n\nFrom the Venn diagram:  \n\\( A + B - (A \\cap B) = \\text{Total contributions} \\)  \n\\( 50 + B - 20 = \\text{Total contributions} \\)  \n\nAssuming total contributions to be those contributed in either history or economics or both: \\( A + B = 50 + B \\)  \n\nThus, the contributions in economics can be represented as:  \n\\( B = x \\)  \nSo:  \n\\( B = 40 + 20 \\)  \nThus, total contributions in economics gives us:  \n\\( B - 20 \\rightarrow (40 - 20) = 20 \\)  \nHence:  \nContributions made exclusively in economics is equal to 20.",
+         "options": ["30", "40", "20", "10"],
+         "answer": "20",
+         "tags": ["GI", "history, economics"],
+         "difficulty": 1,
+         "prompt": "graphic interpretation - <quantitative venn diagram> - <history, economics> - <1>"
+      },
+      {
+         "sources": [
+            {
+               "source_info": "This source provides a quantitative Venn diagram showing the overlap between different market segments in terms of sales and market penetration across three different products.",
+               "graph": {
+                  "graph": "quantitative venn diagram",
+                  "title": "Market Segment Overlap",
+                  "description": "This diagram highlights the distribution of market shares across three products and their intersecting customer bases.",
+                  "data": [
+                     {
+                        "sets": ["Product A"],
+                        "values": 30
+                     },
+                     {
+                        "sets": ["Product B"],
+                        "values": 25
+                     },
+                     {
+                        "sets": ["Product C"],
+                        "values": 20
+                     },
+                     {
+                        "sets": ["Product A & B"],
+                        "values": 10
+                     },
+                     {
+                        "sets": ["Product A & C"],
+                        "values": 15
+                     },
+                     {
+                        "sets": ["Product B & C"],
+                        "values": 5
+                     },
+                     {
+                        "sets": ["Product A & B & C"],
+                        "values": 2
+                     }
+                  ]
+               }
+            },
+            {
+               "source_info": "This source presents a different quantitative Venn diagram focusing on customer preferences regarding the same three products within varying income brackets.",
+               "graph": {
+                  "graph": "quantitative venn diagram",
+                  "title": "Customer Preference Overlap by Income",
+                  "description": "This diagram illustrates how customer preferences for three products overlap across different income segments.",
+                  "data": [
+                     {
+                        "sets": ["Low Income"],
+                        "values": 25
+                     },
+                     {
+                        "sets": ["Middle Income"],
+                        "values": 30
+                     },
+                     {
+                        "sets": ["High Income"],
+                        "values": 15
+                     },
+                     {
+                        "sets": ["Low & Middle Income"],
+                        "values": 8
+                     },
+                     {
+                        "sets": ["Low & High Income"],
+                        "values": 5
+                     },
+                     {
+                        "sets": ["Middle & High Income"],
+                        "values": 10
+                     },
+                     {
+                        "sets": ["Low & Middle & High Income"],
+                        "values": 3
+                     }
+                  ]
+               }
+            },
+            {
+               "source_info": "This source provides a quantitative Venn diagram analyzing the market share of three different advertising platforms and their effectiveness in reaching potential customers.",
+               "graph": {
+                  "graph": "quantitative venn diagram",
+                  "title": "Advertising Platform Overlap",
+                  "description": "This diagram depicts how the reach of three distinct advertising platforms overlaps in terms of customer engagement.",
+                  "data": [
+                     {
+                        "sets": ["Platform A"],
+                        "values": 40
+                     },
+                     {
+                        "sets": ["Platform B"],
+                        "values": 20
+                     },
+                     {
+                        "sets": ["Platform C"],
+                        "values": 25
+                     },
+                     {
+                        "sets": ["Platform A & B"],
+                        "values": 10
+                     },
+                     {
+                        "sets": ["Platform A & C"],
+                        "values": 12
+                     },
+                     {
+                        "sets": ["Platform B & C"],
+                        "values": 5
+                     },
+                     {
+                        "sets": ["Platform A & B & C"],
+                        "values": 8
+                     }
+                  ]
+               }
+            }
+         ],
+         "thread_id": "thread_6VF5UVpjmsLmHnBqDvyy3UkN",
+         "questions": [
+            {
+               "question": "Based on the Venn diagrams provided, what is the total number of customers who prefer at least one of the three products (A, B, or C) from Source 1?",
+               "title": "Total Customers Preferring Products A, B, or C",
+               "solution": "The total number of customers who prefer at least one of the three products (A, B, or C) is calculated using the principle of inclusion-exclusion:\n\n\\text{Total Customers} = (30 + 25 + 20) - (10 + 15 + 5) + 2 = 47.",
+               "options": ["50", "46", "47", "42"],
+               "tags": ["economics, business"],
+               "difficulty": 1,
+               "answer": "47"
+            },
+            {
+               "question": "From the second source Venn diagram, how many customers fall into the category of Middle Income and prefer at least one of the products?",
+               "title": "Middle Income Customers Preferring Products",
+               "solution": "The number of customers who fall into the category of Middle Income and prefer at least one of the products is calculated as follows:\n\n\\text{Middle Income Customers} = 30 + 8 + 10 - 3 = 45.",
+               "options": ["48", "45", "50", "42"],
+               "tags": ["economics, business"],
+               "difficulty": 1,
+               "answer": "45"
+            },
+            {
+               "question": "In the third source Venn diagram, how many customers are reached by all three advertising platforms combined?",
+               "title": "Customers Reached by All Advertising Platforms",
+               "solution": "The number of customers reached by all three advertising platforms is directly given in the Venn diagram data as:\n\n\\text{Customers Reached by All Platforms} = 8.",
+               "options": ["12", "5", "10", "8"],
+               "tags": ["economics, business"],
+               "difficulty": 1,
+               "answer": "8"
+            }
+         ],
+         "title": "Analyzing Customer Preferences and Market Reach Across Products and Advertising Platforms",
+         "tags": ["MSR", "economics, business"],
+         "difficulty": 1,
+         "prompt": "multi source reasoning - <quantitative venn diagram> - <economics, business> - <1>"
+      },
+      {
+         "thread_id": "thread_baKQFBG5jeK5pomKsBSeXPDp",
+         "tables": [
+            {
+               "table_name": "Sales Performance by Environment Type",
+               "columns": [
+                  "Environment Type",
+                  "Total Sales",
+                  "Average Sales per Transaction",
+                  "Number of Transactions"
+               ],
+               "rows": ["Urban", "Suburban", "Rural"],
+               "data": [
+                  ["Urban", 500000, 250, 2000],
+                  ["Suburban", 300000, 300, 1000],
+                  ["Rural", 150000, 150, 1000]
+               ]
+            }
+         ],
+         "question": "The table above presents the sales performance figures segmented by various environment types. It includes total sales, average sales per transaction, and the number of transactions recorded in urban, suburban, and rural settings. Based on this information, can we conclude whether the average sales per transaction in the urban environment is higher than that in the suburban environment?",
+         "title": "Comparison of Average Sales per Transaction in Different Environments",
+         "solution": [
+            "Yes, the information provided in the table is sufficient to determine this. The average sales per transaction in the urban environment is \\$250, while in the suburban environment it is \\$300. Since \\$250 < \\$300, it is confirmed that the average sales per transaction in the urban environment is not higher than that in the suburban environment.",
+            "No, since the comparison is between urban and suburban environments, which yields clear values for average sales per transaction, the data is adequate for the conclusion needed.",
+            "Yes, the average sales per transaction figures provided allow for a direct comparison, ensuring that any necessary conclusions can be drawn without further data."
+         ],
+         "options": [
+            "Is the average sales per transaction in the urban environment higher than in the suburban environment?",
+            "Can we determine the total sales figure for the suburban environment based on the average sales?",
+            "Does the number of transactions in the rural environment affect the average sales per transaction in the urban environment?"
+         ],
+         "answer": {
+            "Is the average sales per transaction in the urban environment higher than in the suburban environment?": "No",
+            "Can we determine the total sales figure for the suburban environment based on the average sales?": "No",
+            "Does the number of transactions in the rural environment affect the average sales per transaction in the urban environment?": "No"
+         },
+         "tags": ["TA", "Yes/No"],
+         "difficulty": 1,
+         "prompt": "table analysis - <2 category table> - <Yes/No> - <environment, sales> - <1>"
+      },
+      {
+         "thread_id": "thread_G7p8Fhu81c460eZYQyYZsgpl",
+         "part1": {
+            "description": "This bar chart illustrates the GDP growth rates of three countries over four years: Country A, Country B, and Country C.",
+            "graph": {
+               "graph": "bar chart",
+               "title": "GDP Growth Rate Comparison",
+               "description": "This chart displays the annual GDP growth rates of three countries from 2019 to 2022.",
+               "x-axis": "Years",
+               "y-axis": "GDP Growth Rate (%)",
+               "data": [
+                  {
+                     "category": "Country A",
+                     "2019": 2.5,
+                     "2020": -1.2,
+                     "2021": 4.0,
+                     "2022": 3.5
+                  },
+                  {
+                     "category": "Country B",
+                     "2019": 3.0,
+                     "2020": 0.5,
+                     "2021": 5.2,
+                     "2022": 4.0
+                  },
+                  {
+                     "category": "Country C",
+                     "2019": 4.0,
+                     "2020": 2.0,
+                     "2021": 3.0,
+                     "2022": 2.5
+                  }
+               ]
+            }
+         },
+         "part2": {
+            "description": "Analyze the historical context that influenced the economic conditions reflected in the bar chart.",
+            "graph": null,
+            "table": null
+         },
+         "question": "Based on the bar chart illustrating GDP growth rates from 2019 to 2022, identify the economic trend for each country and the historical events that might have influenced these trends.",
+         "type": "No Math calculation",
+         "title": "GDP Growth Rate Comparison and Historical Influence",
+         "solution": "Based on the data presented in the bar chart, we can analyze the following: <br> <ul> <li>Country A experienced a significant decline in its GDP growth rate in 2020 (-1.2\\%), likely due to the global pandemic, which affected trade and economic stability.</li> <li>Country B had a small growth rate of 0.5\\% in 2020 but rebounded in subsequent years, indicating potential recovery measures in response to historical events.</li> <li>Country C showed a decline in growth rates but remained positive, suggesting it was affected by some economic fluctuations.</li> </ul> Hence, option A correctly identifies the historical context influencing Country A's negative growth rate in 2020.",
+         "options": [
+            "Country C showed consistent growth rates each year, unaffected by historical events.",
+            "Country A had the highest GDP growth rate in 2022, primarily due to a boom in the tech sector.",
+            "Country B's growth rate declined in 2021 due to economic sanctions imposed in 2020.",
+            "Country A exhibited a negative GDP growth rate in 2020, likely due to the global pandemic impacting trade."
+         ],
+         "answer": "Country A exhibited a negative GDP growth rate in 2020, likely due to the global pandemic impacting trade.",
+         "tags": ["TPA"],
+         "difficulty": 1,
+         "prompt": "two part analysis - <history, economics> - <1> - <bar chart>"
+      }
+   ]
+}

@@ -9,12 +9,26 @@ class Combination:
         self.combination_number = self.combination["combination number"]
     
     def pair_combination(self, length, combination_number):
-        idx_1 = math.floor((combination_number - 1) / (length - 1))
-        idx_2 = math.floor((combination_number - 1) % (length - 1))
-        if idx_2 >= idx_1:
-            idx_2 += 1
-        return idx_1, idx_2 % length
-    
+        """
+        Generate a pair of valid indices for the given length and combination number.
+        Ensures indices are within bounds and not equal to each other.
+        """
+        if length < 2:
+            return 0, 0  # Handle edge case of insufficient length
+            
+        # Ensure combination_number is positive
+        combination_number = max(1, combination_number)
+        
+        # Calculate indices ensuring they're within bounds
+        idx_1 = (combination_number - 1) % length
+        idx_2 = ((combination_number - 1) // length) % length
+        
+        # Ensure indices are different
+        if idx_1 == idx_2:
+            idx_2 = (idx_2 + 1) % length
+            
+        return idx_1, idx_2
+
     def generate_combination(self):
         prompt = []
         for section_name, details in self.combination.items():
@@ -27,9 +41,10 @@ class Combination:
                 for key, values in details.items():
                     if isinstance(values, list):
                         length = len(values)
-                        idx = math.floor(self.combination_number / initiator)% length
+                        idx = math.floor(self.combination_number / initiator) % length
                     elif isinstance(values, int):
-                        idx = math.floor(self.combination_number / initiator)% values
+                        idx = math.floor(self.combination_number / initiator) % values
+                        
                     if key == "questionStyle":
                         question_style_selected = values[idx]
                         string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
@@ -43,6 +58,9 @@ class Combination:
                         else:
                             filtered_topics = values
                         
+                        if not filtered_topics:  # If no topics match the filter, use all topics
+                            filtered_topics = values
+                            
                         length = len(filtered_topics)
                         idx = math.floor(self.combination_number / initiator) % length
                         string += (f" - <{filtered_topics[idx]}>").replace("*", "").replace("$", "")
@@ -55,8 +73,9 @@ class Combination:
                         initiator *= length
 
                     elif key == "questionTheme" and "Word Problems" in question_style_selected:
-                        idx_1, idx_2 = self.pair_combination(len(values), self.combination_number)
-                        string += (f" - <{values[idx_1]}, {values[idx_2]}>").replace("*", "").replace("$", "")
+                        if isinstance(values, list) and len(values) > 0:
+                            idx_1, idx_2 = self.pair_combination(len(values), self.combination_number)
+                            string += (f" - <{values[idx_1]}, {values[idx_2]}>").replace("*", "").replace("$", "")
                     else:
                         if isinstance(values, int):
                             string += (f" - <{idx+1}>").replace("*", "").replace("$", "")

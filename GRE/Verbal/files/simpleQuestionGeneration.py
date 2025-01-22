@@ -44,6 +44,12 @@ class SimpleQuestionGeneration:
       self.questionData["options"] = self.shuffle_options(options)
 
       self.questionData["solution"] = questionContent.generate_questionSolution()
-      self.questionData["difficulty"] = int(self.prompt.split(" - ")[3].strip("<>"))
-      self.questionData["tag"] = self.prompt.split(" - ")[2].strip("<>").strip("[]").split(",")
+      self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
+      
+      # Extract theme and type as tags
+      prompt_parts = self.prompt.split(" - ")
+      theme = prompt_parts[0].strip()
+      question_type = prompt_parts[1].strip("<>").lower()
+      self.questionData["tags"] = [theme, question_type]
+      
       return self.questionData
