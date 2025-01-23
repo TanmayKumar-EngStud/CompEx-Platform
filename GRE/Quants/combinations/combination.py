@@ -39,14 +39,22 @@ class Combination:
                 filtered_topics = []
 
                 for key, values in details.items():
+                    # Skip if values is None or empty
+                    if not values:
+                        continue
+                        
                     if isinstance(values, list):
                         length = len(values)
+                        if length == 0:  # Skip if list is empty
+                            continue
                         idx = math.floor(self.combination_number / initiator) % length
                     elif isinstance(values, int):
+                        if values <= 0:  # Handle invalid integer values
+                            values = 1
                         idx = math.floor(self.combination_number / initiator) % values
                         
                     if key == "questionStyle":
-                        question_style_selected = values[idx]
+                        question_style_selected = values[idx] if idx < len(values) else values[0]
                         string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
                         initiator *= length
 
@@ -62,15 +70,17 @@ class Combination:
                             filtered_topics = values
                             
                         length = len(filtered_topics)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        string += (f" - <{filtered_topics[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
+                        if length > 0:  # Only proceed if we have topics
+                            idx = math.floor(self.combination_number / initiator) % length
+                            string += (f" - <{filtered_topics[idx]}>").replace("*", "").replace("$", "")
+                            initiator *= length
 
                     elif key == "tableType" and "Data Interpretation" in question_style_selected:
-                        length = len(values)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
+                        if isinstance(values, list) and len(values) > 0:
+                            length = len(values)
+                            idx = math.floor(self.combination_number / initiator) % length
+                            string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
+                            initiator *= length
 
                     elif key == "questionTheme" and "Word Problems" in question_style_selected:
                         if isinstance(values, list) and len(values) > 0:

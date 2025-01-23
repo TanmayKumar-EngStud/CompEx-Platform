@@ -1,49 +1,61 @@
 import json, re
 
 def refine_response(response_text):
+    """
+    A simplified function to handle JSON responses while preserving LaTeX expressions.
+    """
+    if not response_text:
+        return None
+        
     try:
-        # First try direct JSON parsing
+        # First try to parse as pure JSON
         try:
             json.loads(response_text)
-            return response_text
+            return response_text  # If it's valid JSON, return as is
         except json.JSONDecodeError:
             pass
 
-        # Look for JSON-like structure between curly braces
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if not json_match:
-            raise ValueError("No valid JSON structure found")
+        # Clean up the text a bit
+        text = response_text.strip()
         
-        json_string = json_match.group(0).strip()
+        # If it starts with { and ends with }, try to parse it
+        if text.startswith('{') and text.endswith('}'):
+            try:
+                # Handle single quotes
+                text = text.replace("'", '"')
+                # Remove trailing commas before } or ]
+                text = re.sub(r',(\s*})', r'\1', text)
+                text = re.sub(r',(\s*])', r'\1', text)
+                
+                # Try to parse again
+                parsed = json.loads(text)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{text}\n")
+                return None
         
-        # Clean up whitespace but preserve newlines
-        json_string = re.sub(r'[ \t]+', ' ', json_string)
-        
-        # Handle LaTeX expressions with proper escaping
-        def escape_latex(match):
-            latex = match.group(1)
-            latex = latex.replace('"', '\\"')
-            return f'~~{latex}~~'
-            
-        json_string = re.sub(r'~~(.*?)~~', escape_latex, json_string)
-        
-        # Handle quotes and formatting
-        json_string = json_string.replace('\\"', '__ESCAPED_QUOTE__')
-        json_string = re.sub(r"'", '"', json_string)  # Replace single quotes
-        json_string = re.sub(r'(?<!\\)"', '\\"', json_string)  # Escape unescaped quotes
-        
-        # Clean up trailing commas
-        json_string = re.sub(r',(\s*[}\]])', r'\1', json_string)
-        
-        # Validate final JSON
-        try:
-            json.loads(json_string)
-            return json_string
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON after processing: {str(e)}")
+        # If we get here, try to find JSON in the text
+        match = re.search(r'(\{.*\})', text, re.DOTALL)
+        if match:
+            try:
+                json_str = match.group(1)
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{json_str}\n")
+                return None
+                
+        return None
             
     except Exception as e:
-        raise ValueError(f"Failed to process response: {str(e)}")
+        print(f"Error in refine_response: {str(e)}")
+        return None
 
 class ParentChildQuestion:
     def __init__(self, llm, prompt, thread_id=None):

@@ -21,8 +21,8 @@ class SimpleQuestionGeneration:
         return option_list
 
     def generate_question(self):
-      questionContent = SimpleQuestion(self.llm)
-      self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText(self.prompt)
+      questionContent = SimpleQuestion(self.llm, self.prompt)
+      self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
       self.questionData["title"] = questionContent.generate_questionTitle()
       num_options = 0
       if "tc-1" in self.prompt:
@@ -48,7 +48,7 @@ class SimpleQuestionGeneration:
       
       # Extract theme and type as tags
       prompt_parts = self.prompt.split(" - ")
-      theme = prompt_parts[0].strip()
+      theme = prompt_parts[0].strip().strip("<>").lower()
       question_type = prompt_parts[1].strip("<>").lower()
       self.questionData["tags"] = [theme, question_type]
       

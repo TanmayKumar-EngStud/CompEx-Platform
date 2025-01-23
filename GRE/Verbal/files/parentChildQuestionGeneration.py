@@ -53,13 +53,8 @@ class ParentChildQuestionGeneration:
             total_child_questions = 4
         
         child_prompts = self.generate_child_prompt(total_child_questions)
-        
-        # Extract theme and type as tags
-        prompt_parts = self.prompt.split(" - ")
-        theme = prompt_parts[0].strip()
-        question_type = prompt_parts[1].strip("<>").lower()
-        self.questionData["tags"] = [theme, question_type]
-        
+        self.questionData["tag"] = self.prompt.split(" - ")[2].strip("<>").strip("[]").split(",")
+        # print(f"child_prompts: {child_prompts}")
         self.questionData["childQuestions"] = []
         for i in range(total_child_questions):
             childQuestionData = {}
@@ -77,12 +72,8 @@ class ParentChildQuestionGeneration:
                 childQuestionData["answer"] = answers
             childQuestionData["options"] = self.shuffle_options(options)
             childQuestionData["solution"] = parentChildQuestion.generate_childSolution(i)
-            
-            # Extract child question tags from prompt
-            child_prompt_parts = child_prompts[i].split("-")
-            child_theme = child_prompt_parts[0].strip()
-            childQuestionData["tags"] = [child_theme]
-            childQuestionData["difficulty"] = int(child_prompt_parts[1].strip())
-            
+            childQuestionData["tags"] = [child_prompts[i].split("-")[0].strip().strip()]
+            childQuestionData["difficulty"] = int(child_prompts[i].split("-")[1].strip().strip())
+            self.questionData["tags"].extend(childQuestionData["tag"])
             self.questionData["childQuestions"].append(childQuestionData)
         return self.questionData

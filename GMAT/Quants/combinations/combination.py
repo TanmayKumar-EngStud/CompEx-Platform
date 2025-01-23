@@ -9,10 +9,33 @@ class Combination:
         self.combination_number = self.combination["combination number"]
     
     def pair_combination(self, length, combination_number):
-        idx_1 = math.floor((combination_number - 1) / (length - 1))
-        idx_2 = math.floor((combination_number - 1) % (length - 1))
+        """Generate two unique indices for pairing values.
+        Args:
+            length: Length of the values list
+            combination_number: Current combination number
+        Returns:
+            Tuple of two indices that are within bounds and different from each other
+        """
+        if length < 2:
+            return 0, 0
+            
+        # Ensure combination_number is positive
+        combination_number = max(1, combination_number)
+        
+        # Calculate total possible combinations
+        total_combinations = length * (length - 1)
+        
+        # Use modulo to wrap around
+        adjusted_number = ((combination_number - 1) % total_combinations) + 1
+        
+        # Calculate indices ensuring they're different and within bounds
+        idx_1 = ((adjusted_number - 1) // (length - 1)) % length
+        idx_2 = ((adjusted_number - 1) % (length - 1))
+        
+        # Adjust second index if it's equal to or greater than first index
         if idx_2 >= idx_1:
             idx_2 += 1
+            
         return idx_1, idx_2 % length
     
     def generate_combination(self):

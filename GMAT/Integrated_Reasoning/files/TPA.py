@@ -1,5 +1,6 @@
 from GMAT.Integrated_Reasoning.files.questionComponents import TPA
 import random
+import json
 
 class Generate_TPA:
     def __init__(self, llm, prompt):
@@ -18,7 +19,7 @@ class Generate_TPA:
                 "table": None
             },
             "question": "",
-            "type": "No Math calculation",
+            "type": None,
             "title": "",
             "solution": "",
             "options": [],

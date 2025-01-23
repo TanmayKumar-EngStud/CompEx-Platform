@@ -1,0 +1,393 @@
+{
+  "GRE_V": [
+    {
+      "thread_id": "thread_du1c0MaxUr7r1Oucw7Zy6zkK",
+      "question": "The rise of blockchain technology has significantly impacted the finance sector, enabling more secure and decentralized transactions. However, several challenges remain for financial institutions to fully integrate this technology into their operations. One major concern is regulatory compliance. Financial regulators across different jurisdictions have yet to establish a cohesive framework for cryptocurrencies, leading to uncertainty for institutions that wish to adopt blockchain solutions. Furthermore, the volatility of cryptocurrencies presents another challenge. Institutions must navigate the risks associated with price fluctuations while trying to harness the potential benefits of blockchain. As such, while the promise of blockchain technology is apparent, the _________ it faces within traditional finance should not be underestimated.",
+      "title": "Challenges of Blockchain Technology in Finance",
+      "answer": "C",
+      "options": [
+        "integration",
+        "obstacle",
+        "acceptance",
+        "innovation",
+        "opportunity",
+        "expansion"
+      ],
+      "solution": "<p>The correct option is <strong>C</strong> (obstacle) because the sentence discusses the challenges that blockchain technology faces within traditional finance. The term 'obstacle' accurately captures the difficulties encountered, such as regulatory compliance and market volatility.</p><p>The other options are incorrect for the following reasons:</p><ul><li><strong>A</strong> (opportunity): While blockchain presents opportunities, the sentence focuses on the challenges, making this option unsuitable.</li><li><strong>B</strong> (acceptance): This term implies readiness or willingness to embrace technology, which does not align with the idea of challenges.</li><li><strong>D</strong> (expansion): This suggests growth or increase, which contradicts the notion of facing barriers.</li><li><strong>E</strong> (innovation): Although blockchain is an innovation, this term does not reflect the challenges it faces.</li><li><strong>F</strong> (integration): While integration is part of the discussion, it does not specifically highlight the challenges being faced.</li></ul>",
+      "difficulty": 1,
+      "tags": [
+        "<Finance>",
+        "critical reasoning"
+      ]
+    }
+  ],
+  "GMAT_IR": [
+    {
+      "thread_id": "thread_KscMnLUGj4RFwrHTUK6TAZkU",
+      "graphs": [
+        {
+          "graph": "bar chart",
+          "title": "Marketing Budget Allocation",
+          "description": "This graph illustrates the budget allocation for different marketing channels over four quarters.",
+          "x-axis": "Marketing Channels",
+          "y-axis": "Budget (in USD)",
+          "data": [
+            {
+              "category": "Social Media",
+              "Q1": 15000,
+              "Q2": 18000,
+              "Q3": 22000,
+              "Q4": 25000
+            },
+            {
+              "category": "Email Marketing",
+              "Q1": 10000,
+              "Q2": 12000,
+              "Q3": 15000,
+              "Q4": 18000
+            },
+            {
+              "category": "Content Marketing",
+              "Q1": 5000,
+              "Q2": 7000,
+              "Q3": 9000,
+              "Q4": 11000
+            }
+          ]
+        },
+        {
+          "graph": "line chart",
+          "title": "Sales Growth Over Quarters",
+          "description": "This graph shows the sales growth corresponding to the marketing budget allocation over four quarters.",
+          "x-axis": "Quarters",
+          "y-axis": "Sales (in USD)",
+          "data": [
+            {
+              "series": "Sales",
+              "values": [
+                {
+                  "x": "Q1",
+                  "y": 40000
+                },
+                {
+                  "x": "Q2",
+                  "y": 45000
+                },
+                {
+                  "x": "Q3",
+                  "y": 50000
+                },
+                {
+                  "x": "Q4",
+                  "y": 60000
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "question": "Based on the bar chart, which marketing channel experienced the highest budget allocation in Q4? Additionally, what was the corresponding sales growth in Q4 according to the line chart?",
+      "title": "Budget Allocation and Sales Growth Analysis for Marketing Channels",
+      "solution": "The marketing channel with the highest budget allocation in Q4 is Social Media, which received \\$25000. According to the line chart, the corresponding sales growth in Q4 was \\$60000.",
+      "options": [
+        "Social Media with a budget of \\$25000 and sales of \\$60000.",
+        "Email Marketing with a budget of \\$25000 and sales of \\$60000.",
+        "Social Media with a budget of \\$22000 and sales of \\$70000.",
+        "Content Marketing with a budget of \\$25000 and sales of \\$60000."
+      ],
+      "answer": "Social Media with a budget of \\$25000 and sales of \\$60000.",
+      "tags": [
+        "GI",
+        "marketing, economics"
+      ],
+      "difficulty": 2,
+      "prompt": "graphic interpretation - <bar chart> - <marketing, economics> - <2>"
+    },
+    {
+      "sources": [
+        {
+          "source_info": "The bar chart below illustrates the annual profit and expense data for three different companies over the last fiscal year.",
+          "graph": {
+            "graph": "bar chart",
+            "title": "Annual Profit and Expense Data",
+            "description": "Comparison of annual profit and expenses for three companies.",
+            "x-axis": "Companies",
+            "y-axis": "Amount (in USD)",
+            "data": [
+              {
+                "category": "Company A",
+                "Profit": 500000,
+                "Expense": 300000
+              },
+              {
+                "category": "Company B",
+                "Profit": 750000,
+                "Expense": 500000
+              },
+              {
+                "category": "Company C",
+                "Profit": 400000,
+                "Expense": 250000
+              }
+            ]
+          }
+        },
+        {
+          "source_info": "The bar chart below depicts the quarterly revenue of three different companies over the four quarters of the last year.",
+          "graph": {
+            "graph": "bar chart",
+            "title": "Quarterly Revenue Data",
+            "description": "This chart shows the revenue generated by each company during each quarter of the fiscal year.",
+            "x-axis": "Companies",
+            "y-axis": "Revenue (in USD)",
+            "data": [
+              {
+                "category": "Company A",
+                "Q1": 120000,
+                "Q2": 150000,
+                "Q3": 130000,
+                "Q4": 170000
+              },
+              {
+                "category": "Company B",
+                "Q1": 200000,
+                "Q2": 250000,
+                "Q3": 240000,
+                "Q4": 300000
+              },
+              {
+                "category": "Company C",
+                "Q1": 90000,
+                "Q2": 100000,
+                "Q3": 95000,
+                "Q4": 130000
+              }
+            ]
+          }
+        },
+        {
+          "source_info": "The bar chart below presents the marketing expenses incurred by three different companies across four major campaigns during the last year.",
+          "graph": {
+            "graph": "bar chart",
+            "title": "Annual Marketing Expenses by Campaign",
+            "description": "Comparison of marketing expenses for major campaigns across three companies.",
+            "x-axis": "Campaigns",
+            "y-axis": "Expenses (in USD)",
+            "data": [
+              {
+                "category": "Campaign 1",
+                "Company A": 40000,
+                "Company B": 60000,
+                "Company C": 30000
+              },
+              {
+                "category": "Campaign 2",
+                "Company A": 50000,
+                "Company B": 70000,
+                "Company C": 40000
+              },
+              {
+                "category": "Campaign 3",
+                "Company A": 60000,
+                "Company B": 80000,
+                "Company C": 50000
+              },
+              {
+                "category": "Campaign 4",
+                "Company A": 70000,
+                "Company B": 90000,
+                "Company C": 60000
+              }
+            ]
+          }
+        }
+      ],
+      "thread_id": "thread_tEmv14sU8CoZqtl79vQxIxMR",
+      "questions": [
+        {
+          "question": "Based on the Annual Profit and Expense Data graph for Company A, Company B, and Company C, what is the profit margin (in percentage) for Company B?",
+          "title": "Profit Margin Calculation for Company B",
+          "solution": "The profit margin for Company B is calculated as follows: ~~\\text{Profit Margin} = \\left(\\frac{\\text{Profit} - \\text{Expense}}{\\text{Profit}}\\right) \\times 100\\% = \\left(\\frac{750000 - 500000}{750000}\\right) \\times 100\\% = 33.33\\%~~",
+          "options": [
+            "50.00%, an incorrect calculation due to misunderstanding expense data.",
+            "40.00%, an incorrect calculation based on wrong profit figures.",
+            "33.33%, calculated correctly as \\left(\\frac{750000 - 500000}{750000}\\right) \\times 100\\%",
+            "25.00%, calculated correctly as \\left(\\frac{750000 - 500000}{750000}\\right) \\times 100\\%"
+          ],
+          "tags": [
+            "business, economics"
+          ],
+          "difficulty": 3,
+          "answer": "33.33%, calculated correctly as \\left(\\frac{750000 - 500000}{750000}\\right) \\times 100\\%"
+        },
+        {
+          "question": "From the Quarterly Revenue Data graph, what is the total revenue generated by Company C over all four quarters?",
+          "title": "Total Revenue Calculation for Company C",
+          "solution": "The total revenue for Company C is calculated as follows: ~~\\text{Total Revenue} = Q1 + Q2 + Q3 + Q4 = 90000 + 100000 + 95000 + 130000 = 415000~~",
+          "options": [
+            "400000, an incorrect total calculated by missing one quarter's revenue.",
+            "450000, an incorrect value due to adding wrong quarterly numbers.",
+            "415000, calculated correctly by summing each quarterly revenue.",
+            "350000, an incorrect calculation by omitting Q4 revenue."
+          ],
+          "tags": [
+            "business, economics"
+          ],
+          "difficulty": 3,
+          "answer": "415000, calculated correctly by summing each quarterly revenue."
+        },
+        {
+          "question": "According to the Annual Marketing Expenses by Campaign graph, what is the total marketing expense for Company A across all four campaigns?",
+          "title": "Total Marketing Expense Calculation for Company A",
+          "solution": "The total marketing expense for Company A is calculated as follows: ~~\\text{Total Marketing Expense} = \text{Campaign 1} + \text{Campaign 2} + \text{Campaign 3} + \text{Campaign 4} = 40000 + 50000 + 60000 + 70000 = 220000~~",
+          "options": [
+            "240000, an incorrect figure due to miscalculating Campaign 3.",
+            "250000, an incorrect calculation combining different companies' expenses.",
+            "220000, calculated correctly by summing all campaign expenses.",
+            "200000, an incorrect total from not including all campaigns."
+          ],
+          "tags": [
+            "business, economics"
+          ],
+          "difficulty": 3,
+          "answer": "220000, calculated correctly by summing all campaign expenses."
+        }
+      ],
+      "title": "Comprehensive Business Analysis: Profit Margins, Revenue, and Marketing Expenses",
+      "tags": [
+        "MSR",
+        "business, economics"
+      ],
+      "difficulty": 3,
+      "prompt": "multi source reasoning - <bar chart> - <business, economics> - <3>"
+    },
+    {
+      "thread_id": "thread_HVuWvov7vgGty25M3A0xoaJQ",
+      "tables": [
+        {
+          "table_name": "Art Sales Data",
+          "columns": [
+            "Art Piece",
+            "Artist",
+            "Sales Price",
+            "Year Sold"
+          ],
+          "rows": [
+            "Mona Lisa",
+            "Van Gogh",
+            "Starry Night",
+            "The Scream"
+          ],
+          "data": [
+            [
+              "Mona Lisa",
+              "Leonardo da Vinci",
+              "$500,000",
+              "2019"
+            ],
+            [
+              "Starry Night",
+              "Vincent van Gogh",
+              "$300,000",
+              "2020"
+            ],
+            [
+              "The Scream",
+              "Edvard Munch",
+              "$400,000",
+              "2021"
+            ]
+          ]
+        }
+      ],
+      "question": "The table above displays the sales data for various famous art pieces, detailing the art piece name, the artist, the sales price, and the year each piece was sold. Based on this information, can you determine if certain conclusions can be drawn regarding future art sales?",
+      "title": "Analysis of Art Sales Trends and Future Implications",
+      "solution": [
+        "Option A contains information regarding the sales price and year sold of notable art pieces. This information can help infer potential trends in the art market, thus it would help in determining future art sales.",
+        "Option B suggests a method for estimating future sales price based solely on artist reputation. While artist reputation is an important factor, it may not be sufficient without specific sales data from the table, hence it would not help in making a reliable conclusion.",
+        "Option C refers to analyzing past sales trends based on the data provided. The data shows sales prices over specific years for known pieces, allowing for a detailed analysis, thus it would help in determining future art sales."
+      ],
+      "options": [
+        "Estimating future sales prices based solely on the artist's reputation.",
+        "Analyzing sales data to identify successful marketing strategies for art pieces.",
+        "Using historical sales prices to predict future art sales trends."
+      ],
+      "answer": {
+        "Using historical sales prices to predict future art sales trends.": "Yes",
+        "Estimating future sales prices based solely on the artist's reputation.": "No",
+        "Analyzing sales data to identify successful marketing strategies for art pieces.": "Yes"
+      },
+      "tags": [
+        "TA",
+        "Would Help / Would Not Help"
+      ],
+      "difficulty": 1,
+      "prompt": "table analysis - <2 category table> - <Would Help / Would Not Help> - <art, sales> - <1>"
+    },
+    {
+      "thread_id": "thread_gjp78tTazsM1HWefIxXLAYPW",
+      "part1": {
+        "description": "In 2023, the total investment in historical preservation in several regions of the country was distributed among the following sectors: Museums, Historical Sites, and Educational Programs. The total budget for historical preservation was \\$10 million.",
+        "graph": {
+          "graph": "pie chart",
+          "title": "Historical Preservation Investment Distribution",
+          "description": "This pie chart shows the investment distribution among various sectors in historical preservation.",
+          "data": [
+            {
+              "label": "Museums",
+              "value": 40
+            },
+            {
+              "label": "Historical Sites",
+              "value": 35
+            },
+            {
+              "label": "Educational Programs",
+              "value": 25
+            }
+          ]
+        },
+        "table": null
+      },
+      "part2": {
+        "description": "In the same year, the economic impact generated from historical tourism (from the investments made in the above sectors) was analyzed. The economic impact was categorized as follows: Direct Impact, Indirect Impact, and Induced Impact. The total economic impact was estimated to be \\$15 million.",
+        "graph": {
+          "graph": "pie chart",
+          "title": "Economic Impact from Historical Tourism",
+          "description": "This pie chart illustrates the economic impact categories generated from historical tourism.",
+          "data": [
+            {
+              "label": "Direct Impact",
+              "value": 50
+            },
+            {
+              "label": "Indirect Impact",
+              "value": 30
+            },
+            {
+              "label": "Induced Impact",
+              "value": 20
+            }
+          ]
+        },
+        "table": null
+      },
+      "question": "If the total investment in historical preservation is \\$10 million and the total economic impact generated is \\$15 million, calculate the percentage of the economic impact that is contributed by each sector of historical preservation.",
+      "type": "No Math calculation",
+      "title": "Investment and Economic Impact from Historical Preservation",
+      "solution": "To determine the percentage of the economic impact contributed by each sector, use the investment amounts from the historical preservation distribution. The calculations are as follows: <br><br> <b>Museums:</b> \\frac{40\\% \\times \\text{Total Investment in Preservation}}{\\text{Total Economic Impact}} = \\frac{40\\% \\times 10,000,000}{15,000,000} = \\frac{4,000,000}{15,000,000} = 26.67\\% <br> <b>Historical Sites:</b> \\frac{35\\% \\times \\text{Total Investment in Preservation}}{\\text{Total Economic Impact}} = \\frac{35\\% \\times 10,000,000}{15,000,000} = \\frac{3,500,000}{15,000,000} = 23.33\\% <br> <b>Educational Programs:</b> \\frac{25\\% \\times \\text{Total Investment in Preservation}}{\\text{Total Economic Impact}} = \\frac{25\\% \\times 10,000,000}{15,000,000} = \\frac{2,500,000}{15,000,000} = 16.67\\% <br><br> Therefore, the final contributions are: <br> Museums: 40\\%, Historical Sites: 35\\%, Educational Programs: 25\\%. <br> The economic impacts expressed are components of the total impact.",
+      "options": [
+        "Museums: 60\\%, Historical Sites: 20\\%, Educational Programs: 20\\%",
+        "Museums: 50\\%, Historical Sites: 30\\%, Educational Programs: 20\\%",
+        "Museums: 40\\%, Historical Sites: 35\\%, Educational Programs: 25\\%",
+        "Museums: 30\\%, Historical Sites: 40\\%, Educational Programs: 30\\%"
+      ],
+      "answer": "Museums: 40\\%, Historical Sites: 35\\%, Educational Programs: 25\\%",
+      "tags": [
+        "TPA"
+      ],
+      "difficulty": 3,
+      "prompt": "two part analysis - <history, economics> - <3> - <pie chart>"
+    }
+  ]
+}

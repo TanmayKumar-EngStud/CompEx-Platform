@@ -1,54 +1,74 @@
 import json, re
 
 def refine_response(response_text):
+    """
+    A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
+    """
+    if not response_text:
+        return None
+        
     try:
-        # First try to parse as JSON directly
+        # First try to parse as pure JSON
         try:
             json.loads(response_text)
-            return response_text
+            return response_text  # If it's valid JSON, return as is
         except json.JSONDecodeError:
             pass
 
-        # Look for JSON-like structure between curly braces
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if not json_match:
-            return None
+        # Look for ```json blocks
+        json_block_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
+        if json_block_match:
+            try:
+                json_str = json_block_match.group(1).strip()
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error in code block: {str(e)}\nJSON string:\n{json_str}\n")
+                # Continue to try other methods
         
-        json_string = json_match.group(0).strip()
+        # Clean up the text a bit
+        text = response_text.strip()
         
-        # Handle LaTeX expressions
-        latex_expressions = []
-        def replace_latex(match):
-            expr = match.group(1)
-            # Double escape backslashes in LaTeX
-            expr = expr.replace('\\', '\\\\')
-            latex_expressions.append(expr)
-            return f"__LATEX_{len(latex_expressions)-1}__"
+        # If it starts with { and ends with }, try to parse it
+        if text.startswith('{') and text.endswith('}'):
+            try:
+                # Handle single quotes
+                text = text.replace("'", '"')
+                # Remove trailing commas before } or ]
+                text = re.sub(r',(\s*})', r'\1', text)
+                text = re.sub(r',(\s*])', r'\1', text)
+                
+                # Try to parse again
+                parsed = json.loads(text)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{text}\n")
+                return None
         
-        json_string = re.sub(r'~~(.*?)~~', replace_latex, json_string)
-        
-        # Clean up whitespace but preserve newlines
-        json_string = re.sub(r'[ \t]+', ' ', json_string)
-        
-        # Handle quotes and formatting
-        json_string = json_string.replace('\\"', '__ESCAPED_QUOTE__')
-        json_string = re.sub(r"'", '"', json_string)  # Replace single quotes
-        json_string = re.sub(r',(\s*[}\]])', r'\1', json_string)  # Clean trailing commas
-        
-        # Restore LaTeX expressions
-        for i, expr in enumerate(latex_expressions):
-            json_string = json_string.replace(f'__LATEX_{i}__', f'~~{expr}~~')
-        
-        # Restore escaped quotes
-        json_string = json_string.replace('__ESCAPED_QUOTE__', '\\"')
-        
-        # Validate final JSON
-        try:
-            json.loads(json_string)
-            return json_string
-        except json.JSONDecodeError as e:
-            print(f"JSON parsing error after cleanup: {str(e)}")
-            return None
+        # If we get here, try to find JSON in the text
+        match = re.search(r'(\{.*\})', text, re.DOTALL)
+        if match:
+            try:
+                json_str = match.group(1)
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{json_str}\n")
+                return None
+                
+        return None
             
     except Exception as e:
         print(f"Error in refine_response: {str(e)}")
@@ -220,83 +240,148 @@ class TPA:
         self.max_retries = 3
 
     def _retry_generate(self, func, *args):
+        last_error = None
         for attempt in range(self.max_retries):
-            result = func(*args)
-            if result and all(v is not None for v in (result if isinstance(result, tuple) else [result])):
-                return result
-            print(f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+            try:
+                result = func(*args)
+                if result:  # If we got any non-None result, return it
+                    return result
+                print(f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+            except Exception as e:
+                last_error = str(e)
+                print(f"Error in attempt {attempt + 1}: {last_error}")
+        
+        # If we get here, all attempts failed
+        if last_error:
+            print(f"All attempts failed. Last error: {last_error}")
         return None
 
     def generate_QuestionText(self):
         def _generate():
-            if(self.thread_id):
-                response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
-            else:
-                response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
-                self.thread_id = response[0].thread_id if response else None
-            
             try:
-                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-                if not all(k in message for k in ["part1", "part2", "question", "type"]):
-                    return None
-                if not isinstance(message["part1"], dict) or not isinstance(message["part2"], dict):
-                    return None
-                if not all(k in message["part1"] for k in ["description", "graph", "table"]):
-                    return None
-                if not all(k in message["part2"] for k in ["description", "graph", "table"]):
-                    return None
-                if not message["part1"]["description"] or not message["part2"]["description"]:
-                    return None
-                return self.thread_id, message["part1"], message["part2"], message["question"], message["type"]
+                if(self.thread_id):
+                    response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
+                else:
+                    response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
+                    self.thread_id = response[0].thread_id if response else None
+                
+                # Get the raw response text
+                raw_response = [message.content[0].text.value for message in response][0]
+                # print(f"\nGMAT IR TPA Raw Response:\n{raw_response}\n")
+                
+                # First try to parse it directly as JSON
+                try:
+                    message = json.loads(raw_response)
+                    # print("Successfully parsed raw response as JSON")
+                except json.JSONDecodeError:
+                    # If direct parsing fails, try refine_response
+                    print("Direct JSON parsing failed, trying refine_response")
+                    refined_response = refine_response(raw_response)
+                    if not refined_response:
+                        print("Failed to refine response")
+                        return None
+                        
+                    print(f"\nRefined Response:\n{refined_response}\n")
+                    message = json.loads(refined_response)
+                
+                # Ensure required fields exist with default values
+                part1 = message.get("part1", {})
+                if not isinstance(part1, dict):
+                    part1 = {}
+                part1.setdefault("description", "")
+                part1.setdefault("graph", None)
+                part1.setdefault("table", None)
+                
+                part2 = message.get("part2", {})
+                if not isinstance(part2, dict):
+                    part2 = {}
+                part2.setdefault("description", "")
+                part2.setdefault("graph", None)
+                part2.setdefault("table", None)
+                
+                question = message.get("question", "")
+                qtype = message.get("type", "two-part analysis")
+                
+                # Return all required values
+                return self.thread_id, part1, part2, question, qtype
+                    
             except Exception as e:
                 print(f"Error in generate_QuestionText: {str(e)}")
+                if 'response' in locals():
+                    try:
+                        print(f"Raw response content:\n{[m.content[0].text.value for m in response][0]}\n")
+                    except:
+                        print("Could not extract raw response content")
                 return None
 
         result = self._retry_generate(_generate)
         if not result:
-            raise Exception("Failed to generate valid question text after maximum retries")
+            # Return a default structure if all retries fail
+            default_part = {"description": "", "graph": None, "table": None}
+            return "", default_part, default_part, "", "two-part analysis"
         return result
 
     def generate_QuestionTitle(self):
         def _generate():
             response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
             try:
-                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-                return message["title"] if message.get("title") else None
+                raw_response = [message.content[0].text.value for message in response][0]
+                # First try direct JSON parsing
+                try:
+                    message = json.loads(raw_response)
+                except json.JSONDecodeError:
+                    # If that fails, try refine_response
+                    refined_response = refine_response(raw_response)
+                    if not refined_response:
+                        return None
+                    message = json.loads(refined_response)
+                return message.get("title", "")
             except:
                 return None
 
         result = self._retry_generate(_generate)
-        if not result:
-            raise Exception("Failed to generate valid title after maximum retries")
-        return result
+        return result if result else ""
 
     def generate_QuestionSolution(self):
         def _generate():
             response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
             try:
-                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-                return message["solution"] if message.get("solution") else None
+                raw_response = [message.content[0].text.value for message in response][0]
+                # First try direct JSON parsing
+                try:
+                    message = json.loads(raw_response)
+                except json.JSONDecodeError:
+                    # If that fails, try refine_response
+                    refined_response = refine_response(raw_response)
+                    if not refined_response:
+                        return None
+                    message = json.loads(refined_response)
+                return message.get("solution", "")
             except:
                 return None
 
         result = self._retry_generate(_generate)
-        if not result:
-            raise Exception("Failed to generate valid solution after maximum retries")
-        return result
+        return result if result else ""
 
     def generate_QuestionOptions(self):
         def _generate():
             response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
             try:
-                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-                if not message.get("options") or not message.get("answer"):
-                    return None
-                return message["options"], message["answer"]
+                raw_response = [message.content[0].text.value for message in response][0]
+                # First try direct JSON parsing
+                try:
+                    message = json.loads(raw_response)
+                except json.JSONDecodeError:
+                    # If that fails, try refine_response
+                    refined_response = refine_response(raw_response)
+                    if not refined_response:
+                        return None
+                    message = json.loads(refined_response)
+                if message.get("options") and message.get("answer"):
+                    return message["options"], message["answer"]
+                return None
             except:
                 return None
 
         result = self._retry_generate(_generate)
-        if not result:
-            raise Exception("Failed to generate valid options after maximum retries")
-        return result
+        return result if result else ([], {})

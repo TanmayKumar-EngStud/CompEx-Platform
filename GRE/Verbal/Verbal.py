@@ -26,7 +26,6 @@ class GRE_V:
     
     def generate_question(self, prompt, llm):
       if ("<rc-" in prompt):
-         print("GRE Verbal: generating parent child question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),
@@ -37,7 +36,6 @@ class GRE_V:
          questionData = parentChildQuestionGeneration.generate_question()
          return questionData
       else:
-         print("GRE Verbal: generating simple question")
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),

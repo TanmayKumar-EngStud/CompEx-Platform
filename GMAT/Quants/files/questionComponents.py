@@ -1,58 +1,78 @@
 import json, re
 
 def refine_response(response_text):
+    """
+    A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
+    """
+    if not response_text:
+        return None
+        
     try:
-        # First try to parse as JSON directly
-        json.loads(response_text)
-        return response_text
-    except json.JSONDecodeError:
+        # First try to parse as pure JSON
         try:
-            # Look for JSON-like structure between curly braces
-            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-            if json_match:
-                json_string = json_match.group(0)
-            else:
+            json.loads(response_text)
+            return response_text  # If it's valid JSON, return as is
+        except json.JSONDecodeError:
+            pass
+
+        # Look for ```json blocks
+        json_block_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
+        if json_block_match:
+            try:
+                json_str = json_block_match.group(1).strip()
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error in code block: {str(e)}\nJSON string:\n{json_str}\n")
+                # Continue to try other methods
+        
+        # Clean up the text a bit
+        text = response_text.strip()
+        
+        # If it starts with { and ends with }, try to parse it
+        if text.startswith('{') and text.endswith('}'):
+            try:
+                # Handle single quotes
+                text = text.replace("'", '"')
+                # Remove trailing commas before } or ]
+                text = re.sub(r',(\s*})', r'\1', text)
+                text = re.sub(r',(\s*])', r'\1', text)
+                
+                # Try to parse again
+                parsed = json.loads(text)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{text}\n")
                 return None
-
-            # Clean up whitespace
-            json_string = re.sub(r'\s+', ' ', json_string.strip())
+        
+        # If we get here, try to find JSON in the text
+        match = re.search(r'(\{.*\})', text, re.DOTALL)
+        if match:
+            try:
+                json_str = match.group(1)
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{json_str}\n")
+                return None
+                
+        return None
             
-            # LaTeX handling
-            latex_patterns = {
-                '\\\\': '{{BACKSLASH}}',
-                '\\(': '{{LATEX_START}}',
-                '\\)': '{{LATEX_END}}',
-                '\\frac': '{{FRAC}}',
-                '\\sqrt': '{{SQRT}}',
-                '\\sum': '{{SUM}}',
-                '\\int': '{{INT}}'
-            }
-            
-            # Replace LaTeX patterns with placeholders
-            for pattern, placeholder in latex_patterns.items():
-                json_string = json_string.replace(pattern, placeholder)
-            
-            # Handle quotes and formatting
-            json_string = json_string.replace('\\"', '{{ESCAPED_QUOTE}}')
-            json_string = re.sub(r"(?<!\\)'", '"', json_string)
-            json_string = re.sub(r":\s*'", ': "', json_string)
-            json_string = re.sub(r"'\s*[,}\\]]", '"\\g<0>', json_string)
-            
-            # Clean trailing commas
-            json_string = re.sub(r',(\s*[}\]])', r'\1', json_string)
-            
-            # Restore LaTeX patterns
-            for placeholder, pattern in latex_patterns.items():
-                json_string = json_string.replace(placeholder, pattern)
-            json_string = json_string.replace('{{ESCAPED_QUOTE}}', '\\"')
-
-            # Validate final JSON
-            json.loads(json_string)
-            return json_string
-            
-        except Exception as e:
-            print(f"Processing failed: {str(e)}")
-            return None
+    except Exception as e:
+        print(f"Error in refine_response: {str(e)}")
+        return None
 
 class ParentChildQuestion:
     def __init__(self, llm, prompt, thread_id=None):
@@ -110,55 +130,101 @@ class ParentChildQuestion:
             return ""
 
 class SimpleQuestion:
-    def __init__(self, llm, thread_id= None):
+    def __init__(self, llm, thread_id=None):
         self.llm = llm
         self.thread_id = thread_id
+        self.max_retries = 3
+
+    def _retry_generate(self, func, *args):
+        last_error = None
+        for attempt in range(self.max_retries):
+            try:
+                result = func(*args)
+                if result:  # If we got any non-None result, return it
+                    return result
+                print(f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+            except Exception as e:
+                last_error = str(e)
+                print(f"Error in attempt {attempt + 1}: {last_error}")
+        
+        # If we get here, all attempts failed
+        if last_error:
+            print(f"All attempts failed. Last error: {last_error}")
+        return None
+
     def generate_questionText(self, input_data):
-        response = self.llm.invoke({"content":f"QuestionText: {input_data}"})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            message = json.loads(response_text)
-            self.thread_id = response[0].thread_id if response else "GMAT Quants, Error! thread_id not found! (questionComponent@l:30)"
-            return self.thread_id, message["question"]
-        except Exception as e:
-            print(f"GMAT Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}\n\n")
-            print(f"Exception details: {str(e)}")
-            return "", ""
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionText: {input_data}"})
+            try:
+                response_text = refine_response([message.content[0].text.value for message in response][0])
+                if not response_text:
+                    return None
+                message = json.loads(response_text)
+                self.thread_id = response[0].thread_id if response else None
+                if message.get("question"):
+                    return self.thread_id, message["question"]
+                return None
+            except Exception as e:
+                print(f"GMAT Quants, Error in generate_questionText: {str(e)}")
+                return None
+
+        result = self._retry_generate(_generate)
+        return result if result else ("", "")
+
     def generate_questionTitle(self):
-        response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            message = json.loads(response_text)
-            return message["title"]
-        except Exception as e:
-            # message received is:
-            print(f"GMAT Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}\n\n")
-            return ""
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
+            try:
+                response_text = refine_response([message.content[0].text.value for message in response][0])
+                if not response_text:
+                    return None
+                message = json.loads(response_text)
+                return message.get("title", "")
+            except Exception as e:
+                print(f"GMAT Quants, Error in generate_questionTitle: {str(e)}")
+                return None
+
+        result = self._retry_generate(_generate)
+        return result if result else ""
+
     def generate_questionSolution(self):
-        response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            if isinstance(response_text, dict):
-                message = response_text
-            else:
-                message = json.loads(response_text)    
-            return message["solution"]
-        except Exception as e:
-            print(f"GMAT Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
-            print(f"JSON parsing error: {str(e)}")
-            return ""
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
+            try:
+                response_text = refine_response([message.content[0].text.value for message in response][0])
+                if not response_text:
+                    return None
+                if isinstance(response_text, dict):
+                    message = response_text
+                else:
+                    message = json.loads(response_text)    
+                return message.get("solution", "")
+            except Exception as e:
+                print(f"GMAT Quants, Error in generate_questionSolution: {str(e)}")
+                return None
+
+        result = self._retry_generate(_generate)
+        return result if result else ""
+
     def generate_questionOptions(self):
-      response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
-      try:
-         raw_response = response[0].content[0].text.value
-         json_string = refine_response(raw_response.replace("'", '"'))
-         message = json.loads(json_string)
-         return message["options"], message["answer"]
-      except Exception as e:
-         print(f"GMAT Quants, Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
-         print(f"JSON parsing error: {str(e)}")
-         return {}, ""
-      
+        def _generate():
+            response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
+            try:
+                raw_response = response[0].content[0].text.value
+                json_string = refine_response(raw_response)
+                if not json_string:
+                    return None
+                message = json.loads(json_string)
+                if message.get("options") and message.get("answer"):
+                    return message["options"], message["answer"]
+                return None
+            except Exception as e:
+                print(f"GMAT Quants, Error in generate_questionOptions: {str(e)}")
+                return None
+
+        result = self._retry_generate(_generate)
+        return result if result else ({}, "")
+
 class DataSufficiencyQuestion:
     def __init__(self, llm, prompt, thread_id= None):
         self.llm = llm

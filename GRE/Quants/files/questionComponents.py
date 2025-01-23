@@ -1,38 +1,74 @@
 import json, re
 
 def refine_response(response_text):
+    """
+    A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
+    """
+    if not response_text:
+        return None
+        
     try:
-        # First try to parse as JSON directly
+        # First try to parse as pure JSON
         try:
             json.loads(response_text)
-            return response_text  # Return string instead of parsed object
+            return response_text  # If it's valid JSON, return as is
         except json.JSONDecodeError:
             pass
 
-        # Look for JSON-like structure between curly braces
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if not json_match:
-            raise ValueError("No valid JSON structure found")
+        # Look for ```json blocks
+        json_block_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
+        if json_block_match:
+            try:
+                json_str = json_block_match.group(1).strip()
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error in code block: {str(e)}\nJSON string:\n{json_str}\n")
+                # Continue to try other methods
         
-        json_string = json_match.group(0).strip()
+        # Clean up the text a bit
+        text = response_text.strip()
         
-        # Handle LaTeX expressions
-        def escape_latex(match):
-            latex = match.group(1)
-            latex = latex.replace('\\', '\\\\')  # Escape backslashes
-            return f'~~{latex}~~'
-            
-        json_string = re.sub(r'~~(.*?)~~', escape_latex, json_string)
+        # If it starts with { and ends with }, try to parse it
+        if text.startswith('{') and text.endswith('}'):
+            try:
+                # Handle single quotes
+                text = text.replace("'", '"')
+                # Remove trailing commas before } or ]
+                text = re.sub(r',(\s*})', r'\1', text)
+                text = re.sub(r',(\s*])', r'\1', text)
+                
+                # Try to parse again
+                parsed = json.loads(text)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{text}\n")
+                return None
         
-        # Clean up whitespace and handle quotes
-        json_string = re.sub(r"'", '"', json_string)  # Replace single quotes with double quotes
-        
-        # Validate final JSON
-        try:
-            json.loads(json_string)
-            return json_string
-        except json.JSONDecodeError as e:
-            raise ValueError(f"JSON validation failed: {str(e)}")
+        # If we get here, try to find JSON in the text
+        match = re.search(r'(\{.*\})', text, re.DOTALL)
+        if match:
+            try:
+                json_str = match.group(1)
+                # Handle single quotes
+                json_str = json_str.replace("'", '"')
+                # Remove trailing commas
+                json_str = re.sub(r',(\s*})', r'\1', json_str)
+                json_str = re.sub(r',(\s*])', r'\1', json_str)
+                
+                parsed = json.loads(json_str)
+                return json.dumps(parsed)
+            except json.JSONDecodeError as e:
+                print(f"JSON validation error: {str(e)}\nJSON string:\n{json_str}\n")
+                return None
+                
+        return None
             
     except Exception as e:
         print(f"Error in refine_response: {str(e)}")

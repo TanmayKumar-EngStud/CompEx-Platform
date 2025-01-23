@@ -30,23 +30,51 @@ class Combination:
         return idx_1, idx_2
     
     def generate_combination(self):
-        prompt = ""
-        initiator = self.combination_number
+
+        prompt_components = []
+        initiator = max(1, self.combination_number)  # Ensure initiator is positive
+        
         for key, values in self.combination.items():
             if key != "combination number":
-                if isinstance(values, list):
-                    length = len(values)
-                elif isinstance(values, int):
-                    length = values
-                idx = initiator % length
-                if isinstance(values, list):
-                    prompt += (f" - <{values[idx]}>")
-                else:
-                    prompt += (f" - <{idx+1}>")
-                initiator = math.floor(initiator/length)
+                try:
+                    if isinstance(values, list):
+                        if not values:  # Skip empty lists
+                            continue
+                        length = len(values)
+                    elif isinstance(values, int):
+                        if values <= 0:  # Handle invalid integer values
+                            values = 1
+                        length = values
+                    else:  # Skip invalid types
+                        continue
+                        
+                    idx = initiator % length
+                    
+                    if isinstance(values, list):
+                        if idx < len(values):  # Safety check for index
+                            prompt_components.append(values[idx])
+                        else:
+                            prompt_components.append(values[0])
+                    else:
+                        prompt_components.append(idx+1)
+                        
+                    initiator = math.floor(initiator/length)
+                except Exception as e:
+                    print(f"Error processing {key}: {str(e)}")
+                    continue  # Skip this item and continue with the next
+
+        # Ensure we have at least one combination
+        if not prompt_components:
+            prompt_components.append(1)
 
         self.combination_number += 1
         self.combination["combination number"] = self.combination_number
-        with open(os.path.join(os.path.dirname(__file__), "combination.json"), "w") as file:
-            json.dump(self.combination, file, indent=4)
+        
+        try:
+            with open(os.path.join(os.path.dirname(__file__), "combination.json"), "w") as file:
+                json.dump(self.combination, file, indent=4)
+        except Exception as e:
+            print(f"Error saving combination file: {str(e)}")
+        prompt = " - ".join(f"<{component}>" for component in prompt_components)
+
         return prompt
