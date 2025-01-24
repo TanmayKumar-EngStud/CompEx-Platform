@@ -1,5 +1,5 @@
 {
-    "combination number": 55,
+    "combination number": 57,
     "graphic interpretation": {
         "graphType": [
             "bar chart",
@@ -78,15 +78,25 @@
             "science and technology"
         ],
         "difficultyLevel": 5,
-        "graph/table": [
-            "bar chart",
-            "pie chart",
-            "line chart",
-            "scatter plot",
-            "quantitative venn diagram",
-            "qualitative venn diagram",
-            "2 category table",
-            "2 category hybrid table"
+        "part1": [
+            "part1- bar chart",
+            "part1- pie chart",
+            "part1- line chart",
+            "part1- scatter plot",
+            "part1- quantitative venn diagram",
+            "part1- qualitative venn diagram",
+            "part1- 2 category table",
+            "part1- 2 category hybrid table"
+        ],
+        "part2": [
+            "part2- bar chart",
+            "part2- pie chart",
+            "part2- line chart",
+            "part2- scatter plot",
+            "part2- quantitative venn diagram",
+            "part2- qualitative venn diagram",
+            "part2- 2 category table",
+            "part2- 2 category hybrid table"
         ]
     }
 }

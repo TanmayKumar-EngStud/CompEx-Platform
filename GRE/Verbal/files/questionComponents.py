@@ -284,7 +284,6 @@ class SimpleQuestion:
                     raise Exception("No response received from LLM")
 
                 raw_response = [message.content[0].text.value for message in response][0]
-                print(f"\nGRE Verbal Title Raw Response:\n{raw_response}\n")
 
                 # First try to parse it directly as JSON
                 try:
@@ -311,11 +310,6 @@ class SimpleQuestion:
                 print(f"GRE Verbal Error in generate_questionTitle:")
                 print(f"  Error Type: {type(e).__name__}")
                 print(f"  Error Message: {str(e)}")
-                if 'response' in locals():
-                    try:
-                        print(f"Raw title response content:\n{[m.content[0].text.value for m in response][0]}\n")
-                    except:
-                        print("Could not extract raw title response content")
                 return None
 
         result = self._retry_generate(_generate)
@@ -332,12 +326,11 @@ class SimpleQuestion:
                     raise Exception("No response received from LLM")
 
                 raw_response = [message.content[0].text.value for message in response][0]
-                print(f"\nGRE Verbal Solution Raw Response:\n{raw_response}\n")
+                
 
                 # First try to parse it directly as JSON
                 try:
                     message = json.loads(raw_response)
-                    print("Successfully parsed raw solution response as JSON")
                 except json.JSONDecodeError as je:
                     # If direct parsing fails, try refine_response
                     print(f"Direct JSON parsing failed: {str(je)}")
@@ -381,12 +374,12 @@ class SimpleQuestion:
                     raise Exception("No response received from LLM")
 
                 raw_response = [message.content[0].text.value for message in response][0]
-                print(f"\nGRE Verbal Options Raw Response:\n{raw_response}\n")
+
 
                 # First try to parse it directly as JSON
                 try:
                     message = json.loads(raw_response)
-                    print("Successfully parsed raw options response as JSON")
+
                 except json.JSONDecodeError as je:
                     # If direct parsing fails, try refine_response
                     print(f"Direct JSON parsing failed: {str(je)}")

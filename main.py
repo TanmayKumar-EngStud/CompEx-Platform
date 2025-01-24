@@ -162,7 +162,7 @@ if __name__ == "__main__":
     db = Prisma(auto_register=True)
     db.connect()
     start_time = time.time()
-    print(f"DB connected: {db.is_connected()}")
+    # print(f"DB connected: {db.is_connected()}")
     
     try:
         # Initialize DB handler with existing Prisma client
@@ -174,43 +174,43 @@ if __name__ == "__main__":
         # Save the questions
         save_questions_to_files(questions)
         
-        print("\nGenerated questions:")
-        print(json.dumps(questions, indent=2))
+        # print("\nGenerated questions:")
+        # print(json.dumps(questions, indent=2))
         
-        print("\nRegistering questions in database...")
-        for section, section_questions in questions.items():
-            try:
-                if isinstance(section_questions, dict) and "error" in section_questions:
-                    print(f"❌ Skipping {section} due to generation error: {section_questions['error']}")
-                    continue
+        # print("\nRegistering questions in database...")
+        # for section, section_questions in questions.items():
+        #     try:
+        #         if isinstance(section_questions, dict) and "error" in section_questions:
+        #             print(f"❌ Skipping {section} due to generation error: {section_questions['error']}")
+        #             continue
                     
-                print(f"Registering {section} questions...")
-                if section == "GMAT_IR":
-                    for question in section_questions:
-                        db_handler._register_gmat_ir_question(question)
-                elif section == "GMAT_Q":
-                    for question in section_questions:
-                        db_handler._register_gmat_quants_question(question)
-                elif section == "GMAT_V":
-                    db_handler._register_gmat_verbal_question(section_questions)
-                elif section == "GRE_Q":
-                    for question in section_questions:
-                        db_handler._register_gre_quants_question(question)
-                elif section == "GRE_V":
-                    for question in section_questions:
-                        db_handler._register_gre_verbal_question(question)
-                print(f"✓ Successfully registered {section} questions")
-            except Exception as e:
-                print(f"❌ Error registering {section} questions: {str(e)}")
-                continue
+        #         print(f"Registering {section} questions...")
+        #         if section == "GMAT_IR":
+        #             for question in section_questions:
+        #                 db_handler._register_gmat_ir_question(question)
+        #         elif section == "GMAT_Q":
+        #             for question in section_questions:
+        #                 db_handler._register_gmat_quants_question(question)
+        #         elif section == "GMAT_V":
+        #             db_handler._register_gmat_verbal_question(section_questions)
+        #         elif section == "GRE_Q":
+        #             for question in section_questions:
+        #                 db_handler._register_gre_quants_question(question)
+        #         elif section == "GRE_V":
+        #             for question in section_questions:
+        #                 db_handler._register_gre_verbal_question(question)
+        #         print(f"✓ Successfully registered {section} questions")
+        #     except Exception as e:
+        #         print(f"❌ Error registering {section} questions: {str(e)}")
+        #         continue
         
-        print("✓ Question registration completed")
+        # print("✓ Question registration completed")
 
     except Exception as e:
         print(f"Error: {str(e)}")
         raise
     finally:
         db.disconnect()
-        print(f"DB connected after disconnect: {db.is_connected()}")
+        # print(f"DB connected after disconnect: {db.is_connected()}")
         end_time = time.time()
         print(f"Total time taken: {end_time - start_time} seconds")
