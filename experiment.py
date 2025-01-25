@@ -1,41 +1,28 @@
 import pickle
-import json
+
 import os
 from prisma import Prisma
-from db import DB
-
-def save_questions_to_files(questions_data):
-    """Save questions to both pickle and JSON files with verification"""
-    # First save to a temporary pickle file
-    with open("data_temp.pkl", "wb") as f:
-        pickle.dump(questions_data, f, protocol=pickle.HIGHEST_PROTOCOL)
-    
-    # Verify the saved data
-    with open("data_temp.pkl", "rb") as f:
-        loaded_data = pickle.load(f)
-    
-    # If verification successful, rename temp file
-    if loaded_data == questions_data:
-        # Backup existing data.pkl if it exists
-        if os.path.exists("data.pkl"):
-            os.rename("data.pkl", "data.pkl.bak")
-        os.rename("data_temp.pkl", "data.pkl")
-        
-        # Also save as JSON for human-readable backup
-        with open("data.json", "w") as f:
-            json.dump(questions_data, f, indent=2)
-        print("✓ Questions successfully saved to data.pkl and data.json")
-    else:
-        os.remove("data_temp.pkl")
-        raise ValueError("Data verification failed - saved data does not match original")
+from new_db import DB
 
 def main():
     try:
+        # Get the most recent pickle file from __generatedContent directory
+        generated_dir = os.path.join(os.path.dirname(__file__), "__generatedContent")
+        if not os.path.exists(generated_dir):
+            raise FileNotFoundError("No generated content directory found")
+            
+        pickle_files = [f for f in os.listdir(generated_dir) if f.endswith('.pkl')]
+        if not pickle_files:
+            raise FileNotFoundError("No pickle files found in generated content directory")
+            
+        latest_file = max(pickle_files, key=lambda x: os.path.getctime(os.path.join(generated_dir, x)))
+        pickle_path = os.path.join(generated_dir, latest_file)
+
         # Load questions from pickle file
-        with open("__generatedContent/data-22-15-13-24.pkl", "rb") as f:
+        with open(pickle_path, "rb") as f:
             questions = pickle.load(f)
         
-        print("✓ Successfully loaded questions from data.pkl")
+        print(f"✓ Successfully loaded questions from {pickle_path}")
         print(f"Found {sum(len(q) if isinstance(q, list) else 1 for q in questions.values())} questions across {len(questions)} sections")
         
         # Initialize database connection
@@ -44,12 +31,15 @@ def main():
         database = DB(db)
         
         print("\nRegistering questions in database...")
-        database.register_questions(questions)
-        print("✓ Successfully registered all questions in database")
-        
-        # Save questions to files (both pickle and JSON)
-        save_questions_to_files(questions)
-        
+        for exam_section, questions in questions.items():
+            if not database.registerQuestion(exam_section, questions):
+                raise Exception(f"Error registering questions for {exam_section}")
+            else:
+                print(f"✓ Successfully registered questions for {exam_section}")
+
+    except FileNotFoundError as e:
+        print(f"File error: {str(e)}")
+        print("Please ensure questions have been generated before running this script")
     except Exception as e:
         print(f"Error: {str(e)}")
         raise
@@ -57,5 +47,5 @@ def main():
         if 'db' in locals():
             db.disconnect()
 
-
-main()
+if __name__ == "__main__":
+    main()
