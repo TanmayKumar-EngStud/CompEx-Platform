@@ -2,7 +2,7 @@ import pickle
 
 import os
 from prisma import Prisma
-from new_db import DB
+from db import DB
 
 def main():
     try:

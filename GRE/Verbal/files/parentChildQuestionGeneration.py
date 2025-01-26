@@ -47,13 +47,16 @@ class ParentChildQuestionGeneration:
         total_child_questions = 0
         if "rc-s" in self.prompt.lower():
             total_child_questions = 2
+            self.questionData["tags"]= ["rc-s"]
         elif "rc-m" in self.prompt.lower():
             total_child_questions = 3
+            self.questionData["tags"]= ["rc-m"]
         elif "rc-l" in self.prompt.lower():
             total_child_questions = 4
+            self.questionData["tags"]= ["rc-l"]
         
         child_prompts = self.generate_child_prompt(total_child_questions)
-        self.questionData["tag"] = self.prompt.split(" - ")[2].strip("<>").strip("[]").split(",")
+
         # print(f"child_prompts: {child_prompts}")
         self.questionData["childQuestions"] = []
         for i in range(total_child_questions):
@@ -72,8 +75,11 @@ class ParentChildQuestionGeneration:
                 childQuestionData["answer"] = answers
             childQuestionData["options"] = self.shuffle_options(options)
             childQuestionData["solution"] = parentChildQuestion.generate_childSolution(i)
-            childQuestionData["tags"] = [child_prompts[i].split("-")[0].strip().strip()]
-            childQuestionData["difficulty"] = int(child_prompts[i].split("-")[1].strip().strip())
-            self.questionData["tags"].extend(childQuestionData["tag"])
+
+            childQuestionData["tags"] = [child_prompts[i].split("-")[0]]
+            childQuestionData["difficulty"] = int(child_prompts[i].split("-")[1].strip())
+            print(f"this is childQuestionData: \n{childQuestionData}\n\n")
+            self.questionData["tags"].extend(childQuestionData["tags"])
             self.questionData["childQuestions"].append(childQuestionData)
+        
         return self.questionData

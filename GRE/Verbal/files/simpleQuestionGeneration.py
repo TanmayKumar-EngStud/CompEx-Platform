@@ -24,7 +24,7 @@ class SimpleQuestionGeneration:
       questionContent = SimpleQuestion(self.llm, self.prompt)
       self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
       self.questionData["title"] = questionContent.generate_questionTitle()
-      num_options = 0
+      num_options = 6
       if "tc-1" in self.prompt:
          num_options = 6
       elif "tc-2" in self.prompt:

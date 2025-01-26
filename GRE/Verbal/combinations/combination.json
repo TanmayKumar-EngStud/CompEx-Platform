@@ -1,5 +1,5 @@
 {
-    "combination number": 55,
+    "combination number": 18,
     "questionTheme": [
         "Economics",
         "Finance",
@@ -13,8 +13,8 @@
         "Fiction"
     ],
     "questionType": [
-        "rc-s",
         "tc-3",
+        "rc-s",
         "rc-m",
         "rc-l",
         "sentence equivalence",

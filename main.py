@@ -37,11 +37,12 @@ class QuestionGenerator:
         self.GMAT_V = GMAT_V()
         self.GRE_Q = GRE_Q()
         self.GRE_V = GRE_V()
+# ⬇️ make comments here to check generation individually
         self.generators = [
-            ("GMAT_IR", self.GMAT_IR),
-            ("GMAT_Q", self.GMAT_Q),
-            ("GMAT_V", self.GMAT_V),
-            ("GRE_Q", self.GRE_Q),
+            # ("GMAT_IR", self.GMAT_IR),
+            # ("GMAT_Q", self.GMAT_Q),
+            # ("GMAT_V", self.GMAT_V),
+            # ("GRE_Q", self.GRE_Q),
             ("GRE_V", self.GRE_V)
         ]
         self.retry_counts = {name: 0 for name, _ in self.generators}
@@ -55,16 +56,16 @@ class QuestionGenerator:
                 if isinstance(generator, (GMAT_IR, GMAT_Q, GMAT_V, GRE_Q, GRE_V)):
                     result = generator.generate_questions()
                     if self.retry_counts[name] > 0:
-                        print(f"✓ {name}: Successfully generated after {self.retry_counts[name]} retries")
+                        print(f"✅ {name}: Successfully generated after {self.retry_counts[name]} retries")
                     return (name, result)
             except Exception as e:
                 self.retry_counts[name] += 1
                 if self.retry_counts[name] == self.max_retries:
                     print(f"❌ {name}: Failed after {self.max_retries} attempts")
-                    print(f"   Error: {str(e)}")
+                    print(f"💀 Error: {str(e)}")
                     return (name, {"error": str(e)})
-                print(f"⚠️  {name}: Attempt {self.retry_counts[name]} failed, retrying...")
-                print(f"   Error: {str(e)}")
+                print(f"🔁 {name}: Attempt {self.retry_counts[name]} failed, retrying...")
+                print(f"💀 Error: {str(e)}")
                 continue
         return (name, {"error": f"Max retries ({self.max_retries}) exceeded"})
     
@@ -80,9 +81,9 @@ class QuestionGenerator:
                     gen_name, gen_result = future.result()
                     results[gen_name] = gen_result
                     if "error" not in gen_result:
-                        print(f"✓ {name}: Successfully generated")
+                        print(f"\t✅ {name}: Successfully generated")
                 except Exception as e:
-                    print(f"❌ {name}: Unhandled exception: {str(e)}")
+                    print(f"\t❌ {name}: Unhandled exception: {str(e)}")
                     results[name] = {"error": str(e)}
         print("-------------------------------------------\n")
         return results
@@ -108,14 +109,14 @@ def save_questions_to_files(questions_data):
     # First convert any generators to lists
     questions_data = convert_generators_to_lists(questions_data)
     
-    # Generate filenames with timestamp
+    # region Generate filenames with timestamp
     timestamp = datetime.now().strftime('%d-%H-%M-%S')
     file_name = f"data-{timestamp}.pkl"
     representation_file_name = f"data-{timestamp}.json"
     temp_pkl_path = os.path.join(GENERATED_CONTENT_DIR, f"{file_name}_temp.pkl")
     final_pkl_path = os.path.join(GENERATED_CONTENT_DIR, file_name)
     json_path = os.path.join(GENERATIONS_DIR, representation_file_name)
-
+    # endregion
     try:
         # Save to temporary pickle file
         with open(temp_pkl_path, "wb") as f:
@@ -129,7 +130,6 @@ def save_questions_to_files(questions_data):
         if os.path.exists(final_pkl_path):
             backup_path = f"{final_pkl_path}.bak"
             os.rename(final_pkl_path, backup_path)
-            print(f"Created backup of existing file: {backup_path}")
             
         os.rename(temp_pkl_path, final_pkl_path)
         print(f"Questions saved to {file_name} successfully")
@@ -143,7 +143,7 @@ def save_questions_to_files(questions_data):
         if str(loaded_data) == str(questions_data):
             print("Data verification successful - saved data matches original")
         else:
-            print("Warning: Saved data verification failed - contents may not match exactly")
+            print("🚩 Warning: Saved data verification failed - contents may not match exactly")
             
     except Exception as e:
         print(f"Error saving questions to file: {str(e)}")
@@ -174,35 +174,18 @@ if __name__ == "__main__":
         # Save the questions
         save_questions_to_files(questions)
         
-        # print("\nGenerated questions:")
-        # print(json.dumps(questions, indent=2))
-        
-        # print("\nRegistering questions in database...")
-        # for section, section_questions in questions.items():
-        #     try:
-        #         if isinstance(section_questions, dict) and "error" in section_questions:
-        #             print(f"❌ Skipping {section} due to generation error: {section_questions['error']}")
-        #             continue
-                    
-        #         print(f"Registering {section} questions...")
-        #         if section == "GMAT_IR":
-        #             for question in section_questions:
-        #                 db_handler._register_gmat_ir_question(question)
-        #         elif section == "GMAT_Q":
-        #             for question in section_questions:
-        #                 db_handler._register_gmat_quants_question(question)
-        #         elif section == "GMAT_V":
-        #             db_handler._register_gmat_verbal_question(section_questions)
-        #         elif section == "GRE_Q":
-        #             for question in section_questions:
-        #                 db_handler._register_gre_quants_question(question)
-        #         elif section == "GRE_V":
-        #             for question in section_questions:
-        #                 db_handler._register_gre_verbal_question(question)
-        #         print(f"✓ Successfully registered {section} questions")
-        #     except Exception as e:
-        #         print(f"❌ Error registering {section} questions: {str(e)}")
-        #         continue
+        print("\nRegistering questions in database...")
+        for exam_section, questions in questions.items():
+            try:
+                if isinstance(questions, dict) and "error" in questions:
+                    print(f"❌ Skipping {exam_section} due to generation error:\n {questions['error']}\n\n")
+                    continue
+                else: 
+                    db_handler.registerQuestion(exam_section, questions, isMockQuestion=False)
+                print(f"✅ Successfully registered {exam_section} questions")
+            except Exception as e:
+                print(f"❌ Error registering {exam_section} questions: {str(e)}")
+                continue
         
         # print("✓ Question registration completed")
 
