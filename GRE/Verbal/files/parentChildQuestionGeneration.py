@@ -78,7 +78,7 @@ class ParentChildQuestionGeneration:
 
             childQuestionData["tags"] = [child_prompts[i].split("-")[0]]
             childQuestionData["difficulty"] = int(child_prompts[i].split("-")[1].strip())
-            print(f"this is childQuestionData: \n{childQuestionData}\n\n")
+            # print(f"this is childQuestionData: \n{childQuestionData}\n\n")
             self.questionData["tags"].extend(childQuestionData["tags"])
             self.questionData["childQuestions"].append(childQuestionData)
         

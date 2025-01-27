@@ -39,10 +39,10 @@ class QuestionGenerator:
         self.GRE_V = GRE_V()
 # ⬇️ make comments here to check generation individually
         self.generators = [
-            # ("GMAT_IR", self.GMAT_IR),
-            # ("GMAT_Q", self.GMAT_Q),
-            # ("GMAT_V", self.GMAT_V),
-            # ("GRE_Q", self.GRE_Q),
+            ("GMAT_IR", self.GMAT_IR),
+            ("GMAT_Q", self.GMAT_Q),
+            ("GMAT_V", self.GMAT_V),
+            ("GRE_Q", self.GRE_Q),
             ("GRE_V", self.GRE_V)
         ]
         self.retry_counts = {name: 0 for name, _ in self.generators}

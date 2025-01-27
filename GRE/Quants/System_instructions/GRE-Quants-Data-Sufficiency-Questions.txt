@@ -238,7 +238,8 @@ Now the above one was just an example, you can pick any theme in that way it can
 the question will not be about the calculation, but more about logical reasoning and analysis if the given data is sufficient or not for finding the answer.
 Thus it should not be more about the logical reasoning and analysis.
 
-Output format:- {"question": "complete question text", "statements": ["statement 1", "statement 2"]}
+Output format:- {"statements": ["statement 1", "statement 2"], "question": "complete question text asked on the above provided statements"}
+// don't give statements again in the question text, just keep them separate.
 
 Mode 2: questionTitle
 here the question title is to be created, now question title should be like a short one line summary of the question text, please include the theme of the question too in the title, so that the question title always stands out and uniquely represent the question.

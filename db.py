@@ -195,6 +195,7 @@ class DB:
                self.db.problemtags.create(data = tag_data) # ❌
        except Exception as e: 
            print(f"Error creating problem tags in _register_problem_tags: {str(e)}")
+           print(f"here is the value received for tagid: {tagid}")
            return False
        return True
    
@@ -217,7 +218,10 @@ class DB:
     # ✅
     def _register_tag(self, tag):
        try: 
-           tagid =  self.db.tags.find_first(where={'name': tag})
+           tagid =  self.db.tags.find_first(where={'name': tag, 
+                                                   'examtypes': {'connect': {'examtypeid': self.current_exam_id}},
+                                                   'sections': {'connect': {'sectionid': self.current_section_id}}
+                                                   }) #because two different exams/sections can have same tag
            if tagid:
                return tagid.tagid
            else:
@@ -232,6 +236,7 @@ class DB:
                return tagid.tagid
        except Exception as e: 
            print(f"Error creating tag in _register_tag: {str(e)}")
+           print(f"here is the tag value that is causing the issue:- {tag}")
            return False
        return True
    
@@ -307,3 +312,43 @@ class DB:
        except Exception as e:
            print(f"Error in registerQuestion: {str(e)}")
            return False
+    def __del__(self):
+        """Destructor to ensure database connection is closed"""
+        if hasattr(self, 'db') and self.db.is_connected():
+            self.db.disconnect() 
+    def delete_all_questions(self):
+        input("💀 Warning you are deleting all the questions: Enter if you want to continue\nelse control + c..\n")
+        """Delete all question content from the database while preserving primary tables"""
+        try:
+            # Delete in order to respect foreign key constraints
+            print("Deleting question content...")
+            
+            # First delete the many-to-many relationships
+            print("- Deleting problem tags...")
+            self.db.problemtags.delete_many()
+            
+            print("- Deleting problem set tags...")
+            self.db.problemssettags.delete_many()
+            
+            # Delete options
+            print("- Deleting problem options...")
+            self.db.problemoptions.delete_many()
+            
+            # Delete problems
+            print("- Deleting problems...")
+            self.db.problems.delete_many()
+            
+            # Delete problem sets
+            print("- Deleting problem sets...")
+            self.db.problemsset.delete_many()
+            
+            # Delete tags (but not exam types and sections)
+            print("- Deleting tags...")
+            self.db.tags.delete_many()
+            
+            print("✅💀💀 Successfully deleted all question content")
+            
+        except Exception as e:
+            print(f"Error deleting question content: {str(e)}")
+            raise
+    
