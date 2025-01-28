@@ -1,0 +1,635 @@
+{
+  "GMAT_V": [
+    {
+      "thread_id": "thread_cHnhp6k3OYplN35hrojN2vQZ",
+      "question": "As climate change exacerbates the global food crisis, many countries have recognized the importance of implementing sustainable agricultural practices, <u>which has led to increases</u> in food production and resilience to environmental change.",
+      "title": "Identifying Errors in Sentence about Global Food Crisis and Agriculture",
+      "answer": "which have led to increases",
+      "options": [
+        "which led to increases",
+        "leading to increases",
+        "which has led to an increase",
+        "which have led to increases",
+        "which has led to increase"
+      ],
+      "solution": "The correct answer is A: 'which have led to increases' because it properly matches the plural noun 'practices' with the plural verb 'have'.<br> <o>Option B: 'which has led to an increase' is incorrect because the singular verb 'has' does not agree with the plural noun 'practices'.<br> <o>Option C: 'leading to increases' changes the structure and meaning of the sentence, making it less clear.<br> <o>Option D: 'which has led to increase' is incorrect due to the singular verb 'has' and also lacks an article before 'increase', making it grammatically wrong.<br> <o>Option E: 'which led to increases' changes the tense improperly, making it sound as if the action is completed rather than ongoing.",
+      "difficulty": 2,
+      "tag": [
+        "",
+        "Global Issues",
+        "sentence correction"
+      ],
+      "prompt": " - <Global Issues> - <sentence correction> - <2> - <1>"
+    }
+  ],
+  "GMAT_Q": [
+    {
+      "thread_id": "thread_eVIrMsMsQvYwAktWtoXBSKQ4",
+      "question": "Is x greater than 2 based on the information provided in the statements?",
+      "statements": [
+        "Is x > 2?",
+        "Is 2x < 6?"
+      ],
+      "title": "Inequalities and Their Implications on Value of x",
+      "solution": "The second statement can be simplified to x < 3, which does not definitively answer whether x is greater than 2. The first statement alone suffices to conclude that x is greater than 2. Thus, we cannot conclude that both statements together are necessary to determine if x is greater than 2.",
+      "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+      "options": [
+        "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+        "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "EITHER statement ALONE is sufficient",
+        "Statements (1) and (2) TOGETHER are NOT sufficient"
+      ],
+      "difficulty": 1,
+      "tag": [
+        "data sufficiency"
+      ],
+      "prompt": "data sufficiency - <Inequalities> - <1> - <Number Properties and Fractions, Decimals, Percentages>"
+    },
+    {
+      "thread_id": "thread_GH7n3BTMiUH8MIWjujuWqNtb",
+      "question": "In a quirky little town renowned for its peculiarities, each house is assigned a unique numeric identifier that is the product of two distinct prime numbers. If House A is identified by the number 10 and House B by the number 21, how many unique prime factors are there between the two houses? Additionally, if the same town decides to designate a new house on the block with the identifier derived from the sum of the identifiers of House A and House B, what will be the product of the unique prime factors of this new house identifier?",
+      "title": "Unique Prime Identifier Investigation in a Quirky Town",
+      "solution": "<html><body><p>House A has the identifier 10, which can be factored into prime numbers as follows:</p><p>Prime factors of 10: \\{2, 5\\}</p><p>House B has the identifier 21, which can be factored into prime numbers as follows:</p><p>Prime factors of 21: \\{3, 7\\}</p><p>Now, for the new house identifier, we calculate:</p><p>New house identifier = 10 + 21 = 31</p><p>We find the prime factors of 31:</p><p>Prime factors of 31: \\{31\\}</p><p>The product of unique prime factors of the new house identifier is:</p><p>Product = 31</p></body></html>",
+      "options": [
+        "31",
+        "42",
+        "1",
+        "15"
+      ],
+      "answer": "31",
+      "difficulty": 1,
+      "tags": [
+        "problem solving",
+        "Algebraic Manipulations",
+        "Number Properties"
+      ],
+      "prompt": "problem solving - <Algebraic Manipulations> - <1> - <Number Properties>"
+    }
+  ],
+  "GRE_Q": [
+    {
+      "thread_id": "thread_qvI2Oz1Buieg1I0TCapRa9fN",
+      "question": "Is the value of the variable x greater than 5?",
+      "statements": [
+        "The variable x is a positive integer.",
+        "The inequality \\frac{3x + 5}{x - 2} < 1 holds true."
+      ],
+      "title": "Inequality Analysis to Determine Integer Value of x",
+      "solution": "To determine if the value of the variable x is greater than 5 based on the given statements, we analyze each statement's sufficiency. From Statement (1), we know that x is a positive integer but this alone does not provide enough information to ascertain if x > 5. Statement (2) involves the inequality \\frac{3x + 5}{x - 2} < 1. By solving this inequality, we can find the values of x that satisfy it: \\frac{3x + 5}{x - 2} < 1 implies 3x + 5 < x - 2 leading to 2x < -7, hence x < -\\frac{7}{2}. Since x is a positive integer (from Statement 1), this condition cannot be met. Thus, under both statements together, we find that x cannot be greater than 5. Consequently, Statement (2) is sufficient on its own to confirm this result. Therefore, the correct option is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+      "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+      "options": [
+        "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+        "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "EITHER statement ALONE is sufficient",
+        "Statements (1) and (2) TOGETHER are NOT sufficient"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "DS",
+        "Number Properties and Fractions, Decimals, Percentages"
+      ],
+      "prompt": "data sufficiency - <Inequalities> - <1> - <Number Properties and Fractions, Decimals, Percentages>"
+    },
+    {
+      "thread_id": "thread_f9dcw6Nq7nO5iibhT2JvoE1k",
+      "question": "A researcher is studying the relationship between three variables: X, Y, and Z. The variable X is defined as 7, and the variable Y represents the average score of a group of students, which must exceed X by at least 8 points in order to be considered significant. Additionally, the variable Z, which accounts for the variability in the scores, must be less than or equal to 8 to maintain a controlled environment for the experiment. Given this scenario, what is the relationship that needs to be established between X, Y, and Z to ensure that the research meets the required statistical significance? Formulate the relevant inequalities.",
+      "title": "Exploring Statistical Significance Through Inequalities Among Variables X, Y, and Z",
+      "solution": "<p>Given the values, we can formulate the inequalities:<br>1. To ensure that the average score Y exceeds X by at least 8 points, we write:<br>   ~~Y > 15~~<br>2. The variability variable Z must be controlled to not exceed 8, leading to:<br>   ~~Z ≤ 8~~<br>Thus, the established relationships for this research are:<br>   - ~~Y > 15~~<br>   - ~~Z ≤ 8~~</p>",
+      "options": [
+        "Y > 12 and Z ≤ 8",
+        "Y > 15 and Z ≤ 8",
+        "Y > 14 and Z ≤ 9",
+        "Y > 18 and Z ≤ 6",
+        "Y > 15 and Z ≤ 10"
+      ],
+      "answer": "Y > 15 and Z ≤ 8",
+      "difficulty": 1,
+      "tag": [
+        "problem solving",
+        "Inequalities",
+        "Number Properties and Fractions",
+        "Decimals",
+        "Percentages"
+      ],
+      "prompt": "problem solving - <Inequalities> - <1> - <Number Properties and Fractions, Decimals, Percentages>"
+    }
+  ],
+  "GRE_V": [
+    {
+      "passages": [
+        "<p>In the realm of literature, the power of the written word is profound and far-reaching. Great literary works often reflect the complexities of the human experience, capturing emotions, struggles, and triumphs that resonate across time and culture. The themes of love, loss, and the quest for identity recur throughout history, demonstrating how storytelling transcends generations. From the epic poems of antiquity to modern prose, the capacity for literature to provoke thought and evoke empathy remains a hallmark of its significance.</p>",
+        "<p>One cannot overlook the role of literary criticism in enriching our understanding of texts. Critics often analyze works through various lenses, such as historical context, thematic exploration, and stylistic choices. This examination not only elevates the appreciation of literature but also fosters deeper discussions about societal issues reflected in these narratives. In essence, literary criticism acts as a bridge connecting readers to the intricate layers of meaning that a text may hold.</p>"
+      ],
+      "title": "The Enduring Power and Analysis of Literature",
+      "tags": [
+        "rc-s",
+        "Assumption Question ",
+        "Main Idea Question "
+      ],
+      "childQuestions": [
+        {
+          "question": "What assumption underlies the idea that literature can provoke thought and evoke empathy in readers?",
+          "title": "Assumption Behind Literature's Impact",
+          "answer": "Readers inherently seek emotional connections through the written word.",
+          "options": [
+            "All literature reflects the author's personal experiences.",
+            "Readers inherently seek emotional connections through the written word.",
+            "The themes in literature are universally understood by all readers.",
+            "Literary works are primarily created for entertainment purposes."
+          ],
+          "solution": "<p>The correct option is <strong>B</strong>: <em>Readers inherently seek emotional connections through the written word.</em> This option captures the fundamental assumption that literature's power lies in its ability to resonate emotionally with individuals, encouraging introspection and empathy.</p> <p>Option <strong>A</strong>: <em>Literary works are primarily created for entertainment purposes.</em> is incorrect because although entertainment is a component, the primary strength of literature often lies in its capacity to inspire thought and evoke emotional responses, far beyond mere entertainment.</p> <p>Option <strong>C</strong>: <em>All literature reflects the author's personal experiences.</em> is not accurate, as literature can be a product of imagination, cultural narratives, or historical contexts, not solely the author's personal experiences.</p> <p>Option <strong>D</strong>: <em>The themes in literature are universally understood by all readers.</em> is misleading, as interpretations of themes can vary significantly across different cultures and personal experiences, suggesting that not all readers have a universal understanding.</p>",
+          "tags": [
+            "Assumption Question "
+          ],
+          "difficulty": 1
+        },
+        {
+          "question": "Which of the following best captures the main idea of the passages regarding literature?",
+          "title": "Exploring the Essence of Literature",
+          "answer": "The analysis of literary works can deepen our understanding and appreciation of human experiences.",
+          "options": [
+            "The analysis of literary works can deepen our understanding and appreciation of human experiences.",
+            "Literary criticism is irrelevant to the enjoyment of texts by readers.",
+            "Literature serves solely as a form of entertainment that does not influence societal views.",
+            "All literary texts reflect a singular narrative structure and theme."
+          ],
+          "solution": "<p>The correct option is <strong>B</strong>: <em>The analysis of literary works can deepen our understanding and appreciation of human experiences.</em> This option effectively encapsulates the main idea of the passages, highlighting the significance of literary analysis in enhancing our recognition of the emotions and themes present in literature.</p> <p>Option <strong>A</strong>: <em>Literature serves solely as a form of entertainment that does not influence societal views.</em> is incorrect because the passages emphasize that literature profoundly reflects and shapes societal issues, going beyond mere entertainment.</p> <p>Option <strong>C</strong>: <em>All literary texts reflect a singular narrative structure and theme.</em> is inaccurate, as the passages indicate diverse themes and styles across different literary works, demonstrating that literature is not monolithic.</p> <p>Option <strong>D</strong>: <em>Literary criticism is irrelevant to the enjoyment of texts by readers.</em> is also incorrect because the passages suggest that literary criticism enhances the enjoyment and understanding of texts, making it a valuable aspect of literary engagement.</p>",
+          "tags": [
+            "Main Idea Question "
+          ],
+          "difficulty": 4
+        }
+      ]
+    }
+  ],
+  "GMAT_IR": [
+    {
+      "thread_id": "thread_qfwi7IlfTS4DEwjMvLsKcn94",
+      "graphs": [
+        {
+          "graph": "quantitative venn diagram",
+          "title": "Overlap of History and Economics",
+          "description": "This diagram illustrates the distribution of students studying History, Economics, and both fields.",
+          "data": [
+            {
+              "sets": [
+                "A"
+              ],
+              "values": 120
+            },
+            {
+              "sets": [
+                "B"
+              ],
+              "values": 150
+            },
+            {
+              "sets": [
+                "C"
+              ],
+              "values": 80
+            },
+            {
+              "sets": [
+                "A & B"
+              ],
+              "values": 50
+            },
+            {
+              "sets": [
+                "A & C"
+              ],
+              "values": 20
+            },
+            {
+              "sets": [
+                "B & C"
+              ],
+              "values": 30
+            },
+            {
+              "sets": [
+                "A & B & C"
+              ],
+              "values": 10
+            }
+          ]
+        },
+        {
+          "graph": "pie chart",
+          "title": "Distribution of Students by Specialization",
+          "description": "This pie chart depicts the total number of students specializing in History, Economics, or both.",
+          "data": [
+            {
+              "label": "Only History",
+              "value": 70
+            },
+            {
+              "label": "Only Economics",
+              "value": 100
+            },
+            {
+              "label": "Both Subjects",
+              "value": 10
+            }
+          ]
+        }
+      ],
+      "question": "In a university, there are students enrolled in History and Economics courses as represented in the Quantitative Venn Diagram. If there are 120 students studying only History, 150 students studying only Economics, and 50 students studying both subjects, how many students are exclusively studying Economics? Additionally, based on the pie chart, what is the percentage of students specializing in History only compared to the total number of students? Round your answer to two decimal places.",
+      "title": "Enrollment Analysis in History and Economics Courses",
+      "solution": "The number of students exclusively studying Economics is \\text{150}. Additionally, the percentage of students specializing in History only compared to the total number of students is \\text{37.5\\%}.",
+      "options": [
+        "The number of students only studying Economics is 120, and the percentage for History is 25.00%.",
+        "The number of students only studying Economics is 100, and the percentage for History is 70.00%.",
+        "The number of students only studying Economics is 150, and the percentage for History is 37.50%.",
+        "The number of students only studying Economics is 150, and the percentage for History is 50.00%."
+      ],
+      "answer": "The number of students only studying Economics is 150, and the percentage for History is 37.50%.",
+      "tags": [
+        "GI",
+        "history, economics"
+      ],
+      "difficulty": 2,
+      "prompt": "graphic interpretation - <quantitative venn diagram> - <history, economics> - <2>"
+    },
+    {
+      "sources": [
+        {
+          "source_info": "The following quantitative venn diagram represents the distribution of market shares among three companies: Company A, Company B, and Company C. The companies have overlapping market shares in several segments, indicating various levels of competition and customer base. Understanding these overlaps is crucial for formulating competitive strategies.",
+          "graph": {
+            "graph": "quantitative venn diagram",
+            "title": "Market Share Distribution",
+            "description": "this will give the description of the graph",
+            "data": [
+              {
+                "sets": [
+                  "A"
+                ],
+                "values": 20
+              },
+              {
+                "sets": [
+                  "B"
+                ],
+                "values": 30
+              },
+              {
+                "sets": [
+                  "C"
+                ],
+                "values": 40
+              },
+              {
+                "sets": [
+                  "A & B"
+                ],
+                "values": 10
+              },
+              {
+                "sets": [
+                  "A & C"
+                ],
+                "values": 15
+              },
+              {
+                "sets": [
+                  "B & C"
+                ],
+                "values": 25
+              },
+              {
+                "sets": [
+                  "A & B & C"
+                ],
+                "values": 5
+              }
+            ]
+          }
+        },
+        {
+          "source_info": "The following quantitative venn diagram displays the interconnected market share positions of three leading tech companies: Tech Company X, Tech Company Y, and Tech Company Z. This diagram illustrates how overlapping market segments can influence strategic business decisions and competition within the technology sector.",
+          "graph": {
+            "graph": "quantitative venn diagram",
+            "title": "Tech Market Share Distribution",
+            "description": "this will give the description of the graph",
+            "data": [
+              {
+                "sets": [
+                  "X"
+                ],
+                "values": 25
+              },
+              {
+                "sets": [
+                  "Y"
+                ],
+                "values": 35
+              },
+              {
+                "sets": [
+                  "Z"
+                ],
+                "values": 45
+              },
+              {
+                "sets": [
+                  "X & Y"
+                ],
+                "values": 15
+              },
+              {
+                "sets": [
+                  "X & Z"
+                ],
+                "values": 20
+              },
+              {
+                "sets": [
+                  "Y & Z"
+                ],
+                "values": 30
+              },
+              {
+                "sets": [
+                  "X & Y & Z"
+                ],
+                "values": 10
+              }
+            ]
+          }
+        },
+        {
+          "source_info": "This quantitative venn diagram depicts the market share distribution of three retail giants: Retailer Alpha, Retailer Beta, and Retailer Gamma. The overlaps indicate shared customer bases and competition between these retailers, providing insights into market strategies and consumer preferences.",
+          "graph": {
+            "graph": "quantitative venn diagram",
+            "title": "Retail Market Share Distribution",
+            "description": "this will give the description of the graph",
+            "data": [
+              {
+                "sets": [
+                  "Alpha"
+                ],
+                "values": 30
+              },
+              {
+                "sets": [
+                  "Beta"
+                ],
+                "values": 40
+              },
+              {
+                "sets": [
+                  "Gamma"
+                ],
+                "values": 30
+              },
+              {
+                "sets": [
+                  "Alpha & Beta"
+                ],
+                "values": 15
+              },
+              {
+                "sets": [
+                  "Alpha & Gamma"
+                ],
+                "values": 10
+              },
+              {
+                "sets": [
+                  "Beta & Gamma"
+                ],
+                "values": 35
+              },
+              {
+                "sets": [
+                  "Alpha & Beta & Gamma"
+                ],
+                "values": 5
+              }
+            ]
+          }
+        }
+      ],
+      "thread_id": "thread_H1ROjlkjRZpUHRpjrDtOUxPv",
+      "questions": [
+        {
+          "question": "Based on the market share distribution of Company A, Company B, and Company C, what is the total market share held exclusively by Company A (not shared with Companies B or C)?",
+          "title": "Exclusive Market Share of Company A",
+          "solution": "To find the total market share held exclusively by Company A, we can use the formula: \\text{Exclusive Share of A} = \\text{Total Share of A} - (\\text{Share with B} + \\text{Share with C} - \\text{Share with both B and C}).\\newline\\text{Exclusive Share of A} = 20 - (10 + 15 - 5) = 20 - 20 = 0.\\text{Therefore, Company A holds an exclusive market share of 0\\%}.",
+          "options": [
+            "10%",
+            "5%",
+            "0%",
+            "20%"
+          ],
+          "tags": [
+            "economics, business"
+          ],
+          "difficulty": 4,
+          "answer": "0%"
+        },
+        {
+          "question": "In the tech market share distribution, what is the combined market share held by Tech Company X and Tech Company Y, but not Tech Company Z?",
+          "title": "Combined Market Share of Tech Companies X and Y",
+          "solution": "To find the combined market share held by Tech Companies X and Y, but not Tech Company Z, we can use the formula: \\text{Combined Share of X and Y} = \\text{Share of X} + \\text{Share of Y} - \\text{Share with both X and Y and Z}.\\newline\\text{Combined Share of X and Y} = 25 + 35 - 10 = 50 - 15 = 35.\\text{Therefore, the combined market share held by Tech Company X and Tech Company Y, excluding Tech Company Z, is 35\\%}.",
+          "options": [
+            "25%",
+            "30%",
+            "45%",
+            "35%"
+          ],
+          "tags": [
+            "economics, business"
+          ],
+          "difficulty": 4,
+          "answer": "35%"
+        },
+        {
+          "question": "From the retail market share diagram, what is the total market share held by Retailer Beta and Retailer Gamma together, including their overlap?",
+          "title": "Total Market Share of Retailer Beta and Gamma",
+          "solution": "To find the total market share held by Retailer Beta and Retailer Gamma together, including their overlap, we can use the formula: \\text{Total Share of Beta and Gamma} = \\text{Share of Beta} + \\text{Share of Gamma} + \\text{Shared with Beta and Gamma} - \\text{Shared with Alpha}.\\newline\\text{Total Share of Beta and Gamma} = 40 + 30 + 35 - 0 = 85.\\text{Therefore, the total market share held by Retailer Beta and Retailer Gamma, including overlaps, is 85\\%}.",
+          "options": [
+            "85%",
+            "80%",
+            "90%",
+            "70%"
+          ],
+          "tags": [
+            "economics, business"
+          ],
+          "difficulty": 4,
+          "answer": "85%"
+        }
+      ],
+      "title": "Analyzing Market Share Distributions Across Various Industries",
+      "tags": [
+        "MSR",
+        "economics, business"
+      ],
+      "difficulty": 4,
+      "prompt": "multi source reasoning - <quantitative venn diagram> - <economics, business> - <4>"
+    },
+    {
+      "thread_id": "thread_X2XXEx8E0hh7yTa1CdL7lWjL",
+      "tables": [
+        {
+          "table_name": "Quarterly Sales and Revenue",
+          "columns": [
+            "Quarter",
+            "Sales ($)",
+            "Revenue ($)",
+            "Profit Margin (%)"
+          ],
+          "rows": [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4"
+          ],
+          "data": [
+            [
+              "Q1",
+              150000,
+              200000,
+              25
+            ],
+            [
+              "Q2",
+              180000,
+              230000,
+              22
+            ],
+            [
+              "Q3",
+              200000,
+              250000,
+              28
+            ],
+            [
+              "Q4",
+              220000,
+              275000,
+              30
+            ]
+          ]
+        }
+      ],
+      "question": "The table shows the quarterly sales, revenue, and profit margin for a company. Based on the information in the table, can you determine if the profit margin in Q2 was higher than the profit margin in Q4?",
+      "title": "Comparison of Profit Margins in Q2 and Q4",
+      "solution": [
+        "The profit margin in Q2 is 22\\%, while the profit margin in Q4 is 30\\%. Since 22\\% is not greater than 30\\%, the answer is 'No'.",
+        "The data provided clearly shows the profit margins for each quarter, allowing for a straightforward comparison.",
+        "Thus, the conclusion is justified based on the available data from the table."
+      ],
+      "options": [
+        "Can the total revenue for the year be calculated from the information provided?",
+        "Can we determine if the profit margin in Q2 was higher than in Q4?",
+        "Is it possible to assess whether sales increased progressively throughout the year?"
+      ],
+      "answer": {
+        "Can we determine if the profit margin in Q2 was higher than in Q4?": "No",
+        "Can the total revenue for the year be calculated from the information provided?": "Yes",
+        "Is it possible to assess whether sales increased progressively throughout the year?": "Yes"
+      },
+      "tags": [
+        "TA",
+        "Yes/No"
+      ],
+      "difficulty": 2,
+      "prompt": "table analysis - <2 category table> - <Yes/No> - <finance, sales> - <2>"
+    },
+    {
+      "thread_id": "thread_4ZSJ10WWo0EKmRb9XnMZpJeo",
+      "part1": {
+        "description": "The line chart shows the trend in global smartphone sales over five years. The sales are measured in millions of units from 2018 to 2022.",
+        "graph": {
+          "graph": "line chart",
+          "title": "Global Smartphone Sales Trend",
+          "description": "This chart illustrates the increase in smartphone sales over the years.",
+          "x-axis": "Years",
+          "y-axis": "Sales (in millions)",
+          "data": [
+            {
+              "series": "Sales Units",
+              "values": [
+                {
+                  "x": "2018",
+                  "y": 1500
+                },
+                {
+                  "x": "2019",
+                  "y": 1800
+                },
+                {
+                  "x": "2020",
+                  "y": 2100
+                },
+                {
+                  "x": "2021",
+                  "y": 2500
+                },
+                {
+                  "x": "2022",
+                  "y": 3000
+                }
+              ]
+            }
+          ]
+        },
+        "table": null
+      },
+      "part2": {
+        "description": "The bar chart displays the percentage of ownership of smartphones across different age groups in 2022.",
+        "graph": {
+          "graph": "bar chart",
+          "title": "Smartphone Ownership by Age Group in 2022",
+          "description": "This chart reveals the ownership percentage of smartphones in various age demographics.",
+          "x-axis": "Age Groups",
+          "y-axis": "Ownership Percentage",
+          "data": [
+            {
+              "category": "18-24",
+              "percentage": 90
+            },
+            {
+              "category": "25-34",
+              "percentage": 93
+            },
+            {
+              "category": "35-44",
+              "percentage": 85
+            },
+            {
+              "category": "45-54",
+              "percentage": 72
+            },
+            {
+              "category": "55+",
+              "percentage": 50
+            }
+          ]
+        },
+        "table": null
+      },
+      "question": "Based on the above charts, determine the following: (Part 1) What was the percentage increase in smartphone sales from 2018 to 2022? (Part 2) Which age group had the highest percentage of smartphone ownership in 2022?",
+      "type": "Requires Math calculation",
+      "title": "Smartphone Sales Growth and Ownership by Age",
+      "solution": "<p>To find the percentage increase in smartphone sales from 2018 to 2022, we use the formula:</p> <p>\\text{Percentage Increase} = \\left(\\frac{\\text{Sales in 2022} - \\text{Sales in 2018}}{\\text{Sales in 2018}}\\right) \\times 100</p> <p>Substituting the values:</p> <p>\\text{Percentage Increase} = \\left(\\frac{3000 - 1500}{1500}\\right) \\times 100 = \\left(\\frac{1500}{1500}\\right) \\times 100 = 100\\%</p> <p>The age group with the highest percentage of smartphone ownership in 2022 is 25-34, with 93% ownership.</p>",
+      "options": [
+        "The percentage increase in smartphone sales from 2018 to 2022 is 90%, and the age group with the highest ownership is 25-34.",
+        "The percentage increase in smartphone sales from 2018 to 2022 is 100%, and the age group with the highest ownership is 25-34.",
+        "The percentage increase in smartphone sales from 2018 to 2022 is 75%, and the age group with the highest ownership is 18-24.",
+        "The percentage increase in smartphone sales from 2018 to 2022 is 110%, and the age group with the highest ownership is 18-24."
+      ],
+      "answer": "The percentage increase in smartphone sales from 2018 to 2022 is 100%, and the age group with the highest ownership is 25-34.",
+      "tags": [
+        "TPA"
+      ],
+      "difficulty": 1,
+      "prompt": "two part analysis - <science and technology, economics> - <1> - <part1- line chart> - <part2- bar chart>"
+    }
+  ]
+}
