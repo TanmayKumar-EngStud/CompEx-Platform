@@ -1,11 +1,28 @@
 import json
 import math
 import os
+
+def binary_search_instance(x: int, y: int) -> int:
+    x %= y 
+
+    low, high = 1, y
+    mid = (low + high) // 2
+    for i in range(1, x + 1):
+        mid = (low + high) // 2
+        if mid < x:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return mid
+
 class Combination:
+   
    def __init__(self):
       with open(os.path.join(os.path.dirname(__file__), "combination.json"), "r") as file:
          self.combination = json.load(file)
-      self.combination_number = self.combination["combination number"]
+      self.original_combination_number = self.combination["combination number"]
+      total_number_of_combinations = self.find_total_number_of_combinations()
+      self.combination_number = binary_search_instance(self.original_combination_number, total_number_of_combinations)
    
    def pair_combination(self, length, combination_number):
       """
@@ -28,6 +45,16 @@ class Combination:
          
       return idx_1, idx_2
    
+   def find_total_number_of_combinations(self):
+      total_number_of_combinations = 1
+      for component, value in self.combination.items():
+         if component != "combination number":
+            if isinstance(value, list):
+               total_number_of_combinations *= len(value)
+            elif isinstance(value, int):
+               total_number_of_combinations *= value
+      return total_number_of_combinations
+
    def generate_combination(self):
       prompt = []
       for section_name, details in self.combination.items():
@@ -79,8 +106,8 @@ class Combination:
       if not prompt:
          prompt = ["Section - <1>"]
 
-      self.combination_number += 1
-      self.combination["combination number"] = self.combination_number
+      self.original_combination_number += 1
+      self.combination["combination number"] = self.original_combination_number
       
       try:
          with open(os.path.join(os.path.dirname(__file__), "combination.json"), "w") as file:

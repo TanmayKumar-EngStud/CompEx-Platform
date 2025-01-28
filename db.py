@@ -1,5 +1,5 @@
 from prisma import Prisma
-import json
+import json, re
 from datetime import datetime
 
 class DB: 
@@ -218,9 +218,11 @@ class DB:
     # ✅
     def _register_tag(self, tag):
        try: 
+           tag = re.sub(r' \(.*', '', tag) if ' (' in tag else tag # remove bracket content
+           tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag # remove anything after comma
            tagid =  self.db.tags.find_first(where={'name': tag, 
-                                                   'examtypes': {'connect': {'examtypeid': self.current_exam_id}},
-                                                   'sections': {'connect': {'sectionid': self.current_section_id}}
+                                                   'examtypeid': self.current_exam_id,
+                                                   'sectionid': self.current_section_id
                                                    }) #because two different exams/sections can have same tag
            if tagid:
                return tagid.tagid
@@ -238,7 +240,6 @@ class DB:
            print(f"Error creating tag in _register_tag: {str(e)}")
            print(f"here is the tag value that is causing the issue:- {tag}")
            return False
-       return True
    
     def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False):
        """Register a problem set with its child questions"""
@@ -265,7 +266,6 @@ class DB:
                problemsset_data['content'] = json.dumps(parent_question['graph/table'])
            else:
                 raise ValueError("No content found in parent question")
-                return False
            if isMockQuestion:
                 problemsset_data['mocktestquestions'] = {'connect': {'mocktestquestionid': self.current_mocktestquestion_id}}
            # Create problem set
@@ -295,8 +295,48 @@ class DB:
            print(f"Error in _register_problemset: {str(e)}")
            return False
 
+    def having_any_empty_value(self, component):
+        if not component:
+            return False # None
+        if isinstance(component, int) or isinstance(component, float):
+            return True
+        if isinstance(component, list):
+            if len(component):
+                for cell in component:
+                    val = self.having_any_empty_value(cell)
+                    if not val:
+                        return False
+                return True
+            return False # []
+        if isinstance(component, str):
+            if len(component):
+                return True
+            return False # ""
+        for key, value in component.items():
+
+            if key == 'graph':
+                if not value:
+                    content = component.get('table', None)
+                    if not self.having_any_empty_value(content):
+                        return False
+            elif key == 'table':
+                if not value:
+                    content = component.get('graph', None)
+                    if not self.having_any_empty_value(content): 
+                        return False
+            else:
+                if not self.having_any_empty_value(value):
+                    return False
+        return True
+
+
     def registerQuestion(self, exam_section, questions, isMockQuestion=False):
        """Main method to register questions"""
+       for question in questions:
+        if not self.having_any_empty_value(question):
+            print(f"some of the component in the string for {exam_section} is empty, thus not registering such question")
+            print(f"thread_id: {question.get('thread_id', 'Even thread_id is empty')}")
+            return False
        try:
            for question in questions:
                # Check for parent-child questions using multiple possible keys
@@ -312,6 +352,7 @@ class DB:
        except Exception as e:
            print(f"Error in registerQuestion: {str(e)}")
            return False
+    
     def __del__(self):
         """Destructor to ensure database connection is closed"""
         if hasattr(self, 'db') and self.db.is_connected():
