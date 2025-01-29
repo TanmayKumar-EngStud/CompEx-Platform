@@ -33,7 +33,8 @@ class GMAT_IR:
          try:
             question = generator_func()
             question["prompt"] = prompt
-            print(f"✓ {question_type}: Successfully generated")
+
+            print(f"✅ {question_type}: Successfully generated")
             return question
          except Exception as e:
             if attempt < self.max_retries - 1:

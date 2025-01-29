@@ -1,19 +1,18 @@
 import json
-import math
 import os
 
 def binary_search_instance(x: int, y: int) -> int:
     x %= y 
-
     low, high = 1, y
     mid = (low + high) // 2
-    for i in range(1, x + 1):
+    for _ in range(1, x + 1):
         mid = (low + high) // 2
         if mid < x:
             low = mid + 1
         else:
             high = mid - 1
     return mid
+
 class Combination:
     def __init__(self):
         with open(os.path.join(os.path.dirname(__file__), "combination.json"), "r") as file:
@@ -21,96 +20,95 @@ class Combination:
         self.original_combination_number = self.combination["combination number"]
         total_number_of_combinations = self.find_total_number_of_combinations()
         self.combination_number = binary_search_instance(self.original_combination_number, total_number_of_combinations)
-    
+      #   print(f"combination number found: {self.combination_number}")
+
     def find_total_number_of_combinations(self):
         total_number_of_combinations = 1
         for component, value in self.combination.items():
             if component != "combination number":
-                if isinstance(value, list):
-                    total_number_of_combinations *= len(value)
-                elif isinstance(value, int):
-                    total_number_of_combinations *= value
+                if isinstance(value, dict):
+                    for key, sub_value in value.items():
+                        if isinstance(sub_value, list):
+                            total_number_of_combinations *= len(sub_value)
+                        elif isinstance(sub_value, int):
+                            total_number_of_combinations *= sub_value
         return total_number_of_combinations
-    
-    def pair_combination(self, length, combination_number):
-        """Generate two unique indices for pairing values.
-        Args:
-            length: Length of the values list
-            combination_number: Current combination number
-        Returns:
-            Tuple of two indices that are within bounds and different from each other
-        """
-        if length < 2:
-            return 0, 0
-            
-        # Ensure combination_number is positive
-        combination_number = max(1, combination_number)
-        
-        # Calculate total possible combinations
-        total_combinations = length * (length - 1)
-        
-        # Use modulo to wrap around
-        adjusted_number = ((combination_number - 1) % total_combinations) + 1
-        
-        # Calculate indices ensuring they're different and within bounds
-        idx_1 = ((adjusted_number - 1) // (length - 1)) % length
-        idx_2 = ((adjusted_number - 1) % (length - 1))
-        
-        # Adjust second index if it's equal to or greater than first index
-        if idx_2 >= idx_1:
-            idx_2 += 1
-            
-        return idx_1, idx_2 % length
     
     def generate_combination(self):
         prompt = []
         for section_name, details in self.combination.items():
-            if section_name != "combination number":
-                string = f"{section_name}"
+            if section_name != 'combination number':
+                prompt_items = [section_name]
                 initiator = 1
-                question_style_selected = ""
-                filtered_topics = []
+                Type = None
+                selectors =  ["*", "&", "$"]
+                for property, values in details.items():
+ 
+                  if isinstance(values, int):
+                     values = max(1, values)
+                     idx = (self.combination_number//initiator) % values
+                     prompt_items.append(f"<{idx+1}>")
+                     initiator *= values
+                  elif isinstance(values, list):
+                     if not Type:
+                         idx = (self.combination_number//initiator) % len(values)
+                         selected_item = values[idx]
+                         if selected_item:
+                           initiator *= len(values)
+                           for selector in selectors:
+                              if selector in selected_item:
+                                    Type = selector
+                           selected_item = str(selected_item).replace('*', '').replace('&', '').replace('$', '')
+                           prompt_items.append(f"<{selected_item}>")
 
-                for key, values in details.items():
-                    if isinstance(values, list):
-                        length = len(values)
-                        idx = math.floor(self.combination_number / initiator)% length
-                    elif isinstance(values, int):
-                        idx = math.floor(self.combination_number / initiator)% values
-                    if key == "questionStyle":
-                        question_style_selected = values[idx]
-                        string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
+                     else: 
+                         execute = True
+                         for selector in selectors:
+                             if selector in property:
+                                 execute = False
+                                 # if the selector is present in the properties and Type is equal to properties then only add the component else skip it
+                                 if Type == selector:
+                                     idx = (self.combination_number // initiator) % len(values)
+                                     selected_item = values[idx]
+                                     if selected_item:
+                                       initiator *= len(values)
+                                       prompt_items.append(f"<{selected_item}>")
+                                 break
+                         if execute:
+                           validate = False
+                           for val in values:
+                              if Type in val:
+                                    validate = True
+                                    break
+                           if validate:
+                              filtered_values = [value for value in values if Type in value]
+                              idx = (self.combination_number // initiator ) % len(filtered_values)
+                              selected_item = filtered_values[idx]
+                              if selected_item:
+                                 initiator *= len(filtered_values)
+                                 prompt_items.append(f"<{selected_item.replace(Type, '')}>")
+                           else:
+                              filtered_values =[]
+                              for value in values:
+                                  if not value:
+                                      continue
+                                  add = True
+                                  for selector in selectors:
+                                      if selector in value and selector != Type:
+                                          add = False
+                                  if add:
+                                      filtered_values.append(value)
+                              
+                              idx = (self.combination_number // initiator) % len(filtered_values)
+                              selected_item = filtered_values[idx]
+                              if selected_item:
+                                 initiator *= len(filtered_values)
+                                 prompt_items.append(f"<{str(selected_item).replace(Type, '')}>") 
 
-                    elif key == "questionTopic":
-                        if "Geometric Properties" in question_style_selected:
-                            filtered_topics = [topic for topic in values if '*' in topic]
-                        elif "Data Interpretation" in question_style_selected:
-                            filtered_topics = [topic for topic in values if '$' in topic]
-                        else:
-                            filtered_topics = values
-                        
-                        length = len(filtered_topics)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        string += (f" - <{filtered_topics[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
-
-                    elif key == "tableType" and "Data Interpretation" in question_style_selected:
-                        length = len(values)
-                        idx = math.floor(self.combination_number / initiator) % length
-                        string += (f" - <{values[idx]}>").replace("*", "").replace("$", "")
-                        initiator *= length
-
-                    elif key == "questionTheme" and "Word Problems" in question_style_selected:
-                        idx_1, idx_2 = self.pair_combination(len(values), self.combination_number)
-                        string += (f" - <{values[idx_1]}, {values[idx_2]}>").replace("*", "").replace("$", "")
-                    else:
-                        if isinstance(values, int):
-                            string += (f" - <{idx+1}>").replace("*", "").replace("$", "")
-                prompt.append(string)
-
+                prompt.append(" - ".join(prompt_items))
+        
         self.original_combination_number += 1
         self.combination["combination number"] = self.original_combination_number
         with open(os.path.join(os.path.dirname(__file__), "combination.json"), "w") as file:
-            json.dump(self.combination, file, indent=4)
+           json.dump(self.combination, file, indent = 4)
         return prompt

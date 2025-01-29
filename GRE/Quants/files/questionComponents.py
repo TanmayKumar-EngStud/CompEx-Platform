@@ -150,7 +150,6 @@ class SimpleQuestion:
             print(f"GRE Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}\n\n")
             print(f"Exception details: {str(e)}")
             return "", ""
-
     def generate_questionTitle(self):
         response = self.llm.invoke({"content": "QuestionTitle", "thread_id": self.thread_id})
         try:
@@ -160,7 +159,6 @@ class SimpleQuestion:
         except Exception as e:
             print(f"GRE Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}\n\n")
             return ""
-
     def generate_questionSolution(self):
         response = self.llm.invoke({"content": "QuestionSolution", "thread_id": self.thread_id})
         try:
@@ -168,13 +166,16 @@ class SimpleQuestion:
             if isinstance(response_text, dict):
                 message = response_text
             else:
-                message = json.loads(response_text)    
-            return message["solution"]
+                message = json.loads(response_text)
+            if "solution" in message:
+                return message["solution"], message["answer"]
+            else:
+                return message["solution"]
+            
         except Exception as e:
             print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
             print(f"JSON parsing error: {str(e)}")
             return ""
-
     def generate_questionOptions(self):
         response = self.llm.invoke({"content": "QuestionOptions", "thread_id": self.thread_id})
         try:
@@ -192,6 +193,7 @@ class DataSufficiencyQuestion:
         self.llm = llm
         self.prompt = prompt
         self.thread_id = thread_id
+    
     def generate_questionGraph(self):
         response = self.llm.invoke({"content":f"questionGraph: {self.prompt}"})
         try:

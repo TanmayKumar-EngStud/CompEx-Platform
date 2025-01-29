@@ -34,6 +34,7 @@ class GMAT_Q:
          dataSufficiencyQuestionGeneration = DataSufficiencyQuestionGeneration(llm, prompt)
          questionData = dataSufficiencyQuestionGeneration.generate_question()
          questionData["prompt"] = prompt
+
          return questionData
       elif ("graph" in prompt.lower()):
          llm = OpenAIAssistantRunnable(
@@ -44,6 +45,7 @@ class GMAT_Q:
          parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
          questionData = parentChildQuestionGeneration.generate_question()
          questionData["prompt"] = prompt
+
          return questionData
       else:
          llm = OpenAIAssistantRunnable(
@@ -54,6 +56,7 @@ class GMAT_Q:
          simpleQuestionGeneration = SimpleQuestionGeneration(llm, prompt)
          questionData = simpleQuestionGeneration.generate_question()
          questionData["prompt"] = prompt
+
          return questionData
 
 # gmatQuants = GMAT_Q()

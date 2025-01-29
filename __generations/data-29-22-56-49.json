@@ -1,0 +1,674 @@
+{
+  "GMAT_Q": [
+    {
+      "thread_id": "thread_Sm9FEsC5ev2uXtArEhQJdfrl",
+      "question": "Is the sum of the two positive integers greater than 50?",
+      "statements": [
+        "Statement (1): The product of two positive integers is less than 100.",
+        "Statement (2): The sum of two positive integers is greater than 30."
+      ],
+      "title": "Evaluating the Sum of Positive Integers Based on Product and Sum Constraints",
+      "solution": "Statement (1) alone cannot definitively determine if the sum exceeds 50; for example, the integers could be 7 and 8, giving a sum of 15, or 10 and 9, giving a sum of 19. Statement (2) alone also cannot definitively determine whether their sum exceeds 50 since multiple combinations may sum to greater than 30 but less than 50. However, when combined, the constraints suggest possible combinations that may still fall under or exceed 50 based on the specific values chosen. Therefore, neither statement alone is sufficient, but both together can possibly provide the needed insight to evaluate the ranges of integers involved. Given the uncertainty, the answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+      "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+      "options": [
+        "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+        "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "EITHER statement ALONE is sufficient",
+        "Statements (1) and (2) TOGETHER are NOT sufficient"
+      ],
+      "difficulty": 1,
+      "tag": [
+        "data sufficiency"
+      ],
+      "prompt": "data sufficiency - <Inequalities> - <1> - <Number Properties and Fractions, Decimals, Percentages>"
+    },
+    {
+      "thread_id": "thread_YhAbkZsBSQPIura2hKfi0YaQ",
+      "question": "In a whimsical forest where numbers dance under the moonlight, a peculiar problem arises. A group of mischievous squirrels has gathered 48 acorns. The squirrels, equally curious about the nature of these acorns, decide to split them in such a way that each squirrel receives a whole number of acorns. If they choose to have 4 squirrels share the acorns equally, how many acorns would each squirrel receive? Furthermore, if one additional squirrel joins the group, how many acorns will each of the five squirrels then receive? Devise a comprehensive approach to determine the distribution of acorns under these circumstances.",
+      "title": "Distribution of Acorns Among Squirrels in a Whimsical Forest",
+      "solution": "<p>To determine the allocation of acorns among the squirrels, we will follow these steps:</p><ol><li><p>First, for the original 4 squirrels sharing the 48 acorns, we calculate the number of acorns each squirrel receives:</p><p>\\(\\text{Acorns per squirrel (4 squirrels)} = \\frac{48}{4} = 12\\text{ acorns}\\)</p></li><li><p>Next, if 1 additional squirrel joins, the total number of squirrels becomes 5. We will now determine the new distribution of acorns:</p><p>\\(\\text{Total squirrels} = 4 + 1 = 5\\)</p></li><li><p>Now we find the share for the 5 squirrels:</p><p>\\(\\text{Acorns per squirrel (5 squirrels)} = \\frac{48}{5} = 9.6\\text{ acorns}\\)</p></li></ol><p>Thus, each of the 4 initial squirrels receives 12 acorns, while each of the 5 squirrels receives 9.6 acorns upon the new joining.</p>",
+      "options": [
+        "12 acorns (initially for 4 squirrels)",
+        "9.6 acorns (error: for 5 squirrels instead of 4)",
+        "6.86 acorns (error: mistaken for 7 squirrels)",
+        "8 acorns (error: mistaken for 6 squirrels)"
+      ],
+      "answer": "12 acorns (initially for 4 squirrels)",
+      "difficulty": 1,
+      "tags": [
+        "problem solving",
+        "Algebraic Manipulations",
+        "Number Properties"
+      ],
+      "prompt": "problem solving - <Algebraic Manipulations> - <1> - <Number Properties>"
+    }
+  ],
+  "GMAT_V": [
+    {
+      "thread_id": "thread_nRlXHCdsaKqUhBwJWwyjqonK",
+      "passage": [
+        "<p>The study of social sciences encompasses various fields such as sociology, psychology, and anthropology, each focusing on different aspects of human behavior and society. Sociology looks at the structure of societies and the relationships among individuals within those societies, while psychology investigates mental processes and behavior of individuals. Anthropology, on the other hand, examines cultures and their development over time. These disciplines often intersect, offering a comprehensive understanding of human life and interactions.</p>"
+      ],
+      "title": "Exploring the Interconnectedness of Social Sciences",
+      "childQuestions": [
+        {
+          "question": "What assumption underlies the conclusion that social sciences provide a comprehensive understanding of human interactions?",
+          "title": "Assumption Behind Social Sciences' Conclusions",
+          "answer": "Human interactions are complex and multifaceted.",
+          "options": [
+            "Different fields of social sciences cannot function independently.",
+            "Human interactions are complex and multifaceted.",
+            "Understanding cultures is irrelevant to understanding individual behavior.",
+            "Social sciences are the only means to understand human behavior."
+          ],
+          "solution": "<p>The correct option is <strong>C</strong>: \"Human interactions are complex and multifaceted.\" This option accurately reflects the assumption that a comprehensive understanding of human interactions requires an acknowledgment of their complexity and the interconnectedness of various social sciences.</p> <p><strong>A</strong>: \"Social sciences are the only means to understand human behavior.\" is incorrect as it dismisses other fields of study that may also contribute to understanding human behavior.</p> <p><strong>B</strong>: \"Different fields of social sciences cannot function independently.\" is incorrect because while they may be interconnected, each discipline can stand alone and provide valuable insights.</p> <p><strong>D</strong>: \"Understanding cultures is irrelevant to understanding individual behavior.\" is also incorrect. In fact, cultural understanding is crucial in the field of social sciences as it deeply influences individual behavior.</p>",
+          "difficulty": 5,
+          "tags": [
+            "Assumption Question"
+          ]
+        },
+        {
+          "question": "Which of the following statements, if true, would most seriously weaken the argument that social sciences can comprehensively explain human interactions?",
+          "title": "Weakening the Argument for Social Sciences",
+          "answer": "Human interactions are solely influenced by biological factors, independent of social sciences.",
+          "options": [
+            "Many researchers in social sciences agree on core principles that guide their research.",
+            "Social sciences often contain subjective interpretations that may vary from culture to culture.",
+            "Quantitative data in social sciences yields more reliable results than qualitative analyses.",
+            "Human interactions are solely influenced by biological factors, independent of social sciences."
+          ],
+          "solution": "<p>The correct option is <strong>C</strong>: \"Human interactions are solely influenced by biological factors, independent of social sciences.\" This statement directly weakens the argument by suggesting that human interactions do not rely on social sciences to be fully understood, implying that these fields may not be necessary for comprehending human behavior.</p> <p><strong>A</strong>: \"Social sciences often contain subjective interpretations that may vary from culture to culture.\" although it introduces a limitation of social sciences, it does not fundamentally undermine the argument that they can provide a comprehensive understanding of human interactions.</p> <p><strong>B</strong>: \"Quantitative data in social sciences yields more reliable results than qualitative analyses.\" supports the argument by reinforcing the notion that the scientific method can yield valuable insights into human behavior.</p> <p><strong>D</strong>: \"Many researchers in social sciences agree on core principles that guide their research.\" strengthens the credibility of social sciences and their conclusions, rather than weakening the argument.</p>",
+          "difficulty": 4,
+          "tags": [
+            "Weaken Question"
+          ]
+        }
+      ],
+      "tags": [
+        "rc-s",
+        "Assumption Question",
+        "Weaken Question"
+      ],
+      "prompt": " - <Social Sciences> - <rc-s> - <2> - <1>"
+    }
+  ],
+  "GRE_V": [
+    {
+      "passages": [
+        "<p>The Great Wall of China stands as a monumental testament to the ingenuity and determination of ancient civilizations. Constructed over several dynasties, its primary purpose was to protect against invasions from nomadic tribes to the north. The origins of the wall can be traced back to the 7th century BC, with various smaller walls built by local rulers. However, it was during the Ming Dynasty (1368–1644) that the wall was extensively rebuilt and fortified, reaching its current form.</p><p>Despite its formidable presence, the Great Wall was not impassable. In fact, historical records indicate that invaders occasionally breached its defenses, highlighting the complexities of warfare during that era. The construction of the wall also involved significant human labor, often at great cost to those who built it. Many workers were conscripted from local populations, leading to substantial loss of life and immense hardships, intertwined with the broader narrative of China's imperial history.</p>",
+        "<p>The Silk Road, a sprawling network of trade routes that connected China to the Mediterranean, played a crucial role in the cultural, political, and economic exchanges between East and West. Established during the Han Dynasty (206 BC – 220 AD), this path not only facilitated the trading of silk but also fostered the spread of ideas, technology, and religions. Merchants, travelers, and scholars journeyed along these routes, bringing with them goods and knowledge that would significantly alter the societies they encountered.</p><p>Though primarily recognized for its connection to luxury items, the Silk Road was also instrumental in the dissemination of less tangible resources, such as cultures and scientific knowledge. Various empires leveraged it to expand their influence, leading to a period of cultural flourishing. However, the route faced threats from bandits and geographical challenges, leading to fluctuating trade dynamics that could dramatically impact economies on both ends of the spectrum.</p>",
+        "<p>The Assyrian Empire, one of the earliest known empires in history, emerged in the 25th century BC and reached its zenith between the 9th and 7th centuries BC. Renowned for its military prowess, the Assyrians were adept at warfare and established a reputation for brutality against their enemies. However, their success was not solely based on military might; the Assyrians also excelled in administrative organization, employing innovative methods of governance that included the use of local governors and a network of spies to maintain control over their vast territories.</p><p>Art and architecture flourished under Assyrian rule, with grand palaces adorned with intricate reliefs depicting scenes of conquest and daily life. These artworks tell a story of both the glory and the complexities of Assyrian civilization, reflecting a culture that valued both power and the arts. Despite their achievements, the empire faced challenges from internal strife and external pressures, leading to its eventual decline and fall by the late 7th century BC.</p>"
+      ],
+      "title": "The Enduring Legacies of Ancient Civilizations",
+      "tags": [
+        "rc-m",
+        "Strengthen Question ",
+        "Main Idea Question ",
+        "Inference Question "
+      ],
+      "childQuestions": [
+        {
+          "question": "Which of the following statements best reinforces the significance of the Great Wall of China in the context of ancient Chinese civilization?",
+          "title": "The Great Wall's Historical Importance",
+          "answer": "The Great Wall served as a symbol of China's strength and determination to protect its territory.",
+          "options": [
+            "The Great Wall served as a symbol of China's strength and determination to protect its territory.",
+            "The Great Wall provided a recreational space for the Chinese emperors and their families.",
+            "The Great Wall was primarily built for agricultural purposes to enhance crop production.",
+            "The Great Wall facilitated trade and economic growth in ancient China."
+          ],
+          "solution": "<p>The correct answer is <strong>B</strong> - The Great Wall served as a symbol of China's strength and determination to protect its territory. This statement reinforces the wall's significance as a defensive structure built to deter invasions, highlighting its role in representing the resolve of ancient Chinese civilization.</p><p><strong>A</strong> is incorrect because, while the Great Wall may have indirectly affected trade, its primary purpose was defense, not economic growth.</p><p><strong>C</strong> is also incorrect as the wall was not primarily constructed for agricultural purposes; its main function was military defense against invasions.</p><p><strong>D</strong> is incorrect since the Great Wall was not designed as a recreational space for emperors, but rather as a fortified barrier to safeguard the empire.</p>",
+          "tags": [
+            "Strengthen Question "
+          ],
+          "difficulty": 4
+        },
+        {
+          "question": "What is the main idea of the passage regarding the Silk Road's role in history?",
+          "title": "The Historical Impact of the Silk Road",
+          "answer": "The Silk Road enabled significant cultural and economic exchanges between East and West, impacting societies along the route.",
+          "options": [
+            "The Silk Road enabled significant cultural and economic exchanges between East and West, impacting societies along the route.",
+            "The Silk Road was a government initiative that aimed to unify different Chinese provinces.",
+            "The Silk Road was known for its dangerous conditions and frequent attacks by bandits, limiting trade.",
+            "The Silk Road primarily facilitated the trade of silk, which was the most valuable commodity."
+          ],
+          "solution": "<p>The correct answer is <strong>B</strong> - The Silk Road enabled significant cultural and economic exchanges between East and West, impacting societies along the route. This option encapsulates the passage's main idea, highlighting the broad influence of the Silk Road beyond mere trade.</p><p><strong>A</strong> is incorrect because, while silk was a valuable commodity traded along the route, the passage emphasizes the cultural and economic exchanges rather than focusing solely on silk.</p><p><strong>C</strong> is misleading; although there were dangers associated with the Silk Road, the passage's main focus is on the positive exchanges facilitated by the route, not merely the dangers.</p><p><strong>D</strong> is incorrect as the Silk Road was not solely a government initiative aimed at unifying provinces; it was a product of commerce driven by merchants and travelers across diverse cultures.</p>",
+          "tags": [
+            "Main Idea Question "
+          ],
+          "difficulty": 5
+        },
+        {
+          "question": "Based on the passage about the Assyrian Empire, what can be inferred about the relationship between military power and cultural achievements during this period?",
+          "title": "Military Power and Cultural Achievements in Assyrian Society",
+          "answer": "The Assyrians believed that military power justified their cultural expressions, intertwining art with themes of conquest.",
+          "options": [
+            "The Assyrians believed that military power justified their cultural expressions, intertwining art with themes of conquest.",
+            "Cultural achievements in the Assyrian Empire were primarily a result of peaceful conditions rather than military success.",
+            "The Assyrian Empire's military dominance had little impact on its cultural developments, which were largely independent.",
+            "Cultural advancements in the Assyrian Empire were hindered by the constant need for military expeditions."
+          ],
+          "solution": "<p>The correct answer is <strong>C</strong> - The Assyrians believed that military power justified their cultural expressions, intertwining art with themes of conquest. This inference aligns with the passage, which highlights how their art depicted scenes of conquest, indicating that military success was a source of cultural pride.</p><p><strong>A</strong> is incorrect because the passage suggests a close relationship between military power and cultural developments, not an independent existence of each.</p><p><strong>B</strong> is also incorrect since the passage does not imply that cultural achievements were primarily a result of peaceful conditions, but rather that they were also influenced by military success.</p><p><strong>D</strong> is misleading; while military expeditions were frequent, the passage describes thriving cultural advancements, suggesting that military activity did not hinder, but rather coexisted with cultural growth.</p>",
+          "tags": [
+            "Inference Question "
+          ],
+          "difficulty": 5
+        }
+      ]
+    }
+  ],
+  "GRE_Q": [
+    {
+      "thread_id": "thread_5Fc0CUPkh8g7n0Npk3dM8ZQX",
+      "question": "Is the information provided in the statements sufficient to determine the population of the butterfly species after 10 years?",
+      "statements": [
+        "The exponential growth of a rare species of butterfly can be modeled by the equation P = P_0 e^{rt}, where P is the population at time t, P_0 is the initial population, r is the growth rate, and t is time in years. If P_0 is 100 and r = 0.03, what will be the population after 10 years?",
+        "If the population were to double in size every 20 years, what will be the population after 60 years?"
+      ],
+      "title": "Determining the Butterfly Population Growth After 10 Years",
+      "solution": "To analyze the sufficiency of the statements: In Statement 1, we have the equation to directly calculate the butterfly population after 10 years given the initial population and growth rate. By substituting the values, we calculate the population as follows: \\begin{align*} P &= P_0 e^{rt} \\newline P &= 100 e^{0.03 \\cdot 10} \\newline &= 100 e^{0.3} \\\\approx 100 \\cdot 1.3499 \\\\approx 134.99 \\text{ (approximately 135 butterflies)} \\end{align*}. Therefore, Statement 1 is sufficient on its own. In Statement 2, population doubling provides additional information but is not necessary for finding the 10-year population since we already have sufficient data from Statement 1. Hence, Statement 2 is not needed to answer the question. Thus, the answer is option A, as Statement 1 alone is adequate for determining the population after 10 years.",
+      "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+      "options": [
+        "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+        "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "EITHER statement ALONE is sufficient",
+        "Statements (1) and (2) TOGETHER are NOT sufficient"
+      ],
+      "difficulty": 5,
+      "tags": [
+        "DS",
+        "Exponents and Powers"
+      ],
+      "prompt": "data sufficiency - <Word Problems> - <5> - <Exponents and Powers>"
+    },
+    {
+      "thread_id": "thread_67640mKV3X589ANeI2FREvD6",
+      "question": "In a hypothetical country, the government has introduced a policy to effectively double the tax incentives for small businesses every year. Initially, these incentives were valued at \\$50,000. If the government maintains this policy for five consecutive years, how much will the total value of the tax incentives be at the end of the fifth year? Further, if the government then decides to add an additional fixed incentive of \\$20,000 for that year, calculate the overall worth of the tax incentives by the end of the fifth year. Express your answer in terms of the power of two, and additionally find the total by summing this value with the added fixed incentive.",
+      "title": "Calculating the Total Value of Tax Incentives Under Doubling Policy in Five Years",
+      "solution": [
+        "<p>Tax incentives at the end of year 5 (doubling for 5 years):<br>Initial value = \\$50,000 <br>Value at the end of year 5 = ~~50,000 * 2^5 = 50,000 * 32 = 1,600,000~~ <br>Total tax incentives = \\$1,600,000 <br>Add fixed incentive: \\$1,600,000 + \\$20,000 = \\$1,620,000</p>",
+        "1620000"
+      ],
+      "options": [
+        "\\$1,520,000 (incorrect: miscalculated doubling)",
+        "\\$1,620,000 (correct answer)",
+        "\\$1,570,000 (incorrect: ignored fixed incentive)",
+        "\\$1,670,000 (incorrect: wrong fixed incentive)"
+      ],
+      "answer": "\\$1,620,000 (correct answer)",
+      "difficulty": 5,
+      "tag": [
+        "problem solving",
+        "Word Problems",
+        "Exponents and Powers"
+      ],
+      "prompt": "problem solving - <Word Problems> - <5> - <Exponents and Powers> - <Government Policies and Regulations>"
+    },
+    {
+      "question": "",
+      "title": "",
+      "solution": "<p>In the assembly line, the total work required is 400 hours. Given the percentages for each manufacturer: <br>- Manufacturer A: 27% <br>- Manufacturer B: 22% <br>- Manufacturer C: 27% <br>- Manufacturer D: 24% <br>Calculating their contributions, we have: <br>- Manufacturer A: ~~27 \\% \\times 400 = 108.0~~ hours <br>- Manufacturer B: ~~22 \\% \\times 400 = 88.0~~ hours <br>- Manufacturer C: ~~27 \\% \\times 400 = 108.0~~ hours <br>- Manufacturer D: ~~24 \\% \\times 400 = 96.0~~ hours <br>Total Contributions: <br>- Manufacturer A: 108.0 hours <br>- Manufacturer B: 88.0 hours <br>- Manufacturer C: 108.0 hours <br>- Manufacturer D: 96.0 hours <br>Therefore, the contributions are rounded to two decimal places.</p>",
+      "answer": "400.0",
+      "difficulty": 5,
+      "tag": [
+        "numeric entry",
+        "work and rate problems"
+      ],
+      "prompt": "numeric entry - <work and rate problems> - <5> - <Pie Chart>"
+    }
+  ],
+  "GMAT_IR": [
+    {
+      "thread_id": "thread_pkO9DmtvJPmXEeC2ZrOitRfQ",
+      "graphs": [
+        {
+          "graph": "scatter plot",
+          "title": "Advertising Spend vs. Sales Revenue",
+          "description": "this will give the description of the graph",
+          "x-axis": "Advertising Spend (in USD)",
+          "y-axis": "Sales Revenue (in USD)",
+          "data": [
+            {
+              "label": "Label A",
+              "x": 5000,
+              "y": 20000
+            },
+            {
+              "label": "Label B",
+              "x": 7000,
+              "y": 30000
+            },
+            {
+              "label": "Label C",
+              "x": 4000,
+              "y": 15000
+            },
+            {
+              "label": "Label D",
+              "x": 10000,
+              "y": 40000
+            },
+            {
+              "label": "Label E",
+              "x": 6000,
+              "y": 25000
+            }
+          ]
+        }
+      ],
+      "question": "A company analyzed its advertising spend against sales revenue for five different campaigns, as represented in the scatter plot. Based on the data, what is the correlation between advertising spend and sales revenue? Additionally, if the company wants to achieve a sales revenue of \\$30,000, what minimum advertising spend would be necessary according to the trend illustrated in the plot?",
+      "title": "Analyzing Correlation Between Advertising Spend and Sales Revenue",
+      "solution": "The correlation coefficient between advertising spend and sales revenue is approximately 0.99, indicating a very strong positive correlation. To achieve a sales revenue of \\$30,000, the minimum advertising spend required is approximately \\$7363.64.",
+      "options": [
+        "The correlation is approximately 0.90, and the minimum advertising spend is \\$5000.",
+        "The correlation is approximately 0.95, and the minimum advertising spend is \\$8000.",
+        "The correlation is approximately 0.99, and the minimum advertising spend is \\$8000.",
+        "The correlation is approximately 0.99, and the minimum advertising spend is \\$7363.64."
+      ],
+      "answer": "The correlation is approximately 0.99, and the minimum advertising spend is \\$7363.64.",
+      "tags": [
+        "GI",
+        "economics, finance"
+      ],
+      "difficulty": 3,
+      "prompt": "graphic interpretation - <scatter plot> - <economics, finance> - <3>"
+    },
+    {
+      "sources": [
+        {
+          "source_info": "This scatter plot displays the relationship between the advertising spend and resulting sales revenue over the last year for various product lines. It highlights the effectiveness of different advertising strategies.",
+          "graph": {
+            "graph": "scatter plot",
+            "title": "Advertising Spend vs. Sales Revenue",
+            "description": "This will give the description of the graph",
+            "x-axis": "Advertising Spend (in USD)",
+            "y-axis": "Sales Revenue (in USD)",
+            "data": [
+              {
+                "label": "Label A",
+                "x": 5000,
+                "y": 20000
+              },
+              {
+                "label": "Label B",
+                "x": 7000,
+                "y": 30000
+              },
+              {
+                "label": "Label C",
+                "x": 4000,
+                "y": 15000
+              },
+              {
+                "label": "Label D",
+                "x": 10000,
+                "y": 40000
+              },
+              {
+                "label": "Label E",
+                "x": 6000,
+                "y": 25000
+              }
+            ]
+          }
+        },
+        {
+          "source_info": "This second scatter plot compares the historical investments in advertising with the overall market growth for the same period. It provides insights into how advertising spending correlates with market growth.",
+          "graph": {
+            "graph": "scatter plot",
+            "title": "Advertising Investment vs. Market Growth",
+            "description": "This will give the description of the graph",
+            "x-axis": "Advertising Investment (in USD)",
+            "y-axis": "Market Growth Rate (%)",
+            "data": [
+              {
+                "label": "Investment A",
+                "x": 2000,
+                "y": 3
+              },
+              {
+                "label": "Investment B",
+                "x": 4000,
+                "y": 5
+              },
+              {
+                "label": "Investment C",
+                "x": 3000,
+                "y": 4
+              },
+              {
+                "label": "Investment D",
+                "x": 6000,
+                "y": 6
+              },
+              {
+                "label": "Investment E",
+                "x": 8000,
+                "y": 8
+              }
+            ]
+          }
+        },
+        {
+          "source_info": "This third source presents a qualitative analysis in a table format, summarizing the advertising strategies employed by different companies and their corresponding sales revenues. It sheds light on how various approaches can yield different economic outcomes.",
+          "table": {
+            "table_name": "Advertising Strategies and Outcomes",
+            "columns": [
+              "Company",
+              "Advertising Strategy",
+              "Sales Revenue (in USD)",
+              "Market Growth Rate (%)"
+            ],
+            "rows": [
+              "Company X",
+              "Company Y",
+              "Company Z",
+              "Company W"
+            ],
+            "data": [
+              [
+                "Company X",
+                "Social Media",
+                25000,
+                5
+              ],
+              [
+                "Company Y",
+                "Television",
+                20000,
+                4
+              ],
+              [
+                "Company Z",
+                "Print Media",
+                15000,
+                3
+              ],
+              [
+                "Company W",
+                "Digital Marketing",
+                30000,
+                6
+              ]
+            ]
+          }
+        }
+      ],
+      "thread_id": "thread_Vq9eATHXr33VQow118mkLquQ",
+      "questions": [
+        {
+          "question": "Based on the scatter plot of Advertising Spend vs. Sales Revenue, which label indicates the highest sales revenue achieved with a specific advertising spend? What was the advertising spend amount for that label?",
+          "title": "Highest Sales Revenue from Advertising Spend",
+          "solution": "The highest sales revenue achieved with a specific advertising spend is from **Label D** with a sales revenue of \\$40000 at an advertising spend of \\$10000.",
+          "options": [
+            "Label C had the highest sales revenue of \\$15000 at an advertising spend of \\$4000.",
+            "Label B had the highest sales revenue of \\$35000 at an advertising spend of \\$7500.",
+            "Label D had the highest sales revenue of \\$40000 at an advertising spend of \\$10000.",
+            "Label A had the highest sales revenue of \\$25000 at an advertising spend of \\$6000."
+          ],
+          "tags": [
+            "history, economics"
+          ],
+          "difficulty": 4,
+          "answer": "Label D had the highest sales revenue of \\$40000 at an advertising spend of \\$10000."
+        },
+        {
+          "question": "Referencing the scatter plot of Advertising Investment vs. Market Growth, what is the market growth rate corresponding to the highest advertising investment? How much was the investment amount for that growth rate?",
+          "title": "Market Growth Rate from Highest Advertising Investment",
+          "solution": "The market growth rate corresponding to the highest advertising investment is from **Investment E** with a growth rate of 8\\% at an investment amount of \\$8000.",
+          "options": [
+            "Investment D had a market growth rate of 7\\% with an investment amount of \\$6000.",
+            "Investment E had a market growth rate of 8\\% with an investment amount of \\$8000.",
+            "Investment C had a market growth rate of 5\\% with an investment amount of \\$3000.",
+            "Investment A had a market growth rate of 4\\% with an investment amount of \\$2000."
+          ],
+          "tags": [
+            "history, economics"
+          ],
+          "difficulty": 4,
+          "answer": "Investment E had a market growth rate of 8\\% with an investment amount of \\$8000."
+        },
+        {
+          "question": "Using the data from the summary table on Advertising Strategies and Outcomes, which advertising strategy generated the highest sales revenue? What was the sales revenue associated with that strategy?",
+          "title": "Highest Sales Revenue from Advertising Strategy",
+          "solution": "The advertising strategy that generated the highest sales revenue is **Digital Marketing** with a sales revenue of \\$30000.",
+          "options": [
+            "Digital Marketing generated the highest sales revenue of \\$30000.",
+            "Social Media generated the highest sales revenue of \\$25000.",
+            "Print Media generated the highest sales revenue of \\$20000.",
+            "Television generated the highest sales revenue of \\$28000."
+          ],
+          "tags": [
+            "history, economics"
+          ],
+          "difficulty": 4,
+          "answer": "Digital Marketing generated the highest sales revenue of \\$30000."
+        }
+      ],
+      "title": "Analyzing Advertising Spend, Market Growth, and Strategy Outcomes",
+      "tags": [
+        "MSR",
+        "history, economics"
+      ],
+      "difficulty": 4,
+      "prompt": "multi source reasoning - <scatter plot> - <history, economics> - <4>"
+    },
+    {
+      "thread_id": "thread_fZq43gO6vgcqWy4xr6FErwNl",
+      "tables": [
+        {
+          "table_name": "Employee Sales Performance and Training Programs",
+          "columns": [
+            {
+              "Employee Name": [
+                "John Doe",
+                "Jane Smith",
+                "Alice Johnson"
+              ]
+            },
+            {
+              "Sales Region": [
+                "North",
+                "South",
+                "East"
+              ]
+            }
+          ],
+          "row_header": "Training Program",
+          "rows": [
+            "Sales Basics",
+            "Advanced Sales Techniques",
+            "CRM Software Training"
+          ],
+          "data": [
+            [
+              "Yes",
+              "No",
+              "Yes"
+            ],
+            [
+              "Yes",
+              "Yes",
+              "No"
+            ],
+            [
+              "No",
+              "Yes",
+              "Yes"
+            ]
+          ]
+        }
+      ],
+      "question": "The table above displays employee names alongside their respective sales regions and the training programs they have completed. Based on the training programs completed, how effective are those programs in enhancing sales performance across different regions?",
+      "title": "Evaluating the Impact of Training Programs on Employee Sales Performance",
+      "solution": [
+        "Option A `Would Help`. The training program 'Sales Basics' can help improve the foundational skills of the employees, which is essential for successful sales, regardless of their region. Thus, knowing if 'John Doe' is effective after this training would provide valuable insights.",
+        "Option B `Would Not Help`. Simply knowing if 'Advanced Sales Techniques' were effective for 'Jane Smith' does not provide a holistic view of overall sales performance across different regions, as it does not consider other training she may or may not have had.",
+        "Option C `Would Help`. Understanding the effectiveness of the 'CRM Software Training' for 'Alice Johnson' is important as effective use of CRM can enhance sales tracking and management, thus driving better sales outcomes across regions."
+      ],
+      "options": [
+        "Is the effectiveness of the 'Advanced Sales Techniques' training program sufficient on its own to evaluate Jane Smith's sales performance?",
+        "Does completion of the 'Sales Basics' training program improve sales performance for John Doe?",
+        "Would the 'CRM Software Training' completion enhance Alice Johnson's ability to manage sales effectively?"
+      ],
+      "answer": {
+        "Does completion of the 'Sales Basics' training program improve sales performance for John Doe?": "Would Help",
+        "Is the effectiveness of the 'Advanced Sales Techniques' training program sufficient on its own to evaluate Jane Smith's sales performance?": "Would Not Help",
+        "Would the 'CRM Software Training' completion enhance Alice Johnson's ability to manage sales effectively?": "Would Help"
+      },
+      "tags": [
+        "TA",
+        "Would Help / Would Not Help"
+      ],
+      "difficulty": 2,
+      "prompt": "table analysis - <2 category hybrid table> - <Would Help / Would Not Help> - <human resources, sales> - <2>"
+    },
+    {
+      "thread_id": "thread_AueyHsnzMwLsqHv6MeY7JLWD",
+      "part1": {
+        "description": "The line chart illustrates the GDP growth rates of three different countries over a five-year period. The countries are Country X, Country Y, and Country Z.",
+        "graph": {
+          "graph": "line chart",
+          "title": "GDP Growth Rates Over Five Years",
+          "description": "This chart shows how the GDP growth rates have changed annually for three countries.",
+          "x-axis": "Years",
+          "y-axis": "GDP Growth Rate (%)",
+          "data": [
+            {
+              "series": "Country X",
+              "values": [
+                {
+                  "x": "Year 1",
+                  "y": 2.5
+                },
+                {
+                  "x": "Year 2",
+                  "y": 3.0
+                },
+                {
+                  "x": "Year 3",
+                  "y": 3.5
+                },
+                {
+                  "x": "Year 4",
+                  "y": 2.0
+                },
+                {
+                  "x": "Year 5",
+                  "y": 4.0
+                }
+              ]
+            },
+            {
+              "series": "Country Y",
+              "values": [
+                {
+                  "x": "Year 1",
+                  "y": 1.0
+                },
+                {
+                  "x": "Year 2",
+                  "y": 1.5
+                },
+                {
+                  "x": "Year 3",
+                  "y": 2.0
+                },
+                {
+                  "x": "Year 4",
+                  "y": 2.5
+                },
+                {
+                  "x": "Year 5",
+                  "y": 3.0
+                }
+              ]
+            },
+            {
+              "series": "Country Z",
+              "values": [
+                {
+                  "x": "Year 1",
+                  "y": 5.0
+                },
+                {
+                  "x": "Year 2",
+                  "y": 4.5
+                },
+                {
+                  "x": "Year 3",
+                  "y": 4.0
+                },
+                {
+                  "x": "Year 4",
+                  "y": 3.5
+                },
+                {
+                  "x": "Year 5",
+                  "y": 3.0
+                }
+              ]
+            }
+          ]
+        },
+        "table": null
+      },
+      "part2": {
+        "description": "The bar chart shows the unemployment rates in the same three countries over the same five-year period.",
+        "graph": {
+          "graph": "bar chart",
+          "title": "Unemployment Rates Over Five Years",
+          "description": "This chart illustrates the unemployment rates for Country X, Country Y, and Country Z.",
+          "x-axis": "Countries",
+          "y-axis": "Unemployment Rate (%)",
+          "data": [
+            {
+              "category": "Country X",
+              "Year 1": 5,
+              "Year 2": 4,
+              "Year 3": 3,
+              "Year 4": 6,
+              "Year 5": 2
+            },
+            {
+              "category": "Country Y",
+              "Year 1": 7,
+              "Year 2": 6,
+              "Year 3": 5,
+              "Year 4": 4,
+              "Year 5": 3
+            },
+            {
+              "category": "Country Z",
+              "Year 1": 2,
+              "Year 2": 2,
+              "Year 3": 2,
+              "Year 4": 3,
+              "Year 5": 4
+            }
+          ]
+        },
+        "table": null
+      },
+      "question": "Based on the GDP growth rates and unemployment rates of Country X, Country Y, and Country Z over the five years, determine which country's GDP growth is inversely related to its unemployment rate.",
+      "type": "Requires Math calculation",
+      "title": "Analyzing GDP Growth vs Unemployment Rates of Three Countries",
+      "solution": "<p>To determine the relationship between GDP growth and unemployment rates, let's analyze the trends for each country:</p><br/> <ul><li><strong>Country X:</strong> GDP growth rates are 2.5%, 3.0%, 3.5%, 2.0%, and 4.0% over the five years, while unemployment rates are 5%, 4%, 3%, 6%, and 2%. As GDP growth increases or fluctuates, we see a corresponding decrease in unemployment in the first three years, but a peak in unemployment in Year 4 correlates with a drop in GDP growth.</li><br/><li><strong>Country Y:</strong> GDP growth is 1.0%, 1.5%, 2.0%, 2.5%, and 3.0% with unemployment rates of 7%, 6%, 5%, 4%, and 3%. Here, both GDP growth and unemployment rate appear to move in the same direction, indicating a positive correlation.</li><br/><li><strong>Country Z:</strong> GDP growth rates are 5.0%, 4.5%, 4.0%, 3.5%, and 3.0% with unemployment rates of 2%, 2%, 2%, 3%, and 4%. The GDP growth is decreasing, while the unemployment rate is initially low and then increases. This suggests an inverse relationship.</li></ul><br/> <p>Thus, <strong>Country Z</strong> exhibits an inverse relationship between GDP growth and unemployment rate.</p>",
+      "options": [
+        "All countries have a similar relationship between GDP growth and unemployment rates.",
+        "Country Y's GDP growth and unemployment rates are positively correlated.",
+        "Country X has decreasing GDP growth and increasing unemployment rates.",
+        "Country Z shows an inverse relationship between GDP growth and unemployment rates."
+      ],
+      "answer": "Country Z shows an inverse relationship between GDP growth and unemployment rates.",
+      "tags": [
+        "TPA"
+      ],
+      "difficulty": 3,
+      "prompt": "two part analysis - <politics, economics> - <3> - <part1- line chart> - <part2- bar chart>"
+    }
+  ]
+}

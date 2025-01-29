@@ -24,6 +24,7 @@ class GMAT_V:
          parentChildQuestionGeneration = ParentChildQuestionGeneration(llm, prompt)
          questionData = parentChildQuestionGeneration.generate_question()
          questionData["prompt"] = prompt
+
          questions.append(questionData)
          return questions
       else:
@@ -35,6 +36,7 @@ class GMAT_V:
          simpleQuestionGeneration = SimpleQuestionGeneration(llm, prompt)
          questionData = simpleQuestionGeneration.generate_question()
          questionData["prompt"] = prompt
+
          questions.append(questionData)
          return questions
       
