@@ -1,109 +1,109 @@
 {
-   "combination number": 92,
-   "data sufficiency": {
-      "questionStyle": [
-         "Single Variable Equation",
-         "Inequalities",
-         "Geometric Properties*",
-         "Word Problems&",
-         "Numeric Comparisons",
-         "Data Interpretation$"
-      ],
-      "difficulty": 5,
-      "questionTopic": [
-         "Number Properties and Fractions, Decimals, Percentages$",
-         "Ratio and Proportion$",
-         "Simple Interest and Compound Interest",
-         "work and rate problem$",
-         "Profit, Loss and Discount$",
-         "Mixtures and Alligations$",
-         "Linear Equations, Quadratic Equations and Inequalities",
-         "Functions and Polynomials",
-         "Exponents and Powers",
-         "Algebraic Expressions and Simplification",
-         "Lines and Angles*",
-         "Triangles (Type, Properties, Pythagoras Theorem)*",
-         "Circles (arc, sector, cord, etc)*",
-         "Quadrilaterals and Polygons*",
-         "Coordinate Geometry*",
-         "3D Geometry*",
-         "Mensuration (Area, Perimeter, Volume, Surface Area)*",
-         "Mean, Median, Mode, Range$",
-         "Standard Deviation and Variance$",
-         "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
-         "Permutations and Combinations",
-         "Sets and Venn Diagrams"
-      ],
-      "graphType/tableType$": [
-         null,
-         "Line Graph",
-         "Bar Graph",
-         "Pie Chart graph",
-         "Scatter Plot graph",
-         "Standard Data Table",
-         "Pivot Table",
-         "Highlight Table",
-         "Heat Table",
-         "Text Table",
-         "Matrix Table",
-         "Frequency Table",
-         "Contingency Table"
-      ],
-      "questionTheme": [
-         "Business and Finance",
-         "Marketing and Sales",
-         "Logistics and Operations",
-         "Science and Technology",
-         "Human Resources",
-         "Environment and Sustainability",
-         "Government Policies and Regulations"
-      ]
-   },
-   "problem solving": {
-      "questionStyle": [
-         "Unitary Method",
-         "Algebraic Manipulations",
-         "Word Problems&",
-         "Geometric Calculations",
-         "Data Analysis$",
-         "Logical Reasoning",
-         "Mixed Concepts"
-      ],
-      "difficulty": 5,
-      "questionTopic": [
-         "Number Properties",
-         "Fractions, Decimals, and Percentages",
-         "Ratios and Proportions",
-         "Algebra",
-         "Geometry",
-         "Word Problems",
-         "Statistics$",
-         "Probability$",
-         "Functions and Graphs*"
-      ],
-      "questionTheme&": [
-         "Business and Finance",
-         "Science and Technology",
-         "Education and Academia",
-         "Everyday Mathematics",
-         "Health and Medicine",
-         "Environmental Issues",
-         "Sports and Entertainment"
-      ],
-      "graphType/tableType*": [
-         null,
-         "Line Graph",
-         "Bar Graph",
-         "Pie Chart graph",
-         "Scatter Plot graph",
-         "Standard Data Table",
-         "Pivot Table",
-         "Highlight Table",
-         "Heat Table",
-         "Text Table",
-         "Matrix Table",
-         "Frequency Table",
-         "Contingency Table"
-      ]
-   }
+    "combination number": 95,
+    "data sufficiency": {
+        "questionStyle": [
+            "Single Variable Equation",
+            "Inequalities",
+            "Geometric Properties*",
+            "Word Problems&",
+            "Numeric Comparisons",
+            "Data Interpretation$"
+        ],
+        "difficulty": 5,
+        "questionTopic": [
+            "Number Properties and Fractions, Decimals, Percentages$",
+            "Ratio and Proportion$",
+            "Simple Interest and Compound Interest",
+            "work and rate problem$",
+            "Profit, Loss and Discount$",
+            "Mixtures and Alligations$",
+            "Linear Equations, Quadratic Equations and Inequalities",
+            "Functions and Polynomials",
+            "Exponents and Powers",
+            "Algebraic Expressions and Simplification",
+            "Lines and Angles*",
+            "Triangles (Type, Properties, Pythagoras Theorem)*",
+            "Circles (arc, sector, cord, etc)*",
+            "Quadrilaterals and Polygons*",
+            "Coordinate Geometry*",
+            "3D Geometry*",
+            "Mensuration (Area, Perimeter, Volume, Surface Area)*",
+            "Mean, Median, Mode, Range$",
+            "Standard Deviation and Variance$",
+            "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "Permutations and Combinations",
+            "Sets and Venn Diagrams"
+        ],
+        "graphType/tableType$": [
+            null,
+            "Line Graph",
+            "Bar Graph",
+            "Pie Chart graph",
+            "Scatter Plot graph",
+            "Standard Data Table",
+            "Pivot Table",
+            "Highlight Table",
+            "Heat Table",
+            "Text Table",
+            "Matrix Table",
+            "Frequency Table",
+            "Contingency Table"
+        ],
+        "questionTheme": [
+            "Business and Finance",
+            "Marketing and Sales",
+            "Logistics and Operations",
+            "Science and Technology",
+            "Human Resources",
+            "Environment and Sustainability",
+            "Government Policies and Regulations"
+        ]
+    },
+    "problem solving": {
+        "questionStyle": [
+            "Unitary Method",
+            "Algebraic Manipulations",
+            "Word Problems&",
+            "Geometric Calculations",
+            "Data Analysis$",
+            "Logical Reasoning",
+            "Mixed Concepts"
+        ],
+        "difficulty": 5,
+        "questionTopic": [
+            "Number Properties",
+            "Fractions, Decimals, and Percentages",
+            "Ratios and Proportions",
+            "Algebra",
+            "Geometry",
+            "Word Problems",
+            "Statistics$",
+            "Probability$",
+            "Functions and Graphs*"
+        ],
+        "questionTheme&": [
+            "Business and Finance",
+            "Science and Technology",
+            "Education and Academia",
+            "Everyday Mathematics",
+            "Health and Medicine",
+            "Environmental Issues",
+            "Sports and Entertainment"
+        ],
+        "graphType/tableType*": [
+            null,
+            "Line Graph",
+            "Bar Graph",
+            "Pie Chart graph",
+            "Scatter Plot graph",
+            "Standard Data Table",
+            "Pivot Table",
+            "Highlight Table",
+            "Heat Table",
+            "Text Table",
+            "Matrix Table",
+            "Frequency Table",
+            "Contingency Table"
+        ]
+    }
 }

@@ -42,7 +42,7 @@ class GRE_Q:
             print(f"GRE Quants, Data Sufficiency, Error: {e}")
             return {}
 
-      elif ("graph" in prompt.lower() or "table" in prompt.lower()):
+      elif ("graph" in prompt.lower() or "table" in prompt.lower()) and "numeric entry" not in prompt.lower():
          # Parent Child Question Generation
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
@@ -74,7 +74,7 @@ class GRE_Q:
             print(f"GRE Quants, Simple, Error: {e}")
             return {}
 
-      if "numeric entry" in prompt.lower():
+      elif "numeric entry" in prompt.lower():
          llm = OpenAIAssistantRunnable(
             model="gpt-4o-mini",
             api_key=os.getenv("OPENAI_API_KEY"),

@@ -77,6 +77,8 @@ class Combination:
                          if execute:
                            validate = False
                            for val in values:
+                              if not val:
+                                 continue
                               if Type in val:
                                     validate = True
                                     break
