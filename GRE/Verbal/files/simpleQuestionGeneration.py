@@ -1,7 +1,18 @@
-from GRE.Verbal.files.questionComponents import SimpleQuestion
-import random
+from Verbal.files.questionComponents import SimpleQuestion
+import random, os, json, re
+from dotenv import load_dotenv
+from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+
 class SimpleQuestionGeneration:
-    def __init__(self, llm, prompt):
+    def __init__(self, llm=None, prompt=None):
+        load_dotenv()
+        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Verbal-Simple-Questions"]
+        if llm is None:
+            llm = OpenAIAssistantRunnable(
+                model="gpt-4o-mini",
+                api_key=os.getenv("OPENAI_API_KEY"),
+                assistant_id=assistant_id
+            )
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
@@ -44,12 +55,19 @@ class SimpleQuestionGeneration:
       self.questionData["options"] = self.shuffle_options(options)
 
       self.questionData["solution"] = questionContent.generate_questionSolution()
-      self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
+
+      pattern = r'<difficulty-level: (\d+)>'
+      match = re.search(pattern, self.prompt)
+      self.questionData["difficulty"] = int(match.group(1))
       
       # Extract theme and type as tags
-      prompt_parts = self.prompt.split(" - ")
+      prompt_parts = self.prompt.split("-")
       theme = prompt_parts[0].strip().strip("<>").lower()
       question_type = prompt_parts[1].strip("<>").lower()
-      self.questionData["tags"] = [theme, question_type]
+      try:
+         self.questionData["tags"] = [theme, question_type]
+      except Exception as e:
+         print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
+         self.questionData["tags"] = ["Simple", "Simple"]
       
       return self.questionData

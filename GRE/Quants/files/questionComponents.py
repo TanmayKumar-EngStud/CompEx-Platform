@@ -20,11 +20,21 @@ def refine_response(response_text):
         if json_block_match:
             try:
                 json_str = json_block_match.group(1).strip()
-                # Handle single quotes
-                json_str = json_str.replace("'", '"')
-                # Remove trailing commas
+# region ✅ 3 levels of json transformation 1️⃣ *,} -> *} ; *,] -> *] 2️⃣ {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*: 3️⃣ *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+            # *,} -> *} ; *,] -> *]
                 json_str = re.sub(r',(\s*})', r'\1', json_str)
                 json_str = re.sub(r',(\s*])', r'\1', json_str)
+                # {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*:
+                json_str = re.sub(r"(\[\s*)'", r'\1"', json_str)
+                json_str = re.sub(r"(\{\s*)'", r'\1"', json_str)
+                json_str = re.sub(r"'(\s*\])", r'"\1', json_str)
+                json_str = re.sub(r"'(\s*\})", r'"\1', json_str)
+                json_str = re.sub(r"'(\s*:)" , r'"\1', json_str)
+
+                # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+                json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
+                json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
+# endregion
                 
                 parsed = json.loads(json_str)
                 return json.dumps(parsed)
@@ -147,7 +157,7 @@ class SimpleQuestion:
             self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:30)"
             return self.thread_id, message["question"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}\n\n")
+            print(f"GRE Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\n\n")
             print(f"Exception details: {str(e)}")
             return "", ""
     def generate_questionTitle(self):
@@ -155,9 +165,16 @@ class SimpleQuestion:
         try:
             response_text = refine_response([message.content[0].text.value for message in response][0])
             message = json.loads(response_text)
-            return message["title"]
+            # Handle case where AI returns "question" key instead of "title"
+            if "title" in message:
+                return message["title"]
+            elif "question" in message:
+                print(f"Warning: AI returned 'question' key instead of 'title' key in questionTitle response")
+                return message["question"]  # Use the value even though key is wrong
+            else:
+                raise KeyError("Neither 'title' nor 'question' key found in response")
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}\n\n")
+            print(f"GRE Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\n\n")
             return ""
     def generate_questionSolution(self):
         response = self.llm.invoke({"content": "QuestionSolution", "thread_id": self.thread_id})
@@ -173,7 +190,7 @@ class SimpleQuestion:
                 return message["solution"]
             
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
             print(f"JSON parsing error: {str(e)}")
             return ""
     def generate_questionOptions(self):
@@ -184,7 +201,7 @@ class SimpleQuestion:
             message = json.loads(json_string)
             return message["options"], message["answer"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Quants, Error: message received for questionOptions is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
             print(f"JSON parsing error: {str(e)}")
             return {}, ""
 
@@ -201,7 +218,7 @@ class DataSufficiencyQuestion:
             self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:115)"
             return self.thread_id, message["graph/table"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
             return "", ""
     def generate_questionText(self):
         if(self.thread_id is not None):
@@ -213,7 +230,7 @@ class DataSufficiencyQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return self.thread_id, message["question"], message["statements"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
             return ""
     def generate_questionTitle(self):
         response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
@@ -221,7 +238,7 @@ class DataSufficiencyQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionTitle is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Quants, Error: message received for questionTitle is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
             return ""
     def generate_questionSolution(self):
         response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
@@ -229,5 +246,5 @@ class DataSufficiencyQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["solution"], str(message["answer"])
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
             return "", ""

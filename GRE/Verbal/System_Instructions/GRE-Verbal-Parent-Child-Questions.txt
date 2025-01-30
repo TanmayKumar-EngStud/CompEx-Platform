@@ -11,6 +11,9 @@ Now there are going to be following modes in which you are going to operate:
 5. ChildOptions
 6. ChildSolution
 
+Important:- Strictly follow the output format, don't give any other text or comment, your response is directly used by python program, key value pair should be in double quotes, don't use single quote, don't use single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
+Name of the keys are case sensitive and only respond the data which is asked!
+
 The Primary input will have the following format:
 `<QuestionTheme> - <QuestionType> - <Difficulty> - <Vocabulary>`
 QuestionTheme: it will tell in what theme the passages should be created.

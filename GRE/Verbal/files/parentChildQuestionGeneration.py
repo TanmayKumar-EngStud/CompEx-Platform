@@ -1,5 +1,8 @@
-from GRE.Verbal.files.questionComponents import ParentChildQuestion
+from Verbal.files.questionComponents import ParentChildQuestion
 import random, math, os, json
+from dotenv import load_dotenv
+from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx):
         child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))
@@ -21,7 +24,15 @@ class ParentChildQuestionGeneration:
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         # print(f"indexes: {indexes}")
         return prompts
-    def __init__(self, llm, prompt):
+    def __init__(self, llm=None, prompt=None):
+        load_dotenv()
+        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Verbal-Parent-Child-Questions"]
+        if llm is None:
+            llm = OpenAIAssistantRunnable(
+                model="gpt-4o-mini",
+                api_key=os.getenv("OPENAI_API_KEY"),
+                assistant_id=assistant_id
+            )
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}

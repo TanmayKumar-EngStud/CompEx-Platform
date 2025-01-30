@@ -4,11 +4,12 @@ class Verbal:
         self.mock_difficulty = mock_difficulty
         self.total_questions = 27
         
-        with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "verbal","difficulty_distribution.json"), "r") as file:
-            self.difficulty_distribution = json.load(file)
+        with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "difficulty_distribution.json"), "r") as file:
+            self.difficulty_distribution = json.load(file)["verbal"]
 
-        with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "verbal","component_allocation.json"), "r") as file:
-            self.component_allocation = json.load(file)
+        with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "r") as file:
+            self.complete_component_allocation = json.load(file)
+        self.component_allocation = self.complete_component_allocation["verbal"]
         self.combination_number = self.component_allocation["combination_number"]
 
         self.section_1 = self.component_allocation["section1"]
@@ -26,9 +27,9 @@ class Verbal:
       medium_count = int(self.total_questions * difficulty_ratio["medium"])
       hard_count = self.total_questions - (easy_count + medium_count)
     # we need to arrange the difficulty pool system here.
-      one = random.randint(1, easy_count)
-      three = random.randint(1, medium_count)
-      five = random.randint(1, hard_count)
+      one = random.randint(1, easy_count-1)
+      three = random.randint(1, medium_count-1)
+      five = random.randint(1, hard_count-1)
       two_three = random.randint(1, medium_count - three)
       two = easy_count - one + two_three
       four = hard_count - five + medium_count - three - two_three
@@ -45,10 +46,12 @@ class Verbal:
 
           self.component_allocation["combination_number"] = self.combination_number
           self.component_allocation["themes"] = self.themes
-          with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "verbal","component_allocation.json"), "w") as file:
-              json.dump(self.component_allocation, file)
 
-          return f"{questionTheme} - {q_type} - {difficulty} - {vocab}" if "rc" not in q_type.lower() else f"{questionTheme} - {q_type} - {difficulty}"
+          with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "w") as file:
+              self.complete_component_allocation["verbal"] = self.component_allocation
+              json.dump(self.complete_component_allocation, file)
+
+          return f"<{questionTheme}> - <{q_type}> - <difficulty-level: {difficulty}> - <vocabulary-level:{vocab}>" if "rc" not in q_type.lower() else f"<{questionTheme}> - <{q_type}> - <difficulty-level: {difficulty}>"
       
       def allocate_questions(section_allocation):
           section_prompts = []
@@ -86,3 +89,6 @@ class Verbal:
 
       
       return [section_1_prompts, section_2_prompts]
+
+# v = Verbal(mock_difficulty=1)
+# print(v.generate_question_prompts())
