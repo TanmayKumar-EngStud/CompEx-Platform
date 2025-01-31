@@ -1,3 +1,4 @@
+
 import json, os, random
 
 class Quants:
@@ -107,10 +108,14 @@ class Quants:
 
             prompt = self.generate_prompt(difficulty_pool[i], "mcq_single", qType)
             section_prompts.append(prompt)
-            
+         random.shuffle(section_prompts)
          all_prompts.append(section_prompts)
 
       return all_prompts
 
 # q = Quants(mock_difficulty=1)
-# print(q.generate_question_prompts())
+# sections = q.generate_question_prompts()
+# for section in sections:
+#     for prompt in section:
+#         print(prompt)
+#     print("-"*90)

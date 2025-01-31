@@ -89,11 +89,11 @@ class ParentChildQuestion:
    def generate_passages(self):
       def _generate(warn = False):
       #region 🔄 getting passage count
-         if "rc-s" in self.prompt:
+         if "rc-s" in self.prompt.lower():
             total_passage_count = 2
-         elif "rc-m" in self.prompt:
+         elif "rc-m" in self.prompt.lower():
             total_passage_count = 3
-         elif "rc-l" in self.prompt:
+         elif "rc-l" in self.prompt.lower():
             total_passage_count = 4
          else:
             total_passage_count = 0
@@ -206,7 +206,7 @@ class SimpleQuestion:
             print(f"🚩 {func_name} has failed to return response - attempt {attempt+1}/{max_retries}")
             print(f"\tReason: Function returned None")
          except Exception as e: 
-            print(f"🏳️ {func_name} failed in even attempting because: {str(e)}")
+            print(f"🏳️ {func_name} failed in even attempting [SimpleQuestion-GRE Verbal]because: {str(e)}")
       return None
 
    def generate_questionText(self):

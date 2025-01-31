@@ -14,15 +14,31 @@ class ParentChildQuestionGeneration:
                 assistant_id=assistant_id
             )
         self.llm = llm
-        self.prompt = prompt
+        # print(f"prompt: {prompt}")
+        self.total_child_questions = int(re.search(r"parent_child-(\d+)", prompt).group(1))
+        self.prompt = re.sub(r"parent_child-(\d+)", f'total child questions that you would have to generate for this parentChildQuestion will be {self.total_child_questions} so prepare other question data accordigly, prompt: ', prompt)
         self.questionData = {}
         self.thread_id = None
     def generate_question(self):
+        pattern = r'<difficulty-level: (\d+)>'
+        match = re.search(pattern, self.prompt)
+        self.questionData["difficulty"] = int(match.group(1))
+        try:
+            match = re.search(r"<(.*?)>", self.prompt)
+            tag = ["PS"]
+            if match:
+                first_content = match.group(1)
+                tag.append(first_content)
+            self.questionData["tag"] = tag
+        except Exception as e:
+            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
+            self.questionData["tag"] = ["PS"]
+
         parentChildQuestion = ParentChildQuestion(self.llm, self.prompt)
         self.thread_id, self.questionData["graph/table"] = parentChildQuestion.generate_questionGraph()
 
         self.questionData["title"] = parentChildQuestion.generate_parentTitle()
-        number_of_child_questions = random.randint(2,4)
+        number_of_child_questions = self.total_child_questions
         self.questionData["childQuestions"] = []
         for i in range(number_of_child_questions):
             childQuestionData = {}
@@ -37,12 +53,5 @@ class ParentChildQuestionGeneration:
             childQuestionData["options"] = option_list
             self.questionData["childQuestions"].append(childQuestionData)
 
-        pattern = r'<difficulty-level: (\d+)>'
-        match = re.search(pattern, self.prompt)
-        self.questionData["difficulty"] = int(match.group(1))
-        try:
-            self.questionData["tag"] = ["PS", self.prompt.split("-")[3].strip("<>").strip("[]").split(",")]
-        except Exception as e:
-            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-            self.questionData["tag"] = ["PS"]
+        
         return self.questionData

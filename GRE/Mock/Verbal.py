@@ -1,3 +1,4 @@
+# ✅ verified, working fine, number of question prompts needed to be generated based on the section is working fine.
 import json, os, random
 class Verbal:
     def __init__(self, mock_difficulty):
@@ -55,13 +56,23 @@ class Verbal:
       
       def allocate_questions(section_allocation):
           section_prompts = []
-          num_rc = random.randint(*section_allocation["RC"])
+          num_rc = 0
+          rc_combination = []
+          if section_allocation == self.section_1:
+              rc_combination = random.choice([["RC-S", "RC-L"], ["RC-M", "RC-M"], ["RC-L", "RC-M"]])
+          else:
+              rc_combination = random.choice([["RC-S", "RC-L", "RC-M"], ["RC-M", "RC-M", "RC-M"], ["RC-L", "RC-M", "RC-M"]])
+          for _ in rc_combination:
+              num_rc += 2 if _ == "RC-S" else 3 if _ == "RC-M" else 4
           num_tc = random.randint(*section_allocation["TC"])
           num_se = 12 if section_allocation == self.section_1 else 15
           remaining_questions = num_se
           num_se -= (num_rc + num_tc)
+          no_prompts = num_se + num_tc + len(rc_combination)
+          if num_se <= 0:
+              num_tc += (num_se - 2)
+              num_se = 2 #atleast some SE questions should be there in any of the section
 
-          rc_combination = random.choice([["RC-S", "RC-L"], ["RC-M", "RC-M"], ["RC-L", "RC-M"]])
           num_rc_questions = 0
           for q_type in rc_combination[: num_rc]:
               section_prompts.append(generate_prompt(q_type, difficulty_pool.pop()))
@@ -75,20 +86,29 @@ class Verbal:
           else:
               pin = random.randint(0, 2) # pinning system for TC question prompt generation
               itr = 0
-              for tc in tc_combination[: num_tc]:
-                  section_prompts.append(generate_prompt(tc, difficulty_pool.pop()))
-                  if itr == pin:
-                      section_prompts.append(generate_prompt(tc, difficulty_pool.pop()))
+              i=0
+              while i < num_tc:
+
+                  section_prompts.append(generate_prompt(f"TC-{itr%3+1}", difficulty_pool.pop()))
+                  if i == pin:
+                      section_prompts.append(generate_prompt(f"TC-{itr%3+1}", difficulty_pool.pop()))
+                      i +=1
                   itr += 1
+                  i+=1
           for _ in range(num_se):
               section_prompts.append(generate_prompt("SE", difficulty_pool.pop()))
           return section_prompts
       
       section_1_prompts = allocate_questions(self.section_1)
       section_2_prompts = allocate_questions(self.section_2)
-
+      random.shuffle(section_1_prompts)
+      random.shuffle(section_2_prompts)
       
       return [section_1_prompts, section_2_prompts]
 
 # v = Verbal(mock_difficulty=1)
-# print(v.generate_question_prompts())
+# sections = v.generate_question_prompts()
+# for section in sections:
+#     for prompt in section:
+#         print(prompt)
+#     print("-"*90)

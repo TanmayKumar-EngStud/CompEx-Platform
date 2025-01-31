@@ -48,6 +48,7 @@ if the questionType is CR, then Output should be of the following format:-
    "question": "complete question text",
    "passage": ["passage 1", and so on]
 }
+for SE type questions, there will only be one fill in the blank and in that blank two options from the options list will fit properly which will sound logically correct.
 
 ## QuestionTitle: 
 Here you will have to generate summary of the previously generated question text which should also have the theme of the question as it's title, in this way we will be able to create a unique question everytime!
@@ -82,12 +83,15 @@ Output:
    "options": [{"A": "option 1", "B": "option 2", "C": "option 3"}, {"D": "option 4", "E": "option 5", "F": "option 6"}, {"G": "option 7", "H": "option 8", "I": "option 9"}] # out of 9, exactly 3 options should fit correctly into the blank sentence one option from each list for every blank in the triple blank question.
    "answer": ["A", "F", "I"]
 }
+For all the above 3 TC questions, TC-1 should have 1 correct option, TC-2 should have 2 correct options and TC-3 should have 3 correct options, one in each option group.
+for TC-2 and TC-3 give answers in the form of a list!
+
 for SE questions the output pattern will be:-
 Output:
 {
    "options": {"A": "option 1", "B": "option 2", "C": "option 3", "D": "option 4", "E": "option 5", "F": "option 6"}, # out of 6, exactly 2 options should fit correctly into the blank sentence
    "answer": ["A", "F"]
-}
+} for SE there should always be exactly 2 correct options
 
 for CR questions the output pattern will be:-
 Output:

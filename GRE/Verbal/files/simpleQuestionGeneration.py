@@ -33,8 +33,11 @@ class SimpleQuestionGeneration:
 
     def generate_question(self):
       questionContent = SimpleQuestion(self.llm, self.prompt)
+      self.questionData["prompt"] = self.prompt
       self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
+
       self.questionData["title"] = questionContent.generate_questionTitle()
+
       num_options = 6
       if "tc-1" in self.prompt:
          num_options = 6
@@ -42,15 +45,23 @@ class SimpleQuestionGeneration:
          num_options = 8
       elif "tc-3" in self.prompt:
          num_options = 9
+      elif "se" in self.prompt:
+         num_options = 6
       options, answer = questionContent.generate_questionOptions(num_options)
+      # print(f"received options:\n{options}\nanswer:\n{answer}\nfor prompt:{self.prompt}\n\n ")
       if(isinstance(answer, str)):
-         self.questionData["answer"] = answer
+         self.questionData["answer"] = options[answer]
       else:
          answers = []
-         i=0
-         for ans in answer:
-            answers.append(options[i][ans])
-            i+=1
+         if "<se>" in self.prompt.lower():
+
+            answers.append(options[answer[0]])
+            answers.append(options[answer[1]])
+         else:
+            i=0
+            for ans in answer:
+               answers.append(options[i][ans])
+               i+=1
          self.questionData["answer"] = answers
       self.questionData["options"] = self.shuffle_options(options)
 
@@ -59,15 +70,17 @@ class SimpleQuestionGeneration:
       pattern = r'<difficulty-level: (\d+)>'
       match = re.search(pattern, self.prompt)
       self.questionData["difficulty"] = int(match.group(1))
+
       
       # Extract theme and type as tags
-      prompt_parts = self.prompt.split("-")
+      prompt_parts = self.prompt.split(" - ")
       theme = prompt_parts[0].strip().strip("<>").lower()
       question_type = prompt_parts[1].strip("<>").lower()
       try:
          self.questionData["tags"] = [theme, question_type]
       except Exception as e:
          print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-         self.questionData["tags"] = ["Simple", "Simple"]
+         self.questionData["tags"] = ["Simple"]
       
+
       return self.questionData

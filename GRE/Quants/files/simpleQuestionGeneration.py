@@ -24,6 +24,23 @@ class SimpleQuestionGeneration:
         return tags
 
     def generate_question(self):
+        pattern = r'<difficulty-level: (\d+)>'
+        match = re.search(pattern, self.prompt)
+        self.questionData["difficulty"] = int(match.group(1))
+        try:
+            match = re.search(r"<(.*?)>", self.prompt)
+            if "(multi-correct MCQ)" in self.prompt:
+                tag = ["MCQ-Multi correct"]
+            else:
+                tag = ["MCQ-Single correct"]
+            if match:
+                first_content = match.group(1)
+                tag.append(first_content)
+            self.questionData["tag"] = tag
+        except Exception as e:
+            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
+            self.questionData["tag"] = ["MCQ"]
+        
         questionContent = SimpleQuestion(self.llm, self.prompt)
         self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
         self.questionData["title"] = questionContent.generate_questionTitle()
@@ -34,12 +51,5 @@ class SimpleQuestionGeneration:
         self.questionData["options"] = options_list
         self.questionData["answer"] = options[answer]
 
-        pattern = r'<difficulty-level: (\d+)>'
-        match = re.search(pattern, self.prompt)
-        self.questionData["difficulty"] = int(match.group(1))
-        try:
-            self.questionData["tag"] = self.getTagAtIndex([0, 1, 3])
-        except Exception as e:
-            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-            self.questionData["tag"] = ["Simple"]
+        
         return self.questionData

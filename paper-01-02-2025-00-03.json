@@ -1,0 +1,1310 @@
+{
+  "GRE_Q": {
+    "section1": [
+      {
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_2gWlC0Su14eV6SQK3UziA4G5",
+        "question": "Given a numerical sequence where the nth term is defined as the product of the first n prime numbers, is the 10th term of this sequence even?",
+        "statements": [
+          "In a certain numerical sequence, the nth term is defined as the product of the first n prime numbers. Is the 10th term of this sequence even?",
+          "The 10th term can be computed as the product of the first 10 primes."
+        ],
+        "title": "Prime Product Sequence: Is the 10th Term Even?",
+        "solution": "Statement (1) states that the nth term is the product of the first n prime numbers. Since the product of any set of integers is even if at least one number in the product is even, and in the first 10 prime numbers, there is exactly one even prime, which is 2, we can conclude that the 10th term is indeed even. Therefore, Statement (1) alone is sufficient. Statement (2) simply reaffirms the calculation necessary for determining the 10th term but doesn't directly address the inquiry of whether it is even or not. Thus, Statement (2) alone is not sufficient. As a result, the answer is A.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_T1j717FnCIUy8Clq2xvdyNrt",
+        "question": "Is the total number of ways to choose and arrange the marbles sufficient to determine if there are more ways to arrange the marbles than to simply select them?",
+        "statements": [
+          "A box contains 10 distinct colored marbles. How many ways can you choose 4 marbles from this box?",
+          "If the order in which the 4 marbles are selected matters, what is the corresponding number of arrangements?"
+        ],
+        "title": "Comparing Selections and Arrangements of Distinct Marbles",
+        "solution": "To determine the relationship between the number of ways to select and arrange the marbles, we analyze each statement. Statement (1) provides the number of ways to choose 4 marbles from 10 distinct marbles, calculated as \\binom{10}{4} = \\frac{10!}{4!(10-4)!}. Statement (2) outlines that the number of ways to arrange those 4 selected marbles is given by 4! = 24. To compare, we find that \\binom{10}{4} * 4! = 210 * 24, which would yield a definitive comparison. Therefore, both statements together provide sufficient information regarding the relationship between selection and arrangement, as one must consider both scenarios to comprehend their relation. Thus, the correct answer is C, as both statements together are sufficient, but neither is alone sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "Numeric Entry",
+          "algebra"
+        ],
+        "question": "In a peculiar land where numbers exist as mythical creatures, a group of centaurs decides to organize a race. They start with a total of 2500 enchanted apples, which they plan to distribute evenly among four different tribes: the Elven, Dwarven, Human, and Dragon tribes. However, the Elven tribe declares that they will only accept 80% of what is allocated to them initially to save some for the forest. Unbeknownst to the others, the Dwarven tribe discovers an ancient spell that allows them to double their allotted share. If the remaining apples are evenly divided between the Human and Dragon tribes, how many apples will each of the Human and Dragon tribes receive after these adjustments?",
+        "title": "The Enchanted Apples Race Among the Tribes",
+        "solution": "<p>Initial allocation for each tribe = \\frac{2500}{4} = 625 apples. <br> Elven tribe takes only 80\\% of their allocation: <br> Elven apples = ~~625 \\times 0.8 = 500~~ apples. <br> Dwarven tribe doubles their allocation: <br> Dwarven apples = ~~625 \\times 2 = 1250~~ apples. <br> Remaining apples = 2500 - (500 + 1250) = 750 apples. <br> Remaining apples are divided between Human and Dragon tribes: <br> Each tribe receives = \\frac{750}{2} = 375 apples. </p>",
+        "answer": "375"
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_R7yHAtomdXC7WFxuDRCmxzR2",
+        "question": "Is it possible for the polygon mentioned in Statement (1) to be a regular polygon?",
+        "statements": [
+          "The sum of the internal angles of a polygon is given by the formula \\text{Sum} = (n - 2) \\times 180\\text{\u00b0}, where }n\\text{ is the number of sides. In a certain polygon, the sum of the internal angles is 720\u00b0.",
+          "The polygon has all its sides of equal length."
+        ],
+        "title": "Determining the Nature of a Polygon's Angles",
+        "solution": "From Statement (1), we have the sum of internal angles as 720\u00b0. Using the formula \\text{Sum} = (n - 2) \\times 180\\text{\u00b0}, we can set up the equation: \\left(n - 2\\right) \\times 180 = 720. \\text{ Solving for }n: \\frac{720}{180} = n - 2 \\Rightarrow n = 6. \\text{ Thus, the polygon is a hexagon, which can be regular.} \\text{ Statement (2) alone does not specify the nature of the polygon. Therefore, Statement (1) is sufficient, and Statement (2) is not. The answer is A. ",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "standard deviation and variance"
+        ],
+        "thread_id": "thread_Uon3YbeDJq9XV7JEgZkvQUDb",
+        "question": "In a mystical village where the residents have peculiar gifting ceremonies, the villagers partake in the exchange of rare gemstones. Each villager collects a different number of gemstones based on their ages: a 20-year-old owns 15 gemstones, a 25-year-old has 22 gemstones, a 30-year-old possesses 18 gemstones, and a 35-year-old has 25 gemstones. The village elder is keen to understand the variability in their gemstone collections and decides to calculate the variance and standard deviation of the number of gemstones owned by these four villagers. If the villagers' collections represent a unique data set, what is the calculation for the variance, and how does the standard deviation further elucidate their gemstone ownership disparity?",
+        "title": "Analyzing Gemstone Collection Variability in a Mystical Village",
+        "solution": [
+          "<p>Step 1: Calculate the mean number of gemstones: <br> Mean = \\frac{15 + 22 + 18 + 25}{4} = \\frac{80}{4} = 20 <br> Step 2: Calculate the variance using the formula: <br> Variance = \\frac{(15 - 20)^{2} + (22 - 20)^{2} + (18 - 20)^{2} + (25 - 20)^{2}}{4} <br> = \\frac{(-5)^{2} + (2)^{2} + (-2)^{2} + (5)^{2}}{4} = \\frac{25 + 4 + 4 + 25}{4} = \\frac{58}{4} = 14.5 <br> Step 3: Calculate the standard deviation as the square root of the variance: <br> Standard Deviation = \\sqrt{14.5} \\approx 3.81 </p>",
+          "3.81"
+        ],
+        "options": [
+          "4.01",
+          "3.81",
+          "4.81",
+          "3.31"
+        ],
+        "answer": "3.81"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "Numeric Entry",
+          "speed, distance and time"
+        ],
+        "question": "In a peculiar race between an elephant and a snail, the elephant can sprint at a speed of 24 km/h, while the snail, albeit moving slowly, travels at a speed of 0.1 km/h. If the race begins at noon and the snail initially is 5 kilometers behind the starting line while the elephant starts right at the beginning, how many minutes will it take for the snail to catch up to the elephant?",
+        "title": "Race Between an Elephant and a Snail: Who Will Catch Up?",
+        "solution": "<p>The total distance the snail needs to cover to catch up to the elephant is 5 kilometers. The relative speed at which the snail approaches the elephant is given by the difference in their speeds. <br> The speed of the elephant is 24 km/h, and the speed of the snail is 0.1 km/h. Therefore, the relative speed is calculated as follows: <br> <br> ~~\\text{Relative Speed} = \\text{Speed of Elephant} - \\text{Speed of Snail} = 24 \\text{ km/h} - 0.1 \\text{ km/h} = 23.9 \\text{ km/h}~~ <br> <br> The time taken for the snail to catch up is calculated by dividing the distance by the relative speed: <br> <br> ~~\\text{Time} = \\frac{\\text{Distance}}{\\text{Relative Speed}} = \\frac{5 \\text{ km}}{23.9 \\text{ km/h}} \\approx 0.2092 \\text{ hours}~~ <br> <br> Converting this time into minutes: <br> <br> ~~\\text{Time in minutes} = 0.2092 \\text{ hours} \\times 60 \\approx 12.55 \\text{ minutes}~~ </p>",
+        "answer": "12.55"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "geometry"
+        ],
+        "thread_id": "thread_lu7ow6HDHCHImNgpLLNXbvk3",
+        "question": "In a whimsical land where geometry rules govern the growth of magical trees, consider a triangular garden designed between three ancient oaks. The base of the triangle formed by the garden measures 18 meters, while the height extending perpendicularly from the apex oak to the base measures 12 meters. In an attempt to enhance the beauty of the garden, the gardeners decide to plant additional flowers along the perimeter of the triangle. They plant flowers every meter along the sides of the triangle. If the left side measures 25 meters and the right side measures 30 meters, how many flowers can be planted in total along the perimeter of the triangular garden? Be sure to note that each flower requires a distance of 1 meter to be planted.",
+        "title": "Calculating the Total Number of Flowers to be Planted in a Triangular Garden",
+        "solution": [
+          "<p>Given the triangular garden, we first calculate the perimeter by summing the lengths of all three sides: <br> Perimeter = Base + Left side + Right side = ~~18 + 25 + 30 = 73~~ meters. <br> Therefore, the total number of flowers that can be planted along the perimeter, with each flower occupying 1 meter, is ~~73~~.</p>",
+          "73"
+        ],
+        "options": [
+          "73",
+          "70",
+          "75",
+          "68"
+        ],
+        "answer": "73"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "standard deviation and variance"
+        ],
+        "graph/table": [
+          {
+            "index": [
+              "Policy A",
+              "Policy B",
+              "Policy C",
+              "Policy D",
+              "Policy E"
+            ],
+            "columns": [
+              "Effect on Standard Deviation",
+              "Effect on Variance"
+            ],
+            "data": {
+              "Policy A": {
+                "Effect on Standard Deviation": 57,
+                "Effect on Variance": 61
+              },
+              "Policy B": {
+                "Effect on Standard Deviation": 82,
+                "Effect on Variance": 56
+              },
+              "Policy C": {
+                "Effect on Standard Deviation": 50,
+                "Effect on Variance": 15
+              },
+              "Policy D": {
+                "Effect on Standard Deviation": 2,
+                "Effect on Variance": 29
+              },
+              "Policy E": {
+                "Effect on Standard Deviation": 70,
+                "Effect on Variance": 23
+              }
+            },
+            "type": "pivot table",
+            "description": "This pivot table summarizes the effects of various government policies on the standard deviation and variance."
+          }
+        ],
+        "title": "Analyzing the Impact of Government Policies on Standard Deviation and Variance",
+        "childQuestions": [
+          {
+            "question": "Given the effects of various government policies on the standard deviation and variance, determine the total reduction in variance if the effects of Policy A and Policy D are combined. Please provide the difference between the effects of Policy A and Policy D on variance.",
+            "number": 0,
+            "title": "Total Reduction in Variance from Combined Government Policies",
+            "solution": "<p>The total reduction in variance when combining the effects of <strong>Policy A</strong> and <strong>Policy D</strong> is calculated as follows:</p><p>Given the effect of <strong>Policy A</strong> on variance is <strong>61</strong> and the effect of <strong>Policy D</strong> is <strong>29</strong>, the calculation is:</p><p>~~\\text{Reduction} = \\text{Effect of Policy A} - \\text{Effect of Policy D} = 61 - 29 = 32~~</p><p>Thus, the total reduction in variance is <strong>32</strong>.</p>",
+            "answer": "Reduction value is 32",
+            "options": [
+              "Reduction value is 25",
+              "Reduction value is 32",
+              "Reduction value is 30",
+              "Reduction value is 28"
+            ]
+          },
+          {
+            "question": "If you were to analyze the variability in the effects of government policies, which policy has the highest effect on standard deviation, and what is that effect? Explain how this effect compares to the overall average effect of all policies on standard deviation.",
+            "number": 1,
+            "title": "Highest Effect on Standard Deviation among Government Policies",
+            "solution": "<p>Upon analyzing the effects of government policies on standard deviation, we find that <strong>Policy B</strong> exhibits the highest effect on standard deviation, which is <strong>82</strong>.</p><p>In comparison, the overall average effect of all policies on standard deviation is approximately <strong>52.2</strong>.</p><p>This indicates that <strong>Policy B</strong> significantly exceeds the average effect, highlighting its substantial impact on variability.</p>",
+            "answer": "Policy B has an effect of 82",
+            "options": [
+              "Policy B has an effect of 82",
+              "Policy E has an effect of 70",
+              "Policy A has an effect of 57",
+              "Policy C has an effect of 50"
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "probability"
+        ],
+        "graph/table": [
+          {
+            "variable1": [
+              "Yes",
+              "Yes",
+              "No",
+              "No"
+            ],
+            "variable2": [
+              "Policy A",
+              "Policy B",
+              "Policy C",
+              "Policy D"
+            ],
+            "frequency": [
+              10,
+              20,
+              5,
+              15,
+              8,
+              22,
+              12,
+              18
+            ],
+            "type": "contingency table",
+            "description": "This contingency table shows the distribution of compliance with government policies among different policies."
+          },
+          {
+            "headers": [
+              "Policy",
+              "Approval Rating"
+            ],
+            "rows": [
+              [
+                "Policy A",
+                70
+              ],
+              [
+                "Policy B",
+                80
+              ],
+              [
+                "Policy C",
+                60
+              ],
+              [
+                "Policy D",
+                50
+              ]
+            ],
+            "type": "standard data table",
+            "description": "This table displays the approval ratings for various government policies."
+          }
+        ],
+        "title": "Analyzing the Impact of Government Policies on Compliance and Public Approval",
+        "childQuestions": [
+          {
+            "question": "",
+            "number": 0,
+            "title": "Interpreting Approval Ratings of Government Policies",
+            "solution": "<p>The approval ratings for the policies are as follows:</p> <ul> <li>Policy A: 70\\%</li> <li>Policy B: 80\\%</li> <li>Policy C: 60\\%</li> <li>Policy D: 50\\%</li> </ul> <p>The average approval rating across these policies is 65.00\\%. This suggests a varying level of public support, with Policy B leading in approval.</p>",
+            "answer": "65.0",
+            "options": [
+              "45.0",
+              "70.0",
+              "65.0",
+              "80.0"
+            ]
+          },
+          {
+            "question": "",
+            "number": 1,
+            "title": "Understanding the Implications of Low Approval Ratings in Policy Making",
+            "solution": "<p>Low approval ratings for government policies can have significant consequences. For example, with Policy D having an approval rating of 50\\%, this suggests that public support is weak. Such a situation may lead policymakers to reconsider this policy's implementation strategy or even overhaul it entirely.</p> <p>Moreover, low approval can result in a lack of funding and support from both the public and lawmakers, as they may not see the policy as being beneficial. Continuous public dissatisfaction can also result in adverse political outcomes during elections, as constituents tend to favor representatives who align closely with their values and needs.</p>",
+            "answer": "Policymakers might face election challenges due to low support.",
+            "options": [
+              "Immediate funding increases due to low approval.",
+              "Increased support for the policy due to focus on its downsides.",
+              "Policymakers might face election challenges due to low support.",
+              "No impact on future policy changes."
+            ]
+          },
+          {
+            "question": "",
+            "number": 2,
+            "title": "",
+            "solution": "",
+            "answer": "Implementing community engagement initiatives to gather feedback.",
+            "options": [
+              "Limiting the available information on policy outcomes.",
+              "Avoiding public discussions to maintain a consistent narrative.",
+              "Scaling back on communication efforts to save resources.",
+              "Implementing community engagement initiatives to gather feedback."
+            ]
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "difficulty": 2,
+        "tag": [
+          "Numeric Entry",
+          "probability"
+        ],
+        "question": "In a peculiar village, there are 120 residents, of whom 40 are younger than 18 years old, 50 are between the ages of 18 and 34, and the remaining residents are above 34. If a random resident is selected, what is the probability that the selected resident is either younger than 18 years old or older than 34 years old? Please provide your answer rounded to four decimal places.",
+        "title": "Calculating the Probability of Selecting a Resident by Age Group in a Village",
+        "solution": "<p>Total residents = 120 <br> Residents younger than 18 = 40 <br> Residents between 18 and 34 = 50 <br> Residents older than 34 = 120 - (40 + 50) = 30 <br> Favorable outcomes (younger than 18 or older than 34) = 40 + 30 = 70 <br> Probability = \\frac{70}{120} = 0.5833</p>",
+        "answer": "0.58"
+      },
+      {
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_a4Wa8QS2COEMJvgk0d63osJo",
+        "question": "Is the number of students who passed the mathematics exam greater than 30?",
+        "statements": [
+          "The ratio of the number of students who passed the mathematics exam to those who failed is 3:2.",
+          "The total number of students who appeared for the exam is 50."
+        ],
+        "title": "Analyzing Student Exam Results with Ratios",
+        "solution": "From Statement (1), if the ratio of students who passed to those who failed is 3:2, we can express the number of students who passed as \\frac{3}{5} \\times \\text{total students}. From Statement (2), the total number of students is 50. Thus, the number who passed is \\frac{3}{5} \\times 50 = 30. We conclude that 30 is not greater than 30. Therefore, Statement (1) provides the necessary information to answer the question.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_npCEcomcXeUHsv6pj6whKeHR",
+        "question": "Is the height of the triangle greater than 8 units?",
+        "statements": [
+          "The area of a triangle is 60 square units and its base is 10 units.",
+          "The height of the triangle is half of its base."
+        ],
+        "title": "Height Determination in a Triangle given Area and Base",
+        "solution": "To find if the height is greater than 8 units, we analyze both statements. From statement (1), we can use the formula for the area of a triangle: \\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}. Given the area is 60 and the base is 10, we have: \\[ 60 = \\frac{1}{2} \\times 10 \\times h \\] which simplifies to \\[ h = \\frac{60 \\times 2}{10} = 12. \\] Therefore, the height is 12, which is greater than 8. Statement (1) alone is sufficient. From statement (2), if the height is half the base, then: \\[ h = \\frac{1}{2} \\times 10 = 5. \\] This is less than 8, indicating that statement (2) alone is not sufficient. Thus, the correct answer is option A.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_T1xEceetxm7VwonePilyW1De",
+        "question": "Determine the number of oranges in a basket based on the given ratios and total amount of fruits.",
+        "statements": [
+          "The ratio of the number of apples to the number of oranges in a basket is 3:5. If the total number of fruits is 32, how many oranges are there?",
+          "If the number of apples is doubled, the new ratio of apples to oranges becomes 6:5."
+        ],
+        "title": "Determining Oranges from Fruit Ratios in a Basket",
+        "solution": "To find the number of oranges, we can analyze each statement. From Statement (1), if the ratio of apples to oranges is 3:5, we can set up the equation: \\text{Let the number of apples be } 3x \\text{ and the number of oranges be } 5x. \\text{ From the total fruits: } 3x + 5x = 32 \\Rightarrow 8x = 32 \\Rightarrow x = 4. \\text{ Thus, the number of oranges is } 5x = 5(4) = 20. This statement is sufficient on its own. From Statement (2), if the number of apples is doubled, the new ratio becomes 6:5. This gives us an additional equation but does not necessarily provide information about the total number of oranges without knowing the original amount of apples. Therefore, this statement alone is not sufficient. Hence, the answer is option A.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_PFXfH4OfpLfn9dq9OhwTXkUa",
+        "question": "Is the information obtained from the statements sufficient to determine the total number of distinct committees that can be formed under the given conditions?",
+        "statements": [
+          "A certain committee must be formed by selecting members from a larger group of people. If the committee must consist of 4 members and the total number of people is 10, how many different ways can the committee be formed?",
+          "The committee will include at least one member from a specified subgroup of 3 people within the larger group of 10."
+        ],
+        "title": "Committee Formation using Permutations and Combinations",
+        "solution": "Statement (1) alone provides the total number of ways to choose 4 members from 10, calculated as \\binom{10}{4} = \\frac{10!}{4!(10-4)!} = 210. However, it does not specify whether the subgroup of 3 must be represented. Statement (2) alone shows that at least one member from a subgroup of 3 people should be included but does not provide the total count of combinations. Therefore, we cannot ascertain the number of combinations with just one statement. Together, Statements (1) and (2) clarify that we can find the total valid combinations considering the subgroup condition, making them sufficient to answer the question.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_4MKzk92iyfI8HCnIluUL2PHL",
+        "question": "Is it true that the product of the two prime numbers is also a prime number?",
+        "statements": [
+          "The sum of two prime numbers is an even number.",
+          "One of the prime numbers is greater than 5."
+        ],
+        "title": "Analyzing the Product of Prime Numbers from Number Theory",
+        "solution": "Statement (1) asserts that the sum of two prime numbers is even, which implies they must both be odd. However, as the only even prime number is 2, the other must also be 2 if the sum is to remain even. Thus, the product, \\( 2 \\times 2 = 4 \\), is not prime, contradicting the assertion that their product is prime. Therefore, Statement (1) alone isn't sufficient. Statement (2) introduces conditions aiding in determining a specific range for the primes considered, but does not inherently influence the primality of their product. Without a combined examination, neither condition independently provides proof; hence, we find that the essence of both statements, when analyzed together, reveals that the product derived from any arrangement of primes, specifically greater than 5, remains composite, so neither statement alone suffices.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "Numeric Entry",
+          "percentage"
+        ],
+        "question": "A farmer has a large orchard with two types of trees: apple and orange trees. Currently, there are 120 apple trees and 80 orange trees. In the next planting season, the farmer plans to increase the number of apple trees by 25% and the number of orange trees by 15%. After these changes, what will be the percentage of apple trees in the entire orchard as compared to the total number of trees?",
+        "title": "Calculating the Revised Percentage of Apple Trees After Planting Season",
+        "solution": "<p>Initial number of apple trees = 120 <br> Increase in apple trees = ~~120 * 25\\% = 30~~ <br> New number of apple trees = ~~120 + 30 = 150~~ <br> Initial number of orange trees = 80 <br> Increase in orange trees = ~~80 * 15\\% = 12~~ <br> New number of orange trees = ~~80 + 12 = 92~~ <br> Total number of trees in the orchard = ~~150 + 92 = 242~~ <br> Percentage of apple trees = ~~\\frac{150}{242} \\times 100\\% \\approx 61.90\\%~~</p>",
+        "answer": "61.90"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "algebra"
+        ],
+        "thread_id": "thread_G7UufQxK40j6LY5tVZIyT7eP",
+        "question": "In a quaint little town, a bakery produces two types of pastries: croissants and danishes. Last month, the bakery produced a total of 600 pastries, with each croissant selling for \\$3 and each danish selling for \\$4. In total, the bakery earned \\$2,100 from sales of these pastries. If the number of croissants produced was twice the number of danishes produced, how many danishes were sold?",
+        "title": "Determining the Number of Danish Pastries Sold in a Bakery's Monthly Production",
+        "solution": [
+          "<p>Let the number of danishes produced be denoted by \\( d \\). Then, according to the problem statement, the number of croissants produced is \\( 2d \\). Given that the total pastries produced is 600, we can express this as: <br> \\( d + 2d = 600 \\) <br> Simplifying, we find that \\( 3d = 600 \\) which leads us to \\( d = \\frac{600}{3} = 200 \\). <br> From the question, the total revenue generated from sales is \\$2,100. Therefore, we can set up the equation for the total revenue: <br> \\( 3(2d) + 4(d) = 2100 \\) <br> Replacing \\( d \\) in the equation, we have: <br> \\( 6d + 4d = 2100 \\) <br> Simplifying gives: \\( 10d = 2100 \\) which results in \\( d = \\frac{2100}{10} = 210 \\). <br> Therefore, the number of danishes produced is \\( 210 \\). </p>",
+          "210"
+        ],
+        "options": [
+          "250",
+          "200",
+          "300",
+          "210"
+        ],
+        "answer": "210"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "standard deviation and variance"
+        ],
+        "thread_id": "thread_0LqdzX5lbIOhofaw9Pzcacwq",
+        "question": "In a town renowned for its eclectic mix of vintage and modern architecture, the mayor decided to evaluate the heights of various buildings for an urban planning project. A random sample of 10 buildings was selected, with the following heights measured in meters: 15, 18, 20, 22, 15, 23, 19, 24, 26, and 20. After compiling this data, the mayor required a comprehensive analysis to gauge the level of consistency among the building heights. Specifically, she seeks to determine the variance and standard deviation of this dataset to inform her future decisions regarding zoning laws. What are the variance and standard deviation of the heights of the buildings?",
+        "title": "Analyzing Variance and Standard Deviation of Building Heights in Urban Planning",
+        "solution": [
+          "<p>Step 1: Calculate the mean of the heights.<br> Mean = ~~\\frac{15 + 18 + 20 + 22 + 15 + 23 + 19 + 24 + 26 + 20}{10} = 20.2~~ meters.<br><br>Step 2: Calculate the sum of squared deviations from the mean.<br> Squared deviations = (15 - 20.2)^{2} + (18 - 20.2)^{2} + (20 - 20.2)^{2} + (22 - 20.2)^{2} + (15 - 20.2)^{2} + (23 - 20.2)^{2} + (19 - 20.2)^{2} + (24 - 20.2)^{2} + (26 - 20.2)^{2} + (20 - 20.2)^{2} = ~~(27.04 + 4.84 + 0.04 + 3.24 + 27.04 + 7.84 + 1.44 + 14.44 + 33.64 + 0.04) = 109.6~~.<br><br>Step 3: Calculate the variance.<br> Variance = ~~\\frac{109.6}{10} = 11.96~~.<br><br>Step 4: Calculate the standard deviation.<br> Standard Deviation = ~~\\sqrt{Variance} = \\sqrt{11.96} \\approx 3.46~~ meters.</p>",
+          "11.96 for variance and approximately 3.46 for standard deviation."
+        ],
+        "options": [
+          "11.96 for variance and approximately 3.46 for standard deviation.",
+          "12.96 for variance and approximately 3.46 for standard deviation.",
+          "10.96 for variance and approximately 3.46 for standard deviation.",
+          "14.96 for variance and approximately 3.46 for standard deviation."
+        ],
+        "answer": "11.96 for variance and approximately 3.46 for standard deviation."
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "simple interest/compound interest"
+        ],
+        "graph/table": [
+          {
+            "graph": {
+              "title": "Simple Interest vs. Compound Interest Over 5 Years",
+              "xAxis": "Years",
+              "yAxis": "Amount in Dollars",
+              "data": {
+                "x-axis": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "y-axis": [
+                  1000,
+                  2000,
+                  3000,
+                  4000,
+                  5000
+                ],
+                "data": [
+                  1050,
+                  1102.5,
+                  1157.625,
+                  1215.50625,
+                  1276.2815625
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "This bar graph compares the amount accumulated through simple interest and compound interest over a span of five years."
+          },
+          {
+            "graph": {
+              "title": "Growth of Investment with Compound Interest",
+              "xAxis": "Years",
+              "yAxis": "Amount in Dollars",
+              "data": {
+                "x-axis": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "y-axis": [
+                  1000,
+                  2000,
+                  3000,
+                  4000,
+                  5000
+                ],
+                "data": [
+                  1050,
+                  1102.5,
+                  1157.625,
+                  1215.50625,
+                  1276.2815625
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "This bar graph presents the growth of an investment as it accumulates compound interest over a five-year period."
+          }
+        ],
+        "title": "Comparison of Simple Interest and Compound Interest Growth Over Time",
+        "childQuestions": [
+          {
+            "question": "If an investment of \\$1000 is made at a simple interest rate of 5\\% per annum, what would be the total amount after 5 years?",
+            "number": 0,
+            "title": "Total Amount Accrued from Simple Interest After 5 Years",
+            "solution": "<p>To calculate the total amount accrued from simple interest, we can use the formula:</p><p>~~\\text{Total Amount} = \\text{Principal} + \\text{Interest}~~</p><p>where:</p><ul><li>~~\\text{Interest} = \\text{Principal} \\times \\text{Rate} \\times \\text{Time}~~</li></ul><p>Substituting in the values:</p><ul><li>Principal = \\$1000</li><li>Rate = 5\\% = 0.05</li><li>Time = 5 \\text{ years}</li></ul><p>First, we calculate the Interest:</p><p>~~\\text{Interest} = 1000 \\times 0.05 \\times 5 = 250~~</p><p>Next, we can find the Total Amount:</p><p>~~\\text{Total Amount} = 1000 + 250 = 1250~~</p><p>Therefore, the total amount after 5 years would be \\$1250.</p>",
+            "answer": "\\$1250",
+            "options": [
+              "\\$1250",
+              "\\$1050",
+              "\\$1200",
+              "\\$1200"
+            ]
+          },
+          {
+            "question": "If an investment of \\$1000 is made at a compound interest rate of 5\\% per annum, what will be the amount after 5 years, compounded annually?",
+            "number": 1,
+            "title": "Total Amount Accrued from Compound Interest After 5 Years",
+            "solution": "<p>To calculate the total amount accrued from compound interest, we use the formula:</p><p>~~\\text{Total Amount} = \\text{Principal} \\times \\left(1 + \\text{Rate}\\right)^{\\text{Time}}~~</p><p>where:</p><ul><li>Principal = \\$1000</li><li>Rate = 5\\% = 0.05</li><li>Time = 5 \\text{ years}</li></ul><p>Substituting in the values:</p><p>~~\\text{Total Amount} = 1000 \\times \\left(1 + 0.05\\right)^{5}~~</p><p>Calculating this gives:</p><p>~~\\text{Total Amount} = 1000 \\times (1.2762815625) \\approx 1276.28~~</p><p>Therefore, the total amount after 5 years would be approximately \\$1276.28.</p>",
+            "answer": "\\$1276.28",
+            "options": [
+              "\\$1216.65",
+              "\\$1250.00",
+              "\\$1276.28",
+              "\\$1215.51"
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": 3,
+        "tag": [
+          "PS",
+          "simple interest/compound interest"
+        ],
+        "graph/table": [
+          {
+            "type": "frequency table",
+            "description": "This frequency table represents the number of years individuals have engaged with government policies and regulations concerning interest rates.",
+            "category": [
+              "0-2 years",
+              "3-5 years",
+              "6-10 years",
+              "11-15 years"
+            ],
+            "frequency": [
+              5,
+              15,
+              10,
+              8
+            ]
+          },
+          {
+            "type": "frequency table",
+            "description": "This frequency table provides insights into the range of interest rates applied by government policies.",
+            "category": [
+              "Less than 1%",
+              "1%-3%",
+              "3%-5%",
+              "More than 5%"
+            ],
+            "frequency": [
+              12,
+              18,
+              7,
+              3
+            ]
+          }
+        ],
+        "title": "Analysis of the Impact of Government Policies on Interest Rates and Public Engagement",
+        "childQuestions": [
+          {
+            "question": "",
+            "number": 0,
+            "title": "Percentage of Individuals Engaged with Government Policies for 6-10 Years",
+            "solution": "The percentage of individuals who have interacted with government policies for a duration of 6-10 years is calculated as follows:<br>~~\\text{Percentage} = \\left(\\frac{\\text{Individuals in '6-10 years'}}{\\text{Total Individuals}}\\right) \\times 100\\%~~<br>~~\\text{Percentage} = \\left(\\frac{10}{50}\\right) \\times 100\\% = 20.0\\%~~",
+            "answer": "20.0%",
+            "options": [
+              "20.0%",
+              "10.0%",
+              "15.0%",
+              "25.0%"
+            ]
+          },
+          {
+            "question": "",
+            "number": 1,
+            "title": "Impact of New Interest Rate Category on Overall Distribution",
+            "solution": "The new total frequency for each category after increasing the frequency for '1%-3%' is calculated as follows:<br>Original Frequencies: [12, 18, 7, 3]<br>New Frequency for '1%-3%': 23<br>New Frequencies: [12, 23, 7, 3]<br>Total Frequency = Original Total + 5 = 40 + 5 = 45.",
+            "answer": "45",
+            "options": [
+              "35",
+              "50",
+              "45",
+              "40"
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "probability"
+        ],
+        "graph/table": [
+          {
+            "graph": {
+              "title": "Employee Retention Probability Over Years",
+              "xAxis": "Years",
+              "yAxis": "Retention Probability",
+              "data": {
+                "x-axis": [
+                  2001,
+                  2002,
+                  2003,
+                  2004,
+                  2005
+                ],
+                "y-axis": [
+                  0,
+                  0.2,
+                  0.4,
+                  0.6,
+                  0.8,
+                  1
+                ],
+                "data": [
+                  0.12,
+                  0.69,
+                  0.87,
+                  0.6,
+                  0.1
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph illustrates the probability of employee retention over the years in a human resources context."
+          }
+        ],
+        "title": "Analyzing Employee Retention Probability in Human Resources over Time",
+        "childQuestions": [
+          {
+            "question": "Based on the data illustrated in the graph, what would be the expected retention probability in 2005 if the trend continued at the average growth rate from 2001 to 2004?",
+            "number": 0,
+            "title": "Expected Retention Probability in 2005 Based on Trend",
+            "solution": "To determine the expected retention probability in 2005, we first find the average growth rate in retention probability from 2001 to 2004. The growth rates for each year are calculated as follows:<br><br>Growth Rate from 2001 to 2002: ~~0.69 - 0.12 = 0.57~~<br>Growth Rate from 2002 to 2003: ~~0.87 - 0.69 = 0.18~~<br>Growth Rate from 2003 to 2004: ~~0.60 - 0.87 = -0.27~~<br><br>The average growth rate is then calculated as:<br>~~\\text{Average Growth Rate} = \\frac{0.57 + 0.18 - 0.27}{3} = 0.16~~<br><br>Using this average growth rate to project the retention probability for 2005:<br>~~\\text{Expected Retention Probability in 2005} = 0.60 + 0.16 = 0.76~~",
+            "answer": "0.76",
+            "options": [
+              "0.81",
+              "0.76",
+              "0.66",
+              "0.26"
+            ]
+          },
+          {
+            "question": "If the employee retention probability in 2006 increased by 15% from the 2005 value, what would be the new retention probability for that year?",
+            "number": 1,
+            "title": "Projected Retention Probability for 2006 with Increase",
+            "solution": "To calculate the projected retention probability for 2006, we apply a 15\\% increase to the retention probability from 2005. Thus, the calculation is as follows:<br><br>Let the retention probability be denoted as:<br>~~\\text{Retention Probability in 2005} = 0.76~~<br><br>Now, applying the increase:<br>~~\\text{New Retention Probability in 2006} = 0.76 \\times (1 + 0.15) = 0.76 \\times 1.15 = 0.874~~",
+            "answer": "0.87",
+            "options": [
+              "1.05",
+              "0.97",
+              "0.74",
+              "0.87"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "GRE_V": {
+    "section1": [
+      {
+        "prompt": "<Philosophy> - <SE> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_6nxr6z3DsRzvH267aAxDvyfS",
+        "question": "In understanding the complex nature of existence, one must consider the _______ of human perception, as it significantly influences our interpretation of reality. This _______ is not just subjective but is informed by a myriad of social and cultural factors.",
+        "title": "Philosophy - The Influence of Human Perception on Reality",
+        "answer": [
+          "boundedness",
+          "vastness"
+        ],
+        "options": [
+          "clarity",
+          "emphasis",
+          "vastness",
+          "boundedness",
+          "confusion",
+          "richness"
+        ],
+        "solution": "<p>The correct options are <b>A: boundedness</b> and <b>E: vastness</b>. They both capture the nuances of human perception in relation to reality.</p><p>Option A is correct because 'boundedness' suggests that human perception is limited, leading to a skewed interpretation of reality. </p><p>Option E is correct as 'vastness' indicates that human perception can encompass a wide range of influences, affecting how reality is interpreted.</p><br/><p>Other options are incorrect for the following reasons:</p><ul><li><b>B: richness</b> - While perception can indeed be rich, it does not directly address the limitation or influence on interpretation.</li><li><b>C: clarity</b> - Clarity implies straightforwardness, which contrasts with the inherent subjectivity of perception.</li><li><b>D: confusion</b> - Although confusion can result from perception, it does not encapsulate the broader concept of human interpretation.</li><li><b>F: emphasis</b> - Emphasis pertains to priority rather than the overall influence on reality interpretation.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "philosophy",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Science> - <TC-1> - <difficulty-level: 1> - <vocabulary-level:1>",
+        "thread_id": "thread_tT8UOW9MerDmFoiUmdvMKIfw",
+        "question": "The photosynthesis process allows plants to use sunlight to convert carbon dioxide and water into _______.",
+        "title": "Science of Photosynthesis",
+        "answer": "glucose",
+        "options": [
+          "oxygen",
+          "energy",
+          "hydrogen",
+          "carbohydrates",
+          "vitamins",
+          "glucose"
+        ],
+        "solution": "<p><strong>Option A</strong> is correct because glucose is the primary product of photosynthesis. During this process, plants synthesize glucose using sunlight, carbon dioxide, and water.</p><p>Other options are not correct for the following reasons:</p><ul><li><strong>Option B:</strong> Oxygen is a byproduct of photosynthesis, not the main product.</li><li><strong>Option C:</strong> Energy is harnessed during the process but is not a product; rather, it's converted into glucose.</li><li><strong>Option D:</strong> Carbohydrates are a broader category that includes glucose, but glucose specifically is the direct product.</li><li><strong>Option E:</strong> Hydrogen is not produced in usable form in this process.</li><li><strong>Option F:</strong> Vitamins are not produced in photosynthesis.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "science",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Economics> - <TC-3> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "thread_id": "thread_aAYcSRBpYNZ6aNyAfyQ5mcXj",
+        "question": "The recent shifts in global trade dynamics reveal a complexity that often leads to __________ consequences for domestic economies, making the need for effective policy __________ imperative for governments worldwide. As tariffs and regulations continue to evolve, understanding the intricacies of these adjustments is crucial for maintaining economic stability in an increasingly interconnected landscape.",
+        "title": "Global Trade Dynamics and Economic Policy",
+        "answer": "adverse",
+        "options": [
+          "catastrophic",
+          "beneficial",
+          "sustainable",
+          "considerable",
+          "negligible",
+          "adverse"
+        ],
+        "solution": "<p>The correct option is <b>adverse</b> because shifts in global trade dynamics typically create negative impacts on domestic economies, making this a fitting choice for the blank.</p><p>Other options explained:</p><ul><li><b>beneficial</b>: This option contradicts the common outcomes of trade shifts, which often include negative consequences.</li><li><b>negligible</b>: This implies no significant impact, which does not reflect the reality of significant changes in trade policies.</li><li><b>catastrophic</b>: While it suggests a serious outcome, it is too extreme for what is generally observed.</li><li><b>considerable</b>: This may seem plausible, but it lacks the negative connotation appropriate for the context.</li><li><b>sustainable</b>: Sustainability relates to enduring practices rather than the immediate consequences resulting from trade shifts, making it irrelevant here.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "economics",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "thread_id": "thread_VTIKx0HPUWGA4mKniM6lpc2K",
+        "question": "In his novel, the author paints a portrait of a society where the joy of individual freedom is ______, while the pervading atmosphere of despair continues to ______ the characters' choices.",
+        "title": "Literature: Exploring Freedom and Despair",
+        "answer": [
+          "celebrated",
+          "cloud"
+        ],
+        "options": [
+          [
+            "overlooked",
+            "revered",
+            "celebrated",
+            "constrained"
+          ],
+          [
+            "determine",
+            "cloud",
+            "emancipate",
+            "enlighten"
+          ]
+        ],
+        "solution": "<p>In this question, the correct answers are <strong>D</strong> ('celebrated') and <strong>F</strong> ('cloud'). The first blank suggests that the joy of individual freedom is something positive that is often highlighted in the society depicted by the author, hence 'celebrated' fits perfectly. The second blank indicates how the atmosphere of despair affects the choices made by characters, and 'cloud' effectively conveys how the despair overshadows their decisions.</p><p><strong>Option A:</strong> 'revered' suggests high respect but does not fit the tone of the sentence.</p><p><strong>Option B:</strong> 'constrained' implies restriction, which contradicts the joy of freedom.</p><p><strong>Option C:</strong> 'overlooked' indicates that freedom is ignored, which isn't the intended meaning in the context.</p><p><strong>Option E:</strong> 'enlighten' does not fit with the surrounding context of despair affecting choices.</p><p><strong>Option G:</strong> 'emancipate' suggests a freeing action but does not contextually connect with the characters' choices.</p><p><strong>Option H:</strong> 'determine' suggests a decisive influence but lacks the appropriate context related to the atmosphere of despair.</p>",
+        "difficulty": 2,
+        "tags": [
+          "literature",
+          "tc-2"
+        ]
+      },
+      {
+        "passages": [
+          "<p>In the field of psychology, the dichotomy between nature and nurture has long been a subject of intense debate. Researchers explore the extent to which genetic predispositions versus environmental influences shape individual behaviors and mental processes. Twin studies have provided compelling evidence that genetics play a critical role in various psychological traits, such as intelligence and personality. However, numerous studies also highlight the impact of upbringing, culture, and social experiences, which can significantly mold these innate characteristics.</p><p>Further complicating this discourse is the emergence of epigenetics, a field dedicated to understanding how environmental factors can alter gene expression. This suggests that while a person may inherit certain genetic markers linked to behaviors, their actual expression can be modified by lifestyle choices and environmental contexts. Consequently, practitioners in psychology emphasize a holistic approach that considers both biological and environmental factors in treating mental health issues and fostering psychological resilience.</p>",
+          "<p>The concept of cognitive dissonance, introduced by Leon Festinger in the 1950s, refers to the mental discomfort experienced when an individual holds two or more contradictory beliefs, values, or attitudes simultaneously. This discomfort often leads people to modify their beliefs or justify their behaviors in order to achieve consistency. For example, a person who smokes may experience dissonance due to understanding the health risks associated with smoking while simultaneously enjoying the act itself. To alleviate this discomfort, they may downplay the risks or convince themselves that they will quit soon.</p><p>Research in cognitive dissonance has demonstrated that individuals are motivated to reduce this psychological tension, which can lead to both positive and negative outcomes. On the one hand, it can encourage personal growth and behavioral change, such as quitting smoking or adopting healthier habits. On the other hand, it may lead to rationalizations that reinforce negative behaviors. Consequently, understanding cognitive dissonance is vital for psychologists aiming to foster behavioral change in clients, as it provides insight into the underlying motivations and conflicts that hinder personal development.</p>",
+          "<p>Emotional intelligence (EI) is a pivotal concept in psychology that refers to an individual's ability to recognize, understand, and manage their own emotions, as well as the emotions of others. Daniel Goleman popularized the notion in the 1990s, asserting that EI can significantly influence personal and professional success. Psychologists have identified several dimensions of emotional intelligence, including self-awareness, self-regulation, empathy, and social skills, which together contribute to effective interpersonal interactions.</p><p>The importance of emotional intelligence has been underscored by various studies linking high EI to better leadership, improved relationships, and enhanced mental health. For instance, individuals with strong emotional intelligence are often better equipped to handle stress, resolve conflicts, and communicate effectively. As a result, many organizations now prioritize EI in their hiring and training processes, recognizing that technical skills alone do not guarantee success in collaborative environments. Understanding and cultivating emotional intelligence can lead to more productive and harmonious workplaces.</p>"
+        ],
+        "title": "The Interplay of Nature and Nurture in Psychological Development",
+        "tags": [
+          "rc-m",
+          "Assumption Question ",
+          "Strengthen Question ",
+          "Inference Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "What assumption underlies the argument that emotional intelligence contributes to professional success?",
+            "title": "Assumptions Behind Emotional Intelligence and Success",
+            "answer": "Technical skills are not sufficient alone for achieving success in workplaces.",
+            "options": [
+              "Emotional intelligence is influenced solely by genetic factors.",
+              "High emotional intelligence leads to decreased stress and increased conflict.",
+              "Emotional intelligence can be measured reliably through standard assessments.",
+              "Technical skills are not sufficient alone for achieving success in workplaces."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: <em>Technical skills are not sufficient alone for achieving success in workplaces.</em> This option supports the argument that emotional intelligence plays a crucial role in professional success, emphasizing the need for interpersonal skills alongside technical capabilities.</p><p><strong>A</strong>: <em>Emotional intelligence can be measured reliably through standard assessments.</em> This statement, while relevant, does not directly address the assumption regarding the influence of emotional intelligence on success.</p><p><strong>C</strong>: <em>High emotional intelligence leads to decreased stress and increased conflict.</em> This option contradicts the argument, as high emotional intelligence is generally associated with better stress management and conflict resolution.</p><p><strong>D</strong>: <em>Emotional intelligence is influenced solely by genetic factors.</em> This is false as emotional intelligence is shaped by both genetic and environmental influences, and does not serve as a valid assumption regarding its contribution to success.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "question": "Which of the following statements best strengthens the argument that emotional intelligence is a key factor in leadership success?",
+            "title": "Strengthening the Argument for Emotional Intelligence in Leadership",
+            "answer": "Research shows that leaders with high emotional intelligence are more effective in team management.",
+            "options": [
+              "Leaders with high emotional intelligence often report greater job satisfaction.",
+              "Research shows that leaders with high emotional intelligence are more effective in team management.",
+              "Emotional intelligence training programs have become popular in corporate environments.",
+              "Many leaders possess advanced technical skills related to their industries."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: <em>Research shows that leaders with high emotional intelligence are more effective in team management.</em> This statement directly supports the argument by providing evidence that emotional intelligence contributes significantly to leadership success, especially in managing teams effectively.</p><p><strong>A</strong>: <em>Leaders with high emotional intelligence often report greater job satisfaction.</em> While this may be true, it does not specifically strengthen the argument regarding their effectiveness in leadership roles.</p><p><strong>C</strong>: <em>Emotional intelligence training programs have become popular in corporate environments.</em> This indicates a growing recognition of EI's importance but does not necessarily strengthen the argument about its role in effective leadership.</p><p><strong>D</strong>: <em>Many leaders possess advanced technical skills related to their industries.</em> This statement does not support the argument, as it focuses on technical skills rather than the relevance of emotional intelligence in leadership success.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "question": "What can be inferred about the relationship between emotional intelligence and workplace dynamics from the passage?",
+            "title": "Inferences on Emotional Intelligence and Workplace Dynamics",
+            "answer": "Emotional intelligence positively influences team interactions and productivity.",
+            "options": [
+              "Workplaces are likely to become less collaborative without emotional intelligence training.",
+              "Emotional intelligence is the only factor that determines workplace success.",
+              "Emotional intelligence positively influences team interactions and productivity.",
+              "Individuals with high emotional intelligence may struggle with technical skills."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: <em>Emotional intelligence positively influences team interactions and productivity.</em> This inference can be drawn from the passage, which states that individuals with strong emotional intelligence are better equipped to handle stress and resolve conflicts, leading to improved interpersonal dynamics and productivity in the workplace.</p><p><strong>A</strong>: <em>Emotional intelligence is the only factor that determines workplace success.</em> This statement is inaccurate, as the passage highlights the importance of both emotional intelligence and technical skills in achieving success.</p><p><strong>C</strong>: <em>Individuals with high emotional intelligence may struggle with technical skills.</em> This inference is not supported by the passage, which maintains that while emotional intelligence is crucial, it does not imply a deficiency in technical abilities.</p><p><strong>D</strong>: <em>Workplaces are likely to become less collaborative without emotional intelligence training.</em> While the passage suggests that emotional intelligence fosters collaboration, it does not definitively state that a lack of training would lead to reduced collaboration.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "passages": [
+          "<p>The Renaissance, a fervent period of cultural revival that emerged in Italy during the 14th century and spread across Europe, marked a dramatic shift from the medieval worldview to a renewed emphasis on humanism, art, and scientific inquiry. This era, characterized by a blossoming of literature, visual arts, and philosophy, emerged as a reaction to the constraints of feudal society and the dogmatic teachings of the Church. Prominent figures such as Leonardo da Vinci and Michelangelo epitomized the Renaissance ideals, pushing the boundaries of artistic expression and dabbling in various disciplines, thus embodying the notion of the 'Renaissance man'\u2014a polymath thriving across multiple areas of knowledge.</p><p>Furthermore, the Renaissance was not merely confined to Italy; it had far-reaching implications across Europe, influencing the Reformation and the subsequent development of modern science. This period saw the proliferation of new ideas, spurred by innovations such as the printing press which facilitated the dissemination of knowledge, thereby nurturing an environment where inquiry and debate flourished. Yet, it was also a time of significant social upheaval, as the newfound emphasis on individualism challenged established societal hierarchies, leading to both advancements and conflicts.</p>",
+          "<p>The Age of Enlightenment, spanning the late 17th to the early 19th centuries, heralded an intellectual movement that emphasized reason, individualism, and skepticism of traditional authorities. Thinkers such as John Locke, Voltaire, and Immanuel Kant championed ideas that questioned the foundations of government, religion, and social norms, promoting the concept that human reason could lead to progress and improvement of society. This emphasis on rational thought propelled advancements in various fields, including political theory, ethics, and science, and laid the groundwork for modern democratic ideals.</p><p>However, the Enlightenment was not free from contradictions. While it espoused liberty and equality, many Enlightenment philosophers failed to extend their ideals to all humans; social hierarchies, colonialism, and issues of race often belied their proclamations of universal rights. The movement also spawned the rise of the bourgeoisie and was closely tied to the economic transformations ushered in by capitalism, leading to a reassessment of class dynamics as the common man increasingly sought a voice in political discourse. As the Enlightenment ideals permeated the fabric of society, their influence resonated through revolutions, such as the American and French Revolutions, signaling a pivotal shift toward modern governance.</p>",
+          "<p>The Industrial Revolution, commencing in the late 18th century, represented a monumental shift in production processes, transitioning from agrarian economies to industrialized and urban societies. This transformation was not merely technological; it fundamentally altered social structures, labor dynamics, and the very nature of human relationships. Innovators such as James Watt and Henry Bessemer revolutionized manufacturing through mechanization and the introduction of steam power, accelerating productivity and enabling mass production. However, this rapid industrialization came at a significant cost.</p><p>In tandem with increased output, profound social challenges arose. The migration from rural areas to burgeoning urban centers led to overcrowded cities, often accompanied by dire living conditions, public health crises, and labor exploitation. The working class, subjected to long hours and hazardous environments, began to organize and voice their grievances, paving the way for labor rights movements. Additionally, the environmental repercussions of industrialization became increasingly stark, leading to a burgeoning awareness of ecological sustainability. Thus, while the Industrial Revolution catalyzed unprecedented economic growth, it also necessitated a reevaluation of human values and the ethical implications of progress.</p>",
+          "<p>The 20th century was characterized by a series of transformative events that reshaped the global landscape, marked by the dual specters of war and ideological conflict. The two World Wars not only redefined national boundaries but also catalyzed social changes, such as the push for civil rights and gender equality. The aftermath of World War II ushered in an era of decolonization, where numerous countries in Asia, Africa, and the Caribbean asserted their independence from colonial powers. This period highlighted the tensions between emerging nations and their former colonizers, fueling a complex narrative of identity and self-determination.</p><p>Simultaneously, the Cold War's ideological battle between capitalism and communism created a climate of mistrust and rivalry. Events such as the Cuban Missile Crisis and the Vietnam War exposed the fragility of peace and the lengths to which nations would go to assert their dominance. Technological advancements during this time, particularly in nuclear weapons, not only refined warfare but also raised profound ethical questions surrounding the capacity for human destruction. Thus, the 20th century embodies a tapestry of conflict and change, where the legacies of war and liberation continue to influence contemporary global relations and societal structures.</p>"
+        ],
+        "title": "The Transformative Epochs of Human History: Renaissance to the Cold War",
+        "tags": [
+          "rc-l",
+          "Main Idea Question ",
+          "Strengthen Question ",
+          "Inference Question ",
+          "Main Idea Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "What is the primary focus of the passages regarding historical transformations from the Renaissance to the Cold War?",
+            "title": "Understanding Historical Transformations",
+            "answer": "The evolution of cultural and ideological movements across various epochs.",
+            "options": [
+              "The evolution of cultural and ideological movements across various epochs.",
+              "The role of individual figures in shaping historical narratives.",
+              "The impact of technological advancements on societal structures.",
+              "The consequences of war and conflict on global relations."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: 'The evolution of cultural and ideological movements across various epochs.' This reflects the primary focus of the passages, which collectively explore significant historical transformations from the Renaissance, through the Enlightenment and Industrial Revolution, to the complexities of the 20th century.</p><p>Option <strong>A</strong> ('The impact of technological advancements on societal structures.') is partially correct but does not encompass the broader cultural and ideological themes presented in the passages.</p><p>Option <strong>C</strong> ('The role of individual figures in shaping historical narratives.') is too narrow, as while individuals are mentioned, the passages emphasize larger movements and events rather than focusing solely on individuals.</p><p>Option <strong>D</strong> ('The consequences of war and conflict on global relations.') is relevant but again does not fully capture the main idea regarding the evolution of ideas throughout history.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "question": "Which of the following pieces of evidence most strongly supports the assertion that the Enlightenment ideals were contradictorily applied in practice?",
+            "title": "Contradictions of Enlightenment Ideals",
+            "answer": "Many Enlightenment thinkers advocated for universal rights while simultaneously supporting colonialism.",
+            "options": [
+              "Voltaire wrote extensively about freedom of speech despite being imprisoned for his views.",
+              "The rise of capitalism during this period helped disseminate Enlightenment ideas across Europe.",
+              "Many Enlightenment thinkers advocated for universal rights while simultaneously supporting colonialism.",
+              "Scientific advancements in this period led to improved living conditions for all social classes."
+            ],
+            "solution": "<p>The correct option is <strong>A</strong>: 'Many Enlightenment thinkers advocated for universal rights while simultaneously supporting colonialism.' This statement most strongly supports the assertion of contradictions present in Enlightenment ideals, as it highlights the disparity between the proclaimed values of liberty and equality and the realities of colonial exploitation.</p><p>Option <strong>B</strong> ('The rise of capitalism during this period helped disseminate Enlightenment ideas across Europe.') does not directly address contradictions but rather merely states a correlation between capitalism and the spread of Enlightenment thoughts.</p><p>Option <strong>C</strong> ('Voltaire wrote extensively about freedom of speech despite being imprisoned for his views.') illustrates a personal conflict but does not capture the broader societal contradictions regarding Enlightenment ideals.</p><p>Option <strong>D</strong> ('Scientific advancements in this period led to improved living conditions for all social classes.') suggests progress but does not reflect the inconsistency in applying Enlightenment principles universally, particularly regarding social inequalities.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "question": "What can be inferred about the social structures of industrialized societies during the Industrial Revolution based on the passage?",
+            "title": "Social Structures of Industrialized Societies",
+            "answer": "Labor exploitation and poor living conditions were prevalent issues faced by the working class.",
+            "options": [
+              "Industrialized societies were marked by greater equality due to the rise of the middle class.",
+              "Labor exploitation and poor living conditions were prevalent issues faced by the working class.",
+              "The migration to urban centers led to an immediate improvement in public health standards.",
+              "Social hierarchies were completely dismantled during the Industrial Revolution."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: 'Labor exploitation and poor living conditions were prevalent issues faced by the working class.' This inference is supported by the passage's discussion of the adverse social consequences of rapid industrialization, highlighting challenges faced by workers in urban environments.</p><p>Option <strong>A</strong> ('Industrialized societies were marked by greater equality due to the rise of the middle class.') is misleading, as the passage indicates that social upheaval and exploitation were significant challenges, suggesting that equality was not readily achieved.</p><p>Option <strong>C</strong> ('Social hierarchies were completely dismantled during the Industrial Revolution.') contradicts the passage's emphasis on the ongoing struggles and inequalities present during this period, indicating that traditional hierarchies persisted.</p><p>Option <strong>D</strong> ('The migration to urban centers led to an immediate improvement in public health standards.') is incorrect, as the passage notes that overcrowding and public health crises were significant issues, rather than improvements.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "question": "What overarching theme connects the passages regarding historical developments from the Renaissance to the 20th century?",
+            "title": "Connecting Themes of Historical Development",
+            "answer": "The continuous evolution of human thought and its impact on societal transformation.",
+            "options": [
+              "The prominence of individual figures in advocating for change.",
+              "The decline of monarchies and the rise of democratic ideals.",
+              "The technological innovations that shaped each historical period.",
+              "The continuous evolution of human thought and its impact on societal transformation."
+            ],
+            "solution": "<p>The correct option is <strong>A</strong>: 'The continuous evolution of human thought and its impact on societal transformation.' This overarching theme reflects the passages' focus on how cultural and ideological movements have influenced societies from the Renaissance through to the 20th century.</p><p>Option <strong>B</strong> ('The technological innovations that shaped each historical period.') is a valid aspect but does not encapsulate the broader themes of human thought and cultural shifts emphasized across the passages.</p><p>Option <strong>C</strong> ('The prominence of individual figures in advocating for change.') is too narrow, as the passages discuss movements and societal transformations rather than concentrating solely on individuals.</p><p>Option <strong>D</strong> ('The decline of monarchies and the rise of democratic ideals.') pertains to a specific context in history but fails to account for the full range of ideological developments discussed in the passages.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<Politics> - <SE> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_5NRlegfBMbZxcXcEA5AvZ9lS",
+        "question": "Despite the numerous challenges to democracy in recent years, many scholars argue that its core tenets remain both __________ and __________, serving as a bulwark against authoritarianism and political apathy.",
+        "title": "Politics and the Resilience of Democracy",
+        "answer": [
+          "enduring",
+          "resilient"
+        ],
+        "options": [
+          "resilient",
+          "tenuous",
+          "enduring",
+          "universal",
+          "fragile",
+          "elusive"
+        ],
+        "solution": "<p>In this sentence, the correct options are <b>enduring</b> and <b>resilient</b>, as they convey the idea that the core tenets of democracy remain strong and capable of withstanding challenges. </p><p><b>Option A (fragile)</b>: This contradicts the intended meaning of the sentence, suggesting weakness rather than strength.</p><p><b>Option C (universal)</b>: While it implies broad applicability, it does not convey the idea of strength that the sentence requires.</p><p><b>Option D (tenuous)</b>: Similar to fragile, it implies a lack of stability.</p><p><b>Option F (elusive)</b>: This suggests something that is hard to grasp, which does not align with the idea of democracy's core tenets being protective.</p>",
+        "difficulty": 2,
+        "tags": [
+          "politics",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <SE> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "thread_id": "thread_bN1HzrSqXwUWMLHU1q7g1XXR",
+        "question": "The author's prose is so __________ that it captivates the reader from the very first page, seemingly transporting them into another world; it is an experience that is as much __________ as it is enlightening.",
+        "title": "Literature",
+        "answer": [
+          "vibrant",
+          "mesmerizing"
+        ],
+        "options": [
+          "turgid",
+          "vibrant",
+          "mesmerizing",
+          "tedious",
+          "immense",
+          "pedestrian"
+        ],
+        "solution": "<p><b>C</b> is the correct choice as it describes prose that is lively and full of life, which fits perfectly with the context of captivating the reader. <b>F</b> complements <b>C</b> well as it conveys the idea of being fascinated or enchanted, enhancing the overall experience of reading.</p><p>Other options do not fit the context:</p><ul><li><b>A</b> (turgid) suggests being overly complex or bombastic, which is contrary to captivating prose.</li><li><b>B</b> (pedestrian) implies something dull or ordinary, not suitable for engaging writing.</li><li><b>D</b> (tedious) means boring, which directly opposes the intended meaning of captivating prose.</li><li><b>E</b> (immense) does not directly relate to the quality of prose, thus it is irrelevant in this context.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "literature",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_nRXox2Ex881EubMf4vJtp57n",
+        "question": "In the world of literature, themes often intersect in fascinating ways, where the exploration of human emotions can serve not only as a reflective mirror but also as a _______ for social commentary. Authors utilize their narratives to _______ the complexities of relationships, exploring both the superficial and the profound aspects of connection, which ultimately leads readers to _______ a deeper understanding of their own lives.",
+        "title": "Exploration of Themes in Literature",
+        "answer": "catalyst",
+        "options": [
+          "distraction",
+          "theme",
+          "catalyst",
+          "reflection",
+          "instigator",
+          "obstacle"
+        ],
+        "solution": "<p>The correct answer is <b>catalyst</b>. In literature, themes can act as a catalyst for social commentary, provoking thought and discussion about societal issues.</p> <p><b>Other options:</b></p> <ul><li><b>obstacle</b> - This does not fit the context; themes in literature do not serve as barriers, but rather as tools for exploration.</li><li><b>theme</b> - This is too vague; while themes exist, the sentence requires a term that captures their active role.</li><li><b>reflection</b> - This suggests looking back, not actively engaging with social commentary.</li><li><b>distraction</b> - This contradicts the educational power that literature has in discussing societal issues.</li><li><b>instigator</b> - This could partially fit but lacks the nuanced understanding that catalyst provides.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Economics> - <TC-2> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "thread_id": "thread_8ojeHOYzrSLQMxtefVL3mRM2",
+        "question": "Economists often argue that individuals act in their own ________ and, as a result, the market functions optimally. However, this presumption can be ________ if not supported by empirical data, which often reveal unexpected behaviors.",
+        "title": "Economic Behavior and Market Functionality",
+        "answer": "interests",
+        "options": [
+          "convenience",
+          "curiosity",
+          "disregard",
+          "ambivalence",
+          "interests",
+          "intentions"
+        ],
+        "solution": "<p>The correct answer is <b>interests</b>. This choice aligns with the idea that individuals typically act to further their own well-being or advantage, which is a fundamental premise in economics. </p><p>Other options discuss actions that do not represent the primary motive of individuals in economic theory:</p><ul><li><b>convenience</b> - while convenience can play a role, it is not the central driving force behind market actions.</li><li><b>disregard</b> - this option contradicts the basic economic assumption that individuals aim to maximize their gain.</li><li><b>ambivalence</b> - this implies uncertainty or indecision, which is not consistent with rational economic behavior.</li><li><b>intentions</b> - intentions may not always translate into actions that lead to optimal market functioning.</li><li><b>curiosity</b> - although curiosity can influence behavior, it is not a primary economic motivator.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "economics",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Science> - <TC-1> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "thread_id": "thread_T30iEhEXYScMJyAr9drovh0B",
+        "question": "The recent breakthrough in renewable energy has been both exhilarating and __________, promising a future where fossil fuels could become obsolete.",
+        "title": "Science Breakthrough in Renewable Energy",
+        "answer": "inspiring",
+        "options": [
+          "encouraging",
+          "unsettling",
+          "inspiring",
+          "disheartening",
+          "daunting",
+          "overwhelming"
+        ],
+        "solution": "<p><strong>C</strong> is the correct option because it conveys a positive sentiment that aligns with the overall theme of excitement regarding renewable energy. It suggests that the breakthrough is uplifting and encouraging for the future of energy sustainability.</p><p>Options discussion:</p><ul><li><strong>A</strong> (disheartening) suggests negativity, which contradicts the positive tone of excitement.</li><li><strong>B</strong> (daunting) implies fear or intimidation, not fitting with the idea of exhilaration.</li><li><strong>D</strong> (overwhelming) can imply both positive and negative feelings, but in this context, it does not capture the intended positivity.</li><li><strong>E</strong> (unsettling) also introduces a sense of discomfort, which is inconsistent with a breakthrough being exhilarating.</li><li><strong>F</strong> (encouraging) is positive but does not express the same level of excitement as <strong>C</strong>.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "science",
+          "tc-1"
+        ]
+      },
+      {
+        "passages": [
+          "<p>The human mind, a complex interplay of emotions, cognition, and social influences, has long fascinated psychologists. Among the various theories attempting to explain human behavior, social learning theory posits that much of what individuals learn arises through observation and imitation of others, rather than through direct experience. This perspective shifts the focus from internal motivations to the observational contexts in which individuals interact. The profound implications of this theory can be witnessed in various domains, including familial settings, educational environments, and media consumption.</p><p>Consider, for instance, the role of parental behavior in shaping children's emotional responses. Children who observe their parents managing stress in a constructive manner are likely to adopt similar strategies when confronted with their own challenges. Conversely, exposure to negative coping mechanisms, such as aggression or withdrawal, may predispose children to emulate these behaviors, leading to maladaptive patterns. Thus, understanding the dynamics of observational learning becomes crucial in therapeutic settings where behavioral change is sought.</p>",
+          "<p>Another significant aspect of psychology is the study of cognitive biases, which are systematic patterns of deviation from norm or rationality in judgment. These biases serve as mental shortcuts that simplify decision-making processes but often lead to errors in reasoning. For example, confirmation bias leads individuals to seek out information that supports their preexisting beliefs while disregarding evidence that contradicts them. This phenomenon can be especially pronounced in contexts such as political discourse, where individuals may polarize around particular ideologies.</p><p>Moreover, cognitive biases can be pivotal in therapeutic practices. Therapists might encounter clients exhibiting these biases, which can skew their self-perception and influence their behavior. By bringing awareness to these biases, therapists can facilitate cognitive restructuring, allowing individuals to challenge their distorted thinking. Recognizing and addressing these biases not only enhances individual understanding but can also improve interpersonal relationships, as more balanced viewpoints emerge from the therapeutic process. Thus, the exploration of cognitive biases underscores the necessity of critical thinking in psychological practice.</p>",
+          "<p>The field of psychology encompasses a diversity of theoretical perspectives, each contributing uniquely to our understanding of human behavior. One such perspective is the ecological systems theory, which emphasizes the multifaceted influences on individual development\u2014from immediate surroundings such as family and school to broader societal factors like culture and economic conditions. This theory posits that individuals cannot be understood in isolation; instead, their behaviors and psychological outcomes are shaped by numerous interacting systems.</p><p>In contemporary practice, the application of ecological systems theory can enhance therapeutic approaches by encouraging practitioners to consider all aspects of a client\u2019s environment. For instance, a therapist working with adolescents may evaluate not only the client's personal struggles but also the familial, educational, and social contexts that contribute to their experiences. By adopting a holistic view, practitioners can develop more tailored interventions that address the complex web of influences on an individual, thereby fostering greater resilience and adaptability in their clients.</p>"
+        ],
+        "title": "Understanding Human Behavior: The Interplay of Social Learning, Cognitive Biases, and Ecological Systems",
+        "tags": [
+          "rc-m",
+          "Inference Question ",
+          "Strengthen Question ",
+          "Inference Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "Based on the passages, which of the following can be inferred about the role of observational learning in shaping behavior?",
+            "title": "The Impact of Observational Learning on Behavioral Development",
+            "answer": "Children are more likely to adopt positive coping strategies if they observe them used by their parents.",
+            "options": [
+              "Children are more likely to adopt positive coping strategies if they observe them used by their parents.",
+              "Observational learning is irrelevant in the context of familial influences on behavior.",
+              "Observational learning is only effective in educational settings.",
+              "Negative role models have no impact on the development of children's emotional responses."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong> because the passage explicitly states that children who observe their parents managing stress in a constructive manner are likely to adopt similar strategies when facing their own challenges. This reinforces the concept of observational learning and its positive effects on behavior.</p><p>Option <strong>A</strong> is incorrect because the passage highlights the significant role of observational learning in shaping behavior, particularly in familial contexts.</p><p>Option <strong>C</strong> is also incorrect; the passage discusses how exposure to negative coping mechanisms can lead to maladaptive patterns, indicating that negative role models do impact children's emotional responses.</p><p>Lastly, option <strong>D</strong> is inaccurate because the passage emphasizes that observational learning influences behavior across various domains, including familial settings, educational environments, and media consumption, not just education.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "question": "Which of the following statements strengthens the arguments made regarding the impact of cognitive biases on decision-making?",
+            "title": "Enhancing Understanding of Cognitive Biases in Decision-Making",
+            "answer": "Studies have shown that individuals who are aware of their cognitive biases make more rational decisions.",
+            "options": [
+              "Most people believe they are immune to cognitive biases and rarely acknowledge their influence.",
+              "The presence of cognitive biases has been shown to improve the accuracy of decision-making in uncertain situations.",
+              "Cognitive biases are a natural part of human thinking and do not significantly alter decision outcomes.",
+              "Studies have shown that individuals who are aware of their cognitive biases make more rational decisions."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong> because it reinforces the argument that awareness of cognitive biases plays a crucial role in improving decision-making. The statement suggests that individuals who recognize these biases can mitigate their effects, thereby strengthening the overall point made in the passage about the importance of critical thinking.</p><p>Option <strong>A</strong> is incorrect as it downplays the impact of cognitive biases by asserting they do not significantly alter outcomes, which contradicts the passage's discussion of biases leading to errors in reasoning.</p><p>Option <strong>C</strong> is also incorrect; while it's true that many individuals may believe they are immune to biases, this statement does not support the passage's arguments about the negative effects of cognitive biases on judgment.</p><p>Lastly, option <strong>D</strong> is inaccurate because it claims that cognitive biases improve decision-making accuracy, which conflicts with the passage's emphasis on how these biases often lead to systematic errors.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "question": "What can be inferred about the ecological systems theory from the passages?",
+            "title": "Insights into Ecological Systems Theory and Its Implications",
+            "answer": "The theory emphasizes the importance of considering multiple environmental factors affecting individual development.",
+            "options": [
+              "According to the theory, an individual's behavior is unchangeable and fixed by their environments.",
+              "The theory emphasizes the importance of considering multiple environmental factors affecting individual development.",
+              "Ecological systems theory is primarily concerned with individual psychological processes rather than external influences.",
+              "Ecological systems theory suggests that individual behavior is solely influenced by immediate family interactions."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong> because the passage explicitly states that ecological systems theory emphasizes the multifaceted influences on individual development, which includes not only immediate surroundings but also broader societal factors.</p><p>Option <strong>A</strong> is incorrect as it suggests that the theory only considers immediate family interactions, which contradicts the passage's explanation of the broader systems involved.</p><p>Option <strong>C</strong> is also incorrect; the theory does not claim that behavior is unchangeable. Instead, it promotes an understanding of the complex interactions that can influence behavior and development.</p><p>Lastly, option <strong>D</strong> is inaccurate because ecological systems theory focuses on external influences and contexts, not solely on individual psychological processes.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      },
+      {
+        "passages": [
+          "<p>The interplay between politics and public perception has been a persistent theme in democratic societies, particularly as media becomes an increasingly potent force in shaping opinions. In a landscape where information is disseminated rapidly through various channels, the challenge for political leaders is to navigate the complex waters of public sentiment while simultaneously adhering to their ideological tenets. This balancing act not only requires an acute awareness of current events but also a deep understanding of both historical precedents and future ramifications of political decisions.</p><p>Moreover, the rise of populism has signaled a shift in the political paradigm, where traditional institutions find themselves under scrutiny. Candidates who once relied on established party structures now appeal directly to the electorate, often circumventing conventional norms. This phenomenon raises crucial questions about the future integrity of political discourse and the extent to which the electorate is informed or misled. As political agendas evolve, so too does the responsibility of the media to provide accurate representations of political phenomena, influencing not just what voters think, but how they think.</p>",
+          "<p>The implications of political decisions are often far-reaching, extending beyond the immediate ramifications to touch upon the lives of citizens in profound ways. When leaders prioritize partisan agendas over collective welfare, societal fractures emerge, threatening the very fabric of democracy. The recent trend of leaders employing divisive rhetoric has exacerbated tensions, polarizing the electorate and fostering an environment where constructive dialogue becomes increasingly elusive. In this atmosphere, the electorate must grapple with an inundation of information, contrasting fact with opinion.</p><p>In response to this predicament, a new wave of political engagement has arisen, with citizen activism gaining momentum across various sectors. Grassroots movements have ignited discussions that challenge the status quo, pushing for accountability from those in power. These movements illuminate the role of civic responsibility and highlight the necessity for voters to remain vigilant and informed. As history shows, when the populace mobilizes, it can lead to significant changes, thus underlining the power of collective action in shaping political landscapes.</p>",
+          "<p>Throughout history, political landscapes have been remarkably fluid, shaped by not only the decisions made by leaders but also the collective consciousness of the populace. The dialectic between governance and public expectation has resulted in a dynamic evolution of democratic principles. For instance, the current climate marked by disillusionment with traditional political structures poses questions about the efficacy and adaptability of established systems. Can they withstand the scrutiny of an increasingly informed citizenry, or will alternative governance models emerge to fill perceived gaps?</p><p>Additionally, the phenomenon of misinformation presents a formidable challenge. In an age where news exists at the click of a button, discerning truth from falsehood has become an arduous task for voters. Political operatives often exploit this vulnerability, amplifying divisions and spreading propaganda to serve their ends. The responsibility falls not only on institutions but also on individuals to foster a culture of critical evaluation. In a well-functioning democracy, informed citizens are essential, and their ability to scrutinize information is paramount to the integrity of political discourse.</p>",
+          "<p>The relationship between economic policies and political stability is intricate, as fiscal decisions often directly affect public sentiment and electoral outcomes. Economic downturns can catalyze political unrest, prompting a reevaluation of leaders' strategies and priorities. In recent years, unprecedented challenges such as the global pandemic have highlighted systemic vulnerabilities, leading to widespread calls for reform. Politicians face the arduous task of addressing immediate economic needs while simultaneously planning for sustainable growth in the long run.</p><p>Furthermore, the interplay of domestic and international politics complicates these considerations. Globalization has intensified the reliance on interconnected economies, where local policies can have international ramifications. Political leaders must deftly navigate these waters, balancing national interests with global responsibilities. As they do so, they are not merely custodians of policy but also architects of a vision that must resonate with an informed and, at times, skeptical electorate. The discourse surrounding these issues invites citizens to engage more fully in the democratic process, reinforcing the notion that active participation is crucial for the health of a democracy.</p>"
+        ],
+        "title": "Navigating the Complexities of Modern Politics",
+        "tags": [
+          "rc-l",
+          "Strengthen Question ",
+          "Strengthen Question ",
+          "Inference Question ",
+          "Main Idea Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "Which of the following statements, if true, most strengthens the argument that grassroots movements are essential for political accountability?",
+            "title": "The Power of Grassroots Movements in Politics",
+            "answer": "Grassroots movements have historically led to significant policy changes in various countries.",
+            "options": [
+              "Grassroots movements have historically led to significant policy changes in various countries.",
+              "Many politicians prioritize popular opinion over established party agendas in their decision-making.",
+              "Voter turnout has decreased in recent elections across all demographics.",
+              "Political leaders often engage with their electorate through social media platforms."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Grassroots movements have historically led to significant policy changes in various countries. This statement directly supports the argument that such movements are essential for political accountability by providing evidence of their impact on policy decisions.</p><p><strong>B</strong>: Many politicians prioritize popular opinion over established party agendas in their decision-making. While this may suggest a responsiveness to the electorate, it does not specifically strengthen the point about grassroots movements fostering accountability.</p><p><strong>C</strong>: Voter turnout has decreased in recent elections across all demographics. This statement is irrelevant to the strength of the argument regarding grassroots movements, as it does not address their efficacy or impact.</p><p><strong>D</strong>: Political leaders often engage with their electorate through social media platforms. Although this highlights a method of communication, it does not necessarily strengthen the claim about the effectiveness of grassroots movements in ensuring accountability.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "question": "Which of the following pieces of information would most strengthen the argument that the rise of populism is reshaping the political landscape?",
+            "title": "The Impact of Populism on Political Dynamics",
+            "answer": "Recent elections in multiple countries have resulted in the election of populist leaders who reject traditional political norms.",
+            "options": [
+              "Many traditional political parties are struggling to maintain their voter base in the face of growing populist movements.",
+              "Political campaigns have increasingly focused on broad ideological themes rather than specific policies.",
+              "Populist leaders tend to have lower approval ratings than their predecessors.",
+              "Recent elections in multiple countries have resulted in the election of populist leaders who reject traditional political norms."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Recent elections in multiple countries have resulted in the election of populist leaders who reject traditional political norms. This information directly supports the argument that the rise of populism is reshaping the political landscape by providing concrete examples of how populist figures challenge established practices.</p><p><strong>B</strong>: Populist leaders tend to have lower approval ratings than their predecessors. While this statement provides insight into the popularity of populist leaders, it does not strengthen the argument about the reshaping of the political landscape, as lower approval does not inherently imply a transformative effect on politics.</p><p><strong>C</strong>: Political campaigns have increasingly focused on broad ideological themes rather than specific policies. This option points to a trend in campaign strategies but does not explicitly link it to the impact of populism on the political landscape.</p><p><strong>D</strong>: Many traditional political parties are struggling to maintain their voter base in the face of growing populist movements. Although this may suggest a challenge to traditional parties, it doesn't directly illustrate how populist movements are reshaping the political landscape compared to option A.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "What can be inferred about the role of media in shaping public perception of political leaders based on the passage?",
+            "title": "Media's Influence on Political Perception",
+            "answer": "Media plays a crucial role in disseminating information that can either support or undermine political leaders.",
+            "options": [
+              "Media plays a crucial role in disseminating information that can either support or undermine political leaders.",
+              "Media coverage is often biased towards traditional political parties, ignoring grassroots movements.",
+              "Political leaders have complete control over how they are portrayed in the media.",
+              "Public perception of leaders is primarily shaped by direct interactions rather than media coverage."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Media plays a crucial role in disseminating information that can either support or undermine political leaders. This inference aligns with the passage's discussion on how media influences public sentiment and the challenges political leaders face in navigating that landscape.</p><p><strong>B</strong>: Political leaders have complete control over how they are portrayed in the media. This statement is incorrect; the passage suggests that media representation is often beyond the control of political leaders, influenced instead by broader dynamics.</p><p><strong>C</strong>: Public perception of leaders is primarily shaped by direct interactions rather than media coverage. This option contradicts the passage, which emphasizes the significance of media as a primary influence on public perceptions of leaders.</p><p><strong>D</strong>: Media coverage is often biased towards traditional political parties, ignoring grassroots movements. While this might be true in some contexts, the passage highlights the need for accurate representations and does not support the idea that grassroots movements are entirely ignored.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "question": "What is the main idea of the passage regarding the relationship between citizen activism and political accountability?",
+            "title": "The Role of Citizen Activism in Ensuring Political Accountability",
+            "answer": "Active citizen engagement is essential for fostering political accountability and promoting reform.",
+            "options": [
+              "Political leaders are largely unresponsive to the demands of active citizen activists.",
+              "Citizen activism often leads to the rise of populist leaders who challenge major political parties.",
+              "Active citizen engagement is essential for fostering political accountability and promoting reform.",
+              "Increasing political participation has no impact on the integrity of political discourse."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Active citizen engagement is essential for fostering political accountability and promoting reform. This option encapsulates the main idea of the passage, which emphasizes the importance of citizen activism in holding political leaders accountable.</p><p><strong>A</strong>: Citizen activism often leads to the rise of populist leaders who challenge major political parties. While this may be a related point, it does not capture the primary focus of the passage on accountability and reform.</p><p><strong>C</strong>: Political leaders are largely unresponsive to the demands of active citizen activists. This statement contradicts the passage\u2019s argument about the significance of citizen activism in demanding accountability, making it an inaccurate inference.</p><p><strong>D</strong>: Increasing political participation has no impact on the integrity of political discourse. This option is contrary to the essence of the passage, which advocates for the positive effects of citizen activism on political integrity.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "passages": [
+          "<p>The tumultuous period of the Middle Ages, often termed the 'Dark Ages' by later historians, was characterized by a significant decline in cultural and economic activity following the fall of the Roman Empire. This era, spanning roughly from the 5th to the late 15th century, saw a fragmentation of political authority across Europe and a retreat into feudalism. Yet, despite the challenges, it was a time when various societal undercurrents emerged, laying the groundwork for the Renaissance.</p><p>One of the pivotal developments during this period was the rise of monasticism. Monasteries became centers of learning and preservation of knowledge. Monks not only copied ancient texts but also contributed original works in philosophy, science, and literature. Their efforts played a crucial role in maintaining the intellectual heritage of Europe, which would later fuel the resurgence of arts and sciences during the Renaissance. This reliance on monastic institutions for education and literacy highlights the paradox of the so-called 'Dark Ages' as a time of both stagnation and foundational progress.</p>",
+          "<p>In addition to the rise of monasticism, the Middle Ages were marked by notable advancements in agriculture, which significantly altered the socioeconomic landscape of Europe. Innovations such as the heavy plow, the three-field system, and the introduction of crop rotation led to increased productivity. These improvements not only enhanced food security but also supported population growth, which in turn spurred urbanization as people moved to towns in search of better opportunities.</p><p>With the growth of towns came a shift in social structures. The emergence of a merchant class created a new economic dynamic, challenging the traditional power held by the nobility. Trade routes expanded, facilitating cultural exchange and the spread of ideas across continents. This gradual evolution fostered a more interconnected world, ultimately paving the way for the exploration and expansion that would define the following centuries.</p>",
+          "<p>The artistic landscape of the Middle Ages also underwent transformation, as evidenced by the development of Gothic architecture. This architectural style emerged in the 12th century and is characterized by features such as pointed arches, ribbed vaults, and flying buttresses. These advancements not only allowed for taller structures but also enabled the creation of vast stained-glass windows, which infused churches with light and color, enhancing the spiritual experience.</p><p>Gothic cathedrals, such as those in Chartres and Notre-Dame, stand as testaments to the era's architectural ingenuity and serve as symbols of the social and religious ambitions of Medieval Europe. The construction of these monumental structures often involved entire communities, highlighting a collective effort driven by faith and a desire to achieve something greater than the sum of their parts. The artistry and engineering of the Gothic period would later influence Renaissance architecture, demonstrating the enduring legacy of the Middle Ages.</p>"
+        ],
+        "title": "Foundations of Change: The Middle Ages Redefined",
+        "tags": [
+          "rc-m",
+          "Weaken Question ",
+          "Strengthen Question ",
+          "Inference Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "Which of the following statements, if true, would most seriously weaken the argument that the Middle Ages were characterized by both stagnation and foundational progress?",
+            "title": "Challenging the Duality of the Middle Ages",
+            "answer": "Agricultural innovations were minimal and did not significantly affect food production.",
+            "options": [
+              "Trade and commerce were predominantly controlled by nobility, limiting economic mobility.",
+              "Agricultural innovations were minimal and did not significantly affect food production.",
+              "The majority of the population remained uneducated and without access to literary works.",
+              "Monastic contributions were largely disregarded by the mainstream society of the time."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Agricultural innovations were minimal and did not significantly affect food production.'</p><p>This statement weakens the argument by suggesting that the advancements in agriculture were not as impactful as claimed, thus undermining the idea that the Middle Ages led to foundational progress.</p><p><strong>A</strong>: 'Monastic contributions were largely disregarded by the mainstream society of the time.' This statement does not weaken the argument effectively, as it does not deny the existence or impact of monastic contributions; it merely suggests they were overlooked.</p><p><strong>C</strong>: 'The majority of the population remained uneducated and without access to literary works.' This statement supports the idea of stagnation but does not address the claim of progress made by monasticism and other advancements.</p><p><strong>D</strong>: 'Trade and commerce were predominantly controlled by nobility, limiting economic mobility.' While this hints at inequality, it does not directly weaken the notion that there were advancements in trade and urbanization during the Middle Ages.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "question": "Which of the following statements, if true, would most strengthen the argument that the Middle Ages were a time of significant foundational progress despite its designation as the 'Dark Ages'?",
+            "title": "Supporting the Progress of the Middle Ages",
+            "answer": "Numerous universities were established during the latter part of the Middle Ages, fostering education and learning.",
+            "options": [
+              "Many literary works from the Classical era were lost and never recovered during the Middle Ages.",
+              "The period saw a significant decline in artistic expression and cultural achievements.",
+              "Most people in Europe relied on feudal lords for economic stability and protection during this time.",
+              "Numerous universities were established during the latter part of the Middle Ages, fostering education and learning."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Numerous universities were established during the latter part of the Middle Ages, fostering education and learning.'</p><p>This statement strengthens the argument by providing evidence of an institutional advancement in education, which contradicts the notion of the Middle Ages as a purely stagnant period and highlights an aspect of foundational progress.</p><p><strong>A</strong>: 'Many literary works from the Classical era were lost and never recovered during the Middle Ages.' This statement does not strengthen the argument; rather, it suggests an overall cultural loss, aligning with the view of the Middle Ages as a 'Dark Age.'</p><p><strong>C</strong>: 'Most people in Europe relied on feudal lords for economic stability and protection during this time.' While this reflects the socio-political structure, it does not indicate progress and instead emphasizes dependence on a system that is often seen as regressive.</p><p><strong>D</strong>: 'The period saw a significant decline in artistic expression and cultural achievements.' This statement directly contradicts the argument for progress and would serve to weaken the claim of any foundational advancements occurring during the Middle Ages.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "question": "Based on the passages, what can be inferred about the role of monasticism during the Middle Ages?",
+            "title": "Inferring the Impact of Monasticism in the Middle Ages",
+            "answer": "Monks played a crucial role in the preservation and dissemination of knowledge throughout Europe.",
+            "options": [
+              "Monks played a crucial role in the preservation and dissemination of knowledge throughout Europe.",
+              "Monasticism served primarily as a means of economic stability within feudal society.",
+              "Monastic institutions were largely isolated from the cultural developments of the time.",
+              "The primary focus of monasteries was on promoting trade and commerce."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Monks played a crucial role in the preservation and dissemination of knowledge throughout Europe.'</p><p>This inference is directly supported by the passages, which highlight the contributions of monasteries in maintaining and producing literary and philosophical works during a time when much knowledge was at risk of being lost.</p><p><strong>A</strong>: 'Monasticism served primarily as a means of economic stability within feudal society.' This option is not supported by the text, which focuses more on intellectual contributions rather than economic roles.</p><p><strong>C</strong>: 'Monastic institutions were largely isolated from the cultural developments of the time.' This statement contradicts the passages, which demonstrate how monasticism was instrumental in the cultural and intellectual progression of the era.</p><p><strong>D</strong>: 'The primary focus of monasteries was on promoting trade and commerce.' While some monasteries may have engaged in trade, the passages emphasize their role in education and the preservation of knowledge rather than commerce.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

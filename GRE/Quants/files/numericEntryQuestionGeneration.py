@@ -20,6 +20,21 @@ class NumericEntryQuestionGeneration:
       self.thread_id = None
    
    def generate_question(self):
+      pattern = r'<difficulty-level: (\d+)>'
+      match = re.search(pattern, self.prompt)
+      self.questionData["difficulty"] = int(match.group(1))
+      
+      try:
+            match = re.search(r"<(.*?)>", self.prompt)
+            tag = ["Numeric Entry"]
+            if match:
+                first_content = match.group(1)
+                tag.append(first_content)
+            self.questionData["tag"] = tag
+      except Exception as e:
+            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
+            self.questionData["tag"] = ["Numeric Entry"]
+            
       if "graph" in self.prompt.lower() or "table" in self.prompt.lower():
          numericEntryQuestion = ParentChildQuestion(self.llm, self.prompt)
          self.thread_id, self.questionData["graph/table"] = numericEntryQuestion.generate_questionGraph()
@@ -29,16 +44,5 @@ class NumericEntryQuestionGeneration:
       self.questionData["title"] = numericEntryQuestion.generate_questionTitle()
       self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution()
       
-      pattern = r'<difficulty-level: (\d+)>'
-      match = re.search(pattern, self.prompt)
-      self.questionData["difficulty"] = int(match.group(1))
-      try:
-         tag = re.sub(r'\([^)]*\)', '', self.prompt.split("-")[1].strip("<>"))
-         tag = tag.strip()
-      except Exception as e:
-         print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-         tag = "numeric entry"
       
-      self.questionData["tag"] = ["numeric entry", tag]
       return self.questionData
-

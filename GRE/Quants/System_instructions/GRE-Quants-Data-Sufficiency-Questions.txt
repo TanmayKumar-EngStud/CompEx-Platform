@@ -36,7 +36,8 @@ Output format:-
 {
   "statements": ["statement 1", "statement 2"], 
   "question": "complete question text asked on the above provided statements"
-}
+} 
+"statements" key must always be an array of length 2, statement 1 should be at index 0 and statement 2 should be at index 1.
 // don't give statements again in the question text, just keep them separate.
 
 Mode 2: questionTitle

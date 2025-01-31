@@ -1,0 +1,14 @@
+import re
+
+value = "Statement No.1): The sum of two numbers \\( x \\) and \\( y \\) is greater than 10. Statement No.2): The product of \\( x \\) and \\( y \\) is less than 20."
+
+# Use re.IGNORECASE to make the search case-insensitive
+match = re.search(r'\bstatement\b[^0-9]*?\b2\b', value, re.IGNORECASE)
+if match:
+    index = match.start()
+    part1 = value[:index]
+    part2 = value[index:]
+    part = [part1, part2]
+    print(part)
+else:
+    raise Exception("Statement 2 not found")
