@@ -42,11 +42,11 @@ class ParentChildQuestionGeneration:
         self.questionData["childQuestions"] = []
         for i in range(number_of_child_questions):
             childQuestionData = {}
-            childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i)
-            childQuestionData["number"] = i
-            childQuestionData["title"] = parentChildQuestion.generate_childQuestionTitle(i)
-            childQuestionData["solution"] = parentChildQuestion.generate_childSolution(i)
-            options, answer = parentChildQuestion.generate_childOptions(i)
+            childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i+1)
+            childQuestionData["number"] = i+1
+            childQuestionData["title"] = parentChildQuestion.generate_childQuestionTitle(i+1)
+            childQuestionData["solution"] = parentChildQuestion.generate_childSolution(i+1)
+            options, answer = parentChildQuestion.generate_childOptions(i+1)
             childQuestionData["answer"] = options[answer]
             option_list = list(options.values())
             random.shuffle(option_list)

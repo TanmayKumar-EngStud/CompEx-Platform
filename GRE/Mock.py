@@ -1,7 +1,7 @@
 import json, time, dotenv
 from Mock.Verbal import Verbal
 from Mock.Quants import Quants
-from typing import Callable, Union
+
 from enum import Enum
 import time
 # region Quants generators:
@@ -49,16 +49,36 @@ class GRE_Mock:
             raise ValueError(f"Invalid generator_class: {generator_class}")
         while retries < self.max_retries:
             try:
+                print(f"\nAttempting to generate {exam_section} question for section {section_id}")
+                print(f"Using generator: {generator_class.name}")
+                print(f"Prompt: {prompt}")
+                
                 question_generator_class = GENERATOR_MAP[generator_class]
                 question_generator = question_generator_class(llm=None, prompt=prompt)
                 question_data = question_generator.generate_question()
+                
+                if not question_data:
+                    raise ValueError("Question generator returned None")
+                    
                 return [exam_section, f"section{section_id}", question_data]
             except Exception as e:
                 retries += 1
+                print(f"\nAttempt {retries} failed:")
+                print(f"Error type: {type(e).__name__}")
+                print(f"Error message: {str(e)}")
+                print(f"Generator class: {question_generator_class.__name__}")
+                if hasattr(e, '__traceback__'):
+                    import traceback
+                    print("Traceback:")
+                    traceback.print_tb(e.__traceback__)
+                
                 if retries == self.max_retries:
-                    print(f"Failed after {self.max_retries} attempts due to: \n{question_generator_class}")
+                    print(f"\nFailed after {self.max_retries} attempts for:")
+                    print(f"Section: {exam_section}")
+                    print(f"Generator: {generator_class.name}")
+                    print(f"Prompt: {prompt}")
                     return None
-                print(f"Attempt {retries} failed, retrying: {str(e)}")
+                print(f"\nAttempt {retries} failed, retrying: {str(e)}\nPrompt: {prompt}\n\n")
 
     def generate(self):
         # we need to prepare questions

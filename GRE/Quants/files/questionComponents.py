@@ -99,48 +99,42 @@ class ParentChildQuestion:
             self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:115)"
             return self.thread_id, message["graph/table"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}\n\n")
-            return "", ""
+            raise Exception(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}\n\n")
     def generate_parentTitle(self):
         response = self.llm.invoke({"content": f"ParentTitle", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response[0].content[0].text.value}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response[0].content[0].text.value}\n\n")
     def generate_childQuestionTitle(self, index):
         response = self.llm.invoke({"content": f"ChildQuestionTitle: {index}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestionTitle) is: \n{response[0].content[0].text.value}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestionTitle) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
     def generate_childQuestion(self, index, child_prompt=""):
         response = self.llm.invoke({"content": f"generate ChildQuestion: {index} of {child_prompt}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["question"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
     def generate_childOptions(self, index):
         response = self.llm.invoke({"content": f"ChildOptions: {index}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["options"], message["answer"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\n\n")
-            return []
+            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
     def generate_childSolution(self, index):
         response = self.llm.invoke({"content": f"ChildSolution: {index}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["solution"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
 
 class SimpleQuestion:
     def __init__(self, llm, prompt, thread_id=None):
@@ -160,9 +154,7 @@ class SimpleQuestion:
             self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:30)"
             return self.thread_id, message["question"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\n\n")
-            print(f"Exception details: {str(e)}")
-            return "", ""
+            raise Exception(f"GRE Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
     def generate_questionTitle(self):
         response = self.llm.invoke({"content": "QuestionTitle", "thread_id": self.thread_id})
         try:
@@ -177,8 +169,7 @@ class SimpleQuestion:
             else:
                 raise KeyError("Neither 'title' nor 'question' key found in response")
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
     def generate_questionSolution(self):
         response = self.llm.invoke({"content": "QuestionSolution", "thread_id": self.thread_id})
         try:
@@ -193,9 +184,7 @@ class SimpleQuestion:
                 return message["solution"]
             
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-            print(f"JSON parsing error: {str(e)}")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
     def generate_questionOptions(self):
         response = self.llm.invoke({"content": "QuestionOptions", "thread_id": self.thread_id})
         try:
@@ -204,9 +193,7 @@ class SimpleQuestion:
             message = json.loads(json_string)
             return message["options"], message["answer"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionOptions is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-            print(f"JSON parsing error: {str(e)}")
-            return {}, ""
+            raise Exception(f"GRE Quants, Error: message received for questionOptions is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
 
 class DataSufficiencyQuestion:
     def __init__(self, llm, prompt, thread_id= None):
@@ -221,8 +208,8 @@ class DataSufficiencyQuestion:
             self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:115)"
             return self.thread_id, message["graph/table"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-            return "", ""
+            raise Exception(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
+
     def generate_questionText(self):
         if(self.thread_id is not None):
             response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
@@ -233,21 +220,18 @@ class DataSufficiencyQuestion:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return self.thread_id, message["question"], message["statements"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
     def generate_questionTitle(self):
         response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionTitle is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-            return ""
+            raise Exception(f"GRE Quants, Error: message received for questionTitle is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
     def generate_questionSolution(self):
         response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["solution"], str(message["answer"])
         except Exception as e:
-            print(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-            return "", ""
+            raise Exception(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")

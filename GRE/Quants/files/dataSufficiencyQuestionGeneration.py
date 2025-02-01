@@ -29,8 +29,7 @@ class DataSufficiencyQuestionGeneration:
                 tag.append(first_content)
             self.questionData["tags"] = tag
         except Exception as e:
-            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-            self.questionData["tags"] = ["DS"]
+            raise Exception(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
         dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.prompt)
         if("graph" in self.prompt.lower()):
             self.thread_id, self.questionData["graph"], self.questionData["type"], self.questionData["description"] = dataSufficiencyQuestion.generate_questionGraph()

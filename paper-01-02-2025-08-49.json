@@ -1,0 +1,1338 @@
+{
+  "GRE_Q": {
+    "section1": [
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_jMwWZDjUdJLItbAqpTnRmZCS",
+        "question": "Is the number of protons in the atom greater than 25?",
+        "statements": [
+          "The ratio of the number of protons to the number of neutrons in an atom is 3:2.",
+          "The total number of protons and neutrons in the atom is 50."
+        ],
+        "title": "Determining Proton Count in Atomic Structure",
+        "solution": "From Statement (1), let the number of protons be \\(3x\\) and the number of neutrons be \\(2x\\). From Statement (2), we have: \\(3x + 2x = 50\\) which simplifies to \\(5x = 50\\), giving \\(x = 10\\). Thus, the number of protons is \\(3x = 30\\), which is greater than 25. Therefore, Statement (1) is sufficient to answer the question. Statement (2) alone does not provide information about the individual counts of protons or neutrons. Hence, the answer is A: Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 4,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_ctblrYObzvEaktzXMgwZ71WO",
+        "question": "If the ratio of students who prefer mathematics to those who prefer science is given as 3:4, can we determine the exact number of students who prefer mathematics given the total number of students surveyed is 840?",
+        "statements": [
+          "The ratio of the number of students who prefer mathematics to those who prefer science is 3:4.",
+          "The total number of students surveyed is 840."
+        ],
+        "title": "Determining Student Preferences: Mathematics vs Science Ratio",
+        "solution": "From Statement (2), we know the total number of students is 840. Using Statement (1), the ratio of students who prefer mathematics to those who prefer science is 3:4. Let the number of students who prefer mathematics be 3x and those who prefer science be 4x. Then, we have: \\[ 3x + 4x = 840 \\] Hence, \\[ 7x = 840 \\] which gives \\[ x = 120 \\]. Therefore, the number of students who prefer mathematics is \\[ 3x = 3 \\times 120 = 360 \\]. Thus, Statement (2) alone is sufficient when combined with Statement (1) to find the exact number of students who prefer mathematics. Therefore, the answer is E because they are together sufficient, but neither is enough alone.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_PdvFTR8Pkhlp1sC8t0k5lygq",
+        "question": "What is the length of the shorter rod?",
+        "statements": [
+          "The ratio of the lengths of two metal rods is 3:5.",
+          "The sum of the lengths of the two metal rods is 48 inches."
+        ],
+        "title": "Determining Lengths of Metal Rods Using Ratios and Sums",
+        "solution": "To find the length of the shorter rod, we first analyze each statement separately. From Statement (1), we know the ratio of the lengths of the rods is 3:5. Let the lengths of the rods be represented as \\text{Length}_{1} = 3x \\text{ and } \\text{Length}_{2} = 5x.\\text{ Thus, we need a second condition to find } x. \\text{ From Statement (2), the sum of the lengths is given as } 48 \\text{ inches. Thus, } 3x + 5x = 48 \\text{ leads to } 8x = 48, \\text{ hence } x = 6. Now substituting back, we find } \\text{Length}_{1} = 3 \\times 6 = 18 \\text{ inches (shorter rod)} \\text{ and } \\text{Length}_{2} = 5 \\times 6 = 30 \\text{ inches. Both statements together are necessary to derive the length. Hence the correct option is C.}",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_k365PZE0bZ7MJoW3K7tZ0Iwl",
+        "question": "Is the customer able to determine the total number of ways to choose and arrange desserts based on the given statements?",
+        "statements": [
+          "In a small town, there are 8 different desserts available at a bakery. How many ways can a customer choose 3 desserts to take home?",
+          "If the order of the desserts matters, how many different ways can the customer choose and arrange 3 desserts?"
+        ],
+        "title": "Dessert Selection and Arrangement Combinations in a Bakery",
+        "solution": "Statement (1) determines the number of combinations of 3 desserts chosen from 8, calculated as \\binom{8}{3} = \\frac{8!}{3!(8-3)!}, which is sufficient for the selection part. Statement (2) provides the arrangement of the chosen desserts, calculated as P(8,3) = \\frac{8!}{(8-3)!}, which is sufficient for the arrangement part. Since both statements together help in determining total outcomes and either can provide sufficient answers independently, the answer is D.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "Numeric Entry",
+          "fractions/decimals and Unitary method"
+        ],
+        "question": "In a whimsical town where residents exchange peculiar fruits, a vendor sells a basket containing 48 quirky apples and 36 unusual oranges. If the total cost of the basket is \\$30, how much would it cost to purchase a basket that contains 24 quirky apples and 18 unusual oranges, given that the ratio of apples to oranges remains consistent throughout?",
+        "title": "Cost Calculation of a Quirky Fruit Basket",
+        "solution": "<p>Step 1: Determine the total number of fruits in the original basket: <br> Total fruits = 48 + 36 = 84. <br> Step 2: Calculate the cost per fruit: <br> Cost per apple = \\$30 * \\frac{48}{84} = \\$17.14 <br> Cost per orange = \\$30 * \\frac{36}{84} = \\$12.86. <br> Step 3: Calculate the total cost for the new basket: <br> Total cost = (24 * \\$17.14) + (18 * \\$12.86) = \\$428.57 + \\$231.43 = \\$660.00.</p>",
+        "answer": "660.00"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_mdOtx2Yn6DjJaYrJWGqNfP7T",
+        "question": "In a peculiar town, a group of 12 friends decides to organize a unique talent show where they can perform acts in a variety of combinations. Each act requires exactly 4 performers. How many different ways can the performers be selected for a single act if the order in which they perform does not matter? Furthermore, if a specific duo of friends insists on performing together, how many different combinations can they still form, given that the total number of friends is 12?",
+        "title": "Finding Combinations for a Unique Talent Show in a Town of 12 Friends",
+        "solution": [
+          "<p>1. Without any restrictions, the number of ways to choose 4 performers out of 12 friends is given by the combination formula: <br> \n~~C(n, r) = \\frac{n!}{r!(n - r)!}~~, where n is the total number of friends and r is the number of performers needed. <br> \nHere, we have n = 12 and r = 4. Thus, first calculate the total combinations without restrictions: <br> \n~~C(12, 4) = \\frac{12!}{4!(12 - 4)!} = \\frac{12!}{4!8!} = 495~~. <br> \n2. Next, consider the scenario where a specific duo of friends insists on performing together. In this case, we can treat this duo as a single unit. This leaves us with 11 units (the duo and 10 other friends) from which we need to select 3 more performers (to make it a total of 4 performers). The calculation thus becomes: <br> \n~~C(10, 2) = \\frac{10!}{2!(10 - 2)!} = \\frac{10!}{2!8!} = 45~~. <br> \nIn conclusion, the total number of combinations without restrictions is 495, and with the duo constraint, it is 45.</p>",
+          "495 different ways without restrictions and 45 different ways with the duo constraint."
+        ],
+        "options": [
+          "495",
+          "50",
+          "480",
+          "400"
+        ],
+        "answer": "495"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "standard deviation and variance"
+        ],
+        "thread_id": "thread_cusk5ZNSf7fDgwXaq4doOWLE",
+        "question": "In a peculiar data analysis competition pitting statisticians against computer algorithms, a team of analysts collected the test scores of 12 contestants who participated in a rigorous mathematics assessment. The scores, expressed in integers, are as follows: 78, 85, 92, 95, 75, 88, 64, 90, 85, 81, 77, and 86. After a thorough review, the analysts seek to understand the variation in performance among these contestants. Using the calculations of variance and standard deviation, they aim to analyze and summarize the distribution of these scores. In this context, what are the variance and standard deviation of the given dataset? Furthermore, taking into consideration the entire dataset, determine which of the following statements correctly reflect the properties of variance and standard deviation.",
+        "title": "Analysis of Contestant Performance Through Variance and Standard Deviation",
+        "solution": [
+          "<p>Mean of the scores: ~~\\text{Mean} = \\frac{78 + 85 + 92 + 95 + 75 + 88 + 64 + 90 + 85 + 81 + 77 + 86}{12} = 83~~ <br> Variance: The variance is calculated using the formula: <br> ~~\\text{Variance} = \\frac{(78 - 83)^{2} + (85 - 83)^{2} + (92 - 83)^{2} + (95 - 83)^{2} + (75 - 83)^{2} + (88 - 83)^{2} + (64 - 83)^{2} + (90 - 83)^{2} + (85 - 83)^{2} + (81 - 83)^{2} + (77 - 83)^{2} + (86 - 83)^{2}}{12} = 67.17~~ <br> Standard Deviation: The standard deviation is simply the square root of the variance: <br> ~~\\text{Standard Deviation} = \\sqrt{67.17} \\approx 8.20~~ <br> Therefore, the variance of the dataset is approximately 67.17 and the standard deviation is approximately 8.20.</p>",
+          "67.17"
+        ],
+        "options": [
+          "Variance: 65, Standard Deviation: 8.20",
+          "Variance: 75, Standard Deviation: 8.20",
+          "Variance: 67.17, Standard Deviation: 8.20",
+          "Variance: 67.17, Standard Deviation: 8.50"
+        ],
+        "answer": "Variance: 67.17, Standard Deviation: 8.20"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "profit, loss and discount"
+        ],
+        "graph/table": [
+          {
+            "category": [
+              "Product A",
+              "Product B",
+              "Product C"
+            ],
+            "frequency": [
+              20,
+              35,
+              45
+            ],
+            "type": "frequency table",
+            "description": "This frequency table displays the number of sales made for three different products in a specific time period, highlighting the distribution of product sales."
+          },
+          {
+            "category": [
+              "Product A",
+              "Product B",
+              "Product C"
+            ],
+            "frequency": [
+              15,
+              25,
+              60
+            ],
+            "type": "frequency table",
+            "description": "This frequency table illustrates the returns for three products, presenting the frequency of returns and how it compares to sales data."
+          }
+        ],
+        "title": "Analysis of Profit, Loss, and Discount in Product Sales",
+        "childQuestions": [
+          {
+            "question": "In the frequency table representing product sales, if the total sales for Product A and Product C combined accounted for 65 units, what is the percentage of total sales that Product B represents?",
+            "number": 1,
+            "title": "Sales Proportion of Product B",
+            "solution": "<p>The total sales for Products A, B, and C is calculated as follows:</p>\n<p>\\text{Total Sales} = \\text{Sales of Product A} + \\text{Sales of Product B} + \\text{Sales of Product C} = 20 + 35 + 45 = 100</p>\n<p>Now, to find the percentage of total sales that Product B represents:</p>\n<p>\\text{Percentage of Product B} = \\left(\\frac{\\text{Sales of Product B}}{\\text{Total Sales}}\\right) \\times 100\\% = \\left(\\frac{35}{100}\\right) \\times 100\\% = 35\\%</p>",
+            "answer": "29.17%",
+            "options": [
+              "45.00%",
+              "29.17%",
+              "20.00%",
+              "45.00%"
+            ]
+          },
+          {
+            "question": "In the frequency table showing returns, if Products A and C were returned at a rate where their combined total was 75% of all returns, how many units of Product B were returned?",
+            "number": 2,
+            "title": "Returns of Product B",
+            "solution": "<p>The total returns for Products A, B, and C are calculated as follows:</p>\n<p>\\text{Total Returns} = \\text{Returns of Product A} + \\text{Returns of Product B} + \\text{Returns of Product C} = 15 + 25 + 60 = 100</p>\n<p>According to the information, the combined returns from Products A and C account for 75\\% of total returns:</p>\n<p>\\text{Combined Returns of A and C} = 75\\% \\times \\text{Total Returns} = 0.75 \\times 100 = 75</p>\n<p>Thus, the returns of Product B can be found by subtracting the combined returns of A and C from the total returns:</p>\n<p>\\text{Returns of Product B} = \\text{Total Returns} - \\text{Combined Returns of A and C} = 100 - 75 = 25</p>",
+            "answer": "15.00",
+            "options": [
+              "80.00",
+              "20.00",
+              "15.00",
+              "10.00"
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "mean median mode"
+        ],
+        "graph/table": [
+          {
+            "headers": [
+              "Marketing Strategy",
+              "Cost ($)",
+              "Conversion Rate (%)"
+            ],
+            "rows": [
+              {
+                "Marketing Strategy": "Email",
+                "Cost ($)": 1200,
+                "Conversion Rate (%)": 15
+              },
+              {
+                "Marketing Strategy": "Social Media",
+                "Cost ($)": 1500,
+                "Conversion Rate (%)": 10
+              },
+              {
+                "Marketing Strategy": "SEO",
+                "Cost ($)": 800,
+                "Conversion Rate (%)": 20
+              },
+              {
+                "Marketing Strategy": "Content Marketing",
+                "Cost ($)": 1000,
+                "Conversion Rate (%)": 25
+              }
+            ],
+            "type": "text table",
+            "description": "This table illustrates various marketing strategies along with their associated costs and conversion rates."
+          }
+        ],
+        "title": "Analysis of Marketing Strategies: Costs and Conversion Rates",
+        "childQuestions": [
+          {
+            "question": "Given the text table illustrating various marketing strategies, what is the total expenditure on the marketing strategies listed? Calculate the total amount spent based on the values provided for each marketing strategy.",
+            "number": 1,
+            "title": "Calculation of Total Expenditure on Marketing Strategies",
+            "solution": "The total expenditure on the marketing strategies can be calculated as follows:<br>Total Expenditure = Cost_{Email} + Cost_{Social Media} + Cost_{SEO} + Cost_{Content Marketing} <br>Total Expenditure = 1200 + 1500 + 800 + 1000 = 3500<br>Thus, the total expenditure on the marketing strategies listed is \\$3500.",
+            "answer": "3500",
+            "options": [
+              "4700",
+              "4600",
+              "3500",
+              "4600"
+            ]
+          },
+          {
+            "question": "Based on the information provided in the text table, what is the average conversion rate across all marketing strategies?",
+            "number": 2,
+            "title": "Calculation of Average Conversion Rate for Marketing Strategies",
+            "solution": "The average conversion rate can be calculated using the formula:<br>Average Conversion Rate = \\frac{Conversion Rate_{Email} + Conversion Rate_{Social Media} + Conversion Rate_{SEO} + Conversion Rate_{Content Marketing}}{4} <br>Average Conversion Rate = \\frac{15 + 10 + 20 + 25}{4} = \\frac{70}{4} = 17.5<br>Thus, the average conversion rate across all marketing strategies is 17.5\\%.",
+            "answer": "17.5",
+            "options": [
+              "20",
+              "18",
+              "15",
+              "17.5"
+            ]
+          },
+          {
+            "question": "What is the difference between the highest and lowest conversion rates among the marketing strategies presented in the text table?",
+            "number": 3,
+            "title": "Calculation of Difference in Conversion Rates Among Marketing Strategies",
+            "solution": "The difference between the highest and lowest conversion rates can be calculated as follows:<br>Difference = Highest Conversion Rate - Lowest Conversion Rate <br>Difference = 25 - 10 = 15<br>Thus, the difference between the highest and lowest conversion rates among the marketing strategies is 15\\%.",
+            "answer": "15",
+            "options": [
+              "20",
+              "10",
+              "15",
+              "5"
+            ]
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_UZa5OsiXBDgzfl9B3QGvUxhA",
+        "question": "Is it possible to determine the length of side BC of triangle ABC with the given information?",
+        "statements": [
+          "The perimeter of triangle ABC is 30 cm, and the lengths of sides AB and AC are equal.",
+          "The area of triangle ABC is 100 cm\u00b2."
+        ],
+        "title": "Finding the Length of Side BC in an Isosceles Triangle",
+        "solution": "To determine the length of side BC, consider the first statement which informs us that the triangle is isosceles with sides AB = AC, and that the perimeter is 30 cm. Let the lengths of sides AB and AC be denoted as x. Thus, we have: \\text{Perimeter} = AB + AC + BC = 2x + BC = 30 \\Rightarrow BC = 30 - 2x. However, without the specific value of x, we cannot find a unique value for BC. The second statement provides the area of triangle ABC as 100 cm\u00b2, which can be expressed by the formula for area: \\text{Area} = \\frac{1}{2} \\times \\text{base} \\times \\text{height}. Assuming BC as the base, we need the height to compute the area and cannot deduce it from the information provided. Therefore, neither statement alone is sufficient, but together they do not lead to a unique solution either. Hence, the correct answer is E.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 5,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_ylDPGMIRHPHgR8DZhz44hzu4",
+        "question": "Is the triangle formed by points A(2, 3), B(8, 7), and C(2, 7) obtuse?",
+        "statements": [
+          "The area of a triangle with vertices at points A(2, 3), B(8, 7), and C(2, 7) is greater than 12.",
+          "The length of side AB is less than the length of side AC."
+        ],
+        "title": "Determining the Nature of a Triangle in Coordinate Geometry",
+        "solution": "To determine whether the triangle is obtuse, we must analyze the statements provided. \\text{Statement 1} alone gives a condition on the area, but does not address the angles of the triangle. \\text{Statement 2} tells us about the lengths of sides AB and AC but does not provide direct information regarding the angles either. To ascertain whether a triangle is obtuse, we need to know the relationship between the angles or lengths of the sides sufficiently. Hence, neither statement alone is sufficient, but together they might provide the necessary conditions to conclude the obtuseness of the triangle. Therefore, the correct option is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_EbLzMN7zk3tLz8TxP14Y12tK",
+        "question": "What is the width of the rectangle?",
+        "statements": [
+          "A rectangle has a length that is three times its width. The perimeter of the rectangle is 48 units.",
+          "The area of the rectangle is 108 square units."
+        ],
+        "title": "Determining the Width of a Rectangle from Perimeter and Area",
+        "solution": "To determine the width of the rectangle, we can analyze the two statements. From Statement (1), let the width be denoted as \\text{w}. Then the length is \\text{3w}, and the perimeter \\text{P} is given as \\text{P} = 2(\\text{length} + \\text{width}) = 2(3\\text{w} + \\text{w}) = 8\\text{w}. Setting this equal to 48, we find \\text{w} = 6. From Statement (2), the area is given as \\text{A} = \\text{length} \\cdot \\text{width} = 3\\text{w} \\cdot \\text{w} = 3\\text{w}^{2}. Setting this equal to 108, we get \\text{w}^{2} = 36, hence \\text{w} = 6. Each statement alone provides the same width, confirming that either statement alone is sufficient to determine the width.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 5,
+        "tag": [
+          "MCQ-Multi correct",
+          "standard deviation and variance"
+        ],
+        "thread_id": "thread_meyy8IVsLMeqFlp6zQ0kFmiU",
+        "question": "In a peculiar town where the weather patterns vary dramatically from one day to the next, a meteorologist recorded the daily high temperatures over a 10-day period. The recorded temperatures (in degrees Celsius) were as follows: 15, 22, 26, 30, 18, 25, 32, 29, 21, and 27. The meteorologist wishes to present these data to the town council to argue for a new climate initiative. To do this convincingly, he calculates both the variance and standard deviation of these temperature readings, as these statistics will illustrate the variability of the weather. If the variance and standard deviation are to be presented as evidence of the temperature fluctuation, the meteorologist must calculate them accurately. To find the variance, he first computes the mean of the temperatures, then determines the squared differences from the mean for each temperature reading, and finally averages these squared differences. For the standard deviation, he will take the square root of the variance. How many degrees Celsius, representing the standard deviation, should he report in his findings to impress the council?",
+        "title": "Calculating Temperature Variability for Climate Advocacy",
+        "solution": [
+          "<p>Step 1: Calculate the Mean <br> Mean temperature = ~~\\frac{15 + 22 + 26 + 30 + 18 + 25 + 32 + 29 + 21 + 27}{10} = 24.5~~ <br><br> Step 2: Calculate the Squared Differences from the Mean <br> The squared differences are: <br> (15 - 24.5)\u00b2 = 90.25 <br> (22 - 24.5)\u00b2 = 6.25 <br> (26 - 24.5)\u00b2 = 2.25 <br> (30 - 24.5)\u00b2 = 30.25 <br> (18 - 24.5)\u00b2 = 42.25 <br> (25 - 24.5)\u00b2 = 0.25 <br> (32 - 24.5)\u00b2 = 56.25 <br> (29 - 24.5)\u00b2 = 20.25 <br> (21 - 24.5)\u00b2 = 12.25 <br> (27 - 24.5)\u00b2 = 6.25 <br> The sum of squared differences = 90.25 + 6.25 + 2.25 + 30.25 + 42.25 + 0.25 + 56.25 + 20.25 + 12.25 + 6.25 =  242.5 <br><br> Step 3: Calculate Variance <br> Variance = ~~\\frac{242.5}{10} = 26.65~~ <br><br> Step 4: Calculate Standard Deviation <br> Standard deviation = ~~\\sqrt{26.65} = 5.16~~ </p>",
+          "5.16"
+        ],
+        "options": [
+          "3.19",
+          "9.45",
+          "5.16",
+          "3.99"
+        ],
+        "answer": "5.16"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "Numeric Entry",
+          "profit, loss and discount"
+        ],
+        "question": "A store offers a high-end gadget at a marked price of \\$500. During a promotional event, the store applies a discount of 15% on the marked price. After the discount, the store sells the gadget to a customer who is then later offered a 10% discount on her next purchase of accessories. If the customer spends \\$250 on accessories after availing the discount, how much was her total expenditure including the gadget?",
+        "title": "Calculating Total Expenditure After Discounts on a High-End Gadget and Accessories",
+        "solution": "<p>Selling Price of Gadget: <br>Marked Price = \\$500 <br>Discount = 15\\% <br>Selling Price = ~~500 * (1 - 0.15) = 500 * 0.85 = 425~~ <br><br>Expenditure on Accessories: <br>Original Price = \\$250 <br>Discount = 10\\% <br>Final Expenditure = ~~250 * (1 - 0.10) = 250 * 0.90 = 225~~ <br><br>Total Expenditure = Selling Price of Gadget + Final Expenditure on Accessories = ~~425 + 225 = 650~~ </p>",
+        "answer": "650.00"
+      },
+      {
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_4rE3irIWtfW55XcR01Y3P9pp",
+        "question": "Is it possible to determine the number of mathematics books in the library?",
+        "statements": [
+          "The ratio of the number of books on mathematics to the number of books on science in a library is 3:2.",
+          "The total number of books in the library is 60."
+        ],
+        "title": "Determining Mathematics Book Count from Library Ratios",
+        "solution": "From statement (1), we know the ratio of mathematics to science books is 3:2. This means for every 3 mathematics books, there are 2 science books. However, we cannot find the exact number of mathematics books without knowing the total number of books. Statement (2) gives us the total number of books in the library, which is 60. If we let the number of mathematics books be 3x and the number of science books be 2x, then we have: ~~3x + 2x = 60~~. Solving this gives us ~~5x = 60~~ or ~~x = 12~~. Thus, the number of mathematics books is ~~3x = 3(12) = 36~~. Hence, we can determine the number of mathematics books using both statements together. Therefore, the answer is C: Both statements together are sufficient, but neither statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "algebra"
+        ],
+        "thread_id": "thread_0N0CqCCCeVchHOTuPvWYG2Ns",
+        "question": "In a quaint village, a magical bakery produces two types of cookies: chocolate chip and oatmeal raisin. Each chocolate chip cookie weighs 50 grams, while each oatmeal raisin cookie weighs 40 grams. On a particular day, the bakery made a total of 300 cookies, creating a delightful mixture of these two varieties. The total weight of all cookies baked that day was 12,000 grams. If we let \\( x \\) represent the number of chocolate chip cookies and \\( y \\) represent the number of oatmeal raisin cookies, how many of each type of cookie were baked? What is the value of \\( \\frac{y}{x} \\) rounded to two decimal places?",
+        "title": "Determining the Quantity of Cookies Baked in a Magical Bakery",
+        "solution": [
+          "<p>Given that the bakery made a total of 300 cookies, we set up the equations: <br> \\( x + y = 300 \\) <br> And, given the weights, we have: <br> \\( 50x + 40y = 12000 \\) <br> <br> Solving the first equation for \\( y \\): <br> \\( y = 300 - x \\) <br> <br> Substituting into the second equation: <br> \\( 50x + 40(300 - x) = 12000 \\) <br> This simplifies to: <br> \\( 50x + 12000 - 40x = 12000 \\) <br> \\( 10x = 0 \\) <br> Hence, \\( x = 0 \\) and substituting back we find \\( y = 300 \\). <br> Therefore, the number of chocolate chip cookies \\( x \\) is 0 and the number of oatmeal raisin cookies \\( y \\) is 300. <br> <br> Since \\( x \\) is 0, the ratio \\( \\frac{y}{x} \\) is undefined.</p>",
+          "undefined"
+        ],
+        "options": [
+          "300.0",
+          "0.75",
+          "1.5",
+          "2.0"
+        ],
+        "answer": "0.75"
+      },
+      {
+        "difficulty": 5,
+        "tag": [
+          "Numeric Entry",
+          "simple interest/compound interest"
+        ],
+        "question": "In a distant galaxy, a peculiar species of plant grows in a unique garden. This garden operates on a complex system of interest for its growth cycles. The growth of these plants can be modeled using financial concepts. Suppose one type of plant, known as the Lumina, grows its height based on a compound interest formula, where its height doubles every 7 cycles due to unique nutrients. In contrast, another type, the Solara, grows based on a simple interest principle, increasing its height by a fixed amount of 2 centimeters each cycle. If the Lumina begins at a height of 1 centimeter, and the Solara starts at a height of 12 centimeters, after how many cycles will the Lumina surpass the Solara in height? Calculate the specific height of both plants at that point and provide the total height difference.",
+        "title": "Comparative Growth of Lumina and Solara Plants Over Garden Cycles",
+        "solution": "<p>After 48 cycles, the Lumina plant reaches a height of approximately ~~115.93~~ centimeters, while the Solara plant grows to a height of ~~108~~ centimeters. Therefore, the Lumina plant surpasses the Solara plant in height after 48 cycles. The total height difference between the two plants at this point is approximately ~~7.93~~ centimeters.</p>",
+        "answer": "7.93"
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "mean median mode"
+        ],
+        "graph/table": [
+          {
+            "headers": [
+              "Product",
+              "Sales",
+              "Performance"
+            ],
+            "rows": [
+              {
+                "data": [
+                  "Product A",
+                  120
+                ],
+                "highlight": true
+              },
+              {
+                "data": [
+                  "Product B",
+                  200
+                ],
+                "highlight": true
+              },
+              {
+                "data": [
+                  "Product C",
+                  90
+                ],
+                "highlight": false
+              },
+              {
+                "data": [
+                  "Product D",
+                  160
+                ],
+                "highlight": true
+              }
+            ],
+            "type": "highlight table",
+            "description": "This highlight table illustrates the sales performance of various products, with highlights on the most successful sales figures."
+          }
+        ],
+        "title": "Analyzing Sales Performance Metrics of Various Products",
+        "childQuestions": [
+          {
+            "question": "Based on the highlight table illustrating the sales performance of various products, what is the average sales figure of the products listed, excluding the product with the lowest sales?",
+            "number": 1,
+            "title": "Average Sales Calculation Excluding Lowest Sales Product",
+            "solution": "To find the average sales figure excluding the product with the lowest sales, we first remove the lowest sales value, which is \\$90. The sales figures we consider are \\$120, \\$200, and \\$160. The average is calculated as follows: <br> <br> ~~\\text{Average Sales} = \\left(\\frac{120 + 200 + 160}{3}\\right) = 160.00~~ <br> Thus, the average sales figure excluding the lowest sales product is \\$160.00.",
+            "answer": "160.00",
+            "options": [
+              "142.50",
+              "160.00",
+              "156.67",
+              "160.00"
+            ]
+          },
+          {
+            "question": "In the highlight table illustrating the sales performance of various products, which product had the highest sales and what percentage of the total sales does it represent?",
+            "number": 2,
+            "title": "Identifying Highest Sales Product and Its Sales Percentage",
+            "solution": "The product with the highest sales is **Product B**, with sales amounting to \\$200. To find out what percentage this represents of the total sales, we calculate as follows: <br> <br> Total sales = \\$120 + \\$200 + \\$90 + \\$160 = \\$570. <br> <br> Percentage of total sales for Product B: <br> ~~\\text{Percentage} = \\left(\\frac{200}{570}\\right) \\times 100 \\approx 35.09\\%~~ <br> Therefore, Product B represents approximately 35.09\\% of the total sales.",
+            "answer": "35.09%",
+            "options": [
+              "35.09%",
+              "26.32%",
+              "29.85%",
+              "64.91%"
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": 5,
+        "tag": [
+          "PS",
+          "mean median mode"
+        ],
+        "graph/table": [
+          {
+            "headers": [
+              "Year",
+              "Mean",
+              "Median",
+              "Mode"
+            ],
+            "rows": [
+              {
+                "Year": 2018,
+                "Mean": 200,
+                "Median": 210,
+                "Mode": 205
+              },
+              {
+                "Year": 2019,
+                "Mean": 220,
+                "Median": 215,
+                "Mode": 210
+              },
+              {
+                "Year": 2020,
+                "Mean": 225,
+                "Median": 230,
+                "Mode": 222
+              },
+              {
+                "Year": 2021,
+                "Mean": 240,
+                "Median": 235,
+                "Mode": 239
+              },
+              {
+                "Year": 2022,
+                "Mean": 250,
+                "Median": 245,
+                "Mode": 255
+              }
+            ],
+            "type": "highlight table",
+            "description": "This highlight table showcases the mean, median, and mode values for logistics and operations over the years 2018 to 2022."
+          },
+          {
+            "headers": [
+              "Year",
+              "Mean",
+              "Median",
+              "Mode"
+            ],
+            "rows": [
+              {
+                "Year": 2018,
+                "Mean": 300,
+                "Median": 290,
+                "Mode": 295
+              },
+              {
+                "Year": 2019,
+                "Mean": 320,
+                "Median": 310,
+                "Mode": 315
+              },
+              {
+                "Year": 2020,
+                "Mean": 325,
+                "Median": 330,
+                "Mode": 322
+              },
+              {
+                "Year": 2021,
+                "Mean": 340,
+                "Median": 335,
+                "Mode": 339
+              },
+              {
+                "Year": 2022,
+                "Mean": 350,
+                "Median": 345,
+                "Mode": 360
+              }
+            ],
+            "type": "highlight table",
+            "description": "This highlight table evaluates the statistical data of mean, median, and mode for logistics performance metrics from 2018 to 2022."
+          }
+        ],
+        "title": "Analysis of Statistical Measures in Logistics and Operations",
+        "childQuestions": [
+          {
+            "question": "In the highlight table analyzing logistics and operations from 2018 to 2022, if the mean value increased by \\$50 from 2018 to 2022, and the median increased by \\$35 during the same period, what was the mode value in 2022? Additionally, considering the trend in the mode over the years, how does it compare to the mean increase of \\$50?",
+            "number": 1,
+            "title": "Determining the Mode Value in 2022 Based on Mean and Median Increases",
+            "solution": "The mode value in 2022 is \\text{255}. Given that the mean increased by \\$50 and the median by \\$35 from 2018 to 2022, the change in mode of \\$50 shows a parallel trend in the statistical measurements, indicating similar growth across these metrics.",
+            "answer": "What is the mode value in 2022? \\text{255}",
+            "options": [
+              "What is the mode value in 2022? \\text{255}",
+              "What is the mode value in 2022? \\text{240}",
+              "What is the mode value in 2022? \\text{260}",
+              "What is the mode value in 2022? \\text{245}"
+            ]
+          },
+          {
+            "question": "In the highlight table evaluating logistics performance metrics from 2018 to 2022, if the mean value increased by \\$50 and the median value by \\$55 during this period, how much did the mode increase from 2018 to 2022? What does this indicate about the distribution of the data in terms of trends in the logistics sector?",
+            "number": 2,
+            "title": "Analyzing the Increase in Mode Value in Logistics Performance Metrics",
+            "solution": "The mode value increased by \\text{65} from 2018 to 2022, resulting in a mode of \\text{360} in 2022. This significant increase of \\$65 indicates a strong shift in the distribution of the data in the logistics sector, reflecting improved performance and potentially higher demand.",
+            "answer": "What is the mode increase from 2018 to 2022? \\text{65}",
+            "options": [
+              "What is the mode increase from 2018 to 2022? \\text{70}",
+              "What is the mode increase from 2018 to 2022? \\text{50}",
+              "What is the mode increase from 2018 to 2022? \\text{55}",
+              "What is the mode increase from 2018 to 2022? \\text{65}"
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "standard deviation and variance"
+        ],
+        "graph/table": [
+          {
+            "category": [
+              "Policy A",
+              "Policy B",
+              "Policy C",
+              "Policy D"
+            ],
+            "frequency": [
+              16,
+              11,
+              18,
+              10
+            ],
+            "type": "frequency table",
+            "description": "This frequency table displays the occurrence of different government policies being implemented."
+          }
+        ],
+        "title": "Analysis of Government Policy Implementation Patterns and Variability",
+        "childQuestions": [
+          {
+            "question": "In a recent analysis of government policies, the following frequencies were recorded: Policy A: 16, Policy B: 11, Policy C: 18, and Policy D: 10. If the total occurrence is 55, what would be the percentage occurrence of Policy B?",
+            "number": 1,
+            "title": "What is the percentage occurrence of Policy B in the context of total policies implemented?",
+            "solution": "~~\\text{Percentage Occurrence of Policy B} = \\left(\\frac{\\text{Frequency of Policy B}}{\\text{Total Occurrence}}\\right) \\times 100\\% = \\left(\\frac{11}{55}\\right) \\times 100\\% = 20.00\\%~~",
+            "answer": "20.00\\%",
+            "options": [
+              "18.00\\%",
+              "25.00\\%",
+              "80.00\\%",
+              "20.00\\%"
+            ]
+          },
+          {
+            "question": "In the analysis of government policies, the observed frequencies are: Policy C: 18, and Policy D: 10. What is the difference in frequency of occurrences between Policy C and Policy D?",
+            "number": 2,
+            "title": "What is the difference in frequency between Policy C and Policy D?",
+            "solution": "~~\\text{Difference in Frequency} = \\text{Frequency of Policy C} - \\text{Frequency of Policy D} = 18 - 10 = 8~~",
+            "answer": "8",
+            "options": [
+              "8",
+              "-8",
+              "6",
+              "11"
+            ]
+          },
+          {
+            "question": "In the frequency table of government policies, the frequencies are recorded as follows: Policy A: 16, Policy B: 11, Policy C: 18, and Policy D: 10. What would be the total frequency of all the government policies combined?",
+            "number": 3,
+            "title": "What is the total frequency of all the government policies combined?",
+            "solution": "~~\\text{Total Frequency} = \\text{Frequency of Policy A} + \\text{Frequency of Policy B} + \\text{Frequency of Policy C} + \\text{Frequency of Policy D} = 16 + 11 + 18 + 10 = 55~~",
+            "answer": "55",
+            "options": [
+              "55",
+              "60",
+              "45",
+              "50"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "GRE_V": {
+    "section1": [
+      {
+        "prompt": "<Philosophy> - <TC-1> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_WxbHGizHP0o7O7CMPGm5fdDE",
+        "question": "In the realm of _______ thought, one must consider the intricate balance between ethical principles and human experience.",
+        "title": "Philosophical Considerations of Ethics",
+        "answer": "ethical",
+        "options": [
+          "aesthetic",
+          "metaphysical",
+          "ethical",
+          "phenomenological",
+          "spiritual",
+          "scientific"
+        ],
+        "solution": "<p>The correct option is <strong>C</strong> (ethical) because the sentence discusses the balance between ethical principles and human experience, directly tying the context of philosophy to ethics. </p><p>Other options include:</p><ul><li><strong>A</strong> (metaphysical) - While metaphysical thought is crucial in philosophy, it does not address the balance mentioned in the sentence.</li><li><strong>B</strong> (scientific) - Scientific thought primarily focuses on empirical evidence and does not engage with ethical principles.</li><li><strong>D</strong> (spiritual) - Spiritual thought often intersects with ethics but does not define the interplay between ethics and human experience.</li><li><strong>E</strong> (aesthetic) - Aesthetic considerations relate more to beauty and art than to ethics.</li><li><strong>F</strong> (phenomenological) - Phenomenology is a philosophical approach, but it does not specifically pertain to ethical principles.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "philosophy",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <SE> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_VU6KETitpxjwl6TVv4PkIvnf",
+        "question": "While some politicians have long been known for their ______ stance on environmental issues, others have been criticized for their ______ approach, often prioritizing short-term economic gains over sustainability.",
+        "title": "Politics and Environmental Issues",
+        "answer": [
+          "favorable",
+          "unwavering"
+        ],
+        "options": [
+          "dismissive",
+          "favorable",
+          "pragmatic",
+          "unwavering",
+          "cynical",
+          "ambiguous"
+        ],
+        "solution": "<p><strong>The correct options are B and E:</strong> <br> <u>B: favorable</u> - This denotes a supportive stance towards environmental issues, aligning with the context of politicians with positive views. <br> <u>E: unwavering</u> - This indicates a consistent and firm position regarding environmental concerns, which matches the description of a politician known for their strong stance. <br> <br> <strong>Incorrect options:</strong> <br> <strong>A: ambiguous</strong> - This relates to uncertainty and does not fit the definition of being clear or strong in stance. <br> <strong>C: cynical</strong> - While it implies a distrustful view, it does not align with a supportive environmental position. <br> <strong>D: pragmatic</strong> - This suggests a practical approach without clear alignment on environmental issues and could fit in another context but not here. <br> <strong>F: dismissive</strong> - This indicates a disregard for action, which is the opposite of being supportive or strong in stance.</p>",
+        "difficulty": 2,
+        "tags": [
+          "politics",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Psychology> - <TC-1> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "thread_id": "thread_ng3HqV4W8MxMABzbSRKbAdE0",
+        "question": "In recent studies, the phenomenon of cognitive dissonance has been shown to cause a significant amount of psychological _______ as individuals struggle to reconcile conflicting beliefs.",
+        "title": "Psychological Struggles and Cognitive Dissonance",
+        "answer": "discomfort",
+        "options": [
+          "serenity",
+          "confusion",
+          "elation",
+          "clarity",
+          "discomfort",
+          "indifference"
+        ],
+        "solution": "<p><strong>discomfort</strong> is the correct answer as it directly relates to the psychological struggle individuals face when reconciling conflicting beliefs in cognitive dissonance.</p><p>Other options explanation:</p><ul><li><strong>clarity</strong>: This indicates understanding, which contradicts the essence of cognitive dissonance.</li><li><strong>elation</strong>: A state of extreme happiness, not applicable in this context.</li><li><strong>indifference</strong>: A lack of interest, which does not align with the emotional struggle described.</li><li><strong>serenity</strong>: Denotes calmness, contrary to the discomfort of dissonance.</li><li><strong>confusion</strong>: While it suggests a lack of clarity, it does not encapsulate the emotional turmoil implied by discomfort.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "psychology",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<History> - <TC-2> - <difficulty-level: 3> - <vocabulary-level:1>",
+        "thread_id": "thread_Q0brI2rx8DMBgcL0lIR1ZfCB",
+        "question": "The discovery of artifacts in the ruins suggested that the civilization was __________ in trade; in fact, the abundance of such relics indicates an __________ exchange of goods with neighboring cultures.",
+        "title": "History and Trade: Artifacts and Exchanges",
+        "answer": [
+          "preeminent",
+          "intricate"
+        ],
+        "options": [
+          [
+            "preeminent",
+            "ancillary",
+            "ambivalent",
+            "negligent"
+          ],
+          [
+            "sporadic",
+            "insipid",
+            "interminable",
+            "intricate"
+          ]
+        ],
+        "solution": "<p><b>A</b> is the correct answer as it denotes a primary excellence in trade, which aligns with the context of the civilization's prosperity indicated by the artifacts. <br> <b>E</b> is also fitting because it describes a complex and detailed exchange of goods. <br> <br> The other options suggest meanings that do not logically fit: <br> <ul><li><b>B</b> ('negligent') implies a lack of care, contradictory to the wealth of artifacts.</li><li><b>C</b> ('ancillary') means supplementary, which does not accurately reflect the civilization's trade status.</li><li><b>D</b> ('ambivalent') suggests uncertainty, not fitting for a thriving trade.</li><li><b>F</b> ('interminable') implies endlessness but does not enhance the meaning of exchange.</li><li><b>G</b> ('insipid') means bland, which is irrelevant in this context.</li><li><b>H</b> ('sporadic') indicates irregularity, opposite to the implication of abundant trade.</li></ul></p>",
+        "difficulty": 3,
+        "tags": [
+          "history",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Psychology> - <TC-3> - <difficulty-level: 3> - <vocabulary-level:2>",
+        "thread_id": "thread_UOHuyOcfTx81PfNkqpETo0dU",
+        "question": "In the realm of psychological treatment, it is often observed that patients with a higher degree of ____(1)____ attachment tend to exhibit a pronounced ____(2)____ in their recovery process, possibly due to the comfort provided by their relationships. Conversely, those with a more ____(3)____ attachment style may struggle significantly, leading to a delayed or incomplete recovery.",
+        "title": "Psychological Treatment and Attachment Styles",
+        "answer": "secure",
+        "options": [
+          "secure",
+          "avoidant",
+          "rapid",
+          "reluctance",
+          "deficiency",
+          "empathy"
+        ],
+        "solution": "<p>In this question, the correct answer is <b>secure</b>, which describes a type of attachment that facilitates a positive recovery process in patients. Those with secure attachments are generally better supported emotionally, which aids their therapeutic progress.</p> <p>Other option discussions:</p> <ul><li><b>Deficiency</b> does not fit well in the context of attachment; it is not a type of attachment style.</li><li><b>Empathy</b> is an important trait but does not specifically relate to attachment styles.</li><li><b>Reluctance</b> suggests hesitation or unwillingness, which does not describe an attachment style.</li><li><b>Avoidant</b> describes a type of attachment that could hinder recovery, not help it.</li><li><b>Rapid</b> similarly does not pertain to attachment styles.</li></ul>",
+        "difficulty": 3,
+        "tags": [
+          "psychology",
+          "tc-3"
+        ]
+      },
+      {
+        "passages": [
+          "<p>The economic dynamics of developing nations often showcase a contrasting perspective to that of more advanced economies. In many developing countries, the interplay between agriculture and industry lays the foundation for economic growth. The primary sector, particularly agriculture, provides employment to a significant portion of the population. However, as nations strive for modernization, a delicate balance must be maintained between these sectors. Industrial expansion can lead to urbanization, drawing workers away from rural opportunities and, consequently, affecting agricultural productivity.</p><p>Furthermore, the role of government in these economies is pivotal. Many governments adopt policies that favor industrial growth, sometimes at the expense of agricultural investment. This can create a cycle of dependency where reliance on imported food increases, which undermines local farmers and disrupts food security. Therefore, understanding the intricate relationship between agriculture, industry, and governmental policy is crucial for fostering sustainable economic development in these regions.</p>",
+          "<p>Economic inequality remains a persistent issue globally, manifesting in various forms across different regions. In many nations, disparities in income and wealth distribution have led to social tensions and economic inefficiencies. Studies have shown that high levels of inequality can stymie economic growth, as they limit access to education and healthcare for the lower-income populace, resulting in a less skilled workforce. In contrast, equitable income distribution tends to promote higher levels of consumer spending, which in turn fuels economic expansion.</p><p>In addressing inequality, policymakers must consider a multifaceted approach. Certain measures, such as progressive taxation or social welfare programs, have been proposed to redistribute wealth. However, the effectiveness of these interventions often hinges on the broader economic context, including the country's stage of development and existing social infrastructures. Thus, a comprehensive understanding of economic inequality's roots and ramifications is essential for devising policies that sustain both social equity and economic growth.</p>",
+          "<p>The concept of globalization has spurred heated debates regarding its economic implications for both developed and developing nations. Proponents argue that globalization fosters economic growth by enabling access to larger markets, promoting competition, and facilitating the exchange of ideas and technologies. For developing countries, participation in the global market can attract foreign investment and stimulate local economies. Nonetheless, opponents caution that globalization can exacerbate existing inequalities by benefitting wealthier nations disproportionately and undermining local industries.</p><p>Moreover, the environmental impacts of globalization cannot be overlooked. Increased industrial activity and resource extraction can lead to significant ecological degradation. Hence, economic policies that prioritize sustainable practices while embracing globalization are necessary. Policymakers must navigate these complex interactions, seeking to harness the benefits of globalization while mitigating its adverse effects on both societies and the environment.</p>",
+          "<p>The labor market is a critical component of economic health, influencing productivity, wage levels, and overall living standards. In many economies, shifts in labor demand can result from technological advancements, which can either enhance productivity or lead to job displacement. The adjustment to these changes can be particularly challenging for workers in low-skilled positions, where retraining and upskilling become essential for employment stability.</p><p>Additionally, labor market policies play a significant role in shaping economic outcomes. Governments must balance the need for protective measures, such as minimum wage laws and unemployment benefits, with the necessity for flexibility that allows businesses to adapt to changing market conditions. An understanding of the ongoing dialogues surrounding labor rights and economic policies is vital for addressing contemporary challenges in the workforce while promoting sustainable economic growth.</p>"
+        ],
+        "title": "Navigating Economic Dynamics: Growth, Inequality, and Globalization",
+        "tags": [
+          "rc-l",
+          "Evaluate Question ",
+          "Strengthen Question ",
+          "Inference Question ",
+          "Main Idea Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "What are the potential consequences of prioritizing industrial growth over agricultural investment in developing nations?",
+            "title": "Consequences of Industrialization vs. Agricultural Investment",
+            "answer": "Urbanization leading to worker displacement from rural areas.",
+            "options": [
+              "Increased agricultural productivity and food security.",
+              "Higher government revenues from agricultural taxes.",
+              "Reduction in dependence on imported food.",
+              "Urbanization leading to worker displacement from rural areas."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: Urbanization leading to worker displacement from rural areas.</p><p>This choice accurately reflects the passage's point that prioritizing industrial growth may cause workers to leave agricultural sectors for urban jobs, potentially reducing agricultural productivity.</p><p>Option <strong>A</strong>: Increased agricultural productivity and food security, is incorrect because it contradicts the passage's assertion that industrial growth can detract from agricultural investment, negatively impacting productivity.</p><p>Option <strong>C</strong>: Higher government revenues from agricultural taxes, is also inaccurate. With a focus on industry, agricultural revenues could diminish due to reduced investment in farming.</p><p>Lastly, option <strong>D</strong>: Reduction in dependence on imported food, is incorrect as well. With less support for agriculture, many nations could become increasingly reliant on food imports, undermining local agricultural operations.</p>",
+            "tags": [
+              "Evaluate Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "Which of the following statements best supports the argument that economic inequality hinders economic growth in a country?",
+            "title": "Supporting the Argument Against Economic Inequality",
+            "answer": "Reducing inequality can enhance access to education for the lower-income populace.",
+            "options": [
+              "Economic growth is primarily driven by technological advancements.",
+              "Wealthy individuals tend to contribute more to charity than lower-income individuals.",
+              "Reducing inequality can enhance access to education for the lower-income populace.",
+              "High levels of inequality can lead to higher levels of consumer spending."
+            ],
+            "solution": "<p>The correct option is <strong>A</strong>: Reducing inequality can enhance access to education for the lower-income populace.</p><p>This statement effectively supports the argument that economic inequality hinders economic growth, as it suggests that addressing disparities in income can lead to increased educational opportunities, leading to a more skilled workforce and, consequently, economic advancement.</p><p>Option <strong>B</strong>: High levels of inequality can lead to higher levels of consumer spending, is incorrect because it implies that inequality may boost consumer spending, which contradicts the overall argument that inequality is detrimental to growth.</p><p>Option <strong>C</strong>: Economic growth is primarily driven by technological advancements, is not directly relevant to the discussion of inequality's impact on growth, making it an inadequate support for the argument.</p><p>Finally, option <strong>D</strong>: Wealthy individuals tend to contribute more to charity than lower-income individuals, does not strengthen the argument about the adverse effects of inequality on economic growth, as charitable giving does not necessarily address economic disparities or promote growth.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "What can be inferred about the relationship between globalization and local industries from the passage?",
+            "title": "Inferences on Globalization and Local Industries",
+            "answer": "The growth of globalization may lead to the decline of local industries in developing nations.",
+            "options": [
+              "Globalization consistently benefits local industries by providing them with new markets.",
+              "The growth of globalization may lead to the decline of local industries in developing nations.",
+              "Local industries are entirely independent of global market trends.",
+              "Globalization has no measurable impact on local economic conditions."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: The growth of globalization may lead to the decline of local industries in developing nations.</p><p>This inference is drawn from the passage's argument that while globalization presents opportunities, it can also harm local industries, particularly in developing nations, by favoring larger, established market players from wealthier countries.</p><p>Option <strong>A</strong>: Globalization consistently benefits local industries by providing them with new markets, is incorrect because the passage highlights the potential negative impacts of globalization on local sectors.</p><p>Option <strong>C</strong>: Local industries are entirely independent of global market trends, is also incorrect, as the passage indicates a connection between globalization and local economic conditions, particularly the challenges they may face.</p><p>Finally, option <strong>D</strong>: Globalization has no measurable impact on local economic conditions, is misleading as it contradicts the passage\u2019s assertions regarding the complexities of globalization's effects.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "What is the main idea of the passage regarding the labor market's role in economic health?",
+            "title": "Main Idea: Labor Market and Economic Health",
+            "answer": "The labor market must adapt to changes in technology and economic policies to promote overall economic health.",
+            "options": [
+              "Protective labor market policies hinder business adaptability in changing conditions.",
+              "Technological advancements in the labor market lead to a skilled workforce.",
+              "The labor market must adapt to changes in technology and economic policies to promote overall economic health.",
+              "The labor market is solely responsible for determining wage levels in an economy."
+            ],
+            "solution": "<p>The correct option is <strong>C</strong>: The labor market must adapt to changes in technology and economic policies to promote overall economic health.</p><p>This statement captures the passage's message that the labor market significantly influences economic health and that it needs to adjust to technological shifts and policy changes to ensure stability and growth.</p><p>Option <strong>A</strong>: The labor market is solely responsible for determining wage levels in an economy, is incorrect because the passage does not suggest that the labor market is the only factor affecting wages; it acknowledges multiple influences.</p><p>Option <strong>B</strong>: Technological advancements in the labor market lead to a skilled workforce, misinterprets the broader context of the passage, which discusses the need for the workforce to adapt rather than attributing skill development solely to technology.</p><p>Lastly, option <strong>D</strong>: Protective labor market policies hinder business adaptability in changing conditions, is not directly supported by the passage, which presents a more nuanced view of the balance necessary between protection and flexibility.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      },
+      {
+        "passages": [
+          "<p>In recent years, the field of genetics has experienced unprecedented advancements, particularly in the realm of gene editing. One of the most revolutionary techniques to emerge is CRISPR-Cas9, a technology that allows for precise alterations to an organism's DNA. Researchers have heralded this method as a breakthrough, capable of correcting genetic defects, combating diseases, and even enhancing agricultural productivity.</p><p>However, the implications of gene editing extend beyond mere biological improvements. Ethical quandaries arise as the potential for human enhancement creates a philosophical debate regarding the essence of what it means to be human. Critics argue that manipulating our genetic code may lead to unforeseen consequences, potentially exacerbating social inequalities as only those with access to such technologies may benefit. As society grapples with these advancements, it must also consider regulatory frameworks to ensure that gene editing technologies are applied judiciously and equitably, balancing innovation with ethical responsibility.</p>",
+          "<p>Climate change has emerged as one of the most pressing challenges of our time, necessitating a multifaceted response from global communities. Scientific consensus indicates that human activities, particularly the combustion of fossil fuels, have significantly increased greenhouse gas concentrations in the atmosphere, leading to rising temperatures and unpredictable weather patterns. The resultant effects encompass not only environmental degradation but also socio-economic repercussions that disproportionately affect vulnerable populations.</p><p>While mitigation strategies, such as carbon taxation and renewable energy transitions, are extensively discussed, adaptation measures are becoming equally critical. Communities must be prepared to cope with the immediate impacts of climate change, which include extreme weather events and rising sea levels. By fostering resilience through infrastructure improvements and sustainable practices, societies can better shield themselves from the inevitable changes imposed by a warming planet. Nevertheless, the collaboration of governments, businesses, and individuals is essential to ensure a holistic approach to both mitigation and adaptation efforts.</p>",
+          "<p>The pursuit of renewable energy sources has gained significant momentum in light of the escalating concerns surrounding fossil fuel dependency and environmental degradation. Solar and wind energy, two prominent candidates, have shown remarkable potential in reducing carbon emissions and fostering sustainable development. Innovations in photovoltaic technology and wind turbine efficiency continue to enhance the viability of these energy sources, making them more accessible and economical.</p><p>Despite their advantages, challenges persist in the integration of renewable energy into existing power grids. Intermittency issues related to solar and wind availability require advanced storage solutions and grid management strategies. Moreover, the transition to a predominantly renewable energy infrastructure necessitates substantial investments and policy frameworks that promote research and development. As governments and corporations engage in this pivotal transition, the ultimate goal remains clear: to achieve a sustainable energy future that mitigates climate change while promoting economic growth and energy security.</p>"
+        ],
+        "title": "Navigating the Frontiers of Science: Gene Editing, Climate Change, and Renewable Energy",
+        "tags": [
+          "rc-m",
+          "Conclusion Question ",
+          "Strengthen Question ",
+          "Inference Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "What overarching themes can be derived from the discussions on gene editing, climate change, and renewable energy in the passages?",
+            "title": "Exploring Common Themes in Contemporary Scientific Challenges",
+            "answer": "The need for ethical considerations in technology and environmental stewardship.",
+            "options": [
+              "The isolation of scientific advancements from societal impact.",
+              "Advancements in gene editing are irrelevant to discussions on climate change.",
+              "The need for ethical considerations in technology and environmental stewardship.",
+              "Renewable energy sources eliminate the need for genetic research."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'The need for ethical considerations in technology and environmental stewardship.' This option encapsulates the essence of all three passages, emphasizing the importance of addressing ethical implications tied to scientific advancements, whether in gene editing, climate change, or renewable energy.</p><p><strong>B</strong>: 'The isolation of scientific advancements from societal impact.' is incorrect because the passages highlight the significant societal impact of scientific developments, particularly the ethical, environmental, and economic ramifications.</p><p><strong>C</strong>: 'Advancements in gene editing are irrelevant to discussions on climate change.' is incorrect since the discussions about gene editing are part of broader ethical questions that intersect with environmental issues.</p><p><strong>D</strong>: 'Renewable energy sources eliminate the need for genetic research.' is incorrect as it incorrectly implies a dichotomy between the fields, when in fact they can coexist and inform responsible innovation.</p>",
+            "tags": [
+              "Conclusion Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "question": "Which statement would most effectively strengthen the argument for the ethical regulation of gene editing technologies?",
+            "title": "Strengthening Ethical Arguments in Gene Editing",
+            "answer": "Historical cases of unregulated scientific advancements have led to societal harm.",
+            "options": [
+              "Public opinion on gene editing is overwhelmingly positive and uncritical.",
+              "Gene editing has the potential to improve crop yields significantly.",
+              "Gene editing should be prioritized over all other scientific research.",
+              "Historical cases of unregulated scientific advancements have led to societal harm."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: 'Historical cases of unregulated scientific advancements have led to societal harm.' This statement effectively strengthens the argument for ethical regulation of gene editing technologies by providing evidence of the potential negative consequences of neglecting ethical considerations in scientific progress.</p><p><strong>A</strong>: 'Gene editing has the potential to improve crop yields significantly.' is incorrect as it focuses on the benefits of gene editing without addressing the need for ethical regulations.</p><p><strong>B</strong>: 'Public opinion on gene editing is overwhelmingly positive and uncritical.' is incorrect because it suggests a lack of concern for ethical implications, which undermines the argument for regulation.</p><p><strong>D</strong>: 'Gene editing should be prioritized over all other scientific research.' is incorrect as it misrepresents the argument, suggesting that one field should dominate scientific inquiry, rather than highlighting the need for responsible oversight.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "What can be inferred about the relationship between technological advancements and ethical considerations in scientific fields based on the passages?",
+            "title": "Inferring the Interplay Between Technology and Ethics in Science",
+            "answer": "Ethical considerations are increasingly viewed as integral to technological progress.",
+            "options": [
+              "There is a universal consensus that ethics should take precedence over technology.",
+              "Technological advancements often proceed without ethical considerations.",
+              "Ethical considerations are increasingly viewed as integral to technological progress.",
+              "Technological advancements eliminate the need for ethical debates."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Ethical considerations are increasingly viewed as integral to technological progress.' This inference aligns with the passages, highlighting the growing recognition that ethical issues must accompany scientific and technological advancements like gene editing, climate change solutions, and renewable energy.</p><p><strong>A</strong>: 'Technological advancements often proceed without ethical considerations.' is incorrect as it contradicts the emphasis placed on the importance of ethics in the discussions presented in the passages.</p><p><strong>C</strong>: 'There is a universal consensus that ethics should take precedence over technology.' is incorrect, as it assumes a level of agreement that is not necessarily present in all contexts; rather, the passages suggest a need for balance.</p><p><strong>D</strong>: 'Technological advancements eliminate the need for ethical debates.' is incorrect since the passages indicate that ethical debates become even more critical as technology evolves.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 2
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<Science> - <SE> - <difficulty-level: 4> - <vocabulary-level:3>",
+        "thread_id": "thread_q3vAeCKP0xQbvRaOAmusgTg9",
+        "question": "The intricate workings of the ecosystem are often seen as a pivotal element in the health of our planet, leading many scientists to believe that a ______ understanding of these systems is crucial for sustainability.",
+        "title": "Ecosystem Understanding and Sustainability",
+        "answer": [
+          "comprehensive",
+          "holistic"
+        ],
+        "options": [
+          "theoretical",
+          "comprehensive",
+          "holistic",
+          "fragmented",
+          "superficial",
+          "preliminary"
+        ],
+        "solution": "<p><b>comprehensive</b> is the correct option as it indicates a thorough and complete understanding, which is essential for addressing sustainability issues in ecosystems.<br><br>Other options:<br><br><b>superficial</b> - suggests a lack of depth in understanding, which is inadequate for sustainability efforts.<br><b>fragmented</b> - implies a disjointed view of ecosystems, which would hinder holistic understanding.<br><b>preliminary</b> - indicates an initial or basic understanding, not sufficient for practical application.<br><b>theoretical</b> - while valuable, a purely theoretical understanding does not necessarily translate to effective real-world solutions.<br><b>holistic</b> - though correct in many contexts, it does not imply the same level of thoroughness as comprehensive.</p>",
+        "difficulty": 4,
+        "tags": [
+          "science",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 3> - <vocabulary-level:3>",
+        "thread_id": "thread_due0scL6kAzW0fUgSdCL9a2A",
+        "question": "The poet's work is often considered to embody a deep sense of __________ that transcends the trivialities of daily life, inviting readers to explore the __________ human experience while also addressing the __________ of societal norms and expectations.",
+        "title": "Exploration of Human Experience in Poetry",
+        "answer": [
+          "melancholy",
+          "timeless",
+          "gratification"
+        ],
+        "options": [
+          [
+            "triviality",
+            "joy",
+            "complexity",
+            "melancholy"
+          ],
+          [
+            "shared",
+            "mundane",
+            "individual",
+            "timeless"
+          ],
+          [
+            "aesthetic",
+            "failure",
+            "fulfillment",
+            "gratification"
+          ]
+        ],
+        "solution": "<p>The correct answers are <b>A</b>, <b>F</b>, and <b>I</b>. The phrase conveys that the poet's work embodies a deep sense of <b>melancholy</b> (A), which allows readers to explore the <b>timeless</b> (F) human experience, while also addressing notions of <b>gratification</b> (I) concerning societal norms.</p><p><b>Option Discussion:</b><br/>- <b>B</b> (joy) does not fit the context since the theme is about depth, which often relates to more melancholic emotions.<br/>- <b>C</b> (triviality) is incorrect as it contradicts the idea of transcending daily life.<br/>- <b>D</b> (complexity) fits the idea of depth but does not appropriately describe the emotional state.<br/><br/>- <b>E</b> (mundane) does not capture the essence of the profound experience discussed.<br/>- <b>G</b> (individual) lacks the universality implied by the original text.<br/>- <b>H</b> (shared) is misleading as it obscures the individual journey suggested in the question.<br/><br/>- <b>J</b> (failure) and <b>K</b> (aesthetic) are not fitting in terms of societal norms as they misinterpret the context, while <b>L</b> (fulfillment) does not resonate with the notion of societal critique.</p>",
+        "difficulty": 3,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Science> - <TC-1> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "thread_id": "thread_LwwOIbY6aTklhv72Sxv8I5Ag",
+        "question": "The recent discovery of a new exoplanet has prompted scientists to reconsider their understanding of planetary formation, suggesting that the process is far more _______ than previously believed.",
+        "title": "Revisiting Planetary Formation",
+        "answer": "complex",
+        "options": [
+          "intricate",
+          "straightforward",
+          "uniform",
+          "predictable",
+          "complex",
+          "simple"
+        ],
+        "solution": "<p>The correct answer is <strong>complex</strong> because the context suggests that the new findings indicate a more elaborate process of planetary formation. This aligns with the idea that the earlier understanding was overly simplistic.</p> <p>Other options discussed:</p> <ul><li><strong>straightforward</strong>: This contradicts the implication of the new complexity.</li><li><strong>uniform</strong>: This suggests a lack of variability, which does not fit the context.</li><li><strong>predictable</strong>: Implies an easily understood process, opposing the notion of new discoveries.</li><li><strong>intricate</strong>: While it suggests complexity, it does not fit the sentence as well as complex.</li><li><strong>simple</strong>: This directly opposes the intended meaning of a reconsidered understanding.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "science",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<History> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "thread_id": "thread_8NFDhmgfHToQ9n2vxcaSBE4C",
+        "question": "Though often viewed as a period of cultural stagnation, the Middle Ages were actually a time of _________ intellectual production and _________ artistic creation.",
+        "title": "Intellectual and Artistic Growth in the Middle Ages",
+        "answer": [
+          "unprecedented",
+          "prolific"
+        ],
+        "options": [
+          [
+            "monotonous",
+            "routine",
+            "unprecedented",
+            "negligible"
+          ],
+          [
+            "superficial",
+            "tepid",
+            "limited",
+            "prolific"
+          ]
+        ],
+        "solution": "<p>The correct options are <strong>unprecedented</strong> and <strong>prolific</strong>, highlighting the remarkable nature of intellectual and artistic advancements during the Middle Ages.</p> <p>Other options discussed:</p> <ul><li><strong>monotonous</strong>: This implies a lack of variety, which contradicts the idea of growth.</li><li><strong>negligible</strong>: Suggests minimal impact, opposed to the reality of the period's significance.</li><li><strong>routine</strong>: Implies a sameness that downplays the creativity of the time.</li></ul> <p>In the second group:</p> <ul><li><strong>tepid</strong>: Indicates a lack of enthusiasm, which is misleading regarding the era's vibrancy.</li><li><strong>superficial</strong>: Suggests a lack of depth, which does not align with historical achievements.</li><li><strong>limited</strong>: This undermines the true extent of cultural and intellectual contributions of the Middle Ages.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "history",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <SE> - <difficulty-level: 4> - <vocabulary-level:3>",
+        "thread_id": "thread_6KKNj8ufRsmf5QiyX1X8fjAz",
+        "question": "In the current political climate, the ability to engage in __________ discourse is essential for constructive debate, as it allows for an exchange of divergent views and encourages critical thinking among constituents. Conversely, __________ dialogue stifles understanding and breeds animosity, ultimately undermining the democratic process.",
+        "title": "Political Discourse and Constructive Dialogue",
+        "answer": [
+          "productive",
+          "hostile"
+        ],
+        "options": [
+          "hostile",
+          "meaningful",
+          "aggressive",
+          "productive",
+          "respectful",
+          "adversarial"
+        ],
+        "solution": "<p><b>Option A:</b> <i>productive</i> \u2013 This word aptly fits the first blank, as it describes a type of discourse that is constructive and beneficial for debate. <br> <b>Option D:</b> <i>hostile</i> \u2013 Similarly, this captures the negative essence required for the second blank, indicating a form of dialogue that is confrontational and detrimental to understanding.<br> <br> <b>Option B:</b> <i>aggressive</i> \u2013 While this has a negative connotation, it lacks the specific nuance of hostility in a debate context.<br> <b>Option C:</b> <i>meaningful</i> \u2013 Although it seems appropriate, it does not convey the divisive nature required in the second blank.<br> <b>Option E:</b> <i>respectful</i> \u2013 This contradicts the idea of stifling understanding as it promotes positive engagement. <br> <b>Option F:</b> <i>adversarial</i> \u2013 While it suggests a confrontational stance, it doesn't capture the essence of shutting down discourse needed for the second blank.</p>",
+        "difficulty": 4,
+        "tags": [
+          "politics",
+          "se"
+        ]
+      },
+      {
+        "passages": [
+          "<p>In the realm of literature, the term `bildungsroman` describes a narrative that centers on the growth and development of a protagonist, often from youth to adulthood. This genre is distinguished by its focus on the inner transformation of the character, depicting the influences of society, family, and personal experiences on their moral and psychological evolution. A quintessential example of this form is Charles Dickens' 'David Copperfield', where the titular character navigates the trials and tribulations of life, ultimately leading to self-actualization.</p><p>Despite the apparent simplicity of a coming-of-age tale, `bildungsromane` often engage with complex themes such as identity, belonging, and the quest for autonomy. Authors experiment with various narrative techniques, such as unreliable narrators or non-linear timelines, to enrich the portrayal of a character's journey. This complexity allows readers to delve into the often tumultuous process of maturation, offering insight into the broader human experience.</p>",
+          "<p>The concept of `intertextuality` plays a pivotal role in understanding literature as a web of interconnected texts. It suggests that no text exists in isolation; rather, each literary work is influenced by and responds to other texts, creating a dialogue across time and genre. This interplay can manifest in various forms, including direct quotations, thematic parallels, and allusions, thereby enrichening the reader's experience and interpretation.</p><p>A poignant illustration of intertextuality can be found in the works of modernist writers like T.S. Eliot. In his poem 'The Waste Land', Eliot weaves references to a myriad of literary sources, from classical mythology to contemporary literature. Such references serve not only to enhance the depth of his work but also to position it within a larger literary context. The recognition of intertextuality invites readers to explore these connections, turning text reading into a multifaceted experience that transcends the individual narrative.</p>",
+          "<p>Allegory is a powerful narrative device that authors use to convey deeper meanings and moral lessons through symbolic figures and actions. Often, allegorical tales operate on two levels: the surface narrative and the underlying message that addresses broader societal or ethical issues. Notable examples of this technique can be found in classic literature, such as George Orwell's 'Animal Farm', which serves as a commentary on totalitarianism through the story of farm animals.</p><p>The effectiveness of allegory lies in its ability to engage readers' imaginations while provoking critical reflection on real-world issues. By presenting complex ideas in a more accessible and engaging format, allegorical narratives encourage readers to draw connections to their own experiences and societal contexts. This multi-layered approach to storytelling fosters a rich environment for discussion and interpretation, marking allegory as a significant component of literary tradition.</p>"
+        ],
+        "title": "Navigating Growth and Influence in Literature",
+        "tags": [
+          "rc-m",
+          "Main Idea Question ",
+          "Weaken Question ",
+          "Inference Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "What is the primary purpose of allegory as discussed in the passage?",
+            "title": "The Purpose of Allegory in Literature",
+            "answer": "To convey deeper meanings and moral lessons through symbolism.",
+            "options": [
+              "To explore the psychological state of characters.",
+              "To provide a straightforward account of historical events.",
+              "To convey deeper meanings and moral lessons through symbolism.",
+              "To entertain readers with fantastical narratives."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: To convey deeper meanings and moral lessons through symbolism. The passage highlights how allegory operates on two levels, providing both a story and a larger message about societal or ethical issues.</p><p><strong>A</strong> is incorrect because while allegorical stories may entertain, their primary function is not merely to amuse but to convey deeper meanings.</p><p><strong>C</strong> is incorrect because the passage indicates that allegory does not typically provide straightforward accounts but rather uses symbolism to address broader themes.</p><p><strong>D</strong> is also incorrect, as the focus of allegory, as mentioned in the passage, is on conveying moral and societal lessons rather than exploring individual psychological states.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "question": "Which of the following, if true, would most undermine the argument that allegory is a significant component of literary tradition?",
+            "title": "Challenging the Importance of Allegory in Literature",
+            "answer": "Most contemporary authors do not employ allegory in their works.",
+            "options": [
+              "Most contemporary authors do not employ allegory in their works.",
+              "Literary critics increasingly focus on modernist literature over traditional allegories.",
+              "Allegorical works are often less popular than non-allegorical ones.",
+              "Many readers prefer narratives that are straightforward and literal."
+            ],
+            "solution": "<p>The correct answer is <strong>D</strong>: Most contemporary authors do not employ allegory in their works. This statement undermines the argument that allegory is a significant component of literary tradition, as it suggests a declining relevance of allegory in modern literature.</p><p><strong>A</strong> is incorrect because while preferences for straightforward narratives may exist, they do not diminish the importance of allegory within literary traditions.</p><p><strong>B</strong> is misleading; the popularity of allegorical works compared to non-allegorical ones does not directly negate their significance in literary tradition.</p><p><strong>C</strong> is also incorrect, as the focus of literary critics on different types of literature does not invalidate the importance of allegory; rather, it reflects changes in literary trends.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "question": "What can be inferred about the role of intertextuality in literature from the passage?",
+            "title": "Understanding Intertextuality's Role in Literature",
+            "answer": "Readers benefit from recognizing connections between texts.",
+            "options": [
+              "Intertextuality is a concept primarily used in modernist literature.",
+              "Readers benefit from recognizing connections between texts.",
+              "Most literary texts are isolated and reference very few other works.",
+              "Intertextuality diminishes the originality of literary works."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Readers benefit from recognizing connections between texts. The passage emphasizes that intertextuality enriches the reader's experience and invites exploration of these connections across time and genre.</p><p><strong>A</strong> is incorrect because the passage does not support the idea that intertextuality diminishes originality; rather, it suggests that texts build upon one another.</p><p><strong>C</strong> is incorrect as the passage explicitly states that no text exists in isolation, countering the claim that most are isolated.</p><p><strong>D</strong> is incorrect because the concept of intertextuality extends beyond modernist literature and applies to various literary contexts, as indicated in the passage.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "passages": [
+          "<p>The concept of opportunity cost is fundamental in economics, serving as a guiding principle for decision-making processes. Every choice made implies the forfeiture of alternatives, whereby the next best option is abandoned in favor of the selected course of action. For instance, an individual deciding to pursue higher education must consider not only the financial investment required but also the potential income lost during the years of study. This illustrates that opportunity costs are not merely a matter of monetary expenditure; rather, they encompass time and potential future benefits that are sacrificed.</p><p>One prevalent application of opportunity cost occurs in business. Companies continuously evaluate whether to allocate resources towards production of one good over another. A firm that decides to produce cars over motorcycles must assess the loss of revenue from the motorcycles it could have sold. However, understanding opportunity costs requires foresight and analytical skills, as estimating the true value of a forgone option can be intricate. Therefore, both individuals and businesses must remain vigilant about the potential implications of their choices to avoid unfavorable outcomes in their respective endeavors.</p>",
+          "<p>Inflation, a persistent increase in the general price level of goods and services, has far-reaching effects on the economy. It can erode purchasing power, leading consumers to spend less and save more in anticipation of higher future prices. Central banks often respond to inflationary pressures by adjusting interest rates; raising them can help cool consumer spending and stabilize prices. However, such measures must be balanced carefully to avoid tipping the economy into recession.</p><p>The causes of inflation can be broadly categorized into demand-pull and cost-push inflation. Demand-pull inflation occurs when the demand for goods exceeds supply, often in a growing economy where consumers have higher disposable incomes. On the other hand, cost-push inflation is triggered by rising production costs, such as wages and raw materials, which lead suppliers to increase prices. Both forms of inflation highlight the complex interplay between supply, demand, and external economic factors, necessitating careful analysis to understand their implications for both policymakers and consumers alike.</p>",
+          "<p>The relationship between unemployment and inflation is often explored through the lens of the Phillips Curve, which posits an inverse relationship between these two economic indicators. Essentially, when unemployment rates are low, inflation tends to rise due to increased consumer spending, while high unemployment often corresponds with lower inflation rates as demand dwindles. However, this relationship is not universally accepted, and economic conditions can shift over time, challenging the validity of the Phillips Curve.</p><p>For instance, during periods of stagflation, characterized by high inflation and high unemployment, the traditional understanding of the Phillips Curve comes into question. Such scenarios compel economists and policymakers to reconsider their strategies, as conventional tools aimed at lowering inflation might exacerbate unemployment and vice versa. Thus, the complexities of unemployment and inflation necessitate nuanced approaches, requiring a delicate balance between stimulating growth and managing price stability in the economy.</p>"
+        ],
+        "title": "Understanding Economic Principles: Opportunity Cost, Inflation, and Unemployment",
+        "tags": [
+          "rc-m",
+          "Inference Question ",
+          "Weaken Question ",
+          "Inference Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "Based on the passages, what can be inferred about the interplay between inflation and economic policy responses?",
+            "title": "Analyzing the Interplay between Inflation and Policy Responses",
+            "answer": "Central banks may raise interest rates to combat inflation, but this can impact economic growth.",
+            "options": [
+              "High inflation always results in an immediate reduction in unemployment.",
+              "Economic policy responses to inflation are straightforward and predictable.",
+              "Inflation consistently leads to lower interest rates as a common response.",
+              "Central banks may raise interest rates to combat inflation, but this can impact economic growth."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: Central banks may raise interest rates to combat inflation, but this can impact economic growth. This reflects the nuanced understanding of the relationship between inflation and policy responses, as discussed in the passages.</p><p><strong>A</strong>: Inflation consistently leads to lower interest rates as a common response.</strong> This option is incorrect because, typically, central banks raise interest rates in response to rising inflation, not lower them.</p><p><strong>B</strong>: Economic policy responses to inflation are straightforward and predictable.</strong> This option is misleading; the passages indicate that responses are complex and must consider multiple economic factors.</p><p><strong>D</strong>: High inflation always results in an immediate reduction in unemployment.</strong> This statement is incorrect because high inflation does not guarantee a decrease in unemployment and can, in some cases, coexist with high unemployment (as noted in the discussion of stagflation).</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "question": "Which of the following statements would weaken the credibility of the Phillips Curve as a reliable model for economic policy?",
+            "title": "Challenging the Phillips Curve: Evaluating Its Credibility",
+            "answer": "Recent economic trends demonstrate simultaneous high inflation and high unemployment rates.",
+            "options": [
+              "Historical data shows that periods of high inflation are accompanied by low unemployment.",
+              "Inflation has only been observed in low unemployment scenarios.",
+              "Recent economic trends demonstrate simultaneous high inflation and high unemployment rates.",
+              "Most economists agree that the Phillips Curve accurately predicts economic outcomes."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Recent economic trends demonstrate simultaneous high inflation and high unemployment rates. This statement weakens the credibility of the Phillips Curve because it directly contradicts the model's assertion that inflation and unemployment have an inverse relationship.</p><p><strong>A</strong>: Historical data shows that periods of high inflation are accompanied by low unemployment.</strong> This option is incorrect for weakening the Phillips Curve since it supports the traditional view of the relationship between inflation and unemployment.</p><p><strong>C</strong>: Most economists agree that the Phillips Curve accurately predicts economic outcomes.</strong> This statement does not weaken the Phillips Curve but rather reinforces its credibility as a model used by economists.</p><p><strong>D</strong>: Inflation has only been observed in low unemployment scenarios.</strong> This option is also incorrect because it implies a limited perspective of economic conditions and does not provide evidence against the Phillips Curve.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "What can be inferred about the implications of opportunity cost for both individual decision-makers and firms based on the passages?",
+            "title": "Understanding Implications of Opportunity Cost for Decision-Making",
+            "answer": "Individuals and firms must weigh the potential benefits and losses when making choices.",
+            "options": [
+              "Considering opportunity cost simplifies decision-making processes for all economic agents.",
+              "Opportunity cost only affects individual consumers, not businesses.",
+              "Individuals and firms must weigh the potential benefits and losses when making choices.",
+              "Opportunity cost is irrelevant in business contexts and has no financial implications."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Individuals and firms must weigh the potential benefits and losses when making choices. This reflects the essence of opportunity cost, as both entities need to consider what they are forfeiting with each decision they make.</p><p><strong>A</strong>: Opportunity cost is irrelevant in business contexts and has no financial implications.</strong> This statement is incorrect, as opportunity cost is a crucial consideration in both individual and business decisions and greatly affects financial outcomes.</p><p><strong>C</strong>: Considering opportunity cost simplifies decision-making processes for all economic agents.</strong> This is misleading; while considering opportunity cost is essential, it adds complexity to the decision-making process by requiring analysis of various alternatives.</p><p><strong>D</strong>: Opportunity cost only affects individual consumers, not businesses.</strong> This statement is also incorrect because businesses, just like individuals, face opportunity costs in their decision-making and resource allocation.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "passages": [
+          "<p>Philosophy, as a domain of inquiry, has long grappled with questions that defy simple answers, exploring the very essence of existence and the nature of knowledge. Central to this inquiry is the problem of nihilism, which posits that life is devoid of intrinsic meaning and value. This perspective challenges fundamental beliefs held by many, suggesting that without external validation, concepts such as morality and purpose may be mere constructs of human thought. The ramifications of embracing nihilism extend beyond intellectual discourse, influencing practical realms such as ethics, politics, and personal identity.</p><p>In contrast, existentialist thinkers have sought to counter nihilistic tendencies by asserting the importance of individual agency in creating meaning. In the existential view, while existence may initially appear absurd, individuals possess the capacity to ascribe meaning to their own lives through choices and actions. This pursuit of meaning, however, often entails navigating existential angst\u2014a profound awareness of the void and a struggle against it. Thus, the ongoing dialogue between nihilism and existentialism not only enriches philosophical literature but also provides a framework for understanding the modern human experience in a world that can often seem chaotic and indifferent.</p>",
+          "<p>Immanuel Kant\u2019s critical philosophy presents a rigorous framework for examining the boundaries of human knowledge while simultaneously addressing the profound implications of metaphysics. Kant argues that while human experience is confined to the phenomenal world\u2014the realm of appearance\u2014there exists a noumenal realm that transcends human perception. This distinction draws attention to the limitations inherent in our understanding and challenges the metaphysical assumptions that underpin traditional philosophical thought. Kant\u2019s epistemology posits that knowledge is not merely a passive reflection of reality but is actively constructed through the interplay of sensory experience and rational thought.</p><p>The implications of Kant's ideas extend into moral philosophy, wherein he introduces the concept of the categorical imperative, a fundamental principle that prescribes universalizability in ethical decision-making. According to Kant, moral actions must be guided by maxims that could consistently be willed as universal laws. This approach emphasizes not only the importance of intention in ethical behavior but also establishes a framework for assessing the moral worth of actions independent of their consequences. Consequently, Kant\u2019s work invites ongoing debates about the nature of morality, the validity of metaphysical discourse, and the role of human reason in shaping both knowledge and ethical principles.</p>",
+          "<p>The philosophical discourse surrounding the nature of free will has elicited considerable debate, particularly in light of deterministic perspectives that suggest all events, including human actions, are predetermined by prior states of affairs. Thinkers like Baruch Spinoza advocated for a deterministic view, arguing that human beings are subject to the laws of nature, thus questioning the authenticity of free will. In contrast, libertarians within the free will debate assert that individuals possess the inherent capacity to make choices that are not predetermined, emphasizing the idea of radical freedom that allows for moral responsibility.</p><p>This conflict has sparked various responses from compatibilist philosophers, who argue that free will can coexist with determinism. They propose that freedom should be understood not as absolute independence from causal chains, but rather as the ability to act in accordance with one's desires and rational deliberations, even if those desires are themselves shaped by deterministic factors. Thus, the compatibility of free will and determinism offers a nuanced perspective that recognizes the complexities of human behavior, enabling a richer understanding of moral responsibility. This ongoing discourse not only delves into metaphysical implications but also influences practical considerations, such as legal accountability and ethical conduct.</p>",
+          "<p>The evolution of utilitarian ethics, primarily championed by philosophers such as Jeremy Bentham and John Stuart Mill, marks a significant shift in moral philosophy, centering on the principle of the greatest happiness. Bentham's hedonistic calculus offered a quantitative method for evaluating the moral worth of actions based on their consequences for overall happiness. However, Mill expanded upon Bentham\u2019s ideas by emphasizing the qualitative differences in pleasures, thereby prioritizing higher intellectual and moral pleasures over mere physical gratification. This nuanced approach seeks to address critiques directed at utilitarianism regarding its perceived neglect of justice and rights.</p><p>Moreover, the critique of utilitarianism has led to the development of alternative ethical frameworks, such as deontological ethics, which reject consequentialist premises by asserting that certain actions are inherently right or wrong regardless of their outcomes. Philosophers like Kant provide this contrast by positing a duty-based ethics that prioritizes moral laws over the calculation of utility. Despite these critiques, utilitarianism endures as a compelling ethical theory, which continues to influence contemporary debates surrounding public policy, economics, and collective moral choices, thereby prompting an ongoing re-evaluation of its principles in light of modern ethical dilemmas.</p>"
+        ],
+        "title": "Navigating the Depths of Philosophical Inquiry: Nihilism, Existence, and Moral Frameworks",
+        "tags": [
+          "rc-l",
+          "Assumption Question ",
+          "Weaken Question ",
+          "Inference Question ",
+          "Main Idea Question "
+        ],
+        "childQuestions": [
+          {
+            "question": "What underlying assumptions about meaning and morality can be inferred from the philosophical discussions of nihilism and existentialism presented in the passage?",
+            "title": "Exploring Assumptions in Nihilism and Existentialism",
+            "answer": "Existentialism presumes that individuals can generate their own values and purpose.",
+            "options": [
+              "Both philosophies agree that morality is inherently subjective and not grounded in objective truth.",
+              "Nihilism assumes that humans lack the capacity to create meaning.",
+              "Existentialism presumes that individuals can generate their own values and purpose.",
+              "Existentialism suggests that meaning must be validated by external standards."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>. Existentialism posits that individuals have the capacity to create their own values and purpose despite the inherent absurdity of existence. This reflects the fundamental tenet of existential philosophy that emphasizes personal agency in ascribing meaning to life.</p><p>Option <strong>A</strong> is incorrect because while nihilism suggests that life lacks intrinsic meaning, it does not necessarily imply that humans cannot create meaning; rather, it merely denies that pre-existing meaning exists.</p><p>Option <strong>C</strong> is partially correct but misleading; while nihilism suggests subjectivity in morality, existentialism recognizes the role of personal meaning-making, which can exist within a framework that does not entirely dismiss objectivity in some contexts.</p><p>Option <strong>D</strong> is incorrect because existentialism fundamentally challenges the notion that meaning must be validated externally, advocating instead for individual creation of meaning.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "question": "What evidence from the passage could weaken the argument that existentialism provides a robust solution to nihilistic despair?",
+            "title": "Assessing the Strength of Existentialism Against Nihilistic Despair",
+            "answer": "The struggle to create meaning can lead to greater despair, potentially exacerbating the feelings nihilism evokes.",
+            "options": [
+              "Nihilism offers a simpler explanation for the lack of meaning in life, making it more accessible than existentialism.",
+              "Existentialism acknowledges the profound sense of angst that arises from an indifferent universe.",
+              "Existentialists often conflict with one another regarding the sources of meaning, creating uncertainty in their philosophy.",
+              "The struggle to create meaning can lead to greater despair, potentially exacerbating the feelings nihilism evokes."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>. This option highlights that the struggle to create meaning within the existential framework can indeed lead to greater despair, potentially exacerbating the feelings of emptiness and absurdity that nihilism evokes. This suggests that existentialism might not effectively address the problems associated with nihilism, thus weakening the argument that it provides a robust solution.</p><p>Option <strong>A</strong> is incorrect because while it recognizes the angst associated with existentialism, it does not directly weaken the argument regarding existentialism's role as a solution to nihilism.</p><p>Option <strong>B</strong> is also incorrect; while nihilism may offer a simpler explanation, this does not inherently undermine the effectiveness of existentialist thought, which is more complex and potentially more fulfilling for some individuals.</p><p>Option <strong>D</strong> is inaccurate as it may suggest uncertainty in existentialism, but it doesn\u2019t directly weaken existentialism\u2019s ability to address nihilistic despair. Disagreement among existentialists does not negate the philosophy's overall validity or applicability.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "question": "What can be inferred about the relationship between existentialism and the human experience as portrayed in the passage?",
+            "title": "Inferences on Human Experience Through Existentialism",
+            "answer": "Existentialism views the creation of meaning as a necessary but challenging endeavor for individuals.",
+            "options": [
+              "Existentialism views the creation of meaning as a necessary but challenging endeavor for individuals.",
+              "Existentialism suggests that human beings must accept a life devoid of meaning.",
+              "Existentialism implies that human experiences are fundamentally unconnected and chaotic.",
+              "The passage indicates that existentialism offers a universal answer to the human condition."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>. This option aligns with the passage's depiction of existentialism as a philosophy that acknowledges life's initial absurdity while positing that individuals can and should create their own meaning. This highlights the necessary and challenging endeavor that the philosophy entails.</p><p>Option <strong>A</strong> is incorrect as existentialism does not suggest that life is devoid of meaning; rather, it indicates that meaning is something that individuals must actively create for themselves.</p><p>Option <strong>C</strong> is not correct because the passage does not indicate that existentialism provides a universal answer to the human condition; instead, it emphasizes personal agency and the varying experiences of individuals.</p><p>Option <strong>D</strong> is also incorrect, as while existentialism acknowledges the chaotic nature of existence, it does not imply that human experiences are fundamentally unconnected. Rather, it suggests that individuals can forge connections and meaning despite the chaos.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "question": "What is the main idea of the passage regarding the ongoing discourse between nihilism and existentialism?",
+            "title": "Main Ideas in the Nihilism and Existentialism Discourse",
+            "answer": "The passage highlights the importance of both nihilism and existentialism in understanding the complexities of human existence.",
+            "options": [
+              "The passage highlights the importance of both nihilism and existentialism in understanding the complexities of human existence.",
+              "The passage argues that nihilism and existentialism are fundamentally contradictory philosophies with no overlap.",
+              "The passage suggests that existentialism is the only viable response to the challenges posed by nihilism.",
+              "The passage contends that both philosophies lead to a pessimistic view of human life and decision-making."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>. This option encapsulates the main idea of the passage, which emphasizes the significance of both nihilism and existentialism in grappling with the complexities of human existence. The ongoing dialogue between these two viewpoints enriches philosophical literature and enhances understanding of the human experience.</p><p>Option <strong>A</strong> is incorrect because the passage does not portray nihilism and existentialism as entirely contradictory; rather, it presents them as complementary oppositions that inform one another.</p><p>Option <strong>C</strong> is also incorrect, as the passage does not assert that existentialism is the only valid response to nihilism; instead, it outlines the broader discourse between the two philosophies.</p><p>Option <strong>D</strong> is misleading because while nihilism may present a pessimistic view, existentialism does not necessarily lead to the same conclusion about life; instead, it emphasizes personal agency and the possibility of creating meaning.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      }
+    ]
+  }
+}
