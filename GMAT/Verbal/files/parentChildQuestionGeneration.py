@@ -1,11 +1,18 @@
-import random, math,os, json
+import random, math,os, json, re
+import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
 
-from GMAT.Verbal.files.questionComponents import ParentChildQuestion
+from dotenv import load_dotenv
+from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+
+from Verbal.files.questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx):
         child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))
         prompts = []
-        t = child_prompt["combination number"]
+        t = int(child_prompt["combination number"])
         indexes = []
         for i in range(idx):
             option = child_prompt["reading comprehension"]
@@ -15,31 +22,43 @@ class ParentChildQuestionGeneration:
                 if j <= idx+counter:
                     counter += 1
             indexes.append((idx+counter)%len(option))
-            t = math.floor(t/len(option))
+            t = t//len(option)
             difficulty = random.randint(1, 5)
             prompts.append(f"{option[idx]} - <{difficulty}>")
         child_prompt["combination number"] += 1
+
+        if (t+1)%len(child_prompt["reading comprehension"]) == 0:
+            random.shuffle(child_prompt["reading comprehension"])
+    
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         
         return prompts
-    def __init__(self, llm, prompt):
+    def __init__(self, prompt=None):
+        load_dotenv()
+        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GMAT-Verbal-Parent-Child-Questions"]
+
+        llm = OpenAIAssistantRunnable(
+                model="gpt-4o-mini",
+                api_key=os.getenv("OPENAI_API_KEY"),
+                assistant_id=assistant_id
+        )
         self.llm = llm
         self.prompt = prompt
         child_question_numbers = 0
-        if "rc-s" in self.prompt.lower():
-            child_question_numbers = 2
-        elif "rc-m" in self.prompt.lower():
+        if "rc_3" in self.prompt.lower():
             child_question_numbers = 3
-        elif "rc-l" in self.prompt.lower():
+        elif "rc_4" in self.prompt.lower():
             child_question_numbers = 4
+        self.number_of_child_questions = child_question_numbers
         self.child_prompt = self.generate_child_prompt(child_question_numbers)
         self.questionData = {}
     def generate_question(self):
-        questionContent = ParentChildQuestion(self.llm, self.prompt)
+        questionContent = ParentChildQuestion(self.llm, self.prompt, self.number_of_child_questions)
         self.questionData["thread_id"], self.questionData["passage"] = questionContent.generate_parentPassage()
+
         self.questionData["title"] = questionContent.generate_parentTitle()
         self.questionData["childQuestions"] = []
-        self.questionData["tags"] = [self.prompt.split(" - ")[2].strip().strip('<>').strip()] 
+        self.questionData["tags"] = []
         child_question_numbers = len(self.child_prompt) if self.child_prompt else random.randint(2, 4)
         for i in range(child_question_numbers):
             childQuestionData = {}
@@ -51,7 +70,10 @@ class ParentChildQuestionGeneration:
             random.shuffle(options_list)
             childQuestionData["options"] = options_list
             childQuestionData["solution"] = questionContent.generate_childSolution(i)
-            childQuestionData["difficulty"] = int(self.child_prompt[i].split("-")[1].strip().strip('<>').strip())
+            pattern = r'<difficulty_level: (\d+)>'
+            difficulty = re.search(pattern, self.child_prompt[i])
+            if difficulty:
+               childQuestionData["difficulty"] = int(difficulty.group(1))
             childQuestionData["tags"] = [self.child_prompt[i].split("-")[0].strip().strip()]
             self.questionData["tags"].extend(childQuestionData["tags"])
             self.questionData["childQuestions"].append(childQuestionData)

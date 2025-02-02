@@ -1,0 +1,82 @@
+{
+   "verbal": {
+      "combination_number": 1241,
+      "section": { "RC": [13, 14], "CR": [10, 9] },
+      "themes": [
+         "culture",
+         "biological_sciences",
+         "philosophy",
+         "history",
+         "social_sciences",
+         "psychology",
+         "economics",
+         "business",
+         "literature",
+         "physical_sciences"
+      ],
+      "cr_types": [
+         "strengthen the argument",
+         "structure of the argument boldface structure question",
+         "complete the argument",
+         "Weaken the argument",
+         "structure of the argument dialogue structure question",
+         "evaluate the conclusion",
+         "find the assumption",
+         "draw inference/conclusion",
+         "paradox"
+      ]
+   },
+   "quants": {
+      "combination_number": 1230,
+      "question_style": ["Pure Contextual", "Real Contextual"],
+      "options": ["Arithmetic", "Algebra", "Word Problems"],
+      "Arithmetic": {
+         "focused_skill": [
+            "Critical Reasoning",
+            "Number Sense",
+            "Logical Reasoning",
+            "common pitfalls"
+         ],
+         "topics": [
+            "Percentages",
+            "Ratio and Proportion",
+            "Discount, Profit and Loss",
+            "Rates",
+            "Unitary Method",
+            "Trial and Error Method(type of questions)",
+            "Work and Time"
+         ]
+      },
+      "Algebra": {
+         "focused_skill": [
+            "Backsolving",
+            "Number Picking(by logical and critical reasoning over constraints given in the question)"
+         ],
+         "topics": [
+            "Algebraic Equations",
+            "Inequalities",
+            "Functions",
+            "Polynomials"
+         ]
+      },
+      "Word Problems": {
+         "focused_skill": [
+            "Assessing given Situation(checking the ability of accessing a given situation)",
+            "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
+            "Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)",
+            "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)"
+         ],
+         "themes": [
+            "Business",
+            "Economics",
+            "Finance",
+            "Marketing and Sales",
+            "Logistics and Supply Chain",
+            "Strategy and Management",
+            "Accounting",
+            "Taxation",
+            "Resource Management"
+         ]
+      }
+   }
+}

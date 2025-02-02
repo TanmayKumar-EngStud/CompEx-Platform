@@ -136,7 +136,7 @@ class GRE_Mock:
                     exam_section, section_id, data = question_data
                     paper[exam_section][section_id].append(data)
 
-        with open(f"paper-{time.strftime('%d-%m-%Y-%H-%M')}.json", "w") as f:
+        with open(f"GRE_paper-{time.strftime('%d-%m-%Y-%H-%M')}.json", "w") as f:
             json.dump(paper, f, indent=2)
         return paper
 
