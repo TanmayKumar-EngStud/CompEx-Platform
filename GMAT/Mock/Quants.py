@@ -60,7 +60,7 @@ class Quants:
                random.shuffle(self.component_allocation[option]["themes"])
             prompt_elements.append(theme)
          
-         prompt_elements.append(difficulty_pool.pop())
+         prompt_elements.append(f"difficulty_level: {difficulty_pool.pop()}")
          prompt = " - ".join(f"<{element}>" for element in prompt_elements)
          self.component_allocation["combination_number"] += 1
          prompts.append(prompt)
@@ -70,9 +70,9 @@ class Quants:
          json.dump(self.complete_component_allocation, file, indent=4)
       return prompts
 
-# q = Quants(5)
-# prompts = q.generate_question_prompts()
-# for prompt in prompts:
-#    print(prompt)
-# print("-"*80)
-# print(f"total prompts: {len(prompts)}")
+q = Quants(5)
+prompts = q.generate_question_prompts()
+for prompt in prompts:
+   print(prompt)
+print("-"*80)
+print(f"total prompts: {len(prompts)}")

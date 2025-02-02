@@ -53,6 +53,7 @@ class ParentChildQuestionGeneration:
         self.child_prompt = self.generate_child_prompt(child_question_numbers)
         self.questionData = {}
     def generate_question(self):
+        self.questionData["prompt"] = self.prompt
         questionContent = ParentChildQuestion(self.llm, self.prompt, self.number_of_child_questions)
         self.questionData["thread_id"], self.questionData["passage"] = questionContent.generate_parentPassage()
 
@@ -74,6 +75,8 @@ class ParentChildQuestionGeneration:
             difficulty = re.search(pattern, self.child_prompt[i])
             if difficulty:
                childQuestionData["difficulty"] = int(difficulty.group(1))
+            else:
+               childQuestionData["difficulty"] = -1
             childQuestionData["tags"] = [self.child_prompt[i].split("-")[0].strip().strip()]
             self.questionData["tags"].extend(childQuestionData["tags"])
             self.questionData["childQuestions"].append(childQuestionData)

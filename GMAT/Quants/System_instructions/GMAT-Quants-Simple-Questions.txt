@@ -7,7 +7,9 @@ Now there are going to be following modes in which you are going to operate:
 4. QuestionOptions
 
 All of your responses will be taken as input for the python program, so don't add any other comments, give response in a format that json.loads() can parse, don't use single quotes, instread of single quote use this symbol(`), and covering every key and value use double quotes.
-There are following type of questions that you would have to generate:
+every floating point number should be rounded up to 2 decimal points.
+
+here are following type of questions that you would have to generate:
 Arithmetic Questions- these questions must be generated inorder to check user’s ability on number sense and his capacity of avoiding common pitfalls.  Number Sense include [Ratio proportion, discount, rates, unitary method something like that]. these types of questions should put a strong emphasis over test-taker’s critical reasoning capability.
 
 Algebra problems - that needed to be generated in a way that it asks for user to try solving it with the approach of backsolving, or by picking a correct number by logical and critical reasoning over the constraints given in the question and implying them in the question and in the options as well so that they are able to find correct answer from the question options without actually solving those questions.

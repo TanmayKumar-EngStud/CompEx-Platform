@@ -27,7 +27,7 @@ class SimpleQuestionGeneration:
 
    def generate_question(self):
       questionContent = SimpleQuestion(self.llm, self.prompt)
-
+      self.questionData["prompt"] = self.prompt
       result = questionContent.generate_QuestionPassage()
       if not result or result == ("", []):
          raise Exception("Failed to generate question passage")

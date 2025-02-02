@@ -36,75 +36,75 @@
         ]
     },
     "quants": {
-        "combination_number": 1368,
+        "combination_number": 1414,
         "question_style": [
             "Pure Contextual",
             "Real Contextual"
         ],
         "options": [
-            "Arithmetic",
             "Algebra",
-            "Word Problems"
+            "Word Problems",
+            "Arithmetic"
         ],
         "Arithmetic": {
             "focused_skill": [
-                "Critical Reasoning",
-                "Number Sense",
                 "common pitfalls",
-                "Logical Reasoning"
+                "Logical Reasoning",
+                "Critical Reasoning",
+                "Number Sense"
             ],
             "topics": [
-                "Percentages",
-                "Work and Time",
-                "Unitary Method",
                 "Discount, Profit and Loss",
+                "Percentages",
+                "Unitary Method",
                 "Trial and Error Method(type of questions)",
+                "Work and Time",
                 "Rates",
                 "Ratio and Proportion"
             ]
         },
         "Algebra": {
             "focused_skill": [
-                "Backsolving",
-                "Number Picking(by logical and critical reasoning over constraints given in the question)"
+                "Number Picking(by logical and critical reasoning over constraints given in the question)",
+                "Backsolving"
             ],
             "topics": [
-                "Inequalities",
-                "Algebraic Equations",
+                "Functions",
                 "Polynomials",
-                "Functions"
+                "Inequalities",
+                "Algebraic Equations"
             ]
         },
         "Word Problems": {
             "focused_skill": [
-                "Assessing given Situation(checking the ability of accessing a given situation)",
                 "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)",
+                "Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)",
                 "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
-                "Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)"
+                "Assessing given Situation(checking the ability of accessing a given situation)"
             ],
             "topics": [
-                "Inequalities",
-                "Unitary Method",
-                "Discount, Profit and Loss",
-                "Algebraic Equations",
                 "Work and Time",
-                "Rates",
                 "Polynomials",
                 "Percentages",
+                "Functions",
+                "Algebraic Equations",
+                "Rates",
+                "Unitary Method",
+                "Inequalities",
+                "Discount, Profit and Loss",
                 "Trial and Error Method(type of questions)",
-                "Ratio and Proportion",
-                "Functions"
+                "Ratio and Proportion"
             ],
             "themes": [
-                "Finance",
-                "Strategy and Management",
-                "Taxation",
-                "Resource Management",
-                "Accounting",
-                "Business",
                 "Marketing and Sales",
+                "Taxation",
                 "Logistics and Supply Chain",
-                "Economics"
+                "Accounting",
+                "Strategy and Management",
+                "Resource Management",
+                "Economics",
+                "Finance",
+                "Business"
             ]
         }
     }

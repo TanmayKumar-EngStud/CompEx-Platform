@@ -46,6 +46,7 @@ class SimpleQuestionGeneration:
          thread_id, question = questionContent.generate_questionText(self.prompt)
          if not thread_id or not question:
             raise Exception("Failed to generate valid question text")
+         self.questionData["prompt"] = self.prompt
          self.questionData["thread_id"] = thread_id
          self.questionData["question"] = question
          
@@ -69,10 +70,12 @@ class SimpleQuestionGeneration:
             self.questionData["answer"] = "A"
          
          # Set difficulty and tags
-         try:
-            self.questionData["difficulty"] = int(self.prompt.split(" - ")[2].strip("<>"))
-         except:
-            self.questionData["difficulty"] = 1
+         pattern = r'<difficulty_level: (\d+)>'
+         difficulty = re.search(pattern, self.prompt)
+         if difficulty:
+            self.questionData["difficulty"] = int(difficulty.group(1))
+         else:
+            self.questionData["difficulty"] = -1
             
          tags = [self.prompt.split(" - ")[x].strip("<>") for x in [0, 1, 2, 3]]
          self.questionData["tags"] = [re.sub(r'\([^)]*\)', '', tag) for tag in tags]
