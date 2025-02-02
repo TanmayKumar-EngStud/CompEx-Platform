@@ -1,12 +1,12 @@
 import json, time, dotenv
 from Mock.Verbal import Verbal
+from Mock.Quants import Quants
 
 import traceback
 from enum import Enum
 import time,os
 # region Quants generators:
-from Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
-from Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as Q_PC_gen
+from Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
 # endregion
 
 # region Verbal generators:
@@ -19,14 +19,12 @@ def clear_terminal():
     os.system('clear')
 clear_terminal()
 class GeneratorClass(Enum):
-    Q_PC_gen = "Q_PC_gen"
-    Q_DS_gen = "Q_DS_gen"
+    Q_S_gen = "Q_S_gen"
     V_PC_gen = "V_PC_gen"
     V_S_gen = "V_S_gen"
 
 GENERATOR_MAP = {
-    GeneratorClass.Q_PC_gen: Q_PC_gen,
-    GeneratorClass.Q_DS_gen: Q_DS_gen,
+    GeneratorClass.Q_S_gen: Q_S_gen,
     GeneratorClass.V_PC_gen: V_PC_gen,
     GeneratorClass.V_S_gen: V_S_gen,
 }
@@ -37,8 +35,8 @@ class GMAT_Mock:
         self.mock_difficulty = mock_difficulty
         verbal = Verbal(mock_difficulty)
         self.verbal_prompts = verbal.generate_question_prompts()
-      #   quants = Quants(mock_difficulty)
-      #   self.quants_prompts = quants.generate_question_prompts()
+        quants = Quants(mock_difficulty)
+        self.quants_prompts = quants.generate_question_prompts()
     def generate_question_with_retry(self, exam_section: str, prompt: str, generator_class):
         retries = 0
         if not isinstance(generator_class, GeneratorClass):
@@ -75,6 +73,8 @@ class GMAT_Mock:
         paper = {"GMAT_Q": {"section0":[]}, "GMAT_V": {"section0": []}, "GMAT_IR": {"section0": []}}
         with ThreadPoolExecutor() as executor:
             futures = []
+            for prompts in self.quants_prompts:
+                futures.append(executor.submit(self.generate_question_with_retry, "GMAT_Q", prompts, GeneratorClass.Q_S_gen)) 
             for prompts in self.verbal_prompts:
                 if "rc" in prompts.lower():
                     futures.append(executor.submit(self.generate_question_with_retry, "GMAT_V", prompts, GeneratorClass.V_PC_gen))

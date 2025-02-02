@@ -18,19 +18,32 @@ def refine_response(response_text):
         # Look for ```json blocks
         json_block_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
         if json_block_match:
-            try:
-                json_str = json_block_match.group(1).strip()
-                # Handle single quotes
-                json_str = json_str.replace("'", '"')
-                # Remove trailing commas
-                json_str = re.sub(r',(\s*})', r'\1', json_str)
-                json_str = re.sub(r',(\s*])', r'\1', json_str)
+            json_str = json_block_match.group(1).strip()
+        else:
+            json_str = response_text
+        json_str = re.sub(r'(?<!\\)\\(?!\\)', r'\\\\', json_str)
+        try:
+# region ✅ 3 levels of json transformation 1️⃣ *,} -> *} ; *,] -> *] 2️⃣ {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*: 3️⃣ *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+        # *,} -> *} ; *,] -> *]
+            json_str = re.sub(r',(\s*})', r'\1', json_str)
+            json_str = re.sub(r',(\s*])', r'\1', json_str)
+            # {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*:
+            json_str = re.sub(r"(\[\s*)'", r'\1"', json_str)
+            json_str = re.sub(r"(\{\s*)'", r'\1"', json_str)
+            json_str = re.sub(r"'(\s*\])", r'"\1', json_str)
+            json_str = re.sub(r"'(\s*\})", r'"\1', json_str)
+            json_str = re.sub(r"'(\s*:)" , r'"\1', json_str)
+
+            # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+            json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
+            json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
+# endregion
                 
-                parsed = json.loads(json_str)
-                return json.dumps(parsed)
-            except json.JSONDecodeError as e:
-                print(f"JSON validation error in code block: {str(e)}\nJSON string:\n{json_str}\n")
-                # Continue to try other methods
+            parsed = json.loads(json_str)
+            return json.dumps(parsed)
+        except json.JSONDecodeError as e:
+            print(f"JSON validation error in code block: {str(e)}\nJSON string:\n{json_str}\n")
+            # Continue to try other methods
         
         # Clean up the text a bit
         text = response_text.strip()

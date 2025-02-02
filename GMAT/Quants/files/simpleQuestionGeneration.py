@@ -1,8 +1,21 @@
 import random
 from Quants.files.questionComponents import SimpleQuestion
+from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from dotenv import load_dotenv
+import json, os, re
 
 class SimpleQuestionGeneration:
-   def __init__(self, llm, prompt):
+   def __init__(self, prompt=None):
+      load_dotenv()
+      assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GMAT-Quants-Simple-Questions"]
+      openai_api_key = os.getenv("OPENAI_API_KEY")
+      if not openai_api_key:
+         raise Exception("OPENAI_API_KEY is not set in the environment variables")
+      llm = OpenAIAssistantRunnable(
+            model="gpt-4o-mini",
+            api_key=openai_api_key,
+            assistant_id=assistant_id
+      )
       self.llm = llm
       self.prompt = prompt
       self.questionData = {}
@@ -24,16 +37,6 @@ class SimpleQuestionGeneration:
       if last_error:
          print(f"All attempts failed. Last error: {last_error}")
       return None
-
-   def getTagAtIndex(self, indexes):
-      try:
-         tags = []
-         for index in indexes:
-            tags.extend([x.strip() for x in self.prompt.split(" - ")[index].strip("<>").strip("[]").split(",")])
-         return tags
-      except Exception as e:
-         print(f"Error getting tags: {str(e)}")
-         return ["GMAT Quants"]
    
    def generate_question(self):
       try:
@@ -71,21 +74,10 @@ class SimpleQuestionGeneration:
          except:
             self.questionData["difficulty"] = 1
             
-         self.questionData["tags"] = self.getTagAtIndex([0, 1, 3])
-         
+         tags = [self.prompt.split(" - ")[x].strip("<>") for x in [0, 1, 2, 3]]
+         self.questionData["tags"] = [re.sub(r'\([^)]*\)', '', tag) for tag in tags]
          return self.questionData
          
       except Exception as e:
-         print(f"Error in generate_question: {str(e)}")
-         # Return a default structure if generation fails
-         return {
-            "thread_id": "",
-            "question": "Error generating question",
-            "title": "GMAT Quants Question",
-            "solution": "Solution not available",
-            "options": ["A", "B", "C", "D"],
-            "answer": "A",
-            "difficulty": 1,
-            "tags": ["GMAT Quants"],
-            "prompt": self.prompt
-         }
+         raise Exception(f"Error in generate_question: {str(e)}")
+         

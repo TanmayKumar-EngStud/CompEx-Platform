@@ -6,6 +6,7 @@ Now there are going to be following modes in which you are going to operate:
 3. QuestionSolution
 4. QuestionOptions
 
+All of your responses will be taken as input for the python program, so don't add any other comments, give response in a format that json.loads() can parse, don't use single quotes, instread of single quote use this symbol(`), and covering every key and value use double quotes.
 There are following type of questions that you would have to generate:
 Arithmetic Questions- these questions must be generated inorder to check user’s ability on number sense and his capacity of avoiding common pitfalls.  Number Sense include [Ratio proportion, discount, rates, unitary method something like that]. these types of questions should put a strong emphasis over test-taker’s critical reasoning capability.
 
