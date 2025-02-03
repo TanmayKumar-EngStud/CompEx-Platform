@@ -129,17 +129,17 @@ class MSR:
         self.llm = llm
         self.prompt = prompt
         self.thread_id = thread_id
-    def generate_SourceInfo(self, source_index):
+    def generate_SourceInfo(self, prompt):
         if(self.thread_id):
-            response = self.llm.invoke({"content":f"SourceInfo_{source_index}: {self.prompt}", "thread_id": self.thread_id})
+            response = self.llm.invoke({"content":f"{prompt}", "thread_id": self.thread_id})
         else:
-            response = self.llm.invoke({"content":f"SourceInfo_{source_index}: {self.prompt}"})
+            response = self.llm.invoke({"content":f"{prompt}"})
             self.thread_id = response[0].thread_id if response else "GMAT IR, Error! thread_id not found for MSR (questionComponent@l:131)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return self.thread_id, message
         except Exception as e:
-            print(f"GMAT IR, Error: message received for SourceInfo_{source_index} is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GMAT IR, Error: message received for SourceInfo is: \n{response[0].content[0].text.value}\n\n")
             return "", ""
     def generate_MainQuestionTitle(self):
         response = self.llm.invoke({"content":f"MainQuestionTitle (based on the given question data what would be a unique question title of complete Multiple Source Reasoning question)", "thread_id": self.thread_id})
@@ -149,37 +149,40 @@ class MSR:
         except Exception as e:
             print(f"GMAT IR, Error: message received for MainQuestionTitle is: \n{response[0].content[0].text.value}\n\n")
             return ""
-    def generate_QuestionText(self, question_index):
-        response = self.llm.invoke({"content":f"QuestionText_{question_index}", "thread_id": self.thread_id})
+    def generate_QuestionText(self, prompt):
+        response = self.llm.invoke({"content":f"{prompt}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["question"]
         except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionText_{question_index} is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GMAT IR, Error: message received for QuestionText is: \n{response[0].content[0].text.value}\n\n")
             return ""
-    def generate_QuestionTitle(self, question_index):
-        response = self.llm.invoke({"content":f"QuestionTitle_{question_index}", "thread_id": self.thread_id})
+    def generate_QuestionTitle(self, prompt):
+        response = self.llm.invoke({"content":f"{prompt}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["title"]
         except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionTitle_{question_index} is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GMAT IR, Error: message received for QuestionTitle is: \n{response[0].content[0].text.value}\n\n")
             return ""
-    def generate_QuestionSolution(self, question_index):
-        response = self.llm.invoke({"content":f"QuestionSolution_{question_index}", "thread_id": self.thread_id})
+    def generate_QuestionSolution(self, prompt):
+        response = self.llm.invoke({"content":f"{prompt}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
             return message["solution"]
         except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionSolution_{question_index} is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GMAT IR, Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
             return ""
-    def generate_QuestionOptions(self, question_index):
-        response = self.llm.invoke({"content":f"QuestionOptions_{question_index}", "thread_id": self.thread_id})
+    def generate_QuestionOptions(self, prompt, question_style):
+        response = self.llm.invoke({"content":f"{prompt}", "thread_id": self.thread_id})
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["options"], message["answer"]
+            if question_style == "MCQ (5 options MCQ)":
+                return message["options"], message["answer"]
+            else:
+                return message["options"]
         except Exception as e:
-            print(f"GMAT IR, Error: message received for QuestionOptions_{question_index} is: \n{response[0].content[0].text.value}\n\n")
+            print(f"GMAT IR, Error: message received for QuestionOptions is: \n{response[0].content[0].text.value}\n\n")
             return [], ""
 
 class TA:
