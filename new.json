@@ -1,24 +1,15 @@
 {
-   "graph/table": [
+   "options": [
       {
-         "graph/table data1": {
-            "headers": [
-               "Year",
-               "Principal Amount ($)",
-               "Simple Interest ($)",
-               "Compound Interest ($)"
-            ],
-            "rows": [
-               [1, 1000, 50.0, 50.0],
-               [2, 2000, 200.0, 205.0],
-               [3, 3000, 450.0, 472.88],
-               [4, 4000, 800.0, 862.03],
-               [5, 5000, 1250.0, 1381.41]
-            ],
-            "type": "standard data table",
-            "description": "This table shows the relationships between the principal amounts, simple interest, and compound interest over 5 years."
-         }
+         "A": "option A",
+         "B": "option B",
+         "C": "option C"
+      },
+      {
+         "D": "option D",
+         "E": "option E",
+         "F": "option F"
       }
    ],
-   "relation": "This table illustrates the comparison between simple interest and compound interest accrued on various principal amounts over a span of 5 years."
+   "answer": ["B", "F"]
 }
