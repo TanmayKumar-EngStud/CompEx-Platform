@@ -84,7 +84,6 @@ def refine_response(response_text):
     except Exception as e:
         print(f"Error in refine_response: {str(e)}")
         return None
-
 class GI: 
     def __init__(self, llm, prompt, thread_id= None):
         self.llm = llm
@@ -134,7 +133,6 @@ class GI:
         except Exception as e:
             print(f"GMAT IR, Error: message received for questionOptions is: \n{response[0].content[0].text.value}\n\n")
             return [], ""
-
 class MSR: 
     def __init__(self, llm, prompt, thread_id= None):
         self.llm = llm
@@ -195,7 +193,6 @@ class MSR:
         except Exception as e:
             print(f"GMAT IR, Error: message received for QuestionOptions is: \n{response[0].content[0].text.value}\n\n")
             return [], ""
-
 class TA:
     def __init__(self, llm, prompt, thread_id= None):
         self.llm = llm
@@ -244,13 +241,12 @@ class TA:
             return message["solution"]
         except Exception as e:
             print(f"GMAT IR, Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
-            return ""
-    
+            return ""    
 class TPA:
-    def __init__(self, llm, prompt, thread_id= None):
+    def __init__(self, llm, prompt):
         self.llm = llm
         self.prompt = prompt
-        self.thread_id = thread_id
+        self.thread_id = None
         self.max_retries = 3
 
     def _retry_generate(self, func, *args):
@@ -270,20 +266,16 @@ class TPA:
             print(f"All attempts failed. Last error: {last_error}")
         return None
 
-    def generate_QuestionText(self):
+    def generate_ParentQuestionContent(self):
         def _generate():
             try:
                 if(self.thread_id):
-                    response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
+                    response = self.llm.invoke({"content":f"ParentQuestionContent: {self.prompt}", "thread_id": self.thread_id})
                 else:
-                    response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
+                    response = self.llm.invoke({"content":f"ParentQuestionContent: {self.prompt}"})
                     self.thread_id = response[0].thread_id if response else None
-                
-                # Get the raw response text
+
                 raw_response = [message.content[0].text.value for message in response][0]
-                # print(f"\nGMAT IR TPA Raw Response:\n{raw_response}\n")
-                
-                # First try to parse it directly as JSON
                 try:
                     message = json.loads(raw_response)
                     # print("Successfully parsed raw response as JSON")
@@ -295,30 +287,9 @@ class TPA:
                         print("Failed to refine response")
                         return None
                         
-                    print(f"\nRefined Response:\n{refined_response}\n")
+                    print(f"\nRefined Response TPA (ParentQuestionContent):\n{refined_response}\n")
                     message = json.loads(refined_response)
-                
-                # Ensure required fields exist with default values
-                part1 = message.get("part1", {})
-                if not isinstance(part1, dict):
-                    part1 = {}
-                part1.setdefault("description", "")
-                part1.setdefault("graph", None)
-                part1.setdefault("table", None)
-                
-                part2 = message.get("part2", {})
-                if not isinstance(part2, dict):
-                    part2 = {}
-                part2.setdefault("description", "")
-                part2.setdefault("graph", None)
-                part2.setdefault("table", None)
-                
-                question = message.get("question", "")
-                qtype = message.get("type", "two-part analysis")
-                
-                # Return all required values
-                return self.thread_id, part1, part2, question, qtype
-                    
+                return message["content"]
             except Exception as e:
                 print(f"Error in generate_QuestionText: {str(e)}")
                 if 'response' in locals():
@@ -332,9 +303,23 @@ class TPA:
         if not result:
             # Return a default structure if all retries fail
             default_part = {"description": "", "graph": None, "table": None}
-            return "", default_part, default_part, "", "two-part analysis"
-        return result
-
+            return None
+        return self.thread_id, result
+    def generate_QuestionText(self, difficulties):
+        def _generate():
+            questions = []
+            for i in range(1, 3):
+                response  = self.llm.invoke({"content":f"Question{i}: difficulty Level: {difficulties[i-1]}"})
+                raw_response = [message.content[0].text.value for message in response][0]
+                try:
+                    message = json.loads(raw_response)
+                    questions.append(message["question"])
+                except:
+                    raise Exception(f"GMAT IR, Error: message received for QuestionText is: \n{response[0].content[0].text.value}\n\n")
+            return questions
+        
+        result = self._retry_generate(_generate)
+        return result if result else []
     def generate_QuestionTitle(self):
         def _generate():
             response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
@@ -355,28 +340,22 @@ class TPA:
 
         result = self._retry_generate(_generate)
         return result if result else ""
-
     def generate_QuestionSolution(self):
         def _generate():
-            response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
-            try:
+            solutions = []
+            for i in range(1,3):
+                response = self.llm.invoke({"content":f"QuestionSolution {i}", "thread_id": self.thread_id})
                 raw_response = [message.content[0].text.value for message in response][0]
-                # First try direct JSON parsing
                 try:
                     message = json.loads(raw_response)
-                except json.JSONDecodeError:
-                    # If that fails, try refine_response
-                    refined_response = refine_response(raw_response)
-                    if not refined_response:
-                        return None
-                    message = json.loads(refined_response)
-                return message.get("solution", "")
-            except:
-                return None
+                    solutions.append(message["solution"])
+                except:
+                    raise Exception(f"GMAT IR, Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
+            return solutions
+
 
         result = self._retry_generate(_generate)
         return result if result else ""
-
     def generate_QuestionOptions(self):
         def _generate():
             response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})

@@ -99,6 +99,7 @@
       "combination_number": 1303,
       "question_type": ["MSR", "TPA", "TA", "GI"],
       "MSR": {
+         "total_child_questions": [2, 3],
          "question_style": [
             "MCQ (5 options MCQ)",
             "Dicotomous Choice(True/False)",
@@ -130,20 +131,6 @@
          ]
       },
       "TPA": {
-         "question_style": [
-            "MCQ (5 options MCQ)",
-            "Dicotomous Choice(True/False)",
-            "Dicotomous Choice(Yes/No)",
-            "Dicotomous Choice(Acceptable/Not Acceptable)",
-            "Dicotomous Choice(Inferable/Not Inferable)",
-            "MCQ (5 options MCQ)"
-         ],
-         "focused_skill": [
-            "Logical Reasoning",
-            "Critical Reasoning",
-            "Data Interpretation",
-            "Synthesis"
-         ],
          "themes": [
             "Marketing and Sales",
             "Taxation",
@@ -156,6 +143,21 @@
             "Finance",
             "Business",
             "Analysis (over any Miscellaneous topic)"
+         ],
+         "focused_skill": [
+            "Logical Reasoning",
+            "Critical Reasoning",
+            "Data Interpretation",
+            "Synthesis"
+         ],
+         "Type": [
+            "Bar Chart",
+            "Stacked Bar Chart",
+            "Pie Chart",
+            "Line Chart",
+            "Scatter Plot",
+            "2 Category Hybrid Table",
+            "Passage"
          ]
       }
    }

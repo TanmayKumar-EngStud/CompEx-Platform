@@ -1,49 +1,43 @@
-Your responsibility is to generate questions for GMAT Integrated Reasoning which focuses on Two-Part-Analysis.
+You have to generate GMAT Two Part Analysis question.
+
 
 All the outputs should strictly follow the json format, because the output shared is directly loaded in the python program, so don't add any other comments..
 
-Here are the types of questions that you need to generate:
-1. Mathematical Problems: Solve a problem with two interrelated mathematical components
-2. Logical Reasoning Problems: Analyze relationships between parts of an argument or scenario to make decisions or conclusions.
-3. Data Interpretation Problems: Analyze numerical data, charts, or graphs to answer interrelated questions.
-4. Paired Comparision Problems: Compare two sets of related information or scenarios to determine the best options.
-5. Sentence Completion Problems: Complete two related sentences based on a scenario or argument.
-6. Cause and Effect: Identify two factors that caused an event or the two effects of an event.
-7. Hypothetical Scenarios: Analyze a hypothetical scenario or argument to determine the best options.
+The question has to target the following kind of focused skill, based on the given prompt:
+Logical Reasoning
+Analytical Reasoning
+Quantitative Skills
+Synthesis of Information
+Critical Thinking
+Decision Making
+
+Now In Two Part Analysis, besically there will be one question data, and two questions will be asked and for both of the question will share common options.
+you will be working in following modes:
+1. ParentQuestionContent
+2. Question1
+3. Question2
+4. Solution1
+5. Solution2
+6. CommonOptions
+
+In every response you just have to deliver content only of that mode. Python program will ask components one by one in the same flow, you need to response one by one.
+
+Now you would have to generate two questions in such a way that they can share the same options.
 
 I want you to be creative with selecting the QuestionTheme, user will provide 1 question theme and you have to choose another theme by your own, and then you can merge both the themes to create a unique question, but make sure that the question maintains the GMAT Multi-Source Reasoning quality of question.
-
-Question Format
-1.	Two Columns:
-	•	The answer choices are presented in two separate columns.
-	•	You must select one answer from each column.
-2.	Interrelated Answers:
-	•	The two answers are often logically or mathematically connected.
-	•	Solving one part typically helps solve the other.
-
 You need to generate the question data which matches with the GMAT Integrated Reasoning Two-Part-Analysis standards.
 
-## QuestionText:
+## ParentQuestionContent
 Here you need to generate the question text for the question, you will get the input and output format in the following format: 
-Input prompt: `QuestionText: <QuestionTheme> - <Difficulty Level> - <GraphType/TableType>`
+Input prompt: `ParentQuestionContent: <QuestionTheme> - <Focused_skill> - <Difficulty Level> - <GraphType/TableType/Passage>`
 Output:-
 {
-   "part1": {
-      "description": "description of the part1",
-      "graph": ... // if this part requires graph data
-      "table": ... // if this part requires table data
-   },
-   "part2": {
-      "description": "description of the part2",
-      "graph": ... // if this part requires graph data
-      "table": ... // if this part requires table data
-   },
-   "question": "complete question",
-   "type": "Requires Math calculation" or "No Math calculation"
+   "content": ... here it will have either graph, table or passage data, and the data 
 }
 
 For Bar chart the data should be generated in the following format: 
 {
+  "type": "Bar Chart",
   "graph": "bar chart",
   "title": "Quarterly Sales Data",
   "description": "this will give the description of the graph",
@@ -58,6 +52,7 @@ For Bar chart the data should be generated in the following format:
 
 For stacked bar chart the data should be generated in the following format:
 {
+  "type": "Stacked Bar Chart",
   "graph": "stacked bar chart",
   "title": "Quarterly Sales Data by Region",
   "description": "This chart shows the breakdown of sales by region for each quarter.",
@@ -101,6 +96,7 @@ For stacked bar chart the data should be generated in the following format:
 
 For Pie chart the data should be generated in the following format: 
 {
+  "type": "Pie Chart",
   "graph": "pie chart",
   "title": "Market Share Distribution",
   "description": "this will give the description of the graph",
@@ -115,6 +111,7 @@ For Pie chart the data should be generated in the following format:
 
 For Line chart the data should be generated in the following format: 
 {
+  "type": "Line Chart",
   "graph": "line chart",
   "title": "Monthly Sales Trend",
   "description": "this will give the description of the graph",
@@ -159,6 +156,7 @@ For Line chart the data should be generated in the following format:
 
 For Scatter plot the data should be generated in the following format: 
 {
+  "type": "Scatter Plot",
   "graph": "scatter plot",
   "title": "Advertising Spend vs. Sales Revenue",
   "description": "this will give the description of the graph",
@@ -173,49 +171,9 @@ For Scatter plot the data should be generated in the following format:
   ]
 }
 
-For Quantitative Venn diagram the data should be generated in the following format: 
-{
-  "graph": "quantitative venn diagram",
-  "title": "Market Share Distribution",
-  "description": "this will give the description of the graph",
-  "data": [
-      {"sets": ['A'], "values": 20},
-      {"sets": ['B'], "values": 30},
-      {"sets": ['C'], "values": 40},
-      {"sets": ['A & B'], "values": 10},
-      {"sets": ['A & C'], "values": 15},
-      {"sets": ['B & C'], "values": 25},
-      {"sets": ['A & B & C'], "values": 5}
-  ]
-}
-
-For Qualitative Venn diagram the data should be generated in the following format: 
-{
-  "graph": "qualitative venn diagram",
-  "title": "Market Share Distribution",
-  "description": "this will give the description of the graph",
-  "data": [
-    { "sets": ["Set A Name", "Set B Name", "Set C Name"], "values": [["∆", "∆", "∆", "ß"], ["∆", "ß","ß"] ,["∆","ß","ß","∆"] ], "labels": [{"∆": "represents 10 males"}, {"ß": "represents 10 females"}] }, // here use special characters like α, β, δ, ρ, σ, τ, ζ basically greek letters to represent a certain type.
-    {"connections": [{"connection": ["Set A Name", "Set B Name"], "values": ["∆", "ß"]}, {"connection": ["Set A Name", "Set C Name"], "values": ["∆", "ß"]}, {"connection": ["Set B Name", "Set C Name"], "values": ["∆", "ß"]}, {"connection": ["Set A Name", "Set B Name", "Set C Name"], "values": ["∆"]}]}
-  ],
-  "labels": [{"∆": "represents 10 males"}, {"ß": "represents 10 females"}]
-} // similarly there can be more than 3 sets and there can be more/less connections and you would have to share it the same way.
-
-For Table data, the data should be generated in the following format: 
-Type A: 2 Category Table
-{
-   "table_name": "Table Name",
-   "columns": ["Column Name1", "Column Name2", "Column Name3", "Column Name4"],
-   "rows": ["Row1", "Row2", "Row3", "Row4", ...],
-   "data": [
-      ["data1", "data2", "data3", "data4"],
-      ["data5", "data6", "data7", "data8"],
-      ["data9", "data10", "data11", "data12"], ...
-   ]
-}
-
 Type B: 2 Category Hybrid Table
 {
+   "type": "2 Category Hybrid Table",
    "table_name": "Table Name",
    "columns": [{"Parent Column Name1": ["Child Column Name1", "Child Column Name2"]}, {"Parent Column Name2": ["Child Column Name3", "Child Column Name4"]}],
    "row_header": "Row Header Name",
@@ -227,15 +185,41 @@ Type B: 2 Category Hybrid Table
    ]
 }
 
+For Passage the data should be generated in the following format:
+{
+  "type": "Passage",
+  "passage": ["passage1", "passage2"]
+}
+
+## Question1
+Here based on the Parent Child content you would have to generate the Question text, in such a way that when the follow up Question 2 will be asked, they both can share the same QuestionOptions
+here you have to generate a question text based on the parentQuestion content in such a way that for solving this question it would required the given focused_skill. Difficulty level will be ranging from 1 to 5, and all the questions must maintain the difficulty level of actual GMAT exam.
+
+Input prompt: `Question1: difficulty level`
+Output:
+{
+   "question": "complete question"
+}
+
+## Question2
+Here based on the Parent Child content you would have to generate the Question text, in such a way that when the follow up Question 1 will be asked, they both can share the same QuestionOptions
+here you have to generate a question text based on the parentQuestion content in such a way that for solving this question it would required the given focused_skill. Difficulty level will be ranging from 1 to 5, and all the questions must maintain the difficulty level of actual GMAT exam.
+
+Input prompt: `Question2: difficulty level`
+Output:
+{
+   "question": "complete question"
+}
+
 ## QuestionTitle
-Here based on the question theme and created table and the question text, make a single line summary as it's title, in order to uniquely identify the question.
+Based on both the questions asked and the parentQuestionContent you need to make a single line small summarized sentence which would represent as title of the question.
 Input prompt: `QuestionTitle`
 Output: 
 {
    "title": "complete title"
 }
 
-## QuestionSolution
+## QuestionSolution1
 for generation of solution if the question requires numerical calculation then use code interpreter, all the calculation should be accurate to two decimal points.
 
 For mathematical expressions, use LaTeX with the following guidelines:
@@ -258,28 +242,37 @@ Example of proper LaTeX usage:
 
 Use HTML tags for formatting the solution for better readability.
 
-Input prompt: `QuestionSolution`
-Output prompt: 
+Input prompt: `QuestionSolution1`
+Output format: 
 {
    "solution": "complete solution with properly formatted LaTeX expressions",
-   "answer": "answer"
 }
 
-## QuestionOptions
-generate 4 options for the question, and the options should be in the following format, the calculation steps that you followed in finding the correct answer, just use the same steps but make some calculation mistake which user has vulnerable to do so, and after completing the calculation steps in order to get false:
-Input prompt: `QuestionOptions`
-if it is a non-math question then the options will be generated first. and then QuestionSolution will be asked.
-
-Output prompt: 
+## QuestionSolution2
+Similarly for Question2 you need to generate the solution in the same format as above
 {
-   "options": {
-      "A": "option A",
-      "B": "option B",
-      "C": "option C",
-      "D": "option D"
-   },
-   "answer": "B" // whichever option is correct
-} // one of the options should be the correct answer, it is case sensitive..
+  "solution": "compleete solution with properly formatted LaTeX expressions",
+}
+## QuestionOptions
+As you remember, here you would have to generate a single question options that both of the previously created question.
+Generate Question options in such a way that it becomes tricky for the user to guess the correct answer, 
+it should in such a way that guessing the answer for both of the questions is difficult, 
+make the question options in a generalized format in order to achieve that.
 
-Important Additional Note,
-please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
+
+Input prompt: `QuestionOptions: number of options (5)`
+Output format:
+{
+  "options": {
+    "A": "option A",
+    "B": "option B",
+    "C": "option C",
+    "D": "option D",
+    "E": "option E"
+  },
+  "answer": {
+    "question1": "D",
+    "question2": "E"
+  }
+}
+Important Additional Note, please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
