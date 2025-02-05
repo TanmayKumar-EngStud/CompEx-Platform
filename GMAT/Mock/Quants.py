@@ -70,9 +70,9 @@ class Quants:
          json.dump(self.complete_component_allocation, file, indent=4)
       return prompts
 
-q = Quants(5)
-prompts = q.generate_question_prompts()
-for prompt in prompts:
-   print(prompt)
-print("-"*80)
-print(f"total prompts: {len(prompts)}")
+# q = Quants(5)
+# prompts = q.generate_question_prompts()
+# for prompt in prompts:
+#    print(prompt)
+# print("-"*80)
+# print(f"total prompts: {len(prompts)}")

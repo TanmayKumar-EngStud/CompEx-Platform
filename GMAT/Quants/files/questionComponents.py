@@ -260,7 +260,7 @@ class DataSufficiencyQuestion:
             self.thread_id = response[0].thread_id if response else "GMAT Quants, Error! thread_id not found! (questionComponent@l:125)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return self.thread_id, message["question"], message["statements"]
+            return self.thread_id, message["question_passage"], message["statements"], message["question"]
         except Exception as e:
             print(f"GMAT Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}\n\n")
             return ""

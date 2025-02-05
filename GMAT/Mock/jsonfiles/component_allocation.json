@@ -1,164 +1,266 @@
 {
-   "verbal": {
-      "combination_number": 1244,
-      "section": {
-         "RC": [13, 14],
-         "CR": [10, 9]
-      },
-      "themes": [
-         "history",
-         "physical_sciences",
-         "social_sciences",
-         "biological_sciences",
-         "literature",
-         "philosophy",
-         "economics",
-         "psychology",
-         "business",
-         "culture"
-      ],
-      "cr_types": [
-         "strengthen the argument",
-         "Weaken the argument",
-         "paradox",
-         "complete the argument",
-         "find the assumption",
-         "structure of the argument boldface structure question",
-         "structure of the argument dialogue structure question",
-         "draw inference/conclusion",
-         "evaluate the conclusion"
-      ]
-   },
-   "quants": {
-      "combination_number": 1414,
-      "question_style": ["Pure Contextual", "Real Contextual"],
-      "options": ["Algebra", "Word Problems", "Arithmetic"],
-      "Arithmetic": {
-         "focused_skill": [
-            "common pitfalls",
-            "Logical Reasoning",
-            "Critical Reasoning",
-            "Number Sense"
-         ],
-         "topics": [
-            "Discount, Profit and Loss",
-            "Percentages",
-            "Unitary Method",
-            "Trial and Error Method(type of questions)",
-            "Work and Time",
-            "Rates",
-            "Ratio and Proportion"
-         ]
-      },
-      "Algebra": {
-         "focused_skill": [
-            "Number Picking(by logical and critical reasoning over constraints given in the question)",
-            "Backsolving"
-         ],
-         "topics": [
-            "Functions",
-            "Polynomials",
-            "Inequalities",
-            "Algebraic Equations"
-         ]
-      },
-      "Word Problems": {
-         "focused_skill": [
-            "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)",
-            "Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)",
-            "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
-            "Assessing given Situation(checking the ability of accessing a given situation)"
-         ],
-         "topics": [
-            "Work and Time",
-            "Polynomials",
-            "Percentages",
-            "Functions",
-            "Algebraic Equations",
-            "Rates",
-            "Unitary Method",
-            "Inequalities",
-            "Discount, Profit and Loss",
-            "Trial and Error Method(type of questions)",
-            "Ratio and Proportion"
-         ],
-         "themes": [
-            "Marketing and Sales",
-            "Taxation",
-            "Logistics and Supply Chain",
-            "Accounting",
-            "Strategy and Management",
-            "Resource Management",
-            "Economics",
-            "Finance",
-            "Business"
-         ]
-      }
-   },
-   "Integrated_Reasoning": {
-      "combination_number": 1303,
-      "question_type": ["MSR", "TPA", "TA", "GI"],
-      "MSR": {
-         "total_child_questions": [2, 3],
-         "question_style": [
-            "MCQ (5 options MCQ)",
-            "Dicotomous Choice(True/False)",
-            "MCQ (5 options MCQ)",
-            "Dicotomous Choice(Yes/No)",
-            "MCQ (5 options MCQ)",
-            "Dicotomous Choice(Acceptable/Not Acceptable)",
-            "Dicotomous Choice(Inferable/Not Inferable)",
-            "MCQ (5 options MCQ)"
-         ],
-         "focused_skill": [
-            "Logical Reasoning",
-            "Critical Reasoning",
-            "Data Interpretation",
-            "Synthesis"
-         ],
-         "themes": [
-            "Marketing and Sales",
-            "Taxation",
-            "Logistics and Supply Chain",
-            "Accounting",
-            "Budget",
-            "Strategy and Management",
-            "Resource Management",
-            "Economics",
-            "Finance",
-            "Business",
-            "Analysis (over any Miscellaneous topic)"
-         ]
-      },
-      "TPA": {
-         "themes": [
-            "Marketing and Sales",
-            "Taxation",
-            "Logistics and Supply Chain",
-            "Accounting",
-            "Budget",
-            "Strategy and Management",
-            "Resource Management",
-            "Economics",
-            "Finance",
-            "Business",
-            "Analysis (over any Miscellaneous topic)"
-         ],
-         "focused_skill": [
-            "Logical Reasoning",
-            "Critical Reasoning",
-            "Data Interpretation",
-            "Synthesis"
-         ],
-         "Type": [
-            "Bar Chart",
-            "Stacked Bar Chart",
-            "Pie Chart",
-            "Line Chart",
-            "Scatter Plot",
-            "2 Category Hybrid Table",
-            "Passage"
-         ]
-      }
-   }
+    "verbal": {
+        "total_questions": 23,
+        "combination_number": 1249,
+        "section": {
+            "RC": [
+                13,
+                14
+            ],
+            "CR": [
+                10,
+                9
+            ]
+        },
+        "themes": [
+            "biological_sciences",
+            "history",
+            "physical_sciences",
+            "literature",
+            "economics",
+            "social_sciences",
+            "psychology",
+            "philosophy",
+            "business",
+            "culture"
+        ],
+        "cr_types": [
+            "paradox",
+            "strengthen the argument",
+            "complete the argument",
+            "draw inference/conclusion",
+            "structure of the argument boldface structure question",
+            "structure of the argument dialogue structure question",
+            "find the assumption",
+            "Weaken the argument",
+            "evaluate the conclusion"
+        ]
+    },
+    "quants": {
+        "total_questions": 21,
+        "combination_number": 1690,
+        "question_style": [
+            "Real Contextual",
+            "Pure Contextual"
+        ],
+        "options": [
+            "Arithmetic",
+            "Algebra",
+            "Word Problems"
+        ],
+        "Arithmetic": {
+            "focused_skill": [
+                "Logical Reasoning",
+                "Critical Reasoning",
+                "Number Sense",
+                "common pitfalls"
+            ],
+            "topics": [
+                "Discount, Profit and Loss",
+                "Rates",
+                "Trial and Error Method(type of questions)",
+                "Percentages",
+                "Unitary Method",
+                "Work and Time",
+                "Ratio and Proportion"
+            ]
+        },
+        "Algebra": {
+            "focused_skill": [
+                "Number Picking(by logical and critical reasoning over constraints given in the question)",
+                "Backsolving"
+            ],
+            "topics": [
+                "Polynomials",
+                "Inequalities",
+                "Functions",
+                "Algebraic Equations"
+            ]
+        },
+        "Word Problems": {
+            "focused_skill": [
+                "Assessing given Situation(checking the ability of accessing a given situation)",
+                "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
+                "Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)",
+                "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)"
+            ],
+            "topics": [
+                "Percentages",
+                "Unitary Method",
+                "Rates",
+                "Algebraic Equations",
+                "Functions",
+                "Discount, Profit and Loss",
+                "Polynomials",
+                "Work and Time",
+                "Ratio and Proportion",
+                "Inequalities",
+                "Trial and Error Method(type of questions)"
+            ],
+            "themes": [
+                "Business",
+                "Marketing and Sales",
+                "Accounting",
+                "Strategy and Management",
+                "Taxation",
+                "Finance",
+                "Economics",
+                "Resource Management",
+                "Logistics and Supply Chain"
+            ]
+        }
+    },
+    "integrated_reasoning": {
+        "total_questions": 20,
+        "combination_number": 1303,
+        "question_type": [
+            "MSR",
+            "TPA",
+            "TA",
+            "GI"
+        ],
+        "MSR": {
+            "total_child_questions": [
+                2,
+                3
+            ],
+            "question_style": [
+                "MCQ (5 options MCQ)",
+                "Dicotomous Choice(True/False)",
+                "MCQ (5 options MCQ)",
+                "Dicotomous Choice(Yes/No)",
+                "MCQ (5 options MCQ)",
+                "Dicotomous Choice(Acceptable/Not Acceptable)",
+                "Dicotomous Choice(Inferable/Not Inferable)",
+                "MCQ (5 options MCQ)"
+            ],
+            "focused_skill": [
+                "Logical Reasoning",
+                "Critical Reasoning",
+                "Data Interpretation",
+                "Synthesis"
+            ],
+            "themes": [
+                "Marketing and Sales",
+                "Taxation",
+                "Logistics and Supply Chain",
+                "Accounting",
+                "Budget",
+                "Strategy and Management",
+                "Resource Management",
+                "Economics",
+                "Finance",
+                "Business",
+                "Analysis (over any Miscellaneous topic)"
+            ]
+        },
+        "TPA": {
+            "themes": [
+                "Marketing and Sales",
+                "Taxation",
+                "Logistics and Supply Chain",
+                "Accounting",
+                "Budget",
+                "Strategy and Management",
+                "Resource Management",
+                "Economics",
+                "Finance",
+                "Business",
+                "Analysis (over any Miscellaneous topic)"
+            ],
+            "focused_skill": [
+                "Logical Reasoning",
+                "Critical Reasoning",
+                "Data Interpretation",
+                "Synthesis"
+            ],
+            "type": [
+                "Bar Chart",
+                "Stacked Bar Chart",
+                "Pie Chart",
+                "Line Chart",
+                "Scatter Plot",
+                "2 Category Hybrid Table",
+                "Passage"
+            ]
+        },
+        "TA": {
+            "focused_skill": [
+                "Comparative Analysis",
+                "Pattern Recognition",
+                "Data Synthesis",
+                "Logical Reasoning",
+                "Critical Reasoning"
+            ],
+            "table_type": [
+                "Simple Table",
+                "Time_series Table"
+            ],
+            "themes": [
+                "Marketing and Sales",
+                "Taxation",
+                "Logistics and Supply Chain",
+                "Accounting",
+                "Budget",
+                "Strategy and Management",
+                "Resource Management",
+                "Economics",
+                "Finance",
+                "Business"
+            ],
+            "type": [
+                "Inferred/Conflicting type",
+                "True/False type",
+                "Yes/No type",
+                "Acceptable/Not Acceptable type"
+            ]
+        },
+        "GI": {
+            "focused_skill": [
+                "Data Interpretation",
+                "Critical Thinking",
+                "Quantitative Reasoning",
+                "Attention to Detail",
+                "Synthesis of Information",
+                "Logical Reasoning",
+                "Comparative Analysis",
+                "Pattern Recognition",
+                "Data Sufficiency"
+            ],
+            "chart_type": [
+                "Line Chart",
+                "Bar Chart",
+                "Stacked Bar Chart",
+                "Pie Chart",
+                "Scatter Plot"
+            ],
+            "themes": [
+                "Marketing and Sales",
+                "Taxation",
+                "Logistics and Supply Chain",
+                "Accounting",
+                "Budget",
+                "Strategy and Management",
+                "Resource Management",
+                "Economics",
+                "Finance",
+                "Business"
+            ]
+        },
+        "DS": {
+            "topics": [
+                "Algebra",
+                "Word Problems",
+                "Arithmetic",
+                "Data Sufficiency"
+            ],
+            "focused_skill": [
+                "Attention to Detail",
+                "Logical Reasoning",
+                "Critical Reasoning",
+                "Mathematical Knowledge",
+                "Efficiency and Time Management"
+            ]
+        }
+    }
 }

@@ -1,5 +1,5 @@
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import TPA
+from Integrated_Reasoning.files.questionComponents import TPA
 import random
 import json
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
@@ -18,7 +18,7 @@ class Generate_TPA:
         self.prompt = prompt
         self.questionData = {}
 
-    def generate_TPA(self):
+    def generate_question(self):
         difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)
         difficulty = 1
         if difficulty_search:

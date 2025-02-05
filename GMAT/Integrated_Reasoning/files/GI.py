@@ -1,6 +1,6 @@
 import random, json, os,re
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import GI 
+from Integrated_Reasoning.files.questionComponents import GI 
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 from dotenv import load_dotenv
 class Generate_GI:
@@ -15,7 +15,7 @@ class Generate_GI:
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
-    def generate_GI(self):
+    def generate_question(self):
         gi = GI(self.llm, self.prompt)
         self.questionData["thread_id"], self.questionData["content"] = gi.generate_questionGraph()
         self.questionData["question"] = gi.generate_questionText()
@@ -38,12 +38,12 @@ class Generate_GI:
         self.questionData["options"] = shuffled_options
         self.questionData["answer"] = answer_list
 
-        print(f"options: \n{shuffled_options}\n\n answer: {answer_list}\n\n")
+        # print(f"options: \n{shuffled_options}\n\n answer: {answer_list}\n\n")
         self.questionData["tags"] = ["GI", self.prompt.split("-")[2].strip().strip('<>').strip()]
         difficulty = re.search(r"<difficulty_level: (\d+)>", self.prompt)
         self.questionData["difficulty"] = int(difficulty.group(1))
         return self.questionData
     
-g = Generate_GI("<GI> - <Bar Chart> - <difficulty_level: 4>")
-content = g.generate_GI()
-json.dump(content, open(os.path.join(os.path.dirname(__file__), "GI-component.json"), "w"))
+# g = Generate_GI("<GI> - <Bar Chart> - <difficulty_level: 4>")
+# content = g.generate_GI()
+# json.dump(content, open(os.path.join(os.path.dirname(__file__), "GI-component.json"), "w"))

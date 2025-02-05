@@ -179,35 +179,6 @@ For Scatter plot the data should be generated in the following format:
   ]
 }
 
-For Quantitative Venn diagram the data should be generated in the following format: 
-{
-  "graph": "quantitative venn diagram",
-  "title": "Market Share Distribution",
-  "description": "this will give the description of the graph",
-  "data": [
-      {"sets": ['A'], "values": 20},
-      {"sets": ['B'], "values": 30},
-      {"sets": ['C'], "values": 40},
-      {"sets": ['A & B'], "values": 10},
-      {"sets": ['A & C'], "values": 15},
-      {"sets": ['B & C'], "values": 25},
-      {"sets": ['A & B & C'], "values": 5}
-  ]
-}
-
-For Qualitative Venn diagram the data should be generated in the following format: 
-{
-  "graph": "qualitative venn diagram",
-  "title": "Market Share Distribution",
-  "description": "this will give the description of the graph",
-  "data": [
-    { "sets": ["Set A Name", "Set B Name", "Set C Name"], "values": [["∆", "∆", "∆", "ß"], ["∆", "ß","ß"] ,["∆","ß","ß","∆"] ], "labels": [{"∆": "represents 10 males"}, {"ß": "represents 10 females"}] }, // here use special characters like α, β, δ, ρ, σ, τ, ζ basically greek letters to represent a certain type.
-    {"connections": [{"connection": ["Set A Name", "Set B Name"], "values": ["∆", "ß"]}, {"connection": ["Set A Name", "Set C Name"], "values": ["∆", "ß"]}, {"connection": ["Set B Name", "Set C Name"], "values": ["∆", "ß"]}, {"connection": ["Set A Name", "Set B Name", "Set C Name"], "values": ["∆"]}]}
-  ],
-  "labels": [{"∆": "represents 10 males"}, {"ß": "represents 10 females"}]
-} // similarly there can be more than 3 sets and there can be more/less connections and you would have to share it the same way.
-
-user will provide you one graph type, for questions with difficulty level 4 and 5, you need to generate one more graph of different type, which has a relation with the previous graph so that more complex questions could be asked.
 
 you have to give output in the following format: 
 `

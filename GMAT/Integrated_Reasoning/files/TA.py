@@ -2,7 +2,7 @@
 
 import random
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import TA
+from Integrated_Reasoning.files.questionComponents import TA
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 from dotenv import load_dotenv
 import os, re, json
@@ -18,7 +18,7 @@ class Generate_TA:
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
-    def generate_TA(self):
+    def generate_question(self):
         ta = TA(self.llm, self.prompt)
         difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)
         difficulty = 1
@@ -39,6 +39,6 @@ class Generate_TA:
         self.questionData["difficulty"] = difficulty
         return self.questionData
 
-g = Generate_TA("<TA> - <Quantitative Skills> - <Time-SeriesTable> - <Inferred/Conflicting type> - <Sales> - <difficulty_level: 3>")
-res = g.generate_TA()
-json.dump(res, open("ta-component.json", "w"))
+# g = Generate_TA("<TA> - <Quantitative Skills> - <Time-SeriesTable> - <Inferred/Conflicting type> - <Sales> - <difficulty_level: 3>")
+# res = g.generate_TA()
+# json.dump(res, open("ta-component.json", "w"))

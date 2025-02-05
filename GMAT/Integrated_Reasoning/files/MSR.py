@@ -2,7 +2,7 @@ import random, json, os, re
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 # Integrated_Reasoning.files.
-from questionComponents import MSR
+from Integrated_Reasoning.files.questionComponents import MSR
 
 class Generate_MSR:
     def __init__(self, prompt):
@@ -24,7 +24,7 @@ class Generate_MSR:
         self.questionData = {}
         self.MSR = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/MSR.json")))
 
-    def generate_MSR(self):
+    def generate_question(self):
         msr = MSR(self.llm, self.prompt)
         self.questionData["sources"] = []
         cn = self.MSR["combination_number"]
@@ -93,6 +93,6 @@ class Generate_MSR:
         return self.questionData
 
 
-g = Generate_MSR("<MSR> - <total_child_questions: 3> - <Business> - <difficulty_level: 4>")
-content = g.generate_MSR()
-json.dump(content, open(os.path.join(os.path.dirname(__file__), "MSR-component.json"), "w"))
+# g = Generate_MSR("<MSR> - <total_child_questions: 3> - <Business> - <difficulty_level: 4>")
+# content = g.generate_MSR()
+# json.dump(content, open(os.path.join(os.path.dirname(__file__), "MSR-component.json"), "w"))
