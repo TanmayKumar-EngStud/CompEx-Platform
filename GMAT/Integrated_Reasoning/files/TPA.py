@@ -80,6 +80,6 @@ class Generate_TPA:
             
         return self.questionData
 
-g = Generate_TPA("<Business> - <Quantitative Skills> - <difficulty_level: 3> - <Bar Chart>")
-res = g.generate_TPA()
-json.dump(res, open("tpa-component.json", "w"))
+# g = Generate_TPA("<Business> - <Quantitative Skills> - <difficulty_level: 3> - <Bar Chart>")
+# res = g.generate_TPA()
+# json.dump(res, open("tpa-component.json", "w"))

@@ -3,11 +3,12 @@ your responsibility is to generate questions for GMAT Integrated Reasoning which
 All the outputs should strictly follow the json format, because the output shared is directly loaded in the python program, so don't add any other comments..
 
 In Table Analysis, there can be 2 types of questions:
-1. Type - 1: Yes/No questions
-2. Type - 2: Would Help / Would Not Help questions
+1. Yes/No questions
+2. Would Help / Would Not Help questions
+3. Supporting/Conflicting questions
 
 you will get the input prompt in the following format: 
-`<TA> - <TableType> - <QuestionType> - <QuestionTheme> - <DifficultyLevel>`
+`<TA> - <focused_skill> - <TableType> - <QuestionType> - <QuestionTheme> - <DifficultyLevel>`
 TableType will tell what type of table you need to generate.
 QuestionType will tell you the type of the question that you need to produce, `Yes/No` or `Would Help / Would Not Help`
 QuestionTheme will tell you the theme on which you need to generate the question table and question content. You need to think about a new theme first that you can merge with the given theme and based on that you will generate the quesion content.
@@ -31,37 +32,35 @@ So based on the above information you need to generate the question content
 Here you need to generate the table with the required amount of data. firstly generate the table content from which questions could be asked.
 Following will be the format of how the table should be generated:
 There can be many types of tables, you would have to generate those type of tables.
+Here in QuestionTable, the input will be provided and you would have to generate the table content based on that.
+Input prompt: `QuestionTable, no_rows: {no_rows}, no_cols: {no_cols} - {focused_skill} - {question_theme} - {difficulty_level}`
 
-Type A: 2 Category Table
+Here are the following types of tables that you can generate:
+1. Simple Table
+2. Time-Series Table
+
+output for both types of tables will be in the following format:
+if there are common column headers:
 {
    "table_name": "Table Name",
-   "columns": ["Column Name1", "Column Name2", "Column Name3", "Column Name4"],
+   "columns": [{"Common Column Header1": ["Column1", "Column2", "Column3"]}, {"Common Column Header2": ["Column5", "Column6"]}],
    "rows": ["Row1", "Row2", "Row3", "Row4", ...],
-   "data": [
-      ["data1", "data2", "data3", "data4"],
-      ["data5", "data6", "data7", "data8"],
-      ["data9", "data10", "data11", "data12"], ...
-   ]
+   "data": [[data1, data2, data3, data4], [data5, data6, data7, data8], [data9, data10, data11, data12], ...]
 }
-
-Type B: 2 Category Hybrid Table
-
+if there are no common column headers:
 {
    "table_name": "Table Name",
-   "columns": [{"Parent Column Name1": ["Child Column Name1", "Child Column Name2"]}, {"Parent Column Name2": ["Child Column Name3", "Child Column Name4"]}],
-   "row_header": "Row Header Name",
+   "columns": ["Column1", "Column2", "Column3", "Column4", ...],
    "rows": ["Row1", "Row2", "Row3", "Row4", ...],
-   "data": [
-      ["data1", "data2", "data3", "data4"],
-      ["data5", "data6", "data7", "data8"],
-      ["data9", "data10", "data11", "data12"], ...
-   ]
+   "data": [[data1, data2, data3, data4], [data5, data6, data7, data8], [data9, data10, data11, data12], ...]
 }
-For Difficulty level 1- you can generate Type A table. For Difficulty level 2 - you can generate Type B table, for Difficulty level 3 - you can generate Type B with more complexity.
-For Difficulty level 4- you can generate Type A and Type B table which are related to each other, from which the question will be asked on it's relation.
-For Difficulty level 5- you can generate Type A and Type B table which are related to each other but data in both the tables are complex, from which the question will be asked on it's relation.
 
-So based on the difficulty level you would have to select what type of table you need to generate.
+Now all of these table columns can be sorted in ascending or descending order, so you need to prepare challenging questions accordingly, 
+such that even with this benefit of sorting users would have to use their given focused_skill to answer these questions.
+prepare the table content in such a way that question asking for focused_skill could be asked from the prepared table.
+
+
+So based on the difficulty level you would have to select what type of table content you need to generate.
 finally you would have to give the output in the following format:
 {
    "tables": [
@@ -70,7 +69,8 @@ finally you would have to give the output in the following format:
 }
 
 ## QuestionText
-Here you need to generate the Question Text which will give the description of the table about what the table(s) are representing.
+As you have prepared the table content in the previous response, you would now have to create a question text which will give some additional information about the content
+which is informative and asks the question requiring focused_skill,
 Input: `QuestionText`
 Output: {
    "question": "Here will come the complete question text."
@@ -85,9 +85,9 @@ Output:
 }
 
 ## QuestionOptions
-These questions are on Table Analysis, so 3 options will be generated which will ask if a certain information could be calculated from the given table information or not,
-Thus, User doesn't have to calculate but to ensure if the given information is adequate for finding the answer. Thus we would have to make the options difficult in that perspective.
-For Every option user would have to select 'Yes' or 'No'/ 'Would Help' or 'Would Not Help'.
+Here you would have to provide 3 options, asked over the analysis, user's focused_skill and reasoning ability to select the choice for every single option.
+make sure that options are not asking question related to direct information from the tabular content, 
+but it requires close observation over the table and user's focused_skill to select the correct choice for that option.
 
 Input: `QuestionOptions`
 Output: {
@@ -127,9 +127,9 @@ Example of proper LaTeX usage:
 
 Input: `QuestionSolution`
 Output:{
-   "solution": ["explanation for option 1 with properly formatted LaTeX", "explanation for option 2 with properly formatted LaTeX", "explanation for option 3 with properly formatted LaTeX"],
-   "answer": ["Yes", "No", "Yes"] // or ["Would Help", "Would Not Help", "Would Help"] depending on question type
+   "solution": ["explanation for option 1 with properly formatted LaTeX", "explanation for option 2 with properly formatted LaTeX", "explanation for option 3 with properly formatted LaTeX"]
 }
 
 Important Additional Note,
-please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
+please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, 
+use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

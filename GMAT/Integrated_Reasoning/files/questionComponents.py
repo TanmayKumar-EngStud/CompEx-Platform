@@ -198,11 +198,11 @@ class TA:
         self.llm = llm
         self.prompt = prompt
         self.thread_id = thread_id
-    def generate_QuestionTable(self):
+    def generate_QuestionTable(self, no_rows, no_cols):
         if(self.thread_id):
-            response = self.llm.invoke({"content":f"QuestionTable", "thread_id": self.thread_id})
+            response = self.llm.invoke({"content":f"QuestionTable, no_rows: {no_rows}, no_cols: {no_cols}", "thread_id": self.thread_id})
         else:
-            response = self.llm.invoke({"content":f"QuestionTable: {self.prompt}"})
+            response = self.llm.invoke({"content":f"QuestionTable, no_rows: {no_rows}, no_cols: {no_cols} - {self.prompt}"})
             self.thread_id = response[0].thread_id if response else "GMAT IR, Error! thread_id not found for TA (questionComponent@l:131)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
