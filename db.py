@@ -369,11 +369,12 @@ class DB:
                             if not  self._register_problem(exam_section, question, isMockQuestion=isMockQuestion):
                                 raise Exception(f"Error registering problem for {exam_section}")
                         self.current_mockquestion_number += 1
-                    return True
                 except Exception as e:
                     print(f"Error in registerQuestion: {str(e)}")
                     return False
+       return True
                 
+    
     def __del__(self):
         """Destructor to ensure database connection is closed"""
         if hasattr(self, 'db') and self.db.is_connected():
