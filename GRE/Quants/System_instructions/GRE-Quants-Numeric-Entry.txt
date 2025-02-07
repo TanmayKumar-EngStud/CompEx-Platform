@@ -120,5 +120,7 @@ for example:-
 input:- "mode:- questionSolution"
 output:- {
   "solution": "<p>Batch 1: Total cakes = 150 <br> Percentage of chocolate = 20% <br> Total chocolate cakes = ~~150 * 20% = 30~~ <br> Batch 2: Total cakes = 150 <br> Percentage of chocolate = 30% <br> Total chocolate cakes = ~~150 * 30% = 45~~ <br> Total chocolate cakes = ~~30 + 45 = 75~~ </p>"
-  "answer": "75"
+  "answer": 75.00
   }
+
+note that the answer should always be a floating point number with 2 decimal places

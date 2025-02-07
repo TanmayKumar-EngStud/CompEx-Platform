@@ -49,12 +49,8 @@ class GRE_Mock:
             raise ValueError(f"Invalid generator_class: {generator_class}")
         while retries < self.max_retries:
             try:
-                print(f"\nAttempting to generate {exam_section} question for section {section_id}")
-                print(f"Using generator: {generator_class.name}")
-                print(f"Prompt: {prompt}")
-                
                 question_generator_class = GENERATOR_MAP[generator_class]
-                question_generator = question_generator_class(llm=None, prompt=prompt)
+                question_generator = question_generator_class(prompt=prompt)
                 question_data = question_generator.generate_question()
                 
                 if not question_data:

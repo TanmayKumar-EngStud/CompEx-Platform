@@ -26,9 +26,8 @@ class Generate_MSR:
 
     def generate_question(self):
         msr = MSR(self.llm, self.prompt)
-        self.questionData["sources"] = []
         cn = self.MSR["combination_number"]
-
+        sources = {"sources": []}
         # region generating sources
         for source_index in range(1, 4):
             source_type = self.MSR["source_types"][cn%len(self.MSR["source_types"])]
@@ -36,8 +35,12 @@ class Generate_MSR:
                 random.shuffle(self.MSR["source_types"])
             source = {}
             self.questionData["thread_id"], source = msr.generate_SourceInfo(f"Generate SourceInfo_{source_index} having {source_type} of question: {self.prompt}")
-            self.questionData["sources"].append(source)
+            sources["sources"].append(source)
             cn +=1
+        self.questionData["type"] = "MSR"
+        self.questionData["prompt"] = self.prompt
+
+        self.questionData["content"] = sources
         # endregion
         self.questionData["title"] = msr.generate_MainQuestionTitle()
         self.questionData["questions"] = []
@@ -67,6 +70,7 @@ class Generate_MSR:
             question["title"] = msr.generate_QuestionTitle(f"ChildQuestionTitle: {source_index}")
             question["solution"] = msr.generate_QuestionSolution(f"ChildQuestionSolution: {source_index}")
             options = []
+            self.questionData["type"] += f" - {question_style}"
             if question_style == "MCQ (5 options MCQ)":
                 options, correct_option = msr.generate_QuestionOptions(f"ChildQuestionOptions: {source_index}", question_style)
                 question["answer"] = options[correct_option]

@@ -24,15 +24,14 @@ class ParentChildQuestionGeneration:
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         # print(f"indexes: {indexes}")
         return prompts
-    def __init__(self, llm=None, prompt=None):
+    def __init__(self, prompt=None):
         load_dotenv()
         assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Verbal-Parent-Child-Questions"]
-        if llm is None:
-            llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-            )
+        llm = OpenAIAssistantRunnable(
+            model="gpt-4o-mini",
+            api_key=os.getenv("OPENAI_API_KEY"),
+            assistant_id=assistant_id
+        )
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
@@ -53,7 +52,9 @@ class ParentChildQuestionGeneration:
 
     def generate_question(self):
         parentChildQuestion = ParentChildQuestion(self.llm, self.prompt)
-        self.questionData["passages"] = parentChildQuestion.generate_passages()
+        self.questionData["type"] = "RC"
+        passages= parentChildQuestion.generate_passages()
+        self.questionData["content"] = {"passages": passages}
         self.questionData["title"] = parentChildQuestion.generate_parentTitle()
         total_child_questions = 0
         if "rc-s" in self.prompt.lower():
@@ -69,9 +70,10 @@ class ParentChildQuestionGeneration:
         child_prompts = self.generate_child_prompt(total_child_questions)
 
         # print(f"child_prompts: {child_prompts}")
-        self.questionData["childQuestions"] = []
+        self.questionData["questions"] = []
         for i in range(total_child_questions):
             childQuestionData = {}
+            childQuestionData["type"] = "RC"
             childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i, child_prompts[i])
             childQuestionData["title"] = parentChildQuestion.generate_childQuestionTitle(i)
             options, answer = parentChildQuestion.generate_childOptions(i)
@@ -91,6 +93,6 @@ class ParentChildQuestionGeneration:
             childQuestionData["difficulty"] = int(child_prompts[i].split("-")[1].strip())
             # print(f"this is childQuestionData: \n{childQuestionData}\n\n")
             self.questionData["tags"].extend(childQuestionData["tags"])
-            self.questionData["childQuestions"].append(childQuestionData)
+            self.questionData["questions"].append(childQuestionData)
         
         return self.questionData

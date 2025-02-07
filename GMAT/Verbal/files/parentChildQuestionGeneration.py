@@ -53,10 +53,11 @@ class ParentChildQuestionGeneration:
         self.child_prompt = self.generate_child_prompt(child_question_numbers)
         self.questionData = {}
     def generate_question(self):
+        self.questionData["type"] = "RC"
         self.questionData["prompt"] = self.prompt
         questionContent = ParentChildQuestion(self.llm, self.prompt, self.number_of_child_questions)
-        self.questionData["thread_id"], self.questionData["passage"] = questionContent.generate_parentPassage()
-
+        self.questionData["thread_id"], passages = questionContent.generate_parentPassage()
+        self.questionData["content"] = {"passages": passages}
         self.questionData["title"] = questionContent.generate_parentTitle()
         self.questionData["childQuestions"] = []
         self.questionData["tags"] = []

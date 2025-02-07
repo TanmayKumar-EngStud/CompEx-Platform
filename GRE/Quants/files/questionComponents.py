@@ -179,7 +179,12 @@ class SimpleQuestion:
             else:
                 message = json.loads(response_text)
             if "solution" in message:
-                return message["solution"], message["answer"]
+                try:
+                    float(message["answer"])
+                    return message["solution"], float(message["answer"])
+                except:
+                    print(f"GRE Quants, @NE: unable to convert answer to float, {message['answer']}")
+                    return message["solution"], message["answer"]
             else:
                 return message["solution"]
             
@@ -201,15 +206,6 @@ class DataSufficiencyQuestion:
         self.prompt = prompt
         self.thread_id = thread_id
     
-    def generate_questionGraph(self):
-        response = self.llm.invoke({"content":f"questionGraph: {self.prompt}"})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:115)"
-            return self.thread_id, message["graph/table"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
-
     def generate_questionText(self):
         if(self.thread_id is not None):
             response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
@@ -218,7 +214,7 @@ class DataSufficiencyQuestion:
             self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:125)"
         try:
             message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return self.thread_id, message["question"], message["statements"]
+            return self.thread_id, message.get("passage", None), message["statements"], message["question"]
         except Exception as e:
             raise Exception(f"GRE Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
     def generate_questionTitle(self):

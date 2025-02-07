@@ -14,7 +14,9 @@ class DB:
       self.current_tag_id = 0
       self.current_problemset_id = 0
       self.current_mocktest_id = 0
-      self.current_mocktestquestion_id = 0
+      self.current_mocksection_id = None
+      self.current_mockquestion_number = None
+      self.question_type = ""
       return None
 
     def _initialize_primary_tables(self):
@@ -30,6 +32,7 @@ class DB:
                     where={'examtypeid': exam_data['id']}
                 )
                 if not existing_exam:
+                    print(f"Exam type {exam_name} not found, creating it")
                     exam_type =  self.db.examtypes.create({
                         'examtypeid': exam_data['id'],
                         'name': exam_name,
@@ -87,40 +90,22 @@ class DB:
            self._get_exam_section_ids(exam_section)
            
            # Format metadata as JSON string
-           metadata = json.dumps({})
-           if 'part1' in question and 'part2' in question:
-               metadata = json.dumps({
-                   "type": "parts",
-                   "content": {
-                       "part1": question['part1'],
-                       "part2": question['part2']
-                   }
-               })
-           elif 'passages' in question:
-               metadata = json.dumps({
-                   "type": "CR",
-                   "content": question['passages']
-               })
-           elif 'graphs' in question:
-               metadata = json.dumps({
-                   "type": "Graphical",
-                   "content": question['graphs']
-               })
-           else:
-               metadata = json.dumps({})
-           
            # Format solution
+
            solution = question.get('solution', {})
            if isinstance(solution, (str, dict)):
                solution = json.dumps({"solution": solution})
            else: 
                solution = json.dumps(solution)
            # Create problem with proper Prisma format
+           self.question_type = question.get('type', '')
            question_data = {
+               "type": question.get('type', ''),
+               "prompt": question.get('prompt', ''),
                "title": question.get('title', ''),
                "text": question.get('question', ''),
                "difficulty": question.get('difficulty', 1),
-               "metadata": metadata,  # Prisma will handle JSON conversion
+               "metadata": json.dumps(question.get('content', {})),  # Prisma will handle JSON conversion
                "solution": solution,  # Prisma will handle JSON conversion
                "isChildren": isChildQuestion,
                "isMockQuestion": isMockQuestion,
@@ -130,7 +115,8 @@ class DB:
            if isChildQuestion:
                question_data["ProblemsSet"] = {"connect": {"problemsSetId": self.current_problemset_id}}    
            if isMockQuestion: 
-               question_data["mocktestquestions"] = {"connect": {"mocktestquestionid": self.current_mocktestquestion_id}}
+               question_data["mocksections"] = {"connect": {"mocksectionid": self.current_mocksection_id}}
+               question_data["mockquestionnumber"] = self.current_mockquestion_number
 
            problem =  self.db.problems.create(data = question_data)
            self.current_problem_id = problem.problemid
@@ -141,7 +127,9 @@ class DB:
            for option in options:
                if isinstance(option, str):
                    self._register_problem_options(option, answer)
-               else:
+               elif isinstance(option, int):
+                   self._register_problem_options(option, answer)
+               elif isinstance(option, list):
                    group = "A"
                    for suboption in option:
                        self._register_problem_options(suboption, answer, group)
@@ -153,15 +141,20 @@ class DB:
            return True
            
        except Exception as e:
-           print(f"Error in _register_problem: {str(e)}")
+           print(f"Error in _register_problem: {str(e)}\n\n here is the question content: {json.dumps(question, indent=4)}")
            return False
 
     def _register_problem_options(self, option, answers, group=None):
        
        correct_answers = []
-       if isinstance(answers, dict): # for TA questions
+       if isinstance(answers, dict):
+           finder = re.search(r'\(([^/]+)', self.question_type) # for TA questions
+           if finder:
+               ansVal = finder.group(1)
+           else:
+               ansVal = "Yes"
            for option, answer in answers.items():
-               if answer == "Yes":
+               if answer.lower().strip() == ansVal.lower().strip():
                    correct_answers.append(option)
        elif isinstance(answers, list):
            correct_answers = answers
@@ -169,7 +162,7 @@ class DB:
            correct_answers = [answers]
        
        option_data = {
-            'optiontext': option,
+            'optiontext': str(option),
             'iscorrect': True if option in correct_answers else False,
             'problems': {'connect': {'problemid': self.current_problem_id}}
         }
@@ -180,7 +173,7 @@ class DB:
                data = option_data
                )
        except Exception as e: 
-           print(f"Error creating problem option in _register_problem_options: {str(e)}")
+           print(f"Error creating problem option in _register_problem_options: {str(e)} \n\n here is the option: {option} \n\n here is the answer: {answers}")
            return False
        return True
    
@@ -248,33 +241,24 @@ class DB:
            
            # Determine content type and data
            problemsset_data = {
+                'type': parent_question.get('type', ''),
+                'content': json.dumps(parent_question.get('content', {})),
                 'title': parent_question.get('title', ''),
                 'sections': {'connect': {'sectionid': self.current_section_id}},
                 'examtypes': {'connect': {'examtypeid': self.current_exam_id}}
             }
-           if 'sources' in parent_question:
-               problemsset_data['type'] = "MSR"
-               problemsset_data['content'] = json.dumps(parent_question['sources'])
-           elif 'passages' in parent_question:
-               problemsset_data['type'] = "RC"
-               problemsset_data['content'] = json.dumps(parent_question['passages'])
-           elif 'graphs' in parent_question:
-               problemsset_data['type'] = "GI"
-               problemsset_data['content'] = json.dumps(parent_question['graphs'])
-           elif 'graph/table' in parent_question:
-               problemsset_data['type'] = "graph/table"
-               problemsset_data['content'] = json.dumps(parent_question['graph/table'])
-           else:
-                raise ValueError("No content found in parent question")
+           
            if isMockQuestion:
-                problemsset_data['mocktestquestions'] = {'connect': {'mocktestquestionid': self.current_mocktestquestion_id}}
+                problemsset_data['mockquestionnumber'] = self.current_mockquestion_number
+                problemsset_data['mocksections'] = {'connect': {'mocksectionid': self.current_mocksection_id}}
+
            # Create problem set
            try: 
                
                problemsset =  self.db.problemsset.create(data = problemsset_data)
                self.current_problemset_id = problemsset.problemsSetId
            except Exception as e: 
-               print(f"Error registering parent question component in _register_problemset: {str(e)}")
+               print(f"Error registering parent question component in _register_problemset: {str(e)} \n\n here is the parent question content: {json.dumps(parent_question.get('content', {}), indent=4)}")
                return False
 
 
@@ -330,29 +314,66 @@ class DB:
         return True
 
 
-    def registerQuestion(self, exam_section, questions, isMockQuestion=False):
+    def registerQuestion(self, paper, isMockQuestion=False, difficulty=0):
        """Main method to register questions"""
-       for question in questions:
-        if not self.having_any_empty_value(question):
-            print(f"some of the component in the string for {exam_section} is empty, thus not registering such question")
-            print(f"thread_id: {question.get('thread_id', 'Even thread_id is empty')}")
-            return False
-       try:
-           for question in questions:
-               # Check for parent-child questions using multiple possible keys
-               if any(key in question for key in ['childQuestions', 'questions', 'sources']):
-                   # Handle parent-child questions
-                   if not  self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion):
-                       raise Exception(f"Error registering problem set for {exam_section}")
-               else:
-                   # Handle single questions
-                   if not  self._register_problem(exam_section, question, isMockQuestion=isMockQuestion):
-                       raise Exception(f"Error registering problem for {exam_section}")
-           return True
-       except Exception as e:
-           print(f"Error in registerQuestion: {str(e)}")
-           return False
-    
+    #    here we will be getting complete paper.
+    # region not validating the question components if they are empty or not
+    #    for exam_section, subSections in paper.items():
+    #        questions_to_remove = []
+    #        for questions in subSections.values():
+    #             for question in questions:
+    #                 if not self.having_any_empty_value(question):
+    #                     print(f"some of the component in the string for {exam_section} is empty, thus not registering such question")
+    #                     print(f"thread_id: {question.get('thread_id', 'Even thread_id is empty')}")
+    #                     isMockQuestion = False # if any question is empty, don't put the whole paper in mock test.
+    #                     questions_to_remove.append(question)
+
+    #             for question in questions_to_remove:
+    #                 questions.remove(question)
+    # endregion
+
+       if isMockQuestion:
+           exam_section = list(paper.keys())[0]
+           self._get_exam_section_ids(exam_section)
+           current_mocktest = self.db.mocktests.create({
+               'difficulty': difficulty,
+               'examtypeid': self.current_exam_id,
+               'date': datetime.now(),
+               'starttime': datetime.now(),
+               'endtime': datetime.now(),
+               'isactive': True
+           })
+           self.current_mocktest_id = current_mocktest.mocktestid
+       for exam_section, subSections in paper.items():
+           self._get_exam_section_ids(exam_section)
+           for sectionNumber, questions in subSections.items():
+                print(f"sectionNumber: {sectionNumber}")
+                if isMockQuestion:
+                    secNo = int(sectionNumber[-1])
+                    current_mocksection = self.db.mocksections.create({
+                        'mocktestid': self.current_mocktest_id,
+                        'sectionnumber': secNo,
+                        'sectionid': self.current_section_id
+                    })
+                    self.current_mocksection_id = current_mocksection.mocksectionid
+                try:
+                    self.current_mockquestion_number = 1
+                    for question in questions:
+                        # Check for parent-child questions using multiple possible keys
+                        if any(key in question for key in ['childQuestions', 'questions', 'sources']):
+                            # Handle parent-child questions
+                            if not  self._register_problemsset(exam_section, question,isMockQuestion=isMockQuestion):
+                                raise Exception(f"Error registering problem set for {exam_section}")
+                        else:
+                            # Handle single questions
+                            if not  self._register_problem(exam_section, question, isMockQuestion=isMockQuestion):
+                                raise Exception(f"Error registering problem for {exam_section}")
+                        self.current_mockquestion_number += 1
+                    return True
+                except Exception as e:
+                    print(f"Error in registerQuestion: {str(e)}")
+                    return False
+                
     def __del__(self):
         """Destructor to ensure database connection is closed"""
         if hasattr(self, 'db') and self.db.is_connected():
@@ -387,6 +408,14 @@ class DB:
             print("- Deleting tags...")
             self.db.tags.delete_many()
             
+            # Delete mocksections
+            print("- Deleting mocksections...")
+            self.db.mocksections.delete_many()
+
+            # Delete mocktests
+            print("- Deleting mocktests...")
+            self.db.mocktests.delete_many()
+
             print("✅💀💀 Successfully deleted all question content")
             
         except Exception as e:

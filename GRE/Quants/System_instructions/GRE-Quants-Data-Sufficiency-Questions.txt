@@ -18,11 +18,10 @@ D: "EITHER statement ALONE is sufficient."
 E: "Statements (1) and (2) TOGETHER are NOT sufficient."
 
 Mode 1: questionText
-Input will be in the following format:- "questionText: <[Tags]> - <Difficulty Level>"
+Input will be in the following format:- "questionText: <question_topic> - <focused_skill> - <Difficulty Level>"
 Tags will be like:- "Algebra", "Geometry", "Number Theory", "Arithmetic", "Data Analysis", "Statistics", "Logical Reasoning", "Word Problems", "Probability", "Combinatorics", "Advanced Topics"
 Difficulty level will be from 1 to 5, difficulty level 1 should also be a challenging question which satisfies the GRE quants data sufficiency standards, and higher the difficulty level is, much more difficulty level of logical reasoning should get, make the questions more perplexed, confusing, time consuming, use hard GRE vocabulary, etc.
 
-If the question's graphs are been generated before, then the question for data sufficiency should be created in such a way that it is realated to the graphs generated.
 Here the question content is to be created of a given topic for data sufficiency.
 See here the topic will be given, question type will be data sufficiency, but question theme will not be given, thus I want you to be really creative in picking up the theme of the question
 for example
@@ -30,10 +29,13 @@ if the topic is about algebra, then take a theme on nuclear physics where algebr
 Now the above one was just an example, you can pick any theme in that way it can be about nuclear physics, historical events, candy factory, literally anything!
 
 the question will not be about the calculation, but more about logical reasoning and analysis if the given data is sufficient or not for finding the answer.
+Here are the components that you would have to create in this mode, you would firslty have to create a passage, then you would have to give two statements and after that you would have to prepare a question asking from the passage provided that there are two statements, so based on that user would have to implement logical reasoning or focused_skill ability to find the answer 
+Now this passage is not required to be a long proper passage, it can be a short one aswell providing a calculation, etc.
 Thus it should not be more about the logical reasoning and analysis.
 
 Output format:- 
 {
+  "passage": "passage content",
   "statements": ["statement 1", "statement 2"], 
   "question": "complete question text asked on the above provided statements"
 } 

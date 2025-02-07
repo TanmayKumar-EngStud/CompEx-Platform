@@ -95,35 +95,27 @@ class GMAT_Mock:
         paper = {"GMAT_Q": {"section0":[]}, "GMAT_V": {"section0": []}, "GMAT_IR": {"section0": []}}
         with ThreadPoolExecutor() as executor:
             futures = []
-            gi = 0
-            tpa = 0
-            ta = 0
-            msr = 0
-            q_ds = 0
-            for prompt in self.ir_prompts:
-                if "GI" in prompt and gi == 0:
-                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.GI_gen))
-                    gi += 1
-                elif "TA" in prompt and ta == 0:
-                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.TA_gen))
-                    ta += 1
-                elif "TPA" in prompt and tpa == 0:
-                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.TPA_gen))
-                    tpa += 1
-                elif "MSR" in prompt and msr == 0:
-                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.MSR_gen))
-                    msr += 1
-                elif "DS" in prompt and q_ds == 0:
-                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.Q_DS_gen))
-                    q_ds += 1
 
-            # for prompt in self.quants_prompts:
-            #     futures.append(executor.submit(self.generate_question_with_retry, "GMAT_Q", prompt, GeneratorClass.Q_S_gen)) 
-            # for prompt in self.verbal_prompts:
-            #     if "rc" in prompt.lower():
-            #         futures.append(executor.submit(self.generate_question_with_retry, "GMAT_V", prompt, GeneratorClass.V_PC_gen))
-            #     else:
-            #         futures.append(executor.submit(self.generate_question_with_retry, "GMAT_V", prompt, GeneratorClass.V_S_gen))
+            for prompt in self.ir_prompts:
+                if "GI" in prompt :
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.GI_gen))
+                    
+                elif "TA" in prompt:
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.TA_gen))
+                elif "TPA" in prompt:
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.TPA_gen))
+                elif "MSR" in prompt:
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.MSR_gen))
+                elif "DS" in prompt:
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_IR", prompt, GeneratorClass.Q_DS_gen))
+
+            for prompt in self.quants_prompts:
+                futures.append(executor.submit(self.generate_question_with_retry, "GMAT_Q", prompt, GeneratorClass.Q_S_gen)) 
+            for prompt in self.verbal_prompts:
+                if "rc" in prompt.lower():
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_V", prompt, GeneratorClass.V_PC_gen))
+                else:
+                    futures.append(executor.submit(self.generate_question_with_retry, "GMAT_V", prompt, GeneratorClass.V_S_gen))
 
             for future in as_completed(futures):
                 question_data = future.result()
@@ -136,8 +128,12 @@ class GMAT_Mock:
 
         return paper
 
-gmat_mock = GMAT_Mock(mock_difficulty=3)
+start_time = time.time()
+gmat_mock = GMAT_Mock(mock_difficulty=1)
 
 paper = gmat_mock.generate()
 
 # json.dump(paper, open(f"paper-{time.strftime('%d-%m-%Y-%H-%M-%S')}.json", "w"), indent=2)
+
+end_time = time.time()
+print(f"Time taken: {end_time - start_time} seconds")

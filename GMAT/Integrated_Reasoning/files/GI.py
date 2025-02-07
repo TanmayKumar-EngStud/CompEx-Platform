@@ -17,6 +17,8 @@ class Generate_GI:
         self.questionData = {}
     def generate_question(self):
         gi = GI(self.llm, self.prompt)
+        self.questionData["type"] = "GI"
+        self.questionData["prompt"] = self.prompt
         self.questionData["thread_id"], self.questionData["content"] = gi.generate_questionGraph()
         self.questionData["question"] = gi.generate_questionText()
         self.questionData["title"] = gi.generate_questionTitle()

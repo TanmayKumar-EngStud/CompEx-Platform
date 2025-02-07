@@ -27,6 +27,7 @@ class SimpleQuestionGeneration:
 
    def generate_question(self):
       questionContent = SimpleQuestion(self.llm, self.prompt)
+      self.questionData["type"] = "CR"
       self.questionData["prompt"] = self.prompt
       result = questionContent.generate_QuestionPassage()
       if not result or result == ("", []):
@@ -34,7 +35,7 @@ class SimpleQuestionGeneration:
       
       thread_id, passages = result
       self.questionData["thread_id"] = thread_id
-      self.questionData["passage"] = passages
+      self.questionData["content"] = {"passages": passages}
 
       self.questionData["question"] = questionContent.generate_questionText()
       self.questionData["title"] = questionContent.generate_questionTitle()

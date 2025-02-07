@@ -19,7 +19,9 @@ class DataSufficiencyQuestionGeneration:
         questionContent = DataSufficiencyQuestion(self.llm, self.prompt)
         self.questionData["type"] = "Data Sufficiency"
         self.questionData["prompt"] = self.prompt
-        self.questionData["thread_id"], self.questionData["passage"], self.questionData["statements"], self.questionData["question"] = questionContent.generate_questionText()
+        self.questionData["thread_id"], passages, statements, question = questionContent.generate_questionText()
+        self.questionData["content"] = {"passages": passages, "statements": statements}
+        self.questionData["question"] = question
         self.questionData["title"] = questionContent.generate_questionTitle()
         self.questionData["solution"], self.questionData["answer"] = questionContent.generate_questionSolution()
         self.questionData["options"] = ["Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient", "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient", "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient", "EITHER statement ALONE is sufficient", "Statements (1) and (2) TOGETHER are NOT sufficient"]

@@ -4,15 +4,14 @@ import os, json, re
 from dotenv import load_dotenv
 import random
 class ParentChildQuestionGeneration:
-    def __init__(self, llm=None, prompt=None):
+    def __init__(self, prompt=None):
         load_dotenv()
         assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Quants-Parent-Child-Questions"]
-        if llm is None:
-            llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-            )
+        llm = OpenAIAssistantRunnable(
+            model="gpt-4o-mini",
+            api_key=os.getenv("OPENAI_API_KEY"),
+            assistant_id=assistant_id
+        )
         self.llm = llm
         # print(f"prompt: {prompt}")
         self.total_child_questions = int(re.search(r"parent_child-(\d+)", prompt).group(1))
@@ -20,26 +19,27 @@ class ParentChildQuestionGeneration:
         self.questionData = {}
         self.thread_id = None
     def generate_question(self):
-        pattern = r'<difficulty-level: (\d+)>'
-        match = re.search(pattern, self.prompt)
-        self.questionData["difficulty"] = int(match.group(1))
+        self.questionData["type"] = "PS"
+        self.questionData["prompt"] = self.prompt
+        self.questionData["thread_id"] = self.thread_id
+        tag = []
         try:
             match = re.search(r"<(.*?)>", self.prompt)
             tag = ["PS"]
             if match:
                 first_content = match.group(1)
                 tag.append(first_content)
-            self.questionData["tag"] = tag
         except Exception as e:
-            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-            self.questionData["tag"] = ["PS"]
-
+            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
+            tag = ["PS"]
+        
         parentChildQuestion = ParentChildQuestion(self.llm, self.prompt)
-        self.thread_id, self.questionData["graph/table"] = parentChildQuestion.generate_questionGraph()
+        self.thread_id, content = parentChildQuestion.generate_questionGraph()
+        self.questionData["content"] = content
 
         self.questionData["title"] = parentChildQuestion.generate_parentTitle()
         number_of_child_questions = self.total_child_questions
-        self.questionData["childQuestions"] = []
+        self.questionData["questions"] = []
         for i in range(number_of_child_questions):
             childQuestionData = {}
             childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i+1)
@@ -51,7 +51,12 @@ class ParentChildQuestionGeneration:
             option_list = list(options.values())
             random.shuffle(option_list)
             childQuestionData["options"] = option_list
-            self.questionData["childQuestions"].append(childQuestionData)
+            childQuestionData["tag"] = tag
+            self.questionData["questions"].append(childQuestionData)
 
-        
+        pattern = r'<difficulty-level: (\d+)>'
+        match = re.search(pattern, self.prompt)
+        self.questionData["difficulty"] = int(match.group(1))
+        self.questionData["tag"] = tag
+
         return self.questionData

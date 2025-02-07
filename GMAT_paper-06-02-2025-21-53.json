@@ -1,0 +1,2542 @@
+{
+  "GMAT_Q": {
+    "section0": [
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Backsolving> - <Algebraic Equations> - <difficulty_level: 1>",
+        "thread_id": "thread_R0DXpwv6BeoWBtFarsDtbQrU",
+        "question": "In a recent survey conducted in the small town of Quantopia, the local bakery reported that the number of chocolate cakes sold in the morning is equal to twice the number of vanilla cakes sold. If the bakery sold a total of 30 cakes in the morning, how many chocolate cakes did they sell?",
+        "title": "Chocolate Cake Sales in Quantopia Bakery",
+        "solution": "<p>Let:</p>\n<p>x = \\text{number of vanilla cakes sold}</p>\n<p>Then, the number of chocolate cakes sold = 2x.</p>\n<p>We can write the equation:</p>\n<p>x + 2x = 30</p>\n<p>3x = 30</p>\n<p>x = \\frac{30}{3} = 10</p>\n<p>Thus, the number of chocolate cakes sold is:</p>\n<p>2x = 2 \\times 10 = 20</p>\n<p>Therefore, the bakery sold 20 chocolate cakes in the morning.</p>",
+        "options": [
+          "20",
+          "10",
+          "10",
+          "25"
+        ],
+        "answer": "20",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Backsolving",
+          "Algebraic Equations"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Assessing given Situation(checking the ability of accessing a given situation)> - <Percentages> - <Accounting> - <difficulty_level: 1>",
+        "thread_id": "thread_gEFcoytLfeePwOwX9CXthUna",
+        "question": "In a quaint little town, a local bakery known for its delicious pastries has decided to offer a seasonal discount of 20\\% on all items to attract customers. If a customer purchases a dozen croissants priced at \\$5 each, how much money does the customer save due to the discount? Calculate the total cost of the croissants before and after applying the discount to determine the savings. What is the total amount saved?",
+        "title": "Calculating Savings from Seasonal Discounts at a Local Bakery",
+        "solution": "<p>The total cost of the croissants before discount is calculated as follows:</p> <p>~~\\text{Total Cost Before Discount} = \\text{Price Per Croissant} \\times \\text{Number of Croissants} = 5 \\times 12 = 60\\$~~</p> <p>The total discount applied is:</p> <p>~~\\text{Total Discount} = \\text{Total Cost Before Discount} \\times \\text{Discount Rate} = 60 \\times 0.20 = 12\\$~~</p> <p>The total cost after applying the discount becomes:</p> <p>~~\\text{Total Cost After Discount} = \\text{Total Cost Before Discount} - \\text{Total Discount} = 60 - 12 = 48\\$~~</p> <p>Thus, the total amount saved by the customer is \\$12.</p>",
+        "options": [
+          "10.0\\$",
+          "8.0\\$",
+          "12.0\\$",
+          "15.0\\$"
+        ],
+        "answer": "12.0\\$",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Assessing given Situation",
+          "Percentages"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <Number Sense> - <Work and Time> - <difficulty_level: 2>",
+        "thread_id": "thread_SMMxdmKwJdtdsdAs7IzxamH5",
+        "question": "In a quaint village, a group of enthusiastic villagers decided to work together to build a community fountain. They estimated that the total work required to complete the fountain would take 120 hours if they all worked together continuously. However, due to unforeseen circumstances, only 6 villagers were available to work each day for the first two days. Each villager is capable of completing 1/120 of the work in one hour. After two days, 4 additional villagers joined, increasing their total number to 10. Assuming that all the villagers are equally efficient, how many more days will it take for the whole group of 10 to finish the remaining work? Please calculate the total time taken to complete the fountain in hours and then convert this into days. Note that it may require a few steps of calculation to arrive at the total number of days needed.",
+        "title": "Community Fountain Construction: Work and Time Calculation",
+        "solution": "<p>To find the solution, we begin by calculating the amount of work done by the initial group of villagers:</p>\n\n<p>1. Initially, 6 villagers work for 2 days (which is 48 hours) as follows:</p>\n<p>Work done by 6 villagers = 6 \\times \\frac{1}{120} \\times (6 \\times 24) = 6 \\times \\frac{1}{120} \\times 48 = \\frac{288}{120} = 2.4\\ hours</p>\n\n<p>2. Next, we calculate the remaining work after the first 2 days:</p>\n<p>Remaining work = 120 - 2.4 = 117.6\\ hours</p>\n\n<p>3. After the first 2 days, 4 more villagers join, making a total of 10 villagers. Therefore, the work done by 10 villagers per hour is:</p>\n<p>Work done by 10 villagers = 10 \\times \\frac{1}{120} = \\frac{10}{120} = \\frac{1}{12}\\ hours.</p>\n\n<p>4. Now we calculate the time needed to complete the remaining work with 10 villagers:</p>\n<p>Time to complete remaining work = \\frac{117.6}{\\frac{1}{12}} = 117.6 \\times 12 = 1411.2\\ hours</p>\n\n<p>5. Finally, we convert this time from hours into days:</p>\n<p>Total days needed = \\frac{1411.2}{24} \\approx 58.80 days.</p>\n\n<p>Thus, it will take approximately 58.80 days for the villagers to complete the fountain.</p>",
+        "options": [
+          "63.8",
+          "64.68",
+          "53.8",
+          "58.8",
+          "52.92"
+        ],
+        "answer": "58.8",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "Number Sense",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Work and Time> - <Taxation> - <difficulty_level: 1>",
+        "thread_id": "thread_66SZNGazSgSB35MapBZ4v8vF",
+        "question": "In a quaint little town, a local bakery employs two bakers, Alice and Bob, who together have the ability to produce a batch of delicious pastries in 6 hours. However, Alice is known to be slightly faster; she can complete the same batch alone in 4 hours, while Bob, on the other hand, takes 12 hours. Given this context, if both bakers decide to work together on a busy Saturday, and they manage to produce an extra 3 batches within the duration of a single Saturday, how long did they take to make these extra batches during their busy working period?",
+        "title": "Work Efficiency of Bakers in a Busy Day",
+        "solution": "First, we calculate the work rates of Alice and Bob:<br>- Alice's work rate: ~~\\frac{1 \\text{ batch}}{4 \\text{ hours}} = 0.25 \\text{ batches per hour}~~<br>- Bob's work rate: ~~\\frac{1 \\text{ batch}}{12 \\text{ hours}} = 0.0833 \\text{ batches per hour}~~<br><br>Now, to find their combined work rate:<br>Combined work rate = ~~0.25 + 0.0833 = 0.3333 \\text{ batches per hour}~~<br><br>Next, we need to calculate the time taken to produce 3 batches:<br>Let \\( t \\) be the time in hours to produce 3 batches.<br>Thus, we have:<br><br>~~t \\times 0.3333 = 3~~<br><br>Solving for \\( t \\):<br>~~t = \\frac{3}{0.3333} \\approx 9 \\text{ hours}~~<br><br>Therefore, Alice and Bob took approximately 9 hours to make the extra 3 batches on that busy Saturday.",
+        "options": [
+          "11",
+          "8",
+          "10",
+          "9"
+        ],
+        "answer": "9",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <common pitfalls> - <Percentages> - <difficulty_level: 3>",
+        "thread_id": "thread_V366Djnb0wnFiqAkMyT9vHqT",
+        "question": "In a vibrant city fair, a booth sells colorful balloons at a fixed price. During the fair, the vendor decides to offer a promotional discount of 25% on all balloon purchases. If a shopper buys a total of 10 balloons, the original price per balloon is \\$4. After the discount, the shopper also encounters an unexpected 10% sales tax on the final price. What is the total amount the shopper spends on these 10 balloons after applying the discount and adding the sales tax? Be careful with the calculations, as rounding at different stages may lead to different outcomes.",
+        "title": "Calculating the Total Cost of Balloons with Discounts and Taxes",
+        "solution": "<html><p>To determine the total amount spent by the shopper on the balloons, we will follow these steps:</p><ol><li>Calculate the total original price of the balloons:</li> <p>\\( \\text{Total Original Price} = \\text{Price per Balloon} \\times \\text{Number of Balloons} = 4.00 \\times 10 = 40.00 \\, \\text{USD} \\)</p> <li>Calculate the discount amount:</li> <p>\\( \\text{Discount Amount} = \\text{Total Original Price} \\times \\text{Discount Percentage} = 40.00 \\times 0.25 = 10.00 \\, \\text{USD} \\)</p> <li>Calculate the price after discount:</li> <p>\\( \\text{Price After Discount} = \\text{Total Original Price} - \\text{Discount Amount} = 40.00 - 10.00 = 30.00 \\, \\text{USD} \\)</p> <li>Calculate the sales tax amount:</li> <p>\\( \\text{Sales Tax Amount} = \\text{Price After Discount} \\times \\text{Sales Tax Percentage} = 30.00 \\times 0.10 = 3.00 \\, \\text{USD} \\)</p> <li>Calculate the final price after tax:</li> <p>\\( \\text{Final Price} = \\text{Price After Discount} + \\text{Sales Tax Amount} = 30.00 + 3.00 = 33.00 \\, \\text{USD} \\)</p></ol><p>Thus, the total amount spent by the shopper on the balloons after applying the discount and adding the sales tax is \\$33.00.</p></html>",
+        "options": [
+          33.0,
+          30.0,
+          34.0,
+          34.0
+        ],
+        "answer": 33.0,
+        "difficulty": 3,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "common pitfalls",
+          "Percentages"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Functions> - <difficulty_level: 1>",
+        "thread_id": "thread_qVuurO1RSZhDxbCTwmEv5paf",
+        "question": "A quirky caf\u00e9 is known for serving unique flavored lattes. The caf\u00e9 offers three sizes of lattes - small, medium, and large. If the price of a small latte is represented by \\( x \\), the medium latte costs \\( 1.5x \\), and the large latte costs \\( 2.2x \\). If a customer orders one small, one medium, and one large latte, what is the total cost in terms of \\( x \\)?",
+        "title": "Finding the Total Cost of Lattes at a Quirky Caf\u00e9",
+        "solution": "To find the total cost of the lattes in terms of \\( x \\), we can calculate as follows:<br><br>1. The cost of a small latte is \\( x \\).<br>2. The cost of a medium latte is \\( 1.5x \\).<br>3. The cost of a large latte is \\( 2.2x \\).<br><br>Now, the total cost can be expressed as:<br>\\[ \\text{Total Cost} = x + 1.5x + 2.2x \\]<br>\\[ \\text{Total Cost} = (1 + 1.5 + 2.2)x \\]<br>\\[ \\text{Total Cost} = 4.7x \\]<br><br>Thus, the total cost of one small, one medium, and one large latte is \\( 4.7x \\).",
+        "options": [
+          "9.4x",
+          "4.7x",
+          "4.6x",
+          "5.7x"
+        ],
+        "answer": "4.7x",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Inequalities> - <Accounting> - <difficulty_level: 1>",
+        "thread_id": "thread_MhWLNGr7MkYHhTLNBv0BIjp1",
+        "question": "In a small accounting firm, Sarah is tasked with managing the financial records for two different clients, Client A and Client B. Client A's records are expected to generate a profit of at least \\$1,500, while Client B's records should yield a profit of at least \\$1,200. If Sarah's total profit from both clients cannot exceed \\$3,000 due to budget constraints set by her firm, which of the following inequalities represents the situation described? Let x represent the profit from Client A and y represent the profit from Client B.",
+        "title": "Inequalities in Profit Management: An Accounting Dilemma",
+        "solution": "The situation can be represented by the following inequalities:<ul><li>\\( x \\geq 1500 \\) - Profit from Client A</li><li>\\( y \\geq 1200 \\) - Profit from Client B</li><li>\\( x + y \\leq 3000 \\) - Total profit constraint</li></ul>These inequalities reflect the requirements of profit generation set for Sarah in the accounting firm.",
+        "options": [
+          "x >= 1500, y >= 1200, x + y <= 3000",
+          "x >= 1500, y <= 1200, x + y <= 3000",
+          "x >= 1500, y >= 1200, x + y >= 3000",
+          "x < 1500, y >= 1200, x + y <= 3000",
+          "x >= 1300, y >= 1200, x + y <= 3000"
+        ],
+        "answer": "x >= 1500, y >= 1200, x + y <= 3000",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)> - <Polynomials> - <Strategy and Management> - <difficulty_level: 4>",
+        "thread_id": "thread_jVnFCBmkq68vJ17I0BUlONw0",
+        "question": "In a recent evaluation of a strategic management initiative aimed at enhancing project efficiency, a company's project manager devised a polynomial model representing the relationship between the number of resources allocated (x) and the completion time (y) in days for a specific project. The polynomial is defined as y = 3x^2 - 12x + 18, where x must be a positive integer. The management wants to assess the completion time as resources are adjusted, noting that they aim for a completion time no greater than 30 days. Considering the constraints involved in resource allocation, the project manager sets aside a budget allowing for the deployment of up to 8 resources. However, they also receive feedback from team members suggesting that employing a reduction strategy by redistributing existing resources could optimize completion time without exceeding the set budget. Based on this, what is the maximum number of resources that can be allocated while still ensuring the project is completed in accordance with the stipulated timeframe of 30 days?",
+        "title": "Optimizing Resource Allocation for Project Efficiency in Strategic Management",
+        "solution": "<p>To solve the problem, we start by setting the polynomial equal to 30, since we want to find when the project can be completed in at most 30 days:</p> <p>~~y = 3x^{2} - 12x + 18 = 30~~</p> <p>Rearranging gives:</p> <p>~~3x^{2} - 12x + 18 - 30 = 0~~</p> <p>Which simplifies to:</p> <p>~~3x^{2} - 12x - 12 = 0~~</p> <p>Now, we can factor or use the quadratic formula:</p> <p>Using the quadratic formula: ~~x = \\frac{-b \\pm \\sqrt{b^{2} - 4ac}}{2a}~~</p> <p>Where:\n - a = 3\n - b = -12\n - c = -12</p> <p>Calculating the discriminant:</p> <p>~~b^{2} - 4ac = (-12)^{2} - 4(3)(-12) = 144 + 144 = 288~~</p> <p>Now applying the quadratic formula:</p> <p>~~x = \\frac{12 \\pm \\sqrt{288}}{6}~~</p> <p>This gives two possible solutions. However, since we are interested in positive integer values of x, we only consider those solutions which are greater than zero. Solving further:</p> <p>After calculating, the relevant solution for x that aligns with the conditions of resource allocation is approximately: ~~x \\approx 4.83~~</p> <p>Since x must be a positive integer, we take the maximum possible integer value, thus:</p> <p>The maximum number of resources that can be allocated while ensuring project completion within 30 days is: <strong>5</strong>.</p>",
+        "options": [
+          "4",
+          "6",
+          "2",
+          "5"
+        ],
+        "answer": "5",
+        "difficulty": 4,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Choosing correct mathematical tools to solve problems",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Polynomials> - <difficulty_level: 5>",
+        "thread_id": "thread_miqerNkwafTrD5tqNxC7aSu9",
+        "question": "In a mathematical competition, participants were tasked with solving a complex polynomial equation defined as -5x^2 + -8x + 5y + -2. The evaluators noticed that the first variable, x, is greatly affected by the value of y. To streamline the grading, it was determined that when x is set to 5, the total value of the polynomial must yield a sum close to -40. Only the candidates who can critically evaluate the function and correctly deduce the other values will pass. Which of the following values of y would allow the polynomial to satisfy the condition stated by the evaluators?",
+        "title": "Polynomial Evaluation in a Competitive Scenario",
+        "solution": "<p>To determine the value of y that satisfies the polynomial equation, we start with the given values:</p> <p>Let \\( x = 5 \\) and we want the polynomial to sum up to \\( -40 \\).</p> <p>Substituting \\( x \\) into the polynomial:</p> <p>\\( -5x^{2} + -8x + 5y + -2 = -40 \\)</p> <p>This simplifies to:</p> <p>\\( -5(5)^{2} + -8(5) + 5y + -2 = -40 \\)</p> <p>Calculating the left-hand side:</p> <p>\\( -5(25) + -40 + 5y - 2 = -40 \\)</p> <p>Which simplifies to:</p> <p>\\( -125 + 5y - 2 = -40 \\)</p> <p>Now, combining the constants:</p> <p>\\( 5y - 127 = -40 \\)</p> <p>Adding 127 to both sides gives:</p> <p>\\( 5y = 87 \\)</p> <p>Dividing both sides by 5 yields:</p> <p>\\( y = \\frac{87}{5} = 17.4 \\)</p><p>Thus, the value of y that would allow the polynomial to satisfy the evaluators' condition is:</p> <p>\\( y = 17.4 \\)</p>",
+        "options": [
+          "17.5",
+          "26.76",
+          "25.4",
+          "13.77"
+        ],
+        "answer": "25.4",
+        "difficulty": 5,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Number Picking",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Critical Reasoning> - <Unitary Method> - <difficulty_level: 1>",
+        "thread_id": "thread_M7XSvDLHwUuwtQI9IjVD1roq",
+        "question": "In a small bakery, the baker uses 2 kg of flour to make 16 loaves of bread. If she wants to make 48 loaves, how much flour does she need to use? A helpful tip: think about how much flour is used for each loaf and then scale it accordingly.",
+        "title": "Flour Calculation for Bread Production in a Bakery",
+        "solution": "To determine the amount of flour required for 48 loaves, we first find out how much flour is used for one loaf.<br><br>1. Calculate flour per loaf:<br>   \\text{Flour per loaf} = \\frac{2 \\text{ kg}}{16 \\text{ loaves}} = 0.125 \\text{ kg per loaf}<br><br>2. Now, to find the flour needed for 48 loaves:<br>   \\text{Total flour for 48 loaves} = 0.125 \\text{ kg/loaf} \\times 48 \\text{ loaves} = 6.0 \\text{ kg}<br><br>Thus, the total amount of flour required to produce 48 loaves of bread is 6.0 kg.",
+        "options": [
+          "6.0 kg",
+          "5.0 kg",
+          "8.0 kg",
+          "3.0 kg",
+          "9.0 kg"
+        ],
+        "answer": "6.0 kg",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Critical Reasoning",
+          "Unitary Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Polynomials> - <difficulty_level: 2>",
+        "thread_id": "thread_5KeRRSIZ356YuOB6ipbNVgJ7",
+        "question": "A local gardening club has decided to plant a new type of flower in their community garden. They have created a polynomial equation to model the number of flowers (f) they can plant based on the number of garden beds (b). The equation is given by f(b) = -1b^3 + 4b^2 + 1b + -4. The club currently has 4 garden beds available for planting. If they want to maximize the number of flowers planted while still staying within the positive integer quantity of flowers, what is the maximum number of flowers they can plant using their polynomial equation? Choose the appropriate number of garden beds they should use from the options provided.",
+        "title": "Maximizing Flowers Planted in a Community Garden Using a Polynomial Model",
+        "solution": "<h3>Solution:</h3> <p>To find the maximum number of flowers that can be planted using the polynomial equation <strong>f(b) = -1b^3 + 4b^2 + 1b - 4</strong>, we evaluate this polynomial for the integer values of garden beds (b) from 1 to 4:</p> <ul> <li>For b = 1: f(1) = -1(1^3) + 4(1^2) + 1(1) - 4 = 0</li> <li>For b = 2: f(2) = -1(2^3) + 4(2^2) + 1(2) - 4 = 6</li> <li>For b = 3: f(3) = -1(3^3) + 4(3^2) + 1(3) - 4 = 8</li> <li>For b = 4: f(4) = -1(4^3) + 4(4^2) + 1(4) - 4 = 0</li> </ul> <p>Thus, the maximum number of flowers that can be planted using 3 garden beds is <strong>8</strong>.</p>",
+        "options": [
+          "6",
+          "6",
+          "8",
+          "10",
+          "7"
+        ],
+        "answer": "8",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Number Picking",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Assessing given Situation(checking the ability of accessing a given situation)> - <Polynomials> - <Taxation> - <difficulty_level: 1>",
+        "thread_id": "thread_5iohBsR9VuIWRrOnUjXtCHUJ",
+        "question": "In a bustling city, a government official proposed a new tax policy affecting the city's residents. The tax on small businesses is represented by the polynomial expression \\( P(x) = 2x^{2} + 3x + 5 \\), where \\( x \\) represents the number of employees in a small business. If a business has 3 employees, how much tax would the business owe? Calculate the tax using the polynomial provided and determine the total tax liability for a small business with 3 employees.",
+        "title": "Calculating Tax Liability for a Small Business Based on Employee Count",
+        "solution": "To find the tax owed by a business with 3 employees, we will use the polynomial \\( P(x) = 2x^{2} + 3x + 5 \\). We will evaluate this polynomial at \\( x = 3 \\):<br><br>1. Substitute \\( x \\) into the polynomial:<br>   \\( P(3) = 2(3)^{2} + 3(3) + 5 \\)<br>2. Calculate \\( (3)^{2} = 9 \\):<br>   \\( P(3) = 2(9) + 3(3) + 5 \\)<br>3. Multiply: \\( 2(9) = 18 \\)<br>   \\( P(3) = 18 + 3(3) + 5 \\)<br>4. Calculate \\( 3(3) = 9 \\):<br>   \\( P(3) = 18 + 9 + 5 \\)<br>5. Add all terms: \\( P(3) = 18 + 9 + 5 = 32 \\)<br><br>Thus, the total tax liability for a small business with 3 employees is \\$ 32.",
+        "options": [
+          "32",
+          "22",
+          "35",
+          "37"
+        ],
+        "answer": "32",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Assessing given Situation",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)> - <Percentages> - <Economics> - <difficulty_level: 4>",
+        "thread_id": "thread_e1plG149Zw5fPL5CzN73tE2a",
+        "question": "In a peculiar market town renowned for its extravagant economic festivals, a baker operates a quaint bakery. Last month, the baker decided to introduce a new line of prestige pastries priced at \\$4 each, hoping to increase his market share. He sold 150 pastries. Due to a pricing error, the baker also inadvertently marked down his classic cookies, which are normally priced at \\$2 each, by 25\\% to attract more customers. This resulted in the sale of 300 cookies in the same time frame. After observing that customers preferred cookies over pastries, the baker raised the prices of both items for the upcoming month. The new prices for pastries and cookies were set to be calculated based on the sales data from last month. If the market's demand fluctuated by a further 40\\% increase in cookie sales and a proportional decrease in pastry sales next month, what will be the best way to ascertain the optimal new prices to maintain profitability while ensuring that demand continues to grow? Consider how to best calculate the effects of price changes on the total revenue of both product lines before re-evaluating the price adjustments for the next month, taking into account both the price elasticity of demand and the new sales forecasts.",
+        "title": "Optimal Price Setting in the Quirky Market Town Bakery",
+        "solution": "<p>To find the optimal new prices for maintaining profitability while ensuring sales growth, we can break down the calculations as follows:</p><ol><li><p>The discounted price of cookies was calculated based on a 25% markdown:</p> <p>Cookie Price (Discounted) = \\$2 \\times (1 - 0.25) = \\$1.50</p></li><li><p>The total revenue generated from both pastries and cookies in the initial month was:</p> <p>Total Revenue (Initial) = (\\$4 \\times 150) + (\\$1.50 \\times 300) = \\$1050</p></li><li><p>With a projected 40% increase in cookie sales, the new forecast for cookie sales becomes:</p> <p>Cookie Sales (Forecasted) = 300 \\times (1 + 0.40) = 420</p></li><li><p>Conversely, the expected change in pastry sales, given a proportional decrease, can be anticipated as:</p> <p>Pastry Sales (Forecasted) = 150 \\times (1 - 0.40) = 90</p></li><li><p>Finally, estimating the total revenue for the following month with these projections keeping cookie prices at their standard current level:</p><p>Total Revenue (Forecasted) = (\\$4 \\times 90) + (\\$2 \\times 420) = \\$1200</p></li></ol><p>By assessment and retaining a firm grasp on both price elasticity and shifting market demands, the baker may now explore adjustments to optimize his prices after considering these revenue projections.</p>",
+        "options": [
+          "1200.00",
+          "1200.00",
+          "1600.00",
+          "945.00"
+        ],
+        "answer": "1200.00",
+        "difficulty": 4,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Choosing correct mathematical tools to solve problems",
+          "Percentages"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Choosing correct mathematical tools to solve problems(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)> - <Algebraic Equations> - <Resource Management> - <difficulty_level: 1>",
+        "thread_id": "thread_785A8wS2Fr9QLFtAwlzOyjE5",
+        "question": "In a small island community, the local fishery has a sustainable fishing limit of 600 pounds per week. Due to an increase in demand, the fishery has decided to reassess its weekly fishing practices. The fishery currently operates $5.00 for every pound of fish caught and has fixed costs amounting to $300. The fishery's owner estimates that reducing fishing days from 6 to 4 would decrease the maximum capacity of fish caught significantly. Determine how many pounds of fish can be caught per day if they decide to fish only on 4 days this week while not exceeding the sustainable limit.",
+        "title": "Optimal Fishing Strategies: Balancing Demand and Sustainability on the Island",
+        "solution": "To determine how many pounds of fish can be caught per day when fishing only on 4 days, we divide the total sustainable limit by the number of days fished. The calculation is as follows:<br><br>$$\\text{Pounds per day} = \\frac{\\text{Total Limit per Week}}{\\text{Fishing Days}} = \\frac{600 \\text{ pounds}}{4} = 150 \\text{ pounds per day}.$$<br><br>Thus, they can catch 150 pounds of fish per day.",
+        "options": [
+          "120.0 pounds",
+          "250.0 pounds",
+          "200.0 pounds",
+          "150.0 pounds"
+        ],
+        "answer": "150.0 pounds",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Choosing correct mathematical tools to solve problems",
+          "Algebraic Equations"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Inequalities> - <difficulty_level: 2>",
+        "thread_id": "thread_ffU0g9GR4qwE2z6fCkKQuaIu",
+        "question": "In a rare cosmic event, a particularly bright comet is traveling through our solar system. The velocity of the comet can be described by the inequality \\(v > 100 + 2x\\), where \\(v\\) is the velocity in kilometers per hour, and \\(x\\) is the number of days from its closest approach to Earth. If the comet passed by Earth 10 days ago, what is the minimum speed \\(v\\) at which the comet is traveling today, considering the influence of gravitational pull from neighboring celestial bodies that can alter its acceleration by up to 15 km/h? Express your answer in terms of \\(v\\) and determine the greatest possible rank that this comet could achieve in the top celestial speed records, keeping in mind that the velocity must exceed the average limit of 120 km/h required for such an accolade.",
+        "title": "Velocity of a Comet: Determining Minimum Speed for Celestial Records",
+        "solution": "<h2>Solution:</h2><p>Given the inequality for velocity \\(v > 100 + 2x\\), we first substitute \\(x = 10\\):</p><p>\\(v > 100 + 2(10) \\Rightarrow v > 100 + 20 \\Rightarrow v > 120\\)</p><p>Next, we need to factor in the influence from gravitational pull, which can add up to 15 km/h:</p><p>\\(v > 120 + 15 \\Rightarrow v > 135\\)</p><p>However, since we are looking for the greatest possible rank, we also need it to be above the average limit required for such accolade, which is 120 km/h. Thus:</p><p>\\(v = 135 \\text{ km/h} \\text{ (considering acceleration)}\\)</p><p>Therefore, the comet's speed must exceed \\(120 km/h\\) to achieve a record, confirmed by our findings:</p><p>Final minimum speed \\(v = 135 \\text{ km/h}\\</p>",
+        "options": [
+          "140 km/h",
+          "150 km/h",
+          "130 km/h",
+          "135 km/h"
+        ],
+        "answer": "135 km/h",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Number Picking",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Logical Reasoning> - <Trial and Error Method(type of questions)> - <difficulty_level: 2>",
+        "thread_id": "thread_zwzyYLQUkV5cJz3a2TK9fJ3S",
+        "question": "A logistics company is assessing its delivery system efficiency. They discovered that on Mondays, the average delivery time for packages is 8 hours. On Tuesdays, due to a temporary increase in workload, the average delivery time jumps to 10 hours. The company needs to calculate the average delivery time over the course of a week (Monday to Sunday). However, they realized that Wednesdays have a 20% reduction in delivery time compared to Mondays, while Thursdays have an increase of 15% compared to Tuesdays. Fridays are particularly busy, and their average delivery time is 12 hours, while Saturday deliveries are known to be quicker, averaging 7 hours. Finally, Sundays have a delivery time that is 25% longer than Saturdays. Given this information, what is the average delivery time across the entire week if the company is able to compute the total hours and divide by 7?",
+        "title": "Calculation of Average Delivery Time in a Logistics Company",
+        "solution": "To solve for the average delivery time over the week, we first calculate the individual delivery times:\n<ul><li>Monday: 8 hours</li><li>Tuesday: 10 hours</li><li>Wednesday: 6.40 hours (20% reduction from Monday)</li><li>Thursday: 11.50 hours (15% increase from Tuesday)</li><li>Friday: 12 hours</li><li>Saturday: 7 hours</li><li>Sunday: 8.75 hours (25% longer than Saturday)</li></ul>Next, we find the total delivery time for the week:\nTotal Delivery Time = 8 + 10 + 6.40 + 11.50 + 12 + 7 + 8.75\nTotal Delivery Time = 63.65 hours\n\nFinally, to find the average delivery time:\nAverage Delivery Time = \\frac{\\text{Total Delivery Time}}{7} = \\frac{63.65}{7} \\approx 9.09 \\text{ hours}.",
+        "options": [
+          "8.68 hours",
+          "9.18 hours",
+          "9.81 hours",
+          "9.09 hours"
+        ],
+        "answer": "9.09 hours",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Logical Reasoning",
+          "Trial and Error Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Functions> - <Strategy and Management> - <difficulty_level: 1>",
+        "thread_id": "thread_6Sh5I9eyK5thMOl373ahzcHe",
+        "question": "A small startup company specializes in providing strategic management consulting for various businesses. The consulting fee they charge is structured based on the functions involved in the project, specifically on the number of hours dedicated to the client's needs. For a particular project, they charge \\$100 per hour for the first 10 hours, and for any hours beyond that, they offer a 10\\% discount on the hourly rate. If a client requires 15 hours of consulting, what will be the total fee for the project?",
+        "title": "Calculating the Consulting Fee for a Startup Project",
+        "solution": "<html><p>To calculate the total consulting fee for the client, we will follow these steps:</p><ol><li>Calculate the fee for the first 10 hours:</li><p>\\( \\text{Fee for first 10 hours} = \\$100 \\times 10 = \\$1000 \\)</p><li>Determine the number of additional hours needed:</li><p>\\( \\text{Additional hours} = 15 - 10 = 5 \\text{ hours} \\)</p><li>Calculate the discounted hourly rate for additional hours:</li><p>\\( \\text{Discounted rate} = \\$100 \\times (1 - 0.10) = \\$90 \\)</p><li>Calculate the fee for the additional hours:</li><p>\\( \\text{Fee for additional hours} = \\$90 \\times 5 = \\$450 \\)</p><li>Finally, sum both fees to find the total:</li><p>\\( \\text{Total fee} = \\$1000 + \\$450 = \\$1450 \\)</p></ol></html>",
+        "options": [
+          "\\$1500",
+          "\\$1500",
+          "\\$1450",
+          "\\$1350"
+        ],
+        "answer": "\\$1450",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Inequalities> - <difficulty_level: 1>",
+        "thread_id": "thread_lrJcjGziB8PBxERgX0mgjgK3",
+        "question": "In a quaint village, there are three types of fruits being sold at a local market. Apples are sold at \\$2 per kilogram, oranges at \\$3 per kilogram, and bananas at \\$1 per kilogram. A fruit vendor determines to mix these fruits and put together a fruit basket weighing a total of 10 kilograms. If the vendor wants to ensure that the weight of bananas is at least 2 kilograms but not more than 4 kilograms, how many kilograms of apples and oranges combined does the vendor need to include in the basket, provided that the weight of apples must be twice that of oranges? What are the possible weight combinations for apples and oranges under these constraints?",
+        "title": "Weight Combinations of Fruits in a Market Basket",
+        "solution": "<p>To solve the problem, we start by expressing the weight of apples and oranges using the given relationships:</p> <p>Let:</p> <ul> <li>Weight of apples = a</li> <li>Weight of oranges = o</li> <li>Weight of bananas = b</li> </ul> <p>According to the problem:</p> <ul> <li>The relationship between apples and oranges is: \\( a = 2o \\)</li> <li>And the total weight equation is: \\( a + o + b = 10 \\)</li> </ul> <p>Substituting the expression for apples into the total weight equation gives:</p> <p>\\( 2o + o + b = 10 \\)</p> <p>This simplifies to:</p> <p>\\( 3o + b = 10 \\)</p> <p>From this, we can express the weight of bananas as:</p> <p>\\( b = 10 - 3o \\)</p> <p>Next, we have the constraints for the weight of bananas:</p> <ul> <li>Minimum weight of bananas: \\( b \\geq 2 \\)</li> <li>Maximum weight of bananas: \\( b \\leq 4 \\)</li> </ul> <p>Setting these inequalities we find:</p> <p>For minimum weight:</p> <p>\\( 10 - 3o \\geq 2 \\Rightarrow 3o \\leq 8 \\Rightarrow o \\leq \\frac{8}{3} \\approx 2.67 \\)</p> <p>For maximum weight:</p> <p>\\( 10 - 3o \\leq 4 \\Rightarrow 3o \\geq 6 \\Rightarrow o \\geq 2 \\)</p> <p>Thus, the possible values of weight of oranges satisfying the conditions are approximately:</p> <ul> <li>2 kg</li> <li>2.33 kg</li> <li>2.67 kg</li> </ul> <p>Therefore, the combined weight of apples and oranges must be represented within these conditions.</p>",
+        "options": [
+          "2.67 kg",
+          "2.33 kg",
+          "1.83 kg",
+          "3.67 kg"
+        ],
+        "answer": "2.67 kg",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Critical Reasoning> - <Ratio and Proportion> - <difficulty_level: 1>",
+        "thread_id": "thread_MgSFJObuZmmmMhA2M9Bc86yu",
+        "question": "In a local bakery, the ratio of chocolate muffins to blueberry muffins is 4:3. If there are a total of 70 muffins in the bakery, how many chocolate muffins are there? To solve the problem, you must find the total parts represented by the ratio and then determine the portion that corresponds to chocolate muffins.",
+        "title": "Finding the Number of Chocolate Muffins in a Bakery Based on Ratios",
+        "solution": "To find the number of chocolate muffins, follow these steps:<br>1. The ratio of chocolate muffins to blueberry muffins is given as 4:3.<br>2. First, calculate the total parts in the ratio: \\(4 + 3 = 7\\).<br>3. To find the number of chocolate muffins, use the ratio: \\(\\frac{4}{7} \\times 70 = 40\\).<br>Thus, the total number of chocolate muffins is \\(40\\).",
+        "options": [
+          "40.0",
+          "50.0",
+          "30.0",
+          "30.0"
+        ],
+        "answer": "40.0",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Critical Reasoning",
+          "Ratio and Proportion"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <Logical Reasoning> - <Unitary Method> - <difficulty_level: 2>",
+        "thread_id": "thread_ND38yfejoymFJlLy2ruJ0SbC",
+        "question": "In a peculiar town known for its annual strawberry festival, the local farmers decided to distribute their strawberries in unique ways to attract more visitors. Farmer A sells his strawberries at a price of \\$3 per kilogram, while Farmer B sells his strawberries at \\$4 per kilogram. This year, Farmer A managed to sell 36 kilograms, which resulted in total proceeds of \\$108. Meanwhile, Farmer B reported an interesting outcome this season; for every kilogram sold, he noticed that if he sold twice as many kilograms as Farmer A, his earnings would total \\$X. If Farmer B sold 25 kilograms of strawberries this season, how much did he earn in total, and was he correct in his assumption? Calculate the total earnings and provide an explanation for the values used in your calculations.",
+        "title": "Earnings Comparison of Two Farmers at the Strawberry Festival",
+        "solution": "<p>Farmer A sold his strawberries at a price of \\$3 per kilogram. He sold 36 kilograms. The total earnings for Farmer A can be calculated as:</p>\n\n<p>\\(\\text{Total Earnings of Farmer A} = \\text{Price} \\times \\text{Kilograms Sold} = 3 \\times 36 = \\$108\\)</p>\n\n<p>Farmer B sells his strawberries at \\$4 per kilogram. He sold 25 kilograms. The total earnings for Farmer B can be calculated as:</p>\n\n<p>\\(\\text{Total Earnings of Farmer B} = \\text{Price} \\times \\text{Kilograms Sold} = 4 \\times 25 = \\$100\\)</p>\n\n<p>Thus, Farmer A earned \\$108 while Farmer B earned \\$100.</p>",
+        "options": [
+          "90",
+          "104",
+          "96",
+          "100"
+        ],
+        "answer": "100",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "Logical Reasoning",
+          "Unitary Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Algebraic Equations> - <difficulty_level: 5>",
+        "thread_id": "thread_DxLLNzmY8B73eayuOIpL220n",
+        "question": "In a certain town, the population is represented by the equation 2x + 3y = 79 and the number of schools is given by y = \\frac{b}{x} + 5, where x represents the number of students and y represents the number of schools. If it is known that the number of students exceeds 40 by at least 7, which of the following values of x would satisfy both equations under the restriction that y must be an integer?",
+        "title": "Finding the Number of Students and Schools in a Town Based on Given Equations",
+        "solution": "To solve for the number of students (x) and schools (y), we start with the two equations given:<br> <br> 1. \\( 2x + 3y = 79 \\) <br> 2. \\( y = \\frac{8}{x} + 5 \\)<br> <br> Substituting the second equation into the first gives us:<br> \\( 2x + 3\\left(\\frac{8}{x} + 5\\right) = 79 \\)<br> Simplifying this equation leads to:<br> \\( 2x + \\frac{24}{x} + 15 = 79 \\)<br> which further reduces to:<br> \\( 2x + \\frac{24}{x} = 64 \\)<br> Multiplying through by x to eliminate the fraction results in:<br> \\( 2x^{2} - 64x + 24 = 0 \\)<br> Solving this quadratic equation using the quadratic formula yields two potential values for x:<br> \\( x = 16 - 2\\sqrt{61} \\) and \\( x = 2\\sqrt{61} + 16 \\).<br> Since we are looking for the integer value where the number of students exceeds 47 by 7, we take the second potential value which results in approximately 31.62. Therefore, the valid choice for the number of students is around 31, ensuring y remains an integer.",
+        "options": [
+          "37",
+          "30",
+          "32",
+          "42",
+          "29"
+        ],
+        "answer": "32",
+        "difficulty": 5,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Algebraic Equations"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Backsolving> - <Inequalities> - <difficulty_level: 3>",
+        "thread_id": "thread_JPkZ7o0ZQ9wZlJssyk0DjIHf",
+        "question": "In a local theatre, the management has decided to set up an event where tickets are sold in two categories: Category A, which costs \\$15 each, and Category B, which costs \\$25 each. The theatre has a maximum seating capacity of 200 and seeks to achieve at least \\$3,000 in total ticket sales. If the number of tickets sold for Category A is represented by x and the number of tickets sold for Category B is represented by y, which of the following inequalities correctly represents the situation described, taking into account the limits on the seating and the sales threshold?",
+        "title": "Inequalities in Theatre Ticket Sales",
+        "solution": "<p>To represent the data given in the problem, we start with two key inequalities:</p>\n<ul>\n<li>1. The total ticket revenue must be at least \\$3000:</li>\n<p>\\(15x + 25y \\geq 3000\\)</p>\n<li>2. The total number of tickets sold must not exceed the seating capacity of 200:</li>\n<p>\\(x + y \\leq 200\\)</p>\n</ul>\n<p>Now, we can solve each inequality for y:</p>\n<ul>\n<li>From the first inequality:</li>\n<p>\\(y \\geq 120 - \\frac{3}{5}x\\)</p>\n<li>From the second inequality:</li>\n<p>\\(y \\leq 200 - x\\)</p>\n</ul>\n<p>With these derived expressions of y, we can analyze the constraints on ticket sales and seating arrangements.</p>",
+        "options": [
+          "15x + 25y >= 3000 and x + y >= 200",
+          "15x + 25y > 3000 and x + y < 200",
+          "15x + 20y >= 3000 and x + y <= 200",
+          "15x + 25y >= 3000 and x + y <= 200"
+        ],
+        "answer": "15x + 25y >= 3000 and x + y <= 200",
+        "difficulty": 3,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Backsolving",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Number Sense> - <Percentages> - <difficulty_level: 5>",
+        "thread_id": "thread_90cvGOKXN7OCgeWsJJx9KJo4",
+        "question": "In a region known for its rare and exquisite flowers, a boutique florist specializes in creating stunning floral arrangements for various occasions. One day, the florist received an order for a grand wedding event that requested 150 white roses, 200 red tulips, and 250 blue orchids. Each type of flower has a different price based on its rarity. The white roses are priced at $3 each, the red tulips at $2.5 each, and the blue orchids at $4 each. As the florist plans the arrangement, they also need to consider an extra budget of 15% for transportation costs and a 10% discount on the total price due to a special vendor relationship. If the florist wants to achieve a profit margin of at least 20% on the final price, what should be the minimum selling price that the florist should charge for the wedding arrangements? Take each step carefully to ensure all costs, discounts, and desired profits are accurately considered, and calculate the final amount the florist should charge, rounding to the nearest cent.",
+        "title": "Florist's Pricing Dilemma: Calculating Minimum Selling Price for Wedding Arrangements",
+        "solution": "Solution not available",
+        "options": [
+          "$2572.81",
+          "$2422.81",
+          "$2522.81",
+          "$2322.81"
+        ],
+        "answer": "$2522.81",
+        "difficulty": 5,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Number Sense",
+          "Percentages"
+        ]
+      }
+    ]
+  },
+  "GMAT_V": {
+    "section0": [
+      {
+        "type": "CR",
+        "prompt": "<philosophy> - <CR> - <draw inference/conclusion> - <difficulty_level: 4>",
+        "thread_id": "thread_fGnspxdYPaTiWBmf9MyCJUoD",
+        "content": {
+          "passages": [
+            "In recent years, a new philosophy has emerged advocating for the significance of emotional intelligence over traditional cognitive intelligence. Proponents argue that understanding and managing emotions is fundamental not only in personal relationships but also in professional environments. They assert that leaders who possess high emotional intelligence are more effective in fostering teamwork and motivating their subordinates. Furthermore, studies indicate that teams led by emotionally intelligent leaders tend to outperform those led by leaders lacking in this skill. Critics, however, question whether emotional intelligence is truly more important than cognitive intelligence in decision-making processes. They cite instances where analytical skills and technical knowledge have led to significant breakthroughs in various fields. As the debate continues, many organizations are starting to prioritize emotional intelligence training alongside traditional cognitive skill development.",
+            "The philosophy of utilitarianism posits that the best action is the one that maximizes utility, generally defined as that which produces the greatest well-being of the greatest number of people. This approach is often applied in ethical reasoning and policy-making. Proponents of utilitarianism argue that it provides a clear framework for evaluating the consequences of actions and choices. However, critics claim that utilitarianism can sometimes lead to morally questionable decisions if the overall utility justifies harming a minority. Despite these criticisms, recent studies in social behavior indicate that societies tend to favor utilitarian principles when making collective decisions, suggesting that such philosophies may strongly influence public policy and societal norms. As more leaders and policymakers embrace these principles, there is a growing question about the long-term implications of utilitarianism on ethical standards and individual rights."
+          ]
+        },
+        "question": "Based on the philosophy of utilitarianism discussed in the passage, what can be inferred about its influence on modern ethical decision-making?",
+        "title": "Inferences on Utilitarianism's Impact on Ethical Decisions",
+        "answer": "Utilitarian principles likely contribute to a more collective approach in ethical decision-making.",
+        "options": [
+          "Societal norms are increasingly ignoring utilitarian principles.",
+          "Utilitarianism has no significant influence on public policy.",
+          "Utilitarian principles likely contribute to a more collective approach in ethical decision-making.",
+          "Individual rights are prioritized over the well-being of the majority in utilitarian ethics.",
+          "Utilitarianism has been completely rejected in modern ethical discussions."
+        ],
+        "solution": "The correct answer is B: <br> Utilitarian principles likely contribute to a more collective approach in ethical decision-making. The passage indicates that societies tend to favor utilitarian principles when making collective decisions, suggesting a significant influence on modern ethical reasoning. <o> <br> Option A is incorrect because the passage does not state that utilitarianism has been completely rejected; rather, it highlights an ongoing debate. <o> <br> Option C is incorrect, as the passage emphasizes that utilitarianism may lead to morally questionable decisions, but it does not imply that individual rights are prioritized. <o> <br> Option D is incorrect because the passage suggests that utilitarianism does influence public policy, indicating its relevance and effectiveness. <o> <br> Option E is also incorrect as it contradicts the evidence presented in the passage regarding the acceptance of utilitarian principles in social decision-making.",
+        "difficulty": 4,
+        "tag": [
+          "philosophy",
+          "CR",
+          "draw inference/conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<physical_sciences> - <CR> - <complete the argument> - <difficulty_level: 1>",
+        "thread_id": "thread_3mAB3hRR6CEMBiCM3w3yZJIS",
+        "content": {
+          "passages": [
+            "Recent advancements in solar energy technology have made it significantly more efficient and accessible. As a result, many households are not only adopting solar panels for their energy needs but are also selling excess energy back to the grid. This shift indicates a move toward a more sustainable and economically viable energy future. Therefore, if more households transition to solar energy technologies, the overall carbon footprint of residential energy consumption will be greatly reduced.",
+            "In recent years, researchers have discovered that exercise has not only physical benefits but also significant mental health benefits. Studies show that regular physical activity can alleviate symptoms of anxiety and depression. This is particularly important as mental health issues continue to rise globally. Therefore, if schools incorporate more physical activity into their curriculums, students will likely experience improved mental health and overall well-being."
+          ]
+        },
+        "question": "Which of the following, if true, would most logically complete the argument presented in the passage about the benefits of physical activity in schools?",
+        "title": "Completing the Argument on Physical Activity Benefits in Schools",
+        "answer": "Research shows that students who engage in physical activity have lower stress levels.",
+        "options": [
+          "Physical activity can also lead to injuries if not managed properly.",
+          "Most students prefer sedentary activities over physical exercise.",
+          "Research shows that students who engage in physical activity have lower stress levels.",
+          "Increased physical activity leads to higher academic performance among students.",
+          "Many students are unable to participate in sports due to various barriers."
+        ],
+        "solution": "The correct answer is E. Research shows that students who engage in physical activity have lower stress levels, which directly supports the argument that incorporating physical activity into school curriculums will improve mental health and overall well-being.<br><o>Option A is incorrect because while it mentions barriers to participation, it does not strengthen the conclusion about the positive impacts of exercise on mental health.<br><o>Option B is incorrect because, although it discusses academic performance, it does not explicitly address mental health benefits.<br><o>Option C is incorrect as it introduces a negative aspect of physical activity but fails to complete the argument in a way that supports the conclusion.<br><o>Option D is also incorrect since it highlights student preferences for sedentary activities, which undermines the argument rather than completing it.",
+        "difficulty": 1,
+        "tag": [
+          "physical_sciences",
+          "CR",
+          "complete the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<culture> - <CR> - <draw inference/conclusion> - <difficulty_level: 1>",
+        "thread_id": "thread_xII34iipdEgaBz0swNtLgxN4",
+        "content": {
+          "passages": [
+            "In recent years, a significant rise in vegetarianism has been observed in urban populations across various countries. This increase is often attributed to heightened awareness of health issues, environmental concerns, and animal rights. In many cities, vegetarian restaurants are flourishing, and more grocery stores are stocking plant-based products than ever before. Surveys indicate that younger generations are particularly inclined towards adopting vegetarian diets, suggesting that this trend may lead to lasting changes in dietary habits. Given these observations, it can be inferred that urban culture is evolving to become more health-conscious and ethical.",
+            "Recent studies have shown that social media platforms are profoundly influencing youth culture. Teenagers increasingly rely on these platforms for entertainment, information, and connection with peers. As a result, traditional forms of communication, such as face-to-face interactions and phone calls, have seen a decline. Furthermore, a survey revealed that 75% of teenagers prefer to share experiences online rather than in person. This evidence suggests that social media not only shapes their interests and opinions but also alters the way they build relationships, indicating a shift in cultural norms among younger generations."
+          ]
+        },
+        "question": "Based on the passage, what can be concluded about the impact of social media on youth culture?",
+        "title": "Impact of Social Media on Youth Culture",
+        "answer": "Teenagers are increasingly sharing experiences online over traditional communication methods.",
+        "options": [
+          "Social media is leading to more face-to-face interactions among teenagers.",
+          "Traditional media sources are gaining popularity among the youth.",
+          "Teenagers prefer obtaining information from books rather than online sources.",
+          "Teenagers are increasingly sharing experiences online over traditional communication methods.",
+          "Social media has no significant effect on the way teenagers connect with each other."
+        ],
+        "solution": "The correct answer is B: Teenagers are increasingly sharing experiences online over traditional communication methods.<br> This statement accurately reflects the passage's conclusion that teenagers prefer to share their experiences on social media rather than through face-to-face interactions, indicating a shift in cultural norms.<br> <o>Option A is incorrect because the passage states that traditional forms of communication, such as face-to-face interactions, have declined due to social media use.<br> <o>Option C is incorrect as the passage does not mention any increased popularity of traditional media sources.<br> <o>Option D is incorrect because the passage clearly indicates that social media has a significant influence on how teenagers connect with one another.<br> <o>Option E is incorrect as the passage does not discuss teenagers' preferences for obtaining information from books over online sources.",
+        "difficulty": 1,
+        "tag": [
+          "culture",
+          "CR",
+          "draw inference/conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<social_sciences> - <CR> - <draw inference/conclusion> - <difficulty_level: 4>",
+        "thread_id": "thread_jz9P0ZbmnKjbJoXJWYuYS5Xy",
+        "content": {
+          "passages": [
+            "Recent research shows that urban parks significantly enhance the quality of life for city residents. A study conducted in various metropolitan areas revealed that individuals living near parks reported higher levels of physical activity, improved mental health, and greater community engagement. Despite these positive outcomes, many urban parks are underfunded and suffer from neglect. Consequently, urban planners argue that investment in parks is crucial for fostering healthy communities. The data suggests that increased park funding could lead to better public health outcomes. However, some critics claim that the benefits of parks are overstated and that funds could be allocated to other pressing needs, such as housing or transportation infrastructure.",
+            "A recent study by the Institute for Urban Development found that people who utilize public libraries are more likely to be involved in civic activities, such as volunteering and voting, than those who do not. The study surveyed several communities and noted that in areas with well-resourced libraries, residents engaged in democratic processes at significantly higher rates. Library advocates argue that this indicates a link between access to information and active civic participation. However, skeptics remind us that correlation does not imply causation, suggesting that those who frequent libraries might already be inclined towards civic involvement for other reasons. This leads to an ongoing debate about the true impact of public libraries on community engagement."
+          ]
+        },
+        "question": "Based on the findings of the study by the Institute for Urban Development, which of the following conclusions can be drawn regarding public libraries and civic engagement?",
+        "title": "Impacts of Public Libraries on Civic Engagement",
+        "answer": "The findings support the idea that using libraries correlates with increased civic participation.",
+        "options": [
+          "The findings support the idea that using libraries correlates with increased civic participation.",
+          "Access to public libraries has no relationship with community voting rates.",
+          "Public libraries are essential for fostering civic engagement among residents.",
+          "Only well-resourced libraries contribute to democratic processes in their communities.",
+          "Individuals who use public libraries are more likely to have higher levels of education."
+        ],
+        "solution": "The correct answer is D: The findings support the idea that using libraries correlates with increased civic participation.<br> <o>This option is directly supported by the study's conclusion that users of public libraries engage more in civic activities compared to non-users.</o><br> <o>Option A is too strong, as it states libraries are essential, while the study only shows correlation, not causation.</o><br> <o>Option B introduces an unrelated variable\u2014education\u2014without evidence from the passage.</o><br> <o>Option C incorrectly states that access to libraries has no relationship with voting rates, contradicting the findings of increased civic activity.</o><br> <o>Option E is misleading as it suggests that only well-resourced libraries have an impact, while the passage does not isolate the effect of resource levels.</o>",
+        "difficulty": 4,
+        "tag": [
+          "social_sciences",
+          "CR",
+          "draw inference/conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<philosophy> - <CR> - <evaluate the conclusion> - <difficulty_level: 1>",
+        "thread_id": "thread_SlqtjhIyAy7XAn3fGWrd3UoP",
+        "content": {
+          "passages": [
+            "Philosophers often argue about the nature of truth and its relationship to reality. Some contend that truth is an objective characteristic, independent of human perception, while others believe that truth is subjective, shaped by cultural and individual contexts. A recent debate highlighted this divide, with proponents of objective truth arguing that scientific discoveries reveal universal truths about the world, while advocates for subjective truth claim that different perspectives can lead to equally valid interpretations of realities. Ultimately, the discussion poses critical questions about how we evaluate the conclusions we draw from our experiences and observations.",
+            "In philosophy, the concept of moral relativism suggests that moral judgments are not absolute but rather shaped by cultural, societal, and personal influences. Proponents argue that what is considered right or wrong can vary from one society to another, and as such, no single moral framework should be viewed as superior. This position raises important considerations for ethical debates, as it challenges the validity of universal moral principles. Critics, however, argue that this view can lead to a dangerous tolerance of harmful practices, suggesting a need for some overarching moral standards. Thus, the ongoing discourse about moral relativism and its implications invites us to critically evaluate the conclusions drawn about ethics in a diverse world."
+          ]
+        },
+        "question": "Based on the passage, which of the following conclusions can be accurately drawn regarding moral relativism and its implications for ethical debates?",
+        "title": "Evaluating Conclusions on Moral Relativism in Ethical Debates",
+        "answer": "Critics of moral relativism argue for the necessity of universal moral standards to prevent harm.",
+        "options": [
+          "The debate on moral relativism is irrelevant to contemporary ethical considerations.",
+          "Critics of moral relativism argue for the necessity of universal moral standards to prevent harm.",
+          "Moral relativism suggests that all moral frameworks are equally valid regardless of their principles.",
+          "Moral relativism supports the idea that ethical practices can remain unchanged over time.",
+          "Proponents of moral relativism believe that only one cultural perspective should dominate moral discussions."
+        ],
+        "solution": "The correct answer is C: Critics of moral relativism argue for the necessity of universal moral standards to prevent harm.<br><o>This option accurately reflects the passage's discussion about how critics of moral relativism see the potential dangers of a lack of absolute ethical guidelines.</o><br><o>Option A is incorrect because it misrepresents moral relativism; while it recognizes different moral perspectives, it does not claim they are all equally valid without context.</o><br><o>Option B is also incorrect as it suggests that proponents of moral relativism advocate for a singular dominant perspective, which contradicts their fundamental belief in the multiplicity of moral views.</o><br><o>Option D is misleading since moral relativism recognizes that ethical practices may differ across cultures, implying that practices can evolve over time.</o><br><o>Lastly, option E is incorrect because the debate on moral relativism is highly relevant to contemporary ethical discussions, as evidenced by ongoing ethical dilemmas in diverse societies.</o>",
+        "difficulty": 1,
+        "tag": [
+          "philosophy",
+          "CR",
+          "evaluate the conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<philosophy> - <CR> - <find the assumption> - <difficulty_level: 2>",
+        "thread_id": "thread_25WaNfsW2t7T0hHUMxY1guey",
+        "content": {
+          "passages": [
+            "The philosophical notion of utilitarianism posits that the best action is one that maximizes utility, typically defined as that which produces the greatest well-being of the greatest number of people. Some critics argue that this approach fails to take into account the long-term consequences of actions, focusing instead on immediate outcomes. However, proponents claim that by prioritizing overall happiness, utilitarianism leads to more ethical decision-making. Therefore, they argue that when faced with a moral dilemma, one should always opt for the course of action that benefits the majority.",
+            "In examining moral philosophies, one often encounters deontological ethics, which assert that the morality of an action is based on whether that action itself is fundamentally right or wrong, regardless of the consequences. This view is contrasted with consequentialist theories, which judge actions based on their outcomes. A common assumption underlying deontological perspectives is that there are inherent moral rights and duties that do not depend on the potential results of an action. Thus, when making ethical decisions, it is crucial to recognize these moral imperatives."
+          ]
+        },
+        "question": "What assumption is made by the proponent of deontological ethics in the argument presented regarding moral actions and their consequences?",
+        "title": "Identify the assumption in deontological ethics regarding moral actions",
+        "answer": "There are actions that are inherently right or wrong regardless of outcomes.",
+        "options": [
+          "Ethical decisions are best made by considering the greatest good for the greatest number.",
+          "All moral actions must prioritize individual happiness over collective well-being.",
+          "Moral rights and duties are always determined by the consequences of actions.",
+          "Consequentialist theories provide a stronger framework for moral decision-making.",
+          "There are actions that are inherently right or wrong regardless of outcomes."
+        ],
+        "solution": "<o>The correct answer is B: 'There are actions that are inherently right or wrong regardless of outcomes.' This statement captures the core assumption of deontological ethics, which posits that moral actions are judged based on their own intrinsic nature rather than their consequences.</o><br><o>Option A is incorrect because it contradicts the foundational principle of deontology, which emphasizes that moral rights and duties exist independently of consequences.</o><br><o>Option C is incorrect as it references a consequentialist perspective rather than a deontological one, which does not prioritize outcomes in moral decision-making.</o><br><o>Option D is incorrect because it advocates for consequentialism, which deontological ethics explicitly stands against.</o><br><o>Option E is incorrect as it conflates deontological ethics with a perspective that prioritizes individual happiness over collective good, which is not a tenet of deontology.</o>",
+        "difficulty": 2,
+        "tag": [
+          "philosophy",
+          "CR",
+          "find the assumption"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<culture> - <CR> - <paradox> - <difficulty_level: 1>",
+        "thread_id": "thread_dqHNhqdmNO1xBo88LnkFRTyA",
+        "content": {
+          "passages": [
+            "In many societies, cultural practices are often seen as rigid and unchanging. However, historical evidence suggests that cultures are not static; they evolve over time in response to various factors such as globalization, technological advancements, and social movements. This presents a paradox: while many individuals may strongly identify with and cling to their cultural traditions, these very traditions may be changing or disappearing as society progresses. Hence, the question arises: how can a culture be both a source of identity and a subject to transformation?",
+            "Cultural identity is often perceived as a fixed and uniform characteristic that individuals possess. Yet, the reality is often contradictory. On one hand, people take pride in their heritage and maintain traditions that have been passed down through generations. On the other hand, exposure to different cultures through travel, migration, or technology frequently leads individuals to adopt new practices and beliefs that may dilute their original cultural identities. This raises a paradox: how can one claim to uphold their cultural heritage while simultaneously embracing influences from other cultures?"
+          ]
+        },
+        "question": "What is the paradox presented in the passage concerning cultural identity and its transformation?",
+        "title": "Understanding the Paradox of Cultural Identity and Transformation",
+        "answer": "Cultural practices evolve in response to external influences while still being embraced by individuals.",
+        "options": [
+          "Individuals can only maintain their cultural identity by completely rejecting outside influences.",
+          "Cultural practices evolve in response to external influences while still being embraced by individuals.",
+          "Cultural identity is solely based on rigid traditions that remain unchanged over time.",
+          "The transformation of culture is a recent phenomenon that has no historical precedent.",
+          "Cultural identity is only valuable when it remains static and unchanging."
+        ],
+        "solution": "The correct answer is B: <br> Cultural practices evolve in response to external influences while still being embraced by individuals. This option reflects the paradox described in the passage, where individuals maintain a sense of cultural identity even as they adapt to new influences. <br> <o> Option A is incorrect because it ignores the dynamic nature of cultural identity that the passage discusses. <br> <o> Option C is incorrect as it suggests that outside influences must be completely rejected, contradicting the concept of cultural evolution presented in the passage. <br> <o> Option D is incorrect because the passage implies that cultural transformation has been ongoing throughout history, not just a recent phenomenon. <br> <o> Option E is also incorrect because it fails to recognize that cultural identity can, and often does, incorporate change and adapt over time.",
+        "difficulty": 1,
+        "tag": [
+          "culture",
+          "CR",
+          "paradox"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<history> - <CR> - <complete the argument> - <difficulty_level: 1>",
+        "thread_id": "thread_dTCTIEQAqRJxm8PnxN2WrPeV",
+        "content": {
+          "passages": [
+            "The ancient Greeks made significant contributions to the fields of art, science, and philosophy, which have continued to influence modern civilization. For instance, their development of democratic principles laid the foundation for contemporary political systems. Furthermore, their innovative approaches in mathematics and geometry, such as the Pythagorean theorem, have shaped the way we understand the world today. Therefore, one can argue that without the contributions of the ancient Greeks, our understanding of democracy, art, and science would be markedly different.",
+            "During the Renaissance period, a revival of interest in classical knowledge began to spread across Europe. This movement not only led to advancements in art and architecture but also spurred significant progress in science and technology. For example, Leonardo da Vinci's studies of anatomy improved our understanding of the human body, while Galileo's innovations in astronomy changed how we perceive our place in the universe. Therefore, it can be concluded that the Renaissance was a pivotal time that not only celebrated the achievements of ancient civilizations but also laid the groundwork for modern scientific inquiry."
+          ]
+        },
+        "question": "Based on the passage, which of the following best completes the argument: 'Thus, the Renaissance not only revived classical knowledge but also ________.'",
+        "title": "Completion of the Argument on the Renaissance's Impact",
+        "answer": "initiated a new era of artistic expression and scientific exploration.",
+        "options": [
+          "initiated a new era of artistic expression and scientific exploration.",
+          "had minimal effects on the development of modern society.",
+          "led to a decline in philosophical thought and innovation.",
+          "restricted the progress of technology and science.",
+          "was solely focused on returning to ancient Greek art styles."
+        ],
+        "solution": "The correct answer is A: 'initiated a new era of artistic expression and scientific exploration.' This option logically follows the passage's argument that the Renaissance built upon classical knowledge and contributed significantly to advancements in various fields.<br> <o>Option B is incorrect because the passage highlights significant progress in philosophical thought during the Renaissance.</o> <br> <o>Option C is incorrect as the passage clearly states the profound impact of the Renaissance on modern society.</o> <br> <o>Option D is inaccurate because the passage discusses broader achievements beyond just the revival of Greek art.</o> <br> <o>Option E is also incorrect since the passage emphasizes advancements in technology and science rather than restrictions.</o>",
+        "difficulty": 1,
+        "tag": [
+          "history",
+          "CR",
+          "complete the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<history> - <CR> - <strengthen the argument> - <difficulty_level: 1>",
+        "thread_id": "thread_saGONnwUSx38AP959hsw9eJL",
+        "content": {
+          "passages": [
+            "Throughout history, many civilizations have thrived primarily due to their innovations in agricultural practices. For instance, the ancient Mesopotamians developed irrigation systems that allowed them to control water flow, which in turn significantly boosted their crop yields. This advancement in agriculture helped sustain larger populations and facilitated trade. Consequently, it is clear that agricultural innovation is not merely a supportive element but a critical factor in the success and expansion of civilizations.",
+            "The Renaissance, a period of significant cultural and intellectual revival in Europe, was largely fueled by the increased availability of printed materials. The invention of the printing press allowed for the rapid dissemination of ideas, particularly those related to science and philosophy. This surge in accessible knowledge not only inspired advancements in various fields but also empowered individuals to challenge traditional beliefs. Therefore, it can be posited that the printing press was instrumental in shaping the transformative nature of the Renaissance."
+          ]
+        },
+        "question": "Which of the following, if true, would most strengthen the argument that the printing press was instrumental in shaping the transformative nature of the Renaissance?",
+        "title": "Strengthening the Argument for the Printing Press's Role in the Renaissance",
+        "answer": "Many artists during the Renaissance were inspired by classical texts that were made widely available through printed materials.",
+        "options": [
+          "Prior to the printing press, handwritten manuscripts were limited to a small audience, limiting the spread of knowledge.",
+          "Many artists during the Renaissance were inspired by classical texts that were made widely available through printed materials.",
+          "The economic prosperity of cities during the Renaissance allowed for greater investment in literature and education.",
+          "The Renaissance was marked by a decline in religious influence, leading to a new focus on secular ideas.",
+          "The printing press was used exclusively for religious texts, contributing little to secular knowledge."
+        ],
+        "solution": "The correct answer is C. This statement directly supports the argument by indicating that classical texts, which were vital to the intellectual advancements of the Renaissance, became widely accessible because of the printing press. <br> <o> Option A, while true, only discusses the limitations of handwritten manuscripts without connecting it to the transformative nature of the Renaissance. <br> <o> Option B discusses a decline in religious influence but does not directly relate to how the printing press contributed to broader knowledge dissemination. <br> <o> Option D highlights economic prosperity but does not specifically address the role of the printing press. <br> <o> Option E contradicts the argument that the printing press was instrumental in shaping the Renaissance by suggesting it was only used for religious texts, thereby weakening the overall argument.",
+        "difficulty": 1,
+        "tag": [
+          "history",
+          "CR",
+          "strengthen the argument"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<physical_sciences> - <RC_3> - <difficulty_level: 5>",
+        "thread_id": "thread_Nlclt22pcdWrdxpzFpXPmGH0",
+        "content": {
+          "passages": [
+            "The study of thermodynamics, a fundamental branch of physics, delves into the principles governing energy transfer and the transformations it undergoes. It is critical for understanding both macroscopic systems, such as engines and refrigerators, and microscopic phenomena, including molecular interactions. One of the cornerstone concepts is the first law of thermodynamics, which asserts that energy cannot be created or destroyed, only converted from one form to another. This principle is not only applicable to theoretical scenarios but also crucial in real-world applications. Through the lens of thermodynamics, phenomena such as entropy reveal the tendency towards disorder in energy systems. Understanding these principles is essential for advancements in technology, particularly in areas like renewable energy and materials science.",
+            "Quantum mechanics, a pivotal theory in physics, fundamentally redefined our comprehension of matter and energy at the smallest scales. Central to quantum mechanics is the concept of wave-particle duality, which posits that particles can exhibit both wave-like and particle-like behaviors depending on the experimental setup. This is exemplified in the famous double-slit experiment, where light behaves as both a wave and a particle. Furthermore, quantum entanglement demonstrates the intricate connections between particles across vast distances, leading to the puzzling idea that the state of one particle can instantaneously affect another, regardless of the space separating them. These phenomena challenge classical intuitions, prompting a reconsideration of the nature of reality and its inherent limitations. The implications of quantum mechanics extend far beyond theoretical implications, influencing the development of technologies such as semiconductors and quantum computers, which hold the potential to revolutionize information processing.",
+            "The principles of electromagnetism play a vital role in both theoretical physics and practical applications, bridging the gap between electric and magnetic fields. Established by James Clerk Maxwell in the 19th century, Maxwell's equations describe how electric charges create electric fields and how changing magnetic fields generate electric currents. This interconnectivity is the foundation for understanding technologies including electric motors, generators, and wireless communication. One of the intriguing aspects of electromagnetism is the concept of electromagnetic waves, which propagate through space and are responsible for various phenomena such as light and radio waves. The implications of this theory extend into modern technologies, with applications in medical imaging through MRI and the use of lasers in various fields. As we delve deeper into electromagnetism, it embodies the unification of forces that govern both everyday life and advanced scientific phenomena, illustrating the profound interrelations of the physical universe."
+          ]
+        },
+        "title": "Exploring the Frontiers of Physical Sciences: Thermodynamics, Quantum Mechanics, and Electromagnetism",
+        "childQuestions": [
+          {
+            "question": "What can be inferred about the practical significance of thermodynamics, quantum mechanics, and electromagnetism in modern technology based on the passages?",
+            "title": "Implications of Physical Sciences in Technological Advancements",
+            "answer": "These scientific principles are essential for the development of innovative technologies, such as renewable energy and quantum computing.",
+            "options": [
+              "These scientific principles are essential for the development of innovative technologies, such as renewable energy and quantum computing.",
+              "Scientific advances in physics are solely confined to theoretical frameworks and do not translate into practical applications.",
+              "Understanding these concepts is primarily important for academic purposes and does not influence real-world technology.",
+              "The principles of physical sciences have no significant impact on contemporary technological applications."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: These scientific principles are essential for the development of innovative technologies, such as renewable energy and quantum computing.</p><p>This option accurately reflects the implications drawn from the passages, which discuss how thermodynamics, quantum mechanics, and electromagnetism are not only foundational theories but also crucial for advancing technology.</p><p><strong>B</strong>: The principles of physical sciences have no significant impact on contemporary technological applications. <em>This statement is incorrect as the passages highlight the direct applications of these scientific principles in various technologies.</em></p><p><strong>C</strong>: Understanding these concepts is primarily important for academic purposes and does not influence real-world technology. <em>The passages clearly indicate that these principles are vital for practical applications, thus this option is also incorrect.</em></p><p><strong>D</strong>: Scientific advances in physics are solely confined to theoretical frameworks and do not translate into practical applications. <em>This statement contradicts the essence of the passages, which emphasize the significant real-world applications of physical sciences.</em></p>",
+            "difficulty": -1,
+            "tags": [
+              "Inference (identify information that is implied in the passage, but not directly stated)"
+            ]
+          },
+          {
+            "question": "What can be inferred about the role of quantum mechanics in reshaping our understanding of reality based on the passages?",
+            "title": "The Transformative Role of Quantum Mechanics in Understanding Reality",
+            "answer": "Quantum mechanics fundamentally alters our perception of reality by introducing concepts such as wave-particle duality and entanglement.",
+            "options": [
+              "The principles of quantum mechanics are confirmed by classical physics, providing no significant change in our understanding of reality.",
+              "The theories in quantum mechanics support the idea that reality operates solely on deterministic principles.",
+              "Quantum mechanics leads to practical benefits only, without affecting theoretical frameworks.",
+              "Quantum mechanics fundamentally alters our perception of reality by introducing concepts such as wave-particle duality and entanglement."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Quantum mechanics fundamentally alters our perception of reality by introducing concepts such as wave-particle duality and entanglement.</p><p>This option accurately reflects the implications of the passage, which discusses how quantum mechanics challenges classical intuitions and prompts a reconsideration of the nature of reality.</p><p><strong>B</strong>: The principles of quantum mechanics are confirmed by classical physics, providing no significant change in our understanding of reality. <em>This statement is incorrect as the passage highlights that quantum mechanics challenges and redefines, rather than confirms, classical physics.</em></p><p><strong>C</strong>: Quantum mechanics leads to practical benefits only, without affecting theoretical frameworks. <em>This is incorrect since the passage emphasizes that quantum mechanics not only has practical applications but also alters theoretical understandings of reality.</em></p><p><strong>D</strong>: The theories in quantum mechanics support the idea that reality operates solely on deterministic principles. <em>This statement is inaccurate; the passage illustrates that quantum mechanics introduces indeterminacy and complexities that contradict purely deterministic views.</em></p>",
+            "difficulty": -1,
+            "tags": [
+              "Inference (identify information that is implied in the passage, but not directly stated)"
+            ]
+          },
+          {
+            "question": "According to the passage, what is a consequence of Maxwell's equations in relation to electricity and magnetism?",
+            "title": "Consequences of Maxwell's Equations in Electromagnetism",
+            "answer": "Maxwell's equations describe how electric charges create electric fields.",
+            "options": [
+              "Maxwell's equations emphasize that electric currents cannot generate magnetic fields.",
+              "Maxwell's equations provide an argument that electricity and magnetism are completely independent phenomena.",
+              "Maxwell's equations describe how electric charges create electric fields.",
+              "Maxwell's equations state that electric fields do not influence magnetic fields."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Maxwell's equations describe how electric charges create electric fields.</p><p>This statement is directly supported by the passage, which outlines that one of the key roles of Maxwell's equations is to explain the interaction between electric and magnetic fields.</p><p><strong>B</strong>: Maxwell's equations provide an argument that electricity and magnetism are completely independent phenomena. <em>This statement is incorrect as the passage illustrates that electricity and magnetism are interconnected through Maxwell's equations.</em></p><p><strong>C</strong>: Maxwell's equations emphasize that electric currents cannot generate magnetic fields. <em>This is inaccurate; the passage states that changing magnetic fields generate electric currents, contradicting this option.</em></p><p><strong>D</strong>: Maxwell's equations state that electric fields do not influence magnetic fields. <em>This statement is also incorrect since Maxwell's equations highlight the intricate relationship between electric and magnetic fields.</em></p>",
+            "difficulty": -1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          }
+        ],
+        "tags": [
+          "Inference (identify information that is implied in the passage, but not directly stated)",
+          "Inference (identify information that is implied in the passage, but not directly stated)",
+          "Detail (question on detail that is directly stated in the passage)"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<physical_sciences> - <RC_4> - <difficulty_level: 5>",
+        "thread_id": "thread_RD6QfdrsEOouqAQOZjVYyfRF",
+        "content": {
+          "passages": [
+            "In the study of physical sciences, the interactions between matter and energy reveal fundamental principles that govern the behavior of the universe. For instance, the relationship outlined by Einstein's theory of relativity indicates that energy can transform into mass, leading to the understanding that these two entities are interconnected. This relationship is not merely theoretical but has practical applications, such as in nuclear energy, where minute amounts of mass are converted into substantial energy. Moreover, the principles of thermodynamics further explicate how energy flows between systems, establishing laws that dictate heat transfer and efficiency in physical processes. By exploring these interactions, scientists can predict the outcomes of various phenomena, expanding our comprehension of both the microcosmic and macrocosmic scales of existence.",
+            "Advancements in physical sciences have illuminated the intricate patterns underlying natural phenomena, leading to revolutionary breakthroughs. Consider the quantum theory, which challenges classical notions by suggesting that particles exist in states of superposition, allowing them to occupy multiple states simultaneously until observed. This principle significantly alters our understanding of reality, presenting a nuanced perspective where determinism is replaced by probabilities. Applied to technologies such as semiconductors and lasers, quantum mechanics has catalyzed the development of modern electronics. Furthermore, the interplay of electromagnetism and gravity reveals the cohesive forces that not only shape cosmic structures but also dictate the fabric of spacetime. Such insights foster innovations in diverse fields, bridging theoretical physics and practical applications.",
+            "The exploration of physical sciences extends beyond mere observation; it is a pursuit of understanding the principles that underpin our reality. The standard model of particle physics encompasses the fundamental particles and forces, offering a framework that connects the macroscopic observations of the universe to the microscopic subatomic world. Through this model, scientists hypothesize the existence of the Higgs boson, a particle that endows mass to others through the Higgs field, thus providing insight into why matter has mass. In addition, thermodynamic principles elucidate the behavior of systems in equilibrium and the directionality of energy transformations. Through experiments and theoretical modeling, physicists strive to unify these expansive concepts, aiming to create a singular theory that encapsulates all known physical phenomena.",
+            "To grasp the complexities of physical sciences, one must consider the role of interdisciplinary research, which integrates principles from chemistry, biology, and environmental science. Recent investigations into climate change illustrate the intricate dynamics between human activity and natural systems, emphasizing the need for a comprehensive understanding of feedback loops and tipping points. For example, the increase of greenhouse gases not only raises global temperatures but also affects ocean currents and weather patterns, revealing interdependencies inherent to Earth's systems. This complexity necessitates sophisticated modeling techniques that employ data from various scientific fields to predict future scenarios. By engaging in such multi-faceted studies, researchers can devise strategies aimed at mitigating adverse environmental impacts and promoting sustainability. Such an approach underscores the importance of collaboration among scientists to address global challenges effectively."
+          ]
+        },
+        "title": "Interconnected Realities: Exploring the Frontiers of Physical Sciences",
+        "childQuestions": [
+          {
+            "question": "What is the primary strength of the argument presented in the passage regarding the interconnectedness of various scientific principles in understanding physical phenomena?",
+            "title": "Analyzing the Interconnectedness in Physical Sciences",
+            "answer": "The argument highlights how advancements in one scientific field can lead to breakthroughs in others, demonstrating their mutual reliance.",
+            "options": [
+              "The argument asserts that physical sciences operate independently of each other, thus emphasizing the uniqueness of each field.",
+              "The argument emphasizes that all physical phenomena are governed by strict deterministic laws, limiting the scope of scientific inquiry.",
+              "The argument highlights how advancements in one scientific field can lead to breakthroughs in others, demonstrating their mutual reliance.",
+              "The argument suggests that the complexities of climate change can be resolved through singular scientific approaches, reinforcing a limited perspective."
+            ],
+            "solution": "<p>The correct option is <strong>A</strong>: <em>The argument highlights how advancements in one scientific field can lead to breakthroughs in others, demonstrating their mutual reliance.</em> This reflects the passage's emphasis on the interdependencies among various scientific disciplines and how they collaborate to enhance our understanding of physical phenomena.</p> <p>Option <strong>B</strong> is incorrect because it contradicts the passage's assertion that different scientific fields are interconnected rather than independent.</p> <p>Option <strong>C</strong> is incorrect as the passage does not promote a singular approach to solving climate change, but rather highlights the need for an interdisciplinary method.</p> <p>Option <strong>D</strong> is also incorrect because the passage discusses the complexities and probabilistic nature of scientific laws, not a purely deterministic perspective.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Analyze the argument(analyze the strength of an argument made in the passage)"
+            ]
+          },
+          {
+            "question": "What can be inferred from the passage about the role of interdisciplinary research in addressing global challenges?",
+            "title": "Inference on Interdisciplinary Research in Global Challenges",
+            "answer": "Collaborative efforts among various scientific fields enhance the effectiveness of solutions to complex problems like climate change.",
+            "options": [
+              "Single-discipline studies are deemed sufficient to tackle environmental issues on their own.",
+              "Interdisciplinary research is primarily motivated by funding opportunities rather than a genuine interest in scientific collaboration.",
+              "Interdisciplinary research is considered less important than traditional approaches focused solely on physical sciences.",
+              "Collaborative efforts among various scientific fields enhance the effectiveness of solutions to complex problems like climate change."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: <em>Collaborative efforts among various scientific fields enhance the effectiveness of solutions to complex problems like climate change.</em> This inference aligns with the passage's discussion on the necessity of interdisciplinary research to understand and address environmental issues.</p> <p>Option <strong>A</strong> is incorrect because it misrepresents the passage; it suggests that interdisciplinary research is less important, while the passage advocates for its importance.</p> <p>Option <strong>C</strong> is incorrect since the passage argues for the complexity of environmental issues, implying that single-discipline studies may not suffice.</p> <p>Option <strong>D</strong> is also incorrect as the passage focuses on the significance of collaboration in scientific research, rather than suggesting motivations related to funding opportunities.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Inference (identify information that is implied in the passage, but not directly stated)"
+            ]
+          },
+          {
+            "question": "According to the passage, what scientific principle is described as providing insight into why matter has mass?",
+            "title": "Detail on the Principle of Matter and Mass",
+            "answer": "Einstein's theory of relativity",
+            "options": [
+              "The laws of thermodynamics",
+              "The principle of superposition",
+              "The standard model of particle physics",
+              "Einstein's theory of relativity"
+            ],
+            "solution": "<p>The correct option is <strong>C</strong>: <em>Einstein's theory of relativity</em>. The passage explicitly states that this theory provides insight into why matter has mass, particularly through the context of the Higgs boson and the Higgs field.</p> <p>Option <strong>A</strong> is incorrect because, while the standard model of particle physics is mentioned, it does not specifically address why matter has mass.</p> <p>Option <strong>B</strong> is incorrect as the laws of thermodynamics are discussed in relation to energy transformations but not directly linked to the concept of mass.</p> <p>Option <strong>D</strong> is also incorrect as the principle of superposition pertains to quantum mechanics, which does not directly explain the mass of matter as described in the passage.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "question": "What is the primary purpose of the passage regarding the field of physical sciences?",
+            "title": "Primary Purpose of the Passage on Physical Sciences",
+            "answer": "To highlight the interconnectedness of various scientific principles and the importance of interdisciplinary research.",
+            "options": [
+              "To highlight the interconnectedness of various scientific principles and the importance of interdisciplinary research.",
+              "To argue that physical sciences are ultimately subjective and depend on individual interpretations.",
+              "To provide a detailed analysis of specific physical laws and their mathematical formulations.",
+              "To explain the historical developments in physical sciences and their impact on society."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: <em>To highlight the interconnectedness of various scientific principles and the importance of interdisciplinary research.</em> The passage emphasizes how different scientific fields are connected and discusses the necessity of collaboration to address complex issues like climate change.</p> <p>Option <strong>A</strong> is incorrect because the passage does not focus on historical developments but rather on current scientific understandings and their applications.</p> <p>Option <strong>C</strong> is incorrect as the passage does not delve into specific physical laws or their mathematical formulations, but rather discusses broad principles and concepts.</p> <p>Option <strong>D</strong> is also incorrect since the passage does not present physical sciences as subjective; it discusses the objective nature of scientific inquiry and collaboration.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Primary Purpose (question on primary purpose of what that passage serves)"
+            ]
+          }
+        ],
+        "tags": [
+          "Analyze the argument(analyze the strength of an argument made in the passage)",
+          "Inference (identify information that is implied in the passage, but not directly stated)",
+          "Detail (question on detail that is directly stated in the passage)",
+          "Primary Purpose (question on primary purpose of what that passage serves)"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<history> - <RC_4> - <difficulty_level: 1>",
+        "thread_id": "thread_M34KBgkKzfFxxcV2Sco5lJFQ",
+        "content": {
+          "passages": [
+            "Throughout history, the development of civilizations has relied heavily on the exchange of ideas, goods, and cultural practices among different societies. Trade routes, such as the Silk Road, not only facilitated the movement of products like silk and spices but also acted as conduits for the spread of religious beliefs, innovations, and languages. This intricate network of interactions significantly contributed to the enrichment of diverse cultures, leading to advancements in art, science, and philosophy. As societies engaged with one another, they shared their histories and traditions, which reflected the interconnected nature of human experience and mutual influence in shaping the modern world.",
+            "The Renaissance, a period spanning the 14th to the 17th century, marked a profound transformation in various aspects of European society. Originating in Italy, this cultural movement emphasized a revival of learning based on classical sources, highlighting the importance of humanism. Artists, such as Leonardo da Vinci and Michelangelo, explored the intricacies of human anatomy and natural landscapes, producing masterpieces that continue to inspire awe. Furthermore, the invention of the printing press by Johannes Gutenberg revolutionized the dissemination of knowledge, enabling ideas to transcend geographical boundaries. This surge in intellectual inquiry and artistic expression laid the groundwork for the modern age, reshaping perspectives on art, science, and individual potential.",
+            "The Age of Exploration, occurring from the late 15th to the early 17th century, was a pivotal era characterized by European nations expanding their territories and influence across the globe. Driven by a desire for new trade routes and wealth, explorers like Christopher Columbus and Vasco da Gama ventured into uncharted waters. Their voyages led to the discovery of new lands, including the Americas and sea passages to India, fundamentally altering global commerce and cultural exchanges. However, this expansion brought about significant consequences, including the colonization of indigenous populations and the establishment of the transatlantic slave trade. Thus, while the Age of Exploration expanded horizons, it also initiated complex social and ethical dilemmas that resonate to this day.",
+            "The Industrial Revolution, which began in the late 18th century and continued into the 19th century, marked a major turning point in history. This era was characterized by the transition from agrarian economies to industrialized and urbanized societies. The introduction of machinery and technological innovations, such as the steam engine and spinning jenny, significantly increased production capacity and efficiency. Additionally, the rise of factories led to mass employment opportunities but also resulted in challenging working conditions for laborers. Urban centers expanded as people migrated for work, resulting in both socio-economic advancements and public health challenges. The ramifications of the Industrial Revolution are profound, laying the groundwork for the modern economy and influencing societal structures globally."
+          ]
+        },
+        "title": "Transformative Eras in History: Exploration, Renaissance, and Industrial Changes",
+        "childQuestions": [
+          {
+            "question": "What is the primary organizational structure used in the passage to discuss the major historical events such as the Renaissance, the Age of Exploration, and the Industrial Revolution?",
+            "title": "Organizational Structure of Historical Developments",
+            "answer": "Chronological order emphasizing the sequence of events.",
+            "options": [
+              "Discrete sections highlighting individual historical figures.",
+              "Chronological order emphasizing the sequence of events.",
+              "Thematic organization focusing on technological advancements.",
+              "Comparative analysis linking different cultural effects."
+            ],
+            "solution": "<p>The primary organizational structure used in the passage is:</p> <p><strong>A: Chronological order emphasizing the sequence of events.</strong> This option is correct because the passage discusses historical eras in the order they occurred (Renaissance, Age of Exploration, and Industrial Revolution), clearly illustrating their chronological development.</p> <p><strong>B: Comparative analysis linking different cultural effects.</strong> This option is incorrect as the passage does not primarily compare different cultural effects in a side-by-side format, but rather presents events in a sequential manner.</p> <p><strong>C: Thematic organization focusing on technological advancements.</strong> This option is not entirely accurate, since while technology is mentioned, the passage primarily focuses on distinct historical periods rather than categorizing them thematically based only on technological advancements.</p> <p><strong>D: Discrete sections highlighting individual historical figures.</strong> This option is incorrect because the passage discusses broader historical movements rather than isolating individual figures in separate sections.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          },
+          {
+            "question": "Based on the passage, what inference can be drawn about the impact of the Renaissance on future scientific developments?",
+            "title": "Inference on the Renaissance's Influence on Science",
+            "answer": "The emphasis on humanism during the Renaissance encouraged scientific exploration.",
+            "options": [
+              "The emphasis on humanism during the Renaissance encouraged scientific exploration.",
+              "The Renaissance stifled scientific innovation due to its focus on art.",
+              "The Renaissance had no significant impact on science according to the passage.",
+              "Scientific advancements were divorced from the intellectual climate of the Renaissance."
+            ],
+            "solution": "<p>The correct answer is:</p> <p><strong>C: The emphasis on humanism during the Renaissance encouraged scientific exploration.</strong> This option is correct because the passage describes the Renaissance as a period that emphasized humanism and a revival of learning, which inherently fostered an environment ripe for scientific inquiry and exploration.</p> <p><strong>A: The Renaissance stifled scientific innovation due to its focus on art.</strong> This option is incorrect as the passage suggests that the flourishing of arts and sciences occurred simultaneously, rather than one hindering the other.</p> <p><strong>B: Scientific advancements were divorced from the intellectual climate of the Renaissance.</strong> This option is incorrect because the passage implies that the intellectual climate of the Renaissance, characterized by humanism, was integral to the advances in various fields, including science.</p> <p><strong>D: The Renaissance had no significant impact on science according to the passage.</strong> This option is incorrect since the passage outlines how the Renaissance's cultural movements and emphasis on learning indeed laid the groundwork for future scientific developments.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Inference (identify information that is implied in the passage, but not directly stated)"
+            ]
+          },
+          {
+            "question": "Which technological innovation is credited to Johannes Gutenberg that had a significant impact during the Renaissance?",
+            "title": "Technological Innovation of the Renaissance",
+            "answer": "The printing press",
+            "options": [
+              "The spinning jenny",
+              "The mechanical clock",
+              "The steam engine",
+              "The printing press"
+            ],
+            "solution": "<p>The correct answer is:</p> <p><strong>C: The printing press.</strong> This option is correct because the passage explicitly states that Johannes Gutenberg's invention of the printing press revolutionized the dissemination of knowledge during the Renaissance, allowing ideas to spread more widely and efficiently.</p> <p><strong>A: The steam engine.</strong> This option is incorrect as the steam engine is associated with the later stages of the Industrial Revolution, not the Renaissance.</p> <p><strong>B: The spinning jenny.</strong> This option is also incorrect because the spinning jenny was an invention that emerged much later during the Industrial Revolution, significantly impacting textile production rather than the Renaissance.</p> <p><strong>D: The mechanical clock.</strong> This option is incorrect since while clocks were important for timekeeping, the passage does not attribute their invention or significance to Gutenberg or the Renaissance period specifically.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "question": "What is the primary purpose of the passage regarding transformative historical eras?",
+            "title": "Primary Purpose of the Passage on Historical Transformations",
+            "answer": "To illustrate the interconnectedness of major historical events and their impacts on society.",
+            "options": [
+              "To illustrate the interconnectedness of major historical events and their impacts on society.",
+              "To provide a detailed timeline of important inventions in history.",
+              "To highlight the negative consequences of exploration and industrialization.",
+              "To argue against the notion that art influences scientific progress."
+            ],
+            "solution": "<p>The correct answer is:</p> <p><strong>B: To illustrate the interconnectedness of major historical events and their impacts on society.</strong> This option is correct because the passage discusses the Renaissance, Age of Exploration, and Industrial Revolution as transformative periods that influenced each other and shaped modern society through cultural and technological advancements.</p> <p><strong>A: To highlight the negative consequences of exploration and industrialization.</strong> This option is incorrect as the passage does not solely focus on the negative consequences; it emphasizes the broader influence of these eras on progress and human experience.</p> <p><strong>C: To provide a detailed timeline of important inventions in history.</strong> This option is incorrect because the passage is not structured as a timeline or list of inventions, rather it provides a thematic discussion of historical movements.</p> <p><strong>D: To argue against the notion that art influences scientific progress.</strong> This option is incorrect since the passage supports the idea that art and science flourished together during the Renaissance, rather than opposing it.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Primary Purpose (question on primary purpose of what that passage serves)"
+            ]
+          }
+        ],
+        "tags": [
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)",
+          "Inference (identify information that is implied in the passage, but not directly stated)",
+          "Detail (question on detail that is directly stated in the passage)",
+          "Primary Purpose (question on primary purpose of what that passage serves)"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<psychology> - <RC_3> - <difficulty_level: 4>",
+        "thread_id": "thread_uVLhDrkqSMZZ0cbWHqf6hscn",
+        "content": {
+          "passages": [
+            "The study of psychology encompasses a vast array of topics concerned with the mind, behavior, and the complex interactions between individuals and their environments. Psychologists seek to understand not only the cognitive processes that underlie human actions but also the emotional and social factors that influence behavior. For instance, research indicates that societal norms and cultural backgrounds significantly shape an individual's self-perception and decision-making. The rise of cognitive-behavioral therapy exemplifies a paradigm shift in psychological treatment, emphasizing the interconnectedness of thought patterns, emotions, and behaviors. As such, psychologists are often tasked with tailoring interventions to meet the unique needs of diverse populations, thereby enhancing the efficacy of therapeutic practices.",
+            "In the realm of psychology, the concept of resilience has garnered significant interest, as it pertains to an individual's capacity to adapt in the face of adversity. Research illustrates that resilient individuals often possess certain traits, such as optimism, cognitive flexibility, and robust social support networks. These attributes not only help them navigate challenging situations but also allow them to thrive under pressure. Moreover, interventions aimed at fostering resilience, such as mindfulness training and positive psychology practices, have shown promise in enhancing emotional well-being. However, the relationship between resilience and mental health is complex, as various factors, including genetics and childhood experiences, interplay to shape an individual's resilience levels. Understanding these dynamics is crucial for developing effective therapeutic strategies and promoting mental health within communities.",
+            "The emergence of technology has profoundly influenced psychological research and practice, particularly through the advent of digital mental health tools. These innovations range from mobile applications designed for self-monitoring emotions to online therapy platforms connecting individuals with licensed therapists. The efficacy of such tools has become a focal point of contemporary studies, as they offer accessibility and convenience for a broader audience. However, questions remain about the potential drawbacks, including privacy concerns and the quality of care provided. Additionally, the integration of artificial intelligence in diagnostics and treatment raises ethical considerations, prompting discussions about the role of human empathy in psychological interventions. As technology continues to evolve, its implications for the future of psychological practice warrant careful examination and thoughtful discourse."
+          ]
+        },
+        "title": "The Interplay of Mind, Behavior, and Technology in Modern Psychology",
+        "childQuestions": [
+          {
+            "question": "According to the passage, which of the following traits is commonly associated with resilient individuals?",
+            "title": "Traits of Resilience in Psychology",
+            "answer": "Optimism",
+            "options": [
+              "Optimism",
+              "Pessimism",
+              "Social isolation",
+              "Cognitive inflexibility"
+            ],
+            "solution": "<p>The correct answer is <strong>C: Optimism</strong>. The passage explicitly states that resilient individuals often possess traits such as optimism, highlighting its importance in adapting to adverse situations.</p> <p><strong>A: Cognitive inflexibility</strong> is incorrect. The passage discusses cognitive flexibility as a trait associated with resilience, not inflexibility.</p> <p><strong>B: Pessimism</strong> is also incorrect. In contrast to optimism, pessimism would likely hinder resilience, making it an unsuitable choice.</p> <p><strong>D: Social isolation</strong> is incorrect. The passage mentions that robust social support networks are traits of resilient individuals, indicating that social isolation would not be a characteristic of resilience.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "question": "What can be inferred about the relationship between technology and mental health based on the passage?",
+            "title": "Implications of Technology on Mental Health",
+            "answer": "Technology can improve access to mental health services for a wider audience.",
+            "options": [
+              "The use of technology in psychology eliminates the need for human therapists.",
+              "Privacy concerns regarding digital tools are unfounded and negligible.",
+              "All digital mental health tools are considered effective and reliable.",
+              "Technology can improve access to mental health services for a wider audience."
+            ],
+            "solution": "<p>The correct answer is <strong>A: Technology can improve access to mental health services for a wider audience.</strong> The passage highlights how digital mental health tools offer accessibility and convenience, suggesting a positive relationship between technology and access to mental health services.</p> <p><strong>B: All digital mental health tools are considered effective and reliable.</strong> This option is incorrect as the passage raises questions about efficacy and potential drawbacks of these tools, indicating that not all are guaranteed to be effective.</p> <p><strong>C: The use of technology in psychology eliminates the need for human therapists.</strong> This statement is incorrect. The passage discusses the role of technology but also emphasizes the importance of human empathy in psychological interventions, indicating that therapists still have a vital role.</p> <p><strong>D: Privacy concerns regarding digital tools are unfounded and negligible.</strong> This is not supported by the passage; rather, it states that privacy concerns are a significant issue that needs consideration, making this option incorrect.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Inference (identify information that is implied in the passage, but not directly stated)"
+            ]
+          },
+          {
+            "question": "What psychological treatment approach is mentioned in the passage as an example of a paradigm shift?",
+            "title": "Key Psychological Treatment Approaches",
+            "answer": "Cognitive-Behavioral Therapy",
+            "options": [
+              "Humanistic Therapy",
+              "Cognitive-Behavioral Therapy",
+              "Gestalt Therapy",
+              "Psychoanalysis"
+            ],
+            "solution": "<p>The correct answer is <strong>A: Cognitive-Behavioral Therapy</strong>. The passage explicitly mentions this approach as an example of a paradigm shift in psychological treatment, highlighting its emphasis on the interconnectedness of thought patterns, emotions, and behaviors.</p> <p><strong>B: Psychoanalysis</strong> is incorrect. The passage does not mention psychoanalysis as an example of a recent shift in treatment approaches.</p> <p><strong>C: Humanistic Therapy</strong> is also incorrect. This approach is not referenced in the passage as a paradigm shift, so it does not fit the context.</p> <p><strong>D: Gestalt Therapy</strong> is incorrect as well. Similar to the previous options, gestalt therapy is not mentioned in the passage, making it an unsuitable answer.</p>",
+            "difficulty": -1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          }
+        ],
+        "tags": [
+          "Detail (question on detail that is directly stated in the passage)",
+          "Inference (identify information that is implied in the passage, but not directly stated)",
+          "Detail (question on detail that is directly stated in the passage)"
+        ]
+      }
+    ]
+  },
+  "GMAT_IR": {
+    "section0": [
+      {
+        "type": "GI",
+        "prompt": "GI - <Finance> - <Critical Thinking> - <Pie Chart> - <difficulty_level: 1>",
+        "thread_id": "thread_PEJjDrdtqYVE3NU4zuVSuoeq",
+        "content": [
+          {
+            "graph": "pie chart",
+            "title": "Budget Allocation for 2023",
+            "description": "This pie chart illustrates the distribution of an organization's budget for the year 2023 across various departments.",
+            "data": [
+              {
+                "label": "Marketing",
+                "value": 25
+              },
+              {
+                "label": "Research and Development",
+                "value": 35
+              },
+              {
+                "label": "Human Resources",
+                "value": 20
+              },
+              {
+                "label": "Operations",
+                "value": 15
+              },
+              {
+                "label": "IT",
+                "value": 5
+              }
+            ]
+          }
+        ],
+        "question": "The organization allocated __________% of its budget to Research and Development, while __________% was allocated to Operations.",
+        "title": "Budget Allocation Percentages for Departments",
+        "solution": "To find the percentages allocated to Research and Development and Operations, we can directly refer to the pie chart data: \n\n- The percentage allocated to Research and Development is given as 35\\%. \n- The percentage allocated to Operations is given as 15\\%. \n\nThus, the answers are: 35\\% for Research and Development and 15\\% for Operations.",
+        "options": [
+          [
+            "35, 15",
+            "30, 12",
+            "25, 10"
+          ],
+          [
+            "35, 20",
+            "25, 15",
+            "40, 5"
+          ]
+        ],
+        "answer": [
+          "35, 15",
+          "25, 15"
+        ],
+        "tags": [
+          "GI",
+          "Critical Thinking"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "TA",
+        "prompt": "TA - <Resource Management> - <Comparative Analysis> - <Simple Table> - <Inferred/Conflicting type> - <difficulty_level: 2>",
+        "thread_id": "thread_EULkNFb82sTiaAkmAS4VkBuZ",
+        "content": {
+          "tables": [
+            {
+              "table_name": "Resource Allocation Comparison",
+              "columns": [
+                {
+                  "Department": [
+                    "HR",
+                    "Finance",
+                    "IT",
+                    "Sales",
+                    "Marketing",
+                    "Operations"
+                  ]
+                },
+                {
+                  "Resources Allocated (in %)": [
+                    "30",
+                    "25",
+                    "20",
+                    "15",
+                    "5",
+                    "5"
+                  ]
+                },
+                {
+                  "Resources Needed (in %)": [
+                    "25",
+                    "30",
+                    "25",
+                    "10",
+                    "5",
+                    "5"
+                  ]
+                },
+                {
+                  "Efficiency Ratio": [
+                    "1.2",
+                    "0.83",
+                    "0.8",
+                    "1.5",
+                    "1",
+                    "1"
+                  ]
+                },
+                {
+                  "Budget Utilization (in $)": [
+                    "30000",
+                    "25000",
+                    "20000",
+                    "15000",
+                    "5000",
+                    "5000"
+                  ]
+                },
+                {
+                  "Performance Outcome": [
+                    "Good",
+                    "Average",
+                    "Average",
+                    "Excellent",
+                    "Poor",
+                    "Poor"
+                  ]
+                }
+              ],
+              "rows": [
+                "Row1",
+                "Row2",
+                "Row3",
+                "Row4",
+                "Row5",
+                "Row6"
+              ],
+              "data": [
+                [
+                  30,
+                  25,
+                  20,
+                  15,
+                  5,
+                  5
+                ],
+                [
+                  25,
+                  30,
+                  25,
+                  10,
+                  5,
+                  5
+                ],
+                [
+                  1.2,
+                  0.83,
+                  0.8,
+                  1.5,
+                  1,
+                  1
+                ],
+                [
+                  30000,
+                  25000,
+                  20000,
+                  15000,
+                  5000,
+                  5000
+                ],
+                [
+                  "Good",
+                  "Average",
+                  "Average",
+                  "Excellent",
+                  "Poor",
+                  "Poor"
+                ]
+              ]
+            }
+          ]
+        },
+        "question": "The table presents the allocation of resources among various departments within a company, highlighting both the percentage of resources allocated and necessary, along with efficiency ratios and performance outcomes. Based on this information, can we infer that the Sales department operates with the highest efficiency ratio compared to the other departments?",
+        "title": "Efficiency Comparison of Resource Allocation across Departments",
+        "solution": [
+          "Option A is incorrect because the Sales department has an efficiency ratio of 1.5, which is actually the highest among all departments.",
+          "Option B is correct as the IT department's efficiency ratio is 0.8, which is lower than Sales but higher than others like Finance and Marketing.",
+          "Option C is incorrect because while the Operations department has an efficiency ratio of 1, it is not close to the Sales department's efficiency ratio of 1.5."
+        ],
+        "options": [
+          "No, the IT department has a higher efficiency ratio than Sales.",
+          "Yes, but it's close to the Operations department's ratio.",
+          "Yes, the Sales department has the highest efficiency ratio."
+        ],
+        "answer": {
+          "Yes, the Sales department has the highest efficiency ratio.": "No",
+          "No, the IT department has a higher efficiency ratio than Sales.": "Yes",
+          "Yes, but it's close to the Operations department's ratio.": "No"
+        },
+        "tags": [
+          "TA",
+          "Comparative Analysis",
+          "Simple Table",
+          "Resource Management"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Strategy and Management> - <Synthesis of Information> - <Pie Chart> - <difficulty_level: 1>",
+        "thread_id": "thread_zdDzcPZKVnZhjrukjMX9WPV7",
+        "content": [
+          {
+            "graph": "pie chart",
+            "title": "Budget Allocation by Department",
+            "description": "This pie chart represents the distribution of the annual budget across various departments within the organization.",
+            "data": [
+              {
+                "label": "Marketing",
+                "value": 35
+              },
+              {
+                "label": "Research & Development",
+                "value": 25
+              },
+              {
+                "label": "Operations",
+                "value": 20
+              },
+              {
+                "label": "Human Resources",
+                "value": 10
+              },
+              {
+                "label": "Sales",
+                "value": 10
+              }
+            ]
+          }
+        ],
+        "question": "The budget allocated to __________ Marketing is greater than the amount allocated to __________ Human Resources.",
+        "title": "Budget Allocation Comparison Between Departments",
+        "solution": "To find the budget allocated to Marketing and Human Resources from the pie chart data, we note that the values are as follows: \\text{Marketing} = 35\\% \\text{ and } \\text{Human Resources} = 10\\%. Thus, we fill in the blanks with the corresponding values. The completed sentence is: The budget allocated to \\text{Marketing} is greater than the amount allocated to \\text{Human Resources}.",
+        "options": [
+          [
+            "35",
+            "30",
+            "40"
+          ],
+          [
+            "10",
+            "8",
+            "12"
+          ]
+        ],
+        "answer": [
+          "35",
+          "10"
+        ],
+        "tags": [
+          "GI",
+          "Synthesis of Information"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Marketing and Sales> - <Quantitative Reasoning> - <Bar Chart> - <difficulty_level: 1>",
+        "thread_id": "thread_fi0jHmHWjN4DhJgrCfHzUpOq",
+        "content": [
+          {
+            "graph": "bar chart",
+            "title": "Quarterly Sales Data",
+            "description": "This chart displays the sales figures of different products over four quarters.",
+            "x-axis": "Products",
+            "y-axis": "Sales (in USD)",
+            "data": [
+              {
+                "category": "Product A",
+                "Q1": 1000,
+                "Q2": 1200,
+                "Q3": 1500,
+                "Q4": 1700
+              },
+              {
+                "category": "Product B",
+                "Q1": 800,
+                "Q2": 950,
+                "Q3": 1100,
+                "Q4": 1300
+              },
+              {
+                "category": "Product C",
+                "Q1": 600,
+                "Q2": 750,
+                "Q3": 900,
+                "Q4": 1050
+              }
+            ]
+          }
+        ],
+        "question": "In Q1, the sales of ___________ were ___________ more than the sales of Product B.",
+        "title": "Comparison of Product A and Product B Sales in Q1",
+        "solution": "To find the sales of Product A and Product B in Q1:\n\n- Sales of Product A in Q1 = \\$1000\n- Sales of Product B in Q1 = \\$800\n\nNow, we calculate the difference:\n\nDifference = Sales of Product A - Sales of Product B = \\$1000 - \\$800 = \\$200\n\nThus, the sales of Product A were \\$200 more than the sales of Product B.",
+        "options": [
+          [
+            "Product B",
+            "Product A",
+            "Product C"
+          ],
+          [
+            "200",
+            "300",
+            "100"
+          ]
+        ],
+        "answer": [
+          "Product A",
+          "200"
+        ],
+        "tags": [
+          "GI",
+          "Quantitative Reasoning"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Economics> - <Synthesis of Information> - <Stacked Bar Chart> - <difficulty_level: 2>",
+        "thread_id": "thread_YQxfWhjAyJBGc4I4bsZSeNHo",
+        "content": [
+          {
+            "graph": "stacked bar chart",
+            "title": "Quarterly Revenue by Product Lines",
+            "description": "This chart shows the breakdown of total revenue by different product lines for each quarter.",
+            "x-axis": "Quarters",
+            "y-axis": "Revenue (in USD)",
+            "data": [
+              {
+                "category": "Q1",
+                "values": [
+                  {
+                    "region": "Product A",
+                    "value": 5000
+                  },
+                  {
+                    "region": "Product B",
+                    "value": 3000
+                  },
+                  {
+                    "region": "Product C",
+                    "value": 2000
+                  }
+                ]
+              },
+              {
+                "category": "Q2",
+                "values": [
+                  {
+                    "region": "Product A",
+                    "value": 6000
+                  },
+                  {
+                    "region": "Product B",
+                    "value": 4000
+                  },
+                  {
+                    "region": "Product C",
+                    "value": 3500
+                  }
+                ]
+              },
+              {
+                "category": "Q3",
+                "values": [
+                  {
+                    "region": "Product A",
+                    "value": 8000
+                  },
+                  {
+                    "region": "Product B",
+                    "value": 5000
+                  },
+                  {
+                    "region": "Product C",
+                    "value": 4500
+                  }
+                ]
+              },
+              {
+                "category": "Q4",
+                "values": [
+                  {
+                    "region": "Product A",
+                    "value": 9000
+                  },
+                  {
+                    "region": "Product B",
+                    "value": 5500
+                  },
+                  {
+                    "region": "Product C",
+                    "value": 5000
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "question": "The total revenue for Q3 is ___________ and for Q4 is ___________.",
+        "title": "Quarterly Revenue Analysis of Product Lines",
+        "solution": "To find the total revenue for each quarter, we can sum the revenue from all product lines for the specified quarters.\n\n1. For Q3:\n   Total Revenue Q3 = \text{Revenue of Product A} + \text{Revenue of Product B} + \text{Revenue of Product C}\n   \\\\;\n   Total Revenue Q3 = 8000 + 5000 + 4500 = 17500 \\\text{ (in USD)}\n\n2. For Q4:\n   Total Revenue Q4 = \text{Revenue of Product A} + \text{Revenue of Product B} + \text{Revenue of Product C}\n   \\\\;\n   Total Revenue Q4 = 9000 + 5500 + 5000 = 19500 \\\text{ (in USD)}\n\nTherefore, the total revenue for Q3 is 17500 and for Q4 is 19500.",
+        "options": [
+          [
+            "12000",
+            "17500",
+            "16500"
+          ],
+          [
+            "19000",
+            "18000",
+            "19500"
+          ]
+        ],
+        "answer": [
+          "17500",
+          "19500"
+        ],
+        "tags": [
+          "GI",
+          "Synthesis of Information"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "TPA",
+        "prompt": "TPA - <Logistics and Supply Chain> - <Critical Reasoning> - <Passage> - <difficulty_level: 2>",
+        "thread_id": "thread_NWEcbwS38159XNTBXQV6qEd9",
+        "content": [
+          {
+            "type": "Passage",
+            "passage": [
+              "In recent years, the logistics and supply chain industry has undergone significant changes due to advancements in technology and shifts in consumer demand. Companies are increasingly adopting automation and artificial intelligence to enhance efficiency and reduce operational costs.",
+              "However, implementing these technologies requires substantial investment and can pose risks if not properly managed. Companies must also consider the impact on their workforce, as automation may lead to job displacement while creating opportunities in tech-savvy roles.",
+              "To remain competitive, organizations are expected to adopt a holistic approach, balancing technology integration with a commitment to workforce development and sustainable practices."
+            ]
+          }
+        ],
+        "title": "Balancing Technology and Workforce Development in Logistics",
+        "questions": [
+          {
+            "question": "Based on the Quarterly Sales Data provided, which product had the highest total sales over the four quarters?",
+            "solution": "The passage discusses how logistics and supply chain companies are adopting technology while considering the associated risks and workforce implications. A critical aspect is how companies can balance technology integration and workforce development. A well-managed transition can yield benefits, while a poorly managed one could cause disruptions. Therefore, the best approach involves understanding both the technological needs and the workforce requirements.",
+            "answer": "A balanced approach requires investment in both technology and employee development.",
+            "options": [
+              "Automation will eliminate the need for a skilled workforce in logistics.",
+              "Job displacement is expected to be minimal with the integration of automation.",
+              "Companies should prioritize technology over workforce training to maximize efficiency.",
+              "A balanced approach requires investment in both technology and employee development.",
+              "All workforce impacts must be disregarded to focus on technology advancement."
+            ],
+            "difficulty": 1,
+            "tags": [
+              "Logistics and Supply Chain"
+            ]
+          },
+          {
+            "question": "Based on the data presented, what is the total sales amount for Product C across all four quarters?",
+            "solution": "The passage emphasizes the need for companies to adopt a holistic approach when integrating technology into their logistics and supply chain practices. This includes understanding the risks associated with automation and ensuring workforce development to mitigate job displacement. Companies should invest not only in technology but also in training programs for their employees to equip them for new roles. This balanced strategy can help organizations remain competitive while protecting their workforce.",
+            "answer": "A balanced approach requires investment in both technology and employee development.",
+            "options": [
+              "Automation will eliminate the need for a skilled workforce in logistics.",
+              "Job displacement is expected to be minimal with the integration of automation.",
+              "Companies should prioritize technology over workforce training to maximize efficiency.",
+              "A balanced approach requires investment in both technology and employee development.",
+              "All workforce impacts must be disregarded to focus on technology advancement."
+            ],
+            "difficulty": 2,
+            "tags": [
+              "Logistics and Supply Chain"
+            ]
+          }
+        ],
+        "tags": [
+          "TPA",
+          "Logistics and Supply Chain"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "TA",
+        "prompt": "TA - <Business> - <Critical Reasoning> - <Simple Table> - <Inferred/Conflicting type> - <difficulty_level: 1>",
+        "thread_id": "thread_wVsIo76zeEnNBdxLKZEmEKEw",
+        "content": {
+          "tables": [
+            {
+              "table_name": "Product Sales by Region",
+              "columns": [
+                "Region",
+                "Product A Sales",
+                "Product B Sales",
+                "Total Sales",
+                "Market Share (%)",
+                "Growth Rate (%)"
+              ],
+              "rows": [
+                "North",
+                "South",
+                "East",
+                "West",
+                "Central",
+                "Northeast"
+              ],
+              "data": [
+                [
+                  2000,
+                  1500,
+                  3500,
+                  30,
+                  10
+                ],
+                [
+                  3000,
+                  2000,
+                  5000,
+                  25,
+                  20
+                ],
+                [
+                  1500,
+                  2500,
+                  4000,
+                  20,
+                  15
+                ],
+                [
+                  4000,
+                  1000,
+                  5000,
+                  35,
+                  5
+                ],
+                [
+                  1600,
+                  2400,
+                  4000,
+                  10,
+                  25
+                ],
+                [
+                  2500,
+                  3000,
+                  5500,
+                  15,
+                  12
+                ]
+              ]
+            }
+          ]
+        },
+        "question": "The table displays the sales data for Product A and Product B across various regions along with the total sales, market share, and growth rate. Based on the sales information, can we conclude which region has the highest market share?",
+        "title": "Analysis of Regional Market Share in Product Sales",
+        "solution": [
+          "Option A is incorrect because the North region has a market share of 30%, which is not the highest among the regions listed.",
+          "Option B is correct as the South region has a market share of 25%, which, relative to the other regions, is the highest available in the provided data.",
+          "Option C is incorrect because while the West region has a market share of 35%, it is possible that it is inaccurately represented as it should be lower than what we observe in the South region."
+        ],
+        "options": [
+          "The North region has the highest market share.",
+          "The South region has the highest market share.",
+          "The West region has the highest market share."
+        ],
+        "answer": {
+          "The North region has the highest market share.": "No",
+          "The South region has the highest market share.": "Yes",
+          "The West region has the highest market share.": "No"
+        },
+        "tags": [
+          "TA",
+          "Critical Reasoning",
+          "Simple Table",
+          "Business"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Economics> - <Pattern Recognition> - <Scatter Plot> - <difficulty_level: 4>",
+        "thread_id": "thread_lIPsHKeCirhpbqOjJqnuT1GU",
+        "content": [
+          {
+            "graph": "scatter plot",
+            "title": "Advertising Spend vs. Sales Revenue",
+            "description": "This graph illustrates the relationship between advertising spend and corresponding sales revenue for various products.",
+            "x-axis": "Advertising Spend (in USD)",
+            "y-axis": "Sales Revenue (in USD)",
+            "data": [
+              {
+                "label": "Product A",
+                "x": 5000,
+                "y": 20000
+              },
+              {
+                "label": "Product B",
+                "x": 7000,
+                "y": 30000
+              },
+              {
+                "label": "Product C",
+                "x": 4000,
+                "y": 15000
+              },
+              {
+                "label": "Product D",
+                "x": 10000,
+                "y": 40000
+              },
+              {
+                "label": "Product E",
+                "x": 6000,
+                "y": 25000
+              }
+            ]
+          },
+          {
+            "graph": "line chart",
+            "title": "Sales Revenue Over Time",
+            "description": "This line chart shows the monthly sales revenue trends for the products over a six-month period.",
+            "x-axis": "Months",
+            "y-axis": "Sales Revenue (in USD)",
+            "data": [
+              {
+                "series": "Product A",
+                "values": [
+                  {
+                    "x": "January",
+                    "y": 5000
+                  },
+                  {
+                    "x": "February",
+                    "y": 7000
+                  },
+                  {
+                    "x": "March",
+                    "y": 8000
+                  },
+                  {
+                    "x": "April",
+                    "y": 6000
+                  },
+                  {
+                    "x": "May",
+                    "y": 9000
+                  },
+                  {
+                    "x": "June",
+                    "y": 10000
+                  }
+                ]
+              },
+              {
+                "series": "Product B",
+                "values": [
+                  {
+                    "x": "January",
+                    "y": 3000
+                  },
+                  {
+                    "x": "February",
+                    "y": 4000
+                  },
+                  {
+                    "x": "March",
+                    "y": 5000
+                  },
+                  {
+                    "x": "April",
+                    "y": 3500
+                  },
+                  {
+                    "x": "May",
+                    "y": 6000
+                  },
+                  {
+                    "x": "June",
+                    "y": 8000
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "question": "Based on the scatter plot above, when the advertising spend reaches ___________ USD, the sales revenue is predicted to be ___________ USD.",
+        "title": "Analyzing Advertising Spend and Sales Revenue Correlation",
+        "solution": "To solve the question, we will analyze the data from the scatter plot. We can observe the trend to identify the points that relate advertising spend to sales revenue. \\n\\nLet's calculate the predicted sales revenue when the advertising spend is \\$7000. Using the relation from the scatter plot: \\n\\nFor advertising spend \\$7000, sales revenue is approximately \\$30000 derived from the data points shown in the graph.\\n\\nThus, we fill in the blanks as follows:\\n\\n1. Advertising Spend = 7000 USD\\n2. Sales Revenue = 30000 USD\\n\\nHence the complete statement becomes: Based on the scatter plot above, when the advertising spend reaches \\$7000 USD, the sales revenue is predicted to be \\$30000 USD.",
+        "options": [
+          [
+            "5000",
+            "9000",
+            "7000"
+          ],
+          [
+            "20000",
+            "15000",
+            "30000"
+          ]
+        ],
+        "answer": [
+          "7000",
+          "30000"
+        ],
+        "tags": [
+          "GI",
+          "Pattern Recognition"
+        ],
+        "difficulty": 4
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Economics> - <Quantitative Reasoning> - <Line Chart> - <difficulty_level: 1>",
+        "thread_id": "thread_Pb1w8GS7MJwyqo0qnHTV7ur2",
+        "content": [
+          {
+            "graph": "line chart",
+            "title": "Annual Inflation Rate Over Five Years",
+            "description": "This chart shows the changes in annual inflation rates from 2018 to 2022.",
+            "x-axis": "Years",
+            "y-axis": "Inflation Rate (%)",
+            "data": [
+              {
+                "series": "Inflation Rate",
+                "values": [
+                  {
+                    "x": "2018",
+                    "y": 2.1
+                  },
+                  {
+                    "x": "2019",
+                    "y": 1.8
+                  },
+                  {
+                    "x": "2020",
+                    "y": 1.2
+                  },
+                  {
+                    "x": "2021",
+                    "y": 4.7
+                  },
+                  {
+                    "x": "2022",
+                    "y": 7.0
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "question": "The inflation rate in 2021 was __________ while the inflation rate in 2022 increased to __________.",
+        "title": "Inflation Rate Changes from 2021 to 2022",
+        "solution": "From the line chart, the inflation rate in 2021 is 4.7\\% and the inflation rate in 2022 increased to 7.0\\%. Therefore, we can write: \\text{Inflation Rate in 2021} = 4.7\\% \\text{ and } \\text{Inflation Rate in 2022} = 7.0\\%.",
+        "options": [
+          [
+            "5.0\\%, 8.0\\%",
+            "4.7\\%, 7.0\\%",
+            "4.5\\%, 6.5\\%"
+          ],
+          [
+            "5.5\\%, 7.5\\%",
+            "4.0\\%, 6.0\\%",
+            "3.5\\%, 5.0\\%"
+          ]
+        ],
+        "answer": [
+          "4.7\\%, 7.0\\%",
+          "3.5\\%, 5.0\\%"
+        ],
+        "tags": [
+          "GI",
+          "Quantitative Reasoning"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Budget> - <Attention to Detail> - <Line Chart> - <difficulty_level: 2>",
+        "thread_id": "thread_vKJtRqBr7ZrhVLyFEapCKoc8",
+        "content": [
+          {
+            "graph": "line chart",
+            "title": "Annual Marketing Budget Allocation Over Time",
+            "description": "This chart illustrates the trend of marketing budget allocation over four consecutive years.",
+            "x-axis": "Years",
+            "y-axis": "Budget Allocation (in USD)",
+            "data": [
+              {
+                "series": "Digital Marketing",
+                "values": [
+                  {
+                    "x": "2020",
+                    "y": 30000
+                  },
+                  {
+                    "x": "2021",
+                    "y": 40000
+                  },
+                  {
+                    "x": "2022",
+                    "y": 50000
+                  },
+                  {
+                    "x": "2023",
+                    "y": 65000
+                  }
+                ]
+              },
+              {
+                "series": "TV Advertising",
+                "values": [
+                  {
+                    "x": "2020",
+                    "y": 20000
+                  },
+                  {
+                    "x": "2021",
+                    "y": 25000
+                  },
+                  {
+                    "x": "2022",
+                    "y": 30000
+                  },
+                  {
+                    "x": "2023",
+                    "y": 40000
+                  }
+                ]
+              },
+              {
+                "series": "Print Advertising",
+                "values": [
+                  {
+                    "x": "2020",
+                    "y": 15000
+                  },
+                  {
+                    "x": "2021",
+                    "y": 10000
+                  },
+                  {
+                    "x": "2022",
+                    "y": 8000
+                  },
+                  {
+                    "x": "2023",
+                    "y": 5000
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "question": "Based on the line chart, the budget allocation for Digital Marketing in 2022 was ___________ and for TV Advertising in 2023 was ___________.",
+        "title": "Budget Allocation Trends in Marketing Over Four Years",
+        "solution": "To find the budget allocation for Digital Marketing in 2022 and TV Advertising in 2023, we can refer directly to the values indicated in the line chart. \\\\text{From the chart:} \\\\text{Digital Marketing in 2022: } 50000 \\\\text{TV Advertising in 2023: } 40000. \\\\text{Thus the values are: } 50000 \\text{ and } 40000.",
+        "options": [
+          [
+            "50000",
+            "45000",
+            "55000"
+          ],
+          [
+            "42000",
+            "38000",
+            "40000"
+          ]
+        ],
+        "answer": [
+          "50000",
+          "40000"
+        ],
+        "tags": [
+          "GI",
+          "Attention to Detail"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "TA",
+        "prompt": "TA - <Marketing and Sales> - <Data Synthesis> - <Simple Table> - <Acceptable/Not Acceptable type> - <difficulty_level: 2>",
+        "thread_id": "thread_ixWl5paxHNyqLNSqG3jtdqLr",
+        "content": {
+          "tables": [
+            {
+              "table_name": "Marketing and Sales Performance",
+              "columns": [
+                {
+                  "Region": [
+                    "North",
+                    "South",
+                    "East",
+                    "West",
+                    "Central"
+                  ]
+                },
+                {
+                  "Q1 Sales ($)": [
+                    15000,
+                    12000,
+                    9000,
+                    16000,
+                    11000
+                  ]
+                },
+                {
+                  "Q2 Sales ($)": [
+                    18000,
+                    15000,
+                    11000,
+                    17000,
+                    14000
+                  ]
+                },
+                {
+                  "Q3 Sales ($)": [
+                    21000,
+                    19000,
+                    13000,
+                    22000,
+                    16000
+                  ]
+                },
+                {
+                  "Q4 Sales ($)": [
+                    24000,
+                    20000,
+                    14000,
+                    25000,
+                    17000
+                  ]
+                },
+                {
+                  "Total Sales ($)": [
+                    78000,
+                    66000,
+                    49000,
+                    80000,
+                    60000
+                  ]
+                },
+                {
+                  "Performance Rating": [
+                    "Acceptable",
+                    "Not Acceptable",
+                    "Acceptable",
+                    "Acceptable",
+                    "Not Acceptable"
+                  ]
+                }
+              ],
+              "rows": [
+                "North",
+                "South",
+                "East",
+                "West",
+                "Central"
+              ],
+              "data": [
+                [
+                  15000,
+                  18000,
+                  21000,
+                  24000,
+                  78000,
+                  "Acceptable"
+                ],
+                [
+                  12000,
+                  15000,
+                  19000,
+                  20000,
+                  66000,
+                  "Not Acceptable"
+                ],
+                [
+                  9000,
+                  11000,
+                  13000,
+                  14000,
+                  49000,
+                  "Acceptable"
+                ],
+                [
+                  16000,
+                  17000,
+                  22000,
+                  25000,
+                  80000,
+                  "Acceptable"
+                ],
+                [
+                  11000,
+                  14000,
+                  16000,
+                  17000,
+                  60000,
+                  "Not Acceptable"
+                ]
+              ]
+            }
+          ]
+        },
+        "question": "The table above displays the sales performance by region for each quarter in a year, along with the total sales and the corresponding performance rating (Acceptable/Not Acceptable). Based on the data provided, can we determine if the sales performance in the South region is acceptable based on the total sales figures?",
+        "title": "Assessment of Sales Performance in the South Region",
+        "solution": [
+          "Option A is 'No' because the total sales in the South region amount to \\$66,000, which aligns with the 'Not Acceptable' performance rating indicated in the table.",
+          "Option B is 'Yes' as the total sales figure of \\$66,000 for the South region is explicitly marked as 'Not Acceptable' in the performance rating column.",
+          "Option C is 'No' since the performance rating for the South region is 'Not Acceptable', contrary to what this option suggests."
+        ],
+        "options": [
+          "The performance rating for the South region indicates its sales are acceptable.",
+          "The sales in the South region are not acceptable based on total sales.",
+          "The sales in the South region are acceptable based on total sales."
+        ],
+        "answer": {
+          "The sales in the South region are acceptable based on total sales.": "No",
+          "The sales in the South region are not acceptable based on total sales.": "Yes",
+          "The performance rating for the South region indicates its sales are acceptable.": "No"
+        },
+        "tags": [
+          "TA",
+          "Data Synthesis",
+          "Simple Table",
+          "Marketing and Sales"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Critical Reasoning> - <difficulty_level: 1>",
+        "thread_id": "thread_dbEpQbc97GYsnsyHXoaeWNti",
+        "content": {
+          "passages": "In a certain retail store, the relationship between the number of items sold (S) and the total revenue generated (R) is governed by the equation R = pS, where p is the price per item. The store owner wants to determine whether increasing the price per item will lead to a proportional increase in total revenue, given that sales data over the past year showed fluctuations caused by seasonal demand changes.",
+          "statements": [
+            "Statement 1: During the summer months, the average price per item sold was $15, while a promotional discount resulted in sales increasing by 30%.",
+            "Statement 2: In the autumn season, the price per item was raised to $20, yet the number of items sold decreased by 25% compared to the previous season."
+          ]
+        },
+        "question": "Based on the statements above, can we conclusively determine whether increasing the price per item will always result in increased total revenue?",
+        "title": "Impact of Price Increase on Revenue in a Retail Store",
+        "solution": "The statements provide information about price changes and their effects on sales but do not establish a definitive relationship between price increases and total revenue across all seasons. Therefore, while individual scenarios are discussed, we cannot conclude universally that increased prices will always result in higher revenue.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 1,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Arithmetic> - <Logical Reasoning> - <difficulty_level: 5>",
+        "thread_id": "thread_J2lcj96TbownN0UoArM5kZsV",
+        "content": {
+          "passages": "A certain factory produces widgets and gadgets. The production capacity for widgets is given by the equation W = 3X + 7, where X is the number of machines dedicated to widget production. Gadgets are produced using the same machines, but the efficiency decreases based on the equation G = 2(X - 5). Given that the total production of widgets and gadgets is limited to a maximum of 100 units per day, can you determine if the production capacity of gadgets can exceed 30 units on any given day?",
+          "statements": [
+            "Statement (1): The factory has a total of 10 machines available for production.",
+            "Statement (2): On a specific day, the factory produced 50 widgets."
+          ]
+        },
+        "question": "Is it possible for the production capacity of gadgets to exceed 30 units on any given day based on the above statements?",
+        "title": "Maximizing Gadget Production Capacity in a Factory Setup",
+        "solution": "By analyzing Statement (1), if there are 10 machines, W can be calculated as W = 3(10) + 7 = 37, leaving G = 100 - 37 = 63, which exceeds 30. Statement (2) indicates that 50 widgets were produced, hence G = 100 - 50 = 50, which also exceeds 30. Both statements alone suffice to confirm that gadget production can exceed 30 units independently.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 5,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Word Problems> - <Logical Reasoning> - <difficulty_level: 1>",
+        "thread_id": "thread_7hMsKaQQhFKoXl087bY8OrOy",
+        "content": {
+          "passages": "A company plans to increase its workforce by a certain percentage over the next year. Currently, the company employs 250 workers. The management anticipates that the percentage increase will directly affect productivity, but they are uncertain of the exact relationship between the increase in workforce and the anticipated output. Consequently, they have made plans to either hire additional workers or increase the productivity of current workers. The question remains: what percentage increase in workforce is necessary for the company to achieve an overall productivity increase of at least 10%?",
+          "statements": [
+            "Statement 1: If the workforce is increased by 30%, the productivity of the company is expected to increase by 12%.",
+            "Statement 2: The total productivity of the current workforce, when evaluated over a specific time frame, has historically increased by an average of 8% with a 25% increase in workforce."
+          ]
+        },
+        "question": "Based on the statements above, can you determine if a 10% productivity increase is achievable solely through a workforce increase?",
+        "title": "Workforce Increase and Productivity Relationship",
+        "solution": "Statement 1 alone provides a direct correlation between the percentage increase in workforce and the productivity increase, confirming that a 30% increase in workforce leads to a 12% productivity increase, which covers the company's target of at least 10%. Statement 2, while informative about productivity trends, does not guarantee a solution to the specific inquiry regarding achieving a 10% productivity increase based solely on the given workforce percentage. Therefore, Statement 1 alone is sufficient to determine the answer.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 1,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Efficiency and Time Management> - <difficulty_level: 3>",
+        "thread_id": "thread_wuHMaXhuh0uQcxyImaxsvgN3",
+        "content": {
+          "passages": "A certain retailer operates several stores across different states, each with varying sales volumes. The store located in State A has reported a 15% increase in sales over the previous year, while the store in State B has seen a decrease in sales by 10%. The regional manager is interested in determining whether the total sales volume for the retailer this year exceeds the total sales volume from last year across all states.",
+          "statements": [
+            "The sales volume of the store in State A last year was $200,000.",
+            "The total sales volume of the stores in State B and C combined last year was $150,000 and the store in State C has a reported increase of 20%."
+          ]
+        },
+        "question": "Is the retailer's total sales volume this year greater than the total sales volume last year?",
+        "title": "Retailer Sales Volume Comparison",
+        "solution": "Statement (1) alone allows us to calculate the sales volume for State A this year, but without knowing the sales volumes for State B and C or any specific totals, we cannot determine the overall sales volume. Statement (2) provides information about State B and C, but without the specific sales volume from State A or the overall sales volume from last year, we still cannot definitively answer the question. However, combining both statements lets us calculate necessary comparisons of sales volumes, leading to the conclusion about total sales volumes.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Critical Reasoning> - <difficulty_level: 1>",
+        "thread_id": "thread_bDI3f9Ah0KK8lkFUdxgBqHdO",
+        "content": {
+          "passages": "A certain school organizes an annual science fair where students present their projects. Each project requires a specific budget to cover materials, equipment, and other costs. This year's fair is projected to host a maximum of 20 projects. However, the school has a limited budget of \\$5,000 for all projects combined. The goal is to determine whether it is feasible for each student to receive an equal amount of funding while adhering to the project's budget constraints.",
+          "statements": [
+            "Statement (1): The average cost per project is estimated to be \\$250.",
+            "Statement (2): The school plans to cut down the maximum number of projects to 15."
+          ]
+        },
+        "question": "Is it possible for each student to receive an equal amount of funding for their project if the school has a \\$5,000 budget?",
+        "title": "Equal Funding Distribution for School Science Fair Projects",
+        "solution": "Both statements indicate how the total budget can be allocated across a varying number of projects. Statement (1) shows that with 20 projects, the funding per project would be \\$250, which fits perfectly into the \\$5,000 budget. However, statement (2) modifies the situation by reducing the number of projects to 15, where each student would then receive \\$333.33, exceeding the budget. Therefore, both statements together affirm that the funding can be equalized, but neither statement alone conclusively determines the feasibility of equal funding under the budget constraints.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 1,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Critical Reasoning> - <difficulty_level: 3>",
+        "thread_id": "thread_TptiWmSVsR0uoADe7rjks0ld",
+        "content": {
+          "passages": "In a certain town, the number of bicycles sold in one month (B) is directly proportional to the number of bikes produced (P) in that month and inversely proportional to the average price of each bicycle (A). Accordingly, the relationship can be expressed as B = k * (P/A) where k is a constant. Additionally, it is known that in the last year, the average price of bicycles varied significantly due to market fluctuations. The town council is now interested in determining how many bicycles were sold last month.",
+          "statements": [
+            "Statement (1): The town produced 500 bicycles last month.",
+            "Statement (2): The average price of each bicycle last month was $200."
+          ]
+        },
+        "question": "What information is sufficient to determine the number of bicycles sold in the town last month?",
+        "title": "Determining Bicycle Sales Based on Production and Price",
+        "solution": "Both statements together provide a complete picture needed to determine the total bicycles sold, as they give both the production and pricing context, which is crucial given the relationship B = k * (P/A). Alone, neither statement directly provides sufficient information to calculate B.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Attention to Detail> - <difficulty_level: 2>",
+        "thread_id": "thread_iMD16gSHxxUC2X4LkUDtMZrU",
+        "content": {
+          "passages": "A factory produces two types of gadgets: Type A and Type B. Each Type A gadget requires 3 hours of work and each Type B gadget requires 2 hours of work. The factory has a total of 120 hours available for production in a week. Additionally, there is a rule that at least twice as many Type A gadgets must be produced as Type B gadgets. How many Type A gadgets can the factory produce in a week if these conditions are to be met?",
+          "statements": [
+            "Statement (1): The factory can produce a maximum of 30 Type A gadgets.",
+            "Statement (2): The factory can produce a maximum of 20 Type B gadgets."
+          ]
+        },
+        "question": "Is it possible for the factory to produce the maximum number of Type A gadgets while meeting both the work hour and type production requirements?",
+        "title": "Maximizing Production of Type A Gadgets under Constraints",
+        "solution": "Both statements together provide essential information regarding the maximum number of Type A and Type B gadgets that can be produced. Statement (1) indicates that the factory can produce up to 30 Type A gadgets, while Statement (2) indicates that the factory can produce up to 20 Type B gadgets. Using both statements, we can verify whether these quantities meet the production rules (i.e., at least twice as many Type A as Type B) and the total hours available. The calculations confirm that both conditions can be satisfied simultaneously. Therefore, the correct option is C.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Algebra> - <Critical Reasoning> - <difficulty_level: 1>",
+        "thread_id": "thread_UwlWrItSVOybHUVeCJsninns",
+        "content": {
+          "passages": "In a certain algebraic expression, let x represent a positive integer and y represent the product of x and two additional consecutive integers. The relationship between x and y is defined by the equation y = x(x + 1)(x + 2). A third integer z is introduced, which is defined as the sum of x, y, and 5. It is necessary to ascertain the specific value of z based solely on the conditions described.",
+          "statements": [
+            "Statement (1): x is equal to 3.",
+            "Statement (2): The result of y when x is 3 leads to z being an even number."
+          ]
+        },
+        "question": "Can the exact value of z be determined from the above statements?",
+        "title": "Determining Value of z from Algebraic Expressions",
+        "solution": "From Statement (1), we have x = 3. Substituting this value into the equation for y gives y = 3(3 + 1)(3 + 2) = 3 * 4 * 5 = 60. Then, z = x + y + 5 = 3 + 60 + 5 = 68. Therefore, Statement (1) alone is sufficient to determine z. Statement (2) states that y leads to z being an even number, but does not provide the necessary value of x or its relation to z directly. Hence, Statement (2) alone is insufficient. Thus, the answer is A: Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 1,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "sources": [
+          {
+            "source_info": "This scatter plot displays the relationship between logistics costs and supply chain efficiency across various companies.",
+            "content": {
+              "type": "scatter plot",
+              "graph": "scatter plot",
+              "title": "Logistics Costs vs. Supply Chain Efficiency",
+              "description": "This plot illustrates how logistics costs impact the efficiency of the supply chain among different companies.",
+              "x-axis": "Logistics Costs (in USD)",
+              "y-axis": "Supply Chain Efficiency (in %)",
+              "data": [
+                {
+                  "label": "Company A",
+                  "x": 20000,
+                  "y": 80
+                },
+                {
+                  "label": "Company B",
+                  "x": 30000,
+                  "y": 70
+                },
+                {
+                  "label": "Company C",
+                  "x": 15000,
+                  "y": 90
+                },
+                {
+                  "label": "Company D",
+                  "x": 40000,
+                  "y": 60
+                },
+                {
+                  "label": "Company E",
+                  "x": 25000,
+                  "y": 75
+                }
+              ]
+            }
+          },
+          {
+            "source_info": "This passage provides an overview of the key factors affecting logistics costs and the optimization of supply chain efficiency.",
+            "content": {
+              "type": "Passage",
+              "passages": [
+                "Logistics costs have become a critical component of supply chain management as they directly affect the overall efficiency and profitability of businesses. Companies strive to minimize these costs while maximizing the effectiveness of their supply chain operations. Factors such as transportation costs, warehousing expenses, and inventory management all contribute to logistics costs. An increase in logistics costs can lead to reduced supply chain efficiency, as businesses may struggle to meet customer demands promptly. Effective management of these costs often involves leveraging technology and analytics to streamline operations and make data-driven decisions.",
+                "In today's competitive market, companies must remain agile and responsive to fluctuations in demand. This requires a careful balance between investing in logistics capabilities and controlling costs. The implementation of advanced forecasting tools can enhance demand planning, while efficient routing and warehousing strategies can significantly lower logistics expenses. Ultimately, the interdependence of logistics costs and supply chain efficiency illustrates the importance of continuous evaluation and improvement in logistics practices."
+              ]
+            }
+          },
+          {
+            "source_info": "This line chart presents the trends in logistics costs over a span of six months for different companies in the supply chain sector.",
+            "content": {
+              "type": "line chart",
+              "graph": "line chart",
+              "title": "Monthly Logistics Costs Trends",
+              "description": "This chart shows the fluctuation of logistics costs incurred by various companies over the last six months.",
+              "x-axis": "Months",
+              "y-axis": "Logistics Costs (in USD)",
+              "data": [
+                {
+                  "series": "Company A",
+                  "values": [
+                    {
+                      "x": "January",
+                      "y": 21000
+                    },
+                    {
+                      "x": "February",
+                      "y": 22000
+                    },
+                    {
+                      "x": "March",
+                      "y": 23000
+                    },
+                    {
+                      "x": "April",
+                      "y": 20000
+                    },
+                    {
+                      "x": "May",
+                      "y": 25000
+                    },
+                    {
+                      "x": "June",
+                      "y": 24000
+                    }
+                  ]
+                },
+                {
+                  "series": "Company B",
+                  "values": [
+                    {
+                      "x": "January",
+                      "y": 18000
+                    },
+                    {
+                      "x": "February",
+                      "y": 17500
+                    },
+                    {
+                      "x": "March",
+                      "y": 19000
+                    },
+                    {
+                      "x": "April",
+                      "y": 21000
+                    },
+                    {
+                      "x": "May",
+                      "y": 20500
+                    },
+                    {
+                      "x": "June",
+                      "y": 22000
+                    }
+                  ]
+                },
+                {
+                  "series": "Company C",
+                  "values": [
+                    {
+                      "x": "January",
+                      "y": 15000
+                    },
+                    {
+                      "x": "February",
+                      "y": 16000
+                    },
+                    {
+                      "x": "March",
+                      "y": 17000
+                    },
+                    {
+                      "x": "April",
+                      "y": 16500
+                    },
+                    {
+                      "x": "May",
+                      "y": 18000
+                    },
+                    {
+                      "x": "June",
+                      "y": 17500
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "thread_id": "thread_rBWBNvObvKmH66GVIgjFlrSR",
+        "title": "Evaluating the Interrelationship Between Logistics Costs and Supply Chain Efficiency",
+        "questions": [
+          {
+            "prompt": "ChildQuestion: 1 <Critical Reasoning> - <Dicotomous Choice(Acceptable/Not Acceptable)> - <2>",
+            "question": "Is it acceptable to conclude that higher logistics costs universally lead to lower supply chain efficiency based on the provided data?",
+            "title": "Evaluating the Relationship Between Logistics Costs and Supply Chain Efficiency",
+            "solution": "To determine if it is acceptable to conclude that higher logistics costs lead to lower supply chain efficiency, we analyze the following: \n\nFrom the scatter plot illustrating logistics costs versus supply chain efficiency, we observe varying data points. For example, Company A incurs logistics costs of \\$20000 and has a supply chain efficiency of 80\\%. In contrast, Company D has higher logistics costs of \\$40000 but lower efficiency at 60\\%. This suggests some correlation between higher costs leading to lower efficiency. \n\nHowever, Company C demonstrates that lower logistics costs of \\$15000 coincide with higher efficiency at 90\\%. Thus, there are exceptions to the correlation.  \n\nAdditionally, the passage indicates that logistics costs can be managed effectively, impacting efficiency positively through optimization strategies. Therefore, while there is evidence supporting a relationship, it does not universally apply to all cases, leading us to conclude that it is **Not Acceptable** to generalize this finding without further evidence for each specific situation. \n\nIn summary, conclusions drawn from the data must consider individual company practices and strategies, highlighting the complexity of the logistics cost-efficiency dynamic.",
+            "answer": {
+              "Acceptable": "Higher logistics costs will inevitably reduce supply chain efficiency for every company.",
+              "Not Acceptable": "It is not acceptable to conclude that higher logistics costs universally lead to lower supply chain efficiency as exceptions exist."
+            },
+            "options": [
+              "It is not acceptable to conclude that higher logistics costs universally lead to lower supply chain efficiency as exceptions exist.",
+              "Higher logistics costs will inevitably reduce supply chain efficiency for every company."
+            ],
+            "tags": [
+              "Critical Reasoning",
+              "Dicotomous Choice(Acceptable/Not Acceptable)",
+              "MSR",
+              "Line Chart"
+            ],
+            "difficulty": 2
+          },
+          {
+            "prompt": "ChildQuestion: 2 <Synthesis> - <Dicotomous Choice(Yes/No)> - <1>",
+            "question": "Can it be inferred that effective management of logistics costs positively influences supply chain efficiency based on the combined information from the passages and charts?",
+            "title": "Inferring the Impact of Logistics Cost Management on Supply Chain Efficiency",
+            "solution": "To analyze the possibility that effective management of logistics costs positively influences supply chain efficiency, we reference both the passage and the visual data sources. \n\nThe passage highlights the significance of managing logistics costs through strategies such as advanced forecasting tools and efficient routing. It states that effective management is crucial for minimizing costs while maximizing supply chain operations.\n\nLooking at the provided scatter plot data, we note that Company C, with the lowest logistics costs of \\$15000, boasts the highest supply chain efficiency at 90\\%. This suggests that lower logistics costs, potentially achieved through effective management, may correlate with higher efficiency in operational practices. \n\nAdditionally, the line chart data supports this notion, showing that as companies implement better management practices, trends indicate fluctuations in logistics costs can lead to stable or improved efficiency.\n\nThus, we can logically synthesize the information across the sources, concluding that effective management of logistics costs does indeed appear to positively influence supply chain efficiency.\n\nTherefore, the answer is **Yes**, effective management of logistics costs correlates with improvements in supply chain efficiency.",
+            "answer": {
+              "Yes": "The data clearly indicates that all companies with managed logistics costs have higher efficiency.",
+              "No": "It cannot be inferred that effective management of logistics costs has any impact on supply chain efficiency according to the combined information."
+            },
+            "options": [
+              "The data clearly indicates that all companies with managed logistics costs have higher efficiency.",
+              "It cannot be inferred that effective management of logistics costs has any impact on supply chain efficiency according to the combined information."
+            ],
+            "tags": [
+              "Synthesis",
+              "Dicotomous Choice(Yes/No)",
+              "MSR",
+              "Line Chart"
+            ],
+            "difficulty": 1
+          }
+        ],
+        "tags": [
+          "Line Chart",
+          "MSR",
+          "Critical Reasoning",
+          "Dicotomous Choice(Yes/No)",
+          "Synthesis",
+          "Dicotomous Choice(Acceptable/Not Acceptable)"
+        ],
+        "difficulty": 2
+      }
+    ]
+  }
+}

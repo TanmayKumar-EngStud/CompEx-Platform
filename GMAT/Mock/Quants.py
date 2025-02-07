@@ -3,7 +3,7 @@ import json, os, random
 class Quants:
    def __init__(self, mock_difficulty):
       self.mock_difficulty = mock_difficulty
-      self.total_questions = 23
+      self.total_questions = 21
 
       with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "difficulty_distribution.json"), "r") as file:
          self.difficulty_distribution = json.load(file)["quants"]

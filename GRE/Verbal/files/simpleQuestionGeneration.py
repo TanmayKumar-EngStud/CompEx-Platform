@@ -4,15 +4,14 @@ from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 
 class SimpleQuestionGeneration:
-    def __init__(self, llm=None, prompt=None):
+    def __init__(self, prompt=None):
         load_dotenv()
         assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Verbal-Simple-Questions"]
-        if llm is None:
-            llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-            )
+        llm = OpenAIAssistantRunnable(
+            model="gpt-4o-mini",
+            api_key=os.getenv("OPENAI_API_KEY"),
+            assistant_id=assistant_id
+        )
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
@@ -39,13 +38,17 @@ class SimpleQuestionGeneration:
       self.questionData["title"] = questionContent.generate_questionTitle()
 
       num_options = 6
-      if "tc-1" in self.prompt:
+      if "tc-1" in self.prompt.lower():
+         self.questionData["type"] = "TC-1"
          num_options = 6
-      elif "tc-2" in self.prompt:
+      elif "tc-2" in self.prompt.lower():
+         self.questionData["type"] = "TC-2"
          num_options = 8
-      elif "tc-3" in self.prompt:
-         num_options = 9
-      elif "se" in self.prompt:
+      elif "tc-3" in self.prompt.lower():
+         self.questionData["type"] = "TC-3"
+         num_options = 12
+      elif "se" in self.prompt.lower():
+         self.questionData["type"] = "SE"
          num_options = 6
       options, answer = questionContent.generate_questionOptions(num_options)
       # print(f"received options:\n{options}\nanswer:\n{answer}\nfor prompt:{self.prompt}\n\n ")

@@ -20,13 +20,16 @@ class Generate_TA:
         self.questionData = {}
     def generate_question(self):
         ta = TA(self.llm, self.prompt)
+        self.questionData["type"] = "TA"
+        self.questionData["prompt"] = self.prompt
         difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)
         difficulty = 1
         if difficulty_search:
             difficulty = int(difficulty_search.group(1))
         no_rows = difficulty + random.randint(5, 7)
         no_cols = difficulty + random.randint(3, 5)
-        self.questionData["thread_id"], self.questionData["tables"] = ta.generate_QuestionTable(no_rows, no_cols)
+        self.questionData["thread_id"], content = ta.generate_QuestionTable(no_rows, no_cols)
+        self.questionData["content"] = {"tables": content}
         self.questionData["question"] = ta.generate_QuestionText()
         self.questionData["title"] = ta.generate_QuestionTitle()
         options, answers = ta.generate_QuestionOptions()

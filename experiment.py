@@ -6,9 +6,9 @@ from db import DB
 def main():
     try:
         # Get the most recent pickle file from __generatedContent directory
-        with open(os.path.join(os.path.dirname(__file__), "__generations/data.json"), "r") as f:
-            questions = json.load(f)
-        print(f"Found {sum(len(q) if isinstance(q, list) else 1 for q in questions.values())} questions across {len(questions)} sections")
+        with open(os.path.join(os.path.dirname(__file__), "GRE_paper-06-02-2025-17-39.json"), "r") as f:
+            paper = json.load(f)
+        # print(f"Found {sum(len(q) if isinstance(q, list) else 1 for q in paper.values())} questions across {len(paper)} sections")
         
         # Initialize database connection
         db = Prisma(auto_register=True)
@@ -17,12 +17,7 @@ def main():
         
         print("\nRegistering questions in database...")
 # 😵 comment this for loop to ignore registering questions
-        for exam_section, questions in questions.items():
-            if not database.registerQuestion(exam_section, questions):
-                print(f"❌ Error registering questions for {exam_section}")
-            else:
-                print(f"✅ Successfully registered questions for {exam_section}")
-
+        database.registerQuestion(paper, isMockQuestion=True, difficulty=1)
     finally:
         if 'db' in locals():
             db.disconnect()

@@ -28,9 +28,10 @@ class Generate_TPA:
         
         # Generate question text and components
         thread_id, parentQuestionContent = tpa.generate_ParentQuestionContent()
+        self.questionData["type"] = "TPA"
         self.questionData["prompt"] = self.prompt
         self.questionData["thread_id"] = thread_id
-        self.questionData["content"] = parentQuestionContent
+        self.questionData["content"] = [parentQuestionContent]
         
         # region preparing difficulty for child Questions
         d1 = difficulty + random.randint(-1, 1)

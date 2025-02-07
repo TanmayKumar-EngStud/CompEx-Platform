@@ -46,6 +46,7 @@ class SimpleQuestionGeneration:
          thread_id, question = questionContent.generate_questionText(self.prompt)
          if not thread_id or not question:
             raise Exception("Failed to generate valid question text")
+         self.questionData["type"] = "MCQ-Single"
          self.questionData["prompt"] = self.prompt
          self.questionData["thread_id"] = thread_id
          self.questionData["question"] = question

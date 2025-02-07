@@ -17,9 +17,10 @@ model ProblemsSet {
   title              String
   type               String
   content            Json
-  mocktestquestionid Int?
+  mocksectionid      Int?
+  mockquestionnumber Int?
   examtypes          examtypes          @relation(fields: [examtypeid], references: [examtypeid])
-  mocktestquestions  mocktestquestions? @relation(fields: [mocktestquestionid], references: [mocktestquestionid])
+  mocksections       mocksections?      @relation(fields: [mocksectionid], references: [mocksectionid])
   sections           sections           @relation(fields: [sectionid], references: [sectionid])
   problems           problems[]
   problemssettags    problemssettags[]
@@ -36,17 +37,6 @@ model examtypes {
   tags        tags[]
 }
 
-model mocktestquestions {
-  mocktestquestionid Int           @id @default(autoincrement())
-  mocktestid         Int?
-  problemid          Int?
-  sectionid          Int?
-  ProblemsSet        ProblemsSet[]
-  mocktests          mocktests?    @relation(fields: [mocktestid], references: [mocktestid], onDelete: NoAction, onUpdate: NoAction)
-  problems           problems?     @relation(fields: [problemid], references: [problemid], onDelete: NoAction, onUpdate: NoAction)
-  sections           sections?     @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
-}
-
 model mocktestrankings {
   rankingid  Int        @id @default(autoincrement())
   userid     Int?
@@ -59,15 +49,16 @@ model mocktestrankings {
 
 model mocktests {
   mocktestid           Int                    @id @default(autoincrement())
+  difficulty           Int                    @default(0)
   examtypeid           Int?
   date                 DateTime               @db.Date
   starttime            DateTime               @db.Time(6)
   endtime              DateTime               @db.Time(6)
   isactive             Boolean?               @default(true)
-  mocktestquestions    mocktestquestions[]
   mocktestrankings     mocktestrankings[]
   examtypes            examtypes?             @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
   usermocktestattempts usermocktestattempts[]
+  mocksections mocksections[]
 }
 
 model mocktestsectionscores {
@@ -77,6 +68,17 @@ model mocktestsectionscores {
   score                Decimal?              @db.Decimal(5, 2)
   usermocktestattempts usermocktestattempts? @relation(fields: [attemptid], references: [attemptid], onDelete: NoAction, onUpdate: NoAction)
   sections             sections?             @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model mocksections{
+  mocksectionid Int @id @default(autoincrement())
+  mocktestid Int
+  sectionnumber Int
+  sectionid Int
+  mocktests mocktests? @relation(fields: [mocktestid], references: [mocktestid], onDelete: NoAction, onUpdate: NoAction)
+  sections sections? @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
+  problems problems[]
+  problemsset ProblemsSet[]
 }
 
 model performance {
@@ -103,6 +105,8 @@ model problemoptions {
 }
 
 model problems {
+  type                 String?
+  prompt               String?
   problemid            Int                 @id @default(autoincrement())
   sectionid            Int?
   examtypeid           Int?
@@ -116,15 +120,18 @@ model problems {
   addedDate            DateTime?           @default(now()) @db.Timestamp(6)
   isChildren           Boolean             @default(false)
   problemsSetId        Int?
+  mocksectionid        Int?
+  mockquestionnumber    Int?
   isMockQuestion       Boolean             @default(false)
   solution             Json?
-  mocktestquestions    mocktestquestions[]
   problemoptions       problemoptions[]
   examtypes            examtypes?          @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
   ProblemsSet          ProblemsSet?        @relation(fields: [problemsSetId], references: [problemsSetId], onDelete: NoAction, onUpdate: NoAction)
   sections             sections?           @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
+  mocksections         mocksections?       @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: NoAction, onUpdate: NoAction)
   problemtags          problemtags[]
   userattempts         userattempts[]
+
 }
 
 model problemssettags {
@@ -151,12 +158,12 @@ model sections {
   name                  String                  @db.VarChar(100)
   description           String?
   ProblemsSet           ProblemsSet[]
-  mocktestquestions     mocktestquestions[]
   mocktestsectionscores mocktestsectionscores[]
   performance           performance[]
   problems              problems[]
   examtypes             examtypes?              @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
   tags                  tags[]
+  mocksections          mocksections[]
 }
 
 model tags {

@@ -4,15 +4,14 @@ import os, json, re
 from dotenv import load_dotenv
 import random
 class SimpleQuestionGeneration:
-    def __init__(self, llm=None, prompt=None):
+    def __init__(self, prompt=None):
         load_dotenv()
         assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Quants-Simple-Questions"]
-        if llm is None:
-            llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-            )
+        llm = OpenAIAssistantRunnable(
+            model="gpt-4o-mini",
+            api_key=os.getenv("OPENAI_API_KEY"),
+            assistant_id=assistant_id
+        )
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
@@ -24,6 +23,28 @@ class SimpleQuestionGeneration:
         return tags
 
     def generate_question(self):
+        if "(multi-correct MCQ)" in self.prompt:
+            self.questionData["type"] = "MCQ-Multi"
+        else:
+            self.questionData["type"] = "MCQ-Single"
+        self.questionData["prompt"] = self.prompt
+        questionContent = SimpleQuestion(self.llm, self.prompt)
+        self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
+        self.questionData["title"] = questionContent.generate_questionTitle()
+        self.questionData["solution"] = questionContent.generate_questionSolution()
+        options, answer = questionContent.generate_questionOptions()
+        options_list = list(options.values())
+        
+        if isinstance(answer, list):
+            ans = []
+            for i in answer:
+                ans.append(options[i])
+            self.questionData["answer"] = ans
+        else:
+            self.questionData["answer"] = options[answer]
+        random.shuffle(options_list)
+        self.questionData["options"] = options_list
+
         pattern = r'<difficulty-level: (\d+)>'
         match = re.search(pattern, self.prompt)
         self.questionData["difficulty"] = int(match.group(1))
@@ -38,18 +59,7 @@ class SimpleQuestionGeneration:
                 tag.append(first_content)
             self.questionData["tag"] = tag
         except Exception as e:
-            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
+            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
             self.questionData["tag"] = ["MCQ"]
-        
-        questionContent = SimpleQuestion(self.llm, self.prompt)
-        self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
-        self.questionData["title"] = questionContent.generate_questionTitle()
-        self.questionData["solution"] = questionContent.generate_questionSolution()
-        options, answer = questionContent.generate_questionOptions()
-        options_list = list(options.values())
-        random.shuffle(options_list)
-        self.questionData["options"] = options_list
-        self.questionData["answer"] = options[answer]
 
-        
         return self.questionData

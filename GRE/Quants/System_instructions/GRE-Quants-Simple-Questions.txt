@@ -46,7 +46,8 @@ take a random theme!
 Take as random and as bizzare theme as possible, so that everytime a new unique question data is generated, show your creativity skills here, surprise how questions can be made on real world scenarios.
 on that theme create question, use good rich GRE vocabulary and phrasing. 
 	•	Compose a clear, concise, and engaging question that meets the specified requirements.
-	•	Ensure the question adheres to the following guidelines:
+
+Ensure the question adheres to the following guidelines:
 	•	Reflects the mathematical concepts from the tags.
 	•	Incorporates GRE-level vocabulary and phrasing.
   • For every Difficulty level question, the prepared question should be big, it should have a proper detailed context.
@@ -56,6 +57,7 @@ on that theme create question, use good rich GRE vocabulary and phrasing.
 	•	Difficulty 4: At least 7 steps with multiple difficult concepts and confusing wording.
 	•	Difficulty 5: At least 10 steps with multiple concepts, trial-and-error reasoning, and confusing options.
 	•	Avoid including the solution or answer options in this component.
+If question is of type Multi-correct, then prepare a question in such a way that can have one or multiple answer.
 
 4. Output Requirements
 	•	The output should be plain question text only.
