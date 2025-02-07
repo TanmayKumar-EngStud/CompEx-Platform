@@ -211,7 +211,9 @@ class DB:
     # ✅
     def _register_tag(self, tag):
        try: 
-           tag = re.sub(r' \(.*', '', tag) if ' (' in tag else tag # remove bracket content
+           pattern = r'\(.*?\)'
+           tag = re.sub(pattern, '', tag).strip()
+           
            tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag # remove anything after comma
            tagid =  self.db.tags.find_first(where={'name': tag, 
                                                    'examtypeid': self.current_exam_id,
@@ -231,7 +233,8 @@ class DB:
                return tagid.tagid
        except Exception as e: 
            print(f"Error creating tag in _register_tag: {str(e)}")
-           print(f"here is the tag value that is causing the issue:- {tag}")
+           print(f"for {self.current_mockquestion_number}")
+           print(f"here is the tag value that is causing the issue:- {tag} ")
            return False
    
     def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False):
