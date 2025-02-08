@@ -1,19 +1,19 @@
 import json, time, dotenv
-from Mock.Verbal import Verbal
-from Mock.Quants import Quants
+from GRE.Mock_prompts.Verbal import Verbal_prompts
+from GRE.Mock_prompts.Quants import Quants_prompts
 
 from enum import Enum
 import time
 # region Quants generators:
-from Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
-from Quants.files.numericEntryQuestionGeneration import NumericEntryQuestionGeneration as Q_NE_gen
-from Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as Q_PC_gen
-from Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
+from GRE.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
+from GRE.Quants.files.numericEntryQuestionGeneration import NumericEntryQuestionGeneration as Q_NE_gen
+from GRE.Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as Q_PC_gen
+from GRE.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
 # endregion
 
 # region Verbal generators:
-from Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
-from Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
+from GRE.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
+from GRE.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
 # endregion 
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -38,9 +38,9 @@ class GRE_Mock:
     def __init__(self, mock_difficulty) -> None:
         self.max_retries = 3
         self.mock_difficulty = mock_difficulty
-        verbal = Verbal(mock_difficulty)
+        verbal = Verbal_prompts(mock_difficulty)
         self.verbal_prompts = verbal.generate_question_prompts()
-        quants = Quants(mock_difficulty)
+        quants = Quants_prompts(mock_difficulty)
         self.quants_prompts = quants.generate_question_prompts()
 
     def generate_question_with_retry(self, exam_section: str, section_id: int, prompt: str, generator_class):
@@ -131,13 +131,10 @@ class GRE_Mock:
                 if question_data:
                     exam_section, section_id, data = question_data
                     paper[exam_section][section_id].append(data)
-
-        with open(f"GRE_paper-{time.strftime('%d-%m-%Y-%H-%M')}.json", "w") as f:
-            json.dump(paper, f, indent=2)
         return paper
 
-gre_mock = GRE_Mock(mock_difficulty=3)
+# gre_mock = GRE_Mock(mock_difficulty=3)
 
-paper = gre_mock.generate()
+# paper = gre_mock.generate()
 
 # json.dump(paper, open(f"paper-{time.strftime('%d-%m-%Y-%H-%M-%S')}.json", "w"), indent=2)

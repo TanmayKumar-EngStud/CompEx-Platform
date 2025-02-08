@@ -117,7 +117,9 @@ class DB:
            if isMockQuestion: 
                question_data["mocksections"] = {"connect": {"mocksectionid": self.current_mocksection_id}}
                question_data["mockquestionnumber"] = self.current_mockquestion_number
-
+           if self.question_type == "NE":
+               question_data["metadata"]  = json.dumps({"answer": question.get('answer', '')})
+            
            problem =  self.db.problems.create(data = question_data)
            self.current_problem_id = problem.problemid
 
@@ -213,7 +215,7 @@ class DB:
        try: 
            pattern = r'\(.*?\)'
            tag = re.sub(pattern, '', tag).strip()
-           
+
            tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag # remove anything after comma
            tagid =  self.db.tags.find_first(where={'name': tag, 
                                                    'examtypeid': self.current_exam_id,

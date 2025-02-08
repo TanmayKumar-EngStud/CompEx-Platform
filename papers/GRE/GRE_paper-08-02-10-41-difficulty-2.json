@@ -1,0 +1,1591 @@
+{
+  "GRE_Q": {
+    "section1": [
+      {
+        "prompt": "<permutations and combinations>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_O785YvJFQhi4OrVBaAV0R7VB",
+        "content": {
+          "passage": "In a culinary contest featuring various dessert recipes, a chef has 5 different types of fruits and wishes to create a fruit salad using 3 of them. The order in which the fruits are combined matters for presentation. Furthermore, the chef considers that using the same fruit more than once is prohibited. How many unique arrangements of the fruit salad can the chef prepare?",
+          "statements": [
+            "The chef selects 3 different fruits from the 5 available fruits.",
+            "The arrangement of the fruits in the salad is allowed to change based on presentation preferences."
+          ]
+        },
+        "question": "Is the information provided in the statements sufficient to determine the total number of unique arrangements of the fruit salad the chef can prepare?",
+        "title": "Unique Arrangements of Fruit Salad in a Culinary Contest",
+        "solution": "To determine the total number of unique arrangements of the fruit salad, we need to consider both statements provided. Statement (1) tells us that the chef selects 3 different fruits from a total of 5 fruits, which gives us a combination of fruits. The number of ways to choose 3 fruits from 5 can be calculated using the combination formula: \\(\\binom{5}{3} = 10\\). Statement (2) informs us that the arrangement of these fruits is important. For each selection of 3 fruits, there are \\(3! = 6\\) different ways to arrange them. Hence, the total unique arrangements the chef can prepare is calculated as \\(10 \\times 6 = 60\\). Both statements together provide the necessary information to answer the question.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<geometry>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_yMEXmx2cs3elD495pznDQy3f",
+        "content": {
+          "passage": "A cylindrical container has a radius of r and a height of h. The volume V of the cylinder can be calculated using the formula V = \u03c0r^2h. If the height of the cylinder is doubled and the radius remains the same, what is the new volume of the cylinder compared to the original?",
+          "statements": [
+            "The original volume of the cylinder is 50\u03c0 cubic units.",
+            "The height of the cylinder is 10 units."
+          ]
+        },
+        "question": "Is the new volume of the cylinder twice the original volume based on the given information?",
+        "title": "Comparing Volumes of a Cylinder with Modified Height",
+        "solution": "From Statement (1), we know the original volume is 50\u03c0 cubic units. From Statement (2), the height is 10 units. Therefore, the original radius can be calculated using the volume formula: 50\u03c0 = \u03c0r^2(10), which simplifies to r^2 = 5, thus r = \u221a5. When the height is doubled to 20 units, the new volume becomes V = \u03c0(\u221a5)^2(20) = 100\u03c0 cubic units, which is indeed double the original volume (50\u03c0). Therefore, both statements together provide enough information to affirm that the new volume is double the original. Overall, we conclude that EITHER statement ALONE is not sufficient, meaning the correct answer is C.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<number theorm>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_S7iGYrGIpcjOdwh5LS4cWz41",
+        "content": {
+          "passage": "In a certain number system, every even number is expressed as the sum of two prime numbers. For example, the number 6 can be represented as 3 + 3 or 5 + 1. Are there exactly three representations for the number 10 using the mentioned rule?",
+          "statements": [
+            "Statement (1): The prime numbers less than 10 are 2, 3, 5, and 7. Statement (2): There are four different pairs of prime numbers whose sum equals 10."
+          ]
+        },
+        "question": "Is it true that there are exactly three representations for the number 10 as the sum of two primes based on the above statements?",
+        "title": "Representations of the Number 10 as Sum of Prime Numbers",
+        "solution": "To determine if there are exactly three representations of the number 10 as the sum of two primes, we can analyze the statements. From Statement (1), we know the primes less than 10 are 2, 3, 5, and 7. We can form the pairs (3, 7), (5, 5), and (2, 8), but since 8 is not prime, it is excluded. From Statement (2), we identify the pairs (3, 7), (5, 5), and the repeated pair (2, 8) which we exclude. Hence, there are only two valid pairs, not three, consistent with the conclusion that Statement (1) is insufficient alone. Statement (2) proposes four pairs, which contradicts the total valid pairs found from (1). Therefore, the correct option is E, as no combination suffices to confirm the claim made in (1) or (2).",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<speed, distance and time>- <difficulty-level: 1>",
+        "thread_id": null,
+        "question": "In a peculiar race of mythical creatures, a speedy Minotaur runs at a constant speed of 12 meters per second for the first 5 seconds. Shortly thereafter, a mischievous Centaur joins the race and runs at a speed of 15 meters per second. If both creatures continue running at their respective speeds, what will be the total distance covered by both the Minotaur and the Centaur after 10 seconds of the race?",
+        "title": "The Mythical Race of the Minotaur and Centaur",
+        "solution": "<p>Distance covered by Minotaur in first 5 seconds = ~~12 m/s * 5 s = 60 m~~ <br> Distance covered by Centaur in the remaining 5 seconds = ~~15 m/s * 5 s = 75 m~~ <br> Total distance covered by both = ~~60 m + 75 m = 135 m~~ </p>",
+        "answer": 135.0,
+        "tag": [
+          "Numeric Entry",
+          "speed, distance and time"
+        ],
+        "difficulty": 1
+      },
+      {
+        "prompt": "<number theorm>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_pCSDzlTGHm4rSwvvY8JUArn8",
+        "content": {
+          "passage": "In a small village, the residents have organized a festival where villagers are challenged to participate in a unique number game. Each villager has a certain number of coins, which is a prime number less than 50. It is known that the sum of the coins held by two villagers, A and B, is also a prime number. Additionally, no villager holds more than 30 coins. The village has a specific rule that the sum of the coins of any two villagers must remain a prime number for the next festival to be possible. Understanding these rules could aid in predicting the possible combinations of coins villagers could have in the future.",
+          "statements": [
+            "The number of coins held by villager A is 17.",
+            "The number of coins held by villager B is 19."
+          ]
+        },
+        "question": "Based on the above passage, can we determine if the sum of the coins held by villagers A and B will satisfy the prime requirement for the next festival?",
+        "title": "Prime Number Game in a Village Festival",
+        "solution": "To determine if the sum of the coins held by villagers A and B is prime, we calculate the sum: 17 + 19 = 36. However, 36 is not a prime number (as it can be divided by 2, 3, and others). Therefore, we can conclude that the information given in the statements is sufficient to answer the question about whether the sum satisfies the prime requirement for the next festival, which it does not. Hence, the correct answer is option A, as statement 1 alone provides sufficient information to answer the question.",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<profit, loss and discount>- <difficulty-level: 1> (multi-correct MCQ)",
+        "thread_id": "thread_I5u9bmirsYWudA2WaO0Lnz4c",
+        "question": "In a small town, a curious shopkeeper decided to run a special sale event for the local community. The shopkeeper set a regular price of $200 for a unique handcrafted vase. For the sale, the shopkeeper intended to offer a discount of 25% off the regular price. Additionally, the shopkeeper had previously set a markup of 20% on the original wholesale cost of $150. If a customer purchases two vases during the sale, what are the total savings from the discount and the effective profit per vase based on the original wholesale cost?",
+        "title": "Savings and Profits in a Handmade Vase Sale",
+        "solution": "<p>Regular Price of Vase: $200 <br> Discount Percentage: 25% <br> Discount Amount: ~~200 * 25% = 50~~ <br> Discounted Price: ~~200 - 50 = 150~~ <br> Total Savings for Two Vases: ~~50 * 2 = 100~~ <br> Wholesale Cost of Vase: $150 <br> Markup Percentage: 20% <br> Markup Amount: ~~150 * 20% = 30~~ <br> Selling Price After Markup: ~~150 + 30 = 180~~ <br> Effective Profit Per Vase: ~~150 - 180 = -30 (Loss)~~ </p>",
+        "answer": [
+          "Savings: $100.0, Profit: $-25.0",
+          "Savings: $100.0, Profit: $-30.0"
+        ],
+        "options": [
+          "Savings: $100.0, Profit: $-25.0",
+          "Savings: $80.0, Profit: $-20.0",
+          "Savings: $100.0, Profit: $-30.0",
+          "Savings: $120.0, Profit: $-40.0"
+        ],
+        "difficulty": 1,
+        "tag": [
+          "MCQ-Multi correct",
+          "profit, loss and discount"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<fractions/decimals and Unitary method>- <difficulty-level: 1>",
+        "thread_id": "thread_a1SnKgEbmoau3DLQEv21aCZV",
+        "question": "In a mystical garden filled with enchanted flowers, a wizard collects 24 magical daisies. Each day, he carefully arranges these daisies into bouquets. On the first day, he creates 6 bouquets, and each bouquet contains an equal number of daisies. On the second day, he picks 12 more daisies, and he decides to create twice as many bouquets as the previous day using all the daisies he now has. How many daisies did he place in each bouquet on the second day?",
+        "title": "Determining the Number of Daisies per Bouquet in a Wizard's Enchanted Garden",
+        "solution": "<p>On the first day, the wizard creates 6 bouquets.<br> Therefore, each bouquet contains 4.0 daisies. <br> On the second day, he picks 12 additional daisies, making it a total of 36 daisies.<br> Now, he decides to create 12 bouquets, thus each bouquet on the second day contains 3.0 daisies.</p>",
+        "answer": "3.0",
+        "options": [
+          "2.5",
+          "6.0",
+          "3.0",
+          "4.0"
+        ],
+        "difficulty": 1,
+        "tag": [
+          "MCQ-Single correct",
+          "fractions/decimals and Unitary method"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<Unitary method>- <difficulty-level: 3> (multi-correct MCQ)",
+        "thread_id": "thread_4AsHxmyjBEE46DKYWaD1JjNA",
+        "question": "In a peculiar land where every household is equipped with a \u2018Joy-o-Meter\u2019, an invention that quantifies happiness based on the number of chores completed, the citizens decided to invite a whopping 25 households to a communal \u2018Joy Festival\u2019. Each household has pledged to contribute their fair share to the festival by performing a certain number of chores. If each household is required to complete 12 chores, how many chores must the entire group collectively accomplish? After observing the festival's success, it was noted that each household effectively completed an additional 5 chores on average due to overwhelming enthusiasm. Based on these observations, what might be the total chore count during the festival? Additionally, considering the average household size increases by 20%, how would that impact the total number of chores if each household persists in this level of performance? Calculate to find out the implications on the overall festival chore count. Select the most suitable conclusions from the options below.",
+        "title": "Calculating the Total Chores for a Joy Festival and Its Implications on Household Happiness",
+        "solution": "<p>Total chores required for the festival: ~~25 households * 12 chores = 300~~. <br> Total chores completed after additional contribution: ~~300 + (25 households * 5 additional chores) = 425~~. <br> With an increase of 20% in household size: ~~25 households * 1.20 = 30 households~~. <br> New total chores required: ~~30 households * 12 chores + (30 households * 5 additional chores) = 510~~. </p>",
+        "answer": "520",
+        "options": [
+          "500",
+          "520",
+          "460",
+          "540"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "MCQ-Multi correct",
+          "Unitary method"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <profit, loss and discount> - <Pivot Table> - <Human Resources>- <difficulty-level: 1>",
+        "content": [
+          {
+            "index": [
+              "HR",
+              "IT",
+              "Sales"
+            ],
+            "columns": [
+              "Profit_Amount",
+              "Loss_Amount",
+              "Profit_Discount",
+              "Loss_Discount"
+            ],
+            "data": {
+              "HR": {
+                "Profit_Amount": 30000,
+                "Loss_Amount": 10000,
+                "Profit_Discount": 3000,
+                "Loss_Discount": 1000
+              },
+              "IT": {
+                "Profit_Amount": 25000,
+                "Loss_Amount": 8000,
+                "Profit_Discount": 2500,
+                "Loss_Discount": 800
+              },
+              "Sales": {
+                "Profit_Amount": 20000,
+                "Loss_Amount": 5000,
+                "Profit_Discount": 2000,
+                "Loss_Discount": 500
+              }
+            },
+            "type": "pivot table",
+            "description": "This pivot table summarizes the profit and loss amounts along with their discounts across different departments."
+          }
+        ],
+        "title": "Analysis of Profit, Loss, and Discount Across Departments in Human Resources",
+        "questions": [
+          {
+            "question": "Given the financial overview of the departments in Human Resources, calculate the total loss amount incurred by the IT department along with its corresponding discount rate. What would be the overall impact on the resources if there was an additional 10% loss incurred in this department based on the current figures?",
+            "number": 1,
+            "title": "Calculation of Loss and Impact Analysis for the IT Department",
+            "solution": "The total loss amount incurred by the IT department is given as \\( 8000 \\). With an additional 10% loss, the overall total loss becomes \\( 8800 \\). The corresponding discount rate for this loss is \\( 800 \\).",
+            "answer": "8800.00",
+            "options": [
+              "9600.00",
+              "8800.00",
+              "9200.00",
+              "8400.00"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          },
+          {
+            "question": "For the Sales department, determine the effective profit after applying the profit discount. Additionally, calculate how much the profit would increase if there were a 15% increment on the profit amount. What will the new profit amount be with this increment?",
+            "number": 2,
+            "title": "Profit Analysis and Increment Calculation for the Sales Department",
+            "solution": "The effective profit for the Sales department after applying the profit discount is \\( 18000 \\). If there were a 15% increment on this effective profit, the new profit amount would be \\( 20700 \\).",
+            "answer": "20700.00",
+            "options": [
+              "19550.00",
+              "20700.00",
+              "22770.00",
+              "16100.00"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          }
+        ],
+        "difficulty": 1,
+        "tag": [
+          "PS",
+          "profit, loss and discount"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Pivot Table> - <Business and Finance>- <difficulty-level: 3>",
+        "content": [
+          {
+            "type": "pivot table",
+            "index": [
+              "Electronics",
+              "Clothing",
+              "Furniture"
+            ],
+            "columns": [
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q1 Profits",
+              "Q2 Profits"
+            ],
+            "data": {
+              "Electronics": {
+                "Q1 Sales": 20000,
+                "Q2 Sales": 25000,
+                "Q1 Profits": 5000,
+                "Q2 Profits": 7000
+              },
+              "Clothing": {
+                "Q1 Sales": 15000,
+                "Q2 Sales": 20000,
+                "Q1 Profits": 3000,
+                "Q2 Profits": 5000
+              },
+              "Furniture": {
+                "Q1 Sales": 30000,
+                "Q2 Sales": 35000,
+                "Q1 Profits": 10000,
+                "Q2 Profits": 12000
+              }
+            },
+            "description": "This pivot table presents a comparison of sales and profits across different departments over two quarters."
+          }
+        ],
+        "title": "Analysis of Sales and Profits Across Business Departments",
+        "questions": [
+          {
+            "question": "In the provided pivot table, what is the total profit earned from the Electronics department over both quarters? Referencing the values, determine the total profit and analyze how it compares to the profit from the Clothing and Furniture departments.",
+            "number": 1,
+            "title": "Total Profit Analysis of the Electronics Department",
+            "solution": "The total profit earned from the Electronics department over both quarters is given by the sum of the profits in both quarters: \\(\\text{Total Profit} = 5000 + 7000 = 12000\\). Therefore, the total profit is \\(12000\\).",
+            "answer": "12000",
+            "options": [
+              "12000",
+              "10000",
+              "13000",
+              "17000"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "question": "Based on the pivot table, how do the total sales from the Furniture department in Q2 compare to the combined total sales from the Clothing and Electronics departments in the same quarter? Analyze the data and provide your findings.",
+            "number": 2,
+            "title": "Comparison of Sales in Q2 Across Departments",
+            "solution": "In Q2, the total sales from the Furniture department amount to \\(35000\\), while the combined total sales from the Clothing and Electronics departments equals \\(20000 + 25000 = 45000\\). Therefore, the Furniture department's sales exceed the combined sales by \\(35000 - 45000 = -10000\\), indicating that the Furniture sales are \\(10000\\) less than the combined total.",
+            "answer": "-10000",
+            "options": [
+              "-13000",
+              "-5000",
+              "0",
+              "-10000"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          }
+        ],
+        "difficulty": 3,
+        "tag": [
+          "PS",
+          "data interpretation"
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<work and time>- <difficulty-level: 2> (multi-correct MCQ)",
+        "thread_id": "thread_pw3BfPeEnDO1ezYREaxAs1Me",
+        "question": "In a quaint town renowned for its eclectic on-demand delivery services, two delivery drivers, Alex and Jamie, embark on an ambitious project to deliver artisanal bread from the local bakery to various neighborhoods. Alex takes 3 hours to complete his round, covering a total distance of 24 kilometers, while Jamie, known for her efficiency, manages to make the same deliveries in just 2.4 hours, achieving a distance of 36 kilometers. However, due to a recent demand surge, they decide to work together to create a streamlined delivery strategy. If both drivers contribute their efforts simultaneously, with Alex delivering at his pace and Jamie at hers, how long will it take them to complete the deliveries together if they both start from the bakery at the same time? What potential factors could influence their combined delivery time? Consider elements such as traffic conditions, order volume, and route optimization. Note: more than one answer may be correct to this intricate scenario.",
+        "title": "Determining Combined Delivery Time for Two Artisanal Bread Drivers in a Town's Dynamic Environment",
+        "solution": "<p>Alex's speed = 8.00 km/h <br> Jamie's speed = 15.00 km/h <br> Combined speed = 23.00 km/h <br> Total distance = 24 km <br> Combined time = 1.04 hours</p>",
+        "answer": [
+          "1.04"
+        ],
+        "options": [
+          "0.84",
+          "1.04",
+          "1.54",
+          "2.08"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "work and time"
+        ]
+      },
+      {
+        "prompt": "<geometry>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_fKByfwcJeBvLbhkTtZ89UDYr",
+        "content": {
+          "passage": "In a trapezoid ABCD, the lengths of the bases AB and CD are 10 cm and 6 cm respectively. The height of the trapezoid from base AB to base CD is 4 cm. If point E is the midpoint of base AB and point F is the midpoint of base CD, what is the length of line segment EF connecting points E and F?",
+          "statements": [
+            "Statement (1): The trapezoid is isosceles.",
+            "Statement (2): The lengths of the legs AD and BC are equal."
+          ]
+        },
+        "question": "What is the length of line segment EF connecting points E and F?",
+        "title": "Finding the Length of the Midsegment EF in an Isosceles Trapezoid",
+        "solution": "To determine the length of the midsegment EF in trapezoid ABCD, we can use the property that the length of the midsegment is the average of the lengths of the two bases. Thus, the length of EF can be calculated as \\( EF = \\frac{AB + CD}{2} = \\frac{10 + 6}{2} = 8 \\, \\text{cm} \\). Both statements indicate properties of the trapezoid, but the length can still be determined with the definition of the midsegment alone.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<standard deviation and variance>- <difficulty-level: 5>",
+        "thread_id": null,
+        "question": "In a peculiar land where the only currency is based on the weight of mystical stones, two merchants are in a heated competition to determine the fairest way to price their stones based on their weights, which are recorded as follows: Merchant A has weights of 3.5 kg, 4.5 kg, 5.5 kg, and 9.5 kg for his stones, whereas Merchant B has weights of 2.5 kg, 3.5 kg, and 10.5 kg. Both merchants aim to establish prices using the concept of variance and standard deviation to gauge the volatility of their weights. They decide to compute the variance of their stone weights to evaluate the price stability. Merchant A realizes that his weights yield a variance of 4.25, while Merchant B, somewhat bewildered, arrives at a variance of 9.33. As they continue their conversation, Merchant B suggests they merge their weights together to analyze the combined variance and standard deviation of their stones. If they proceed with this joint analysis, calculating the overall variance based on the merged weights of all their stones, which total 7 stones, how would the resulting variance compare to their individual variances? Furthermore, what would be the new standard deviation to consider for their pricing strategy? Provide the final values for both the variance and standard deviation, rounded to two decimal places. This collaboration will determine how they can effectively set stable prices in this peculiar economy.",
+        "title": "Evaluating Variance and Standard Deviation in the Weight Pricing of Mystical Stones by Two Merchants",
+        "solution": "<p>Merchant A's weights variance = 5.19 <br> Merchant B's weights variance = 12.67 <br> Merged weights = [3.5, 4.5, 5.5, 9.5, 2.5, 3.5, 10.5] <br> Merged variance = ~~8.41~~ <br> Merged standard deviation = ~~2.90~~ </p>",
+        "answer": 8.41,
+        "tag": [
+          "Numeric Entry",
+          "standard deviation and variance"
+        ],
+        "difficulty": 5
+      },
+      {
+        "prompt": "<Unitary method>- <difficulty-level: 5>",
+        "type": "DS",
+        "difficulty": 5,
+        "tags": [
+          "DS",
+          "Unitary method"
+        ],
+        "thread_id": "thread_p6l0msY8NrkDS5PpYwNPKVTd",
+        "content": {
+          "passage": "In a quaint village, an artisan produces exquisite pottery. It is observed that when he utilizes a specific clay mixture, he can create 12 vases in 10 hours. Subsequently, he discovers that by altering the mixture slightly, he is able to produce 15 vases in the same amount of time. Curious about the effects of these mixtures on time efficiency, another resident attempts to replicate the output. The artisan shares his findings, stating that doubling the clay mixture for the first type would yield a predictable increase in vases produced. However, he is uncertain whether the same principle applies to the second mixture, as its characteristics are distinct. Based on this information, consider the following statements:",
+          "statements": [
+            "If the artisan uses the first type of mixture, how many vases can he make in 30 hours?",
+            "Using the second type of mixture, can the artisan produce more than 40 vases in 30 hours?"
+          ]
+        },
+        "question": "Based on the above statements, can we determine whether the artisan can produce a greater number of vases using either mixture over the course of 30 hours compared to the other?",
+        "title": "Pottery Production Analysis: Evaluating Vase Output in Different Mixtures",
+        "solution": "To evaluate the vase production, we analyze the two statements. Statement (1) involves a direct calculation based on given rates. With the first mixture, the artisan creates 12 vases in 10 hours. Thus, in 30 hours, he can produce \\(\\frac{12 \\text{ vases}}{10 \\text{ hours}} \\times 30 \\text{ hours} = 36 \\text{ vases}\\). Statement (2) does not provide sufficient information to determine whether more than 40 vases can be produced with the second mixture because the characteristics of the mixture are not quantitatively defined. Therefore, while Statement (1) provides a direct answer, Statement (2) remains inconclusive. Thus, Statement (1) is sufficient by itself, whereas Statement (2) alone is insufficient. Given this reasoning, the correct answer is A: \"Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.\"",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<Unitary method>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "Unitary method"
+        ],
+        "thread_id": "thread_7iog83sJ4jVKSxDz9UreRqqR",
+        "content": {
+          "passage": "In a small town, a peculiar factory produces exquisite glass figurines. The factory is known for its unique fine art, where the production cost varies based on time and the number of artisans working on a project. One day, the factory manager estimated that 5 artisans could create 12 glass figurines in 7 hours. The manager aims to determine how many glass figurines could be produced by 8 artisans working for 10 hours, but he is unsure of the correlation between the artisans and the output based on the aforementioned estimate.",
+          "statements": [
+            "If each artisan has the same productivity rate, then the output can be directly scaled based on the number of artisans and the hours worked.",
+            "The manager has an additional report indicating that the productivity per artisan decreases when more artisans are added due to resource constraints."
+          ]
+        },
+        "question": "Based on the above passage, can the manager conclusively determine how many glass figurines will be produced by 8 artisans working for 10 hours?",
+        "title": "Determining Glass Figurine Production: Artisans and Hours in a Factory",
+        "solution": "The first statement indicates that the output can be scaled based on artisans and hours, suggesting a straightforward approach to calculation. However, the second statement introduces a complication: the productivity per artisan decreases with a higher number of artisans due to resource constraints. Therefore, neither statement alone can provide a conclusive answer about the total output without considering the interplay of these factors. Thus, BOTH statements TOGETHER are necessary to approach a solution, but still might not yield a definitive conclusion.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<profit, loss and discount>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "profit, loss and discount"
+        ],
+        "thread_id": "thread_Np7FbdakyQUtdQjkscoaiGjZ",
+        "content": {
+          "passage": "In a quaint little bookstore, the original price of a rare novel was set at $40. The owner decided to implement a discount of 25% on this price for a special weekend sale. As the weekend approached, the owner realized that after the discount, some additional overhead costs amounting to $5 per sale would be incurred. The owner is now deliberating if he will still make a profit if he sells the novel at the discounted price. The scenario prompts the consideration of profit and loss calculations during discount events.",
+          "statements": [
+            "The bookstore owner will sell the novel at a discounted price of $30.",
+            "The total overhead costs for each sale are $5."
+          ]
+        },
+        "question": "Based on the above statements, is the bookstore owner guaranteed to make a profit on the sale of the novel?",
+        "title": "Profit Analysis on Discounted Book Sales in a Store",
+        "solution": "To determine if the bookstore owner will make a profit, we first calculate the discounted price of the novel. A 25% discount on the original price of $40 is calculated as follows: \n\\[ 40 - (0.25 \\times 40) = 40 - 10 = 30. \\] \nThus, the sale price is $30. \nNext, we account for the overhead costs of $5. Therefore, the effective earning from each sale is: \n\\[ 30 - 5 = 25. \\] \nAs the effective earning ($25) is less than the original price ($40), the owner is selling at a loss compared to the original pricing context. Therefore, it can be concluded that the owner will not make a profit. Hence, Statement (1) provides the sale price while Statement (2) details overhead costs, but neither alone nor together confirm a profit. Therefore, the answer is option E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<geometry>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_Hx9VqEmPANVNxrlqN4XXSI7y",
+        "content": {
+          "passage": "In a unique town, the local park is designed as a perfect triangular shape with vertices A, B, and C. The lengths of sides AB, BC, and AC are in the ratio 3:4:5. A new walking path is constructed along side AC, and it divides the triangle into two smaller triangles. If the perimeter of triangle ABC is 36 meters, what is the length of side AC of triangle ABC, and how does that affect the area of the triangle? ",
+          "statements": [
+            "The length of side AC is 12 meters.",
+            "The area of triangle ABC can be calculated using the lengths of sides AB and BC."
+          ]
+        },
+        "question": "Is the information provided in the two statements sufficient to determine if the area of triangle ABC can be definitively calculated?",
+        "title": "Calculating Area of a Triangular Park Based on Side Lengths",
+        "solution": "From Statement (1), we know that the length of side AC is 12 meters. Since the perimeter of triangle ABC is 36 meters, the lengths of sides AB and BC can be determined based on their ratio of 3:4:5. This means AB = 9 meters and BC = 15 meters. The area of a triangle can be calculated using Heron's formula, which requires knowledge of all three sides. Therefore, Statement (1) alone is sufficient to find the area. However, Statement (2) doesn't provide the lengths of all sides explicitly, as it mentions calculating the area using just two sides, which does not directly give us the necessary information without the third side. Thus, we need both statements to be combined to affirm the area comprehensively. However, since statement (1) yields all values necessary, we can conclude that Statement (1) alone suffices. Therefore, the answer is A: \"Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.\"",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<geometry>- <difficulty-level: 5> (multi-correct MCQ)",
+        "thread_id": "thread_JFevCkDpJ8DZGkRi19g8XLHn",
+        "question": "In a peculiar solar system, a newly discovered planet, Zog, is geometrically intriguing. The shape of Zog resembles a perfect dodecahedron, each face of which has a side length of 10 kilometers. On Zog, a colony has decided to create a series of energy-efficient tunnels that connect the centers of each of the faces of the dodecahedron. The tunnels are to be constructed such that they form a perfect polyhedral network. The cost to build each tunnel is calculated based on the length of the tunnel multiplied by a factor of 3. As the colonists prepare for construction, they need to assess the total cost of building tunnels connecting all centers of adjacent faces of the dodecahedron. Which of the following statements about the total cost of construction is true? <br> I. The total number of tunnels needed can be determined by the number of edges in the dodecahedron. <br> II. The total cost will exceed 1000 credits based on the length of all tunnels. <br> III. The total length of tunnels connecting the centers of adjacent faces can be calculated by recognizing that each face has 5 edges, and the geometry of a dodecahedron allows for a specific formula to compute the total length of all tunnels.",
+        "title": "Exploring the Geometric Dodecahedron and Tunnel Construction Costs on Planet Zog",
+        "solution": "<p>Each edge of the dodecahedron connects two faces, and since there are 30 edges, we can calculate the length of each tunnel as follows:<br> Length of tunnel = Side Length * sqrt(3) = ~~10 * 1.73 = 17.32~~ km.<br> Total length of tunnels = Number of edges * Length of tunnel = ~~30 * 17.32 = 519.6~~ km.<br> Total cost of construction = Total length of tunnels * Cost per km = ~~519.6 * 3 = 1558.85~~ credits.<br> </p>",
+        "answer": "1558.85",
+        "options": [
+          "1358.85",
+          "1714.74",
+          "779.42",
+          "1558.85"
+        ],
+        "difficulty": 5,
+        "tag": [
+          "MCQ-Multi correct",
+          "geometry"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<mean median mode>- <difficulty-level: 2>",
+        "thread_id": null,
+        "question": "In a peculiar land where the inhabitants speak only in numbers, a merchant named Thales gathers sales figures from his unusual Oddity Store over a week. The sales for each day in the land's numeric language are as follows: 15, 22, 17, 25, 20, 30, and 18. Thales decides to calculate the mean sales figure to understand his average earnings during that week. However, he also becomes curious about the median sales value to uncover the day with the central performance. If Thales adds a special discount day sales of 40 to this numeric narrative, what is the overall mean and median of the sales figures? Please provide the final answers rounded to two decimal places.",
+        "title": "Calculating Mean and Median Sales Figures in a Peculiar Land",
+        "solution": "<p>To calculate the mean sales figure, we sum up all the sales values: <br> Total sales = 15 + 22 + 17 + 25 + 20 + 30 + 18 + 40 = 177 <br> Mean sales = Total sales / Number of days = 177 / 8 = 22.125 <br> Next, to calculate the median, we first sort the sales figures: 15, 17, 18, 20, 22, 25, 30, 40. Since there are 8 values (an even number), the median will be the average of the fourth and fifth values: <br> Median = (20 + 22) / 2 = 21.0 </p>",
+        "answer": 23.38,
+        "tag": [
+          "Numeric Entry",
+          "mean median mode"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <statistics> - <Bar Graph> - <Logistics and Operations>- <difficulty-level: 2>",
+        "content": [
+          {
+            "graph": {
+              "title": "Monthly Logistics Operations Expenses in 2022",
+              "xAxis": "Months",
+              "yAxis": "Expenses in USD",
+              "data": {
+                "x-axis": [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December"
+                ],
+                "y-axis": [
+                  0,
+                  5000,
+                  10000,
+                  15000,
+                  20000,
+                  25000
+                ],
+                "data": [
+                  8000,
+                  10000,
+                  12000,
+                  15000,
+                  18000,
+                  12000,
+                  16000,
+                  20000,
+                  22000,
+                  25000,
+                  23000,
+                  24000
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "This bar graph illustrates the monthly logistics operations expenses throughout the year 2022."
+          },
+          {
+            "graph": {
+              "title": "Logistics Operations Revenue Trends in 2022",
+              "xAxis": "Months",
+              "yAxis": "Revenue in USD",
+              "data": {
+                "x-axis": [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December"
+                ],
+                "y-axis": [
+                  0,
+                  5000,
+                  10000,
+                  15000,
+                  20000,
+                  25000
+                ],
+                "data": [
+                  10000,
+                  15000,
+                  18000,
+                  22000,
+                  26000,
+                  22000,
+                  27000,
+                  30000,
+                  32000,
+                  34000,
+                  33000,
+                  35000
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "This bar graph depicts the monthly revenue trends within logistics operations during 2022."
+          }
+        ],
+        "title": "Analysis of Logistics Operations: Expenses vs. Revenue in 2022",
+        "questions": [
+          {
+            "question": "In the month of June 2022, the logistics operations had an expense of $12,000. Considering the overall trend in expenses and revenues throughout the year, calculate the percentage difference between the total expenses for the first half of the year (January to June) and the total revenue for the same period. What does this percentage difference indicate about the financial health of the logistics operations?",
+            "number": 1,
+            "title": "Percentage Difference in Financial Performance for Logistics Operations in June 2022",
+            "solution": "The total expenses for the first half of 2022 amounted to $75,000, while the total revenue for the same period was $113,000. The percentage difference between total revenue and total expenses is approximately \\( 50.67\\% \\). This positive percentage difference indicates a favorable financial health, suggesting that the logistics operations generated significantly more revenue than expenses during this period.",
+            "answer": "Approximately 50.67%",
+            "options": [
+              "Approximately 37.37%",
+              "Approximately 50.67%",
+              "Approximately 57.37%",
+              "Approximately 27.37%"
+            ],
+            "tag": [
+              "PS",
+              "statistics"
+            ]
+          },
+          {
+            "question": "In August 2022, the logistics operations recorded a revenue of $30,000. Given the monthly expenses and revenues throughout the year, what was the total revenue generated from January to August 2022, and how does it compare to the total expenses for the same period? Calculate the ratio of total revenue to total expenses, and what insights can be drawn regarding the overall performance of the logistics operations?",
+            "number": 2,
+            "title": "Revenue to Expense Ratio for Logistics Operations up to August 2022",
+            "solution": "For the period from January to August 2022, the total expenses reached $111,000, while the total revenue generated was $170,000. This gives a revenue to expense ratio of approximately \\( 1.53 \\). This ratio indicates that for every dollar spent on expenses, the logistics operations generated about $1.53 in revenue, suggesting a robust financial performance.",
+            "answer": "Approximately 1.53",
+            "options": [
+              "Approximately 1.36",
+              "Approximately 1.53",
+              "Approximately 1.16",
+              "Approximately 1.66"
+            ],
+            "tag": [
+              "PS",
+              "statistics"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "statistics"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Standard Data Table> - <Environment and Sustainability>- <difficulty-level: 5>",
+        "content": [
+          {
+            "headers": [
+              "Year",
+              "CO2 Emissions (Million Metric Tons)",
+              "Renewable Energy Usage (%)",
+              "Biodiversity Index"
+            ],
+            "rows": [
+              [
+                2015.0,
+                5000.0,
+                15.0,
+                0.75
+              ],
+              [
+                2016.0,
+                5200.0,
+                17.0,
+                0.76
+              ],
+              [
+                2017.0,
+                5400.0,
+                20.0,
+                0.77
+              ],
+              [
+                2018.0,
+                5600.0,
+                22.0,
+                0.78
+              ],
+              [
+                2019.0,
+                5800.0,
+                25.0,
+                0.79
+              ]
+            ],
+            "type": "standard data table",
+            "description": "This standard data table illustrates the relationship between CO2 emissions, renewable energy usage, and biodiversity index over a span of five years."
+          },
+          {
+            "headers": [
+              "Sector",
+              "CO2 Emissions (Million Metric Tons)",
+              "Renewable Energy Usage (%)",
+              "Sustainability Rating (1-10)"
+            ],
+            "rows": [
+              [
+                "Transportation",
+                1700,
+                10,
+                6
+              ],
+              [
+                "Industry",
+                2100,
+                12,
+                5
+              ],
+              [
+                "Residential",
+                800,
+                20,
+                7
+              ],
+              [
+                "Agriculture",
+                500,
+                15,
+                4
+              ],
+              [
+                "Commercial",
+                900,
+                18,
+                6
+              ]
+            ],
+            "type": "standard data table",
+            "description": "This standard data table details the CO2 emissions, renewable energy usage, and sustainability ratings across various sectors."
+          }
+        ],
+        "title": "Analyzing Environmental Impact: A Data-Driven Approach to Sustainability and CO2 Emissions",
+        "questions": [
+          {
+            "question": "Using the provided data table that outlines CO2 emissions over a five-year period, what is the percentage increase in CO2 emissions from the year 2015 to the year 2019?",
+            "number": 1,
+            "title": "Percentage Increase in CO2 Emissions from 2015 to 2019",
+            "solution": "The percentage increase in CO2 emissions from 2015 to 2019 is 16.00\\%.",
+            "answer": "16.00\\%",
+            "options": [
+              "16.00\\%",
+              "-4.00\\%",
+              "800.00",
+              "13.79\\%"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          },
+          {
+            "question": "Based on the provided data table detailing emissions and sustainability ratings across various sectors, what is the average sustainability rating among all sectors listed?",
+            "number": 2,
+            "title": "Average Sustainability Rating Across Various Sectors",
+            "solution": "The average sustainability rating across various sectors is 5.60.",
+            "answer": "5.60",
+            "options": [
+              "7.00",
+              "5.80",
+              "5.60",
+              "7.00"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          }
+        ],
+        "difficulty": 5,
+        "tag": [
+          "PS",
+          "data analytics"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <probability> - <Scatter Plot> - <Business and Finance>- <difficulty-level: 1>",
+        "content": null,
+        "title": "Analyzing the Influence of Marketing Strategies on Sales Performance Using Scatter Plots",
+        "questions": [
+          {
+            "question": "Based on the scatter plot illustrating the relationship between advertising budget and sales, if the advertising budget was increased to 50 thousand dollars, what would be the expected sales revenue based on the trend observed in the data?",
+            "number": 1,
+            "title": "Expected Sales Revenue from Advertising Budget Increase to $50,000",
+            "solution": "The expected sales revenue for an advertising budget of $50,000 is approximately $55.07.",
+            "answer": "55.07",
+            "options": [
+              "45.10",
+              "55.07",
+              "60.25",
+              "54.17"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          },
+          {
+            "question": "According to the scatter plot depicting the impact of social media marketing on sales, if the social media marketing budget were to be reduced to 10 thousand dollars, what sales revenue would you expect based on the observed trend in the data?",
+            "number": 2,
+            "title": "Expected Sales Revenue from Social Media Marketing Budget Reduction to $10,000",
+            "solution": "The expected sales revenue for a social media marketing budget of $10,000 is approximately $26.84.",
+            "answer": "26.84",
+            "options": [
+              "26.84",
+              "24.00",
+              "28.50",
+              "30.75"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          }
+        ],
+        "difficulty": 1,
+        "tag": [
+          "PS",
+          "probability"
+        ]
+      }
+    ]
+  },
+  "GRE_V": {
+    "section1": [
+      {
+        "prompt": "<Psychology> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "thread_id": "thread_JuNENrHFXpiB66HDZSGkEz1h",
+        "question": "The study of psychology often reveals that individuals exhibit _______ behaviors that may seem incongruent with their conscious thoughts, suggesting a deeper _______ at play within the cognitive processes.",
+        "title": "Psychology and Incongruent Behaviors",
+        "type": "TC-2",
+        "answer": [
+          "multifaceted",
+          "cognitive dissonance"
+        ],
+        "options": [
+          [
+            "consistent",
+            "erratic",
+            "anomalous",
+            "multifaceted"
+          ],
+          [
+            "harmony",
+            "cognitive dissonance",
+            "conflict",
+            "strategy"
+          ]
+        ],
+        "solution": "<p>The correct options are <b>multifaceted</b> and <b>cognitive dissonance</b>. These choices indicate that behaviors can be complex and influenced by deeper psychological conflicts.</p><p>Option Discussion:</p><ul><li><b>Option A: multifaceted</b> - This describes behaviors that are intricate and varied, fitting the context.</li><li><b>Option B: erratic</b> - While this indicates inconsistent behaviors, it does not capture the underlying complexity.</li><li><b>Option C: anomalous</b> - This refers to behaviors that are abnormal but lacks the explanation of cognitive processes.</li><li><b>Option D: consistent</b> - This contradicts the idea of incongruent behaviors.</li></ul><p>For the second blank:</p><ul><li><b>Option E: conflict</b> - Could imply a struggle but lacks specificity in cognitive terms.</li><li><b>Option F: strategy</b> - Not relevant to the concept of underlying psychological processes.</li><li><b>Option G: cognitive dissonance</b> - This perfectly explains the psychological conflict arising from incongruent beliefs and behaviors.</li><li><b>Option H: harmony</b> - This contradicts the idea of incongruence altogether.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "psychology",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <SE> - <difficulty-level: 5> - <vocabulary-level:1>",
+        "thread_id": "thread_pBIl7FNm4eUoYp490EfxbfwY",
+        "question": "In exploring the themes of isolation and despair, the author presents a character whose life is marked by a profound sense of _______. This feeling is particularly palpable in the later chapters, as the character grapples with their internal struggles and seeks solace in _______.",
+        "title": "Literary Themes of Isolation and Despair",
+        "type": "SE",
+        "answer": [
+          "loneliness",
+          "companionship"
+        ],
+        "options": [
+          "solitude",
+          "contentment",
+          "betrayal",
+          "joy",
+          "companionship",
+          "loneliness"
+        ],
+        "solution": "<p><strong>Option B: loneliness</strong> is the correct choice as it directly relates to the themes of isolation and despair the author explores\u2014indicating the character's profound feelings in the narrative.<br> <br> <strong>Option E: companionship</strong> is also correct, as the character seeks solace in relationships, contrasting with their loneliness. <br> <br> The other options do not appropriately capture the essence of despair and isolation:<br>  <ul><li><strong>Option A: joy</strong> contradicts the themes portrayed in the text.</li><li><strong>Option C: contentment</strong> suggests a sense of satisfaction, which is not reflective of the character's struggles.</li><li><strong>Option D: betrayal</strong> does not directly connect to the overarching themes of isolation.</li><li><strong>Option F: solitude</strong> could imply a peacefulness rather than the despair the character endures.</li></ul></p>",
+        "difficulty": 5,
+        "tags": [
+          "literature",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Economics> - <SE> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "thread_id": "thread_XiMhR8gt69fK6wd678MOY6g1",
+        "question": "Although typically seen as a symptom of economic downturn, inflation can sometimes be viewed as a __________ factor that encourages spending. This explains why some economists deem a moderate level of inflation as beneficial to the economy, suggesting that a strong albeit controlled increase in prices can be __________ in promoting growth.",
+        "title": "The Dual Nature of Inflation in Economic Contexts",
+        "type": "SE",
+        "answer": [
+          "catalytic",
+          "neutral"
+        ],
+        "options": [
+          "constraining",
+          "neutral",
+          "detrimental",
+          "volatile",
+          "problematic",
+          "catalytic"
+        ],
+        "solution": "<p>In this sentence, the correct options are <b>catalytic</b> and <b>neutral</b>. The term <b>catalytic</b> suggests that inflation can act as a driving force that stimulates spending and economic activity, while <b>neutral</b> implies that inflation does not have a significant effect on economic behavior, aligning with the idea that moderate inflation can be beneficial.</p><p>Other options:</p><ul><li><b>volatile</b>: This suggests instability, which does not align with the context of promoting positive economic behavior.</li><li><b>constraining</b>: Implies restriction, contrary to the phrase encouraging spending.</li><li><b>detrimental</b>: Indicates harm, which does not fit with the view of inflation as sometimes beneficial.</li><li><b>problematic</b>: Suggests issues or difficulties, again not consistent with the positive aspects of mild inflation.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "economics",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<History> - <TC-1> - <difficulty-level: 1> - <vocabulary-level:3>",
+        "thread_id": "thread_VI1takPx1FYrG9zJsrYefqz8",
+        "question": "The discovery of ancient artifacts often leads historians to _______ about the cultures that created them.",
+        "title": "History and Interpretation of Ancient Artifacts",
+        "type": "TC-1",
+        "answer": "speculate",
+        "options": [
+          "wonder",
+          "speculate",
+          "celebrate",
+          "ignore",
+          "confirm",
+          "document"
+        ],
+        "solution": "<p>The correct answer is <b>speculate</b> because historians often make educated guesses about the cultural significance of artifacts based on the evidence available. </p><p>Other options are discussed below:</p><ul><li><b>ignore</b>: This is incorrect as historians actively seek to study artifacts.</li><li><b>confirm</b>: While they may confirm certain aspects, the act of discovering artifacts typically involves speculation more than confirmation.</li><li><b>celebrate</b>: This does not relate to the process of understanding or interpreting artifacts.</li><li><b>wonder</b>: Although historians may wonder about artifacts, it does not fit the context of actively seeking understanding.</li><li><b>document</b>: While documenting is part of their work, it does not capture the interpretive nature of examining cultural artifacts.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "history",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <TC-3> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_M63lpl66o1E2vfZt7jD4r4M8",
+        "question": "The recent political upheaval in the region has led to a series of changes in leadership, which many analysts argue is not merely a reaction to external pressures but also a result of _______ within the political parties. This internal strife has created a _______ environment, where cooperation is scarce, and has ultimately resulted in _______ governance that struggles to address the needs of the populace.",
+        "title": "Political Upheaval and Internal Strife",
+        "type": "TC-3",
+        "answer": [
+          "dissension",
+          "volatile",
+          "ineffective"
+        ],
+        "options": [
+          [
+            "dissension",
+            "harmony",
+            "collaboration",
+            "resolution"
+          ],
+          [
+            "stable",
+            "dynamic",
+            "conducive",
+            "volatile"
+          ],
+          [
+            "ineffective",
+            "robust",
+            "efficient",
+            "effective"
+          ]
+        ],
+        "solution": "<p>In this question, **dissension** (A) is correct as it accurately describes the internal conflict within political parties that would lead to upheaval. **Volatile** (F) is suitable for the environment described, indicating instability and unpredictability. **Ineffective** (J) aptly characterizes the governance resulting from this strife.</p> <p>Other options are not suitable because: </p> <ul> <li>**Harmony** (B) contradicts the context of internal conflict.</li> <li>**Resolution** (C) implies a solution, which is not applicable here.</li> <li>**Collaboration** (D) also undermines the idea of internal strife.</li> <li>**Dynamic** (E) does not directly connote instability.</li> <li>**Stable** (G) and **conducive** (H) imply a positive environment, which isn't accurate.</li> <li>**Effective** (I) suggests successful governance, contrary to the scenario's implications.</li> <li>**Robust** (L) implies strength, which doesn't fit the context either.</li> </ul>",
+        "difficulty": 2,
+        "tags": [
+          "politics",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Science> - <SE> - <difficulty-level: 5> - <vocabulary-level:2>",
+        "thread_id": "thread_9tezicEBSlInznzZgN9tcOyA",
+        "question": "The discovery of penicillin, which marked a significant milestone in the development of antibiotics, has made many previously deadly infections __________, transforming modern medicine and saving countless lives.",
+        "title": "Significant Discoveries in Science",
+        "type": "SE",
+        "answer": [
+          "manageable",
+          "preventable"
+        ],
+        "options": [
+          "isolated",
+          "manageable",
+          "perpetual",
+          "untreatable",
+          "preventable",
+          "intrusive"
+        ],
+        "solution": "<p><strong>The correct options are B and C:</strong> The sentence indicates that the discovery of penicillin changed previously deadly infections into something that can now be dealt with, which makes 'manageable' and 'preventable' appropriate choices.</p><p><strong>Option A:</strong> 'untreatable' contradicts the context of the sentence as penicillin allowed for treatment.</p><p><strong>Option D:</strong> 'perpetual' does not fit logically, as it suggests ongoing severity rather than improvement.</p><p><strong>Option E:</strong> 'intrusive' does not relate to treatment of infections in this context.</p><p><strong>Option F:</strong> 'isolated' does not align with how infections are managed within the framework of modern medicine.</p>",
+        "difficulty": 5,
+        "tags": [
+          "science",
+          "se"
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The field of psychology has long sought to understand the complex interplay between behavior and mental processes. Among the many theories that have emerged, cognitive psychology stands out for its focus on the internal processes by which individuals perceive, think, and remember. This branch of psychology emphasizes the importance of mental functions in understanding how people process information from their environments and make decisions based on that information.</p><p>One of the significant developments in cognitive psychology is the concept of cognitive distortions, which refers to the biased perspectives individuals may adopt about themselves and the world around them. This can lead to misinterpretations of reality, affecting emotional responses and behaviors. Understanding these distortions is critical for therapeutic practices, particularly in cognitive behavioral therapy (CBT), which aims to help individuals recognize and alter these maladaptive thought patterns.</p>",
+            "<p>Another pivotal area of study within psychology is the realm of social psychology, which examines how an individual's thoughts, feelings, and behaviors are influenced by the actual, imagined, or implied presence of others. This field investigates a variety of phenomena, including conformity, group dynamics, and interpersonal relationships. Social psychologists explore questions such as why individuals often conform to group norms, even against their better judgment, and how social contexts can shape individual behavior.</p><p>Research in social psychology has also illuminated mechanisms behind prejudice and discrimination, revealing how stereotypes can influence perceptions and lead to biased behaviors. By understanding these social processes, psychologists aim to inform interventions that promote tolerance and reduce social conflict. In therapeutic settings, this knowledge can empower individuals to navigate their social worlds more effectively, fostering healthier relationships and reducing anxiety in social contexts.</p>",
+            "<p>Developmental psychology represents yet another vital branch, focusing on the psychological growth and changes that occur throughout a person's lifespan. This field examines how various factors, such as genetics, environment, and social experiences, contribute to cognitive and emotional development. Key theories, like Erik Erikson's stages of psychosocial development, outline how individuals face different challenges and crises at various life stages, influencing their identity and personal growth.</p><p>Additionally, research in developmental psychology has highlighted the significance of early childhood experiences on later behavior and emotional health. Notably, attachment theory posits that the bonds formed with primary caregivers shape an individual's social and emotional capacities. Understanding these developmental processes is crucial for educators, parents, and mental health professionals alike, as it can guide interventions aimed at fostering healthy development and addressing developmental disorders.</p>"
+          ]
+        },
+        "title": "Exploring the Dimensions of Psychological Study",
+        "tags": [
+          "rc-m",
+          "Assumption Question ",
+          "Main Idea Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What assumption underlies the premise that cognitive distortions significantly affect emotional responses and behaviors?",
+            "title": "Assumptions in Cognitive Distortion Impact",
+            "answer": "Thought patterns directly lead to changes in emotional and behavioral responses.",
+            "options": [
+              "Thought patterns directly lead to changes in emotional and behavioral responses.",
+              "Cognitive distortions can be easily recognized by individuals.",
+              "Emotional responses are not influenced by cognitive processes.",
+              "There is no connection between thought and emotion."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: 'Thought patterns directly lead to changes in emotional and behavioral responses.' This assumption underlies the concept of cognitive distortions, suggesting that how individuals think directly impacts how they feel and act.</p><p>Option <strong>A</strong> is incorrect because while some cognitive distortions can be recognized, they are often subtle and can be difficult for individuals to identify without guidance.</p><p>Option <strong>B</strong> is incorrect as it contradicts the foundational idea of cognitive psychology, which posits that cognitive processes significantly affect emotional responses.</p><p>Option <strong>D</strong> is also incorrect because it denies the well-established link between thought processes and emotional responses, which is critical in psychological theories and therapies.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What is the main idea of the passage regarding social psychology?",
+            "title": "Understanding the Core of Social Psychology",
+            "answer": "Social psychology examines how individuals are influenced by the presence of others.",
+            "options": [
+              "Social psychology ignores the impact of group dynamics on individual behavior.",
+              "Social psychology examines how individuals are influenced by the presence of others.",
+              "Social psychology focuses solely on prejudice and discrimination.",
+              "Social psychology primarily addresses individual cognitive processes."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Social psychology examines how individuals are influenced by the presence of others.' This encapsulates the main idea of the passage, highlighting the field's focus on the interaction between individual behavior and social contexts.</p><p>Option <strong>A</strong> is incorrect because it misrepresents social psychology, which does not focus solely on individual cognitive processes but rather emphasizes the social context in shaping behavior.</p><p>Option <strong>C</strong> is incorrect, as while prejudice and discrimination are important topics, they do not encompass the entirety of social psychology.</p><p>Option <strong>D</strong> is also incorrect because it overlooks the significance of group dynamics, which are fundamental to understanding social influence.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "type": "RC",
+            "question": "What assumption is made about early childhood experiences in the context of developmental psychology?",
+            "title": "Assumptions About Early Childhood Experiences",
+            "answer": "Early interactions with caregivers have a lasting impact on emotional development.",
+            "options": [
+              "All individuals have the same childhood experiences regardless of their environment.",
+              "Early interactions with caregivers have a lasting impact on emotional development.",
+              "Developmental changes occur in a linear, unchanging manner.",
+              "Early childhood experiences are irrelevant to adult behavior."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Early interactions with caregivers have a lasting impact on emotional development.' This assumption is central to developmental psychology and underlines the importance of foundational relationships in shaping emotional and social capacities.</p><p>Option <strong>A</strong> is incorrect as it completely disregards the significance of early experiences, which are widely recognized as crucial in influencing later behavior.</p><p>Option <strong>C</strong> is incorrect because it simplifies developmental processes, which are often non-linear and influenced by a variety of factors.</p><p>Option <strong>D</strong> is also incorrect because it fails to acknowledge the diversity of individual experiences, which can vary greatly depending on environmental and contextual factors.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 4
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The philosophical journey often commences with a sense of wonder, a curiosity about the nature of existence itself. Philosophers have pondered questions such as 'What is the meaning of life?' and 'Is there a reality beyond what we can perceive?' In exploring these inquiries, one may encounter various schools of thought, notably empiricism and rationalism. Empiricists argue that knowledge is derived from sensory experience, suggesting that our understanding of the world is fundamentally shaped by what we perceive through our senses. In contrast, rationalists contend that reason and innate ideas play a crucial role in the formation of knowledge, proposing that some truths can be known independently of sensory experience.</p><p>This dichotomy highlights the tension between two fundamentally different approaches to understanding truth. While empiricism emphasizes the role of experience and observation, rationalism elevates the power of intellect and reasoning. This ongoing debate has spurred countless discussions on the nature of knowledge and has influenced various disciplines, including science, ethics, and metaphysics, thereby illustrating the profound implications of these philosophical positions.</p>",
+            "<p>Throughout history, philosophers have grappled with the concept of the self and its relation to the external world. The existentialist school of thought, championed by figures such as Jean-Paul Sartre and Simone de Beauvoir, posits that existence precedes essence; in other words, individuals are not born with a predetermined nature but instead create their identities through choices and actions. This belief in radical freedom underscores the weight of personal responsibility, urging individuals to forge their own paths in an indifferent universe.</p><p>Moreover, this philosophical viewpoint invites an exploration of authenticity and the struggle against societal norms that often dictate behavior. The existentialist perspective encourages one to confront the 'bad faith' that arises when individuals conform to external expectations at the expense of their true selves. Through such reflection, it becomes evident that understanding one's identity is not merely a philosophical exercise but an essential endeavor for leading a meaningful life amidst the complexities of existence.</p>",
+            "<p>The concept of morality has been a focal point in philosophical discourse, with numerous theorists attempting to articulate the foundations of ethical behavior. Immanuel Kant's deontological ethics presents a framework in which moral actions are dictated by adherence to duty rather than the consequences of those actions. Kantian ethics asserts that one should act according to maxims that could be universally applied, thereby fostering a sense of moral obligation that transcends personal desires.</p><p>Conversely, utilitarianism, associated with philosophers such as Jeremy Bentham and John Stuart Mill, emphasizes the outcomes of actions, advocating for the greatest happiness principle. This perspective evaluates the morality of actions based on their ability to produce pleasure and minimize suffering for the greatest number of people. The tension between these two ethical paradigms invites critical reflection on the nature of morality and challenges individuals to consider whether ethical decisions should be based on duty or the pursuit of consequential benefits.</p>"
+          ]
+        },
+        "title": "The Duality of Knowledge: Exploration of Philosophical Thought",
+        "tags": [
+          "rc-m",
+          "Strengthen Question ",
+          "Main Idea Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "Which philosophical perspective asserts that knowledge is primarily derived from sensory experience?",
+            "title": "Empiricism: The Foundation of Knowledge",
+            "answer": "Empiricism",
+            "options": [
+              "Empiricism",
+              "Rationalism",
+              "Utilitarianism",
+              "Existentialism"
+            ],
+            "solution": "<p>The correct answer is <strong>A: Empiricism</strong>. This philosophical perspective emphasizes that knowledge is primarily derived from sensory experience, affirming that our understanding of the world is shaped by observation and interaction with our environment.</p><p><strong>B: Rationalism</strong> is incorrect because it holds that reason and innate ideas, rather than sensory experience, are the key sources of knowledge.</p><p><strong>C: Existentialism</strong> is not applicable here, as it primarily addresses individual existence and the creation of meaning rather than the acquisition of knowledge.</p><p><strong>D: Utilitarianism</strong> focuses on the consequences of actions and their ability to promote happiness, which does not pertain to the source of knowledge.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "type": "RC",
+            "question": "What is the primary focus of existentialist philosophy as discussed in the passage?",
+            "title": "Existentialism: The Essence of Individuality and Freedom",
+            "answer": "The creation of identity through choices.",
+            "options": [
+              "The creation of identity through choices.",
+              "The preordained nature of individuals.",
+              "The importance of intellectual reasoning.",
+              "Conformity to societal norms."
+            ],
+            "solution": "<p>The correct answer is <strong>B: The creation of identity through choices</strong>. This option accurately reflects the existentialist belief that individuals are not born with a predetermined nature but instead forge their identities through their actions and decisions.</p><p><strong>A: The preordained nature of individuals</strong> is incorrect as existentialism specifically argues against the idea that individuals have a set essence at birth.</p><p><strong>C: Conformity to societal norms</strong> is not in alignment with existentialist philosophy, which often critiques such conformity as a barrier to authentic existence.</p><p><strong>D: The importance of intellectual reasoning</strong> misrepresents the focus of existentialism, which prioritizes freedom and personal responsibility over pure reasoning as seen in rationalist thought.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What assumption underlies the Kantian ethical framework discussed in the passage?",
+            "title": "Kantian Ethics: The Basis of Moral Duty",
+            "answer": "Ethical behavior is based on universal maxims.",
+            "options": [
+              "Personal desires should guide moral decisions.",
+              "Moral actions are determined by their consequences.",
+              "Happiness is the ultimate goal of morality.",
+              "Ethical behavior is based on universal maxims."
+            ],
+            "solution": "<p>The correct answer is <strong>B: Ethical behavior is based on universal maxims</strong>. This assumption is central to Kant's deontological ethics, which posits that moral actions should be guided by principles that could be applied universally, regardless of the results.</p><p><strong>A: Moral actions are determined by their consequences</strong> is incorrect as it describes utilitarianism, not Kantian ethics, which focuses on duty over outcomes.</p><p><strong>C: Personal desires should guide moral decisions</strong> contradicts Kant's emphasis on duty and the importance of adhering to moral law rather than subjective desires.</p><p><strong>D: Happiness is the ultimate goal of morality</strong> does not align with Kantian ethics, which prioritizes adherence to duty rather than the pursuit of happiness as in utilitarian philosophy.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 3
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<History> - <TC-1> - <difficulty-level: 1> - <vocabulary-level:1>",
+        "thread_id": "thread_q6vvc7o9z1xrT5oDZXWP0Ph8",
+        "question": "The Renaissance was a period of great cultural and intellectual _______ in Europe, marking a transition from the medieval to the modern world.",
+        "title": "History and Cultural Transition",
+        "type": "TC-1",
+        "answer": "revival",
+        "options": [
+          "revival",
+          "chaos",
+          "stagnation",
+          "decline",
+          "confusion",
+          "disruption"
+        ],
+        "solution": "<p>The correct answer is <b>revival</b>, as the Renaissance is characterized by a significant revival of arts and learning in Europe.</p><ul><li><b>decline</b>: This option is incorrect because the Renaissance was not a period of decline but rather a flourishing of culture.</li><li><b>stagnation</b>: Stagnation suggests a lack of progress, which does not accurately describe the Renaissance.</li><li><b>confusion</b>: This option implies disorder, contrasting sharply with the clarity and creativity of the period.</li><li><b>chaos</b>: Chaos is not applicable, as the Renaissance involved organized cultural advancements.</li><li><b>disruption</b>: While there were conflicts, the overall impact of the Renaissance was not one of disruption but of renewal.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "history",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <TC-1> - <difficulty-level: 1> - <vocabulary-level:1>",
+        "thread_id": "thread_fgQz1Po66xYKM45aDvODxvq2",
+        "question": "In modern democracies, the role of political parties is to __________ the differing views of the populace, ensuring that a diverse range of opinions is considered in the governance process.",
+        "title": "Political Parties in Modern Democracies",
+        "type": "TC-1",
+        "answer": "embrace",
+        "options": [
+          "undermine",
+          "disregard",
+          "assess",
+          "marginalize",
+          "clarify",
+          "embrace"
+        ],
+        "solution": "<p><strong>C</strong> is the correct option because political parties actively seek to <em>embrace</em> the differing views of the populace, fostering inclusivity in government decisions.</p> <p>Other options are not suitable for the following reasons:</p> <ul> <li><strong>A</strong> - While parties aim to clarify views, this does not encompass the idea of inclusion.</li> <li><strong>B</strong> - Assessing views does not imply representation or action.</li> <li><strong>D</strong> - Undermining views contradicts the purpose of political parties in a democracy.</li> <li><strong>E</strong> - Disregarding differing views would lead to a narrow governance approach.</li> <li><strong>F</strong> - Marginalizing voices undermines the democratic fabric.</li> </ul>",
+        "difficulty": 1,
+        "tags": [
+          "politics",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 4> - <vocabulary-level:1>",
+        "thread_id": "thread_Wunru3Iip0sUpZr5uiW9AsYN",
+        "question": "In the realm of literature, the protagonist often embodies the values of _______ and _______ that are central to the novel\u2019s overarching themes, while simultaneously illustrating the complexities of human nature through _______ behavior.",
+        "title": "Literature: Protagonist's Values and Human Nature",
+        "type": "TC-3",
+        "answer": [
+          "compassion",
+          "altruistic",
+          "exemplary"
+        ],
+        "options": [
+          [
+            "compassion",
+            "indifference",
+            "sacrilege",
+            "generosity"
+          ],
+          [
+            "heroic",
+            "nostalgic",
+            "malevolent",
+            "altruistic"
+          ],
+          [
+            "apologetic",
+            "exemplary",
+            "irresponsible",
+            "exuberant"
+          ]
+        ],
+        "solution": "<p>The correct answers are <b>compassion</b>, <b>altruistic</b>, and <b>exemplary</b> as these words collectively represent the values that a protagonist in literature typically embodies. Together, they illustrate a character who is not only caring and selfless but also serves as a model for others.</p><p><u>Explanation of other options:</u></p><ul><li><b>sacrilege</b>: This term refers to violation of something sacred, which is contrary to the positive values expected of a protagonist.</li><li><b>indifference</b>: This word implies a lack of concern or interest, contrary to compassionate behavior.</li><li><b>nostalgic</b>: While it may reflect a yearning for the past, it does not tie strongly to altruism or compassion.</li><li><b>heroic</b>: Although it suggests bravery, it doesn't necessarily align with the values of compassion.</li><li><b>malevolent</b>: This denotes a desire to harm others, which is the opposite of the expected qualities in a protagonist.</li><li><b>irresponsible</b>: This implies a lack of accountability, which contradicts the exemplary nature of a protagonist.</li><li><b>exuberant</b>: While it denotes enthusiasm, it does not reflect the serious values embodied by a protagonist.</li><li><b>apologetic</b>: This indicates remorse, which does not align with the proactive qualities of a character who embodies strong values.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <SE> - <difficulty-level: 1> - <vocabulary-level:2>",
+        "thread_id": "thread_LyQXfcZbUZ6jH5GuHG4sJnaX",
+        "question": "The recent campaign was notable not only for its innovative approach to voter outreach but also for the candidates' ability to communicate their visions in a manner that was both _______ and _______.",
+        "title": "Political Campaign Communication",
+        "type": "SE",
+        "answer": [
+          "candid",
+          "articulate"
+        ],
+        "options": [
+          "ambiguous",
+          "transparent",
+          "confusing",
+          "incomprehensible",
+          "articulate",
+          "candid"
+        ],
+        "solution": "<p>The correct options are <b>candid</b> and <b>articulate</b> because both words imply clarity and honesty in communication, traits essential for effective political discourse.</p><p>Other options are less suitable because:</p><ul><li><b>Confusing</b>: implies lack of clarity.</li><li><b>Ambiguous</b>: suggests unclear messaging.</li><li><b>Incomprehensible</b>: indicates it cannot be understood.</li><li><b>Transparent</b>: while positive, it does not fit as well in the context of communication style alongside the first blank.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "politics",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Psychology> - <TC-3> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "thread_id": "thread_4KFli4GripEdYXIMU52p8hRi",
+        "question": "In psychology, the concept of cognitive dissonance refers to the mental discomfort experienced when an individual holds two or more conflicting beliefs or values. This dissonance can lead to a variety of outcomes, including changes in attitudes, __________ responses to information, and a heightened need for __________ validation. Ultimately, individuals strive for __________ in their beliefs, as the tension created by dissonance can be psychologically taxing.",
+        "title": "Cognitive Dissonance and Its Psychological Impacts",
+        "type": "TC-3",
+        "answer": [
+          "emotional",
+          "external",
+          "consistency"
+        ],
+        "options": [
+          [
+            "inauthentic",
+            "emotional",
+            "physical",
+            "observable"
+          ],
+          [
+            "identical",
+            "external",
+            "social",
+            "self-referential"
+          ],
+          [
+            "ambiguity",
+            "consistency",
+            "discrepancy",
+            "disharmony"
+          ]
+        ],
+        "solution": "<p><strong>A</strong>: The term 'emotional' fits well in the context of 'responses to information,' as cognitive dissonance often triggers emotional reactions. <br> <strong>F</strong>: 'External' validation is relevant, as individuals seek outside confirmation to alleviate dissonance. <br> <strong>I</strong>: 'Consistency' ties with the goal of aligning beliefs to resolve the discomfort of dissonance.</p> <p>Other options do not fit as effectively: <br> <strong>B</strong> ('physical') and <strong>C</strong> ('observable') do not relate to psychological responses; <br> <strong>D</strong> ('inauthentic'), <strong>E</strong> ('social'), <strong>G</strong> ('self-referential'), <strong>H</strong> ('identical'), <strong>J</strong> ('discrepancy'), <strong>K</strong> ('ambiguity'), and <strong>L</strong> ('disharmony') do not adequately capture the psychological striving for balance and resolution.</p>",
+        "difficulty": 2,
+        "tags": [
+          "psychology",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Philosophy> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:3>",
+        "thread_id": "thread_5yQzt3nMENwk0nH0sjocLUEh",
+        "question": "Many philosophers contend that the essence of ethical behavior is not merely adherence to prescribed norms, but rather a deeper understanding of being, requiring individuals to engage in _______ reflection on their principles and to _______ those principles in the context of human experience.",
+        "title": "Philosophical Reflection and Principles",
+        "type": "TC-2",
+        "answer": [
+          "critical",
+          "reassess"
+        ],
+        "options": [
+          [
+            "ambiguous",
+            "superficial",
+            "unquestioning",
+            "critical"
+          ],
+          [
+            "articulate",
+            "disregard",
+            "ignore",
+            "reassess"
+          ]
+        ],
+        "solution": "<p><b>Option B</b> (critical) is correct because it indicates a deep, thoughtful examination of ethical principles, which aligns with engaging in meaningful reflection. <br> <br> <b>Option F</b> (reassess) is also correct since it implies evaluating and possibly altering one's principles based on reflection.  <br> <br> <b>Option A</b> (superficial) suggests a lack of depth in reflection, making it incorrect. <br> <br> <b>Option C</b> (ambiguous) does not fit as it would not suggest a clear understanding of ethical behavior. <br> <br> <b>Option D</b> (unquestioning) contradicts the notion of engagement in critical thinking. <br> <br> <b>Option E</b> (articulate) does not fit as it relates to expression rather than reflection and engagement. <br> <br> <b>Option G</b> (ignore) and <b>Option H</b> (disregard) both imply neglect and do not align with the idea of thoughtful ethical engagement.</p>",
+        "difficulty": 2,
+        "tags": [
+          "philosophy",
+          "tc-2"
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The study of photosynthesis has captivated scientists for centuries. This process, whereby plants convert light energy into chemical energy, is fundamental to life on Earth. During photosynthesis, plants utilize sunlight to transform carbon dioxide and water into glucose and oxygen. These products serve as both an energy source for the plants themselves and a key component of the Earth's atmospheric balance.</p>",
+            "<p>Recent advancements in biotechnology have led to the development of genetically modified organisms (GMOs). These innovations allow scientists to enhance crop resistance to pests and environmental conditions, potentially increasing food production. However, the introduction of GMOs has sparked significant debate regarding their safety and environmental impact, highlighting the need for ongoing research and regulation in this dynamic field.</p>"
+          ]
+        },
+        "title": "Photosynthesis and the Rise of Biotechnology",
+        "tags": [
+          "rc-s",
+          "Weaken Question ",
+          "Main Idea Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "How does the introduction of GMOs potentially weaken the argument for traditional agriculture sustainability?",
+            "title": "The Weakened Foundations of Traditional Agriculture",
+            "answer": "Introducing GMOs diminishes biodiversity in ecosystems.",
+            "options": [
+              "GMOs require less pesticide, thus benefiting traditional methods.",
+              "Introducing GMOs diminishes biodiversity in ecosystems.",
+              "GMOs boost yields, which supports traditional agriculture practices.",
+              "GMOs can lead to increased soil degradation over time."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: Introducing GMOs diminishes biodiversity in ecosystems. This option weakens the argument for the sustainability of traditional agriculture by suggesting that reliance on GMOs could lead to a reduction in the variety of plant and animal life, which is essential for resilient agricultural systems.</p><p>Option <strong>A</strong>, 'GMOs can lead to increased soil degradation over time,' is speculative and does not directly correlate with the sustainability argument itself.</p><p>Option <strong>B</strong>, 'GMOs require less pesticide, thus benefiting traditional methods,' supports the use of GMOs rather than weakening the argument against traditional agriculture.</p><p>Option <strong>D</strong>, 'GMOs boost yields, which supports traditional agriculture practices,' also strengthens the argument for GMOs rather than undermining traditional agriculture sustainability.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "What is the main idea of the passage regarding photosynthesis and its importance to life on Earth?",
+            "title": "The Essential Role of Photosynthesis",
+            "answer": "Photosynthesis is crucial for energy conversion and atmospheric balance.",
+            "options": [
+              "Photosynthesis is a complex process that only certain plants can perform.",
+              "Photosynthesis is crucial for energy conversion and atmospheric balance.",
+              "Photosynthesis relies solely on water and sunlight to function effectively.",
+              "The process of photosynthesis primarily benefits animals rather than plants."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Photosynthesis is crucial for energy conversion and atmospheric balance. This option encapsulates the main idea of the passage, highlighting the significance of photosynthesis in both energy production for plants and maintaining the Earth's atmosphere.</p><p>Option <strong>A</strong>, 'Photosynthesis is a complex process that only certain plants can perform,' is inaccurate as all green plants, algae, and some bacteria can perform photosynthesis, and it does not address the broader importance of the process.</p><p>Option <strong>C</strong>, 'The process of photosynthesis primarily benefits animals rather than plants,' misrepresents the passage, which emphasizes the benefits to plants and the ecosystem as a whole.</p><p>Option <strong>D</strong>, 'Photosynthesis relies solely on water and sunlight to function effectively,' oversimplifies the process, neglecting the role of carbon dioxide and not capturing the broader theme of importance.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The study of history is often seen as a repository of factual events, but it is fundamentally an interpretation of the past. Historians seek to reconstrue narratives from the remnants of bygone eras, attempting to weave together disparate threads into cohesive stories. This effort requires not only a deep understanding of the events themselves but also an appreciation for the context in which these events occurred. For instance, the fall of the Roman Empire is not merely recorded in terms of battles lost or territories gained, but understood through the lens of shifting cultural, social, and economic factors that precipitated its decline.</p><p>Moreover, the interpretation of history is inherently subjective; different historians may emphasize various elements of the same event based on their perspectives and the contemporary issues they wish to address. The evolution of historical narratives over time reveals much about the societies that produced them. The tumultuous history of colonization, for example, has been portrayed in radically diverse ways, reflecting ongoing conversations about power, race, and identity. As such, history is not a static record, but a dynamic field that evolves with new research and societal shifts.</p>",
+            "<p>The Renaissance period marks a significant turning point in European history, characterized by a revival of interest in the classical art and philosophies of ancient Greece and Rome. This cultural movement, which spanned from the 14th to the 17th centuries, fostered a spirit of inquiry and innovation that profoundly impacted art, science, and politics. Artists such as Leonardo da Vinci and Michelangelo redefined artistic boundaries, employing techniques such as chiaroscuro and perspective to create lifelike representations of the human form. Their works, steeped in humanism, illustrated not only a mastery of technique but also a new appreciation for individual experience and emotion.</p><p>Simultaneously, scientific advancements began to flourish, as thinkers like Copernicus and Galileo challenged established notions of the cosmos, proposing revolutionary ideas that would lay the groundwork for modern science. This intellectual ferment was further nurtured by the invention of the printing press, which facilitated the widespread dissemination of ideas and allowed for the questioning of authority. The Renaissance exemplifies a period where the confluence of artistry and science fostered a profound transformation in European thought, encouraging a forward-looking exploration that would define the subsequent eras.</p>",
+            "<p>The Industrial Revolution, spanning from the late 18th to the mid-19th century, was a period of profound change that transformed societies around the globe. Beginning in Great Britain, it marked the transition from agrarian economies to industrialized and urban ones. The introduction of machinery and factory production fundamentally altered the nature of labor; artisans and craftsmen were increasingly replaced by factory workers, leading to a new social order characterized by the rise of the working class. This shift contributed to significant demographic changes, as people moved to urban centers in search of employment opportunities.</p><p>However, the Industrial Revolution was not merely an economic transformation; it brought with it a plethora of social and environmental consequences. While it spurred unprecedented wealth and advancements in technology, it also gave rise to brutal working conditions, child labor, and environmental degradation. Reactions to these challenges spurred movements advocating for labor rights and social reforms, indicating that the progress achieved was often accompanied by significant social strife. Thus, the Industrial Revolution serves as a complex chapter in history, illustrating the duality of progress and the accompanying challenges it often entails.</p>"
+          ]
+        },
+        "title": "The Shifts and Transformations of Historical Progress",
+        "tags": [
+          "rc-m",
+          "Evaluate Question ",
+          "Main Idea Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What are the key factors that historians consider when interpreting historical events?",
+            "title": "Understanding Historical Interpretation",
+            "answer": "Cultural context and socio-economic factors",
+            "options": [
+              "The geographical location of events",
+              "Cultural context and socio-economic factors",
+              "The number of battles fought during the era",
+              "Personal anecdotes of leaders involved"
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Cultural context and socio-economic factors.</p><p>This option is accurate as historians must consider the broader societal influences that shape events. Social structures, economic conditions, and cultural beliefs are critical to understanding why events occurred as they did and how they affected the population.</p><p><strong>B</strong>: The number of battles fought during the era may provide some information, but it does not encompass the wider context necessary for a thorough historical interpretation.</p><p><strong>C</strong>: The geographical location of events is important, yet it is only one aspect of a multifaceted interpretation of history.</p><p><strong>D</strong>: Personal anecdotes of leaders involved can be interesting but are often biased and do not reflect the larger societal context being analyzed.</p>",
+            "tags": [
+              "Evaluate Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "question": "What is the main idea of the passage regarding the Industrial Revolution?",
+            "title": "Central Themes of the Industrial Revolution",
+            "answer": "The Industrial Revolution resulted in significant economic and social transformations.",
+            "options": [
+              "The Industrial Revolution led to changes solely in economic practices.",
+              "The Industrial Revolution primarily affected rural communities.",
+              "The Industrial Revolution was a period of social progress with no negative effects.",
+              "The Industrial Revolution resulted in significant economic and social transformations."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: The Industrial Revolution resulted in significant economic and social transformations.</p><p>This option captures the passage's main idea, highlighting how the Industrial Revolution brought about both economic changes\u2014transitioning to factory production\u2014and social issues such as the rise of the working class and the need for labor rights.</p><p><strong>A</strong>: The Industrial Revolution led to changes solely in economic practices is incorrect because the passage emphasizes social and environmental impacts as well.</p><p><strong>B</strong>: The Industrial Revolution was a period of social progress with no negative effects is wrong; the passage clearly notes the adverse conditions that accompanied industrial growth.</p><p><strong>D</strong>: The Industrial Revolution primarily affected rural communities is misleading; the transformation was centered in urban areas where people moved for work, thus affecting urban communities much more significantly.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What assumption underlies the historians' interpretations of the fall of the Roman Empire discussed in the passage?",
+            "title": "Assumptions Behind Historical Interpretation",
+            "answer": "Cultural, social, and economic factors are crucial to understanding historical events.",
+            "options": [
+              "The fall of the Roman Empire was primarily due to external invasions.",
+              "Cultural, social, and economic factors are crucial to understanding historical events.",
+              "Historical events can be understood solely through military outcomes.",
+              "Historians always agree on the interpretation of historical events."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Cultural, social, and economic factors are crucial to understanding historical events.</p><p>This option reflects the assumption that historians consider a variety of influences beyond just military aspects when interpreting the fall of the Roman Empire as discussed in the passage.</p><p><strong>B</strong>: Historical events can be understood solely through military outcomes is incorrect because it ignores the broader context, including cultural and economic influences, which are emphasized in the passage.</p><p><strong>C</strong>: The fall of the Roman Empire was primarily due to external invasions is misleading as the passage asserts that various factors contributed to its decline, not just invasions.</p><p><strong>D</strong>: Historians always agree on the interpretation of historical events is false; the passage discusses how different historians may interpret events differently based on their perspectives.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The concept of economics is fundamentally concerned with how societies allocate scarce resources. In an increasingly interconnected world, the principles of economics help to explain how individuals and institutions make choices regarding production, distribution, and consumption. For instance, when a government decides to fund public education, it is effectively reallocating resources that could have been used in other sectors of the economy. This decision illustrates the trade-offs inherent in economic decision-making.</p><p>Furthermore, economic theories offer insights into the behavior of markets. Supply and demand, a foundational principle of economics, posits that prices are determined by the availability of goods and the desire of consumers to purchase them. When demand exceeds supply, prices tend to rise, prompting producers to increase production, thus eventually achieving a market equilibrium. An understanding of these concepts is essential for both policymakers and businesses alike, as it influences their strategic decisions.</p>",
+            "<p>Economics is often divided into two main branches: microeconomics and macroeconomics. Microeconomics focuses on the individual and firm-level decisions, analyzing how consumers respond to changes in prices and how firms determine their production levels. For example, when the price of a popular consumer good increases, microeconomic principles suggest that consumers may either seek substitutes or reduce their overall consumption, thereby influencing market dynamics.</p><p>On the other hand, macroeconomics examines the economy as a whole, investigating factors like national income, overall employment, and inflation rates. Policymakers utilize macroeconomic indicators to assess economic health and develop strategies to promote growth. Understanding the cyclical nature of economies, including periods of expansion and recession, is crucial for crafting effective economic policies. The interplay between micro and macroeconomic factors highlights the complexity of economic systems and the challenges faced by decision-makers.</p>",
+            "<p>One vital concept in economics is that of opportunity cost, which refers to the value of the next best alternative forgone when a choice is made. For example, if a student chooses to attend college instead of working full-time, the opportunity cost includes not just the lost wages but also the experience and skills that could have been gained through employment. This concept is essential for both individuals and businesses to understand, as it shapes their decision-making processes regarding resource allocation.</p><p>Additionally, the role of incentives in economics cannot be overstated. Incentives can motivate behavior and influence individuals and organizations to act in certain ways. For instance, tax reductions can incentivize investment in businesses, leading to job creation and economic growth. Conversely, disincentives, such as taxes on sugary drinks, are designed to reduce consumption of unhealthy products. Recognizing the power of incentives is crucial for the effective formulation of both economic policies and business strategies.</p>",
+            "<p>Globalization is a defining feature of the modern economy, characterized by the increasing interdependence of countries worldwide. Through trade, investment, and technology transfer, globalization enhances economic growth and offers consumers a wider choice of goods and services. However, it also presents challenges, such as job displacement in certain sectors and income inequality within countries. Understanding the implications of globalization is critical for governments as they pursue policies that can maximize its benefits while mitigating its adverse effects.</p><p>Moreover, the phenomenon of economic development concerns the improvements in living standards and the quality of life in a nation. Economic development takes into account not just the growth of GDP but also factors like education, healthcare, and environmental sustainability. Policymakers aim to foster economic development by implementing strategies that promote innovation, infrastructure investment, and fair trade practices. Balancing the various aspects of economic development is crucial for ensuring long-term prosperity and equity among citizens.</p>"
+          ]
+        },
+        "title": "The Dynamics of Economics: Balancing Choices and Consequences",
+        "tags": [
+          "rc-l",
+          "Conclusion Question ",
+          "Main Idea Question ",
+          "Assumption Question ",
+          "Main Idea Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What can be inferred about the relationship between globalization and economic development based on the passages?",
+            "title": "Inferences on Globalization and Economic Development",
+            "answer": "While globalization offers growth opportunities, it may also lead to increased inequality.",
+            "options": [
+              "All countries experience the same outcomes from globalization.",
+              "Globalization exclusively benefits developed countries.",
+              "While globalization offers growth opportunities, it may also lead to increased inequality.",
+              "Economic development is unaffected by international trade."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: While globalization offers growth opportunities, it may also lead to increased inequality. The passages discuss how globalization enhances economic growth and provides consumers with choices, but they also highlight challenges such as job displacement and income inequality, indicating a nuanced relationship between the two.</p><p><strong>A</strong>: Globalization exclusively benefits developed countries. This option is incorrect because the passages indicate that globalization affects both developed and developing countries, presenting challenges and opportunities to each.</p><p><strong>C</strong>: Economic development is unaffected by international trade. This option is incorrect as the passages suggest that international trade is a significant factor influencing economic development positively and negatively.</p><p><strong>D</strong>: All countries experience the same outcomes from globalization. This option is incorrect because the effects of globalization vary across countries, depending on their unique economic contexts and policies.</p>",
+            "tags": [
+              "Conclusion Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "Which of the following best captures the main idea of the passages?",
+            "title": "Understanding the Core Themes of Economic Principles",
+            "answer": "The interplay of micro and macroeconomic factors is essential for understanding economic behavior.",
+            "options": [
+              "Economic principles primarily concern personal finance management.",
+              "Globalization has no significant impact on economic theory.",
+              "Economic development only depends on technological advancements.",
+              "The interplay of micro and macroeconomic factors is essential for understanding economic behavior."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: The interplay of micro and macroeconomic factors is essential for understanding economic behavior. The passages emphasize the importance of both microeconomics and macroeconomics and how they collaborate to provide insights into economic decision-making and policy formulation.</p><p><strong>A</strong>: Economic principles primarily concern personal finance management. This option is incorrect as the passages focus on broader economic concepts and theories rather than just personal finance.</p><p><strong>C</strong>: Globalization has no significant impact on economic theory. This option is incorrect because the passages discuss globalization's influence on economic growth and development, indicating that it plays a vital role in modern economics.</p><p><strong>D</strong>: Economic development only depends on technological advancements. This option is incorrect, as the passages illustrate that economic development is multi-faceted, involving various factors such as trade, policy, and social considerations, not solely dependent on technology.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "Which assumption underlies the idea that incentives significantly impact economic behavior?",
+            "title": "The Role of Incentives in Economic Decision-Making",
+            "answer": "People respond predictably to changes in costs and benefits.",
+            "options": [
+              "All economic actors seek to minimize their risks.",
+              "Individuals and firms are motivated primarily by altruism.",
+              "People respond predictably to changes in costs and benefits.",
+              "Economic behavior remains constant regardless of external factors."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: People respond predictably to changes in costs and benefits. This assumption is fundamental to the concept of incentives in economics, suggesting that individuals and firms will adjust their behavior based on how incentives alter the perceived costs and benefits of their choices.</p><p><strong>A</strong>: Individuals and firms are motivated primarily by altruism. This option is incorrect, as the passages emphasize that economic behavior is largely influenced by self-interest and rational decision-making rather than altruistic motivations.</p><p><strong>C</strong>: Economic behavior remains constant regardless of external factors. This option is incorrect because the essence of incentives is that they modify behavior in response to changes in external conditions.</p><p><strong>D</strong>: All economic actors seek to minimize their risks. This option is incorrect, as it implies a uniformity in behavior that does not account for the diverse motivations and objectives of different economic actors.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What is the primary focus of the passages regarding economic concepts?",
+            "title": "Exploring the Focus of Economic Concepts",
+            "answer": "The significance of understanding how economic principles apply to decision-making.",
+            "options": [
+              "The effects of natural resources on economic growth.",
+              "The role of government regulations in shaping market behavior.",
+              "The significance of understanding how economic principles apply to decision-making.",
+              "The importance of studying historical economic trends."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: The significance of understanding how economic principles apply to decision-making. The passages highlight various economic concepts and emphasize their practical implications in decision-making for individuals and policymakers.</p><p><strong>A</strong>: The importance of studying historical economic trends. This option is incorrect as the passages do not focus on historical analysis but rather on current economic principles and their applications.</p><p><strong>C</strong>: The role of government regulations in shaping market behavior. This option is incorrect because, while government regulations are important, the passages primarily target broader economic principles rather than specific regulatory impacts.</p><p><strong>D</strong>: The effects of natural resources on economic growth. This option is incorrect since the passages do not concentrate on natural resources but on a range of factors like incentives, opportunity costs, and globalization.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 3
+          }
+        ]
+      }
+    ]
+  }
+}

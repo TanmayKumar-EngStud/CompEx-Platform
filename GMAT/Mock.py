@@ -1,26 +1,26 @@
 import json, time, dotenv
-from Mock.Verbal import Verbal
-from Mock.Quants import Quants
-from Mock.Integrated_Reasoning import Integrated_Reasoning
+from GMAT.Mock_prompts.Verbal import Verbal_prompts
+from GMAT.Mock_prompts.Quants import Quants_prompts
+from GMAT.Mock_prompts.Integrated_Reasoning import Integrated_Reasoning_prompts
 
 import traceback
 from enum import Enum
 import time,os
 
-from Integrated_Reasoning.files.GI import Generate_GI as GI_gen
-from Integrated_Reasoning.files.TPA import Generate_TPA as TPA_gen
-from Integrated_Reasoning.files.TA import Generate_TA as TA_gen
-from Integrated_Reasoning.files.MSR import Generate_MSR as MSR_gen
-from Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
+from GMAT.Integrated_Reasoning.files.GI import Generate_GI as GI_gen
+from GMAT.Integrated_Reasoning.files.TPA import Generate_TPA as TPA_gen
+from GMAT.Integrated_Reasoning.files.TA import Generate_TA as TA_gen
+from GMAT.Integrated_Reasoning.files.MSR import Generate_MSR as MSR_gen
+from GMAT.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
 
 # region Quants generators:
-from Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
+from GMAT.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
 
 # endregion
 
 # region Verbal generators:
-from Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
-from Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
+from GMAT.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
+from GMAT.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
 # endregion 
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -52,11 +52,11 @@ class GMAT_Mock:
     def __init__(self, mock_difficulty) -> None:
         self.max_retries = 3
         self.mock_difficulty = mock_difficulty
-        verbal = Verbal(mock_difficulty)
+        verbal = Verbal_prompts(mock_difficulty)
         self.verbal_prompts = verbal.generate_question_prompts()
-        quants = Quants(mock_difficulty)
+        quants = Quants_prompts(mock_difficulty)
         self.quants_prompts = quants.generate_question_prompts()
-        ir = Integrated_Reasoning(mock_difficulty)
+        ir = Integrated_Reasoning_prompts(mock_difficulty)
         self.ir_prompts = ir.generate_question_prompts()
 
     def generate_question_with_retry(self, exam_section: str, prompt: str, generator_class):
@@ -123,17 +123,14 @@ class GMAT_Mock:
                     exam_section, data = question_data
                     paper[exam_section]["section0"].append(data)
 
-        with open(f"GMAT_paper-{time.strftime('%d-%m-%Y-%H-%M')}.json", "w") as f:
-            json.dump(paper, f, indent=2)
-
         return paper
 
-start_time = time.time()
-gmat_mock = GMAT_Mock(mock_difficulty=1)
+# start_time = time.time()
+# gmat_mock = GMAT_Mock(mock_difficulty=1)
 
-paper = gmat_mock.generate()
+# paper = gmat_mock.generate()
 
-# json.dump(paper, open(f"paper-{time.strftime('%d-%m-%Y-%H-%M-%S')}.json", "w"), indent=2)
+# # json.dump(paper, open(f"paper-{time.strftime('%d-%m-%Y-%H-%M-%S')}.json", "w"), indent=2)
 
-end_time = time.time()
-print(f"Time taken: {end_time - start_time} seconds")
+# end_time = time.time()
+# print(f"Time taken: {end_time - start_time} seconds")

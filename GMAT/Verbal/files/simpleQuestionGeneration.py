@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 
 
-from Verbal.files.questionComponents import SimpleQuestion
+from GMAT.Verbal.files.questionComponents import SimpleQuestion
 import random
 class SimpleQuestionGeneration:
    def __init__(self, prompt=None):

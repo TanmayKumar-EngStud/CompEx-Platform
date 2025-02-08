@@ -1,8 +1,8 @@
 import random, json, os, re
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-# Integrated_Reasoning.files.
-from Integrated_Reasoning.files.questionComponents import MSR
+# GMAT.Integrated_Reasoning.files.
+from GMAT.Integrated_Reasoning.files.questionComponents import MSR
 
 class Generate_MSR:
     def __init__(self, prompt):

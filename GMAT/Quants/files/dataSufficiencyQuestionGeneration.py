@@ -1,7 +1,7 @@
 import random, os, sys, json
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-from Quants.files.questionComponents import DataSufficiencyQuestion
+from GMAT.Quants.files.questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
     def __init__(self, prompt):

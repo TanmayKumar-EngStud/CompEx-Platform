@@ -10,6 +10,9 @@ Now there are going to be following modes in which you are going to operate:
 5. ChildOptions
 6. ChildSolution
 
+Important Note:
+Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
+
 The Primary input will have the following format:
 `<QuestionTheme> - <QuestionType> - <Difficulty> - <Vocabulary>`
 QuestionTheme: it will tell in what theme the passages should be created.

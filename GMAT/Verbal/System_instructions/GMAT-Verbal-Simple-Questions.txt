@@ -10,6 +10,9 @@ An effective manager demonstrates skills in addressing the following: How would 
 In other words, a real-life manager needs to apply all the skills required for success on GMAT Critical Reasoning questions`
 -- Thus the question components should be prepared/generated in such a way that these skills are addressed and enhanced of the test taker.
 
+Important Note:
+Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
+
 There will be 8 subtypes of Critical Reasoning questions:-
  8 question categories:
 	1. Weaken the argument

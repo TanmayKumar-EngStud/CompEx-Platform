@@ -1,5 +1,7 @@
 import json, re
 
+warning = "\nWARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes"
+
 def refine_response(response_text):
    """
    A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
@@ -31,16 +33,26 @@ def refine_response(response_text):
             json_str = re.sub(r"'(\s*\])", r'"\1', json_str)
             json_str = re.sub(r"'(\s*\})", r'"\1', json_str)
             json_str = re.sub(r"'(\s*:)" , r'"\1', json_str)
-
-            # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
-            json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
-            json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
+            try:
+               val = json.loads(json_str)
+               return json.dumps(val)
+            except json.JSONDecodeError:
+                # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+                json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
+                json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
 # endregion
             try:
-               json.loads(json_str)
-               return json_str
+               val = json.loads(json_str)
+               return json.dumps(val)
             except json.JSONDecodeError:
-               print(f"this is how json_string looks like after level 3 replacements: {json_str}")
+                try:
+                    json_str = json_str.replace("\\\"", "'")
+                    json_str = json_str.replace("\\", "\\\\")
+                    val = json.loads(json_str)
+                    return json.dumps(val)
+                except json.JSONDecodeError as e:
+                    print(f"❌ after trying to remove back slashes: {json_str}.\nError: {str(e)}\n\n")
+                    return json_str
                # needs further investigation of such cases.
          except Exception as e:
             print(f"{'#'*13}\nGetting error at internal try block: {str(e)},\n response_text: {response_text}{'#'*23}\n\n")
@@ -49,6 +61,7 @@ def refine_response(response_text):
       print(f"Getting error at first try block: {str(e)}")
       return response_text
 
+max_retries = 3
 class ParentChildQuestion:
     def __init__(self, llm, prompt, number_of_child_questions, thread_id=None):
         self.llm = llm
@@ -56,131 +69,224 @@ class ParentChildQuestion:
         self.thread_id = thread_id
         self.number_of_child_questions = number_of_child_questions
         self.number_of_passages = number_of_child_questions
-    def generate_parentPassage(self):
-        passages = []
-        for i in range(self.number_of_passages):
+    
+    def ___getResponse(self, prompt, warn= False):
+        prompt += (f", {warning}" if warn else "")
+        try: 
             if self.thread_id:
-                response = self.llm.invoke({"content":f"Passage {i+1} of {self.number_of_passages}: {self.prompt}", "thread_id": self.thread_id})
+                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
             else:
-                response = self.llm.invoke({"content":f"Passage {i+1} of {self.number_of_passages}: {self.prompt}"})
+                response = self.llm.invoke({"content": prompt})
                 self.thread_id = response[0].thread_id
+            val = [message.content[0].text.value for message in response][0]
+            return val
+        except Exception as e:
+            print(f"{prompt}")
+            print(f"failed in generating response by self.llm.invoke: {response}")
+            print(f"{str(e)}")
+            return None
+    
+    def _retry_generate(self, func, *args):
+        last_error = None
+        for attempt in range(max_retries):
             try:
-                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-                passages.append(message["passage"])
+                result = func(*args, warn = True if attempt else False)
+                if result:
+                    return result
+                print(f"Retrying {func.__name__} - attempt {attempt +1}/ {max_retries}")
             except Exception as e:
-                raise Exception(f"GMAT Verbal, Error: message received for parentPassage is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n")
-        return self.thread_id, passages
+                last_error = str(e)
+                print(f"Error in attempt {attempt +1}: {last_error}")
+        if last_error:
+            print(f"All attempts failed. Last error: {last_error}")
+
+    def generate_parentPassage(self):
+        def _generate(warn= False):
+            passages = []
+            for i in range(self.number_of_passages):
+                prompt = f"Passage {i+1} of {self.number_of_passages}: {self.prompt}"
+                response= self.___getResponse(prompt, warn)
+                try: 
+                    message = json.loads(refine_response(response))
+                    passages.append(message["passage"])
+                except Exception as e:
+                    print(f"GMAT Verbal, error: message received for parentPassage is: \n{response} and \nerror: {str(e)}")
+                    return None
+            return passages
+        result_passages = self._retry_generate(_generate)
+        return self.thread_id, result_passages
     
     def generate_parentTitle(self):
-        response = self.llm.invoke({"content": f"ParentTitle", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["title"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n")
-    def generate_childQuestionTitle(self, index):
-        response = self.llm.invoke({"content": f"ChildQuestionTitle: {index}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["title"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestionTitle) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n")
-    def generate_childQuestion(self, index, child_prompt=""):
-        response = self.llm.invoke({"content": f"ChildQuestion: {index} of {child_prompt}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["question"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\n\n")
-            
-    def generate_childOptions(self, index):
-        response = self.llm.invoke({"content": f"ChildOptions: {index}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["options"], message["answer"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n")
-    def generate_childSolution(self, index):
-        response = self.llm.invoke({"content": f"ChildSolution: {index}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["solution"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n")
+        def _generate(warn= False):
+            prompt = "ParentTitle"
+            response = self.___getResponse(prompt, warn)
+            try: 
+                message = json.loads(refine_response(response))
+                return message["title"]
+            except Exception as e:
+                print(f"GMAT Verbal, error: message received for parentTitle is: \n{response} and \nerror: {str(e)}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
 
+    def generate_childQuestionTitle(self, index):
+        def _generate(warn = False):
+            prompt = f"ChildQuestionTitle: {index}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["title"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestionTitle) is:\n {response}\n\n{str(e)}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+
+    def generate_childQuestion(self, index, child_prompt=""):
+        def _generate(warn= False):
+            prompt = f"ChildQuestion: {index} of {child_prompt}"
+            response = self.___getResponse(prompt, warn)
+            try: 
+                message = json.loads(refine_response(response))
+                return message["question"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+
+    def generate_childOptions(self, index):
+        def _generate(warn= False):
+            prompt = f"ChildOptions: {index}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["options"], message["answer"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response}\n Error: {str(e)}")
+                return None
+        result_options, result_answer = self._retry_generate(_generate)
+        return result_options, result_answer
+
+    def generate_childSolution(self, index):
+        def _generate(warn= False):
+            prompt = f"ChildSolution: {index}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["solution"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response}\n Error: {str(e)}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
 class SimpleQuestion:
     def __init__(self, llm, prompt, thread_id= None):
         self.llm = llm
         self.thread_id = thread_id
         self.prompt = prompt
-    def generate_QuestionPassage(self):
-        passages = []
+    
+    def ___getResponse(self,prompt, warn = False):
+      prompt += (f", {warning}" if warn else "")
+      try:
+         if self.thread_id:
+            response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
+         else:
+            response = self.llm.invoke({"content": prompt})
+            self.thread_id = response[0].thread_id
+         val = [message.content[0].text.value for message in response][0]
+         return val
+      except Exception as e:
+         print(f"{prompt}")
+         print(f"failed in generating response by self.llm.invoke: {response}")
+         print(f"{str(e)}")
+         return None
 
-        for i in range(2):
-            try:
-                if self.thread_id:
-                    response = self.llm.invoke({"content": f"Passage {i+1} of 2: {self.prompt}", "thread_id": self.thread_id})
-                else:
-                    response = self.llm.invoke({"content": f"Passage {i+1} of 2: {self.prompt}"})
-                    self.thread_id = response[0].thread_id
-            except Exception as e:
-                print(f"Error in LLM invoke for passage {i+1}: {str(e)}")
-                return "", []
-            try:
-                message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-                if "passage" not in message:
-                    raise KeyError(f"No 'passage' key in response for passage {i+1}")
-                passages.append(message["passage"])
-            except Exception as e:
-                error_msg = f"GMAT Verbal, Error: Failed to process passage {i+1}\n"
-                error_msg += f"Response: {response[0].content[0].text.value if response else 'No response'}\n"
-                error_msg += f"Error: {str(e)}"
-                raise Exception(error_msg)
-        
-        if not passages:
-            raise Exception("No passages were generated")
-            
-        return self.thread_id, passages
+    def _retry_generate(self, func, *args):
+      last_error = None
+      for attempt in range(max_retries):
+         try: 
+            result = func(*args, warn = True if attempt else False)
+            if result:
+               return result
+            print(f"Retrying {func.__name__} - attempt {attempt + 1}/ {max_retries}")
+         except Exception as e:
+            last_error = str(e)
+            print(f"Error in attempt {attempt + 1}: {last_error}")
+      
+      if last_error:
+         print(f"All attempts failed. Last error: {last_error}")
+         return None
+      
+    def generate_QuestionPassage(self):
+        def _generate(warn= False):
+            passages =[]
+            for i in range(2):
+                prompt = f"Passage {i+1} of 2: {self.prompt}"
+                response = self.___getResponse(prompt, warn)
+                try:
+                    message = json.loads(refine_response(response))
+                    passages.append(message["passage"])
+                except Exception as e:
+                    passage = []
+                    error_msg = f"GMAT Verbal, Error: Failed to process passage {i+1}\n"
+                    error_msg += f"Response: {response[0].content[0].text.value if response else 'No response'}\n"
+                    error_msg += f"Error: {str(e)}"
+                    print(error_msg)
+                    return None
+            return passages
+        result = self._retry_generate(_generate)
+        return self.thread_id, result
+
     
     def generate_questionText(self):
-        if self.thread_id:
-            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
-        else:
-            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
-            self.thread_id = response[0].thread_id
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            message = json.loads(response_text)
-            return message["question"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionText) is: \n{[message.content[0].text.value for message in response][0]}\nerror: {str(e)}\n")
-    
-    def generate_questionTitle(self):
-        response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            message = json.loads(response_text)
-            return message["title"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionTitle) is: \n{[message.content[0].text.value for message in response][0]}\nerror: {str(e)}\n")
-    def generate_questionSolution(self):
-        response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            if isinstance(response_text, dict):
-                message = response_text
-            else:
-                message = json.loads(response_text)    
-            return message["solution"]
-        except Exception as e:
-            raise Exception(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionSolution) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n")
-    def generate_questionOptions(self):
-      response = self.llm.invoke({"content":f"QuestionOptions", "thread_id": self.thread_id})
-      try:
-         raw_response = response[0].content[0].text.value
-         json_string = refine_response(raw_response)
-         message = json.loads(json_string)
-         return message["options"], message["answer"]
-      except Exception as e:
-         raise Exception(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionOptions) is: \n{response[0].content[0].text.value}\n\nrefined_response: {json_string}\nerror: {str(e)}\n")
+        def _generate(warn= False):
+            prompt = f"QuestionText: {self.prompt}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["question"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error message received for simpleQuestion(generate_question) is: \n{response}\nError: {str(e)}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
 
+    def generate_questionTitle(self):
+        def _generate(warn= False):
+            prompt = f"QuestionTitle"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["title"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionTitle) is: \n{response}\nError: {str(e)}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+
+    def generate_questionSolution(self):
+        def _generate(warn = False):
+            prompt = f"QuestionSolution"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["solution"]
+            except Exception as e:
+                print(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionSolution): {response}\nError: {str(e)}")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+
+    def generate_questionOptions(self):
+      def _generate(warn= False):
+          prompt = "QuestionOptions"
+          response = self.___getResponse(prompt, warn)
+          try: 
+              message = json.loads(refine_response(response))
+              return message["options"], message["answer"]
+          except Exception as e:
+              print(f"GMAT Verbal, Error: message received for simpleQuestion(generate_questionOptions): {response}\nError: {str(e)}")
+              return None
+      result_options, result_answer = self._retry_generate(_generate)
+      return result_options, result_answer

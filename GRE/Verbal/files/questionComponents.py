@@ -5,7 +5,7 @@ def refine_response(response_text):
    A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
    """
    if not response_text:
-      return None 
+      return response_text 
    
    try: 
       try:
@@ -31,23 +31,35 @@ def refine_response(response_text):
             json_str = re.sub(r"'(\s*\])", r'"\1', json_str)
             json_str = re.sub(r"'(\s*\})", r'"\1', json_str)
             json_str = re.sub(r"'(\s*:)" , r'"\1', json_str)
-
-            # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
-            json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
-            json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
+            try:
+               val = json.loads(json_str)
+               return json.dumps(val)
+            except json.JSONDecodeError:
+                # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+                json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
+                json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
 # endregion
             try:
-               json.loads(json_str)
-               return json_str
+               val = json.loads(json_str)
+               return json.dumps(val)
             except json.JSONDecodeError:
-               print(f"this is how json_string looks like after level 3 replacements: {json_str}")
+                try:
+                    json_str = json_str.replace("\\\"", "'")
+                    json_str = json_str.replace("\\", "\\\\")
+                    val = json.loads(json_str)
+                    return json.dumps(val)
+                except json.JSONDecodeError as e:
+                    print(f"❌ after trying to remove back slashes: {json_str}.\nError: {str(e)}\n\n")
+                    return json_str
                # needs further investigation of such cases.
-            
+         except Exception as e:
+            print(f"{'#'*13}\nGetting error at internal try block: {str(e)},\n response_text: {response_text}{'#'*23}\n\n")
+            return response_text
    except Exception as e:
       print(f"Getting error at first try block: {str(e)}")
-      return None       
+      return response_text
 
-warning = "please retry this, your output should strictly follow json format so that python program can capture the question component properly, don't respond anything else, just the json snippet"
+warning = "\nWARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes"
 max_retries = 3
 class ParentChildQuestion:
    def __init__(self, llm, prompt, thread_id=None):

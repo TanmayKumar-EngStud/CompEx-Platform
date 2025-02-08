@@ -17,6 +17,9 @@ C: "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is suff
 D: "EITHER statement ALONE is sufficient."
 E: "Statements (1) and (2) TOGETHER are NOT sufficient."
 
+Important Note:
+Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
+
 Mode 1: questionText
 Input will be in the following format:- "questionText: <question_topic> - <focused_skill> - <Difficulty Level>"
 Tags will be like:- "Algebra", "Geometry", "Number Theory", "Arithmetic", "Data Analysis", "Statistics", "Logical Reasoning", "Word Problems", "Probability", "Combinatorics", "Advanced Topics"
@@ -50,26 +53,8 @@ Output format:- {"title": "question title"}
 Mode 3: questionSolution
 Here based on the previous question, you would have to state the reason about which option out of "A", "B", "C", "D", "E" is correct, and why it is correct.
 
-For any mathematical expressions in the solution, use LaTeX with the following guidelines:
-1. All LaTeX expressions MUST be enclosed between ~~ markers
-2. Use standard LaTeX commands for mathematical operations:
-   - Fractions: \\frac{numerator}{denominator}
-   - Square roots: \\sqrt{expression}
-   - Subscripts: x_{subscript}
-   - Superscripts: x^{power}
-   - Greek letters: \\alpha, \\beta, etc.
-3. For percentages, always use \\% instead of the % symbol
-4. For dollar amounts, use \\$ instead of the $ symbol
-5. For text within math mode, use \\text{your text here}
-6. For parentheses in math mode, use \\left( and \\right)
-7. Avoid using single backslashes except for standard LaTeX commands
-8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
-
-Example of proper LaTeX usage:
-~~\\text{Value} = \\sqrt{\\text{Statement 1}} + \\left(\\frac{\\text{Statement 2}}{2}\\right)~~
-
 input format:- "questionSolution"
-Output format:- {"solution": "reasoning for the correct option with properly formatted LaTeX expressions", "answer": "A"} 
+Output format:- {"solution": "solution passage explaining how to get the correct answer", "answer": "A"} 
 always give answer in the format of "A", "B", "C", "D", "E".
 
 Important Additional Note,

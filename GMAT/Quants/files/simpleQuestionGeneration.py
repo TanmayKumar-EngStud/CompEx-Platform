@@ -1,5 +1,5 @@
 import random
-from Quants.files.questionComponents import SimpleQuestion
+from GMAT.Quants.files.questionComponents import SimpleQuestion
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 from dotenv import load_dotenv
 import json, os, re

@@ -1,4 +1,4 @@
-from Quants.files.questionComponents import ParentChildQuestion, SimpleQuestion
+from GRE.Quants.files.questionComponents import ParentChildQuestion, SimpleQuestion
 import json, re
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
@@ -29,7 +29,7 @@ class NumericEntryQuestionGeneration:
       numericEntryQuestion = SimpleQuestion(self.llm, self.prompt, self.thread_id)
       self.thread_id, self.questionData["question"] = numericEntryQuestion.generate_questionText()
       self.questionData["title"] = numericEntryQuestion.generate_questionTitle()
-      self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution()
+      self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution(isNE = True)
 
       try:
             match = re.search(r"<(.*?)>", self.prompt)

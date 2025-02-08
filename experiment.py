@@ -17,7 +17,7 @@ def main():
         
         print("\nRegistering questions in database...")
 # 😵 comment this for loop to ignore registering questions
-        database.registerQuestion(paper, isMockQuestion=True, difficulty=1)
+        database.registerQuestion(paper, isMockQuestion=False, difficulty=1)
     finally:
         if 'db' in locals():
             db.disconnect()

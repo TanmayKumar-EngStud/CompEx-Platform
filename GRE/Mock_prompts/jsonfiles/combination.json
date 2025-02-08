@@ -1,0 +1,90 @@
+{
+   "ds": {
+      "simple": {
+         "topic": [
+            "linear inequalities",
+            "number theorm",
+            "geometry",
+            "ratio and proportion",
+            "permutations and combinations",
+            "Unitary method",
+            "profit, loss and discount"
+         ]
+      }
+   },
+   "mcq_single": {
+      "simple": {
+         "topic": [
+            "algebra",
+            "geometry",
+            "mensuration",
+            "integer properties",
+            "number theorm",
+            "linear inequalities",
+            "ratio and proportion",
+            "profit, loss and discount",
+            "mean median mode",
+            "probability",
+            "fractions/decimals and Unitary method",
+            "properties of shapes",
+            "rate and work"
+         ]
+      },
+      "parent_child": {
+         "topic": [
+            "profit, loss and discount",
+            "data interpretation",
+            "probability",
+            "statistics",
+            "data analytics"
+         ],
+         "graphType/tableType": [
+            "Line Graph",
+            "Bar Graph",
+            "Pie Chart",
+            "Scatter Plot",
+            "Standard Data Table",
+            "Pivot Table"
+         ],
+         "questionTheme": [
+            "Business and Finance",
+            "Marketing and Sales",
+            "Logistics and Operations",
+            "Science and Technology",
+            "Human Resources",
+            "Environment and Sustainability",
+            "Government Policies and Regulations"
+         ]
+      }
+   },
+   "mcq_multiple": {
+      "simple": {
+         "topic": [
+            "algebra",
+            "geometry",
+            "number theorm",
+            "linear inequalities",
+            "ratio and proportion",
+            "Unitary method",
+            "profit, loss and discount",
+            "work and time"
+         ]
+      }
+   },
+   "ne": {
+      "simple": {
+         "topic": [
+            "Unitary method",
+            "percentage",
+            "speed, distance and time",
+            "work and time",
+            "mean median mode",
+            "standard deviation and variance",
+            "algebra",
+            "probability",
+            "profit, loss and discount",
+            "ratio and proportion"
+         ]
+      }
+   }
+}

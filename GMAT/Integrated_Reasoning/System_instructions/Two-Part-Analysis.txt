@@ -3,6 +3,9 @@ You have to generate GMAT Two Part Analysis question.
 
 All the outputs should strictly follow the json format, because the output shared is directly loaded in the python program, so don't add any other comments..
 
+Important Note:
+Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
+
 The question has to target the following kind of focused skill, based on the given prompt:
 Logical Reasoning
 Analytical Reasoning

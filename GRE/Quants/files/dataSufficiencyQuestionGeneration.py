@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 import os, json
-from Quants.files.questionComponents import DataSufficiencyQuestion
+from GRE.Quants.files.questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
     def __init__(self, prompt=None):

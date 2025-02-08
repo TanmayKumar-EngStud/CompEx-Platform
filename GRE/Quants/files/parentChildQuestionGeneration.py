@@ -1,4 +1,4 @@
-from Quants.files.questionComponents import ParentChildQuestion
+from GRE.Quants.files.questionComponents import ParentChildQuestion
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 import os, json, re
 from dotenv import load_dotenv
@@ -21,7 +21,7 @@ class ParentChildQuestionGeneration:
     def generate_question(self):
         self.questionData["type"] = "PS"
         self.questionData["prompt"] = self.prompt
-        self.questionData["thread_id"] = self.thread_id
+        
         tag = []
         try:
             match = re.search(r"<(.*?)>", self.prompt)

@@ -1,4 +1,4 @@
-from Quants.files.questionComponents import SimpleQuestion
+from GRE.Quants.files.questionComponents import SimpleQuestion
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
 import os, json, re
 from dotenv import load_dotenv

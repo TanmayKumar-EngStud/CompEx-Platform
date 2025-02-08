@@ -1,4 +1,4 @@
-from Verbal.files.questionComponents import ParentChildQuestion
+from GRE.Verbal.files.questionComponents import ParentChildQuestion
 import random, math, os, json
 from dotenv import load_dotenv
 from langchain_experimental.openai_assistant import OpenAIAssistantRunnable

@@ -1,30 +1,28 @@
 import json, re
 
 def refine_response(response_text):
-    """
-    A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
-    """
-    if not response_text:
-        return None
-        
-    try:
-        # First try to parse as pure JSON
-        try:
-            json.loads(response_text)
-            return response_text  # If it's valid JSON, return as is
-        except json.JSONDecodeError:
-            pass
-
-        # Look for ```json blocks
-        json_block_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
-        if json_block_match:
+   """
+   A simplified function to handle JSON responses, including those wrapped in ```json code blocks.
+   """
+   if not response_text:
+      return response_text 
+   
+   try: 
+      try:
+         json.loads(response_text)
+         return response_text
+      except json.JSONDecodeError:
+         json_block_match = re.search(r'```json\s*(.*?)\s*```', response_text, re.DOTALL)
+         if json_block_match:
             json_str = json_block_match.group(1).strip()
-        else:
+         else: 
             json_str = response_text
-        json_str = re.sub(r'(?<!\\)\\(?!\\)', r'\\\\', json_str)
-        try:
+         try:
+            json.loads(json_str)
+            return json_str
+         except json.JSONDecodeError:
 # region ✅ 3 levels of json transformation 1️⃣ *,} -> *} ; *,] -> *] 2️⃣ {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*: 3️⃣ *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
-        # *,} -> *} ; *,] -> *]
+            # *,} -> *} ; *,] -> *]
             json_str = re.sub(r',(\s*})', r'\1', json_str)
             json_str = re.sub(r',(\s*])', r'\1', json_str)
             # {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*:
@@ -33,108 +31,164 @@ def refine_response(response_text):
             json_str = re.sub(r"'(\s*\])", r'"\1', json_str)
             json_str = re.sub(r"'(\s*\})", r'"\1', json_str)
             json_str = re.sub(r"'(\s*:)" , r'"\1', json_str)
-
-            # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
-            json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
-            json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
+            try:
+               val = json.loads(json_str)
+               return json.dumps(val)
+            except json.JSONDecodeError:
+                # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
+                json_str = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', json_str)
+                json_str = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', json_str)
 # endregion
-                
-            parsed = json.loads(json_str)
-            return json.dumps(parsed)
-        except json.JSONDecodeError as e:
-            print(f"JSON validation error in code block: {str(e)}\nJSON string:\n{json_str}\n")
-            # Continue to try other methods
-        
-        # Clean up the text a bit
-        text = response_text.strip()
-        
-        # If it starts with { and ends with }, try to parse it
-        if text.startswith('{') and text.endswith('}'):
             try:
-                # Handle single quotes
-                text = text.replace("'", '"')
-                # Remove trailing commas before } or ]
-                text = re.sub(r',(\s*})', r'\1', text)
-                text = re.sub(r',(\s*])', r'\1', text)
-                
-                # Try to parse again
-                parsed = json.loads(text)
-                return json.dumps(parsed)
-            except json.JSONDecodeError as e:
-                print(f"JSON validation error: {str(e)}\nJSON string:\n{text}\n")
-                return None
-        
-        # If we get here, try to find JSON in the text
-        match = re.search(r'(\{.*\})', text, re.DOTALL)
-        if match:
-            try:
-                json_str = match.group(1)
-                # Handle single quotes
-                json_str = json_str.replace("'", '"')
-                # Remove trailing commas
-                json_str = re.sub(r',(\s*})', r'\1', json_str)
-                json_str = re.sub(r',(\s*])', r'\1', json_str)
-                
-                parsed = json.loads(json_str)
-                return json.dumps(parsed)
-            except json.JSONDecodeError as e:
-                print(f"JSON validation error: {str(e)}\nJSON string:\n{json_str}\n")
-                return None
-                
-        return None
+               val = json.loads(json_str)
+               return json.dumps(val)
+            except json.JSONDecodeError:
+               # it reached here because it has backslashes.
+               try:
+                  json_str = json_str.replace("\\\"", "'")
+                  json_str = json_str.replace("\\", "\\\\")
+                  val = json.loads(json_str)
+                  return json.dumps(val)
+               except json.JSONDecodeError as e:
+                  print(f"❌ after trying to remove back slashes: {json_str}.\nError: {str(e)}\n\n")
+                  return json_str
+
             
-    except Exception as e:
-        print(f"Error in refine_response: {str(e)}")
-        return None
+               # needs further investigation of such cases.
+         except Exception as e:
+            print(f"{'#'*13}\nGetting error at internal try block: {str(e)},\n response_text: {response_text}{'#'*23}\n\n")
+            return response_text
+   except Exception as e:
+      print(f"Getting error at first try block: {str(e)}")
+      return response_text
+
+warning = "\nWARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes"
+max_retries = 3
 
 class ParentChildQuestion:
     def __init__(self, llm, prompt, thread_id=None):
         self.llm = llm
         self.prompt = prompt
         self.thread_id = thread_id
+
+    def ___getResponse(self,prompt, warn = False):
+      prompt += (f", {warning}" if warn else "")
+      try:
+         if self.thread_id:
+            response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
+         else:
+            response = self.llm.invoke({"content": prompt})
+            self.thread_id = response[0].thread_id
+         val = [message.content[0].text.value for message in response][0]
+         return val
+      except Exception as e:
+         print(f"{prompt}")
+         print(f"failed in generating response by self.llm.invoke: {response}")
+         print(f"{str(e)}")
+         return None   
+      
+    def _retry_generate(self, func, *args):
+        last_error = None
+        for attempt in range(max_retries):
+            try: 
+                result = func(*args, warn = True if attempt else False)
+                if result:
+                    return result
+                print(f"Retrying {func.__name__} - attempt {attempt + 1}/ {max_retries}")
+            except Exception as e:
+                last_error = str(e)
+                print(f"Error in attempt {attempt + 1}: {last_error}")
+        
+        if last_error:
+            print(f"All attempts failed. Last error: {last_error}")
+            return None
+      
     def generate_questionGraph(self):
-        response = self.llm.invoke({"content":f"questionGraph: {self.prompt}"})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:115)"
-            return self.thread_id, message["graph/table"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionGraph is: \n{response[0].content[0].text.value}\n\n")
+        def _generate(warn = False):
+            prompt = f"questionGraph: {self.prompt}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["graph/table"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionGraph is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return self.thread_id, result
     def generate_parentTitle(self):
-        response = self.llm.invoke({"content": f"ParentTitle", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["title"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response[0].content[0].text.value}\n\n")
+        def _generate(warn = False):
+            prompt = f"ParentTitle"
+            response = self.___getResponse(prompt, warn)
+
+            try:
+                message = json.loads(refine_response(response))
+                return message["title"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for parentChildQuestion(generate_parentTitle) is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
     def generate_childQuestionTitle(self, index):
-        response = self.llm.invoke({"content": f"ChildQuestionTitle: {index}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["title"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestionTitle) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
+        def _generate(warn = False):
+            prompt = f"ChildQuestionTitle: {index}"
+            response = self.___getResponse(prompt, warn)
+
+            try:
+                message = json.loads(refine_response(response))
+                return message["title"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestionTitle) is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
     def generate_childQuestion(self, index, child_prompt=""):
-        response = self.llm.invoke({"content": f"generate ChildQuestion: {index} of {child_prompt}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["question"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
+        def _generate(warn = False):
+            prompt = f"generate ChildQuestion: {index} of {child_prompt}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["question"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+    def generate_childQuestion(self, index, child_prompt=""):
+        def _generate(warn = False):
+            prompt = f"generate ChildQuestion: {index} of {child_prompt}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["question"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childQuestion) is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
     def generate_childOptions(self, index):
-        response = self.llm.invoke({"content": f"ChildOptions: {index}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["options"], message["answer"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
+        def _generate(warn = False):
+            prompt = f"ChildOptions: {index}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["options"], message["answer"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childOptions) is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
     def generate_childSolution(self, index):
-        response = self.llm.invoke({"content": f"ChildSolution: {index}", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["solution"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\nerror: {str(e)}\n\n")
+        def _generate(warn = False):
+            prompt = f"ChildSolution: {index}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["solution"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for parentChildQuestion(generate_childSolution) is: \n{response[0].content[0].text.value}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
 
 class SimpleQuestion:
     def __init__(self, llm, prompt, thread_id=None):
@@ -142,63 +196,96 @@ class SimpleQuestion:
         self.prompt = prompt
         self.thread_id = thread_id
 
+    def ___getResponse(self,prompt, warn = False):
+        prompt += (f", {warning}" if warn else "")
+        try:
+            if self.thread_id:
+                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
+            else:
+                response = self.llm.invoke({"content": prompt})
+                self.thread_id = response[0].thread_id
+            val = [message.content[0].text.value for message in response][0]
+            return val
+        except Exception as e:
+            print(f"{prompt}")
+            print(f"failed in generating response by self.llm.invoke: {response}")
+            print(f"{str(e)}")
+            return None   
+      
+    def _retry_generate(self, func, *args):
+        last_error = None
+        for attempt in range(max_retries):
+            try: 
+                result = func(*args, warn = True if attempt else False)
+                if result:
+                    return result
+                print(f"Retrying {func.__name__} - attempt {attempt + 1}/ {max_retries}")
+            except Exception as e:
+                last_error = str(e)
+                print(f"Error in attempt {attempt + 1}: {last_error}")
+        
+        if last_error:
+            print(f"All attempts failed. Last error: {last_error}")
+            return None
+        
     def generate_questionText(self):
-        if self.thread_id:
-            response = self.llm.invoke({"content": f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
-        else:
-            response = self.llm.invoke({"content": f"QuestionText: {self.prompt}"})
-            
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            message = json.loads(response_text)
-            self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:30)"
-            return self.thread_id, message["question"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionText is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
+        def _generate(warn = False):
+            prompt = f"QuestionText: {self.prompt}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["question"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionText is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return self.thread_id, result
+    
     def generate_questionTitle(self):
-        response = self.llm.invoke({"content": "QuestionTitle", "thread_id": self.thread_id})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            message = json.loads(response_text)
-            # Handle case where AI returns "question" key instead of "title"
-            if "title" in message:
+        def _generate(warn = False):
+            prompt = f"QuestionTitle"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
                 return message["title"]
-            elif "question" in message:
-                print(f"Warning: AI returned 'question' key instead of 'title' key in questionTitle response")
-                return message["question"]  # Use the value even though key is wrong
-            else:
-                raise KeyError("Neither 'title' nor 'question' key found in response")
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionTitle is: \n{[message.content[0].text.value for message in response][0]}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
-    def generate_questionSolution(self):
-        response = self.llm.invoke({"content": "QuestionSolution", "thread_id": self.thread_id})
-        try:
-            response_text = refine_response([message.content[0].text.value for message in response][0])
-            if isinstance(response_text, dict):
-                message = response_text
-            else:
-                message = json.loads(response_text)
-            if "solution" in message:
-                try:
-                    float(message["answer"])
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionTitle is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+    
+    def generate_questionSolution(self, isNE = False):
+        def _generate(warn = False):
+            prompt = f"QuestionSolution"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                if isNE:
                     return message["solution"], float(message["answer"])
-                except:
-                    print(f"GRE Quants, @NE: unable to convert answer to float, {message['answer']}")
-                    return message["solution"], message["answer"]
-            else:
-                return message["solution"]
-            
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
+                else:
+                    return message["solution"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionSolution is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        if isNE:
+            result_solution, result_answer = self._retry_generate(_generate)
+            return result_solution, result_answer
+        else:
+            result = self._retry_generate(_generate)
+            return result
+
     def generate_questionOptions(self):
-        response = self.llm.invoke({"content": "QuestionOptions", "thread_id": self.thread_id})
-        try:
-            raw_response = response[0].content[0].text.value
-            json_string = refine_response(raw_response.replace("'", '"'))
-            message = json.loads(json_string)
-            return message["options"], message["answer"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionOptions is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\nerror: {str(e)}\n\n")
+        def _generate(warn = False):
+            prompt = f"QuestionOptions"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["options"], message["answer"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionOptions is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
 
 class DataSufficiencyQuestion:
     def __init__(self, llm, prompt, thread_id= None):
@@ -206,28 +293,82 @@ class DataSufficiencyQuestion:
         self.prompt = prompt
         self.thread_id = thread_id
     
+    def ___getResponse(self,prompt, warn = False):
+        prompt += (f", {warning}" if warn else "")
+        try:
+            if self.thread_id:
+                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
+            else:
+                response = self.llm.invoke({"content": prompt})
+                self.thread_id = response[0].thread_id
+            val = [message.content[0].text.value for message in response][0]
+            return val
+        except Exception as e:
+            print(f"{prompt}")
+            print(f"failed in generating response by self.llm.invoke: {response}")
+            print(f"{str(e)}")
+            return None   
+      
+    def _retry_generate(self, func, *args):
+        last_error = None
+        for attempt in range(max_retries):
+            try: 
+                result = func(*args, warn = True if attempt else False)
+                if result:
+                    return result
+                print(f"Retrying {func.__name__} - attempt {attempt + 1}/ {max_retries}")
+            except Exception as e:
+                last_error = str(e)
+                print(f"Error in attempt {attempt + 1}: {last_error}")
+        
     def generate_questionText(self):
-        if(self.thread_id is not None):
-            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}", "thread_id": self.thread_id})
-        else:
-            response = self.llm.invoke({"content":f"QuestionText: {self.prompt}"})
-            self.thread_id = response[0].thread_id if response else "GRE Quants, Error! thread_id not found! (questionComponent@l:125)"
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return self.thread_id, message.get("passage", None), message["statements"], message["question"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionText is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
+        def _generate(warn = False):
+            prompt = f"QuestionText: {self.prompt}"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["passage"], message["statements"], message["question"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionText is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result_passage, result_statements, result_question = self._retry_generate(_generate)
+        return self.thread_id, result_passage, result_statements, result_question
+
     def generate_questionTitle(self):
-        response = self.llm.invoke({"content":f"QuestionTitle", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["title"]
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionTitle is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
+        def _generate(warn = False):
+            prompt = f"QuestionTitle"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["title"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionTitle is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+    
     def generate_questionSolution(self):
-        response = self.llm.invoke({"content":f"QuestionSolution", "thread_id": self.thread_id})
-        try:
-            message = json.loads(refine_response([message.content[0].text.value for message in response][0]))
-            return message["solution"], str(message["answer"])
-        except Exception as e:
-            raise Exception(f"GRE Quants, Error: message received for questionSolution is: \n{response[0].content[0].text.value}, \nfor prompt: {self.prompt}\n\n")
+        def _generate(warn = False):
+            prompt = f"QuestionSolution"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["solution"], str(message["answer"])
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionSolution is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result
+
+    def generate_questionOptions(self):
+        def _generate(warn = False):
+            prompt = f"QuestionOptions"
+            response = self.___getResponse(prompt, warn)
+            try:
+                message = json.loads(refine_response(response))
+                return message["options"], message["answer"]
+            except Exception as e:
+                print(f"GRE Quants, Error: message received for questionOptions is: \n{response}\nError: {str(e)}\n\n")
+                return None
+        result = self._retry_generate(_generate)
+        return result

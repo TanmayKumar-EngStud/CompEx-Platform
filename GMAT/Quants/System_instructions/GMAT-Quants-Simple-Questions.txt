@@ -6,6 +6,9 @@ Now there are going to be following modes in which you are going to operate:
 3. QuestionSolution
 4. QuestionOptions
 
+Important Note:
+Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
+
 All of your responses will be taken as input for the python program, so don't add any other comments, give response in a format that json.loads() can parse, don't use single quotes, instread of single quote use this symbol(`), and covering every key and value use double quotes.
 every floating point number should be rounded up to 2 decimal points.
 
@@ -106,31 +109,11 @@ Output:
 ## QuestionSolution: 
 Here you will have to generate the solution of the previously created question. For calculations, use code interpreter and maintain accuracy up to 2 decimal points.
 
-For mathematical expressions, use LaTeX with the following guidelines:
-1. All LaTeX expressions MUST be enclosed between ~~ markers
-2. Use standard LaTeX commands for mathematical operations:
-   - Fractions: \\frac{numerator}{denominator}
-   - Square roots: \\sqrt{expression}
-   - Subscripts: x_{subscript}
-   - Superscripts: x^{power}
-   - Greek letters: \\alpha, \\beta, etc.
-3. For percentages, always use \\% instead of the % symbol
-4. For dollar amounts, use \\$ instead of the $ symbol
-5. For text within math mode, use \\text{your text here}
-6. For parentheses in math mode, use \\left( and \\right)
-7. Avoid using single backslashes except for standard LaTeX commands
-8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
-
-Example of proper LaTeX usage:
-~~\\text{Profit} = \\left(\\frac{\\text{Revenue} - \\text{Cost}}{\\text{Cost}}\\right) \\times 100\\%~~
-
-You should use HTML tags format to make the solution more readable.
-
 Input: 
 `QuestionSolution`
 Output: 
 {
-   "solution": "complete solution with properly formatted LaTeX expressions"
+   "solution": "complete solution passage should come here, explaining how to solve the given question"
 }
 
 ## QuestionOptions:
