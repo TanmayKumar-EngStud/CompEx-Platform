@@ -1,3 +1,5 @@
+print("Startup in progress...")
+
 import json, pickle
 from prisma import Prisma
 from db import DB
@@ -6,7 +8,6 @@ import time
 # importing papers
 from GMAT.Mock import GMAT_Mock
 from GRE.Mock import GRE_Mock
-
 class Main:
    def __init__(self):
       self._difficulty_and_is_mock = {

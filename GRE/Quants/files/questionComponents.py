@@ -109,7 +109,13 @@ class ParentChildQuestion:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["graph/table"]
+                graph = {}
+                try:
+                    graph = message["graph/table"]
+                except Exception as e:
+                    graph = message["graph"]
+                    print(f"GRE Quants, Error: message received for generate_questionGraph: received 'graph' instead of 'graph/table'.\nWarning: {str(e)}\n\n")
+                return graph
             except Exception as e:
                 print(f"GRE Quants, Error: message received for questionGraph is: \n{response}\nError: {str(e)}\n\n")
                 return None

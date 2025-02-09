@@ -1,0 +1,26 @@
+services:
+   langchain-app:
+      build: .
+      env_file:
+         - .env
+      volumes:
+         - .:/app
+      container_name: question-generator
+      networks:
+         - compex-network
+
+networks:
+   compex-network:
+      external: true
+# Steps:
+# defined langchain-app service
+# building docker image from the current directory.
+# env_file to load environment variables from .env
+# mounted volume to share current directory (.) with the container /app path
+# dependency on my-postgres service
+
+# defined container_name
+# deinfed a command to run when the container starts.
+
+# Backup:
+# /Users/tanmaykumar/backups/postgres/backup.dump

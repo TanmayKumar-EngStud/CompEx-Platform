@@ -1,0 +1,1650 @@
+{
+  "GRE_Q": {
+    "section1": [
+      {
+        "prompt": "<linear inequalities>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "linear inequalities"
+        ],
+        "thread_id": "thread_KoENP0I13eaAywipgRxomNNC",
+        "content": {
+          "passage": "In a peculiar city ruled by logic, the population of the city can be described by a linear inequality. Assume the number of inhabitants, x, satisfies the inequality 2x + 3y \u2264 100, where y represents the number of pets owned by the inhabitants. The mayor wants to determine whether it is possible for the city to have at least 20 inhabitants with more than 5 pets. Given this premise, we consider the following statements. ",
+          "statements": [
+            "The total number of inhabitants in the city is at least 30.",
+            "Each inhabitant owns at least 3 pets."
+          ]
+        },
+        "question": "Based on the above statements, can we conclude that it is possible for the city to have at least 20 inhabitants with more than 5 pets?",
+        "title": "Linear Inequalities and City Inhabitants with Pets",
+        "solution": "To determine if the statements are sufficient, we analyze each one. Statement (1) states that the total number of inhabitants is at least 30. This information alone does not indicate whether there can be 20 inhabitants with more than 5 pets. Statement (2) suggests that each inhabitant owns at least 3 pets. While this may help in assessing the pet ownership, it does not provide a direct link to the number of inhabitants having more than 5 pets. Both statements do not provide sufficient information independently or together, as we need to focus on the specific combinations of these numbers to conclude whether 20 inhabitants can have more than 5 pets. Therefore, the correct answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<permutations and combinations>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_V5FdeNOBwUadHThHsXkewsZo",
+        "content": {
+          "passage": "In a local theater production, 5 actors are selected to play 3 leading roles. The roles are distinguished by the level of experience required: Role A needs 3 years of professional acting experience, Role B needs 2 years, and Role C requires at least 1 year. If each actor meets the experience criteria, how many different arrangements of actors are possible for these roles?",
+          "statements": [
+            "The total number of different actors available for selection is 7.",
+            "The arrangement of roles is fixed, meaning each role is distinct and cannot be interchanged."
+          ]
+        },
+        "question": "Based on the information above, can the total number of arrangements of actors into these 3 roles be determined?",
+        "title": "Determining Actor Arrangements in a Theater Production",
+        "solution": "To determine the total number of arrangements of actors into the distinct roles, we need to assess both statements. Statement (1) indicates that there are 7 actors available, but it does not specify how many meet the experience requirements, which leaves the arrangement undetermined. Statement (2) clarifies that each role is fixed and distinct, meaning we cannot interchange roles. However, this alone does not provide information on how many actors are qualified for the roles. Thus, both statements together do not provide sufficient information to calculate the arrangements, as we still lack details about the qualified actors. Hence, the correct answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<Unitary method>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "Unitary method"
+        ],
+        "thread_id": "thread_TleC0M5iXH3DJTvCnnpKMmI4",
+        "content": {
+          "passage": "In a small town, a bakery sells two types of pastries: croissants and danishes. Last Saturday, the bakery sold a total of 150 pastries, and the number of croissants sold was twice the number of danishes sold. If the bakery's revenue from croissants was 3 times that from danishes, what was the revenue generated from danishes? ",
+          "statements": [
+            "The bakery sold 60 croissants.",
+            "The bakery sold danishes at a price of $2 each."
+          ]
+        },
+        "question": "Based on the statements above, can we determine the total revenue generated from danishes?",
+        "title": "Bakery Revenue Analysis: Determining Danishes Income",
+        "solution": "To determine the total revenue generated from danishes, we need to analyze the statements. From Statement 1, if the bakery sold 60 croissants and knowing that the number of croissants sold was twice the number of danishes, we can deduce that 30 danishes were sold. However, we do not have the price of danishes from this statement. Statement 2 provides the price of danishes as $2 each. With both statements, we can calculate the total revenue from danishes (30 danishes \u00d7 $2 = $60). Since together the statements allow us to find the total revenue, the correct answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<mean median mode>- <difficulty-level: 1>",
+        "thread_id": null,
+        "question": "A group of seven friends decided to have a picnic and brought a variety of snacks. The number of snacks each friend brought is as follows: 3, 5, 7, 2, 8, 4, and 6. What is the mean and median number of snacks brought by the friends?",
+        "title": "Calculating the Mean and Median of Snacks Brought by Friends",
+        "solution": "<p>To find the mean, we sum the number of snacks: ~~3 + 5 + 7 + 2 + 8 + 4 + 6 = 35~~. We then divide by the number of friends: ~~35 / 7 = 5~~. <br> For the median, we first arrange the numbers in order: 2, 3, 4, 5, 6, 7, 8. Since the number of friends is odd, the median is the middle number, which is 5.</p>",
+        "answer": 5.0,
+        "tag": [
+          "Numeric Entry",
+          "mean median mode"
+        ],
+        "difficulty": 1
+      },
+      {
+        "prompt": "<number theorm>- <difficulty-level: 4>",
+        "type": "DS",
+        "difficulty": 4,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_XPbiJ2NKRzBgGgQecSJwJSNj",
+        "content": {
+          "passage": "In a certain number set, the product of two prime numbers, p and q, results in a composite number n. The sum of the digits of n is 12. Additionally, if n is divided by p, the quotient is another prime number r. Given that p is less than 10, what is the possible value of q if it's known that the difference between p and q is a prime number?",
+          "statements": [
+            "The only possible values for p are 2, 3, 5, and 7.",
+            "The sum of the digits of q is 5."
+          ]
+        },
+        "question": "Based on the above statements, can we determine the possible value of q?",
+        "title": "Determining the Possible Value of Prime q in a Number Set",
+        "solution": "To determine the possible value of q, we evaluate the statements. Statement (1) provides us with the possible values of p, which are all primes less than 10: 2, 3, 5, and 7. Statement (2) gives us that the sum of the digits of q is 5. However, neither statement alone can conclusively lead to a specific value of q. When combined, we can identify the possibilities more clearly. For instance, if p is 2, q could be a prime such as 3, as their difference (1) is not prime. Other combinations hold similarly but require thorough checking. Therefore, while the two statements together narrow down options, they still do not provide a definitive answer for q. Hence, the correct answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<number theorm>- <difficulty-level: 1> (multi-correct MCQ)",
+        "thread_id": "thread_kw0RtHV9w70hxXsq6QNHblnk",
+        "question": "In a peculiar land where numbers dance, a group of numbers is organizing a festive parade. Among them, there are 45 participants in total. The numbers follow a specific set of rules: each even number must always be followed by an odd number, while odd numbers can stand alone or be followed again by another odd number. If the even numbers chosen are 2, 4, 6, 8, 10, and the odd numbers are chosen from 1, 3, 5, 7, 9, how many valid arrangements of these numbers can be formed for the parade if exactly 5 even numbers and 5 odd numbers are to be used in the parade? Specify the arrangements that adhere to the mentioned rules, and it is important to determine which of the following statements may be true.",
+        "title": "The Dance of Numbers: Arranging Even and Odd for the Festive Parade",
+        "solution": "<p>To find the total number of valid arrangements of the parade, we recognize that we have 5 even numbers and 5 odd numbers to arrange. The arrangement must follow the rules where each even number is followed by an odd number, resulting in a sequence structure of E, O, E, O, E, O, E, O, E, O. <br> <br> The total number of arrangements can be computed by using the formula: <br> Total arrangements = (number of even numbers)! * (number of odd numbers)! <br> <br> Therefore, the calculations are as follows: <br> 1. Number of arrangements of the even numbers = 5! = 120. <br> 2. Number of arrangements of the odd numbers = 5! = 120. <br>  <br> The total arrangements = 120 * 120 = 14400.</p>",
+        "answer": 14400,
+        "options": [
+          14400,
+          2880,
+          14534,
+          13722,
+          11417
+        ],
+        "difficulty": 1,
+        "tag": [
+          "MCQ-Multi correct",
+          "number theorm"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<geometry>- <difficulty-level: 4> (multi-correct MCQ)",
+        "thread_id": "thread_023kzpWchWdZVVMfoanUZUMs",
+        "question": "In a peculiar geometric town, there exists a triangular park where the lengths of the sides are represented by the expressions 3x + 5, 4x - 2, and 5x - 3. The park\u2019s area is also a subject of curiosity, as it is demarcated by a walkway that forms another triangle inside, each side of which is given by the expressions (x + 2), (2x - 1), and (x + 3). The citizens of the town hold a contest to determine if it is possible for the area of the inner triangle to be equal to 24 square units, given specific conditions on x. What values of x could potentially fulfill this requirement, ensuring that both the side lengths of the outer triangle are valid and the area condition is satisfied? Analyze the side lengths and the area requirement for both triangles and conclude which values of x can be possible.",
+        "title": "Determining Possible Values of x for Triangle Areas in a Unique Geometric Town",
+        "solution": "<p>To find the possible values of x, we start by analyzing the geometries of the triangles involved. The outer triangle's sides are given as follows: <br> 1st side: 3x + 5 <br> 2nd side: 4x - 2 <br> 3rd side: 5x - 3 <br><br> We first ensure these values are positive for valid side lengths: <br> 3x + 5 > 0, 4x - 2 > 0, and 5x - 3 > 0. By solving these inequalities, we would need to derive suitable bounds for x. <br><br> Next, we calculate the area of the inner triangle using Heron's formula. Given the side lengths: <br> (x + 2), (2x - 1), (x + 3), we set the semi-perimeter s_inner and calculate the area accordingly. <br> Setting the area of the inner triangle equal to 24, we have the equation: <br> area_inner = 24. <br> By solving the equation using the derived quadratic relationship, the values of x are found as: <br> x = `-1/((-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2)) - (-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2)/3`, `-(-1296 + 3*sqrt(186621))**(1/3)*(-1/2 + sqrt(3)*I/2)/3 - 1/((-1296 + 3*sqrt(186621))**(1/3)*(-1/2 + sqrt(3)*I/2))`, and `-(-1296 + 3*sqrt(186621))**(1/3)/3 - 1/(-1296 + 3*sqrt(186621))**(1/3)`.</p>",
+        "answer": [
+          "x = -1/((-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2)) - (-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2)/3",
+          "x = 0"
+        ],
+        "options": [
+          "x = 0",
+          "x = -1/((-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2) + 1)",
+          "x = -3/((-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2))",
+          "x = -1/((-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2)) - (-1296 + 3*sqrt(186621))**(1/3)*(-1/2 - sqrt(3)*I/2)/3"
+        ],
+        "difficulty": 4,
+        "tag": [
+          "MCQ-Multi correct",
+          "geometry"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Pivot Table> - <Marketing and Sales>- <difficulty-level: 4>",
+        "content": [
+          {
+            "type": "pivot table",
+            "index": [
+              "Marketing Channel",
+              "Sales Quarter"
+            ],
+            "columns": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ],
+            "data": {
+              "Online": {
+                "Q1": 15000,
+                "Q2": 20000,
+                "Q3": 25000,
+                "Q4": 30000
+              },
+              "Retail": {
+                "Q1": 10000,
+                "Q2": 15000,
+                "Q3": 20000,
+                "Q4": 25000
+              },
+              "Wholesale": {
+                "Q1": 5000,
+                "Q2": 7000,
+                "Q3": 8000,
+                "Q4": 9000
+              }
+            },
+            "description": "This pivot table summarizes the sales data across different marketing channels and quarters. It compares the revenue generated through Online, Retail, and Wholesale channels in each quarter."
+          },
+          {
+            "type": "pivot table",
+            "index": [
+              "Product Category",
+              "Sales Quarter"
+            ],
+            "columns": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ],
+            "data": {
+              "Electronics": {
+                "Q1": 20000,
+                "Q2": 30000,
+                "Q3": 40000,
+                "Q4": 50000
+              },
+              "Clothing": {
+                "Q1": 15000,
+                "Q2": 20000,
+                "Q3": 25000,
+                "Q4": 30000
+              },
+              "Furniture": {
+                "Q1": 8000,
+                "Q2": 9000,
+                "Q3": 10000,
+                "Q4": 11000
+              }
+            },
+            "description": "This pivot table illustrates the sales figures for different product categories across four quarters, highlighting the sales performance of Electronics, Clothing, and Furniture."
+          }
+        ],
+        "title": "Analyzing Sales Performance Across Various Marketing Channels and Product Categories",
+        "questions": [
+          {
+            "question": "Based on the sales data from the pivot table contrasting marketing channels and sales quarters, if the total revenue from the Retail channel in Q2 increased by 10% in Q3, what would be the new revenue for the Retail channel in Q3? Additionally, how does this new figure compare to the Online channel's revenue for the same quarter?",
+            "number": 1,
+            "title": "Revenue Growth Analysis for Retail Channel in Q3",
+            "solution": "The revenue for the Retail channel in Q2 was \\$15000. With a 10% increase in Q3, the new revenue for the Retail channel is calculated as follows: \\$15000 * (1 + 0.10) = \\$16500. In comparison, the revenue for the Online channel in Q3 is \\$25000. Therefore, the new revenue for the Retail channel in Q3 is \\$16500, which is \\$8490 less than the Online channel's revenue for the same quarter.",
+            "answer": "16500.00",
+            "options": [
+              "16500.00",
+              "17000.00",
+              "15750.00",
+              "17250.00"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "question": "Considering the sales data in the pivot table outlining product categories and their revenues in Q4, if the total revenue from Electronics is projected to grow by 20% in the next quarter, what will be the estimated revenue for Electronics in Q1 of the following year? Additionally, how does this estimated revenue align with the revenue figures of Clothing for Q4?",
+            "number": 2,
+            "title": "Projected Revenue Growth for Electronics in Q1",
+            "solution": "The revenue for Electronics in Q4 is \\$50000. Projecting a growth of 20% into Q1 of the following year, the estimated revenue for Electronics can be calculated as follows: \\$50000 * (1 + 0.20) = \\$60000. In comparison, the revenue for Clothing in Q4 is \\$30000. Therefore, the estimated revenue for Electronics in Q1 is \\$60000, which is \\$30000 more than the Clothing revenue for Q4.",
+            "answer": "60000.00",
+            "options": [
+              "65000.00",
+              "60000.00",
+              "55000.00",
+              "60000.00"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          }
+        ],
+        "difficulty": 4,
+        "tag": [
+          "PS",
+          "data interpretation"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 3 so prepare other question data accordigly, prompt: :- <data analytics> - <Scatter Plot> - <Government Policies and Regulations>- <difficulty-level: 1>",
+        "content": null,
+        "title": "Analyzing the Impact of Government Policies on Compliance Rates Through Scatter Plot",
+        "questions": [
+          {
+            "question": "Based on the scatter plot illustrating the relationship between government policies ranking and compliance rates, if a government policy ranks 45, what would you predict the compliance rate to be in percentage? Please provide a detailed analysis to support your prediction.",
+            "number": 1,
+            "title": "Prediction of Compliance Rate for a Government Policy with Ranking of 45",
+            "solution": "To predict the compliance rate for a government policy with a ranking of 45, a linear regression model was used. By fitting the model to the scatter plot data, the predicted compliance rate is approximately 41.59%. This prediction is based on the established relationship observed in the scatter plot, indicating that as government policy rankings approach this value, compliance rates are expected to cluster around 41.59%.",
+            "answer": "43.36",
+            "options": [
+              "50.26",
+              "32.94",
+              "43.36",
+              "31.21"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          },
+          {
+            "question": "Considering the scatter plot depicting the relationship between government policies ranking and compliance rates, what would be the estimated compliance rate for a policy with a ranking of 80? Explain the reasoning behind your estimate by analyzing the data presented in the graph.",
+            "number": 2,
+            "title": "Estimation of Compliance Rate for a Government Policy with Ranking of 80",
+            "solution": "To estimate the compliance rate for a government policy with a ranking of 80, the previously trained linear regression model was used. The prediction generated from the model indicates that the estimated compliance rate is approximately 38.31%. This estimate is derived from the trend observed in the scatter plot, suggesting that as the government policy ranking increases to 80, the corresponding compliance rates reflect a decrease to about 38.31%.",
+            "answer": "35.79",
+            "options": [
+              "46.27",
+              "31.19",
+              "35.79",
+              "24.03"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          },
+          {
+            "question": "Referring to the scatter plot showing the relationship between government policies ranking and compliance rates, if a policy has a very high ranking of 95, what could be the anticipated compliance rate? Provide your analysis based on the data trends observed in the scatter plot.",
+            "number": 3,
+            "title": "Anticipated Compliance Rate for a Government Policy with Ranking of 95",
+            "solution": "To anticipate the compliance rate for a government policy with a ranking of 95, the linear regression model was employed again. The prediction suggests that the expected compliance rate is approximately 36.90%. This prediction is informed by the observed trend in the scatter plot, indicating that high-ranking policies tend to correlate with lower compliance rates, thus leading to an anticipated compliance rate of about 36.90%.",
+            "answer": "34.13",
+            "options": [
+              "44.14",
+              "34.13",
+              "31.66",
+              "25.36"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          }
+        ],
+        "difficulty": 1,
+        "tag": [
+          "PS",
+          "data analytics"
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<linear inequalities>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "linear inequalities"
+        ],
+        "thread_id": "thread_YurYKPEkhEQXW4JC6YzaQyTh",
+        "content": {
+          "passage": "In a hypothetical city, the number of bicycles, denoted by B, and the number of cars, denoted by C, must satisfy certain inequalities due to environmental regulations. Specifically, the city mandates that the number of bicycles must be at least twice the number of cars, which can be expressed as B \u2265 2C. Additionally, it is known that the total number of vehicles (bicycles and cars) cannot exceed 100, leading to the inequality B + C \u2264 100. Suppose the current number of cars is 20. Based on these regulations, are there possible valid solutions for the number of bicycles?",
+          "statements": [
+            "The number of bicycles is at least 40.",
+            "The number of bicycles cannot exceed 80."
+          ]
+        },
+        "question": "Is it possible to determine if there exists a valid number of bicycles based on the statements provided regarding their quantity in relation to the number of cars and the city regulations given the current number of cars is 20?",
+        "title": "Environmental Regulations on Vehicle Quantities in a Hypothetical City",
+        "solution": "To determine if we can find a valid number of bicycles based on the provided statements, we analyze each statement in conjunction with the inequalities. The first statement states that the number of bicycles is at least 40, which satisfies the inequality B \u2265 2C when C is 20, leading to B \u2265 40. The second statement indicates that the number of bicycles cannot exceed 80. Thus, we rewrite the total vehicle constraint: B + C \u2264 100 becomes B + 20 \u2264 100, or B \u2264 80. Therefore, both statements together give us the range 40 \u2264 B \u2264 80. Since both statements provide bounds that make B valid according to the inequalities, we conclude that both statements together are indeed sufficient to conclude that there exists a valid number of bicycles satisfying the conditions. Thus, the answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<speed, distance and time>- <difficulty-level: 4>",
+        "thread_id": null,
+        "question": "In a vibrant world where intergalactic delivery services thrive, a cosmic courier embarked on a journey to deliver packages across different planets. Initially, the courier sped through the Milky Way at a velocity of 120 kilometers per hour for the first 4 hours, covering a significant distance. However, upon sensing a space-time fluctuation, the courier was compelled to increase their speed by 25% for the ensuing 6 hours. Compounded by a detour that required an additional 50 kilometers to be covered, the courier faced a unique challenge. What is the total distance traveled by the courier during this mission, considering both the time and the detour?",
+        "title": "Total Distance Traveled by a Cosmic Courier During an Intergalactic Delivery",
+        "solution": "<p>Segment 1: Initial speed = 120 km/h <br> Time traveled = 4 hours <br> Distance covered = ~~120 km/h * 4 hours = 480 km~~ <br> Segment 2: Increased speed = 120 km/h * 1.25 = 150 km/h <br> Time traveled = 6 hours <br> Distance covered = ~~150 km/h * 6 hours = 900 km~~ <br> Additional detour distance = 50 km <br> Total distance traveled = ~~480 km + 900 km + 50 km = 1430 km~~ </p>",
+        "answer": 1430.0,
+        "tag": [
+          "Numeric Entry",
+          "speed, distance and time"
+        ],
+        "difficulty": 4
+      },
+      {
+        "prompt": "<profit, loss and discount>- <difficulty-level: 4>",
+        "type": "DS",
+        "difficulty": 4,
+        "tags": [
+          "DS",
+          "profit, loss and discount"
+        ],
+        "thread_id": "thread_Aee2NJxVoVyZjkPZqSLm8SgP",
+        "content": {
+          "passage": "A boutique sells three different types of handbags: A, B, and C. Handbag A sells for $80, Handbag B sells for $120, and Handbag C sells for $150. During a seasonal sale, the boutique offers a 20% discount on Handbag A and a 30% discount on Handbag B. After the discounts, the boutique buys Handbag C back at an additional 10% off the original price for a promotional event. If the boutique sold 10 bags of A, 5 bags of B, and bought 3 bags of C, what is the total profit made by the boutique after all sales and buybacks are accounted for?",
+          "statements": [
+            "Statement (1): The boutique has a fixed cost of $500 that needs to be included in the total profit calculation.",
+            "Statement (2): The boutique's selling price after discounts for Handbag A and B can be calculated as $64 and $84, respectively."
+          ]
+        },
+        "question": "Is the total profit of the boutique sufficient to determine whether the sales strategy is effective?",
+        "title": "Evaluating Profit from Handbag Sales After Discounts and Buybacks",
+        "solution": "To determine whether the sales strategy is effective by analyzing the total profit, we need to assess if the information from the provided statements gives us enough insight. Statement (1) provides a fixed cost, which is necessary to calculate the total profit accurately. Statement (2) gives us the discounted selling prices for Handbags A and B. Both statements together allow us to compute the total profit by considering sales revenue from all handbags and subtracting costs, therefore they are sufficient in tandem. However, Statement (1) alone does not give us enough information since we still need the selling prices, and Statement (2) alone does not provide the fixed cost. Thus, the correct option is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<permutations and combinations>- <difficulty-level: 5>",
+        "type": "DS",
+        "difficulty": 5,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_fsiXT7O5JvHKsXCVARpnRSpR",
+        "content": {
+          "passage": "In a prestigious culinary competition, a chef wants to prepare a unique three-course meal using six distinct ingredients: chicken, broccoli, cheese, pasta, garlic, and lemon. The chef has a specific rule that the main ingredient of the entree must differ from the ingredients used in the appetizer and dessert. The chef also wants to ensure that no ingredient is repeated across any of the courses. Given these conditions, how many different combinations of three-course meals can the chef create? To determine whether the given data is sufficient, consider the following statements.",
+          "statements": [
+            "The chef decides that chicken will always be the main ingredient of the entree.",
+            "The chef is considering broccoli and cheese as possible ingredients for the appetizer."
+          ]
+        },
+        "question": "Based on the statements provided, is the information sufficient to determine the total number of unique three-course meals the chef can prepare?",
+        "title": "Culinary Combinations: Unique Three-Course Meals Analysis",
+        "solution": "To solve the problem, we need to assess the sufficiency of the statements provided. Statement (1) specifies that chicken is the main ingredient for the entree; however, this does not eliminate any other ingredient choices for the appetizer or dessert, leaving us with the remaining five ingredients to choose from for the two other courses. Statement (2) adds that the chef is considering broccoli and cheese for the appetizer, which narrows down the options for the appetizer and maintains the six total ingredients. Thus, while these statements provide some restrictions, they do not provide enough information to calculate the exact number of three-course meals due to the variances in choosing the appetizer and dessert based on the restrictions. Therefore, both statements together give insights into ingredient choices but ultimately do not allow us to derive a definitive total count of unique combinations. Hence, the correct answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<permutations and combinations>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "permutations and combinations"
+        ],
+        "thread_id": "thread_9xk9jqkn8B9zBgLNx0zHjEw7",
+        "content": {
+          "passage": "In a futuristic society, a group of scientists is trying to determine the different combinations of elements that can produce a new type of energy. They have 5 unique elements: A, B, C, D, and E. Each combination can include any number of these elements, provided they are distinct and should include at least 2 elements. The scientists are tasked to find out how many distinct combinations can be formed only using elements A, B, and C. The researchers also wonder if including element D would yield more unique combinations than including only A, B, and C.",
+          "statements": [
+            "The number of distinct combinations using only elements A, B, and C is 4.",
+            "Including element D, the number of distinct combinations raises to 8."
+          ]
+        },
+        "question": "How many distinct combinations can be formed with the elements discussed?",
+        "title": "Combination Exploration of Elements in Energy Production",
+        "solution": "To determine whether the statements are sufficient for answering the question, we analyze them. Statement (1) indicates that there are 4 distinct combinations using only elements A, B, and C, which is sufficient to show at least some combinations exist but does not give a complete picture of combinations with D. Statement (2) states that including D raises the number of combinations to 8, which directly informs the possibility and gives us more clarity about the overall count. Therefore, we need both statements together to conclusively determine the distinct combinations including whether D makes a difference. Hence, the correct answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<work and time>- <difficulty-level: 5> (multi-correct MCQ)",
+        "thread_id": "thread_BZsAOSoN4jhJeJBNEQKlrtsW",
+        "question": "In a fantastical world where wizards and magical creatures coexist, a group of apprentices decides to build a magical tower. They have hired two wizards, Wizard A and Wizard B, to construct it. Wizard A can complete the tower alone in 12 hours, while Wizard B can do it in 15 hours. In their excitement, they decide to work together for the first 4 hours. After that, Wizard A, feeling fatigued, takes a break while Wizard B continues to work for another 4 hours alone. At this point, the apprentices realize they need to keep track of the tower's progress. They calculate the remaining work needed to finish the tower. However, unbeknownst to them, both wizards have enchanted the materials of the tower such that every hour they work causes the amount of work remaining to decrease by only 75% of the usual progress due to unpredictable magical resonances. After Wizard A re-joins Wizard B, they continue to finish the tower together. What fraction of the tower do they complete by the end of the 12th hour of working together? Which of the following statements about their work is true? 1) The total amount of work completed after 12 hours is less than 90%. 2) Wizard B, despite working more hours than Wizard A, contributed less to the overall construction due to magical interferences.",
+        "title": "The Enchanted Tower: A Collaborative Work Challenge of Wizards",
+        "solution": "<p>Initially, Wizard A has a work rate of 1/12 of the tower per hour, and Wizard B has a work rate of 1/15 of the tower per hour.<br> In the first 4 hours working together, they produce: <br> Work done = (1/12 + 1/15) * 4 hours * 0.75 = 0.45 of the tower. <br> In the next 4 hours, Wizard B works alone: <br> Work done by B = (1/15) * 4 hours * 0.75 = 0.2 of the tower. <br> Total work done after 8 hours = 0.45 + 0.2 = 0.65 of the tower <br> Remaining work = 1 - 0.65 = 0.35 of the tower. <br> Finally, in the last 4 hours, both wizards work together again: <br> Work done = (1/12 + 1/15) * 4 hours * 0.75 = 0.45 of the tower. <br> Therefore, the final total work done = 0.65 + 0.45 = 1.1 of the tower.</p>",
+        "answer": [
+          "Total work completed is 1.1 of the tower."
+        ],
+        "options": [
+          "Total work completed is 1.1 of the tower.",
+          "Total work completed is 1.00 of the tower.",
+          "Total work completed is 0.85 of the tower.",
+          "Total work completed is 0.90 of the tower."
+        ],
+        "difficulty": 5,
+        "tag": [
+          "MCQ-Multi correct",
+          "work and time"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<work and time>- <difficulty-level: 5>",
+        "thread_id": null,
+        "question": "As part of a collaborative art project, a group of skilled artisans is tasked with creating a series of intricate sculptures. Artisan A can complete a sculpture by working 5 hours a day for 6 days, whereas Artisan B can finish the same sculpture in 8 hours a day over 4 days. After A and B work together for 2 days at their respective daily schedules, they find that Artisan C, who can create a sculpture in 12 hours a day over 3 days, joins them. What is the additional time Artisan C would need to complete the sculpture if Artisan A and Artisan B had produced a significant portion prior to C\u2019s involvement?",
+        "title": "Collaboration and Completion Time in a Sculpture Project",
+        "solution": "<p>Artisan A can complete a sculpture in 30 hours (5 hours/day for 6 days). <br> Artisan B can complete a sculpture in 32 hours (8 hours/day for 4 days). <br> Over 2 days of work, Artisan A would complete ~~(5 hours * 2 days) / 30 hours = 1/3 sculpture~~, while Artisan B would complete ~~(8 hours * 2 days) / 32 hours = 1/2 sculpture~~. <br> Together, they've completed ~~1/3 + 1/2 = 5/6~~ of the sculpture. <br> This leaves ~~1 - 5/6 = 1/6~~ of the sculpture to complete. <br> Artisan C can finish a sculpture in 36 hours (12 hours/day for 3 days), giving Artisan C a rate of ~~1/36 sculptures per hour~~. <br> The additional time Artisan C needs to complete the remaining 1/6 of the sculpture is ~~(1/6) / (1/36) = 6 hours~~.</p>",
+        "answer": 6.0,
+        "tag": [
+          "Numeric Entry",
+          "work and time"
+        ],
+        "difficulty": 5
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<work and time>- <difficulty-level: 4> (multi-correct MCQ)",
+        "thread_id": "thread_sYrziWqzXsPb1zdEsCcwT1Oc",
+        "question": "In a peculiar town where the residents are obsessed with gardening, there are two gardeners, Alice and Bob, who are tasked with planting a flourishing Tulip garden. Alice can plant 120 Tulips in 6 hours, while Bob can plant 180 Tulips in 8 hours. The town\u2019s council gives them an additional challenge: they must also arrange a further 240 Tulips into rows after planting them. They realize they can work together, boosting their efficiency by 25%. After working together for 4 hours, they are distracted by the town festival and take a 2-hour break. Upon returning, they find that due to their prolonged absence, the soil has dried up, causing the efficiency to drop by 50%. After accounting for the break and decreased efficiency, how many additional Tulips do Alice and Bob still need to plant to meet the requirement? How does their combined planting strategy affect their total time efficiency? Could their arrangements fulfill the requirement if they work a total of 10 hours?",
+        "title": "The Gardener's Dilemma: How Efficiently Can Alice and Bob Plant Tulips?",
+        "solution": "<p>Alice's planting rate = 120 Tulips / 6 hours = 20 Tulips/hour <br> Bob's planting rate = 180 Tulips / 8 hours = 22.5 Tulips/hour <br> Combined planting rate = 20 + 22.5 = 42.5 Tulips/hour <br> With a 25% efficiency boost, the combined rate becomes = 42.5 * 1.25 = 53.125 Tulips/hour <br> In the first 4 hours of work, they plant = 53.125 * 4 = 212.5 Tulips.<br> After a 2-hour break due to the town festival, the remaining time is 10 - (4 + 2) = 4 hours. <br> However, their efficiency drops by 50%, leading to a decreased rate of = 53.125 * 0.5 = 26.5625 Tulips/hour.<br> Therefore, the Tulips they plant in the remaining 4 hours = 26.5625 * 4 = 106.25 Tulips.<br> Total Tulips planted = 212.5 + 106.25 = 318.75 Tulips.<br> Since they were assigned an additional task of arranging 240 Tulips, the remaining Tulips still needed to be planted = 240 - 318.75 = -78.75. Thus, they have planted 78.75 Tulips more than required.</p>",
+        "answer": [
+          "-78.75 Tulips still needed"
+        ],
+        "options": [
+          "258.75 Tulips still needed",
+          "368.75 Tulips still needed",
+          "218.75 Tulips still needed",
+          "-78.75 Tulips still needed"
+        ],
+        "difficulty": 4,
+        "tag": [
+          "MCQ-Multi correct",
+          "work and time"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <profit, loss and discount> - <Pivot Table> - <Environment and Sustainability>- <difficulty-level: 2>",
+        "content": [
+          {
+            "index": [
+              "Year",
+              "Product"
+            ],
+            "columns": [
+              "Profit",
+              "Loss",
+              "Discount"
+            ],
+            "data": {
+              "Product A": {
+                "Profit": 20000,
+                "Loss": 5000,
+                "Discount": 3
+              },
+              "Product B": {
+                "Profit": 15000,
+                "Loss": 3000,
+                "Discount": 5
+              },
+              "Product C": {
+                "Profit": 18000,
+                "Loss": 2000,
+                "Discount": 6
+              }
+            },
+            "type": "pivot table",
+            "description": "This pivot table illustrates the annual profit, loss, and discount rates for various products over three years, showcasing their financial performance."
+          },
+          {
+            "index": [
+              "Year",
+              "Product"
+            ],
+            "columns": [
+              "Profit",
+              "Loss",
+              "Discount"
+            ],
+            "data": {
+              "Product A": {
+                "Profit": 25000,
+                "Loss": 7000,
+                "Discount": 4
+              },
+              "Product B": {
+                "Profit": 17000,
+                "Loss": 4000,
+                "Discount": 5
+              },
+              "Product C": {
+                "Profit": 20000,
+                "Loss": 2500,
+                "Discount": 7
+              }
+            },
+            "type": "pivot table",
+            "description": "This pivot table represents the financial data for different products indicating changes in profit, loss, and discount rates over a specific timeframe, helping analyze their performance."
+          }
+        ],
+        "title": "Analyzing Profit, Loss, and Discount Rates in Sustainable Product Management",
+        "questions": [
+          {
+            "question": "Given the financial data represented in the pivot table for Product A, if the total revenue was \\$50,000 in the first year, determine the percentage of profit after accounting for the losses and discounts applied. What would be the adjusted profit figure in comparison to the revenue?",
+            "number": 1,
+            "title": "Determining Adjusted Profit for Product A Based on Revenue, Losses, and Discounts",
+            "solution": "For Product A, the profit is $20,000. However, after accounting for a loss of $5,000 and applying a discount of 3% on the total revenue of $50,000, the adjusted profit is calculated as follows: \\( Adjusted Profit = Profit - Loss - Discount \\). Thus, \\( Adjusted Profit = 20000 - 5000 - (50000 \\times 0.03) = 13500 \\). This adjusted profit represents 27% of the total revenue.",
+            "answer": "13500",
+            "options": [
+              "12500",
+              "16000",
+              "12500",
+              "13500"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          },
+          {
+            "question": "From the second pivot table data for Product B, if the total sales revenue is \\$60,000, calculate the overall profit margin after deducting the loss and discount. What would be the new profit margin percentage derived from the given financial data?",
+            "number": 2,
+            "title": "Calculating Profit Margin for Product B After Loss and Discount Adjustments",
+            "solution": "For Product B, the initial profit is $15,000. After accounting for a loss of $3,000 and applying a discount of 5% on the total sales revenue of $60,000, the adjusted profit is calculated as follows: \\( Adjusted Profit = Profit - Loss - Discount \\). Thus, \\( Adjusted Profit = 15000 - 3000 - (60000 \\times 0.05) = 9000 \\). This adjusted profit reflects a profit margin of 15% against the total sales revenue.",
+            "answer": "9000",
+            "options": [
+              "15600",
+              "9000",
+              "8000",
+              "8000"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "profit, loss and discount"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Line Graph> - <Business and Finance>- <difficulty-level: 5>",
+        "content": [
+          {
+            "graph": {
+              "title": "Annual Revenue Growth from 2010 to 2020",
+              "xAxis": "Years",
+              "yAxis": "Revenue (in millions)",
+              "data": {
+                "x-axis": [
+                  2010,
+                  2011,
+                  2012,
+                  2013,
+                  2014,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020
+                ],
+                "y-axis": [
+                  0,
+                  100,
+                  200,
+                  300,
+                  400,
+                  500,
+                  600,
+                  700,
+                  800,
+                  900,
+                  1000
+                ],
+                "data": [
+                  50,
+                  150,
+                  300,
+                  400,
+                  500,
+                  600,
+                  700,
+                  800,
+                  900,
+                  950,
+                  1000
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph illustrates the annual revenue growth of a hypothetical company from 2010 to 2020, showcasing the company's increasing financial success over the decade."
+          },
+          {
+            "graph": {
+              "title": "Annual Expense Growth from 2010 to 2020",
+              "xAxis": "Years",
+              "yAxis": "Expenses (in millions)",
+              "data": {
+                "x-axis": [
+                  2010,
+                  2011,
+                  2012,
+                  2013,
+                  2014,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020
+                ],
+                "y-axis": [
+                  0,
+                  100,
+                  200,
+                  300,
+                  400,
+                  500,
+                  600,
+                  700,
+                  800,
+                  900,
+                  1000
+                ],
+                "data": [
+                  30,
+                  80,
+                  150,
+                  300,
+                  350,
+                  450,
+                  500,
+                  550,
+                  600,
+                  650,
+                  700
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph illustrates the annual expense growth of a hypothetical company from 2010 to 2020, showing an increase in operational costs over the same period."
+          }
+        ],
+        "title": "Analysis of Financial Performance: Revenue vs Expenses from 2010 to 2020",
+        "questions": [
+          {
+            "question": "In the year 2015, the company experienced a revenue of 600 million. If the annual expenses in the same year were 450 million, what was the profit margin in percentage for that year, and how does it compare to the profit margin in 2014?",
+            "number": 1,
+            "title": "Profit Margin Analysis for the Year 2015",
+            "solution": "To find the profit margin for the year 2015, we first need to calculate the profit, which is the difference between revenue and expenses. The revenue in 2015 was 600 million and the expenses were 450 million. Thus, the profit is calculated as follows: \n\nProfit = Revenue - Expenses = 600 million - 450 million = 150 million.\n\nNext, the profit margin is calculated by dividing the profit by the revenue and multiplying by 100 to express it as a percentage:\n\nProfit Margin = (Profit / Revenue) * 100 = (150 million / 600 million) * 100 = 25%.\n\nNow, we compare it to the profit margin of 2014. The revenue for 2014 was 500 million, and if the expenses were 350 million:\n\nProfit for 2014 = 500 million - 350 million = 150 million.\n\nProfit Margin for 2014 = (150 million / 500 million) * 100 = 30%.\n\nTherefore, the profit margin for 2015 was 25%, which is a decrease compared to the profit margin of 30% in 2014.",
+            "answer": "30.77%",
+            "options": [
+              "150%",
+              "30.77%",
+              "16.67%",
+              "20%"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "question": "What was the total revenue growth percentage from 2014 to 2015, and how does this growth compare to the revenue growth from 2013 to 2014?",
+            "number": 2,
+            "title": "Revenue Growth Percentage Analysis from 2014 to 2015",
+            "solution": "To calculate the total revenue growth percentage from 2014 to 2015, we first need the revenue values for both years. We will use the following formula for revenue growth percentage:\n\nRevenue Growth Percentage = ((Revenue in Current Year - Revenue in Previous Year) / Revenue in Previous Year) * 100.\n\nFor the years in question:\n- Revenue in 2015 = 600 million\n- Revenue in 2014 = 500 million\n\nSo, the calculation for revenue growth from 2014 to 2015 is:\n\nRevenue Growth from 2014 to 2015 = ((600 - 500) / 500) * 100 = (100 / 500) * 100 = 20%.\n\nNext, we need to calculate the revenue growth from 2013 to 2014. For this, we must denote the revenue for 2013, which can be approximated from the previous data, assuming revenue in 2013 was 400 million:\n\n- Revenue in 2013 = 400 million\n\nThus, the growth percentage from 2013 to 2014 is:\n\nRevenue Growth from 2013 to 2014 = ((500 - 400) / 400) * 100 = (100 / 400) * 100 = 25%.\n\nIn summary, the total revenue growth percentage from 2014 to 2015 was 20%, which is less compared to the growth of 25% from 2013 to 2014.",
+            "answer": "10%",
+            "options": [
+              "-20%",
+              "11.11%",
+              "30%",
+              "10%"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          }
+        ],
+        "difficulty": 5,
+        "tag": [
+          "PS",
+          "data interpretation"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Pie Chart> - <Science and Technology>- <difficulty-level: 4>",
+        "content": [
+          {
+            "graph": {
+              "title": "Distribution of AI Applications in Various Industries",
+              "data": [
+                {
+                  "name": "Healthcare",
+                  "color": "#0405ef",
+                  "value": 25
+                },
+                {
+                  "name": "Finance",
+                  "color": "#ef0523",
+                  "value": 35
+                },
+                {
+                  "name": "Retail",
+                  "color": "#05ef04",
+                  "value": 20
+                },
+                {
+                  "name": "Manufacturing",
+                  "color": "#ef0523",
+                  "value": 10
+                },
+                {
+                  "name": "Transportation",
+                  "color": "#ef0512",
+                  "value": 10
+                }
+              ]
+            },
+            "type": "pie chart",
+            "description": "This pie chart illustrates the distribution of artificial intelligence applications across different industries, indicating the prevalence of AI technologies in sectors like healthcare, finance, retail, manufacturing, and transportation."
+          },
+          {
+            "graph": {
+              "title": "Growth of AI Market Value from 2015 to 2025",
+              "xAxis": "Year",
+              "yAxis": "Market Value in Billion USD",
+              "data": {
+                "x-axis": [
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020,
+                  2021,
+                  2022,
+                  2023,
+                  2024,
+                  2025
+                ],
+                "y-axis": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200,
+                  250,
+                  300,
+                  400,
+                  500,
+                  600,
+                  700
+                ],
+                "data": [
+                  50,
+                  75,
+                  120,
+                  180,
+                  250,
+                  320,
+                  400,
+                  500,
+                  600,
+                  650,
+                  700
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph displays the projected growth of the artificial intelligence market value from 2015 to 2025, showing an upward trend in market value across the years."
+          }
+        ],
+        "title": "Analyzing the Impact of Artificial Intelligence Across Industries",
+        "questions": [
+          {
+            "question": "In 2025, the artificial intelligence market value is projected to reach 700 billion USD. If the retail sector utilizes 20% of this market value, what will be the dollar value allocation for AI applications in that sector? Additionally, how does this compare to the healthcare sector's allocation, which is indicated to obtain 25% of the market value?",
+            "number": 1,
+            "title": "Projected Allocation of AI Market Value in Retail and Healthcare Sectors",
+            "solution": "In 2025, the projected dollar allocation for AI applications in the retail sector is 140 billion USD, calculated by taking 20% of the total market value of 700 billion USD. In comparison, the healthcare sector is slated to receive 175 billion USD, obtained by applying the 25% allocation to the same total market value. This indicates that the healthcare sector will have a greater financial commitment to AI applications compared to the retail sector by 35 billion USD.",
+            "answer": "140 billion USD for retail and 175 billion USD for healthcare",
+            "options": [
+              "175 billion USD for retail and 175 billion USD for healthcare",
+              "140 billion USD for retail and 175 billion USD for healthcare",
+              "105 billion USD for retail and 210 billion USD for healthcare",
+              "140 billion USD for retail and 140 billion USD for healthcare"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          },
+          {
+            "question": "According to the pie chart, if the finance sector accounts for 35% of AI applications, how many billion USD does this translate to in 2025? Furthermore, if the combined allocation for the healthcare and manufacturing sectors is equal to the finance sector's allocation, what will be the dollar value for the manufacturing sector based on the information provided?",
+            "number": 2,
+            "title": "Financial Allocation of AI Applications in Finance, Healthcare, and Manufacturing Sectors",
+            "solution": "In 2025, the dollar allocation for AI applications in the finance sector is approximately 245 billion USD, derived from 35% of the total market value of 700 billion USD. Furthermore, since the combined allocation for the healthcare sector (175 billion USD) and the manufacturing sector must equal the finance sector's allocation, the dollar value allocated for the manufacturing sector is approximately 70 billion USD.",
+            "answer": "244 billion USD for finance and 70 billion USD for manufacturing",
+            "options": [
+              "244 billion USD for finance and 54 billion USD for manufacturing",
+              "244 billion USD for finance and 70 billion USD for manufacturing",
+              "280 billion USD for finance and 54 billion USD for manufacturing",
+              "210 billion USD for finance and 89 billion USD for manufacturing"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          }
+        ],
+        "difficulty": 4,
+        "tag": [
+          "PS",
+          "data analytics"
+        ]
+      },
+      {
+        "prompt": "<geometry>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_YN1gtZfTZElfGr8RHAchZCuF",
+        "content": {
+          "passage": "In a certain triangle, the lengths of the two sides are represented as x and y, where x is double the length of y. The angle opposite to side y is 30 degrees. The area of the triangle can be calculated with the formula (1/2)*base*height. Can we determine the exact area of the triangle with this information?",
+          "statements": [
+            "Statement (1): The length of side y is 5 units.",
+            "Statement (2): The length of side x is 10 units."
+          ]
+        },
+        "question": "Is the information provided in the statements sufficient to determine the area of the triangle?",
+        "title": "Determining the Area of a Triangle with Side Lengths",
+        "solution": "Both statements provide the lengths of the sides of the triangle, with Statement (1) giving the length of side y as 5 units and Statement (2) giving the length of side x as 10 units. Using the formula for the area of a triangle, area = (1/2) * base * height, and with the angle of 30 degrees being given, we can calculate the height using trigonometric functions. Thus, both statements together provide sufficient information to calculate the area. However, either statement alone would not allow us to calculate the area since we need to know both side lengths to do so.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      }
+    ]
+  },
+  "GRE_V": {
+    "section1": [
+      {
+        "prompt": "<Psychology> - <TC-1> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "thread_id": "thread_9XWSLHWWGRqHOhKwVUzOUrtO",
+        "question": "The concept of cognitive dissonance refers to the mental discomfort experienced when a person holds two or more contradictory beliefs, values, or ideas, leading to a state of _______ that motivates them to find consistency.",
+        "title": "Cognitive Dissonance in Psychology",
+        "type": "TC-1",
+        "answer": "confusion",
+        "options": [
+          "apathy",
+          "clarity",
+          "confusion",
+          "tranquility",
+          "solitude",
+          "excitement"
+        ],
+        "solution": "<p><strong>A</strong> is correct because cognitive dissonance inherently involves a state of confusion as individuals struggle to reconcile conflicting thoughts or beliefs.</p><hr/><p><strong>B</strong> is incorrect because clarity would imply a lack of dissonance.</p><hr/><p><strong>C</strong> is incorrect since excitement does not relate to the discomfort of conflicting beliefs.</p><hr/><p><strong>D</strong> is incorrect as apathy does not reflect the active mental struggle associated with cognitive dissonance.</p><hr/><p><strong>E</strong> is also incorrect; solitude is unrelated to the cognitive processes involved in dissonance.</p><hr/><p><strong>F</strong> is incorrect, as tranquility does not represent a state of dissonance but rather peace of mind.</p>",
+        "difficulty": 2,
+        "tags": [
+          "psychology",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Philosophy> - <TC-2> - <difficulty-level: 3> - <vocabulary-level:2>",
+        "thread_id": "thread_V5pIk9s6MVrahF4me7ucbmJe",
+        "question": "In the realm of philosophical inquiry, the distinction between _____ concepts and _____ ideas is often blurred, leading to confusion in ethical discussions.",
+        "title": "Philosophical Inquiry and Ethical Discussions",
+        "type": "TC-2",
+        "answer": [
+          "abstract",
+          "practical"
+        ],
+        "options": [
+          [
+            "concrete",
+            "abstract",
+            "theoretical",
+            "substantial"
+          ],
+          [
+            "mythical",
+            "speculative",
+            "practical",
+            "empirical"
+          ]
+        ],
+        "solution": "<p>The correct options are <strong>A</strong> (abstract) and <strong>E</strong> (practical). In philosophical discourse, abstract concepts refer to those that are theoretical and cannot be directly observed, while practical ideas are grounded in real-world application. Thus, the interplay of these concepts often leads to ethical ambiguities.</p><hr/><p>Other options discussed:</p><ul><li><strong>B</strong> (concrete): This refers to tangible or specific items, which is generally the opposite of what is being explored here.</li><li><strong>C</strong> (substantial): Although related, it does not convey the nuanced distinction sought in ethical discussions.</li><li><strong>D</strong> (theoretical): While relevant, it does not pair as effectively with 'practical' as 'abstract' does.</li><li><strong>F</strong> (mythical): This is irrelevant to the discourse on philosophical concepts.</li><li><strong>G</strong> (empirical): This term refers to knowledge acquired through observation or experimentation, which doesn't fit the context of the philosophical debate here.</li><li><strong>H</strong> (speculative): While it touches on ideas that involve conjecture, it does not work well with 'abstract' to match the blank.</li></ul>",
+        "difficulty": 3,
+        "tags": [
+          "philosophy",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Psychology> - <SE> - <difficulty-level: 3> - <vocabulary-level:3>",
+        "thread_id": "thread_0kclZfnJRJaFEO4rboGjg9sh",
+        "question": "The researcher found that the participants exhibited a ______ sense of urgency when faced with deadlines, which ultimately affected their decision-making process and task completion rates. This phenomenon often results in either a heightened __________ response to stress or a complete absence of motivation.",
+        "title": "Psychology of Decision-Making Under Pressure",
+        "type": "SE",
+        "answer": [
+          "keen",
+          "acute"
+        ],
+        "options": [
+          "acute",
+          "dull",
+          "keen",
+          "irresolute",
+          "overstated",
+          "neutral"
+        ],
+        "solution": "<p>The correct options are <b>A</b> and <b>F</b>. The sentence conveys that the sense of urgency can be viewed as either heightened or acute, thus indicating that participants respond more intensely under pressure.<br><br>Option A: <b>keen</b> is appropriate as it indicates a sharp and strong sense of urgency.<br>Option F: <b>acute</b> also indicates an intense and possibly overwhelming sense of urgency.<br><br>Other options:<br> - Option B: <b>dull</b> contradicts the idea of urgency.<br> - Option C: <b>neutral</b> does not reflect urgency at all.<br> - Option D: <b>overstated</b> suggests exaggeration, which does not fit the context.<br> - Option E: <b>irresolute</b> implies uncertainty and indecision, which contrasts with a sense of urgency.</p>",
+        "difficulty": 3,
+        "tags": [
+          "psychology",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <SE> - <difficulty-level: 5> - <vocabulary-level:1>",
+        "thread_id": "thread_BCYGIhRK4PbMJJWtOFCxZVev",
+        "question": "The recent election results have created a sense of both _______ and _______ among the electorate, with many feeling hopeful about the future yet skeptical about the candidates' promises.",
+        "title": "Politics: Election Results and Electorate Sentiments",
+        "type": "SE",
+        "answer": [
+          "enthusiasm",
+          "cynicism"
+        ],
+        "options": [
+          "despair",
+          "apathy",
+          "cynicism",
+          "disappointment",
+          "enthusiasm",
+          "optimism"
+        ],
+        "solution": "<p>The correct options are <strong>enthusiasm</strong> and <strong>cynicism</strong>, as they capture the duality of the electorate's feelings. On one hand, many voters may feel a sense of enthusiasm about potential positive changes, while on the other, there exists a strong current of cynicism regarding the candidates' commitments.</p><p>Here\u2019s why the other options are less suitable:</p><ul><li><strong>Disappointment:</strong> This does not align with the hopeful sentiment implied in the question.</li><li><strong>Apathy:</strong> This suggests indifference, which is contrary to the notion of active feelings among the electorate.</li><li><strong>Optimism:</strong> This is similar to enthusiasm, but lacks the contrasting element of skepticism.</li><li><strong>Despair:</strong> This conveys a more negative sentiment than what is suggested by the juxtaposition of hope and skepticism.</li></ul>",
+        "difficulty": 5,
+        "tags": [
+          "politics",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 4> - <vocabulary-level:1>",
+        "thread_id": "thread_J68xcknJAWIlfseBSsGyZ3mJ",
+        "question": "In his analysis of the classical tragedy, the author posits that the essence of such works lies not only in the ____ of heroic deeds but also in the profound ____ of human frailties and moral dilemmas, creating a narrative that resonates deeply with audiences. This duality serves to emphasize the tragic hero's eventual ____ and highlights the complexity of the human experience.",
+        "title": "Literature: The Duality of Heroism and Human Frailty in Tragedy",
+        "type": "TC-3",
+        "answer": [
+          "celebration",
+          "revelation",
+          "failure"
+        ],
+        "options": [
+          [
+            "recognition",
+            "abandonment",
+            "celebration",
+            "denial"
+          ],
+          [
+            "illustration",
+            "revelation",
+            "exaltation",
+            "exploration"
+          ],
+          [
+            "elevation",
+            "failure",
+            "ascendance",
+            "redemption"
+          ]
+        ],
+        "solution": "<p><strong>Option A:</strong> celebration - This fits the context as it captures the essence of heroic deeds, suggesting that the narrative highlights and honors these acts.</p><p><strong>Option F:</strong> revelation - This word conveys the deep understanding of human frailties and moral dilemmas, adding depth to the narrative.</p><p><strong>Option J:</strong> failure - This word accurately depicts the tragic hero's eventual downfall, aligning with the complexity of the human experience featured in classical tragedies.</p><p><strong>Other Options:</strong> <br> - B: recognition does not convey the sense of honor or celebration intended. <br> - C: abandonment does not relate to the context of heroic deeds. <br> - D: denial contradicts the analysis of human frailty. <br> - E: exaltation is too focused on elevated feelings, missing the deeper implications. <br> - G: exploration implies a journey without the tragic undertones. <br> - H: illustration is inadequate for conveying depth. <br> - K: ascendance implies success, which is inconsistent with tragedy. <br> - L: elevation does not link back to human frailties effectively.</p>",
+        "difficulty": 4,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The intricate relationship between atmospheric pressure and weather patterns has long captivated scientists and meteorologists alike. Atmospheric pressure, the weight of air pressing down on the Earth's surface, significantly influences climatic variations across different regions. Notably, areas of high pressure, usually associated with descending air, tend to produce clear, sunny conditions, whereas low-pressure zones are characterized by rising air that often leads to cloud formation and precipitation.</p><p>This interplay becomes particularly evident in the context of cyclones and anticyclones. Cyclones, or areas of low pressure, draw air inwards and upwards, facilitating the development of storm systems. Conversely, anticyclones, or high-pressure systems, promote stability in the atmosphere, suppressing storm development. Understanding the mechanisms underlying these systems is critical for predicting weather changes and preparing for extreme weather events, which are becoming increasingly prevalent in a changing climate.</p>",
+            "<p>The advancement of genetic engineering has opened new horizons in the field of biotechnology, allowing scientists to manipulate the genetic material of organisms with unprecedented precision. At the heart of this revolution lies CRISPR-Cas9 technology, which enables targeted modifications to DNA sequences. This method has been employed to engineer crops that are resistant to pests and diseases, enhancing food security in the face of a burgeoning global population.</p><p>Moreover, the implications of genetic engineering extend beyond agriculture. In medical research, techniques derived from CRISPR have facilitated the development of gene therapies aimed at treating hereditary diseases, transforming the landscape of potential treatments. However, the rapid pace of advancements has also sparked ethical debates surrounding genetic modification, particularly concerning its application in humans. These discussions emphasize the need for regulations to ensure responsible research and the equitable distribution of its benefits.</p>",
+            "<p>The phenomenon of quantum entanglement has solidified its relevance within the realm of modern physics, challenging our classical intuitions about the nature of reality. Entanglement refers to a quantum state wherein particles become interlinked, such that the state of one particle instantaneously influences the state of another, regardless of the distance separating them. This observation, famously dubbed 'spooky action at a distance' by Albert Einstein, has been substantiated through numerous experiments, leading to profound implications for the fields of quantum computing and cryptography.</p><p>Furthermore, entanglement raises intriguing philosophical questions pertaining to locality and determinism. It compels scientists and philosophers alike to reconsider the foundational principles of physics, including causality and time. As research continues to unveil the complexities of these quantum systems, the challenge lies not only in harnessing their potential for technological advancement but also in grappling with the theoretical ramifications of a world governed by quantum mechanics.</p>"
+          ]
+        },
+        "title": "Exploring the Intricacies of Atmospheric Pressure, Genetic Engineering, and Quantum Entanglement",
+        "tags": [
+          "rc-m",
+          "Inference Question ",
+          "Inference Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "Based on the passages, which of the following statements can be inferred about the impact of atmospheric pressure on weather patterns?",
+            "title": "Inference on Atmospheric Pressure and Weather Patterns",
+            "answer": "Changes in atmospheric pressure can affect local ecosystems.",
+            "options": [
+              "Understanding atmospheric pressure is irrelevant to weather predictions.",
+              "High-pressure systems always lead to stormy weather.",
+              "Low-pressure zones are typically associated with clear weather.",
+              "Changes in atmospheric pressure can affect local ecosystems."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: Changes in atmospheric pressure can affect local ecosystems. This is supported by the notion that variations in atmospheric pressure lead to different weather conditions, which in turn influence ecosystems.</p><p><strong>A</strong>: High-pressure systems always lead to stormy weather is incorrect as high-pressure systems often result in clear, sunny conditions.</p><p><strong>B</strong>: Low-pressure zones are typically associated with clear weather is incorrect, as these areas are more commonly linked to cloud formation and precipitation.</p><p><strong>D</strong>: Understanding atmospheric pressure is irrelevant to weather predictions is also incorrect because knowledge of atmospheric pressure is crucial for making accurate weather forecasts.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "question": "What can be inferred about the ethical considerations surrounding genetic engineering based on the passage?",
+            "title": "Ethical Considerations in Genetic Engineering",
+            "answer": "Ethical debates surrounding genetic modification highlight the need for responsible research.",
+            "options": [
+              "Ethical debates surrounding genetic modification highlight the need for responsible research.",
+              "There is a consensus among scientists that genetic engineering should proceed without regulation.",
+              "The benefits of genetic engineering are universally agreed upon by all stakeholders.",
+              "Genetic engineering poses no ethical concerns in agriculture."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: Ethical debates surrounding genetic modification highlight the need for responsible research. The passage indicates that the rapid advancements in genetic engineering have sparked discussions about ethics, implying that a consideration of responsibility is necessary.</p><p><strong>A</strong>: Genetic engineering poses no ethical concerns in agriculture is incorrect, as the passage suggests that ethical debates do exist in this field.</p><p><strong>B</strong>: There is a consensus among scientists that genetic engineering should proceed without regulation is incorrect, as the passage emphasizes the need for regulations to ensure responsible practices.</p><p><strong>D</strong>: The benefits of genetic engineering are universally agreed upon by all stakeholders is also incorrect, since the passage highlights ongoing debates about its ethical implications, suggesting that not all stakeholders agree on the benefits.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "Which assumption underlies the assertion that quantum entanglement has implications for quantum computing and cryptography?",
+            "title": "Assumptions of Quantum Entanglement in Computing and Cryptography",
+            "answer": "Utilizing quantum entanglement can enhance computational power and security.",
+            "options": [
+              "The principles of classical physics can fully explain quantum mechanics.",
+              "Quantum entanglement only occurs in experimental settings.",
+              "Utilizing quantum entanglement can enhance computational power and security.",
+              "Entangled particles can communicate information faster than light."
+            ],
+            "solution": "<p>The correct answer is <strong>D</strong>: Utilizing quantum entanglement can enhance computational power and security. This assumption supports the assertion that quantum entanglement has significant implications for quantum computing and cryptography, suggesting that entangled particles can be harnessed for these advancements.</p><p><strong>A</strong>: Quantum entanglement only occurs in experimental settings is incorrect because entanglement can exist beyond the laboratory, influencing various applications.</p><p><strong>B</strong>: Entangled particles can communicate information faster than light is misleading. While entanglement shows correlations, it does not allow for faster-than-light communication, which would violate relativistic principles.</p><p><strong>C</strong>: The principles of classical physics can fully explain quantum mechanics is also incorrect, as quantum mechanics fundamentally differs from classical physics and often challenges its principles.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 4
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The study of economics as a discipline encompasses not only the examination of financial transactions and markets but also extends to the intricate interplay between human behavior and resource allocation. At its core, economics seeks to elucidate how individuals and societies make choices in the face of scarcity, with the fundamental premise that resources are limited while human wants are virtually boundless. This duality creates a series of trade-offs that are crucial for understanding both micro and macroeconomic principles.</p><p>In recent years, the field has witnessed a paradigm shift towards behavioral economics, which synthesizes insights from psychology with traditional economic models. This evolving perspective acknowledges that human decision-making deviates from the rational actor model, influenced by cognitive biases and emotional responses. As a result, policymakers are increasingly incorporating behavioral insights to design interventions that nudge individuals towards more beneficial economic behaviors, such as saving for retirement or reducing energy consumption. The implications of these approaches extend beyond mere financial indicators, affecting the overall welfare of societies and challenging the conventional wisdom of economic theory.</p>",
+            "<p>The global economy has become increasingly interdependent in the 21st century, highlighting the necessity for comprehensive trade policies that reflect the complexities of globalization. As countries engage in international trade, they must navigate both the benefits and the challenges posed by this interconnectedness. Trade agreements, while designed to lower tariffs and enhance market access, often lead to contentious debates regarding their impact on domestic industries and employment levels. Industries that are exposed to foreign competition frequently lobby for protective measures, underscoring the tensions between free trade principles and national economic interests.</p><p>Furthermore, the advent of digital technology has revolutionized trade practices, enabling e-commerce and the rapid exchange of information across borders. As digital platforms flourish, they reshape consumer expectations and business models, presenting new opportunities for growth. However, this transformation also raises concerns about regulatory challenges, data privacy, and the digital divide that may exacerbate inequalities between developed and developing nations. Policymakers thus face the difficult task of balancing the promotion of innovative economic practices with the need to safeguard public interests.</p>",
+            "<p>Monetary policy plays a pivotal role in shaping economic stability and growth, particularly through the actions of central banks. Throughout history, various monetary frameworks have evolved, each reflecting differing philosophies about the role of money supply and interest rates. The transition from the gold standard to fiat currency systems, for example, marked a significant shift in how monetary authorities operate. Central banks now wield substantial influence, utilizing tools such as open market operations and interest rate adjustments to manage inflation and stimulate employment. However, the effectiveness of these policies often comes under scrutiny, especially during periods of economic volatility.</p><p>In recent years, unconventional monetary policies, such as quantitative easing, have gained prominence as traditional methods reach their limits. Central banks have resorted to purchasing large quantities of government securities to inject liquidity into the economy, aiming to encourage lending and investment. While proponents argue that such measures are essential for recovery during economic downturns, critics raise concerns about long-term implications, including asset bubbles and income inequality. This debate underscores the necessity of a nuanced understanding of monetary policy's effects and the broader economic landscape.</p>",
+            "<p>The relationship between fiscal policy and economic performance is a complex and often contested area within the field of economics. Fiscal policy, which encompasses government spending and taxation, serves as a crucial counterbalance to the forces of the market. Economists debate the efficacy of various fiscal strategies, particularly in the context of stimulating growth during economic recessions. Keynesian economics advocates for increased government spending to stimulate demand, while supply-side economics emphasizes tax cuts as a means to enhance economic productivity. The effectiveness of these contrasting approaches often hinges on the particular economic conditions faced by a country.</p><p>Moreover, the increasing public debt levels in many countries have sparked significant discussions around sustainability and fiscal responsibility. As governments respond to economic crises with robust stimulus packages, concerns regarding long-term fiscal health inevitably arise. Critics warn that excessive borrowing could lead to higher interest rates, crowding out private investment, whereas supporters assert that strategic debt financing can facilitate robust economic recovery. Ultimately, the challenge lies in balancing immediate economic needs with long-term fiscal stability, necessitating a careful and informed approach to fiscal policymaking.</p>"
+          ]
+        },
+        "title": "The Interplay of Policy and Economic Dynamics",
+        "tags": [
+          "rc-l",
+          "Main Idea Question ",
+          "Inference Question ",
+          "Assumption Question ",
+          "Main Idea Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What is the main idea presented in the passages regarding the role of monetary and fiscal policy in the economy?",
+            "title": "Understanding Economic Policy Frameworks",
+            "answer": "Both policies aim to balance immediate economic needs with long-term stability.",
+            "options": [
+              "Only fiscal policy is essential for managing economic performance.",
+              "Monetary policy has no significant impact on employment levels.",
+              "Monetary and fiscal policies are ineffective in achieving economic stability.",
+              "Both policies aim to balance immediate economic needs with long-term stability."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Both policies aim to balance immediate economic needs with long-term stability.</p> <p>This option accurately reflects the overarching theme of the passages, which discuss the importance of both monetary and fiscal policies in managing economic performance and stability. The passages illustrate how these policies interact to address immediate economic challenges while considering long-term implications for the economy.</p> <p><strong>A</strong> is incorrect because it dismisses the effectiveness of both policies, which have been shown to impact economic stability significantly.</p> <p><strong>C</strong> is incorrect as it neglects the role of monetary policy, which is discussed as crucial for influencing economic conditions.</p> <p><strong>D</strong> is incorrect because the passages clearly mention that monetary policy does indeed have a significant impact on employment levels and overall economic conditions.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "type": "RC",
+            "question": "Based on the passages, which inference can be drawn about the future direction of economic policymaking?",
+            "title": "Future Trends in Economic Policymaking",
+            "answer": "Policymakers will need to integrate behavioral insights to address modern economic issues.",
+            "options": [
+              "Policymakers will need to integrate behavioral insights to address modern economic issues.",
+              "The emphasis on protective trade measures will dominate future economic policies.",
+              "Fiscal and monetary policies will become irrelevant as economies evolve.",
+              "Economic policymaking will increasingly rely on traditional methods without adapting to new challenges."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Policymakers will need to integrate behavioral insights to address modern economic issues.</p> <p>This option is supported by the passages' discussion on the evolving landscape of economic policymaking, especially with the rise of behavioral economics and the need to account for cognitive biases and emotional responses in decision-making.</p> <p><strong>A</strong> is incorrect because the passages suggest that economic policymaking is adapting and evolving, particularly with the integration of behavioral insights.</p> <p><strong>C</strong> is incorrect as it does not reflect the comprehensive view of trade policy presented in the passages, which highlight the complexities involved rather than a singular focus on protective measures.</p> <p><strong>D</strong> is incorrect because the passages emphasize the relevance of both fiscal and monetary policies, suggesting they will continue to play vital roles in economic management.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "type": "RC",
+            "question": "What assumption underlies the argument that behavioral insights can improve economic policymaking?",
+            "title": "Assumptions in Behavioral Economic Policymaking",
+            "answer": "Policies based on behavioral insights can lead to more effective economic outcomes.",
+            "options": [
+              "Policies based on behavioral insights can lead to more effective economic outcomes.",
+              "Economic models are sufficient to predict human behavior accurately.",
+              "Individuals always make rational economic decisions.",
+              "Government intervention is unnecessary in a fully competitive market."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Policies based on behavioral insights can lead to more effective economic outcomes.</p> <p>This assumption is central to the argument presented in the passages, which highlight that incorporating behavioral insights into policymaking could better align with actual human behavior, potentially resulting in improved economic outcomes.</p> <p><strong>A</strong> is incorrect because the argument specifically challenges the notion that individuals always make rational decisions, which is a key point in advocating for behavioral economics.</p> <p><strong>C</strong> is incorrect as the passages indicate that traditional economic models often fall short in accounting for actual human behavior, thereby necessitating the integration of behavioral insights.</p> <p><strong>D</strong> is incorrect because the argument made in the passages focuses on the role of government intervention as an important mechanism to achieve desired economic behaviors, especially in the context of addressing market failures.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "type": "RC",
+            "question": "What is the central thesis presented in the passages regarding the interaction of various economic policies?",
+            "title": "Central Thesis on Economic Policy Interaction",
+            "answer": "The synergy between monetary and fiscal policies is essential for economic stability.",
+            "options": [
+              "Global economic factors have minimal impact on national policies.",
+              "Behavioral insights are irrelevant to the effectiveness of economic policies.",
+              "The synergy between monetary and fiscal policies is essential for economic stability.",
+              "Economic policies operate independently of one another."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: The synergy between monetary and fiscal policies is essential for economic stability.</p> <p>This reflects the central thesis of the passages, which discuss how both monetary and fiscal policies interact to manage economic performance and ensure stability within the economy.</p> <p><strong>A</strong> is incorrect because the passages emphasize the interconnectedness of various economic policies, rather than their independence.</p> <p><strong>C</strong> is incorrect as the passages highlight that global economic factors do significantly influence national policies, particularly in the context of trade and monetary frameworks.</p> <p><strong>D</strong> is incorrect because the passages assert that behavioral insights are increasingly relevant in shaping effective economic policies, particularly as they relate to human decision-making.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<Psychology> - <TC-1> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "thread_id": "thread_7a7rrfPgBmTYCv8vTJxUKMMr",
+        "question": "Despite extensive research into the concept of cognitive dissonance, the phenomenon remains ________, leaving researchers to grapple with its implications in behavioral psychology.",
+        "title": "Psychology of Cognitive Dissonance",
+        "type": "TC-1",
+        "answer": "enigmatic",
+        "options": [
+          "uncontested",
+          "simple",
+          "resolute",
+          "trivial",
+          "ordinary",
+          "enigmatic"
+        ],
+        "solution": "<p>The correct option is <b>A</b> (enigmatic), as it implies that the phenomenon of cognitive dissonance is mysterious and not fully understood, which aligns with the context of the question. The other options do not fit well because:</p><ul><li><b>B</b> (uncontested) suggests that there is no debate about it, which contradicts the notion of researchers grappling with it.</li><li><b>C</b> (trivial) downplays the significance of cognitive dissonance, which is not appropriate given its importance in psychology.</li><li><b>D</b> (ordinary) implies a lack of complexity or interest, which misrepresents the intriguing nature of the phenomenon.</li><li><b>E</b> (simple) also fails to capture the depth of discussion surrounding cognitive dissonance.</li><li><b>F</b> (resolute) implies firmness or a lack of ambiguity, which does not align with the intention of the statement.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "psychology",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Economics> - <TC-2> - <difficulty-level: 1> - <vocabulary-level:1>",
+        "thread_id": "thread_UpS6nEGwXhEhIMzxODLZ61tG",
+        "question": "In times of economic crisis, governments may implement stimulus measures to __________ spending and encourage economic growth, while simultaneously aiming to __________ inflationary pressures that could arise.",
+        "title": "Economic Stimulus and Inflation Management",
+        "type": "TC-2",
+        "answer": [
+          "augment",
+          "mitigate"
+        ],
+        "options": [
+          [
+            "augment",
+            "incite",
+            "curtail",
+            "dwindle"
+          ],
+          [
+            "escalate",
+            "ameliorate",
+            "exacerbate",
+            "mitigate"
+          ]
+        ],
+        "solution": "<p>In this context, the correct answers are <strong>augment</strong> and <strong>mitigate</strong>.<br><br> - <strong>augment</strong> (Option D) fits well as it means to increase or enhance spending, which is the purpose of stimulus measures.<br> - <strong>mitigate</strong> (Option F) is appropriate as it means to lessen or reduce inflationary pressures.</p><p>Other options for clarification:</p><ul><li><strong>dwindle</strong> (Option A) suggests a decrease in spending, which contradicts the intended purpose of stimulus measures.</li><li><strong>curtail</strong> (Option B) also implies a reduction in spending, which is not consistent with the goal of stimulating the economy.</li><li><strong>incite</strong> (Option C) suggests provoking or urging spending, rather than facilitating it.</li><li><strong>augment</strong> (Option D) was correctly chosen to reflect increasing spending.</li><li><strong>escalate</strong> (Option G) implies an increase that may not specifically relate to desirable inflation management.</li><li><strong>exacerbate</strong> (Option H) means to make a situation worse, which is contrary to mitigating inflation.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "economics",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-1> - <difficulty-level: 1> - <vocabulary-level:1>",
+        "thread_id": "thread_rhLrD9v67SJLMm9Km9YUkovd",
+        "question": "In the novel, the protagonist's journey is marked by a series of _______ events that challenge her understanding of morality.",
+        "title": "Literature: The Protagonist's Journey",
+        "type": "TC-1",
+        "answer": "anomalous",
+        "options": [
+          "predictable",
+          "mundane",
+          "conventional",
+          "trivial",
+          "benign",
+          "anomalous"
+        ],
+        "solution": "<p>The correct answer is <strong>C</strong> (anomalous) because the term suggests events that are unusual or out of the ordinary, effectively challenging the protagonist's understanding of morality as intended in the context of the sentence.</p><p><strong>Other Options:</strong></p><ul><li><strong>A</strong> (conventional): Implies events that are standard and typical, which would not present a challenge to her understanding.</li><li><strong>B</strong> (mundane): Suggests ordinary events that do not evoke any moral questioning.</li><li><strong>D</strong> (predictable): Indicates events that are expected and therefore would not challenge her perspective.</li><li><strong>E</strong> (benign): Refers to harmless events, again failing to provoke moral contemplation.</li><li><strong>F</strong> (trivial): Denotes events of little significance, which would not impact her understanding of morality.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "literature",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 1> - <vocabulary-level:2>",
+        "thread_id": "thread_uSnC3tz2F33cogbYKrwxu8S9",
+        "question": "In the realm of literature, a profound understanding of the human experience often hinges on an author's ability to create _______ characters, as they provide insight into the complex emotions we all _______ at various stages of life, ultimately reflecting the _______ of our own journeys.",
+        "title": "Literary Complexity and Human Experience",
+        "type": "TC-3",
+        "answer": [
+          "multidimensional",
+          "experience",
+          "richness"
+        ],
+        "options": [
+          [
+            "multidimensional",
+            "stereotypical",
+            "superficial",
+            "ordinary"
+          ],
+          [
+            "forget",
+            "observe",
+            "ignore",
+            "experience"
+          ],
+          [
+            "richness",
+            "hollowness",
+            "triviality",
+            "banality"
+          ]
+        ],
+        "solution": "<p>In this question, the correct answer is <strong>B</strong>, <strong>F</strong>, and <strong>J</strong>. This selection creates a coherent narrative about literature's ability to connect with human emotions.</p> <p><strong>B</strong> (multidimensional) best describes characters that resonate deeply with readers as they embody complexity. </p> <p><strong>F</strong> (experience) emphasizes that these characters reflect emotions that individuals actively engage with throughout their lives. </p> <p><strong>J</strong> (richness) concludes the thought by highlighting that the profound narratives shape our understanding of life's multifaceted journeys.</p> <p> <strong>Discussions on other options:</strong></p> <ul><li><strong>A</strong> (stereotypical) is incorrect as it implies a lack of depth.</li><li><strong>C</strong> (superficial) suggests that the characters offer little emotional insight.</li><li><strong>D</strong> (ordinary) doesn't capture the essence of impactful literary characters.</li><li><strong>E</strong> (ignore), <strong>G</strong> (observe), and <strong>H</strong> (forget) don't appropriately position the reader's relationship with these characters.</li><li><strong>K</strong> (triviality) and <strong>L</strong> (hollowness) contradict the idea of literary depth and richness.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Philosophy> - <SE> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "thread_id": "thread_owKJ9u09JuPHpylL1JgkhITD",
+        "question": "In philosophical discourse, the concepts of knowledge and belief are often seen as _______ yet distinct elements, both serving critical roles in the formation of human understanding.",
+        "title": "Philosophy of Knowledge and Belief",
+        "type": "SE",
+        "answer": [
+          "intertwined",
+          "complementary"
+        ],
+        "options": [
+          "similar",
+          "intertwined",
+          "independent",
+          "contradictory",
+          "irrelevant",
+          "complementary"
+        ],
+        "solution": "<p><b>Option A:</b> 'intertwined' suggests that knowledge and belief are closely connected yet different, which fits the context of their relationship.</p><p><b>Option E:</b> 'complementary' also works, indicating that knowledge and belief enhance each other in forming understanding.</p><p><b>Option B:</b> 'independent' fails as it implies separation without interaction, which contradicts the intended meaning.</p><p><b>Option C:</b> 'similar' does not capture the nuance between knowledge and belief, and thus is too simplistic.</p><p><b>Option D:</b> 'contradictory' directly opposes the idea of them being distinct but related.</p><p><b>Option F:</b> 'irrelevant' suggests a complete lack of connection, which is not accurate in philosophical discussions.</p>",
+        "difficulty": 2,
+        "tags": [
+          "philosophy",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Economics> - <TC-3> - <difficulty-level: 1> - <vocabulary-level:2>",
+        "thread_id": "thread_p6HwbEUbfjBWSeVJ9jmuhrAL",
+        "question": "In considering the economic policies of various countries, it becomes clear that while some nations prioritize _______ (1), others are more focused on _______ (2) and _______ (3). These differences often stem from historical contexts and cultural influences that shape their respective goals.",
+        "title": "Economic Policies and Cultural Influence",
+        "type": "TC-3",
+        "answer": [
+          "protectionism",
+          "growth",
+          "regulation"
+        ],
+        "options": [
+          [
+            "stability",
+            "innovation",
+            "protectionism",
+            "liberation"
+          ],
+          [
+            "inequality",
+            "efficiency",
+            "redistribution",
+            "growth"
+          ],
+          [
+            "intervention",
+            "reduction",
+            "regulation",
+            "development"
+          ]
+        ],
+        "solution": "<p>The correct answers are <b>protectionism</b> (B), <b>growth</b> (E), and <b>regulation</b> (I). Each of these terms reflects important facets of economic policies that countries may prioritize. </p><p>Option Discussion:</p><ul><li><b>Protectionism</b>: This indicates a focus on safeguarding local industries, making it a common priority for some nations.</li><li><b>Growth</b>: This underscores the importance of fostering economic expansion and development.</li><li><b>Regulation</b>: It signifies a nation\u2019s approach to maintaining oversight on industries, often viewed as a cornerstone of managing economic activities.</li></ul><p>Other options do not fit as well:</p><ul><li><b>Liberation</b> (A): While vital, it does not fit the broader context of governmental policy focus.</li><li><b>Innovation</b> (C): Though crucial, it's often a means to achieve other ends rather than a primary focus.</li><li><b>Stability</b> (D): Important, but less often prioritized in competitive economic frameworks.</li><li><b>Inequality</b> (F): Typically, it is a concern that arises when discussing outcomes of economic policies rather than a goal.</li><li><b>Efficiency</b> (G): Focused on optimization, but not a direct policy goal.</li><li><b>Redistribution</b> (H): This usually stems from choices made related to inequality and is not a primary focus.</li><li><b>Intervention</b> (J): While significant, it is often seen as a reactive rather than proactive policy.</li><li><b>Reduction</b> (K): Vague without corresponding context.</li><li><b>Development</b> (L): Similar to growth but lacks specificity regarding economic policy goals.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "economics",
+          "tc-3"
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>Philosophy, at its core, investigates the fundamental nature of existence, knowledge, and values. It challenges individuals to question their beliefs and to rationalize the principles that govern their understanding of life. In this quest for meaning, philosophers engage in rigorous discourse, often dissecting concepts such as morality, reality, and the human condition. The interplay between subjective experiences and objective truths forms the crux of many philosophical debates, prompting individuals to reflect deeply on their own perspectives.</p><p>As philosophy evolves, it increasingly intersects with other disciplines, including science, psychology, and social theory. This interdisciplinarity enriches philosophical inquiry, allowing for a more nuanced understanding of complex issues. Notably, contemporary philosophers advocate for the applicability of philosophical reasoning to real-world dilemmas, asserting that theoretical discussions must inform practical actions.</p>",
+            "<p>The concept of free will is a perennial topic in philosophy, one that evokes profound contemplation about human agency and determinism. Philosophers debate whether humans possess the ability to choose actions independently or whether their decisions are predetermined by external factors such as genetics, culture, or environment. This inquiry poses significant implications for moral responsibility; if free will is an illusion, the very foundation of ethics might be called into question.</p><p>Recent developments in neuroscience have provided insights that complicate traditional views on free will. Studies suggest that brain activity related to decision-making may occur before individuals become consciously aware of their choices. Such findings invite further exploration of the nuances of autonomy and the extent to which individuals can claim ownership of their actions. As this dialogue continues, it challenges fundamental assumptions about individuality and ethical accountability.</p>"
+          ]
+        },
+        "title": "Exploring the Depths of Philosophical Inquiry",
+        "tags": [
+          "rc-s",
+          "Strengthen Question ",
+          "Inference Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "How does the interdisciplinary approach in contemporary philosophy enhance the understanding of practical dilemmas?",
+            "title": "The Interdisciplinary Influence on Philosophical Understanding",
+            "answer": "It provides diverse perspectives that lead to more holistic solutions.",
+            "options": [
+              "It provides diverse perspectives that lead to more holistic solutions.",
+              "It promotes the idea that all philosophical problems have a definitive answer.",
+              "It simplifies complex issues by removing philosophical jargon.",
+              "It encourages philosophers to solely focus on abstract theories."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: It provides diverse perspectives that lead to more holistic solutions. This option highlights the importance of integrating various fields into philosophical inquiry, emphasizing that real-world dilemmas benefit from multiple viewpoints.</p><p><strong>A</strong>: It simplifies complex issues by removing philosophical jargon. This option is incorrect because effective interdisciplinary approaches don't necessarily simplify issues but rather deepen understanding through complexity.</p><p><strong>C</strong>: It promotes the idea that all philosophical problems have a definitive answer. This statement is misleading, as philosophy often thrives on the exploration of questions without absolute answers.</p><p><strong>D</strong>: It encourages philosophers to solely focus on abstract theories. This option is incorrect, as contemporary philosophy is increasingly about applying theoretical insights to practical situations, rather than distancing itself from practical concerns.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "question": "What can be inferred about the implications of neuroscience on the concept of free will as discussed in the passage?",
+            "title": "Implications of Neuroscience on Free Will",
+            "answer": "The findings of neuroscience challenge traditional notions of autonomy.",
+            "options": [
+              "Philosophical discussions about free will are becoming irrelevant due to neuroscience.",
+              "Neuroscience definitively proves that humans lack free will.",
+              "The findings of neuroscience challenge traditional notions of autonomy.",
+              "Neuroscience supports the idea that all decisions are made consciously."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: The findings of neuroscience challenge traditional notions of autonomy. This reflects the passage's indication that new data on decision-making processes affects how free will is understood, suggesting a reevaluation of autonomy.</p><p><strong>A</strong>: Neuroscience definitively proves that humans lack free will. This option is incorrect because the passage does not assert a definitive conclusion but rather raises questions about the nature of free will.</p><p><strong>C</strong>: Philosophical discussions about free will are becoming irrelevant due to neuroscience. This is incorrect as the passage emphasizes the ongoing dialogue and importance of philosophical inquiry in light of scientific findings.</p><p><strong>D</strong>: Neuroscience supports the idea that all decisions are made consciously. This option is wrong since the passage suggests that brain activity can occur before conscious awareness, indicating that not all decisions are made with conscious intent.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 3
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The Renaissance, a cultural movement that began in Italy during the 14th century, marked a significant turning point in European history. It is characterized by a revival of classical learning and wisdom, leading to remarkable advancements in art, literature, and science. Artists like Leonardo da Vinci and Michelangelo embraced humanism, which emphasized human potential and achievement. This period not only saw the flourishing of art but also the emergence of new ideas about politics and society, setting the stage for the modern world.</p><p>Moreover, the invention of the printing press in the 15th century significantly contributed to the spread of knowledge. Books became more accessible to the general public, facilitating the exchange of ideas and promoting literacy. The Renaissance's focus on individualism and inquiry paved the way for the Reformation and the Age of Enlightenment, ultimately transforming European society and thought.</p>",
+            "<p>The Industrial Revolution, which began in the late 18th century in Britain, was a period of great technological advancement and economic change. It marked the transition from hand production methods to machines, leading to the establishment of factories. This period saw inventions such as the steam engine, which revolutionized transportation and industry. As a result, goods could be produced more efficiently, and as production increased, so did the demand for labor.</p><p>With the rise of factories, urbanization became a key feature of this era. People moved from rural areas to cities in search of work, leading to significant demographic changes. Although the Industrial Revolution spurred economic growth and improved living standards for some, it also brought challenges, including labor exploitation and environmental degradation. The implications of this transformation continue to influence modern society, as the patterns of industrialization shaped contemporary economic and social structures.</p>",
+            "<p>The American Revolution, occurring between 1775 and 1783, was a pivotal event in world history. It stemmed from growing tensions between the American colonies and British authorities over issues such as taxation without representation and the desire for self-governance. The conflict ultimately led to the colonies' quest for independence, which was famously articulated in the Declaration of Independence in 1776.</p><p>The revolution not only resulted in the establishment of the United States of America but also inspired other nations to pursue their own quests for liberty and democratic governance. The principles of equality and individual rights advocated during this time became foundational to modern democratic ideologies. Additionally, the success of the American Revolution set a precedent for future revolutionary movements, illustrating the power of collective will in the face of oppression.</p>"
+          ]
+        },
+        "title": "Transformative Epochs: The Renaissance, Industrial Revolution, and American Revolution",
+        "tags": [
+          "rc-m",
+          "Assumption Question ",
+          "Inference Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What assumption underlies the argument that the Renaissance significantly influenced modern societal structures?",
+            "title": "Assuming Influence: The Legacy of the Renaissance",
+            "answer": "The advancements made during the Renaissance had lasting effects on various aspects of society.",
+            "options": [
+              "The Renaissance occurred in a vacuum, separate from political changes.",
+              "The Renaissance artists were primarily focused on traditional religious themes.",
+              "The advancements made during the Renaissance had lasting effects on various aspects of society.",
+              "Literacy rates did not improve during the Renaissance."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: The advancements made during the Renaissance had lasting effects on various aspects of society. This option accurately reflects the central assumption that the innovations and ideas of the Renaissance period have influenced subsequent societal developments.</p><p><strong>A</strong> is incorrect because while some Renaissance artists depicted religious themes, many also explored humanism and secular subjects, which indicates a broader range of influence.</p><p><strong>C</strong> is incorrect as it suggests that the Renaissance did not interact with the political changes of the time, which is false; in fact, it was deeply intertwined with various political transformations.</p><p><strong>D</strong> is incorrect since the Renaissance led to improved literacy rates, particularly due to the invention of the printing press, which made books more accessible.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "What can be inferred about the role of urbanization during the Industrial Revolution based on the passage?",
+            "title": "Urbanization's Impact: Lessons from the Industrial Revolution",
+            "answer": "Urbanization was a response to the demand for labor in factories.",
+            "options": [
+              "The Industrial Revolution did not change demographic patterns.",
+              "Urbanization was a response to the demand for labor in factories.",
+              "The rise of factories had no effect on population distribution.",
+              "Urbanization led to improvements in rural living conditions."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: Urbanization was a response to the demand for labor in factories. This inference aligns with the passage, which indicates that people moved to cities in search of work due to the establishment of factories during the Industrial Revolution.</p><p><strong>A</strong> is incorrect because the passage does not suggest that urbanization led to improvements in rural living conditions; rather, it highlights urban migration.</p><p><strong>B</strong> is incorrect as the passage clearly states that urbanization emerged as a result of factory labor demands, indicating a significant change in population distribution.</p><p><strong>D</strong> is incorrect since the Industrial Revolution caused notable demographic changes as people migrated to urban areas for employment opportunities.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What assumption can be made about the outcomes of the American Revolution based on the passage?",
+            "title": "Outcomes Assumed: The Consequences of the American Revolution",
+            "answer": "The American colonies were unified in their desire for independence.",
+            "options": [
+              "The revolution primarily benefited only the elite class.",
+              "The American Revolution had no influence on other nations seeking independence.",
+              "The American colonies were unified in their desire for independence.",
+              "The principles of equality were already prevalent in societies worldwide."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: The American colonies were unified in their desire for independence. This assumption is inferred from the passage, which discusses the collective quest for independence articulated in the Declaration of Independence.</p><p><strong>B</strong> is incorrect because the passage states that the revolution inspired various other nations, suggesting broader societal benefits beyond just the elite class.</p><p><strong>C</strong> is incorrect since the passage implies that the principles of equality and individual rights were not universally accepted before the revolution, making the assumption flawed.</p><p><strong>D</strong> is incorrect as the passage clearly indicates that the success of the American Revolution influenced other nations to pursue their quests for liberty, highlighting its impact on global movements for independence.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 2
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The field of science has always been a domain of inquiry and exploration, uncovering the mechanisms that govern the natural world. From the smallest particle to the vastness of the cosmos, scientific endeavors seek to describe and explain phenomena through observation, experimentation, and reasoning. The scientific method is not just a systematic approach but a philosophy that encourages skepticism and critical thinking, enabling scientists to challenge existing paradigms and expand the boundaries of knowledge.</p><p>One of the most significant principles in science is falsifiability; a hypothesis must be testable and falsifiable to hold scientific merit. This tenet distinguishes scientific inquiry from belief-based systems, allowing for the rejection of theories in the face of contrary evidence. Over centuries, the scientific community has been responsible for numerous breakthroughs, from the understanding of gravity to the discoveries of DNA's structure, demonstrating how systematic investigation leads to profound advancements in technology and medicine.</p>",
+            "<p>Scientific discovery often requires a collaborative approach, where researchers from various disciplines come together to tackle complex challenges. Such interdisciplinary efforts can lead to innovative solutions that would be unattainable within the confines of a single field. For instance, the merging of biology and engineering has given rise to fields like biotechnology, where biological processes are harnessed to create products beneficial to humanity.</p><p>Moreover, the advancement of technology has greatly impacted scientific research, providing tools that enhance data collection and analysis. Modern instruments such as electron microscopes and particle accelerators have expanded our ability to explore the universe at unprecedented levels of detail. As science progresses, it continues to raise ethical questions regarding its applications, making it essential for scientists to consider the implications of their work on society and the environment.</p>",
+            "<p>Another vital aspect of science is the role of peer review, a process that subjects research findings to the scrutiny of fellow scientists before publication. This mechanism ensures that the research meets the rigorous standards of validity and reliability, fostering a culture of accountability within the scientific community. Peer review not only helps to maintain quality but also serves as a vital tool for knowledge dissemination, making sure that accurate information reaches the wider public and informs future research.</p><p>Furthermore, science education plays a crucial role in inspiring the next generation of scientists. By fostering curiosity and critical thinking from a young age, educational initiatives aim to cultivate a populace that values empirical evidence and rational discourse. As the global challenges we face become increasingly complex, a scientifically literate society is essential for informed decision-making and problem-solving.</p>",
+            "<p>The public's perception of science is shaped by various factors, including media representation and cultural beliefs. Misinformation can spread rapidly, often leading to skepticism about scientific findings. To counteract this, scientists and educators must strive to communicate their discoveries effectively, emphasizing transparency and accessibility. Engaging the public through outreach programs, social media, and community workshops can foster a better understanding of scientific principles.</p><p>Ultimately, science is a vital endeavor that transcends boundaries, contributing to advancements in health, technology, and environmental sustainability. As we move forward, it is imperative to support scientific research and its applications, while also fostering a dialogue that encourages critical examination and ethical considerations of scientific practices.</p>"
+          ]
+        },
+        "title": "Exploring the Essence of Scientific Inquiry and Its Impact",
+        "tags": [
+          "rc-l",
+          "Weaken Question ",
+          "Inference Question ",
+          "Assumption Question ",
+          "Main Idea Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "Which of the following statements, if true, would most seriously weaken the argument that scientific inquiry is essential for societal advancement?",
+            "title": "Challenges to the Necessity of Scientific Inquiry",
+            "answer": "Many traditional practices, such as herbal medicine, have shown effectiveness without scientific validation.",
+            "options": [
+              "Public distrust in scientific studies has led to a rise in pseudoscience.",
+              "Scientific advancements often lead to ethical dilemmas that challenge their societal acceptance.",
+              "Interdisciplinary approaches often yield solutions that do not rely solely on scientific methods.",
+              "Many traditional practices, such as herbal medicine, have shown effectiveness without scientific validation."
+            ],
+            "solution": "<p>Option A is correct because it suggests that traditional practices can achieve effective results without reliance on scientific validation, thereby questioning the argument that scientific inquiry is essential for societal advancement.</p><p>Option B, while highlighting ethical dilemmas, does not directly weaken the argument but rather provides a criticism of scientific advancements. Hence, it does not challenge the necessity of scientific inquiry itself.</p><p>Option C indicates a public distrust in science, which could be seen as a criticism but does not weaken the argument regarding the overall importance of scientific inquiry in society.</p><p>Option D implies that effective solutions can arise from various fields, but it does not negate the value of scientific methods; therefore, it does not weaken the argument as strongly as Option A does.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "What can be inferred about the role of peer review in the scientific process from the passage?",
+            "title": "The Implications of Peer Review in Science",
+            "answer": "Peer review serves to enhance the credibility and quality of scientific research.",
+            "options": [
+              "Scientists rely solely on peer review to verify their findings before public dissemination.",
+              "Peer review is unnecessary for research that has already demonstrated its validity.",
+              "The peer review process often delays the publication of groundbreaking research.",
+              "Peer review serves to enhance the credibility and quality of scientific research."
+            ],
+            "solution": "<p>Option A is correct because the passage emphasizes that peer review is a mechanism that ensures research meets rigorous standards, thereby enhancing its credibility and quality.</p><p>Option B, although it may be true that peer review can cause delays, does not address the critical function of peer review in ensuring quality, making it less relevant to the inference.</p><p>Option C incorrectly suggests that peer review is unnecessary for already validated research. The process applies to all research submissions, regardless of prior validation, thus weakening the inference.</p><p>Option D implies that peer review is the sole method by which findings are verified, which is inaccurate as researchers utilize multiple methods for validation before public dissemination.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "Which assumption underlies the argument that scientific education is crucial for fostering a scientifically literate society?",
+            "title": "Fundamental Assumptions About Science Education",
+            "answer": "Students who receive science education are more likely to engage with scientific topics in adulthood.",
+            "options": [
+              "Scientific literacy is not dependent on factors outside formal education.",
+              "Science is a universally understood language that transcends cultural differences.",
+              "Students who receive science education are more likely to engage with scientific topics in adulthood.",
+              "The current educational system effectively promotes critical thinking in every subject."
+            ],
+            "solution": "<p>Option A is correct because it directly supports the argument that science education is essential for creating a scientifically literate society by implying a positive correlation between science education and future engagement with scientific topics.</p><p>Option B suggests that the educational system promotes critical thinking in all subjects, which, while potentially true, does not specifically support the argument about science education's unique role in fostering scientific literacy.</p><p>Option C incorrectly assumes that outside factors, such as personal experience or external influences, do not affect scientific literacy. This diminishes the relevance of the assumption about education alone.</p><p>Option D makes a broad claim about the universality of science, which does not directly relate to the argument regarding the necessity of science education for scientific literacy; therefore, it is not a valid assumption in this context.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "What is the main idea of the passage regarding the significance of science in society?",
+            "title": "The Significance of Science in Modern Society",
+            "answer": "Science is an essential component of societal progress and addresses complex global challenges.",
+            "options": [
+              "Understanding science requires a basic education, which is universally accessible to everyone.",
+              "Ethical dilemmas often overshadow the positive contributions of scientific advancements.",
+              "Science is an essential component of societal progress and addresses complex global challenges.",
+              "The scientific method is often disregarded in traditional practices that yield effective results."
+            ],
+            "solution": "<p>Option A is correct because it encapsulates the central theme of the passage, emphasizing that science plays a crucial role in driving societal progress and tackling complex global issues.</p><p>Option B presents a critique of the scientific method in traditional practices but does not represent the main idea of the passage, which focuses on the positive contributions of science.</p><p>Option C highlights ethical dilemmas faced by scientific advancements, which is a significant concern but does not reflect the primary focus of the passage regarding science's importance to society.</p><p>Option D discusses the accessibility of education but is not aligned with the main idea, which centers around the value of scientific inquiry and its impact on societal development.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 4
+          }
+        ]
+      }
+    ]
+  }
+}

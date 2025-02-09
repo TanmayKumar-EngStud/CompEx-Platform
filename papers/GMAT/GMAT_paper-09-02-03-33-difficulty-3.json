@@ -1,0 +1,796 @@
+{
+  "GMAT_Q": {
+    "section0": [
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)> - <Percentages> - <Business> - <difficulty_level: 2>",
+        "thread_id": "thread_oTMdfXstD3JkfNAAM2nctFej",
+        "question": "In a bustling city, a coffee shop is known for its specialty brews and exquisite blends. The owner decided to run a promotional offer that claims customers will receive a 20% discount on their total bill for every purchase exceeding $50. Last Saturday, the shop was buzzing with customers who jumped at this opportunity. A customer named Sarah bought two bags of premium coffee beans priced at $30 each and a bottle of limited-edition syrup priced at $25. To make the most of the discount, she also included an extra cupcake priced at $5. As her total before any discount was calculated, an unexpected dilemma arose: Should she use the discount on her entire purchase, or was it more beneficial to forego the cupcake? Calculate the amount she needs to pay after applying the discount on her purchase, and consider the possible outcomes of removing the cupcake from her total. What is the final amount Sarah would need to pay if she chooses to include the cupcake in her purchase?",
+        "title": "Calculating the Effective Final Payment After A Discount at a Coffee Shop",
+        "solution": "To determine the final amount Sarah needs to pay, we start by calculating her total purchases. She bought 2 bags of coffee at $30 each, a bottle of syrup for $25, and a cupcake for $5. Therefore, the total cost is calculated as follows: \\n\\nTotal cost = (2 * $30) + $25 + $5 = $60 + $25 + $5 = $90.  \\n\\nSince her total purchase exceeds $50, Sarah is eligible for a 20% discount on her total bill. The discount amount is given by: \\nDiscount = 20% of $90 = 0.20 * $90 = $18. \\n\\nThus, the final amount she needs to pay after applying the discount is: \\nFinal amount = Total cost - Discount = $90 - $18 = $72. \\n\\nIf she opts to exclude the cupcake from her purchase, her new total would be: \\nNew total cost = (2 * $30) + $25 = $60 + $25 = $85. \\n\\nAgain, since this amount exceeds $50, she would still get a 20% discount on the new total: \\nDiscount without cupcake = 20% of $85 = 0.20 * $85 = $17. \\n\\nHence, the final amount without the cupcake would be: \\nFinal amount without cupcake = New total cost - Discount without cupcake = $85 - $17 = $68. \\n\\nIn summary, including the cupcake results in a final payment of $72, whereas excluding it results in a total of $68.",
+        "options": [
+          "62.0",
+          "68.0",
+          "72.0",
+          "77.0",
+          "71.0"
+        ],
+        "answer": "72.0",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Obtaining the best answer",
+          "Percentages"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Functions> - <difficulty_level: 2>",
+        "thread_id": "thread_IsyvrcRGdrSvttLt5c3CLBZt",
+        "question": "In a peculiar town where the population demographics fluctuate, the ratio of children to adults is consistently maintained at 2:3. If the number of adults, denoted by A, varies with the expression 3x - 15, where x represents an integer that can be any whole number from 5 to 20.  Furthermore, the local council aims to establish a children's park in every neighborhood. In total, there are 5 neighborhoods, and each neighborhood is required to have a number of parks equal to the number of adults in that neighborhood. Given the equation for the total number of adults across all neighborhoods as T = 5A, how many children will there be in the town if the values of A are determined intelligently based on the possible values of x?",
+        "title": "Determining the Number of Children Based on Adult Population in a Peculiar Town",
+        "solution": "To determine the number of children in the town based on the number of adults, we start by expressing the number of adults, A, using the formula A = 3x - 15 where x can take values from 5 to 20. We then calculate the total number of adults across all neighborhoods as T = 5A. The ratio of children to adults is 2:3. Therefore, the number of children can be derived from T using the equation: Children = (2/3) * T. After evaluating all possible values of x from the given range, the calculations yield the following results: for x = 6, A equals 3 with 15 total adults, resulting in 10 children; for x = 7, A equals 6 with 30 total adults, resulting in 20 children; and so on up to x = 20 where A equals 45 yielding a total of 225 adults and 150 children. Out of all evaluated x, the children count scales from 10 to 150, based on the respective number of adults calculated.",
+        "options": [
+          "135",
+          "155",
+          "140",
+          "150"
+        ],
+        "answer": "150",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Number Picking",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <Number Sense> - <Work and Time> - <difficulty_level: 2>",
+        "thread_id": "thread_egh2uE1bw6P8ZVgolTG4Es7T",
+        "question": "In a bustling factory, there are three different machines, A, B, and C, that work together to produce a particular gadget. Machine A can complete the task in 12 hours, Machine B in 18 hours, and Machine C in 24 hours. If all three machines work simultaneously to produce the gadgets, how long will it take to finish the job? To find the total time taken when they work together, first calculate the rate at which each machine works, then find their combined rate, and finally determine the time it takes to complete the job using that combined rate.",
+        "title": "Combined Work Efficiency of Machines A, B, and C in a Factory",
+        "solution": "To determine how long it will take for Machines A, B, and C to complete the task together, we first calculate the work rate for each machine: Machine A completes the task in 12 hours, hence its rate is 1/12 of the job per hour. Machine B, requiring 18 hours, has a rate of 1/18 of the job per hour, and Machine C, which takes 24 hours, works at a rate of 1/24 of the job per hour. The combined rate of work is thus the sum of these individual rates: (1/12 + 1/18 + 1/24). After finding the least common multiple to combine these fractions appropriately, we can find the combined rate as approximately 1/5.54 (after evaluating the total). Therefore, the time taken to complete the entire job when all three machines work together is approximately 5.54 hours.",
+        "options": [
+          "5.04",
+          "6.04",
+          "4.54",
+          "7.54"
+        ],
+        "answer": "6.04",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "Number Sense",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Choosing mathematical tools(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)> - <Rates> - <Marketing and Sales> - <difficulty_level: 4>",
+        "thread_id": "thread_JuJqmgQJqgwO2we8bm5tH8qA",
+        "question": "In an effort to boost sales, a coffee shop has implemented a new promotional strategy that varies its prices based on different times of the day. During the morning rush hour (from 7 AM to 10 AM), the shop offers a special deal on coffee where each cup is sold for $2.50. From 10 AM to 2 PM, the price of a cup of coffee rises to $3.00, whereas from 2 PM to 6 PM, it is sold for $3.50, and finally, from 6 PM to 9 PM, the price is decreased to $2.00 to attract evening customers.Earlier in the week, on a typical day, the shop sold 120 cups from 7 AM to 10 AM, 80 cups from 10 AM to 2 PM, 60 cups from 2 PM to 6 PM, and 40 cups from 6 PM to 9 PM. Taking into account the different price brackets and the respective sales, what was the total revenue generated from coffee sales on that particular day? Furthermore, if the shop aims to increase its total revenue by 15% the next day, what would be the necessary revenue target? Formulate a strategy using the most efficient approach to calculate the total revenue and the required revenue target, considering the promotional pricing strategy.",
+        "title": "Calculating Total Revenue from a Coffee Shop's Promotional Pricing Strategy",
+        "solution": "To calculate the total revenue generated from coffee sales, we first need to consider the price per cup during the different time slots and the quantity sold in each time slot. The calculations are as follows: \n\n- **Morning (7 AM to 10 AM)**: 120 cups sold at $2.50 each yields $300.00 (120 * 2.50).\n- **Midday (10 AM to 2 PM)**: 80 cups sold at $3.00 each yields $240.00 (80 * 3.00).\n- **Afternoon (2 PM to 6 PM)**: 60 cups sold at $3.50 each yields $210.00 (60 * 3.50).\n- **Evening (6 PM to 9 PM)**: 40 cups sold at $2.00 each yields $80.00 (40 * 2.00). \n\nAdding all these revenues together gives: \n\nTotal Revenue = $300.00 + $240.00 + $210.00 + $80.00 = $830.00. \n\nTo find the necessary revenue target for the next day with a 15% increase, we can use the total revenue of $830.00 and calculate: \n\nTarget Revenue = Total Revenue * 1.15 = $830.00 * 1.15 = $954.50.\n\nThus, the total revenue generated from coffee sales on that day is $830.00, and the revenue target for the next day is $954.50.",
+        "options": [
+          "1000.0",
+          "900.0",
+          "940.0",
+          "954.5"
+        ],
+        "answer": "954.5",
+        "difficulty": 4,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Choosing mathematical tools",
+          "Rates"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Logical Reasoning> - <Trial and Error Method(type of questions)> - <difficulty_level: 3>",
+        "thread_id": "thread_4jp0SM3i9Lc5nxng65vmiznF",
+        "question": "In a peculiar small town, a unique gathering takes place every Saturday where the townsfolk exchange home-baked breads. Each baker sets a specific rule for the number of loaves they are willing to trade. For example, Baker A will trade 3 of his sourdough loaves for 2 of Baker B's baguettes and Baker C will offer 4 of his ciabatta loaves for 5 of Baker D's focaccia loaves. One Saturday, Baker E decides to join the trade using a different strategy; he intends to trade his 15 loaves of multigrain bread. He plans to swap his loaves such that he wants twice as many baguettes as focaccia loaves from Baker B and Baker D respectively. Considering the rules of trade and the amount of loaves, what is the maximum number of loaves of bread Baker E can possibly take back home by making the right trades? Keep in mind that Baker E can only trade with Baker B and Baker D and he faces a restriction that he cannot have any leftover loaves from his trades.",
+        "title": "Maximizing Bread Trades: A Baker's Dilemma",
+        "solution": "Baker E can receive approximately 3.95 focaccia loaves and approximately 7.89 baguettes. To analyze this, we set the number of focaccia loaves Baker E receives as F, leading to him wanting 2F baguettes. Based on the trade requirements, to get F focaccia loaves, he needs to trade a certain amount of loaves for both baguettes and focaccia. Solving the equations reveals that Baker E can take home approximately 11.84 loaves in total. However, since he can't have fractional loaves, he can receive a maximum of 3 focaccia loaves and 7 baguettes, which gives him a total of 10 loaves. Thus, he should opt to trade using whole loaves for practical purposes.",
+        "options": [
+          "11",
+          "8",
+          "10",
+          "13"
+        ],
+        "answer": "10",
+        "difficulty": 3,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Logical Reasoning",
+          "Trial and Error Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Number Sense> - <Percentages> - <difficulty_level: 2>",
+        "thread_id": "thread_ANLxsToga05TzdcZyZoNkHmw",
+        "question": "In a small town, there were 600 residents who were surveyed about their interest in two different recreational clubs: the Hiking Club and the Biking Club. It was found that 30% of the residents were interested in the Hiking Club, while 50% were interested in the Biking Club. Additionally, 10% of the total residents expressed interest in both clubs. Given this information, what is the percentage of residents who are interested in either the Hiking Club or the Biking Club, but not both?",
+        "title": "Determining the Percentage of Residents Interested in Recreational Clubs",
+        "solution": "To determine the percentage of residents who are interested in either the Hiking Club or the Biking Club but not both, we start by calculating the number of residents interested in each club based on the given percentages. First, we find that 30% of 600 residents are interested in the Hiking Club, which comes to 180 residents. Similarly, 50% of 600 residents are interested in the Biking Club, totaling 300 residents. Additionally, 10% of the residents, which amounts to 60 residents, are interested in both clubs.\n\nNext, we calculate the number of residents interested in only the Hiking Club by subtracting those who are interested in both from the total interested in the Hiking Club: 180 - 60 = 120. For the Biking Club, we perform the same calculation, finding that 300 - 60 = 240 residents are interested only in the Biking Club.\n\nBy summing these two figures (120 + 240), we find that 360 residents are interested in either the Hiking Club or the Biking Club but not both. To find the percentage of total residents, we use the formula (360 / 600) * 100, which gives us a result of 60%. Thus, 60% of the residents are interested in either the Hiking Club or the Biking Club but not both.",
+        "options": [
+          "50.0",
+          "70.0",
+          "75.0",
+          "60.0"
+        ],
+        "answer": "60.0",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Number Sense",
+          "Percentages"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Functions> - <difficulty_level: 2>",
+        "thread_id": "thread_BoUuskKCAyijnvJzrfwiqPSN",
+        "question": "In a small town, a local artisan creates geometric sculptures. The cost \\( C \\) in dollars to create a sculpture is given by the function \\( C(x) = 2x^2 + 3x + 50 \\), where \\( x \\) represents the number of hours spent on the sculpture. If the artisan worked for either 5, 6, or 7 hours, and the total cost of creating the sculpture is at most $100, what is the maximum number of hours \\( x \\) the artisan could possibly work under this financial constraint? Please determine the feasible values of \\( x \\) by examining the function provided.",
+        "title": "Determining the Maximum Working Hours for a Sculpture within Budget Constraints",
+        "solution": "To determine the maximum number of hours \\( x \\) the artisan could work while keeping the cost within $100, we need to solve the inequality \\( 2x^2 + 3x + 50 \\leq 100 \\). First, we simplify the inequality to \\( 2x^2 + 3x - 50 \\leq 0 \\). We then find the roots of the corresponding quadratic equation by using the quadratic formula: \\( x = \\\\frac{-b \\\\pm \\\\sqrt{b^2 - 4ac}}{2a} \\). In this case, \\( a = 2, b = 3, c = -50 \\). Solving for \\( x \\), we find the roots which provide the critical points. This inequality will hold true between the roots of the function where it intersects the x-axis. The solution gives us the range of values for \\( x \\\\) as being approximately \\( -5.81 \\\\) to \\( 4.31 \\\\). Since \\( x \\) represents hours worked, we consider only the positive values, which indicates that the maximum number of hours \\( x \\) the artisan can work is approximately \\( 4.31 \\) hours.",
+        "options": [
+          "5.31",
+          "-4.81",
+          "4.31",
+          "5"
+        ],
+        "answer": "4.31",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Inequalities> - <difficulty_level: 4>",
+        "thread_id": "thread_hrb8t2uEBtutk3DFS6pr9hHQ",
+        "question": "A company has a policy for employee promotions that states an employee's performance score must exceed 80 points to be eligible for a promotion. The performance scores of three employees, X, Y, and Z, are given by the following inequalities based on their respective contributions to team projects. \n- Employee X's score is at least 75. \n- Employee Y's score is at most 25. \n- Employee Z's score is exactly 50 points. \nGiven that only one of the employees is eligible for promotion, which of the following could possibly be true about their scores? You need to backsolve using the inequalities provided.",
+        "title": "Eligibility for Promotion Based on Performance Scores",
+        "solution": "To determine which employee is eligible for promotion, we need to compare their scores against the threshold of 80 points.\n- Employee X has a score of 75 points. Since 75 is less than 80, Employee X is not eligible for promotion.\n- Employee Y has a score of 25 points. Since 25 is also less than 80, Employee Y is not eligible for promotion.\n- Employee Z has a score of 50 points. Since 50 is again less than 80, Employee Z is not eligible for promotion.\n\nGiven that all employees are not eligible based on the strict inequalities provided, it leads to the conclusion that the values must have contained some assumptions. The only valid scenario would involve working backwards from an inequality which suggests that an adjustment in the scores or conditions might prove one of them eligible.\n\nAs a result, only one employee can potentially meet the requirement given the original inequalities if their scores were to shift upward beyond the stated constraints.",
+        "options": [
+          "Employee Z is eligible when their score decreases to 40.",
+          "All employees are eligible due to a mistake in evaluation.",
+          "Employee X is eligible if their score is adjusted to be greater than 80.",
+          "Employee Y could be eligible if their score shifts to exactly 80."
+        ],
+        "answer": "Employee X is eligible if their score is adjusted to be greater than 80.",
+        "difficulty": 4,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Assessing given Situation(checking the ability of accessing a given situation)> - <Discount, Profit and Loss> - <Logistics and Supply Chain> - <difficulty_level: 2>",
+        "thread_id": "thread_J7tmtuqWGVKmW1Bs3nytu3tF",
+        "question": "In a bustling logistics company, two warehouse managers, Alice and Bob, are tasked with managing stock levels of a popular product, Widget X. The company operates under a policy where they apply a 25% discount on each Widget X sold to increase sales volume. Last month, Alice sold a total of 600 units of Widget X, while Bob sold 800 units. Despite Bob's higher sales volume, he incurred a loss of 10% on his total revenue due to higher operational costs associated with maintaining his warehouse, which affected his net profits. Meanwhile, Alice managed to maintain her costs well, resulting in a 15% profit margin on her sales after the discount. To further drive sales, the company decided to invest in promotional activities, allocating 5% of the total revenue generated from the sales of Widget X by each manager towards marketing. If Alice's sales revenue was ultimately 30% more than Bob's due to her effective cost management, how much less did Bob allocate for marketing compared to Alice?",
+        "title": "Comparing Marketing Allocations Between Two Warehouse Managers in a Logistics Company",
+        "solution": "To calculate how much less Bob allocated for marketing compared to Alice, we start by establishing their revenues from sales. The price of Widget X is assumed to be $100. After applying the 25% discount, Alice sold 600 units, resulting in revenue of $78,000, whereas Bob sold 800 units and generated $60,000 in revenue. Since Alice's sales revenue was found to be 30% more than Bob's, we were able to confirm that Alice's revenue counts correctly.\n\nNext, we factor in their respective profit margins. Alice enjoyed a 15% profit margin, leading to a net revenue of approximately $89,700. On the other hand, Bob suffered a 10% loss, resulting in a net revenue of approximately $54,000.\n\nNow, we calculate the marketing allocation for both. Alice allocated 5% of her net revenue towards marketing, which amounts to about $4,485. Meanwhile, Bob, with his net revenue, allocated about $2,700.\n\nFinally, we find the difference between their marketing allocations: Alice allocated $4,485 - $2,700, which equates to a difference of $1,785. Thus, Bob allocated $1,785 less for marketing than Alice.",
+        "options": [
+          "-2085.00",
+          "-1285.00",
+          "215.00",
+          "-1785.00"
+        ],
+        "answer": "-1785.00",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Assessing given Situation",
+          "Discount, Profit and Loss"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)> - <Work and Time> - <Taxation> - <difficulty_level: 5>",
+        "thread_id": "thread_fKfxp4duQcCu4sx2cLKQGEOz",
+        "question": "In a bustling metropolis renowned for its intricate taxation policies, a peculiar scenario unfolds involving three friends: Alice, Bob, and Charlie. Alice operates a bakery and is subject to a 20% business tax, Bob is a freelance graphic designer facing a 15% tax rate, while Charlie runs a small vintage car restoration business with a flat tax of $500 annually. The trio decides to collaborate on a community project to provide free meals to local homeless shelters. To fund their initiative, each friend pledged a specific percentage of their pre-tax earnings to the project. In the first month of operations, Alice earned $1,200 before taxes, Bob accumulated $3,000, and Charlie had an income of $4,500. After applying their respective tax rates, they each contribute 25% of their remaining income to the project. However, unbeknownst to Charlie, he mistakenly believes that only 20% of his pre-tax income should be used to calculate his contribution. At the month\u2019s end, they review their contributions. What is the total amount contributed to the project by all three friends after taxes? Assume there are no other deductions or credits and that Charlie\u2019s misunderstanding has not affected Alice and Bob's calculations. Will they have enough funds to meet their initial goal of $1,500 for the first month?",
+        "title": "Calculating Contributions of Friends to a Community Project Considering Tax Implications and Misunderstandings",
+        "solution": "To find the total contribution made by Alice, Bob, and Charlie to their community project, we first calculate their net earnings after taxes and then their contributions.\n\nStep 1: Calculate net earnings after tax for each friend:\n- Alice's earnings after her 20% tax: $1,200 * (1 - 0.20) = $960.00.\n- Bob's earnings after his 15% tax: $3,000 * (1 - 0.15) = $2,550.00.\n- Charlie's earnings after paying a flat tax of $500: $4,500 - $500 = $4,000.\n\nStep 2: Calculate contributions:\n- Alice contributes 25% of her net earnings: $960 * 0.25 = $240.00.\n- Bob contributes 25% of his net earnings: $2,550 * 0.25 = $637.50.\n- Charlie incorrectly believes he should calculate 20% of his pre-tax income: $4,500 * 0.20 = $900.00. However, his correct contribution would have been $4,000 * 0.25 = $1,000.00 (but we will use the incorrect value for this scenario).\n\nStep 3: Total contribution by all three friends:\nTotal Contribution = $240.00 (Alice) + $637.50 (Bob) + $900.00 (Charlie's incorrect contribution) = $1,777.50.\n\nStep 4: To evaluate if they met their goal of $1,500:\nSince $1,777.50 is greater than $1,500, the goal is successfully met.",
+        "options": [
+          "$1977.50",
+          "$1777.50",
+          "$1877.50",
+          "$1677.50"
+        ],
+        "answer": "$1777.50",
+        "difficulty": 5,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Obtaining the best answer",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Logical Reasoning> - <Rates> - <difficulty_level: 2>",
+        "thread_id": "thread_tLzjpqWAvpR9Yb6WNK4qpDfp",
+        "question": "In a small town, a bakery sells two types of pastries: chocolate croissants and almond muffins. One day, the owner noticed that the total number of pastries sold was 240. The chocolate croissants sold at a rate of 12 for $15 and the almond muffins sold at a rate of 10 for $12. If the total revenue from sales that day was $216, how many of each type of pastry did the bakery sell?",
+        "title": "Calculating Pastry Sales and Revenue in a Bakery",
+        "solution": "To find the number of each type of pastry sold, we set up two equations based on the information given. Let x represent the number of chocolate croissants sold, and y represent the number of almond muffins sold. The first equation comes from the total pastries sold: x + y = 240. The second equation comes from the total revenue: (x/12)*15 + (y/10)*12 = 216. Solving these equations simultaneously, we found that the solution yields negative values for the number of pastries, which indicates that either the assumptions or values provided in the problem may contain inconsistencies or inaccuracies regarding sales or prices. Therefore, an appropriate interpretation of realistic sales is needed to come up with valid numerical answers.",
+        "options": [
+          "$298.0 (from | using x=200 croissants & y=40 muffins) (False)",
+          "$294.0 (from | using x=120 croissants & y=120 muffins) (False)",
+          "$216 (from | using x=120 croissants & y=120 muffins) (Correct)",
+          "$297.0 (from | using x=180 croissants & y=60 muffins) (False)"
+        ],
+        "answer": "$216 (from | using x=120 croissants & y=120 muffins) (Correct)",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Logical Reasoning",
+          "Rates"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Polynomials> - <difficulty_level: 3>",
+        "thread_id": "thread_iCHLnsF2rZ5LzmIx54PY52K9",
+        "question": "A company is evaluating two marketing strategies represented by the polynomial equations A(x) = x^2 + 3x + 2 and B(x) = x^2 + 5x + C. If the two strategies yield the same profit when x = 3, what is the value of C? Furthermore, suppose that the profit generated by strategy A is twice that of strategy B when x = 2. What are the conditions under which this relationship holds true, and how can you express C in terms of x? Finally, determine the possible values for C such that the undertone of profit difference remains consistent based on the profit equations.",
+        "title": "Determining the Value of C for Marketing Strategy Equivalence",
+        "solution": "To find the value of C such that the profit equations A(x) and B(x) yield the same profit at x = 3, we start with the two equations: A(x) = x\u00b2 + 3x + 2 and B(x) = x\u00b2 + 5x + C. By substituting x = 3 into both equations, we have: A(3) = 3\u00b2 + 3(3) + 2 = 20. For B, we find that B(3) = 3\u00b2 + 5(3) + C, which simplifies to B(3) = 24 + C. Setting these equal to each other yields the equation 20 = 24 + C. Solving for C gives C = -4. \n\nNext, for the second condition, we examine the instance when x = 2. Here, we compute A(2) = 2\u00b2 + 3(2) + 2 = 12. We also calculate B(2) as B(2) = 2\u00b2 + 5(2) + C, which results in B(2) = 16 + C. The condition states that A(2) should be twice B(2), giving us the equation 12 = 2(16 + C), which we can simplify. However, this equation yields no valid solution for C under the given condition, indicating inconsistent profit relationships under that scenario.",
+        "options": [
+          "-6",
+          "-5",
+          "-3",
+          "-4"
+        ],
+        "answer": "-4",
+        "difficulty": 3,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Assessing given Situation(checking the ability of accessing a given situation)> - <Unitary Method> - <Finance> - <difficulty_level: 2>",
+        "thread_id": "thread_IgBjMn86WReHXaQInFZiSgTe",
+        "question": "In a digital marketing company, a junior analyst earns $3,600 per month. Due to her excellent performance, the management decided to provide her with a 15% increase in her salary effective from the next month. Meanwhile, the company is planning to hire a senior analyst who is expected to earn $4,800 per month. If the junior analyst works for 9 months after the increase and the senior analyst works for the same duration, what will be the total salary expenditure for both analysts at the end of 9 months?",
+        "title": "Calculating Total Salary Expenditure for Junior and Senior Analysts After Salary Increases",
+        "solution": "To find the total salary expenditure for the junior and senior analysts at the end of 9 months, we first calculate the new monthly salary for the junior analyst after her salary increase. The junior analyst's original monthly salary is $3,600. With a 15% increase, the increase amount is $3,600 * 0.15 = $540. Therefore, her new monthly salary becomes $3,600 + $540 = $4,140.\n\nFor the 9 months that she works after this increase, her total salary is $4,140 * 9 = $37,260.\n\nThe senior analyst has a fixed monthly salary of $4,800. Over the same 9 months, the total salary for the senior analyst is $4,800 * 9 = $43,200.\n\nFinally, the total salary expenditure for both analysts at the end of 9 months is $37,260 (junior analyst) + $43,200 (senior analyst) = $80,460.",
+        "options": [
+          "75060.00",
+          "80460.00",
+          "80400.00",
+          "81460.00"
+        ],
+        "answer": "80460.00",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Assessing given Situation",
+          "Unitary Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <common pitfalls> - <Discount, Profit and Loss> - <difficulty_level: 5>",
+        "thread_id": "thread_XJ2UKPhCPeRx46dwae62rt44",
+        "question": "In a bustling marketplace, a whimsical vendor decides to sell a peculiar gadget that is originally priced at $120. Due to an ongoing festival, the vendor announces a discount of 25% on the gadget. However, to entice customers even more, he later offers an additional 10% discount on the already discounted price. After a full day of sales, he realizes that despite the discounts, he accidentally miscalculated his total profit. To make things even more complicated, the vendor also offers a bundle discount if customers buy three gadgets together, lowering the total price of the trio by another 5% after applicable discounts. If a customer buys three gadgets in one go, what is the final price he pays? Make sure to calculate each step carefully and be wary of common pitfalls in discount calculations. Remember: the eager vendor also wants to maintain a profit margin of 15% on each gadget based on the original price. What is the final amount that the customer has to pay after all these discounts are applied and while ensuring the vendor's profit margin is intact?",
+        "title": "Calculating the Final Price after Multiple Discounts and Profit Margin for a Peculiar Gadget",
+        "solution": "To find the final price the customer pays after multiple discounts, we start with the original price of the gadget, which is $120. The first discount of 25% is applied:\n\n1. Calculate the first discount: 120 * 0.25 = $30. \n2. Subtract this from the original price: 120 - 30 = $90 (this is the price after the first discount).\n\nNext, an additional 10% discount is applied to the already discounted price:\n\n3. Calculate the second discount: 90 * 0.10 = $9.\n4. Subtract this from the already discounted price: 90 - 9 = $81 (this is the price after the second discount).\n\nNow, if the customer buys three gadgets, we calculate the total price for three:\n\n5. Total price for three gadgets = 81 * 3 = $243.\n\nThen, an additional 5% bundle discount is applied:\n\n6. Calculate the bundle discount: 243 * 0.05 = $12.15.\n7. Subtract this from the total for three gadgets: 243 - 12.15 = $230.85 (this is the final price).\n\nIt should be noted that the vendor needs to maintain a profit margin of 15%. The effective cost price for each gadget is:\n\n8. Cost price = 120 * (1 - 0.15) = $102.\n9. Total cost price for three gadgets = 102 * 3 = $306.\n\nThus, after applying all the discounts and ensuring the vendor's profit margin is intact, the final price the customer pays is $230.85.",
+        "options": [
+          "$230.85",
+          "$230.85",
+          "$255.15",
+          "$245.85"
+        ],
+        "answer": "$230.85",
+        "difficulty": 5,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "common pitfalls",
+          "Discount, Profit and Loss"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Assessing given Situation(checking the ability of accessing a given situation)> - <Rates> - <Business> - <difficulty_level: 1>",
+        "thread_id": "thread_ZGcsnqxYP5g94KM0vTvIPaD9",
+        "question": "In a bustling pastry shop, a new type of \u00e9clair was introduced at a special launch price of $2.50 each. If the shop sold 120 \u00e9clairs on the first day of the launch, how much total revenue did the shop generate from the sales of the \u00e9clairs on that day?",
+        "title": "Total Revenue from \u00c9clair Sales at a Pastry Shop",
+        "solution": "To find the total revenue generated from the sales of the \u00e9clairs, multiply the price of one \u00e9clair by the number of \u00e9clairs sold. The price of one \u00e9clair is $2.50 and the shop sold 120 \u00e9clairs on the first day. Therefore, the total revenue is calculated as follows: Total Revenue = Price per \u00c9clair \u00d7 Number of \u00c9clairs Sold = $2.50 \u00d7 120 = $300.00. Hence, the total revenue generated by the shop from the sales of the \u00e9clairs on that day is $300.00.",
+        "options": [
+          "$250.00",
+          "$280.00",
+          "$320.00",
+          "$290.00"
+        ],
+        "answer": "$280.00",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Assessing given Situation",
+          "Rates"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Critical Reasoning> - <Work and Time> - <difficulty_level: 2>",
+        "thread_id": "thread_3Ke2nzRT6gQsdpLeQQFSEZYJ",
+        "question": "In a bustling bakery known for its delectable pastries, two skilled bakers, Alice and Bob, are tasked with preparing a batch of special \u00e9clairs for an important event. Alice, working at her full efficiency, can whip up 60 \u00e9clairs in 3 hours. Bob, on the other hand, can achieve the same feat, however, he takes a slightly longer time, completing 60 \u00e9clairs in 4 hours. If they collaborate and work together on this delightful endeavor, how many seconds will it take for them to prepare a total of 120 \u00e9clairs for the event?",
+        "title": "Time Taken by Two Bakers to Prepare \u00c9clairs Together",
+        "solution": "To solve the problem, we first need to determine the rate at which each baker works: Alice can make 60 \u00e9clairs in 3 hours, which means her rate is 60/3 = 20 \u00e9clairs per hour. Bob can make the same amount in 4 hours, resulting in a rate of 60/4 = 15 \u00e9clairs per hour. When Alice and Bob work together, their combined rate is 20 + 15 = 35 \u00e9clairs per hour. The task is to make 120 \u00e9clairs total. Therefore, the time required to prepare 120 \u00e9clairs is 120 divided by the combined rate: 120 / 35 = approximately 3.43 hours. To convert this into seconds, we multiply by 3600 seconds/hour, yielding approximately 12354.86 seconds. Thus, it will take them approximately 12354.86 seconds to prepare 120 \u00e9clairs.",
+        "options": [
+          "44434285.71",
+          "44435785.71",
+          "44432285.71",
+          "44430785.71"
+        ],
+        "answer": "44434285.71",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Critical Reasoning",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Polynomials> - <difficulty_level: 3>",
+        "thread_id": "thread_fIEsZZyhS8gxkLKkp76t2ueB",
+        "question": "In a certain fantasy land, the height of mighty trees is described by the polynomial equation H(x) = 2x^3 - 3x^2 + 5, where H represents the height in meters and x represents the age of the tree in years. A logging company is evaluating three trees of ages 2, 3, and 4 years. Upon assessing the potential for timber, they realize they have a constraint: the height must not exceed 20 meters for the trees to be eligible for logging. Determine the highest age (of the three options) for which the trees' heights comply with the company's requirement of not surpassing this maximum height, and thus, which tree(s) can they possibly log. What is the maximum age of the trees that can be logged based on the given height constraint?",
+        "title": "Determining Eligible Trees for Logging Based on Height Constraints",
+        "solution": "To solve the problem, we start by calculating the heights of the trees at the specified ages using the polynomial equation H(x) = 2x^3 - 3x^2 + 5. We evaluate this for the ages of 2, 3, and 4 years: \n\n1. For age 2: H(2) = 2(2^3) - 3(2^2) + 5 = 2(8) - 3(4) + 5 = 16 - 12 + 5 = 9 meters.\n2. For age 3: H(3) = 2(3^3) - 3(3^2) + 5 = 2(27) - 3(9) + 5 = 54 - 27 + 5 = 32 meters.\n3. For age 4: H(4) = 2(4^3) - 3(4^2) + 5 = 2(64) - 3(16) + 5 = 128 - 48 + 5 = 85 meters.\n\nNext, we compare these heights to the company\u2019s maximum allowable height of 20 meters. The trees at ages 3 and 4 exceed this limit, while the tree at age 2 has a height of only 9 meters, which is acceptable. \n\nTherefore, the maximum age of the trees that can be logged, based on the height constraint, is 2 years.",
+        "options": [
+          "4 years",
+          "3 years",
+          "2 years",
+          "1 year"
+        ],
+        "answer": "2 years",
+        "difficulty": 3,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Number Picking",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <common pitfalls> - <Unitary Method> - <difficulty_level: 2>",
+        "thread_id": "thread_imyKlIsPBJa1M4sk39Z3eZWI",
+        "question": "In a vibrant city known for its diverse culinary offerings, a food festival occurs annually. This year, the festival is anticipated to attract approximately 6000 attendees. An organizer discovers that if they reduce the ticket price from $25 to $20, they will attract an additional 2000 attendees. Determine how much more revenue the organizers would collect if they opt for the lower ticket price and attract the additional attendees instead of keeping the original price. Consider the original expected revenue as well as the new expected revenue based on these calculations, and understand the impact of ticket pricing strategies on financial outcomes.",
+        "title": "Impact of Ticket Price Reduction on Revenue at the Annual Food Festival",
+        "solution": "To determine the impact of reducing the ticket price on the revenue generated by the food festival, we begin with the following calculations:\n\n1. **Original Revenue**: The original ticket price is $25, and the anticipated number of attendees is 6000. Thus, the original revenue can be calculated as:\n   \n   Original Revenue = Original Price * Original Attendees\\n   = $25 * 6000 = $150,000.\n\n2. **New Price and Additional Attendees**: By reducing the ticket price to $20, the organizers predict an increase of 2000 attendees. Therefore, the total number of attendees at the new price will be:\n\n   Total Attendees = Original Attendees + Additional Attendees\\n   = 6000 + 2000 = 8000.\n\n3. **New Revenue Calculation**: With the new price and the increased number of attendees, we can now calculate the expected revenue:\n\n   New Revenue = New Price * Total Attendees\\n   = $20 * 8000 = $160,000.\n\n4. **Revenue Comparison**: Lastly, we find the difference in revenue generated from the two pricing strategies:\n\n   Revenue Difference = New Revenue - Original Revenue\\n   = $160,000 - $150,000 = $10,000.\n\nIn conclusion, by opting for the lower ticket price, the organizers of the food festival would collect an additional $10,000 in revenue compared to maintaining the higher ticket price.",
+        "options": [
+          "8000",
+          "10000",
+          "12000",
+          "15000"
+        ],
+        "answer": "10000",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "common pitfalls",
+          "Unitary Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Choosing mathematical tools(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)> - <Work and Time> - <Resource Management> - <difficulty_level: 3>",
+        "thread_id": "thread_bWJnPU8uLrUmakxITYLXnKfS",
+        "question": "In a bustling city known for its intricate transportation networks, a delivery service employs two types of drones to ensure timely package delivery across various neighborhoods. Drone A can complete a delivery in 45 minutes, while Drone B takes 30 minutes for the same task. To improve their overall delivery efficiency, the service decides to schedule both types of drones for a high-demand period. The management estimates that in an hour, Drone A and Drone B can each complete a certain number of deliveries based on their respective delivery times. If the delivery service aims to maximize the number of packages delivered within the next 3 hours and if both drones can operate simultaneously, how many total deliveries can they complete in that timeframe? Additionally, after 2 hours of operation, Drone A needs maintenance for 15 minutes, during which it will be temporarily unavailable. Determine how many packages will be delivered in total after the 3-hour period, considering the maintenance downtime of Drone A.",
+        "title": "Maximizing Delivery Efficiency with Drones: A Case Study in Logistics",
+        "solution": "To solve the problem, we first need to determine how many deliveries each drone can make within the given timeframes. Drone A takes 45 minutes to complete a delivery, and Drone B takes 30 minutes. Over the entire 3-hour period (i.e., 180 minutes), we perform the following calculations:\n\n1. **Total Deliveries Calculation**:\n   - Drone A can complete deliveries in 180 minutes:\n     - Total deliveries by Drone A = 180 minutes / 45 minutes per delivery = 4 deliveries\n   - Drone B can complete deliveries in 180 minutes:\n     - Total deliveries by Drone B = 180 minutes / 30 minutes per delivery = 6 deliveries\n   - Without considering downtime, the combined total is 4 + 6 = 10 deliveries.\n\n2. **Downtime Adjustment for Drone A**:\n   - After the first 2 hours (120 minutes), Drone A needs 15 minutes of maintenance, reducing its availability for deliveries.\n   - During the first 2 hours, the deliveries made by Drone A:\n     - Deliveries in first 2 hours = 120 minutes / 45 minutes per delivery = 2 deliveries.\n   - After 2 hours, there are 60 minutes left, but we must account for 15 minutes downtime. So, the time available for Drone A after maintenance is 60 - 15 = 45 minutes.\n   - Deliveries by Drone A after maintenance can then be calculated as:\n     - Deliveries after maintenance = 45 minutes / 45 minutes per delivery = 1 delivery.\n\n3. **Drone B Operations During Drone A's Downtime**:\n   - While Drone A is down for maintenance, Drone B can continue to deliver:\n     - In 15 minutes, Drone B can perform: 15 / 30 = 0.5 deliveries (it cannot fully deliver a package, hence effectively is rated 0 for that downtime).\n\n4. **Total Deliveries with Downtime Considered**:\n   - Total delivery contributions before and after maintenance:\n     - From Drone A: 2 (first 2 hours) + 1 (after maintenance) = 3 deliveries.\n     - From Drone B: It has completed 6 deliveries in total.\n   - Combining these, we get the total deliveries:\n     - Total deliveries = 3 (from A) + 6 (from B) = 9 deliveries.\n\nThus, the total number of packages delivered after the 3-hour period, accounting for maintenance downtime, is 9.",
+        "options": [
+          "10",
+          "9",
+          "8",
+          "12"
+        ],
+        "answer": "9",
+        "difficulty": 3,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Choosing mathematical tools",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Polynomials> - <difficulty_level: 4>",
+        "thread_id": "thread_o60uUxMAVAAeHwlFhFGR3YhD",
+        "question": "A company produces software represented by the polynomial 9x^2 + 7x + 3. The revenue from this software is expressed as a function of the number of licenses sold, which can be modeled by the equation of profits given by the polynomial above. If the company notices that when they sell x licenses, the profit function yields a distinctly higher amount than selling fewer than x licenses, they need to assess the conditions under which this polynomial behaves optimally. Given that the coefficients of this polynomial represent our fixed costs and variable incomes, determine the value of x that maximizes their profit, considering all positive integer values. Furthermore, if the maximum profit occurs at the midpoint of the development costs and sales revenue, how many licenses must they sell for this maximum profit? Formulate your answer based on the polynomial structure.",
+        "title": "Maximization of Profit through Polynomial Revenue Analysis",
+        "solution": "To find the number of licenses (x) that maximizes profit based on the polynomial 9x^2 + 7x + 3, we first need to identify the vertex of the parabola formed by the quadratic function. The vertex formula for x in the quadratic function ax^2 + bx + c is given by x = -b/(2a). Given a = 9 and b = 7, we have: x = -7/(2*9) = -0.39. Since negative values for licenses are not feasible in this context, we look for the closest positive integers, which are 1 and 2. Evaluating the profit at these points: For x = 1, Profit = 9(1)^2 + 7(1) + 3 = 19. For x = 2, Profit = 9(2)^2 + 7(2) + 3 = 53. Therefore, the maximum profit occurs when the company sells 2 licenses, yielding a profit of 53.",
+        "options": [
+          "53",
+          "25",
+          "19",
+          "40"
+        ],
+        "answer": "53",
+        "difficulty": 4,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Number Picking",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Polynomials> - <difficulty_level: 5>",
+        "thread_id": "thread_ecvJTH6Ddm928o1cgCFNzNMO",
+        "question": "In a peculiar bridge building contest, there are two types of materials available: Steel and Concrete. A certain structural engineer has determined that the total strength of the bridge (S) can be represented by the polynomial equation S(x) = 3x^3 - 5x^2 + 2x + k, where x represents the ratio of steel to concrete in the bridge, and k is a constant unique to each builder. During the contest, two builders presented their initial designs. Builder A claimed that with a ratio of steel (x) equal to 2, the bridge's strength would be a minimum of 50. Meanwhile, Builder B asserted that with a ratio (x) of 1, the bridge strength should aim to exceed 20. After a series of calculations, it was discovered that for Builder A's design, the value of k must be at least 24 to meet the strength criteria. For Builder B\u2019s design to hold valid, it is concluded that the value of k must be larger than 15, but less than 30. Given this information, if k can only be a prime number and must fulfill the conditions set by both builders, which of the following values for k are viable? List the prime number(s) that can exist in the overlapping range determined.",
+        "title": "Optimal Prime Value Selection for k in a Bridge Building Contest",
+        "solution": "To determine the viable values for k that satisfy both builders' requirements, we first define the constraints: Builder A requires k to be at least 24 (k >= 24), while Builder B requires k to be greater than 15 but less than 30 (15 < k < 30). This gives us an overlapping valid range where k must be in the interval 24 <= k < 30. To find the prime numbers in this overlapping range, we check numbers 24, 25, 26, 27, 28, and 29 for primality. The only prime number within this range is 29. Therefore, the only viable value of k satisfying the conditions of both builders, while being a prime number, is 29.",
+        "options": [
+          "26",
+          "28",
+          "25",
+          "29"
+        ],
+        "answer": "29",
+        "difficulty": 5,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Number Picking",
+          "Polynomials"
+        ]
+      }
+    ]
+  },
+  "GMAT_V": {
+    "section0": [
+      {
+        "type": "CR",
+        "prompt": "<biological_sciences> - <CR> - <complete the argument> - <difficulty_level: 2>",
+        "thread_id": "thread_iYf30RROePT8rGCZ4aNt0ZxC",
+        "content": {
+          "passages": [
+            "Recent studies in biological sciences have shown that the diversity of microorganisms in soil is crucial for maintaining ecosystem health. This diversity not only supports plant growth but also enhances the ability of the soil to sequester carbon. Therefore, increasing microbial diversity should be a key goal in agricultural practices. By implementing crop rotation and reduced pesticide use, farmers can promote a healthier microbiome in their fields. If the agricultural sector adopts these practices effectively, it could lead to significant improvements in soil quality and agricultural productivity.",
+            "Recent studies in biological sciences have highlighted the critical role of microorganisms in soil health and plant growth. Specifically, it has been shown that a diverse microbial community can improve nutrient cycling and inhibit pests, thereby reducing the need for chemical fertilizers and pesticides. As organic farming practices continue to gain popularity, the emphasis on cultivating a robust microbial ecosystem in agricultural soils becomes increasingly important. To achieve this, farmers are encouraged to adopt practices such as cover cropping and reduced tillage. If these methods are integrated into conventional farming, they may lead to a sustainable increase in crop yields while preserving environmental quality."
+          ]
+        },
+        "question": "Which of the following best completes the argument about the benefits of integrating microbial-friendly practices in agriculture? <br> Recent studies in biological sciences have highlighted the critical role of microorganisms in soil health and plant growth. Specifically, it has been shown that a diverse microbial community can improve nutrient cycling and inhibit pests, thereby reducing the need for chemical fertilizers and pesticides. As organic farming practices continue to gain popularity, the emphasis on cultivating a robust microbial ecosystem in agricultural soils becomes increasingly important. To achieve this, farmers are encouraged to adopt practices such as cover cropping and reduced tillage. If these methods are integrated into conventional farming, they may lead to a sustainable increase in crop yields while preserving environmental quality. <br> Which of the following best completes the argument?",
+        "title": "Completing the Argument on Microbial Diversity in Agriculture",
+        "answer": "This integration could ultimately reduce the environmental footprint of farming.",
+        "options": [
+          "Increased microbial diversity will automatically increase crop prices.",
+          "This integration could ultimately reduce the environmental footprint of farming.",
+          "Investments in microbial research are necessary to understand the full benefits.",
+          "Most farmers are still resistant to adopting organic farming methods.",
+          "Farmers need to experiment with new crops to benefit from these practices."
+        ],
+        "solution": "<br> The correct answer is A: This integration could ultimately reduce the environmental footprint of farming.<br> This option effectively completes the argument by reflecting the potential environmental benefits of integrating microbial-friendly practices, aligning with the passage's focus on sustainability and reduced chemical usage.<br><br> Option B: Farmers need to experiment with new crops to benefit from these practices.<br> This option suggests a need for experimentation that is not directly supported by the argument; the passage focuses on established practices rather than the introduction of new crops.<br><br> Option C: Investments in microbial research are necessary to understand the full benefits.<br> Although research is helpful, the argument emphasizes actionable farming practices rather than further research requirements, making this option less relevant to completing the argument.<br><br> Option D: Most farmers are still resistant to adopting organic farming methods.<br> This option introduces negativity and resistance that is not discussed in the passage; it does not add to the argument's momentum regarding the adoption of beneficial practices.<br><br> Option E: Increased microbial diversity will automatically increase crop prices.<br> This option introduces a potentially misleading economic implication that is not supported by the passage, which focuses more on biological and environmental outcomes rather than direct economic effects.",
+        "difficulty": 2,
+        "tag": [
+          "biological_sciences",
+          "CR",
+          "complete the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<business> - <CR> - <complete the argument> - <difficulty_level: 1>",
+        "thread_id": "thread_vFONvZTeSlGP94XWabcmFnLw",
+        "content": {
+          "passages": [
+            "In recent years, corporate leaders have increasingly emphasized the importance of sustainable practices in their operations. Companies that adopt eco-friendly policies not only enhance their public image but also attract environmentally conscious consumers. Therefore, it is crucial for businesses to integrate sustainability into their core strategies. This integration will not only benefit the environment but also lead to higher profits in the long term.",
+            "Many experts argue that investing in employee training is essential for the long-term success of a company. Effective training programs lead to increased productivity, higher employee satisfaction, and decreased turnover rates. As a result, businesses that prioritize the development of their workforce are more likely to outperform competitors. Thus, companies should allocate a significant portion of their budgets to employee training, as this will yield substantial returns in the form of improved performance and profitability."
+          ]
+        },
+        "question": "Which of the following best completes the argument? <br> Therefore, investing in employee training is likely to lead to ___",
+        "title": "Completing the Argument on Employee Training Benefits",
+        "answer": "greater employee retention and reduced hiring costs",
+        "options": [
+          "greater employee retention and reduced hiring costs",
+          "a decrease in overall project completion times",
+          "less focus on innovation and creativity",
+          "increased customer complaints about service quality",
+          "more layoffs during economic downturns"
+        ],
+        "solution": "The correct answer is A: greater employee retention and reduced hiring costs.<br> <o>This option directly connects to the benefits of employee training, suggesting that well-trained employees are more likely to stay with the company and thus reduce turnover costs.</o><br> <o>Option B is incorrect because while training may improve project efficiency, the argument focuses on employee retention rather than project completion.</o><br> <o>Option C is incorrect as it contradicts the argument that effective training leads to higher employee satisfaction, which typically results in better customer service.</o><br> <o>Option D is also incorrect because it implies negative outcomes, while the argument is about the positive impacts of training.</o><br> <o>Option E is incorrect, as it suggests a negative consequence that is inconsistent with the argument's emphasis on the benefits of employee training.</o>",
+        "difficulty": 1,
+        "tag": [
+          "business",
+          "CR",
+          "complete the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<literature> - <CR> - <evaluate the conclusion> - <difficulty_level: 4>",
+        "thread_id": "thread_AUHxSiVzOGAWFSGLZDhMIAkm",
+        "content": {
+          "passages": [
+            "In recent years, there has been a significant increase in the number of novels incorporating themes of technology and its impact on society. Scholars argue that these novels not only reflect contemporary anxieties about technological advancements but also shape readers' perceptions of these changes. For instance, the novel 'Digital Shadows' presents a dystopian future where technology drives society to the brink of chaos, highlighting potential consequences of unregulated tech growth. Critics, however, have noted that while such narratives raise valid concerns, they often overlook the benefits technology brings, such as improved communication and access to information. Thus, one can conclude that while technology-themed novels serve as valuable cautionary tales, they may also foster a simplistic view of the technological landscape.",
+            "Literary critics have long debated the role of the author in interpreting a text. In his latest work, acclaimed author James P. Roberts contends that understanding a text requires considering the author's intent, arguing that readers who disregard this often misinterpret the work. He cites examples from his own novels, where the underlying themes significantly change depending on the reader's awareness of his personal experiences and societal context. However, some critics argue that overemphasizing authorial intent restricts the interpretive freedom of readers. They suggest that meaning is co-created by the reader and the text, independent of the author's background. Ultimately, while Roberts presents a compelling argument, one must evaluate whether his conclusion properly accounts for the vast array of interpretations that literature allows."
+          ]
+        },
+        "question": "In the passage, the author concludes that while technology-themed novels act as cautionary tales, they may foster a simplistic view of the technological landscape. Which of the following best evaluates the author\u2019s conclusion?",
+        "title": "Evaluating the Conclusion on Technology-Themed Novels",
+        "answer": "The conclusion is well-supported as it acknowledges both the warnings and the limitations present in technology-themed literature.",
+        "options": [
+          "The conclusion lacks evidence because it does not include examples of readers' interpretations of technology-themed novels.",
+          "The conclusion is sound as it highlights the tendency of literature to present one-dimensional narratives about technology.",
+          "The conclusion is well-supported as it acknowledges both the warnings and the limitations present in technology-themed literature.",
+          "The conclusion is weak since it ignores the possibility that readers can discern both positive and negative aspects of technology from such novels.",
+          "The conclusion is flawed because it fails to consider that literature can evolve to reflect the complexities of technology."
+        ],
+        "solution": "The best evaluation of the author's conclusion is option A. <br> <o>The conclusion is well-supported as it acknowledges both the warnings and the limitations present in technology-themed literature.</o> <br> <o>This reflects the complexity of the issue and recognizes that while cautionary tales have merit, they may also lead to oversimplification.</o> <br> <o>Option B is incorrect because although literature evolves, the conclusion stands on its own merit regarding current works, regardless of future developments.</o> <br> <o>Option C is incorrect as it implies that the general audience may not always perceive both sides, which the author suggests is a risk.</o> <br> <o>Option D is not a valid critique since the passage does not lack examples; it is focused on the broader conclusion from the discussion.</o> <br> <o>Option E presents a viewpoint but lacks depth, as it does not address the complexities raised in the passage regarding the authors' perspectives.</o>",
+        "difficulty": 4,
+        "tag": [
+          "literature",
+          "CR",
+          "evaluate the conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<business> - <CR> - <complete the argument> - <difficulty_level: 2>",
+        "thread_id": "thread_vgTF9jrz7JdubpkWUoK8XeHT",
+        "content": {
+          "passages": [
+            "In recent years, many tech companies have shifted their focus from hardware production to software development. This transformation is mainly driven by the increasing demand for innovative software solutions that help businesses operate more efficiently. As a result, companies that have adapted to this trend are experiencing substantial growth. Therefore, if tech companies continue to prioritize software development, they are likely to maintain their competitive edge in the market.",
+            "The introduction of remote work policies has led to significant changes in employee productivity. Businesses that embraced these policies reported an increase in overall productivity levels. Furthermore, employees indicated higher job satisfaction due to the flexibility that remote work offers. Therefore, it can be concluded that adopting remote work policies not only enhances productivity but also contributes to better employee morale, leading to a more committed workforce."
+          ]
+        },
+        "question": "Based on the passage, which of the following best completes the argument: 'Thus, businesses that implement remote work policies will likely not only improve productivity but also...' ",
+        "title": "Completing the Argument on Remote Work Benefits",
+        "answer": "foster a more engaged and loyal workforce.",
+        "options": [
+          "create confusion among employees regarding their roles.",
+          "eliminate the challenges of team collaboration.",
+          "reduce the need for office space altogether.",
+          "foster a more engaged and loyal workforce.",
+          "increase operational costs in the long term."
+        ],
+        "solution": "The correct answer is A: foster a more engaged and loyal workforce.<br> This option logically follows the argument presented in the passage, as it emphasizes the connection between remote work policies, productivity, and employee morale, suggesting that a satisfied workforce is more likely to be engaged and loyal.<br><o>Option B, reduce the need for office space altogether, while potentially true, is not a direct continuation of the argument regarding productivity and morale.</o><br><o>Option C, eliminate the challenges of team collaboration, contradicts the idea that remote work may introduce new communication challenges.</o><br><o>Option D, increase operational costs in the long term, goes against the positive outcomes suggested in the passage.</o><br><o>Option E, create confusion among employees regarding their roles, is inconsistent with the premise that remote work leads to higher job satisfaction and engagement.</o>",
+        "difficulty": 2,
+        "tag": [
+          "business",
+          "CR",
+          "complete the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<psychology> - <CR> - <evaluate the conclusion> - <difficulty_level: 2>",
+        "thread_id": "thread_rSnEJXqT550biByb0Vlqjmnl",
+        "content": {
+          "passages": [
+            "Recent studies in psychology suggest that individuals who practice mindfulness techniques tend to experience lower levels of stress. This finding implies that a routine incorporation of mindfulness practices into daily life could enhance overall mental well-being. As more people adopt these techniques, it is reasonable to expect a general improvement in societal mental health metrics. However, further research is necessary to explore the long-term effects of these practices on diverse populations.",
+            "A recent survey indicates that people who regularly engage in creative activities, such as painting or writing, report feeling happier compared to those who do not. This suggests a potential link between creativity and increased happiness. Many psychologists propose that engaging in creative activities allows individuals to express their emotions, which can contribute to a greater sense of fulfillment. Nevertheless, the survey does not account for other factors that may influence happiness, such as social relationships or physical health."
+          ]
+        },
+        "question": "What can be concluded from the survey indicating that people who engage in creative activities report higher happiness levels, given that the survey does not account for factors like social relationships or physical health?",
+        "title": "Evaluating the Conclusion on Creativity and Happiness",
+        "answer": "There may be other unconsidered factors that contribute to the reported happiness of individuals engaged in creative activities.",
+        "options": [
+          "The relationship between creativity and happiness is independent of social relationships and physical health.",
+          "There may be other unconsidered factors that contribute to the reported happiness of individuals engaged in creative activities.",
+          "The survey conclusively proves that creativity is the sole factor contributing to happiness.",
+          "Engaging in creative activities always leads to increased happiness.",
+          "Individuals who are less happy tend to avoid creative activities."
+        ],
+        "solution": "The correct answer is C: There may be other unconsidered factors that contribute to the reported happiness of individuals engaged in creative activities.<br> <o> This option appropriately acknowledges that the survey does not account for various other influences on happiness, which is crucial when evaluating the conclusion drawn from the survey.</o><br> <o> <strong>Option A</strong> is incorrect because it presents an absolute statement that does not consider the nuances involved; creativity does not guarantee happiness for everyone.</o><br> <o> <strong>Option B</strong> is incorrect as it claims the survey provides conclusive evidence without recognizing the limitations mentioned, such as other contributing factors.</o><br> <o> <strong>Option D</strong> is incorrect because it makes a generalization about less happy individuals, which cannot be inferred directly from the survey results.</o><br> <o> <strong>Option E</strong> is also incorrect, as it ignores the possibility that social relationships and physical health could interact with the level of creative activity to affect happiness.</o>",
+        "difficulty": 2,
+        "tag": [
+          "psychology",
+          "CR",
+          "evaluate the conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<literature> - <CR> - <structure of the argument dialogue structure question> - <difficulty_level: 4>",
+        "thread_id": "thread_Lrie2qgTHr8bmJrk1KlyMX3E",
+        "content": {
+          "passages": [
+            "In a recent debate about the relevance of classic literature in modern education, two prominent educators presented their views. Dr. Smith argued that classic literature provides foundational knowledge that shapes critical thinking and cultural literacy in students. She noted, 'Understanding the historical context of these works enables students to grasp complex societal issues in today\u2019s world.' On the other hand, Mr. Johnson contended that the focus on classic texts often overlooks contemporary voices that can resonate more with today's students. He stated, 'While classic literature is important, we must also include current narratives that reflect the diverse experiences of our society.' The debate concluded with each educator acknowledging the merits of the other's perspective, yet they remained firm in their initial positions.",
+            "During a panel discussion on integrating literature into the curriculum, Professor Adams emphasized the importance of classic works in developing analytical skills. He asserted, 'Classic literature presents enduring themes that challenge students to think critically and engage deeply with complex characters.' In contrast, Dr. Lee raised concerns about the lack of representation in classic texts, arguing, 'It's important to balance the curriculum by including diverse authors whose works reflect the varied experiences of today\u2019s society.' Professor Adams responded by acknowledging Dr. Lee's point, stating, 'While I agree that diversity is crucial, we must not discard the classics that have shaped literary tradition.' This exchange highlighted the ongoing tension between maintaining tradition and embracing inclusivity in educational content."
+          ]
+        },
+        "question": "In the exchange between Professor Adams and Dr. Lee, which of the following best describes the role of Dr. Lee's statement: 'It's important to balance the curriculum by including diverse authors whose works reflect the varied experiences of today\u2019s society.'?",
+        "title": "Identifying the Role of a Statement in a Dialogue on Literature Curriculum",
+        "answer": "It presents a counterargument to Professor Adams' assertion about classic literature.",
+        "options": [
+          "It presents a counterargument to Professor Adams' assertion about classic literature.",
+          "It supports the idea that classic literature should be emphasized in education.",
+          "It introduces a new topic unrelated to the debate about classic literature.",
+          "It summarizes the main argument made by Professor Adams.",
+          "It offers a historical perspective on the relevance of diverse authors."
+        ],
+        "solution": "The correct answer is A: <br> Dr. Lee's statement serves as a counterargument to Professor Adams' assertion by highlighting the need for balance in the curriculum and advocating for the inclusion of diverse authors. <br> <o> B is incorrect because Dr. Lee does not support the emphasis on classic literature; instead, he advocates for more contemporary voices. <br> <o> C is incorrect because Dr. Lee's statement does not provide a historical perspective; it focuses on the need for diversity in the curriculum. <br> <o> D is incorrect because Dr. Lee\u2019s statement does not summarize Professor Adams' argument; rather, it challenges it. <br> <o> E is incorrect as Dr. Lee's statement is directly related to the ongoing debate about the literature curriculum.",
+        "difficulty": 4,
+        "tag": [
+          "literature",
+          "CR",
+          "structure of the argument dialogue structure question"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<history> - <CR> - <paradox> - <difficulty_level: 4>",
+        "thread_id": "thread_Qbz2G1yz7VWMI37RM2VWcKU6",
+        "content": {
+          "passages": [
+            "Throughout history, many empires have risen to great heights, only to ultimately collapse. The Roman Empire, for instance, was once the epitome of strength and governance, commanding vast territories and a prosperous economy. However, it eventually fell into disrepair despite having an organized military and a sophisticated political structure. In contrast, some smaller, less organized societies have persisted for centuries, adapting to their environments without grand military campaigns or extensive bureaucracies. This disparity raises a paradox: why do some seemingly weaker societies endure while powerful empires dissolve?",
+            "In the quest for knowledge, many historical figures are celebrated for their groundbreaking discoveries, yet paradoxically, some of the greatest contributions to science and philosophy came from those who were often dismissed or ignored. The works of individuals like Hypatia of Alexandria were overshadowed by the dominant male scholars of her time, yet her teachings influenced generations. Similarly, the ideas of early feminists like Mary Wollstonecraft were often met with ridicule, but they laid the groundwork for modern gender studies. This presents a paradox: why do revolutionary ideas sometimes emerge from the shadows, when society tends to favor established norms and accepted authorities?"
+          ]
+        },
+        "question": "What is the underlying paradox presented in the passage regarding historical figures and their contributions to knowledge?",
+        "title": "Paradox of Ignored Innovators in History",
+        "answer": "Some significant ideas are developed by those who are overlooked or marginalized.",
+        "options": [
+          "Established scholars always support emerging theories in their fields.",
+          "Some significant ideas are developed by those who are overlooked or marginalized.",
+          "Most revolutionary ideas are accepted immediately by their contemporaries.",
+          "Strong contributions often come from widely recognized figures in their time.",
+          "Cultural contexts have no impact on the acceptance of new ideas."
+        ],
+        "solution": "The correct answer is <b>B</b>: Some significant ideas are developed by those who are overlooked or marginalized.<br> This choice accurately reflects the paradox presented in the passage, highlighting how influential contributions often arise from individuals who do not receive immediate recognition.<br><o>Option A</o> is incorrect because it suggests that strong contributions only come from recognized figures, which contradicts the passage's argument.<br><o>Option C</o> is inaccurate as the passage illustrates that revolutionary ideas may not be readily accepted; rather, they can be dismissed initially.<br><o>Option D</o> misrepresents the situation, as the passage shows that established scholars may belittle new theories instead of supporting them.<br><o>Option E</o> is also incorrect because the passage implies that cultural contexts do play a role in the reception of new ideas, especially in the case of marginalized figures.",
+        "difficulty": 4,
+        "tag": [
+          "history",
+          "CR",
+          "paradox"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<biological_sciences> - <CR> - <find the assumption> - <difficulty_level: 2>",
+        "thread_id": "thread_U6kHg0BQl6EUCDVl0nVigAl6",
+        "content": {
+          "passages": [
+            "In the field of biological sciences, the recent advancements in genetic engineering have led to significant improvements in agricultural productivity. Researchers argue that by modifying the genetic material of crops, it is possible to create strains that are more resistant to pests and diseases, thereby reducing the need for chemical pesticides. These developments are seen as essential for feeding the growing global population. Despite the promising benefits, there are concerns about the long-term effects of genetically modified organisms (GMOs) on health and the environment. Supporters of genetic engineering contend that the potential benefits outweigh the risks, believing that rigorous testing and regulations can mitigate negative consequences.",
+            "The increasing prevalence of antibiotic-resistant bacteria has raised alarms within the medical community and prompted researchers to investigate the use of alternative treatments. Some scientists hypothesize that phage therapy, which uses bacteriophages to target and kill specific bacteria, could be a viable solution. Proponents of phage therapy argue that it is more effective than traditional antibiotics and has fewer side effects. However, this approach assumes that phages can be easily isolated and characterized for therapeutic purposes. Additionally, there is an underlying assumption that the regulatory framework for new treatments will adapt to allow for the use of phage therapy in clinical settings."
+          ]
+        },
+        "question": "What is the underlying assumption of the argument that phage therapy could be a viable solution for treating antibiotic-resistant bacteria?",
+        "title": "Identify the assumption in the phage therapy argument for antibiotic resistance",
+        "answer": "Phages can be effectively isolated and characterized for therapeutic use.",
+        "options": [
+          "Antibiotic-resistant bacteria are a significant public health threat.",
+          "The mechanisms of antibiotic resistance are well understood.",
+          "Phages can be effectively isolated and characterized for therapeutic use.",
+          "Phage therapy will be more widely accepted than traditional antibiotics.",
+          "Phages are safer than all existing antibiotics."
+        ],
+        "solution": "The correct answer is <b>A</b>: Phages can be effectively isolated and characterized for therapeutic use.<br> This is the underlying assumption of the argument since the viability of phage therapy hinges on the ability to isolate and properly use specific bacteriophages against antibiotic-resistant bacteria.<br><o>Option B</o>: Antibiotic-resistant bacteria are indeed a significant public health threat, but this statement is not an assumption; it is a widely accepted premise of the argument.<br><o>Option C</o>: There is no assumption made about the relative acceptance of phage therapy compared to traditional antibiotics within the passage.<br><o>Option D</o>: While phages may have fewer side effects than some antibiotics, the statement that they are safer than all existing antibiotics is not discussed as an assumption in the passage.<br><o>Option E</o>: Understanding the mechanisms of antibiotic resistance is important but does not relate to the assumption about the feasibility of phage therapy.",
+        "difficulty": 2,
+        "tag": [
+          "biological_sciences",
+          "CR",
+          "find the assumption"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<biological_sciences> - <CR> - <find the assumption> - <difficulty_level: 4>",
+        "thread_id": "thread_5K7kxcqK1uNRxMiYOz42PmzD",
+        "content": {
+          "passages": [
+            "Recent studies in biological sciences suggest that exposure to certain environmental factors can significantly influence gene expression. These findings imply that lifestyle choices, such as diet and exercise, may play a crucial role in determining an individual's health outcomes. However, critics argue that the data is not yet conclusive enough to draw definitive conclusions about the long-term effects of these factors on genetic predispositions. To fully understand the relationship between environment and genetics, further research is necessary.",
+            "A recent breakthrough in biological sciences has shown that certain microbiomes in the human gut can significantly affect mental health. Researchers claim that this discovery could lead to new treatments for mental health disorders by manipulating gut bacteria. However, the efficacy of such treatments is still under debate. Critics point out that the correlation between gut microbiomes and mental health does not necessarily imply causation. Thus, further studies are required to establish a more reliable link and potential treatment pathways."
+          ]
+        },
+        "question": "Which of the following is an assumption made by the argument regarding the relationship between gut microbiomes and mental health disorders?",
+        "title": "Assumption about Gut Microbiomes and Mental Health",
+        "answer": "Manipulating gut bacteria can lead to mental health improvements.",
+        "options": [
+          "Manipulating gut bacteria can lead to mental health improvements.",
+          "All gut bacteria impact mental health equally.",
+          "Current treatments for mental health are ineffective.",
+          "Mental health disorders are only caused by genetic factors.",
+          "Microbiomes are the only factor influencing mental health."
+        ],
+        "solution": "<br>The correct answer is A: Manipulating gut bacteria can lead to mental health improvements.<br>This is the key assumption in the argument, as it suggests that the proposed treatment can have a positive effect on mental health outcomes based on the correlation observed.<br><o>Option B is incorrect because while microbiomes may influence mental health, they are not necessarily the only factor involved; other biological and environmental factors could also play a role.</o><br><o>Option C is incorrect because not all gut bacteria have the same effect on mental health; different strains may vary in their impact.</o><br><o>Option D is incorrect as the argument specifically explores the relationship between gut microbiomes and mental health, suggesting that other factors, including lifestyle and environmental influences, can also contribute to mental health disorders.</o><br><o>Option E is incorrect because the argument does not assert that current treatments are ineffective, only implying that there could be new avenues of treatment based on gut bacteria manipulation.</o>",
+        "difficulty": 4,
+        "tag": [
+          "biological_sciences",
+          "CR",
+          "find the assumption"
+        ]
+      },
+      [
+        {
+          "type": "RC",
+          "prompt": "<business> - <RC_3> - <difficulty_level: 5>",
+          "thread_id": "thread_4OQOdZVFQz5rOapJjvx30gyq",
+          "content": {
+            "passages": [
+              "In contemporary business environments, the importance of adaptability cannot be overstated. Companies that fail to embrace the shifting dynamics of market demands often find themselves lagging behind competitors who are quicker to innovate. For instance, organizations that ignore emerging technologies may miss out on opportunities that could enhance operational efficiency and customer engagement. Consider the retail sector; businesses that did not pivot to online platforms during the recent global disruptions witnessed a significant decline in revenue. On the other hand, firms that utilized data analytics to better understand consumer behavior thrived, illustrating that an agile response to change is a critical determinant of success.",
+              "Leadership in modern business hinges on the ability to cultivate a culture of innovation and inclusivity. Research indicates that diverse teams tend to outperform homogeneous ones by harnessing a variety of perspectives that foster creativity. Effective leaders are those who not only recognize the value of such diversity, but actively promote environments where all voices are heard. This inclusivity not only boosts morale but also enhances problem-solving capabilities within the organization. Moreover, leaders must demonstrate transparency and accountability, as these traits build trust and motivate teams toward achieving collective goals. Ultimately, a leader\u2019s commitment to fostering innovation and diversity shapes the trajectory of their organization.",
+              "Strategic decision-making in business necessitates a thorough understanding of both qualitative and quantitative factors. Leaders must analyze data trends while also considering the underlying human emotions and motivations that drive market behavior. For instance, a purely data-driven approach may indicate a lucrative opportunity, yet overlooking potential consumer sentiment could lead to costly misalignments. Furthermore, businesses must remain vigilant in tracking shifts in regulatory landscapes, as such changes can greatly influence operational viability. Companies that implement robust risk assessment frameworks are better positioned to navigate uncertainties and make informed choices. Thus, the interplay of analytical rigor and empathetic insight becomes pivotal in guiding successful business strategies."
+            ]
+          },
+          "title": "Navigating the Complexities of Modern Business: Adaptability, Leadership, and Strategic Decision-Making",
+          "difficulty": 5,
+          "questions": [
+            {
+              "prompt": "Detail (question on detail that is directly stated in the passage) - <difficulty_level: 5>",
+              "question": "What critical determinant of success is highlighted in the first passage regarding businesses that adapt to market changes?",
+              "title": "The Role of Adaptability in Business Success",
+              "answer": "Adaptability to market changes",
+              "options": [
+                "Customer engagement",
+                "Operational efficiency",
+                "Diverse teams",
+                "Adaptability to market changes"
+              ],
+              "solution": "<p>The correct answer is <strong>C</strong>: Adaptability to market changes.</p><p>This option is explicitly stated in the first passage as a critical determinant of success for businesses. It emphasizes that organizations thriving in competitive environments are those that embrace shifts in market dynamics.</p><p><strong>A</strong>: Operational efficiency is mentioned as part of the advantages of leveraging emerging technologies, but it is not the primary focus of success discussed.</p><p><strong>B</strong>: Customer engagement is also noted but serves as an outcome of adaptability rather than a determinant of success itself.</p><p><strong>D</strong>: Diverse teams are referred to in the second passage, but they relate to leadership and innovation rather than directly addressing adaptability in the context of the first passage.</p>",
+              "difficulty": 5,
+              "tags": [
+                "Detail (question on detail that is directly stated in the passage)"
+              ]
+            },
+            {
+              "prompt": "Analyze the argument(analyze the strength of an argument made in the passage) - <difficulty_level: 5>",
+              "question": "What argument is made about the relationship between diversity and team performance in the second passage, and how is it supported?",
+              "title": "Evaluating the Argument for Diversity in Team Performance",
+              "answer": "Diverse teams outperform homogeneous ones due to a variety of perspectives.",
+              "options": [
+                "Diversity in teams hinders effective communication among members.",
+                "Diverse teams outperform homogeneous ones due to a variety of perspectives.",
+                "Creativity is enhanced only in marketing teams with diverse backgrounds.",
+                "Homogeneous teams are more efficient in problem-solving."
+              ],
+              "solution": "<p>The correct answer is <strong>A</strong>: Diverse teams outperform homogeneous ones due to a variety of perspectives.</p><p>This argument is clearly stated in the second passage, which asserts that the inclusion of diverse perspectives fosters creativity, thus enhancing overall team performance.</p><p><strong>B</strong>: This option contradicts the information in the passage, as it suggests that homogeneous teams are more efficient, which the passage does not support.</p><p><strong>C</strong>: While creativity can be important in marketing, the passage makes a broader claim about diversity enhancing creativity across teams, not limited to any specific function.</p><p><strong>D</strong>: This option is incorrect as it misrepresents the passage; it does not mention that diversity hinders communication; rather, it implies that diversity enhances problem-solving capabilities through varied perspectives.</p>",
+              "difficulty": 5,
+              "tags": [
+                "Analyze the argument(analyze the strength of an argument made in the passage)"
+              ]
+            },
+            {
+              "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 5>",
+              "question": "What is the primary purpose of the statement regarding 'transparency and accountability' in the second passage, and how does it function within the overall argument?",
+              "title": "Understanding the Role of Transparency and Accountability in Leadership",
+              "answer": "To emphasize that without these traits, trust will diminish within the organization.",
+              "options": [
+                "To argue that transparency and accountability hinder innovation.",
+                "To emphasize that without these traits, trust will diminish within the organization.",
+                "To suggest that these traits are unnecessary for effective leadership.",
+                "To illustrate how leadership can be successful solely through decision-making skills."
+              ],
+              "solution": "<p>The correct answer is <strong>B</strong>: To emphasize that without these traits, trust will diminish within the organization.</p><p>This statement functions within the overall argument of the second passage by underscoring the essential role that transparency and accountability play in building trust among team members, which is critical for effective leadership.</p><p><strong>A</strong>: This option is incorrect as the passage clearly states that transparency and accountability are important traits for leaders.</p><p><strong>C</strong>: This option misinterprets the passage; it does not argue that these traits hinder innovation, but rather indicates that they are crucial for fostering an innovative and trusting environment.</p><p><strong>D</strong>: This option incorrectly suggests that successful leadership can occur without focusing on ethics and trust, which is contrary to the passage\u2019s emphasis on the importance of relatable leadership qualities, including transparency and accountability.</p>",
+              "difficulty": 5,
+              "tags": [
+                "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+              ]
+            }
+          ],
+          "tags": [
+            "Detail (question on detail that is directly stated in the passage)",
+            "Analyze the argument(analyze the strength of an argument made in the passage)",
+            "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+          ]
+        },
+        
