@@ -1,18 +1,16 @@
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from google import genai
 import os, json
-from GRE.Quants.files.questionComponents import DataSufficiencyQuestion
+# GRE.Quants.files.
+from questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
-    def __init__(self, prompt=None):
+    def __init__(self, prompt=None, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Quants-Data-Sufficiency-Questions"]
-        llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=os.getenv("OPENAI_API_KEY"),
-            assistant_id=assistant_id
-            )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key = api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Data-Sufficiency-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
         self.thread_id = None
@@ -31,10 +29,10 @@ class DataSufficiencyQuestionGeneration:
             self.questionData["tags"] = tag
         except Exception as e:
             raise Exception(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-        dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.prompt)
+        dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.system_instructions, self.prompt)
         content = {}
 
-        self.questionData["thread_id"], passage, statements, question = dataSufficiencyQuestion.generate_questionText()
+        passage, statements, question = dataSufficiencyQuestion.generate_questionText()
         content["passage"] = passage
         content["statements"] = statements
         if len(statements) == 1:

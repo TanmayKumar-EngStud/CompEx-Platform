@@ -1,0 +1,19 @@
+{
+  "type": "MCQ-Single",
+  "prompt": "<fractions/decimals and Unitary method>- <difficulty-level: 2>",
+  "question": "Zorp, a renowned spice merchant hailing from the planet Xylar, embarks on fulfilling a peculiar intergalactic order. This order comprises two distinct types of exotic spices: 2500 Cosmic Crumbles (CC) of 'Stardust Shimmer' and 100 Galactic Glimmers (GG) of 'Void Vapor'.  The universally accepted conversion rates in the intergalactic spice trade are such that 1 Xylarian Krib (XK) is equivalent to 2.5 GG, and 1 GG is equivalent to 0.4 CC. 'Stardust Shimmer' is valued at 18 Galactic Credits per XK, whereas 'Void Vapor', a rarer commodity, is priced at 25 Galactic Credits per XK.  Furthermore, Zorp's esteemed clientele qualifies for a 10% price reduction on the total cost if the order value, before discount, surpasses 30,000 Galactic Credits. Determine the final cost, in Galactic Credits, that Zorp's client will incur for this spice consignment.",
+  "title": "Calculating the Final Cost of an Intergalactic Spice Order in Galactic Credits",
+  "solution": "<p>First, we need to convert the quantities of both spices into a common unit, which is Xylarian Krib (XK), as the prices are given per XK.<br><br>For 'Stardust Shimmer':<br>Quantity = 2500 Cosmic Crumbles (CC)<br>Conversion rate: 1 GG = 0.4 CC  <br>To convert CC to GG, we use the relationship: 1 CC = 1 / 0.4 GG = 2.5 GG.<br>So, 2500 CC = 2500 * 2.5 GG = 6250 GG.<br>Conversion rate: 1 XK = 2.5 GG <br>To convert GG to XK, we use the relationship: 1 GG = 1 / 2.5 XK = 0.4 XK.<br>So, 6250 GG = 6250 * 0.4 XK = 2500 XK.<br>Quantity of 'Stardust Shimmer' in XK = 2500 XK.<br><br>For 'Void Vapor':<br>Quantity = 100 Galactic Glimmers (GG)<br>Conversion rate: 1 XK = 2.5 GG <br>To convert GG to XK, we use the relationship: 1 GG = 0.4 XK.<br>So, 100 GG = 100 * 0.4 XK = 40 XK.<br>Quantity of 'Void Vapor' in XK = 40 XK.<br><br>Now, calculate the cost of each spice:<br>Cost of 'Stardust Shimmer' = Quantity in XK * Price per XK = 2500 XK * 18 Galactic Credits/XK = 45000 Galactic Credits.<br>Cost of 'Void Vapor' = Quantity in XK * Price per XK = 40 XK * 25 Galactic Credits/XK = 1000 Galactic Credits.<br><br>Total cost before discount = Cost of 'Stardust Shimmer' + Cost of 'Void Vapor' = 45000 + 1000 = 46000 Galactic Credits.<br><br>Check for discount: The discount of 10% applies if the total order value surpasses 30,000 Galactic Credits. <br>Since 46000 > 30000, a 10% discount is applicable.<br><br>Discount amount = 10% of Total cost before discount = 10% of 46000 = 0.10 * 46000 = 4600 Galactic Credits.<br><br>Final cost = Total cost before discount - Discount amount = 46000 - 4600 = 41400 Galactic Credits.</p>",
+  "answer": "41400",
+  "options": [
+    "43700",
+    "41400",
+    "46125",
+    "46000"
+  ],
+  "difficulty": 2,
+  "tag": [
+    "MCQ-Single correct",
+    "fractions/decimals and Unitary method"
+  ]
+}

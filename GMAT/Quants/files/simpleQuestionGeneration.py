@@ -1,22 +1,17 @@
 import random
-from GMAT.Quants.files.questionComponents import SimpleQuestion
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+# GMAT.Quants.files.
+from questionComponents import SimpleQuestion
+from google import genai
 from dotenv import load_dotenv
 import json, os, re
 
 class SimpleQuestionGeneration:
-   def __init__(self, prompt=None):
+   def __init__(self, prompt=None, api_IDX=1):
       load_dotenv()
-      assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GMAT-Quants-Simple-Questions"]
-      openai_api_key = os.getenv("OPENAI_API_KEY")
-      if not openai_api_key:
-         raise Exception("OPENAI_API_KEY is not set in the environment variables")
-      llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=openai_api_key,
-            assistant_id=assistant_id
-      )
-      self.llm = llm
+      api_key = os.getenv(f"API_{api_IDX}")
+      self.llm = genai.Client(api_key=api_key)
+      with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Quants-Simple-Questions.txt"), "r") as f:
+         self.system_instructions = f.read()
       self.prompt = prompt
       self.questionData = {}
       self.max_retries = 3
@@ -40,15 +35,12 @@ class SimpleQuestionGeneration:
    
    def generate_question(self):
       try:
-         questionContent = SimpleQuestion(self.llm)
+         questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
          
          # Generate question text
-         thread_id, question = questionContent.generate_questionText(self.prompt)
-         if not thread_id or not question:
-            raise Exception("Failed to generate valid question text")
+         question = questionContent.generate_questionText(self.prompt)
          self.questionData["type"] = "MCQ-Single"
          self.questionData["prompt"] = self.prompt
-         self.questionData["thread_id"] = thread_id
          self.questionData["question"] = question
          
          # Generate title

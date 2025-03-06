@@ -1,8 +1,8 @@
 generator client {
-  provider = "prisma-client-py"
-  recursive_type_depth = 5
-  interface = "sync"
-  enable_experimental_decimal = true
+  provider                    = "prisma-client-py"
+  recursive_type_depth        = "5"
+  enable_experimental_decimal = "true"
+  interface                   = "sync"
 }
 
 datasource db {
@@ -11,7 +11,7 @@ datasource db {
 }
 
 model ProblemsSet {
-  problemsSetId      Int                @id @default(autoincrement())
+  problemsSetId      Int               @id @default(autoincrement())
   sectionid          Int
   examtypeid         Int
   title              String
@@ -19,9 +19,9 @@ model ProblemsSet {
   content            Json
   mocksectionid      Int?
   mockquestionnumber Int?
-  examtypes          examtypes          @relation(fields: [examtypeid], references: [examtypeid])
-  mocksections       mocksections?      @relation(fields: [mocksectionid], references: [mocksectionid])
-  sections           sections           @relation(fields: [sectionid], references: [sectionid])
+  examtypes          examtypes         @relation(fields: [examtypeid], references: [examtypeid])
+  mocksections       mocksections?     @relation(fields: [mocksectionid], references: [mocksectionid])
+  sections           sections          @relation(fields: [sectionid], references: [sectionid])
   problems           problems[]
   problemssettags    problemssettags[]
 }
@@ -43,8 +43,8 @@ model mocktestrankings {
   mocktestid Int?
   rank       Int?
   percentile Decimal?   @db.Decimal(5, 2)
-  mocktests  mocktests? @relation(fields: [mocktestid], references: [mocktestid], onDelete: NoAction, onUpdate: NoAction)
-  users      users?     @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  mocktests  mocktests? @relation(fields: [mocktestid], references: [mocktestid], onDelete: Cascade, onUpdate: Cascade)
+  users      users?     @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model mocktests {
@@ -55,10 +55,10 @@ model mocktests {
   starttime            DateTime               @db.Time(6)
   endtime              DateTime               @db.Time(6)
   isactive             Boolean?               @default(true)
+  mocksections         mocksections[]
   mocktestrankings     mocktestrankings[]
-  examtypes            examtypes?             @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
+  examtypes            examtypes?             @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
   usermocktestattempts usermocktestattempts[]
-  mocksections mocksections[]
 }
 
 model mocktestsectionscores {
@@ -66,19 +66,19 @@ model mocktestsectionscores {
   attemptid            Int?
   sectionid            Int?
   score                Decimal?              @db.Decimal(5, 2)
-  usermocktestattempts usermocktestattempts? @relation(fields: [attemptid], references: [attemptid], onDelete: NoAction, onUpdate: NoAction)
-  sections             sections?             @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
+  usermocktestattempts usermocktestattempts? @relation(fields: [attemptid], references: [attemptid], onDelete: Cascade, onUpdate: Cascade)
+  sections             sections?             @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade, onUpdate: Cascade)
 }
 
-model mocksections{
-  mocksectionid Int @id @default(autoincrement())
-  mocktestid Int
+model mocksections {
+  mocksectionid Int           @id @default(autoincrement())
+  mocktestid    Int
   sectionnumber Int
-  sectionid Int
-  mocktests mocktests? @relation(fields: [mocktestid], references: [mocktestid], onDelete: NoAction, onUpdate: NoAction)
-  sections sections? @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
-  problems problems[]
-  problemsset ProblemsSet[]
+  sectionid     Int
+  problemsset   ProblemsSet[]
+  mocktests     mocktests     @relation(fields: [mocktestid], references: [mocktestid], onDelete: Cascade, onUpdate: Cascade)
+  sections      sections      @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade, onUpdate: Cascade)
+  problems      problems[]
 }
 
 model performance {
@@ -88,8 +88,8 @@ model performance {
   incorrectcount      Int?                     @default(0)
   partialcorrectcount Int?                     @default(0)
   averagespeed        Unsupported("interval")?
-  sections            sections                 @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
-  users               users                    @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  sections            sections                 @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade, onUpdate: Cascade)
+  users               users                    @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: Cascade)
 
   @@id([userid, sectionid])
 }
@@ -100,38 +100,37 @@ model problemoptions {
   optiontext                  String
   iscorrect                   Boolean?
   group                       String?
-  problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: NoAction, onUpdate: NoAction)
+  problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: Cascade, onUpdate: Cascade)
   userattempt_selectedoptions userattempt_selectedoptions[]
 }
 
 model problems {
   type                 String?
   prompt               String?
-  problemid            Int                 @id @default(autoincrement())
+  problemid            Int              @id @default(autoincrement())
   sectionid            Int?
   examtypeid           Int?
-  title                String              @db.VarChar(200)
+  title                String           @db.VarChar(200)
   text                 String
   difficulty           Int?
-  correctattemptscount Int?                @default(0)
-  totalattemptscount   Int?                @default(0)
+  correctattemptscount Int?             @default(0)
+  totalattemptscount   Int?             @default(0)
   metadata             Json?
-  creationdate         DateTime?           @default(now()) @db.Timestamp(6)
-  addedDate            DateTime?           @default(now()) @db.Timestamp(6)
-  isChildren           Boolean             @default(false)
+  creationdate         DateTime?        @default(now()) @db.Timestamp(6)
+  addedDate            DateTime?        @default(now()) @db.Timestamp(6)
+  isChildren           Boolean          @default(false)
   problemsSetId        Int?
   mocksectionid        Int?
-  mockquestionnumber    Int?
-  isMockQuestion       Boolean             @default(false)
+  isMockQuestion       Boolean          @default(false)
   solution             Json?
+  mockquestionnumber   Int?
   problemoptions       problemoptions[]
-  examtypes            examtypes?          @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
-  ProblemsSet          ProblemsSet?        @relation(fields: [problemsSetId], references: [problemsSetId], onDelete: NoAction, onUpdate: NoAction)
-  sections             sections?           @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
-  mocksections         mocksections?       @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: NoAction, onUpdate: NoAction)
+  examtypes            examtypes?       @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
+  mocksections         mocksections?    @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: Cascade, onUpdate: Cascade)
+  ProblemsSet          ProblemsSet?     @relation(fields: [problemsSetId], references: [problemsSetId], onDelete: Cascade, onUpdate: Cascade)
+  sections             sections?        @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade, onUpdate: Cascade)
   problemtags          problemtags[]
   userattempts         userattempts[]
-
 }
 
 model problemssettags {
@@ -146,8 +145,8 @@ model problemssettags {
 model problemtags {
   problemid Int
   tagid     Int
-  problems  problems @relation(fields: [problemid], references: [problemid], onDelete: NoAction, onUpdate: NoAction)
-  tags      tags     @relation(fields: [tagid], references: [tagid], onDelete: NoAction, onUpdate: NoAction)
+  problems  problems @relation(fields: [problemid], references: [problemid], onDelete: Cascade, onUpdate: Cascade)
+  tags      tags     @relation(fields: [tagid], references: [tagid], onDelete: Cascade, onUpdate: Cascade)
 
   @@id([problemid, tagid])
 }
@@ -158,12 +157,12 @@ model sections {
   name                  String                  @db.VarChar(100)
   description           String?
   ProblemsSet           ProblemsSet[]
+  mocksections          mocksections[]
   mocktestsectionscores mocktestsectionscores[]
   performance           performance[]
   problems              problems[]
-  examtypes             examtypes?              @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
+  examtypes             examtypes?              @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
   tags                  tags[]
-  mocksections          mocksections[]
 }
 
 model tags {
@@ -173,8 +172,8 @@ model tags {
   sectionid       Int
   problemssettags problemssettags[]
   problemtags     problemtags[]
-  examtypes       examtypes         @relation(fields: [examtypeid], references: [examtypeid], onDelete: NoAction, onUpdate: NoAction)
-  sections        sections          @relation(fields: [sectionid], references: [sectionid], onDelete: NoAction, onUpdate: NoAction)
+  examtypes       examtypes         @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
+  sections        sections          @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model userattempt_selectedoptions {
@@ -196,8 +195,8 @@ model userattempts {
   partialcorrectnessscore     Decimal?                      @db.Decimal(5, 2)
   iscorrect                   Boolean?
   userattempt_selectedoptions userattempt_selectedoptions[]
-  problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: NoAction, onUpdate: NoAction)
-  users                       users?                        @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: Cascade, onUpdate: Cascade)
+  users                       users?                        @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model usermocktestattempts {
@@ -209,8 +208,8 @@ model usermocktestattempts {
   totalscore            Decimal?                @db.Decimal(5, 2)
   isofficialattempt     Boolean?                @default(true)
   mocktestsectionscores mocktestsectionscores[]
-  mocktests             mocktests?              @relation(fields: [mocktestid], references: [mocktestid], onDelete: NoAction, onUpdate: NoAction)
-  users                 users?                  @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  mocktests             mocktests?              @relation(fields: [mocktestid], references: [mocktestid], onDelete: Cascade, onUpdate: Cascade)
+  users                 users?                  @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model users {
@@ -232,5 +231,5 @@ model userstreaks {
   currentstreak Int?      @default(0)
   lasttestdate  DateTime? @db.Date
   higheststreak Int?      @default(0)
-  users         users?    @relation(fields: [userid], references: [userid], onDelete: NoAction, onUpdate: NoAction)
+  users         users?    @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: Cascade)
 }

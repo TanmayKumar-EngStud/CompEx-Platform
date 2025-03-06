@@ -1,7 +1,8 @@
-from GRE.Verbal.files.questionComponents import ParentChildQuestion
+# GRE.Verbal.files.
+from questionComponents import ParentChildQuestion
 import random, math, os, json
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from google import genai
 
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx):
@@ -24,14 +25,12 @@ class ParentChildQuestionGeneration:
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         # print(f"indexes: {indexes}")
         return prompts
-    def __init__(self, prompt=None):
+    def __init__(self, prompt=None, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Verbal-Parent-Child-Questions"]
-        llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=os.getenv("OPENAI_API_KEY"),
-            assistant_id=assistant_id
-        )
+        api_key = os.getenv(f"API_{api_IDX}")
+        llm = genai.Client(api_key = api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Verbal-Parent-Child-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.llm = llm
         self.prompt = prompt
         self.questionData = {}
@@ -51,8 +50,9 @@ class ParentChildQuestionGeneration:
         return option_list
 
     def generate_question(self):
-        parentChildQuestion = ParentChildQuestion(self.llm, self.prompt)
+        parentChildQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.prompt)
         self.questionData["type"] = "RC"
+        self.questionData["prompt"] = self.prompt
         passages= parentChildQuestion.generate_passages()
         self.questionData["content"] = {"passages": passages}
         self.questionData["title"] = parentChildQuestion.generate_parentTitle()
@@ -74,6 +74,7 @@ class ParentChildQuestionGeneration:
         for i in range(total_child_questions):
             childQuestionData = {}
             childQuestionData["type"] = "RC"
+            childQuestionData["prompt"] = child_prompts[i]
             childQuestionData["question"] = parentChildQuestion.generate_childQuestion(i, child_prompts[i])
             childQuestionData["title"] = parentChildQuestion.generate_childQuestionTitle(i)
             options, answer = parentChildQuestion.generate_childOptions(i)

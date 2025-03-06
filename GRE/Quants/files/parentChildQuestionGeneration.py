@@ -1,19 +1,16 @@
-from GRE.Quants.files.questionComponents import ParentChildQuestion
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+# GRE.Quants.files.
+from questionComponents import ParentChildQuestion
+from google import genai
 import os, json, re
 from dotenv import load_dotenv
 import random
 class ParentChildQuestionGeneration:
-    def __init__(self, prompt=None):
+    def __init__(self, prompt=None, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Quants-Parent-Child-Questions"]
-        llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=os.getenv("OPENAI_API_KEY"),
-            assistant_id=assistant_id
-        )
-        self.llm = llm
-        # print(f"prompt: {prompt}")
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key = api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Parent-Child-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.total_child_questions = int(re.search(r"parent_child-(\d+)", prompt).group(1))
         self.prompt = re.sub(r"parent_child-(\d+)", f'total child questions that you would have to generate for this parentChildQuestion will be {self.total_child_questions} so prepare other question data accordigly, prompt: ', prompt)
         self.questionData = {}
@@ -33,8 +30,8 @@ class ParentChildQuestionGeneration:
             print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
             tag = ["PS"]
         
-        parentChildQuestion = ParentChildQuestion(self.llm, self.prompt)
-        self.thread_id, content = parentChildQuestion.generate_questionGraph()
+        parentChildQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.prompt)
+        content = parentChildQuestion.generate_questionGraph()
         self.questionData["content"] = content
 
         self.questionData["title"] = parentChildQuestion.generate_parentTitle()

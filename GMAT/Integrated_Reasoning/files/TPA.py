@@ -1,20 +1,17 @@
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import TPA
+from questionComponents import TPA
 import random
 import json
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from google import genai
 from dotenv import load_dotenv
 import os, re
 class Generate_TPA:
-    def __init__(self, prompt):
+    def __init__(self, prompt, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["Two-Part-Analysis"]
-        llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key=api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Two-Part-Analysis.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
 
@@ -24,13 +21,12 @@ class Generate_TPA:
         if difficulty_search:
             difficulty = int(difficulty_search.group(1))
         
-        tpa = TPA(self.llm, self.prompt)
+        tpa = TPA(self.llm, self.system_instructions, self.prompt)
         
         # Generate question text and components
-        thread_id, parentQuestionContent = tpa.generate_ParentQuestionContent()
+        parentQuestionContent = tpa.generate_ParentQuestionContent()
         self.questionData["type"] = "TPA"
         self.questionData["prompt"] = self.prompt
-        self.questionData["thread_id"] = thread_id
         self.questionData["content"] = [parentQuestionContent]
         
         # region preparing difficulty for child Questions

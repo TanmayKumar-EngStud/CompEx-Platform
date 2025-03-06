@@ -17,6 +17,7 @@ class DB:
       self.current_mocksection_id = None
       self.current_mockquestion_number = None
       self.question_type = ""
+      self.question_correction_validator = ""
       return None
 
     def _initialize_primary_tables(self):
@@ -99,6 +100,30 @@ class DB:
                solution = json.dumps(solution)
            # Create problem with proper Prisma format
            self.question_type = question.get('type', '')
+           if (question.get('type', '') == "TA"):
+               temp = ""
+               type = question.get('prompt', '').split("-")[4]
+               if type == "Yes/No":
+                   temp = "Yes"
+               elif type == "Would Help/Would Not Help":
+                   temp = "Would Help"
+               elif type == "True/False":
+                   temp = "True"
+               elif type == "Inference/Conflicting":
+                   temp = "Inference"
+               elif type == "Sufficient/Insufficient":
+                   temp = "Sufficient"
+               elif type == "Valid/Invalid":
+                   temp = "Valid"
+               elif type == "Consistent/Inconsistent":
+                   temp = "Consistent"
+               elif type == "Conclusion/Assumption":
+                   temp = "Conclusion"
+               if question['answer'][question['options'][0]] in "Yes/No":
+                   temp = "Yes"
+               question["content"]["connection_validator"] = temp
+               self.question_correction_validator = temp
+            
            question_data = {
                "type": question.get('type', ''),
                "prompt": question.get('prompt', ''),
@@ -112,6 +137,7 @@ class DB:
                "sections": {"connect": {"sectionid": self.current_section_id}},
                "examtypes": {"connect": {"examtypeid": self.current_exam_id}}
            }
+
            if isChildQuestion:
                question_data["ProblemsSet"] = {"connect": {"problemsSetId": self.current_problemset_id}}    
            if isMockQuestion: 
@@ -150,22 +176,39 @@ class DB:
        
        correct_answers = []
        if isinstance(answers, dict):
-           finder = re.search(r'\(([^/]+)', self.question_type) # for TA questions
-           if finder:
-               ansVal = finder.group(1)
+           # First, check if this is a True/False or Yes/No type question with inverted structure
+           if "True" in answers or "False" in answers or "Yes" in answers or "No" in answers:
+               # Handle case where answer dict keys are True/False and values are option texts
+               for key, value in answers.items():
+                   if value == option:
+                       # This option text matches a value in the answers dict
+                       # Mark as correct if the key is "True" or "Yes"
+                       is_correct = key.lower() in ["true", "yes"]
+                       break
+               else:
+                   # Option not found in values, default to False
+                   is_correct = False
            else:
-               ansVal = "Yes"
-           for option, answer in answers.items():
-               if answer.lower().strip() == ansVal.lower().strip():
-                   correct_answers.append(option)
+               # Original code for TA questions where option is a key in answers dict
+               finder = self.question_correction_validator # for TA questions
+               if finder:
+                   ansVal = finder
+               else:
+                   ansVal = "Yes"
+               # Add try/except to catch KeyError
+               try:
+                   is_correct = answers[option].lower().strip() == ansVal.lower().strip()
+               except KeyError:
+                   print(f"Warning: Option '{option}' not found in answers dictionary")
+                   is_correct = False
        elif isinstance(answers, list):
-           correct_answers = answers
+           is_correct = option in answers
        else: 
-           correct_answers = [answers]
+           is_correct = option == answers
        
        option_data = {
             'optiontext': str(option),
-            'iscorrect': True if option in correct_answers else False,
+            'iscorrect': is_correct,
             'problems': {'connect': {'problemid': self.current_problem_id}}
         }
        if group:

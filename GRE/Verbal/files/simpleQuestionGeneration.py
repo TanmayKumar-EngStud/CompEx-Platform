@@ -1,18 +1,19 @@
-from GRE.Verbal.files.questionComponents import SimpleQuestion
+# GRE.Verbal.files.
+from questionComponents import SimpleQuestion
 import random, os, json, re
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from google import genai
 
 class SimpleQuestionGeneration:
-    def __init__(self, prompt=None):
+    def __init__(self, prompt=None, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Verbal-Simple-Questions"]
-        llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=os.getenv("OPENAI_API_KEY"),
-            assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key = api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Verbal-Simple-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
+        if "SE" in prompt:
+            with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Verbal-SE.txt"), "r") as f:
+                self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
 
@@ -31,9 +32,9 @@ class SimpleQuestionGeneration:
         return option_list
 
     def generate_question(self):
-      questionContent = SimpleQuestion(self.llm, self.prompt)
+      questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
       self.questionData["prompt"] = self.prompt
-      self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
+      self.questionData["question"] = questionContent.generate_questionText()
 
       self.questionData["title"] = questionContent.generate_questionTitle()
 

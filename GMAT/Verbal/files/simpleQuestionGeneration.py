@@ -4,37 +4,27 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from google import genai
 
-
-from GMAT.Verbal.files.questionComponents import SimpleQuestion
+# GMAT.Verbal.files.
+from questionComponents import SimpleQuestion
 import random
 class SimpleQuestionGeneration:
-   def __init__(self, prompt=None):
+   def __init__(self, prompt=None, api_IDX = 1):
       load_dotenv()
-      assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GMAT-Verbal-Simple-Questions"]
-      openai_api_key = os.getenv("OPENAI_API_KEY")
-      if not openai_api_key:
-         raise Exception("OPENAI_API_KEY is not set in the environment variables")
-      llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=openai_api_key,
-            assistant_id=assistant_id
-      )
-      self.llm = llm
+      api_key = os.getenv(f"API_{api_IDX}")
+      self.llm = genai.Client(api_key = api_key)
+      with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Verbal-Simple-Questions.txt")) as f:
+         self.system_instructions = f.read()
       self.prompt = prompt
       self.questionData = {}
 
    def generate_question(self):
-      questionContent = SimpleQuestion(self.llm, self.prompt)
+      questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
       self.questionData["type"] = "CR"
       self.questionData["prompt"] = self.prompt
-      result = questionContent.generate_QuestionPassage()
-      if not result or result == ("", []):
-         raise Exception("Failed to generate question passage")
-      
-      thread_id, passages = result
-      self.questionData["thread_id"] = thread_id
+      passages = questionContent.generate_QuestionPassage()
+
       self.questionData["content"] = {"passages": passages}
 
       self.questionData["question"] = questionContent.generate_questionText()

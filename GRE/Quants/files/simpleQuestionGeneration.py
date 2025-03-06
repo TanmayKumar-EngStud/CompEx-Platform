@@ -1,20 +1,18 @@
-from GRE.Quants.files.questionComponents import SimpleQuestion
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+# GRE.Quants.files.
+from questionComponents import SimpleQuestion
+from google import genai
 import os, json, re
 from dotenv import load_dotenv
 import random
 class SimpleQuestionGeneration:
-    def __init__(self, prompt=None):
+    def __init__(self, prompt=None, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GRE-Quants-Simple-Questions"]
-        llm = OpenAIAssistantRunnable(
-            model="gpt-4o-mini",
-            api_key=os.getenv("OPENAI_API_KEY"),
-            assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key = api_key)
         self.prompt = prompt
         self.questionData = {}
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Simple-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
 
     def getTagAtIndex(self, indexes):
         tags = []
@@ -28,8 +26,8 @@ class SimpleQuestionGeneration:
         else:
             self.questionData["type"] = "MCQ-Single"
         self.questionData["prompt"] = self.prompt
-        questionContent = SimpleQuestion(self.llm, self.prompt)
-        self.questionData["thread_id"], self.questionData["question"] = questionContent.generate_questionText()
+        questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
+        self.questionData["question"] = questionContent.generate_questionText()
         self.questionData["title"] = questionContent.generate_questionTitle()
         self.questionData["solution"] = questionContent.generate_questionSolution()
         options, answer = questionContent.generate_questionOptions()

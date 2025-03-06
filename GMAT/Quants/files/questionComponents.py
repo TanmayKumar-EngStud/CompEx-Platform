@@ -1,4 +1,5 @@
-import json, re
+import json, re, time, os
+from google.genai import types
 
 def refine_response(response_text):
    """
@@ -62,25 +63,48 @@ def refine_response(response_text):
 warning = "\nWARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes"
 
 class SimpleQuestion:
-    def __init__(self, llm, thread_id=None):
+    def __init__(self, llm, system_instructions, prompt):
+        self.startTime = time.time()
+        self.requestCounts = 0
         self.llm = llm
-        self.thread_id = thread_id
+        self.prompt = prompt
         self.max_retries = 3
+        self.chat = self.llm.chats.create(
+            model = os.getenv("MODEL"),
+            config = types.GenerateContentConfig(
+                system_instruction = system_instructions
+            )
+        )
 
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try:
-            if self.thread_id: 
-                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
-            else:
-                response = self.llm.invoke({"content": prompt})
-                self.thread_id = response[0].thread_id
-            val = [message.content[0].text.value for message in response][0]
+        try: 
+            self.requestCounts += 1
+            presentTime = time.time()
+            
+            # If we've reached 10 requests, enforce the rate limit
+            if self.requestCounts >= 10:
+                # Calculate time elapsed since start
+                elapsed = presentTime - self.startTime
+                
+                # If less than 60 seconds have passed, we need to wait
+                if elapsed < 60:
+                    wait_time = 60 - elapsed + 0.5  # Add a small buffer
+                    print(f"RPM limit reached, sleeping for {wait_time} seconds")
+                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    time.sleep(wait_time)
+                
+                # Reset counters after waiting or if 60+ seconds have already passed
+                self.startTime = time.time()
+                self.requestCounts = 1  # Set to 1 for the current request
+            
+            response = self.chat.send_message(prompt)
+            val = response.text
             return val
         except Exception as e:
             print(f"{prompt}")
-            print(f"failed in generating response by self.llm.invoke: {response}")
-            print(f"Error: {str(e)}")
+            print(f"failed in generating response by self.llm.invoke")
+            print(f"{str(e)}")
             return None
     
     def _retry_generate(self, func, *args):
@@ -107,7 +131,7 @@ class SimpleQuestion:
             try:
                 message = json.loads(refine_response(response))
                 if message.get("question"):
-                    return self.thread_id, message["question"]
+                    return message["question"]
                 return None
             except Exception as e:
                 print(f"GMAT Quants, Error in generate_questionText: {str(e)}")
@@ -161,26 +185,48 @@ class SimpleQuestion:
         return result if result else ({}, "")
 
 class DataSufficiencyQuestion:
-    def __init__(self, llm, prompt, thread_id= None):
+    def __init__(self, llm, system_instructions, prompt):
         self.llm = llm
+        self.startTime = time.time()
+        self.requestCounts = 0
         self.prompt = prompt
-        self.thread_id = thread_id
         self.max_retries = 3
+        self.chat = self.llm.chats.create(
+            model = os.getenv("MODEL"),
+            config = types.GenerateContentConfig(
+                system_instruction = system_instructions
+            )
+        )
     
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try:
-            if self.thread_id: 
-                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
-            else:
-                response = self.llm.invoke({"content": prompt})
-                self.thread_id = response[0].thread_id
-            val = [message.content[0].text.value for message in response][0]
+        try: 
+            self.requestCounts += 1
+            presentTime = time.time()
+            
+            # If we've reached 10 requests, enforce the rate limit
+            if self.requestCounts >= 10:
+                # Calculate time elapsed since start
+                elapsed = presentTime - self.startTime
+                
+                # If less than 60 seconds have passed, we need to wait
+                if elapsed < 60:
+                    wait_time = 60 - elapsed + 0.5  # Add a small buffer
+                    print(f"RPM limit reached, sleeping for {wait_time} seconds")
+                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    time.sleep(wait_time)
+                
+                # Reset counters after waiting or if 60+ seconds have already passed
+                self.startTime = time.time()
+                self.requestCounts = 1  # Set to 1 for the current request
+            
+            response = self.chat.send_message(prompt)
+            val = response.text
             return val
         except Exception as e:
             print(f"{prompt}")
-            print(f"failed in generating response by self.llm.invoke: {response}")
-            print(f"Error: {str(e)}")
+            print(f"failed in generating response by self.llm.invoke")
+            print(f"{str(e)}")
             return None
     
     def _retry_generate(self, func, *args):
@@ -211,7 +257,7 @@ class DataSufficiencyQuestion:
                 print(f"GMAT Quants, Error: message received for questionGraph is: \n{response}") 
                 return None
         result = self._retry_generate(_generate)
-        return self.thread_id, result
+        return result
     
     def generate_questionText(self):
         def _generate(warn= False):
@@ -224,7 +270,7 @@ class DataSufficiencyQuestion:
                 print(f"GMAT Quants, Error message received for questionText is: {str(e)}")
                 return None
         result_message_question_passage, result_statements, result_question = self._retry_generate(_generate)
-        return self.thread_id, result_message_question_passage, result_statements, result_question
+        return result_message_question_passage, result_statements, result_question
 
     def generate_questionTitle(self):
         def _generate(warn= False):
@@ -251,6 +297,3 @@ class DataSufficiencyQuestion:
                 return None
         result_solution, result_answer = self._retry_generate(_generate)
         return result_solution, result_answer
-
-
-

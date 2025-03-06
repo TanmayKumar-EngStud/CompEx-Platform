@@ -55,3 +55,4 @@ generateAssistant = generateAssistant()
 
 generateAssistant.generateAssistant("GRE-Verbal-Simple-Questions")
 generateAssistant.generateAssistant("GRE-Verbal-Parent-Child-Questions")
+generateAssistant.generateAssistant("GRE-Verbal-SE")

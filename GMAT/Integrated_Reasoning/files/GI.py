@@ -1,46 +1,39 @@
 import random, json, os,re
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import GI 
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from questionComponents import GI 
+from google import genai
 from dotenv import load_dotenv
 class Generate_GI:
-    def __init__(self, prompt):
+    def __init__(self, prompt, api_IDX=1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["Graphic-Interpretation"]
-        llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key=api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Graphic-Interpretation.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        gi = GI(self.llm, self.prompt)
+        gi = GI(self.llm, self.system_instructions, self.prompt)
         self.questionData["type"] = "GI"
         self.questionData["prompt"] = self.prompt
-        self.questionData["thread_id"], self.questionData["content"] = gi.generate_questionGraph()
+        self.questionData["content"] = gi.generate_questionGraph()
         self.questionData["question"] = gi.generate_questionText()
         self.questionData["title"] = gi.generate_questionTitle()
         self.questionData["solution"] = gi.generate_questionSolution()
-        options, correct_option = gi.generate_questionOptions()
-
+        options_list, correct_option = gi.generate_questionOptions()
+        print(f"options_list: {options_list}")
+        print(f"correct_option: {correct_option}")
+        idx = 0
         answer_list = []
-        for i in range(len(options)):
-            answer_list.append(options[i][correct_option[i]])
-
-        shuffled_options = []
-        for option_dict in options:
-            # Convert dictionary values to a list
-            value_list = list(option_dict.values())
-            # Shuffle the list
-            random.shuffle(value_list)
-            # Append the shuffled list to the result
-            shuffled_options.append(value_list)
-        self.questionData["options"] = shuffled_options
+        options = []
+        while idx < len(options_list.values()):
+            answer_list.append(options_list[f"blank_{idx+1}"][correct_option[f"blank_{idx+1}"]])
+            opts = list(options_list[f"blank_{idx+1}"].values())
+            random.shuffle(opts)
+            options.append(opts)
+            idx += 1
+        self.questionData["options"] = options
         self.questionData["answer"] = answer_list
-
-        # print(f"options: \n{shuffled_options}\n\n answer: {answer_list}\n\n")
         self.questionData["tags"] = ["GI", self.prompt.split("-")[2].strip().strip('<>').strip()]
         difficulty = re.search(r"<difficulty_level: (\d+)>", self.prompt)
         self.questionData["difficulty"] = int(difficulty.group(1))

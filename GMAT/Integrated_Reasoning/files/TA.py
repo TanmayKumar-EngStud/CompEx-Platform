@@ -2,24 +2,21 @@
 
 import random
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import TA
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from questionComponents import TA
+from google import genai
 from dotenv import load_dotenv
 import os, re, json
 class Generate_TA:
-    def __init__(self, prompt):
+    def __init__(self, prompt, api_IDX = 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["Table-Analysis"]
-        llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key=api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Table-Analysis.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        ta = TA(self.llm, self.prompt)
+        ta = TA(self.llm, self.system_instructions, self.prompt)
         self.questionData["type"] = "TA"
         self.questionData["prompt"] = self.prompt
         difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)
@@ -28,7 +25,7 @@ class Generate_TA:
             difficulty = int(difficulty_search.group(1))
         no_rows = difficulty + random.randint(5, 7)
         no_cols = difficulty + random.randint(3, 5)
-        self.questionData["thread_id"], content = ta.generate_QuestionTable(no_rows, no_cols)
+        content = ta.generate_QuestionTable(no_rows, no_cols)
         self.questionData["content"] = {"tables": content}
         self.questionData["question"] = ta.generate_QuestionText()
         self.questionData["title"] = ta.generate_QuestionTitle()

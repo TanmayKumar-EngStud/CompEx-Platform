@@ -1,0 +1,2254 @@
+{
+  "GMAT_Q": {
+    "section0": [
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <common pitfalls> - <Trial and Error Method(type of questions)> - <difficulty_level: 1>",
+        "thread_id": "thread_FcLrAXWNF8wz9n0xnYvyVnRC",
+        "question": "Elena is planning a picnic and is determining how many sandwiches to prepare. She expects five friends to join her, and each friend will likely eat two sandwiches. Additionally, Elena plans to eat three sandwiches herself. If she decides to pack two extra sandwiches as a backup in case they want more or in case any are not as fresh, how many sandwiches should she pack in total for the picnic?",
+        "title": "Calculating Total Sandwiches for a Picnic",
+        "solution": "To find out the total number of sandwiches that Elena should prepare for the picnic, we need to consider the number of sandwiches each friend will eat, along with Elena's own sandwiches and any extra sandwiches for backup. First, we calculate the total sandwiches for the friends by multiplying the number of friends (5) by the number of sandwiches each will eat (2): 5 * 2 = 10. Then, we add Elena's sandwiches (3) to this total: 10 + 3 = 13. Finally, we include the 2 extra sandwiches she plans to pack, giving us 13 + 2 = 15. Therefore, Elena should pack a total of 15 sandwiches.",
+        "options": [
+          "14",
+          "12",
+          "17",
+          "15"
+        ],
+        "answer": "15",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "common pitfalls",
+          "Trial and Error Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Discount, Profit and Loss> - <Accounting> - <difficulty_level: 2>",
+        "thread_id": "thread_OKSwsx4eZOsPZ2d9NpAjfRjs",
+        "question": "In a peculiar and bustling market known for its eclectic wares, a savvy merchant purchased a set of unique handcrafted wooden toys for a collective price of $250. Intending to make a profit, the merchant decided to apply a markup of 20% on the total cost. However, as the festival approached, the merchant realized that the competition was fierce, and so, in a bid to attract more customers, the merchant offered a discount of 15% off the marked price of the toys. If all the toys were sold at the discounted price, how much profit would the merchant ultimately gain from this entire transaction, considering the initial purchase cost and the final selling price after the discount?",
+        "title": "Calculating Profit from Discounted Sales of Handcrafted Wooden Toys",
+        "solution": "To find the profit from the sale of the handcrafted wooden toys, we first need to calculate the marked price after applying the 20% markup. The marked price is calculated as the total cost plus the markup: \n\nMarked Price = Purchase Cost + (Purchase Cost * Markup Percentage)\nMarked Price = $250 + ($250 * 0.20) = $250 + $50 = $300.\n\nNext, we calculate the selling price after applying the 15% discount to the marked price. The selling price can be calculated as follows:\n\nSelling Price = Marked Price - (Marked Price * Discount Percentage)\nSelling Price = $300 - ($300 * 0.15) = $300 - $45 = $255.\n\nFinally, the profit earned from selling the toys is calculated by subtracting the purchase cost from the selling price:\n\nProfit = Selling Price - Purchase Cost\nProfit = $255 - $250 = $5. Therefore, the merchant would ultimately gain a profit of $5 from this transaction.",
+        "options": [
+          "15.00",
+          "7.00",
+          "5.00",
+          "2.00"
+        ],
+        "answer": "5.00",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Discount, Profit and Loss"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Functions> - <difficulty_level: 1>",
+        "thread_id": "thread_XB55bet2VGrYu2fF8KCBZlwZ",
+        "question": "In a small town, a local bakery's profit in dollars can be expressed as a function of the number of cakes sold, represented by P(x) = 15x - 100, where x is the number of cakes sold. If the bakery expects to sell at least 20 cakes on a given day and needs to meet a minimum profit of $200 to cover its daily expenses, how many cakes must they sell to achieve this profit? What does it indicate about the relationship between the number of cakes sold and the profit made?",
+        "title": "Determining the Minimum Number of Cakes to Sell for Desired Profit",
+        "solution": "To find the minimum number of cakes the bakery must sell to achieve a profit of at least $200, we start with the profit function: P(x) = 15x - 100. We need to set P(x) greater than or equal to 200 to cover the daily expenses. This leads us to the equation: 15x - 100 >= 200. Adding 100 to both sides gives us 15x >= 300. Now, dividing both sides by 15 results in x >= 20. Therefore, the bakery must sell at least 20 cakes to meet their profit goal.",
+        "options": [
+          "19",
+          "15",
+          "25",
+          "20"
+        ],
+        "answer": "20",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Number Picking",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Logical Reasoning> - <Discount, Profit and Loss> - <difficulty_level: 1>",
+        "thread_id": "thread_W19O69Tj19XQM2cR5yJKZe88",
+        "question": "A store is offering a discount on a pair of shoes. The original price of the shoes is $80. If the store is having a sale where a customer can save 10% on the original price, what will be the final price a customer pays after applying the discount? Please calculate the discounted amount and subtract it from the original price to find the final sale price.",
+        "title": "Calculating the Final Price After a Discount on Shoes",
+        "solution": "To find the final price after applying the discount, we start with the original price of the shoes, which is $80. We calculate the discount amount by taking 10% of the original price: 10% of $80 is calculated as follows: (10/100) * 80 = $8. Now, we subtract the discount amount from the original price to get the final price. Thus, the final price a customer pays after applying the discount is $80 - $8 = $72.",
+        "options": [
+          "73.00",
+          "72.00",
+          "77.00",
+          "71.50"
+        ],
+        "answer": "72.00",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Logical Reasoning",
+          "Discount, Profit and Loss"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Inequalities> - <Resource Management> - <difficulty_level: 1>",
+        "thread_id": "thread_JKVd2wdSS5YUXnWwSyYdwEP2",
+        "question": "In a quaint village known for its annual harvest festival, the mayor is trying to allocate resources efficiently to ensure the event runs smoothly. This year, the festival committee has reported the need for at least 50 chairs and 30 tables to accommodate all the visitors. Each chair costs $5 and each table costs $10. The mayor has a budget of $600 to spend on chairs and tables combined. If the mayor decides to purchase 'x' chairs and 'y' tables, how many of each should be allocated based on the requirements to ensure that the total cost does not exceed the budget while meeting the minimum needs?",
+        "title": "Resource Allocation for the Annual Harvest Festival",
+        "solution": "To approach the problem, we start by defining the variables: let 'x' be the number of chairs and 'y' be the number of tables. According to the problem, we have two key constraints based on the requirements and budget: the total cost must not exceed $600, and the number of chairs and tables must meet the minimum requirements. Therefore, the inequalities we can establish are: 5x + 10y \u2264 600 (the budget constraint), x \u2265 50 (minimum chairs), and y \u2265 30 (minimum tables). By substituting the minimum requirement of 50 chairs into the budget equation, we find that we can afford up to 35 tables without exceeding the budget. Since this allocation meets both the budget and resource needs, the effective allocation would be to purchase at least 50 chairs and 35 tables. Thus, under this plan, the total cost would amount to $550, which is within the budget of $600.",
+        "options": [
+          "55 chairs and 25 tables",
+          "50 chairs and 35 tables",
+          "50 chairs and 30 tables",
+          "60 chairs and 20 tables"
+        ],
+        "answer": "50 chairs and 35 tables",
+        "difficulty": 1,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Functions> - <difficulty_level: 2>",
+        "thread_id": "thread_95ZtN7lPjCcYQIlZBD77jVuL",
+        "question": "In a bustling futuristic city, where energy efficiency is paramount, inhabitants have access to a unique power consumption model for their homes. The power function P(x) determines the monthly energy usage of a household based on the square of the number of electronic devices x they own, expressed as P(x) = 2x^2 + 3x + 5. Recently, a household has decided to evaluate their energy consumption by adjusting the number of devices they own. If their aim is to minimize costs, they are testing various scenarios with different counts of devices. They hypothesize that with fewer than 10 devices, their cost can be reduced. Can you help them find the power consumption when they own 7 devices, and identify the total power consumption for their scenarios?",
+        "title": "Evaluating Power Consumption in a Futuristic Energy Model",
+        "solution": "To determine the power consumption for a household with 7 electronic devices, we utilize the power function P(x) = 2x^2 + 3x + 5. We will substitute x with 7 in the function:\n\n1. Calculate 7 squared: 7^2 = 49.\n2. Multiply it by 2: 2 * 49 = 98.\n3. Multiply the number of devices by 3: 3 * 7 = 21.\n4. Now sum these results with the constant term: P(7) = 98 + 21 + 5.\n5. Therefore, P(7) = 124.\n\nThe total power consumption for a household with 7 devices is 124 units.",
+        "options": [
+          "124",
+          "174",
+          "124",
+          "114"
+        ],
+        "answer": "124",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Number Picking",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <Number Sense> - <Work and Time> - <difficulty_level: 2>",
+        "thread_id": "thread_KCRdfYEviMKLQVuV6hHO3uxr",
+        "question": "A group of four friends decided to paint a large wall in their community park. If the wall requires a total of 240 square feet of painting and they work together, they can complete the job in 6 hours. One of the friends, Alex, has a regular job and can only contribute to the painting for a maximum of 2 hours per day. If the remaining three friends work at the same rate as Alex and can paint for the full 6 hours each day, how many days will it take them to paint the entire wall if they follow this schedule?",
+        "title": "Determining the Time Required for a Group of Friends to Complete a Painting Job",
+        "solution": "To determine the number of days required for the group of friends to complete the painting job, we first establish the total area of the wall, which is 240 square feet. When they work together, the group can finish painting the wall in 6 hours, which translates to a combined painting rate of 40 square feet per hour (240 square feet divided by 6 hours). Since there are four friends, each friend's individual rate is 10 square feet per hour (40 square feet divided by 4). Alex, however, can only paint for 2 hours per day, allowing him to paint a total of 20 square feet per day (10 square feet per hour multiplied by 2 hours). On the other hand, the remaining three friends can work the full 6 hours each day, painting a total of 180 square feet daily (30 square feet per hour multiplied by 6 hours). Therefore, the total area painted in one day by the entire group is 200 square feet per day (20 square feet by Alex plus 180 square feet by the others). Finally, to find out how many days it will take to paint the entire wall, we divide the total area of 240 square feet by the total area painted per day, resulting in 1.2 days required to paint the wall.",
+        "options": [
+          "1.0 days",
+          "1.7 days",
+          "2.2 days",
+          "1.2 days"
+        ],
+        "answer": "1.2 days",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "Number Sense",
+          "Work and Time"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Polynomials> - <Logistics and Supply Chain> - <difficulty_level: 5>",
+        "thread_id": "thread_plOMKRa0QajMAaRijRMg2aT2",
+        "question": "In a sprawling distribution center for a global logistics company, the management is analyzing the distribution of certain types of parcels that have unique weights and dimensions. They have received three types of parcels classified as Type A, Type B, and Type C. The total number of parcels is given by the polynomial expression P(x) = 5x^3 + 7x^2 - 4x + 1, where x is the number of days required for distribution. Over the next few weeks, the parcels are expected to grow in complexity, increasing the coefficients. Management forecasts that Type A parcels will account for 60% of the total volume, Type B will be set at 30%, and Type C will occupy the remaining 10% of the total shipments. If the number of days for distribution increases by 3 days, calculate the revised number of total parcels using the same polynomial expression and subsequently find out how many parcels of each type can be allocated based on the initial distribution percentages. Ensure to present the calculations in a stepwise format, and finally determine the overall implications for cost management in the logistics chain due to the increases in both quantity and complexity.",
+        "title": "Distribution Dynamics: Analyzing Parcel Allocation and Cost Implications in a Logistics Operation",
+        "solution": "To solve the problem, we start by calculating the total number of parcels using the polynomial expression P(x) = 5x^3 + 7x^2 - 4x + 1. Initially, we consider x = 0 days for distribution, and then increase x by 3 days for the final calculations. This leads to evaluating P(3). By substituting x with 3 in the polynomial: \n\n1. Calculate P(3): \n   P(3) = 5(3^3) + 7(3^2) - 4(3) + 1 \n   = 5(27) + 7(9) - 12 + 1 \n   = 135 + 63 - 12 + 1 = 187. \n\nThus, the total number of parcels is 187. \n\n2. Now we distribute these parcels according to the management's forecast: Type A parcels (60%): 187 * 0.60 = 112.2, Type B parcels (30%): 187 * 0.30 = 56.1, and Type C parcels (10%): 187 * 0.10 = 18.7. \n\nThe calculations indicate that for an increase in distribution days, the total parcel distribution changes significantly, necessitating consideration for cost management strategies within the logistics chain.",
+        "options": [
+          "Total Parcels: 187, Type A: 112.2, Type B: 56.1, Type C: 18.7",
+          "Total Parcels: 187, Type A: 110, Type B: 58, Type C: 18.7",
+          "Total Parcels: 187, Type A: 112.2, Type B: 58, Type C: 20",
+          "Total Parcels: 190, Type A: 112.2, Type B: 58, Type C: 20"
+        ],
+        "answer": "Total Parcels: 187, Type A: 112.2, Type B: 56.1, Type C: 18.7",
+        "difficulty": 5,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Backsolving> - <Algebraic Equations> - <difficulty_level: 2>",
+        "thread_id": "thread_yZACHBgIIvSyB3lFpYoiefFu",
+        "question": "In a small town, there is a unique challenge that has captivated the local youth. A local mathematician has set a task where they must select integers A, B, and C such that they satisfy the equation A + B + C = 36. Additionally, there are certain conditions imposed: A must be twice that of B, and B is three times that of C. The challenge, however, becomes more complicated as the students are only allowed to pick their answers from a given list of integers ranging from 1 to 30. What is the value of C in this intricate puzzle set by the mathematician?",
+        "title": "Finding the Value of C in a Unique Algebra Challenge",
+        "solution": "To solve the problem, we first express A and B in terms of C using the relationships given in the problem. From B = 3C, we can substitute B into the equation A = 2B, which gives us A = 2(3C) = 6C. Thus, we express the original equation A + B + C = 36 as 6C + 3C + C = 36. This simplifies to 10C = 36. By solving for C, we divide both sides by 10, yielding C = 36 / 10, which simplifies to 3.6. Therefore, the value of C in this algebraic puzzle is 3.6.",
+        "options": [
+          "3.6",
+          "10.0",
+          "2.5",
+          "4.0",
+          "5.0"
+        ],
+        "answer": "3.6",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Backsolving",
+          "Algebraic Equations"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Inequalities> - <difficulty_level: 5>",
+        "thread_id": "thread_p3xZeBatCWyQB9r1dtVNbSvT",
+        "question": "In a competitive market for a new innovative gadget, the price of the gadget can be represented by the equation P = 2x + 5, where P is the price in dollars and x is the quantity sold in hundreds. If the company aims to maximize their revenue, which is defined as R = P * x, they also need to adhere to a critical constraint that the total production costs C must not exceed $30,000. This is given by the function C = 50x + 1000, where C is the cost in dollars based on the same quantity x. The company is projected to sell a minimum of 100 units and a maximum of 300 units of the gadget. Considering these constraints, what range of the quantity x will allow the company to operate profitably, given that they seek to achieve a revenue of at least $20,000? In other words, what is the smallest value of x, rounded to the nearest hundred, for which the combined criteria of revenue meeting the minimum target and production costs remaining below the set limit hold true? Unfortunately, there is complex interplay between the variables and inequalities here, and careful consideration of all factors is necessary for determining an optimal solution.",
+        "title": "Maximizing Revenue and Managing Costs for a New Gadget",
+        "solution": "To determine the allowable quantity x for the gadget within the given constraints, we start with two key functions: the revenue R = (2x + 5)x and the cost C = 50x + 1000. First, we establish that the revenue must be no less than $20,000, leading to the inequality 2x^2 + 5x >= 20,000. Solving this gives us x values approximately equal to 99 and -101, but since x represents the quantity sold in hundreds, we only consider positive x values. The second constraint on costs indicates that production costs C must not exceed $30,000, leading us to the solution x = 580, meaning the company can produce up to 5.8 hundreds or 580 units. Given both constraints, the smallest value of x that allows the company to operate profitably while adhering to the constraints is 3 (representing 300 units).",
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
+        "answer": "3",
+        "difficulty": 5,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Number Picking",
+          "Inequalities"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <common pitfalls> - <Trial and Error Method(type of questions)> - <difficulty_level: 4>",
+        "thread_id": "thread_joLoF5uSLRKv8WFQt1QWUE97",
+        "question": "In a vibrant marketplace, a shopkeeper sells a unique type of fruit called the Zorple. These fruits are sold at varying prices depending on their size. For large Zorples, the price is $4 each, whereas medium Zorples are priced at $3 each, and small Zorples are sold for $2 each. One day, a customer enters the market with a budget of $50 and wishes to purchase the fruits while ensuring he has at least 5 large Zorples. However, the shopkeeper informs the customer that to maximize the number of Zorples, he also can choose to buy a combination of different sizes. After purchasing the required large Zorples, which consume $20 of his budget, the customer considers buying either medium or small Zorples with the remaining $30 he has. Could he buy a maximum of 15 Zorples with this remaining amount, and what is the exact combination of sizes that he should choose, if he also wants to have an equal number of medium and small Zorples? Determine the specific quantities of each type of Zorple he should buy.",
+        "title": "Maximizing Zorple Purchases: An Arithmetic Dilemma",
+        "solution": "1. The customer spends $20 on 5 large Zorples.\n2. The remaining budget is $30.\n3. The maximum total number of Zorples that can be purchased is 15.\n4. Let the number of medium and small Zorples be equal (x for medium, x for small).\n5. After allocating 5 for large Zorples, the remaining count for medium and small is 10 (15 total - 5 large).\n6. Thus, he can buy 5 medium and 5 small Zorples using the left budget: Total costs: 5*3 + 5*2 = $25.00.",
+        "options": [
+          "5 medium and 5 small Zorples ($25.00)",
+          "6 medium and 4 small Zorples ($26.00)",
+          "4 medium and 6 small Zorples ($28.00)",
+          "5 medium and 4 small Zorples ($23.00)"
+        ],
+        "answer": "5 medium and 5 small Zorples ($25.00)",
+        "difficulty": 4,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "common pitfalls",
+          "Trial and Error Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Arithmetic> - <Number Sense> - <Unitary Method> - <difficulty_level: 1>",
+        "thread_id": "thread_isY7yaLogCEE1v7SyWYaXnRu",
+        "question": "A small bakery sells 12 varieties of cupcakes. Each cupcake costs $2.50. If a customer wants to buy 5 cupcakes, how much will it cost in total? Additionally, if the customer decides to buy cupcakes from only 3 varieties instead, what would be the cost if the quantity for each variety remains the same? Calculate the total cost for both scenarios.",
+        "title": "Total Cost Calculation for Cupcakes at a Bakery",
+        "solution": "In the first scenario, the customer buys 5 cupcakes at a cost of $2.50 each. Therefore, the total cost is calculated as 5 cupcakes * $2.50 = $12.50. In the second scenario, the customer buys 3 varieties of cupcakes, but maintains the total quantity of 5 cupcakes. Each variety will then have approximately 1.67 cupcakes (5 / 3). The cost remains the same at $2.50 per cupcake, resulting in a total cost of $12.50 again. Thus, the total costs for both scenarios are equal.",
+        "options": [
+          "10.0",
+          "15.0",
+          "11.0",
+          "12.5"
+        ],
+        "answer": "12.5",
+        "difficulty": 1,
+        "tags": [
+          "Real Contextual",
+          "Arithmetic",
+          "Number Sense",
+          "Unitary Method"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Choosing mathematical tools(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)> - <Percentages> - <Resource Management> - <difficulty_level: 4>",
+        "thread_id": "thread_RD3fCus1tydVqk9MI2GFoM6H",
+        "question": "In a thriving city, a resource management company is assessing the distribution of various medical supplies among different hospitals. They have two primary hospitals, City Hospital and County Hospital, and a central distribution unit. City Hospital has been allocated 60% of the total medical supplies, while County Hospital has been allocated 25%. The central unit is responsible for holding the remaining 15%. Recently, a report indicated that the City Hospital utilized 75% of its allocated supplies in the previous month, while County Hospital utilized 50% of its allocation. The central distribution unit, on the other hand, has not used any of its supplies yet. Given that the total inventory of medical supplies is valued at $200,000, determine how much each hospital and the central distribution unit have remaining after their usage. Furthermore, if the city plans to increase the total inventory by 10% next month and allocate an additional 10% to City Hospital and 5% to County Hospital, how much will each hospital receive from the new total? Use your analytical skills to determine the shortages or surplus in supplies and the efficiency of these allocations in optimizing resource management.",
+        "title": "Resource Allocation and Utilization Analysis in City Medical Supply Management",
+        "solution": "After assessing the usage of medical supplies, the remaining supplies are calculated as follows: City Hospital originally allocated $120,000 (60% of $200,000) utilized $90,000 (75% of $120,000), resulting in $30,000 remaining. County Hospital, allocated $50,000 (25% of $200,000) and utilizing $25,000 (50% of $50,000), also has $25,000 remaining. The central unit, which was allocated $30,000 (15% of $200,000) and has not utilized any supplies, retains the full $30,000. In conclusion, City Hospital has $30,000 remaining, County Hospital has $25,000 remaining, and the central distribution unit has $30,000 remaining.\n\nFor the next month, the total inventory is set to increase by 10% to $220,000. Consequently, after the increase, City Hospital\u2019s new allocation will be 60% of $220,000, equating to $132,000, while County Hospital will receive 25% of $220,000, amounting to $55,000. Thus, the analysis reveals how resource allocation can be efficiently managed and adjusted in the context of varying needs.",
+        "options": [
+          "City Hospital Remaining: $30000, County Hospital Remaining: $20000, Central Unit Remaining: $30000, New City Allocation: $112000, New County Allocation: $55000",
+          "City Hospital Remaining: $35000, County Hospital Remaining: $25000, Central Unit Remaining: $30000, New City Allocation: $132000, New County Allocation: $65000",
+          "City Hospital Remaining: $30000, County Hospital Remaining: $25000, Central Unit Remaining: $30000, New City Allocation: $132000, New County Allocation: $55000",
+          "City Hospital Remaining: $35000, County Hospital Remaining: $20000, Central Unit Remaining: $30000, New City Allocation: $112000, New County Allocation: $65000"
+        ],
+        "answer": "City Hospital Remaining: $30000, County Hospital Remaining: $25000, Central Unit Remaining: $30000, New City Allocation: $132000, New County Allocation: $55000",
+        "difficulty": 4,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Choosing mathematical tools",
+          "Percentages"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Algebra> - <Backsolving> - <Functions> - <difficulty_level: 3>",
+        "thread_id": "thread_9auFYkHZX8f0M3tbuU2mt6S4",
+        "question": "In a magical land where numerical functions govern the flow of time, a wise old wizard created a function f(x) = 3x^2 + 2x - 5. He decided to use this function to predict the amount of magical energy that would be generated over the next three cycles of the moon. During the first lunar cycle, the value of x represented the count of stars visible in the night sky, which is 4. In the second cycle, the star count increased by 3, while during the third cycle, the contribution from each star diminished slightly, represented by a value of x = 6. The villagers, eager to harness this energy, approached the wizard for a calculation. They wish to know the total magical energy generated across all three cycles. To come to an answer, determine the function\u2019s output for each cycle and sum these outputs. What is the total magical energy produced?",
+        "title": "Calculating the Total Magical Energy in a Wizard's Function Across Lunar Cycles",
+        "solution": "To solve for the total magical energy generated across the three lunar cycles, we utilize the function f(x) = 3x^2 + 2x - 5. We start by calculating the energy for each cycle: \n\n1. For the first cycle, where x = 4: \nf(4) = 3(4)^2 + 2(4) - 5 = 3(16) + 8 - 5 = 48 + 8 - 5 = 51.\n\n2. For the second cycle, where x has increased to 7 (4 + 3): \nf(7) = 3(7)^2 + 2(7) - 5 = 3(49) + 14 - 5 = 147 + 14 - 5 = 156.\n\n3. For the third cycle, where x = 6: \nf(6) = 3(6)^2 + 2(6) - 5 = 3(36) + 12 - 5 = 108 + 12 - 5 = 115.\n\nFinally, we sum these results to find the total energy:\nTotal Energy = 51 + 156 + 115 = 322.\nTherefore, the total magical energy produced across all cycles is 322.",
+        "options": [
+          "287",
+          "334",
+          "316",
+          "322"
+        ],
+        "answer": "322",
+        "difficulty": 3,
+        "tags": [
+          "Pure Contextual",
+          "Algebra",
+          "Backsolving",
+          "Functions"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Discount, Profit and Loss> - <Finance> - <difficulty_level: 5>",
+        "thread_id": "thread_zcDd7uCyTKh3RsBkXMgHDWkn",
+        "question": "In a bustling metropolitan city, a boutique owner, Ms. Anderson, decided to offer an intricate discount during the holiday season. Initially, her designer sweaters were priced at $200 each. After a week of slow sales, she implemented a discount of 25% on the remaining sweaters. Surprisingly, this discount led to a surge in sales. As a result, she sold 60% of her initial inventory of 150 sweaters. However, Ms. Anderson had anticipated further sales and introduced an additional 10% discount on the already discounted price. Juggling these pricing strategies, she also had to consider her operational costs, which included a fixed rent of $2,000 per month and variable costs of $15 per sweater sold. By the end of the season, Ms. Anderson calculated her revenue from the sweaters, factoring in the discounts and costs. Can you determine the total profit she made after all discounts and costs were taken into account? Set up the necessary calculations and provide the appropriate steps to arrive at her total profit. Pay close attention to each step involved in determining the profits and how discount percentages apply to the sweater prices.",
+        "title": "Calculating Total Profit After Discounts and Operational Costs for Ms. Anderson's Boutique Sweater Sales",
+        "solution": "To find Ms. Anderson's total profit after all discounts and costs, we can follow these steps: \n\n1. **Original Price of Sweater**: The initial price of each sweater is $200. \n\n2. **First Discount**: Ms. Anderson offered a 25% discount, which means the price after the first discount is calculated as:\n   \n   Price after First Discount = $200 * (1 - 0.25) = $200 * 0.75 = $150. \n\n3. **Total Inventory**: Initially, there were 150 sweaters. Ms. Anderson sold 60% of these.\n\n   Sweaters Sold = 0.60 * 150 = 90 sweaters. \n\n4. **Revenue after First Discount**: The revenue earned from selling these sweaters at the discounted price is:\n   \n   Revenue = Sweaters Sold * Price after First Discount  \n   Revenue = 90 * $150 = $13,500. \n\n5. **Second Discount**: Ms. Anderson introduced an additional 10% discount on the already discounted price. So the price after the second discount is:\n   \n   Price after Second Discount = $150 * (1 - 0.10) = $150 * 0.90 = $135. \n\n6. **Total Operational Costs**: The total costs include fixed rent of $2,000 and variable costs. The variable cost for 150 sweaters is:\n   \n   Variable Costs = 150 sweaters * $15 = $2,250.\n   Total Costs = $2,000 + $2,250 = $4,250. \n\n7. **Total Profit Calculation**: Finally, to determine the total profit Ms. Anderson made:\n   \n   Total Profit = Total Revenue - Total Costs = $13,500 - $4,250 = $9,250. \n\nThus, Ms. Anderson made a total profit of **$9,250** after all discounts and costs were accounted for.",
+        "options": [
+          "10000.00",
+          "9250.00",
+          "10750.00",
+          "9700.00",
+          "7225.00"
+        ],
+        "answer": "9250.00",
+        "difficulty": 5,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Discount, Profit and Loss"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Algebraic Equations> - <difficulty_level: 2>",
+        "thread_id": "thread_FNdlUCq7AkYAuO1DX3t1wTAO",
+        "question": "In a quaint little village, there exists a community of artisans who pride themselves on their handcrafted goods. The number of craftsmen in the village doubled over a span of five years, and now, in the year 2023, there are a total of 80 artisans. Among these, the woodworkers comprise twice the number of potters. If we let the number of potters be represented by the variable `p`, then the number of woodworkers can be expressed as `2p`. However, unbeknownst to the villagers, a peculiar trend is emerging as some artisans are venturing into other crafts, specifically the art of glassmaking. This new craft has attracted 10 artisans, decreasing the total number of woodworkers by a quarter. Given this situation, determine the original number of potters in the village when they were just starting to flourish. Keep in mind that the total number of artisans has remained constant despite these changes.",
+        "title": "Determining the Original Number of Potters in a Village of Artisans",
+        "solution": "To solve for the original number of potters in the village, we start by setting up equations based on the given conditions. Let `p` represent the number of potters and `2p` be the number of woodworkers. According to the problem, the total number of artisans is now 80. Thus, we can write the equation: `p + 2p = 80`, which simplifies to `3p = 80`. Therefore, solving for `p` gives us `p = 80 / 3`, resulting in `p \u2248 26.67`. To find the original number of potters before the woodworkers left for glassmaking, we consider that after the departure of 10 artisans into glassmaking, the current number of woodworkers is `2p - (0.25 * 2p)` = `1.5p`. After substituting `p` into this expression, we find that the number of woodworkers is 70, which checks out, confirming that the initial number of potters is approximately 26.67.",
+        "options": [
+          "26.67",
+          "30.00",
+          "16.67",
+          "31.67"
+        ],
+        "answer": "26.67",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Number Picking",
+          "Algebraic Equations"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Word Problems> - <Assessing given Situation(checking the ability of accessing a given situation)> - <Algebraic Equations> - <Economics> - <difficulty_level: 2>",
+        "thread_id": "thread_uNW16WNtJo5uX7Da4CZ81jZh",
+        "question": "In a bustling market town, a local farmer is planning to sell his freshly harvested apples. He acquired 320 apples at a cost of $200. In order to cover his expenses and make a profit, he decides to sell each apple at a certain price. If he wants to make a profit of at least 25% on the total cost, what price should he set for each apple? Additionally, he discovers that a nearby competitor is selling apples at a lower price of $0.75 per apple. After realizing this, he contemplates offering a discount of 10% on his initial selling price. How much will he, ultimately, sell each apple for after the discount and what will be his profit per apple considering the discounted price?",
+        "title": "Calculating Selling Price and Profit Margin for Freshly Harvested Apples",
+        "solution": "To determine the selling price per apple while ensuring a profit of at least 25% on the total cost, we first calculate the total cost including the desired profit: Total Cost with Profit = Cost Price * (1 + Desired Profit Percentage / 100) = 200 * (1 + 0.25) = $250. The selling price per apple to achieve this profit can be calculated as: Selling Price per Apple = Total Cost with Profit / Number of Apples = 250 / 320 = $0.78125. However, realizing that competitors are selling apples at $0.75, the farmer considers a discount of 10% on his initial selling price. The discount amount is: Discount Amount = Selling Price per Apple * (Discount Percentage / 100) = 0.78125 * 0.1 = $0.078125. Thus, after discount, the selling price becomes: Discounted Selling Price = Selling Price per Apple - Discount Amount = 0.78125 - 0.078125 = $0.703125. Finally, calculating the profit per apple with the discounted price: Profit per Apple = Discounted Selling Price - (Cost Price / Number of Apples) = 0.703125 - (200 / 320) = 0.703125 - 0.625 = $0.078125.",
+        "options": [
+          "0.83",
+          "0.70",
+          "1.02",
+          "0.64"
+        ],
+        "answer": "0.70",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Word Problems",
+          "Assessing given Situation",
+          "Algebraic Equations"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <Critical Reasoning> - <Ratio and Proportion> - <difficulty_level: 4>",
+        "thread_id": "thread_JFSMTL6DwglAxW0k7tbciaai",
+        "question": "In a magical forest, a sorceress is gathering ingredients for a powerful potion. She has three types of mystical herbs: Glistening Ferns, Whispering Blossoms, and Luminous Roots. The ratio of Glistening Ferns to Whispering Blossoms is 4:3, and the ratio of Whispering Blossoms to Luminous Roots is 5:6. If the sorceress has a total of 300 herbs combined, and she needs to ensure that the ratio remains intact, how many Glistening Ferns must she gather if she decides to increase the total number of herbs to 420? Keep in mind that to maintain the proper proportions of the herbs, adjustments will have to be made to all three kinds. Calculate the exact numbers while preventing the ratio from falling out of balance, taking the increased total into account.",
+        "title": "Herb Gathering Dilemma in the Magical Forest: Calculating Glistening Ferns for Potion Proportions",
+        "solution": "To solve the problem, we start with the ratio of Glistening Ferns (GF) to Whispering Blossoms (WB) as 4:3, and the ratio of WB to Luminous Roots (LR) as 5:6. Let us denote GF = 4x and WB = 3x for the first ratio, and WB = 5y and LR = 6y for the second ratio. Equalizing the two expressions for WB gives us 3x = 5y, from which we can express y in terms of x: y = (3/5)x. Therefore, the number of Luminous Roots in terms of x is LR = 6y = (18/5)x. The total number of herbs then becomes GF + WB + LR = 4x + 3x + (18/5)x, which sums to (38/5)x. Setting this equal to the initial total of 300 herbs yields (38/5)x = 300, leading to x = (300 * 5)/38, resulting in approximately 39.47. Using this value, we find the initial quantities: GF is around 158, WB is around 118, and LR is around 142. Now, if the total quantity of herbs increases to 420, we set up the equation (38/5)k = 420 to find the new variable k, which gives us k = (420 * 5)/38. Substituting back, we find the new quantities: GF is approximately 221, WB is approximately 166, and LR is approximately 199.",
+        "options": [
+          "221",
+          "226",
+          "236",
+          "201"
+        ],
+        "answer": "221",
+        "difficulty": 4,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "Critical Reasoning",
+          "Ratio and Proportion"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Polynomials> - <Accounting> - <difficulty_level: 5>",
+        "thread_id": "thread_qHGDpMe9QlgY8xboEApGTG4i",
+        "question": "In the realm of corporate finance, a company has established a polynomial revenue function R(x) = 3x^3 - 5x^2 + 4x - 17, representing the revenue generated by selling x units of their latest product. To optimize their production, the company initially decides to assess their revenue based on fluctuating demand. After a thorough review of market trends, they predict that for every unit produced, the cost of production increases according to the polynomial cost function C(x) = 2x^2 + 6x + 10. The company aims to identify the optimum sales figure where the profit, defined as P(x) = R(x) - C(x), reaches its maximum point. However, market analysts warn that due to various economic factors, the demand could alter rapidly, leading to changes in both R(x) and C(x). Hence, they prepare for scenario-based planning. Given this information, determine the maximum profit the company can achieve when production is set to the optimal value of units sold, ensuring to incorporate the alterations in the polynomial functions based on competitive analysis and historical data trends. Consider the final answer to be evaluated from the adjustments made by the revenue and cost dynamics. What is the maximum profit achievable?",
+        "title": "Maximizing Profit in Corporate Finance Through Polynomial Functions",
+        "solution": "To determine the maximum profit achievable by the company, we start with the profit function defined as P(x) = R(x) - C(x), where R(x) is the total revenue function and C(x) is the total cost function. We first need to formulate these functions: R(x) = 3x^3 - 5x^2 + 4x - 17 and C(x) = 2x^2 + 6x + 10. The complete equation for profit becomes P(x) = (3x^3 - 5x^2 + 4x - 17) - (2x^2 + 6x + 10), simplifying to P(x) = 3x^3 - 7x^2 - 2x - 27.\n\nNext, we find the derivative of the profit function P'(x) to determine where the function reaches its maximum. We set the derivative P'(x) equal to zero and solve for x, which gives us the critical points. We then evaluate the second derivative P''(x) at these critical points to identify whether they correspond to a maximum profit.\n\nIn this case, the evaluation reveals that the maximum profit obtained from the calculations at the optimal production level results in a maximum profit of approximately -26.86.",
+        "options": [
+          "-36.86",
+          "-26.86",
+          "-21.86",
+          "-11.86"
+        ],
+        "answer": "-26.86",
+        "difficulty": 5,
+        "tags": [
+          "Pure Contextual",
+          "Word Problems",
+          "Setting up proper steps",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Real Contextual> - <Algebra> - <Number Picking(by logical and critical reasoning over constraints given in the question)> - <Polynomials> - <difficulty_level: 2>",
+        "thread_id": "thread_im5VrCC9tKL7H1y741o7F6BK",
+        "question": "In a quaint little bakery, the owner, Ms. Baker, has devised a new pricing strategy based on the number of cupcakes sold. She has decided to set her price for cupcakes as a polynomial function where the price, P(x), is determined by the equation P(x) = 5x^2 - 10x + 20, where x is the number of dozen cupcakes sold. Ms. Baker has received an influx of orders and is attempting to determine how changing the number of dozens sold will affect her total revenue. If Ms. Baker sells two dozen cupcakes, she wonders what her total revenue will be, and if she increases her sales to four dozen cupcakes, what impact that has on her price per dozen. Additionally, if she gives a discount function D(x) = 2x, representing a discount of $2 for each dozen after three dozen, how much will she charge for four dozen? Identify the correct price per dozen and total revenue if she sells between two and four dozen to ensure that she maximizes her profits while maintaining a customer-friendly pricing strategy.",
+        "title": "Maximizing Revenue with Polynomial Pricing: A Bakery Dilemma",
+        "solution": "To determine the price per dozen and total revenue for Ms. Baker's bakery, we will evaluate the polynomial pricing function and apply the discount as follows: First, for two dozen cupcakes, we substitute x = 2 into the price function P(x) = 5x^2 - 10x + 20. This gives us P(2) = 5(2^2) - 10(2) + 20 = 20. Thus, the price per dozen is $20. The total revenue for two dozen is calculated as total revenue = price per dozen * number of dozens = 20 * 2 = $40. Next, for four dozen cupcakes, we substitute x = 4 into the price function: P(4) = 5(4^2) - 10(4) + 20 = 52. We note that since she sells more than three dozen, the discount applies; hence, the effective price becomes 52 - 2(4) = 52 - 8 = 44. Therefore, the price per dozen for four dozen is $44. The total revenue for four dozen is calculated as total revenue = 44 * 4 = $208. In conclusion, for two dozens, the total revenue is $40 with a price of $20 per dozen, while for four dozens, the total revenue is $208 with a price of $44 per dozen.",
+        "options": [
+          "$25",
+          "$20",
+          "$15",
+          "$160"
+        ],
+        "answer": "$20",
+        "difficulty": 2,
+        "tags": [
+          "Real Contextual",
+          "Algebra",
+          "Number Picking",
+          "Polynomials"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<Pure Contextual> - <Arithmetic> - <Logical Reasoning> - <Work and Time> - <difficulty_level: 2>",
+        "thread_id": "thread_tawLVoNg0FGj5htdIQtvMwZo",
+        "question": "In a quaint village, a group of gardeners is dedicated to cultivating a community flower garden. The entire project requires 120 hours of labor to complete. There are two gardeners, Alice and Bob, who decide to work on this project. Alice can complete the garden by herself in 80 hours, while Bob can finish it alone in 120 hours. If they work together, how many total hours will it take them to complete the project? Consider their individual work rates and how they would contribute simultaneously to the project. Additionally, if they take a break for 15 minutes after every 4 hours of work, how does that affect their total working time? Take into consideration any potential overlap in tasks that could save them time. Can you determine the total time required to finish the garden project including breaks?",
+        "title": "Collaborative Gardening: The Time Challenge",
+        "solution": "To solve this problem, we first need to establish the work rates of Alice and Bob. Alice can complete the garden in 80 hours, which gives her a work rate of 1/80 of the garden per hour. Bob can complete the garden in 120 hours, resulting in a work rate of 1/120 of the garden per hour. When they work together, we add their work rates to find the combined rate: (1/80 + 1/120). To combine these fractions, we find a common denominator, which is 240. Thus, Alice's rate becomes 3/240 and Bob's rate becomes 2/240. Adding these together gives us a combined rate of 5/240, or 1/48 of the garden per hour. This means that together they can complete the garden in 48 hours. However, they also take breaks. They work for 4 hours at a stretch, which requires them to take a 15-minute break after each stretch. In 48 hours, they would have completed 12 stretches of 4 hours, leading to 12 breaks. Each break lasts 0.25 hours, resulting in 3 additional hours of break time. Therefore, to calculate the total time taken, we add the time spent working (48 hours) to the total break time (3 hours), which results in a total time of 51 hours. Rounding this to two decimal points provides us what is required, bringing the total time needed to complete the garden project to 50.75 hours, including breaks.",
+        "options": [
+          "54.25",
+          "50.75",
+          "45.75",
+          "51.75"
+        ],
+        "answer": "50.75",
+        "difficulty": 2,
+        "tags": [
+          "Pure Contextual",
+          "Arithmetic",
+          "Logical Reasoning",
+          "Work and Time"
+        ]
+      }
+    ]
+  },
+  "GMAT_V": {
+    "section0": [
+      {
+        "type": "CR",
+        "prompt": "<literature> - <CR> - <draw inference/conclusion> - <difficulty_level: 2>",
+        "thread_id": "thread_DLal3VAorMkwJD7XXJULmamT",
+        "content": {
+          "passages": [
+            "In many novels, the protagonist's journey is often paralleled by the development of a secondary character. For instance, in classic literature, we frequently see how the main character's internal struggles are reflected in their relationships with friends or foes. This narrative technique not only enriches the storyline but also adds depth to character development. However, while some readers focus solely on the protagonist, others find that the arcs of supporting characters provide essential insights into the story's themes. Ultimately, the interplay between the primary and secondary characters can offer readers a more nuanced understanding of the narrative's core messages.",
+            "The use of symbolism in literature serves to convey deeper meanings beyond the literal interpretation of the text. For example, a recurring motif of water might symbolize purification or transformation throughout a novel. Readers often recognize these symbols not merely as decorative elements, but as integral components that shape the reader's understanding of the characters' journeys. Additionally, the way different characters interpret or react to these symbols can reveal varying perspectives on the broader themes of the work. Thus, the analysis of symbolism can lead to richer interpretations and a deeper appreciation of the author\u2019s message."
+          ]
+        },
+        "question": "Based on the passage, what can be inferred about the role of symbolism in literature as described by the author?",
+        "title": "Inference on the Role of Symbolism in Literature",
+        "answer": "Readers\u2019 interpretations of symbols can vary and provide insight into themes.",
+        "options": [
+          "Symbolism detracts from the main plot of the story.",
+          "Only the protagonist's view of symbols matters in interpreting a story.",
+          "All characters react to symbols in the same way, leading to a unified understanding.",
+          "Symbolism is used exclusively for aesthetic purposes in literature.",
+          "Readers\u2019 interpretations of symbols can vary and provide insight into themes."
+        ],
+        "solution": "<b>Correct Answer: B</b><br>Readers\u2019 interpretations of symbols can vary and provide insight into themes. This aligns with the passage's assertion that different characters interpreting symbols can lead to varying perspectives on broader themes.<br><br><b>Option A:</b> Symbolism is used exclusively for aesthetic purposes in literature. <br>This option is incorrect; the passage highlights that symbolism conveys deeper meanings, not just aesthetic value.<br><br><b>Option C:</b> Symbolism detracts from the main plot of the story.<br>This is not supported by the passage, which suggests that symbolism enhances understanding rather than detracting from it.<br><br><b>Option D:</b> All characters react to symbols in the same way, leading to a unified understanding.<br>This option contradicts the passage, which states that differing interpretations of symbols occur.<br><br><b>Option E:</b> Only the protagonist's view of symbols matters in interpreting a story.<br>This is incorrect; the passage emphasizes that supporting characters' views also contribute to understanding.",
+        "difficulty": 2,
+        "tag": [
+          "literature",
+          "CR",
+          "draw inference/conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<physical_sciences> - <CR> - <structure of the argument dialogue structure question> - <difficulty_level: 4>",
+        "thread_id": "thread_SoE1ebAOAgc4tkvhmD0lM1Bs",
+        "content": {
+          "passages": [
+            "In a recent discussion about climate change, Dr. Emma argued that the increase in global temperatures is primarily due to human activities such as burning fossil fuels and deforestation. She emphasized that natural phenomena, like volcanic eruptions, have only a minor impact on climate change. On the other hand, Mr. Lucas contended that natural fluctuations in the Earth's climate historically precede and exceed human influence. He cited evidence from geological records showing that climate has changed significantly without human intervention. The debate highlighted differing perspectives on the causes of climate change and the importance of addressing human impact versus natural variability.",
+            "During a panel discussion on renewable energy, Dr. Sarah proposed that investing in solar and wind energy is crucial for reducing our reliance on fossil fuels. She cited recent advancements in technology that have significantly reduced the cost of solar panels and wind turbines, making them more accessible and efficient. Conversely, Mr. Tom argued that while renewable technology has improved, the transition is hampered by the intermittent nature of renewable energy sources. He insisted that until a reliable energy storage solution is developed, we cannot fully depend on renewables to meet energy demands. This exchange raised questions about the viability of current renewable technologies and the need for additional innovations in energy storage."
+          ]
+        },
+        "question": "In the discussion between Dr. Sarah and Mr. Tom regarding renewable energy, which statement best identifies the relationship between their arguments and highlights their differing viewpoints about the transition to renewable energy?",
+        "title": "Identifying the Key Arguments in the Renewable Energy Debate",
+        "answer": "Dr. Sarah believes that technological advancements will overcome the challenges of renewable energy, while Mr. Tom stresses the need for energy storage solutions.",
+        "options": [
+          "Dr. Sarah believes that technological advancements will overcome the challenges of renewable energy, while Mr. Tom stresses the need for energy storage solutions.",
+          "Dr. Sarah suggests that government policy should focus solely on solar power, while Mr. Tom believes wind energy is the only feasible option.",
+          "Dr. Sarah emphasizes the impact of renewable energy on fossil fuel reduction, while Mr. Tom argues that reliance on energy storage is unnecessary.",
+          "Dr. Sarah and Mr. Tom both agree that renewable energy is essential, yet disagree on the timeline for its implementation.",
+          "Dr. Sarah argues that reducing costs makes renewable energy viable, but Mr. Tom dismisses the importance of cost in favor of energy continuity."
+        ],
+        "solution": "The correct answer is A: Dr. Sarah believes that technological advancements will overcome the challenges of renewable energy, while Mr. Tom stresses the need for energy storage solutions.<br> <o> This option accurately captures the essence of the discussion, highlighting Dr. Sarah's optimism about technology reducing costs and improving accessibility, contrasted with Mr. Tom's concern about the reliability of energy sources due to storage issues.<br><br> Option B is incorrect because it misrepresents the arguments; both speakers do not dismiss the importance of cost but rather focus on different aspects of renewable energy viability.<br><br> Option C is also incorrect as it suggests agreement on the importance of renewable energy. While they both discuss it, they do not express consensus on the implementation timeline.<br><br> Option D is misleading; Dr. Sarah does not dismiss the importance of energy storage but rather focuses on the advancements in renewable technology.<br><br> Option E is incorrect because neither speaker confines their arguments to just one type of renewable energy; they discuss the broader implications of solar and wind technology.",
+        "difficulty": 4,
+        "tag": [
+          "physical_sciences",
+          "CR",
+          "structure of the argument dialogue structure question"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<psychology> - <CR> - <Weaken the argument> - <difficulty_level: 1>",
+        "thread_id": "thread_zca7Hn50VIsntuEKMEEy9klx",
+        "content": {
+          "passages": [
+            "A recent study found that people who regularly engage in creative activities, such as painting or writing, tend to report higher levels of happiness compared to those who do not participate in such activities. The researchers concluded that engaging in creative activities directly contributes to increased happiness levels. This suggests that promoting creative outlets could be an effective strategy for enhancing overall well-being in the population.",
+            "A survey of office workers indicated that those who work in open-plan environments are generally more collaborative and innovative than those in traditional cubicles. The management of a tech company argues that this correlation implies that transitioning to an open-plan layout would improve creativity and team performance across the organization. However, it is essential to consider other factors such as the individual personalities of the workers and their adaptability to new working conditions, which could also influence levels of collaboration and innovation."
+          ]
+        },
+        "question": "Which of the following, if true, would most seriously weaken the argument that transitioning to an open-plan layout will improve creativity and team performance across the organization?",
+        "title": "Weakening the Argument on Open-Plan Layout and Employee Creativity",
+        "answer": "Many workers in the survey preferred working in private spaces and found open-plan layouts distracting.",
+        "options": [
+          "Many workers in the survey preferred working in private spaces and found open-plan layouts distracting.",
+          "The tech company has not conducted any formal studies on the impact of open-plan layouts on employee performance.",
+          "Some employees in the company have expressed lower job satisfaction due to noise levels in open-plan spaces.",
+          "Collaboration has reportedly increased in the open-plan areas of the company's competitors.",
+          "The survey results were collected during a particularly collaborative project phase, which may not be indicative of normal conditions."
+        ],
+        "solution": "Option A is the correct answer because it directly challenges the assumption that an open-plan layout is beneficial for all workers by highlighting that many workers prefer private spaces and find open-plan arrangements distracting. This suggests that the anticipated increase in creativity and team performance might not occur for everyone in an open-plan setting.<br><o>Option B is incorrect because, while the lack of formal studies is a weakness, it does not directly address the correlation presented between layout and performance.</o><br><o>Option C indicates a positive outcome in competitors' open-plan settings but does not weaken the argument for the specific tech company\u2019s situation.</o><br><o>Option D discusses employee satisfaction but does not directly weaken the connection between the layout and performance.</o><br><o>Option E raises concerns about the timing of the survey but fails to directly question the argument regarding the open-plan layout's effects.</o>",
+        "difficulty": 1,
+        "tag": [
+          "psychology",
+          "CR",
+          "Weaken the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<social_sciences> - <CR> - <Weaken the argument> - <difficulty_level: 2>",
+        "thread_id": "thread_xWZevwKkyB0NSm5TjvsyxtYJ",
+        "content": {
+          "passages": [
+            "Studies have shown that communities with greater access to public transportation tend to have lower crime rates. This is because public transportation provides individuals, especially those from disadvantaged backgrounds, with increased access to jobs and educational opportunities. As a result, these individuals are less likely to engage in criminal activities. Therefore, investing in public transportation infrastructure will likely lead to a reduction in crime rates within urban areas.",
+            "A recent study indicated that individuals who consume organic fruits and vegetables tend to have better overall health compared to those who do not. This implies that organic produce is superior in nutritional value, leading to improved health outcomes. Therefore, promoting the consumption of organic fruits and vegetables could significantly enhance public health and reduce healthcare costs in the long run."
+          ]
+        },
+        "question": "Which of the following, if true, would most seriously weaken the argument that promoting the consumption of organic fruits and vegetables will significantly enhance public health and reduce healthcare costs?",
+        "title": "Weaken the argument regarding health benefits of organic produce",
+        "answer": "Organic fruits and vegetables are only marginally more nutritious than non-organic varieties.",
+        "options": [
+          "Organic fruits and vegetables are only marginally more nutritious than non-organic varieties.",
+          "Non-organic fruits and vegetables can also provide essential vitamins and minerals required for good health.",
+          "The price of organic fruits and vegetables has been decreasing, making them more accessible.",
+          "Individuals with better health habits are more likely to choose organic produce.",
+          "Many people who consume organic produce do so in small quantities, making minimal impact on their overall diet."
+        ],
+        "solution": "The best answer is **A**: Organic fruits and vegetables are only marginally more nutritious than non-organic varieties.<br>This option directly undermines the core assumption of the argument that organic produce leads to significantly better health outcomes. If organic fruits and vegetables offer only marginal nutritional benefits, then promoting their consumption may not lead to any substantial improvement in public health.<br><o>Option B:</o> Many people who consume organic produce do so in small quantities, making minimal impact on their overall diet. While this may indicate limited health benefits for some, it does not directly weaken the argument about the overall advantages of promoting organic consumption.<br><o>Option C:</o> Non-organic fruits and vegetables can also provide essential vitamins and minerals required for good health. While this is true, it does not weaken the argument that organic produce can enhance health further.<br><o>Option D:</o> Individuals with better health habits are more likely to choose organic produce. This suggests that health consciousness is a factor but does not weaken the argument regarding the benefits of organic fruits and vegetables.<br><o>Option E:</o> The price of organic fruits and vegetables has been decreasing, making them more accessible. This statement suggests that more people might buy organic produce, but it does not address the health benefit aspect of the argument.",
+        "difficulty": 2,
+        "tag": [
+          "social_sciences",
+          "CR",
+          "Weaken the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<business> - <CR> - <structure of the argument boldface structure question> - <difficulty_level: 4>",
+        "thread_id": "thread_ne7jPGFJNk4ajLL4cXoRxJdq",
+        "content": {
+          "passages": [
+            "In recent discussions about the future of the local economy, city officials have proposed a series of incentives for small businesses that create jobs. They argue that these incentives will not only help small businesses thrive but also contribute to the overall economic health of the city. However, some critics assert that while small businesses create jobs, the new positions may not be sustainable long-term, as many small businesses face high rates of failure within the first few years. Therefore, the officials' conclusion that providing incentives is beneficial relies heavily on their assumption that small businesses will remain stable and continue to grow in numbers.",
+            "The recent initiative by the city to support local artists has received widespread attention. The initiative includes grants and resources designed to help artists promote their work. Proponents of the initiative claim that fostering the arts will lead to increased tourism, benefiting not only the artists but local businesses as well. However, some skeptics argue that the success of this initiative hinges on the belief that greater exposure for artists will automatically translate into economic benefits for the community. The critical assumptions behind this argument suggest that arts and local business growth are directly correlated, which has not been consistently proven."
+          ]
+        },
+        "question": "In the passage, two statements are bolded: *\"Proponents of the initiative claim that fostering the arts will lead to increased tourism, benefiting not only the artists but local businesses as well.\"* and *\"The critical assumptions behind this argument suggest that arts and local business growth are directly correlated.\"* What role do these statements play in the argument presented in the passage?",
+        "title": "Analyzing the Structure of Arguments in Arts Initiative Discussion",
+        "answer": "The first supports the argument's conclusion, while the second acknowledges a key assumption of the argument.",
+        "options": [
+          "The first is a conclusion, and the second is a premise providing evidence for that conclusion.",
+          "The first is a premise supporting the conclusion, and the second is a conclusion drawn from the premise.",
+          "The first is an assumption that weakens the argument, while the second is the main conclusion.",
+          "The first supports the argument's conclusion, while the second acknowledges a key assumption of the argument.",
+          "Both statements are premises that independently contribute to the overall argument."
+        ],
+        "solution": "The correct answer is E. <br> The first bolded statement, *\"Proponents of the initiative claim that fostering the arts will lead to increased tourism, benefiting not only the artists but local businesses as well,\"* serves as a supporting statement that forms part of the argument's conclusion about the benefits of the initiative. The second bolded statement, *\"The critical assumptions behind this argument suggest that arts and local business growth are directly correlated,\"* highlights a significant assumption that the argument relies on. <br><o> <br>This means that while the first statement bolsters the argument, the second clarifies an underlying assumption necessary for the argument's validity. <br><o> <br>Options A and B are incorrect because they mislabel the function of the statements. A incorrectly identifies the first statement as a premise, and B mistakenly labels it as a conclusion. <br><o> <br>Option C is incorrect since both statements do not independently contribute to the argument. They serve different roles within the argument's structure. <br><o> <br>Option D claims the first is an assumption that weakens the argument, which is inaccurate as it actually solidifies the argument's premise.",
+        "difficulty": 4,
+        "tag": [
+          "business",
+          "CR",
+          "structure of the argument boldface structure question"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<economics> - <CR> - <structure of the argument boldface structure question> - <difficulty_level: 1>",
+        "thread_id": "thread_AHfva7dA4Kz1zvqldXFtrGBL",
+        "content": {
+          "passages": [
+            "In a recent report, economists argue that government spending can effectively stimulate economic recovery during a recession. They emphasize that investing in infrastructure projects not only creates jobs but also leads to increased consumer spending as people gain employment. Additionally, the report claims that such investments have a multiplier effect, meaning for every dollar spent, there is a greater increase in economic output. However, some skeptics contend that government actions may lead to inflation and a higher national debt, questioning the long-term viability of such fiscal policies.",
+            "A new study posits that reducing taxes for businesses will lead to higher wages for employees. The authors of the study argue that when businesses retain more of their earnings due to lower tax burdens, they are more likely to invest in employee benefits and compensation. They further assert that this will not only improve employee morale but also enhance productivity, ultimately benefiting the overall economy. However, critics of the study caution that the relationship between tax cuts and wage increases is not as straightforward, highlighting cases where businesses have opted to increase shareholder dividends instead."
+          ]
+        },
+        "question": "In the passage, which of the following best describes the role of the statements in bold? <b>Reducing taxes for businesses will lead to higher wages for employees.</b> and <b>Businesses are more likely to invest in employee benefits and compensation.</b>",
+        "title": "Analyzing the Bold Statements in the Tax Cut Argument",
+        "answer": "The first statement presents a conclusion, while the second statement provides a supporting premise.",
+        "options": [
+          "The first statement presents a conclusion, while the second statement provides a supporting premise.",
+          "Both statements are conclusions drawn from the economic study.",
+          "The first statement is an assumption, while the second statement is a conclusion.",
+          "The first statement is a premise, and the second statement is an assumption.",
+          "Both statements provide evidence for the main argument."
+        ],
+        "solution": "The correct answer is A: The first statement presents a conclusion, while the second statement provides a supporting premise. <br> <o>The statement 'Reducing taxes for businesses will lead to higher wages for employees.' serves as the main conclusion of the argument, suggesting a direct relationship between tax reduction and wage increases.</o> <br> <o>Meanwhile, the statement 'Businesses are more likely to invest in employee benefits and compensation.' acts as a premise, supporting the conclusion by explaining why the first statement might hold true.</o> <br> <o>Option B is incorrect because while the statements are related, only the second statement acts as a supporting premise rather than both being evidence.</o> <br> <o>Option C is incorrect as the first statement is a conclusion, not a premise.</o> <br> <o>Option D incorrectly categorizes the first statement as an assumption, which it is not.</o> <br> <o>Option E is incorrect because the two statements serve different roles, with only one being a conclusion.</o>",
+        "difficulty": 1,
+        "tag": [
+          "economics",
+          "CR",
+          "structure of the argument boldface structure question"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<literature> - <CR> - <draw inference/conclusion> - <difficulty_level: 2>",
+        "thread_id": "thread_wRtxEhOZH07OGhunlV4tgxEO",
+        "content": {
+          "passages": [
+            "In a small town, a new library opened its doors after years of hard work by community volunteers. The library features a wide range of literature, from classic novels to contemporary works. Since its opening, many children have been seen visiting the library after school, often engrossed in books for hours on end. Parents have reported a noticeable increase in their children's reading habits, and local schools have expressed their support, stating that the library is helping students develop better literacy skills. Additionally, the library has started hosting weekly reading workshops aimed at guiding young readers through the process of critical thinking and analysis of texts. Thus, it is evident that the library is making a significant positive impact on the community's literary culture.",
+            "A recent study revealed that students who engage with literature on a regular basis tend to perform better academically compared to their peers who do not. The researchers found that these students were not only better at comprehension and critical thinking but also displayed a greater interest in diverse subjects beyond literature. Furthermore, teachers noted that literature encourages creativity and fosters empathy, allowing students to connect with different perspectives. Given these findings, it can be inferred that regular exposure to literature can enhance not just language skills, but also overall academic success and emotional intelligence."
+          ]
+        },
+        "question": "Based on the passage, what can be inferred about the relationship between regular engagement with literature and students' overall academic performance?",
+        "title": "Inference on Literature's Impact on Academic Performance",
+        "answer": "Students who regularly engage with literature exhibit improved academic performance and emotional intelligence.",
+        "options": [
+          "Students who regularly engage with literature exhibit improved academic performance and emotional intelligence.",
+          "Reading fiction is the only way to enhance language skills.",
+          "Only students who study classic literature perform better academically.",
+          "Students engaged with literature struggle with critical thinking skills.",
+          "Exposure to literature has no effect on students' academic performance."
+        ],
+        "solution": "The correct answer is A: Students who regularly engage with literature exhibit improved academic performance and emotional intelligence.<br> <o> This aligns with the passage, which indicates that such engagement leads to better comprehension, critical thinking, and empathy, ultimately enhancing academic performance.<br> <o> Option B is incorrect because the passage clearly states that regular engagement with literature has a positive impact on academic performance.<br> <o> Option C is incorrect as the study emphasizes the benefits of engaging with literature in general, not just classic literature.<br> <o> Option D contradicts the passage's interpretation that literature encourages critical thinking, thus making it incorrect.<br> <o> Option E is also incorrect because the passage does not claim that only fiction enhances language skills; it discusses the broader impact of all literature.",
+        "difficulty": 2,
+        "tag": [
+          "literature",
+          "CR",
+          "draw inference/conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<history> - <CR> - <draw inference/conclusion> - <difficulty_level: 2>",
+        "thread_id": "thread_58PZfJL9NLPxsSPTz9tAgSqd",
+        "content": {
+          "passages": [
+            "Throughout history, various forms of governance have shaped societies. Monarchies, democracies, and autocracies each exhibit distinct characteristics and consequences for their citizens. For instance, in a monarchy, power is often inherited, which can lead to stability but may also result in a lack of accountability. In contrast, democracies allow for greater public participation, potentially leading to more responsive governance; however, they can be prone to inefficiencies and divisiveness. Autocracies may facilitate quick decision-making, but they typically suppress dissent and individual freedoms. Understanding the strengths and weaknesses of each governance type helps to clarify why certain forms of government prevail in different regions and epochs.",
+            "The Industrial Revolution marked a significant turning point in history, transforming economies that had been based on agriculture into economies based on large-scale industry. This shift not only changed the way goods were produced but also altered the social fabric of societies. Urbanization accelerated as people moved to cities for work, leading to changes in family structures and social roles. As factories became the center of economic activity, the demand for labor surged. However, this transition also brought challenges, including harsh working conditions and environmental degradation. The implications of the Industrial Revolution continue to influence modern economic and social dynamics."
+          ]
+        },
+        "question": "Based on the passage, which of the following can be inferred about the impact of the Industrial Revolution on society? <strong>Select the best option that captures the essence of the inference made from the passage.</strong>",
+        "title": "Inference on the Societal Impact of the Industrial Revolution",
+        "answer": "The Industrial Revolution created a demand for labor that transformed workforce dynamics.",
+        "options": [
+          "Urbanization due to the Industrial Revolution resulted in a more stable family structure.",
+          "The Industrial Revolution allowed for leisure time among workers.",
+          "The Industrial Revolution had no significant impact on environmental conditions.",
+          "The Industrial Revolution created a demand for labor that transformed workforce dynamics.",
+          "The Industrial Revolution led to greater equality among social classes."
+        ],
+        "solution": "<strong>Correct Answer: C</strong><br>The passage clearly states that the Industrial Revolution surged the demand for labor, leading to transformation in workforce dynamics. This reflects the significant change in the way societies operated during this period, making option C the best inference.<br><br><strong>Option A:</strong> This option is incorrect as the passage does not indicate that the Industrial Revolution led to greater equality among social classes; rather, it suggests shifts in social roles and dynamics, but not necessarily equality.<br><br><strong>Option B:</strong> This option is incorrect because the passage mentions changes in family structures as a result of urbanization, which may imply instability rather than stability.<br><br><strong>Option D:</strong> This option is incorrect because the passage points out environmental degradation as a consequence of the Industrial Revolution, contradicting the assertion that it had no significant impact on environmental conditions.<br><br><strong>Option E:</strong> This option is incorrect as the passage does not mention the creation of leisure time among workers; instead, it highlights harsh working conditions.",
+        "difficulty": 2,
+        "tag": [
+          "history",
+          "CR",
+          "draw inference/conclusion"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<biological_sciences> - <CR> - <Weaken the argument> - <difficulty_level: 4>",
+        "thread_id": "thread_qekFT83EDP7H4g4a9gbBHete",
+        "content": {
+          "passages": [
+            "Recent studies have shown that a diet high in saturated fats leads to an increased risk of developing heart disease. Many nutritionists have begun recommending low-fat diets based on these studies, suggesting that reducing saturated fat intake can significantly lower heart disease risk. However, some researchers argue that the link between saturated fats and heart disease is not as direct as it appears, citing instances of individuals consuming high levels of saturated fats who do not develop heart disease, while others with low saturated fat diets do. This has led to a debate over the extent to which saturated fat should be demonized in dietary guidelines.",
+            "A new vaccine has been developed that is reported to be 95% effective in preventing a certain viral infection. Health officials have begun to propose mandatory vaccinations for all school-aged children to eliminate the spread of this virus in the community. However, some experts have raised concerns about the long-term efficacy and safety of this vaccine, noting that a few studies suggest that the vaccine's effectiveness decreases over time and may lead to unforeseen side effects. These concerns imply that enforcing mandatory vaccinations may not be the best course of action."
+          ]
+        },
+        "question": "Which of the following, if true, would most seriously weaken the argument that mandatory vaccinations will effectively eliminate the virus in the community?",
+        "title": "Weaken the Argument on Mandatory Vaccinations and Virus Elimination",
+        "answer": "The effectiveness of the vaccine has been shown to decrease significantly within two years of administration.",
+        "options": [
+          "Data from other countries show that mandatory vaccinations have reduced infection rates substantially.",
+          "Most parents in the community support the idea of mandatory vaccinations for children.",
+          "A small percentage of vaccinated individuals still contract the viral infection each year.",
+          "Experts have confirmed that the majority of children experience mild side effects after vaccination.",
+          "The effectiveness of the vaccine has been shown to decrease significantly within two years of administration."
+        ],
+        "solution": "The correct answer is option A. <br> This option weakens the argument by providing evidence that the vaccine's effectiveness diminishes over time, suggesting that its ability to eliminate the virus may be compromised after two years. <o> <br> Option B is incorrect because parental support for mandatory vaccinations does not affect the actual effectiveness of the vaccine in eradicating the virus. <o> <br> Option C is also incorrect as it suggests that mandatory vaccinations have had positive outcomes in other countries, which would actually strengthen the argument rather than weaken it. <o> <br> Option D, while indicating that some vaccinated individuals may still contract the infection, does not provide a significant enough challenge to the argument about overall community elimination. <o> <br> Finally, option E discusses mild side effects, which do not directly relate to the argument's effectiveness in eliminating the virus and therefore does not weaken the argument.",
+        "difficulty": 4,
+        "tag": [
+          "biological_sciences",
+          "CR",
+          "Weaken the argument"
+        ]
+      },
+      {
+        "type": "CR",
+        "prompt": "<literature> - <CR> - <complete the argument> - <difficulty_level: 4>",
+        "thread_id": "thread_ZRLSjylzD9oC05iEWrNMB8Zi",
+        "content": {
+          "passages": [
+            "If traditional print books are not merely replaced by e-books, but instead find a niche alongside them, it suggests that we should... ",
+            "The rise of graphic novels as a legitimate form of literature has sparked discussions among educators and literary critics alike. Proponents argue that graphic novels combine visual art with storytelling in a way that can engage reluctant readers and enhance comprehension through imagery. Furthermore, they contend that this format can introduce complex narratives and themes that are often found in traditional literature. Critics, however, argue that relying on images may undermine readers' ability to engage in deep literary analysis and interpretation. As the popularity of graphic novels continues to grow, the literary community must consider whether they should be included in academic curricula. Understanding this issue requires an examination of the value that graphic novels bring to readers and how they compare to traditional forms of literature. Thus, as educators explore these questions, they should... "
+          ]
+        },
+        "question": "Based on the passage provided, what should educators explore as they consider the role of graphic novels in academic curricula? <strong>What conclusion can be drawn from the arguments presented?</strong>",
+        "title": "Exploring the Role of Graphic Novels in Education",
+        "answer": "Assess the effectiveness of graphic novels in promoting literacy and critical thinking skills.",
+        "options": [
+          "Focus solely on the artistic elements of graphic novels rather than their narratives.",
+          "Consider alongside graphic novels the emotional responses elicited by classic literature only.",
+          "Encourage students to compare graphic novels exclusively to other visual media.",
+          "Exclude graphic novels entirely from the curriculum to focus solely on traditional literature.",
+          "Assess the effectiveness of graphic novels in promoting literacy and critical thinking skills."
+        ],
+        "solution": "<br>The correct answer is A: Assess the effectiveness of graphic novels in promoting literacy and critical thinking skills.<br>This option aligns with the passage's emphasis on the unique contributions of graphic novels to engaging readers and enhancing comprehension. It reflects the need for educators to evaluate the educational benefits of this format.<br><br>Option B is incorrect because excluding graphic novels could limit students' exposure to diverse literary forms, which is contrary to the passage's intent to consider their inclusion in curricula.<br><br>Option C is misleading as it suggests a focus only on emotional responses to traditional literature, neglecting the comparative analysis that the passage encourages regarding graphic novels.<br><br>Option D is incorrect because comparing graphic novels exclusively to other visual media ignores their literary qualities and the arguments supporting their place in literature education.<br><br>Option E is incorrect as it emphasizes artistic elements at the expense of recognizing narrative depth, which the passage argues is essential when assessing literature in any format.",
+        "difficulty": 4,
+        "tag": [
+          "literature",
+          "CR",
+          "complete the argument"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<history> - <RC_3> - <difficulty_level: 4>",
+        "thread_id": "thread_VUo39lCkuKtiC12QJKrlX9nM",
+        "content": {
+          "passages": [
+            "The evolution of human civilization is marked by significant historical events that have shaped societies and cultures across the globe. From the development of early agricultural systems to the rise of powerful empires, history reflects the intricate interplay of various factors, including technological advancements, political structures, and social movements. For instance, the transition from nomadic lifestyles to settled farming led to the establishment of cities and, consequently, complex societies. This transformation not only facilitated trade and economic growth but also engendered the emergence of written languages and formal governance. While each region's history is distinct, common threads can be observed, such as the influence of religion and commerce on societal development, thus illustrating the universal narrative of humankind's progress.",
+            "The Renaissance period, spanning from the 14th to the 17th century, encapsulated a revival of art, culture, and intellect that profoundly influenced Europe. Emerging from the shadows of the Middle Ages, this era marked a revival of Classical learning, characterized by a renewed interest in ancient Greek and Roman philosophies. Artists like Leonardo da Vinci and Michelangelo epitomized this artistic flourishing, producing works that melded realism with classical themes. Moreover, the dissemination of knowledge was greatly enhanced by the invention of the printing press, which allowed for the rapid spread of ideas, challenging prevailing doctrines and encouraging inquiry. As a catalyst for modernity, the Renaissance not only shaped the artistic landscape but also laid the groundwork for the Scientific Revolution, thus redefining humanity's understanding of itself and its environment.",
+            "The Industrial Revolution, which commenced in the late 18th century, fundamentally transformed economies and societies worldwide. Characterized by the shift from agrarian economies to industrialized ones, it introduced innovations such as the steam engine and mechanized textile production. This period heralded significant urbanization as people flocked to cities in search of work in factories, altering social structures and lifestyles. As industries burgeoned, a burgeoning capitalist economy emerged, leading to both unprecedented wealth and stark inequalities. Furthermore, the repercussions of the Industrial Revolution extended beyond economic parameters; it provoked significant political changes, such as labor movements advocating for workers' rights. The legacy of this transformative era is multifaceted, as it not only shaped contemporary economic practices but also set the stage for ongoing debates about industrialization, environmental impact, and social justice."
+          ]
+        },
+        "title": "Milestones in Human History: From Agriculture to Industrialization",
+        "difficulty": 4,
+        "questions": [
+          {
+            "prompt": "Analyze the argument(analyze the strength of an argument made in the passage) - <difficulty_level: 4>",
+            "question": "What is the primary argument made by the passages regarding the impact of historical events on human civilization?",
+            "title": "The Interconnection of Historical Events and Human Progress",
+            "answer": "Technological advancements and political structures have played a significant role in shaping human civilization.",
+            "options": [
+              "The rise of empires has led to a homogeneous global culture, diminishing regional differences.",
+              "Historical events are merely coincidental and do not influence the development of societies.",
+              "Human civilization has evolved independently of historical events across different regions.",
+              "Technological advancements and political structures have played a significant role in shaping human civilization."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: \"Technological advancements and political structures have played a significant role in shaping human civilization.\" This is supported by the passages, which detail how the evolution of agriculture and the Industrial Revolution fundamentally transformed societies.</p> <p><strong>A</strong>: \"Historical events are merely coincidental and do not influence the development of societies.\" This option is incorrect as the passages argue that historical events are integral to societal development.</p> <p><strong>C</strong>: \"Human civilization has evolved independently of historical events across different regions.\" This contradicts the passages, which highlight the interconnectedness of historical events and human progress.</p> <p><strong>D</strong>: \"The rise of empires has led to a homogeneous global culture, diminishing regional differences.\" This option is misleading, as the passages indicate that while empires had a significant impact, distinct cultural identities and regional differences persisted amidst globalization.</p>",
+            "difficulty": 4,
+            "tags": [
+              "Analyze the argument(analyze the strength of an argument made in the passage)"
+            ]
+          },
+          {
+            "prompt": "Detail (question on detail that is directly stated in the passage) - <difficulty_level: 5>",
+            "question": "According to the passage, what was one of the key technological innovations that fueled the Industrial Revolution?",
+            "title": "Key Innovations of the Industrial Revolution",
+            "answer": "The steam engine",
+            "options": [
+              "The telegraph",
+              "The cotton gin",
+              "The steam engine",
+              "The printing press"
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: \"The steam engine.\" The passage explicitly mentions the steam engine as a key innovation that transformed economies and fueled the Industrial Revolution.</p> <p><strong>A</strong>: \"The printing press\" is incorrect as it pertains to the Renaissance period and the dissemination of knowledge, not directly to the Industrial Revolution.</p> <p><strong>C</strong>: \"The telegraph\" is also incorrect; while it was an important communication device, it was not mentioned as a driving force of the Industrial Revolution in the passages.</p> <p><strong>D</strong>: \"The cotton gin\" is a significant invention in the context of agriculture but does not capture the broader industrial transformations highlighted in the passage.</p>",
+            "difficulty": 5,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 3>",
+            "question": "What purpose does the mention of urbanization serve in relation to the impact of the Industrial Revolution in the passage?",
+            "title": "Understanding Urbanization's Role in the Industrial Revolution",
+            "answer": "It illustrates the shift from rural to urban living as a consequence of industrialization.",
+            "options": [
+              "It emphasizes the cultural uniformity that emerged in cities during this period.",
+              "It points to the decline of factory jobs in urban centers.",
+              "It highlights the stability of agricultural practices during the Industrial Revolution.",
+              "It illustrates the shift from rural to urban living as a consequence of industrialization."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: \"It illustrates the shift from rural to urban living as a consequence of industrialization.\" The passage mentions urbanization as a significant change brought about by the Industrial Revolution, highlighting how people moved to cities for factory work.</p> <p><strong>B</strong>: \"It highlights the stability of agricultural practices during the Industrial Revolution.\" This option is incorrect because the passage focuses on the transition to industrialization rather than the stability of agriculture.</p> <p><strong>C</strong>: \"It points to the decline of factory jobs in urban centers.\" This is misleading, as the passage emphasizes the growth of factory jobs due to urbanization, not their decline.</p> <p><strong>D</strong>: \"It emphasizes the cultural uniformity that emerged in cities during this period.\" This option is incorrect as the passage does not discuss cultural uniformity; instead, it focuses on economic and social changes resulting from industrialization.</p>",
+            "difficulty": 3,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          }
+        ],
+        "tags": [
+          "Analyze the argument(analyze the strength of an argument made in the passage)",
+          "Detail (question on detail that is directly stated in the passage)",
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<literature> - <RC_3> - <difficulty_level: 2>",
+        "thread_id": "thread_ceSL1Po7v4OlpVU6wNOr49qK",
+        "content": {
+          "passages": [
+            "In the realm of literature, the exploration of human emotions and societal structures has always been a central theme. Authors such as Jane Austen and Charles Dickens employed rich characters and intricate plots to reflect the complexities of their times. Austen's novels delve into the intricacies of social class and romantic relationships, often illustrating the limitations placed on women by society. In contrast, Dickens focused on the struggles of the lower class, using his narratives to highlight social injustices and advocate for reform. Both authors utilized their writings not merely as a form of entertainment but as a mirror to society, provoking thought and discussion among readers. This literary tradition persists, as contemporary writers continue to explore similar themes, making literature a timeless vessel for understanding the human condition.",
+            "The value of literature lies not only in its entertainment but also in its ability to challenge prevailing notions and encourage empathy. In works such as 'To Kill a Mockingbird' by Harper Lee, the author confronts issues of racial injustice through the innocent eyes of a child. This perspective allows readers to engage with the material on a deeper level, fostering a connection with the characters' struggles. Similarly, Toni Morrison\u2019s novels often center around the African American experience, exploring themes of identity, heritage, and resilience. Through rich narratives and compelling prose, these authors invite readers to reflect on their own beliefs and attitudes. Thus, literature serves as both a source of enjoyment and a platform for critical reflection on societal issues.",
+            "The evolution of literature showcases the dynamic interplay between societal changes and artistic expression. From the gothic novels of the 18th century to the modern-day thrillers, each literary form uniquely reflects the zeitgeist of its era. Writers like Edgar Allan Poe and Mary Shelley pioneered genres that explored human psychology and the darker sides of existence. Their works resonate due to their ability to tap into universal fears and desires. Today, genres continue to expand, incorporating elements from various cultures and experiences, thereby enriching the literary landscape. This ongoing transformation highlights the adaptability of literature, demonstrating its power to both influence and mirror the world around us. As new voices emerge, the potential for innovation in storytelling remains limitless."
+          ]
+        },
+        "title": "Reflections of Society: The Enduring Power of Literature",
+        "difficulty": 2,
+        "questions": [
+          {
+            "prompt": "Detail (question on detail that is directly stated in the passage) - <difficulty_level: 1>",
+            "question": "Which author is mentioned in the passage as focusing on the intricacies of social class and romantic relationships?",
+            "title": "Inquiry into Social Representations in Literature",
+            "answer": "Jane Austen",
+            "options": [
+              "Edgar Allan Poe",
+              "Harper Lee",
+              "Toni Morrison",
+              "Jane Austen"
+            ],
+            "solution": "<p>The correct answer is <strong>A: Jane Austen</strong>. The passage specifically mentions Austen as an author who delves into the intricacies of social class and romantic relationships.</p> <p><strong>B: Toni Morrison</strong> is incorrect because the passage focuses on Austen's themes, while Morrison is highlighted for exploring the African American experience.</p> <p><strong>C: Harper Lee</strong> is not the correct choice as the passage discusses her work related to racial injustice, not social class and romantic relationships.</p> <p><strong>D: Edgar Allan Poe</strong> is also incorrect since he is known for gothic themes rather than the social intricacies outlined in the passage.</p>",
+            "difficulty": 1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "prompt": "Detail (question on detail that is directly stated in the passage) - <difficulty_level: 1>",
+            "question": "Which contemporary theme is highlighted in the passage as being explored by modern writers?",
+            "title": "Exploring Themes in Contemporary Literature",
+            "answer": "Identity and heritage",
+            "options": [
+              "Social class",
+              "Human psychology",
+              "Racial injustice",
+              "Identity and heritage"
+            ],
+            "solution": "<p>The correct answer is <strong>C: Identity and heritage</strong>. The passage mentions that contemporary writers explore themes similar to those of the past, including identity and heritage as a part of their narratives.</p> <p><strong>A: Racial injustice</strong> is not the best choice, as it relates specifically to Harper Lee's work, which is one example rather than a broader contemporary theme.</p> <p><strong>B: Social class</strong> is mentioned in relation to Jane Austen but does not directly represent the contemporary theme emphasized in the passage.</p> <p><strong>D: Human psychology</strong> is relevant to Poe's work discussed in the passage but again does not capture the contemporary theme being noted.</p>",
+            "difficulty": 1,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 3>",
+            "question": "What purpose does the author attribute to both Austen and Dickens in their literary works?",
+            "title": "Understanding the Purpose of Literary Engagement",
+            "answer": "To reflect societal issues and provoke thought",
+            "options": [
+              "To create fantastical worlds",
+              "To reflect societal issues and provoke thought",
+              "To convey personal narratives",
+              "To entertain readers exclusively"
+            ],
+            "solution": "<p>The correct answer is <strong>B: To reflect societal issues and provoke thought</strong>. The passage clearly states that Austen and Dickens utilized their writings as a mirror to society, aiming to provoke thought and discussion among readers.</p> <p><strong>A: To entertain readers exclusively</strong> is incorrect, as the passage emphasizes that their works aim for more than mere entertainment.</p> <p><strong>C: To create fantastical worlds</strong> does not apply to these authors, as their focus was on realism and societal critique rather than fantasy.</p> <p><strong>D: To convey personal narratives</strong> is not accurate in this context; both authors focus on broader societal themes rather than just personal stories.</p>",
+            "difficulty": 3,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          }
+        ],
+        "tags": [
+          "Detail (question on detail that is directly stated in the passage)",
+          "Detail (question on detail that is directly stated in the passage)",
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<social_sciences> - <RC_3> - <difficulty_level: 2>",
+        "thread_id": "thread_SXn8ybWnjUGhxX0XJP6OFNVl",
+        "content": {
+          "passages": [
+            "Social sciences, encompassing disciplines such as sociology, psychology, and anthropology, explore the complex interactions among individuals within societies. These fields focus on the behavior of individuals and groups, shedding light on how culture, social structures, and institutions influence human actions. For instance, sociologists might investigate how social class affects access to education, while psychologists may study the impact of social media on mental health. By employing both qualitative and quantitative research methods, social scientists aim to comprehensively understand societal issues. Ultimately, the insights gleaned from these disciplines contribute to policies and practices that can improve societal wellbeing and foster social justice.",
+            "One prominent area of study within social sciences is the examination of social inequality. Researchers analyze disparities in wealth, opportunities, and privileges that exist among different groups in society. This phenomenon is often influenced by factors such as race, gender, and socioeconomic status. For example, studies reveal that marginalized groups frequently face systemic barriers to economic advancement and equal education. Understanding these disparities enables social scientists to advocate for social reform and develop strategies aimed at reducing inequality. By highlighting issues like discrimination and access to resources, their work plays a critical role in promoting a more equitable society.",
+            "In recent years, the role of technology in social sciences has garnered significant attention. Researchers are now leveraging advanced tools, such as big data analysis and social media metrics, to gain insights into human behavior and social trends. For instance, data analytics can uncover patterns in consumer behavior, offering essential information for policymakers and businesses alike. Furthermore, the rise of digital communication has transformed the way individuals interact, promoting new forms of community engagement. However, as technology evolves, social scientists must also address ethical concerns related to data privacy and the digital divide, ensuring that their findings contribute to the betterment of society without compromising individual rights."
+          ]
+        },
+        "title": "Exploring the Dynamics of Society: Insights from Social Sciences",
+        "difficulty": 2,
+        "questions": [
+          {
+            "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 1>",
+            "question": "What is the primary purpose of the second passage regarding social inequality within the social sciences?",
+            "title": "Purpose of the Passage on Social Inequality",
+            "answer": "To analyze the disparities in wealth and opportunities among different groups in society.",
+            "options": [
+              "To describe the impact of technology on social interactions.",
+              "To discuss the various research methods used in social sciences.",
+              "To explore the history of sociology as a discipline.",
+              "To analyze the disparities in wealth and opportunities among different groups in society."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'To analyze the disparities in wealth and opportunities among different groups in society.'</p> <p>This option directly aligns with the content of the second passage, which focuses on social inequality and the examination of disparities influenced by factors such as race and gender.</p> <p>Option <strong>B</strong>, 'To explore the history of sociology as a discipline,' is incorrect because the passage does not discuss the historical context of sociology.</p> <p>Option <strong>C</strong>, 'To discuss the various research methods used in social sciences,' is also incorrect, as the passage does not specifically focus on research methods but rather on the topic of social inequality.</p> <p>Lastly, option <strong>D</strong>, 'To describe the impact of technology on social interactions,' is irrelevant to the second passage, which is centered on social inequality rather than technology.</p>",
+            "difficulty": 1,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          },
+          {
+            "prompt": "Detail (question on detail that is directly stated in the passage) - <difficulty_level: 3>",
+            "question": "According to the second passage, which of the following factors is identified as influencing social inequality?",
+            "title": "Factors Influencing Social Inequality",
+            "answer": "Race",
+            "options": [
+              "Globalization",
+              "Economic policies",
+              "Weather conditions",
+              "Race"
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Race.'</p> <p>This option is directly stated in the second passage, which indicates that race, along with gender and socioeconomic status, influences disparities in wealth and opportunities.</p> <p>Option <strong>A</strong>, 'Economic policies,' is not mentioned in the passage and therefore does not address the specific factors discussed.</p> <p>Option <strong>C</strong>, 'Weather conditions,' is unrelated to the topic of social inequality and is not discussed in the passage.</p> <p>Lastly, option <strong>D</strong>, 'Globalization,' while potentially relevant to social issues, is not specifically identified as a factor influencing social inequality in the passage.</p>",
+            "difficulty": 3,
+            "tags": [
+              "Detail (question on detail that is directly stated in the passage)"
+            ]
+          },
+          {
+            "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 3>",
+            "question": "How does the author of the third passage organize the discussion about the role of technology in social sciences?",
+            "title": "Organization of Discussion on Technology in Social Sciences",
+            "answer": "By providing examples of how technology has changed social interactions, followed by a discussion of ethical concerns.",
+            "options": [
+              "By outlining the historical development of technological tools in research.",
+              "By comparing different social sciences and their approaches to technology.",
+              "By listing various social issues without linking them to technology.",
+              "By providing examples of how technology has changed social interactions, followed by a discussion of ethical concerns."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'By providing examples of how technology has changed social interactions, followed by a discussion of ethical concerns.'</p> <p>This option accurately reflects the organization of the third passage, which begins by discussing the positive impacts of technology on the study of social sciences and then transitions into addressing the ethical concerns associated with data privacy and the digital divide.</p> <p>Option <strong>B</strong>, 'By outlining the historical development of technological tools in research,' is incorrect, as the passage does not focus on the history of technological tools but rather their current application and implications.</p> <p>Option <strong>C</strong>, 'By comparing different social sciences and their approaches to technology,' is also incorrect, as the passage does not make comparisons between different fields but instead focuses on technology's impact in a general sense.</p> <p>Lastly, option <strong>D</strong>, 'By listing various social issues without linking them to technology,' is inappropriate because the passage clearly connects technological advancements to specific social interactions and ethical concerns.</p>",
+            "difficulty": 3,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          }
+        ],
+        "tags": [
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)",
+          "Detail (question on detail that is directly stated in the passage)",
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<business> - <RC_4> - <difficulty_level: 5>",
+        "thread_id": "thread_X0b4gdSiwgf5ixTKvp36j0L5",
+        "content": {
+          "passages": [
+            "In contemporary business environments, the significance of effective leadership cannot be overstated. Leaders play a crucial role in shaping the organizational culture and influencing employee performance. A myriad of leadership styles exists, ranging from autocratic to transformational, each with unique implications for strategic outcomes. Transformational leaders, for instance, inspire their teams by fostering an environment of trust and innovation, thereby driving performance and encouraging creativity. Conversely, autocratic leaders may stifle innovation through rigid control and decision-making processes. In today's dynamic economy, businesses face unprecedented challenges, necessitating a leadership approach that can adaptively manage change and harness the potential of diverse talent pools. Understanding the complexities of leadership not only enhances individual capabilities but also propels organizations toward sustainable success.",
+            "The intersection of technology and business strategy has emerged as a pivotal theme in the modern corporate landscape. Organizations increasingly leverage advanced technologies, such as artificial intelligence and big data, to inform strategic decisions. However, the integration of these technologies into business operations is fraught with challenges, including data privacy concerns and the potential for obsolescence. Strategic management frameworks, such as the SWOT analysis, enable companies to identify their strengths, weaknesses, opportunities, and threats in the context of technological advancements. Furthermore, fostering a culture that embraces digital innovation is essential for organizations aiming to maintain a competitive edge. By balancing technological adoption with strategic foresight, businesses can navigate the volatile landscape while maximizing their operational efficiency and customer satisfaction.",
+            "Sustainability in business practices has transitioned from being a peripheral concern to a central tenet of corporate strategy. Companies are increasingly recognizing the importance of Environmental, Social, and Governance (ESG) criteria in informing their operational decisions. The shift towards sustainable practices not only addresses regulatory pressures but also meets the growing demand from consumers who prioritize ethical consumption. Moreover, businesses that adopt sustainable practices often experience enhanced brand loyalty and competitive advantage. However, the path to sustainability is laden with complexities, including the balancing of short-term profitability with long-term environmental stewardship. As organizations integrate sustainability into their core strategies, they must also communicate their efforts transparently to stakeholders, thereby ensuring accountability and fostering trust in their brand identity.",
+            "Globalization has irrevocably transformed the landscape of business, presenting both opportunities and challenges for companies operating across borders. The proliferation of international trade agreements has facilitated market access, enabling organizations to tap into diverse consumer bases and optimize their supply chains. However, the complexities of navigating different regulatory environments and cultural nuances cannot be overlooked. Multinational corporations often face the dilemma of standardizing their products to appeal to a global audience while also localizing offerings to meet regional preferences. Furthermore, geopolitical tensions can disrupt operations, necessitating agile strategies that can swiftly adapt to changing climates. As businesses continue to expand their global footprint, developing a nuanced understanding of international markets will be critical in fostering sustainable growth and mitigating risks associated with global operations."
+          ]
+        },
+        "title": "Navigating the Multifaceted Landscape of Modern Business",
+        "difficulty": 5,
+        "questions": [
+          {
+            "prompt": "Primary Purpose (question on primary purpose of what that passage serves) - <difficulty_level: 5>",
+            "question": "What is the primary purpose of the passage regarding the role of leadership in contemporary business environments?",
+            "title": "Understanding Leadership's Influence in Business",
+            "answer": "To explore various leadership styles and their impact on organizations.",
+            "options": [
+              "To highlight the importance of management techniques over leadership.",
+              "To criticize autocratic leadership as the only effective style.",
+              "To argue that leadership has no significant effect on business outcomes.",
+              "To explore various leadership styles and their impact on organizations."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'To explore various leadership styles and their impact on organizations.'</p> <p>This option accurately captures the essence of the passage, which discusses different leadership styles such as transformational and autocratic and their implications for the effectiveness and culture of organizations.</p> <p><strong>B</strong>: 'To criticize autocratic leadership as the only effective style.' is incorrect because the passage does not state that autocratic leadership is the only effective style; rather, it contrasts it with transformational leadership without dismissing its validity outright.</p> <p><strong>C</strong>: 'To highlight the importance of management techniques over leadership.' is not correct, as the passage focuses primarily on leadership and its influence rather than management techniques.</p> <p><strong>D</strong>: 'To argue that leadership has no significant effect on business outcomes.' is incorrect because the passage explicitly states the crucial role leadership plays in shaping organizational culture and influencing employee performance.</p>",
+            "difficulty": 5,
+            "tags": [
+              "Primary Purpose (question on primary purpose of what that passage serves)"
+            ]
+          },
+          {
+            "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 4>",
+            "question": "What role does the discussion of different leadership styles serve in the passage?",
+            "title": "Analyzing the Role of Leadership Styles in Business",
+            "answer": "To evaluate the effectiveness of various leadership styles in achieving organizational goals.",
+            "options": [
+              "To illustrate a historical context for the evolution of leadership practices.",
+              "To dismiss the significance of leadership in contemporary business.",
+              "To evaluate the effectiveness of various leadership styles in achieving organizational goals.",
+              "To compare leadership styles to managerial strategies directly."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'To evaluate the effectiveness of various leadership styles in achieving organizational goals.'</p> <p>This option is accurate because the passage discusses different leadership styles and their impacts, highlighting how effective leadership can influence employee performance and organizational culture.</p> <p><strong>B</strong>: 'To illustrate a historical context for the evolution of leadership practices.' is incorrect as the passage does not focus on historical aspects but rather on contemporary implications of leadership styles.</p> <p><strong>C</strong>: 'To compare leadership styles to managerial strategies directly.' is also incorrect because the passage primarily discusses leadership styles without making direct comparisons to managerial strategies.</p> <p><strong>D</strong>: 'To dismiss the significance of leadership in contemporary business.' is incorrect, as the passage emphasizes the critical role of leadership in modern business environments and its effect on organizations.</p>",
+            "difficulty": 4,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          },
+          {
+            "prompt": "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized) - <difficulty_level: 4>",
+            "question": "How does the mention of transformational leadership contribute to the overall argument of the passage?",
+            "title": "The Contribution of Transformational Leadership to Business Success",
+            "answer": "It exemplifies a leadership style that encourages employee innovation and trust.",
+            "options": [
+              "It suggests that leadership styles are less important than organizational structure.",
+              "It serves as a contrast to highlight the superiority of autocratic leadership.",
+              "It exemplifies a leadership style that encourages employee innovation and trust.",
+              "It demonstrates how leadership is irrelevant in today's business environment."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'It exemplifies a leadership style that encourages employee innovation and trust.'</p> <p>This option correctly reflects the passage's argument that transformational leadership fosters an environment where employees feel empowered to innovate, contributing positively to organizational dynamics.</p> <p><strong>B</strong>: 'It serves as a contrast to highlight the superiority of autocratic leadership.' is incorrect because the passage does not claim that transformational leadership is superior to autocratic; instead, it discusses each style's implications without favoritism.</p> <p><strong>C</strong>: 'It suggests that leadership styles are less important than organizational structure.' is false, as the passage emphasizes the significance of leadership styles in shaping organizational culture and outcomes.</p> <p><strong>D</strong>: 'It demonstrates how leadership is irrelevant in today's business environment.' is incorrect, as the passage asserts that leadership plays a crucial role in influencing performance and culture, indicating its lasting relevance.</p>",
+            "difficulty": 4,
+            "tags": [
+              "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)"
+            ]
+          },
+          {
+            "prompt": "Primary Purpose (question on primary purpose of what that passage serves) - <difficulty_level: 5>",
+            "question": "What is the primary purpose of the passage regarding the integration of technology in business strategy?",
+            "title": "Exploring the Integration of Technology and Business Strategy",
+            "answer": "To emphasize the challenges and opportunities presented by technology in business strategy.",
+            "options": [
+              "To illustrate the historical developments in technology over the past century.",
+              "To advocate for exclusive reliance on traditional management practices.",
+              "To emphasize the challenges and opportunities presented by technology in business strategy.",
+              "To argue that technology has no impact on business decision-making."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: 'To emphasize the challenges and opportunities presented by technology in business strategy.'</p> <p>This option accurately encapsulates the passage's focus on how organizations leverage technology for strategic decisions while noting the challenges such as data privacy and obsolescence.</p> <p><strong>B</strong>: 'To advocate for exclusive reliance on traditional management practices.' is incorrect because the passage discusses the importance of technology in augmenting business strategy rather than promoting traditional practices exclusively.</p> <p><strong>C</strong>: 'To argue that technology has no impact on business decision-making.' is incorrect, as the passage illustrates that technology significantly influences decision-making and strategic management.</p> <p><strong>D</strong>: 'To illustrate the historical developments in technology over the past century.' is also incorrect because the passage does not focus on historical developments but rather on current challenges and opportunities related to technology in business.</p>",
+            "difficulty": 5,
+            "tags": [
+              "Primary Purpose (question on primary purpose of what that passage serves)"
+            ]
+          }
+        ],
+        "tags": [
+          "Primary Purpose (question on primary purpose of what that passage serves)",
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)",
+          "Organization and Function (identify the purpose of a smaller part of the passage, or identify the way that the whole passage or parts of it are organized)",
+          "Primary Purpose (question on primary purpose of what that passage serves)"
+        ]
+      }
+    ]
+  },
+  "GMAT_IR": {
+    "section0": [
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Algebra> - <Mathematical Knowledge> - <difficulty_level: 2>",
+        "thread_id": "thread_5O6pfcUHtN6BnHwDmiZg3Y2a",
+        "content": {
+          "passages": "In a certain classroom, the number of students is represented by the variable S. An additional group of students, denoted as G, will join this classroom, leading to a new total of students, T. The relationship between these variables is expressed as T = S + G, where G is a constant value representing the number of new students joining. It is also given that the classroom can accommodate up to a maximum of M students without exceeding capacity.",
+          "statements": [
+            "Statement (1): The maximum capacity M of the classroom is 30 students.",
+            "Statement (2): Initially, there were 20 students already in the classroom."
+          ]
+        },
+        "question": "Is the total number of students in the classroom after the new group joins greater than 25?",
+        "title": "Determining Total Students After Group Join in a Classroom",
+        "solution": "To determine if the total number of students after the new group joins is greater than 25, we need to analyze both statements. Statement (1) tells us that the maximum capacity of the classroom is 30 students, but it does not give us the number of new students G joining, making it insufficient on its own. Statement (2) provides that there were initially 20 students. If we consider this with Statement (1), we still lack the specific number of students G joining, thus making both statements together also insufficient to definitively answer the question. Therefore, the correct option is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Efficiency and Time Management> - <difficulty_level: 4>",
+        "thread_id": "thread_9U5EiAAB5svabimLhEhiF0J9",
+        "content": {
+          "passages": "A factory produces two types of gadgets, A and B. The total production of gadgets A and B combined is always greater than 500 units per day. The factory manager notes that the output of gadget A is consistently half that of gadget B, and at least one day's production of gadget A cannot exceed the production of gadget B. This leads to inquiries about the precise daily production volumes for each type of gadget.",
+          "statements": [
+            "Statement (1): The combined production of gadgets A and B on a particular day was 600 units.",
+            "Statement (2): The production of gadget A on that day was 200 units."
+          ]
+        },
+        "question": "What is the production volume of gadget B on the same day?",
+        "title": "Determining Production Volumes of Gadgets A and B",
+        "solution": "To determine the production volume of gadget B, we consider both statements. From Statement (1), if the combined production of gadgets A and B is 600 units, we can write the equation A + B = 600. From Statement (2), if the production of gadget A is 200 units, we substitute A into the equation: 200 + B = 600, which allows us to solve for B: B = 400. Thus, with either statement alone, we can find the production volume of gadget B. Hence, the correct answer is D: EITHER statement ALONE is sufficient.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 4,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Economics> - <Data Interpretation> - <Pie Chart> - <difficulty_level: 2>",
+        "thread_id": "thread_PlSki6JWAJB7mUekAcOBQTy2",
+        "content": {
+          "graphs": [
+            {
+              "graph": "pie chart",
+              "title": "Expenditure Distribution of Households",
+              "description": "This pie chart illustrates the percentage of total household expenditure allocated to various categories.",
+              "data": [
+                {
+                  "label": "Housing",
+                  "value": 35
+                },
+                {
+                  "label": "Food",
+                  "value": 25
+                },
+                {
+                  "label": "Transportation",
+                  "value": 15
+                },
+                {
+                  "label": "Healthcare",
+                  "value": 10
+                },
+                {
+                  "label": "Education",
+                  "value": 5
+                },
+                {
+                  "label": "Entertainment",
+                  "value": 10
+                }
+              ]
+            }
+          ]
+        },
+        "question": "In the given pie chart, households allocate ___________ percent to Housing, and ___________ percent to Education.",
+        "title": "Household Expenditure Allocation Analysis",
+        "solution": "From the pie chart, we can directly see that the percentage allocated to Housing is \\text{35}\\% and the percentage allocated to Education is \\text{5}\\%. Thus, the answers to fill in the blanks are \\text{35}\\% and \\text{5}\\%.",
+        "options": [
+          [
+            "35",
+            "30",
+            "40"
+          ],
+          [
+            "8",
+            "2",
+            "5"
+          ]
+        ],
+        "answer": [
+          "35",
+          "5"
+        ],
+        "tags": [
+          "GI",
+          "Data Interpretation"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Finance> - <Data Interpretation> - <Bar Chart> - <difficulty_level: 3>",
+        "thread_id": "thread_rHySIAF1VX99MEDlwP5mAKUu",
+        "content": {
+          "graphs": [
+            {
+              "graph": "bar chart",
+              "title": "Annual Revenue from Different Sources",
+              "description": "This bar chart illustrates the total revenue generated from various sources in the last financial year.",
+              "x-axis": "Revenue Sources",
+              "y-axis": "Revenue (in USD)",
+              "data": [
+                {
+                  "category": "Product Sales",
+                  "value": 300000
+                },
+                {
+                  "category": "Service Revenue",
+                  "value": 150000
+                },
+                {
+                  "category": "Online Sales",
+                  "value": 200000
+                },
+                {
+                  "category": "Licensing",
+                  "value": 50000
+                }
+              ]
+            }
+          ]
+        },
+        "question": "The total revenue generated from __________ product sales and __________ service revenue, as shown in the chart.",
+        "title": "Analysis of Revenue Sources for Financial Year",
+        "solution": "To find the total revenue generated from product sales and service revenue, we simply add the corresponding values from the bar chart:\n\n1. Revenue from Product Sales = \\$300,000\n2. Revenue from Service Revenue = \\$150,000\n\nThus, the total revenue is calculated as follows:\n\n~~\\text{Total Revenue} = \\text{Product Sales} + \\text{Service Revenue} = 300,000 + 150,000 = 450,000~~\n\nTherefore, the filled blanks should read as follows:\n\n- Total Revenue from Product Sales: \\$300,000\n- Total Revenue from Service Revenue: \\$150,000",
+        "options": [
+          [
+            "300,000",
+            "310,000",
+            "300,500"
+          ],
+          [
+            "160,000",
+            "150,000",
+            "155,000"
+          ]
+        ],
+        "answer": [
+          "300,000",
+          "150,000"
+        ],
+        "tags": [
+          "GI",
+          "Data Interpretation"
+        ],
+        "difficulty": 3
+      },
+      {
+        "type": "TA",
+        "prompt": "TA - <Taxation> - <Data Synthesis> - <Time_series Table> - <True/False type> - <difficulty_level: 1>",
+        "thread_id": "thread_0xwDXQgrsJ3jaLINUANmAthQ",
+        "content": {
+          "tables": [
+            {
+              "type": "Time_series Table",
+              "table_name": "Annual Tax Revenue by Type from 2017 to 2023",
+              "time_column": "Year",
+              "time_units": "Year",
+              "data_columns": [
+                "Corporate Tax",
+                "Personal Income Tax",
+                "Sales Tax",
+                "Property Tax",
+                "Total Tax Revenue"
+              ],
+              "data": [
+                {
+                  "Year": "2017",
+                  "Corporate Tax": 300,
+                  "Personal Income Tax": 500,
+                  "Sales Tax": 200,
+                  "Property Tax": 150,
+                  "Total Tax Revenue": 1150
+                },
+                {
+                  "Year": "2018",
+                  "Corporate Tax": 350,
+                  "Personal Income Tax": 550,
+                  "Sales Tax": 220,
+                  "Property Tax": 160,
+                  "Total Tax Revenue": 1380
+                },
+                {
+                  "Year": "2019",
+                  "Corporate Tax": 400,
+                  "Personal Income Tax": 600,
+                  "Sales Tax": 250,
+                  "Property Tax": 170,
+                  "Total Tax Revenue": 1390
+                },
+                {
+                  "Year": "2020",
+                  "Corporate Tax": 450,
+                  "Personal Income Tax": 580,
+                  "Sales Tax": 240,
+                  "Property Tax": 180,
+                  "Total Tax Revenue": 1450
+                },
+                {
+                  "Year": "2021",
+                  "Corporate Tax": 420,
+                  "Personal Income Tax": 620,
+                  "Sales Tax": 260,
+                  "Property Tax": 175,
+                  "Total Tax Revenue": 1475
+                },
+                {
+                  "Year": "2022",
+                  "Corporate Tax": 480,
+                  "Personal Income Tax": 640,
+                  "Sales Tax": 270,
+                  "Property Tax": 190,
+                  "Total Tax Revenue": 1580
+                },
+                {
+                  "Year": "2023",
+                  "Corporate Tax": 500,
+                  "Personal Income Tax": 700,
+                  "Sales Tax": 290,
+                  "Property Tax": 200,
+                  "Total Tax Revenue": 1750
+                }
+              ]
+            }
+          ]
+        },
+        "question": "The table below shows the annual tax revenue collected by different types of taxes from 2017 to 2023. Based on the data provided, determine if the following statement is true or false: 'In 2019, the total tax revenue increased compared to the previous year.'",
+        "title": "Analysis of Total Tax Revenue Increase in 2019",
+        "solution": [
+          "Option A is true because the total tax revenue in 2019 was \\$1390 \\text{ million}, which is greater than the total tax revenue in 2018, which was \\$1380 \\text{ million}. Thus, the statement is verified.",
+          "Option B is false as it states that the total tax revenue in 2019 was less than in 2018. However, the figures in the table indicate the contrary.",
+          "Option C is false since it claims that the total tax revenue in 2019 remained the same as in 2018. This is incorrect based on the data provided, as there was an increase."
+        ],
+        "options": [
+          "The total tax revenue in 2019 remained the same as in 2018.",
+          "The total tax revenue in 2019 was greater than in 2018.",
+          "The total tax revenue in 2019 was less than in 2018."
+        ],
+        "answer": {
+          "The total tax revenue in 2019 was greater than in 2018.": "True",
+          "The total tax revenue in 2019 was less than in 2018.": "False",
+          "The total tax revenue in 2019 remained the same as in 2018.": "False"
+        },
+        "tags": [
+          "TA",
+          "Data Synthesis",
+          "Time_series Table",
+          "Taxation"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Finance> - <Critical Thinking> - <Pie Chart> - <difficulty_level: 2>",
+        "thread_id": "thread_q5dkOfBvRDYbtECZSYkVJJBm",
+        "content": {
+          "graphs": [
+            {
+              "graph": "pie chart",
+              "title": "Expense Distribution for Company X",
+              "description": "This pie chart shows the distribution of expenses incurred by Company X in various categories.",
+              "data": [
+                {
+                  "label": "Salaries",
+                  "value": 40
+                },
+                {
+                  "label": "Rent",
+                  "value": 25
+                },
+                {
+                  "label": "Utilities",
+                  "value": 15
+                },
+                {
+                  "label": "Marketing",
+                  "value": 10
+                },
+                {
+                  "label": "Miscellaneous",
+                  "value": 10
+                }
+              ]
+            }
+          ]
+        },
+        "question": "In the expense distribution for Company X, the percentage of expenses on ___________ is ___________ the percentage spent on Marketing.",
+        "title": "Expense Distribution Analysis for Company X",
+        "solution": "To find the percentage of expenses on Salaries and compare it to Marketing:\n\n1. Salaries = 40\\%\n2. Marketing = 10\\%\n\nThus, the percentage of expenses on Salaries is 40\\%, which is greater than the percentage spent on Marketing, which is 10\\%. The final fill in the blanks would be:\n\nIn the expense distribution for Company X, the percentage of expenses on Salaries is 40\\% the percentage spent on Marketing.",
+        "options": [
+          [
+            "Rent",
+            "Salaries",
+            "Utilities"
+          ],
+          [
+            "40\\%",
+            "25\\%",
+            "30\\%"
+          ]
+        ],
+        "answer": [
+          "Salaries",
+          "40\\%"
+        ],
+        "tags": [
+          "GI",
+          "Critical Thinking"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "TA",
+        "prompt": "TA - <Resource Management> - <Comparative Analysis> - <Time_series Table> - <Yes/No type> - <difficulty_level: 1>",
+        "thread_id": "thread_v5CQgm04PCWvR7OyNAKH5beF",
+        "content": {
+          "tables": [
+            {
+              "type": "Time_series Table",
+              "table_name": "Resource Allocation Over Years",
+              "time_column": "Year",
+              "time_units": "Year",
+              "data_columns": [
+                "Resource A",
+                "Resource B",
+                "Resource C",
+                "Resource D",
+                "Resource E",
+                "Total"
+              ],
+              "data": [
+                {
+                  "Year": "2018",
+                  "Resource A": 200,
+                  "Resource B": 150,
+                  "Resource C": 300,
+                  "Resource D": 100,
+                  "Resource E": 250,
+                  "Total": 1000
+                },
+                {
+                  "Year": "2019",
+                  "Resource A": 220,
+                  "Resource B": 170,
+                  "Resource C": 310,
+                  "Resource D": 120,
+                  "Resource E": 260,
+                  "Total": 1080
+                },
+                {
+                  "Year": "2020",
+                  "Resource A": 240,
+                  "Resource B": 180,
+                  "Resource C": 320,
+                  "Resource D": 130,
+                  "Resource E": 270,
+                  "Total": 1120
+                },
+                {
+                  "Year": "2021",
+                  "Resource A": 260,
+                  "Resource B": 190,
+                  "Resource C": 330,
+                  "Resource D": 140,
+                  "Resource E": 280,
+                  "Total": 1300
+                },
+                {
+                  "Year": "2022",
+                  "Resource A": 280,
+                  "Resource B": 200,
+                  "Resource C": 340,
+                  "Resource D": 150,
+                  "Resource E": 290,
+                  "Total": 1360
+                },
+                {
+                  "Year": "2023",
+                  "Resource A": 300,
+                  "Resource B": 210,
+                  "Resource C": 350,
+                  "Resource D": 160,
+                  "Resource E": 300,
+                  "Total": 1320
+                },
+                {
+                  "Year": "2024",
+                  "Resource A": 320,
+                  "Resource B": 220,
+                  "Resource C": 360,
+                  "Resource D": 170,
+                  "Resource E": 310,
+                  "Total": 1360
+                }
+              ]
+            }
+          ]
+        },
+        "question": "The following table shows the allocation of five different resources over the years from 2018 to 2024. Based on the total resource allocation, determine if the resources have consistently increased over the years.",
+        "title": "Analysis of Resource Allocation Trends from 2018 to 2024",
+        "solution": [
+          "For option A, the total resource allocation has indeed increased from 1000 in 2018 to 1360 in 2024, showing a consistent upward trend in total allocation year over year. Thus, the answer is 'Yes'.",
+          "For option B, the table does not show any year where the total resource allocation decreased; therefore, the statement is 'No' as no decrease occurred in any year.",
+          "For option C, the resource allocation exhibits an overall increasing trend. The total allocation values demonstrate a clear variation, and thus the answer is 'No' since it did not remain stable."
+        ],
+        "options": [
+          "There has been a decrease in total resource allocation in any year.",
+          "The total resource allocation has increased every year.",
+          "The resource allocation remains stable without any significant changes."
+        ],
+        "answer": {
+          "The total resource allocation has increased every year.": "Yes",
+          "There has been a decrease in total resource allocation in any year.": "No",
+          "The resource allocation remains stable without any significant changes.": "No"
+        },
+        "tags": [
+          "TA",
+          "Comparative Analysis",
+          "Time_series Table",
+          "Resource Management"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Taxation> - <Data Sufficiency> - <Scatter Plot> - <difficulty_level: 2>",
+        "thread_id": "thread_hD8m3ZvTAb1aJnCyRk5Jka6S",
+        "content": {
+          "graphs": [
+            {
+              "graph": "scatter plot",
+              "title": "Income vs. Tax Paid",
+              "description": "This scatter plot shows the relationship between income levels and the amount of tax paid by individuals.",
+              "x-axis": "Income (in USD)",
+              "y-axis": "Tax Paid (in USD)",
+              "data": [
+                {
+                  "label": "Person A",
+                  "x": 30000,
+                  "y": 3000
+                },
+                {
+                  "label": "Person B",
+                  "x": 50000,
+                  "y": 7500
+                },
+                {
+                  "label": "Person C",
+                  "x": 80000,
+                  "y": 12000
+                },
+                {
+                  "label": "Person D",
+                  "x": 120000,
+                  "y": 18000
+                },
+                {
+                  "label": "Person E",
+                  "x": 150000,
+                  "y": 22000
+                }
+              ]
+            }
+          ]
+        },
+        "question": "Based on the scatter plot, the amount of tax paid by a person earning \\$___________ is approximately \\$___________.",
+        "title": "Tax Payment Analysis Based on Income Level",
+        "solution": "To determine the approximate tax paid by individuals with specific incomes from the scatter plot, we can observe the plotted points and estimate their corresponding tax amounts. For example: \n\n1. If we consider a person earning \\$50000, according to the scatter plot, the tax paid is approximately \\$7500.\n2. If we look at an individual earning \\$120000, the tax paid is about \\$18000.\n\nThus, the values can be concluded as follows: \n\n- The tax paid by a person earning \\$50000 is \\$7500.\n- The tax paid by a person earning \\$120000 is \\$18000.",
+        "options": [
+          [
+            "40000",
+            "50000",
+            "60000"
+          ],
+          [
+            "8000",
+            "9000",
+            "7500"
+          ]
+        ],
+        "answer": [
+          "50000",
+          "7500"
+        ],
+        "tags": [
+          "GI",
+          "Data Sufficiency"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Strategy and Management> - <Quantitative Reasoning> - <Line Chart> - <difficulty_level: 4>",
+        "thread_id": "thread_vlxPs7mg4WJvbNWkA4KBMj2L",
+        "content": {
+          "graphs": [
+            {
+              "graph": "line chart",
+              "title": "Monthly Profit Trend",
+              "description": "This chart illustrates the profit trend over six months for three different products.",
+              "x-axis": "Months",
+              "y-axis": "Profit (in USD)",
+              "data": [
+                {
+                  "series": "Product A",
+                  "values": [
+                    {
+                      "x": "January",
+                      "y": 2000
+                    },
+                    {
+                      "x": "February",
+                      "y": 2500
+                    },
+                    {
+                      "x": "March",
+                      "y": 3000
+                    },
+                    {
+                      "x": "April",
+                      "y": 2800
+                    },
+                    {
+                      "x": "May",
+                      "y": 3200
+                    },
+                    {
+                      "x": "June",
+                      "y": 3500
+                    }
+                  ]
+                },
+                {
+                  "series": "Product B",
+                  "values": [
+                    {
+                      "x": "January",
+                      "y": 1500
+                    },
+                    {
+                      "x": "February",
+                      "y": 1700
+                    },
+                    {
+                      "x": "March",
+                      "y": 1600
+                    },
+                    {
+                      "x": "April",
+                      "y": 1800
+                    },
+                    {
+                      "x": "May",
+                      "y": 2100
+                    },
+                    {
+                      "x": "June",
+                      "y": 2200
+                    }
+                  ]
+                },
+                {
+                  "series": "Product C",
+                  "values": [
+                    {
+                      "x": "January",
+                      "y": 1000
+                    },
+                    {
+                      "x": "February",
+                      "y": 1200
+                    },
+                    {
+                      "x": "March",
+                      "y": 1400
+                    },
+                    {
+                      "x": "April",
+                      "y": 1600
+                    },
+                    {
+                      "x": "May",
+                      "y": 1900
+                    },
+                    {
+                      "x": "June",
+                      "y": 2100
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "graph": "scatter plot",
+              "title": "Advertising Spend vs. Monthly Profit",
+              "description": "This scatter plot shows the relationship between advertising spending and monthly profit.",
+              "x-axis": "Advertising Spend (in USD)",
+              "y-axis": "Monthly Profit (in USD)",
+              "data": [
+                {
+                  "label": "January",
+                  "x": 500,
+                  "y": 2000
+                },
+                {
+                  "label": "February",
+                  "x": 700,
+                  "y": 2500
+                },
+                {
+                  "label": "March",
+                  "x": 800,
+                  "y": 3000
+                },
+                {
+                  "label": "April",
+                  "x": 600,
+                  "y": 2800
+                },
+                {
+                  "label": "May",
+                  "x": 900,
+                  "y": 3200
+                },
+                {
+                  "label": "June",
+                  "x": 1100,
+                  "y": 3500
+                }
+              ]
+            }
+          ]
+        },
+        "question": "The profit for Product A in __________ March was __________, while the profit for Product B in the same month was lesser by __________.",
+        "title": "Analysis of Monthly Profit Trends for Products A and B",
+        "solution": "To find the profit for Product A in March, we look at the line chart data, specifically for March: \\text{Profit for Product A} = 3000 \\$.\n\nNext, we need to determine the profit for Product B in March, which is \\text{Profit for Product B} = 1600 \\$.\n\nTo find how much lesser Product B's profit is compared to Product A, we calculate:\n\\text{Difference} = \\text{Profit for Product A} - \\text{Profit for Product B} = 3000 - 1600 = 1400 \\$.\n\nSo, the final fill-in-the-blank answers are:\n1. 3000\n2. 1400.",
+        "options": [
+          [
+            "3000",
+            "2500",
+            "2800"
+          ],
+          [
+            "1400",
+            "1600",
+            "1200"
+          ]
+        ],
+        "answer": [
+          "3000",
+          "1400"
+        ],
+        "tags": [
+          "GI",
+          "Quantitative Reasoning"
+        ],
+        "difficulty": 4
+      },
+      {
+        "type": "GI",
+        "prompt": "GI - <Economics> - <Data Sufficiency> - <Bar Chart> - <difficulty_level: 4>",
+        "thread_id": "thread_oNNPzRRgRPWlXh7DEI0YOHQl",
+        "content": {
+          "graphs": [
+            {
+              "graph": "bar chart",
+              "title": "Annual GDP Growth Rates",
+              "description": "This chart illustrates the GDP growth rates of three different countries over a period of four years.",
+              "x-axis": "Years",
+              "y-axis": "GDP Growth Rate (%)",
+              "data": [
+                {
+                  "category": "Country A",
+                  "2020": 2.5,
+                  "2021": 3.0,
+                  "2022": 2.8,
+                  "2023": 3.5
+                },
+                {
+                  "category": "Country B",
+                  "2020": 1.8,
+                  "2021": 2.0,
+                  "2022": 2.5,
+                  "2023": 3.0
+                },
+                {
+                  "category": "Country C",
+                  "2020": 3.0,
+                  "2021": 2.7,
+                  "2022": 3.8,
+                  "2023": 4.0
+                }
+              ]
+            },
+            {
+              "graph": "line chart",
+              "title": "Inflation Rate Trends",
+              "description": "This line chart shows the inflation rate trends for the same countries during the same period.",
+              "x-axis": "Years",
+              "y-axis": "Inflation Rate (%)",
+              "data": [
+                {
+                  "series": "Country A",
+                  "values": [
+                    {
+                      "x": "2020",
+                      "y": 1.2
+                    },
+                    {
+                      "x": "2021",
+                      "y": 2.1
+                    },
+                    {
+                      "x": "2022",
+                      "y": 2.3
+                    },
+                    {
+                      "x": "2023",
+                      "y": 1.9
+                    }
+                  ]
+                },
+                {
+                  "series": "Country B",
+                  "values": [
+                    {
+                      "x": "2020",
+                      "y": 2.5
+                    },
+                    {
+                      "x": "2021",
+                      "y": 2.7
+                    },
+                    {
+                      "x": "2022",
+                      "y": 2.9
+                    },
+                    {
+                      "x": "2023",
+                      "y": 3.0
+                    }
+                  ]
+                },
+                {
+                  "series": "Country C",
+                  "values": [
+                    {
+                      "x": "2020",
+                      "y": 1.5
+                    },
+                    {
+                      "x": "2021",
+                      "y": 1.8
+                    },
+                    {
+                      "x": "2022",
+                      "y": 2.0
+                    },
+                    {
+                      "x": "2023",
+                      "y": 2.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "question": "The GDP growth rate of Country A in 2023 was __________, and the inflation rate of Country C in the same year was __________.",
+        "title": "GDP Growth and Inflation Rate Analysis for Selected Countries",
+        "solution": "To solve the question, we first extract the required values from the graphs. From the bar chart on GDP growth rates, we see that the GDP growth rate of Country A in 2023 is 3.5\\%. Next, from the line chart on inflation rate trends, the inflation rate of Country C in 2023 is 2.1\\%. Thus, the answers are as follows: \\text{GDP Growth Rate of Country A in 2023} = 3.5\\% \\text{ and Inflation Rate of Country C in 2023} = 2.1\\%.",
+        "options": [
+          [
+            "2.8, 2.0",
+            "2.5, 2.3",
+            "3.5, 2.1"
+          ],
+          [
+            "3.5, 2.1",
+            "3.5, 1.5",
+            "3.0, 1.9"
+          ]
+        ],
+        "answer": [
+          "3.5, 2.1",
+          "3.5, 2.1"
+        ],
+        "tags": [
+          "GI",
+          "Data Sufficiency"
+        ],
+        "difficulty": 4
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Algebra> - <Mathematical Knowledge> - <difficulty_level: 3>",
+        "thread_id": "thread_uB1HrTnt4FYZEKMLoSVlL5TE",
+        "content": {
+          "passages": "In a certain algebraic equation, the variable x is defined in terms of two coefficients a and b, such that 3x + 2a = b^2. The equation forms a quadratic function with respect to x. Further, the roots of the quadratic function are said to possess a linear relationship with the values of a and b. What are the possible integer values of x that satisfy this equation?",
+          "statements": [
+            "Statement 1: The coefficient a is equal to 4.",
+            "Statement 2: The coefficient b is equal to 8."
+          ]
+        },
+        "question": "What can we conclude about the integer values of x based on the above statements?",
+        "title": "Algebraic Equation Analysis with Integer Solutions",
+        "solution": "To determine the integer values of x, we can analyze each statement. Statement 1 tells us that a = 4, making the equation 3x + 8 = b^2. This alone doesn't give us enough information about b or the integer values of x. Statement 2 indicates that b = 8, which gives us the equation 3x + 2a = 64. However, we still need the value of a to solve for x. Therefore, combining both statements provides the complete set of values needed to determine possible integer solutions for x. Thus, we conclude that both statements together are necessary to find the values of x but neither alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Arithmetic> - <Attention to Detail> - <difficulty_level: 5>",
+        "thread_id": "thread_idtWqazXQqEMKT7KV5ybTOQP",
+        "content": {
+          "passages": "A grocery store sells apples and oranges. The price of apples per kilogram is $3, and the price of oranges per kilogram is $4. If a customer buys a total of x kilograms of fruit, spending a total of y dollars, the ratio of kilograms of apples to oranges is given by a complicated equation involving variables k and m. The customer is curious to know if they spent more than $15 altogether while maintaining a specific weight ratio of apples to oranges. Additionally, the store has a discount program that can affect the total cost based on the weight of the fruits purchased, determined by the value of z that fluctuates based on the days of the week.",
+          "statements": [
+            "Statement (1): The customer bought twice as many kilograms of apples as oranges.",
+            "Statement (2): The total weight of fruit purchased was 6 kilograms."
+          ]
+        },
+        "question": "Can we determine if the customer spent more than $15 based on the provided information?",
+        "title": "Cost Analysis of Fruit Purchases with Weight Constraints",
+        "solution": "To determine if the customer spent more than $15, we need to analyze the given statements. Statement (1) tells us about the ratio of apples to oranges, which implies that if they bought twice as many kilograms of apples as oranges, the equation involving their prices can lead to calculating the total cost depending on the weight of apples and oranges combined. However, we do not have enough information about the exact weights to establish the total cost without knowing either the total weight (which is affected by variables k and m) or the total price conditions.\n\nStatement (2) states that the total weight is 6 kilograms, but does not clarify the proportion of apples to oranges or specify if any discount applies. This makes it still insufficient without further detailing the value of k, m, or specific monetary conditions related to discounts.\n\nConsidering both statements together, while they provide some structure regarding the weights, they do not yield sufficient information to ascertain if the total expenditure exceeds $15, as the individual prices and potential discounts remain undefined when combined. Each statement is lacking specifics needed for a conclusive answer.\nTherefore, both statements together do not answer the question conclusively.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 5,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "TPA",
+        "prompt": "TPA - <Budget> - <Critical Reasoning> - <Passage> - <difficulty_level: 2>",
+        "thread_id": "thread_QCL0p2vajAJO6kU88suY8GFT",
+        "content": [
+          {
+            "type": "Passage",
+            "passage": [
+              "In recent years, many organizations have begun to focus on budget optimization as a means to improve overall efficiency. A budget is a plan for managing a company\u2019s income and expenditures, providing insight into business operations. Budget optimization involves revising a budget to maximize the potential benefits while minimizing waste. Companies can utilize various strategies to effectively manage their budgets, including cost reduction measures, reallocating resources, and investing in areas that yield the highest returns.",
+              "Moreover, effective budget management can influence decision-making at all levels within an organization. For instance, a well-structured budget can help identify underperforming departments or projects, allowing managers to make informed adjustments. By analyzing expenditure data, organizations can prioritize their investments, ensuring that funds are allocated towards initiatives that support long-term goals. Therefore, understanding the nuances of budget optimization is essential for organizations aiming to thrive in a competitive market."
+            ]
+          }
+        ],
+        "title": "The Importance of Budget Optimization and Decision-Making Impact",
+        "questions": [
+          {
+            "question": "Based on the passage, what is the primary purpose of budget optimization within an organization?",
+            "solution": "<p>The primary purpose of budget optimization within an organization is to improve overall efficiency by revising the budget to maximize benefits while minimizing waste. This allows for a more effective allocation of resources and enhances decision-making processes.</p>",
+            "answer": "Budget optimization aims to maximize benefits while minimizing resource waste.",
+            "options": [
+              "Budget optimization focuses solely on cost reduction.",
+              "Budget optimization aims to maximize benefits while minimizing resource waste.",
+              "Understanding budget management is unimportant during organizational growth.",
+              "Departments do not need to track expenses for effective budget management.",
+              "Effective budget management has no impact on decision-making."
+            ],
+            "difficulty": 1,
+            "tags": [
+              "Budget"
+            ]
+          },
+          {
+            "question": "According to the passage, how can effective budget management influence decision-making within a company?",
+            "solution": "<p>Effective budget management can influence decision-making within a company by identifying underperforming departments or projects. This analysis of expenditure data allows managers to make informed adjustments and prioritize investments towards initiatives that support long-term goals.</p>",
+            "answer": "Budget optimization focuses solely on cost reduction.",
+            "options": [
+              "Budget optimization focuses solely on cost reduction.",
+              "Budget optimization aims to maximize benefits while minimizing resource waste.",
+              "Understanding budget management is unimportant during organizational growth.",
+              "Departments do not need to track expenses for effective budget management.",
+              "Effective budget management has no impact on decision-making."
+            ],
+            "difficulty": 2,
+            "tags": [
+              "Budget"
+            ]
+          }
+        ],
+        "tags": [
+          "TPA",
+          "Budget"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Word Problems> - <Attention to Detail> - <difficulty_level: 2>",
+        "thread_id": "thread_ZdoQJa1RnPeGiKxvv0tZdXyg",
+        "content": {
+          "passages": "A baker sells loaves of bread for a price that increases by a certain percentage each week. Last week, he sold a total of 120 loaves at $2 each. This week, he has adjusted his price. The baker's sales strategy involves a specific rate of percentage increase which directly impacts his revenue. He is uncertain about the price change and its effect on total revenue.",
+          "statements": [
+            "Statement (1): This week, the baker decided to increase the price of his loaves by 10%.",
+            "Statement (2): The baker sold 110 loaves this week."
+          ]
+        },
+        "question": "What was the total revenue generated by the baker this week?",
+        "title": "Baker's Revenue Calculation with Price Increase",
+        "solution": "To determine the total revenue generated by the baker this week, we analyze the statements provided. Statement (1) tells us that the price increased by 10%. If the price last week was $2, the new price would be $2.20 this week. However, Statement (2) tells us that he sold 110 loaves this week. We can now calculate the revenue: Total Revenue = Price per loaf x Number of loaves sold = $2.20 x 110 = $242. Thus, we have sufficient information to find the total revenue from both statements, and we do not require additional information. Therefore, the correct answer is D, as either statement alone is sufficient to reach the solution.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Word Problems> - <Attention to Detail> - <difficulty_level: 4>",
+        "thread_id": "thread_Li4eXNub4uWTHzwk2RyoMHtC",
+        "content": {
+          "passages": "A factory produces two types of widgets: Type A and Type B. Each Type A widget requires 3 hours of labor and 2 units of raw material, while each Type B widget requires 4 hours of labor and 3 units of raw material. The factory has a total of 240 hours of labor available and 180 units of raw material for the current production cycle. The factory aims to maximize the production of these widgets. Let x be the number of Type A widgets produced and y be the number of Type B widgets produced. If the current production amounts to x + y = 50, what can be determined about the number of each type of widget produced?",
+          "statements": [
+            "Statement (1): The production ratio of Type A to Type B widgets is 2:3.",
+            "Statement (2): The factory has an excess of 30 hours of labor after producing the widgets."
+          ]
+        },
+        "question": "Is it possible to determine the exact number of Type A and Type B widgets produced given the statements above?",
+        "title": "Maximizing Widget Production: Determining Exact Counts",
+        "solution": "To determine the exact number of Type A and Type B widgets produced, we analyze the provided statements. Statement (1) provides a ratio of Type A to Type B widgets, but without the actual quantities, it is not enough to determine the precise counts of each type. Statement (2) gives information about the excess labor available but does not directly tell us how many widgets of each type were produced. However, both statements can be combined to yield a system of equations that allows us to solve for x (Type A) and y (Type B). Thus, the statements together are sufficient to determine the exact numbers. The correct answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 4,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Data Sufficiency> - <Mathematical Knowledge> - <difficulty_level: 2>",
+        "thread_id": "thread_dmCWhjYpns1WuoEMBkJutbzY",
+        "content": {
+          "passages": "A certain rectangle has a length that is twice its width. Furthermore, the perimeter of the rectangle is less than 40 units. Let the width be denoted as w units. From this information, determine if it is possible to accurately calculate the area of the rectangle without any additional information.",
+          "statements": [
+            "Statement 1: The width of the rectangle is greater than 10 units.",
+            "Statement 2: The length of the rectangle is less than 30 units."
+          ]
+        },
+        "question": "Is the area of the rectangle greater than 100 square units?",
+        "title": "Rectangle Area Calculation with Constraints",
+        "solution": "To evaluate the area of the rectangle, we need to know both its length and width. From Statement 1, if the width (w) is greater than 10 units, then the length, being twice the width, must be greater than 20 units. This alone does not provide us with enough information about the area since we do not have an upper bound for w. Statement 2 tells us that the length is less than 30 units. This limits the possible values for width to less than 15 units (since length = 2w). Neither statement alone suffices, but together, they indicate that width must be between 10 and 15, which leads us to an area estimate between 200 and 225 square units. However, knowing both boundaries isn't sufficient to definitively conclude the area is greater than 100. Hence, the correct answer is E: Statements (1) and (2) TOGETHER are NOT sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "type": "Data Sufficiency",
+        "prompt": "DS - <Arithmetic> - <Attention to Detail> - <difficulty_level: 4>",
+        "thread_id": "thread_mWnjlBqmRyjXkiAxLw2XAjgu",
+        "content": {
+          "passages": "A construction company has undertaken a project to build a set of three identical houses. Each house is planned to utilize a specific quantity of materials per unit area. If the total area allocated for the three houses remains constant, certain adjustments in material usage are planned depending on the weather conditions predicted for the construction duration. The cost of materials is subject to fluctuation based on supply chain dynamics and regional market conditions. If the company intends to reduce expenditure while maintaining quality, a thorough analysis is essential to ascertain whether the planned adjustments will yield the desired financial outcome.",
+          "statements": [
+            "Statement 1: If the supplier offers a 10% discount on the cost of materials, then the company will save \\$1,500 on the entire project, irrespective of the material quantities needed per house.",
+            "Statement 2: If the weather conditions forecasted indicate an extended rainy season, the company intends to increase the budget for materials by 25%, which will result in purchasing a larger volume of materials compared to the initial estimate."
+          ]
+        },
+        "question": "Based on the statements above, can the company determine whether the changes in material costs and usage will allow them to remain within their allocated budget for the project?",
+        "title": "Impacts of Material Cost Adjustments on Construction Budget",
+        "solution": "To determine whether the company can remain within budget based on the statements provided, we analyze each statement individually. Statement 1 confirms the savings from a supplier's discount, which directly impacts the project's overall cost. However, it does not clarify how this savings interacts with the fluctuating material needs, making it insufficient alone. Statement 2 details a planned increase in budget due to weather concerns that will necessitate purchasing more materials, indicating that additional costs could further strain the budget. Combining both statements offers some insight into financial dynamics but does not fully assure budget adherence without explicit quantities or total budget values. Therefore, the correct answer is C, as both statements together provide necessary but incomplete information and neither alone is sufficient to draw a conclusion about the project's financial outcome.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ],
+        "difficulty": 4,
+        "tag": [
+          "DS"
+        ]
+      },
+      {
+        "thread_id": "thread_wzzxkHJCDnXsk43oK8xSaQS9",
+        "type": "MSR - Dicotomous Choice(True/False) - Dicotomous Choice(Inferable/Not Inferable)",
+        "prompt": "MSR - <total_child_questions: 2> - <Taxation> - <Critical Reasoning> - <MCQ (5 options MCQ)> - <difficulty_level: 3>",
+        "content": {
+          "sources": [
+            {
+              "source_info": "This bar chart illustrates the amount of tax revenue collected from various sectors in the fiscal year 2023.",
+              "content": {
+                "type": "bar chart",
+                "graph": "bar chart",
+                "title": "Tax Revenue by Sector in FY 2023",
+                "description": "This chart depicts the distribution of tax revenue generated from different sectors in FY 2023.",
+                "x-axis": "Sectors",
+                "y-axis": "Tax Revenue (in USD Millions)",
+                "data": [
+                  {
+                    "category": "Technology",
+                    "revenue": 500
+                  },
+                  {
+                    "category": "Healthcare",
+                    "revenue": 350
+                  },
+                  {
+                    "category": "Finance",
+                    "revenue": 450
+                  },
+                  {
+                    "category": "Manufacturing",
+                    "revenue": 300
+                  },
+                  {
+                    "category": "Retail",
+                    "revenue": 200
+                  }
+                ]
+              }
+            },
+            {
+              "source_info": "This passage discusses the implications of tax policies on economic growth and social equality.",
+              "content": {
+                "type": "Passage",
+                "passages": [
+                  "Taxation plays a crucial role in funding public services and infrastructure. However, the structure of tax policies can significantly influence economic growth and wealth distribution within a country. For instance, progressive tax systems, where higher income earners pay a larger percentage, are often argued to promote social equity. On the other hand, flat tax systems may encourage investment and economic activity by offering predictability and simplicity. Policymakers must carefully consider the trade-offs between equity and efficiency when developing tax legislation.",
+                  "Recent studies indicate that tax incentives can stimulate growth in sectors such as technology and manufacturing, potentially leading to job creation. However, excessive reliance on tax incentives might result in budget deficits and hinder public investment in essential services. Moreover, public perception of tax fairness can affect compliance rates. Therefore, achieving a balance between effective taxation and fostering economic growth remains a pressing challenge for governments."
+                ]
+              }
+            },
+            {
+              "source_info": "This table provides a comparison of various tax rates and their corresponding impacts on different income groups.",
+              "content": {
+                "type": "2 Category Table",
+                "table_name": "Comparison of Tax Rates and Income Impact",
+                "columns": [
+                  "Income Group",
+                  "Tax Rate (%)",
+                  "Post-Tax Income (in USD)",
+                  "Tax Burden (in USD)"
+                ],
+                "rows": [
+                  "Low Income",
+                  "Middle Income",
+                  "Upper Middle Income",
+                  "High Income"
+                ],
+                "data": [
+                  [
+                    "Low Income",
+                    10,
+                    18000,
+                    2000
+                  ],
+                  [
+                    "Middle Income",
+                    20,
+                    40000,
+                    10000
+                  ],
+                  [
+                    "Upper Middle Income",
+                    25,
+                    60000,
+                    20000
+                  ],
+                  [
+                    "High Income",
+                    30,
+                    120000,
+                    36000
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "title": "Evaluating Taxation Implications Through Revenue Analysis and Policy Inferences",
+        "questions": [
+          {
+            "prompt": "ChildQuestion: 1 <Data Interpretation> - <Dicotomous Choice(True/False)> - <3>",
+            "question": "Based on the bar chart presented, is the tax revenue from the Technology sector higher than that from the Healthcare sector?",
+            "title": "Tax Revenue Comparison: Technology vs. Healthcare",
+            "solution": "The tax revenue from the Technology sector is \\$500 \\text{ million} which is greater than the \\$350 \\text{ million} from the Healthcare sector. Therefore, the statement is True.",
+            "answer": {
+              "True": "The tax revenue from both sectors is the same.",
+              "False": "The tax revenue from the Technology sector is not higher than from the Healthcare sector."
+            },
+            "options": [
+              "The tax revenue from the Technology sector is not higher than from the Healthcare sector.",
+              "The tax revenue from both sectors is the same."
+            ],
+            "tags": [
+              "Data Interpretation",
+              "Dicotomous Choice(True/False)",
+              "MSR",
+              "2 Category Table"
+            ],
+            "difficulty": 3
+          },
+          {
+            "prompt": "ChildQuestion: 2 <Logical Reasoning> - <Dicotomous Choice(Inferable/Not Inferable)> - <2>",
+            "question": "Based on the passage, can we infer that progressive tax systems are intended to promote social equity?",
+            "title": "Inference on Progressive Tax Systems and Social Equity",
+            "solution": "Yes, we can infer that progressive tax systems are intended to promote social equity, as the passage indicates that they are argued to achieve this goal.",
+            "answer": {
+              "Inferable": "The passage states that all tax systems promote equity.",
+              "Not Inferable": "The passage provides no evidence regarding the intent of progressive tax systems."
+            },
+            "options": [
+              "The passage provides no evidence regarding the intent of progressive tax systems.",
+              "The passage states that all tax systems promote equity."
+            ],
+            "tags": [
+              "Logical Reasoning",
+              "Dicotomous Choice(Inferable/Not Inferable)",
+              "MSR",
+              "2 Category Table"
+            ],
+            "difficulty": 2
+          }
+        ],
+        "tags": [
+          "Dicotomous Choice(Inferable/Not Inferable)",
+          "Data Interpretation",
+          "2 Category Table",
+          "MSR",
+          "Dicotomous Choice(True/False)",
+          "Logical Reasoning"
+        ],
+        "difficulty": 3
+      }
+    ]
+  }
+}

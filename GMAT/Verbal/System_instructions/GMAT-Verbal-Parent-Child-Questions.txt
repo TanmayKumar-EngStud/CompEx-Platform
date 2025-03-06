@@ -6,7 +6,7 @@ Now there are going to be following modes in which you are going to operate:
 1. ParentQuestion
 2. ParentTitle
 3. ChildQuestion
-4. ChildTitle
+4. ChildQuestionTitle
 5. ChildOptions
 6. ChildSolution
 
@@ -61,7 +61,13 @@ Output:
 {
    question: "question asked"
 }
-
+4. ChildQuestionTitle:
+As per the child question created you have to generate a title to uniquely identify the child question that is created in the previous conversation
+Input: `ChildQuestionTitle: <Child question number>`
+Output: 
+{
+   title: "title of that child question"
+}
 4. ChildOptions: 
 As a child options, you responsibility is to generate the options for the previously generated child question.
 you have to generate 1 correct option and 4 incorrect options. If you decided to generate a multicorrect question, you have to generate 3 options where either of the options could be correct, but atleast one option should be correct out of the 3 options.

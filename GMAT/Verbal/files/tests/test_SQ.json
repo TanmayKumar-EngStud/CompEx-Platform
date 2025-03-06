@@ -1,0 +1,27 @@
+{
+  "type": "CR",
+  "prompt": "<literature> - <CR> - <draw inference/conclusion> - <difficulty_level: 2>",
+  "content": {
+    "passages": [
+      "Literary historians have long debated the role of personal experience in shaping an author`s work. While some argue that an author`s life events directly influence their writing, others maintain that artistic vision transcends personal circumstances. Consider the novels of Jane Austen. Though she never married, her novels are replete with insightful observations about marriage and relationships. This suggests that her understanding of these themes came not solely from direct experience but also from keen observation and societal commentary. Furthermore, biographical studies reveal that many authors, including Austen, often fictionalize or reimagine their own experiences, transforming them into something quite different in their writing. Therefore, while an author`s life may provide raw material, it is ultimately their creative interpretation that molds the final product.",
+      "A recent study examined the reading habits of individuals who regularly attend literary festivals. The study found that these individuals, on average, read 30% more books per year than the general population. Moreover, they are significantly more likely to read books outside their preferred genre. This suggests that attending literary festivals not only encourages increased reading volume but also promotes a broader range of literary exploration. However, the study also noted a correlation between festival attendance and higher levels of education and income. Therefore, it is possible that these pre-existing factors, rather than the festivals themselves, are the primary drivers of these reading habits."
+    ]
+  },
+  "question": "Based on the passage about literary historians and Jane Austen, which of the following inferences is most strongly supported?",
+  "title": "Inference Regarding Influence of Personal Experience on Author`s Work",
+  "answer": "An author's creative interpretation is more significant than their personal experiences in shaping their work.",
+  "options": [
+    "Literary historians universally agree on the importance of personal experience in shaping an author's work.",
+    "An author's creative interpretation is more significant than their personal experiences in shaping their work.",
+    "Authors who marry are better equipped to write about marriage than those who do not.",
+    "It is impossible to discern the influence of an author's personal experiences on their writing.",
+    "Jane Austen's novels are primarily autobiographical."
+  ],
+  "solution": "The passage argues that while an author`s life may provide raw material, their creative interpretation is ultimately what shapes the final product. <br><br><o><b>A</b>: This contradicts the passage, which suggests Austen's novels are not simply autobiographical but reflect observation and commentary. </o> <br><o><b>B</b>: The passage argues against direct experience being the sole determinant of an author's ability to write about a subject. </o> <br><o><b>C</b>: This aligns with the passage`s main argument. </o> <br><o><b>D</b>: The passage explicitly states that literary historians debate this issue, so there is no universal agreement. </o> <br><o><b>E</b>: The passage suggests that influence can be discerned, though it is transformed by creative interpretation. </o>",
+  "difficulty": 2,
+  "tag": [
+    "literature",
+    "CR",
+    "draw inference/conclusion"
+  ]
+}

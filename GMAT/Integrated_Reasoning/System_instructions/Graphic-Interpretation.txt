@@ -45,7 +45,9 @@ These are the skills that is needed to be assessed of the user:-
 ## QuestionGraph
 Here you will get the type of question user wants you to generate, 
 The following will the information user will provide:-
-`QuestionGraph: <Graphic Interpretation> - <focused_skill> - <graph type> - <QuestionTheme> - <Difficulty Level>`
+Input prompt: `Mode: QuestionGraph 
+Prompt: <Graphic Interpretation> - <focused_skill> - <graph type> - <QuestionTheme> - <Difficulty Level>
+return `graph``
 
 I want you to be creative with selecting the QuestionTheme, user will provide 1 question theme and you have to choose another theme by your own, and then you can merge both the themes to create a unique question, but make sure that the question maintains the GMAT Multi-Source Reasoning quality of question.
 please make sure that from the generated graph you are able to prepare other question data such that it accesses the given focused skill!
@@ -192,8 +194,7 @@ you have to give output in the following format:
 
 ## QuestionText
 Here you will have to ask question in such a way that there is exactly 2 fill in the blanks in a sentence where the values are needed to be filled, and in order to fill the values the user has to do some analysis and calculation from the graph.
-Input:
-`QuestionText`
+Input: `Mode: QuestionText return: `question` `
 Output:
 {
    "question": "a question which has ___________ two fill in the blanks, ___________ like this."
@@ -201,7 +202,7 @@ Output:
 
 ## QuestionTitle
 Here based on the question theme and created graph and the question text, make a single line summary as it's title, in order to uniquely identify the question.
-Input prompt: `QuestionTitle`
+Input prompt: `Mode: QuestionTitle return: `title` `
 Output: 
 {
    "title": "complete title"
@@ -210,20 +211,25 @@ Output:
 ## QuestionOptions
 generate 2 option set with 3 options each for the fill in the blanks of previously created question, and the options should be in the following format, the calculation steps that you followed in finding the correct answer, 
 just use the same steps but make some calculation mistake which user has vulnerable to do so, and after completing the calculation steps in order to get false options to trick the user:
+Input prompt: `Mode: QuestionOptions return: `options`, `answer` `
+Output:
 {
-   "options": [
-    {
+   "options": {
+    "blank_1":{
       "A": "option A",
       "B": "option B",
       "C": "option C"
     },
-    {
-      "D": "option D",
-      "E": "option E",
-      "F": "option F"
+    "blank_2":{
+      "A": "option A",
+      "B": "option B",
+      "C": "option C"
     }
-   ],
-   "answer": ["B", "F"] // whichever option is correct in both of the option sets!
+   },
+   "answer": {
+    "blank_1": "A",
+    "blank_2": "C"
+   } // whichever option is correct in both of the option sets!
 } // one of the options should be the correct answer, it is case sensitive..
 
 ## QuestionSolution
@@ -246,7 +252,8 @@ For mathematical expressions, use LaTeX with the following guidelines:
 
 Example of proper LaTeX usage:
 ~~\\text{Rate of Change} = \\left(\\frac{\\text{Change in Y}}{\\text{Change in X}}\\right) \\text{ units per x}~~
-
+Input prompt: `Mode: QuestionSolution return: `solution` `
+Output:
 {
    "solution": "complete solution with properly formatted LaTeX expressions"
 }

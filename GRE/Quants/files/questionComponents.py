@@ -1,4 +1,5 @@
-import json, re
+import json, re, time, os
+from google.genai import types
 
 def refine_response(response_text):
    """
@@ -66,27 +67,47 @@ warning = "\nWARNING: please retry this, your output should strictly follow json
 max_retries = 3
 
 class ParentChildQuestion:
-    def __init__(self, llm, prompt, thread_id=None):
+    def __init__(self, llm, system_instructions, prompt):
         self.llm = llm
+        self.startTime = time.time()
+        self.requestCounts = 0
         self.prompt = prompt
-        self.thread_id = thread_id
-
-    def ___getResponse(self,prompt, warn = False):
-      prompt += (f", {warning}" if warn else "")
-      try:
-         if self.thread_id:
-            response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
-         else:
-            response = self.llm.invoke({"content": prompt})
-            self.thread_id = response[0].thread_id
-         val = [message.content[0].text.value for message in response][0]
-         return val
-      except Exception as e:
-         print(f"{prompt}")
-         print(f"failed in generating response by self.llm.invoke: {response}")
-         print(f"{str(e)}")
-         return None   
-      
+        self.chat = self.llm.chats.create(
+            model = os.getenv("MODEL"),
+            config = types.GenerateContentConfig(
+                system_instruction = system_instructions
+            )
+        )
+    def ___getResponse(self, prompt, warn= False):
+        prompt += (f", {warning}" if warn else "")
+        try: 
+            self.requestCounts += 1
+            presentTime = time.time()
+            
+            # If we've reached 10 requests, enforce the rate limit
+            if self.requestCounts >= 10:
+                # Calculate time elapsed since start
+                elapsed = presentTime - self.startTime
+                
+                # If less than 60 seconds have passed, we need to wait
+                if elapsed < 60:
+                    wait_time = 60 - elapsed + 0.5  # Add a small buffer
+                    print(f"RPM limit reached, sleeping for {wait_time} seconds")
+                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    time.sleep(wait_time)
+                
+                # Reset counters after waiting or if 60+ seconds have already passed
+                self.startTime = time.time()
+                self.requestCounts = 1  # Set to 1 for the current request
+            
+            response = self.chat.send_message(prompt)
+            val = response.text
+            return val
+        except Exception as e:
+            print(f"{prompt}")
+            print(f"failed in generating response by self.llm.invoke")
+            print(f"{str(e)}")
+            return None
     def _retry_generate(self, func, *args):
         last_error = None
         for attempt in range(max_retries):
@@ -114,13 +135,13 @@ class ParentChildQuestion:
                     graph = message["graph/table"]
                 except Exception as e:
                     graph = message["graph"]
-                    print(f"GRE Quants, Error: message received for generate_questionGraph: received 'graph' instead of 'graph/table'.\nWarning: {str(e)}\n\n")
+                    print(f"GRE Quants, Warning: message received for generate_questionGraph: received 'graph' instead of 'graph/table'.\n")
                 return graph
             except Exception as e:
                 print(f"GRE Quants, Error: message received for questionGraph is: \n{response}\nError: {str(e)}\n\n")
                 return None
         result = self._retry_generate(_generate)
-        return self.thread_id, result
+        return result
     def generate_parentTitle(self):
         def _generate(warn = False):
             prompt = f"ParentTitle"
@@ -197,27 +218,49 @@ class ParentChildQuestion:
         return result
 
 class SimpleQuestion:
-    def __init__(self, llm, prompt, thread_id=None):
+    def __init__(self, llm, system_instructions, prompt):
         self.llm = llm
+        self.startTime = time.time()
+        self.requestCounts = 0
         self.prompt = prompt
-        self.thread_id = thread_id
+        self.chat = self.llm.chats.create(
+            model = os.getenv("MODEL"),
+            config = types.GenerateContentConfig(
+                system_instruction = system_instructions
+            )
+        )
 
-    def ___getResponse(self,prompt, warn = False):
+    def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try:
-            if self.thread_id:
-                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
-            else:
-                response = self.llm.invoke({"content": prompt})
-                self.thread_id = response[0].thread_id
-            val = [message.content[0].text.value for message in response][0]
+        try: 
+            self.requestCounts += 1
+            presentTime = time.time()
+            
+            # If we've reached 10 requests, enforce the rate limit
+            if self.requestCounts >= 10:
+                # Calculate time elapsed since start
+                elapsed = presentTime - self.startTime
+                
+                # If less than 60 seconds have passed, we need to wait
+                if elapsed < 60:
+                    wait_time = 60 - elapsed + 0.5  # Add a small buffer
+                    print(f"RPM limit reached, sleeping for {wait_time} seconds")
+                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    time.sleep(wait_time)
+                
+                # Reset counters after waiting or if 60+ seconds have already passed
+                self.startTime = time.time()
+                self.requestCounts = 1  # Set to 1 for the current request
+            
+            response = self.chat.send_message(prompt)
+            val = response.text
             return val
         except Exception as e:
             print(f"{prompt}")
-            print(f"failed in generating response by self.llm.invoke: {response}")
+            print(f"failed in generating response by self.llm.invoke")
             print(f"{str(e)}")
-            return None   
-      
+            return None
+    
     def _retry_generate(self, func, *args):
         last_error = None
         for attempt in range(max_retries):
@@ -245,7 +288,7 @@ class SimpleQuestion:
                 print(f"GRE Quants, Error: message received for questionText is: \n{response}\nError: {str(e)}\n\n")
                 return None
         result = self._retry_generate(_generate)
-        return self.thread_id, result
+        return result
     
     def generate_questionTitle(self):
         def _generate(warn = False):
@@ -294,27 +337,49 @@ class SimpleQuestion:
         return result
 
 class DataSufficiencyQuestion:
-    def __init__(self, llm, prompt, thread_id= None):
+    def __init__(self, llm, system_instructions, prompt):
         self.llm = llm
+        self.startTime = time.time()
+        self.requestCounts = 0
         self.prompt = prompt
-        self.thread_id = thread_id
+        self.chat = self.llm.chats.create(
+            model = os.getenv("MODEL"),
+            config = types.GenerateContentConfig(
+                system_instruction = system_instructions
+            )
+        )
     
-    def ___getResponse(self,prompt, warn = False):
+    def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try:
-            if self.thread_id:
-                response = self.llm.invoke({"content": prompt, "thread_id": self.thread_id})
-            else:
-                response = self.llm.invoke({"content": prompt})
-                self.thread_id = response[0].thread_id
-            val = [message.content[0].text.value for message in response][0]
+        try: 
+            self.requestCounts += 1
+            presentTime = time.time()
+            
+            # If we've reached 10 requests, enforce the rate limit
+            if self.requestCounts >= 10:
+                # Calculate time elapsed since start
+                elapsed = presentTime - self.startTime
+                
+                # If less than 60 seconds have passed, we need to wait
+                if elapsed < 60:
+                    wait_time = 60 - elapsed + 0.5  # Add a small buffer
+                    print(f"RPM limit reached, sleeping for {wait_time} seconds")
+                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    time.sleep(wait_time)
+                
+                # Reset counters after waiting or if 60+ seconds have already passed
+                self.startTime = time.time()
+                self.requestCounts = 1  # Set to 1 for the current request
+            
+            response = self.chat.send_message(prompt)
+            val = response.text
             return val
         except Exception as e:
             print(f"{prompt}")
-            print(f"failed in generating response by self.llm.invoke: {response}")
+            print(f"failed in generating response by self.llm.invoke")
             print(f"{str(e)}")
-            return None   
-      
+            return None
+    
     def _retry_generate(self, func, *args):
         last_error = None
         for attempt in range(max_retries):
@@ -338,7 +403,7 @@ class DataSufficiencyQuestion:
                 print(f"GRE Quants, Error: message received for questionText is: \n{response}\nError: {str(e)}\n\n")
                 return None
         result_passage, result_statements, result_question = self._retry_generate(_generate)
-        return self.thread_id, result_passage, result_statements, result_question
+        return result_passage, result_statements, result_question
 
     def generate_questionTitle(self):
         def _generate(warn = False):

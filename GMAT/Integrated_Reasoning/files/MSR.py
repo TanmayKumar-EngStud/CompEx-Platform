@@ -1,21 +1,18 @@
 import random, json, os, re
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
+from google import genai
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import MSR
+from questionComponents import MSR
 
 class Generate_MSR:
-    def __init__(self, prompt):
+    def __init__(self, prompt, api_IDX=1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["Multi-Source-Reasoning"]
-        llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        client = genai.Client(api_key=api_key)
+        self.llm = client
         self.prompt = prompt
-
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Multi-Source-Reasoning.txt"), "r") as f:
+            self.system_instructions = f.read()
         search = re.search(r"total_child_questions: (\d+)", self.prompt)
         self.total_child_questions = 3
         if search:
@@ -24,17 +21,15 @@ class Generate_MSR:
         self.questionData = {}
         self.MSR = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/MSR.json")))
 
-    def generate_question(self):
-        msr = MSR(self.llm, self.prompt)
+    def generate_question(self): 
+        msr = MSR(self.llm, self.system_instructions,self.prompt)
         cn = self.MSR["combination_number"]
         sources = {"sources": []}
         # region generating sources
         for source_index in range(1, 4):
-            source_type = self.MSR["source_types"][cn%len(self.MSR["source_types"])]
-            if cn%len(self.MSR["source_types"]) == 0:
-                random.shuffle(self.MSR["source_types"])
+            source_type = random.choice(self.MSR["source_types"])
             source = {}
-            self.questionData["thread_id"], source = msr.generate_SourceInfo(f"Generate SourceInfo_{source_index} having {source_type} of question: {self.prompt}")
+            source = msr.generate_SourceInfo(f"Generate SourceInfo_{source_index} having {source_type} of question: {self.prompt}")
             sources["sources"].append(source)
             cn +=1
         self.questionData["type"] = "MSR"
@@ -49,13 +44,8 @@ class Generate_MSR:
         # region generating questions
         for source_index in range(1, self.total_child_questions+1):
             question = {}
-            focused_skill = self.MSR["focused_skill"][cn%len(self.MSR["focused_skill"])]
+            focused_skill = random.choice(self.MSR["focused_skill"])
             question_style = random.choice(self.MSR["question_style"])
-            if cn%len(self.MSR["focused_skill"]) == 0:
-                random.shuffle(self.MSR["focused_skill"])
-            if cn%len(self.MSR["question_style"]) == 0:
-                random.shuffle(self.MSR["question_style"])
-            cn +=1
             search = re.search(r"<difficulty_level: (\d+)>", self.prompt)
             # region setting difficulty level
             original_difficulty = int(search.group(1))
@@ -65,6 +55,7 @@ class Generate_MSR:
             elif difficulty_level > 5:
                 difficulty_level = 5
             # endregion
+            question["type"] = question_style
             question["prompt"] = f"ChildQuestion: {source_index} <{focused_skill}> - <{question_style}> - <{difficulty_level}>"
             question["question"] = msr.generate_QuestionText(question["prompt"])
             question["title"] = msr.generate_QuestionTitle(f"ChildQuestionTitle: {source_index}")

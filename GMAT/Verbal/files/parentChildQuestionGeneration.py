@@ -5,9 +5,9 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-
-from GMAT.Verbal.files.questionComponents import ParentChildQuestion
+from google import genai
+# GMAT.Verbal.files.
+from questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx, difficulty):
         child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))
@@ -41,15 +41,10 @@ class ParentChildQuestionGeneration:
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         
         return prompts
-    def __init__(self, prompt=None):
+    def __init__(self, prompt=None, api_IDX= 1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GMAT-Verbal-Parent-Child-Questions"]
-
-        llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-        )
+        api_key = os.getenv(f"API_{api_IDX}")
+        llm = genai.Client(api_key = api_key)
         self.llm = llm
         self.prompt = prompt
         child_question_numbers = 0
@@ -65,11 +60,13 @@ class ParentChildQuestionGeneration:
             difficulty = 0
         self.child_prompt = self.generate_child_prompt(child_question_numbers, difficulty)
         self.questionData = {}
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Verbal-Parent-Child-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
     def generate_question(self):
         self.questionData["type"] = "RC"
         self.questionData["prompt"] = self.prompt
-        questionContent = ParentChildQuestion(self.llm, self.prompt, self.number_of_child_questions)
-        self.questionData["thread_id"], passages = questionContent.generate_parentPassage()
+        questionContent = ParentChildQuestion(self.llm, self.system_instructions, self.prompt, self.number_of_child_questions)
+        passages = questionContent.generate_parentPassage()
         self.questionData["content"] = {"passages": passages}
 
         difficulty = re.search(r'<difficulty_level: (\d+)>', self.prompt)
@@ -105,4 +102,4 @@ class ParentChildQuestionGeneration:
             self.questionData["tags"].extend(childQuestionData["tags"])
             self.questionData["questions"].append(childQuestionData)
 
-        return self.questionData, difficulty
+        return self.questionData

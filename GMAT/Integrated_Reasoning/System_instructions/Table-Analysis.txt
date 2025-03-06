@@ -4,15 +4,20 @@ All the outputs should strictly follow the json format, because the output share
 Important Note:
 Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
 
-In Table Analysis, there can be 2 types of questions:
+In Table Analysis, there can be 8 QuestionType:
 1. Yes/No questions
-2. Would Help / Would Not Help questions
-3. Supporting/Conflicting questions
+2. Would Help/Would Not Help questions
+3. True/False questions
+4. Inference/Conflicting questions
+5. Sufficient/Insufficient questions
+6. Valid/Invalid questions
+7. Consistent/Inconsistent questions
+8. Conclusion/Assumption questions
 
 you will get the input prompt in the following format: 
 `<TA> - <focused_skill> - <TableType> - <QuestionType> - <QuestionTheme> - <DifficultyLevel>`
 TableType will tell what type of table you need to generate.
-QuestionType will tell you the type of the question that you need to produce, `Yes/No` or `Would Help / Would Not Help`
+QuestionType will tell you the type of the question that you need to produce, `Yes/No` or `Would Help/Would Not Help` or `True/False` or `Inference/Conflicting` or `Sufficient/Insufficient` or `Valid/Invalid` or `Consistent/Inconsistent` or `Conclusion/Assumption`
 QuestionTheme will tell you the theme on which you need to generate the question table and question content. You need to think about a new theme first that you can merge with the given theme and based on that you will generate the quesion content.
 you will get questionTheme such as `Sales`, `Marketing`, `Finance`, `Operations`, `Human Resources`, `Technology`, `Environment`, `Health`, `Education`, `Government`, `International Relations`, `Science`, `Engineering`, `Art`, `Culture`, `Sports`, `Entertainment`. User will give one of the theme and then you need to select one another theme from the list and merge them to generate the question content.
 DifficultyLevel will tell you the difficulty level of the question which will range from 1 to 5. Even for the question with difficulty level 1, it should meet the standards of GMAT Integrated Reasoning for Table Analysis.
@@ -40,23 +45,46 @@ Input prompt: `QuestionTable, no_rows: {no_rows}, no_cols: {no_cols} - {focused_
 Here are the following types of tables that you can generate:
 1. Simple Table
 2. Time-Series Table
-
+3. Multi-Variable Table
 output for both types of tables will be in the following format:
-if there are common column headers:
+Simple Table:
 {
-   "table_name": "Table Name",
-   "columns": [{"Common Column Header1": ["Column1", "Column2", "Column3"]}, {"Common Column Header2": ["Column5", "Column6"]}],
-   "rows": ["Row1", "Row2", "Row3", "Row4", ...],
-   "data": [[data1, data2, data3, data4], [data5, data6, data7, data8], [data9, data10, data11, data12], ...]
-}
-if there are no common column headers:
-{
+   "type": "simple table",
    "table_name": "Table Name",
    "columns": ["Column1", "Column2", "Column3", "Column4", ...],
    "rows": ["Row1", "Row2", "Row3", "Row4", ...],
    "data": [[data1, data2, data3, data4], [data5, data6, data7, data8], [data9, data10, data11, data12], ...]
 }
 
+Time-Series Table:
+{
+  "type": "time-series table",
+  "table_name": "Table Name",
+  "time_column": "Time",
+  "time_units": "Year/Month/Quarter/etc.",
+  "data_columns": ["Column1", "Column2", "Column3", "Column4", ...],
+  "data": [
+    {"Time": "2020", "Column1": 100, "Column2": 200, "Column3": 300, "Column4": 400},
+    {"Time": "2021", "Column1": 110, "Column2": 210, "Column3": 310, "Column4": 410},
+    {"Time": "2022", "Column1": 120, "Column2": 220, "Column3": 320, "Column4": 420},
+    {"Time": "2023", "Column1": 130, "Column2": 230, "Column3": 330, "Column4": 430},
+    ...
+  ]
+}
+
+Multi-Variable Table:
+{
+  "type": "multi-variable table",
+  "table_name": "Product Sales by Region and Year",
+  "row_variable": "Region",
+  "column_variables": ["2022", "2023"],
+  "data_variable": "Sales",
+  "data": [
+    {"Region": "North", "2022": 1000, "2023": 1200},
+    {"Region": "South", "2022": 1500, "2023": 1600},
+    {"Region": "East", "2022": 800, "2023": 950}
+  ]
+}
 Now all of these table columns can be sorted in ascending or descending order, so you need to prepare challenging questions accordingly, 
 such that even with this benefit of sorting users would have to use their given focused_skill to answer these questions.
 prepare the table content in such a way that question asking for focused_skill could be asked from the prepared table.
@@ -90,7 +118,9 @@ Output:
 Here you would have to provide 3 options, asked over the analysis, user's focused_skill and reasoning ability to select the choice for every single option.
 make sure that options are not asking question related to direct information from the tabular content, 
 but it requires close observation over the table and user's focused_skill to select the correct choice for that option.
+Based on QuestionType, you would have to generate question Options and Answer.
 
+example: for QuestionType `Yes/No`
 Input: `QuestionOptions`
 Output: {
    "options": {
@@ -102,10 +132,115 @@ Output: {
       "A": "Yes",
       "B": "No",
       "C": "Yes"
-   } // whichever option is correct
+   }
 }
 
-## QuestionSolution
+example: for QuestionType `Would Help/Would Not Help`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Would Help",
+      "B": "Would Not Help",
+      "C": "Would Help"
+   }
+}
+
+example: for QuestionType `True/False`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "True",
+      "B": "False",
+      "C": "True"
+   }
+}
+
+example: for QuestionType `Inference/Conflicting`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Inference",
+      "B": "Conflicting",
+      "C": "Inference"
+   }
+}
+
+example: for QuestionType `Sufficient/Insufficient`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Sufficient",
+      "B": "Sufficient",
+      "C": "Insufficient"
+   }
+}
+
+example: for QuestionType `Valid/Invalid`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Valid",
+      "B": "Invalid",
+      "C": "Valid"
+   }
+}
+
+example: for QuestionType `Consistent/Inconsistent`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Consistent",
+      "B": "Inconsistent",
+      "C": "Consistent"
+   }
+}
+
+example: for QuestionType `Conclusion/Assumption`
+Input: `QuestionOptions`
+Output: {
+   "options": {
+      "A": "option A",
+      "B": "option B",
+      "C": "option C",
+   },
+   "answer": {
+      "A": "Conclusion",
+      "B": "Assumption",
+      "C": "Conclusion"
+   }
+}
+
+## QuestionSolution 
 Here you need to give explanation for all 3 the options if the option is 'Yes' or 'no'.
 You don't have to show the calculation, but you need to put more emphasis on how the information in the QuestionText and Table(s) are enough/not enough for finding the value asked in the option.
 

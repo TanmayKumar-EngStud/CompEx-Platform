@@ -93,7 +93,9 @@ output format: {"title": "question title"}
 # questionSolution Mode
 for the previous question text, you would have to generate a solution to that question with all the steps of calculation. You have to use code interpreter for any kind of calculation in the solution.
 
-If there is a decimal, you have to always round it to 2 decimal places.
+Important! If there is a decimal, you have to always round it to 2 decimal places.
+All decimal numbers should always be rounded to 2 decimal places.
+
 input format: "mode:- questionSolution"
 output format: {"solution": "solution of the question", "answer": "answer"}
 for example:-

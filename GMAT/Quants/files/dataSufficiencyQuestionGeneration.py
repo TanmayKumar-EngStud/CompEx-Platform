@@ -1,25 +1,23 @@
 import random, os, sys, json
 from dotenv import load_dotenv
-from langchain_experimental.openai_assistant import OpenAIAssistantRunnable
-from GMAT.Quants.files.questionComponents import DataSufficiencyQuestion
+# GMAT.Quants.files.
+from google import genai
+from questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
-    def __init__(self, prompt):
+    def __init__(self, prompt, api_IDX=1):
         load_dotenv()
-        assistant_id = json.load(open(os.path.join(os.path.dirname(__file__), "../../assistant_ids.json"), "r"))["GMAT-Quants-Data-Sufficiency-Questions"]
-        llm = OpenAIAssistantRunnable(
-                model="gpt-4o-mini",
-                api_key=os.getenv("OPENAI_API_KEY"),
-                assistant_id=assistant_id
-        )
-        self.llm = llm
+        api_key = os.getenv(f"API_{api_IDX}")
+        self.llm = genai.Client(api_key=api_key)
+        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Quants-Data-Sufficiency-Questions.txt"), "r") as f:
+            self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        questionContent = DataSufficiencyQuestion(self.llm, self.prompt)
+        questionContent = DataSufficiencyQuestion(self.llm, self.system_instructions, self.prompt)
         self.questionData["type"] = "Data Sufficiency"
         self.questionData["prompt"] = self.prompt
-        self.questionData["thread_id"], passages, statements, question = questionContent.generate_questionText()
+        passages, statements, question = questionContent.generate_questionText()
         self.questionData["content"] = {"passages": passages, "statements": statements}
         self.questionData["question"] = question
         self.questionData["title"] = questionContent.generate_questionTitle()

@@ -1,0 +1,1744 @@
+{
+  "GRE_Q": {
+    "section1": [
+      {
+        "prompt": "<number theorm>- <difficulty-level: 5>",
+        "type": "DS",
+        "difficulty": 5,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_O9ZbjkP7C2R77T5ayDcRzCxE",
+        "content": {
+          "passage": "Consider three integers a, b, and c, where a is the product of b and c. If a is an even number, can we conclude that at least one of b or c is an even number? This relationship holds under certain conditions but may also depend on the specific values of b and c. Analyze the following statements to determine if they provide sufficient information to answer the question.",
+          "statements": [
+            "Statement 1: If b is an odd number and c is an odd number, then a is odd.",
+            "Statement 2: If a is even, then at least one of b or c must be even."
+          ]
+        },
+        "question": "Based on the given statements, can we determine whether at least one of b or c must be even if a is an even number?",
+        "title": "Analyzing Even and Odd Product Relationships in Integers",
+        "solution": "To determine whether at least one of b or c must be even if a is even, we analyze the statements. Statement 1 indicates that if both b and c are odd, then a is odd, which supports the idea that if a is even, at least one of b or c must be even as it contradicts b and c being odd. Statement 2 explicitly states that if a is even, then at least one of b or c must indeed be even. Thus, Statement 2 alone is sufficient to answer the question. Therefore, the correct answer is option B: Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+        "answer": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<geometry>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_oAvT8T5f7f413TYgZADuFIDi",
+        "content": {
+          "passage": "A triangle has a perimeter of 30 units. Two of its sides are equal and measure x units each. The third side has a length of y units. Together, these sides create a triangle that satisfies the triangle inequality theorem. The relationship between x and y can be expressed as x + x > y. If one of the sides is given, can we determine whether the triangle is isosceles?",
+          "statements": [
+            "The length of one side, x, is 10 units.",
+            "The length of the third side, y, is 10 units."
+          ]
+        },
+        "question": "Based on the information provided, can we ascertain if the triangle described is isosceles?",
+        "title": "Determine If Triangle is Isosceles Based on Side Lengths",
+        "solution": "To determine if the triangle is isosceles, we need to analyze the statements. Statement 1 tells us that x = 10. From the perimeter, we know that 2x + y = 30, which gives us y = 10. Thus, the side lengths are 10, 10, and 10, making the triangle isosceles (in fact, it is equilateral). Statement 2 alone only provides the value of y without confirming the length of x, so it is insufficient alone. However, both statements together confirm the triangle is isosceles. Therefore, the answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<work and time>- <difficulty-level: 4>",
+        "thread_id": null,
+        "question": "In a mystical kingdom where days and nights last for an eternity, a skilled carpenter named Elric can complete the construction of a magnificent clock tower in 12 days when working alone. Meanwhile, his apprentice, the enthusiastic yet inexperienced Artin, takes 30 days to finish the same task by himself. One fateful day, an ancient scroll reveals that if Elric and Artin collaborate, they can complete the project in fewer days due to their combined expertise and synergy. However, on the fourth day of their cooperation, a sudden storm disrupts their work, causing them to lose half a day of progress. After the tempest, they recommence their labor ardently and resolve to finish the tower before the sunset of the 15th day. How many days, including the storm's interruption, will it take for them to complete the clock tower together?",
+        "title": "Collaboration Under Adverse Conditions: The Clock Tower Challenge",
+        "solution": "<p>Elric can complete the clock tower in 12 days, while Artin takes 30 days. <br> Daily work rate of Elric = 1/12 and Artin = 1/30.<br> Combined daily work rate = ~~1/12 + 1/30 = (5 + 2) / 60 = 7 / 60~~. <br> They work together for 4 days before the storm, thus completing = ~~4 * (7/60) = 28/60~~ of the work. <br> Remaining work = ~~1 - (28/60) = 32/60~~. <br> After the storm, they lose 0.5 days, leaving them with 15 - 4 - 0.5 = 10.5 days to finish the remaining work. <br> Work done after the storm in 10.5 days = ~~10.5 * (7/60) = 73.5/60~~. <br> Since they are still short of completing the tower (since 73.5/60 < 32/60), they must utilize the entire timeline to finish the clock tower, thus taking them 14.5 days including the storm disruption.</p>",
+        "answer": 14.5,
+        "tag": [
+          "Numeric Entry",
+          "work and time"
+        ],
+        "difficulty": 4
+      },
+      {
+        "prompt": "<geometry>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "thread_id": "thread_Zt4lm5yPn1iFhgJRq2XHGWZ3",
+        "content": {
+          "passage": "In a triangle ABC, the measure of angle A is twice the measure of angle B. The measure of angle C is equal to the sum of the measures of angles A and B. Given this information, determine whether the sum of the angles A and B is greater than 90 degrees.",
+          "statements": [
+            "The measure of angle B is 30 degrees.",
+            "The measure of angle C is 120 degrees."
+          ]
+        },
+        "question": "Is the sum of the measures of angles A and B greater than 90 degrees based on the given information?",
+        "title": "Triangle Angle Relationships and Sum Evaluations",
+        "solution": "To determine whether the sum of the measures of angles A and B is greater than 90 degrees, we analyze each statement. Statement 1 tells us that angle B is 30 degrees. Based on the relationship provided in the passage (angle A = 2 * angle B), angle A must be 60 degrees. The sum of angles A and B is then 60 + 30 = 90 degrees, which is not greater than 90. Hence, Statement 1 alone is insufficient. Statement 2 indicates that angle C is 120 degrees. Since the sum of angles in a triangle is always 180 degrees, we know that angles A and B must then together equal 60 degrees (180 - 120). This also shows that the sum of angles A and B is 60 degrees, which is less than 90, thus Statement 2 alone is also insufficient. However, combining both statements, we get that angle B is confirmed as 30 degrees, therefore angle A = 60 and angle C = 120, which concurs with both pieces of information but does not result in a sum greater than 90. Thus, neither statement alone nor together is sufficient to conclude that the sum of angles A and B is greater than 90 degrees.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<number theorm>- <difficulty-level: 4> (multi-correct MCQ)",
+        "thread_id": "thread_S7PfECnTRPsllVEKOMBB5Jva",
+        "question": "In a peculiar village where the oddities of integers reflect their properties, the villagers discovered a strange relationship among the prime numbers. If a prime number `p` is represented as a sum of two other prime numbers `a` and `b`, where both `a` and `b` are less than `p`, the villagers found patterns that only emerge under certain conditions. They observed that when `p` is either less than or equal to 20 or greater than or equal to 25, they could derive an equation of the form `p = a + b`. Furthermore, if the sum of the digits of `p` also turned out to be an odd number, they concluded that `p` could be both the sum of two distinct primes and a prime itself. Given this mystical observation, determine which of the following prime numbers could be expressed as the sum of two distinct prime numbers with their digit sum being odd. Please select all that apply.",
+        "title": "Exploring the Mystical Properties of Prime Numbers in a Village Context",
+        "solution": "<p>The prime numbers discovered by the villagers that are less than or equal to 20 and greater than or equal to 25 are: 5 and 7. Both of these primes can be expressed as the sum of two distinct primes. <br> For prime number 5: <br> 2 + 3 = 5 <br> Sum of digits of 5 = 5 (which is odd). Thus, 5 satisfies the condition. <br><br> For prime number 7: <br> 2 + 5 = 7 <br> Sum of digits of 7 = 7 (which is also odd). Hence, 7 also satisfies the condition.</p>",
+        "answer": [
+          "5",
+          "7"
+        ],
+        "options": [
+          "7",
+          "5",
+          "13",
+          "11"
+        ],
+        "difficulty": 4,
+        "tag": [
+          "MCQ-Multi correct",
+          "number theorm"
+        ]
+      },
+      {
+        "prompt": "<linear inequalities>- <difficulty-level: 4>",
+        "type": "DS",
+        "difficulty": 4,
+        "tags": [
+          "DS",
+          "linear inequalities"
+        ],
+        "thread_id": "thread_P3mQSdmsvREBTW3ufq7MNdIs",
+        "content": {
+          "passage": "In a certain town, there are two types of delivery vans used for transporting goods: Type A vans can carry a maximum of 100 pounds, while Type B vans can carry a maximum of 150 pounds. If the total weight of goods that needs to be delivered is at least 500 pounds but no more than 600 pounds, how many vans of each type will be used? Note: Let x be the number of Type A vans and y be the number of Type B vans used for deliveries. The town's delivery regulations stipulate that the number of Type A vans must be at least twice the number of Type B vans.\nUse the following statements to determine if the conditions are sufficient to ascertain the number of vans of each type to be used.",
+          "statements": [
+            "The total number of vans used is 7.",
+            "The combined weight capacity of the vans used meets the required delivery weight."
+          ]
+        },
+        "question": "Can you determine the number of Type A and Type B delivery vans used based on the statements provided?",
+        "title": "Delivery Vans Capacity and Requirement Analysis",
+        "solution": "Statement (1) alone provides the total number of vans but does not clarify how many are Type A and how many are Type B, making it insufficient. Statement (2) clarifies that the combined weight capacity meets the required delivery weight but does not specify the distribution between Type A and Type B vans. Thus, neither statement alone is sufficient. However, when both statements are combined, they can imply a possible distribution of vans given their capacities and the total number of vans. Hence, the answer is option C, as both statements together are sufficient to determine the number of vans potentially used.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<linear inequalities>- <difficulty-level: 4>",
+        "thread_id": "thread_VT84ImhDECF3WiadlbINzTVK",
+        "question": "In a fantastical world where creatures of logic and reasoning engage in a competitive race, each creature has a unique speed determined by the following linear inequalities. The velocities of the first creature, represented by the variable x, must satisfy the conditions: 2x + 3y \u2264 60, 4x \u2212 y \u2265 30, and x + y \u2264 25. Meanwhile, the second creature, governed by the variable y, is constrained by the inequalities: 3x + 4y \u2264 90 and x \u2212 2y < 10. If both creatures are allowed to swap one speed value each within their limits, what range of speeds for x and y do they have? Additionally, what are the possible maximum velocities for both creatures to ensure they can still comply with their inequalities?",
+        "title": "Determining the Velocity Limits in a Competitive Race of Logical Creatures Governed by Linear Inequalities",
+        "solution": "<p>First, we derive the boundaries for the first creature based on the inequalities given: <br>For the first creature, the inequalities lead us to the boundaries based on the intersections and allowable maximum speeds: <br>The range for x (level of speed) lies between the values of 0 and approximately 7.5, while the range for y lifts from 0 to 20, maintaining its relative ratios to comply within bounds. <br>For xc = 4x - 30 and 2x + 3y < 60, the maximum allowable bound for speed 'x' permitted can comfortably lift to 25. <br>The effective limits for Creature 2 conjoin similarly: <br>If we investigate 3x + 4y \u2264 90 alongside x - 2y < 10, the collaborative upper limit for x is 10, with y closely trailing behind from 0 to 22.5 as a counterpart. <br>Therefore, the permissible range of speeds for both creatures ensures they can navigate within those bounds and maintain compliance throughout the race.</p>",
+        "answer": "The permissible speeds for x range from 0 to approximately 7.5, and for y, they range from 0 to 20 for Creature 1; whereas for Creature 2, the upper limit for x is 10 and for y is 22.5.",
+        "options": [
+          "The permissible speeds for x range from 0 to approximately 8, and for y, they range from 0 to 25 for Creature 1; whereas for Creature 2, the upper limit for x is 8 and for y is 18.",
+          "The permissible speeds for x range from 0 to approximately 7.5, and for y, they range from 0 to 20 for Creature 1; whereas for Creature 2, the upper limit for x is 10 and for y is 22.5.",
+          "The permissible speeds for x range from 0 to approximately 5, and for y, they range from 0 to 15 for Creature 1; whereas for Creature 2, the upper limit for x is 12 and for y is 20.",
+          "The permissible speeds for x range from 0 to approximately 7, and for y, they range from 0 to 22 for Creature 1; whereas for Creature 2, the upper limit for x is 9 and for y is 25."
+        ],
+        "difficulty": 4,
+        "tag": [
+          "MCQ-Single correct",
+          "linear inequalities"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <probability> - <Standard Data Table> - <Human Resources>- <difficulty-level: 5>",
+        "content": [
+          {
+            "headers": [
+              "Year",
+              "Recruitments",
+              "Terminations",
+              "Satisfaction Score"
+            ],
+            "rows": [
+              [
+                2018,
+                66,
+                30,
+                4.69
+              ],
+              [
+                2019,
+                118,
+                38,
+                3.62
+              ],
+              [
+                2020,
+                125,
+                46,
+                3.41
+              ],
+              [
+                2021,
+                89,
+                35,
+                4.99
+              ],
+              [
+                2022,
+                192,
+                42,
+                4.85
+              ]
+            ],
+            "type": "standard data table",
+            "description": "This table displays the number of recruitments and terminations along with employee satisfaction scores over the years from 2018 to 2022."
+          }
+        ],
+        "title": "Analysis of Recruitment and Employee Satisfaction Over Five Years",
+        "questions": [
+          {
+            "question": "From the data provided, in which year did the highest number of recruitments occur, and what was the corresponding employee satisfaction score for that year? Analyze the trend in recruitments to identify how it correlates with employee satisfaction.",
+            "number": 1,
+            "title": "Identifying Maximum Recruitments and Correlated Satisfaction Scores in HR Data",
+            "solution": "The year with the highest number of recruitments was 2022 with 192 recruitments. The corresponding employee satisfaction score for that year was 4.85.",
+            "answer": "2022 with 192 recruitments and a satisfaction score of 4.85.",
+            "options": [
+              "2022 with 192 recruitments and a satisfaction score of 4.85.",
+              "2020 with 125 recruitments and a satisfaction score of 3.41.",
+              "2019 with 118 recruitments and a satisfaction score of 3.62.",
+              "2021 with 89 recruitments and a satisfaction score of 4.99."
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          },
+          {
+            "question": "Considering the overall trend, how did the number of terminations in 2020 compared to the average of terminations from 2018 to 2022? Discuss the implications this has on employee stability within the organization.",
+            "number": 2,
+            "title": "Analyzing Termination Trends and Their Impact on Employee Stability in HR Data",
+            "solution": "In 2020, the number of terminations was 46. The average number of terminations from 2018 to 2022 was 38.20. This indicates that terminations in 2020 were higher than average, suggesting potential instability within the organization.",
+            "answer": "In 2020, there were 46 terminations and the average was 38.20.",
+            "options": [
+              "In 2020, there were 50 terminations and the average was 40.50.",
+              "In 2020, there were 46 terminations and the average was 38.20.",
+              "In 2020, there were 45 terminations and the average was 35.00.",
+              "In 2020, there were 48 terminations and the average was 34.00."
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          }
+        ],
+        "difficulty": 5,
+        "tag": [
+          "PS",
+          "probability"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 3 so prepare other question data accordigly, prompt: :- <data interpretation> - <Scatter Plot> - <Science and Technology>- <difficulty-level: 1>",
+        "content": [
+          {
+            "graph": {
+              "title": "Impact of Temperature on the Efficiency of Solar Panels",
+              "xAxis": "Temperature (\u00b0C)",
+              "yAxis": "Efficiency (%)",
+              "data": [
+                {
+                  "x": 10,
+                  "y": 30
+                },
+                {
+                  "x": 15,
+                  "y": 40
+                },
+                {
+                  "x": 20,
+                  "y": 50
+                },
+                {
+                  "x": 25,
+                  "y": 60
+                },
+                {
+                  "x": 30,
+                  "y": 70
+                },
+                {
+                  "x": 35,
+                  "y": 80
+                },
+                {
+                  "x": 40,
+                  "y": 85
+                },
+                {
+                  "x": 45,
+                  "y": 90
+                },
+                {
+                  "x": 50,
+                  "y": 95
+                },
+                {
+                  "x": 55,
+                  "y": 80
+                }
+              ]
+            },
+            "type": "scatter plot",
+            "description": "This scatter plot illustrates the relationship between temperature and the efficiency of solar panels, showing how efficiency increases with temperature up to a certain point before declining."
+          },
+          {
+            "graph": {
+              "title": "Cost of Solar Panel Production Over Time",
+              "xAxis": "Year",
+              "yAxis": "Cost ($)",
+              "data": [
+                {
+                  "x": 2010,
+                  "y": 3000
+                },
+                {
+                  "x": 2011,
+                  "y": 2800
+                },
+                {
+                  "x": 2012,
+                  "y": 2600
+                },
+                {
+                  "x": 2013,
+                  "y": 2400
+                },
+                {
+                  "x": 2014,
+                  "y": 2200
+                },
+                {
+                  "x": 2015,
+                  "y": 2000
+                },
+                {
+                  "x": 2016,
+                  "y": 1800
+                },
+                {
+                  "x": 2017,
+                  "y": 1600
+                },
+                {
+                  "x": 2018,
+                  "y": 1500
+                },
+                {
+                  "x": 2019,
+                  "y": 1400
+                }
+              ]
+            },
+            "type": "scatter plot",
+            "description": "This scatter plot depicts the trend of the cost of solar panel production over time, highlighting a consistent decrease in costs from 2010 to 2019."
+          },
+          {
+            "graph": {
+              "title": "Increase in Solar Energy Adoption by Households",
+              "xAxis": "Year",
+              "yAxis": "Number of Households",
+              "data": [
+                {
+                  "x": 2000,
+                  "y": 500
+                },
+                {
+                  "x": 2005,
+                  "y": 1000
+                },
+                {
+                  "x": 2010,
+                  "y": 2000
+                },
+                {
+                  "x": 2015,
+                  "y": 5000
+                },
+                {
+                  "x": 2020,
+                  "y": 10000
+                }
+              ]
+            },
+            "type": "scatter plot",
+            "description": "This scatter plot illustrates the growth in the number of households adopting solar energy from the year 2000 to 2020, demonstrating a significant upward trend."
+          }
+        ],
+        "title": "Analyzing the Trends and Effects of Solar Technology Advancements",
+        "questions": [
+          {
+            "question": "Based on the scatter plot depicting the impact of temperature on the efficiency of solar panels, determine the maximum efficiency of the solar panels at the optimal temperature before it begins to decline. What does this imply about the relationship between temperature and efficiency?",
+            "number": 1,
+            "title": "Determining Maximum Efficiency and Its Implications",
+            "solution": "The maximum efficiency of the solar panels is 95%, which occurs at an optimal temperature of 50\u00b0C. This indicates that while efficiency increases with temperature, there is a specific point beyond which the efficiency starts to decline. This relationship suggests that solar panel performance is not only dependent on sunlight but also on temperature conditions, highlighting the importance of managing operational environments for optimal performance.",
+            "answer": "95% at an optimal temperature of 45\u00b0C",
+            "options": [
+              "80% at an optimal temperature of 40\u00b0C",
+              "85% at an optimal temperature of 50\u00b0C",
+              "95% at an optimal temperature of 45\u00b0C",
+              "90% at an optimal temperature of 50\u00b0C"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "question": "Referring to the scatter plot that illustrates the cost of solar panel production over time, identify the year when the production cost dropped below $2000. How does this significant reduction in cost reflect on the advancements in solar technology and its accessibility for consumers?",
+            "number": 2,
+            "title": "Identifying Cost Reduction Milestones in Solar Panel Production",
+            "solution": "The production cost of solar panels dropped below $2000 in the year 2016. This significant reduction in cost can be attributed to advancements in solar technology, increased manufacturing efficiency, and economies of scale. As production costs decline, solar technology becomes more accessible to consumers, encouraging wider adoption and contributing to the transition towards renewable energy sources.",
+            "answer": "Cost dropped below $2000 in 2016",
+            "options": [
+              "Cost dropped below $2000 in 2016",
+              "Cost dropped below $2000 in 2015",
+              "Cost dropped below $2000 in 2018",
+              "Cost was $ 1900 in 2016"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "question": "Analyzing the scatter plot that tracks the increase in solar energy adoption by households, determine the percentage increase in the number of households adopting solar energy from the year 2000 to 2020. How does this growth in adoption reflect on societal trends towards renewable energy?",
+            "number": 3,
+            "title": "Calculating Percentage Growth in Solar Energy Adoption",
+            "solution": "The percentage increase in the number of households adopting solar energy from the year 2000 to 2020 is 1900%. This remarkable growth reflects a significant societal shift towards renewable energy, driven by increasing environmental awareness, technological advancements, and policy support for sustainable energy solutions. This trend signifies a growing recognition of the importance of transitioning to cleaner energy sources in addressing climate change.",
+            "answer": "A percentage increase of 1800.0%",
+            "options": [
+              "A percentage increase of 1233.3333333333335%",
+              "A percentage increase of 2000.0%",
+              "A percentage increase of 1500.0%",
+              "A percentage increase of 1800.0%"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          }
+        ],
+        "difficulty": 1,
+        "tag": [
+          "PS",
+          "data interpretation"
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<number theorm>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "thread_id": "thread_OAvxzlWppZT06xiGeopEstKv",
+        "content": {
+          "passage": "Consider a set of integers where the sum of any two distinct integers is always an even number. What can be concluded about the integers in this set? We have two statements to analyze whether we can determine the nature of these integers.",
+          "statements": [
+            "All integers in the set are odd.",
+            "All integers in the set are even."
+          ]
+        },
+        "question": "Based on the above statements, can we conclude the nature of the integers in the set?",
+        "title": "Determining the Nature of Integers Based on Sum Properties",
+        "solution": "To determine the nature of the integers in the set, we analyze the statements given. Statement 1 states that all integers in the set are odd, which would result in any two distinct integers' sum being even. Statement 2 states that all integers in the set are even, which also leads to an even sum. Thus, either statement alone can independently verify that the integers must be uniformly odd or uniformly even to satisfy the condition of their sums being even. Therefore, the correct conclusion is that either statement alone is sufficient.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<linear inequalities>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "linear inequalities"
+        ],
+        "thread_id": "thread_JefhcLKj3UjJoPdjxExEKq0P",
+        "content": {
+          "passage": "A store sells two types of products: Type A and Type B. The price of Type A is $10, and the price of Type B is $15. A customer wishes to spend no more than $100 and wants to purchase at least 3 Type A products. Let x be the number of Type A products purchased and y be the number of Type B products. This leads to two inequalities: x \u2265 3 and 10x + 15y \u2264 100. Given this situation, determine if the customer can purchase more than 5 Type B products.",
+          "statements": [
+            "From the inequality 10x + 15y \u2264 100, it can be deduced that y can be expressed in terms of x, allowing us to isolate the maximum value of y.",
+            "If the total number of products bought (Type A and Type B combined) does not exceed 10, then further restrictions on the values of x and y can be established."
+          ]
+        },
+        "question": "Given the two statements above, can the customer purchase more than 5 Type B products?",
+        "title": "Evaluating Product Purchase Limits in a Store Scenario",
+        "solution": "To determine whether the customer can purchase more than 5 Type B products, we analyze the provided statements. Statement 1 allows us to express y in terms of x using the inequality 10x + 15y \u2264 100, which alone would not confirm if y can exceed 5 without knowing x's specific values. However, Statement 2 introduces a limit on the total number of products, constraining x and y together. Since x must be at least 3, if we use Statement 1 to identify possible values for y while considering Statement 2\u2019s upper limit, we could find valid ranges for both products but cannot definitively conclude y > 5 based solely on one. Therefore, both statements together allow for evaluating all constraints and confirming if y can exceed 5. Thus, the answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<profit, loss and discount>- <difficulty-level: 2> (multi-correct MCQ)",
+        "thread_id": "thread_2gybYw2QhWESkbP66MdaQPEN",
+        "question": "In Mystical Grocery Store, a delightful wonderland where prices change like magic, an item priced at $11 is offered at a surprising 24% discount. If a customer purchases 4 of these items, they are also eligible for an additional promotional offer. However, the promotion states that an extra fixed cost of $0.53 applies to the entire purchase. What could be the net effective price per item after applying both the discount and the additional cost? Consider the possibilities of the customer availing or opting out of the fixed cost promotion. Choose the alternatives that correctly represent the total cost computed in this enchanting scenario.",
+        "title": "Calculating Net Effective Price in an Enchanted Grocery Purchase",
+        "solution": "Step 1: Discount amount per item = $11 * 24% = $2.64 <br>Step 2: Discounted price per item = $11 - $2.64 = $8.36 <br>Step 3: Total price for 4 items (after discount) = $8.36 * 4 = $33.44 <br>Step 4: Total cost, including additional fixed cost = $33.44 + $0.53 = $33.97 <br>Step 5: Net effective price per item = $33.97 / 4 = $8.49",
+        "answer": "$8.49",
+        "options": [
+          "$10.49",
+          "$9.49",
+          "$7.99",
+          "$8.49"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "profit, loss and discount"
+        ]
+      },
+      {
+        "prompt": "<ratio and proportion>- <difficulty-level: 4>",
+        "type": "DS",
+        "difficulty": 4,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_Huy3OxYrKdNImkFJkSa2C7ZK",
+        "content": {
+          "passage": "A company produces two types of widgets, Type A and Type B. The ratio of Type A produced to Type B produced is currently 3:2. In a recent month, the company had a total production of widgets that was 150 widgets more than the total production of the previous month. If it is known that the company increased its production of Type A, can we determine the current production numbers for both types of widgets?",
+          "statements": [
+            "The total number of widgets produced last month was 450.",
+            "The increase in Type A widgets produced last month was exactly 150 widgets."
+          ]
+        },
+        "question": "Based on the statements above, can we find the current production numbers for Type A and Type B widgets?",
+        "title": "Determining Current Widget Production from Ratios and Increases",
+        "solution": "To determine if we can find the current production numbers for Type A and Type B widgets, we analyze the statements. Statement 1 tells us that last month's total production was 450 widgets. Given the ratio of Type A to Type B is 3:2, we can derive the last month's production was 270 Type A and 180 Type B. Statement 2 indicates an increase of 150 in Type A production this month. Therefore, current production numbers for Type A would be 270 + 150 = 420 widgets, while Type B remains at 180 (assuming no change). Thus, with both statements, we can calculate the current production numbers. Hence, the answer is C: BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<speed, distance and time>- <difficulty-level: 2>",
+        "thread_id": null,
+        "question": "In a circus, a performer on a unicycle travels around a circular track with a circumference of 500 meters. During the first lap, he pedals at a speed of 10 meters per minute. After completing the first lap, he takes a 5-minute break before resuming his performance at a speed that is 20% faster than his initial speed. How long, in minutes, does it take for him to complete a total of 3 laps?",
+        "title": "Calculating Time for a Unicycle Performer to Complete Multiple Laps",
+        "solution": "<p>Time for the first lap: <br> Total distance for the first lap = 500 meters <br> Speed = 10 meters per minute <br> Time for the first lap = ~~500 / 10 = 50~~ minutes. <br> <br> After completing the first lap, the performer takes a 5-minute break. <br> New speed after the break = 10 meters per minute + 20% = 12 meters per minute. <br> <br> Time for the remaining laps: <br> Distance for the remaining laps = 2 * 500 meters = 1000 meters <br> Time for remaining laps = ~~1000 / 12 = 83.33~~ minutes. <br> <br> Total time taken = 50 + 5 + 83.33 = 138.33 minutes.</p>",
+        "answer": 138.33,
+        "tag": [
+          "Numeric Entry",
+          "speed, distance and time"
+        ],
+        "difficulty": 2
+      },
+      {
+        "type": "NE",
+        "prompt": "<ratio and proportion>- <difficulty-level: 2>",
+        "thread_id": null,
+        "question": "In a magical forest, a wizard brews a potion by combining two different ingredients: ingredient A and ingredient B. Ingredient A constitutes 40% of the total mixture, while ingredient B makes up the remaining 60%. If the wizard uses 300 grams of the total potion mixture, how many grams of ingredient A and ingredient B does he use? Furthermore, if the wizard wishes to increase the total mixture by 50% without changing the composition, how much of each ingredient will he need for the new mixture? Calculate the total amount of each ingredient that will be used after the increase in the mixture.",
+        "title": "Calculating Ingredient Proportions for a Wizard's Potion in a Magical Forest",
+        "solution": "<p>Initial Total Mixture = 300 grams <br> Percentage of Ingredient A = 40% <br> Amount of Ingredient A = ~~300 * 0.40 = 120 grams~~ <br> Percentage of Ingredient B = 60% <br> Amount of Ingredient B = ~~300 * 0.60 = 180 grams~~ <br><br> New Total Mixture after 50% increase = ~~300 * 1.50 = 450 grams~~ <br> Amount of Ingredient A in new mixture = ~~450 * 0.40 = 180 grams~~ <br> Amount of Ingredient B in new mixture = ~~450 * 0.60 = 270 grams~~ <br><br> Total Amount of Ingredient A = ~~120 + 180 = 300 grams~~ <br> Total Amount of Ingredient B = ~~180 + 270 = 450 grams~~ </p>",
+        "answer": 450.0,
+        "tag": [
+          "Numeric Entry",
+          "ratio and proportion"
+        ],
+        "difficulty": 2
+      },
+      {
+        "prompt": "<ratio and proportion>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "thread_id": "thread_xoy1QNLfVPUe7XbcKTi2oD6o",
+        "content": {
+          "passage": "In a certain town, the ratio of the number of bicycles to the number of cars is 3:5. If the total number of vehicles (bicycles and cars) in the town is 400, how many bicycles are there in the town? Consider the following statements: ",
+          "statements": [
+            "Statement 1: The number of cars in the town is greater than 200.",
+            "Statement 2: The ratio of bicycles to cars is constant and does not change regardless of the number of vehicles."
+          ]
+        },
+        "question": "Based on the information provided in the statements above, can we determine the exact number of bicycles in the town?",
+        "title": "Determining the Number of Bicycles from Vehicle Ratios",
+        "solution": "To determine the exact number of bicycles, we analyze the statements. Statement 1 tells us that the number of cars is greater than 200, which supports the given ratio of 3:5. Since there are 400 total vehicles, with 3 parts bicycles and 5 parts cars, we can calculate totals directly. However, Statement 2 confirms that the ratio remains stable, but it alone does not provide a specific count. Therefore, combining both statements does not yield a unique solution since Statement 1 alone makes it sufficient by confirming there are indeed enough cars to uphold the ratio. Thus, only Statement 1 is needed for clarity. Therefore, the correct answer is A. ",
+        "answer": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<Unitary method>- <difficulty-level: 2> (multi-correct MCQ)",
+        "thread_id": "thread_aCQNEllHh13uYgHRfUEyHXfN",
+        "question": "In a bustling bakery in the heart of the city, a delivery service is contracted to transport fresh pastries. The bakery can produce 120 croissants in 3 hours. If the delivery service is hired to deliver these pastries to three different locations and plans to send all 120 croissants in a single trip, they must allocate the pastries for three different orders proportional to the number of customers at each location. If location A has twice the number of customers as location B and location C has 30% fewer customers than location B, what fraction of the total croissants should be allocated to each location? Which of the following allocations are correct?",
+        "title": "Allocation of Croissants Among Multiple Delivery Locations Based on Customer Proportions",
+        "solution": "<p>Let the number of customers at location B be `x`. <br> Then, the number of customers at location A = `2x`. <br> And, the number of customers at location C = `x - 0.3x = 0.7x`. <br> Therefore, the total number of customers = `2x + x + 0.7x = 3.7x`. <br> Allocations: <br> For location A: `120 * (2x / 3.7x)` = `120 * (2/3.7) = 64.86` croissants. <br> For location B: `120 * (x / 3.7x)` = `120 * (1/3.7) = 32.43` croissants. <br> For location C: `120 * (0.7x / 3.7x)` = `120 * (0.7/3.7) = 22.70` croissants.</p>",
+        "answer": [
+          "64.86 croissants for location A",
+          "22.7 croissants for location C"
+        ],
+        "options": [
+          "64.86 croissants for location A",
+          "22.7 croissants for location C",
+          "51.06 croissants for location B",
+          "68.57 croissants for location C"
+        ],
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "Unitary method"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <profit, loss and discount> - <Scatter Plot> - <Marketing and Sales>- <difficulty-level: 2>",
+        "content": [
+          {
+            "graph": {
+              "title": "Scatter Plot of Profit vs Discount Given",
+              "xAxis": "Discount Percentage",
+              "yAxis": "Profit Earned",
+              "data": [
+                {
+                  "x": 5,
+                  "y": 200
+                },
+                {
+                  "x": 10,
+                  "y": 180
+                },
+                {
+                  "x": 15,
+                  "y": 140
+                },
+                {
+                  "x": 20,
+                  "y": 100
+                },
+                {
+                  "x": 25,
+                  "y": 50
+                },
+                {
+                  "x": 30,
+                  "y": 20
+                },
+                {
+                  "x": 35,
+                  "y": -10
+                }
+              ]
+            },
+            "type": "scatter plot",
+            "description": "This scatter plot illustrates the relationship between the discount percentage offered and the profit earned by the company. As the discount increases, the profit tends to decline, showing a negative correlation."
+          },
+          {
+            "graph": {
+              "title": "Scatter Plot of Loss vs Discount Given",
+              "xAxis": "Discount Percentage",
+              "yAxis": "Loss Incurred",
+              "data": [
+                {
+                  "x": 5,
+                  "y": 10
+                },
+                {
+                  "x": 10,
+                  "y": 20
+                },
+                {
+                  "x": 15,
+                  "y": 35
+                },
+                {
+                  "x": 20,
+                  "y": 50
+                },
+                {
+                  "x": 25,
+                  "y": 70
+                },
+                {
+                  "x": 30,
+                  "y": 90
+                },
+                {
+                  "x": 35,
+                  "y": 110
+                }
+              ]
+            },
+            "type": "scatter plot",
+            "description": "This scatter plot shows how the loss incurred by the company increases with the discount percentage. The data reflects a direct correlation indicating higher losses during deeper discounts."
+          }
+        ],
+        "title": "Analyzing the Impact of Discounts on Profit and Loss",
+        "questions": [
+          {
+            "question": "In the context of the provided scatter plot showing the relationship between discount percentages and profits earned, what would be the profit if a discount of 15% were applied, given that the profit decreases as discounts increase? Calculate the profit earned at this discount level.",
+            "number": 1,
+            "title": "Profit Calculation at 15% Discount",
+            "solution": "To determine the profit earned at a discount of 15%, we can refer directly to the provided scatter plot data. At a discount of 15%, the profit earned is calculated to be 140. This indicates that when a 15% discount is applied, the company earns a profit of $140.",
+            "answer": "140",
+            "options": [
+              "120",
+              "190",
+              "126.0",
+              "140"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          },
+          {
+            "question": "Considering the second scatter plot that illustrates the correlation between discount percentages and losses incurred, what would be the loss incurred if a discount of 30% were applied? Analyze the data to determine the loss at this discount level.",
+            "number": 2,
+            "title": "Loss Calculation at 30% Discount",
+            "solution": "To ascertain the loss incurred at a discount of 30%, we can refer directly to the scatter plot data. At a discount of 30%, the loss incurred is determined to be 90. This means that with a 30% discount applied, the company faces a loss of $90.",
+            "answer": "90",
+            "options": [
+              "99.0",
+              "115",
+              "100",
+              "90"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "profit, loss and discount"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <profit, loss and discount> - <Pie Chart> - <Science and Technology>- <difficulty-level: 4>",
+        "content": [
+          {
+            "graph": {
+              "title": "Distribution of Profit, Loss, and Discount in Science and Technology Products",
+              "data": [
+                {
+                  "name": "Profit",
+                  "color": "#28a745",
+                  "value": 40
+                },
+                {
+                  "name": "Loss",
+                  "color": "#dc3545",
+                  "value": 30
+                },
+                {
+                  "name": "Discount",
+                  "color": "#ffc107",
+                  "value": 30
+                }
+              ]
+            },
+            "type": "pie chart",
+            "description": "This pie chart illustrates the percentage distribution of profit, loss, and discount associated with various science and technology products."
+          },
+          {
+            "graph": {
+              "title": "Yearly Comparative Analysis of Profit, Loss, and Discounts in Science and Technology",
+              "xAxis": "Years",
+              "yAxis": "Amount in USD",
+              "data": {
+                "x-axis": [
+                  2019,
+                  2020,
+                  2021,
+                  2022,
+                  2023
+                ],
+                "y-axis": [
+                  0,
+                  100000,
+                  200000,
+                  300000,
+                  400000
+                ],
+                "data": [
+                  150000,
+                  200000,
+                  250000,
+                  180000,
+                  220000
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph depicts the yearly comparative analysis of profit and loss over five years in the science and technology sector."
+          }
+        ],
+        "title": "Financial Trends in Science and Technology: Analyzing Profit, Loss, and Discounts",
+        "questions": [
+          {
+            "question": "Based on the distribution illustrated in the pie chart, if the total revenue from science and technology products is $300,000, what amount corresponds to the losses incurred?",
+            "number": 1,
+            "title": "Calculating Loss from Total Revenue in Science and Technology Products",
+            "solution": "To calculate the amount corresponding to the losses incurred from the total revenue, we take 30% of $300,000. This can be calculated as follows: $300,000 * (30 / 100) = $90,000. Therefore, the amount corresponding to the losses is $90,000.",
+            "answer": "90000.0",
+            "options": [
+              "110000.0",
+              "100000.0",
+              "75000.0",
+              "90000.0"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          },
+          {
+            "question": "Referring to the line graph showing yearly comparative analysis, if the profit in 2021 was 25% of the total revenue for that year, what was the total revenue in USD for 2021?",
+            "number": 2,
+            "title": "Determining Total Revenue Based on Profit Percentage in 2021",
+            "solution": "To determine the total revenue for the year 2021 based on the profit percentage, we use the formula: Total Revenue = Profit / (Profit Percentage / 100). Given that the profit was $250,000 and the profit percentage was 25%, we calculate: Total Revenue = $250,000 / (25 / 100) = $1,000,000. Therefore, the total revenue for 2021 was $1,000,000.",
+            "answer": "1000000.0",
+            "options": [
+              "1050000.0",
+              "950000.0",
+              "1000000.0",
+              "800000.0"
+            ],
+            "tag": [
+              "PS",
+              "profit, loss and discount"
+            ]
+          }
+        ],
+        "difficulty": 4,
+        "tag": [
+          "PS",
+          "profit, loss and discount"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 3 so prepare other question data accordigly, prompt: :- <probability> - <Bar Graph> - <Government Policies and Regulations>- <difficulty-level: 2>",
+        "content": [
+          {
+            "graph": {
+              "title": "Count of Government Policies and Regulations from 2001 to 2010",
+              "xAxis": "Years",
+              "yAxis": "Count",
+              "data": {
+                "x-axis": [
+                  2001,
+                  2002,
+                  2003,
+                  2004,
+                  2005,
+                  2006,
+                  2007,
+                  2008,
+                  2009,
+                  2010
+                ],
+                "y-axis": [
+                  0,
+                  100,
+                  200,
+                  300,
+                  400,
+                  500
+                ],
+                "data": [
+                  321,
+                  411,
+                  490,
+                  492,
+                  101,
+                  456,
+                  328,
+                  236,
+                  469,
+                  217,
+                  201,
+                  291,
+                  76,
+                  280,
+                  131,
+                  57,
+                  55,
+                  56,
+                  216,
+                  188
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "This bar graph illustrates the count of government policies and regulations enacted from the year 2001 to 2010."
+          },
+          {
+            "graph": {
+              "title": "Variation of Government Policies and Regulations from 2001 to 2010",
+              "xAxis": "Years",
+              "yAxis": "Count",
+              "data": {
+                "x-axis": [
+                  2001,
+                  2002,
+                  2003,
+                  2004,
+                  2005,
+                  2006,
+                  2007,
+                  2008,
+                  2009,
+                  2010
+                ],
+                "y-axis": [
+                  0,
+                  100,
+                  200,
+                  300,
+                  400,
+                  500
+                ],
+                "data": [
+                  154,
+                  345,
+                  501,
+                  260,
+                  366,
+                  521,
+                  164,
+                  420,
+                  263,
+                  541,
+                  284,
+                  313,
+                  179,
+                  236,
+                  178,
+                  172,
+                  295,
+                  208,
+                  71,
+                  273
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "This bar graph represents the variation in government policies and regulations enacted from the year 2001 to 2010."
+          }
+        ],
+        "title": "Analysis of Government Policies and Regulations from 2001 to 2010",
+        "questions": [
+          {
+            "question": "Based on the bar graph illustrating the count of government policies and regulations from 2001 to 2010, what was the percentage increase in government policies enacted from 2002 to 2003 compared to the previous year?",
+            "number": 1,
+            "title": "Percentage Increase of Government Policies from 2002 to 2003",
+            "solution": "The percentage increase in government policies from 2002 to 2003 is calculated as follows: ((490 - 411) / 411) * 100 = 19.22%.",
+            "answer": "19.22%",
+            "options": [
+              "16.39%",
+              "19.22%",
+              "25.32%",
+              "17.79%"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          },
+          {
+            "question": "Referring to the bar graph depicting the count of government policies and regulations from 2001 to 2010, what was the total number of government policies enacted in the year 2006?",
+            "number": 2,
+            "title": "Total Government Policies Enacted in 2006",
+            "solution": "The total number of government policies enacted in the year 2006 is 456.",
+            "answer": "456",
+            "options": [
+              "466",
+              "426",
+              "476",
+              "456"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          },
+          {
+            "question": "Based on the graph depicting government policies from 2001 to 2010, what was the average number of government policies enacted per year during this period?",
+            "number": 3,
+            "title": "Average Number of Government Policies Enacted from 2001 to 2010",
+            "solution": "The average number of government policies enacted from 2001 to 2010 is calculated as follows: Total policies = 3521, Number of years = 10. Thus, average = 3521 / 10 = 352.1.",
+            "answer": "352.1",
+            "options": [
+              "352.1",
+              "372.1",
+              "302.1",
+              "362.1"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "probability"
+        ]
+      }
+    ]
+  },
+  "GRE_V": {
+    "section1": [
+      {
+        "prompt": "<Politics> - <SE> - <difficulty-level: 4> - <vocabulary-level:3>",
+        "thread_id": "thread_qeqcotrDIjEmfauGzlFg0SF7",
+        "question": "The recent debate on environmental policy highlights the tension between economic growth and ecological sustainability. Politicians often find themselves at a crossroads, where the immediate __________ demands of their constituencies conflict with the long-term __________ of protecting natural resources and promoting social equity. Navigating this dichotomy requires not just political acumen but also a genuine commitment to __________ that transcends short-term electoral gains.",
+        "title": "Tension in Environmental Policy: Balancing Growth and Sustainability",
+        "type": "SE",
+        "answer": [
+          "financial",
+          "ethical"
+        ],
+        "options": [
+          "ethical",
+          "financial",
+          "political",
+          "convenient",
+          "social",
+          "moral"
+        ],
+        "solution": "<p>The correct options for the blanks are <strong>financial</strong>, <strong>ethical</strong>, and <strong>social</strong>. The sentence discusses the conflicts between immediate demands and long-term goals in politics, making these choices appropriate:</p><ul><li><strong>financial</strong>: This fits well as it reflects the economic demands of constituencies.</li><li><strong>ethical</strong>: This relates to the commitment to protect resources in a morally responsible way.</li><li><strong>social</strong>: This emphasizes the importance of social equity in the broader conversation on sustainability.</li></ul><p>Other options, like <strong>political</strong>, <strong>moral</strong>, and <strong>convenient</strong>, while relevant to political discourse, do not fit as seamlessly into the context of long-term sustainability and values discussed in the passage.</p>",
+        "difficulty": 4,
+        "tags": [
+          "politics",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Psychology> - <TC-1> - <difficulty-level: 4> - <vocabulary-level:1>",
+        "thread_id": "thread_B1bHi4TEDX2Mftyqjm1CrAbE",
+        "question": "The study of cognitive dissonance is fascinating because it reveals how people strive to achieve _______ in their beliefs, often altering their views to align with new information.",
+        "title": "Psychology of Cognitive Dissonance",
+        "type": "TC-1",
+        "answer": "consistency",
+        "options": [
+          "mismatch",
+          "consistency",
+          "clarity",
+          "anxiety",
+          "discordance",
+          "ambiguity"
+        ],
+        "solution": "<p>The correct option is <strong>consistency</strong> because cognitive dissonance fundamentally arises from a desire to maintain a stable set of beliefs. When faced with conflicting information, individuals often change their beliefs to restore this consistency.</p><p>Other options discussion:</p><ul><li><strong>discordance</strong>: This term refers to a lack of agreement but does not capture the motivational aspect of striving for harmony in beliefs.</li><li><strong>ambiguity</strong>: While it depicts uncertainty, it does not specifically relate to the resolution of conflicting beliefs.</li><li><strong>anxiety</strong>: Although cognitive dissonance can lead to anxiety, it is not what individuals are striving to achieve.</li><li><strong>clarity</strong>: This could suggest understanding, but it doesn't encompass the notion of belief alignment.</li><li><strong>mismatch</strong>: This implies a disparity rather than the pursuit of agreement in one\u2019s beliefs.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "psychology",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<History> - <TC-3> - <difficulty-level: 3> - <vocabulary-level:2>",
+        "thread_id": "thread_KG9NwSKMoXk2AvdOjwAzDwlT",
+        "question": "The historiographical debate surrounding the causes of the Civil War has often been marked by a tendency to simplify complex realities. Notably, while some historians argue that issues of slavery and economic disparity were the primary _______ of the conflict, others maintain that social and political factors played an equally critical _______ in shaping the trajectory of the nation. The reconciliation of these differing perspectives remains a challenging _______ for those attempting to understand the full scope of this tumultuous period.",
+        "title": "The Complexities of Civil War Historiography",
+        "type": "TC-3",
+        "answer": [
+          "determinants",
+          "role",
+          "challenge"
+        ],
+        "options": [
+          [
+            "determinants",
+            "causes",
+            "outcomes",
+            "consequences"
+          ],
+          [
+            "role",
+            "discourse",
+            "implications",
+            "influence"
+          ],
+          [
+            "question",
+            "challenge",
+            "dilemma",
+            "debate"
+          ]
+        ],
+        "solution": "<p>The correct answers are <b>determinants</b>, <b>role</b>, and <b>challenge</b> because:</p><ul><li><b>determinants</b>: This word accurately encapsulates the primary factors which led to the Civil War.</li><li><b>role</b>: This term effectively conveys the significant influence that social and political factors had during the conflict.</li><li><b>challenge</b>: This choice highlights the difficulty historians face when trying to reconcile differing viewpoints on the Civil War.</li></ul><p>However, the other options are not suitable because:</p><ul><li><b>outcomes</b>: This term refers to the results of the war rather than its causes.</li><li><b>influence</b>: While related, it does not convey the same certainty as 'role' in terms of causation.</li><li><b>discourse</b>: This word does not fit as it suggests a discussion rather than a contributing factor to the conflict.</li><li><b>implications</b>: This term implies the consequences rather than the causes.</li><li><b>dilemma</b>, <b>question</b>, <b>debate</b>: These do not fit in context as they do not refer to the elements leading to the war.</li></ul>",
+        "difficulty": 3,
+        "tags": [
+          "history",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Science> - <TC-3> - <difficulty-level: 5> - <vocabulary-level:3>",
+        "thread_id": "thread_CK4klb5waLkX6tkIfS3IJAWy",
+        "question": "The recent discoveries in quantum mechanics have led scientists to a deeper understanding of the behavior of particles at the subatomic level, illuminating aspects of the universe that remain ________ to the naked eye and challenging our existing ________ of classical physics. These advancements not only redefine fundamental principles but also suggest a potential ________ for future technological breakthroughs.",
+        "title": "The Intersection of Quantum Mechanics and Classical Physics",
+        "type": "TC-3",
+        "answer": [
+          "inconceivable",
+          "theories",
+          "scale"
+        ],
+        "options": [
+          [
+            "obvious",
+            "inconceivable",
+            "perceptible",
+            "mysterious"
+          ],
+          [
+            "ideas",
+            "assumptions",
+            "doctrines",
+            "theories"
+          ],
+          [
+            "implications",
+            "scale",
+            "methodology",
+            "scope"
+          ]
+        ],
+        "solution": "<p><b>A</b> is the correct option for the first blank as it captures the notion of something that cannot be easily understood or perceived, fitting the context of subatomic phenomena. The term aligns with the idea that quantum mechanics reveals truths that are beyond direct observation.<br><br>Options <b>B</b> (perceptible) and <b>D</b> (obvious) do not fit, as they suggest visibility and clarity, which contradicts the complexities of quantum behavior.<br><br><b>G</b> is the correct option for the second blank, as 'theories' aptly describes the conceptual frameworks scientists use in physics. It complements the notion that quantum discoveries challenge established scientific postulates.<br><br>Options <b>E</b> (ideas) and <b>F</b> (doctrines) are less precise in this context, lacking the specificity required for a scientific context. <br><br><b>I</b> is the correct choice for the last blank because 'scale' refers to the extent and dimension of potential technological advancements suggested by quantum mechanics. It captures the breadth of possibilities ahead.<br><br>Option <b>J</b> (scope) could also seem relevant but does not convey as strong a sense of actionable breadth as <b>I</b>. Options <b>K</b> (implications) and <b>L</b> (methodology) fail to encompass the visionary essence necessary in this context.</p>",
+        "difficulty": 5,
+        "tags": [
+          "science",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Philosophy> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "thread_id": "thread_C47DcQHcNg970oaf1lxTcjHU",
+        "question": "In discussions of ethics, one encounters the fundamental challenge of determining what is ultimately _______ as opposed to simply _______ moral behavior.",
+        "title": "Philosophical Ethics and Moral Behavior",
+        "type": "TC-2",
+        "answer": [
+          "subjective",
+          "arbitrary"
+        ],
+        "options": [
+          [
+            "consequential",
+            "prescriptive",
+            "metaphysical",
+            "subjective"
+          ],
+          [
+            "empirical",
+            "rational",
+            "innate",
+            "arbitrary"
+          ]
+        ],
+        "solution": "<p>The correct answers are <b>subjective</b> and <b>arbitrary</b>. In the context of ethics, subjective refers to moral judgments based on personal feelings or opinions, while arbitrary suggests that moral behavior may not have a solid foundation and may vary without reason.</p><hr><p>Discussion on Options:</p><ul><li><b>prescriptive</b>: Though relevant, it implies advice on what people should do rather than what is fundamentally moral.</li><li><b>metaphysical</b>: Not directly applicable as it deals more with the nature of reality than moral issues.</li><li><b>consequential</b>: This focuses on the outcomes of actions rather than the basis of morality itself.</li></ul><hr><p><b>innate</b>: Suggests morality is inherent, but does not address the relative nature of ethics.</p><ul><li><b>empirical</b>: Refers to knowledge derived from observation rather than moral reasoning.</li><li><b>rational</b>: Indicates logical reasoning but does not consider emotional or subjective dimensions.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "philosophy",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Psychology> - <SE> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "thread_id": "thread_ZcKPbr7lo7nm0XgcP9iEcHRm",
+        "question": "In the field of psychology, the concept of `____` is often associated with how individuals perceive their own capabilities and potential, which can significantly influence their motivation and performance. One's sense of `____` can either propel them toward greater achievements or hinder their progress, depending on whether it is rooted in confidence or self-doubt.",
+        "title": "Psychological Concepts of Self-Perception and Motivation",
+        "type": "SE",
+        "answer": [
+          "self-efficacy",
+          "self-esteem"
+        ],
+        "options": [
+          "self-esteem",
+          "self-reflection",
+          "self-image",
+          "self-doubt",
+          "self-awareness",
+          "self-efficacy"
+        ],
+        "solution": "<p><strong>A</strong> (self-efficacy) is correct as it relates directly to an individual's belief in their ability to succeed, affecting motivation and performance. <strong>B</strong> (self-esteem) is also correct because it represents one\u2019s overall evaluation of their worth and can influence their drive and achievements.</p><hr/><p>Option <strong>C</strong> (self-reflection) is incorrect as it pertains more to self-assessment than capabilities. Option <strong>D</strong> (self-doubt) is about negative self-perception but does not capture the positive aspect needed. Option <strong>E</strong> (self-image) is related but not specific to motivation. Lastly, <strong>F</strong> (self-awareness) involves understanding oneself but does not directly imply capability or motivation.</p>",
+        "difficulty": 4,
+        "tags": [
+          "psychology",
+          "se"
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>In the intricate tapestry of modern economic structures, the interplay between supply and demand exemplifies a foundational principle that underpins market dynamics. The equilibrium achieved when the quantity supplied of a good equals the quantity demanded is not merely a theoretical concept; it reflects the real-world complexities wherein fluctuations can have profound implications on consumer behavior and overall market stability. The elasticity of demand, a crucial determinant, measures how sensitive consumers are to price changes, and thus influences not only individual purchasing decisions but also broader economic trends. When demand is elastic, even minor price alterations can yield significant shifts in quantity demanded, challenging firms to adjust their pricing strategies accordingly.</p><p>Moreover, government interventions such as taxes and subsidies further complicate this equilibrium. While taxes can discourage consumption of certain goods, subsidies have the potential to encourage production and lower prices for consumers. The ramifications of these policies extend beyond immediate market effects; they can reshape industry landscapes and alter competitive dynamics. Consequently, understanding the nuances of economic principles is imperative for policymakers, businesses, and consumers alike, as the decisions made within this environment shape the long-term trajectory of the economy.</p>",
+            "<p>Globalization, while a catalyst for unprecedented economic growth, has also engendered significant disparities within and between nations. The advent of free trade agreements has opened markets, allowing for the efficient allocation of resources across borders; however, this has led to a dichotomy where certain sectors flourish while others lag behind. For instance, manufacturing industries in developed countries have seen declining employment as companies relocate production to lower-cost regions, exacerbating income inequality and social discontent. Thus, the benefits of globalization are often unevenly distributed, creating a pressing challenge for policymakers to address these socioeconomic imbalances.</p><p>Furthermore, the race towards technological advancement propels economies into a new era, yet it compounds the existing disparities. Innovation enhances productivity but tends to favor those with access to education and technological resources. As a result, the digital divide becomes increasingly pronounced, further entrenching inequality. In navigating this complex landscape, governments must formulate policies that not only stimulate economic growth but also ensure equitable opportunities for all citizens, fostering an inclusive approach to economic development that transcends mere growth metrics.</p>",
+            "<p>The concept of sustainable development integrates economic growth with environmental stewardship, challenging traditional economic paradigms that prioritize short-term gains over long-term viability. In recent years, there has been a growing recognition that neglecting environmental considerations can undermine the very fabric of economic stability. The interdependence of economic and ecological systems highlights the necessity for policies that promote sustainable practices, such as investment in renewable energy and the circular economy. These initiatives not only mitigate environmental degradation but also present robust opportunities for innovation and job creation.</p><p>Additionally, the role of corporate responsibility has emerged as an essential component in this discourse. Businesses are increasingly held accountable for their environmental impact, prompting a shift towards ethically grounded practices that resonate with consumers' values. By adopting sustainable models, companies not only enhance their public image but also align with regulatory frameworks aimed at fostering a more sustainable economy. This convergence of ethical responsibility and economic rationale signifies a transformative shift in how industries operate, propelling us towards a more sustainable future that harmonizes economic objectives with ecological preservation.</p>"
+          ]
+        },
+        "title": "Navigating the Complexities of Modern Economics",
+        "tags": [
+          "rc-m",
+          "Strengthen Question ",
+          "Assumption Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "Which of the following statements, if true, would most strengthen the argument that sustainable development is essential for long-term economic stability?",
+            "title": "Supporting Sustainable Development for Economic Stability",
+            "answer": "Investments in renewable energy lead to job creation and economic growth.",
+            "options": [
+              "Investments in renewable energy lead to job creation and economic growth.",
+              "Sustainable practices often require higher upfront costs for businesses.",
+              "The circular economy model has shown limited success in developed nations.",
+              "Short-term economic gains can be achieved without considering environmental impacts."
+            ],
+            "solution": "<p>The correct answer is <strong>A</strong>: Investments in renewable energy lead to job creation and economic growth. This statement directly supports the argument for sustainable development by showing that such investments not only help the environment but also foster economic stability through job creation.</p><p><strong>B</strong>: Short-term economic gains can be achieved without considering environmental impacts. This option weakens the argument by suggesting that a focus on immediate gains is viable, contrary to the long-term focus necessary for sustainable development.</p><p><strong>C</strong>: Sustainable practices often require higher upfront costs for businesses. This statement does not strengthen the argument; rather, it presents a potential barrier to sustainable practices without addressing their long-term benefits.</p><p><strong>D</strong>: The circular economy model has shown limited success in developed nations. This option undermines the argument by highlighting failures rather than reinforcing the effectiveness of sustainable economic practices.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "question": "What assumption underlies the argument that government interventions can reshape industry landscapes and alter competitive dynamics?",
+            "title": "Assumptions Behind Government Interventions in Economics",
+            "answer": "Market forces alone are insufficient to ensure equitable economic outcomes.",
+            "options": [
+              "Market forces alone are insufficient to ensure equitable economic outcomes.",
+              "Competitors will always adapt positively to government interventions.",
+              "Government interventions are often met with resistance from industries affected.",
+              "The effectiveness of government policies is independent of public opinion."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: Market forces alone are insufficient to ensure equitable economic outcomes. This statement is a fundamental assumption behind the argument, suggesting that without government interventions, disparities in the market would persist, thereby justifying the need for regulatory measures.</p><p><strong>A</strong>: Government interventions are often met with resistance from industries affected. While this may be true, it does not underpin the argument that interventions can reshape dynamics; rather, it presents potential challenges to their implementation.</p><p><strong>C</strong>: Competitors will always adapt positively to government interventions. This assumption is overly optimistic and not necessarily true, as interventions can have varied effects on industry dynamics, including negative impacts on competition.</p><p><strong>D</strong>: The effectiveness of government policies is independent of public opinion. This statement contradicts the argument since public support and perception significantly influence the successful implementation of economic policies.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "Which assumption is necessary for the argument that corporate responsibility enhances public image and aligns with regulatory frameworks?",
+            "title": "Assumptions on Corporate Responsibility and Public Perception",
+            "answer": "There is a growing consumer demand for ethical and sustainable business practices.",
+            "options": [
+              "Consumers are willing to pay more for products from socially responsible companies.",
+              "Corporate responsibility initiatives rarely have a measurable impact on profitability.",
+              "There is a growing consumer demand for ethical and sustainable business practices.",
+              "Regulatory frameworks are effective only when supported by ethical business practices."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: There is a growing consumer demand for ethical and sustainable business practices. This assumption underpins the argument by suggesting that an increasing number of consumers prefer to support companies that engage in responsible practices, thereby enhancing those companies' public image.</p><p><strong>A</strong>: Consumers are willing to pay more for products from socially responsible companies. While this may be beneficial, it is not a necessary assumption for the overall argument that corporate responsibility aligns with public image and regulatory support.</p><p><strong>B</strong>: Regulatory frameworks are effective only when supported by ethical business practices. This statement is not a necessary assumption as it suggests a condition for effectiveness rather than supporting the claim about public image enhancement through responsibility.</p><p><strong>D</strong>: Corporate responsibility initiatives rarely have a measurable impact on profitability. This option directly contradicts the argument, as it suggests that responsibility does not benefit the company financially, which undermines the rationale for pursuing ethical practices.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>In the realm of literature, the early 20th century is often regarded as a period of profound transformation marked by a paradigm shift in narrative techniques and thematic explorations. Writers such as Virginia Woolf and James Joyce pushed the boundaries of conventional storytelling through their innovative use of stream of consciousness, allowing readers to delve into the intricate workings of their characters\u2019 minds. This technique, which had previously been employed sparingly, gained prominence as authors sought to represent the complexity of human experience in a rapidly changing world.</p><p>Moreover, the rise of modernism instigated a radical re-evaluation of societal norms and values. The disillusionment following World War I compelled writers to grapple with the alienation and fragmentation of contemporary life. Through symbolism and fragmented narrative structures, the literature of this era reflects the tumultuous emotional landscape of individuals grappling with uncertainty and existential dread. Thus, the early 20th century literature serves as a mirror, revealing not only personal struggles but also broader cultural shifts that resonate to this day.</p>",
+            "<p>The Harlem Renaissance, a cultural movement that flourished in the 1920s and 1930s, marked a significant period for African American literature and arts. It was a time when black writers, musicians, and artists sought to express their unique experiences and identities, redefining the cultural landscape of America. Figures such as Langston Hughes and Zora Neale Hurston emerged as prominent voices, celebrating African heritage while addressing the complexities of race relations in the United States.</p><p>This movement was characterized by a bold rejection of the prevailing stereotypes and social constraints that had historically marginalized black culture. The literature produced during this time employed rich imagery and vernacular language to evoke the vibrancy of African American life. Moreover, the works often explored themes of identity, resilience, and a longing for equality, contributing to a growing awareness of racial injustices. The legacy of the Harlem Renaissance continues to influence contemporary literature and serves as a testament to the enduring power of artistic expression in advocating for social change.</p>",
+            "<p>The intersection of literature and psychology has produced rich avenues for exploration, particularly in the context of character development and thematic depth. Authors like Fyodor Dostoevsky deftly weave psychological complexity into their narratives, offering profound insights into the human condition. Dostoevsky's characters often navigate moral dilemmas that illuminate the strife between personal desires and societal expectations, reflecting a deep concern for existential inquiries that resonate through the ages.</p><p>In addition, the advent of psychoanalytic theory during the early 20th century provided writers with new tools to explore the inner workings of their characters' minds. This amalgamation of literary art and psychological insight has allowed for a more nuanced portrayal of identity, motivation, and conflict. Works from this era challenge readers to ponder not only the motivations behind a character's actions but also the broader implications these narratives have on understanding human behavior. Thus, the interplay between literature and psychology reveals the intricacies of the human psyche and its representation in fictional narratives.</p>"
+          ]
+        },
+        "title": "Transformative Landscapes: Literature's Reflection of Society and Identity",
+        "tags": [
+          "rc-m",
+          "Weaken Question ",
+          "Assumption Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "How does the passage primarily support the argument that early 20th century literature reflects societal transformation?",
+            "title": "Analyzing Literature's Reflection of Societal Change",
+            "answer": "It emphasizes the disillusionment caused by World War I.",
+            "options": [
+              "It emphasizes the disillusionment caused by World War I.",
+              "It discusses the popularity of traditional storytelling methods.",
+              "It highlights the innovative narrative techniques used by authors.",
+              "It focuses on the personal lives of authors rather than societal issues."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: It emphasizes the disillusionment caused by World War I. This choice aligns with the passage's theme of how the early 20th century literature grapples with the complexities and emotional turmoil arising from societal upheaval, particularly after the war.</p><p><strong>A</strong>: It highlights the innovative narrative techniques used by authors. While the passage does discuss innovative techniques, this option does not directly address the primary support for the argument regarding societal transformation.</p><p><strong>B</strong>: It focuses on the personal lives of authors rather than societal issues. This statement is incorrect as the passage primarily discusses broader societal issues and how literature reflects them, rather than focusing solely on personal lives.</p><p><strong>D</strong>: It discusses the popularity of traditional storytelling methods. This option is misleading and incorrect, as the passage instead focuses on the departure from traditional methods and the embrace of modernist techniques.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "type": "RC",
+            "question": "What assumption is made about the impact of the Harlem Renaissance on contemporary literature?",
+            "title": "Exploring Assumptions of Literary Impact",
+            "answer": "The themes explored during the Harlem Renaissance continue to resonate today.",
+            "options": [
+              "Contemporary literature is entirely disconnected from past movements.",
+              "Authors from the Harlem Renaissance were predominantly male.",
+              "The themes explored during the Harlem Renaissance continue to resonate today.",
+              "The Harlem Renaissance eliminated all racial stereotypes in literature."
+            ],
+            "solution": "<p>The correct answer is <strong>C</strong>: The themes explored during the Harlem Renaissance continue to resonate today. This assumption is supported by the passage, which notes the enduring influence of the Harlem Renaissance on contemporary literature and its themes of identity, resilience, and social justice.</p><p><strong>A</strong>: The Harlem Renaissance eliminated all racial stereotypes in literature. This is an overstatement; the passage does not claim that stereotypes were entirely eliminated, but rather that the movement sought to redefine black culture.</p><p><strong>B</strong>: Contemporary literature is entirely disconnected from past movements. This option contradicts the primary argument of the passage, which highlights the ongoing influence of the Harlem Renaissance.</p><p><strong>D</strong>: Authors from the Harlem Renaissance were predominantly male. While some prominent figures were indeed male, this option is misleading as the passage emphasizes contributions from both male and female writers, thus it does not reflect a valid assumption about the impact on contemporary literature.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What assumption can be inferred about Dostoevsky's use of psychological complexity in his narratives?",
+            "title": "Understanding Assumptions Behind Psychological Narratives",
+            "answer": "The exploration of psychological complexity enriches the understanding of human behavior.",
+            "options": [
+              "The exploration of psychological complexity enriches the understanding of human behavior.",
+              "Psychological theories were not considered relevant during Dostoevsky's time.",
+              "Dostoevsky's works lack depth in character development.",
+              "Dostoevsky's characters always find resolution to their moral dilemmas."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: The exploration of psychological complexity enriches the understanding of human behavior. This assumption aligns with the passage's emphasis on how Dostoevsky's narratives provide insights into moral dilemmas and the complexities of the human psyche.</p><p><strong>A</strong>: Dostoevsky's characters always find resolution to their moral dilemmas. This option is not supported by the passage, which suggests that moral dilemmas are often left unresolved, reflecting the complexities of life.</p><p><strong>C</strong>: Psychological theories were not considered relevant during Dostoevsky's time. This statement is misleading; the passage implies that Dostoevsky integrated psychological insights into his works, which suggests that such theories were deemed relevant.</p><p><strong>D</strong>: Dostoevsky's works lack depth in character development. This option directly contradicts the passage, which highlights the rich, psychologically complex characters that Dostoevsky is known for, indicating significant depth in character development.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<Economics> - <TC-1> - <difficulty-level: 5> - <vocabulary-level:3>",
+        "thread_id": "thread_LURgT0M3Yc95PInfckjekSkL",
+        "question": "The recent economic downturn has caused many businesses to become increasingly _______ in their revenue forecasts, leading to a more cautious investment climate.",
+        "title": "Economics - Revenue Forecasts and Investment Climate",
+        "type": "TC-1",
+        "answer": "pessimistic",
+        "options": [
+          "erratic",
+          "optimistic",
+          "definitive",
+          "stable",
+          "pessimistic",
+          "ambiguous"
+        ],
+        "solution": "<p>In this context, the correct answer is <strong>pessimistic</strong> because it aligns with the notion of businesses being cautious in their revenue forecasts during an economic downturn. A pessimistic outlook would lead to more conservative investment decisions.</p> <p><strong>Optimistic</strong> wouldn't fit as it suggests a positive outlook, which contradicts the cautious nature indicated by the economic downturn.</p> <p><strong>Ambiguous</strong> implies uncertainty but doesn\u2019t directly indicate caution. <strong>Definitive</strong> suggests certainty, which also doesn't match the cautious context. <strong>Erratic</strong> is not relevant as it pertains to inconsistency rather than caution. <strong>Stable</strong> conveys security, which is again at odds with the notion of caution.</p>",
+        "difficulty": 5,
+        "tags": [
+          "economics",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Politics> - <TC-1> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "thread_id": "thread_D5z5UWBVZcAovFngNPf3fYcP",
+        "question": "In an increasingly polarized society, political discourse often becomes so __________ that it hampers constructive dialogue.",
+        "title": "Politics and Polarization",
+        "type": "TC-1",
+        "answer": "acrimonious",
+        "options": [
+          "superficial",
+          "innovative",
+          "articulate",
+          "acrimonious",
+          "tedious",
+          "engaging"
+        ],
+        "solution": "<p>The correct answer is <b>acrimonious</b>, which means bitter and hostile, particularly in discussions. In a polarized society, such acrimonious discourse can indeed hinder constructive dialogue.</p><hr><p>Other options:</p><ul><li><b>engaging</b>: This implies that the discourse is captivating, which does not align with the idea of hindrance.</li><li><b>tedious</b>: While it suggests being boring, it does not necessarily convey hostility.</li><li><b>superficial</b>: This refers to a lack of depth, but it does not capture the contentious nature of the dialogue.</li><li><b>innovative</b>: This word indicates creativity, which is antithetical to the hostility in political discourse.</li><li><b>articulate</b>: This suggests clarity, which would be a positive attribute, not something that hampers dialogue.</li></ul>",
+        "difficulty": 2,
+        "tags": [
+          "politics",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-1> - <difficulty-level: 4> - <vocabulary-level:1>",
+        "thread_id": "thread_TpkZGXsybybbMvv64ylAxwV3",
+        "question": "In the realm of classical literature, the __________ nuance of a character's portrayal often unveils the author's deeper intentions.",
+        "title": "Exploring Nuances in Classical Literature",
+        "type": "TC-1",
+        "answer": "subtle",
+        "options": [
+          "negligible",
+          "obvious",
+          "ludicrous",
+          "subtle",
+          "mandatory",
+          "redundant"
+        ],
+        "solution": "<p>The correct answer is <b>subtle</b>, as it indicates a fine or delicate distinction in character portrayal, which aligns with the notion of unveiling deeper intentions. </p><p><u>Explanation of other options:</u></p><ul><li><b>obvious</b>: This suggests a lack of refinement, which contradicts the idea of a nuanced portrayal.</li><li><b>redundant</b>: This implies unnecessary repetition, not fitting in the context of character development.</li><li><b>ludicrous</b>: It indicates absurdity, which is not applicable when discussing literary nuances.</li><li><b>mandatory</b>: This signifies obligation, which does not relate to character portrayal.</li><li><b>negligible</b>: This suggests something insignificant, opposing the idea of a significant literary nuance.</li></ul>",
+        "difficulty": 4,
+        "tags": [
+          "literature",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "thread_id": "thread_d8osrS8ywqUFWpLTQ1lC1LHS",
+        "question": "In the realm of literature, the concept of the unreliable narrator is not only a narrative device but also a __________ exploration of truth, challenging readers to engage with the text more critically. While it may initially appear to be a simple storytelling technique, it often serves to __________ the deeper complexities of the human experience, forcing us to question our own interpretations. Ultimately, these narrators reveal a __________ landscape where certainty is elusive and perspectives are inherently subjective.",
+        "title": "Exploration of Truth in Literature: The Unreliable Narrator",
+        "type": "TC-3",
+        "answer": [
+          "profound",
+          "illuminate",
+          "chaotic"
+        ],
+        "options": [
+          [
+            "transparent",
+            "superficial",
+            "vague",
+            "profound"
+          ],
+          [
+            "illuminate",
+            "simplify",
+            "complicate",
+            "distract"
+          ],
+          [
+            "chaotic",
+            "linear",
+            "dynamic",
+            "static"
+          ]
+        ],
+        "solution": "<p>In this question, the correct options are <b>profound</b>, <b>illuminate</b>, and <b>chaotic</b>.</p> <p><b>Proficient</b> fits the first blank as it conveys the idea that the unreliable narrator provides a deep exploration of truth. </p><hr><p><b>Illuminate</b> is appropriate for the second blank because it indicates that such narrators shed light on the complexities of the human experience.</p><hr><p><b>Chaotic</b> perfectly describes the landscape revealed in the third blank, highlighting the elusive nature of certainty and subjective perspectives. </p> <p>Other options do not fit as well: </p> <ul> <li><b>Superficial</b> implies a lack of depth, which contradicts the intent of the narrative device.</li> <li><b>Distract</b> does not align with the intended meaning of revealing complexities.</li> <li><b>Static</b> suggests a lack of change, which is inconsistent with the nature of perspectives presented by unreliable narrators.</li> </ul>",
+        "difficulty": 4,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Science> - <SE> - <difficulty-level: 1> - <vocabulary-level:2>",
+        "thread_id": "thread_8g61UqRuJaIFJ4AuTsH9iwmh",
+        "question": "The discovery of penicillin was a(n) _______ event in the history of medicine, as it provided a revolutionary cure for bacterial infections, leading to a dramatic increase in survival rates for patients. It is often described as both a(n) _______ advancement and a turning point in the field of pharmacology.",
+        "title": "Scientific Advancements in Medicine",
+        "type": "SE",
+        "answer": [
+          "pivotal",
+          "crucial"
+        ],
+        "options": [
+          "trivial",
+          "pivotal",
+          "incremental",
+          "crucial",
+          "insignificant",
+          "mundane"
+        ],
+        "solution": "<p>The correct choices are <strong>B</strong> (pivotal) and <strong>F</strong> (crucial), which accurately depict the significance of the discovery of penicillin in medicine as transformative and essential.</p><p>Other options are not suitable because:</p><ul><li><strong>A</strong> (mundane) suggests that the event was ordinary, which is inaccurate.</li><li><strong>C</strong> (insignificant) implies that it had little importance, contradicting the impact it had on medical history.</li><li><strong>D</strong> (incremental) suggests a gradual improvement, rather than a breakthrough.</li><li><strong>E</strong> (trivial) implies the discovery was of little value, which is also wrong.</li></ul>",
+        "difficulty": 1,
+        "tags": [
+          "science",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<History> - <TC-2> - <difficulty-level: 5> - <vocabulary-level:2>",
+        "thread_id": "thread_uY7gtDNUWowblcvhAFUVL8VZ",
+        "question": "The argument presented by the historian was not merely a ___ of events but a detailed analysis, showcasing how individual actions could lead to larger societal outcomes. Additionally, the ___ of underlying motivations behind these actions revealed a richer, more complex narrative.",
+        "title": "Historical Analysis and Narrative Complexity",
+        "type": "TC-2",
+        "answer": [
+          "recapitulation",
+          "elucidation"
+        ],
+        "options": [
+          [
+            "chronicle",
+            "annotation",
+            "misrepresentation",
+            "recapitulation"
+          ],
+          [
+            "exposition",
+            "manifestation",
+            "elucidation",
+            "ambiguity"
+          ]
+        ],
+        "solution": "<p>The correct answers are <strong>recapitulation</strong> and <strong>elucidation</strong>. </p><p><strong>recapitulation</strong> is appropriate because it implies a summary or restatement of events, highlighting that the historian's work goes beyond mere summarization. </p><p><strong>elucidation</strong> is fitting as it conveys the act of making something clear, aligning with the idea of revealing deeper motivations.</p><p>Other options are not suitable for the following reasons:</p><ul><li><strong>misrepresentation</strong>: suggests inaccuracies, which contradicts the historian's detailed analysis.</li><li><strong>chronicle</strong>: while relating to records of events, it lacks the nuance of analysis.</li><li><strong>annotation</strong>: refers to explanations or comments on a text, not fitting in the context of narrative complexity.</li><li><strong>exposition</strong>: implies a clear presentation but doesn't convey complexity.</li><li><strong>ambiguity</strong>: denotes uncertainty, which conflicts with the explicit analysis hinted in the passage.</li><li><strong>manifestation</strong>: suggests a demonstration or revelation, but lacks the clarity required in the context of motivations.</li></ul>",
+        "difficulty": 5,
+        "tags": [
+          "history",
+          "tc-2"
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The dynamics of political power often reveal the intricate interplay between leadership styles and public perception. In contemporary politics, the rise of populism has underscored a pivotal shift in how citizens engage with their representatives. Unlike traditional political structures, which often prioritize technocratic expertise, populist movements champion the voice of the 'common man,' eschewing elitism in favor of rhetoric that resonates with widespread dissatisfaction.</p><p>This phenomenon is not merely a reaction to specific policies or economic conditions; it reflects a deeper discontent with the perceived disconnect between governing bodies and the populace. As leaders increasingly adopt highly personalized narratives and social media platforms to connect with voters, the foundations of political discourse are being transformed. Unlike their predecessors, who relied on a more formal engagement with constituents, modern politicians must navigate a landscape characterized by rapid information flow and the viral potential of public sentiment, making their leadership both more precarious and more engaging.</p>",
+            "<p>The intricacies of political ideology can seldom be distilled into binary classifications, as contemporary political landscapes often embody multifaceted beliefs that transcend traditional left-right dichotomies. Indeed, the emergence of environmentalism as a significant political force has necessitated a reevaluation of longstanding paradigms. This shift has prompted politicians to accommodate a broader spectrum of perspectives, often intertwining economic interests with ecological imperatives.</p><p>In this context, the Green New Deal serves as a salient example of a comprehensive framework that seeks to reconcile economic revival with sustainable practices. Advocates argue that by investing in renewable energy, the economy can attain not only resilience but also a fundamental transformation towards a more equitable society. However, this ambitious agenda faces robust opposition from factions entrenched in fossil fuel dependency, who argue that such policies could be detrimental to job security and economic stability. As this debate unfolds, it becomes increasingly clear that the path ahead will require deft negotiation and a willingness to embrace compromise amidst polarized viewpoints.</p>",
+            "<p>The relationship between governance and civil society has reached a critical juncture in the digital age, with technology serving both as a tool for empowerment and a weapon for subjugation. As governments grapple with the implications of surveillance and data privacy, the tension between national security and individual liberties has become a focal point of public discourse. Activists and scholars alike warn that the erosion of privacy undermines democratic values, proposing that robust frameworks are necessary to balance security measures with civil rights.</p><p>Moreover, the use of social media as a mobilization platform has transformed grassroots movements, enabling individuals to organize and advocate for change with unprecedented speed. However, this democratization of information comes with its own challenges, including the spread of misinformation and the potential for online harassment. Therefore, as political actors navigate these complexities, they must reconcile the benefits of technological advancement with the imperative to foster an informed and engaged citizenry. The outcomes of these deliberations will likely define the contours of future political engagement and the vibrancy of democratic practices.</p>"
+          ]
+        },
+        "title": "Navigating the Nuances of Contemporary Politics",
+        "tags": [
+          "rc-m",
+          "Conclusion Question ",
+          "Assumption Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What can be inferred about the impact of technology on the relationship between governance and civil society as discussed in the passages?",
+            "title": "The Influence of Technology on Governance and Civil Society",
+            "answer": "Technology both empowers individuals and poses challenges to democratic values.",
+            "options": [
+              "Technology both empowers individuals and poses challenges to democratic values.",
+              "Technology has completely eliminated the need for traditional forms of governance.",
+              "The use of technology has only strengthened the current government structures without any drawbacks.",
+              "Governments have successfully eliminated misinformation through technological advancements."
+            ],
+            "solution": "<p>The correct option is <strong>C</strong>: Technology both empowers individuals and poses challenges to democratic values.</p><p>This is supported by the passage discussing how technology has facilitated grassroots movements and enabled individuals to organize for change, showcasing its empowering potential. However, it also raises concerns about surveillance and misinformation, indicating the challenges posed to democratic values.</p><p>Option <strong>A</strong> suggests that technology has completely eliminated the need for traditional governance, which is misleading as it merely transforms the nature of governance rather than eliminating it.</p><p>Option <strong>B</strong> claims that technology has only strengthened government structures with no drawbacks, which overlooks the significant issues of privacy and misinformation outlined in the passages.</p><p>Option <strong>D</strong> asserts that governments have successfully eliminated misinformation through technology, which contradicts the passages' acknowledgment of ongoing challenges related to misinformation in the digital age.</p>",
+            "tags": [
+              "Conclusion Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "type": "RC",
+            "question": "What assumption underlies the argument that the rise of populism is primarily a response to the disconnect between elites and the general public?",
+            "title": "Assumptions Behind Populism's Rise",
+            "answer": "Elites are entirely detached from the challenges faced by ordinary citizens.",
+            "options": [
+              "The general public is dissatisfied with its elected leaders.",
+              "Populism is a fleeting political trend without substantial support.",
+              "Elites are entirely detached from the challenges faced by ordinary citizens.",
+              "Populist movements do not rely on public sentiment."
+            ],
+            "solution": "<p>The correct option is <strong>C</strong>: Elites are entirely detached from the challenges faced by ordinary citizens.</p><p>This assumption underlies the argument as it posits that the disconnect between elites and the general public is significant enough to spur the rise of populism, suggesting that elites are oblivious to the difficulties experienced by the populace.</p><p>Option <strong>A</strong> highlights public dissatisfaction, which is a result of the disconnect rather than an assumption about the state of elites.</p><p>Option <strong>B</strong> contradicts the central argument, as populist movements inherently rely on public sentiment to gain traction and legitimacy.</p><p>Option <strong>D</strong> incorrectly implies that populism lacks serious backing, while the passages convey that these movements emerge from genuine grievances and have substantial support.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "What underlying assumption is made about the Green New Deal's potential to achieve economic revival alongside sustainability?",
+            "title": "Assumptions Regarding the Green New Deal's Efficacy",
+            "answer": "Investments in renewable energy will create jobs and economic growth.",
+            "options": [
+              "The Green New Deal will face no opposition from established industries.",
+              "Current economic structures are fully compatible with sustainable practices.",
+              "Investments in renewable energy will create jobs and economic growth.",
+              "The public will universally support the Green New Deal without reservations."
+            ],
+            "solution": "<p>The correct option is <strong>A</strong>: Investments in renewable energy will create jobs and economic growth.</p><p>This assumption is central to the argument supporting the Green New Deal, suggesting that transitioning to renewable energy can simultaneously stimulate the economy and promote sustainability.</p><p>Option <strong>B</strong> assumes universal public support, which is unrealistic given the noted opposition from certain factions, as highlighted in the passage.</p><p>Option <strong>C</strong> posits that current economic structures align perfectly with sustainable practices, which ignores the tension between traditional industries and new ecological initiatives.</p><p>Option <strong>D</strong> suggests a lack of opposition to the Green New Deal, which contradicts the passage stating that fossil fuel-dependent factions are resistant to such policies.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>In the realm of philosophy, one of the most profound inquiries is the nature of human existence and the inquiries associated with it. The existentialists, such as Jean-Paul Sartre and Simone de Beauvoir, have profoundly emphasized the individual's freedom, choice, and the burden of responsibility that accompanies these elements. They argue that life is inherently absurd, devoid of any predetermined purpose, which can lead to a sense of disorientation and confusion in the modern human experience.</p><p>Moreover, contemplation on the self and the awareness of one\u2019s existence can lead to a greater understanding of the collective consciousness and human interconnectedness. This perspective not only fosters a sense of responsibility towards oneself but also extends to the broader human community, underscoring the philosophical concept that one\u2019s existence is intrinsically tied to the existence of others. The dialectic between individual autonomy and social responsibility presents a rich field of inquiry within philosophical discourse, encouraging individuals to explore their existential freedom while considering its implications on societal structures.</p>",
+            "<p>Philosophers have long grappled with the notion of truth and its implications for human understanding. In contemporary discussions, the correspondence theory of truth posits that a statement is true if it corresponds to the actual state of affairs. However, this conception is often challenged by postmodern thinkers, who argue that truth is relative and shaped by cultural, societal, and personal contexts. This raises critical questions about objectivity and the way knowledge is constructed.</p><p>Furthermore, the dialectics of power and knowledge proposed by Michel Foucault illuminate how societal institutions can influence what is accepted as 'truth.' By examining the relationship between power structures and epistemology, one can discern how narratives are created and maintained, often at the expense of marginalized perspectives. Hence, it becomes crucial to cultivate a critical awareness of the sources of our knowledge and the underlying assumptions that guide our understanding of truth, as these factors can shape individual and collective realities in profound ways.</p>",
+            "<p>The interplay between ethics and morality forms a central topic in philosophical inquiries, particularly regarding the question of what constitutes a 'good' life. Utilitarianism, championed by philosophers such as Jeremy Bentham and John Stuart Mill, argues for actions that maximize overall happiness and minimize suffering. This consequentialist approach, however, is often critiqued for neglecting individual rights and the intrinsic value of human life.</p><p>In contrast, deontological ethics, as advocated by Immanuel Kant, emphasizes the importance of moral duties and principles that transcend outcomes. Kantian ethics posits that actions are morally right based on adherence to universal maxims, which must be respected irrespective of the consequences. This dichotomy between utilitarian and deontological ethics stimulates ongoing debates about the moral frameworks that govern human behavior and their applicability in addressing complex ethical dilemmas. Ultimately, these discussions compel individuals to reflect on their values and the implications these have on society at large.</p>"
+          ]
+        },
+        "title": "The Interrogation of Existence and Truth in Contemporary Philosophy",
+        "tags": [
+          "rc-m",
+          "Evaluate Question ",
+          "Assumption Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "How do existentialist views on freedom and responsibility compare to utilitarian and deontological ethical frameworks in their implications for human behavior?",
+            "title": "Comparative Analysis of Philosophical Frameworks on Human Behavior",
+            "answer": "Existentialists prioritize individual freedom while utilitarians focus on collective happiness.",
+            "options": [
+              "Utilitarianism and existentialism both prioritize communal responsibilities over individual freedom.",
+              "Existentialists prioritize individual freedom while utilitarians focus on collective happiness.",
+              "Both existentialism and deontology deny the role of consequences in moral decision-making.",
+              "Deontological ethics is mainly concerned with the outcomes of actions rather than duties."
+            ],
+            "solution": "<p>The correct option is <strong>A</strong>: Existentialists prioritize individual freedom while utilitarians focus on collective happiness. Existentialism emphasizes the freedom and choice of the individual, highlighting personal responsibility, whereas utilitarianism evaluates actions based on their ability to produce the greatest good for the greatest number. This fundamental difference demonstrates how each philosophy influences concepts of human behavior.</p><p>Option <strong>B</strong> is incorrect because existentialism asserts the importance of personal choice, while deontology, championed by Kant, emphasizes moral duties irrespective of consequences.</p><p>Option <strong>C</strong> is also incorrect as existentialism centers on individual autonomy, contrasting with utilitarianism's communal focus on maximizing happiness.</p><p>Lastly, option <strong>D</strong> is misleading because deontological ethics prioritizes duties and principles over outcomes, unlike utilitarianism, which is outcomes-focused.</p>",
+            "tags": [
+              "Evaluate Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "What assumption underlies the critique of utilitarianism by proponents of deontological ethics regarding individual rights?",
+            "title": "Assuming Individual Rights: A Critique of Utilitarianism",
+            "answer": "Deontological ethics uphold that moral obligations cannot be violated for any societal benefit.",
+            "options": [
+              "The pursuit of collective happiness always comes at the expense of individual freedoms.",
+              "Deontological ethics uphold that moral obligations cannot be violated for any societal benefit.",
+              "Utilitarianism inherently ignores the value of individual lives.",
+              "Consequentialist approaches can sufficiently protect the rights of individuals in society."
+            ],
+            "solution": "<p>The correct option is <strong>C</strong>: Deontological ethics uphold that moral obligations cannot be violated for any societal benefit. This option captures the essence of the critique against utilitarianism, which can potentially justify infringing on individual rights if it results in a greater overall happiness.</p><p>Option <strong>A</strong> is incorrect; utilitarianism recognizes the value of individual lives but prioritizes collective outcomes over singular individual considerations.</p><p>Option <strong>B</strong> is misleading as it implies a universal truth; while utilitarianism might sometimes compromise individual freedoms for greater good, it does not always do so.</p><p>Option <strong>D</strong> is also incorrect since consequentialist approaches, including utilitarianism, often face criticism for neglecting individual rights in favor of overall utility, thus unable to guarantee protection of those rights.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "question": "What assumption is made by postmodern thinkers regarding the relationship between truth and power?",
+            "title": "Exploring the Assumption of Truth and Power in Postmodern Thought",
+            "answer": "Power structures significantly shape what is accepted as 'truth' within societies.",
+            "options": [
+              "Knowledge is always constructed through a purely rational process devoid of emotions.",
+              "All truths are equally valid regardless of their origins or contexts.",
+              "Truth is an objective reality that exists independently of societal influences.",
+              "Power structures significantly shape what is accepted as 'truth' within societies."
+            ],
+            "solution": "<p>The correct option is <strong>B</strong>: Power structures significantly shape what is accepted as 'truth' within societies. This reflects the postmodern critique which asserts that truth is not merely an objective reality but is heavily influenced by power dynamics and societal contexts.</p><p>Option <strong>A</strong> is incorrect because it contradicts the postmodern perspective, which denies that truth exists independently of its cultural and social constructions.</p><p>Option <strong>C</strong> is misleading; while postmodern thinkers may argue that many perspectives exist, they do not claim all truths are equally valid without critique based on context and power.</p><p>Lastly, option <strong>D</strong> is inaccurate as postmodernists often emphasize that knowledge and truth are intertwined with emotional and subjective experiences, rather than being purely rational.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 3
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "content": {
+          "passages": [
+            "<p>The intricate relationship between genetic variance and environmental factors has long been an area of extensive research in the field of behavioral genetics. Recent studies have revealed that genes do not simply dictate behavior; rather, they interact dynamically with external stimuli, leading to a complex interplay that shapes personality and decision-making processes. By employing advanced techniques such as genome-wide association studies (GWAS), researchers are increasingly able to pinpoint specific genetic markers that correlate with certain behavioral traits. </p><p>Moreover, environmental influences, including cultural, social, and economic factors, serve to modulate these genetic predispositions. For instance, a genetic tendency towards anxiety may manifest only under stress-inducing conditions, thereby illustrating the significance of context. This multilayered understanding not only enhances our insights into human behavior but also raises ethical questions regarding the extent to which we might hold individuals accountable for actions that are informed by their biological makeup. The nexus of genetics and environment continues to challenge the boundaries of psychology and behavioral science, thereby inviting interdisciplinary dialogue among geneticists, psychologists, and ethicists.</p>",
+            "<p>Climate change, an omnipresent challenge of our time, is reshaping ecosystems and human societies alike. The rising global temperatures, attributed to greenhouse gas emissions, have catalyzed significant shifts in weather patterns, sea levels, and biodiversity. Recent research indicates that not only are polar ice caps melting at an unprecedented rate, but entire species are going extinct due to habitat loss and shifting environmental conditions. This crisis necessitates urgent action from both policymakers and the public.</p><p>Moreover, the socio-economic implications of climate change are profound. Vulnerable populations, particularly in developing regions, are bearing the brunt of environmental changes, often lacking the resources to adapt. For instance, diminished agricultural yields resulting from erratic weather threaten food security in multiple nations. Thus, the interdependence of ecological health and socio-economic stability highlights the need for sustainable practices and international cooperation. As scientists advocate for immediate mitigation strategies, it becomes increasingly critical to mobilize global efforts that address both environmental preservation and human welfare.</p>",
+            "<p>The advent of biotechnology has revolutionized the realm of medicine, offering groundbreaking techniques that promise to transform patient care. Innovations such as CRISPR gene editing and personalized medicine are at the forefront of this movement, enabling targeted therapies that are tailored to the individual's genetic profile. These advancements not only hold the potential to treat genetic disorders but also to enhance our understanding of complex diseases, paving the way for preventive strategies that were previously deemed unattainable.</p><p>However, the rapid progress in biotechnological applications raises pertinent ethical dilemmas concerning genetic modification and equity in healthcare access. As the line between natural and engineered biology blurs, critical questions arise about the socio-economic disparities that may emerge from unequal access to these life-saving technologies. Furthermore, the debate over the implications of 'designer babies' presents both opportunities for reducing hereditary diseases and concerns about exacerbating existing inequalities. Thus, the intersection of biotechnology, ethics, and public policy remains a pivotal arena for discussion as society navigates the challenges and promises of scientific advancement.</p>"
+          ]
+        },
+        "title": "Interplay of Genetics, Environment, and Ethics in Modern Science",
+        "tags": [
+          "rc-m",
+          "Main Idea Question ",
+          "Strengthen Question ",
+          "Assumption Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "question": "What is the primary focus of the passages regarding the implications of advancements in science?",
+            "title": "Understanding the Core Theme of Scientific Advancements",
+            "answer": "The passages emphasize the ethical dilemmas and societal implications arising from scientific advancements.",
+            "options": [
+              "The passages concentrate solely on biotechnological innovations without addressing ethical concerns.",
+              "The passages primarily focus on the challenges posed by environmental factors in genetic research.",
+              "The passages emphasize the ethical dilemmas and societal implications arising from scientific advancements.",
+              "The passages discuss the historical developments in behavioral genetics and climate change."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'The passages emphasize the ethical dilemmas and societal implications arising from scientific advancements.' Throughout the passages, there is a clear focus on how advancements in genetics, climate change, and biotechnology not only present scientific opportunities but also raise significant ethical questions and societal challenges.</p><p>Option <strong>A</strong> is incorrect because while environmental factors are mentioned, the primary emphasis of the passages is broader, addressing ethical and societal implications rather than just environmental issues in genetic research.</p><p>Option <strong>C</strong> is incorrect as it suggests the passages focus on historical developments, which is not the case; the discussions are centered on current implications and future challenges.</p><p>Option <strong>D</strong> is incorrect since the passages do address ethical concerns related to biotechnology, making it clear that they do not solely focus on innovations without considering the associated ethical implications.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "question": "Which of the following statements, if true, would most strengthen the argument regarding the ethical considerations of biotechnological advancements discussed in the passages?",
+            "title": "Evaluating Ethical Arguments in Biotechnology",
+            "answer": "Research indicates that access to biotechnology is often limited in economically disadvantaged communities.",
+            "options": [
+              "The development of CRISPR technology has led to significant breakthroughs in treating rare diseases.",
+              "Many countries are implementing regulations to oversee biotechnological research and applications.",
+              "Research indicates that access to biotechnology is often limited in economically disadvantaged communities.",
+              "Studies show that the majority of the public is opposed to genetic engineering in humans."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Research indicates that access to biotechnology is often limited in economically disadvantaged communities.' This statement directly strengthens the argument about the ethical considerations surrounding biotechnological advancements by highlighting the disparity in access to these technologies, which is a key ethical issue discussed in the passages.</p><p>Option <strong>A</strong> is incorrect because while public opposition to genetic engineering is relevant, it does not necessarily strengthen the argument regarding ethical considerations; it merely reflects public perception.</p><p>Option <strong>C</strong> does not strengthen the argument since it focuses on the positive impacts of CRISPR technology, without addressing the ethical implications related to access and equity.</p><p>Option <strong>D</strong> suggests regulatory measures, which could imply oversight; however, it does not directly engage with the ethical concerns regarding unequal access to biotechnological advancements discussed in the passages.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "question": "Which of the following is an assumption made in the passages regarding the relationship between genetic predispositions and environmental influences?",
+            "title": "Assumptions About Genetics and Environment",
+            "answer": "Genetic predispositions can be modified by changing environmental conditions.",
+            "options": [
+              "Environmental influences have no impact on genetic expressions whatsoever.",
+              "Human behavior is entirely predictable based on genetic makeup alone.",
+              "Genetic predispositions can be modified by changing environmental conditions.",
+              "All genetic outcomes are solely determined by environmental factors."
+            ],
+            "solution": "<p>The correct answer is <strong>B</strong>: 'Genetic predispositions can be modified by changing environmental conditions.' This statement aligns with the passages' assertion that genetics and environmental factors interact dynamically, suggesting that altering the environment can impact the expression of genetic traits.</p><p>Option <strong>A</strong> is incorrect because it implies that genetic outcomes are entirely determined by environmental factors, which contradicts the passages' emphasis on the interplay between genetics and environment.</p><p>Option <strong>C</strong> is incorrect as it suggests that human behavior can be predicted solely by genetic makeup, ignoring the complex interaction between genetics and external influences discussed in the passages.</p><p>Option <strong>D</strong> is incorrect because it states that environmental influences have no impact on genetic expressions, which directly conflicts with the passages' arguments regarding the significance of environmental context in shaping genetic predispositions.</p>",
+            "tags": [
+              "Assumption Question "
+            ],
+            "difficulty": 3
+          }
+        ]
+      }
+    ]
+  }
+}

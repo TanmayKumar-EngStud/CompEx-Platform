@@ -1,102 +1,109 @@
 {
-    "combination number": 91,
-    "graphic interpretation": {
-        "graphType": [
-            "bar chart",
-            "pie chart",
-            "line chart",
-            "scatter plot",
-            "quantitative venn diagram",
-            "qualitative venn diagram"
-        ],
-        "questionTheme": [
-            "economics",
-            "finance",
-            "marketing",
-            "politics",
-            "business",
-            "history",
-            "science and technology"
-        ],
-        "difficultyLevel": 5
-    },
-    "multi source reasoning": {
-        "graphType": [
-            "bar chart",
-            "pie chart",
-            "line chart",
-            "scatter plot",
-            "quantitative venn diagram",
-            "qualitative venn diagram"
-        ],
-        "questionTheme": [
-            "economics",
-            "business",
-            "history",
-            "science and technology"
-        ],
-        "difficultyLevel": 5
-    },
-    "table analysis": {
-        "tableType": [
-            "2 category table",
-            "2 category hybrid table"
-        ],
-        "questionType": [
-            "Yes/No",
-            "Would Help / Would Not Help"
-        ],
-        "questionTheme": [
-            "sales",
-            "marketing",
-            "finance",
-            "operations",
-            "human resources",
-            "technology",
-            "environment",
-            "health",
-            "education",
-            "government",
-            "international relations",
-            "science",
-            "engineering",
-            "art",
-            "culture",
-            "sports",
-            "entertainment"
-        ],
-        "difficultyLevel": 5
-    },
-    "two part analysis": {
-        "questionTheme": [
-            "economics",
-            "finance",
-            "marketing",
-            "politics",
-            "business",
-            "history",
-            "science and technology"
-        ],
-        "difficultyLevel": 5,
-        "part1": [
-            "part1- bar chart",
-            "part1- pie chart",
-            "part1- line chart",
-            "part1- scatter plot",
-            "part1- quantitative venn diagram",
-            "part1- qualitative venn diagram",
-            "part1- 2 category table",
-            "part1- 2 category hybrid table"
-        ],
-        "part2": [
-            "part2- bar chart",
-            "part2- pie chart",
-            "part2- line chart",
-            "part2- scatter plot",
-            "part2- quantitative venn diagram",
-            "part2- qualitative venn diagram",
-            "part2- 2 category table",
-            "part2- 2 category hybrid table"
-        ]
-    }
+   "combination number": 91,
+   "graphic interpretation": {
+      "graphType": [
+         "bar chart",
+         "pie chart",
+         "line chart",
+         "scatter plot",
+         "quantitative venn diagram",
+         "qualitative venn diagram"
+      ],
+      "questionTheme": [
+         "economics",
+         "finance",
+         "marketing",
+         "politics",
+         "business",
+         "history",
+         "science and technology"
+      ],
+      "difficultyLevel": 5
+   },
+   "multi source reasoning": {
+      "graphType": [
+         "bar chart",
+         "pie chart",
+         "line chart",
+         "scatter plot",
+         "quantitative venn diagram",
+         "qualitative venn diagram"
+      ],
+      "questionTheme": [
+         "economics",
+         "business",
+         "history",
+         "science and technology"
+      ],
+      "difficultyLevel": 5
+   },
+   "table analysis": {
+      "tableType": [
+         "simple table",
+         "time_series table",
+         "multi_variable table"
+      ],
+      "questionType": [
+         "Yes/No",
+         "Would Help/Would Not Help",
+         "True/False",
+         "Inference/Conflicting",
+         "Sufficient/Insufficient",
+         "Valid/Invalid",
+         "Consistent/Inconsistent",
+         "Conclusion/Assumption"
+      ],
+      "questionTheme": [
+         "sales",
+         "marketing",
+         "finance",
+         "operations",
+         "human resources",
+         "technology",
+         "environment",
+         "health",
+         "education",
+         "government",
+         "international relations",
+         "science",
+         "engineering",
+         "art",
+         "culture",
+         "sports",
+         "entertainment"
+      ],
+      "difficultyLevel": 5
+   },
+   "two part analysis": {
+      "questionTheme": [
+         "economics",
+         "finance",
+         "marketing",
+         "politics",
+         "business",
+         "history",
+         "science and technology"
+      ],
+      "difficultyLevel": 5,
+      "part1": [
+         "part1- bar chart",
+         "part1- pie chart",
+         "part1- line chart",
+         "part1- scatter plot",
+         "part1- quantitative venn diagram",
+         "part1- qualitative venn diagram",
+         "part1- 2 category table",
+         "part1- 2 category hybrid table"
+      ],
+      "part2": [
+         "part2- bar chart",
+         "part2- pie chart",
+         "part2- line chart",
+         "part2- scatter plot",
+         "part2- quantitative venn diagram",
+         "part2- qualitative venn diagram",
+         "part2- 2 category table",
+         "part2- 2 category hybrid table"
+      ]
+   }
 }
