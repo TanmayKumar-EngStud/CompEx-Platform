@@ -1,12 +1,14 @@
 # GRE.Quants.files.
-from questionComponents import ParentChildQuestion, SimpleQuestion
+from Quants.files.questionComponents import ParentChildQuestion, SimpleQuestion
 import json, re
 from dotenv import load_dotenv
 from google import genai
 import os
 class NumericEntryQuestionGeneration:
-   def __init__(self, prompt= None, api_IDX = 1):
+   def __init__(self, global_state, lock, api_IDX, prompt):
       load_dotenv()
+      self.global_state = global_state
+      self.lock = lock
       api_key = os.getenv(f"API_{api_IDX}")
       self.llm = genai.Client(api_key = api_key)
       with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Numeric-Entry.txt"), "r") as f:
@@ -21,10 +23,10 @@ class NumericEntryQuestionGeneration:
       self.questionData["prompt"] = self.prompt
       self.questionData["thread_id"] = self.thread_id
       if "graph" in self.prompt.lower() or "table" in self.prompt.lower():
-         numericEntryQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.prompt)
+         numericEntryQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
          content = numericEntryQuestion.generate_questionGraph()
          self.questionData["content"] = content
-      numericEntryQuestion = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
+      numericEntryQuestion = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
       self.questionData["question"] = numericEntryQuestion.generate_questionText()
       self.questionData["title"] = numericEntryQuestion.generate_questionTitle()
       self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution(isNE = True)

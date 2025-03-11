@@ -1,12 +1,14 @@
 # GRE.Verbal.files.
-from questionComponents import SimpleQuestion
+from Verbal.files.questionComponents import SimpleQuestion
 import random, os, json, re
 from dotenv import load_dotenv
 from google import genai
 
 class SimpleQuestionGeneration:
-    def __init__(self, prompt=None, api_IDX = 1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
         self.llm = genai.Client(api_key = api_key)
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Verbal-Simple-Questions.txt"), "r") as f:
@@ -32,7 +34,7 @@ class SimpleQuestionGeneration:
         return option_list
 
     def generate_question(self):
-      questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
+      questionContent = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
       self.questionData["prompt"] = self.prompt
       self.questionData["question"] = questionContent.generate_questionText()
 

@@ -1,4 +1,4 @@
-import random, math,os, json, re
+import random, os, json, re
 import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
@@ -7,14 +7,14 @@ sys.path.append(parent_dir)
 from dotenv import load_dotenv
 from google import genai
 # GMAT.Verbal.files.
-from questionComponents import ParentChildQuestion
+from Verbal.files.questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx, difficulty):
         child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))
         prompts = []
         t = int(child_prompt["combination number"])
         indexes = []
-        for i in range(idx):
+        for _ in range(idx):
             option = child_prompt["reading comprehension"]
             idx = t%len(option)
             counter = 0
@@ -41,8 +41,11 @@ class ParentChildQuestionGeneration:
         json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
         
         return prompts
-    def __init__(self, prompt=None, api_IDX= 1):
+
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
         llm = genai.Client(api_key = api_key)
         self.llm = llm
@@ -62,10 +65,11 @@ class ParentChildQuestionGeneration:
         self.questionData = {}
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Verbal-Parent-Child-Questions.txt"), "r") as f:
             self.system_instructions = f.read()
+
     def generate_question(self):
         self.questionData["type"] = "RC"
         self.questionData["prompt"] = self.prompt
-        questionContent = ParentChildQuestion(self.llm, self.system_instructions, self.prompt, self.number_of_child_questions)
+        questionContent = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock, self.number_of_child_questions)
         passages = questionContent.generate_parentPassage()
         self.questionData["content"] = {"passages": passages}
 

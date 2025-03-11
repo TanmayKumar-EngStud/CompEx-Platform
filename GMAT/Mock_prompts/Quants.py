@@ -14,9 +14,10 @@ class Quants_prompts:
 
    def get_difficulty_pool(self) -> list[int]:
       difficulty_ratio = self.difficulty_distribution[str(self.mock_difficulty)]
-      easy_count = int(self.total_questions * difficulty_ratio["easy"])
-      medium_count = int(self.total_questions * difficulty_ratio["medium"])
-      hard_count = self.total_questions - (easy_count + medium_count)
+      total_questions = self.total_questions + 5
+      easy_count = int(total_questions * difficulty_ratio["easy"])
+      medium_count = int(total_questions * difficulty_ratio["medium"])
+      hard_count = total_questions - (easy_count + medium_count)
       one = random.randint(1, easy_count-1)
       three = random.randint(1, medium_count-1)
       five = random.randint(1, hard_count-1)
@@ -24,8 +25,10 @@ class Quants_prompts:
       two = easy_count - one + two_three
       four = hard_count - five + medium_count - three - two_three
       difficulty_pool = ([1]*one + [2]*two + [3]*three + [4]*four + [5]*five)
+      print(f"difficulty pool length:- {len(difficulty_pool)} it should be 20, always")
       random.shuffle(difficulty_pool)
       return difficulty_pool
+   
    
    def generate_question_prompts(self):
       difficulty_pool = self.get_difficulty_pool()

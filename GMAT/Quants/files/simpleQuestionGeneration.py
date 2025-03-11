@@ -1,13 +1,16 @@
 import random
 # GMAT.Quants.files.
-from questionComponents import SimpleQuestion
+from Quants.files.questionComponents import SimpleQuestion
 from google import genai
 from dotenv import load_dotenv
 import json, os, re
 
 class SimpleQuestionGeneration:
-   def __init__(self, prompt=None, api_IDX=1):
+   def __init__(self, global_state, lock, api_IDX, prompt=None):
+
       load_dotenv()
+      self.global_state = global_state
+      self.lock = lock
       api_key = os.getenv(f"API_{api_IDX}")
       self.llm = genai.Client(api_key=api_key)
       with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Quants-Simple-Questions.txt"), "r") as f:
@@ -27,7 +30,7 @@ class SimpleQuestionGeneration:
          except Exception as e:
             last_error = str(e)
             print(f"Error in attempt {attempt + 1}: {last_error}")
-      
+
       # If we get here, all attempts failed
       if last_error:
          print(f"All attempts failed. Last error: {last_error}")
@@ -35,22 +38,21 @@ class SimpleQuestionGeneration:
    
    def generate_question(self):
       try:
-         questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
-         
+         questionContent = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
          # Generate question text
          question = questionContent.generate_questionText(self.prompt)
          self.questionData["type"] = "MCQ-Single"
          self.questionData["prompt"] = self.prompt
          self.questionData["question"] = question
-         
+
          # Generate title
          title = questionContent.generate_questionTitle()
          self.questionData["title"] = title if title else "GMAT Quants Question"
-         
+
          # Generate solution
          solution = questionContent.generate_questionSolution()
          self.questionData["solution"] = solution if solution else "Solution not available"
-         
+
          # Generate options and answer
          options, answer = questionContent.generate_questionOptions()
          if options:

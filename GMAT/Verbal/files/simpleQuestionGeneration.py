@@ -7,20 +7,23 @@ from dotenv import load_dotenv
 from google import genai
 
 # GMAT.Verbal.files.
-from questionComponents import SimpleQuestion
+from Verbal.files.questionComponents import SimpleQuestion
 import random
 class SimpleQuestionGeneration:
-   def __init__(self, prompt=None, api_IDX = 1):
+   def __init__(self, global_state, lock, api_IDX, prompt=None):
       load_dotenv()
       api_key = os.getenv(f"API_{api_IDX}")
       self.llm = genai.Client(api_key = api_key)
       with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GMAT-Verbal-Simple-Questions.txt")) as f:
          self.system_instructions = f.read()
+
+      self.global_state = global_state
+      self.lock = lock
       self.prompt = prompt
       self.questionData = {}
 
    def generate_question(self):
-      questionContent = SimpleQuestion(self.llm, self.system_instructions, self.prompt)
+      questionContent = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
       self.questionData["type"] = "CR"
       self.questionData["prompt"] = self.prompt
       passages = questionContent.generate_QuestionPassage()

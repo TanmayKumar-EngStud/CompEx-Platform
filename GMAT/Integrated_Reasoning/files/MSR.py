@@ -2,12 +2,15 @@ import random, json, os, re
 from dotenv import load_dotenv
 from google import genai
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import MSR
+from Integrated_Reasoning.files.questionComponents import MSR
 
 class Generate_MSR:
-    def __init__(self, prompt, api_IDX=1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
+
         client = genai.Client(api_key=api_key)
         self.llm = client
         self.prompt = prompt
@@ -22,7 +25,7 @@ class Generate_MSR:
         self.MSR = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/MSR.json")))
 
     def generate_question(self): 
-        msr = MSR(self.llm, self.system_instructions,self.prompt)
+        msr = MSR(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
         cn = self.MSR["combination_number"]
         sources = {"sources": []}
         # region generating sources

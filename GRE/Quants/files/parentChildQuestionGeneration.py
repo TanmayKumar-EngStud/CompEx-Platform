@@ -1,12 +1,14 @@
 # GRE.Quants.files.
-from questionComponents import ParentChildQuestion
+from Quants.files.questionComponents import ParentChildQuestion
 from google import genai
 import os, json, re
 from dotenv import load_dotenv
 import random
 class ParentChildQuestionGeneration:
-    def __init__(self, prompt=None, api_IDX = 1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
         self.llm = genai.Client(api_key = api_key)
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Parent-Child-Questions.txt"), "r") as f:
@@ -30,7 +32,7 @@ class ParentChildQuestionGeneration:
             print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
             tag = ["PS"]
         
-        parentChildQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.prompt)
+        parentChildQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
         content = parentChildQuestion.generate_questionGraph()
         self.questionData["content"] = content
 

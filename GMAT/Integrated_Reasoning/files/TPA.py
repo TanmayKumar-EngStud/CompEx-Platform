@@ -1,13 +1,15 @@
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import TPA
+from Integrated_Reasoning.files.questionComponents import TPA
 import random
 import json
 from google import genai
 from dotenv import load_dotenv
 import os, re
 class Generate_TPA:
-    def __init__(self, prompt, api_IDX = 1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
         self.llm = genai.Client(api_key=api_key)
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Two-Part-Analysis.txt"), "r") as f:
@@ -21,7 +23,7 @@ class Generate_TPA:
         if difficulty_search:
             difficulty = int(difficulty_search.group(1))
         
-        tpa = TPA(self.llm, self.system_instructions, self.prompt)
+        tpa = TPA(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
         
         # Generate question text and components
         parentQuestionContent = tpa.generate_ParentQuestionContent()

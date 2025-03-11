@@ -63,9 +63,9 @@ warning = "\nWARNING: please retry this, your output should strictly follow json
 max_retries = 3
 
 class GI: 
-    def __init__(self, llm, system_instructions, prompt):
-        self.startTime = time.time()
-        self.requestCounts = 0
+    def __init__(self, llm, system_instructions, global_state, prompt, lock):
+        self.global_state = global_state
+        self.lock = lock
         self.llm = llm
         self.prompt = prompt
         self.chat = self.llm.chats.create(
@@ -76,25 +76,25 @@ class GI:
 
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try: 
-            self.requestCounts += 1
+        try:
+            self.global_state["request_count"] += 1
             presentTime = time.time()
             
             # If we've reached 10 requests, enforce the rate limit
-            if self.requestCounts >= 10:
+            if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.startTime
+                elapsed = presentTime - self.global_state["start_time"]
                 
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
                     print(f"RPM limit reached, sleeping for {wait_time} seconds")
-                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    print(f"Requests: {self.global_state['request_count']}, Elapsed time: {elapsed:.2f}s")
                     time.sleep(wait_time)
                 
                 # Reset counters after waiting or if 60+ seconds have already passed
-                self.startTime = time.time()
-                self.requestCounts = 1  # Set to 1 for the current request
+                self.global_state["start_time"] = time.time()
+                self.global_state["request_count"] = 1  # Set to 1 for the current request
             
             response = self.chat.send_message(prompt)
             val = response.text
@@ -187,9 +187,9 @@ class GI:
         return result_options, result_answer
 
 class MSR: 
-    def __init__(self, llm, system_instructions, prompt):
-        self.startTime = time.time()
-        self.requestCounts = 0
+    def __init__(self, llm, system_instructions, global_state, prompt, lock):
+        self.lock = lock
+        self.global_state= global_state
         self.llm = llm
         self.prompt = prompt
         self.temp_prompt = None
@@ -201,25 +201,25 @@ class MSR:
 
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try: 
-            self.requestCounts += 1
+        try:
+            self.global_state["request_count"] += 1
             presentTime = time.time()
             
             # If we've reached 10 requests, enforce the rate limit
-            if self.requestCounts >= 10:
+            if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.startTime
+                elapsed = presentTime - self.global_state["start_time"]
                 
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
                     print(f"RPM limit reached, sleeping for {wait_time} seconds")
-                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    print(f"Requests: {self.global_state['request_count']}, Elapsed time: {elapsed:.2f}s")
                     time.sleep(wait_time)
                 
                 # Reset counters after waiting or if 60+ seconds have already passed
-                self.startTime = time.time()
-                self.requestCounts = 1  # Set to 1 for the current request
+                self.global_state["start_time"] = time.time()
+                self.global_state["request_count"] = 1  # Set to 1 for the current request
             
             response = self.chat.send_message(prompt)
             val = response.text
@@ -333,9 +333,9 @@ class MSR:
         return result
 
 class TA:
-    def __init__(self, llm, system_instructions, prompt):
-        self.startTime = time.time()
-        self.requestCounts = 0
+    def __init__(self, llm, system_instructions, global_state, prompt, lock):
+        self.global_state = global_state
+        self.lock = lock
         self.llm = llm
         self.prompt = prompt
 
@@ -349,25 +349,25 @@ class TA:
 
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try: 
-            self.requestCounts += 1
+        try:
+            self.global_state["request_count"] += 1
             presentTime = time.time()
             
             # If we've reached 10 requests, enforce the rate limit
-            if self.requestCounts >= 10:
+            if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.startTime
+                elapsed = presentTime - self.global_state["start_time"]
                 
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
                     print(f"RPM limit reached, sleeping for {wait_time} seconds")
-                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    print(f"Requests: {self.global_state['request_count']}, Elapsed time: {elapsed:.2f}s")
                     time.sleep(wait_time)
                 
                 # Reset counters after waiting or if 60+ seconds have already passed
-                self.startTime = time.time()
-                self.requestCounts = 1  # Set to 1 for the current request
+                self.global_state["start_time"] = time.time()
+                self.global_state["request_count"] = 1  # Set to 1 for the current request
             
             response = self.chat.send_message(prompt)
             val = response.text
@@ -463,7 +463,9 @@ class TA:
         return result
 
 class TPA:
-    def __init__(self, llm, system_isntruction, prompt):
+    def __init__(self, llm, system_instruction, global_state, prompt, lock):
+        self.lock = lock
+        self.global_state = global_state
         self.llm = llm
         self.prompt = prompt
         self.max_retries = 3
@@ -472,31 +474,31 @@ class TPA:
         self.chat = self.llm.chats.create(
             model = os.getenv("MODEL"),
             config = types.GenerateContentConfig(
-                system_instruction = system_isntruction
+                system_instruction = system_instruction
             )
         )
     
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try: 
-            self.requestCounts += 1
+        try:
+            self.global_state["request_count"] += 1
             presentTime = time.time()
             
             # If we've reached 10 requests, enforce the rate limit
-            if self.requestCounts >= 10:
+            if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.startTime
+                elapsed = presentTime - self.global_state["start_time"]
                 
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
                     print(f"RPM limit reached, sleeping for {wait_time} seconds")
-                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    print(f"Requests: {self.global_state['request_count']}, Elapsed time: {elapsed:.2f}s")
                     time.sleep(wait_time)
                 
                 # Reset counters after waiting or if 60+ seconds have already passed
-                self.startTime = time.time()
-                self.requestCounts = 1  # Set to 1 for the current request
+                self.global_state["start_time"] = time.time()
+                self.global_state["request_count"] = 1  # Set to 1 for the current request
             
             response = self.chat.send_message(prompt)
             val = response.text

@@ -65,7 +65,9 @@ def refine_response(response_text):
 
 max_retries = 3
 class ParentChildQuestion:
-    def __init__(self, llm, system_instructions, prompt, number_of_child_questions):
+    def __init__(self, llm, system_instructions, global_state, prompt, lock, number_of_child_questions):
+        self.lock = lock
+        self.global_state = global_state
         self.llm = llm
         self.startTime = time.time()
         self.requestCounts = 0
@@ -78,27 +80,28 @@ class ParentChildQuestion:
                 system_instruction = system_instructions
             )
         )
+
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try: 
-            self.requestCounts += 1
+        try:
+            self.global_state["request_count"] += 1
             presentTime = time.time()
             
             # If we've reached 10 requests, enforce the rate limit
-            if self.requestCounts >= 10:
+            if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.startTime
+                elapsed = presentTime - self.global_state["start_time"]
                 
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
                     print(f"RPM limit reached, sleeping for {wait_time} seconds")
-                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    print(f"Requests: {self.global_state['request_count']}, Elapsed time: {elapsed:.2f}s")
                     time.sleep(wait_time)
                 
                 # Reset counters after waiting or if 60+ seconds have already passed
-                self.startTime = time.time()
-                self.requestCounts = 1  # Set to 1 for the current request
+                self.global_state["start_time"] = time.time()
+                self.global_state["request_count"] = 1  # Set to 1 for the current request
             
             response = self.chat.send_message(prompt)
             val = response.text
@@ -204,9 +207,9 @@ class ParentChildQuestion:
         result = self._retry_generate(_generate)
         return result
 class SimpleQuestion:
-    def __init__(self, llm, system_instructions, prompt):
-        self.startTime = time.time()
-        self.requestCounts = 0
+    def __init__(self, llm, system_instructions, global_state, lock, prompt):
+        self.global_state = global_state
+        self.lock = lock
         self.llm = llm
         self.prompt = prompt
         self.max_retries = 3
@@ -216,27 +219,28 @@ class SimpleQuestion:
                 system_instruction = system_instructions
             )
         )
+
     def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
-        try: 
-            self.requestCounts += 1
+        try:
+            self.global_state["request_count"] += 1
             presentTime = time.time()
             
             # If we've reached 10 requests, enforce the rate limit
-            if self.requestCounts >= 10:
+            if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.startTime
+                elapsed = presentTime - self.global_state["start_time"]
                 
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
                     print(f"RPM limit reached, sleeping for {wait_time} seconds")
-                    print(f"Requests: {self.requestCounts}, Elapsed time: {elapsed:.2f}s")
+                    print(f"Requests: {self.global_state['request_count']}, Elapsed time: {elapsed:.2f}s")
                     time.sleep(wait_time)
                 
                 # Reset counters after waiting or if 60+ seconds have already passed
-                self.startTime = time.time()
-                self.requestCounts = 1  # Set to 1 for the current request
+                self.global_state["start_time"] = time.time()
+                self.global_state["request_count"] = 1  # Set to 1 for the current request
             
             response = self.chat.send_message(prompt)
             val = response.text
@@ -246,7 +250,7 @@ class SimpleQuestion:
             print(f"failed in generating response by self.llm.invoke")
             print(f"{str(e)}")
             return None
-    
+
     def _retry_generate(self, func, *args):
       last_error = None
       for attempt in range(max_retries):
@@ -262,7 +266,7 @@ class SimpleQuestion:
       if last_error:
          print(f"All attempts failed. Last error: {last_error}")
          return None
-      
+
     def generate_QuestionPassage(self):
         def _generate(warn= False):
             passages =[]
@@ -283,7 +287,6 @@ class SimpleQuestion:
         result = self._retry_generate(_generate)
         return result
 
-    
     def generate_questionText(self):
         def _generate(warn= False):
             prompt = f"QuestionText: {self.prompt}"

@@ -2,13 +2,15 @@
 
 import random
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import TA
+from Integrated_Reasoning.files.questionComponents import TA
 from google import genai
 from dotenv import load_dotenv
 import os, re, json
 class Generate_TA:
-    def __init__(self, prompt, api_IDX = 1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
         self.llm = genai.Client(api_key=api_key)
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Table-Analysis.txt"), "r") as f:
@@ -16,7 +18,7 @@ class Generate_TA:
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        ta = TA(self.llm, self.system_instructions, self.prompt)
+        ta = TA(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
         self.questionData["type"] = "TA"
         self.questionData["prompt"] = self.prompt
         difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)

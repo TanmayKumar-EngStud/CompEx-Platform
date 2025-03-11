@@ -2,18 +2,19 @@ from dotenv import load_dotenv
 from google import genai
 import os, json
 # GRE.Quants.files.
-from questionComponents import DataSufficiencyQuestion
+from Quants.files.questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
-    def __init__(self, prompt=None, api_IDX = 1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
         api_key = os.getenv(f"API_{api_IDX}")
+        self.global_state = global_state
+        self.lock = lock
         self.llm = genai.Client(api_key = api_key)
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Data-Sufficiency-Questions.txt"), "r") as f:
             self.system_instructions = f.read()
         self.prompt = prompt
         self.questionData = {}
-        self.thread_id = None
     def generate_question(self):
         self.questionData["prompt"] = self.prompt
         self.questionData["type"] = "DS"
@@ -29,7 +30,7 @@ class DataSufficiencyQuestionGeneration:
             self.questionData["tags"] = tag
         except Exception as e:
             raise Exception(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-        dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.system_instructions, self.prompt)
+        dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
         content = {}
 
         passage, statements, question = dataSufficiencyQuestion.generate_questionText()

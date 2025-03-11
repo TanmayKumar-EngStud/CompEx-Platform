@@ -1,11 +1,13 @@
 import random, json, os,re
 # GMAT.Integrated_Reasoning.files.
-from questionComponents import GI 
+from Integrated_Reasoning.files.questionComponents import GI 
 from google import genai
 from dotenv import load_dotenv
 class Generate_GI:
-    def __init__(self, prompt, api_IDX=1):
+    def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
+        self.global_state = global_state
+        self.lock = lock
         api_key = os.getenv(f"API_{api_IDX}")
         self.llm = genai.Client(api_key=api_key)
         with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Graphic-Interpretation.txt"), "r") as f:
@@ -13,7 +15,7 @@ class Generate_GI:
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        gi = GI(self.llm, self.system_instructions, self.prompt)
+        gi = GI(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
         self.questionData["type"] = "GI"
         self.questionData["prompt"] = self.prompt
         self.questionData["content"] = gi.generate_questionGraph()
@@ -21,8 +23,6 @@ class Generate_GI:
         self.questionData["title"] = gi.generate_questionTitle()
         self.questionData["solution"] = gi.generate_questionSolution()
         options_list, correct_option = gi.generate_questionOptions()
-        print(f"options_list: {options_list}")
-        print(f"correct_option: {correct_option}")
         idx = 0
         answer_list = []
         options = []
