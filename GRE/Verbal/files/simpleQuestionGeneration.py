@@ -1,5 +1,5 @@
 # GRE.Verbal.files.
-from Verbal.files.questionComponents import SimpleQuestion
+from GRE.Verbal.files.questionComponents import SimpleQuestion
 import random, os, json, re
 from dotenv import load_dotenv
 from google import genai

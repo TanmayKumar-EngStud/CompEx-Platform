@@ -1,20 +1,20 @@
 import json, time, dotenv
 # GRE.
-from Mock_prompts.Verbal import Verbal_prompts
-from Mock_prompts.Quants import Quants_prompts
+from GRE.Mock_prompts.Verbal import Verbal_prompts
+from GRE.Mock_prompts.Quants import Quants_prompts
 
 from enum import Enum
 import time
 # region Quants generators:
-from Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
-from Quants.files.numericEntryQuestionGeneration import NumericEntryQuestionGeneration as Q_NE_gen
-from Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as Q_PC_gen
-from Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
+from GRE.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
+from GRE.Quants.files.numericEntryQuestionGeneration import NumericEntryQuestionGeneration as Q_NE_gen
+from GRE.Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as Q_PC_gen
+from GRE.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
 # endregion
 
 # region Verbal generators:
-from Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
-from Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
+from GRE.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
+from GRE.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
 # endregion 
 
 from concurrent.futures import ThreadPoolExecutor, as_completed

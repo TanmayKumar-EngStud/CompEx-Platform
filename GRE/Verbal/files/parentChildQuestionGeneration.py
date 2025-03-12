@@ -1,5 +1,5 @@
 # GRE.Verbal.files.
-from Verbal.files.questionComponents import ParentChildQuestion
+from GRE.Verbal.files.questionComponents import ParentChildQuestion
 import random, math, os, json
 from dotenv import load_dotenv
 from google import genai

@@ -1,7 +1,7 @@
 {
     "verbal": {
         "total_questions": 23,
-        "combination_number": 1271,
+        "combination_number": 1272,
         "section": {
             "RC": [
                 13,
@@ -14,55 +14,55 @@
         },
         "themes": [
             "economics",
-            "culture",
-            "business",
-            "biological_sciences",
             "literature",
-            "physical_sciences",
-            "social_sciences",
-            "philosophy",
+            "culture",
             "history",
-            "psychology"
+            "social_sciences",
+            "business",
+            "physical_sciences",
+            "psychology",
+            "biological_sciences",
+            "philosophy"
         ],
         "cr_types": [
-            "find the assumption",
-            "structure of the argument boldface structure question",
-            "paradox",
+            "Weaken the argument",
+            "structure of the argument dialogue structure question",
             "strengthen the argument",
             "complete the argument",
+            "draw inference/conclusion",
+            "find the assumption",
+            "paradox",
             "evaluate the conclusion",
-            "structure of the argument dialogue structure question",
-            "Weaken the argument",
-            "draw inference/conclusion"
+            "structure of the argument boldface structure question"
         ]
     },
     "quants": {
         "total_questions": 21,
-        "combination_number": 2158,
+        "combination_number": 2179,
         "question_style": [
             "Real Contextual",
             "Pure Contextual"
         ],
         "options": [
             "Arithmetic",
-            "Algebra",
-            "Word Problems"
+            "Word Problems",
+            "Algebra"
         ],
         "Arithmetic": {
             "focused_skill": [
-                "Critical Reasoning",
                 "Number Sense",
+                "common pitfalls",
                 "Logical Reasoning",
-                "common pitfalls"
+                "Critical Reasoning"
             ],
             "topics": [
-                "Trial and Error Method(type of questions)",
-                "Ratio and Proportion",
                 "Unitary Method",
-                "Work and Time",
                 "Percentages",
+                "Ratio and Proportion",
+                "Rates",
                 "Discount, Profit and Loss",
-                "Rates"
+                "Work and Time",
+                "Trial and Error Method(type of questions)"
             ]
         },
         "Algebra": {
@@ -79,9 +79,9 @@
         },
         "Word Problems": {
             "focused_skill": [
-                "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
-                "Assessing given Situation(checking the ability of accessing a given situation)",
                 "Choosing mathematical tools(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)",
+                "Assessing given Situation(checking the ability of accessing a given situation)",
+                "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
                 "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)"
             ],
             "topics": [
@@ -98,15 +98,15 @@
                 "Percentages"
             ],
             "themes": [
-                "Taxation",
-                "Resource Management",
-                "Finance",
-                "Accounting",
-                "Marketing and Sales",
-                "Business",
-                "Strategy and Management",
                 "Logistics and Supply Chain",
-                "Economics"
+                "Accounting",
+                "Economics",
+                "Taxation",
+                "Marketing and Sales",
+                "Strategy and Management",
+                "Business",
+                "Finance",
+                "Resource Management"
             ]
         }
     },

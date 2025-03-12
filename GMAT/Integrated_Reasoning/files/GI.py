@@ -1,6 +1,6 @@
 import random, json, os,re
 # GMAT.Integrated_Reasoning.files.
-from Integrated_Reasoning.files.questionComponents import GI 
+from GMAT.Integrated_Reasoning.files.questionComponents import GI 
 from google import genai
 from dotenv import load_dotenv
 class Generate_GI:

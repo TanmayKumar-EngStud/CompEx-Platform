@@ -2,7 +2,7 @@ import random, os, sys, json
 from dotenv import load_dotenv
 # GMAT.Quants.files.
 from google import genai
-from Quants.files.questionComponents import DataSufficiencyQuestion
+from GMAT.Quants.files.questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
     def __init__(self, global_state, lock, api_IDX, prompt):

@@ -7,7 +7,7 @@ sys.path.append(parent_dir)
 from dotenv import load_dotenv
 from google import genai
 # GMAT.Verbal.files.
-from Verbal.files.questionComponents import ParentChildQuestion
+from GMAT.Verbal.files.questionComponents import ParentChildQuestion
 class ParentChildQuestionGeneration:
     def generate_child_prompt(self, idx, difficulty):
         child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))

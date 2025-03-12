@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from google import genai
 
 # GMAT.Verbal.files.
-from Verbal.files.questionComponents import SimpleQuestion
+from GMAT.Verbal.files.questionComponents import SimpleQuestion
 import random
 class SimpleQuestionGeneration:
    def __init__(self, global_state, lock, api_IDX, prompt=None):

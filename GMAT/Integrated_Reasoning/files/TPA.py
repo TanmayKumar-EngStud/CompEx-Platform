@@ -1,5 +1,5 @@
 # GMAT.Integrated_Reasoning.files.
-from Integrated_Reasoning.files.questionComponents import TPA
+from GMAT.Integrated_Reasoning.files.questionComponents import TPA
 import random
 import json
 from google import genai

@@ -1,25 +1,25 @@
 import json, time, dotenv
 # GMAT.
-from Mock_prompts.Verbal import Verbal_prompts
-from Mock_prompts.Quants import Quants_prompts
-from Mock_prompts.Integrated_Reasoning import Integrated_Reasoning_prompts
+from GMAT.Mock_prompts.Verbal import Verbal_prompts
+from GMAT.Mock_prompts.Quants import Quants_prompts
+from GMAT.Mock_prompts.Integrated_Reasoning import Integrated_Reasoning_prompts
 
 import traceback
 from enum import Enum
 import time, os, threading
-from Integrated_Reasoning.files.GI import Generate_GI as GI_gen
-from Integrated_Reasoning.files.TPA import Generate_TPA as TPA_gen
-from Integrated_Reasoning.files.TA import Generate_TA as TA_gen
-from Integrated_Reasoning.files.MSR import Generate_MSR as MSR_gen
-from Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
+from GMAT.Integrated_Reasoning.files.GI import Generate_GI as GI_gen
+from GMAT.Integrated_Reasoning.files.TPA import Generate_TPA as TPA_gen
+from GMAT.Integrated_Reasoning.files.TA import Generate_TA as TA_gen
+from GMAT.Integrated_Reasoning.files.MSR import Generate_MSR as MSR_gen
+from GMAT.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
 
 # region Quants generators:
-from Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
+from GMAT.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
 # endregion
 
 # region Verbal generators:
-from Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
-from Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
+from GMAT.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
+from GMAT.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
 # endregion 
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -210,12 +210,12 @@ class GMAT_Mock:
         manager.shutdown()
         return paper
 
-start_time = time.time()
-gmat_mock = GMAT_Mock(mock_difficulty=1)
+# start_time = time.time()
+# gmat_mock = GMAT_Mock(mock_difficulty=1)
 
-paper = gmat_mock.generate(8)
+# paper = gmat_mock.generate(8)
 
-json.dump(paper, open(f"paper-NIGGA.json", "w"), indent=2)
-print("paper generated")
-end_time = time.time()
-print(f"Time taken: {end_time - start_time} seconds")
+# json.dump(paper, open(f"paper-NIGGA.json", "w"), indent=2)
+# print("paper generated")
+# end_time = time.time()
+# print(f"Time taken: {end_time - start_time} seconds")

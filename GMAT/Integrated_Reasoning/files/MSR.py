@@ -2,7 +2,7 @@ import random, json, os, re
 from dotenv import load_dotenv
 from google import genai
 # GMAT.Integrated_Reasoning.files.
-from Integrated_Reasoning.files.questionComponents import MSR
+from GMAT.Integrated_Reasoning.files.questionComponents import MSR
 
 class Generate_MSR:
     def __init__(self, global_state, lock, api_IDX, prompt):

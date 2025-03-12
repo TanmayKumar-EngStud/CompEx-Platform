@@ -1,5 +1,5 @@
 # GRE.Quants.files.
-from Quants.files.questionComponents import ParentChildQuestion, SimpleQuestion
+from GRE.Quants.files.questionComponents import ParentChildQuestion, SimpleQuestion
 import json, re
 from dotenv import load_dotenv
 from google import genai
@@ -21,7 +21,6 @@ class NumericEntryQuestionGeneration:
    def generate_question(self):
       self.questionData["type"] = "NE"
       self.questionData["prompt"] = self.prompt
-      self.questionData["thread_id"] = self.thread_id
       if "graph" in self.prompt.lower() or "table" in self.prompt.lower():
          numericEntryQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
          content = numericEntryQuestion.generate_questionGraph()

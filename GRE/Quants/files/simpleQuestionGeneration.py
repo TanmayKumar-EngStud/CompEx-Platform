@@ -1,5 +1,5 @@
 # GRE.Quants.files.
-from Quants.files.questionComponents import SimpleQuestion
+from GRE.Quants.files.questionComponents import SimpleQuestion
 from google import genai
 import os, json, re
 from dotenv import load_dotenv

@@ -1,6 +1,6 @@
 import random
 # GMAT.Quants.files.
-from Quants.files.questionComponents import SimpleQuestion
+from GMAT.Quants.files.questionComponents import SimpleQuestion
 from google import genai
 from dotenv import load_dotenv
 import json, os, re

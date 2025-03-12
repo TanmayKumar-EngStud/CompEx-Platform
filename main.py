@@ -24,7 +24,7 @@ class Main:
    def generate_paper(self):
       start_time = time.time()
       gmat_mock = GMAT_Mock(self._difficulty_and_is_mock['difficulty'])
-      GMAT_paper = gmat_mock.generate()
+      GMAT_paper = gmat_mock.generate(8)
       timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
       with open(f'papers/GMAT/GMAT_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json', 'w') as f:
          try:
@@ -33,8 +33,10 @@ class Main:
             print(f"GMAT paper storing Error: {str(e)}")
       self.database.registerQuestion(GMAT_paper, isMockQuestion=self._difficulty_and_is_mock['is_mock'], difficulty=self._difficulty_and_is_mock['difficulty'])
       print("GMAT Done")
+      print("Sleeping for 60 seconds for resetting all the APIs Request Per Minute counter")
+      time.sleep(60) # wait for 60 seconds to reset all the APIs
       gre_mock = GRE_Mock(self._difficulty_and_is_mock['difficulty'])
-      GRE_paper = gre_mock.generate()
+      GRE_paper = gre_mock.generate(8)
       timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
       with open(f'papers/GRE/GRE_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json', 'w') as f:
          try:

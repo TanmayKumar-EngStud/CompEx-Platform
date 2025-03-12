@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from google import genai
 import os, json
 # GRE.Quants.files.
-from Quants.files.questionComponents import DataSufficiencyQuestion
+from GRE.Quants.files.questionComponents import DataSufficiencyQuestion
 import re
 class DataSufficiencyQuestionGeneration:
     def __init__(self, global_state, lock, api_IDX, prompt):

@@ -1,5 +1,5 @@
 # GRE.Quants.files.
-from Quants.files.questionComponents import ParentChildQuestion
+from GRE.Quants.files.questionComponents import ParentChildQuestion
 from google import genai
 import os, json, re
 from dotenv import load_dotenv
@@ -16,7 +16,7 @@ class ParentChildQuestionGeneration:
         self.total_child_questions = int(re.search(r"parent_child-(\d+)", prompt).group(1))
         self.prompt = re.sub(r"parent_child-(\d+)", f'total child questions that you would have to generate for this parentChildQuestion will be {self.total_child_questions} so prepare other question data accordigly, prompt: ', prompt)
         self.questionData = {}
-        self.thread_id = None
+
     def generate_question(self):
         self.questionData["type"] = "PS"
         self.questionData["prompt"] = self.prompt

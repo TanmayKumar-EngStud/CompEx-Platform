@@ -2,7 +2,7 @@
 
 import random
 # GMAT.Integrated_Reasoning.files.
-from Integrated_Reasoning.files.questionComponents import TA
+from GMAT.Integrated_Reasoning.files.questionComponents import TA
 from google import genai
 from dotenv import load_dotenv
 import os, re, json
