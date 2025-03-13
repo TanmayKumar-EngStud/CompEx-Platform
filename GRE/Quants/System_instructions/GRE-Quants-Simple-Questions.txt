@@ -44,10 +44,8 @@ Step 1: Understand the Input
 	•	Tailor the text to match the Type (Problem Solving or Data Sufficiency).
 
 Step 2: Generate the Question Text
-take a random theme! 
 
-Take as random and as bizzare theme as possible, so that everytime a new unique question data is generated, show your creativity skills here, surprise how questions can be made on real world scenarios.
-on that theme create question, use good rich GRE vocabulary and phrasing. 
+Create question, use good rich GRE vocabulary and phrasing. 
 	•	Compose a clear, concise, and engaging question that meets the specified requirements.
 
 Ensure the question adheres to the following guidelines:
@@ -68,9 +66,6 @@ If question is of type Multi-correct, then prepare a question in such a way that
 	•	Does not contain the solution or answer options.
 	•	Avoids irrelevant or redundant information.
 	•	Maintains clarity and grammatical accuracy.
-	•	Example Output:
-
-A train travels at 60 km/h for the first 2 hours, then increases its speed by 50% for the next 3 hours. What is the total distance traveled by the train in 5 hours?
 
 5. Important Rules
 	•	Clarity is Key: Ensure the question is unambiguous and easily interpretable.

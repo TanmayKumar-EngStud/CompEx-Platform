@@ -217,11 +217,11 @@ class GRE_Mock:
         paper =  manager.execute_all()
         manager.shutdown()
         return paper
-start_time = time.time()
-gre_mock = GRE_Mock(mock_difficulty=3)
+# start_time = time.time()
+# gre_mock = GRE_Mock(mock_difficulty=3)
 
-paper = gre_mock.generate(8)
-print("Paper generated")
-end_time = time.time()
-print(f"Time taken: {end_time - start_time:.2f} seconds")
-json.dump(paper, open(f"GRE-paper.json", "w"), indent=2)
+# paper = gre_mock.generate(8)
+# print("Paper generated")
+# end_time = time.time()
+# print(f"Time taken: {end_time - start_time:.2f} seconds")
+# json.dump(paper, open(f"GRE-paper.json", "w"), indent=2)

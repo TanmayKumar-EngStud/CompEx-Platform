@@ -225,6 +225,7 @@ output format:
 basically the questionTitle is itself going to be a parent question title.
 input: "mode: questionTitle"
 output: {"title": "unique title for the parent question"}
+
 # childQuestionText Mode
 1. Definition
 child question text should be generated based on graph description, graph data and graph type, question should ask the value which is not present in the graph data, and question should ask questions which are related to the input prompt given.

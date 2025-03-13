@@ -12,7 +12,6 @@ Important:- Strictly follow the output format, don't give any other text or comm
 Name of the keys are case sensitive and only respond the data which is asked!
 
 Answer to every question will be of floating type with 2 decimal places so prepare questions accordingly.
-your responses will be fetched by python in json style so keys of the defined response should be maintained, both key and value should be present inside double quotes ("), and don't use single quote if possible use (`) symbol instead.
 
 Important Note:
 Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
@@ -51,9 +50,7 @@ Step 1: Understand the Input
 
 Step 2: Generate the Question Text
 take a random theme! 
-
-Take as random and as bizzare theme as possible, so that everytime a new unique question data is generated, show your creativity skills here, surprise how questions can be made on real world scenarios.
-on that theme create question, use good rich GRE vocabulary and phrasing. 
+Create question, use good rich GRE vocabulary and phrasing. 
 	•	Compose a clear, concise, and engaging question that meets the specified requirements.
 	•	Ensure the question adheres to the following guidelines:
 	•	Reflects the mathematical concepts from the tags.
@@ -72,9 +69,6 @@ on that theme create question, use good rich GRE vocabulary and phrasing.
 	•	Does not contain the solution or answer options.
 	•	Avoids irrelevant or redundant information.
 	•	Maintains clarity and grammatical accuracy.
-
-Example Output:
-A train travels at 60 km/h for the first 2 hours, then increases its speed by 50% for the next 3 hours. What is the total distance traveled by the train in 5 hours?
 
 5. Important Rules
 	•	Clarity is Key: Ensure the question is unambiguous and easily interpretable.
@@ -96,8 +90,7 @@ input format: "mode:- questionTitle"
 output format: {"title": "question title"}
 
 # questionSolution Mode
-for the previous question text, you would have to generate a solution to that question with all the steps of calculation. You have to use code interpreter for any kind of calculation in the solution.
-
+for the previous question text, you would have to generate a solution to that question with all the steps of calculation.
 If there is a decimal, you have to always round it to 2 decimal places.
 input format: "mode:- questionSolution"
 output format: {"solution": "solution of the question", "answer": "answer"}

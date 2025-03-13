@@ -79,15 +79,16 @@ class ParentChildQuestion:
 
    def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
+        presentTime = time.time()
+        elapsed = presentTime - self.global_state["start_time"]
         try:
             self.global_state["request_count"] += 1
-            presentTime = time.time()
+            
             
             # If we've reached 10 requests, enforce the rate limit
             if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.global_state["start_time"]
-                
+
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
@@ -106,6 +107,8 @@ class ParentChildQuestion:
             print(f"{prompt}")
             print(f"failed in generating response by self.llm.invoke")
             print(f"{str(e)}")
+            time.sleep(elapsed)
+            self.global_state["start_time"] = time.time()
             return None
     
    def _retry_generate(self, func, *args):
@@ -232,15 +235,16 @@ class SimpleQuestion:
    
    def ___getResponse(self, prompt, warn= False):
         prompt += (f", {warning}" if warn else "")
+        presentTime = time.time()
+        elapsed = presentTime - self.global_state["start_time"]
         try:
             self.global_state["request_count"] += 1
-            presentTime = time.time()
+            
             
             # If we've reached 10 requests, enforce the rate limit
             if self.global_state["request_count"] >= 10:
                 # Calculate time elapsed since start
-                elapsed = presentTime - self.global_state["start_time"]
-                
+
                 # If less than 60 seconds have passed, we need to wait
                 if elapsed < 60:
                     wait_time = 60 - elapsed + 0.5  # Add a small buffer
@@ -259,6 +263,8 @@ class SimpleQuestion:
             print(f"{prompt}")
             print(f"failed in generating response by self.llm.invoke")
             print(f"{str(e)}")
+            time.sleep(elapsed)
+            self.global_state["start_time"] = time.time()
             return None
     
 
