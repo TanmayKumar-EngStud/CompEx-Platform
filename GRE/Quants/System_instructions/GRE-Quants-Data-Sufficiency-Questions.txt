@@ -16,6 +16,7 @@ there will be x modes:-
 2. questionTitle
 3. questionSolution
 
+For showing Math, use LaTeX notation, and use Single Dollar Sign as Delimiter, e.g:- $\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$
 Important:- Strictly follow the output format, don't give any other text or comment, your response is directly used by python program, key value pair should be in double quotes, don't use single quote, don't use single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 Name of the keys are case sensitive and only respond the data which is asked!
 

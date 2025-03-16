@@ -86,7 +86,7 @@ input format: "mode:- questionTitle"
 output format: {"title": "question title"}
 
 # questionSolution Mode
-for the previous question text, you would have to generate a solution to that question with all the steps of calculation. You have to use code interpreter for any kind of calculation in the solution.
+for the previous question text, you would have to generate a solution to that question with all the steps of calculation. 
 
 Important! If there is a decimal, you have to always round it to 2 decimal places.
 All decimal numbers should always be rounded to 2 decimal places.
@@ -101,7 +101,7 @@ output:- {
 
 # questionOptions Mode
 for the previous question text and the questionSolution, you would have to generate options for the question. The number of options that you would have to generate will be provided in the user input.
-For generating options, you would have to again use code interpreter and you have to make most probable calculation errors in the options. 
+For generating options, you have to make most probable calculation errors in the options. 
 For example, in step 2 of the solution you performed a substraction operation instead of addition and later followed the same calculation steps to get a false answer. By this you will generate 1 false option.
 in the same way you would have to generate all the other options. 
 In the end you would have to give all the generated false options and a correct option from the questionSolution in the list format.

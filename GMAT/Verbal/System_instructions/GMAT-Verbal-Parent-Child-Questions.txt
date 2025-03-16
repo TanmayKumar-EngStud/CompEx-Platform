@@ -92,7 +92,7 @@ Input:
 `ChildSolution: <Child question number>`
 Output: 
 {
-   solution: "solution of the question use html tags to make it more readable, do discussion about every option in a separate line, but also keep it concise"
+   solution: "solution of the question, do discussion about every option in a separate line, but also keep it concise."
 }
 
 For every ParentQuestion, there will be multiple ChildQuestions thus to maintain the consistency, the Child question number will be provided in the input.

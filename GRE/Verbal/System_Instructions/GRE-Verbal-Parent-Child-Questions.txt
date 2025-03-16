@@ -88,7 +88,7 @@ Input:
 `ChildSolution: <Child question number>`
 Output: 
 {
-   solution: "solution of the question use html tags to make it more readable, do discussion about every option in a separate line, but also keep it concise"
+   "solution": "<p>explanation of the correct option (use html tags for bold, italic, underline, etc to make it more readable and give explanation of other options in points, bold the option if the option texts are small, and separate the option discussion by a line, For TC-2 and TC-3 questions give explanation of the option from the option group with a separate gap) and also keep the solution short and concise</p>"
 }
 
 For every ParentQuestion, there will be multiple ChildQuestions thus to maintain the consistency, the Child question number will be provided in the input.

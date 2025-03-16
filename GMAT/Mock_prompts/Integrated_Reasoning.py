@@ -24,7 +24,7 @@ class Integrated_Reasoning_prompts:
       two = easy_count - one + two_three
       four = hard_count - five + medium_count - three - two_three
       difficulty_pool = ([1]*one + [2]*two + [3]*three + [4]*four + [5]*five)
-      print(f"difficulty pool length:- {len(difficulty_pool)} it should be 20, always")
+      # print(f"difficulty pool length:- {len(difficulty_pool)} it should be 20, always")
       random.shuffle(difficulty_pool)
       return difficulty_pool
    
@@ -69,7 +69,7 @@ class Integrated_Reasoning_prompts:
       self.remaining_questions -= total_gi
       
       total_ds = 8
-      print(f"difficuty_level:- {difficulty_pool}\n length remaining:- {len(difficulty_pool)}")
+      # print(f"difficuty_level:- {difficulty_pool}\n length remaining:- {len(difficulty_pool)}")
       for _ in range(total_ds):
          topic = random.choice(self.component_allocation["DS"]["topics"])
          focused_skill = random.choice(self.component_allocation["DS"]["focused_skill"])

@@ -1,0 +1,5 @@
+```json
+{
+   "question": "The passage discusses intentionality as the \"aboutness\" of mental states.  Which of the following assumptions is LEAST likely to be implicitly held by philosophers who emphasize intentionality as a defining characteristic of the mind?",
+}
+```

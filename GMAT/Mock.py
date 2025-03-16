@@ -23,6 +23,8 @@ from GMAT.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration 
 # endregion 
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import asyncio
+
 def clear_terminal():
     os.system('clear')
 clear_terminal()
@@ -50,7 +52,8 @@ GENERATOR_MAP = {
 class APIThreadPoolManager:
     def __init__(self, num_threads: int, paper):
         self.num_threads = num_threads
-        self.executor = ThreadPoolExecutor(max_workers=num_threads)
+        self.paper = paper
+        self.executor = ThreadPoolExecutor(max_workers=num_threads, initializer=self._init_event_loop)
         self.futures = []
         self.paper = paper
         # Create a separate state for each API
@@ -64,6 +67,10 @@ class APIThreadPoolManager:
             })
             self.locks.append(threading.Lock())
     
+    def _init_event_loop(self):
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
     def add_task(self, task_factory, *args):
         """
         Add a task to be executed with the appropriate API state.

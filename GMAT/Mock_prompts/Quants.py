@@ -25,7 +25,7 @@ class Quants_prompts:
       two = easy_count - one + two_three
       four = hard_count - five + medium_count - three - two_three
       difficulty_pool = ([1]*one + [2]*two + [3]*three + [4]*four + [5]*five)
-      print(f"difficulty pool length:- {len(difficulty_pool)} it should be 20, always")
+      # print(f"difficulty pool length:- {len(difficulty_pool)} it should be 20, always")
       random.shuffle(difficulty_pool)
       return difficulty_pool
    
