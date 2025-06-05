@@ -1,0 +1,723 @@
+...
+    },
+    {
+      "series": "Blaze Solutions (B)",
+      "values": [
+        { "x": "Q1", "y": 30 },
+        { "x": "Q2", "y": 35 },
+        { "x": "Q3", "y": 32 },
+        { "x": "Q4", "y": 33 },
+        { "x": "Q5", "y": 34 },
+        { "x": "Q6", "y": 32 }
+      ]
+    },
+    {
+      "series": "Citadel Innovations (C)",
+      "values": [
+        { "x": "Q1", "y": 30 },
+        { "x": "Q2", "y": 27 },
+        { "x": "Q3", "y": 23 },
+        { "x": "Q4", "y": 21 },
+        { "x": "Q5", "y": 18 },
+        { "x": "Q6", "y": 23 }
+      ]
+    }
+  ]
+}
+```
+Error: 'content'
+Retrying _generate - attempt 1/ 3
+RPM limit reached, sleeping for 20.779550790786743 seconds
+Requests: 10, Elapsed time: 39.72s
+RPM limit reached, sleeping for 19.527508020401 seconds
+Requests: 10, Elapsed time: 40.97s
+GMAT TPA, Error message: received for ParentQuestionContent is: 
+```json
+{
+  "type": "Line Chart",
+  "graph": "line chart",
+  "title": "Market Share Percentage in the Premium Smartwatch Market (Q1-Q6)",
+  "description": "The chart below shows the market share percentage for three companies, Apex Corp (A), Blaze Solutions (B), and Citadel Innovations (C), competing in the niche Premium Smartwatch market over six quarters. Key strategic actions were taken by the companies during this period:\n\nBeginning of Q2: Blaze Solutions launched a major aggressive marketing campaign targeting younger demographics.\nBeginning of Q3: Apex Corp introduced a highly anticipated new model with advanced health tracking features.\nBeginning of Q4: Citadel Innovations significantly reduced manufacturing costs and lowered product prices.\n\nAdditionally, the overall market size grew by 15% in Q5 due to increased consumer interest, and industry-wide shortage of a key component impacted production capacity for all players in Q6.",
+  "x-axis": "Quarter",
+  "y-axis": "Market Share (%)",
+  "data": [
+    {
+      "series": "Apex Corp (A)",
+      "values": [
+        { "x": "Q1", "y": 40 },
+        { "x": "Q2", "y": 38 },
+        { "x": "Q3", "y": 45 },
+        { "x": "Q4", "y": 46 },
+        { "x": "Q5", "y": 48 },
+        { "x": "Q6", "y": 45 }
+      ]
+    },
+    {
+      "series": "Blaze Solutions (B)",
+      "values": [
+        { "x": "Q1", "y": 30 },
+        { "x": "Q2", "y": 35 },
+        { "x": "Q3", "y": 32 },
+        { "x": "Q4", "y": 33 },
+        { "x": "Q5", "y": 34 },
+        { "x": "Q6", "y": 32 }
+      ]
+    },
+    {
+      "series": "Citadel Innovations (C)",
+      "values": [
+        { "x": "Q1", "y": 30 },
+        { "x": "Q2", "y": 27 },
+        { "x": "Q3", "y": 23 },
+        { "x": "Q4", "y": 21 },
+        { "x": "Q5", "y": 18 },
+        { "x": "Q6", "y": 23 }
+      ]
+    }
+  ]
+}
+```
+Error: 'content'
+Retrying _generate - attempt 2/ 3
+GMAT TPA, Error message: received for ParentQuestionContent is: 
+```json
+{
+  "type": "Line Chart",
+  "graph": "line chart",
+  "title": "Market Share Percentage in the Premium Smartwatch Market (Q1-Q6)",
+  "description": "The chart below shows the market share percentage for three companies, Apex Corp (A), Blaze Solutions (B), and Citadel Innovations (C), competing in the niche Premium Smartwatch market over six quarters. Key strategic actions were taken by the companies during this period:\n\nBeginning of Q2: Blaze Solutions launched a major aggressive marketing campaign targeting younger demographics.\nBeginning of Q3: Apex Corp introduced a highly anticipated new model with advanced health tracking features.\nBeginning of Q4: Citadel Innovations significantly reduced manufacturing costs and lowered product prices.\n\nAdditionally, the overall market size grew by 15% in Q5 due to increased consumer interest, and industry-wide shortage of a key component impacted production capacity for all players in Q6.",
+  "x-axis": "Quarter",
+  "y-axis": "Market Share (%)",
+  "data": [
+    {
+      "series": "Apex Corp (A)",
+      "values": [
+        { "x": "Q1", "y": 40 },
+        { "x": "Q2", "y": 38 },
+        { "x": "Q3", "y": 45 },
+        { "x": "Q4", "y": 46 },
+        { "x": "Q5", "y": 48 },
+        { "x": "Q6", "y": 45 }
+      ]
+    },
+    {
+      "series": "Blaze Solutions (B)",
+      "values": [
+        { "x": "Q1", "y": 30 },
+        { "x": "Q2", "y": 35 },
+        { "x": "Q3", "y": 32 },
+        { "x": "Q4", "y": 33 },
+        { "x": "Q5", "y": 34 },
+        { "x": "Q6", "y": 32 }
+      ]
+    },
+    {
+      "series": "Citadel Innovations (C)",
+      "values": [
+        { "x": "Q1", "y": 30 },
+        { "x": "Q2", "y": 27 },
+        { "x": "Q3", "y": 23 },
+        { "x": "Q4", "y": 21 },
+        { "x": "Q5", "y": 18 },
+        { "x": "Q6", "y": 23 }
+      ]
+    }
+  ]
+}
+```
+Error: 'content'
+Retrying _generate - attempt 3/ 3
+Error in refining response: Invalid \escape: line 2 column 923 (char 924)
+GMAT Quants, Error: message received for questionSolution is: 
+```json
+{
+  "solution": "Let $T_A$ be the time in hours it takes Machine A alone to manufacture 300 components, and let $T_B$ be the time in hours it takes Machine B alone to manufacture 300 components. We are asked to find the value of $T_A$.\n\nThe rate of Machine A is $R_A = 300/T_A$ components per hour.\nThe rate of Machine B is $R_B = 300/T_B$ components per hour.\n\nStatement (1) says that working together, Machine A and Machine B can manufacture 300 components in 4 hours. The combined rate is $R_A + R_B$.\n$(R_A + R_B) \\times 4 = 300$\n$R_A + R_B = 300 / 4 = 75$ components per hour.\nSubstituting the rates in terms of time, we get:\n$300/T_A + 300/T_B = 75$\nDividing the entire equation by 75 gives:\n$4/T_A + 4/T_B = 1$\nThis is one equation with two unknowns ($T_A$ and $T_B$). We cannot determine a unique value for $T_A$ from this statement alone. For example, if $T_A=5$, then $4/5 + 4/T_B = 1 \\Rightarrow 4/T_B = 1 - 4/5 = 1/5 \\Rightarrow T_B=20$. If $T_A=8$, then $4/8 + 4/T_B = 1 \\Rightarrow 1/2 + 4/T_B = 1 \\Rightarrow 4/T_B = 1/2 \\Rightarrow T_B=8$. $T_A$ can take multiple values, each corresponding to a different $T_B$. Statement (1) alone is not sufficient.\n\nStatement (2) says that Machine A alone takes 5 hours less than Machine B alone to manufacture 300 components.\n$T_A = T_B - 5$\nThis can be rewritten as $T_B = T_A + 5$. This is one equation with two unknowns ($T_A$ and $T_B$). We cannot determine a unique value for $T_A$ from this statement alone. For example, if $T_A=5$, then $T_B=10$. If $T_A=10$, then $T_B=15$. Statement (2) alone is not sufficient.\n\nCombining Statement (1) and Statement (2):\nWe have the equations:\n1) $4/T_A + 4/T_B = 1$\n2) $T_B = T_A + 5$\n\nSubstitute the expression for $T_B$ from Statement (2) into the equation from Statement (1):\n$4/T_A + 4/(T_A + 5) = 1$\nMultiply both sides by $T_A(T_A + 5)$ to clear the denominators, assuming $T_A \\neq 0$ and $T_A + 5 \\neq 0$ (which must be true since time cannot be zero or negative):\n$4(T_A + 5) + 4T_A = T_A(T_A + 5)$\n$4T_A + 20 + 4T_A = T_A^2 + 5T_A$\n$8T_A + 20 = T_A^2 + 5T_A$\nRearrange the terms to form a quadratic equation:\n$T_A^2 + 5T_A - 8T_A - 20 = 0$\n$T_A^2 - 3T_A - 20 = 0$\n\nWe can solve this quadratic equation for $T_A$ using the quadratic formula $T_A = [-b \\pm \\sqrt{b^2 - 4ac}] / 2a$, where $a=1$, $b=-3$, and $c=-20$.\n$T_A = [3 \\pm \\sqrt{(-3)^2 - 4(1)(-20)}] / 2(1)$\n$T_A = [3 \\pm \\sqrt{9 + 80}] / 2$\n$T_A = [3 \\pm \\sqrt{89}] / 2$\n\nThis gives two potential solutions for $T_A$: $(3 + \\sqrt{89}) / 2$ and $(3 - \\sqrt{89}) / 2$. Since time must be a positive value, we must consider which solution is physically valid.\n$\sqrt{89}$ is between $\\sqrt{81}=9$ and $\\sqrt{100}=10$. It is approximately 9.4.\nThe first solution is $(3 + \\sqrt{89}) / 2 \\approx (3 + 9.4) / 2 = 12.4 / 2 = 6.2$. This is a positive value.\nThe second solution is $(3 - \\sqrt{89}) / 2 \\approx (3 - 9.4) / 2 = -6.4 / 2 = -3.2$. This is a negative value, which is not possible for time.\n\nTherefore, the only valid solution for $T_A$ is $(3 + \\sqrt{89}) / 2$. This is a unique value.\n\nSince we can determine a unique value for $T_A$ using both statements together, the statements are sufficient.\n\nThe final answer is $\\boxed{C}$.",
+  "answer": "C"
+}
+```, 
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 1/3
+Error in refining response: Invalid \escape: line 2 column 923 (char 924)
+GMAT Quants, Error: message received for questionSolution is: 
+```json
+{
+  "solution": "Let $T_A$ be the time in hours it takes Machine A alone to manufacture 300 components, and let $T_B$ be the time in hours it takes Machine B alone to manufacture 300 components. We are asked to find the value of $T_A$.\n\nThe rate of Machine A is $R_A = 300/T_A$ components per hour.\nThe rate of Machine B is $R_B = 300/T_B$ components per hour.\n\nStatement (1) says that working together, Machine A and Machine B can manufacture 300 components in 4 hours. The combined rate is $R_A + R_B$.\n$(R_A + R_B) \\times 4 = 300$\n$R_A + R_B = 300 / 4 = 75$ components per hour.\nSubstituting the rates in terms of time, we get:\n$300/T_A + 300/T_B = 75$\nDividing the entire equation by 75 gives:\n$4/T_A + 4/T_B = 1$\nThis is one equation with two unknowns ($T_A$ and $T_B$). We cannot determine a unique value for $T_A$ from this statement alone. For example, if $T_A=5$, then $4/5 + 4/T_B = 1 \\Rightarrow 4/T_B = 1 - 4/5 = 1/5 \\Rightarrow T_B=20$. If $T_A=8$, then $4/8 + 4/T_B = 1 \\Rightarrow 1/2 + 4/T_B = 1 \\Rightarrow 4/T_B = 1/2 \\Rightarrow T_B=8$. $T_A$ can take multiple values, each corresponding to a different $T_B$. Statement (1) alone is not sufficient.\n\nStatement (2) says that Machine A alone takes 5 hours less than Machine B alone to manufacture 300 components.\n$T_A = T_B - 5$\nThis can be rewritten as $T_B = T_A + 5$. This is one equation with two unknowns ($T_A$ and $T_B$). We cannot determine a unique value for $T_A$ from this statement alone. For example, if $T_A=5$, then $T_B=10$. If $T_A=10$, then $T_B=15$. Statement (2) alone is not sufficient.\n\nCombining Statement (1) and Statement (2):\nWe have the equations:\n1) $4/T_A + 4/T_B = 1$\n2) $T_B = T_A + 5$\n\nSubstitute the expression for $T_B$ from Statement (2) into the equation from Statement (1):\n$4/T_A + 4/(T_A + 5) = 1$\nMultiply both sides by $T_A(T_A + 5)$ to clear the denominators, assuming $T_A \\neq 0$ and $T_A + 5 \\neq 0$ (which must be true since time cannot be zero or negative):\n$4(T_A + 5) + 4T_A = T_A(T_A + 5)$\n$4T_A + 20 + 4T_A = T_A^2 + 5T_A$\n$8T_A + 20 = T_A^2 + 5T_A$\nRearrange the terms to form a quadratic equation:\n$T_A^2 + 5T_A - 8T_A - 20 = 0$\n$T_A^2 - 3T_A - 20 = 0$\n\nWe can solve this quadratic equation for $T_A$ using the quadratic formula $T_A = [-b \\pm \\sqrt{b^2 - 4ac}] / 2a$, where $a=1$, $b=-3$, and $c=-20$.\n$T_A = [3 \\pm \\sqrt{(-3)^2 - 4(1)(-20)}] / 2(1)$\n$T_A = [3 \\pm \\sqrt{9 + 80}] / 2$\n$T_A = [3 \\pm \\sqrt{89}] / 2$\n\nThis gives two potential solutions for $T_A$: $(3 + \\sqrt{89}) / 2$ and $(3 - \\sqrt{89}) / 2$. Since time must be a positive value, we must consider which solution is physically valid.\n$\sqrt{89}$ is between $\\sqrt{81}=9$ and $\\sqrt{100}=10$. It is approximately 9.4.\nThe first solution is $(3 + \\sqrt{89}) / 2 \\approx (3 + 9.4) / 2 = 12.4 / 2 = 6.2$. This is a positive value.\nThe second solution is $(3 - \\sqrt{89}) / 2 \\approx (3 - 9.4) / 2 = -6.4 / 2 = -3.2$. This is a negative value, which is not possible for time.\n\nTherefore, the only valid solution for $T_A$ is $(3 + \\sqrt{89}) / 2$. This is a unique value.\n\nSince we can determine a unique value for $T_A$ using both statements together, the statements are sufficient.\n\nThe final answer is C.",
+  "answer": "C"
+}
+```, 
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 2/3
+RPM limit reached, sleeping for 4.038118839263916 seconds
+Requests: 10, Elapsed time: 56.46s
+Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
+GMAT GI, Error: message received for questionSolution is: ```json
+{
+  "solution": "First, calculate the total tax revenue for each year:\nYear 1: ~~550 + 220 + 330 = 1100~~ billion USD\nYear 2: ~~580 + 240 + 350 = 1170~~ billion USD\nYear 3: ~~610 + 260 + 370 = 1240~~ billion USD\nYear 4: ~~640 + 280 + 390 = 1310~~ billion USD\nYear 5: ~~670 + 300 + 410 = 1380~~ billion USD\n\nTo find the average annual increase from Year 1 to Year 5, calculate the total increase and divide by the number of intervals (~~5 - 1 = 4~~ years):\nTotal increase = Year 5 Total - Year 1 Total = ~~1380 - 1100 = 280~~ billion USD\nAverage annual increase = ~~\\frac{\\text{Total increase}}{\\text{Number of years}} = \\frac{280}{4} = 70~~ billion USD.\n\nFor the second blank, calculate the percentage of Income Tax revenue out of the total revenue in Year 3:\nIncome Tax in Year 3 = ~~610~~ billion USD\nTotal Revenue in Year 3 = ~~1240~~ billion USD\nPercentage = ~~\\left(\\frac{\\text{Income Tax in Year 3}}{\\text{Total Revenue in Year 3}}\\right) \\times 100\\%~~ \nPercentage = ~~\\left(\\frac{610}{1240}\\right) \\times 100\\%~~ \n\nUsing a calculator:\n```python\npercentage = (610 / 1240) * 100\nprint(round(percentage, 2))\n```\nOutput: `49.19`\n\nSo, the percentage is approximately ~~49.19\\%~~.\n\nThe average annual increase was approximately 70.00 billion USD, and in Year 3, Income Tax accounted for approximately 49.19 percent of the total tax revenue."
+}
+```
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 2/ 3
+Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
+GMAT GI, Error: message received for questionSolution is: ```json
+{
+  "solution": "First, calculate the total tax revenue for each year:\nYear 1: ~~550 + 220 + 330 = 1100~~ billion USD\nYear 2: ~~580 + 240 + 350 = 1170~~ billion USD\nYear 3: ~~610 + 260 + 370 = 1240~~ billion USD\nYear 4: ~~640 + 280 + 390 = 1310~~ billion USD\nYear 5: ~~670 + 300 + 410 = 1380~~ billion USD\n\nTo find the average annual increase from Year 1 to Year 5, calculate the total increase and divide by the number of intervals (~~5 - 1 = 4~~ years):\nTotal increase = Year 5 Total - Year 1 Total = ~~1380 - 1100 = 280~~ billion USD\nAverage annual increase = ~~\\frac{\\text{Total increase}}{\\text{Number of years}} = \\frac{280}{4} = 70~~ billion USD.\n\nFor the second blank, calculate the percentage of Income Tax revenue out of the total revenue in Year 3:\nIncome Tax in Year 3 = ~~610~~ billion USD\nTotal Revenue in Year 3 = ~~1240~~ billion USD\nPercentage = ~~\\left(\\frac{\\text{Income Tax in Year 3}}{\\text{Total Revenue in Year 3}}\\right) \\times 100\\%~~ \nPercentage = ~~\\left(\\frac{610}{1240}\\right) \\times 100\\%~~ \n\nUsing a calculator:\n```python\npercentage = (610 / 1240) * 100\nprint(round(percentage, 2))\n```\nOutput: `49.19`\n\nSo, the percentage is approximately ~~49.19\\%~~.\n\nThe average annual increase was approximately 70.00 billion USD, and in Year 3, Income Tax accounted for approximately 49.19 percent of the total tax revenue."
+}
+```
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 3/ 3
+Error in refining response: Expecting ',' delimiter: line 2 column 48 (char 49)
+GMAT Quants, Error in generate_questionText: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 1/3
+Error in refining response: Invalid \escape: line 2 column 711 (char 712)
+Error in attempt 1: 'str' object has no attribute 'content'
+Error in refining response: Expecting ',' delimiter: line 2 column 54 (char 55)
+GMAT Quants, Error in generate_questionText: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 2/3
+QuestionText: <Pure Contextual> - <Word Problems> - <Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)> - <Ratio and Proportion> - <Strategy and Management> - <difficulty_level: 3>
+failed in generating response by self.llm.invoke
+('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+RPM limit reached, sleeping for 8.200142860412598 seconds
+Requests: 10, Elapsed time: 52.30s
+GMAT Quants, Error in generate_questionText: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 1/3
+RPM limit reached, sleeping for 14.406362295150757 seconds
+Requests: 10, Elapsed time: 46.09s
+RPM limit reached, sleeping for 12.64159893989563 seconds
+Requests: 10, Elapsed time: 47.86s
+RPM limit reached, sleeping for 14.198084115982056 seconds
+Requests: 10, Elapsed time: 46.30s
+RPM limit reached, sleeping for 2.682372808456421 seconds
+Requests: 10, Elapsed time: 57.82s
+RPM limit reached, sleeping for 14.481398105621338 seconds
+Requests: 10, Elapsed time: 46.02s
+RPM limit reached, sleeping for 26.388105869293213 seconds
+Requests: 10, Elapsed time: 34.11s
+RPM limit reached, sleeping for 27.878118991851807 seconds
+Requests: 10, Elapsed time: 32.62s
+RPM limit reached, sleeping for 22.77272391319275 seconds
+RPM limit reached, sleeping for 27.083476066589355 seconds
+Requests: 10, Elapsed time: 33.42s
+Requests: 10, Elapsed time: 37.73s
+RPM limit reached, sleeping for 23.301259756088257 seconds
+Requests: 10, Elapsed time: 37.20s
+RPM limit reached, sleeping for 22.74522614479065 seconds
+Requests: 10, Elapsed time: 37.75s
+ChildQuestion: 1 of Analyze the argument(analyze the strength of an argument made in the passage) - <difficulty_level: 5>
+failed in generating response by self.llm.invoke
+500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+RPM limit reached, sleeping for 30.125441074371338 seconds
+Requests: 10, Elapsed time: 30.37s
+GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: 
+None
+Retrying _generate - attempt 1/ 3
+RPM limit reached, sleeping for 38.438305139541626 seconds
+Requests: 10, Elapsed time: 22.06s
+2025-06-05 22:20:35 - QuestionGeneration - INFO - [main.py:52] - GMAT paper saved successfully: papers/GMAT/GMAT_paper-05-06-22-20-difficulty-2.json
+sectionNumber: section0
+sectionNumber: section0
+sectionNumber: section0
+Warning: Option 'Based on calculated variances and the mention of reporting significant deviations.' not found in answers dictionary
+Warning: Option 'The sources do not define what constitutes a `significant deviation`.' not found in answers dictionary
+Warning: Option 'The actual hours significantly exceed the standard hours for the task type, making the variance outside the 10% threshold.' not found in answers dictionary
+Warning: Option 'The actual hours per standard resource are calculated to be within 10% of the standard hours per resource adjusted for actual duration.' not found in answers dictionary
+2025-06-05 22:20:37 - QuestionGeneration - INFO - [main.py:59] - GMAT questions registered in database successfully
+2025-06-05 22:20:37 - QuestionGeneration - INFO - [main.py:65] - GMAT paper generation completed successfully
+2025-06-05 22:20:37 - QuestionGeneration - INFO - [main.py:71] - Sleeping for 60 seconds for API rate limit reset
+2025-06-05 22:21:37 - QuestionGeneration - INFO - [main.py:76] - Starting GRE paper generation - Difficulty: 2
+GRE Quants, Error: message received for questionText is: 
+{"question": "A philanthropic organization receives a donation from a benefactor who stipulates that the total sum must be an integer greater than 100, and when this sum is divided by 7, the remainder is 3. Furthermore, when the sum is divided by 11, the remainder is 5. If the organization allocates a portion of this donation equal to the smallest possible integer sum satisfying these conditions for immediate disbursement to a project, how much money, in dollars, is allocated immediately? The benefactor also requires that the total sum must be less than 500."}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+GRE Quants, Error: message received for questionText is: 
+{"question": "A prominent philanthropic organization receives a substantial donation from an anonymous benefactor. The benefactor has stipulated precise conditions regarding the total donation amount, which is an integer value in US dollars. These conditions state that the total sum must be strictly greater than 100 and strictly less than 500. Furthermore, when the total sum is divided by 7, the remainder must be 3, and when the same total sum is divided by 11, the remainder must be 5. The organization has decided to allocate a specific portion of this donation for immediate use on a high-priority project. The amount allocated for this immediate disbursement is defined as the smallest possible integer sum, within the range specified by the benefactor (greater than 100 and less than 500), that satisfies both of the remainder conditions. What is the dollar amount of this immediate disbursement?"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+GRE Quants, Error: message received for questionText is: 
+{"question": "A charitable foundation receives a considerable monetary gift from a benefactor who imposes specific criteria on the total sum. The sum, expressed as an integer number of US dollars, must be strictly greater than 100 and strictly less than 500. Additionally, when the total sum is divided by 7, the remainder must be exactly 3. When the same total sum is divided by 11, the remainder must be exactly 5. The foundation`s policy dictates that a sum equivalent to the smallest possible integer value, within the benefactor`s specified range (greater than 100 and less than 500), that simultaneously satisfies both of these remainder conditions will be earmarked for immediate project funding. Determine the dollar amount allocated for this immediate funding."}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+GRE Quants, Error: message received for questionTitle is: 
+{"title": "Finding the Smallest Donation Amount Satisfying Multiple Remainder Conditions within a Range"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+GRE Quants, Error: message received for questionTitle is: 
+{"title": "Calculate the Smallest Integer Satisfying Congruences within a Given Range"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+GRE Quants, Error: message received for questionTitle is: 
+{"title": "Smallest Donation Amount with Specific Remainders When Divided by 7 and 11"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+GRE Quants, Error: message received for questionText is: 
+{"question": "A retailer offers an article for sale and sets a certain marked price. During a promotional event, the retailer provides a 20% discount on the marked price. An item is sold for $1800 after this discount is applied. If the retailer realizes a profit of 25% based on the original cost price of the item, what was the initial cost price the retailer paid?"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+GRE Quants, Error: message received for questionSolution is: 
+{
+  "solution": "<p>Let N be the total sum of the donation. According to the problem statement, N must satisfy the following conditions:<br>1. 100 < N < 500<br>2. When N is divided by 7, the remainder is 3. This can be written as N ≡ 3 (mod 7).<br>3. When N is divided by 11, the remainder is 5. This can be written as N ≡ 5 (mod 11).</p><p>We need to find the smallest integer N that satisfies all three conditions.</p><p>From N ≡ 3 (mod 7), N can be expressed as N = 7k + 3 for some integer k.<br>From N ≡ 5 (mod 11), N can be expressed as N = 11m + 5 for some integer m.</p><p>Equating the two expressions for N:<br>7k + 3 = 11m + 5<br>7k = 11m + 2</p><p>We need to find integer values for k and m that satisfy this equation. Let's test values for m starting from 0 or 1 to find the smallest non-negative integer solution for N that satisfies both congruences.<br>If m = 0, 7k = 11(0) + 2 = 2 (No integer k)<br>If m = 1, 7k = 11(1) + 2 = 13 (No integer k)<br>If m = 2, 7k = 11(2) + 2 = 24 (No integer k)<br>If m = 3, 7k = 11(3) + 2 = 33 + 2 = 35. This gives 7k = 35, so k = 5.</p><p>Using m = 3 in N = 11m + 5, we get N = 11(3) + 5 = 33 + 5 = 38.<br>Let's check this with N = 7k + 3 using k = 5: N = 7(5) + 3 = 35 + 3 = 38.</p><p>So, N = 38 is the smallest positive integer that satisfies both N ≡ 3 (mod 7) and N ≡ 5 (mod 11). This is a particular solution to the system of congruences.</p><p>The general solution to this system is given by N ≡ 38 (mod lcm(7, 11)).<br>Since 7 and 11 are prime numbers, their least common multiple (lcm) is 7 * 11 = 77.</p><p>So, the general form of N is N = 77j + 38, where j is an integer.</p><p>Now, we need to find the smallest value of N in the range 100 < N < 500 that fits this form.<br>Let's test values for j:<br>If j = 0, N = 77(0) + 38 = 38. This is not > 100.<br>If j = 1, N = 77(1) + 38 = 77 + 38 = 115.<br>Let's check if N = 115 is within the specified range: 100 < 115 < 500. Yes, it is.</p><p>This is the smallest integer N generated by N = 77j + 38 that is greater than 100. Since we are looking for the smallest possible integer sum satisfying the conditions within the range, 115 is the value.</p><p>Let's quickly check the next value for j:<br>If j = 2, N = 77(2) + 38 = 154 + 38 = 192. This is also within the range, but it is larger than 115.</p><p>Thus, the smallest integer sum satisfying the conditions (remainder 3 when divided by 7, remainder 5 when divided by 11, and between 100 and 500) is 115.</p><p>The amount allocated for immediate disbursement is this smallest possible integer sum.</p>",
+  "answer": "115"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+RPM limit reached, sleeping for 23.856513023376465 seconds
+Requests: 10, Elapsed time: 36.64s
+Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
+Error in attempt 1: 'str' object has no attribute 'content'
+GRE Quants, Error: message received for questionText is: 
+{"question": "A retailer offers an article for sale and sets a certain marked price. During a promotional event, the retailer provides a 20% discount on the marked price. An item is sold for $1800 after this discount is applied. If the retailer realizes a profit of 25% based on the original cost price of the item, what was the initial cost price the retailer paid?"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+GRE Quants, Error: message received for questionSolution is: 
+{
+  "solution": "<p>Let the total sum of the donation be denoted by N. According to the problem statement, N is an integer and must satisfy the following conditions:</p><p>1.  100 < N < 500<br>2.  N divided by 7 leaves a remainder of 3, which can be written as N ≡ 3 (mod 7).<br>3.  N divided by 11 leaves a remainder of 5, which can be written as N ≡ 5 (mod 11).</p><p>From the congruences, we can write N in the form:<br>N = 7k + 3, for some integer k<br>N = 11m + 5, for some integer m</p><p>We need to find a value of N that satisfies both forms. Let's equate the expressions:<br>7k + 3 = 11m + 5<br>7k = 11m + 2</p><p>We are looking for integer solutions (k, m). We can express k in terms of m:<br>k = (11m + 2) / 7</p><p>To find the smallest non-negative solution for N satisfying both congruences, we can test small integer values for m until (11m + 2) is divisible by 7:<br>If m = 0, 11(0) + 2 = 2 (not divisible by 7)<br>If m = 1, 11(1) + 2 = 13 (not divisible by 7)<br>If m = 2, 11(2) + 2 = 24 (not divisible by 7)<br>If m = 3, 11(3) + 2 = 33 + 2 = 35 (divisible by 7, 35/7 = 5)</p><p>So, m = 3 is the smallest non-negative integer value for m that gives an integer value for k. If m = 3, then k = 35 / 7 = 5.</p><p>Now substitute m = 3 back into the second expression for N:<br>N = 11m + 5 = 11(3) + 5 = 33 + 5 = 38.</p><p>Let's check this with k = 5 in the first expression for N:<br>N = 7k + 3 = 7(5) + 3 = 35 + 3 = 38.</p><p>Thus, N = 38 is the smallest positive integer that satisfies both congruences N ≡ 3 (mod 7) and N ≡ 5 (mod 11).</p><p>The general form of all integers N satisfying both congruences is given by the Chinese Remainder Theorem. The general solution is N ≡ 38 (mod lcm(7, 11)).<br>Since 7 and 11 are prime numbers, lcm(7, 11) = 7 * 11 = 77.<br>So, the general form of N is N = 77j + 38, where j is an integer.</p><p>Now we need to find the smallest value of N in the range 100 < N < 500 that is of the form 77j + 38.</p><p>We need to find the smallest integer j such that:<br>100 < 77j + 38 < 500</p><p>Subtract 38 from all parts of the inequality:<br>100 - 38 < 77j < 500 - 38<br>62 < 77j < 462</p><p>Now divide all parts by 77:<br>62 / 77 < j < 462 / 77<br>0.805... < j < 6</p><p>The integers j that satisfy this inequality are j = 1, 2, 3, 4, 5.</p><p>We are looking for the smallest possible integer sum N in the specified range. This corresponds to the smallest possible integer value of j in the range of possible j values, which is j = 1.</p><p>Substitute j = 1 into the general form for N:<br>N = 77(1) + 38 = 77 + 38 = 115.</p><p>Let's verify that N = 115 is within the range and satisfies the remainder conditions:<br>100 < 115 < 500 (Condition 1 satisfied)<br>115 ÷ 7 = 16 with remainder 3 (115 = 16 * 7 + 3) (Condition 2 satisfied)<br>115 ÷ 11 = 10 with remainder 5 (115 = 10 * 11 + 5) (Condition 3 satisfied)</p><p>Since 115 is the value of N for the smallest valid integer j (j=1), it is the smallest integer sum satisfying all conditions.</p><p>The dollar amount allocated for immediate funding is this smallest possible integer sum.</p>",
+  "answer": "115"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+RPM limit reached, sleeping for 15.255823135375977 seconds
+Requests: 10, Elapsed time: 45.24s
+GRE Quants, Error: message received for questionText is: 
+{"question": "A retailer offers an article for sale and sets a certain marked price. During a promotional event, the retailer provides a 20% discount on the marked price. An item is sold for $1800 after this discount is applied. If the retailer realizes a profit of 25% based on the original cost price of the item, what was the initial cost price the retailer paid?"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+GRE Quants, Error: message received for questionTitle is: 
+{"title": "Calculating Cost Price from Discounted Sale Price and Profit Percentage"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+GRE Quants, Error: message received for questionTitle is: 
+{"title": "Calculating Cost Price from Discounted Sale Price and Profit Percentage"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+GRE Quants, Error: message received for questionTitle is: 
+{"title": "Calculating Cost Price from Discounted Sale Price and Profit Percentage"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+RPM limit reached, sleeping for 8.28881025314331 seconds
+Requests: 10, Elapsed time: 52.21s
+GRE Quants, Error: message received for questionSolution is: 
+{
+  "solution": "<p>Let the total sum of the donation be represented by N. Based on the problem description, N is an integer in US dollars and must fulfill the following criteria:</p><p>1.  The donation amount N must be strictly greater than 100 and strictly less than 500. This can be written as 100 < N < 500.</p><p>2.  When N is divided by 7, the remainder is 3. This relationship is expressed using modular arithmetic as N ≡ 3 (mod 7).</p><p>3.  When N is divided by 11, the remainder is 5. This relationship is expressed as N ≡ 5 (mod 11).</p><p>We are looking for the smallest integer N that satisfies all three of these conditions.</p><p>From the second condition, N can be written in the form N = 7k + 3 for some integer k.<br>From the third condition, N can be written in the form N = 11m + 5 for some integer m.</p><p>To find a value of N that satisfies both congruences simultaneously, we equate the two expressions for N:<br>7k + 3 = 11m + 5<br>Rearranging the terms to isolate the variables on different sides gives:<br>7k = 11m + 2</p><p>We need to find integer values for k and m that satisfy this equation. We can look for the smallest non-negative integer values of m that make the right side (11m + 2) divisible by 7. Let`s test values for m starting from 0:</p><p>If m = 0, 11(0) + 2 = 2 (Not divisible by 7)<br>If m = 1, 11(1) + 2 = 13 (Not divisible by 7)<br>If m = 2, 11(2) + 2 = 24 (Not divisible by 7)<br>If m = 3, 11(3) + 2 = 33 + 2 = 35 (Divisible by 7. 35 / 7 = 5)</p><p>The smallest non-negative integer value for m that yields an integer k is m = 3. For m = 3, we find k = 5.</p><p>Now substitute m = 3 back into the expression N = 11m + 5:<br>N = 11(3) + 5 = 33 + 5 = 38.</p><p>Alternatively, substitute k = 5 back into the expression N = 7k + 3:<br>N = 7(5) + 3 = 35 + 3 = 38.</p><p>So, N = 38 is the smallest positive integer that satisfies both N ≡ 3 (mod 7) and N ≡ 5 (mod 11). This is a particular solution to the system of congruences.</p><p>The general solution for N satisfying both congruences is given by N ≡ N_particular (mod lcm(modulus1, modulus2)). In this case, it is N ≡ 38 (mod lcm(7, 11)).<br>Since 7 and 11 are prime numbers, their least common multiple (lcm) is their product: lcm(7, 11) = 7 * 11 = 77.</p><p>Therefore, the general form of any integer N that satisfies both remainder conditions is N = 77j + 38, where j is an integer.</p><p>Now, we must find the smallest value of N of the form 77j + 38 that falls within the specified range 100 < N < 500.</p><p>We set up the inequality:<br>100 < 77j + 38 < 500</p><p>To isolate j, subtract 38 from all parts of the inequality:<br>100 - 38 < 77j < 500 - 38<br>62 < 77j < 462</p><p>Now, divide all parts by 77:<br>62 / 77 < j < 462 / 77</p><p>Calculating the division:<br>0.805... < j < 6</p><p>Since j must be an integer, the possible values for j are 1, 2, 3, 4, and 5.</p><p>We are seeking the smallest possible integer sum N within the range, which corresponds to the smallest possible integer value of j that satisfies the inequality. The smallest such integer is j = 1.</p><p>Substitute the smallest valid value of j (j = 1) back into the general form for N:<br>N = 77(1) + 38 = 77 + 38 = 115.</p><p>Let`s verify that N = 115 meets all conditions:<br>- Is 100 < 115 < 500? Yes.<br>- Is the remainder 3 when 115 is divided by 7? 115 = 16 * 7 + 3. Yes.<br>- Is the remainder 5 when 115 is divided by 11? 115 = 10 * 11 + 5. Yes.</p><p>Since 115 is the smallest integer N within the specified range that satisfies both remainder conditions, it is the amount allocated for immediate disbursement.</p>",
+  "answer": "115"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+RPM limit reached, sleeping for 6.195842027664185 seconds
+Requests: 10, Elapsed time: 54.30s
+QuestionSolution
+failed in generating response by self.llm.invoke
+500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+QuestionSolution
+failed in generating response by self.llm.invoke
+500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INTERNAL'}}
+GRE Quants, Error: message received for questionSolution is: 
+{"solution": "<p>The selling price (SP) of the item is given as $1800.</p><p>The retailer made a profit of 25% based on the original cost price (CP).</p><p>The selling price can be expressed in terms of the cost price and the profit percentage:</p><p>SP = CP + (Profit Percentage of CP)</p><p>SP = CP + (25/100) * CP</p><p>SP = CP * (1 + 0.25)</p><p>SP = CP * 1.25</p><p>We are given that SP = $1800.</p><p>So, $1800 = CP * 1.25</p><p>To find the cost price (CP), we rearrange the equation:</p><p>CP = $1800 / 1.25</p><p>CP = $1440</p><p>The initial cost price the retailer paid was $1440.</p>", "answer": "$1440"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 1: 'str' object has no attribute 'content'
+GRE Quants, Error: message received for questionSolution is: 
+{"solution": "<p>The selling price (SP) of the item is given as $1800.</p><p>The retailer made a profit of 25% based on the original cost price (CP).</p><p>The selling price can be expressed in terms of the cost price and the profit percentage:</p><p>SP = CP + (Profit Percentage of CP)</p><p>SP = CP + (25/100) * CP</p><p>SP = CP * (1 + 0.25)</p><p>SP = CP * 1.25</p><p>We are given that SP = $1800.</p><p>So, $1800 = CP * 1.25</p><p>To find the cost price (CP), we rearrange the equation:</p><p>CP = $1800 / 1.25</p><p>CP = $1440</p><p>The initial cost price the retailer paid was $1440.</p>", "answer": "$1440"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+GRE Quants, Error: message received for questionSolution is: 
+{"solution": "<p>The selling price (SP) of the item is given as $1800.</p><p>The retailer made a profit of 25% based on the original cost price (CP).</p><p>The selling price can be expressed in terms of the cost price and the profit percentage:</p><p>SP = CP + (Profit Percentage of CP)</p><p>SP = CP + (25/100) * CP</p><p>SP = CP * (1 + 0.25)</p><p>SP = CP * 1.25</p><p>We are given that SP = $1800.</p><p>So, $1800 = CP * 1.25</p><p>To find the cost price (CP), we rearrange the equation:</p><p>CP = $1800 / 1.25</p><p>CP = $1440</p><p>The initial cost price the retailer paid was $1440.</p>", "answer": "$1440"}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 2: 'str' object has no attribute 'content'
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 3: 'str' object has no attribute 'content'
+All attempts failed. Last error: 'str' object has no attribute 'content'
+GRE Quants, Warning: message received for generate_questionGraph: received 'graph' instead of 'graph/table'.
+
+Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
+Error in attempt 1: 'str' object has no attribute 'content'
+GRE Quants, Error: message received for questionOptions is: 
+{
+  "options": {
+    "A": "115",
+    "B": "124",
+    "C": "126",
+    "D": "192"
+  },
+  "answer": "A"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+GRE Quants, Error: message received for questionOptions is: 
+{
+        "options": {
+    "A": "$1350",
+    "B": "$1440",
+    "C": "$1687.50",
+    "D": "$1800"
+   },
+   "answer": "B"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 1/ 3
+Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
+Error in attempt 2: 'str' object has no attribute 'content'
+Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
+Error in attempt 3: 'str' object has no attribute 'content'
+All attempts failed. Last error: 'str' object has no attribute 'content'
+ChildSolution: 2
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '50s'}]}}
+GRE Quants, Error: message received for questionOptions is: 
+{
+        "options": {
+    "A": "$1350",
+    "B": "$1440",
+    "C": "$1687.50",
+    "D": "$1800"
+   },
+   "answer": "B"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 1: 'str' object has no attribute 'content'
+GRE Quants, Error: message received for questionOptions is: 
+{
+        "options": {
+    "A": "$1350",
+    "B": "$1440",
+    "C": "$1687.50",
+    "D": "$1800"
+   },
+   "answer": "B"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+
+Attempt 1 failed:
+2025-06-05 22:23:19 - QuestionGeneration - WARNING - [Mock.py:153] - Error type: TypeError
+Error type: TypeError
+2025-06-05 22:23:19 - QuestionGeneration - WARNING - [Mock.py:155] - Error message: cannot unpack non-iterable NoneType object
+Error message: cannot unpack non-iterable NoneType object
+2025-06-05 22:23:19 - QuestionGeneration - WARNING - [Mock.py:157] - Generator class: SimpleQuestionGeneration
+Generator class: SimpleQuestionGeneration
+Traceback:
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 144, in generate_question_with_retry
+    question_data = question_generator.generate_question()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Quants/files/simpleQuestionGeneration.py", line 35, in generate_question
+    options, answer = questionContent.generate_questionOptions()
+    ^^^^^^^^^^^^^^^
+
+Attempt 1 failed, retrying: cannot unpack non-iterable NoneType object
+Prompt: <profit, loss and discount>- <difficulty-level: 2>
+
+
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 2: 'str' object has no attribute 'content'
+GRE Quants, Error: message received for questionSolution is: 
+None
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+
+
+Retrying _generate - attempt 1/ 3
+GRE Quants, Error: message received for questionOptions is: 
+{
+  "options": {
+    "A": "115",
+    "B": "124",
+    "C": "126",
+    "D": "192"
+  },
+  "answer": "A"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 2/ 3
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 3: 'str' object has no attribute 'content'
+All attempts failed. Last error: 'str' object has no attribute 'content'
+RPM limit reached, sleeping for 7.594884157180786 seconds
+Requests: 10, Elapsed time: 52.91s
+RPM limit reached, sleeping for 3.565534830093384 seconds
+Requests: 10, Elapsed time: 56.93s
+Error in attempt 1: 'NoneType' object is not subscriptable
+GRE Quants, Error: message received for questionSolution is: 
+None
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+
+
+Retrying _generate - attempt 1/ 3
+RPM limit reached, sleeping for 2.1328909397125244 seconds
+Requests: 10, Elapsed time: 58.37s
+GRE Quants, Error: message received for questionOptions is: 
+{
+  "options": {
+    "A": "115",
+    "B": "124",
+    "C": "126",
+    "D": "192"
+  },
+  "answer": "A"
+}
+Error: 'NoneType' object has no attribute 'group'
+
+
+Retrying _generate - attempt 3/ 3
+
+Attempt 1 failed:
+2025-06-05 22:23:42 - QuestionGeneration - WARNING - [Mock.py:153] - Error type: TypeError
+Error type: TypeError
+2025-06-05 22:23:42 - QuestionGeneration - WARNING - [Mock.py:155] - Error message: cannot unpack non-iterable NoneType object
+Error message: cannot unpack non-iterable NoneType object
+2025-06-05 22:23:42 - QuestionGeneration - WARNING - [Mock.py:157] - Generator class: SimpleQuestionGeneration
+Generator class: SimpleQuestionGeneration
+Traceback:
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 144, in generate_question_with_retry
+    question_data = question_generator.generate_question()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Quants/files/simpleQuestionGeneration.py", line 35, in generate_question
+    options, answer = questionContent.generate_questionOptions()
+    ^^^^^^^^^^^^^^^
+
+Attempt 1 failed, retrying: cannot unpack non-iterable NoneType object
+Prompt: <number theorm>- <difficulty-level: 2>
+
+
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 2: 'str' object has no attribute 'content'
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 3: 'str' object has no attribute 'content'
+All attempts failed. Last error: 'str' object has no attribute 'content'
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 1: 'str' object has no attribute 'content'
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 2: 'str' object has no attribute 'content'
+RPM limit reached, sleeping for 32.93540287017822 seconds
+Requests: 10, Elapsed time: 27.56s
+RPM limit reached, sleeping for 32.508159160614014 seconds
+Requests: 10, Elapsed time: 27.99s
+GRE Quants, Error: message received for questionTitle is: 
+```json
+{
+  "question": "Let `m` and `n` be distinct positive integers, each strictly greater than 1. Suppose that `m` and `n` concurrently satisfy the following criteria:\n\n(I) The value obtained by the product of `m` and `n` is equal to the square of some integer.\n\n(II) The value obtained by the sum of `m` and `n` is a number divisible only by itself and 1.\n\n(III) The largest positive integer that divides both `m` and `n` without remainder is a number having exactly two distinct positive divisors.\n\nIf it is posited that there exists at least one pair of distinct integers `m` and `n` (each > 1) for which conditions (I), (II), and (III) hold true simultaneously, select all the statements below that must be false concerning any such pair (`m`, `n`)."
+}
+```
+Error: 'title'
+
+
+Retrying _generate - attempt 1/ 3
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 3: 'str' object has no attribute 'content'
+All attempts failed. Last error: 'str' object has no attribute 'content'
+RPM limit reached, sleeping for 18.801373958587646 seconds
+Requests: 10, Elapsed time: 41.70s
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 1: 'str' object has no attribute 'content'
+RPM limit reached, sleeping for 13.062680006027222 seconds
+Requests: 10, Elapsed time: 47.44s
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 2: 'str' object has no attribute 'content'
+GRE verbal, error in generate_questionText: 'NoneType' object has no attribute 'group'
+getting this response value: {
+   "question": "The increasing empirical success of neuroscience in mapping brain correlates of mental states has led some to believe that the traditional philosophical puzzles surrounding consciousness will eventually be _______ by a purely physicalist account, yet others argue that the subjective character of experience remains fundamentally resistant to such reduction."
+}
+🚩 _generate has failed to return response - attempt 1/3
+        Reason: Function returned None
+Error in refining response: Invalid \escape: line 2 column 1969 (char 1970)
+GRE Quants, Error: message received for questionSolution is: 
+```json
+{
+  "solution": "Let the three distinct prime numbers in the set S be $p_1, p_2, p_3$. The question asks for the value of $p_1 + p_2 + p_3$.<br/><br/>Statement (1) says that the product of the numbers in S is less than 100. So, $p_1 p_2 p_3 < 100$. We need to check if this condition restricts the possible sets of three distinct primes to a unique sum.<br/>Possible sets of three distinct primes with product less than 100:<br/>- {2, 3, 5}: Product $2 \\times 3 \\times 5 = 30 < 100$. Sum = $2+3+5 = 10$.<br/>- {2, 3, 7}: Product $2 \\times 3 \\times 7 = 42 < 100$. Sum = $2+3+7 = 12$.<br/>- {2, 3, 11}: Product $2 \\times 3 \\times 11 = 66 < 100$. Sum = $2+3+11 = 16$.<br/>- {2, 3, 13}: Product $2 \\times 3 \\times 13 = 78 < 100$. Sum = $2+3+13 = 18$.<br/>- {2, 5, 7}: Product $2 \\times 5 \\times 7 = 70 < 100$. Sum = $2+5+7 = 14$.<br/>Any other set of three distinct primes will have a product of 100 or more (e.g., {2, 3, 17} product is 102; {2, 5, 11} product is 110; {3, 5, 7} product is 105).<br/>Since there are multiple possible sets of primes (and thus multiple possible sums) that satisfy statement (1), statement (1) alone is not sufficient.<br/><br/>Statement (2) says that 3 is one of the numbers in S. This tells us one of the primes is 3, but the other two can be any two distinct primes other than 3. For example, the set could be {3, 2, 5} (sum 10), {3, 2, 7} (sum 12), {3, 5, 7} (sum 15), {3, 2, 101} (sum 106), etc. There are infinitely many possibilities for the other two distinct primes, leading to infinitely many possible sums. Therefore, statement (2) alone is not sufficient.<br/><br/>Now consider both statements together. The set S contains three distinct prime numbers, one of which is 3, and their product is less than 100.<br/>Let the set be {3, $p_2$, $p_3$}, where $p_2$ and $p_3$ are distinct primes and neither is 3. The product is $3 \\times p_2 \\times p_3 < 100$, which means $p_2 \\times p_3 < 100/3 \\approx 33.33$. We need to find distinct primes $p_2, p_3$ (neither equal to 3) such that their product is less than 33.33. Assume $p_2 < p_3$.<br/>If $p_2 = 2$ (prime, not 3): $2 \\times p_3 < 33.33 \implies p_3 < 16.66$. $p_3$ must be a prime distinct from 2 and 3, and $p_3 > p_2=2$. Possible values for $p_3$: 5, 7, 11, 13.<br/>- If $p_3 = 5$, the set is {3, 2, 5}. Product 30, Sum 10. Valid.<br/>- If $p_3 = 7$, the set is {3, 2, 7}. Product 42, Sum 12. Valid.<br/>- If $p_3 = 11$, the set is {3, 2, 11}. Product 66, Sum 16. Valid.<br/>- If $p_3 = 13$, the set is {3, 2, 13}. Product 78, Sum 18. Valid.<br/>If $p_2 = 5$ (prime, not 3, $p_2 > 2$): $5 \\times p_3 < 33.33 \implies p_3 < 6.66$. $p_3$ must be a prime distinct from 3 and 5, and $p_3 > p_2=5$. No such primes exist (primes less than 6.66 are 2, 3, 5).<br/>If $p_2 = 7$ (prime, not 3, $p_2 > 5$): $7 \\times p_3 < 33.33 \implies p_3 < 4.76$. $p_3$ must be a prime distinct from 3 and 7, and $p_3 > p_2=7$. No such primes exist.<br/>The possible sets satisfying both statements are {2, 3, 5}, {2, 3, 7}, {2, 3, 11}, and {2, 3, 13}. These sets result in sums of 10, 12, 16, and 18, respectively. Since there is more than one possible value for the sum, even with both statements combined, the statements together are not sufficient to determine a unique sum.<br/><br/>Therefore, statements (1) and (2) together are not sufficient.",
+  "answer": "E"
+}
+```
+Error: the JSON object must be str, bytes or bytearray, not NoneType
+
+
+Retrying _generate - attempt 1/ 3
+Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
+Error in attempt 3: 'str' object has no attribute 'content'
+All attempts failed. Last error: 'str' object has no attribute 'content'
+
+Attempt 1 failed:
+2025-06-05 22:25:13 - QuestionGeneration - WARNING - [Mock.py:153] - Error type: KeyError
+Error type: KeyError
+2025-06-05 22:25:13 - QuestionGeneration - WARNING - [Mock.py:155] - Error message: 'A'
+Error message: 'A'
+2025-06-05 22:25:13 - QuestionGeneration - WARNING - [Mock.py:157] - Generator class: SimpleQuestionGeneration
+Generator class: SimpleQuestionGeneration
+Traceback:
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 144, in generate_question_with_retry
+    question_data = question_generator.generate_question()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Verbal/files/simpleQuestionGeneration.py", line 69, in generate_question
+    answers.append(options[i][ans])
+                   ~~~~~~~~~~^^^^^
+
+Attempt 1 failed, retrying: 'A'
+Prompt: <Literature> - <TC-3> - <difficulty-level: 2> - <vocabulary-level:1>
+
+
+RPM limit reached, sleeping for 17.244443893432617 seconds
+Requests: 10, Elapsed time: 43.26s
+RPM limit reached, sleeping for 14.251489162445068 seconds
+Requests: 10, Elapsed time: 46.25s
+RPM limit reached, sleeping for 31.818358898162842 seconds
+Requests: 10, Elapsed time: 28.68s
+RPM limit reached, sleeping for 9.98555612564087 seconds
+Requests: 10, Elapsed time: 50.51s
+ChildOptions: 1
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-exp', 'location': 'global'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '8s'}]}}
+
+Attempt 1 failed:
+2025-06-05 22:25:53 - QuestionGeneration - WARNING - [Mock.py:153] - Error type: KeyError
+Error type: KeyError
+2025-06-05 22:25:53 - QuestionGeneration - WARNING - [Mock.py:155] - Error message: 'F'
+Error message: 'F'
+2025-06-05 22:25:53 - QuestionGeneration - WARNING - [Mock.py:157] - Generator class: SimpleQuestionGeneration
+Generator class: SimpleQuestionGeneration
+Traceback:
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 144, in generate_question_with_retry
+    question_data = question_generator.generate_question()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Verbal/files/simpleQuestionGeneration.py", line 69, in generate_question
+    answers.append(options[i][ans])
+                   ~~~~~~~~~~^^^^^
+
+Attempt 1 failed, retrying: 'F'
+Prompt: <Literature> - <TC-2> - <difficulty-level: 1> - <vocabulary-level:1>
+
+
+RPM limit reached, sleeping for 16.129781007766724 seconds
+Requests: 10, Elapsed time: 44.37s
+GRE Verbal, error in generate_childOptions: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 1/ 3
+ChildOptions: 1, 
+WARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
+GRE Verbal, error in generate_childOptions: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 2/ 3
+ChildOptions: 1, 
+WARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
+GRE Verbal, error in generate_childOptions: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 3/ 3
+
+Attempt 1 failed:
+2025-06-05 22:26:05 - QuestionGeneration - WARNING - [Mock.py:153] - Error type: TypeError
+Error type: TypeError
+2025-06-05 22:26:05 - QuestionGeneration - WARNING - [Mock.py:155] - Error message: cannot unpack non-iterable NoneType object
+Error message: cannot unpack non-iterable NoneType object
+2025-06-05 22:26:05 - QuestionGeneration - WARNING - [Mock.py:157] - Generator class: ParentChildQuestionGeneration
+Generator class: ParentChildQuestionGeneration
+Traceback:
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 144, in generate_question_with_retry
+    question_data = question_generator.generate_question()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Verbal/files/parentChildQuestionGeneration.py", line 82, in generate_question
+    options, answer = parentChildQuestion.generate_childOptions(i)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Verbal/files/questionComponents.py", line 255, in generate_childOptions
+    options, answer = self._retry_generate(_generate)
+    ^^^^^^^^^^^^^^^
+
+Attempt 1 failed, retrying: cannot unpack non-iterable NoneType object
+Prompt: <Literature> - <RC-M> - <difficulty-level: 2>
+
+
+ParentQuestion: <Literature> - <RC-M> - <difficulty-level: 2> generate passage 1 of 3
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '53s'}]}}
+GRE Verbal, Error in generating passage 
+Passage:0 of 3: the JSON object must be str, bytes or bytearray, not NoneType
+received response: 
+None
+Retrying _generate - attempt 1/ 3
+ChildQuestion: 1 of Conclusion Question - 5
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '53s'}]}}
+ParentQuestion: <Literature> - <RC-M> - <difficulty-level: 2> generate passage 1 of 3
+failed in generating response by self.llm.invoke
+429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '53s'}]}}
+GRE Verbal, Error in generating passage 
+Passage:0 of 3: the JSON object must be str, bytes or bytearray, not NoneType
+received response: 
+None
+Retrying _generate - attempt 2/ 3
+RPM limit reached, sleeping for 60.499377965927124 seconds
+Requests: 10, Elapsed time: 0.00s
+RPM limit reached, sleeping for 22.63111114501953 seconds
+Requests: 10, Elapsed time: 37.87s
+GRE Verbal, error in generate_childQuestion: the JSON object must be str, bytes or bytearray, not NoneType
+Retrying _generate - attempt 1/ 3
+RPM limit reached, sleeping for 55.109086990356445 seconds
+Requests: 10, Elapsed time: 5.39s
+RPM limit reached, sleeping for 25.46079707145691 seconds
+Requests: 10, Elapsed time: 35.04s
+RPM limit reached, sleeping for 37.149473905563354 seconds
+Requests: 10, Elapsed time: 23.35s
+RPM limit reached, sleeping for 23.909275770187378 seconds
+Requests: 10, Elapsed time: 36.59s
+RPM limit reached, sleeping for 30.89368200302124 seconds
+Requests: 10, Elapsed time: 29.61s
+2025-06-05 22:28:39 - QuestionGeneration - INFO - [main.py:85] - GRE paper saved successfully: papers/GRE/GRE_paper-05-06-22-28-difficulty-2.json
+sectionNumber: section1
+sectionNumber: section2
+sectionNumber: section1
+sectionNumber: section2
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:92] - GRE questions registered in database successfully
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:98] - GRE paper generation completed successfully
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:112] - Updated difficulty to 3, mock: False
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:118] - ================================================================================
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:119] - PAPER GENERATION SESSION SUMMARY
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:120] - GMAT Paper: SUCCESS
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:121] - GRE Paper: SUCCESS
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:122] - Total Time: 870.60 seconds
+2025-06-05 22:28:40 - QuestionGeneration - INFO - [main.py:123] - ================================================================================
+Time taken: 870.60 seconds

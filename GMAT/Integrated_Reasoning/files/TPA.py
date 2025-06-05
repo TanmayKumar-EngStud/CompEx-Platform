@@ -4,7 +4,10 @@ import random
 import json
 from google import genai
 from dotenv import load_dotenv
-import os, re
+import os
+import re
+
+
 class Generate_TPA:
     def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
@@ -22,15 +25,16 @@ class Generate_TPA:
         difficulty = 1
         if difficulty_search:
             difficulty = int(difficulty_search.group(1))
-        
-        tpa = TPA(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
-        
+
+        tpa = TPA(self.llm, self.system_instructions,
+                  self.global_state, self.prompt, self.lock)
+
         # Generate question text and components
         parentQuestionContent = tpa.generate_ParentQuestionContent()
         self.questionData["type"] = "TPA"
         self.questionData["prompt"] = self.prompt
         self.questionData["content"] = [parentQuestionContent]
-        
+
         # region preparing difficulty for child Questions
         d1 = difficulty + random.randint(-1, 1)
         d2 = difficulty + random.randint(-1, 1)
@@ -43,14 +47,14 @@ class Generate_TPA:
         if d2 > 5:
             d2 = 5
         # endregion
-        
+
         # region generating child questions
-        questions= tpa.generate_QuestionText([d1, d2])
-        q1 = {} 
+        questions = tpa.generate_QuestionText([d1, d2])
+        q1 = {}
         q2 = {}
         q1["question"] = questions[0]
         q2["question"] = questions[1]
-        
+
         solutions = tpa.generate_QuestionSolution()
         q1["solution"] = solutions[0]
         q2["solution"] = solutions[1]
@@ -64,6 +68,12 @@ class Generate_TPA:
         self.questionData["title"] = title or "Two Part Analysis Question"
         option_list = list(common_options.values())
         random.shuffle(option_list)
+        q1["type"] = "TPA"
+        q2["type"] = "TPA"
+        q1["title"] = title
+        q2["title"] = title
+        q1["prompt"] = self.prompt
+        q2["prompt"] = self.prompt
         q1["options"] = option_list
         q2["options"] = option_list
         q1["difficulty"] = d1
@@ -72,11 +82,12 @@ class Generate_TPA:
         q2["tags"] = [self.prompt.split(" - ")[1].strip().strip("<>").strip()]
         # endregion
         self.questionData["questions"] = [q1, q2]
-        
+
         # Set tags and difficulty
-        self.questionData["tags"] = ["TPA", self.prompt.split(" - ")[1].strip().strip("<>").strip()]
+        self.questionData["tags"] = ["TPA", self.prompt.split(
+            " - ")[1].strip().strip("<>").strip()]
         self.questionData["difficulty"] = difficulty
-            
+
         return self.questionData
 
 # g = Generate_TPA("<Business> - <Quantitative Skills> - <difficulty_level: 3> - <Bar Chart>")
