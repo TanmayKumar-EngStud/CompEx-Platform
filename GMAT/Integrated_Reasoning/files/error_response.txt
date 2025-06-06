@@ -132,3 +132,374 @@
   "solution": "To answer the question, we need to calculate the total cost for two specific shipments using the data from the scatter plot.\n\nFirst Blank: Total cost for a shipment of 1200 cubic meters via Route QR.\nFrom the scatter plot, Route QR has a Shipment Volume of 1200 cubic meters and an Average Cost per Unit of \\$2.80.\n~~\\text{Total Cost (Route QR)} = \\text{Shipment Volume} \\times \\text{Average Cost per Unit}~~\n~~\\text{Total Cost (Route QR)} = 1200 \\text{ cubic meters} \\times \\$2.80/\\text{cubic meter}~~\n\nUsing a calculator:\n```python\ntotal_cost_qr = 1200 * 2.80\nprint(total_cost_qr)\n```\n~~\\text{Total Cost (Route QR)} = \\$3360~~\n\nThe value for the first blank is 3360.\n\nSecond Blank: Percentage difference between the total cost of the QR shipment and the total cost of a shipment of 500 cubic meters via Route GH.\nFrom the scatter plot, Route GH has a Shipment Volume of 500 cubic meters and an Average Cost per Unit of \\$4.50.\n~~\\text{Total Cost (Route GH)} = \\text{Shipment Volume} \\times \\text{Average Cost per Unit}~~\n~~\\text{Total Cost (Route GH)} = 500 \\text{ cubic meters} \\times \\$4.50/\\text{cubic meter}~~\n\nUsing a calculator:\n```python\ntotal_cost_gh = 500 * 4.50\nprint(total_cost_gh)\n```\n~~\\text{Total Cost (Route GH)} = \\$2250~~\n\nThe question asks for the percentage by which the QR cost (\\$3360) is 'less than' the GH cost (\\$2250). However, \\$3360 is greater than \\$2250. This phrasing likely means the question asks for the magnitude of the percentage difference, calculated relative to the GH cost (the value following `than`).\n\nWe calculate the percentage difference relative to the GH cost:\n~~\\text{Percentage Difference} = \\left(\\frac{\\text{Total Cost QR} - \\text{Total Cost GH}}{\\text{Total Cost GH}}\\right) \\times 100~~\n~~\\text{Percentage Difference} = \\left(\\frac{\\$3360 - \\$2250}{\\$2250}\\right) \\times 100~~\n~~\\text{Percentage Difference} = \\left(\\frac{\\$1110}{\\$2250}\\right) \\times 100~~\n\nUsing a calculator:\n```python\npercentage_difference = (1110 / 2250) * 100\nprint(round(percentage_difference, 2))\n```\n\n~~\\text{Percentage Difference} \\approx 49.33\\%~~\n\nThe total cost for Route QR is approximately 49.33\\% more than the total cost for Route GH. Assuming the question intends the magnitude of the percentage difference relative to the GH cost, the second blank should be approximately 49.33.\n\nTherefore, the total cost for a shipment of 1200 cubic meters via Route QR is \\$3360, and this cost is approximately 49.33\\% different (specifically, more) than the total cost for a shipment of 500 cubic meters via Route GH."
 }
 ```
+```json
+{
+  "tables": [
+    {
+      "type": "simple table",
+      "table_name": "Digital Marketing Channel Performance",
+      "columns": [
+        "Product Category",
+        "Marketing Channel",
+        "Campaign Spend (\$)",
+        "Clicks",
+        "Conversions",
+        "Conversion Rate (\\%)",
+        "Revenue Generated (\$)"
+      ],
+      "rows": [
+        "Data Point 1",
+        "Data Point 2",
+        "Data Point 3",
+        "Data Point 4",
+        "Data Point 5",
+        "Data Point 6",
+        "Data Point 7",
+        "Data Point 8",
+        "Data Point 9"
+      ],
+      "data": [
+        ["Product A", "Social Media", 1000, 5000, 50, 1.00, 5000],
+        ["Product B", "Search Engine", 1500, 6000, 90, 1.50, 9000],
+        ["Product C", "Email", 500, 8000, 120, 1.50, 12000],
+        ["Product A", "Search Engine", 1200, 5500, 66, 1.20, 6600],
+        ["Product B", "Email", 600, 8500, 128, 1.51, 12800],
+        ["Product C", "Social Media", 800, 4000, 32, 0.80, 3200],
+        ["Product A", "Email", 700, 9000, 135, 1.50, 13500],
+        ["Product B", "Social Media", 1100, 4500, 41, 0.91, 4100],
+        ["Product C", "Search Engine", 1600, 6500, 98, 1.51, 9800]
+      ]
+    }
+  ]
+}
+```
+```json
+{
+  "solution": "To solve this problem, we need to calculate the total government tax revenue for both 2022 and 2023 and then determine the percentage increase and the proportion of Income Tax in 2023.\n\nFirst, calculate the total revenue for 2022:\n~~\\text{Total 2022} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2022} = \\$80 \\text{ Billion} + \\$50 \\text{ Billion} + \\$60 \\text{ Billion} + \\$40 \\text{ Billion}~~ \n\n```python\ntotal_2022 = 80 + 50 + 60 + 40\nprint(total_2022)\n```\n\nTotal revenue in 2022 was \\$230 Billion.\n\nNext, calculate the total revenue for 2023:\n~~\\text{Total 2023} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2023} = \\$88 \\text{ Billion} + \\$55 \\text{ Billion} + \\$65 \\text{ Billion} + \\$42 \\text{ Billion}~~ \n\n```python\ntotal_2023 = 88 + 55 + 65 + 42\nprint(total_2023)\n```\n\nTotal revenue in 2023 was \\$250 Billion.\n\nNow, calculate the percentage increase in total revenue from 2022 to 2023:\n~~\\text{Percentage Increase} = \\frac{\\text{Total 2023} - \\text{Total 2022}}{\\text{Total 2022}} \\times 100\\%~~ \n\n```python\ntotal_2022 = 230\ntotal_2023 = 250\npercentage_increase = ((total_2023 - total_2022) / total_2022) * 100\nprint(round(percentage_increase, 2))\n```\n\nThe total government tax revenue increased by approximately 8.70\\% from 2022 to 2023.\n\nFinally, calculate the percentage that Income Tax accounted for in the total revenue in 2023:\n~~\\text{Percentage of Income Tax in 2023} = \\frac{\\text{Income Tax (2023)}}{\\text{Total 2023}} \\times 100\\%~~ \n\n```python\nincome_tax_2023 = 88\ntotal_2023 = 250\npercentage_income_tax_2023 = (income_tax_2023 / total_2023) * 100\nprint(round(percentage_income_tax_2023, 2))\n```\n\nIncome Tax accounted for approximately 35.20\\% of the total revenue in 2023.\n\nTherefore, the total government tax revenue increased by approximately **8.7**\\% from 2022 to 2023, and Income Tax accounted for approximately **35.2**\\% of the total revenue in 2023."
+}
+```
+```json
+{
+  "solution": "To determine the percentage increase in total revenue and the percentage of Income Tax in 2023, we first calculate the total revenue for each year.\n\nTotal Revenue in 2022:\n~~\\text{Total 2022} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2022} = \\$80 \\text{ Billion} + \\$50 \\text{ Billion} + \\$60 \\text{ Billion} + \\$40 \\text{ Billion}~~ \n\n```python\ntotal_2022 = 80 + 50 + 60 + 40\nprint(total_2022)\n```\n\nTotal revenue in 2022 was \\$230 Billion.\n\nTotal Revenue in 2023:\n~~\\text{Total 2023} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2023} = \\$88 \\text{ Billion} + \\$55 \\text{ Billion} + \\$65 \\text{ Billion} + \\$42 \\text{ Billion}~~ \n\n```python\ntotal_2023 = 88 + 55 + 65 + 42\nprint(total_2023)\n```\n\nTotal revenue in 2023 was \\$250 Billion.\n\nPercentage increase in total revenue from 2022 to 2023:\n~~\\text{Percentage Increase} = \\frac{\\text{Total 2023} - \\text{Total 2022}}{\\text{Total 2022}} \\times 100\\%~~ \n\n```python\ntotal_2022 = 230\ntotal_2023 = 250\npercentage_increase = ((total_2023 - total_2022) / total_2022) * 100\nprint(round(percentage_increase, 2))\n```\n\nThe total revenue increased by approximately 8.70\\%. So the first blank is approximately 8.7.\n\nPercentage of Income Tax in total revenue in 2023:\n~~\\text{Percentage of Income Tax} = \\frac{\\text{Income Tax (2023)}}{\\text{Total 2023}} \\times 100\\%~~ \n\n```python\nincome_tax_2023 = 88\ntotal_2023 = 250\npercentage_income_tax = (income_tax_2023 / total_2023) * 100\nprint(round(percentage_income_tax, 2))\n```\n\nIncome Tax accounted for approximately 35.20\\% of the total revenue in 2023. So the second blank is approximately 35.2.\n\nThe total government tax revenue increased by approximately **8.7**\\% from 2022 to 2023, and Income Tax accounted for approximately **35.2**\\% of the total revenue in 2023."
+}
+```
+```json
+{
+  "solution": "To answer the question, we need to calculate the total tax revenue for both 2022 and 2023, find the percentage increase, and then calculate the percentage of Income Tax within the 2023 total revenue.\n\nFirst, calculate the total revenue for 2022 by summing the revenue from all sources:\n~~\\text{Total Revenue 2022} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total Revenue 2022} = \\$80 \\text{ Billion} + \\$50 \\text{ Billion} + \\$60 \\text{ Billion} + \\$40 \\text{ Billion}~~ \n\n```python\ntotal_revenue_2022 = 80 + 50 + 60 + 40\nprint(total_revenue_2022)\n```\n\nTotal revenue in 2022 was \\$230 Billion.\n\nNext, calculate the total revenue for 2023:\n~~\\text{Total Revenue 2023} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total Revenue 2023} = \\$88 \\text{ Billion} + \\$55 \\text{ Billion} + \\$65 \\text{ Billion} + \\$42 \\text{ Billion}~~ \n\n```python\ntotal_revenue_2023 = 88 + 55 + 65 + 42\nprint(total_revenue_2023)\n```\n\nTotal revenue in 2023 was \\$250 Billion.\n\nNow, calculate the percentage increase in total revenue from 2022 to 2023:\n~~\\text{Percentage Increase} = \\frac{\\text{Total Revenue 2023} - \\text{Total Revenue 2022}}{\\text{Total Revenue 2022}} \\times 100\\%~~ \n\n```python\ntotal_revenue_2022 = 230\ntotal_revenue_2023 = 250\npercentage_increase = ((total_revenue_2023 - total_revenue_2022) / total_revenue_2022) * 100\nprint(round(percentage_increase, 2))\n```\n\nThe total government tax revenue increased by approximately 8.70\\%.\n\nFinally, calculate the percentage that Income Tax accounted for in the total revenue in 2023:\n~~\\text{Percentage of Income Tax in 2023} = \\frac{\\text{Income Tax (2023)}}{\\text{Total Revenue 2023}} \\times 100\\%~~ \n\n```python\nincome_tax_2023 = 88\ntotal_revenue_2023 = 250\npercentage_income_tax_2023 = (income_tax_2023 / total_revenue_2023) * 100\nprint(round(percentage_income_tax_2023, 2))\n```\n\nIncome Tax accounted for approximately 35.20\\% of the total revenue in 2023.\n\nThus, the total government tax revenue increased by approximately **8.7**\\% from 2022 to 2023, and Income Tax accounted for approximately **35.2**\\% of the total revenue in 2023."
+}
+```
+```json
+{
+  "solution": "To answer the first part of the question, we need to compare the annual return of each fund in the scatter plot to the average annual return for its respective year shown in the bar chart.\n\nFrom the bar chart:\n- The average return in 2019 was ~~10.5\\%~~.\n- The average return in 2020 was ~~4.8\\%~~.\n- The average return in 2021 was ~~5.2\\%~~.\n\nNow, we examine each fund in the scatter plot and count those whose return is below the average for their year:\n- **2019 Funds (Average: ~~10.5\\%~~):**\n    - F19-A: ~~8\\%~~ (Below)\n    - F19-C: ~~10\\%~~ (Below)\n    - F19-F: ~~12\\%~~ (Above)\n    - F19-H: ~~9\\%~~ (Below)\n    - F19-I: ~~11\\%~~ (Above)\n    - F19-K: ~~13\\%~~ (Above)\n    - Count below average for 2019: 3\n- **2020 Funds (Average: ~~4.8\\%~~):**\n    - F20-B: ~~5\\%~~ (Above)\n    - F20-D: ~~2\\%~~ (Below)\n    - F20-E: ~~7\\%~~ (Above)\n    - F20-G: ~~4\\%~~ (Below)\n    - F20-L: ~~6\\%~~ (Above)\n    - Count below average for 2020: 2\n- **2021 Funds (Average: ~~5.2\\%~~):**\n    - F21-J: ~~-2\\%~~ (Below)\n    - F21-M: ~~8.5\\%~~ (Above)\n    - F21-N: ~~3\\%~~ (Below)\n    - F21-O: ~~10.5\\%~~ (Above)\n    - F21-P: ~~6\\%~~ (Above)\n    - Count below average for 2021: 2\n\nTotal number of funds with an annual return below the average for their respective year = ~~3 + 2 + 2 = 7~~.\n\nFor the second part, we need to find the three funds with the lowest market volatility index (x-axis value) from the scatter plot and calculate their average return.\n\nSorting funds by volatility index (lowest to highest):\n- F19-F: 10\n- F19-K: 11\n- F19-C: 12\n- F21-O: 13\n- F19-I: 14\n- ... and so on.\n\nThe three funds with the lowest volatility indices are F19-F (volatility 10, return 12%), F19-K (volatility 11, return 13%), and F19-C (volatility 12, return 10%).\n\nWe calculate their average return:\n\n```python\nreturns = [12, 13, 10]\naverage_return = sum(returns) / len(returns)\nprint(round(average_return, 1))\n```\n\nThe sum of the returns is ~~12 + 13 + 10 = 35~~.\nThe number of funds is 3.\nThe average return is ~~\\frac{35}{3} \\approx 11.666...\\%~~.\nRounding to one decimal place gives ~~11.7\\%~~.\n\nTherefore, there were ~~7~~ funds with an annual return below the average annual return for their respective year, and the average return of the three funds with the lowest market volatility index was ~~11.7\\%~~."
+}
+```
+```json
+{
+  "solution": "To answer the first part of the question, we need to compare the annual return of each fund in the scatter plot to the average annual return for its respective year shown in the bar chart.\n\nFrom the bar chart:\n- The average return in 2019 was ~~10.5\\%~~.\n- The average return in 2020 was ~~4.8\\%~~.\n- The average return in 2021 was ~~5.2\\%~~.\n\nNow, we examine each fund in the scatter plot and count those whose return is below the average for their year:\n- **2019 Funds (Average: ~~10.5\\%~~):**\n    - F19-A: ~~8\\%~~ (Below)\n    - F19-C: ~~10\\%~~ (Below)\n    - F19-F: ~~12\\%~~ (Above)\n    - F19-H: ~~9\\%~~ (Below)\n    - F19-I: ~~11\\%~~ (Above)\n    - F19-K: ~~13\\%~~ (Above)\n    - Count below average for 2019: 3\n- **2020 Funds (Average: ~~4.8\\%~~):**\n    - F20-B: ~~5\\%~~ (Above)\n    - F20-D: ~~2\\%~~ (Below)\n    - F20-E: ~~7\\%~~ (Above)\n    - F20-G: ~~4\\%~~ (Below)\n    - F20-L: ~~6\\%~~ (Above)\n    - Count below average for 2020: 2\n- **2021 Funds (Average: ~~5.2\\%~~):**\n    - F21-J: ~~-2\\%~~ (Below)\n    - F21-M: ~~8.5\\%~~ (Above)\n    - F21-N: ~~3\\%~~ (Below)\n    - F21-O: ~~10.5\\%~~ (Above)\n    - F21-P: ~~6\\%~~ (Above)\n    - Count below average for 2021: 2\n\nTotal number of funds with an annual return below the average for their respective year = ~~3 + 2 + 2 = 7~~.\n\nFor the second part, we need to find the three funds with the lowest market volatility index (x-axis value) from the scatter plot and calculate their average return.\n\nSorting funds by volatility index (lowest to highest):\n- F19-F: 10\n- F19-K: 11\n- F19-C: 12\n- F21-O: 13\n- F19-I: 14\n- ... and so on.\n\nThe three funds with the lowest volatility indices are F19-F (volatility 10, return 12%), F19-K (volatility 11, return 13%), and F19-C (volatility 12, return 10%).\n\nWe calculate their average return:\n\n```python\nreturns = [12, 13, 10]\naverage_return = sum(returns) / len(returns)\nprint(round(average_return, 1))\n```\n\nThe sum of the returns is ~~12 + 13 + 10 = 35~~.\nThe number of funds is 3.\nThe average return is ~~\\frac{35}{3} \\approx 11.666...\\%~~.\nRounding to one decimal place gives ~~11.7\\%~~.\n\nTherefore, there were ~~7~~ funds with an annual return below the average annual return for their respective year, and the average return of the three funds with the lowest market volatility index was ~~11.7\\%~~."
+}
+```
+```json
+{
+   "graphs": [
+      {
+         "graph": "stacked bar chart",
+         "title": "Quarterly Transportation Cost Breakdown by Region (Thousands USD)",
+         "description": "This chart shows the total transportation cost for four regions (North, South, East, West) across four quarters, broken down by major cost components: Fuel, Labor, Maintenance, and Other.",
+         "x-axis": "Region",
+         "y-axis": "Cost (Thousands USD)",
+         "data": [
+            {
+               "category": "North",
+               "values": [
+                  { "region": "Fuel", "value": 150 },
+                  { "region": "Labor", "value": 200 },
+                  { "region": "Maintenance", "value": 75 },
+                  { "region": "Other", "value": 50 }
+               ]
+            },
+            {
+               "category": "South",
+               "values": [
+                  { "region": "Fuel", "value": 120 },
+                  { "region": "Labor", "value": 180 },
+                  { "region": "Maintenance", "value": 90 },
+                  { "region": "Other", "value": 60 }
+               ]
+            },
+            {
+               "category": "East",
+               "values": [
+                  { "region": "Fuel", "value": 200 },
+                  { "region": "Labor", "value": 250 },
+                  { "region": "Maintenance", "value": 100 },
+                  { "region": "Other", "value": 70 }
+               ]
+            },
+            {
+               "category": "West",
+               "values": [
+                  { "region": "Fuel", "value": 170 },
+                  { "region": "Labor", "value": 210 },
+                  { "region": "Maintenance", "value": 85 },
+                  { "region": "Other", "value": 55 }
+               ]
+            }
+         ]
+      },
+      {
+         "graph": "line chart",
+         "title": "Quarterly Shipment Volume by Region (Metric Tons)",
+         "description": "This chart shows the trend in total shipment volume for four regions (North, South, East, West) across four quarters.",
+         "x-axis": "Quarter",
+         "y-axis": "Volume (Metric Tons)",
+         "data": [
+            {
+               "series": "North",
+               "values": [
+                  { "x": "Q1", "y": 5500 },
+                  { "x": "Q2", "y": 6000 },
+                  { "x": "Q3", "y": 5800 },
+                  { "x": "Q4", "y": 6200 }
+               ]
+            },
+            {
+               "series": "South",
+               "values": [
+                  { "x": "Q1", "y": 4800 },
+                  { "x": "Q2", "y": 5000 },
+                  { "x": "Q3", "y": 5200 },
+                  { "x": "Q4", "y": 5100 }
+               }
+            },
+            {
+               "series": "East",
+               "values": [
+                  { "x": "Q1", "y": 7000 },
+                  { "x": "Q2", "y": 7500 },
+                  { "x": "Q3", "y": 7300 },
+                  { "x": "Q4", "y": 7800 }
+               ]
+            },
+            {
+               "series": "West",
+               "values": [
+                  { "x": "Q1", "y": 6000 },
+                  { "x": "Q2", "y": 6300 },
+                  { "x": "Q3", "y": 6100 },
+                  { "x": "Q4", "y": 6500 }
+            }
+         ]
+      }
+   ]
+}
+```
+```json
+{
+  "solution": "To answer the first part of the question, we need to compare the annual return of each fund in the scatter plot to the average annual return for its respective year shown in the bar chart.\n\nFrom the bar chart:\n- The average return in 2019 was ~~10.5\\%~~.\n- The average return in 2020 was ~~4.8\\%~~.\n- The average return in 2021 was ~~5.2\\%~~.\n\nNow, we examine each fund in the scatter plot and count those whose return is below the average for their year:\n- **2019 Funds (Average: ~~10.5\\%~~):**\n    - F19-A: ~~8\\%~~ (Below)\n    - F19-C: ~~10\\%~~ (Below)\n    - F19-F: ~~12\\%~~ (Above)\n    - F19-H: ~~9\\%~~ (Below)\n    - F19-I: ~~11\\%~~ (Above)\n    - F19-K: ~~13\\%~~ (Above)\n    - Count below average for 2019: 3\n- **2020 Funds (Average: ~~4.8\\%~~):**\n    - F20-B: ~~5\\%~~ (Above)\n    - F20-D: ~~2\\%~~ (Below)\n    - F20-E: ~~7\\%~~ (Above)\n    - F20-G: ~~4\\%~~ (Below)\n    - F20-L: ~~6\\%~~ (Above)\n    - Count below average for 2020: 2\n- **2021 Funds (Average: ~~5.2\\%~~):**\n    - F21-J: ~~-2\\%~~ (Below)\n    - F21-M: ~~8.5\\%~~ (Above)\n    - F21-N: ~~3\\%~~ (Below)\n    - F21-O: ~~10.5\\%~~ (Above)\n    - F21-P: ~~6\\%~~ (Above)\n    - Count below average for 2021: 2\n\nTotal number of funds with an annual return below the average for their respective year = ~~3 + 2 + 2 = 7~~.\n\nFor the second part, we need to find the three funds with the lowest market volatility index (x-axis value) from the scatter plot and calculate their average return.\n\nSorting funds by volatility index (lowest to highest):\n- F19-F: 10\n- F19-K: 11\n- F19-C: 12\n- F21-O: 13\n- F19-I: 14\n- ... and so on.\n\nThe three funds with the lowest volatility indices are F19-F (volatility 10, return 12%), F19-K (volatility 11, return 13%), and F19-C (volatility 12, return 10%).\n\nWe calculate their average return:\n\n```python\nreturns = [12, 13, 10]\naverage_return = sum(returns) / len(returns)\nprint(round(average_return, 1))\n```\n\nThe sum of the returns is ~~12 + 13 + 10 = 35~~.\nThe number of funds is 3.\nThe average return is ~~\\frac{35}{3} \\approx 11.666...\\%~~.\nRounding to one decimal place gives ~~11.7\\%~~.\n\nTherefore, there were ~~7~~ funds with an annual return below the average annual return for their respective year, and the average return of the three funds with the lowest market volatility index was ~~11.7\\%~~."
+}
+```
+```json
+{
+   "graphs": [
+      {
+         "graph": "stacked bar chart",
+         "title": "Q4 Transportation Cost Breakdown by Region (Thousands USD)",
+         "description": "This chart shows the total transportation cost for four regions (North, South, East, West) during Q4, broken down by major cost components: Fuel, Labor, Maintenance, and Other. Costs are shown in thousands of US dollars.",
+         "x-axis": "Region",
+         "y-axis": "Cost (Thousands USD)",
+         "data": [
+            {
+               "category": "North",
+               "values": [
+                  { "component": "Fuel", "value": 150 },
+                  { "component": "Labor", "value": 200 },
+                  { "component": "Maintenance", "value": 75 },
+                  { "component": "Other", "value": 50 }
+               ]
+            },
+            {
+               "category": "South",
+               "values": [
+                  { "component": "Fuel", "value": 120 },
+                  { "component": "Labor", "value": 180 },
+                  { "component": "Maintenance", "value": 90 },
+                  { "component": "Other", "value": 60 }
+               ]
+            },
+            {
+               "category": "East",
+               "values": [
+                  { "component": "Fuel", "value": 200 },
+                  { "component": "Labor", "value": 250 },
+                  { "component": "Maintenance", "value": 100 },
+                  { "component": "Other", "value": 70 }
+               ]
+            },
+            {
+               "category": "West",
+               "values": [
+                  { "component": "Fuel", "value": 170 },
+                  { "component": "Labor", "value": 210 },
+                  { "component": "Maintenance", "value": 85 },
+                  { "component": "Other", "value": 55 }
+               ]
+            }
+         ]
+      },
+      {
+         "graph": "line chart",
+         "title": "Quarterly Shipment Volume by Region (Metric Tons)",
+         "description": "This chart shows the trend in total shipment volume for four regions (North, South, East, West) across four quarters (Q1 to Q4). Volumes are shown in metric tons.",
+         "x-axis": "Quarter",
+         "y-axis": "Volume (Metric Tons)",
+         "data": [
+            {
+               "series": "North",
+               "values": [
+                  { "x": "Q1", "y": 5500 },
+                  { "x": "Q2", "y": 6000 },
+                  { "x": "Q3", "y": 5800 },
+                  { "x": "Q4", "y": 6200 }
+               ]
+            },
+            {
+               "series": "South",
+               "values": [
+                  { "x": "Q1", "y": 4800 },
+                  { "x": "Q2", "y": 5000 },
+                  { "x": "Q3", "y": 5200 },
+                  { "x": "Q4", "y": 5100 }
+               }
+            },
+            {
+               "series": "East",
+               "values": [
+                  { "x": "Q1", "y": 7000 },
+                  { "x": "Q2", "y": 7500 },
+                  { "x": "Q3", "y": 7300 },
+                  { "x": "Q4", "y": 7800 }
+               ]
+            },
+            {
+               "series": "West",
+               "values": [
+                  { "x": "Q1", "y": 6000 },
+                  { "x": "Q2", "y": 6300 },
+                  { "x": "Q3", "x": 6100, "y": 6100 },
+                  { "x": "Q4", "y": 6500 }
+            }
+         ]
+      }
+   ]
+}
+```
+```json
+{
+   "graphs": [
+      {
+         "graph": "stacked bar chart",
+         "title": "Q4 Transportation Cost Breakdown by Region (Thousands USD)",
+         "description": "This chart shows the total transportation cost for four regions (North, South, East, West) during Q4, broken down by major cost components: Fuel, Labor, Maintenance, and Other. Costs are shown in thousands of US dollars.",
+         "x-axis": "Region",
+         "y-axis": "Cost (Thousands USD)",
+         "data": [
+            {
+               "category": "North",
+               "values": [
+                  { "component": "Fuel", "value": 150 },
+                  { "component": "Labor", "value": 200 },
+                  { "component": "Maintenance", "value": 75 },
+                  { "component": "Other", "value": 50 }
+               ]
+            },
+            {
+               "category": "South",
+               "values": [
+                  { "component": "Fuel", "value": 120 },
+                  { "component": "Labor", "value": 180 },
+                  { "component": "Maintenance", "value": 90 },
+                  { "component": "Other", "value": 60 }
+               ]
+            },
+            {
+               "category": "East",
+               "values": [
+                  { "component": "Fuel", "value": 200 },
+                  { "component": "Labor", "value": 250 },
+                  { "component": "Maintenance", "value": 100 },
+                  { "component": "Other", "value": 70 }
+               ]
+            },
+            {
+               "category": "West",
+               "values": [
+                  { "component": "Fuel", "value": 170 },
+                  { "component": "Labor", "value": 210 },
+                  { "component": "Maintenance", "value": 85 },
+                  { "component": "Other", "value": 55 }
+               ]
+            }
+         ]
+      },
+      {
+         "graph": "line chart",
+         "title": "Quarterly Shipment Volume by Region (Metric Tons)",
+         "description": "This chart shows the trend in total shipment volume for four regions (North, South, East, West) across four quarters (Q1 to Q4). Volumes are shown in metric tons.",
+         "x-axis": "Quarter",
+         "y-axis": "Volume (Metric Tons)",
+         "data": [
+            {
+               "series": "North",
+               "values": [
+                  { "x": "Q1", "y": 5500 },
+                  { "x": "Q2", "y": 6000 },
+                  { "x": "Q3", "y": 5800 },
+                  { "x": "Q4", "y": 6200 }
+               ]
+            },
+            {
+               "series": "South",
+               "values": [
+                  { "x": "Q1", "y": 4800 },
+                  { "x": "Q2", "y": 5000 },
+                  { "x": "Q3", "y": 5200 },
+                  { "x": "Q4", "y": 5100 }
+               }
+            },
+            {
+               "series": "East",
+               "values": [
+                  { "x": "Q1", "y": 7000 },
+                  { "x": "Q2", "y": 7500 },
+                  { "x": "Q3", "y": 7300 },
+                  { "x": "Q4", "y": 7800 }
+               ]
+            },
+            {
+               "series": "West",
+               "values": [
+                  { "x": "Q1", "y": 6000 },
+                  { "x": "Q2", "y": 6300 },
+                  { "x": "Q3", "x": 6100, "y": 6100 },
+                  { "x": "Q4", "y": 6500 }
+            }
+         ]
+      }
+   ]
+}
+```
+```json
+{
+   "solution": "To determine the region with the highest and lowest transportation cost per metric ton in Q4, we need to calculate the total transportation cost for each region in Q4 and divide it by the shipment volume for that region in Q4.\n\nFirst, let's calculate the total transportation cost for each region in Q4 using the stacked bar chart:\n\\begin{itemize}\n    \\item North Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$150,000 + \\$200,000 + \\$75,000 + \\$50,000 = \\$475,000~~\n    \\item South Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$120,000 + \\$180,000 + \\$90,000 + \\$60,000 = \\$450,000~~\n    \\item East Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$200,000 + \\$250,000 + \\$100,000 + \\$70,000 = \\$620,000~~\n    \\item West Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$170,000 + \\$210,000 + \\$85,000 + \\$55,000 = \\$520,000~~\n\\end{itemize}\n\nNext, get the Q4 shipment volume for each region from the line chart:\n\\begin{itemize}\n    \\item North Q4 Volume = ~~6200~~ Metric Tons\n    \\item South Q4 Volume = ~~5100~~ Metric Tons\n    \\item East Q4 Volume = ~~7800~~ Metric Tons\n    \\item West Q4 Volume = ~~6500~~ Metric Tons\n\\end{itemize}\n\nNow, calculate the transportation cost per metric ton for each region in Q4:\n\\begin{itemize}\n    \\item North Cost per MT = ~~\\frac{\\$475,000}{6200 \\text{ MT}}~~\n    \\item South Cost per MT = ~~\\frac{\\$450,000}{5100 \\text{ MT}}~~\n    \\item East Cost per MT = ~~\\frac{\\$620,000}{7800 \\text{ MT}}~~\n    \\item West Cost per MT = ~~\\frac{\\$520,000}{6500 \\text{ MT}}~~\n\\end{itemize}\n\nUsing a code interpreter for precise calculation:\n\n```python\nnorth_cost_per_mt = 475000 / 6200\nsouth_cost_per_mt = 450000 / 5100\neast_cost_per_mt = 620000 / 7800\nwest_cost_per_mt = 520000 / 6500\n\nprint(f\"North: {north_cost_per_mt:.2f}\")\nprint(f\"South: {south_cost_per_mt:.2f}\")\nprint(f\"East: {east_cost_per_mt:.2f}\")\nprint(f\"West: {west_cost_per_mt:.2f}\")\n```\n\n```\nNorth: 76.61\nSouth: 88.24\nEast: 79.49\nWest: 80.00\n```\n\nThe calculated costs per metric ton are approximately:\n\\begin{itemize}\n    \\item North: ~~\\$76.61~~ per MT\n    \\item South: ~~\\$88.24~~ per MT\n    \\item East: ~~\\$79.49~~ per MT\n    \\item West: ~~\\$80.00~~ per MT\n\\end{itemize}\n\nComparing these values, the highest cost per metric ton is in the South region (~~\\$88.24~~ per MT), and the lowest cost per metric ton is in the North region (~~\\$76.61~~ per MT).\n\nTherefore, the region with the highest transportation cost per metric ton is South, and the region with the lowest transportation cost per metric ton is North."
+}
+```
+```json
+{
+   "solution": "To determine the region with the highest and lowest transportation cost per metric ton in Q4, we need to calculate the total transportation cost for each region in Q4 and divide it by the shipment volume for that region in Q4.\n\nFirst, let's calculate the total transportation cost for each region in Q4 using the stacked bar chart 'Q4 Transportation Cost Breakdown by Region':\n*   North Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$150,000 + \\$200,000 + \\$75,000 + \\$50,000 = \\$475,000~~\n*   South Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$120,000 + \\$180,000 + \\$90,000 + \\$60,000 = \\$450,000~~\n*   East Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$200,000 + \\$250,000 + \\$100,000 + \\$70,000 = \\$620,000~~\n*   West Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$170,000 + \\$210,000 + \\$85,000 + \\$55,000 = \\$520,000~~\n\nNext, get the Q4 shipment volume for each region from the line chart 'Quarterly Shipment Volume by Region':\n*   North Q4 Volume = ~~6200~~ Metric Tons\n*   South Q4 Volume = ~~5100~~ Metric Tons\n*   East Q4 Volume = ~~7800~~ Metric Tons\n*   West Q4 Volume = ~~6500~~ Metric Tons\n\nNow, calculate the transportation cost per metric ton for each region in Q4:\n*   North Cost per MT = ~~\\frac{\\text{North Q4 Total Cost}}{\\text{North Q4 Volume}} = \\frac{\\$475,000}{6200 \\text{ MT}}~~\n*   South Cost per MT = ~~\\frac{\\text{South Q4 Total Cost}}{\\text{South Q4 Volume}} = \\frac{\\$450,000}{5100 \\text{ MT}}~~\n*   East Cost per MT = ~~\\frac{\\text{East Q4 Total Cost}}{\\text{East Q4 Volume}} = \\frac{\\$620,000}{7800 \\text{ MT}}~~\n*   West Cost per MT = ~~\\frac{\\text{West Q4 Total Cost}}{\\text{West Q4 Volume}} = \\frac{\\$520,000}{6500 \\text{ MT}}~~\n\nUsing a code interpreter for precise calculation:\n\n```python\nnorth_cost_per_mt = 475000 / 6200\nsouth_cost_per_mt = 450000 / 5100\neast_cost_per_mt = 620000 / 7800\nwest_cost_per_mt = 520000 / 6500\n\nprint(f\"North: {north_cost_per_mt:.2f}\")\nprint(f\"South: {south_cost_per_mt:.2f}\")\nprint(f\"East: {east_cost_per_mt:.2f}\")\nprint(f\"West: {west_cost_per_mt:.2f}\")\n```\n\n```\nNorth: 76.61\nSouth: 88.24\nEast: 79.49\nWest: 80.00\n```\n\nThe calculated costs per metric ton are approximately:\n*   North: ~~\\$76.61~~ per MT\n*   South: ~~\\$88.24~~ per MT\n*   East: ~~\\$79.49~~ per MT\n*   West: ~~\\$80.00~~ per MT\n\nComparing these values, the highest cost per metric ton is ~~\\$88.24~~ (South region), and the lowest cost per metric ton is ~~\\$76.61~~ (North region).\n\nTherefore, the region with the highest transportation cost per metric ton is South, and the region with the lowest transportation cost per metric ton is North."
+}
+```
+```json
+{
+   "solution": "To determine the region with the highest and lowest transportation cost per metric ton in Q4, we need to calculate the total transportation cost for each region in Q4 and divide it by the shipment volume for that region in Q4.\n\nFirst, let`s calculate the total transportation cost for each region in Q4 using the stacked bar chart 'Q4 Transportation Cost Breakdown by Region':\n*   North Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$150,000 + \\$200,000 + \\$75,000 + \\$50,000 = \\$475,000~~\n*   South Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$120,000 + \\$180,000 + \\$90,000 + \\$60,000 = \\$450,000~~\n*   East Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$200,000 + \\$250,000 + \\$100,000 + \\$70,000 = \\$620,000~~\n*   West Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$170,000 + \\$210,000 + \\$85,000 + \\$55,000 = \\$520,000~~\n\nNext, get the Q4 shipment volume for each region from the line chart 'Quarterly Shipment Volume by Region':\n*   North Q4 Volume = ~~6200~~ Metric Tons\n*   South Q4 Volume = ~~5100~~ Metric Tons\n*   East Q4 Volume = ~~7800~~ Metric Tons\n*   West Q4 Volume = ~~6500~~ Metric Tons\n\nNow, calculate the transportation cost per metric ton for each region in Q4:\n*   North Cost per MT = ~~\\frac{\\text{North Q4 Total Cost}}{\\text{North Q4 Volume}} = \\frac{\\$475,000}{6200 \\text{ MT}}~~\n*   South Cost per MT = ~~\\frac{\\text{South Q4 Total Cost}}{\\text{South Q4 Volume}} = \\frac{\\$450,000}{5100 \\text{ MT}}~~\n*   East Cost per MT = ~~\\frac{\\text{East Q4 Total Cost}}{\\text{East Q4 Volume}} = \\frac{\\$620,000}{7800 \\text{ MT}}~~\n*   West Cost per MT = ~~\\frac{\\text{West Q4 Total Cost}}{\\text{West Q4 Volume}} = \\frac{\\$520,000}{6500 \\text{ MT}}~~\n\nUsing a code interpreter for precise calculation:\n\n```python\nnorth_cost_per_mt = 475000 / 6200\nsouth_cost_per_mt = 450000 / 5100\neast_cost_per_mt = 620000 / 7800\nwest_cost_per_mt = 520000 / 6500\n\nprint(f\"North: {north_cost_per_mt:.2f}\")\nprint(f\"South: {south_cost_per_mt:.2f}\")\nprint(f\"East: {east_cost_per_mt:.2f}\")\nprint(f\"West: {west_cost_per_mt:.2f}\")\n```\n\n```\nNorth: 76.61\nSouth: 88.24\nEast: 79.49\nWest: 80.00\n```\n\nThe calculated costs per metric ton are approximately:\n*   North: ~~\\$76.61~~ per MT\n*   South: ~~\\$88.24~~ per MT\n*   East: ~~\\$79.49~~ per MT\n*   West: ~~\\$80.00~~ per MT\n\nComparing these values, the highest cost per metric ton is ~~\\$88.24~~ (South region), and the lowest cost per metric ton is ~~\\$76.61~~ (North region).\n\nTherefore, the region with the highest transportation cost per metric ton is South, and the region with the lowest transportation cost per metric ton is North."
+}
+```

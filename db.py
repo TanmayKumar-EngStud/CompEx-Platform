@@ -101,14 +101,14 @@ class DB:
                 )
                 if not existing_exam:
                     print(f"Exam type {exam_name} not found, creating it")
-                    exam_type = self.db.examtypes.create({
+                    exam_type = self.db.examtypes.create(data={
                         'examtypeid': exam_data['id'],
                         'name': exam_name,
                         'description': exam_data['description']
                     })
                     print(f"Exam type {exam_name} created successfully")
                     for section_name, section_data in exam_data['sections'].items():
-                        section = self.db.sections.create({
+                        section = self.db.sections.create(data={
                             'sectionid': section_data['id'],
                             'examtypeid': exam_type.examtypeid,
                             'name': section_name,
@@ -118,7 +118,7 @@ class DB:
             # Initialize primary user if not exists
             existing_user = self.db.users.find_first()
             if not existing_user:
-                self.db.users.create({
+                self.db.users.create(data={
                     'userid': 1,
                     'username': 'admin',
                     'password': 'admin',
@@ -193,27 +193,35 @@ class DB:
                 question["content"]["connection_validator"] = temp
                 self.question_correction_validator = temp
 
+            # Ensure text field has a value (required field, handle null/empty)
+            question_text = question.get('question') or ''
+            if not question_text or question_text == '':
+                question_text = question.get('title') or 'Question text not available'
+            
+            # Ensure title field has a value (required field, handle null/empty)
+            question_title = question.get('title') or ''
+            if not question_title or question_title == '':
+                question_title = f"Question {question.get('type', 'Unknown')} - Difficulty {question.get('difficulty', 1)}"
+            
             question_data = {
                 "type": question.get('type', ''),
                 "prompt": question.get('prompt', ''),
-                "title": question.get('title', ''),
-                "text": question.get('question', ''),
+                "title": question_title,
+                "text": question_text,  # Ensure text field is not empty
                 "difficulty": question.get('difficulty', 1),
+                "sectionid": self.current_section_id,  # Direct field assignment
+                "examtypeid": self.current_exam_id,    # Direct field assignment
                 # Prisma will handle JSON conversion
                 "metadata": json.dumps(question.get('content', {})),
                 "solution": solution,  # Prisma will handle JSON conversion
                 "isChildren": isChildQuestion,
-                "isMockQuestion": isMockQuestion,
-                "sections": {"connect": {"sectionid": self.current_section_id}},
-                "examtypes": {"connect": {"examtypeid": self.current_exam_id}}
+                "isMockQuestion": isMockQuestion
             }
 
             if isChildQuestion:
-                question_data["ProblemsSet"] = {"connect": {
-                    "problemsSetId": self.current_problemset_id}}
+                question_data["problemsSetId"] = self.current_problemset_id  # Direct field assignment
             if isMockQuestion:
-                question_data["mocksections"] = {"connect": {
-                    "mocksectionid": self.current_mocksection_id}}
+                question_data["mocksectionid"] = self.current_mocksection_id  # Direct field assignment
                 question_data["mockquestionnumber"] = self.current_mockquestion_number
             if self.question_type == "NE":
                 question_data["metadata"] = json.dumps(
@@ -283,7 +291,7 @@ class DB:
             option_data = {
                 'optiontext': str(option),
                 'iscorrect': is_correct,
-                'problems': {'connect': {'problemid': self.current_problem_id}},
+                'problemid': self.current_problem_id,  # Direct field assignment
                 'group': answer_group if answer_group else group
             }
             
@@ -321,7 +329,7 @@ class DB:
             option_data = {
                 'optiontext': str(option),
                 'iscorrect': is_correct,
-                'problems': {'connect': {'problemid': self.current_problem_id}}
+                'problemid': self.current_problem_id  # Direct field assignment
             }
             if group:
                 option_data['group'] = group
@@ -341,8 +349,8 @@ class DB:
             for tag in tags:
                 tagid = self._register_tag(tag)  # ✅
                 tag_data = {
-                    'tags': {'connect': {'tagid': tagid}},
-                    'problems': {'connect': {'problemid': self.current_problem_id}}
+                    'tagid': tagid,  # Direct field assignment
+                    'problemid': self.current_problem_id  # Direct field assignment
                 }
                 self.db.problemtags.create(data=tag_data)  # ❌
         except Exception as e:
@@ -357,8 +365,8 @@ class DB:
             for tag in tags:
                 tagid = self._register_tag(tag)
                 tag_data = {
-                    'tags': {'connect': {'tagid': tagid}},
-                    'ProblemsSet': {'connect': {'problemsSetId': self.current_problem_id}}
+                    'tagid': tagid,  # Direct field assignment
+                    'problemsSetId': self.current_problemset_id  # Direct field assignment (fix: was using current_problem_id)
                 }
                 self.db.problemssettags.create(
                     data=tag_data
@@ -387,8 +395,8 @@ class DB:
             else:
                 tag_data = {
                     'name': tag,
-                    'examtypes': {'connect': {'examtypeid': self.current_exam_id}},
-                    'sections': {'connect': {'sectionid': self.current_section_id}}
+                    'examtypeid': self.current_exam_id,  # Direct field assignment
+                    'sectionid': self.current_section_id  # Direct field assignment
                 }
                 tagid = self.db.tags.create(
                     data=tag_data
@@ -405,23 +413,27 @@ class DB:
         try:
             self._get_exam_section_ids(exam_section)
 
+            # Ensure required fields have values (handle null/empty)
+            title = parent_question.get('title') or ''
+            if not title or title == '':
+                title = f"{parent_question.get('type', 'Question')} - {exam_section}"
+            
             # Determine content type and data
             problemsset_data = {
                 'type': parent_question.get('type', ''),
                 'content': json.dumps(parent_question.get('content', {})),
-                'title': parent_question.get('title', ''),
-                'sections': {'connect': {'sectionid': self.current_section_id}},
-                'examtypes': {'connect': {'examtypeid': self.current_exam_id}}
+                'title': title,  # Ensure title is not empty
+                'sectionid': self.current_section_id,    # Direct field assignment (required)
+                'examtypeid': self.current_exam_id       # Direct field assignment (required)
             }
 
             if isMockQuestion:
                 problemsset_data['mockquestionnumber'] = self.current_mockquestion_number
-                problemsset_data['mocksections'] = {'connect': {
-                    'mocksectionid': self.current_mocksection_id}}
+                problemsset_data['mocksectionid'] = self.current_mocksection_id  # Direct field assignment
 
             # Create problem set
             try:
-
+                # Note: Prisma Python client uses lowercase for model names
                 problemsset = self.db.problemsset.create(data=problemsset_data)
                 self.current_problemset_id = problemsset.problemsSetId
             except Exception as e:
@@ -485,7 +497,7 @@ class DB:
         if isMockQuestion:
             exam_section = list(paper.keys())[0]
             self._get_exam_section_ids(exam_section)
-            current_mocktest = self.db.mocktests.create({
+            current_mocktest = self.db.mocktests.create(data={
                 'difficulty': difficulty,
                 'examtypeid': self.current_exam_id,
                 'date': datetime.now(),
@@ -500,7 +512,7 @@ class DB:
                 print(f"sectionNumber: {sectionNumber}")
                 if isMockQuestion:
                     secNo = int(sectionNumber[-1])
-                    current_mocksection = self.db.mocksections.create({
+                    current_mocksection = self.db.mocksections.create(data={
                         'mocktestid': self.current_mocktest_id,
                         'sectionnumber': secNo,
                         'sectionid': self.current_section_id

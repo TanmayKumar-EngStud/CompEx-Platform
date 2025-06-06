@@ -1,0 +1,1647 @@
+{
+  "GRE_Q": {
+    "section1": [
+      {
+        "prompt": "<geometry>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "geometry"
+        ],
+        "content": {
+          "passage": "A rectangle ABCD is inscribed in a circle.",
+          "statements": [
+            "The radius of the circle is 5.",
+            "The ratio of the length of side AB to the length of side BC is 4 to 3."
+          ]
+        },
+        "question": "What is the area of rectangle ABCD?",
+        "title": "Area of an Inscribed Rectangle",
+        "solution": "The area of a rectangle is the product of its length and width. Let the sides of the rectangle ABCD be $l$ and $w$. The area is $l \\cdot w$. When a rectangle is inscribed in a circle, the diagonal of the rectangle is a diameter of the circle. Let the diagonal be $d$. By the Pythagorean theorem, $l^2 + w^2 = d^2$.\n\nStatement (1) states that the radius of the circle is 5. This means the diameter of the circle is $2 \\times 5 = 10$. Thus, the diagonal of the rectangle is $d = 10$. The relationship between the sides and the diagonal becomes $l^2 + w^2 = 10^2 = 100$. While this gives a relationship between $l$ and $w$, it does not uniquely determine their values or their product $l \\cdot w$. For example, if $l=6$ and $w=8$, $6^2+8^2=36+64=100$, and the area is $6 \\times 8 = 48$. If $l=\\sqrt{50}$ and $w=\\sqrt{50}$ (a square), $(\\sqrt{50})^2+(\\sqrt{50})^2 = 50+50=100$, and the area is $\\sqrt{50} \\times \\sqrt{50} = 50$. Since we can get different areas, Statement (1) alone is not sufficient.\n\nStatement (2) states that the ratio of the length of side AB to the length of side BC is 4 to 3. Let $l$ be the length of AB and $w$ be the length of BC. This means $\\frac{l}{w} = \\frac{4}{3}$, or $l = \\frac{4}{3}w$. The area of the rectangle is $l \\cdot w = (\\frac{4}{3}w) \\cdot w = \\frac{4}{3}w^2$. To find the area, we need to know the value of $w$ (or $l$). Statement (2) alone does not provide any information about the actual size of the rectangle or the circle. For instance, the sides could be 4 and 3 (ratio 4:3, area 12, diagonal 5) or 8 and 6 (ratio 4:3, area 48, diagonal 10). Since we can get different areas, Statement (2) alone is not sufficient.\n\nCombining Statement (1) and Statement (2):\nFrom Statement (1), we know the diagonal $d=10$, so $l^2 + w^2 = 100$.\nFrom Statement (2), we know $l = \\frac{4}{3}w$. We can substitute this into the equation from Statement (1):\n$(\\frac{4}{3}w)^2 + w^2 = 100$\n$\\frac{16}{9}w^2 + w^2 = 100$\n$\\frac{16}{9}w^2 + \\frac{9}{9}w^2 = 100$\n$\\frac{25}{9}w^2 = 100$\n$w^2 = 100 \\times \\frac{9}{25}$\n$w^2 = 4 \\times 9 = 36$\nSince $w$ must be positive, $w = \\sqrt{36} = 6$.\nNow we can find $l$: $l = \\frac{4}{3}w = \\frac{4}{3}(6) = 4 \\times 2 = 8$.\nThe sides of the rectangle are 8 and 6. The area of the rectangle is $l \\cdot w = 8 \\times 6 = 48$. Since we found a unique value for the area, both statements together are sufficient.\n\nThus, both statements (1) and (2) together are sufficient to determine the area of the rectangle, but neither statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<number theorm>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "content": {
+          "passage": "$n$ is a positive integer.",
+          "statements": [
+            "$n$ is a divisor of 30.",
+            "$n$ is a multiple of 10."
+          ]
+        },
+        "question": "How many distinct prime factors does $n$ have?",
+        "title": "Integer n, its Divisors, Multiples, and Prime Factors",
+        "solution": "The question asks for the number of distinct prime factors of a positive integer $n$.\n\nStatement (1) says that $n$ is a divisor of 30. The positive divisors of 30 are 1, 2, 3, 5, 6, 10, 15, and 30.\nLet's list the distinct prime factors for each possibility:\n- If $n=1$, distinct prime factors: none (0).\n- If $n=2$, distinct prime factors: {2} (1).\n- If $n=3$, distinct prime factors: {3} (1).\n- If $n=5$, distinct prime factors: {5} (1).\n- If $n=6 = 2 \\times 3$, distinct prime factors: {2, 3} (2).\n- If $n=10 = 2 \\times 5$, distinct prime factors: {2, 5} (2).\n- If $n=15 = 3 \\times 5$, distinct prime factors: {3, 5} (2).\n- If $n=30 = 2 \\times 3 \\times 5$, distinct prime factors: {2, 3, 5} (3).\nSince the number of distinct prime factors can be 0, 1, 2, or 3, statement (1) alone is not sufficient.\n\nStatement (2) says that $n$ is a multiple of 10. This means $n$ could be 10, 20, 30, 40, 50, 60, and so on.\nLet's list the distinct prime factors for some possibilities:\n- If $n=10 = 2 \\times 5$, distinct prime factors: {2, 5} (2).\n- If $n=20 = 2^2 \\times 5$, distinct prime factors: {2, 5} (2).\n- If $n=30 = 2 \\times 3 \\times 5$, distinct prime factors: {2, 3, 5} (3).\n- If $n=40 = 2^3 \\times 5$, distinct prime factors: {2, 5} (2).\n- If $n=50 = 2 \\times 5^2$, distinct prime factors: {2, 5} (2).\n- If $n=60 = 2^2 \\times 3 \\times 5$, distinct prime factors: {2, 3, 5} (3).\nSince the number of distinct prime factors can be 2 or 3 (or potentially more for larger multiples of 10), statement (2) alone is not sufficient.\n\nCombining both statements: $n$ must be a positive integer that is both a divisor of 30 and a multiple of 10.\nThe divisors of 30 are {1, 2, 3, 5, 6, 10, 15, 30}.\nThe multiples of 10 are {10, 20, 30, 40, ...}.\nThe integers that are in both sets are 10 and 30.\nSo, $n$ must be either 10 or 30.\nIf $n=10$, the distinct prime factors are {2, 5}, and the number of distinct prime factors is 2.\nIf $n=30$, the distinct prime factors are {2, 3, 5}, and the number of distinct prime factors is 3.\nSince $n$ could be 10 or 30, the number of distinct prime factors is not uniquely determined (it could be 2 or 3).\n\nTherefore, both statements together are not sufficient to determine the number of distinct prime factors of $n$.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<profit, loss and discount>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "profit, loss and discount"
+        ],
+        "content": {
+          "passage": "A shopkeeper sells an item after applying a discount on its original marked price. The sale results in either a profit or a loss relative to the shopkeeper`s cost price for the item.",
+          "statements": [
+            "The item was sold at a 20% discount on the marked price, and the profit made on the sale was $50.",
+            "The profit made on the sale was 25% of the cost price of the item."
+          ]
+        },
+        "question": "What was the original marked price of the item?",
+        "title": "Determining Original Marked Price from Profit and Discount",
+        "solution": "Let MP be the marked price, CP be the cost price, and SP be the selling price. The profit (P) is given by P = SP - CP.\n\nStatement (1) states that the item was sold at a 20% discount on the marked price, which means SP = MP * (1 - 20/100) = 0.8 * MP. It also states that the profit made on the sale was $50. So, P = $50. Substituting P into the profit formula, we get $50 = SP - CP. Thus, $50 = 0.8*MP - CP. This equation involves two unknowns, MP and CP. We cannot determine a unique value for MP from this statement alone.\n\nStatement (2) states that the profit made on the sale was 25% of the cost price of the item. So, P = 0.25 * CP. Substituting P into the profit formula, we get 0.25*CP = SP - CP. Rearranging this gives SP = 1.25*CP. This statement relates SP and CP or P and CP/SP but does not directly involve MP. We cannot determine a unique value for MP from this statement alone.\n\nCombining Statements (1) and (2):\nFrom statement (1), we know P = $50 and SP = 0.8 * MP.\nFrom statement (2), we know P = 0.25 * CP.\nSince P = $50 (from statement 1), we can use statement (2) to find CP: $50 = 0.25 * CP. Solving for CP, we get CP = $50 / 0.25 = $200.\nNow that we have CP = $200 and P = $50, we can find the Selling Price using P = SP - CP: $50 = SP - $200, so SP = $200 + $50 = $250.\nFinally, using the relationship from statement (1), SP = 0.8 * MP, we can find the Marked Price: $250 = 0.8 * MP. Solving for MP, we get MP = $250 / 0.8 = $250 / (4/5) = $250 * (5/4) = $1250 / 4 = $312.50.\nBoth statements together allow us to find a unique value for the original marked price.\n\nTherefore, both statements together are sufficient, but neither statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<properties of shapes>- <difficulty-level: 3>",
+        "question": "Consider a salient triangular region denoted by ABC. Points D, E, and F are positioned on the sides AB, BC, and CA, respectively, such that the ratio of segment lengths AD to DB is 1 to 2, the ratio of segment lengths BE to EC is 2 to 3, and the ratio of segment lengths CF to FA is 3 to 1. If the area of triangle ABC is precisely 60 square units, what is the area of the inner triangular region defined by points D, E, and F?",
+        "title": "Area of Inner Triangle Formed by Dividing Sides of a Larger Triangle",
+        "solution": "<p>Let the area of triangle ABC be denoted by A(ABC). We are given A(ABC) = 60 square units.</p><p>Point D is on AB such that AD/DB = 1/2. This means AD = (1/3)AB and DB = (2/3)AB.</p><p>Point E is on BC such that BE/EC = 2/3. This means BE = (2/5)BC and EC = (3/5)BC.</p><p>Point F is on CA such that CF/FA = 3/1. This means CF = (3/4)CA and FA = (1/4)CA.</p><p>The area of the inner triangle DEF can be found by subtracting the areas of the three outer triangles (ADF, BDE, and CEF) from the area of triangle ABC.</p><p>The area of a triangle can be calculated using the formula: Area = (1/2)ab sin(C), where a and b are the lengths of two sides and C is the angle between them.</p><p>Area(ADF) = (1/2) * AD * AF * sin(A). Since AD = (1/3)AB and AF = (1/4)AC, we have:<br>A(ADF) = (1/2) * (1/3)AB * (1/4)AC * sin(A)<br>A(ADF) = (1/12) * (1/2) * AB * AC * sin(A)<br>Since A(ABC) = (1/2) * AB * AC * sin(A), we have:<br>A(ADF) = (1/12) * A(ABC)<br>A(ADF) = (1/12) * 60 = 5 square units.</p><p>Area(BDE) = (1/2) * BD * BE * sin(B). Since BD = (2/3)AB and BE = (2/5)BC, we have:<br>A(BDE) = (1/2) * (2/3)AB * (2/5)BC * sin(B)<br>A(BDE) = (4/15) * (1/2) * AB * BC * sin(B)<br>Since A(ABC) = (1/2) * AB * BC * sin(B), we have:<br>A(BDE) = (4/15) * A(ABC)<br>A(BDE) = (4/15) * 60 = 4 * 4 = 16 square units.</p><p>Area(CEF) = (1/2) * CE * CF * sin(C). Since CE = (3/5)BC and CF = (3/4)CA, we have:<br>A(CEF) = (1/2) * (3/5)BC * (3/4)CA * sin(C)<br>A(CEF) = (9/20) * (1/2) * BC * CA * sin(C)<br>Since A(ABC) = (1/2) * BC * CA * sin(C), we have:<br>A(CEF) = (9/20) * A(ABC)<br>A(CEF) = (9/20) * 60 = 9 * 3 = 27 square units.</p><p>The area of triangle DEF is the area of triangle ABC minus the sum of the areas of triangles ADF, BDE, and CEF.<br>A(DEF) = A(ABC) - A(ADF) - A(BDE) - A(CEF)<br>A(DEF) = 60 - 5 - 16 - 27<br>A(DEF) = 60 - (5 + 16 + 27)<br>A(DEF) = 60 - 48<br>A(DEF) = 12 square units.</p>",
+        "answer": "12",
+        "options": [
+          "12",
+          "4",
+          "30",
+          "7"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "MCQ-Single correct",
+          "properties of shapes"
+        ]
+      },
+      {
+        "prompt": "<number theorm>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "number theorm"
+        ],
+        "content": {
+          "passage": "Let $N$ be a non-zero integer.",
+          "statements": [
+            "$\frac{N}{3}$ is an even integer.",
+            "$\frac{N}{4}$ is an integer."
+          ]
+        },
+        "question": "Is $N$ a multiple of 12?",
+        "title": "Integer Properties and Multiples",
+        "solution": "The question asks whether $N$ is a multiple of 12.\n\nStatement (1): $\frac{N}{3}$ is an even integer.\nLet $\frac{N}{3} = 2k$, where $k$ is an integer. This implies $N = 6k$. So, $N$ is a multiple of 6. This statement tells us that $N$ is a multiple of 6, and furthermore, when divided by 3, the result is an even integer. For example, if $N=6$, $\frac{N}{3}=2$, which is an even integer. $N=6$ is not a multiple of 12. If $N=12$, $\frac{N}{3}=4$, which is an even integer. $N=12$ is a multiple of 12. Since we can get different answers (Yes/No) depending on the value of $N$ that satisfies Statement (1), Statement (1) alone is not sufficient.\n\nStatement (2): $\frac{N}{4}$ is an integer.\nThis implies that $N$ is a multiple of 4. So, $N = 4m$ for some integer $m$. For example, if $N=4$, $\frac{N}{4}=1$, which is an integer. $N=4$ is not a multiple of 12. If $N=8$, $\frac{N}{4}=2$, which is an integer. $N=8$ is not a multiple of 12. If $N=12$, $\frac{N}{4}=3$, which is an integer. $N=12$ is a multiple of 12. Since we can get different answers (Yes/No) depending on the value of $N$ that satisfies Statement (2), Statement (2) alone is not sufficient.\n\nCombining both statements:\nFrom Statement (1), $N$ is a multiple of 6 ($N=6k$).\nFrom Statement (2), $N$ is a multiple of 4 ($N=4m$).\nIf $N$ is a multiple of both 6 and 4, then $N$ must be a multiple of the least common multiple (LCM) of 6 and 4.\nLCM(6, 4) = 12.\nTherefore, $N$ must be a multiple of 12. Any integer that is a multiple of both 6 and 4 is necessarily a multiple of 12.\nBoth statements together are sufficient to determine that $N$ is a multiple of 12.\n\nThus, both statements together are sufficient, but neither statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Single",
+        "prompt": "<algebra>- <difficulty-level: 3>",
+        "question": "A diversified corporate investment portfolio is initially allocated solely across two principal sectors: Technology and Healthcare. At the commencement of the first quarter, the value held within the Technology sector constituted exactly 60% of the total value of the entire portfolio. Throughout the first quarter, the investment in the Technology sector appreciated by 25%, while concurrently, the value of the Healthcare sector holdings diminished by 10%. Precisely at the beginning of the second quarter, the corporation executed a strategic adjustment by divesting itself of half of its accumulated holdings in the Technology sector at that time, immediately reinvesting the entirety of the proceeds from this divestiture into the Healthcare sector. Subsequent to this transaction, over the course of the second quarter, the remaining value in the Technology holdings experienced a further depreciation of 5%, whereas the newly augmented investment in the Healthcare sector experienced an appreciation of 15%. What was the approximate percentage change in the total value of the corporation's investment portfolio from the initiation of the first quarter to the conclusion of the second quarter?",
+        "title": "Corporate Portfolio Value Change Over Two Quarters",
+        "solution": "<p>Let the initial total value of the portfolio at the beginning of the first quarter be <code>P</code>.</p><p>At the start of Q1:</p><p>Technology value = <code>0.60P</code></p><p>Healthcare value = <code>0.40P</code></p><p>Total value = <code>0.60P + 0.40P = P</code></p><p>At the end of Q1:</p><p>Technology value appreciates by 25%: <code>0.60P * (1 + 0.25) = 0.60P * 1.25 = 0.75P</code></p><p>Healthcare value diminishes by 10%: <code>0.40P * (1 - 0.10) = 0.40P * 0.90 = 0.36P</code></p><p>Total value at the end of Q1 (and start of Q2 before reallocation) = <code>0.75P + 0.36P = 1.11P</code></p><p>At the start of Q2 (after reallocation):</p><p>Half of the Technology holdings at the end of Q1 (<code>0.75P</code>) are divested: <code>0.5 * 0.75P = 0.375P</code></p><p>Remaining Technology value = <code>0.75P - 0.375P = 0.375P</code></p><p>The <code>0.375P</code> is reinvested into Healthcare.</p><p>New Healthcare value = Healthcare value at end of Q1 + Reinvestment = <code>0.36P + 0.375P = 0.735P</code></p><p>Total value at the start of Q2 (after reallocation) = Remaining Tech + New Healthcare = <code>0.375P + 0.735P = 1.11P</code> (This confirms the total value didn't change due to reallocation).</p><p>At the end of Q2:</p><p>Remaining Technology value depreciates by 5%: <code>0.375P * (1 - 0.05) = 0.375P * 0.95 = 0.35625P</code></p><p>New Healthcare value appreciates by 15%: <code>0.735P * (1 + 0.15) = 0.735P * 1.15 = 0.84525P</code></p><p>Total value at the end of Q2 = <code>0.35625P + 0.84525P = 1.2015P</code></p><p>Percentage change in total value from the start of Q1 to the end of Q2:</p><p>Initial value = <code>P</code></p><p>Final value = <code>1.2015P</code></p><p>Change in value = Final - Initial = <code>1.2015P - P = 0.2015P</code></p><p>Percentage change = <code>(Change in value / Initial value) * 100%</code></p><p>Percentage change = <code>(0.2015P / P) * 100% = 0.2015 * 100% = 20.15%</code></p><p>The approximate percentage change is 20.15%.</p>",
+        "answer": "20.15%",
+        "options": [
+          "12.65%",
+          "12.95%",
+          "20.15%",
+          "8.24%"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "MCQ-Single correct",
+          "algebra"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Scatter Plot> - <Government Policies and Regulations>- <difficulty-level: 3>",
+        "content": [
+          {
+            "graph": {
+              "title": "Relationship between Data Privacy Legislation Updates and Annual Spending on Retro Arcade Games",
+              "xAxis": "Number of Major Data Privacy Legislation Updates per Year/Region",
+              "yAxis": "Annual Spending on Retro Arcade Games (Millions USD)",
+              "data": [
+                {
+                  "x": 2,
+                  "y": 15
+                },
+                {
+                  "x": 5,
+                  "y": 22
+                },
+                {
+                  "x": 1,
+                  "y": 12
+                },
+                {
+                  "x": 8,
+                  "y": 30
+                },
+                {
+                  "x": 3,
+                  "y": 18
+                },
+                {
+                  "x": 6,
+                  "y": 25
+                },
+                {
+                  "x": 4,
+                  "y": 20
+                },
+                {
+                  "x": 7,
+                  "y": 28
+                },
+                {
+                  "x": 9,
+                  "y": 33
+                },
+                {
+                  "x": 10,
+                  "y": 31
+                }
+              ]
+            },
+            "type": "scatter plot",
+            "description": "This scatter plot illustrates the relationship between the number of major data privacy legislation updates implemented in various regions/years and the corresponding annual spending on retro arcade games in millions of U.S. dollars for those same regions/years. Each point represents a distinct observation combining the number of legislative updates on the x-axis and the annual spending on retro arcade games on the y-axis."
+          }
+        ],
+        "title": "Analysis of Data Privacy Legislation's Impact on Consumer Spending Habits: The Case of Retro Arcade Games",
+        "questions": [
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Scatter Plot> - <Government Policies and Regulations>- <difficulty-level: 3>",
+            "question": "Based on the provided scatter plot, what is the approximate percentage increase in the average annual spending on retro arcade games when the number of major data privacy legislation updates is 7 or more, compared to the average annual spending when the number of updates is less than 5? Ignore minor fluctuations and focus on the general trend discernible from the data points.",
+            "number": 1,
+            "title": "Calculating Percentage Increase in Retro Arcade Game Spending Based on Legislation Updates",
+            "solution": "To find the approximate percentage increase in average annual spending on retro arcade games, we first need to calculate the average spending for the two specified groups of data points.\\n\\nGroup 1: Number of major data privacy legislation updates is 7 or more.\\nThe data points corresponding to 7 or more updates (x >= 7) are: (8, 30), (7, 28), (9, 33), and (10, 31). The annual spending values (in millions USD) are 30, 28, 33, and 31.\\nAverage spending for Group 1 = (30 + 28 + 33 + 31) / 4 = 122 / 4 = 30.5\\n\\nGroup 2: Number of major data privacy legislation updates is less than 5.\\nThe data points corresponding to less than 5 updates (x < 5) are: (2, 15), (1, 12), (3, 18), and (4, 20). The annual spending values (in millions USD) are 15, 12, 18, and 20.\\nAverage spending for Group 2 = (15 + 12 + 18 + 20) / 4 = 65 / 4 = 16.25\\n\\nNow, we calculate the percentage increase from Group 2 to Group 1.\\nPercentage Increase = ((Average spending Group 1 - Average spending Group 2) / Average spending Group 2) * 100\\nPercentage Increase = ((30.5 - 16.25) / 16.25) * 100\\nPercentage Increase = (14.25 / 16.25) * 100\\n\\nUsing a calculator:\\n(14.25 / 16.25) \\u2248 0.876923\\n0.876923 * 100 \\u2248 87.69%\\n\\nTherefore, the approximate percentage increase in average annual spending on retro arcade games is approximately 87.69% when the number of major data privacy legislation updates is 7 or more, compared to when it is less than 5.",
+            "answer": "88%",
+            "options": [
+              "75%",
+              "88%",
+              "47%",
+              "94%"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          },
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Scatter Plot> - <Government Policies and Regulations>- <difficulty-level: 3>",
+            "question": "Referencing the provided scatter plot, analyze the data to determine, approximately, how many times greater the mean annual expenditure on retro arcade games is in regions/years where the number of major data privacy legislation updates exceeds 5 compared to regions/years where the number of updates is 5 or fewer. Express your answer as a decimal rounded to the nearest tenth.",
+            "number": 2,
+            "title": "Ratio of Mean Spending Based on Legislation Update Frequency",
+            "solution": "To determine how many times greater the mean annual expenditure is for regions/years with more than 5 major data privacy legislation updates compared to those with 5 or fewer, we must first calculate the mean spending for each group.\\n\\nGroup 1: Regions/years where the number of major data privacy legislation updates exceeds 5 (x > 5).\\nLooking at the scatter plot data points, those with x-values greater than 5 are: (6, 25), (7, 28), (8, 30), (9, 33), and (10, 31).\\nThe corresponding annual spending values (in millions USD) are 25, 28, 30, 33, and 31.\\nSum of spending for Group 1 = 25 + 28 + 30 + 33 + 31 = 147.\\nNumber of data points in Group 1 = 5.\\nMean spending for Group 1 = Sum / Number of points = 147 / 5 = 29.4 million USD.\\n\\nGroup 2: Regions/years where the number of major data privacy legislation updates is 5 or fewer (x <= 5).\\nLooking at the scatter plot data points, those with x-values less than or equal to 5 are: (1, 12), (2, 15), (3, 18), (4, 20), and (5, 22).\\nThe corresponding annual spending values (in millions USD) are 12, 15, 18, 20, and 22.\\nSum of spending for Group 2 = 12 + 15 + 18 + 20 + 22 = 87.\\nNumber of data points in Group 2 = 5.\\nMean spending for Group 2 = Sum / Number of points = 87 / 5 = 17.4 million USD.\\n\\nNow, we calculate how many times greater the mean spending of Group 1 is compared to Group 2 by dividing the mean of Group 1 by the mean of Group 2.\\nRatio = Mean spending Group 1 / Mean spending Group 2\\nRatio = 29.4 / 17.4\\n\\nUsing a calculator:\\n29.4 / 17.4 \\u2248 1.689655...\\n\\nRounding the result to the nearest tenth:\\n1.689655... rounds to 1.7.\\n\\nTherefore, the mean annual expenditure on retro arcade games in regions/years with more than 5 major data privacy legislation updates is approximately 1.7 times greater than in regions/years with 5 or fewer updates.",
+            "answer": "1.7",
+            "options": [
+              "1.5",
+              "1.9",
+              "0.6",
+              "1.7"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          }
+        ],
+        "difficulty": 3,
+        "tag": [
+          "PS",
+          "data analytics"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Line Graph> - <Science and Technology>- <difficulty-level: 2>",
+        "content": [
+          {
+            "graph": {
+              "title": "Annual Filings of Gravitational Anomaly Stabilizer Patents",
+              "xAxis": "Year",
+              "yAxis": "Number of Patents (thousands)",
+              "data": {
+                "x-axis": [
+                  2010,
+                  2011,
+                  2012,
+                  2013,
+                  2014,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020
+                ],
+                "y-axis": [
+                  0,
+                  10,
+                  20,
+                  30,
+                  40,
+                  50
+                ],
+                "data": [
+                  12,
+                  18,
+                  15,
+                  22,
+                  25,
+                  31,
+                  28,
+                  35,
+                  40,
+                  38,
+                  45
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph depicts the number of patents filed globally each year, in thousands, specifically for devices classified as Gravitational Anomaly Stabilizers, from 2010 to 2020."
+          },
+          {
+            "graph": {
+              "title": "Average Daily Usage of Personal Teleportation Devices",
+              "xAxis": "Year",
+              "yAxis": "Device Usage (hours per person)",
+              "data": {
+                "x-axis": [
+                  2010,
+                  2011,
+                  2012,
+                  2013,
+                  2014,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020
+                ],
+                "y-axis": [
+                  0,
+                  0.5,
+                  1.0,
+                  1.5,
+                  2.0
+                ],
+                "data": [
+                  0.3,
+                  0.4,
+                  0.5,
+                  0.6,
+                  0.7,
+                  0.8,
+                  0.9,
+                  1.0,
+                  1.2,
+                  1.4,
+                  1.6
+                ]
+              }
+            },
+            "type": "line graph",
+            "description": "This line graph shows the estimated global average daily usage, in hours per person, of commercially available personal teleportation devices, for each year from 2010 to 2020."
+          }
+        ],
+        "title": "Interstellar Patents and Personal Mobility Device Usage: A Decade Review",
+        "questions": [
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Line Graph> - <Science and Technology>- <difficulty-level: 2>",
+            "question": "Based on the provided graphs, what is the approximate difference, in percentage points, between the percentage increase in annual Gravitational Anomaly Stabilizer patent filings from 2015 to 2020 and the percentage increase in average daily Personal Teleportation Device usage from 2015 to 2020?",
+            "number": 1,
+            "title": "Comparing Growth Rates: Patents vs. Device Usage",
+            "solution": "To find the difference in percentage points between the two percentage increases, we first calculate each percentage increase separately.<br><br>For Gravitational Anomaly Stabilizer Patents:<br>Number of patents in 2015 = 31 thousand<br>Number of patents in 2020 = 45 thousand<br>Increase in patents = 45 - 31 = 14 thousand<br>Percentage increase in patents = (14 / 31) * 100<br>Percentage increase in patents \u2248 45.16%<br><br>For Average Daily Personal Teleportation Device Usage:<br>Usage in 2015 = 0.8 hours<br>Usage in 2020 = 1.6 hours<br>Increase in usage = 1.6 - 0.8 = 0.8 hours<br>Percentage increase in usage = (0.8 / 0.8) * 100<br>Percentage increase in usage = 100.00%<br><br>Difference in percentage points = Percentage increase in usage - Percentage increase in patents<br>Difference = 100.00% - 45.16%<br>Difference = 54.84 percentage points.<br><br>The approximate difference is 54.84 percentage points.",
+            "answer": "54.8",
+            "options": [
+              "4.8",
+              "54.8",
+              "55.2",
+              "68.9"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Line Graph> - <Science and Technology>- <difficulty-level: 2>",
+            "question": "Based on the data presented in the graphs, what is the approximate ratio of the increase in the mean annual number of Gravitational Anomaly Stabilizer patent filings from the five-year period 2010 through 2014 to the five-year period 2016 through 2020, compared to the increase in the mean average daily usage of Personal Teleportation Devices over the same two periods? Round your answer to the nearest integer.",
+            "number": 2,
+            "title": "Ratio of Mean Increases: Patents vs. Usage",
+            "solution": "To find the ratio of the increases in the mean values, we first calculate the mean for each variable in each five-year period.<br><br>For Gravitational Anomaly Stabilizer Patents:<br>Period 2010-2014: Filings are 12, 18, 15, 22, 25 thousand.<br>Sum = 12 + 18 + 15 + 22 + 25 = 92 thousand<br>Mean (2010-2014) = 92 / 5 = 18.4 thousand<br><br>Period 2016-2020: Filings are 28, 35, 40, 38, 45 thousand.<br>Sum = 28 + 35 + 40 + 38 + 45 = 186 thousand<br>Mean (2016-2020) = 186 / 5 = 37.2 thousand<br><br>Increase in mean patents = Mean (2016-2020) - Mean (2010-2014) = 37.2 - 18.4 = 18.8 thousand<br><br>For Average Daily Personal Teleportation Device Usage:<br>Period 2010-2014: Usage is 0.3, 0.4, 0.5, 0.6, 0.7 hours.<br>Sum = 0.3 + 0.4 + 0.5 + 0.6 + 0.7 = 2.5 hours<br>Mean (2010-2014) = 2.5 / 5 = 0.5 hours<br><br>Period 2016-2020: Usage is 0.9, 1.0, 1.2, 1.4, 1.6 hours.<br>Sum = 0.9 + 1.0 + 1.2 + 1.4 + 1.6 = 6.1 hours<br>Mean (2016-2020) = 6.1 / 5 = 1.22 hours<br><br>Increase in mean usage = Mean (2016-2020) - Mean (2010-2014) = 1.22 - 0.5 = 0.72 hours<br><br>Ratio of the increase in mean patents to the increase in mean usage = (Increase in mean patents) / (Increase in mean usage)<br>Ratio = 18.8 / 0.72<br><br>Using a calculator: 18.8 / 0.72 \u2248 26.111...<br><br>Rounding to the nearest integer, the ratio is 26.<br><br>The approximate ratio is 26.",
+            "answer": "26",
+            "options": [
+              "26",
+              "47",
+              "30",
+              "18"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "data interpretation"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<algebra>- <difficulty-level: 3> (multi-correct MCQ)",
+        "question": "Ms. Evelyn and Mr. Howard have initiated distinct savings endeavors. Ms. Evelyn`s initial deposit, denoted by $E$ dollars, demonstrably surpassed Mr. Howard`s initial deposit, denoted by $H$ dollars. Simultaneously, Ms. Evelyn`s fixed weekly contribution to her account, quantified as $e$ dollars per week, was less than Mr. Howard`s fixed weekly contribution, quantified as $h$ dollars per week. Following a duration of precisely ten weeks from the initiation of their respective endeavors, the cumulative sum present in Ms. Evelyn`s account was ascertained to be no more than the cumulative sum present in Mr. Howard`s account. Assuming zero interest accrual and the absence of any withdrawals throughout this ten-week interval, which of the following statements must be true based solely on the stipulated conditions?",
+        "title": "Comparing Savings Accounts Over Time",
+        "solution": "Let $E$ be Ms. Evelyn`s initial deposit and $e$ be her fixed weekly contribution. Let $H$ be Mr. Howard`s initial deposit and $h$ be his fixed weekly contribution.\n\nAccording to the problem, we are given the following conditions:\n1. $E > H$\n2. $e < h$\n3. After 10 weeks, Ms. Evelyn`s total savings $\\le$ Mr. Howard`s total savings.\n\nThe total savings after 10 weeks for Ms. Evelyn is $S_E = E + 10e$.\nThe total savings after 10 weeks for Mr. Howard is $S_H = H + 10h$.\n\nFrom condition 3, we have:\n$E + 10e \\le H + 10h$\n\nWe can rearrange this inequality in several ways to find statements that must be true.\n\nFirst, subtract $H$ and $10e$ from both sides:\n$E - H \\le 10h - 10e$\n$E - H \\le 10(h - e)$\nSince $e < h$, $h - e$ is a positive value. Since $E > H$, $E - H$ is a positive value. We are comparing two positive quantities. Dividing by 10 (which is positive) does not change the inequality direction:\n$\\frac{E - H}{10} \\le h - e$, which can also be written as $h - e \\ge \\frac{E - H}{10}$. This statement must be true.\n\nSecond, let`s rearrange the inequality $E + 10e \\le H + 10h$ to compare Evelyn`s initial deposit with Howard`s total savings after 10 weeks.\nFrom $E + 10e \\le H + 10h$, we can subtract $E$ from both sides:\n$10e \\le H + 10h - E$\nA weekly contribution amount is typically non-negative, so we assume $e \\ge 0$. Therefore, $10e \\ge 0$.\nSince $10e \\le H + 10h - E$ and $10e \\ge 0$, it must be true that $H + 10h - E \\ge 0$.\nAdding $E$ to both sides gives:\n$H + 10h \\ge E$.\nThis statement must also be true under the assumption that weekly contributions are non-negative.\n\nThe statements that must be true are those equivalent to $h - e \\ge \\frac{E - H}{10}$ and $H + 10h \\ge E$ (assuming $e \\ge 0$).\n",
+        "answer": [
+          "`10(h - e) \u2265 E - H`",
+          "`H + 10h \u2265 E`"
+        ],
+        "options": [
+          "`H + 10h \u2265 E`",
+          "`E - H \u2265 h - e`",
+          "`10(h - e) \u2265 E - H`",
+          "`e \u2265 \\frac{E - H}{10}`"
+        ],
+        "difficulty": 3,
+        "tag": [
+          "MCQ-Multi correct",
+          "algebra"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<probability>- <difficulty-level: 3>",
+        "question": "The meteorological service reports that the probability of precipitation occurring on Monday is 0.6. Furthermore, the conditional probability of precipitation on Tuesday, given that precipitation occurred on Monday, is 0.8, while the conditional probability of precipitation on Tuesday, given that precipitation did not occur on Monday, is 0.3. A commuter, cognizant of the precise meteorological forecast for Tuesday, carries an umbrella with a probability of 0.9 if precipitation is forecast for Tuesday, and with a probability of 0.2 if precipitation is not forecast for Tuesday. Assuming the forecast for Tuesday is perfectly accurate, what is the probability, expressed as a decimal, that precipitation occurs on Tuesday and the commuter carries an umbrella on Tuesday?",
+        "title": "Probability of Precipitation and Commuter's Umbrella Decision",
+        "solution": "Let M be the event that precipitation occurs on Monday, and T be the event that precipitation occurs on Tuesday. Let U be the event that the commuter carries an umbrella on Tuesday.\nWe are given:\nP(M) = 0.6\nP(T | M) = 0.8\nP(T | M') = 0.3, where M' is the event that precipitation does not occur on Monday.\nP(M') = 1 - P(M) = 1 - 0.6 = 0.4.\n\nUsing the Law of Total Probability, the probability of precipitation on Tuesday, P(T), is:\nP(T) = P(T | M) * P(M) + P(T | M') * P(M')\nP(T) = (0.8 * 0.6) + (0.3 * 0.4)\nP(T) = 0.48 + 0.12\nP(T) = 0.60.\n\nThe question states that the commuter is cognizant of the precise meteorological forecast for Tuesday and that the forecast is perfectly accurate. This implies that the event `precipitation is forecast for Tuesday` is equivalent to the event `precipitation occurs on Tuesday` (T), and the event `precipitation is not forecast for Tuesday` is equivalent to the event `precipitation does not occur on Tuesday` (T').\nTherefore, the given probabilities for carrying an umbrella can be interpreted as:\nP(U | T) = 0.9 (probability of carrying an umbrella given precipitation occurs on Tuesday)\nP(U | T') = 0.2 (probability of carrying an umbrella given precipitation does not occur on Tuesday)\n\nWe are asked to find the probability that precipitation occurs on Tuesday AND the commuter carries an umbrella on Tuesday. This is the joint probability P(T AND U).\nUsing the definition of conditional probability, P(T AND U) can be calculated as:\nP(T AND U) = P(U | T) * P(T)\n\nSubstitute the values we found:\nP(T AND U) = 0.9 * 0.60\nP(T AND U) = 0.54.\n\nThe probability that precipitation occurs on Tuesday and the commuter carries an umbrella on Tuesday is 0.54.",
+        "answer": 0.54,
+        "tag": [
+          "Numeric Entry",
+          "probability"
+        ],
+        "difficulty": 3
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<Unitary method>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "Unitary method"
+        ],
+        "content": {
+          "passage": "A group of identical workers is assigned to complete a certain project. The project requires a fixed total amount of work.",
+          "statements": [
+            "A group of 12 of these workers completed the project in 6 hours less time than a group of 8 of these workers would have taken to complete the same project.",
+            "If 4 of these workers had worked for 24 hours, they would have completed exactly $1/3$ of the project."
+          ]
+        },
+        "question": "How many hours did it take a group of 10 identical workers to complete the same project?",
+        "title": "Workers and Project Completion Time",
+        "solution": "Let $W$ be the total amount of work required for the project, and let $R$ be the work rate of a single worker (work units per hour). Assume each worker works at the same constant rate $R$. If $N$ workers work for $T$ hours, the total work done is $N \\times R \\times T$. For the project, the total work is $W$. So, $N \\times R \\times T = W$. The time taken for $N$ workers is $T = W / (N \\times R)$.\n\nWe want to find the time taken for 10 workers, which is $T_{10} = W / (10 \\times R)$. To find $T_{10}$, we need to find the value of the ratio $W/R$.\n\nStatement (1): A group of 12 workers completed the project in 6 hours less time than 8 workers. Let $T_{12}$ be the time for 12 workers and $T_8$ be the time for 8 workers. $T_{12} = W / (12R)$ and $T_8 = W / (8R)$. The statement says $T_8 - T_{12} = 6$. So, $W/(8R) - W/(12R) = 6$. We can factor out $W/R$: $(W/R) \\times (1/8 - 1/12) = 6$. The difference in fractions is $(3 - 2)/24 = 1/24$. So, $(W/R) \\times (1/24) = 6$. This allows us to find $W/R = 6 \\times 24 = 144$. Since we can find $W/R$, we can find $T_{10} = (W/R) / 10 = 144 / 10 = 14.4$ hours. Statement (1) alone is sufficient.\n\nStatement (2): If 4 workers worked for 24 hours, they completed $1/3$ of the project. The work done by 4 workers in 24 hours is $4 \\times R \\times 24 = 96R$. This work is $1/3$ of the total project work, $W$. So, $96R = W/3$. Multiplying both sides by 3 gives $288R = W$. We can rearrange this to find the ratio $W/R = 288$. Since we can find $W/R$, we can find $T_{10} = (W/R) / 10 = 288 / 10 = 28.8$ hours. Statement (2) alone is sufficient.\n\nSince both statements alone provide enough information to calculate the time taken for 10 workers, either statement alone is sufficient.",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<linear inequalities>- <difficulty-level: 1> (multi-correct MCQ)",
+        "question": "A non-profit organization is planning a fundraising gala. The organizing committee has a budget constraint for two main categories: venue rental and catering. The venue rental cost must be no more than $10,000, and the catering cost must be no more than $15,000. Let V represent the cost of the venue rental and C represent the cost of catering, both in dollars. Additionally, the committee decides that the total cost for venue rental and catering combined must be at least $18,000 to ensure a sufficiently elaborate event to attract donors. If the organization manages to negotiate the venue rental cost down such that V = 0.8C, where 0.8 is a constant factor reflecting the negotiated rate relative to catering, which of the following statements *could* be true regarding the costs V and C, assuming all constraints are met simultaneously? Indicate all such statements.",
+        "title": "Fundraising Gala Budget Constraints and Cost Relationship",
+        "solution": "Let V be the cost of venue rental and C be the cost of catering. The given constraints are:\\n1. V \\u2264 10,000\\n2. C \\u2264 15,000\\n3. V + C \\u2265 18,000\\n\\nThe relationship between V and C is given as:\\n4. V = 0.8C\\n\\nWe need to find the values of V and C that satisfy all these conditions simultaneously. Substitute the fourth equation into the first three inequalities.\\n\\nSubstitute V = 0.8C into V \\u2264 10,000:\\n0.8C \\u2264 10,000\\nC \\u2264 10,000 / 0.8\\nC \\u2264 12,500\\n\\nSubstitute V = 0.8C into C \\u2264 15,000:\\nC \\u2264 15,000 (This is already given, and C \\u2264 12,500 is a stricter upper bound for C)\\n\\nSubstitute V = 0.8C into V + C \\u2265 18,000:\\n0.8C + C \\u2265 18,000\\n1.8C \\u2265 18,000\\nC \\u2265 18,000 / 1.8\\nC \\u2265 10,000\\n\\nCombining the inequalities for C, we find the valid range for C:\\n10,000 \\u2264 C \\u2264 12,500\\n\\nNow, we find the corresponding range for V using V = 0.8C.\\nWhen C = 10,000, V = 0.8 * 10,000 = 8,000.\\nWhen C = 12,500, V = 0.8 * 12,500 = 10,000.\\n\\nSo, the valid range for V is:\\n8,000 \\u2264 V \\u2264 10,000\\n\\nTo summarize, for the constraints to be met, the cost of catering C must be between $10,000 and $12,500 (inclusive), and the cost of venue rental V must be between $8,000 and $10,000 (inclusive), while maintaining the relationship V = 0.8C. Any statement describing a pair (V, C) that satisfies these conditions *could* be true.\\n\\nWe will evaluate the options based on whether the stated values of V and C fall within the ranges [8,000, 10,000] and [10,000, 12,500] respectively, and if V = 0.8C is satisfied. Multiple statements could be true if they describe different valid points within these ranges.\\n",
+        "answer": [
+          "V is exactly $8,000 and C is exactly $10,000.",
+          "V is exactly $10,000 and C is exactly $12,500.",
+          "V is exactly $9,000 and C is exactly $11,250."
+        ],
+        "options": [
+          "V is exactly $8,000 and C is exactly $10,000.",
+          "V is exactly $7,500 and C is exactly $9,375.",
+          "V is exactly $10,000 and C is exactly $12,500.",
+          "V is exactly $9,000 and C is exactly $11,250."
+        ],
+        "difficulty": 1,
+        "tag": [
+          "MCQ-Multi correct",
+          "linear inequalities"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<profit, loss and discount>- <difficulty-level: 2>",
+        "question": "A retailer procures a consignment of 200 identical electronic gadgets at a cost of `$`50 per unit. The retailer initially marks up the price of each gadget by 60% above the cost price. During a promotional sale, 150 of these gadgets are sold after a 10% discount is applied to the marked price. Subsequently, it is discovered that 20 of the remaining gadgets are damaged and unsaleable. The retailer decides to sell the rest of the undamaged gadgets at a 20% discount off the original marked price. Assuming no other costs are incurred, what is the retailer's overall profit percentage on this consignment, calculated to the nearest hundredth of a percent?",
+        "title": "Calculating overall profit percentage with markups, discounts, and damaged goods.",
+        "solution": "First, calculate the total cost of the consignment.\nTotal cost = Number of units * Cost per unit = 200 * `$`50 = `$`10000.\nThe retailer marks up the price by 60%.\nMarked Price (MP) = Cost per unit * (1 + Markup percentage)\nMP = `$`50 * (1 + 0.60) = `$`50 * 1.60 = `$`80 per unit.\nDuring the promotional sale, 150 units are sold with a 10% discount on the marked price.\nSelling Price 1 (SP1) = MP * (1 - Discount percentage)\nSP1 = `$`80 * (1 - 0.10) = `$`80 * 0.90 = `$`72 per unit.\nRevenue from the first batch = Number of units * SP1 = 150 * `$`72 = `$`10800.\nThe remaining units are 200 - 150 = 50 units.\nOf these remaining units, 20 are damaged. So, undamaged remaining units = 50 - 20 = 30 units.\nThese 30 units are sold at a 20% discount off the original marked price.\nSelling Price 2 (SP2) = MP * (1 - Discount percentage)\nSP2 = `$`80 * (1 - 0.20) = `$`80 * 0.80 = `$`64 per unit.\nRevenue from the second batch = Number of units * SP2 = 30 * `$`64 = `$`1920.\nTotal Revenue = Revenue from first batch + Revenue from second batch\nTotal Revenue = `$`10800 + `$`1920 = `$`12720.\nTotal Profit = Total Revenue - Total Cost\nTotal Profit = `$`12720 - `$`10000 = `$`2720.\nOverall Profit Percentage = (Total Profit / Total Cost) * 100%\nOverall Profit Percentage = (`$`2720 / `$`10000) * 100% = 0.272 * 100% = 27.20%.\nThe overall profit percentage, calculated to the nearest hundredth of a percent, is 27.20%.",
+        "answer": 27.2,
+        "tag": [
+          "Numeric Entry",
+          "profit, loss and discount"
+        ],
+        "difficulty": 2
+      },
+      {
+        "prompt": "<linear inequalities>- <difficulty-level: 3>",
+        "type": "DS",
+        "difficulty": 3,
+        "tags": [
+          "DS",
+          "linear inequalities"
+        ],
+        "content": {
+          "passage": "For real numbers $x$ and $y$, what is the relationship between $x$ and $y$?",
+          "statements": [
+            "$2x + 3y > 10$",
+            "$x - y < 5$"
+          ]
+        },
+        "question": "Is $x > y$?",
+        "title": "Linear Inequalities and Variable Comparison",
+        "solution": "The question asks whether $x > y$. We need to determine if the given statements are sufficient to definitively answer this question.\n\nStatement (1): $2x + 3y > 10$\nLet`s test some values that satisfy this inequality.\nIf $x = 5$ and $y = 1$, then $2(5) + 3(1) = 10 + 3 = 13$, which is greater than 10. In this case, $x > y$. The answer to the question is Yes.\nIf $x = 1$ and $y = 5$, then $2(1) + 3(5) = 2 + 15 = 17$, which is greater than 10. In this case, $x < y$. The answer to the question is No.\nSince Statement (1) alone leads to different answers (Yes and No) depending on the values chosen, it is not sufficient.\n\nStatement (2): $x - y < 5$\nLet`s test some values that satisfy this inequality.\nIf $x = 10$ and $y = 6$, then $x - y = 10 - 6 = 4$, which is less than 5. In this case, $x > y$. The answer to the question is Yes.\nIf $x = 1$ and $y = 1$, then $x - y = 1 - 1 = 0$, which is less than 5. In this case, $x = y$. The answer to the question is No.\nIf $x = 1$ and $y = 6$, then $x - y = 1 - 6 = -5$, which is less than 5. In this case, $x < y$. The answer to the question is No.\nSince Statement (2) alone leads to different answers (Yes and No) depending on the values chosen, it is not sufficient.\n\nStatements (1) and (2) TOGETHER:\nWe need to see if we can find values of $x$ and $y$ that satisfy both inequalities and give different answers to the question $x > y$.\nConsider the case where $x < y$. Let $x=1$ and $y=3$. \nStatement (1): $2(1) + 3(3) = 2 + 9 = 11$. $11 > 10$. This is true.\nStatement (2): $1 - 3 = -2$. $-2 < 5$. This is true.\nSo, $x=1, y=3$ satisfy both statements, and for these values, $x < y$. The answer to the question is No.\n\nConsider the case where $x > y$. Let $x=4$ and $y=1$.\nStatement (1): $2(4) + 3(1) = 8 + 3 = 11$. $11 > 10$. This is true.\nStatement (2): $4 - 1 = 3$. $3 < 5$. This is true.\nSo, $x=4, y=1$ satisfy both statements, and for these values, $x > y$. The answer to the question is Yes.\n\nSince we found pairs of $(x, y)$ that satisfy both statements, where $x < y$ (giving a 'No' answer) and $x > y$ (giving a 'Yes' answer), the two statements together are not sufficient to definitively determine if $x > y$.\n\nThe final answer is $\\boxed{E}$.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<ratio and proportion>- <difficulty-level: 1>",
+        "type": "DS",
+        "difficulty": 1,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "content": {
+          "passage": "A large drum contains a blend of two substances, Liquid P and Liquid Q, mixed in a ratio of $4:7$ by volume.",
+          "statements": [
+            "The total volume of the blend in the drum is $132$ liters.",
+            "The volume of Liquid P in the drum is $48$ liters."
+          ]
+        },
+        "question": "What is the volume of Liquid Q in the drum?",
+        "title": "Ratio of liquids in a drum",
+        "solution": "The problem states that Liquid P and Liquid Q are mixed in a ratio of $4:7$ by volume. This means that for every $4$ units of volume of Liquid P, there are $7$ units of volume of Liquid Q. We can represent the volumes as $4x$ for Liquid P and $7x$ for Liquid Q, where $x$ is a constant.\n\nStatement (1) states that the total volume of the blend in the drum is $132$ liters. The total volume is the sum of the volumes of Liquid P and Liquid Q, which is $4x + 7x = 11x$. So, according to Statement (1), $11x = 132$. We can solve for $x$: $x = \\frac{132}{11} = 12$. The volume of Liquid Q is $7x = 7 \\times 12 = 84$ liters. Since we can determine the volume of Liquid Q uniquely using Statement (1) alone, Statement (1) is sufficient.\n\nStatement (2) states that the volume of Liquid P in the drum is $48$ liters. According to Statement (2), $4x = 48$. We can solve for $x$: $x = \\frac{48}{4} = 12$. The volume of Liquid Q is $7x = 7 \\times 12 = 84$ liters. Since we can determine the volume of Liquid Q uniquely using Statement (2) alone, Statement (2) is sufficient.\n\nSince EITHER statement alone is sufficient to determine the volume of Liquid Q, the correct answer is (D).",
+        "answer": "EITHER statement ALONE is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "prompt": "<ratio and proportion>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "ratio and proportion"
+        ],
+        "content": {
+          "passage": "A collection of vintage postcards is categorized into two types: scenic and historical.",
+          "statements": [
+            "The ratio of scenic postcards to historical postcards in the collection is 7 to 3.",
+            "The difference between the number of scenic postcards and the number of historical postcards is 40."
+          ]
+        },
+        "question": "What is the total number of postcards in the collection?",
+        "title": "Vintage Postcard Collection: Ratio and Difference",
+        "solution": "Let S be the number of scenic postcards and H be the number of historical postcards. The question asks for the total number of postcards, which is S + H.\n\nStatement (1) says that the ratio of scenic postcards to historical postcards is 7 to 3. This can be written as $\\frac{S}{H} = \\frac{7}{3}$, or $S = \\frac{7}{3}H$.  This establishes a relationship between S and H, but we can have infinitely many pairs of (S, H) that satisfy this ratio (e.g., S=7, H=3; S=14, H=6; S=70, H=30). Each pair gives a different total number (10, 20, 100, respectively). Thus, statement (1) alone is not sufficient.\n\nStatement (2) says that the difference between the number of scenic postcards and the number of historical postcards is 40. This can be written as $S - H = 40$. This is a single linear equation with two variables. We can have infinitely many pairs of (S, H) that satisfy this equation (e.g., S=41, H=1; S=50, H=10; S=100, H=60). Each pair gives a different total number (42, 60, 160, respectively). Thus, statement (2) alone is not sufficient.\n\nCombining Statements (1) and (2), we have a system of two linear equations:\n1) $S = \\frac{7}{3}H$\n2) $S - H = 40$\n\nSubstitute the expression for S from equation (1) into equation (2):\n$\\frac{7}{3}H - H = 40$\n$\\frac{7}{3}H - \\frac{3}{3}H = 40$\n$\\frac{4}{3}H = 40$\n$H = 40 \\times \\frac{3}{4}$\n$H = 10 \\times 3$\n$H = 30$\n\nNow substitute the value of H back into either equation to find S. Using equation (1):\n$S = \\frac{7}{3}(30)$\n$S = 7 \\times 10$\n$S = 70$\n\nThe total number of postcards is $S + H = 70 + 30 = 100$. Since we were able to find a unique value for the total number of postcards by using both statements together, the statements together are sufficient.\n\nTherefore, BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+        "answer": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Pie Chart> - <Human Resources>- <difficulty-level: 1>",
+        "content": [
+          {
+            "graph": {
+              "title": "Employee Distribution by Department",
+              "data": [
+                {
+                  "name": "Engineering",
+                  "color": "#05ef04",
+                  "value": 40
+                },
+                {
+                  "name": "Sales",
+                  "color": "#0405ef",
+                  "value": 30
+                },
+                {
+                  "name": "Marketing",
+                  "color": "#ef0523",
+                  "value": 15
+                },
+                {
+                  "name": "Support",
+                  "color": "#FFA500",
+                  "value": 10
+                },
+                {
+                  "name": "Administration",
+                  "color": "#800080",
+                  "value": 5
+                }
+              ]
+            },
+            "type": "pie chart",
+            "description": "The pie chart above illustrates the distribution of employees across various departments within a company, represented as percentages of the total employee count."
+          }
+        ],
+        "title": "Company Employee Distribution Analysis",
+        "questions": [
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Pie Chart> - <Human Resources>- <difficulty-level: 1>",
+            "question": "If the total number of employees in the company is 1200, by what quantity does the number of employees in the Engineering department exceed the sum of employees in the Marketing and Administration departments?",
+            "number": 1,
+            "title": "Departmental Employee Count Comparison",
+            "solution": null,
+            "answer": "240",
+            "options": [
+              "360",
+              "420",
+              "240",
+              "300"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          },
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data interpretation> - <Pie Chart> - <Human Resources>- <difficulty-level: 1>",
+            "question": "If the total number of employees in the company is 1200, the number of employees in the Sales department represents what percent greater than the number of employees in the Marketing department?",
+            "number": 2,
+            "title": "Sales vs. Marketing Employee Percentage Difference",
+            "solution": null,
+            "answer": "100%",
+            "options": [
+              "100%",
+              "15%",
+              "50%",
+              "200%"
+            ],
+            "tag": [
+              "PS",
+              "data interpretation"
+            ]
+          }
+        ],
+        "difficulty": 1,
+        "tag": [
+          "PS",
+          "data interpretation"
+        ]
+      },
+      {
+        "type": "MCQ-Multi",
+        "prompt": "<ratio and proportion>- <difficulty-level: 2> (multi-correct MCQ)",
+        "question": "A philanthropic organization has allocated a significant sum for distribution among three charitable projects: Project Alpha, Project Beta, and Project Gamma. The funds are to be distributed in a specific ratio based on project impact. Initially, the planned distribution ratio for Alpha : Beta : Gamma is 3 : 5 : 8. Due to unforeseen administrative costs, the total sum available for distribution was reduced by 10%. Consequently, the organization revised the distribution such that the amount allocated to Project Gamma remained unchanged, but the remaining funds were distributed between Project Alpha and Project Beta in a new ratio. The total initial sum allocated was $160,000. Consider the following statements regarding the fund distribution after the revision. Select all statements that must be true.",
+        "title": "Revision of Charitable Fund Allocation Ratios After Budget Reduction",
+        "solution": "<p>The initial total sum allocated is $160,000.<br>The initial ratio for Alpha : Beta : Gamma is 3 : 5 : 8.<br>The total number of parts in the initial ratio is ~~3 + 5 + 8 = 16~~.</p><p>Initial amount for Project Alpha = ~~(3/16) * $160,000 = $30,000~~.<br>Initial amount for Project Beta = ~~(5/16) * $160,000 = $50,000~~.<br>Initial amount for Project Gamma = ~~(8/16) * $160,000 = $80,000~~.</p><p>Check: ~~$30,000 + $50,000 + $80,000 = $160,000~~ (Matches the initial total sum).</p><p>The total sum available was reduced by 10%.<br>Amount of reduction = ~~10% of $160,000 = 0.10 * $160,000 = $16,000~~.<br>The new total sum available for distribution = ~~$160,000 - $16,000 = $144,000~~.</p><p>According to the revised distribution, the amount allocated to Project Gamma remained unchanged.<br>New amount for Project Gamma = $80,000.</p><p>The remaining funds were distributed between Project Alpha and Project Beta.<br>Remaining funds = New total sum - New amount for Project Gamma = ~~$144,000 - $80,000 = $64,000~~.</p><p>Let A` be the new amount for Project Alpha and B` be the new amount for Project Beta. These amounts are distributed from the remaining $64,000 in a new ratio.<br>Therefore, A` + B` = $64,000.</p><p>Statements that must be true:</p><ol><li>The new amount for Project Gamma is $80,000. (This is stated directly and calculated).</li><li>The sum of the new amounts for Project Alpha and Project Beta is $64,000. (This is derived from the new total fund and Gamma's unchanged amount).</li><li>Gamma's new amount ($80,000) is greater than Alpha's initial amount ($30,000).</li><li>Gamma's new amount ($80,000) is greater than Beta's initial amount ($50,000).</li><li>The sum of the new amounts for Alpha and Beta ($64,000) is less than the sum of their initial amounts ($30,000 + $50,000 = $80,000).</li></ol><p>The exact new amounts for Alpha and Beta cannot be determined without knowing the specific new ratio between them, but their sum must be $64,000.</p>",
+        "answer": [
+          "The new amount allocated to Project Gamma is $80,000.",
+          "The sum of the new amounts allocated to Project Alpha and Project Beta is less than the sum of their initial allocations."
+        ],
+        "options": [
+          "The sum of the new amounts allocated to Project Alpha and Project Beta is $72,000.",
+          "The new amount allocated to Project Gamma is $8,000 less than its initial allocation.",
+          "The sum of the new amounts allocated to Project Alpha and Project Beta is less than the sum of their initial allocations.",
+          "The new amount allocated to Project Gamma is $80,000."
+        ],
+        "difficulty": 2,
+        "tag": [
+          "MCQ-Multi correct",
+          "ratio and proportion"
+        ]
+      },
+      {
+        "prompt": "<linear inequalities>- <difficulty-level: 2>",
+        "type": "DS",
+        "difficulty": 2,
+        "tags": [
+          "DS",
+          "linear inequalities"
+        ],
+        "content": {
+          "passage": "Assume $x$ and $y$ are real numbers.",
+          "statements": [
+            "$2x + 3y = 10$",
+            "$4x + 6y = 20$"
+          ]
+        },
+        "question": "What is the value of $x$?",
+        "title": "Sufficiency with Dependent Linear Equations",
+        "solution": "The question asks for the value of $x$. We are given two statements involving $x$ and $y$. Statement (1) gives the equation $2x + 3y = 10$. This is a linear equation with two variables, and it represents a line in the xy-plane. There are infinitely many pairs $(x, y)$ that satisfy this equation, so we cannot determine a unique value for $x$. Thus, statement (1) alone is not sufficient. Statement (2) gives the equation $4x + 6y = 20$. This is also a linear equation with two variables. Like statement (1), it represents a line and has infinitely many solutions. We cannot determine a unique value for $x$ from this equation alone. Thus, statement (2) alone is not sufficient. Now consider both statements together. Statement (1) is $2x + 3y = 10$. Statement (2) is $4x + 6y = 20$. Notice that if you multiply statement (1) by 2, you get $2(2x + 3y) = 2(10)$, which simplifies to $4x + 6y = 20$. This is the exact same equation as statement (2). The two statements provide redundant information; they describe the same line. Therefore, having both statements is equivalent to having just one of them, which is insufficient to find a unique value for $x$. For instance, $(x, y) = (5, 0)$ satisfies both equations ($2(5) + 3(0) = 10$ and $4(5) + 6(0) = 20$), in which case $x=5$. However, $(x, y) = (2, 2)$ also satisfies both equations ($2(2) + 3(2) = 4 + 6 = 10$ and $4(2) + 6(2) = 8 + 12 = 20$), in which case $x=2$. Since there are multiple possible values for $x$ that satisfy both statements, we cannot determine a unique value for $x$. Therefore, both statements together are not sufficient.",
+        "answer": "Statements (1) and (2) TOGETHER are NOT sufficient",
+        "options": [
+          "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient",
+          "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient",
+          "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient",
+          "EITHER statement ALONE is sufficient",
+          "Statements (1) and (2) TOGETHER are NOT sufficient"
+        ]
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <probability> - <Pie Chart> - <Environment and Sustainability>- <difficulty-level: 2>",
+        "content": [
+          {
+            "graph": {
+              "title": "Sources of Plastic Waste in Coastal Region X (Percentage)",
+              "data": [
+                {
+                  "name": "Fishing Gear",
+                  "color": "#ff9900",
+                  "value": 35
+                },
+                {
+                  "name": "Tourism",
+                  "color": "#3366cc",
+                  "value": 25
+                },
+                {
+                  "name": "Local Residents",
+                  "color": "#dc3912",
+                  "value": 20
+                },
+                {
+                  "name": "Industrial Waste",
+                  "color": "#109618",
+                  "value": 10
+                },
+                {
+                  "name": "Other",
+                  "color": "#990099",
+                  "value": 10
+                }
+              ]
+            },
+            "type": "pie chart",
+            "description": "The pie chart above illustrates the percentage distribution of plastic waste sources found in Coastal Region X during a recent survey period. The survey categorized plastic waste into five main sources: Fishing Gear, Tourism, Local Residents, Industrial Waste, and Other."
+          },
+          {
+            "graph": {
+              "title": "Annual Volume of Recycled Materials in City Y (Tonnes)",
+              "xAxis": "Year",
+              "yAxis": "Volume (Tonnes)",
+              "data": {
+                "x-axis": [
+                  2018,
+                  2019,
+                  2020,
+                  2021,
+                  2022
+                ],
+                "y-axis": [
+                  0,
+                  500,
+                  1000,
+                  1500,
+                  2000,
+                  2500
+                ],
+                "data": [
+                  1200,
+                  1500,
+                  1800,
+                  1700,
+                  2100
+                ]
+              }
+            },
+            "type": "bar graph",
+            "description": "The bar graph above shows the total annual volume of recycled materials collected in City Y from the year 2018 to 2022. The data represents the total weight in tonnes of all materials successfully processed for recycling each year."
+          }
+        ],
+        "title": "Analysis of Waste Sources and Recycling Trends",
+        "questions": [
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <probability> - <Pie Chart> - <Environment and Sustainability>- <difficulty-level: 2>",
+            "question": "Based on the provided pie chart, if the total quantity of plastic waste surveyed in Coastal Region X over the specified period constituted an aggregate of 120,000 tonnes, what was the combined magnitude of plastic waste originating from Fishing Gear and Tourism, expressed in kilograms?",
+            "number": 1,
+            "title": "Combined Plastic Waste from Fishing Gear and Tourism",
+            "solution": "According to the provided pie chart, the percentage of plastic waste from Fishing Gear is 35%, and the percentage from Tourism is 25%. To find the combined percentage from these two sources, we add their percentages: 35% + 25% = 60%.\n\nThe total quantity of plastic waste surveyed is given as 120,000 tonnes. To find the combined quantity of waste from Fishing Gear and Tourism in tonnes, we calculate 60% of the total:\n0.60 * 120,000 tonnes = 72,000 tonnes.\n\nThe question asks for the answer in kilograms. Since 1 tonne is equal to 1000 kilograms, we convert the quantity from tonnes to kilograms:\n72,000 tonnes * 1000 kg/tonne = 72,000,000 kg.\n\nTherefore, the combined magnitude of plastic waste originating from Fishing Gear and Tourism is 72,000,000 kilograms.",
+            "answer": "72,000,000 kg",
+            "options": [
+              "30,000,000 kg",
+              "72,000,000 kg",
+              "7,200,000 kg",
+              "42,000,000 kg"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          },
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <probability> - <Pie Chart> - <Environment and Sustainability>- <difficulty-level: 2>",
+            "question": "Based on the provided bar graph depicting the annual volume of recycled materials in City Y, approximately by what percentage did the volume of recycled materials collected in 2022 exceed the mean annual volume observed during the five-year interval from 2018 to 2022?",
+            "number": 2,
+            "title": "Percentage Increase in Recycled Volume in 2022 vs. Mean",
+            "solution": "The bar graph provides the annual volume of recycled materials collected in City Y from 2018 to 2022. The volumes for each year are:\n2018: 1200 tonnes\n2019: 1500 tonnes\n2020: 1800 tonnes\n2021: 1700 tonnes\n2022: 2100 tonnes\n\nFirst, calculate the total volume of recycled materials over the five-year period:\nTotal volume = 1200 + 1500 + 1800 + 1700 + 2100 = 8300 tonnes\n\nNext, calculate the mean annual volume over this period:\nMean volume = Total volume / Number of years\nMean volume = 8300 / 5 = 1660 tonnes\n\nThe volume in 2022 was 2100 tonnes.\n\nCalculate the difference between the 2022 volume and the mean volume:\nDifference = 2100 - 1660 = 440 tonnes\n\nTo find the percentage increase, divide the difference by the mean volume and multiply by 100:\nPercentage increase = (Difference / Mean volume) * 100\nPercentage increase = (440 / 1660) * 100\nPercentage increase \u2248 26.506%\n\nRounding to two decimal places, the percentage increase is approximately 26.51%.\n\nTherefore, the volume of recycled materials collected in 2022 exceeded the mean annual volume observed during the five-year interval from 2018 to 2022 by approximately 26.51%.",
+            "answer": "26.51%",
+            "options": [
+              "26.51%",
+              "23.53%",
+              "30.00%",
+              "20.95%"
+            ],
+            "tag": [
+              "PS",
+              "probability"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "probability"
+        ]
+      },
+      {
+        "type": "NE",
+        "prompt": "<work and time>- <difficulty-level: 1>",
+        "question": null,
+        "title": null,
+        "solution": "Let the total work required to complete the mosaic mural be represented by 1 unit of work.\n\nThe work rate of Mr. Thompson is the reciprocal of the time he takes to complete the work alone, which is 1/28 units of work per day.\nThe work rate of Ms. Rodriguez is 1/42 units of work per day.\nThe work rate of Mr. Chen is 1/84 units of work per day.\n\nFor the first 7 days, all three artisans worked together. Their combined work rate is the sum of their individual rates:\nCombined rate (first 7 days) = Rate_Thompson + Rate_Rodriguez + Rate_Chen\nCombined rate (first 7 days) = (1/28) + (1/42) + (1/84) units of work per day.\nTo add these fractions, we find a common denominator. The least common multiple of 28, 42, and 84 is 84.\nCombined rate (first 7 days) = (3/84) + (2/84) + (1/84) = (3 + 2 + 1)/84 = 6/84 = 1/14 units of work per day.\n\nThe amount of work completed in the first 7 days is:\nWork done in first 7 days = Combined rate (first 7 days) * Time\nWork done in first 7 days = (1/14 units/day) * 7 days = 7/14 = 1/2 units of work.\n\nThe remaining work to be done is:\nRemaining work = Total work - Work done in first 7 days\nRemaining work = 1 - 1/2 = 1/2 units of work.\n\nAfter 7 days, Mr. Chen leaves the project. Mr. Thompson and Ms. Rodriguez continue working together. Their combined work rate for the remaining work is:\nCombined rate (after 7 days) = Rate_Thompson + Rate_Rodriguez\nCombined rate (after 7 days) = (1/28) + (1/42) units of work per day.\nUsing the common denominator 84:\nCombined rate (after 7 days) = (3/84) + (2/84) = 5/84 units of work per day.\n\nThe time taken to complete the remaining 1/2 unit of work by Mr. Thompson and Ms. Rodriguez is:\nTime for remaining work = Remaining work / Combined rate (after 7 days)\nTime for remaining work = (1/2) / (5/84) days\nTime for remaining work = (1/2) * (84/5) = 84/10 = 8.4 days.\n\nThe total time from the beginning of the project to completion is the sum of the time spent with all three artisans and the time spent with only two:\nTotal time = Time in first 7 days + Time for remaining work\nTotal time = 7 days + 8.4 days = 15.4 days.\n\nExpressing the answer as a decimal rounded to two decimal places, we get 15.40 days.",
+        "answer": 15.4,
+        "tag": [
+          "Numeric Entry",
+          "work and time"
+        ],
+        "difficulty": 1
+      },
+      {
+        "type": "PS",
+        "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Standard Data Table> - <Government Policies and Regulations>- <difficulty-level: 2>",
+        "content": [
+          {
+            "headers": [
+              "Year",
+              "Government Regulation Index (Scale 1-10)",
+              "Number of Unicorn Plushies Sold (Thousands)",
+              "Average Consumer Price ($)"
+            ],
+            "rows": [
+              [
+                2018,
+                3,
+                55,
+                12.5
+              ],
+              [
+                2019,
+                5,
+                50,
+                13.0
+              ],
+              [
+                2020,
+                8,
+                40,
+                14.5
+              ],
+              [
+                2021,
+                7,
+                42,
+                15.0
+              ],
+              [
+                2022,
+                4,
+                60,
+                14.0
+              ]
+            ],
+            "type": "standard data table",
+            "description": "The table above shows the annual Government Regulation Index (on a scale of 1 to 10, where 10 indicates highest regulation intensity) and the sales data for Unicorn Plushies (in thousands of units) along with their average consumer price in dollars for the years 2018 through 2022."
+          }
+        ],
+        "title": "Analysis of Unicorn Plushie Market Data (2018-2022)",
+        "questions": [
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Standard Data Table> - <Government Policies and Regulations>- <difficulty-level: 2>",
+            "question": "Based on the data presented in the table, what was the approximate percentage decrease in the total revenue generated from the sale of Unicorn Plushies from the year 2019 to the year 2020?",
+            "number": 1,
+            "title": "Unicorn Plushie Revenue Change (2019-2020)",
+            "solution": "To find the percentage decrease in total revenue from 2019 to 2020, we first need to calculate the total revenue for each year.\n\nRevenue for a year is calculated as (Number of Unicorn Plushies Sold in thousands * 1000) * Average Consumer Price.\n\nFor 2019:\nUnits sold (thousands) = 50\nAverage Price = `$13.00`\nRevenue 2019 = `50 * 1000 * 13.00` = `50000 * 13.00` = `$650,000`\n\nFor 2020:\nUnits sold (thousands) = 40\nAverage Price = `$14.50`\nRevenue 2020 = `40 * 1000 * 14.50` = `40000 * 14.50` = `$580,000`\n\nPercentage decrease in revenue from 2019 to 2020 is calculated using the formula:\n`((Revenue 2019 - Revenue 2020) / Revenue 2019) * 100`\n\nPercentage decrease = `((650000 - 580000) / 650000) * 100`\nPercentage decrease = `(70000 / 650000) * 100`\nPercentage decrease = `(7 / 65) * 100`\n\nUsing a calculator:\n`7 / 65 \u2248 0.10769`\n`0.10769 * 100 \u2248 10.77`\n\nThe approximate percentage decrease in total revenue is `10.77%`.\n\nTherefore, the approximate percentage decrease in total revenue generated from the sale of Unicorn Plushies from the year 2019 to the year 2020 was `10.77%`.",
+            "answer": "10.77%",
+            "options": [
+              "20.00%",
+              "10.77%",
+              "12.07%",
+              "11.54%"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          },
+          {
+            "type": "PS",
+            "prompt": "total child questions that you would have to generate for this parentChildQuestion will be 2 so prepare other question data accordigly, prompt: :- <data analytics> - <Standard Data Table> - <Government Policies and Regulations>- <difficulty-level: 2>",
+            "question": "Based on the data presented in the table, what was the ratio of the number of Unicorn Plushies sold in the year corresponding to the nadir of the Government Regulation Index to the number of Unicorn Plushies sold in the year corresponding to the zenith of the Government Regulation Index?",
+            "number": 2,
+            "title": "Plushie Sales Ratio (Min vs Max Regulation)",
+            "solution": "The question asks for the ratio of the number of Unicorn Plushies sold in the year with the lowest Government Regulation Index (nadir) to the number of Unicorn Plushies sold in the year with the highest Government Regulation Index (zenith).\n\nFirst, identify the year with the nadir of the Government Regulation Index.\nLooking at the 'Government Regulation Index' column, the lowest value is 3, which occurs in the year 2018.\nThe number of Unicorn Plushies sold in 2018 is 55 thousand.\n\nNext, identify the year with the zenith of the Government Regulation Index.\nLooking at the 'Government Regulation Index' column, the highest value is 8, which occurs in the year 2020.\nThe number of Unicorn Plushies sold in 2020 is 40 thousand.\n\nFinally, calculate the ratio of the number of plushies sold in the nadir year (2018) to the number of plushies sold in the zenith year (2020).\nRatio = (Number of plushies sold in 2018) / (Number of plushies sold in 2020)\nRatio = `55 / 40`\n\nSimplify the ratio by dividing both numerator and denominator by their greatest common divisor, which is 5.\n`55 / 5 = 11`\n`40 / 5 = 8`\n\nThe ratio is `11/8`.\n\nTherefore, the ratio of the number of Unicorn Plushies sold in the year corresponding to the nadir of the Government Regulation Index to the number of Unicorn Plushies sold in the year corresponding to the zenith of the Government Regulation Index is `11:8`.",
+            "answer": "11:8",
+            "options": [
+              "3:8",
+              "11:8",
+              "8:11",
+              "4:5"
+            ],
+            "tag": [
+              "PS",
+              "data analytics"
+            ]
+          }
+        ],
+        "difficulty": 2,
+        "tag": [
+          "PS",
+          "data analytics"
+        ]
+      }
+    ]
+  },
+  "GRE_V": {
+    "section1": [
+      {
+        "prompt": "<Philosophy> - <SE> - <difficulty-level: 4> - <vocabulary-level:1>",
+        "question": "Philosophers often caution that while scientific advancements offer invaluable insights into the physical world, their explanatory power may remain fundamentally _______ when attempting to fully grasp the subjective nature of consciousness, a realm arguably beyond purely empirical investigation.",
+        "title": "The Limits of Science in Explaining Consciousness",
+        "type": "SE",
+        "answer": [
+          "insufficient",
+          "deficient"
+        ],
+        "options": [
+          "empirical",
+          "insufficient",
+          "comprehensive",
+          "ample",
+          "deficient",
+          "rudimentary"
+        ],
+        "solution": "The sentence suggests that scientific advancements, despite their power in understanding the physical world, have limitations when applied to the subjective nature of consciousness. The blank requires a word that indicates this limitation or inadequacy. 'Insufficient' means not enough; inadequate. 'Deficient' means not having enough of a specified quality; inadequate or defective. Both words fit the context, conveying that science's explanatory power is not enough to fully grasp consciousness. 'Rudimentary' implies basic or undeveloped, which isn't quite right. 'Comprehensive' and 'ample' are the opposite of what is needed. 'Empirical' describes the method, not its limitation in this context.",
+        "difficulty": 4,
+        "tags": [
+          "philosophy",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-2> - <difficulty-level: 4> - <vocabulary-level:2>",
+        "question": "While the critic acknowledged the author`s deft handling of unreliable narrators, she argued that the pervasive sense of psychological __________ in the protagonist`s internal monologues, rather than illuminating their true motivations, often served to __________ the reader, making it difficult to discern genuine psychological distress from deliberate narrative misdirection.",
+        "title": "Literature and Psychology: The Unreliable Narrator's Dilemma",
+        "type": "TC-2",
+        "answer": [
+          "obfuscation",
+          "confound"
+        ],
+        "options": [
+          [
+            "turmoil",
+            "candidness",
+            "simplicity",
+            "obfuscation"
+          ],
+          [
+            "validate",
+            "clarify",
+            "confound",
+            "elucidate"
+          ]
+        ],
+        "solution": "<p>The sentence discusses a critic`s view on how an author`s use of an unreliable narrator and internal monologues affects the reader`s understanding of the protagonist`s motivations. The critic argues that a certain quality of the psychological monologues, instead of clarifying motivations, actually makes it *difficult* for the reader to distinguish genuine distress from deliberate misdirection.</p><p>For the first blank, we need a word that describes a psychological quality presented in the monologues which contributes to this difficulty in discernment. The options are:</p><p><b>A. obfuscation</b>: making something obscure, unclear, or unintelligible. This fits the idea that the monologues contain a sense of things being unclear or deliberately muddled, which would make motivations hard to grasp.</p><p><b>B. candidness</b>: frankness or openness. This is the opposite of something that would make motivations difficult to discern.</p><p><b>C. simplicity</b>: the state of being simple or easily understood. Like candidness, this would likely make motivations clearer, not harder to discern.</p><p><b>D. turmoil</b>: a state of great disturbance, confusion, or uncertainty. While the protagonist might be in turmoil, the blank describes a *sense* of this quality *in the monologues* that makes it hard for the reader. 'Obfuscation' better describes the *nature* of the presentation that leads to reader difficulty.</p><p>For the second blank, we need a word that describes what this psychological quality does to the reader, specifically making it difficult to discern things. The options are:</p><p><b>E. clarify</b>: make something clear or intelligible. This is the opposite of making it difficult to discern.</p><p><b>F. validate</b>: to confirm or support. This doesn`t fit the context of making discernment difficult.</p><p><b>G. confound</b>: to confuse or puzzle. This aligns perfectly with the phrase 'making it difficult to discern'.</p><p><b>H. elucidate</b>: to make something clear; explain. Similar to clarify, this is the opposite of the intended meaning.</p><p>Thus, a pervasive sense of psychological <b>obfuscation</b> in the monologues would serve to <b>confound</b> the reader, making discernment difficult. This pair fits the contrast established in the sentence.</p>",
+        "difficulty": 4,
+        "tags": [
+          "literature",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<Literature> - <TC-3> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "question": "Technological advancements, particularly the rise of digital platforms and multimedia formats, have profoundly altered the landscape of literature, leading to a ________ of traditional notions concerning authorship and text as discrete entities; simultaneously, readers and writers engage with literary works in increasingly ________ ways facilitated by interactive media, which, some critics argue, consequently leads to a ________ value being placed on the literary output compared to the perceived permanence of printed works.",
+        "title": "Literature in the Digital Age",
+        "type": "TC-3",
+        "answer": [
+          "blurring",
+          "dynamic",
+          "transient"
+        ],
+        "options": [
+          [
+            "reinforcement",
+            "solidification",
+            "proliferation",
+            "blurring"
+          ],
+          [
+            "solitary",
+            "static",
+            "dynamic",
+            "hierarchical"
+          ],
+          [
+            "contingent",
+            "transient",
+            "elevated",
+            "intrinsic"
+          ]
+        ],
+        "solution": "<p>The sentence discusses the impact of technology on literature. The first blank describes what happens to traditional notions of authorship and text. Digital platforms, with their emphasis on sharing and remixing, tend to break down the idea of a single, fixed author and text. Thus, there is a <b>blurring</b> of these traditional notions. Options A, B, and D (`reinforcement`, `proliferation`, `solidification`) suggest strengthening or increasing distinctness, which contradicts the idea of boundaries becoming less clear.</p>\n<p>The second blank describes how readers and writers engage with works via interactive media. Interactive media implies activity, change, and perhaps collaboration, which is best described as <b>dynamic</b> engagement. Option E (`static`) is the opposite of dynamic. Options F (`hierarchical`) and G (`solitary`) do not accurately capture the nature of engagement facilitated by interactive media in this context.</p>\n<p>The third blank discusses the value placed on digital literary output compared to printed works, which are perceived as permanent. Critics argue that digital works, being easily alterable or ephemeral, lead to a value that is less permanent or fleeting. <b>Transient</b> (lasting only for a short time) fits this idea of reduced perceived permanence compared to print. Option I (`intrinsic`) suggests inherent value, which is not the point being made about the format's impact. Option J (`elevated`) suggests increased value, which is the opposite of the implied concern about lack of permanence. Option K (`contingent`) means dependent on something else, which is plausible but less directly contrasts with the concept of 'permanence' than 'transient' does.</p>\n",
+        "difficulty": 2,
+        "tags": [
+          "literature",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<History> - <TC-1> - <difficulty-level: 3> - <vocabulary-level:3>",
+        "question": "The invention of the printing press, far from merely accelerating the reproduction of texts, proved to be a profound historical force; by enabling the rapid dissemination of knowledge beyond the traditional confines of monastic libraries and aristocratic courts, it fostered intellectual ferment and gradually contributed to a more ________ society, less beholden to centralized authority on matters of truth.",
+        "title": "History: How the Printing Press Reshaped Society",
+        "type": "TC-1",
+        "answer": "critical",
+        "options": [
+          "dogmatic",
+          "acquiescent",
+          "inquisitive",
+          "critical",
+          "credulous",
+          "passive"
+        ],
+        "solution": "<p>The sentence describes how the printing press led to the widespread dissemination of knowledge, fostering 'intellectual ferment' and creating a society 'less beholden to centralized authority on matters of truth.' The blank requires a word that describes the nature of such a society. A society that questions centralized authority on truth is one that evaluates information independently rather than accepting pronouncements without question.</p><p>Option <b>(E) critical</b> means involving the objective analysis and evaluation of an issue in order to form a judgment. This perfectly fits the description of a society that is examining information for itself and is not simply accepting authority's version of truth.</p><p>- Option <b>(A) passive</b> is incorrect because intellectual ferment and challenging authority imply an active, not passive, engagement with information.</p><p>- Option <b>(B) credulous</b> means too ready to believe things; easily fooled. This is the opposite of a society less beholden to authority on truth, which would be less likely to accept pronouncements without scrutiny.</p><p>- Option <b>(C) acquiescent</b> means ready to accept something without protest. This is contrary to the idea of challenging centralized authority.</p><p>- Option <b>(D) inquisitive</b> means having or showing an interest in learning things; curious. While related to intellectual ferment, 'inquisitive' describes a desire to know, whereas 'critical' describes the analytical process of evaluating what is known, which is more directly linked to being 'less beholden to centralized authority on matters of truth'.</p><p>- Option <b>(F) dogmatic</b> means inclined to lay down principles as incontrovertibly true. This term describes the kind of authority the society is becoming less beholden to, not the society itself.</p><p>Therefore, 'critical' is the most fitting word to describe a society that independently evaluates information and challenges established authorities on matters of truth, as facilitated by the wide availability of knowledge from the printing press.</p>",
+        "difficulty": 3,
+        "tags": [
+          "history",
+          "tc-1"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<Politics> - <RC-M> - <difficulty-level: 2>",
+        "content": {
+          "passages": [
+            "<p>Political polarization, characterized by the divergence of political attitudes away from the center and toward ideological extremes, represents a significant challenge to contemporary democratic governance. While spirited debate and differing viewpoints are intrinsic to a healthy political system, polarization goes beyond mere disagreement. It involves a clustering of opinions into distinct, often mutually antagonistic, camps, marked by increasing ideological homogeneity within each group and a deepening antipathy towards those in the opposing camp. This phenomenon manifests not only in legislative gridlock but also in the broader social fabric, affecting how citizens interact, consume information, and perceive fundamental societal issues. Understanding the drivers and consequences of this trend is crucial for addressing its potentially corrosive effects on democratic institutions and civil society.</p>",
+            "<p>Several factors are often cited as contributing to this escalating polarization. One prominent driver is the transformation of the media landscape. The proliferation of partisan news outlets and the rise of social media platforms have allowed individuals to curate their information sources, often leading to echo chambers and filter bubbles where they are primarily exposed to information and perspectives that reinforce their existing beliefs. This selective exposure can limit exposure to counterarguments, foster distrust of opposing viewpoints, and strengthen in-group identity, thereby solidifying ideological divides and reducing opportunities for common understanding or compromise. Economic factors, such as rising inequality and geographic sorting, where people with similar political views tend to live near each other, also play a role, creating social and economic reinforcing loops that amplify political differences.</p>",
+            "<p>The consequences of heightened political polarization are manifold and detrimental. In the legislative arena, it can lead to legislative paralysis, making it difficult to address pressing national issues and pass necessary reforms. This gridlock can erode public trust in government institutions. Moreover, polarization can fuel political instability and undermine democratic norms, as partisan loyalty may supersede adherence to democratic procedures and respect for minority rights. On a societal level, it can contribute to increased social tension, animosity between groups, and a decline in civil discourse. Efforts to mitigate polarization often focus on promoting media literacy, encouraging cross-partisan dialogue, and reforming political processes to incentivize cooperation rather than confrontation. However, reversing such entrenched trends is a complex challenge requiring sustained effort from political leaders, institutions, and citizens alike.</p>"
+          ]
+        },
+        "title": "Fractured Politics: Understanding Polarization in Modern Democracies",
+        "tags": [
+          "rc-m",
+          "Strengthen Question ",
+          "Main Idea Question ",
+          "Weaken Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "prompt": "Strengthen Question - 4",
+            "question": "The passage attributes political polarization, in part, to the transformation of the media landscape, citing the proliferation of partisan news and social media's role in creating echo chambers. Which of the following, if true, would most strengthen the claim that these changes in media consumption significantly contribute to increased political polarization?",
+            "title": "Strengthening the Link: Media and Political Polarization",
+            "answer": "Studies show that individuals who consume news from a wide variety of sources, including those with opposing viewpoints, tend to hold less extreme political views than those who primarily consume news from sources aligned with their existing beliefs.",
+            "options": [
+              "Historical data reveals that periods of high political polarization in the past occurred before the advent of the internet and social media.",
+              "Studies show that individuals who consume news from a wide variety of sources, including those with opposing viewpoints, tend to hold less extreme political views than those who primarily consume news from sources aligned with their existing beliefs.",
+              "A majority of social media users report being exposed to a diversity of political opinions on these platforms.",
+              "Research demonstrates that economic inequality has increased concurrently with the rise of political polarization.",
+              "Surveys indicate that public trust in mainstream media has declined steadily over the past two decades, correlating with the rise of partisan news outlets and social media as primary news sources."
+            ],
+            "solution": "<p>The question asks which option would most strengthen the claim that changes in the media landscape, specifically the proliferation of partisan news and the rise of social media leading to echo chambers, contribute significantly to increased political polarization.</p><p>Option <b>(A)</b> states that individuals consuming diverse news sources hold less extreme views than those primarily consuming news aligned with their existing beliefs. This directly supports the idea that the consumption patterns described in the passage (consuming news from partisan/aligned sources that create echo chambers) lead to more extreme views, which is a core component of political polarization. Therefore, this option strongly strengthens the claim.</p><p>Option <b>(B)</b> notes a correlation between declining trust in mainstream media and the rise of partisan media/social media. While these trends may be related to polarization, correlation does not prove that the *consumption* of these new media forms is causing polarization. Other factors could be at play.</p><p>Option <b>(C)</b> introduces economic inequality as a factor. The passage mentions economic factors, but the question specifically asks to strengthen the claim about the *media landscape's* contribution, not other factors.</p><p>Option <b>(D)</b> suggests that many social media users are exposed to diverse opinions. This contradicts the passage's claim that social media contributes to polarization by creating echo chambers and filter bubbles, thus weakening the claim.</p><p>Option <b>(E)</b> points out historical periods of polarization before the advent of current media. This indicates that other factors can cause polarization and doesn't necessarily strengthen the argument that *current* media changes are a significant contributor to *increased* polarization now.</p><p>Therefore, option A is the strongest choice as it directly provides evidence linking the specific media consumption patterns mentioned in the passage to the outcome of less or more extreme political views.</p>",
+            "tags": [
+              "Strengthen Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "prompt": "Main Idea Question - 4",
+            "question": "The primary purpose of the passage is to:",
+            "title": "Main Thrust: Unpacking Political Polarization",
+            "answer": "Analyze the causes and consequences of political polarization and suggest potential mitigation strategies.",
+            "options": [
+              "Criticize specific political parties for their role in exacerbating ideological divides.",
+              "Compare historical instances of political polarization with contemporary trends.",
+              "Argue that political polarization is an inevitable outcome of technological advancements.",
+              "Propose a detailed plan for reforming media consumption habits to reduce polarization.",
+              "Analyze the causes and consequences of political polarization and suggest potential mitigation strategies."
+            ],
+            "solution": "<p>The question asks for the primary purpose of the passage.</p><p>Let's analyze the options:</p><p>Option <b>(A)</b> claims the passage argues polarization is an inevitable outcome of technology. The passage identifies technology (media landscape changes) as a factor but does not argue inevitability; it discusses other factors and potential mitigation.</p><p>Option <b>(B)</b> suggests the passage analyzes the causes and consequences of polarization and suggests mitigation. The first paragraph defines polarization. The second discusses causes (media, economic factors). The third discusses consequences (legislative gridlock, social tension) and briefly mentions mitigation efforts. This aligns well with the overall structure and content of the passage.</p><p>Option <b>(C)</b> states the passage criticizes specific political parties. The passage discusses polarization in a general sense, without naming or singling out specific parties for blame.</p><p>Option <b>(D)</b> posits that the passage proposes a detailed plan for reforming media habits. While media is discussed as a cause, the passage only briefly mentions \"promoting media literacy\" as *part* of mitigation efforts; it does not offer a detailed reform plan.</p><p>Option <b>(E)</b> suggests a comparison of historical and contemporary polarization. The passage focuses almost exclusively on contemporary polarization, only briefly mentioning that reversing *entrenched* trends is complex, without a detailed historical comparison.</p><p>Therefore, option B best describes the primary purpose of the passage.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "prompt": "Weaken Question - 1",
+            "question": "The passage argues that social media contributes to political polarization by creating \"echo chambers and filter bubbles where they are primarily exposed to information and perspectives that reinforce their existing beliefs.\" Which of the following, if true, would most weaken this explanation for how social media contributes to polarization?",
+            "title": "Challenging the Echo Chamber: Social Media's Role in Polarization",
+            "answer": "A significant portion of social media users curate their feeds to follow a diverse range of political commentators and news sources.",
+            "options": [
+              "Surveys show that individuals who spend more time on social media are more likely to report feeling alienated from those with different political views.",
+              "Research indicates that algorithms on many social media platforms prioritize engaging or emotionally charged content, regardless of its political alignment.",
+              "Analysis of social media data reveals that politically extreme content often receives more engagement (likes, shares, comments) than moderate content.",
+              "A significant portion of social media users curate their feeds to follow a diverse range of political commentators and news sources.",
+              "Studies find that exposure to opposing political views on social media, even if contentious, increases users' understanding of differing perspectives."
+            ],
+            "solution": "<p>The question asks which option would most weaken the argument that social media contributes to polarization *specifically* by creating echo chambers and filter bubbles that reinforce existing beliefs.</p><p>Option <b>(A)</b> suggests that exposure to opposing views increases understanding. This doesn't necessarily weaken the *existence* of echo chambers; it just says that *if* exposure occurs, it can have a positive effect. It doesn't challenge the premise that many users are primarily in echo chambers.</p><p>Option <b>(B)</b> discusses algorithmic prioritization of engaging content. While this is relevant to social media's impact, it doesn't directly weaken the claim that the *result* is echo chambers and reinforcement of existing beliefs. Engaging content might often *be* content that reinforces existing beliefs.</p><p>Option <b>(C)</b> states that a significant portion of users *actively curate* their feeds to follow a *diverse* range of sources and commentators. If many users are intentionally seeking out diverse viewpoints, this directly challenges the idea that social media primarily functions by trapping users in echo chambers that *only* reinforce existing beliefs. This weakens the proposed mechanism (echo chambers leading to polarization).</p><p>Option <b>(D)</b> suggests more time on social media correlates with feeling alienated from opposing views. This supports the idea that social media *contributes* to polarization but doesn't specifically weaken the *mechanism* of echo chambers.</p><p>Option <b>(E)</b> indicates that extreme content gets more engagement. This aligns with social media potentially amplifying extreme views, which could contribute to polarization, but again, doesn't directly challenge the *echo chamber* mechanism.</p><p>Option C is the most direct challenge to the idea that social media's primary mechanism for causing polarization is the creation of echo chambers and filter bubbles that *primarily* reinforce existing beliefs, by suggesting that a significant portion of users are actively doing the opposite.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      },
+      {
+        "prompt": "<Science> - <TC-3> - <difficulty-level: 5> - <vocabulary-level:3>",
+        "question": "The rigorous methodology of science, often lauded for its capacity to deliver objective truths by stripping away subjective bias, relies on a fundamental `_______` that the universe operates according to discernible, predictable laws. Yet, as phenomena like quantum entanglement and the study of consciousness demonstrate, the very act of observation can appear to `_______` the observed reality in ways that challenge this assumption, leading some philosophers to posit that empirical investigation is ultimately `_______` of capturing the full, interwoven complexity of existence.",
+        "title": "Science's Foundation and the Limits of Observation",
+        "type": "TC-3",
+        "answer": [
+          "axiom",
+          "perturb",
+          "incapable"
+        ],
+        "options": [
+          [
+            "supposition",
+            "premise",
+            "axiom"
+          ],
+          [
+            "confirm",
+            "perturb",
+            "alter"
+          ],
+          [
+            "complete",
+            "insufficient",
+            "incapable"
+          ]
+        ],
+        "solution": "<p>The question explores the philosophical underpinnings and potential limitations of the scientific method. It posits that science, while rigorous, relies on a core assumption about the universe.</p><p>For the first blank, the sentence states science relies on a \"fundamental _______ that the universe operates according to discernible, predictable laws.\" This describes a foundational principle or assumed truth underlying the methodology. <b>A) `axiom`</b> is a fundamental truth or proposition that serves as the basis for a system of belief or analysis, fitting perfectly as the foundational assumption upon which the scientific method is built. B) `premise` is a statement that is assumed to be true for the purpose of an argument, which is close but less foundational than an axiom in describing the basis of an entire methodology. C) `supposition` is a less certain assumption or hypothesis, which doesn't fit the idea of a fundamental basis for a rigorous method.</p><p>For the second blank, the text discusses how phenomena like quantum entanglement challenge this assumption, suggesting that observation can appear to \"_______ the observed reality.\" This implies that observation isn't a neutral act but somehow influences what is seen, thus challenging the idea of a purely objective, predictable reality independent of the observer. <b>D) `perturb`</b> means to disturb or agitate, which aligns with the idea that the act of observation interferes with or changes the state of the system being observed, a key concept in quantum mechanics. E) `alter` is a more general word for change; while observation does alter reality, `perturb` carries a stronger connotation of interference or disturbance which is more specific to the context described. F) `confirm` is incorrect as the phenomena are presented as challenging the assumption, not confirming it.</p><p>For the third blank, the consequence of this challenge is that some philosophers believe empirical investigation is ultimately \"_______ of capturing the full, interwoven complexity of existence.\" If observation isn't purely objective or if reality isn't simply predictable, then methods relying on observation might be fundamentally limited in understanding reality. <b>G) `incapable`</b> means unable to do something, suggesting a fundamental limitation or lack of capacity to fully capture complexity. H) `insufficient` means not enough of something (e.g., data, tools, or methods), which is a possible interpretation, but `incapable` is a stronger term implying a fundamental barrier to comprehension posed by the very nature of observation or reality itself, fitting the philosophical depth of the statement. I) `complete` is the opposite of the required meaning.</p><p>Thus, the combination <b>`axiom`</b>, <b>`perturb`</b>, and <b>`incapable`</b> creates a coherent and logical sentence that follows the progression of the argument: Science rests on a fundamental assumption (axiom); this assumption is challenged by observations that appear to disturb (perturb) reality; leading to the conclusion that empirical methods may be unable (incapable) to fully grasp reality's complexity.</p>",
+        "difficulty": 5,
+        "tags": [
+          "science",
+          "tc-3"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<Philosophy> - <RC-L> - <difficulty-level: 4>",
+        "content": {
+          "passages": [
+            "<p>The philosophical inquiry into the relationship between mind and body has occupied thinkers for centuries, perhaps most famously crystallized in Ren`e Descartes's substance dualism. Descartes posited two fundamentally distinct substances: *res cogitans*, the thinking substance (mind), and *res extensa*, the extended substance (matter). According to Descartes, the mind is immaterial, indivisible, and `aware` of itself through introspection, while the body is material, divisible, and subject to the laws of physics. This stark ontological divide offered an elegant solution to certain problems, notably preserving the possibility of free will and explaining the unique nature of subjective experience, which seemed irreducible to mere mechanical processes.</p><p>However, this dualistic schema immediately raised vexing questions about how these two disparate substances could possibly interact. If mind and body are fundamentally different in nature\u2014one lacking spatial extension, the other defined by it\u2014how can events in the material realm affect the immaterial mind, and vice versa? Descartes himself proposed the pineal gland as the point of interaction, a notion that struck many contemporaries as inadequate and physiologically implausible. Critics, such as Princess Elisabeth of Bohemia, pressed Descartes relentlessly on this point, demanding a coherent explanation of causal interaction across the categorical gulf. This `interaction problem` became the central challenge to Cartesian dualism, leading later philosophers to propose alternative dualistic models, such as occasionalism or pre-established harmony, which, while preserving the distinction, sought to avoid the direct causal puzzle by invoking divine intervention or preordained synchronization, respectively. Nevertheless, the apparent intractability of the interaction problem spurred many subsequent thinkers to explore monistic alternatives, seeking a unified account of reality that did not necessitate bridging such a profound ontological chasm.</p>",
+            "<p>The difficulties inherent in Cartesian dualism, particularly the unresolved interaction problem, motivated philosophers to seek monistic solutions. One prominent monistic view is materialism, or physicalism, which asserts that reality is fundamentally physical. On this account, mental states\u2014sensations, thoughts, beliefs, desires\u2014are not features of an immaterial substance but are identical to, or in some way constituted by, physical states, particularly states of the brain and central nervous system. Early forms of physicalism, like behaviorism, attempted to reduce mental states to observable behaviors or dispositions to behave. Later, the mind-brain identity theory proposed a direct identity between mental states (e.g., the feeling of pain) and specific brain states (e.g., the firing of certain neurons).</p><p>Physicalism offers a seemingly parsimonious account of the mind-body relationship, aligning well with the successes of modern science, which primarily investigates the physical world. It avoids the interaction problem entirely by denying the existence of a non-physical substance that needs to interact with the physical body. However, physicalism faces its own significant challenges. The most persistent is the `explanatory gap`: the difficulty in explaining *why* certain physical states are accompanied by subjective, qualitative experiences (qualia), such as the redness of red or the feeling of pain. While neuroscience can correlate brain activity with conscious experience, it struggles to explain *how* physical processes give rise to the subjective 'what it is like' aspect of consciousness, leaving room for debate and alternative interpretations.</p>",
+            "<p>Another significant monistic perspective is idealism, which, in contrast to materialism, posits that reality is fundamentally mental. For an idealist like George Berkeley, to exist is to be perceived (`esse est percipi`). Material objects, on this view, are not mind-independent entities but rather collections of ideas or perceptions in the mind. The stability and apparent independence of the external world are accounted for by attributing these perceptions ultimately to the mind of God, a universal perceiver. Subjective idealism, associated with Berkeley, holds that only minds and their ideas exist. Absolute idealism, exemplified by G.W.F. Hegel, presents a more complex picture where reality is a single, absolute Mind or Spirit that unfolds historically and logically.</p><p>Idealism neatly sidesteps the interaction problem by collapsing reality into the mental realm, making the interaction between mind and (what was previously conceived of as) matter simply an interaction between different types of mental phenomena or within a single overarching mental reality. However, idealism faces considerable intuitive hurdles. The notion that the physical world, with its `stubborn independence` and causal regularities, is merely a construction of mind seems counterintuitive to our everyday experience. Furthermore, explaining the shared nature of reality\u2014why different minds perceive seemingly the same world\u2014requires invoking a shared framework, often God's mind in Berkeley's case, which may introduce theological commitments that some philosophers find undesirable or non-explanatory in a philosophical sense. Despite these challenges, idealism, in its various forms, offers a profound critique of materialist assumptions and highlights the central role of consciousness in our experience of the world.</p>",
+            "<p>Beyond dualism, materialism, and idealism, other positions have been explored. Panpsychism, for instance, proposes that consciousness or proto-consciousness is a fundamental and ubiquitous feature of reality, present in all matter, perhaps in a rudimentary form, and becoming more complex in organized systems like brains. This view aims to bridge the explanatory gap of physicalism by suggesting that subjectivity is not an emergent property of complex physical systems but is present 'all the way down,' avoiding the problem of explaining its sudden appearance from non-conscious matter. However, panpsychism faces challenges in explaining how these rudimentary forms of consciousness combine to form the complex consciousness we experience and can seem counterintuitive in attributing mental properties to seemingly inanimate objects.</p><p>Functionalism, a position often considered within the physicalist framework but distinct from identity theory, defines mental states not by their internal constitution (physical or otherwise) but by their causal roles\u2014their inputs (sensory data, other mental states), their internal processing, and their outputs (behavior, other mental states). Under functionalism, a mental state like pain is whatever state mediates between certain inputs (tissue damage) and certain outputs (wincing, saying 'ouch'). This allows for the possibility that different physical systems (e.g., biological brains, perhaps future artificial intelligences) could have the same mental states if they implement the same functional roles. While avoiding strict identity commitments, functionalism is still challenged by the problem of qualia, the subjective 'feel' of experience, which seems to be more than just a functional role. The ongoing debate over the mind-body problem demonstrates the enduring complexity of understanding the relationship between consciousness and the physical world, with no single philosophical position achieving universal consensus.</p>"
+          ]
+        },
+        "title": "Navigating the Philosophical Terrain of Mind and Body",
+        "tags": [
+          "rc-l",
+          "Weaken Question ",
+          "Main Idea Question ",
+          "Weaken Question ",
+          "Main Idea Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "prompt": "Weaken Question - 2",
+            "question": "Which of the following findings, if true, would most seriously weaken the argument that mental states, such as subjective experiences (qualia), are identical to specific physical states of the brain?",
+            "title": "The Explanatory Gap Challenge to Physicalism",
+            "answer": "Individuals with identical brain lesions report vastly different subjective experiences in response to the same stimulus.",
+            "options": [
+              "Advanced brain imaging techniques reveal a precise one-to-one correlation between reported subjective experiences and activity in specific neural networks.",
+              "Philosophers develop a compelling theoretical account demonstrating how subjective experience could logically emerge from non-conscious physical processes.",
+              "Certain complex behavioral responses previously thought to indicate consciousness are found to be replicable in simple, non-biological machines.",
+              "Individuals with identical brain lesions report vastly different subjective experiences in response to the same stimulus.",
+              "Studies show that altering a subject's belief about a stimulus can sometimes change their reported subjective experience of that stimulus, even if the physical stimulus remains constant."
+            ],
+            "solution": "<p>The question asks which finding would most seriously weaken the argument that mental states, specifically subjective experiences (qualia), are identical to specific physical states of the brain. This argument is central to the Mind-Brain Identity Theory, a form of physicalism discussed in Passage 2.</p><p>The core claim of the Mind-Brain Identity Theory is that a particular type of mental state (e.g., the feeling of pain) is identical to a particular type of brain state (e.g., C-fibers firing). If this identity holds true, then identical specific brain states should correspond to identical subjective experiences.</p><p>Option **(C)** states that individuals with identical brain lesions report vastly different subjective experiences in response to the same stimulus. Brain lesions affect specific physical areas and functions of the brain. If identical lesions lead to identical relevant physical brain states (or lack thereof), and yet the reported subjective experiences are different, this directly contradicts the idea that the subjective experience *is identical to* that specific physical state. If they were identical, the same physical state would necessarily entail the same subjective experience. Therefore, this finding most seriously weakens the argument for the identity between specific mental states and specific physical brain states.</p><hr><p>Here's why the other options are incorrect:</p><p>*(A)* **Certain complex behavioral responses previously thought to indicate consciousness are found to be replicable in simple, non-biological machines.** This finding challenges the idea that consciousness is necessary for certain behaviors or is unique to biological systems. It might be relevant to functionalism or behaviorism, but it does not directly address the identity of subjective experience (qualia) with specific physical brain states.</p><p>*(B)* **Advanced brain imaging techniques reveal a precise one-to-one correlation between reported subjective experiences and activity in specific neural networks.** A precise correlation, while not proof of identity, strongly *supports* the idea that subjective experiences are closely tied to brain activity and could be interpreted as evidence *consistent with* the identity theory. It certainly does not weaken the argument.</p><p>*(D)* **Philosophers develop a compelling theoretical account demonstrating how subjective experience could logically emerge from non-conscious physical processes.** Such an account, if successful, would bridge the 'explanatory gap' mentioned in Passage 2 and strengthen physicalist positions, including potentially the identity theory, by making the connection between physical processes and subjective experience theoretically clearer. This would support, not weaken, the argument that mental states are physical states.</p><p>*(E)* **Studies show that altering a subject`s belief about a stimulus can sometimes change their reported subjective experience of that stimulus, even if the physical stimulus remains constant.** This demonstrates the influence of psychological factors (beliefs) on subjective experience. While complex, it doesn't necessarily weaken the identity theory. The change in belief itself would likely correspond to a change in brain state, and it could be argued that this new brain state is identical to the new subjective experience. The finding shows a dependency of subjective experience on belief, which is not incompatible with subjective experience being identical to a brain state.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "type": "RC",
+            "prompt": "Main Idea Question - 5",
+            "question": "Which of the following statements best encapsulates the central purpose of the passage?",
+            "title": "The Enduring Puzzle of Mind and Matter",
+            "answer": "To survey and evaluate major philosophical perspectives on the mind-body problem, highlighting their core tenets, motivations, and principal challenges.",
+            "options": [
+              "To survey and evaluate major philosophical perspectives on the mind-body problem, highlighting their core tenets, motivations, and principal challenges.",
+              "To advocate for physicalism as the most scientifically sound approach to understanding the relationship between mind and body.",
+              "To propose a novel synthesis of dualist and monist theories that overcomes the limitations of each.",
+              "To argue that the mind-body problem is ultimately insoluble due to the inherent limitations of human knowledge.",
+              "To critique Descartes's dualism and explain why it has been largely abandoned by contemporary philosophers."
+            ],
+            "solution": "<p>The question asks for the central purpose of the passage. To determine this, we need to look at what the passage as a whole does. The passage begins by introducing Descartes's dualism, then discusses its main problem (interaction). It then moves on to monistic alternatives like physicalism (discussing its appeal and challenge, the explanatory gap) and idealism (discussing its approach and challenges). Finally, it briefly mentions other views like panpsychism and functionalism. Throughout, the passage presents different philosophical positions on the mind-body problem, outlines their core ideas, and discusses the difficulties or questions they raise.</p><p>Option **(C)** states that the passage aims \"To survey and evaluate major philosophical perspectives on the mind-body problem, highlighting their core tenets, motivations, and principal challenges.\" This accurately describes the structure and content of the passage. It *surveys* multiple major views (dualism, physicalism, idealism, etc.), explains their fundamental ideas (`core tenets`), sometimes mentions *why* they were developed (e.g., avoiding the interaction problem - `motivations`), and details the main objections or problems they face (`principal challenges`).</p><hr><p>Here's why the other options are incorrect:</p><p>*(A)* **To advocate for physicalism as the most scientifically sound approach...** While physicalism is discussed as aligning with science, the passage also highlights its significant challenge (the explanatory gap) and presents other views without unequivocally endorsing physicalism.</p><p>*(B)* **To critique Descartes`s dualism and explain why it has been largely abandoned...** The passage *does* critique dualism, but it spends considerable time on other philosophies as well. Its scope is much broader than just a critique of Descartes.</p><p>*(D)* **To argue that the mind-body problem is ultimately insoluble...** The passage emphasizes the complexity and lack of consensus, but it does not explicitly argue *for* the insolubility of the problem. It describes ongoing philosophical attempts to solve it.</p><p>*(E)* **To propose a novel synthesis of dualist and monist theories...** The passage describes existing historical and contemporary philosophical positions; it does not introduce or argue for a new theory or synthesis.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 5
+          },
+          {
+            "type": "RC",
+            "prompt": "Weaken Question - 1",
+            "question": "Which of the following, if true, would provide the strongest challenge to idealism as described in the passage?",
+            "title": "Testing the Foundations of Idealism",
+            "answer": "Experiments show that certain physical events occur and have observable effects even when no conscious observer is present.",
+            "options": [
+              "Neuroscience uncovers a detailed neural correlate for every known type of mental state.",
+              "Experiments show that certain physical events occur and have observable effects even when no conscious observer is present.",
+              "It is demonstrated that different conscious minds can share identical or nearly identical perceptual experiences of the same object.",
+              "Philosophers successfully argue that the concept of 'mind-independent reality' is incoherent.",
+              "Evidence is discovered suggesting that consciousness is a complex phenomenon that evolved relatively late in the history of life."
+            ],
+            "solution": "<p>The question asks for the strongest challenge to idealism as described in the passage. The passage states that idealism posits that reality is fundamentally mental, and for subjective idealism (like Berkeley`s), `to exist is to be perceived` (`esse est percipi`). Material objects are collections of ideas or perceptions in the mind, with their stability often attributed to a universal perceiver (God).</p><p>Option **(B)** states that \"Experiments show that certain physical events occur and have observable effects even when no conscious observer is present.\" This directly contradicts the idealist tenet that existence is tied to perception. If things can exist and cause effects without being perceived by a mind (human or otherwise, assuming the experiment excludes a `God` observer if that`s part of the idealist's system), then existence is *not* contingent on perception. This finding supports the idea of a mind-independent reality, which is precisely what idealism denies, thus posing the strongest challenge.</p><hr><p>Here's why the other options are incorrect:</p><p>*(A)* **Evidence is discovered suggesting that consciousness is a complex phenomenon that evolved relatively late in the history of life.** This challenges panpsychism (mentioned briefly) or views that see consciousness as a fundamental feature of reality. It doesn't directly refute idealism, which holds that *all* reality is mental, not just complex biological consciousness.</p><p>*(C)* **Philosophers successfully argue that the concept of 'mind-independent reality' is incoherent.** This argument would *support* idealism by undermining the main alternative view (physicalism/realism). It would not challenge idealism.</p><p>*(D)* **It is demonstrated that different conscious minds can share identical or nearly identical perceptual experiences of the same object.** Idealism needs to explain the shared nature of reality. The passage mentions that Berkeley uses God's mind for this. Demonstrating shared experiences doesn't challenge idealism; it's something idealism needs to account for, and accounts (like invoking a universal mind) exist within idealism.</p><p>*(E)* **Neuroscience uncovers a detailed neural correlate for every known type of mental state.** This finding strongly supports physicalist theories like the mind-brain identity theory or functionalism. It provides a challenge to dualism but doesn't directly refute idealism, which would interpret these neural states themselves as mental phenomena or as part of a larger mental reality.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "prompt": "Main Idea Question - 1",
+            "question": "According to the passage, which of the following is a primary motivation for exploring monistic alternatives to Cartesian dualism?",
+            "title": "Seeking Unity: From Dualism to Monism",
+            "answer": "The difficulty in explaining how immaterial mind and material body interact.",
+            "options": [
+              "The need to preserve the possibility of human free will.",
+              "The desire to validate the findings of modern neuroscience.",
+              "The intuitive appeal of subjective experience being irreducible to physical processes.",
+              "To align philosophical thought with the principles of subjective idealism.",
+              "The difficulty in explaining how immaterial mind and material body interact."
+            ],
+            "solution": "<p>The question asks for the primary motivation for exploring monistic alternatives to Cartesian dualism, according to the passage. Passage 1 discusses Cartesian dualism and immediately follows with the problem it faces. Passage 2 and 3 introduce monistic views (physicalism and idealism) as responses.</p><p>Passage 1 explicitly states, \"However, this dualistic schema immediately raised vexing questions about how these two disparate substances could possibly interact... This `interaction problem` became the central challenge to Cartesian dualism, leading later philosophers to propose alternative dualistic models... Nevertheless, the apparent intractability of the interaction problem spurred many subsequent thinkers to explore monistic alternatives, seeking a unified account of reality that did not necessitate bridging such a profound ontological chasm.\"</p><p>Option **(C)**, \"The difficulty in explaining how immaterial mind and material body interact,\" directly reflects the `interaction problem` identified in the passage as the key driver for seeking monistic solutions.</p><hr><p>Here's why the other options are incorrect:</p><p>*(A)* **The desire to validate the findings of modern neuroscience.** While physicalism *aligns* with neuroscience (as mentioned in Passage 2), the initial motivation for moving away from dualism historically predates modern neuroscience. The passage identifies the interaction problem as the key historical spur.</p><p>*(B)* **The need to preserve the possibility of human free will.** Passage 1 mentions that dualism *offered* an elegant solution for preserving free will. Monistic views often face challenges regarding free will (e.g., if everything is determined by physics in physicalism). Therefore, preserving free will was a motivation *for* dualism, not for moving away from it.</p><p>*(D)* **The intuitive appeal of subjective experience being irreducible to physical processes.** This irreducibility is a point used to *challenge* physicalism (the `explanatory gap` in Passage 2). It is not a motivation for adopting monism generally (idealism embraces subjectivity, but physicalism attempts to account for it physically, though it faces challenges).</p><p>*(E)* **To align philosophical thought with the principles of subjective idealism.** Subjective idealism is one type of monism discussed as an alternative, but the motivation was not specifically to adopt *idealism*, but rather to find *any* monistic approach that avoided the dualist's interaction problem. Physicalism is also a monistic alternative and is diametrically opposed to idealism.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 1
+          }
+        ]
+      }
+    ],
+    "section2": [
+      {
+        "prompt": "<Psychology> - <TC-1> - <difficulty-level: 4> - <vocabulary-level:1>",
+        "question": "Even with sophisticated neuroimaging techniques providing unprecedented insights into brain function, researchers still grapple with the challenge of establishing a clear and consistent correspondence between observed neural patterns and reported subjective experiences, a disparity that leads some to conclude that conscious awareness is inherently _______ to complete objective analysis.",
+        "title": "Psychology: The Elusive Nature of Consciousness",
+        "type": "TC-1",
+        "answer": "impervious",
+        "options": [
+          "discernible",
+          "transparent",
+          "correlative",
+          "impervious",
+          "amenable",
+          "quantifiable"
+        ],
+        "solution": "<p>The sentence highlights the difficulty researchers face in connecting objective neuroimaging data with subjective conscious experiences. This disparity leads some to conclude that conscious awareness is inherently resistant to or unaffected by complete objective analysis.</p><p>The word that best fits this context is <b>impervious</b>, which means unable to be affected by or resistant to. If conscious awareness is impervious to complete objective analysis, it means objective methods cannot fully access or explain it, aligning with the difficulty described in the sentence.</p><p>- <b>amenable</b>: means easily influenced or responsive. This is the opposite of what the sentence implies; if conscious awareness were amenable to objective analysis, it would be easy to link them.</p><p>- <b>quantifiable</b>: means able to be measured or expressed as a quantity. Again, if conscious awareness were easily quantifiable by objective analysis, the difficulty wouldn`t exist.</p><p>- <b>transparent</b>: means easy to perceive or detect. If conscious awareness were transparent to objective analysis, there would be no challenge in establishing a link.</p><p>- <b>discernible</b>: means able to be perceived or recognized. Similar to transparent, this suggests it could be easily grasped by objective methods.</p><p>- <b>correlative</b>: means having a mutual relationship or connection. While correlation exists, the sentence emphasizes the *difficulty* in establishing a *clear and consistent correspondence*, suggesting the relationship isn`t easily captured by objective analysis in a complete way.</p><p>Therefore, <b>impervious</b> is the only option that accurately reflects the idea that conscious awareness resists full comprehension through objective analytical methods.</p>",
+        "difficulty": 4,
+        "tags": [
+          "psychology",
+          "tc-1"
+        ]
+      },
+      {
+        "prompt": "<Science> - <TC-3> - <difficulty-level: 2> - <vocabulary-level:2>",
+        "question": "Science, particularly complex fields like neuroscience, often involves research producing findings that are inherently difficult to communicate accurately to a lay audience. This difficulty means findings can easily be _______ by the media, leading to a public understanding that is often far removed from the nuanced reality of the laboratory; consequently, the intricate process of scientific discovery itself is frequently portrayed not as a steady, cumulative endeavor but as a series of ______ moments, occasionally appearing entirely _______.",
+        "title": "Communicating Complex Science: Misrepresentation and Misunderstanding",
+        "type": "TC-3",
+        "answer": [
+          "simplified",
+          "discrete",
+          "disconnected"
+        ],
+        "options": [
+          [
+            "simplified",
+            "distorted",
+            "sensationalized"
+          ],
+          [
+            "isolated",
+            "sporadic",
+            "discrete"
+          ],
+          [
+            "random",
+            "disconnected",
+            "erratic"
+          ]
+        ],
+        "solution": "<p>The sentence discusses the challenge of communicating complex scientific findings accurately to a general audience, and how this difficulty affects the public's perception of both the findings and the scientific process itself.</p><p>For the first blank, the phrase \"far removed from the nuanced reality\" suggests that the findings are altered in a way that loses accuracy and detail when communicated. While \"distorted\" and \"sensationalized\" describe potential negative outcomes of media handling, \"<b>simplified</b>\" (C) is the most direct action taken when trying to explain complex topics to a lay audience. This simplification often inherently leads to a loss of nuance and accuracy, thus causing the understanding to be \"far removed from the nuanced reality.\"</p><p>For the second blank, the sentence contrasts the portrayal of the scientific process with a \"steady, cumulative endeavor.\" The portrayal is instead described as a \"series of _______ moments.\" To contrast with a process that builds upon itself cumulatively, the moments must be seen as separate and distinct. \"<b>Discrete</b>\" (E), meaning individually separate and distinct, fits this contrast perfectly, describing the moments as separate units rather than parts of a continuous flow.</p><p>For the third blank, these separate, \"discrete\" moments occasionally appear \"entirely ______.\" If the moments are seen as distinct and not part of a cumulative process, they would logically appear to lack connection to each other. \"<b>Disconnected</b>\" (H) directly describes this lack of connection between the portrayed moments.</p><p>Thus, the most coherent and logical completion is that findings are simplified, leading to the process being seen as a series of discrete moments that appear entirely disconnected.</p><p>Let's look briefly at why other options are less suitable:</p><p><b>Blank 1:</b>\n- <b>(A) distorted:</b> While simplification can lead to distortion, \"simplified\" better captures the primary method of addressing complexity for a lay audience described in the context.\n- <b>(B) sensationalized:</b> Similar to distorted, this is an outcome, not the core strategy implied by the difficulty of communicating complex findings accurately.</p><p><b>Blank 2:</b>\n- <b>(D) sporadic:</b> Contrasts with \"steady,\" but \"discrete\" and \"isolated\" better contrast with \"cumulative endeavor\" by highlighting the separateness of the moments.\n- <b>(F) isolated:</b> Also fits the contrast with \"cumulative,\" but \"discrete\" is a more common and precise term for distinct units in a series.</p><p><b>Blank 3:</b>\n- <b>(G) random:</b> Contrasts with \"steady\" or having a pattern, but \"disconnected\" better reinforces the idea of separate moments lacking linkage.\n- <b>(I) erratic:</b> Also contrasts with \"steady\" or consistent, but \"disconnected\" is a more direct consequence of viewing the process as separate, non-cumulative moments.</p>",
+        "difficulty": 2,
+        "tags": [
+          "science",
+          "tc-3"
+        ]
+      },
+      {
+        "prompt": "<Philosophy> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:1>",
+        "question": "While proponents of ethical egoism argue that pursuing one's own self-interest is morally _________, critics contend that such a stance is inherently _________, leading to a society devoid of genuine empathy or altruism.",
+        "title": "Ethical Egoism: A Philosophical Debate on Self-Interest",
+        "type": "TC-2",
+        "answer": [
+          "obligatory",
+          "self-serving"
+        ],
+        "options": [
+          [
+            "obligatory",
+            "negligible",
+            "divisive",
+            "altruistic"
+          ],
+          [
+            "self-serving",
+            "impartial",
+            "benevolent",
+            "communal"
+          ]
+        ],
+        "solution": "<p>The sentence discusses ethical egoism and the contrasting views of its proponents and critics. Proponents argue that pursuing self-interest is morally something positive or required. Critics argue that this stance is inherently something negative, leading to a lack of empathy.</p><p>For the first blank, proponents of ethical egoism typically argue that acting in one's self-interest is not just permissible but morally required or the right course of action. Option <b>(C) obligatory</b> fits this idea that self-interest is seen as a moral duty. <b>(A) altruistic</b> is the opposite of self-interest. <b>(B) negligible</b> means unimportant, which contradicts the idea of a moral stance. <b>(D) divisive</b> describes a potential outcome of the stance, not the moral status proponents attribute to it.</p><p>For the second blank, critics argue that a stance based on self-interest is inherently negative, leading to a lack of empathy or altruism. Option <b>(G) self-serving</b> describes actions or attitudes motivated solely by one's own needs or interests, often without concern for others, which aligns perfectly with the critics` view and the stated consequence of a society devoid of empathy/altruism. <b>(E) benevolent</b> means kind or generous, which is the opposite of the critics` description. <b>(F) impartial</b> means not favoring any side, whereas ethical egoism explicitly favors the self. <b>(H) communal</b> relates to the interests of the community, which is the opposite of a self-interest-based stance.</p><p>Thus, the correct combination is `obligatory` for the first blank and `self-serving` for the second blank.</p>",
+        "difficulty": 2,
+        "tags": [
+          "philosophy",
+          "tc-2"
+        ]
+      },
+      {
+        "prompt": "<History> - <SE> - <difficulty-level: 3> - <vocabulary-level:2>",
+        "question": "Despite rigorous archival research and nuanced analysis, historians often find it challenging to present a truly objective account of past events, as the available evidence is frequently tainted by the biases of the original chroniclers, making it difficult to disentangle factual records from inherent _______.",
+        "title": "Historical Bias and the Elusiveness of Objectivity",
+        "type": "SE",
+        "answer": [
+          "partiality",
+          "prepossession"
+        ],
+        "options": [
+          "distortion",
+          "prepossession",
+          "veracity",
+          "partiality",
+          "impartiality",
+          "conjecture"
+        ],
+        "solution": "The sentence states that historical evidence is 'tainted by the biases of the original chroniclers,' making it hard to distinguish facts from something 'inherent.' The blank requires a word that signifies the lack of objectivity or the presence of bias that is inseparable from the record due to the chroniclers' perspectives.  Options A ('partiality') and E ('prepossession') both mean bias or a predisposition that prevents objectivity, fitting the context perfectly. Options B ('veracity') and F ('impartiality') are antonyms of the required meaning. Option C ('conjecture') refers to speculation, and option D ('distortion') is an outcome of bias rather than the inherent quality of bias itself.",
+        "difficulty": 3,
+        "tags": [
+          "history",
+          "se"
+        ]
+      },
+      {
+        "prompt": "<Economics> - <TC-1> - <difficulty-level: 3> - <vocabulary-level:2>",
+        "question": "Despite economists` traditional reliance on models positing purely rational actors, recent studies in behavioral economics highlight the significant role of cognitive biases, demonstrating that market outcomes are often a product of not just supply and demand but also the inherent human tendency towards _______ reasoning.",
+        "title": "Behavioral Economics and Market Outcomes",
+        "type": "TC-1",
+        "answer": "heuristic",
+        "options": [
+          "deductive",
+          "heuristic",
+          "erratic",
+          "subjective",
+          "dispassionate",
+          "empirical"
+        ],
+        "solution": "<p>The sentence contrasts traditional economics, which assumes rational actors, with behavioral economics, which highlights the role of cognitive biases. Cognitive biases often lead individuals to rely on mental shortcuts or rules of thumb when making decisions, rather than following purely rational processes. The blank requires a word that describes this type of reasoning influenced by biases.</p><p><b>(D) heuristic</b> refers to methods or strategies, often mental shortcuts, used for problem-solving or decision-making. These heuristics are often associated with cognitive biases because they can lead to systematic errors or deviations from purely rational choices. This word perfectly captures the type of reasoning described as inherent human tendency stemming from cognitive biases.</p><p>Let's examine the other options:</p><ul><li><b>(A) empirical</b> refers to reasoning based on observation or experience. While observations can inform decisions, biases represent deviations *from* purely empirical or rational analysis.</li><li><b>(B) subjective</b> means based on personal feelings or opinions. While biases introduce subjectivity, 'heuristic' is a more precise term for the cognitive *process* or shortcut involved.</li><li><b>(C) dispassionate</b> means not influenced by strong emotion and is therefore rational and impartial. This is the opposite of the type of reasoning influenced by biases.</li><li><b>(E) erratic</b> means unpredictable or inconsistent. While outcomes influenced by biases might seem erratic from a rational viewpoint, the biased reasoning itself often follows predictable patterns based on specific heuristics.</li><li><b>(F) deductive</b> refers to reasoning from general principles to specific cases. Rational actors might use deductive reasoning, but cognitive biases often interfere with or bypass such rigorous logical processes.</li></ul><p>Therefore, \"heuristic\" is the most appropriate word to describe the type of reasoning driven by cognitive biases, contrasting with the purely rational models assumed in traditional economics.</p>",
+        "difficulty": 3,
+        "tags": [
+          "economics",
+          "tc-1"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<History> - <RC-M> - <difficulty-level: 1>",
+        "content": {
+          "passages": [
+            "<p>The Industrial Revolution marked a period of significant technological and economic change that began in Great Britain in the late 18th century. Prior to this era, most manufacturing relied on manual labor and simple tools, often conducted in homes or small workshops. The advent of new machines, initially powered by water and later by steam, shifted production to factories, enabling goods to be produced on a much larger scale. Innovations such as the spinning jenny and the power loom dramatically increased efficiency in the textile industry. James Watt`s improvements to the steam engine were particularly crucial, providing a powerful and versatile energy source that transformed industries like mining, manufacturing, and transportation.</p><p>This transformation had far-reaching social and economic consequences. As factories proliferated, people migrated from agricultural areas to developing industrial cities, seeking employment. This rapid urbanization often outpaced the development of adequate housing and sanitation, leading to challenging living conditions for many workers. The nature of work itself changed profoundly; factory laborers typically worked long hours in standardized conditions, performing specialized, often repetitive tasks. This created a distinct industrial working class and concentrated wealth among factory owners and industrialists. The Industrial Revolution reshaped social structures, altered daily life, and laid the groundwork for the modern industrialized world, spreading from Britain across Europe and North America in the following centuries.</p>",
+            "<p>The innovations and societal shifts initiated in Britain soon spread, influencing countries like Belgium, France, Germany, and later the United States and Japan. While the initial phase centered on textiles, coal, and steam power, subsequent developments in the 19th century brought new industries and technologies to the forefront. The development of Bessemer process enabled mass production of steel, crucial for construction and infrastructure. Electricity began to be harnessed for power and lighting, leading to new inventions and factories. Internal combustion engines, powered by oil, revolutionized transportation with the advent of automobiles and airplanes. These advancements further accelerated the pace of industrial growth and altered daily life even more profoundly, creating a truly global industrial economy.</p>",
+            "<p>While the Industrial Revolution brought unprecedented economic growth and technological progress, it also generated significant social challenges and critiques. Factory work, often involving dangerous machinery and poor air quality, led to health problems and injuries. Child labor was common, with young children working long hours in difficult conditions. Low wages, particularly for unskilled laborers, and the precarious nature of employment created widespread poverty and inequality. These issues sparked various social movements and reform efforts, including the rise of labor unions advocating for better wages, shorter hours, and safer working conditions. Philosophers and economists, such as Karl Marx, analyzed the new industrial system, critiquing its inherent inequalities and proposing alternative social structures. The legacy of the Industrial Revolution is complex, encompassing not only technological marvels and economic prosperity but also enduring questions about social justice, labor rights, and environmental impact.</p>"
+          ]
+        },
+        "title": "The Industrial Revolution: Innovation, Expansion, and Consequence",
+        "tags": [
+          "rc-m",
+          "Evaluate Question ",
+          "Main Idea Question ",
+          "Weaken Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "prompt": "Evaluate Question - 3",
+            "question": "Based on the passages, which of the following inferences can be made about the relationship between the technological innovations of the Industrial Revolution and its subsequent social and economic effects?",
+            "title": "Inference about Technological Innovation and Societal Impact",
+            "answer": "The innovations directly led to both economic growth and significant social challenges, such as poor living conditions and labor issues.",
+            "options": [
+              "The economic prosperity generated by the revolution completely eliminated existing social inequalities.",
+              "Social changes, like urbanization, were the primary drivers of technological innovation during the period.",
+              "Technological progress had minimal impact on daily life outside of factory settings.",
+              "The innovations directly led to both economic growth and significant social challenges, such as poor living conditions and labor issues.",
+              "Technological advancements primarily benefited only the working class by creating abundant factory jobs."
+            ],
+            "solution": "<p>The passages collectively describe the Industrial Revolution as a period marked by significant technological advancements (like the steam engine and power loom) that fueled unprecedented economic growth and industrial expansion. However, they also explicitly detail the resulting negative social consequences, including rapid, unplanned urbanization leading to poor living conditions, difficult and often dangerous factory work, low wages, child labor, and increased social inequality. Therefore, the innovations directly led to both economic growth and significant social challenges. Option B is correct because it accurately reflects this complex relationship depicted throughout the passages.</p><p>Let`s look at the other options:</p><p><b>A</b> The passages indicate that while factory jobs were created, the working class faced considerable hardship, including poor living conditions and dangerous work, not solely benefits. Wealth was concentrated among factory owners and industrialists.</p><p><b>C</b> The passages describe technological innovations as driving changes like urbanization and the shift to factory work, rather than these social changes being the primary drivers of the innovation itself.</p><p><b>D</b> Passage 3 explicitly states that the revolution generated \\`widespread poverty and inequality\\`, directly contradicting the idea that it eliminated existing inequalities.</p><p><b>E</b> The passages mention the impact of innovations on transportation (steam engine, internal combustion engine) and urban life (rapid urbanization), indicating significant effects on daily life beyond just the factory floor.</p>",
+            "tags": [
+              "Evaluate Question "
+            ],
+            "difficulty": 3
+          },
+          {
+            "type": "RC",
+            "prompt": "Main Idea Question - 4",
+            "question": "The three passages, taken together, primarily discuss which of the following about the Industrial Revolution?",
+            "title": "Overall Theme of the Industrial Revolution Passages",
+            "answer": "The origins, spread, and multifaceted consequences (technological, economic, social) of the Industrial Revolution.",
+            "options": [
+              "The lives of prominent inventors and industrialists of the period.",
+              "Detailed economic statistics illustrating the growth of manufacturing output.",
+              "The origins, spread, and multifaceted consequences (technological, economic, social) of the Industrial Revolution.",
+              "The political changes that occurred in Great Britain during the late 18th and 19th centuries.",
+              "The specific technical specifications of key inventions like the steam engine and the power loom."
+            ],
+            "solution": "<p>The first passage introduces the origins and early technological changes in Britain, focusing on the shift to factory production and key inventions. The second passage discusses the spread of the revolution to other countries and subsequent technological advancements. The third passage explores the social challenges and critiques that arose as a result of the industrial changes. Taken together, the passages provide a comprehensive overview of the Industrial Revolution`s beginnings, its expansion, and its wide-ranging effects, encompassing technological, economic, and social aspects. Option C accurately captures this overall scope.</p><p>Let`s look at the other options:</p><p><b>A</b> While some inventions are mentioned, the passages do not provide detailed technical specifications.</p><p><b>B</b> The passages focus on economic and social history, not political changes.</p><p><b>D</b> No specific inventors or industrialists are discussed in detail beyond mentioning James Watt in passing.</p><p><b>E</b> The passages describe economic growth qualitatively but do not present detailed statistical data.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 4
+          },
+          {
+            "type": "RC",
+            "prompt": "Weaken Question - 5",
+            "question": "Which of the following statements, if true, would most undermine the conclusion that the Industrial Revolution`s industrial system was the primary factor driving the widespread severe poverty and harsh living conditions experienced by the working class?",
+            "title": "Factors Contributing to Working Class Hardship",
+            "answer": "Studies show that pre-industrial agricultural laborers in the same regions often faced equally severe poverty and difficult living conditions.",
+            "options": [
+              "Philosophers like Karl Marx provided accurate analyses of the inherent inequalities within the industrial capitalist system.",
+              "Studies show that pre-industrial agricultural laborers in the same regions often faced equally severe poverty and difficult living conditions.",
+              "Factory owners frequently reinvested a significant portion of their profits into improving factory safety and worker housing.",
+              "The rapid influx of people from rural areas into industrial cities strained existing infrastructure and housing supply.",
+              "Many industrial workers found opportunities for social mobility and improved their economic status over time."
+            ],
+            "solution": "parent child solution value is not getting captured <History> - <RC-M> - <difficulty-level: 1>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 5
+          }
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<Science> - <RC-M> - <difficulty-level: 1>",
+        "content": {
+          "passages": [
+            "<p>The formation of planetary systems is a complex process that begins within interstellar clouds of gas and dust. These clouds, known as molecular clouds, are vast nurseries where stars are born. Gravity plays a crucial role; denser regions within the cloud begin to collapse under their own weight. As a region collapses, it spins faster, a phenomenon known as conservation of angular momentum, similar to how a figure skater spins faster when they pull their arms in. This spinning motion flattens the collapsing cloud into a disk-like structure around the central, forming star, called a protostar. This structure is known as a protoplanetary disk or a circumstellar disk.</p>",
+            "<p>Within the protoplanetary disk, the dust grains collide and stick together, gradually growing into larger aggregates. This process, called accretion, continues as these aggregates grow into pebble-sized, then boulder-sized objects. Eventually, these objects become large enough to attract others through their own gravity, forming planetesimals. Planetesimals are rocky or icy bodies ranging in size from kilometers to hundreds of kilometers. These planetesimals then collide with each other. Some collisions are destructive, but others lead to mergers, allowing the larger bodies to grow further. Over millions of years, through repeated collisions and accretion, some planetesimals accumulate enough mass to become planets, sweeping up most of the remaining material in their orbital paths.</p>",
+            "<p>The composition of the forming planets depends heavily on their distance from the central star. Closer to the star, temperatures are high, and volatile compounds like water and methane remain in gaseous form. Only rocky and metallic materials can condense and stick together, leading to the formation of terrestrial planets like Earth and Mars. Farther out, beyond a certain distance known as the 'frost line' or 'snow line', temperatures are low enough for volatile compounds to condense into solid ice grains. This dramatically increases the amount of solid material available, allowing planets to grow much larger and accumulate significant atmospheres of gas captured from the disk. These become the gas giants and ice giants, like Jupiter and Saturn in our own solar system. The remaining gas and dust in the disk are eventually dispersed by radiation and stellar winds from the young star, or by interactions with the forming planets, leaving behind the newly formed planetary system orbiting the star.</p>"
+          ]
+        },
+        "title": "From Dust to Giants: The Formation of Planetary Systems",
+        "tags": [
+          "rc-m",
+          "Conclusion Question ",
+          "Main Idea Question ",
+          "Weaken Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "prompt": "Conclusion Question - 1",
+            "question": "According to the passage, which of the following factors is the most crucial determinant of whether a newly formed planet will be terrestrial (rocky) or gaseous/icy?",
+            "title": "Determining Planetary Type",
+            "answer": "The planet`s distance from the central star during its formation.",
+            "options": [
+              "The speed at which the collapsing cloud spins during the early stages.",
+              "The planet`s distance from the central star during its formation.",
+              "The frequency of destructive collisions between planetesimals.",
+              "The presence or absence of volatile compounds like water and methane in the protoplanetary disk.",
+              "The initial size of the molecular cloud from which the star system formed."
+            ],
+            "solution": "<p>The question asks about the most crucial determinant of whether a planet becomes terrestrial or gaseous/icy. The third paragraph explicitly states, `The composition of the forming planets depends heavily on their distance from the central star.` It explains that closer to the star, high temperatures prevent volatiles from condensing, leading to rocky planets, while farther out, beyond the `frost line`, volatiles condense, providing more material for larger, gas/ice giants. This directly links distance from the star to the planet`s ultimate composition and type.</p><p>Here`s why the other options are incorrect:</p><ul><li><b>A:</b> The initial size of the molecular cloud is related to star formation, but the passage focuses on processes *within* the protoplanetary disk for determining planetary types, not the cloud's overall size.</li><li><b>B:</b> The spinning speed is important for forming the disk, but the passage doesn`t link it directly to the type (rocky vs. gaseous/icy) of the resulting planets.</li><li><b>C:</b> While the *presence* of volatile compounds is necessary for forming gas/ice giants, the *location* (and thus temperature determined by distance from the star) is the crucial factor dictating *whether* these volatiles condense and are available for accretion at a given location. The passage states that temperatures determine whether volatiles *remain in gaseous form* or *condense into solid ice grains*, thus linking their availability for rocky or giant planets to the distance from the star.</li><li><b>E:</b> The frequency of destructive collisions is a factor in the overall accretion process, but the passage highlights distance from the star as the primary differentiator between terrestrial and gaseous/icy planet formation.</li></ul>",
+            "tags": [
+              "Conclusion Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "prompt": "Main Idea Question - 1",
+            "question": "The primary purpose of the passage is to describe:",
+            "title": "Passage`s Main Subject",
+            "answer": "The scientific model for how planetary systems form around stars.",
+            "options": [
+              "The scientific model for how planetary systems form around stars.",
+              "The current characteristics of discovered exoplanets.",
+              "The specific details of our solar system`s formation.",
+              "The gravitational forces within molecular clouds.",
+              "The differences between terrestrial and gaseous planets."
+            ],
+            "solution": "<p>The question asks for the primary purpose of the passage. The passage details the entire process of planetary system formation, beginning with interstellar clouds, leading to the formation of a protoplanetary disk, the accretion of material into planetesimals, and finally the growth of planets whose type is determined by their distance from the central star. This step-by-step explanation outlines the widely accepted scientific model for how these systems come into being.</p><p>Here`s why the other options are incorrect:</p><ul><li><b>A:</b> While the passage *mentions* the differences between terrestrial and gaseous planets, this discussion serves to illustrate a consequence of the formation process, not the main theme of the entire passage.</li><li><b>B:</b> Gravitational collapse is a crucial initial step, but the passage covers the subsequent stages of disk formation, accretion, and planetary growth in detail, indicating a broader scope than just gravitational forces.</li><li><b>C:</b> The passage focuses on the *process* of formation based on general principles observed in astronomy; it does not discuss characteristics of specific *discovered* exoplanets.</li><li><b>E:</b> The passage uses examples from our solar system (Earth, Mars, Jupiter, Saturn) to illustrate the general process described, but the description itself is presented as a model for planetary systems overall, not a history specific only to our solar system.</li></ul>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "prompt": "Weaken Question - 3",
+            "question": "Which of the following discoveries, if true, would most weaken the passage`s explanation for the difference between terrestrial and gaseous/icy planets?",
+            "title": "Weakening Planetary Formation Theory",
+            "answer": "Evidence of a gas giant planet forming extremely close to a star, well within the predicted 'frost line'.",
+            "options": [
+              "Discovery of a molecular cloud that shows no signs of gravitational collapse.",
+              "Evidence of a gas giant planet forming extremely close to a star, well within the predicted 'frost line'.",
+              "Observation of a planetary system where planetesimal collisions are predominantly destructive.",
+              "Confirmation that some terrestrial planets formed significantly later than their star.",
+              "Detection of a protoplanetary disk that lacks significant amounts of dust grains."
+            ],
+            "solution": "<p>The question asks which discovery would most weaken the explanation for the difference between terrestrial and gaseous/icy planets. The passage explains that terrestrial planets form closer to the star (within the frost line) where it`s too hot for volatiles to condense, while gas/ice giants form farther out (beyond the frost line) where volatiles are solid and available for accretion. Option A presents a direct challenge to this explanation by positing the existence of a gas giant *within* the predicted frost line, a location where, according to the passage, only rocky material should be abundant enough to form planets.</p><p>Here`s why the other options are incorrect:</p><ul><li><b>B:</b> A protoplanetary disk lacking dust grains would hinder *any* planet formation (both terrestrial and giant), not specifically weaken the explanation for the *difference* between them based on location and composition.</li><li><b>C:</b> Predominantly destructive collisions would prevent planet formation altogether or result in smaller or fewer planets, but it doesn`t contradict the mechanism explaining *why* planets that *do* form are rocky or gaseous based on their distance from the star.</li><li><b>D:</b> A molecular cloud showing no signs of gravitational collapse would simply mean no star or planetary system forms there. It doesn`t challenge the process described for systems that *do* form.</li><li><b>E:</b> The timing of terrestrial planet formation relative to the star's formation doesn't necessarily contradict the mechanism explaining *why* they are rocky and located close to the star once they do form.</li></ul>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 3
+          }
+        ]
+      },
+      {
+        "prompt": "<Politics> - <TC-1> - <difficulty-level: 3> - <vocabulary-level:3>",
+        "question": "Despite widespread public cynicism and media scrutiny, the politician maintained a veneer of unwavering confidence, a display that many interpreted not as genuine conviction but as a calculated effort to ___________ any signs of internal dissent or public doubt.",
+        "title": "Political Posturing and Public Perception",
+        "type": "TC-1",
+        "answer": "forestall",
+        "options": [
+          "catalyze",
+          "accentuate",
+          "forestall",
+          "conflate",
+          "ameliorate",
+          "disseminate"
+        ],
+        "solution": "<p>The sentence describes the politician`s display of confidence as a calculated effort to address internal dissent or public doubt. The implication is that this effort is intended to prevent or stop these negative signs from manifesting or becoming apparent. Let`s examine the options:</p><ul><li><b>ameliorate</b>: means to make something better. While a politician might want to improve their situation, the action here is directed at the *signs* of dissent or doubt, and the confidence is a means to prevent them, not necessarily improve the underlying issues (though that might be a separate goal).</li><li><b>forestall</b>: means to prevent or hinder by acting in advance. Maintaining a strong, confident front is a common political tactic to prevent signs of weakness (like dissent or doubt) from appearing or being exploited. This fits the context perfectly.</li><li><b>accentuate</b>: means to make something more noticeable. This is the opposite of what the politician would want with dissent or doubt.</li><li><b>disseminate</b>: means to spread information. This doesn`t fit the action taken towards dissent or doubt itself.</li><li><b>conflate</b>: means to combine or confuse two things. This is irrelevant to the action against dissent or doubt.</li><li><b>catalyze</b>: means to cause or accelerate a reaction or process. The politician would want to prevent, not accelerate, dissent or doubt.</li></ul><p>Therefore, 'forestall' is the only option that logically completes the sentence, describing the politician`s calculated effort to prevent signs of dissent or doubt from emerging or gaining traction.</p>",
+        "difficulty": 3,
+        "tags": [
+          "politics",
+          "tc-1"
+        ]
+      },
+      {
+        "type": "RC",
+        "prompt": "<Psychology> - <RC-M> - <difficulty-level: 4>",
+        "content": {
+          "passages": [
+            "<p>Recent advancements in neuroscience and cognitive psychology have reignited long-standing debates about the nature of consciousness and the extent of conscious control over behavior. Traditional psychological models often posited a clear delineation between conscious deliberation and automatic processes, implying that volition, or intentional conscious choice, serves as the primary driver of complex actions and decision-making. This perspective aligns with our introspective sense of self as an executive agent, directing thoughts and actions in a goal-directed manner. However, mounting evidence suggests that many, perhaps even most, cognitive and behavioral processes unfold outside the purview of conscious awareness. Subliminal priming, implicit biases, and the rapid, non-conscious processing of sensory information all point to the significant role of unconscious mechanisms in shaping our perceptions, judgments, and actions. This raises a fundamental challenge to the intuitive notion that consciousness is the necessary prerequisite for complex, adaptive behavior, compelling researchers to reconsider the functional role and causal efficacy of conscious states.</p>",
+            "<p>One prominent alternative framework, drawing heavily from predictive processing theories in computational neuroscience, proposes that the brain operates primarily as a prediction machine. In this view, the brain constantly generates and updates internal models of the external world and the body, predicting incoming sensory data. Behavior then arises not from explicit conscious commands, but from the organism`s continuous effort to minimize discrepancies between these predictions and actual sensory inputs. Consciousness, in this framework, might not be a central command center, but rather an emergent property or a specialized form of information processing \u2013 perhaps involved in broadcasting particularly salient prediction errors or integrating information across diverse sensory modalities for higher-level learning and planning. This perspective challenges the traditional 'Cartesian theater' model of a unified conscious observer receiving a finished perceptual stream, suggesting instead a distributed, hierarchical system where consciousness plays a more nuanced, perhaps even secondary, role in the moment-to-moment execution of behavior, even while remaining crucial for flexible adaptation and long-term goal pursuit.</p>",
+            "<p>Consequently, the question is less about whether consciousness exists, and more about what functions it actually performs. If complex behavior can be orchestrated unconsciously, what is the evolutionary advantage of conscious experience? Some theories propose that consciousness facilitates sophisticated forms of learning and generalization, allowing organisms to simulate future outcomes and evaluate hypothetical scenarios \u2013 a capacity less readily available to purely automatic systems. Others suggest it is `for` social coordination, enabling shared understanding and communication of internal states. Still others posit that consciousness serves a crucial role in error detection and correction, acting as a `global workspace` where different cognitive modules can share information to identify and resolve conflicts or inconsistencies in processing. The debate continues, with diverse perspectives on the precise causal role and functional significance of consciousness, moving beyond the simple dichotomy of conscious vs. unconscious control towards a more integrated understanding of how these intricate systems interact to produce the richness and complexity of human experience and behavior.</p>"
+          ]
+        },
+        "title": "Re-evaluating the Functional Role of Consciousness",
+        "tags": [
+          "rc-m",
+          "Main Idea Question ",
+          "Inference Question ",
+          "Weaken Question "
+        ],
+        "questions": [
+          {
+            "type": "RC",
+            "prompt": "Main Idea Question - 2",
+            "question": "The primary purpose of the passage is to",
+            "title": "Purpose of the Passage",
+            "answer": "Explore various contemporary theories regarding the actual functions and significance of consciousness.",
+            "options": [
+              "Propose a new computational model of the brain that entirely dismisses the importance of conscious awareness.",
+              "Argue for the supremacy of unconscious processes over conscious control in human behavior.",
+              "Explore various contemporary theories regarding the actual functions and significance of consciousness.",
+              "Present recent neuroscientific evidence challenging traditional views of consciousness as the primary driver of behavior.",
+              "Illustrate the historical shift in psychological thought from introspection to behavioral observation."
+            ],
+            "solution": "<p>The primary purpose of the passage is to explore the ongoing debate about the role of consciousness, presenting challenges to traditional views and discussing various modern theories about what consciousness might actually do if it's not the sole controller of behavior. Passage 1 introduces the challenge to traditional views. Passage 2 presents one alternative framework (predictive processing). Passage 3 explores several proposed functions of consciousness given these challenges. This aligns best with exploring various contemporary theories regarding the actual functions and significance of consciousness.</p><p>Here's why the other options are incorrect:</p><p><b>A</b>: While the passage discusses the challenge to conscious control, it doesn't explicitly argue for the supremacy of unconscious processes; it questions the *extent* of conscious control and explores the *functions* of consciousness given the role of unconscious processes.</p><p><b>B</b>: The passage *does* present such evidence, but this is presented as the *impetus* for the debate and exploration of new theories, not the overall primary purpose, which is broader.</p><p><b>C</b>: The passage presents *a* computational model (predictive processing) but does not claim it entirely dismisses the importance of conscious awareness; rather, it re-evaluates its role. The passage explores multiple theories, not just this one model.</p><p><b>E</b>: The passage focuses on contemporary debates in neuroscience and cognitive psychology regarding consciousness, not a historical shift in general psychological methodology from introspection to behaviorism.</p>",
+            "tags": [
+              "Main Idea Question "
+            ],
+            "difficulty": 2
+          },
+          {
+            "type": "RC",
+            "prompt": "Inference Question - 1",
+            "question": "Based on the information presented in the passage, which of the following can be inferred about the perspective challenging the traditional view of consciousness?",
+            "title": "Inferred Perspective on Consciousness",
+            "answer": "It suggests that conscious states might be an outcome of complex processing rather than its initiator.",
+            "options": [
+              "It asserts that introspection is a completely unreliable method for understanding the mind.",
+              "It maintains that consciousness is solely an epiphenomenon with no functional role.",
+              "It completely denies the existence of conscious experience in humans.",
+              "It argues that unconscious processes are inherently more complex and sophisticated than conscious ones.",
+              "It suggests that conscious states might be an outcome of complex processing rather than its initiator."
+            ],
+            "solution": "<p>The passage explores perspectives that challenge the traditional view of consciousness as the primary driver of behavior. Passage 1 notes that evidence suggests many processes occur outside conscious awareness, prompting a re-evaluation of the 'functional role and causal efficacy of conscious states'. Passage 2 introduces the predictive processing framework, which suggests consciousness might be an 'emergent property or a specialized form of information processing' rather than a 'central command center', playing a 'nuanced, perhaps even secondary, role' in moment-to-moment behavior. This strongly supports the idea that these challenging perspectives view conscious states as potentially arising from complex processing rather than being the initial cause or commander of most actions.</p><p>Here's why the other options are incorrect:</p><p><b>A</b>: The passage does not suggest that these perspectives deny the existence of consciousness, but rather question its traditional role. Passage 3 discusses various proposed functions of consciousness, implying its existence.</p><p><b>C</b>: The passage states that complex behavior can be orchestrated unconsciously, but it doesn`t make a comparative argument about the inherent complexity or sophistication of unconscious processes being greater than conscious ones.</p><p><b>D</b>: While the challenges come from empirical evidence that contradicts the introspective sense of conscious control, the passage doesn`t explicitly state that introspection is considered *completely* unreliable by these perspectives.</p><p><b>E</b>: Passage 3 is entirely dedicated to discussing proposed *functional roles* of consciousness, directly contradicting the idea that it is solely an epiphenomenon with no function.</p>",
+            "tags": [
+              "Inference Question "
+            ],
+            "difficulty": 1
+          },
+          {
+            "type": "RC",
+            "prompt": "Weaken Question - 4",
+            "question": "Which of the following, if true, would most weaken the conclusion that the evidence cited regarding unconscious processes (such as subliminal priming and implicit biases) necessitates a fundamental challenge to the notion that consciousness serves as the primary driver of complex, adaptive behavior?",
+            "title": "Weakening the Challenge to Conscious Control",
+            "answer": "Studies show that while unconscious processes can initiate simple responses, complex decision-making invariably requires conscious deliberation.",
+            "options": [
+              "Predictive processing models successfully simulate sophisticated behaviors without incorporating a module for conscious awareness.",
+              "Neuroimaging studies reveal that activity in prefrontal cortical areas, associated with conscious control, often precedes the execution of complex voluntary actions.",
+              "Experiments demonstrate that individuals can be trained to override implicit biases through conscious effort and reflection.",
+              "Studies show that while unconscious processes can initiate simple responses, complex decision-making invariably requires conscious deliberation.",
+              "Research indicates that subliminal primes can influence behavior even when participants consciously report no awareness of the stimuli."
+            ],
+            "solution": "<p>The passage suggests that evidence like subliminal priming and implicit biases, which show unconscious processes influencing behavior, challenges the idea that consciousness is the *primary* driver of *complex, adaptive behavior*. To weaken this conclusion, we need evidence suggesting that conscious processes are, in fact, necessary or primary for complex behavior, despite the influence of unconscious processes on simpler actions. Option A directly states that *complex decision-making invariably requires conscious deliberation*. If this were true, it would significantly undermine the argument that unconscious processes alone necessitate a fundamental challenge to the idea of consciousness as the primary driver of *complex* adaptive behavior.</p><p>Here's why the other options do not weaken the conclusion:</p><p><b>B</b>: This statement supports the challenging view by suggesting complex behaviors can occur without conscious awareness, thus strengthening, not weakening, the conclusion that consciousness may not be the primary driver.</p><p><b>C</b>: This shows that *conscious effort* can counteract implicit biases. While it highlights a role for consciousness, it doesn't weaken the initial point that implicit biases (unconscious processes) *do* influence behavior in ways that challenge the idea that consciousness is *always* the primary driver. In fact, it could be argued that conscious override is a specific conscious *function* that exists because of the influence of unconscious processes.</p><p><b>D</b>: This provides evidence that conscious-associated brain areas are active *before* complex actions, which could be interpreted as supporting the traditional view of conscious control. However, the timing of brain activity doesn`t definitively prove causality (e.g., prefrontal activity could be preparing for an action decided elsewhere or initiated unconsciously). Compared to A, which specifically focuses on the necessity of consciousness for *complex* behavior, D offers weaker counter-evidence.</p><p><b>E</b>: This research finding is precisely the type of evidence cited in the passage to *support* the challenge to the primary role of consciousness, as it shows unconscious influence on behavior. Thus, it strengthens the conclusion, not weakens it.</p>",
+            "tags": [
+              "Weaken Question "
+            ],
+            "difficulty": 4
+          }
+        ]
+      }
+    ]
+  }
+}
