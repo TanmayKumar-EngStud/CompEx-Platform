@@ -67,14 +67,15 @@ Users are preparing for MBA thus the quality of the questions should be of a gra
 For Bar chart the data should be generated in the following format: 
 {
   "graph": "bar chart",
-  "title": "Quarterly Sales Data",
+  "title": "Annual Sales Data",
   "description": "this will give the description of the graph",
   "x-axis": "Products",
   "y-axis": "Sales (in USD)",
   "data": [
-    { "category": "Product A", "Q1": 1000, "Q2": 1200, "Q3": 1500, "Q4": 1700 },
-    { "category": "Product B", "Q1": 800, "Q2": 950, "Q3": 1100, "Q4": 1300 },
-    { "category": "Product C", "Q1": 600, "Q2": 750, "Q3": 900, "Q4": 1050 }
+    { "category": "Product A", "value": 1500 },
+    { "category": "Product B", "value": 1200 },
+    { "category": "Product C", "value": 900 },
+    { "category": "Product D", "value": 1800 }
   ]
 }
 For stacked bar chart the data should be generated in the following format:
