@@ -265,3 +265,216 @@ Since each statement alone is sufficient to determine a unique value for $a$, EI
    "question": "Astro-Gastronomics Inc., pioneers in synthesizing gourmet foodstuffs for deep-space consumption, has developed a proprietary process for creating 'Nebula Nectar,' a highly prized beverage derived from stellar radiation conversion. The efficiency of the process, and thus the final yield in liters, is intricately linked to the initial energy input, \(E\), measured in gigajoules.\n\nThe conversion process unfolds in several critical stages over an orbital cycle:\n\nStage 1: Primary Energy Absorption is described by the function \(A(E) = 0.95E - 7500\). For the process to proceed, \(A(E)\) must be non-negative. If \(A(E) < 0\), the yield is 0.\nStage 2: Nectar Base Synthesis relies on the absorbed energy, \(A(E)\), and is given by \(B(A(E)) = 2.2 \times A(E)^{0.6}\). This stage only yields material if \(A(E) \geq 0\). The output of this stage, \(B\), is rounded down to the nearest integer.\nStage 3: Flavor Infusion involves adding rare cosmic spices. If the output from Stage 2, \(B\), is at least 5000 units, 12% of \(B\) is lost during infusion due to volatile reactions. If \(1000 \leq B < 5000\) units, 8% of \(B\) is lost. If \(B < 1000\) units, a fixed 50 units are lost. The quantity remaining after this loss, \(M_3\), is rounded down to the nearest integer.\nStage 4: Volume Stabilization depends on the material quantity after Stage 3, \(M_3\). If \(M_3\) is between 3000 and 8000 liters (inclusive), a volume expansion factor of \(M_3 / 200\) is applied, adding to the volume. If \(M_3 < 3000\), a fixed 20 liters are added. If \(M_3 > 8000\), a fixed 100 liters are added. The final yield, \(Y\), after adding any bonus, is rounded down to the nearest integer.\n\nThe final Nebula Nectar yield, \(Y\), is the quantity in liters after all applicable stages are complete. Astro-Gastronomics Inc. aims for a final yield of exactly 4500 liters for a specific batch. Assuming the process did not fail in Stage 1, which of the following values was most likely the initial energy input \(E\), in gigajoules? All intermediate and final quantities are rounded down to the nearest whole number before being used in the subsequent stage's calculation or reported as the final yield."
 }
 ```
+The problem asks for the numerical value of `x`, given that `x` and `y` are distinct, non-zero real numbers.
+
+**Analyze Statement (1):**
+Statement (1) provides two pieces of information:
+1. "The algebraic expression `(x+y)^2 - (x-y)^2` evaluates to 96."
+Let's simplify this expression:
+`(x+y)^2 - (x-y)^2 = (x^2 + 2xy + y^2) - (x^2 - 2xy + y^2)`
+`= x^2 + 2xy + y^2 - x^2 + 2xy - y^2`
+`= 4xy`
+So, `4xy = 96`, which simplifies to `xy = 24`.
+
+2. "It is known that `x` and `y` are the roots of a quadratic polynomial `P(t) = t^2 - 12t + C`, where `C` is a real constant."
+For a quadratic equation of the form `at^2 + bt + c = 0`, the sum of the roots is `-b/a` and the product of the roots is `c/a`.
+In `P(t) = t^2 - 12t + C`, we have `a=1`, `b=-12`, and `c=C`.
+Therefore, the sum of the roots `x+y = -(-12)/1 = 12`.
+And the product of the roots `xy = C/1 = C`.
+
+Combining these findings from Statement (1), we have a system of two equations:
+i) `xy = 24` (from the first part of the statement)
+ii) `x+y = 12` (from the second part of the statement, implying `C=24`)
+
+We can solve this system to find the values of `x` and `y`.
+From (ii), `y = 12 - x`. Substitute this into (i):
+`x(12 - x) = 24`
+`12x - x^2 = 24`
+`x^2 - 12x + 24 = 0`
+
+This is a quadratic equation for `x`. We can solve for `x` using the quadratic formula `x = [-b ± sqrt(b^2 - 4ac)] / 2a`:
+`x = [12 ± sqrt((-12)^2 - 4*1*24)] / (2*1)`
+`x = [12 ± sqrt(144 - 96)] / 2`
+`x = [12 ± sqrt(48)] / 2`
+`x = [12 ± sqrt(16*3)] / 2`
+`x = [12 ± 4*sqrt(3)] / 2`
+`x = 6 ± 2*sqrt(3)`
+
+This gives two possible values for `x`:
+*   `x1 = 6 + 2*sqrt(3)`
+*   `x2 = 6 - 2*sqrt(3)`
+
+If `x = 6 + 2*sqrt(3)`, then `y = 12 - (6 + 2*sqrt(3)) = 6 - 2*sqrt(3)`.
+If `x = 6 - 2*sqrt(3)`, then `y = 12 - (6 - 2*sqrt(3)) = 6 + 2*sqrt(3)`.
+
+Both pairs `(6 + 2*sqrt(3), 6 - 2*sqrt(3))` and `(6 - 2*sqrt(3), 6 + 2*sqrt(3))` consist of distinct, non-zero real numbers. Since Statement (1) yields two possible values for `x`, it is NOT sufficient to determine a unique value for `x`.
+
+**Analyze Statement (2):**
+Statement (2) provides two pieces of information:
+1. "The quotient `x/y` is unequivocally greater than 1." This means `x/y > 1`.
+2. "The product of `x` and `y` is not equal to 20." This means `xy != 20`.
+
+This statement alone does not provide any specific numerical values for `x` or `y`. For example, if `x=3` and `y=2`, then `x/y = 1.5 > 1` and `xy = 6 != 20`. If `x=4` and `y=3`, then `x/y = 4/3 > 1` and `xy = 12 != 20`. There are infinitely many pairs of `(x, y)` that satisfy these conditions. Therefore, Statement (2) alone is NOT sufficient.
+
+**Analyze Statements (1) and (2) Together:**
+From Statement (1), we know that `x` can be either `6 + 2*sqrt(3)` or `6 - 2*sqrt(3)`. Also, we established that `xy = 24`. The condition `xy != 20` from Statement (2) is consistent with `xy=24`, so it adds no new constraints on `x` and `y` beyond what Statement (1) already provides.
+
+Now, let's use the condition `x/y > 1` from Statement (2) to distinguish between the two possibilities for `x` derived from Statement (1).
+We know `x+y = 12` and `xy = 24`. Since `xy = 24 > 0`, `x` and `y` must have the same sign. Since `x+y = 12 > 0`, both `x` and `y` must be positive.
+Therefore, `x/y > 1` implies `x > y`.
+
+Let's check the two cases from Statement (1):
+**Case 1:** `x = 6 + 2*sqrt(3)` and `y = 6 - 2*sqrt(3)`
+Approximate `sqrt(3)` as 1.732.
+`x ≈ 6 + 2*(1.732) = 6 + 3.464 = 9.464`
+`y ≈ 6 - 2*(1.732) = 6 - 3.464 = 2.536`
+In this case, `x > y` (9.464 > 2.536), which means `x/y > 1`. This solution is consistent with Statement (2).
+
+**Case 2:** `x = 6 - 2*sqrt(3)` and `y = 6 + 2*sqrt(3)`
+`x ≈ 6 - 2*(1.732) = 6 - 3.464 = 2.536`
+`y ≈ 6 + 2*(1.732) = 6 + 3.464 = 9.464`
+In this case, `x < y` (2.536 < 9.464), which means `x/y < 1`. This solution is NOT consistent with Statement (2).
+
+Since only one of the two possibilities for `x` (namely, `x = 6 + 2*sqrt(3)`) satisfies the condition `x/y > 1`, we can uniquely determine the value of `x`.
+
+Therefore, BOTH statements TOGETHER are sufficient.
+
+The final answer is $\boxed{C}$
+To determine the initial amount of the endowment received by the charitable trust, let's define the variables:
+Let E be the initial total endowment.
+Let I be the amount allocated for long-term investment.
+Let D be the amount designated for immediate charitable disbursements.
+We know that E = I + D.
+
+**Analyze Statement (1):**
+"After precisely three years, the cumulative value of the initial investment, compounded annually, exceeded the portion initially designated for immediate charitable disbursements by $45,000. The annual compounding interest rate for the investment portfolio was precisely 8%."
+
+The future value of the investment (FV) after 3 years at 8% annual compound interest is given by the formula: FV = I * (1 + r)^n.
+Here, r = 0.08 and n = 3.
+So, FV = I * (1 + 0.08)^3 = I * (1.08)^3 = I * 1.259712.
+
+According to the statement, this future value exceeded D by $45,000:
+I * 1.259712 = D + 45000
+
+We also know D = E - I. Substitute this into the equation:
+1.259712I = (E - I) + 45000
+1.259712I = E - I + 45000
+2.259712I - E = 45000  (Equation A)
+
+This is a single linear equation with two unknowns (I and E). Therefore, Statement (1) alone is not sufficient to find a unique value for E.
+
+**Analyze Statement (2):**
+"Had 10% less of the initial endowment been designated for immediate charitable disbursements, the amount initially allocated for investment would have been $150,000 more than the amount initially disbursed under this hypothetical scenario."
+
+Let's denote the hypothetical new disbursement as D' and the hypothetical new investment as I'. The total endowment E remains unchanged.
+The phrase "10% less of the initial endowment been designated for immediate charitable disbursements" means the amount of the endowment designated for disbursement would be reduced by 10% of the total endowment, E.
+So, D' = D - 0.10E.
+
+Since E = I' + D', the new investment I' would be:
+I' = E - D' = E - (D - 0.10E) = E - D + 0.10E.
+Since D = E - I, we have I = E - D. Substituting E - D with I:
+I' = I + 0.10E.
+
+The statement says that in this hypothetical scenario, the new investment I' would be $150,000 more than the new disbursement D':
+I' = D' + 150000
+
+Substitute the expressions for I' and D':
+I + 0.10E = (D - 0.10E) + 150000
+I + 0.10E = D - 0.10E + 150000
+I - D + 0.20E = 150000
+
+Now substitute D = E - I into this equation:
+I - (E - I) + 0.20E = 150000
+I - E + I + 0.20E = 150000
+2I - 0.80E = 150000 (Equation B)
+
+This is a single linear equation with two unknowns (I and E). Therefore, Statement (2) alone is not sufficient to find a unique value for E.
+
+**Combine Statement (1) and Statement (2):**
+Now we have a system of two linear equations with two variables (I and E):
+From (A): 2.259712I - E = 45000
+From (B): 2I - 0.80E = 150000
+
+From Equation (A), we can express E in terms of I:
+E = 2.259712I - 45000
+
+Substitute this expression for E into Equation (B):
+2I - 0.80 * (2.259712I - 45000) = 150000
+2I - (0.80 * 2.259712)I + (0.80 * 45000) = 150000
+2I - 1.8077696I + 36000 = 150000
+(2 - 1.8077696)I = 150000 - 36000
+0.1922304I = 114000
+I = 114000 / 0.1922304
+
+Since I can be uniquely determined, we can substitute this unique value of I back into the equation for E (E = 2.259712I - 45000) to find a unique value for E.
+
+Thus, both statements together are sufficient to determine the initial amount of the endowment.
+
+The final answer is $\boxed{C}$
+{
+   "solution": "Let`s denote the original direct unit cost of `Cosmic Crumbles` as `C`.
+
+**Step 1: Calculate the original list price and sale price.**
+The list price was set at 150% of the direct unit cost.
+Original List Price (L) = 1.50 * C
+
+During the `Stardust Sale`, a 20% discount was offered on the list price.
+Original Sale Price (S) = L - (0.20 * L) = 0.80 * L
+Substitute the expression for L:
+S = 0.80 * (1.50 * C) = 1.20 * C
+
+**Step 2: Verify the original profit.**
+The Emporium achieved a profit of 20% on the original unit cost.
+Original Profit = S - C
+Original Profit = 1.20 * C - C = 0.20 * C
+This confirms that the initial setup is consistent with the problem statement, as a 20% profit on the original cost `C` implies a sale price of 1.20 * C.
+
+**Step 3: Calculate the new direct unit cost.**
+The Emporium secured a 10% reduction in the direct unit cost.
+New Direct Unit Cost (C_new) = C - (0.10 * C) = 0.90 * C
+
+**Step 4: Determine the new sale price.**
+The problem states that the Emporium maintains both the original list price (numerical value) and the same percentage discount structure.
+So, the numerical value of the original list price was `1.50 * C`. This value is maintained.
+The discount is still 20% on this maintained list price.
+New Sale Price (S_new) = (1.50 * C) - (0.20 * 1.50 * C)
+S_new = 1.50 * C - 0.30 * C
+S_new = 1.20 * C
+(Notice that the numerical sale price remains the same as before).
+
+**Step 5: Calculate the new profit amount.**
+New Profit = New Sale Price - New Direct Unit Cost
+New Profit = S_new - C_new
+New Profit = 1.20 * C - 0.90 * C
+New Profit = 0.30 * C
+
+**Step 6: Calculate the new profit percentage.**
+The new profit percentage is calculated on the new reduced unit cost.
+New Profit Percentage = (New Profit / New Direct Unit Cost) * 100%
+New Profit Percentage = (0.30 * C / 0.90 * C) * 100%
+New Profit Percentage = (0.30 / 0.90) * 100%
+New Profit Percentage = (1/3) * 100%
+New Profit Percentage = 33.33%
+
+To illustrate with a numerical example:
+Let the original unit cost (C) be $100.
+Original List Price (L) = 1.50 * $100 = $150.
+Original Sale Price (S) = 0.80 * $150 = $120.
+Original Profit = $120 - $100 = $20.
+Original Profit Percentage = ($20 / $100) * 100% = 20%. (Matches the problem).
+
+New Direct Unit Cost (C_new) = $100 * 0.90 = $90.
+New Sale Price (S_new) = $120 (since the original list price of $150 and 20% discount are maintained).
+New Profit = $120 - $90 = $30.
+New Profit Percentage = ($30 / $90) * 100% = (1/3) * 100% = 33.33%.
+
+The final answer is 33.33%."
+}{
+   "options": {
+      "A": "33.33%",
+      "B": "25.00%",
+      "C": "28.57%",
+      "D": "40.00%"
+   },
+   "answer": "A"
+}

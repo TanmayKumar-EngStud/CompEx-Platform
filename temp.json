@@ -1,0 +1,10 @@
+{
+   "source_info": "This passage discusses different approaches to taxation and their potential impacts on economic development, particularly focusing on the perspectives of two hypothetical countries.",
+   "content": {
+      "type": "Passage",
+      "passages": [
+         "Country A has historically relied on a progressive income tax system, where higher earners pay a larger percentage of their income in taxes. This system is coupled with significant government spending on social programs, infrastructure, and public education. Proponents argue that this approach leads to greater income equality, a robust social safety net, and long-term human capital development, which in turn fosters sustainable economic growth. However, critics claim that high marginal tax rates disincentivize entrepreneurship and investment, leading to capital flight and slower job creation. Recent economic data from Country A indicates a stable Gini coefficient, suggesting consistent income distribution, but also a moderate average annual GDP growth rate of 2.5% over the last decade, which is below the global average for developed nations.",
+         "In contrast, Country B has adopted a predominantly consumption-based tax system, primarily through a high Value-Added Tax (VAT) and very low corporate and individual income tax rates. The philosophy behind this approach is to encourage savings, investment, and production by reducing the tax burden on income and capital. Supporters contend that a consumption tax is simpler to administer, promotes economic efficiency, and makes the country more attractive for foreign direct investment. Critics, however, warn that consumption taxes are inherently regressive, disproportionately affecting lower-income households who spend a larger portion of their income. They also point to a potential reduction in domestic demand due to increased prices. Over the past decade, Country B has experienced a higher average annual GDP growth rate of 4.1%, but its Gini coefficient has shown a slight increase, indicating widening income disparity."
+      ]
+   }
+}

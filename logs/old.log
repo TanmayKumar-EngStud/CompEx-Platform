@@ -1,919 +1,608 @@
 === Question Generation Session Started ===
-Log file: logs/question_generation_2025-06-06_17-13-12.log
-Timestamp: 2025-06-06 17:13:12
+Log file: logs/question_generation_2025-06-07_03-10-41.log
+Timestamp: 2025-06-07 03:10:41
 ================================================================================
 Primary user already exists
-Initialized - Difficulty: 4, Mock: False
+Initialized - Difficulty: 4, Mock: True
 ================================================================================
 PAPER GENERATION SESSION STARTED
 ================================================================================
 Starting GMAT paper generation - Difficulty: 4
-GMAT TPA, Error message: received for ParentQuestionContent is: 
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 4 (char 5)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+   "content": {
+      "type": "Pie Chart",
+      "graph": "pie chart",
+      "title": "Company X's Annual Budget Allocation for Sustainability Initiatives (Year 2023)",
+      "description": "This pie chart illustrates how Company X allocated its total annual sustainability budget of \\$5,000,000 across various initiatives in 2023. The percentages represent the proportion of the total budget assigned to each category.",
+      "data": [
+         { "label": "Renewable Energy Projects", "value": 35 },
+         { "label": "Waste Reduction Programs", "value": 25 },
+         { "label": "Sustainable Sourcing", "value": 20 },
+         { "label": "Community Engagement & Education", "value": 10 },
+         { "label": "Green Building Upgrades", "value": 10 }
+      ]
+   }
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 773
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+   "content": {
+      "type": "Pie Chart",
+      "graph": "pie chart",
+      "title": "Company X's Annual Budget Allocation for Sustainability Initiatives (Year 2023)",
+      "description": "This pie chart illustrates how Company X allocated its total annual sustainability budget of \\$5,000,000 across various initiatives in 2023. The percentages represent the proportion of the total budget assigned to each category.",
+      "data": [
+         { "label": "Renewable Energy Projects", "value": 35 },
+         { "label": "Waste Reduction Programs", "value": 25 },
+         { "label": "Sustainable Sourcing", "value": 20 },
+         { "label": "Community Engagement & Education", "value": 10 },
+         { "label": "Green Building Upgrades", "value": 10 }
+      ]
+   }
+}
+----------------------------------------
+================================================================================
+================================================================================
+DETAILED ERROR LOG - GMAT TPA ParentQuestionContent - JSON parsing failed
+================================================================================
+Error: refine_response returned error: Failed to parse JSON response
+----------------------------------------
+RAW RESPONSE:
+{
+   "content": {
+      "type": "Pie Chart",
+      "graph": "pie chart",
+      "title": "Company X's Annual Budget Allocation for Sustainability Initiatives (Year 2023)",
+      "description": "This pie chart illustrates how Company X allocated its total annual sustainability budget of \\$5,000,000 across various initiatives in 2023. The percentages represent the proportion of the total budget assigned to each category.",
+      "data": [
+         { "label": "Renewable Energy Projects", "value": 35 },
+         { "label": "Waste Reduction Programs", "value": 25 },
+         { "label": "Sustainable Sourcing", "value": 20 },
+         { "label": "Community Engagement & Education", "value": 10 },
+         { "label": "Green Building Upgrades", "value": 10 }
+      ]
+   }
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 773
+Expected keys: ['content', 'question', 'graph', 'data']
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 4 (char 5)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+   "content": {
+      "type": "Pie Chart",
+      "graph": "pie chart",
+      "title": "Company X's Annual Budget Allocation for Sustainability Initiatives (Year 2023)",
+      "description": "This pie chart illustrates how Company X allocated its total annual sustainability budget of \\$5,000,000 across various initiatives in 2023. The percentages represent the proportion of the total budget assigned to each category.",
+      "data": [
+         { "label": "Renewable Energy Projects", "value": 35 },
+         { "label": "Waste Reduction Programs", "value": 25 },
+         { "label": "Sustainable Sourcing", "value": 20 },
+         { "label": "Community Engagement & Education", "value": 10 },
+         { "label": "Green Building Upgrades", "value": 10 }
+      ]
+   }
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 773
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+   "content": {
+      "type": "Pie Chart",
+      "graph": "pie chart",
+      "title": "Company X's Annual Budget Allocation for Sustainability Initiatives (Year 2023)",
+      "description": "This pie chart illustrates how Company X allocated its total annual sustainability budget of \\$5,000,000 across various initiatives in 2023. The percentages represent the proportion of the total budget assigned to each category.",
+      "data": [
+         { "label": "Renewable Energy Projects", "value": 35 },
+         { "label": "Waste Reduction Programs", "value": 25 },
+         { "label": "Sustainable Sourcing", "value": 20 },
+         { "label": "Community Engagement & Education", "value": 10 },
+         { "label": "Green Building Upgrades", "value": 10 }
+      ]
+   }
+}
+----------------------------------------
+================================================================================
+REFINED RESPONSE:
+{"error": "Failed to parse JSON response"}
+----------------------------------------
+PARSED JSON KEYS:
+['error']
+PARSED JSON CONTENT:
+  error: Failed to parse JSON response
+================================================================================
+
+Retrying _generate - attempt 1/ 3
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 4 (char 5)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
 ```json
 {
-   "type": "2 Category Hybrid Table",
-   "table_name": "Company Project Portfolio Overview",
-   "columns": [
-     {"Project Details": ["Project Name", "Project Type"]},
-     {"Performance Metrics": ["Status", "Budget (USD)", "Completion `%", "Estimated ROI `%"]}
-   ],
-   "row_header": "Project ID",
-   "rows": ["P001", "P002", "P003", "P004", "P005"],
-   "data": [
-      ["Market Expansion", "Growth", "In Progress", "500,000", "60", "15"],
-      ["Cost Reduction", "Efficiency", "Completed", "300,000", "100", "10"],
-      ["Product Innovation", "Growth", "In Progress", "750,000", "40", "25"],
-      ["Supply Chain Optimization", "Efficiency", "Planned", "400,000", "10", "12"],
-      ["Customer Loyalty Program", "Growth", "In Progress", "200,000", "80", "18"]
-   ]
+   "options": {
+      "A": "Project P001, 'AI Analytics Platform', was completed under budget.",
+      "B": "Only two projects exceeded their allocated budget.",
+      "C": "Project P004, 'Cybersecurity Upgrade', had the lowest actual spend among all projects."
+   },
+   "answer": {
+      "A": "True",
+      "B": "False",
+      "C": "True"
+   }
 }
 ```
-Error: 'content'
-Retrying _generate - attempt 1/ 3
-Error in refining response: Invalid \escape: line 12 column 29 (char 290)
-GMAT TA, Error: message received for QuestionTable is:
+----------------------------------------
+Response type: <class 'str'>
+Response length: 360
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+   "options": {
+      "A": "Project P001, "AI Analytics Platform", was completed under budget.",
+      "B": "Only two projects exceeded their allocated budget.",
+      "C": "Project P004, "Cybersecurity Upgrade", had the lowest actual spend among all projects."
+   },
+   "answer": {
+      "A": "True",
+      "B": "False",
+      "C": "True"
+   }
+}
+
+----------------------------------------
+================================================================================
+================================================================================
+DETAILED ERROR LOG - GMAT TA QuestionOptions - JSON parsing failed
+================================================================================
+Error: refine_response returned error: Failed to parse JSON response
+----------------------------------------
+RAW RESPONSE:
 ```json
 {
-  "tables": [
+   "options": {
+      "A": "Project P001, 'AI Analytics Platform', was completed under budget.",
+      "B": "Only two projects exceeded their allocated budget.",
+      "C": "Project P004, 'Cybersecurity Upgrade', had the lowest actual spend among all projects."
+   },
+   "answer": {
+      "A": "True",
+      "B": "False",
+      "C": "True"
+   }
+}
+```
+----------------------------------------
+Response type: <class 'str'>
+Response length: 360
+Expected keys: ['options', 'answer', 'choices', 'answers']
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 4 (char 5)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+```json
+{
+   "options": {
+      "A": "Project P001, 'AI Analytics Platform', was completed under budget.",
+      "B": "Only two projects exceeded their allocated budget.",
+      "C": "Project P004, 'Cybersecurity Upgrade', had the lowest actual spend among all projects."
+   },
+   "answer": {
+      "A": "True",
+      "B": "False",
+      "C": "True"
+   }
+}
+```
+----------------------------------------
+Response type: <class 'str'>
+Response length: 360
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+   "options": {
+      "A": "Project P001, "AI Analytics Platform", was completed under budget.",
+      "B": "Only two projects exceeded their allocated budget.",
+      "C": "Project P004, "Cybersecurity Upgrade", had the lowest actual spend among all projects."
+   },
+   "answer": {
+      "A": "True",
+      "B": "False",
+      "C": "True"
+   }
+}
+
+----------------------------------------
+================================================================================
+REFINED RESPONSE:
+{"error": "Failed to parse JSON response"}
+----------------------------------------
+PARSED JSON KEYS:
+['error']
+PARSED JSON CONTENT:
+  error: Failed to parse JSON response
+================================================================================
+
+Retrying _generate - attempt 1/ 3
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "graphs": [
     {
-      "type": "simple table",
-      "table_name": "Digital Marketing Channel Performance",
-      "columns": [
-        "Product Category",
-        "Marketing Channel",
-        "Campaign Spend (\$)",
-        "Clicks",
-        "Conversions",
-        "Conversion Rate (\\%)",
-        "Revenue Generated (\$)"
-      ],
-      "rows": [
-        "Data Point 1",
-        "Data Point 2",
-        "Data Point 3",
-        "Data Point 4",
-        "Data Point 5",
-        "Data Point 6",
-        "Data Point 7",
-        "Data Point 8",
-        "Data Point 9"
-      ],
+      "graph": "line chart",
+      "title": "Monthly Sales Revenue by Marketing Channel (January - June)",
+      "description": "This line chart displays the monthly sales revenue generated by four distinct marketing channels: Social Media, Email Campaigns, Search Engine Ads, and Direct Sales, for a company from January to June.",
+      "x-axis": "Months",
+      "y-axis": "Sales Revenue (in thousands of USD)",
       "data": [
-        ["Product A", "Social Media", 1000, 5000, 50, 1.00, 5000],
-        ["Product B", "Search Engine", 1500, 6000, 90, 1.50, 9000],
-        ["Product C", "Email", 500, 8000, 120, 1.50, 12000],
-        ["Product A", "Search Engine", 1200, 5500, 66, 1.20, 6600],
-        ["Product B", "Email", 600, 8500, 128, 1.51, 12800],
-        ["Product C", "Social Media", 800, 4000, 32, 0.80, 3200],
-        ["Product A", "Email", 700, 9000, 135, 1.50, 13500],
-        ["Product B", "Social Media", 1100, 4500, 41, 0.91, 4100],
-        ["Product C", "Search Engine", 1600, 6500, 98, 1.51, 9800]
+        {
+          "series": "Social Media",
+          "values": [
+            { "x": "January", "y": 150 },
+            { "x": "February", "y": 175 },
+            { "x": "March", "y": 190 },
+            { "x": "April", "y": 180 },
+            { "x": "May", "y": 210 },
+            { "x": "June", "y": 230 }
+          ]
+        },
+        {
+          "series": "Email Campaigns",
+          "values": [
+            { "x": "January", "y": 120 },
+            { "x": "February", "y": 135 },
+            { "x": "March", "y": 150 },
+            { "x": "April", "y": 165 },
+            { "x": "May", "y": 180 },
+            { "x": "June", "y": 195 }
+          ]
+        },
+        {
+          "series": "Search Engine Ads",
+          "values": [
+            { "x": "January", "y": 90 },
+            { "x": "February", "y": 105 },
+            { "x": "March", "y": 120 },
+            { "x": "April", "y": 135 },
+            { "x": "May", "y": 150 },
+            { "x": "June", "y": 165 }
+          ]
+        },
+        {
+          "series": "Direct Sales",
+          "values": [
+            { "x": "January", "y": 80 },
+            { "x": "February", "y": 85 },
+            { "x": "March", "y": 90 },
+            { "x": "April", "y": 95 },
+            { "x": "May", "y": 100 },
+            { "x": "June", "y": 105 }
+          ]
+        }
       ]
     }
   ]
 }
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-GMAT TPA, Error message: received for ParentQuestionContent is: 
-```json
+----------------------------------------
+Response type: <class 'str'>
+Response length: 1801
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
 {
-   "type": "2 Category Hybrid Table",
-   "table_name": "Company Project Portfolio Overview",
-   "columns": [
-     {"Project Details": ["Project Name", "Project Type"]},
-     {"Performance Metrics": ["Status", "Budget (USD)", "Completion `%", "Estimated ROI `%`"]}
-   ],
-   "row_header": "Project ID",
-   "rows": ["P001", "P002", "P003", "P004", "P005"],
-   "data": [
-      ["Market Expansion", "Growth", "In Progress", "500,000", "60", "15"],
-      ["Cost Reduction", "Efficiency", "Completed", "300,000", "100", "10"],
-      ["Product Innovation", "Growth", "In Progress", "750,000", "40", "25"],
-      ["Supply Chain Optimization", "Efficiency", "Planned", "400,000", "10", "12"],
-      ["Customer Loyalty Program", "Growth", "In Progress", "200,000", "80", "18"]
-   ]
+  "graphs": [
+    {
+      "graph": "line chart",
+      "title": "Monthly Sales Revenue by Marketing Channel (January - June)",
+      "description": "This line chart displays the monthly sales revenue generated by four distinct marketing channels: Social Media, Email Campaigns, Search Engine Ads, and Direct Sales, for a company from January to June.",
+      "x-axis": "Months",
+      "y-axis": "Sales Revenue (in thousands of USD)",
+      "data": [
+        {
+          "series": "Social Media",
+          "values": [
+            { "x": "January", "y": 150 },
+            { "x": "February", "y": 175 },
+            { "x": "March", "y": 190 },
+            { "x": "April", "y": 180 },
+            { "x": "May", "y": 210 },
+            { "x": "June", "y": 230 }
+          ]
+        },
+        {
+          "series": "Email Campaigns",
+          "values": [
+            { "x": "January", "y": 120 },
+            { "x": "February", "y": 135 },
+            { "x": "March", "y": 150 },
+            { "x": "April", "y": 165 },
+            { "x": "May", "y": 180 },
+            { "x": "June", "y": 195 }
+          ]
+        },
+        {
+          "series": "Search Engine Ads",
+          "values": [
+            { "x": "January", "y": 90 },
+            { "x": "February", "y": 105 },
+            { "x": "March", "y": 120 },
+            { "x": "April", "y": 135 },
+            { "x": "May", "y": 150 },
+            { "x": "June", "y": 165 }
+          ]
+        },
+        {
+          "series": "Direct Sales",
+          "values": [
+            { "x": "January", "y": 80 },
+            { "x": "February", "y": 85 },
+            { "x": "March", "y": 90 },
+            { "x": "April", "y": 95 },
+            { "x": "May", "y": 100 },
+            { "x": "June", "y": 105 }
+          ]
+        }
+      ]
+    }
+  ]
 }
-```
-Error: 'content'
-Retrying _generate - attempt 2/ 3
-GMAT TPA, Error message: received for ParentQuestionContent is: 
-```json
-{
-   "type": "2 Category Hybrid Table",
-   "table_name": "Company Project Portfolio Overview",
-   "columns": [
-     {"Project Details": ["Project Name", "Project Type"]},
-     {"Performance Metrics": ["Status", "Budget (USD)", "Completion `%", "Estimated ROI `%`"]}
-   ],
-   "row_header": "Project ID",
-   "rows": ["P001", "P002", "P003", "P004", "P005"],
-   "data": [
-      ["Market Expansion", "Growth", "In Progress", "500,000", "60", "15"],
-      ["Cost Reduction", "Efficiency", "Completed", "300,000", "100", "10"],
-      ["Product Innovation", "Growth", "In Progress", "750,000", "40", "25"],
-      ["Supply Chain Optimization", "Efficiency", "Planned", "400,000", "10", "12"],
-      ["Customer Loyalty Program", "Growth", "In Progress", "200,000", "80", "18"]
-   ]
-}
-```
-Error: 'content'
-Retrying _generate - attempt 3/ 3
-Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-  "solution": "To solve this problem, we need to calculate the total government tax revenue for both 2022 and 2023 and then determine the percentage increase and the proportion of Income Tax in 2023.\n\nFirst, calculate the total revenue for 2022:\n~~\\text{Total 2022} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2022} = \\$80 \\text{ Billion} + \\$50 \\text{ Billion} + \\$60 \\text{ Billion} + \\$40 \\text{ Billion}~~ \n\n```python\ntotal_2022 = 80 + 50 + 60 + 40\nprint(total_2022)\n```\n\nTotal revenue in 2022 was \\$230 Billion.\n\nNext, calculate the total revenue for 2023:\n~~\\text{Total 2023} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2023} = \\$88 \\text{ Billion} + \\$55 \\text{ Billion} + \\$65 \\text{ Billion} + \\$42 \\text{ Billion}~~ \n\n```python\ntotal_2023 = 88 + 55 + 65 + 42\nprint(total_2023)\n```\n\nTotal revenue in 2023 was \\$250 Billion.\n\nNow, calculate the percentage increase in total revenue from 2022 to 2023:\n~~\\text{Percentage Increase} = \\frac{\\text{Total 2023} - \\text{Total 2022}}{\\text{Total 2022}} \\times 100\\%~~ \n\n```python\ntotal_2022 = 230\ntotal_2023 = 250\npercentage_increase = ((total_2023 - total_2022) / total_2022) * 100\nprint(round(percentage_increase, 2))\n```\n\nThe total government tax revenue increased by approximately 8.70\\% from 2022 to 2023.\n\nFinally, calculate the percentage that Income Tax accounted for in the total revenue in 2023:\n~~\\text{Percentage of Income Tax in 2023} = \\frac{\\text{Income Tax (2023)}}{\\text{Total 2023}} \\times 100\\%~~ \n\n```python\nincome_tax_2023 = 88\ntotal_2023 = 250\npercentage_income_tax_2023 = (income_tax_2023 / total_2023) * 100\nprint(round(percentage_income_tax_2023, 2))\n```\n\nIncome Tax accounted for approximately 35.20\\% of the total revenue in 2023.\n\nTherefore, the total government tax revenue increased by approximately **8.7**\\% from 2022 to 2023, and Income Tax accounted for approximately **35.2**\\% of the total revenue in 2023."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-  "solution": "To determine the percentage increase in total revenue and the percentage of Income Tax in 2023, we first calculate the total revenue for each year.\n\nTotal Revenue in 2022:\n~~\\text{Total 2022} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2022} = \\$80 \\text{ Billion} + \\$50 \\text{ Billion} + \\$60 \\text{ Billion} + \\$40 \\text{ Billion}~~ \n\n```python\ntotal_2022 = 80 + 50 + 60 + 40\nprint(total_2022)\n```\n\nTotal revenue in 2022 was \\$230 Billion.\n\nTotal Revenue in 2023:\n~~\\text{Total 2023} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total 2023} = \\$88 \\text{ Billion} + \\$55 \\text{ Billion} + \\$65 \\text{ Billion} + \\$42 \\text{ Billion}~~ \n\n```python\ntotal_2023 = 88 + 55 + 65 + 42\nprint(total_2023)\n```\n\nTotal revenue in 2023 was \\$250 Billion.\n\nPercentage increase in total revenue from 2022 to 2023:\n~~\\text{Percentage Increase} = \\frac{\\text{Total 2023} - \\text{Total 2022}}{\\text{Total 2022}} \\times 100\\%~~ \n\n```python\ntotal_2022 = 230\ntotal_2023 = 250\npercentage_increase = ((total_2023 - total_2022) / total_2022) * 100\nprint(round(percentage_increase, 2))\n```\n\nThe total revenue increased by approximately 8.70\\%. So the first blank is approximately 8.7.\n\nPercentage of Income Tax in total revenue in 2023:\n~~\\text{Percentage of Income Tax} = \\frac{\\text{Income Tax (2023)}}{\\text{Total 2023}} \\times 100\\%~~ \n\n```python\nincome_tax_2023 = 88\ntotal_2023 = 250\npercentage_income_tax = (income_tax_2023 / total_2023) * 100\nprint(round(percentage_income_tax, 2))\n```\n\nIncome Tax accounted for approximately 35.20\\% of the total revenue in 2023. So the second blank is approximately 35.2.\n\nThe total government tax revenue increased by approximately **8.7**\\% from 2022 to 2023, and Income Tax accounted for approximately **35.2**\\% of the total revenue in 2023."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 2/ 3
-Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-  "solution": "To answer the question, we need to calculate the total tax revenue for both 2022 and 2023, find the percentage increase, and then calculate the percentage of Income Tax within the 2023 total revenue.\n\nFirst, calculate the total revenue for 2022 by summing the revenue from all sources:\n~~\\text{Total Revenue 2022} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total Revenue 2022} = \\$80 \\text{ Billion} + \\$50 \\text{ Billion} + \\$60 \\text{ Billion} + \\$40 \\text{ Billion}~~ \n\n```python\ntotal_revenue_2022 = 80 + 50 + 60 + 40\nprint(total_revenue_2022)\n```\n\nTotal revenue in 2022 was \\$230 Billion.\n\nNext, calculate the total revenue for 2023:\n~~\\text{Total Revenue 2023} = \\text{Income Tax} + \\text{Corporate Tax} + \\text{Sales Tax} + \\text{Property Tax}~~ \n~~\\text{Total Revenue 2023} = \\$88 \\text{ Billion} + \\$55 \\text{ Billion} + \\$65 \\text{ Billion} + \\$42 \\text{ Billion}~~ \n\n```python\ntotal_revenue_2023 = 88 + 55 + 65 + 42\nprint(total_revenue_2023)\n```\n\nTotal revenue in 2023 was \\$250 Billion.\n\nNow, calculate the percentage increase in total revenue from 2022 to 2023:\n~~\\text{Percentage Increase} = \\frac{\\text{Total Revenue 2023} - \\text{Total Revenue 2022}}{\\text{Total Revenue 2022}} \\times 100\\%~~ \n\n```python\ntotal_revenue_2022 = 230\ntotal_revenue_2023 = 250\npercentage_increase = ((total_revenue_2023 - total_revenue_2022) / total_revenue_2022) * 100\nprint(round(percentage_increase, 2))\n```\n\nThe total government tax revenue increased by approximately 8.70\\%.\n\nFinally, calculate the percentage that Income Tax accounted for in the total revenue in 2023:\n~~\\text{Percentage of Income Tax in 2023} = \\frac{\\text{Income Tax (2023)}}{\\text{Total Revenue 2023}} \\times 100\\%~~ \n\n```python\nincome_tax_2023 = 88\ntotal_revenue_2023 = 250\npercentage_income_tax_2023 = (income_tax_2023 / total_revenue_2023) * 100\nprint(round(percentage_income_tax_2023, 2))\n```\n\nIncome Tax accounted for approximately 35.20\\% of the total revenue in 2023.\n\nThus, the total government tax revenue increased by approximately **8.7**\\% from 2022 to 2023, and Income Tax accounted for approximately **35.2**\\% of the total revenue in 2023."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 3/ 3
-Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-  "solution": "To answer the first part of the question, we need to compare the annual return of each fund in the scatter plot to the average annual return for its respective year shown in the bar chart.\n\nFrom the bar chart:\n- The average return in 2019 was ~~10.5\\%~~.\n- The average return in 2020 was ~~4.8\\%~~.\n- The average return in 2021 was ~~5.2\\%~~.\n\nNow, we examine each fund in the scatter plot and count those whose return is below the average for their year:\n- **2019 Funds (Average: ~~10.5\\%~~):**\n    - F19-A: ~~8\\%~~ (Below)\n    - F19-C: ~~10\\%~~ (Below)\n    - F19-F: ~~12\\%~~ (Above)\n    - F19-H: ~~9\\%~~ (Below)\n    - F19-I: ~~11\\%~~ (Above)\n    - F19-K: ~~13\\%~~ (Above)\n    - Count below average for 2019: 3\n- **2020 Funds (Average: ~~4.8\\%~~):**\n    - F20-B: ~~5\\%~~ (Above)\n    - F20-D: ~~2\\%~~ (Below)\n    - F20-E: ~~7\\%~~ (Above)\n    - F20-G: ~~4\\%~~ (Below)\n    - F20-L: ~~6\\%~~ (Above)\n    - Count below average for 2020: 2\n- **2021 Funds (Average: ~~5.2\\%~~):**\n    - F21-J: ~~-2\\%~~ (Below)\n    - F21-M: ~~8.5\\%~~ (Above)\n    - F21-N: ~~3\\%~~ (Below)\n    - F21-O: ~~10.5\\%~~ (Above)\n    - F21-P: ~~6\\%~~ (Above)\n    - Count below average for 2021: 2\n\nTotal number of funds with an annual return below the average for their respective year = ~~3 + 2 + 2 = 7~~.\n\nFor the second part, we need to find the three funds with the lowest market volatility index (x-axis value) from the scatter plot and calculate their average return.\n\nSorting funds by volatility index (lowest to highest):\n- F19-F: 10\n- F19-K: 11\n- F19-C: 12\n- F21-O: 13\n- F19-I: 14\n- ... and so on.\n\nThe three funds with the lowest volatility indices are F19-F (volatility 10, return 12%), F19-K (volatility 11, return 13%), and F19-C (volatility 12, return 10%).\n\nWe calculate their average return:\n\n```python\nreturns = [12, 13, 10]\naverage_return = sum(returns) / len(returns)\nprint(round(average_return, 1))\n```\n\nThe sum of the returns is ~~12 + 13 + 10 = 35~~.\nThe number of funds is 3.\nThe average return is ~~\\frac{35}{3} \\approx 11.666...\\%~~.\nRounding to one decimal place gives ~~11.7\\%~~.\n\nTherefore, there were ~~7~~ funds with an annual return below the average annual return for their respective year, and the average return of the three funds with the lowest market volatility index was ~~11.7\\%~~."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-  "solution": "To answer the first part of the question, we need to compare the annual return of each fund in the scatter plot to the average annual return for its respective year shown in the bar chart.\n\nFrom the bar chart:\n- The average return in 2019 was ~~10.5\\%~~.\n- The average return in 2020 was ~~4.8\\%~~.\n- The average return in 2021 was ~~5.2\\%~~.\n\nNow, we examine each fund in the scatter plot and count those whose return is below the average for their year:\n- **2019 Funds (Average: ~~10.5\\%~~):**\n    - F19-A: ~~8\\%~~ (Below)\n    - F19-C: ~~10\\%~~ (Below)\n    - F19-F: ~~12\\%~~ (Above)\n    - F19-H: ~~9\\%~~ (Below)\n    - F19-I: ~~11\\%~~ (Above)\n    - F19-K: ~~13\\%~~ (Above)\n    - Count below average for 2019: 3\n- **2020 Funds (Average: ~~4.8\\%~~):**\n    - F20-B: ~~5\\%~~ (Above)\n    - F20-D: ~~2\\%~~ (Below)\n    - F20-E: ~~7\\%~~ (Above)\n    - F20-G: ~~4\\%~~ (Below)\n    - F20-L: ~~6\\%~~ (Above)\n    - Count below average for 2020: 2\n- **2021 Funds (Average: ~~5.2\\%~~):**\n    - F21-J: ~~-2\\%~~ (Below)\n    - F21-M: ~~8.5\\%~~ (Above)\n    - F21-N: ~~3\\%~~ (Below)\n    - F21-O: ~~10.5\\%~~ (Above)\n    - F21-P: ~~6\\%~~ (Above)\n    - Count below average for 2021: 2\n\nTotal number of funds with an annual return below the average for their respective year = ~~3 + 2 + 2 = 7~~.\n\nFor the second part, we need to find the three funds with the lowest market volatility index (x-axis value) from the scatter plot and calculate their average return.\n\nSorting funds by volatility index (lowest to highest):\n- F19-F: 10\n- F19-K: 11\n- F19-C: 12\n- F21-O: 13\n- F19-I: 14\n- ... and so on.\n\nThe three funds with the lowest volatility indices are F19-F (volatility 10, return 12%), F19-K (volatility 11, return 13%), and F19-C (volatility 12, return 10%).\n\nWe calculate their average return:\n\n```python\nreturns = [12, 13, 10]\naverage_return = sum(returns) / len(returns)\nprint(round(average_return, 1))\n```\n\nThe sum of the returns is ~~12 + 13 + 10 = 35~~.\nThe number of funds is 3.\nThe average return is ~~\\frac{35}{3} \\approx 11.666...\\%~~.\nRounding to one decimal place gives ~~11.7\\%~~.\n\nTherefore, there were ~~7~~ funds with an annual return below the average annual return for their respective year, and the average return of the three funds with the lowest market volatility index was ~~11.7\\%~~."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 2/ 3
-RPM limit reached, sleeping for 20.66419792175293 seconds
-Requests: 10, Elapsed time: 39.84s
-Error in refining response: Expecting ',' delimiter: line 71 column 16 (char 2694)
-GMAT GI, Error: message received for questionGraph is:
-```json
-{
-   "graphs": [
-      {
-         "graph": "stacked bar chart",
-         "title": "Quarterly Transportation Cost Breakdown by Region (Thousands USD)",
-         "description": "This chart shows the total transportation cost for four regions (North, South, East, West) across four quarters, broken down by major cost components: Fuel, Labor, Maintenance, and Other.",
-         "x-axis": "Region",
-         "y-axis": "Cost (Thousands USD)",
-         "data": [
-            {
-               "category": "North",
-               "values": [
-                  { "region": "Fuel", "value": 150 },
-                  { "region": "Labor", "value": 200 },
-                  { "region": "Maintenance", "value": 75 },
-                  { "region": "Other", "value": 50 }
-               ]
-            },
-            {
-               "category": "South",
-               "values": [
-                  { "region": "Fuel", "value": 120 },
-                  { "region": "Labor", "value": 180 },
-                  { "region": "Maintenance", "value": 90 },
-                  { "region": "Other", "value": 60 }
-               ]
-            },
-            {
-               "category": "East",
-               "values": [
-                  { "region": "Fuel", "value": 200 },
-                  { "region": "Labor", "value": 250 },
-                  { "region": "Maintenance", "value": 100 },
-                  { "region": "Other", "value": 70 }
-               ]
-            },
-            {
-               "category": "West",
-               "values": [
-                  { "region": "Fuel", "value": 170 },
-                  { "region": "Labor", "value": 210 },
-                  { "region": "Maintenance", "value": 85 },
-                  { "region": "Other", "value": 55 }
-               ]
-            }
-         ]
-      },
-      {
-         "graph": "line chart",
-         "title": "Quarterly Shipment Volume by Region (Metric Tons)",
-         "description": "This chart shows the trend in total shipment volume for four regions (North, South, East, West) across four quarters.",
-         "x-axis": "Quarter",
-         "y-axis": "Volume (Metric Tons)",
-         "data": [
-            {
-               "series": "North",
-               "values": [
-                  { "x": "Q1", "y": 5500 },
-                  { "x": "Q2", "y": 6000 },
-                  { "x": "Q3", "y": 5800 },
-                  { "x": "Q4", "y": 6200 }
-               ]
-            },
-            {
-               "series": "South",
-               "values": [
-                  { "x": "Q1", "y": 4800 },
-                  { "x": "Q2", "y": 5000 },
-                  { "x": "Q3", "y": 5200 },
-                  { "x": "Q4", "y": 5100 }
-               }
-            },
-            {
-               "series": "East",
-               "values": [
-                  { "x": "Q1", "y": 7000 },
-                  { "x": "Q2", "y": 7500 },
-                  { "x": "Q3", "y": 7300 },
-                  { "x": "Q4", "y": 7800 }
-               ]
-            },
-            {
-               "series": "West",
-               "values": [
-                  { "x": "Q1", "y": 6000 },
-                  { "x": "Q2", "y": 6300 },
-                  { "x": "Q3", "y": 6100 },
-                  { "x": "Q4", "y": 6500 }
-            }
-         ]
-      }
-   ]
-}
-```
- Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-RPM limit reached, sleeping for 16.589906930923462 seconds
-Requests: 10, Elapsed time: 43.91s
-Error in refining response: Unterminated string starting at: line 2 column 15 (char 16)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-  "solution": "To answer the first part of the question, we need to compare the annual return of each fund in the scatter plot to the average annual return for its respective year shown in the bar chart.\n\nFrom the bar chart:\n- The average return in 2019 was ~~10.5\\%~~.\n- The average return in 2020 was ~~4.8\\%~~.\n- The average return in 2021 was ~~5.2\\%~~.\n\nNow, we examine each fund in the scatter plot and count those whose return is below the average for their year:\n- **2019 Funds (Average: ~~10.5\\%~~):**\n    - F19-A: ~~8\\%~~ (Below)\n    - F19-C: ~~10\\%~~ (Below)\n    - F19-F: ~~12\\%~~ (Above)\n    - F19-H: ~~9\\%~~ (Below)\n    - F19-I: ~~11\\%~~ (Above)\n    - F19-K: ~~13\\%~~ (Above)\n    - Count below average for 2019: 3\n- **2020 Funds (Average: ~~4.8\\%~~):**\n    - F20-B: ~~5\\%~~ (Above)\n    - F20-D: ~~2\\%~~ (Below)\n    - F20-E: ~~7\\%~~ (Above)\n    - F20-G: ~~4\\%~~ (Below)\n    - F20-L: ~~6\\%~~ (Above)\n    - Count below average for 2020: 2\n- **2021 Funds (Average: ~~5.2\\%~~):**\n    - F21-J: ~~-2\\%~~ (Below)\n    - F21-M: ~~8.5\\%~~ (Above)\n    - F21-N: ~~3\\%~~ (Below)\n    - F21-O: ~~10.5\\%~~ (Above)\n    - F21-P: ~~6\\%~~ (Above)\n    - Count below average for 2021: 2\n\nTotal number of funds with an annual return below the average for their respective year = ~~3 + 2 + 2 = 7~~.\n\nFor the second part, we need to find the three funds with the lowest market volatility index (x-axis value) from the scatter plot and calculate their average return.\n\nSorting funds by volatility index (lowest to highest):\n- F19-F: 10\n- F19-K: 11\n- F19-C: 12\n- F21-O: 13\n- F19-I: 14\n- ... and so on.\n\nThe three funds with the lowest volatility indices are F19-F (volatility 10, return 12%), F19-K (volatility 11, return 13%), and F19-C (volatility 12, return 10%).\n\nWe calculate their average return:\n\n```python\nreturns = [12, 13, 10]\naverage_return = sum(returns) / len(returns)\nprint(round(average_return, 1))\n```\n\nThe sum of the returns is ~~12 + 13 + 10 = 35~~.\nThe number of funds is 3.\nThe average return is ~~\\frac{35}{3} \\approx 11.666...\\%~~.\nRounding to one decimal place gives ~~11.7\\%~~.\n\nTherefore, there were ~~7~~ funds with an annual return below the average annual return for their respective year, and the average return of the three funds with the lowest market volatility index was ~~11.7\\%~~."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 3/ 3
-RPM limit reached, sleeping for 13.915485143661499 seconds
-Requests: 10, Elapsed time: 46.58s
-RPM limit reached, sleeping for 13.313161849975586 seconds
-Requests: 10, Elapsed time: 47.19s
-Error in refining response: Expecting ',' delimiter: line 71 column 16 (char 2813)
-GMAT GI, Error: message received for questionGraph is:
-```json
-{
-   "graphs": [
-      {
-         "graph": "stacked bar chart",
-         "title": "Q4 Transportation Cost Breakdown by Region (Thousands USD)",
-         "description": "This chart shows the total transportation cost for four regions (North, South, East, West) during Q4, broken down by major cost components: Fuel, Labor, Maintenance, and Other. Costs are shown in thousands of US dollars.",
-         "x-axis": "Region",
-         "y-axis": "Cost (Thousands USD)",
-         "data": [
-            {
-               "category": "North",
-               "values": [
-                  { "component": "Fuel", "value": 150 },
-                  { "component": "Labor", "value": 200 },
-                  { "component": "Maintenance", "value": 75 },
-                  { "component": "Other", "value": 50 }
-               ]
-            },
-            {
-               "category": "South",
-               "values": [
-                  { "component": "Fuel", "value": 120 },
-                  { "component": "Labor", "value": 180 },
-                  { "component": "Maintenance", "value": 90 },
-                  { "component": "Other", "value": 60 }
-               ]
-            },
-            {
-               "category": "East",
-               "values": [
-                  { "component": "Fuel", "value": 200 },
-                  { "component": "Labor", "value": 250 },
-                  { "component": "Maintenance", "value": 100 },
-                  { "component": "Other", "value": 70 }
-               ]
-            },
-            {
-               "category": "West",
-               "values": [
-                  { "component": "Fuel", "value": 170 },
-                  { "component": "Labor", "value": 210 },
-                  { "component": "Maintenance", "value": 85 },
-                  { "component": "Other", "value": 55 }
-               ]
-            }
-         ]
-      },
-      {
-         "graph": "line chart",
-         "title": "Quarterly Shipment Volume by Region (Metric Tons)",
-         "description": "This chart shows the trend in total shipment volume for four regions (North, South, East, West) across four quarters (Q1 to Q4). Volumes are shown in metric tons.",
-         "x-axis": "Quarter",
-         "y-axis": "Volume (Metric Tons)",
-         "data": [
-            {
-               "series": "North",
-               "values": [
-                  { "x": "Q1", "y": 5500 },
-                  { "x": "Q2", "y": 6000 },
-                  { "x": "Q3", "y": 5800 },
-                  { "x": "Q4", "y": 6200 }
-               ]
-            },
-            {
-               "series": "South",
-               "values": [
-                  { "x": "Q1", "y": 4800 },
-                  { "x": "Q2", "y": 5000 },
-                  { "x": "Q3", "y": 5200 },
-                  { "x": "Q4", "y": 5100 }
-               }
-            },
-            {
-               "series": "East",
-               "values": [
-                  { "x": "Q1", "y": 7000 },
-                  { "x": "Q2", "y": 7500 },
-                  { "x": "Q3", "y": 7300 },
-                  { "x": "Q4", "y": 7800 }
-               ]
-            },
-            {
-               "series": "West",
-               "values": [
-                  { "x": "Q1", "y": 6000 },
-                  { "x": "Q2", "y": 6300 },
-                  { "x": "Q3", "x": 6100, "y": 6100 },
-                  { "x": "Q4", "y": 6500 }
-            }
-         ]
-      }
-   ]
-}
-```
- Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 2/ 3
-RPM limit reached, sleeping for 1.6393051147460938 seconds
-Requests: 10, Elapsed time: 58.86s
-Error in refining response: Expecting ',' delimiter: line 71 column 16 (char 2813)
-GMAT GI, Error: message received for questionGraph is:
-```json
-{
-   "graphs": [
-      {
-         "graph": "stacked bar chart",
-         "title": "Q4 Transportation Cost Breakdown by Region (Thousands USD)",
-         "description": "This chart shows the total transportation cost for four regions (North, South, East, West) during Q4, broken down by major cost components: Fuel, Labor, Maintenance, and Other. Costs are shown in thousands of US dollars.",
-         "x-axis": "Region",
-         "y-axis": "Cost (Thousands USD)",
-         "data": [
-            {
-               "category": "North",
-               "values": [
-                  { "component": "Fuel", "value": 150 },
-                  { "component": "Labor", "value": 200 },
-                  { "component": "Maintenance", "value": 75 },
-                  { "component": "Other", "value": 50 }
-               ]
-            },
-            {
-               "category": "South",
-               "values": [
-                  { "component": "Fuel", "value": 120 },
-                  { "component": "Labor", "value": 180 },
-                  { "component": "Maintenance", "value": 90 },
-                  { "component": "Other", "value": 60 }
-               ]
-            },
-            {
-               "category": "East",
-               "values": [
-                  { "component": "Fuel", "value": 200 },
-                  { "component": "Labor", "value": 250 },
-                  { "component": "Maintenance", "value": 100 },
-                  { "component": "Other", "value": 70 }
-               ]
-            },
-            {
-               "category": "West",
-               "values": [
-                  { "component": "Fuel", "value": 170 },
-                  { "component": "Labor", "value": 210 },
-                  { "component": "Maintenance", "value": 85 },
-                  { "component": "Other", "value": 55 }
-               ]
-            }
-         ]
-      },
-      {
-         "graph": "line chart",
-         "title": "Quarterly Shipment Volume by Region (Metric Tons)",
-         "description": "This chart shows the trend in total shipment volume for four regions (North, South, East, West) across four quarters (Q1 to Q4). Volumes are shown in metric tons.",
-         "x-axis": "Quarter",
-         "y-axis": "Volume (Metric Tons)",
-         "data": [
-            {
-               "series": "North",
-               "values": [
-                  { "x": "Q1", "y": 5500 },
-                  { "x": "Q2", "y": 6000 },
-                  { "x": "Q3", "y": 5800 },
-                  { "x": "Q4", "y": 6200 }
-               ]
-            },
-            {
-               "series": "South",
-               "values": [
-                  { "x": "Q1", "y": 4800 },
-                  { "x": "Q2", "y": 5000 },
-                  { "x": "Q3", "y": 5200 },
-                  { "x": "Q4", "y": 5100 }
-               }
-            },
-            {
-               "series": "East",
-               "values": [
-                  { "x": "Q1", "y": 7000 },
-                  { "x": "Q2", "y": 7500 },
-                  { "x": "Q3", "y": 7300 },
-                  { "x": "Q4", "y": 7800 }
-               ]
-            },
-            {
-               "series": "West",
-               "values": [
-                  { "x": "Q1", "y": 6000 },
-                  { "x": "Q2", "y": 6300 },
-                  { "x": "Q3", "x": 6100, "y": 6100 },
-                  { "x": "Q4", "y": 6500 }
-            }
-         ]
-      }
-   ]
-}
-```
- Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 3/ 3
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-   "solution": "To determine the region with the highest and lowest transportation cost per metric ton in Q4, we need to calculate the total transportation cost for each region in Q4 and divide it by the shipment volume for that region in Q4.\n\nFirst, let's calculate the total transportation cost for each region in Q4 using the stacked bar chart:\n\\begin{itemize}\n    \\item North Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$150,000 + \\$200,000 + \\$75,000 + \\$50,000 = \\$475,000~~\n    \\item South Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$120,000 + \\$180,000 + \\$90,000 + \\$60,000 = \\$450,000~~\n    \\item East Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$200,000 + \\$250,000 + \\$100,000 + \\$70,000 = \\$620,000~~\n    \\item West Q4 Cost = Fuel + Labor + Maintenance + Other = ~~\\$170,000 + \\$210,000 + \\$85,000 + \\$55,000 = \\$520,000~~\n\\end{itemize}\n\nNext, get the Q4 shipment volume for each region from the line chart:\n\\begin{itemize}\n    \\item North Q4 Volume = ~~6200~~ Metric Tons\n    \\item South Q4 Volume = ~~5100~~ Metric Tons\n    \\item East Q4 Volume = ~~7800~~ Metric Tons\n    \\item West Q4 Volume = ~~6500~~ Metric Tons\n\\end{itemize}\n\nNow, calculate the transportation cost per metric ton for each region in Q4:\n\\begin{itemize}\n    \\item North Cost per MT = ~~\\frac{\\$475,000}{6200 \\text{ MT}}~~\n    \\item South Cost per MT = ~~\\frac{\\$450,000}{5100 \\text{ MT}}~~\n    \\item East Cost per MT = ~~\\frac{\\$620,000}{7800 \\text{ MT}}~~\n    \\item West Cost per MT = ~~\\frac{\\$520,000}{6500 \\text{ MT}}~~\n\\end{itemize}\n\nUsing a code interpreter for precise calculation:\n\n```python\nnorth_cost_per_mt = 475000 / 6200\nsouth_cost_per_mt = 450000 / 5100\neast_cost_per_mt = 620000 / 7800\nwest_cost_per_mt = 520000 / 6500\n\nprint(f\"North: {north_cost_per_mt:.2f}\")\nprint(f\"South: {south_cost_per_mt:.2f}\")\nprint(f\"East: {east_cost_per_mt:.2f}\")\nprint(f\"West: {west_cost_per_mt:.2f}\")\n```\n\n```\nNorth: 76.61\nSouth: 88.24\nEast: 79.49\nWest: 80.00\n```\n\nThe calculated costs per metric ton are approximately:\n\\begin{itemize}\n    \\item North: ~~\\$76.61~~ per MT\n    \\item South: ~~\\$88.24~~ per MT\n    \\item East: ~~\\$79.49~~ per MT\n    \\item West: ~~\\$80.00~~ per MT\n\\end{itemize}\n\nComparing these values, the highest cost per metric ton is in the South region (~~\\$88.24~~ per MT), and the lowest cost per metric ton is in the North region (~~\\$76.61~~ per MT).\n\nTherefore, the region with the highest transportation cost per metric ton is South, and the region with the lowest transportation cost per metric ton is North."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-Error in refining response: Expecting ',' delimiter: line 2 column 396 (char 397)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-   "solution": "To determine the region with the highest and lowest transportation cost per metric ton in Q4, we need to calculate the total transportation cost for each region in Q4 and divide it by the shipment volume for that region in Q4.\n\nFirst, let's calculate the total transportation cost for each region in Q4 using the stacked bar chart 'Q4 Transportation Cost Breakdown by Region':\n*   North Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$150,000 + \\$200,000 + \\$75,000 + \\$50,000 = \\$475,000~~\n*   South Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$120,000 + \\$180,000 + \\$90,000 + \\$60,000 = \\$450,000~~\n*   East Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$200,000 + \\$250,000 + \\$100,000 + \\$70,000 = \\$620,000~~\n*   West Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$170,000 + \\$210,000 + \\$85,000 + \\$55,000 = \\$520,000~~\n\nNext, get the Q4 shipment volume for each region from the line chart 'Quarterly Shipment Volume by Region':\n*   North Q4 Volume = ~~6200~~ Metric Tons\n*   South Q4 Volume = ~~5100~~ Metric Tons\n*   East Q4 Volume = ~~7800~~ Metric Tons\n*   West Q4 Volume = ~~6500~~ Metric Tons\n\nNow, calculate the transportation cost per metric ton for each region in Q4:\n*   North Cost per MT = ~~\\frac{\\text{North Q4 Total Cost}}{\\text{North Q4 Volume}} = \\frac{\\$475,000}{6200 \\text{ MT}}~~\n*   South Cost per MT = ~~\\frac{\\text{South Q4 Total Cost}}{\\text{South Q4 Volume}} = \\frac{\\$450,000}{5100 \\text{ MT}}~~\n*   East Cost per MT = ~~\\frac{\\text{East Q4 Total Cost}}{\\text{East Q4 Volume}} = \\frac{\\$620,000}{7800 \\text{ MT}}~~\n*   West Cost per MT = ~~\\frac{\\text{West Q4 Total Cost}}{\\text{West Q4 Volume}} = \\frac{\\$520,000}{6500 \\text{ MT}}~~\n\nUsing a code interpreter for precise calculation:\n\n```python\nnorth_cost_per_mt = 475000 / 6200\nsouth_cost_per_mt = 450000 / 5100\neast_cost_per_mt = 620000 / 7800\nwest_cost_per_mt = 520000 / 6500\n\nprint(f\"North: {north_cost_per_mt:.2f}\")\nprint(f\"South: {south_cost_per_mt:.2f}\")\nprint(f\"East: {east_cost_per_mt:.2f}\")\nprint(f\"West: {west_cost_per_mt:.2f}\")\n```\n\n```\nNorth: 76.61\nSouth: 88.24\nEast: 79.49\nWest: 80.00\n```\n\nThe calculated costs per metric ton are approximately:\n*   North: ~~\\$76.61~~ per MT\n*   South: ~~\\$88.24~~ per MT\n*   East: ~~\\$79.49~~ per MT\n*   West: ~~\\$80.00~~ per MT\n\nComparing these values, the highest cost per metric ton is ~~\\$88.24~~ (South region), and the lowest cost per metric ton is ~~\\$76.61~~ (North region).\n\nTherefore, the region with the highest transportation cost per metric ton is South, and the region with the lowest transportation cost per metric ton is North."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 2/ 3
-Error in refining response: Expecting ',' delimiter: line 2 column 396 (char 397)
-GMAT GI, Error: message received for questionSolution is: ```json
-{
-   "solution": "To determine the region with the highest and lowest transportation cost per metric ton in Q4, we need to calculate the total transportation cost for each region in Q4 and divide it by the shipment volume for that region in Q4.\n\nFirst, let`s calculate the total transportation cost for each region in Q4 using the stacked bar chart 'Q4 Transportation Cost Breakdown by Region':\n*   North Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$150,000 + \\$200,000 + \\$75,000 + \\$50,000 = \\$475,000~~\n*   South Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$120,000 + \\$180,000 + \\$90,000 + \\$60,000 = \\$450,000~~\n*   East Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$200,000 + \\$250,000 + \\$100,000 + \\$70,000 = \\$620,000~~\n*   West Q4 Total Cost = Fuel + Labor + Maintenance + Other = ~~\\$170,000 + \\$210,000 + \\$85,000 + \\$55,000 = \\$520,000~~\n\nNext, get the Q4 shipment volume for each region from the line chart 'Quarterly Shipment Volume by Region':\n*   North Q4 Volume = ~~6200~~ Metric Tons\n*   South Q4 Volume = ~~5100~~ Metric Tons\n*   East Q4 Volume = ~~7800~~ Metric Tons\n*   West Q4 Volume = ~~6500~~ Metric Tons\n\nNow, calculate the transportation cost per metric ton for each region in Q4:\n*   North Cost per MT = ~~\\frac{\\text{North Q4 Total Cost}}{\\text{North Q4 Volume}} = \\frac{\\$475,000}{6200 \\text{ MT}}~~\n*   South Cost per MT = ~~\\frac{\\text{South Q4 Total Cost}}{\\text{South Q4 Volume}} = \\frac{\\$450,000}{5100 \\text{ MT}}~~\n*   East Cost per MT = ~~\\frac{\\text{East Q4 Total Cost}}{\\text{East Q4 Volume}} = \\frac{\\$620,000}{7800 \\text{ MT}}~~\n*   West Cost per MT = ~~\\frac{\\text{West Q4 Total Cost}}{\\text{West Q4 Volume}} = \\frac{\\$520,000}{6500 \\text{ MT}}~~\n\nUsing a code interpreter for precise calculation:\n\n```python\nnorth_cost_per_mt = 475000 / 6200\nsouth_cost_per_mt = 450000 / 5100\neast_cost_per_mt = 620000 / 7800\nwest_cost_per_mt = 520000 / 6500\n\nprint(f\"North: {north_cost_per_mt:.2f}\")\nprint(f\"South: {south_cost_per_mt:.2f}\")\nprint(f\"East: {east_cost_per_mt:.2f}\")\nprint(f\"West: {west_cost_per_mt:.2f}\")\n```\n\n```\nNorth: 76.61\nSouth: 88.24\nEast: 79.49\nWest: 80.00\n```\n\nThe calculated costs per metric ton are approximately:\n*   North: ~~\\$76.61~~ per MT\n*   South: ~~\\$88.24~~ per MT\n*   East: ~~\\$79.49~~ per MT\n*   West: ~~\\$80.00~~ per MT\n\nComparing these values, the highest cost per metric ton is ~~\\$88.24~~ (South region), and the lowest cost per metric ton is ~~\\$76.61~~ (North region).\n\nTherefore, the region with the highest transportation cost per metric ton is South, and the region with the lowest transportation cost per metric ton is North."
-}
-```
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 3/ 3
-Error in refining response: Invalid \escape: line 2 column 23 (char 24)
-GMAT Quants, Error in generate_questionSolution: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/3
-RPM limit reached, sleeping for 16.575057983398438 seconds
-Requests: 10, Elapsed time: 43.92s
-RPM limit reached, sleeping for 36.01631498336792 seconds
-Requests: 10, Elapsed time: 24.48s
-ChildQuestion: 0 of Detail (question on detail that is directly stated in the passage) - <difficulty_level: 3>
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '7s'}]}}
-RPM limit reached, sleeping for 32.06509017944336 seconds
-Requests: 10, Elapsed time: 28.43s
-GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: 
-None
-Retrying _generate - attempt 1/ 3
-ChildQuestion: 0 of Detail (question on detail that is directly stated in the passage) - <difficulty_level: 3>, 
-WARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '52s'}]}}
-GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: 
-None
-Retrying _generate - attempt 2/ 3
-ChildQuestion: 0 of Detail (question on detail that is directly stated in the passage) - <difficulty_level: 3>, 
-WARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}
-GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestion) is: 
-None
-Retrying _generate - attempt 3/ 3
-RPM limit reached, sleeping for 14.765244960784912 seconds
-Requests: 10, Elapsed time: 45.73s
-ChildQuestionTitle: 0
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '49s'}]}}
-GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestionTitle) is:
- None
-
-the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-ChildQuestionTitle: 0, 
-WARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-exp', 'location': 'global'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '48s'}]}}
-GMAT Verbal, Error: message received for parentChildQuestion(generate_childQuestionTitle) is:
- None
-
-the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 2/ 3
-RPM limit reached, sleeping for 60.49952411651611 seconds
-Requests: 10, Elapsed time: 0.00s
-RPM limit reached, sleeping for 21.124869108200073 seconds
-Requests: 10, Elapsed time: 39.38s
-RPM limit reached, sleeping for 34.71589207649231 seconds
-Requests: 10, Elapsed time: 25.78s
-ChildOptions: 2
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
-GMAT Verbal, Error: message received for parentChildQuestion(generate_childOptions) is: 
-None
- Error: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-RPM limit reached, sleeping for 48.02196717262268 seconds
-Requests: 10, Elapsed time: 12.48s
-RPM limit reached, sleeping for 31.92228627204895 seconds
-Requests: 10, Elapsed time: 28.58s
-GMAT paper saved successfully: papers/GMAT/GMAT_paper-06-06-17-20-difficulty-4.json
-sectionNumber: section0
-sectionNumber: section0
-sectionNumber: section0
-GMAT questions registered in database successfully
-GMAT paper generation completed successfully
-Sleeping for 60 seconds for API rate limit reset
-Starting GRE paper generation - Difficulty: 4
-GRE Quants, Error: message received for questionText is: 
-{"question": "Consider two baskets of fruit. Basket A contains 3 succulent red apples, 4 vibrant green pears, and 3 sweet blue plums, for a total of 10 pieces of fruit. Basket B contains 2 red apples, 3 green pears, and 5 blue plums, totaling 10 pieces of fruit. A single piece of fruit is randomly selected from Basket A and placed into Basket B. Subsequently, a single piece of fruit is randomly selected from Basket B. If it is known that the fruit initially selected from Basket A was not a blue plum, what is the probability that the fruit subsequently selected from Basket B is a green pear?"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for parentChildQuestion(generate_parentTitle) is: 
-{"title": "Trends in Speculative Technological Development: Patents and Usage"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for questionText is: 
-{"question": "Consider two distinct baskets of fruit. Basket A contains 3 succulent red apples, 4 vibrant green pears, and 3 sweet blue plums, aggregating to 10 pieces of fruit. Basket B contains 2 red apples, 3 green pears, and 5 blue plums, also totaling 10 pieces of fruit. A single piece of fruit is randomly withdrawn from Basket A and transferred into Basket B. Consequent to this transfer, a single piece of fruit is randomly drawn from Basket B. Given the condition that the fruit initially selected from Basket A was indisputably not a blue plum, determine the probability that the fruit subsequently chosen from Basket B is a green pear."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-GRE Quants, Error: message received for questionText is: 
-{"question": "Consider two distinct containers holding fruit. Container P contains 3 red apples, 4 green pears, and 3 blue plums, aggregating to 10 items. Container Q contains 2 red apples, 3 green pears, and 5 blue plums, totaling 10 items. A single item is randomly moved from Container P to Container Q. Following this transfer, an item is randomly selected from Container Q. If it is known that the item moved from Container P was indisputably not a blue plum, what is the probability that the item subsequently selected from Container Q is a green pear?"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-GRE Quants, Error: message received for questionTitle is: 
-{"title": "Conditional Probability of Fruit Selection After Transfer"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for questionTitle is: 
-{"title": "Probability of Selecting a Green Pear from a Modified Basket Given Initial Transfer Condition"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-GRE Quants, Error: message received for questionTitle is: 
-{"title": "Conditional Probability of Fruit Selection from Second Container After Transfer Based on Initial Selection Type"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-Error in refining response: Expecting ',' delimiter: line 2 column 936 (char 937)
-Error in attempt 1: 'str' object has no attribute 'content'
-Error in refining response: Expecting ',' delimiter: line 2 column 958 (char 959)
-Error in attempt 2: 'str' object has no attribute 'content'
-GRE Quants, Error: message received for questionSolution is: 
-{"solution": "Let P be Container P and Q be Container Q.\nInitial contents of P: 3 Red Apples (A), 4 Green Pears (P), 3 Blue Plums (L). Total = 10.\nInitial contents of Q: 2 Red Apples (A), 3 Green Pears (P), 5 Blue Plums (L). Total = 10.\n\nAn item is moved from P to Q. The condition is that the moved item is NOT a blue plum.\nLet M be the event that the moved item from P is not a blue plum.\nThis means the moved item is either a red apple or a green pear.\n\nThe items in P that are not blue plums are the 3 apples and 4 pears, totaling 7 items.\nThe total number of items in P is 10.\n\nWe are interested in the probability of selecting a green pear from Q *given* that the item moved from P was not a blue plum. We can use the Law of Total Probability conditioned on the type of non-plum fruit moved from P.\n\nCase 1: An apple is moved from P to Q (given it's not a plum).\nProbability of moving an apple from P, given it's not a plum: P(Apple from P | Not Plum from P) = (Number of apples in P) / (Number of non-plums in P) = 3 / (3 + 4) = 3/7.\nIf an apple is moved to Q, the contents of Q become: 2+1 = 3 A, 3 P, 5 L. Total = 11.\nThe probability of selecting a green pear from Q in this case is (Number of pears in Q) / (Total items in Q) = 3 / 11.\n\nCase 2: A pear is moved from P to Q (given it's not a plum).\nProbability of moving a pear from P, given it's not a plum: P(Pear from P | Not Plum from P) = (Number of pears in P) / (Number of non-plums in P) = 4 / (3 + 4) = 4/7.\nIf a pear is moved to Q, the contents of Q become: 2 A, 3+1 = 4 P, 5 L. Total = 11.\nThe probability of selecting a green pear from Q in this case is (Number of pears in Q) / (Total items in Q) = 4 / 11.\n\nNow, apply the Law of Total Probability:\nP(Pear from Q | Not Plum from P) = P(Pear from Q | Apple moved from P) * P(Apple moved from P | Not Plum from P) + P(Pear from Q | Pear moved from P) * P(Pear moved from P | Not Plum from P)\nP(Pear from Q | Not Plum from P) = (3/11) * (3/7) + (4/11) * (4/7)\nP(Pear from Q | Not Plum from P) = 9/77 + 16/77\nP(Pear from Q | Not Plum from P) = (9 + 16) / 77\nP(Pear from Q | Not Plum from P) = 25/77\n\nTo get the answer as a floating point number rounded to 2 decimal places:\n25 / 77 `is approx` 0.324675...\nRounding to two decimal places gives 0.32.\n", "answer": 0.32}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 1: 'str' object has no attribute 'content'
-RPM limit reached, sleeping for 10.43013620376587 seconds
-Requests: 10, Elapsed time: 50.07s
-RPM limit reached, sleeping for 8.382696866989136 seconds
-Requests: 10, Elapsed time: 52.12s
-RPM limit reached, sleeping for 7.626297950744629 seconds
-Requests: 10, Elapsed time: 52.87s
-RPM limit reached, sleeping for 6.272391080856323 seconds
-Requests: 10, Elapsed time: 54.23s
-GRE Quants, Error: message received for questionSolution is: 
-{"solution": "Let P represent Container P and Q represent Container Q.\nInitial contents of P: 3 Red Apples (A), 4 Green Pears (P), 3 Blue Plums (L). Total = 10.\nInitial contents of Q: 2 Red Apples (A), 3 Green Pears (P), 5 Blue Plums (L). Total = 10.\n\nAn item is transferred from P to Q. The problem states that the transferred item is *not* a blue plum. This means the item moved was either a red apple or a green pear.\n\nThe items in P that are not blue plums are the 3 apples and 4 pears, a total of 7 items.\n\nWe need to find the probability of selecting a green pear from Q *given* that the item moved from P was not a blue plum. We can consider two cases based on what non-plum fruit was moved from P:\n\nCase 1: A red apple was moved from P to Q.\nGiven the moved item is not a plum, the probability that it was a red apple is the number of red apples in P divided by the total number of non-plums in P: P(Apple from P | Not Plum from P) = 3 / (3 + 4) = 3/7.\nIf a red apple is moved, the contents of Q become: 2 + 1 = 3 Apples, 3 Pears, 5 Plums. The total number of items in Q is now 11.\nThe probability of selecting a green pear from Q in this state is the number of green pears in Q divided by the total items in Q: P(Pear from Q | Apple moved from P) = 3 / 11.\n\nCase 2: A green pear was moved from P to Q.\nGiven the moved item is not a plum, the probability that it was a green pear is the number of green pears in P divided by the total number of non-plums in P: P(Pear from P | Not Plum from P) = 4 / (3 + 4) = 4/7.\nIf a green pear is moved, the contents of Q become: 2 Apples, 3 + 1 = 4 Pears, 5 Plums. The total number of items in Q is now 11.\nThe probability of selecting a green pear from Q in this state is the number of green pears in Q divided by the total items in Q: P(Pear from Q | Pear moved from P) = 4 / 11.\n\nUsing the Law of Total Probability, the total probability of selecting a green pear from Q, given the moved item was not a plum, is the sum of the probabilities of selecting a pear from Q in each case, weighted by the probability of that case occurring:\nP(Pear from Q | Not Plum from P) = P(Pear from Q | Apple moved) * P(Apple moved | Not Plum) + P(Pear from Q | Pear moved) * P(Pear moved | Not Plum)\nP(Pear from Q | Not Plum from P) = (3/11) * (3/7) + (4/11) * (4/7)\nP(Pear from Q | Not Plum from P) = 9/77 + 16/77\nP(Pear from Q | Not Plum from P) = (9 + 16) / 77\nP(Pear from Q | Not Plum from P) = 25/77\n\nTo express this as a decimal rounded to 2 decimal places:\n25 \\ 77 `is approximately` 0.324675...\nRounding to two decimal places gives 0.32.\n", "answer": 0.32}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-GRE Quants, Error: message received for questionSolution is: 
-{"solution": "Let P denote Container P and Q denote Container Q.\\nInitially, Container P contains: 3 Red Apples (A), 4 Green Pears (P), 3 Blue Plums (L). Total items = 10.\\nInitially, Container Q contains: 2 Red Apples (A), 3 Green Pears (P), 5 Blue Plums (L). Total items = 10.\\n\\nA single item is moved from P to Q. The condition given is that the item moved from P was NOT a blue plum.\\nThis means the moved item was either a red apple or a green pear.\\n\nThe items in P that are not blue plums are the 3 red apples and 4 green pears, totaling 7 items.\\n\nWe want to find the probability that the item subsequently selected from Q is a green pear, given that the item moved from P was not a blue plum. We consider the two possibilities for the item moved from P (given it's not a plum):\\n\\nCase 1: A red apple was moved from P to Q.\\nThe probability of moving a red apple from P, given that the moved item is not a plum, is the number of red apples in P divided by the total number of non-plums in P: P(Apple moved | Not Plum moved) = 3 / (3 + 4) = 3/7.\\nAfter moving a red apple, Container Q contains: 2 + 1 = 3 Apples, 3 Pears, 5 Plums. Total items in Q = 11.\\nThe probability of selecting a green pear from Q in this state is: P(Pear from Q | Apple moved) = (Number of Pears in Q) / (Total items in Q) = 3 / 11.\\n\\nCase 2: A green pear was moved from P to Q.\\nThe probability of moving a green pear from P, given that the moved item is not a plum, is the number of green pears in P divided by the total number of non-plums in P: P(Pear moved | Not Plum moved) = 4 / (3 + 4) = 4/7.\\nAfter moving a green pear, Container Q contains: 2 Apples, 3 + 1 = 4 Pears, 5 Plums. Total items in Q = 11.\\nThe probability of selecting a green pear from Q in this state is: P(Pear from Q | Pear moved) = (Number of Pears in Q) / (Total items in Q) = 4 / 11.\\n\nUsing the Law of Total Probability, the overall probability of selecting a green pear from Q, given that the item moved from P was not a plum, is the sum of the probabilities of selecting a pear in each case, weighted by the probability of that case occurring:\\nP(Pear from Q | Not Plum moved) = P(Pear from Q | Apple moved) * P(Apple moved | Not Plum moved) + P(Pear from Q | Pear moved) * P(Pear moved | Not Plum moved)\\nP(Pear from Q | Not Plum moved) = (3/11) * (3/7) + (4/11) * (4/7)\\nP(Pear from Q | Not Plum moved) = 9/77 + 16/77\\nP(Pear from Q | Not Plum moved) = (9 + 16) / 77\\nP(Pear from Q | Not Plum moved) = 25/77\\n\nTo convert this fraction to a decimal rounded to two decimal places:\\n25 \\ 77 `is approximately` 0.324675...\\nRounding to two decimal places gives 0.32.\\n", "answer": 0.32}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-
-Attempt 1 failed:
-Error type: TypeError
-Error message: cannot unpack non-iterable NoneType object
-Generator class: NumericEntryQuestionGeneration
-Traceback:
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 143, in generate_question_with_retry
-    question_data = question_generator.generate_question()
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Quants/files/numericEntryQuestionGeneration.py", line 31, in generate_question
-    self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution(isNE = True)
-                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Quants/files/questionComponents.py", line 384, in generate_questionSolution
-    result_solution, result_answer = self._retry_generate(_generate)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Attempt 1 failed, retrying: cannot unpack non-iterable NoneType object
-Prompt: <probability>- <difficulty-level: 3>
-
-
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 2: 'str' object has no attribute 'content'
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 3: 'str' object has no attribute 'content'
-All attempts failed. Last error: 'str' object has no attribute 'content'
-GRE Quants, Error: message received for questionText is: 
-{"question": "A large basket contains a heterogeneous assortment of fruits, specifically 10 crisp apples, 8 ripe bananas, and 12 sweet cherries. If four fruits are procured without replacement from this collection, what is the likelihood, expressed as a decimal fraction, that the selected quartet comprises a minimum of two apples whilst concurrently not exceeding a singular banana?"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for parentChildQuestion(generate_parentTitle) is: 
-{"title": "Environmental Impact and Recycling Efforts"}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for questionText is: 
-`{"question": "A capacious receptacle contains a varied collection of produce: precisely 10 crimson apples, 8 golden bananas, and 12 ruby cherries. If a random selection of four items is drawn sequentially, without replacement, from this assembly, what is the probability, articulated as a decimal value rounded to the nearest hundredth, that the aggregate comprises no fewer than two apples and no more than a single banana?"}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 1: 'str' object has no attribute 'content'
-GRE Quants, Error: message received for questionText is: 
-`{"question": "Within a sizable and varied inventory are housed 30 individual fruits, precisely comprising 10 crimson apples, 8 sun-kissed bananas, and 12 ruby cherries. If a set of four fruits is chosen at random from this inventory in succession, without the process of replacement, calculate the numerical probability, presented as a decimal fraction rounded to the nearest hundredth, that this resultant group of four fruits includes a minimum complement of two apples and concurrently consists of no more than a single banana."}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-GRE Quants, Error: message received for questionTitle is: 
-`{"title": "Probability of selecting four fruits with minimum apple and maximum banana constraints."}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 2: 'str' object has no attribute 'content'
-GRE Quants, Error: message received for questionTitle is: 
-`{"title": "Determine the probability of selecting four fruits with specific minimum apple and maximum banana counts."}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 3: 'str' object has no attribute 'content'
-All attempts failed. Last error: 'str' object has no attribute 'content'
-GRE Quants, Error: message received for questionTitle is: 
-`{"title": "Calculate the probability of drawing four fruits meeting criteria for apple and banana counts."}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-RPM limit reached, sleeping for 19.010130405426025 seconds
-Requests: 10, Elapsed time: 41.49s
-ChildSolution: 1
-failed in generating response by self.llm.invoke
-400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting', 'status': 'INVALID_ARGUMENT'}}
-GRE Quants, Error: message received for questionText is: 
-{"question": "Three seasoned contractors, Mr. Henderson, Ms. Evans, and Mr. Davies, are tasked with completing a complex building renovation project. Working alone, Mr. Henderson can complete the entire renovation in 20 days. Ms. Evans, a specialist in interior finishing, can complete the same project in 30 days working alone. Mr. Davies, focusing primarily on structural modifications, can complete the project in 60 days by himself. They begin working together, but after 5 days, Mr. Davies is called away for another urgent assignment and leaves the project. Mr. Henderson and Ms. Evans continue working together until the project is fully completed. Assuming they maintain their individual constant work rates throughout, how many total days did it take from the beginning for the renovation project to be completed? Express your answer as a decimal to two decimal places."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-RPM limit reached, sleeping for 12.245352268218994 seconds
-Requests: 10, Elapsed time: 48.25s
-GRE Quants, Error: message received for questionText is: 
-{"question": "Three seasoned contractors, Mr. Henderson, Ms. Evans, and Mr. Davies, are tasked with completing a complex building renovation project. Working alone, Mr. Henderson can complete the entire renovation in 20 days. Ms. Evans, a specialist in interior finishing, can complete the same project in 30 days working alone. Mr. Davies, focusing primarily on structural modifications, can complete the project in 60 days by himself. They begin working together, but after 5 days, Mr. Davies is called away for another urgent assignment and leaves the project. Mr. Henderson and Ms. Evans continue working together until the project is fully completed. Assuming they maintain their individual constant work rates throughout, how many total days did it take from the beginning for the renovation project to be completed? Express your answer as a decimal to two decimal places."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-RPM limit reached, sleeping for 11.88059687614441 seconds
-Requests: 10, Elapsed time: 48.62s
-GRE Quants, Error: message received for questionSolution is: 
-`{
-	"solution": "Let A be the number of apples, B the number of bananas, and C the number of cherries selected. The total number of fruits is 10 apples + 8 bananas + 12 cherries = 30. We are selecting 4 fruits without replacement.\\n\\nFirst, calculate the total number of ways to choose 4 fruits from the 30 available fruits. This is given by the combination formula C(n, k) = n! / (k! * (n-k)!):\\nTotal ways = C(30, 4) = `(30 * 29 * 28 * 27) / (4 * 3 * 2 * 1)` = `(30/6) * (28/4) * 29 * 27 / 1` = `5 * 7 * 29 * 27` = `35 * 783` = 27405.\\n\\nNext, identify the combinations of fruits (A, B, C) that satisfy the conditions: A + B + C = 4, A `ge` 2 (minimum 2 apples), and B `le` 1 (no more than 1 banana). The possible combinations (A, B, C) are:\\n\\nCase 1: B = 0 (No bananas)\\nSince A + C = 4 and A `ge` 2, the possibilities are (A, C): (2, 2), (3, 1), (4, 0).\\n\\nCase 2: B = 1 (Exactly one banana)\\nSince A + 1 + C = 4, A + C = 3, and A `ge` 2, the possibilities are (A, C): (2, 1), (3, 0).\\n\\nNow, calculate the number of ways for each valid combination:\\n\\nCase 1.1: 2 Apples, 0 Bananas, 2 Cherries\\nWays = C(10, 2) * C(8, 0) * C(12, 2) = `(10*9)/(2*1)` * 1 * `(12*11)/(2*1)` = 45 * 1 * 66 = 2970.\\n\\nCase 1.2: 3 Apples, 0 Bananas, 1 Cherry\\nWays = C(10, 3) * C(8, 0) * C(12, 1) = `(10*9*8)/(3*2*1)` * 1 * 12 = 120 * 1 * 12 = 1440.\\n\\nCase 1.3: 4 Apples, 0 Bananas, 0 Cherries\\nWays = C(10, 4) * C(8, 0) * C(12, 0) = `(10*9*8*7)/(4*3*2*1)` * 1 * 1 = 210 * 1 * 1 = 210.\\n\\nCase 2.1: 2 Apples, 1 Banana, 1 Cherry\\nWays = C(10, 2) * C(8, 1) * C(12, 1) = 45 * 8 * 12 = 4320.\\n\\nCase 2.2: 3 Apples, 1 Banana, 0 Cherries\\nWays = C(10, 3) * C(8, 1) * C(12, 0) = 120 * 8 * 1 = 960.\\n\\nTotal number of favorable outcomes is the sum of ways for all valid cases:\\nTotal favorable ways = 2970 + 1440 + 210 + 4320 + 960 = 9900.\\n\\nFinally, calculate the probability:\\nProbability = (Total favorable ways) / (Total ways) = 9900 / 27405.\\n\\nTo express this as a decimal rounded to the nearest hundredth:\\n9900 / 27405 `aprox` 0.361247...\\nRounding to two decimal places, the probability is 0.36.\\n",
-	"answer": 0.36
-}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-RPM limit reached, sleeping for 12.320814847946167 seconds
-Requests: 10, Elapsed time: 48.18s
-Error in refining response: Unterminated string starting at: line 2 column 16 (char 17)
-Error in attempt 1: 'str' object has no attribute 'content'
-GRE Quants, Error: message received for questionSolution is: 
-`{
-	"solution": "Let the total number of fruits be $N = 10$ apples $+ 8$ bananas $+ 12$ cherries $= 30$. We are selecting $k = 4$ fruits without replacement.\\n\\nThe total number of ways to choose 4 fruits from 30 is given by the combination formula $C(n, k) = n! / (k! * (n-k)!)$.\\nTotal ways $= C(30, 4) = \\frac{30!}{4!26!} = \\frac{30 \\times 29 \\times 28 \\times 27}{4 \\times 3 \\times 2 \\times 1} = 27405$.\\n\\nWe need to find the number of ways to select 4 fruits such that there are a minimum of 2 apples ($A \\ge 2$) and no more than 1 banana ($B \\le 1$). The fruits selected must sum up to 4 ($A+B+C=4$). The possible combinations of (Apples, Bananas, Cherries) are:\\n\\nCase 1: $B = 0$ (No bananas)\\n$A + C = 4$ and $A \\ge 2$. Possible (A, C) are (2, 2), (3, 1), (4, 0).\\n\\nSubcase 1.1: 2 Apples, 0 Bananas, 2 Cherries\\nNumber of ways $= C(10, 2) \\times C(8, 0) \\times C(12, 2) = \\frac{10 \\times 9}{2 \\times 1} \\times 1 \\times \\frac{12 \\times 11}{2 \\times 1} = 45 \\times 1 \\times 66 = 2970$.\\n\\nSubcase 1.2: 3 Apples, 0 Bananas, 1 Cherry\\nNumber of ways $= C(10, 3) \\times C(8, 0) \\times C(12, 1) = \\frac{10 \\times 9 \\times 8}{3 \\times 2 \\times 1} \\times 1 \\times 12 = 120 \\times 1 \\times 12 = 1440$.\\n\\nSubcase 1.3: 4 Apples, 0 Bananas, 0 Cherries\\nNumber of ways $= C(10, 4) \\times C(8, 0) \\times C(12, 0) = \\frac{10 \\times 9 \\times 8 \\times 7}{4 \\times 3 \\times 2 \\times 1} \\times 1 \\times 1 = 210 \\times 1 \\times 1 = 210.\\n\\nCase 2: $B = 1$ (Exactly one banana)\\n$A + 1 + C = 4$, so $A + C = 3$, and $A \\ge 2$. Possible (A, C) are (2, 1), (3, 0).\\n\\nSubcase 2.1: 2 Apples, 1 Banana, 1 Cherry\\nNumber of ways $= C(10, 2) \\times C(8, 1) \\times C(12, 1) = 45 \\times 8 \\times 12 = 4320$.\\n\\nSubcase 2.2: 3 Apples, 1 Banana, 0 Cherries\\nNumber of ways $= C(10, 3) \\times C(8, 1) \\times C(12, 0) = 120 \\times 8 \\times 1 = 960.\\n\\nTotal number of favorable outcomes is the sum of the ways for all valid subcases:\\nTotal favorable ways $= 2970 + 1440 + 210 + 4320 + 960 = 9900$.\\n\\nThe probability is the ratio of total favorable ways to the total ways:\\nProbability $= \\frac{\\text{Total favorable ways}}{\\text{Total ways}} = \\frac{9900}{27405}$.\\n\\nTo express this as a decimal rounded to the nearest hundredth:\\n$\\frac{9900}{27405} \\approx 0.361247...$\\nRounding to two decimal places, the probability is $0.36$.\\n",
-	"answer": 0.36
-}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-GRE Quants, Error: message received for questionText is: 
-{"question": "Three skilled artisans, Mr. Thompson, Ms. Rodriguez, and Mr. Chen, are contracted to construct an elaborate mosaic mural. Working independently, Mr. Thompson can complete the entire mural in 28 days. Ms. Rodriguez, a specialist in intricate tile patterns, can complete the same mural in 42 days working alone. Mr. Chen, who focuses on the structural foundation, can complete the project by himself in 84 days. All three commence work on the mural simultaneously. However, after 7 days, Mr. Chen is required to attend to an urgent external matter and leaves the project. Mr. Thompson and Ms. Rodriguez proceed to work together to finish the remaining portion of the mural. Assuming each artisan maintains their consistent individual work rate throughout, what is the total number of days, from the start of the project, that it took to complete the elaborate mosaic mural? Express your answer as a decimal rounded to two decimal places."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-GRE Quants, Error: message received for questionTitle is: 
-{"title": "Total time to complete a project with varying workforce participation."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for questionTitle is: 
-{"title": "Calculating total project duration with partial workforce contribution over time."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 2/ 3
-GRE Quants, Error: message received for questionTitle is: 
-{"title": "Determining total project completion time with changing worker availability."}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-GRE Quants, Error: message received for questionSolution is: 
-{"solution": "Let W be the total work required to complete the mosaic mural. The work rate of an artisan is the fraction of the work completed per day.\n\nMr. Thompson's work rate = 1/28 of the mural per day.\nMs. Rodriguez's work rate = 1/42 of the mural per day.\nMr. Chen's work rate = 1/84 of the mural per day.\n\nFor the first 7 days, all three artisans worked together. Their combined work rate is the sum of their individual rates:\nCombined rate (first 7 days) = (1/28) + (1/42) + (1/84)\nTo sum these fractions, find a common denominator, which is the least common multiple of 28, 42, and 84. LCM(28, 42, 84) = 84.\nCombined rate (first 7 days) = (3/84) + (2/84) + (1/84) = (3 + 2 + 1)/84 = 6/84 = 1/14 of the mural per day.\n\nThe amount of work done in the first 7 days is:\nWork done in 7 days = Combined rate * Time = (1/14) * 7 = 7/14 = 1/2 of the mural.\n\nThe remaining work is:\nRemaining work = Total work - Work done = 1 - 1/2 = 1/2 of the mural.\n\nAfter 7 days, Mr. Chen leaves the project. Mr. Thompson and Ms. Rodriguez continue working together. Their combined work rate is:\nCombined rate (after 7 days) = (1/28) + (1/42)\nUsing the common denominator 84:\nCombined rate (after 7 days) = (3/84) + (2/84) = 5/84 of the mural per day.\n\nThe time taken to complete the remaining 1/2 of the mural by Mr. Thompson and Ms. Rodriguez is:\nTime for remaining work = Remaining work / Combined rate (after 7 days) = (1/2) / (5/84)\nTime for remaining work = (1/2) * (84/5) = 84/10 = 8.4 days.\n\nThe total number of days from the beginning to complete the mural is the sum of the time spent with all three artisans and the time spent with only two:\nTotal time = Time in first period + Time in second period\nTotal time = 7 days + 8.4 days = 15.4 days.\n\nRounding the answer to two decimal places, we get 15.40 days.", "answer": 15.40}
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 1/ 3
-GRE Quants, Error: message received for questionSolution is: 
-`{
-	"solution": "Let the total number of fruits be N = 10 apples + 8 bananas + 12 cherries = 30. We are selecting k = 4 fruits without replacement.\\n\\nThe total number of ways to choose 4 fruits from 30 is given by the combination formula C(n, k) = n! / (k! * (n-k)!).\\nTotal ways = C(30, 4) = `(30 * 29 * 28 * 27) / (4 * 3 * 2 * 1)` = 27405.\\n\\nWe need to find the number of ways to select 4 fruits such that there are a minimum of 2 apples (A `>=` 2) and no more than 1 banana (B `<=` 1). The fruits selected must sum up to 4 (A+B+C=4).\\n\\nWe consider cases based on the number of bananas (B), which must be 0 or 1.\\n\\nCase 1: B = 0 (No bananas)\\nIf B=0, then A+C=4. The condition A `>=` 2 means possible (A, C) combinations are (2, 2), (3, 1), and (4, 0).\\nSubcase 1.1: 2 Apples, 0 Bananas, 2 Cherries\\nNumber of ways = C(10, 2) * C(8, 0) * C(12, 2) = `(10*9)/(2*1)` * 1 * `(12*11)/(2*1)` = 45 * 1 * 66 = 2970.\\nSubcase 1.2: 3 Apples, 0 Bananas, 1 Cherry\\nNumber of ways = C(10, 3) * C(8, 0) * C(12, 1) = `(10*9*8)/(3*2*1)` * 1 * 12 = 120 * 1 * 12 = 1440.\\nSubcase 1.3: 4 Apples, 0 Bananas, 0 Cherries\\nNumber of ways = C(10, 4) * C(8, 0) * C(12, 0) = `(10*9*8*7)/(4*3*2*1)` * 1 * 1 = 210 * 1 * 1 = 210.\\n\\nCase 2: B = 1 (Exactly one banana)\\nIf B=1, then A+1+C=4, so A+C=3. The condition A `>=` 2 means possible (A, C) combinations are (2, 1) and (3, 0).\\nSubcase 2.1: 2 Apples, 1 Banana, 1 Cherry\\nNumber of ways = C(10, 2) * C(8, 1) * C(12, 1) = 45 * 8 * 12 = 4320.\\nSubcase 2.2: 3 Apples, 1 Banana, 0 Cherries\\nNumber of ways = C(10, 3) * C(8, 1) * C(12, 0) = 120 * 8 * 1 = 960.\\n\\nTotal number of favorable outcomes is the sum of the ways for all valid subcases:\\nTotal favorable ways = 2970 + 1440 + 210 + 4320 + 960 = 9900.\\n\\nThe probability is the ratio of total favorable ways to the total ways:\\nProbability = `(Total favorable ways) / (Total ways)` = 9900 / 27405.\\n\\nTo express this as a decimal rounded to the nearest hundredth:\\n9900 / 27405 `aprox` 0.361247...\\nRounding to two decimal places, the probability is 0.36.\\n",
-	"answer": 0.36
-}`
-Error: 'NoneType' object has no attribute 'group'
-
-
-Retrying _generate - attempt 3/ 3
-
-Attempt 2 failed:
-Error type: TypeError
-Error message: cannot unpack non-iterable NoneType object
-Generator class: NumericEntryQuestionGeneration
-Traceback:
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 143, in generate_question_with_retry
-    question_data = question_generator.generate_question()
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Quants/files/numericEntryQuestionGeneration.py", line 31, in generate_question
-    self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution(isNE = True)
-                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Quants/files/questionComponents.py", line 384, in generate_questionSolution
-    result_solution, result_answer = self._retry_generate(_generate)
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Attempt 2 failed, retrying: cannot unpack non-iterable NoneType object
-Prompt: <probability>- <difficulty-level: 3>
-
-
-QuestionSolution, 
-WARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-exp', 'location': 'global'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
-Error in attempt 1: 'NoneType' object is not subscriptable
-RPM limit reached, sleeping for 60.49869108200073 seconds
-Requests: 10, Elapsed time: 0.00s
-GRE Quants, Error: message received for questionSolution is: 
-None
-Error: the JSON object must be str, bytes or bytearray, not NoneType
-
-
-Retrying _generate - attempt 2/ 3
-RPM limit reached, sleeping for 36.884217977523804 seconds
-Requests: 10, Elapsed time: 23.62s
-RPM limit reached, sleeping for 19.948486804962158 seconds
-Requests: 10, Elapsed time: 40.55s
-RPM limit reached, sleeping for 18.923130989074707 seconds
-Requests: 10, Elapsed time: 41.58s
-RPM limit reached, sleeping for 47.66285419464111 seconds
-Requests: 10, Elapsed time: 12.84s
-
-Attempt 1 failed:
-Error type: KeyError
-Error message: 'A'
-Generator class: SimpleQuestionGeneration
-Traceback:
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Mock.py", line 143, in generate_question_with_retry
-    question_data = question_generator.generate_question()
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/tanmaykumar/Desktop/LangChain-py/GRE/Verbal/files/simpleQuestionGeneration.py", line 69, in generate_question
-    answers.append(options[i][ans])
-                   ~~~~~~~~~~^^^^^
-
-Attempt 1 failed, retrying: 'A'
-Prompt: <Philosophy> - <TC-2> - <difficulty-level: 2> - <vocabulary-level:1>
-
-
-QuestionSolution
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '48s'}]}}
-RPM limit reached, sleeping for 30.383240938186646 seconds
-Requests: 10, Elapsed time: 30.12s
-RPM limit reached, sleeping for 29.49352192878723 seconds
-Requests: 10, Elapsed time: 31.01s
-RPM limit reached, sleeping for 41.55672287940979 seconds
-Requests: 10, Elapsed time: 18.94s
-GRE Verbal, error in generate_childSolution: the JSON object must be str, bytes or bytearray, not NoneType
-this is the response that is being captured: None
-🚩 _generate has failed to return response - attempt 1/3
-	Reason: Function returned None
-RPM limit reached, sleeping for 60.49967622756958 seconds
-Requests: 10, Elapsed time: 0.00s
-ChildSolution: 1
-failed in generating response by self.llm.invoke
-429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash-exp', 'location': 'global'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
-GRE Verbal, error in generate_childSolution: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-RPM limit reached, sleeping for 60.49931883811951 seconds
-Requests: 10, Elapsed time: 0.00s
-Error in refining response: Expecting ',' delimiter: line 3 column 1 (char 1356)
-GRE Verbal, error in generate_childSolution: the JSON object must be str, bytes or bytearray, not NoneType
-Retrying _generate - attempt 1/ 3
-GRE paper saved successfully: papers/GRE/GRE_paper-06-06-17-27-difficulty-4.json
-sectionNumber: section1
-sectionNumber: section2
-Error in _register_problem: Unable to match input value to any allowed input type for the field. Parse errors: [`data.title`: A value is required but not set, `data.title`: A value is required but not set]
-
- here is the question content: {
-    "type": "NE",
-    "prompt": "<work and time>- <difficulty-level: 1>",
-    "question": null,
-    "title": null,
-    "solution": "Let the total work required to complete the mosaic mural be represented by 1 unit of work.\n\nThe work rate of Mr. Thompson is the reciprocal of the time he takes to complete the work alone, which is 1/28 units of work per day.\nThe work rate of Ms. Rodriguez is 1/42 units of work per day.\nThe work rate of Mr. Chen is 1/84 units of work per day.\n\nFor the first 7 days, all three artisans worked together. Their combined work rate is the sum of their individual rates:\nCombined rate (first 7 days) = Rate_Thompson + Rate_Rodriguez + Rate_Chen\nCombined rate (first 7 days) = (1/28) + (1/42) + (1/84) units of work per day.\nTo add these fractions, we find a common denominator. The least common multiple of 28, 42, and 84 is 84.\nCombined rate (first 7 days) = (3/84) + (2/84) + (1/84) = (3 + 2 + 1)/84 = 6/84 = 1/14 units of work per day.\n\nThe amount of work completed in the first 7 days is:\nWork done in first 7 days = Combined rate (first 7 days) * Time\nWork done in first 7 days = (1/14 units/day) * 7 days = 7/14 = 1/2 units of work.\n\nThe remaining work to be done is:\nRemaining work = Total work - Work done in first 7 days\nRemaining work = 1 - 1/2 = 1/2 units of work.\n\nAfter 7 days, Mr. Chen leaves the project. Mr. Thompson and Ms. Rodriguez continue working together. Their combined work rate for the remaining work is:\nCombined rate (after 7 days) = Rate_Thompson + Rate_Rodriguez\nCombined rate (after 7 days) = (1/28) + (1/42) units of work per day.\nUsing the common denominator 84:\nCombined rate (after 7 days) = (3/84) + (2/84) = 5/84 units of work per day.\n\nThe time taken to complete the remaining 1/2 unit of work by Mr. Thompson and Ms. Rodriguez is:\nTime for remaining work = Remaining work / Combined rate (after 7 days)\nTime for remaining work = (1/2) / (5/84) days\nTime for remaining work = (1/2) * (84/5) = 84/10 = 8.4 days.\n\nThe total time from the beginning of the project to completion is the sum of the time spent with all three artisans and the time spent with only two:\nTotal time = Time in first 7 days + Time for remaining work\nTotal time = 7 days + 8.4 days = 15.4 days.\n\nExpressing the answer as a decimal rounded to two decimal places, we get 15.40 days.",
-    "answer": 15.4,
-    "tag": [
-        "Numeric Entry",
-        "work and time"
-    ],
-    "difficulty": 1
-}
-Error in registerQuestion: Error registering problem for GRE_Q
-GRE questions registered in database successfully
-GRE paper generation completed successfully
-Updated difficulty to 5, mock: False
+----------------------------------------
 ================================================================================
-PAPER GENERATION SESSION SUMMARY
-GMAT Paper: SUCCESS
-GRE Paper: SUCCESS
-Total Time: 862.31 seconds
 ================================================================================
-Time taken: 862.31 seconds
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
 ================================================================================
-=== Question Generation Session Ended ===
-Timestamp: 2025-06-06 17:27:35
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2113
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
 ================================================================================
+================================================================================
+DETAILED ERROR LOG - GMAT GI questionSolution - JSON parsing failed
+================================================================================
+Error: refine_response returned error: Failed to parse JSON response
+----------------------------------------
+RAW RESPONSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2113
+Expected keys: ['solution', 'answer', 'explanation', 'question']
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2113
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+================================================================================
+REFINED RESPONSE:
+{"error": "Failed to parse JSON response"}
+----------------------------------------
+PARSED JSON KEYS:
+['error']
+PARSED JSON CONTENT:
+  error: Failed to parse JSON response
+================================================================================
+
+Retrying _generate - attempt 1/ 3
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2113
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+================================================================================
+================================================================================
+DETAILED ERROR LOG - GMAT GI questionSolution - JSON parsing failed
+================================================================================
+Error: refine_response returned error: Failed to parse JSON response
+----------------------------------------
+RAW RESPONSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2113
+Expected keys: ['solution', 'answer', 'explanation', 'question']
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2113
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~ thousand USD\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~ thousand USD\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~ thousand USD\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~ thousand USD\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD, while Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+================================================================================
+REFINED RESPONSE:
+{"error": "Failed to parse JSON response"}
+----------------------------------------
+PARSED JSON KEYS:
+['error']
+PARSED JSON CONTENT:
+  error: Failed to parse JSON response
+================================================================================
+
+Retrying _generate - attempt 2/ 3
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 4 (char 5)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+   "solution": "The correct answer is <b>E</b>. <div>The question asks what would weaken the argument that the budget was primarily aimed at quantifiable financial returns. This means we are looking for a statement that suggests the budget was driven by something other than financial returns, or that financial returns were not a primary outcome.</div><div>A) `The "Green Building Upgrades" initiative included the installation of new, highly efficient HVAC systems that are projected to reduce energy costs by 15% annually.` This statement supports the idea of quantifiable financial returns, as it directly links an initiative to cost savings.</div><div>B) `A significant portion of the "Renewable Energy Projects" budget was allocated to installing solar panels on company facilities, leading to a measurable reduction in electricity bills.` This statement also supports the idea of quantifiable financial returns through reduced operational costs.</div><div>C) `The "Waste Reduction Programs" focused on optimizing manufacturing processes, which led to a 10% decrease in raw material consumption and associated purchasing costs.` This statement directly indicates financial savings and thus supports the argument.</div><div>D) `An internal report indicated that increased customer preference for environmentally responsible companies led to a 3% revenue increase, partly attributable to Company X`s sustainability efforts.` While this is a financial return, it`s revenue-based and external, and doesn`t necessarily contradict the idea that internal cost savings were a primary aim. However, it still points to financial motivation.</div><div>E) `The primary driver for allocating funds to 'Community Engagement & Education' was to improve local community relations, with no direct financial benefit or cost reduction projected for the company.` This statement directly undermines the idea that the budget was *primarily* aimed at *quantifiable financial returns*. It highlights an initiative (10% of the budget) that was undertaken for a non-financial reason (community relations), without projected financial benefits, thus weakening the argument that financial returns were the *primary* aim across the board.</div>"
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2227
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+   "solution": "The correct answer is <b>E</b>. <div>The question asks what would weaken the argument that the budget was primarily aimed at quantifiable financial returns. This means we are looking for a statement that suggests the budget was driven by something other than financial returns, or that financial returns were not a primary outcome.</div><div>A) `The "Green Building Upgrades" initiative included the installation of new, highly efficient HVAC systems that are projected to reduce energy costs by 15% annually.` This statement supports the idea of quantifiable financial returns, as it directly links an initiative to cost savings.</div><div>B) `A significant portion of the "Renewable Energy Projects" budget was allocated to installing solar panels on company facilities, leading to a measurable reduction in electricity bills.` This statement also supports the idea of quantifiable financial returns through reduced operational costs.</div><div>C) `The "Waste Reduction Programs" focused on optimizing manufacturing processes, which led to a 10% decrease in raw material consumption and associated purchasing costs.` This statement directly indicates financial savings and thus supports the argument.</div><div>D) `An internal report indicated that increased customer preference for environmentally responsible companies led to a 3% revenue increase, partly attributable to Company X`s sustainability efforts.` While this is a financial return, it`s revenue-based and external, and doesn`t necessarily contradict the idea that internal cost savings were a primary aim. However, it still points to financial motivation.</div><div>E) `The primary driver for allocating funds to 'Community Engagement & Education' was to improve local community relations, with no direct financial benefit or cost reduction projected for the company.` This statement directly undermines the idea that the budget was *primarily* aimed at *quantifiable financial returns*. It highlights an initiative (10% of the budget) that was undertaken for a non-financial reason (community relations), without projected financial benefits, thus weakening the argument that financial returns were the *primary* aim across the board.</div>"
+}
+----------------------------------------
+================================================================================
+GMAT TPA, Error: message received for QuestionSolution is: 
+{
+   "solution": "The correct answer is <b>E</b>. <div>The question asks what would weaken the argument that the budget was primarily aimed at quantifiable financial returns. This means we are looking for a statement that suggests the budget was driven by something other than financial returns, or that financial returns were not a primary outcome.</div><div>A) `The "Green Building Upgrades" initiative included the installation of new, highly efficient HVAC systems that are projected to reduce energy costs by 15% annually.` This statement supports the idea of quantifiable financial returns, as it directly links an initiative to cost savings.</div><div>B) `A significant portion of the "Renewable Energy Projects" budget was allocated to installing solar panels on company facilities, leading to a measurable reduction in electricity bills.` This statement also supports the idea of quantifiable financial returns through reduced operational costs.</div><div>C) `The "Waste Reduction Programs" focused on optimizing manufacturing processes, which led to a 10% decrease in raw material consumption and associated purchasing costs.` This statement directly indicates financial savings and thus supports the argument.</div><div>D) `An internal report indicated that increased customer preference for environmentally responsible companies led to a 3% revenue increase, partly attributable to Company X`s sustainability efforts.` While this is a financial return, it`s revenue-based and external, and doesn`t necessarily contradict the idea that internal cost savings were a primary aim. However, it still points to financial motivation.</div><div>E) `The primary driver for allocating funds to 'Community Engagement & Education' was to improve local community relations, with no direct financial benefit or cost reduction projected for the company.` This statement directly undermines the idea that the budget was *primarily* aimed at *quantifiable financial returns*. It highlights an initiative (10% of the budget) that was undertaken for a non-financial reason (community relations), without projected financial benefits, thus weakening the argument that financial returns were the *primary* aim across the board.</div>"
+}
+Error: 'solution'
+
+
+Retrying _generate - attempt 1/ 3
+Rate limit safety: waiting 19.8s (requests: 9, elapsed: 41.2s)
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD.\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2069
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD.\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+================================================================================
+================================================================================
+DETAILED ERROR LOG - GMAT GI questionSolution - JSON parsing failed
+================================================================================
+Error: refine_response returned error: Failed to parse JSON response
+----------------------------------------
+RAW RESPONSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD.\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2069
+Expected keys: ['solution', 'answer', 'explanation', 'question']
+================================================================================
+REFINE_RESPONSE FAILURE - DETAILED ERROR LOG
+================================================================================
+Error in refining response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)
+----------------------------------------
+ORIGINAL RESPONSE TEXT:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD.\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+Response type: <class 'str'>
+Response length: 2069
+----------------------------------------
+PROCESSED TEXT BEFORE FINAL JSON PARSE:
+{
+  "solution": "To determine the total sales revenue generated by Social Media and Email Campaigns combined from January to June:\n\n**Step 1: Calculate the total sales revenue for Social Media from January to June.**\nSales (in thousands of USD) for Social Media:\nJanuary: ~~150~~\nFebruary: ~~175~~\nMarch: ~~190~~\nApril: ~~180~~\nMay: ~~210~~\nJune: ~~230~~\n\n~~\\text{Total Social Media Sales} = 150 + 175 + 190 + 180 + 210 + 230 = 1135~~\n\n**Step 2: Calculate the total sales revenue for Email Campaigns from January to June.**\nSales (in thousands of USD) for Email Campaigns:\nJanuary: ~~120~~\nFebruary: ~~135~~\nMarch: ~~150~~\nApril: ~~165~~\nMay: ~~180~~\nJune: ~~195~~\n\n~~\\text{Total Email Campaigns Sales} = 120 + 135 + 150 + 165 + 180 + 195 = 945~~\n\n**Step 3: Sum the total sales for Social Media and Email Campaigns.**\n~~\\text{Combined Total Sales} = \\text{Total Social Media Sales} + \\text{Total Email Campaigns Sales} = 1135 + 945 = 2080~~\n\nTherefore, the total sales revenue generated by Social Media and Email Campaigns combined from January to June was approximately ~~2080~~ thousand USD.\n\nTo determine the percentage of total sales revenue accounted for by Direct Sales across all channels in June:\n\n**Step 4: Identify the sales revenue for each channel in June.**\nSocial Media: ~~230~~\nEmail Campaigns: ~~195~~\nSearch Engine Ads: ~~165~~\nDirect Sales: ~~105~~\n\n**Step 5: Calculate the total sales revenue across all channels in June.**\n~~\\text{Total Sales in June} = 230 + 195 + 165 + 105 = 695~~\n\n**Step 6: Calculate the percentage of Direct Sales relative to the total sales in June.**\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{\\text{Direct Sales in June}}{\\text{Total Sales in June}}\\right) \\times 100 \\%~~\n~~\\text{Percentage of Direct Sales in June} = \\left(\\frac{105}{695}\\right) \\times 100 \\% \\approx 0.151079 \\times 100 \\% \\approx 15.11\\%~~\n\nTherefore, Direct Sales accounted for approximately ~~15.11~~ percent of the total sales revenue across all channels in June."
+}
+----------------------------------------
+================================================================================
+REFINED RESPONSE:
+{"error": "Failed to parse JSON response"}
+----------------------------------------
+PARSED JSON KEYS:
+['error']
+PARSED JSON CONTENT:
+  error: Failed to parse JSON response
+================================================================================
+
+Retrying _generate - attempt 3/ 3
+Rate limit safety: waiting 13.6s (requests: 9, elapsed: 47.4s)
+Traceback (most recent call last):
+  File "/Users/tanmaykumar/Desktop/LangChain-py/main.py", line 131, in <module>
+    main.generate_paper()
+  File "/Users/tanmaykumar/Desktop/LangChain-py/main.py", line 44, in generate_paper
+    GMAT_paper = gmat_mock.generate(8)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GMAT/Mock.py", line 214, in generate
+    manager.add_task(create_task, method, section, prompt, gen_class)
+  File "/Users/tanmaykumar/Desktop/LangChain-py/GMAT/Mock.py", line 99, in add_task
+    time.sleep(0.5) # check on every half second if it is done or not.
+    ^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py'>
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1553, in _shutdown
+    atexit_call()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 31, in _python_exit
+    t.join()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1112, in join
+    self._wait_for_tstate_lock()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1132, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: 

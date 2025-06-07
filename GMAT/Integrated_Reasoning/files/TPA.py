@@ -50,19 +50,34 @@ class Generate_TPA:
 
         # region generating child questions
         questions = tpa.generate_QuestionText([d1, d2])
+        if not questions or len(questions) < 2:
+            print("Error: Failed to generate questions or insufficient questions returned")
+            return None
+        
         q1 = {}
         q2 = {}
         q1["question"] = questions[0]
         q2["question"] = questions[1]
 
         solutions = tpa.generate_QuestionSolution()
+        if not solutions or len(solutions) < 2:
+            print("Error: Failed to generate solutions or insufficient solutions returned")
+            return None
         q1["solution"] = solutions[0]
         q2["solution"] = solutions[1]
         common_options, answers = tpa.generate_QuestionOptions()
-        ans1 = common_options[answers["question1"]]
-        ans2 = common_options[answers["question2"]]
-        q1["answer"] = ans1
-        q2["answer"] = ans2
+        if not common_options or not answers:
+            print("Error: Failed to generate options or answers")
+            return None
+        
+        try:
+            ans1 = common_options[answers["question1"]]
+            ans2 = common_options[answers["question2"]]
+            q1["answer"] = ans1
+            q2["answer"] = ans2
+        except (KeyError, TypeError) as e:
+            print(f"Error: Invalid options or answers structure: {e}")
+            return None
 
         title = tpa.generate_QuestionTitle()
         self.questionData["title"] = title or "Two Part Analysis Question"

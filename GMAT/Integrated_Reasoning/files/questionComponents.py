@@ -9,93 +9,192 @@ def refine_response(response_text):
     """
     refines json responses, wrapped in json```{block}``` and  properly handles with new line inside the values and keys.
     """
-    def remove_tailing_commas(string):
-        # remove tailing commas
-        # }, -> } ; ], -> ]
-        string = re.sub(r',(\s*})', r'\1', string)
-        string = re.sub(r',(\s*])', r'\1', string)
-        # {' -> {" ; [' -> [" ; '} -> "} ; '] -> "] ; '\s*: -> "\s*:
-        string = re.sub(r"(\[\s*)'", r'\1"', string)
-        string = re.sub(r"(\{\s*)'", r'\1"', string)
-        string = re.sub(r"'(\s*\])", r'"\1', string)
-        string = re.sub(r"'(\s*\})", r'"\1', string)
-        string = re.sub(r"'(\s*:)", r'"\1', string)
+    if not response_text or response_text.strip() == "":
+        print("Warning: Empty response received")
+        return '{"error": "Empty response received"}'
 
-        # if not enclosed in double quotes
-        # *'\s*, -> *"\s*, ;  ,\s*'* -> ,\s*"* ;
-        string = re.sub(r"([a-zA-Z0-9\s!.`]\s*)'(\s*,)", r'\1"\2', string)
-        string = re.sub(r"(,\s*)'(\s*[a-zA-Z0-9])", r'\1"\2', string)
-        return string
+    def clean_json_string(text, response_text):
+        """Clean JSON string to fix common formatting issues"""
+        # Remove any leading/trailing whitespace and non-JSON content
+        text = text.strip()
 
-    def preprocessing_string(match):
-        value = match.group(0)
-        value = value.replace("\n", "<br>")
-        value = value.replace("\t", "<t>")
-        value = value.replace("\f", "<f>")
-        value = value.replace("\\f", "<f>")
-        value = value.replace("\\t", "<t>")
-        value = value.replace("\i", "<i>")
-        value = value.replace("\s", "<s>")
-        value = value.replace("\pi", "<pi>")
-        value = re.sub(r"\\(.)", r"\\\\\1", value)
-        return value
+        # Remove any markdown code block indicators
+        text = re.sub(r'^```json\s*', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^```\s*$', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^```', '', text, flags=re.MULTILINE)
 
-    def postprocessing_string(json_data):
-        for key, value in json_data.items():
-            if isinstance(value, str):
-                json_data[key] = value.replace("<br>", "\n")
-                json_data[key] = json_data[key].replace("<t>", "\\t")
-                json_data[key] = json_data[key].replace("<f>", "\\f")
-                json_data[key] = json_data[key].replace("<i>", "\\i")
-                json_data[key] = json_data[key].replace("<s>", "\\s")
-                json_data[key] = json_data[key].replace("<pi>", "\\pi")
-        return json.dumps(json_data)
+        # Normalize whitespace by joining all lines
+        lines = text.split('\n')
+        cleaned_text = ''
+        for line in lines:
+            cleaned_line = line.strip()
+            if cleaned_line:
+                cleaned_text += cleaned_line + ' '
 
-    if not response_text:
-        return response_text
+        cleaned_text = cleaned_text.strip()
 
-    pattern = r'"(.*?)"'
-    new_text = re.search(r"```json\n(.*?)```",
-                         response_text, re.DOTALL).group(1)
-    key_and_values = re.findall(pattern, new_text, re.DOTALL)
+        # Try to parse the cleaned JSON
+        try:
+            json.loads(cleaned_text)
+            return cleaned_text
+        except json.JSONDecodeError:
+            print(
+                f"Failed because we received this cleaned_text: \n{cleaned_text}\nAnd this was the json error message: \n{e}")
+            print(f"this was the original text: \n{response_text}\n")
+            return None
 
-    for key_and_value in key_and_values:
-        if "\n" in key_and_value:
-            proper_key_and_value = key_and_value.replace("\n", "\\n")
-            new_text = new_text.replace(
-                f'"{key_and_value}"', f'"{proper_key_and_value}"')
+    def fix_br_tags_in_json(json_string):
+        """Parse JSON and fix <br> tags to proper newlines"""
+        try:
+            # Parse the JSON
+            data = json.loads(json_string)
+
+            # Recursively fix <br> tags in all string values
+            def fix_br_recursive(obj):
+                if isinstance(obj, dict):
+                    for key, value in obj.items():
+                        obj[key] = fix_br_recursive(value)
+                elif isinstance(obj, list):
+                    for i, item in enumerate(obj):
+                        obj[i] = fix_br_recursive(item)
+                elif isinstance(obj, str):
+                    # Replace <br> with actual newlines
+                    obj = obj.replace('<br>', '\n')
+                return obj
+
+            # Fix the data and return as formatted JSON
+            fixed_data = fix_br_recursive(data)
+            return json.dumps(fixed_data, indent=2)
+
+        except json.JSONDecodeError:
+            return json_string
+        except Exception:
+            return json_string
+
+    # Extract JSON from various formats
+    new_text = None
+
+    # Pattern 1: ```json\n...\n```
+    markdown_match = re.search(
+        r"```json\s*\n(.*?)\n\s*```", response_text, re.DOTALL)
+    if markdown_match:
+        try:
+            group_text = markdown_match.group(1)
+            if group_text and group_text.strip():
+                new_text = group_text.strip()
+        except (IndexError, AttributeError):
+            pass
+
+    # Pattern 2: ```\n{...}\n```
+    if not new_text:
+        json_block_match = re.search(
+            r"```\s*\n(\{.*?\})\n\s*```", response_text, re.DOTALL)
+        if json_block_match:
+            try:
+                group_text = json_block_match.group(1)
+                if group_text and group_text.strip():
+                    new_text = group_text.strip()
+            except (IndexError, AttributeError):
+                pass
+
+    # Pattern 3: Look for JSON object starting with { - use balanced brace matching
+    if not new_text:
+        # Find the first opening brace
+        start_pos = response_text.find('{')
+        if start_pos != -1:
+            # Count braces to find the matching closing brace
+            brace_count = 0
+            end_pos = start_pos
+            for i, char in enumerate(response_text[start_pos:], start_pos):
+                if char == '{':
+                    brace_count += 1
+                elif char == '}':
+                    brace_count -= 1
+                    if brace_count == 0:
+                        end_pos = i
+                        break
+            
+            if brace_count == 0:  # Found matching brace
+                try:
+                    group_text = response_text[start_pos:end_pos + 1]
+                    if group_text and group_text.strip():
+                        new_text = group_text.strip()
+                except Exception:
+                    pass
+
+    # Fallback: assume entire response is JSON
+    if not new_text:
+        new_text = response_text.strip()
+
+    # Clean the JSON string
+    new_text = clean_json_string(new_text, response_text)
+
+    if new_text is None:
+        return '{"error": "Failed to parse JSON response: becuase clean_json_string received incomplete JSON text"}'
+
+    # Fix <br> tags to proper newlines
+    new_text = fix_br_tags_in_json(new_text)
+
+    # Final validation and formatting
     try:
         data = json.loads(new_text)
         return json.dumps(data, indent=2)
-    except json.JSONDecodeError as e:
-        try:
-            new_text = re.search(
-                r"```json\n(.*?)```",
-                response_text,
-                re.DOTALL
-            ).group(1)
-            new_text = remove_tailing_commas(new_text)
-            pattern = r'"(.*?)"'
-            text = re.sub(
-                pattern,
-                preprocessing_string,
-                new_text,
-                flags=re.DOTALL
-            )
-            pseudo_data = json.loads(text)
-            post_pseudo_data = postprocessing_string(pseudo_data)
-            data = json.loads(post_pseudo_data)
-            return json.dumps(data, indent=2)
-        except Exception as e:
-            print(f"Error in refining response: {str(e)}")
-            with open(os.path.join(os.path.dirname(__file__), "error_response.txt"), "+a") as f:
-                f.write(response_text)
-                f.write("\n")
-            return None
+    except json.JSONDecodeError:
+        return '{"error": "Failed to parse JSON response"}'
 
 
-warning = "\nWARNING: please retry this, your output should strictly follow json format so that python program can capture question component properly, use (`) symbol instead of single quote and every key and value should be enclosed in double quotes"
+warning = "\nCRITICAL ERROR: Your response MUST be valid JSON only. EXAMPLE: {\"solution\": \"text here\"}. No text before/after JSON. No explanations. No markdown. Just pure JSON that can be parsed by json.loads(). Use (`) instead of single quotes inside strings."
 max_retries = 3
+
+
+def is_error_response(message):
+    """Check if the parsed JSON is an error response from refine_response"""
+    return isinstance(message, dict) and "error" in message and len(message) == 1
+
+
+def log_detailed_error(context, raw_response, error, expected_keys=None):
+    """Log detailed error information for debugging"""
+    print("=" * 80)
+    print(f"DETAILED ERROR LOG - {context}")
+    print("=" * 80)
+    print(f"Error: {str(error)}")
+    print("-" * 40)
+    print("RAW RESPONSE:")
+    print(raw_response)
+    print("-" * 40)
+    print(f"Response type: {type(raw_response)}")
+    print(f"Response length: {len(raw_response) if raw_response else 0}")
+    if expected_keys:
+        print(f"Expected keys: {expected_keys}")
+
+    # Try to show what refine_response produces
+    try:
+        refined = refine_response(raw_response)
+        print("REFINED RESPONSE:")
+        print(refined)
+        print("-" * 40)
+
+        # Try to parse the refined response
+        try:
+            parsed = json.loads(refined)
+            print("PARSED JSON KEYS:")
+            if isinstance(parsed, dict):
+                print(list(parsed.keys()))
+                print("PARSED JSON CONTENT:")
+                for key, value in parsed.items():
+                    print(
+                        f"  {key}: {str(value)[:200]}{'...' if len(str(value)) > 200 else ''}")
+            else:
+                print(f"Parsed JSON is not a dict, it's: {type(parsed)}")
+                print(
+                    f"Content: {str(parsed)[:500]}{'...' if len(str(parsed)) > 500 else ''}")
+        except Exception as parse_error:
+            print(f"FAILED TO PARSE REFINED JSON: {str(parse_error)}")
+    except Exception as refine_error:
+        print(f"FAILED TO REFINE RESPONSE: {str(refine_error)}")
+
+    print("=" * 80)
+    print()
 
 
 class GI:
@@ -107,7 +206,10 @@ class GI:
         self.chat = self.llm.chats.create(
             model=os.getenv("MODEL"),
             config=types.GenerateContentConfig(
-                system_instruction=system_instructions
+                system_instruction=system_instructions,
+                thinking_config=types.ThinkingConfig(
+                    include_thoughts=True
+                )
             ))
 
     def ___getResponse(self, prompt, warn=False):
@@ -222,10 +324,31 @@ class GI:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["solution"]
+
+                # Check if this is an error response from refine_response
+                if is_error_response(message):
+                    log_detailed_error("GMAT GI questionSolution - JSON parsing failed", response,
+                                       f"refine_response returned error: {message.get('error', 'Unknown error')}",
+                                       expected_keys=["solution", "answer", "explanation", "question"])
+                    return None
+
+                # Try different possible keys for solution data
+                if "solution" in message:
+                    return message["solution"]
+                elif "answer" in message:
+                    return message["answer"]
+                elif "explanation" in message:
+                    return message["explanation"]
+                elif "question" in message:
+                    return message["question"]
+                else:
+                    log_detailed_error("GMAT GI questionSolution - Missing expected keys", response,
+                                       f"Expected solution keys not found. Available keys: {list(message.keys())}",
+                                       expected_keys=["solution", "answer", "explanation", "question"])
+                    return None
             except Exception as e:
-                print(
-                    f"GMAT GI, Error: message received for questionSolution is: {response}\nError: {str(e)}")
+                log_detailed_error("GMAT GI questionSolution - Exception during parsing", response, str(e),
+                                   expected_keys=["solution", "answer", "explanation", "question"])
                 return None
         result = self._retry_generate(_generate)
         return result
@@ -236,12 +359,41 @@ class GI:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["options"], message["answer"]
+                # Try different possible keys for options and answers
+                options = None
+                answers = None
+
+                # Look for options
+                if "options" in message:
+                    options = message["options"]
+                elif "choices" in message:
+                    options = message["choices"]
+                elif "solution" in message:
+                    # Sometimes solution contains the answer structure
+                    options = message["solution"]
+
+                # Look for answers
+                if "answer" in message:
+                    answers = message["answer"]
+                elif "answers" in message:
+                    answers = message["answers"]
+                elif "solution" in message and options != message["solution"]:
+                    answers = message["solution"]
+
+                if options is not None and answers is not None:
+                    return options, answers
+                else:
+                    print(
+                        f"GMAT GI, Error: Expected 'options' and 'answer' keys not found in response: {list(message.keys())}")
+                    return None
             except Exception as e:
                 print(
                     f"GMAT GI, Error: message received for questionOptions is: {response}\nError: {str(e)}")
                 return None
-        result_options, result_answer = self._retry_generate(_generate)
+        result = self._retry_generate(_generate)
+        if result is None:
+            return None, None
+        result_options, result_answer = result
         return result_options, result_answer
 
 
@@ -387,6 +539,8 @@ class MSR:
 
         def _generate(warn=False):
             response = self.___getResponse(self.temp_prompt, warn)
+            print(
+                f"XXXXXX\nThis is what we got in solution:\n\n{response}\n\n=============================")
             try:
                 message = json.loads(refine_response(response))
                 return message["solution"]
@@ -415,7 +569,10 @@ class MSR:
                     f"GMAT MSR, Error: message received for QuestionOptions is: \n{response}\nError: {str(e)}")
                 return None
         if question_style == "MCQ (5 options MCQ)":
-            result_options, result_answer = self._retry_generate(_generate)
+            result = self._retry_generate(_generate)
+            if result is None:
+                return None, None
+            result_options, result_answer = result
             return result_options, result_answer
         result = self._retry_generate(_generate)
         return result
@@ -510,10 +667,29 @@ class TA:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["tables"]
+
+                # Check if this is an error response from refine_response
+                if is_error_response(message):
+                    log_detailed_error("GMAT TA QuestionTable - JSON parsing failed", response,
+                                       f"refine_response returned error: {message.get('error', 'Unknown error')}",
+                                       expected_keys=["tables", "content", "table"])
+                    return None
+
+                # Try different possible keys for table data
+                if "tables" in message:
+                    return message["tables"]
+                elif "content" in message:
+                    return message["content"]
+                elif "table" in message:
+                    return message["table"]
+                else:
+                    log_detailed_error("GMAT TA QuestionTable - Missing expected keys", response,
+                                       f"Expected keys not found. Available keys: {list(message.keys())}",
+                                       expected_keys=["tables", "content", "table"])
+                    return None
             except Exception as e:
-                print(
-                    f"GMAT TA, Error: message received for QuestionTable is:\n{response}\nError: {str(e)}")
+                log_detailed_error("GMAT TA QuestionTable - Exception during parsing", response, str(e),
+                                   expected_keys=["tables", "content", "table"])
                 return None
         result = self._retry_generate(_generate)
         return result
@@ -524,7 +700,19 @@ class TA:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["question"]
+                # Try different possible keys for question text
+                if "question" in message:
+                    return message["question"]
+                elif "text" in message:
+                    return message["text"]
+                elif "content" in message:
+                    return message["content"]
+                elif "title" in message:
+                    return message["title"]
+                else:
+                    print(
+                        f"GMAT TA, Error: Expected 'question', 'text', 'content', or 'title' key not found in response: {list(message.keys())}")
+                    return None
             except Exception as e:
                 print(
                     f"GMAT TA, Error: message received for QuestionText is: \n{response}\nError: {str(e)}")
@@ -552,12 +740,50 @@ class TA:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["options"], message["answer"]
+
+                # Check if this is an error response from refine_response
+                if is_error_response(message):
+                    log_detailed_error("GMAT TA QuestionOptions - JSON parsing failed", response,
+                                       f"refine_response returned error: {message.get('error', 'Unknown error')}",
+                                       expected_keys=["options", "answer", "choices", "answers"])
+                    return None
+
+                # Try different possible keys for options and answers
+                options = None
+                answers = None
+
+                # Look for options
+                if "options" in message:
+                    options = message["options"]
+                elif "choices" in message:
+                    options = message["choices"]
+                elif "question" in message:
+                    options = message["question"]
+
+                # Look for answers
+                if "answer" in message:
+                    answers = message["answer"]
+                elif "answers" in message:
+                    answers = message["answers"]
+                elif "solution" in message:
+                    answers = message["solution"]
+
+                if options is not None and answers is not None:
+                    return options, answers
+                else:
+                    log_detailed_error("GMAT TA QuestionOptions - Missing expected keys", response,
+                                       f"Could not find both options and answers. Available keys: {list(message.keys())}. "
+                                       f"Options found: {options is not None}, Answers found: {answers is not None}",
+                                       expected_keys=["options", "answer", "choices", "answers"])
+                    return None
             except Exception as e:
-                print(
-                    f"GMAT TA, Error: message received for QuestionOptions is: \n{response}\nError: {str(e)}")
+                log_detailed_error("GMAT TA QuestionOptions - Exception during parsing", response, str(e),
+                                   expected_keys=["options", "answer", "choices", "answers"])
                 return None
-        result_options, result_answer = self._retry_generate(_generate)
+        result = self._retry_generate(_generate)
+        if result is None:
+            return None, None
+        result_options, result_answer = result
         return result_options, result_answer
 
     def generate_QuestionSolution(self):
@@ -661,10 +887,31 @@ class TPA:
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))
-                return message["content"]
+
+                # Check if this is an error response from refine_response
+                if is_error_response(message):
+                    log_detailed_error("GMAT TPA ParentQuestionContent - JSON parsing failed", response,
+                                       f"refine_response returned error: {message.get('error', 'Unknown error')}",
+                                       expected_keys=["content", "question", "graph", "data"])
+                    return None
+
+                # Try different possible keys for content data
+                if "content" in message:
+                    return message["content"]
+                elif "question" in message:
+                    return message["question"]
+                elif "graph" in message:
+                    return message["graph"]
+                elif "data" in message:
+                    return message["data"]
+                else:
+                    log_detailed_error("GMAT TPA ParentQuestionContent - Missing expected keys", response,
+                                       f"Expected content keys not found. Available keys: {list(message.keys())}",
+                                       expected_keys=["content", "question", "graph", "data"])
+                    return None
             except Exception as e:
-                print(
-                    f"GMAT TPA, Error message: received for ParentQuestionContent is: \n{response}\nError: {str(e)}")
+                log_detailed_error("GMAT TPA ParentQuestionContent - Exception during parsing", response, str(e),
+                                   expected_keys=["content", "question", "graph", "data"])
                 return None
 
         result = self._retry_generate(_generate)
@@ -712,9 +959,9 @@ class TPA:
                 try:
                     message = json.loads(refine_response(response))
                     solutions.append(message["solution"])
-                except:
+                except Exception as e:
                     print(
-                        f"GMAT TPA, Error: message received for QuestionSolution is: \n{response[0].content[0].text.value}\n\n")
+                        f"GMAT TPA, Error: message received for QuestionSolution is: \n{response}\nError: {str(e)}\n\n")
                     return None
             return solutions
 
