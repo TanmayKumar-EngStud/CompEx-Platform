@@ -307,7 +307,8 @@ Example of proper LaTeX usage:
 Input prompt: `ChildQuestionSolution: 1` // solution for 1st question asked from the source information.
 Output: 
 {
-   "solution": "complete solution with properly formatted LaTeX expressions"
+   "solution": "complete solution with properly formatted LaTeX expressions",
+   "answer": "A"
 }
 
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

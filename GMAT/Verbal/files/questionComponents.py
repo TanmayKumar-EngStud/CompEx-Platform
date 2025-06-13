@@ -4,6 +4,8 @@ import time
 import os
 from google import genai
 from google.genai import types
+from google import genai
+from google.genai import types
 
 warning = "\nCRITICAL ERROR: Your response MUST be valid JSON only. EXAMPLE: {\"solution\": \"text here\"}. No text before/after JSON. No explanations. No markdown. Just pure JSON that can be parsed by json.loads(). Use (`) instead of single quotes inside strings."
 

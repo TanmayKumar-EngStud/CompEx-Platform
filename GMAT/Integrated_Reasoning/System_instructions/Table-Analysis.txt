@@ -274,7 +274,12 @@ Example of proper LaTeX usage:
 
 Input: `QuestionSolution`
 Output:{
-   "solution": ["explanation for option 1 with properly formatted LaTeX", "explanation for option 2 with properly formatted LaTeX", "explanation for option 3 with properly formatted LaTeX"]
+   "solution": ["explanation for option 1 with properly formatted LaTeX", "explanation for option 2 with properly formatted LaTeX", "explanation for option 3 with properly formatted LaTeX"],
+   "answer": {
+      "A": "Yes",
+      "B": "No", 
+      "C": "Yes"
+   }
 }
 
 Important Additional Note,

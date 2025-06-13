@@ -287,7 +287,11 @@ Example of proper LaTeX usage:
 Input prompt: `Mode: QuestionSolution return: `solution` `
 Output:
 {
-   "solution": "comprehensive solution with detailed graph analysis and properly formatted LaTeX expressions"
+   "solution": "comprehensive solution with detailed graph analysis and properly formatted LaTeX expressions",
+   "answer": {
+    "blank_1": "A",
+    "blank_2": "C"
+   }
 }
 
 

@@ -125,7 +125,8 @@ Input:
 `ChildSolution: <Child question number>`
 Output: 
 {
-   solution: "comprehensive solution with detailed textual analysis and reasoning explanation"
+   "solution": "comprehensive solution with detailed textual analysis and reasoning explanation",
+   "answer": "A"
 }
 
 For every ParentQuestion, there will be multiple ChildQuestions thus to maintain the consistency, the Child question number will be provided in the input.

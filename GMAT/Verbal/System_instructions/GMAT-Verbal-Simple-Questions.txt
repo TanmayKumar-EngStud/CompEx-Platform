@@ -122,7 +122,8 @@ you HTML tags such as <br> and <strong> tag to give explanation for every option
 Input format: `QuestionSolution`
 Output format:
 {
-   "solution": "comprehensive explanation of the solution with detailed reasoning analysis"
+   "solution": "comprehensive explanation of the solution with detailed reasoning analysis",
+   "answer": "A"
 }
 
 Important Additional Note,

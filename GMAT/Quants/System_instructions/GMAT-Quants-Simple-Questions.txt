@@ -149,7 +149,8 @@ Input:
 `QuestionSolution`
 Output: 
 {
-   "solution": "complete solution passage should come here, explaining how to solve the given question step by step with clear reasoning"
+   "solution": "complete solution passage should come here, explaining how to solve the given question step by step with clear reasoning",
+   "answer": "A"
 }
 
 ## QuestionOptions:

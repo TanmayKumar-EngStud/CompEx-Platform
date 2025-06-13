@@ -255,12 +255,14 @@ Input prompt: `QuestionSolution1`
 Output format: 
 {
    "solution": "complete solution with properly formatted LaTeX expressions",
+   "answer": "D"
 }
 
 ## QuestionSolution2
 Similarly for Question2 you need to generate the solution in the same format as above
 {
   "solution": "compleete solution with properly formatted LaTeX expressions",
+  "answer": "E"
 }
 ## QuestionOptions
 As you remember, here you would have to generate a single question options that both of the previously created question.
