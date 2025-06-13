@@ -63,10 +63,27 @@ input format:- "QuestionSolution"
 
 CRITICAL: Your response must be ONLY the JSON object below. No explanatory text before or after.
 
-Output format:- {"solution": "complete solution passage should come here, explaining how to solve the given question", "answer": "A"}
+ENHANCED SOLUTION REQUIREMENTS:
+The solution must provide a comprehensive, step-by-step analysis that includes:
 
-Example correct response:
-{"solution": "To solve this data sufficiency problem...", "answer": "C"}
+1. **Problem Analysis**: Clear identification of what the question is asking for
+2. **Statement Analysis**: Detailed examination of each statement individually
+3. **Sufficiency Testing**: Step-by-step evaluation of whether each statement provides sufficient information
+4. **Logical Reasoning**: Clear explanation of the logical steps taken to reach the conclusion
+5. **Mathematical Work**: All calculations shown with proper formatting using <br> tags for line breaks
+6. **Final Reasoning**: Clear explanation of why the selected answer choice is correct
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use ~~mathematical expressions~~ for any mathematical notation
+- Structure the solution in clear, numbered steps
+- Include subsections for analyzing Statement (1) and Statement (2) separately
+- Provide a final summary explaining the answer choice
+
+Output format:- {"solution": "complete solution passage should come here, explaining how to solve the given question step by step", "answer": "A"}
+
+**Example Structure:**
+{"solution": "<strong>Step 1: Understanding the Question</strong><br>We need to determine [what the question is asking].<br><br><strong>Step 2: Analyzing Statement (1)</strong><br>[Detailed analysis of statement 1]<br>Mathematical work: ~~calculation if needed~~<br>Conclusion: Statement (1) [is/is not] sufficient because [reason].<br><br><strong>Step 3: Analyzing Statement (2)</strong><br>[Detailed analysis of statement 2]<br>Mathematical work: ~~calculation if needed~~<br>Conclusion: Statement (2) [is/is not] sufficient because [reason].<br><br><strong>Step 4: Combined Analysis (if needed)</strong><br>[Analysis of both statements together if neither alone is sufficient]<br><br><strong>Final Answer</strong><br>The answer is [X] because [clear reasoning].", "answer": "C"}
 
 WRONG: Do not include any text like "The answer is..." or explanations outside the JSON.
 always give answer in the format of "A", "B", "C", "D", "E".

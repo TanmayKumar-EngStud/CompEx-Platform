@@ -97,11 +97,32 @@ Output format:
 }
 ## QuestionSolution
 Description: for the previous question generated and the options provided, you need to generate the explanation of the solution of that question, plus you also have to give the explanation of why other options are incorrect.
-you HTML tags such as <br> and <o> tag to give explanation for every option in a separate line for better readability.
+
+ENHANCED SOLUTION REQUIREMENTS FOR VERBAL QUESTIONS:
+The solution must provide a comprehensive analysis that teaches critical reasoning skills:
+
+1. **Argument Structure Analysis**: Break down the passage into premise(s) and conclusion
+2. **Question Type Strategy**: Explain the specific approach for this type of CR question
+3. **Logical Reasoning Process**: Step-by-step thinking process to identify the correct answer
+4. **Correct Answer Explanation**: Detailed explanation of why the correct option works
+5. **Incorrect Options Analysis**: Clear explanation of why each incorrect option fails
+6. **Critical Reasoning Insights**: Key lessons about logical reasoning and common traps
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use <strong> tags for emphasis on key points
+- Structure the analysis with clear sections
+- Include systematic evaluation of each option
+- Provide reasoning strategies that can be applied to similar questions
+
+**Example Structure:**
+{"solution": "<strong>Argument Structure</strong><br>Premise: [Identify the evidence/facts presented]<br>Conclusion: [Identify what the argument concludes]<br><br><strong>Question Strategy</strong><br>This is a [weaken/strengthen/assumption/etc.] question. Our approach: [specific strategy for this question type]<br><br><strong>Logical Analysis</strong><br>[Step-by-step reasoning process]<br><br><strong>Option Analysis</strong><br><strong>(A)</strong> [Detailed explanation of why A is correct/incorrect]<br><strong>(B)</strong> [Detailed explanation of why B is correct/incorrect]<br><strong>(C)</strong> [Detailed explanation of why C is correct/incorrect]<br><strong>(D)</strong> [Detailed explanation of why D is correct/incorrect]<br><strong>(E)</strong> [Detailed explanation of why E is correct/incorrect]<br><br><strong>Key Insight</strong><br>[Important critical reasoning principle or common trap to avoid]"}
+
+you HTML tags such as <br> and <strong> tag to give explanation for every option in a separate line for better readability.
 Input format: `QuestionSolution`
 Output format:
 {
-   "solution": "explanation of the solution of the question"
+   "solution": "comprehensive explanation of the solution with detailed reasoning analysis"
 }
 
 Important Additional Note,

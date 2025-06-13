@@ -36,67 +36,83 @@ The input will be provided in the following format:
 
 3. Processing Instructions
 use code interpreter to generate graph data for the question, you just have to generate the graph data, there are going to multiple scenarios, 
-graph type could be of line graph, bar graph, pie chart, scatter plot. 
+graph type could be of line-graph, bar-graph, pie-chart, scatter-plot. 
 
 For Line Graph:-
 Output format: 
 The description of the graph and table will be used to generate child question text later, Also the description should be formal because this description will also be presented to the user as parent question text.
 {
-   "graph": {
+   "graph/table": {
+      "type": "line-graph",
       "title": "title of the graph",
-      "xAxis": "x axis of the graph",
-      "yAxis": "y axis of the graph",
-      "data": {
-         "x-axis": [2001, 2002, 2003, 2004, 2005],
-         "y-axis": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
-         "data": [240, 280, 150, 270, 450, 200, 300, 100, 800, 300]
-      }
-   },
-   "type": "line graph",
-   "description": "description telling what this line graph is about"
+      "description": "description telling what this line-graph is about",
+      "x_axis": "x axis of the graph",
+      "y_axis": "y axis of the graph",
+      "data": [
+         {
+            "series": "Series A",
+            "values": [
+               { "x": "2001", "y": 240 },
+               { "x": "2002", "y": 280 },
+               { "x": "2003", "y": 150 },
+               { "x": "2004", "y": 270 },
+               { "x": "2005", "y": 450 }
+            ]
+         }
+      ]
+   }
 }
 
 For Bar Graph:-
 Output format: 
 {
-   "graph": {
+   "graph/table": {
+      "type": "bar-graph",
       "title": "title of the graph",
-      "xAxis": "x axis of the graph",
-      "yAxis": "y axis of the graph",
-      "data": {
-         "x-axis": [2001, 2002, 2003, 2004, 2005],
-         "y-axis": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
-         "data": [240, 280, 150, 270, 450, 200, 300, 100, 800, 300]
-      }
-   },
-   "type": "bar graph",
-   "description": "description telling what this bar graph is about"
+      "description": "description telling what this bar-graph is about",
+      "x_axis": "x axis of the graph",
+      "y_axis": "y axis of the graph",
+      "data": [
+         { "label": "2001", "value": 240 },
+         { "label": "2002", "value": 280 },
+         { "label": "2003", "value": 150 },
+         { "label": "2004", "value": 270 },
+         { "label": "2005", "value": 450 }
+      ]
+   }
 }
 For Pie Chart:-
 Output format:
 {
-   "graph": {
+   "graph/table": {
+      "type": "pie-chart",
       "title": "title of the graph",
-      "data": [{"name": "label1", "color": "#0405ef", "value": 15},
-      {"name": "label2", "color": "#ef0523", "value": 45},
-      {"name": "label3", "color": "#05ef04", "value": 30},
-      {"name": "label4", "color": "#ef0523", "value": 10}],
-   }, //here 15+45+30+10 = 100 (total sum of all the values should always be 100)
-   "type": "pie chart",
-   "description": "description telling what this pie chart is about"
+      "description": "description telling what this pie-chart is about",
+      "data": [
+         {"label": "label1", "color": "#0405ef", "value": 15},
+         {"label": "label2", "color": "#ef0523", "value": 45},
+         {"label": "label3", "color": "#05ef04", "value": 30},
+         {"label": "label4", "color": "#96CEB4", "value": 10}
+      ]
+   }
 } 
 
 For Scatter Plot:-
 Output format:
 {
-   "graph": {
+   "graph/table": {
+      "type": "scatter-plot",
       "title": "title of the graph",
-      "xAxis": "x axis of the graph",
-      "yAxis": "y axis of the graph",
-      "data": [{"x": 10, "y": 20}, {"x": 20, "y": 30}, {"x": 30, "y": 40}, {"x": 40, "y": 50}]
-   },
-   "type": "scatter plot",
-   "description": "description telling what this scatter plot is about"
+      "description": "description telling what this scatter-plot is about",
+      "x_axis": "x axis of the graph",
+      "y_axis": "y axis of the graph",
+      "data": [
+         {"label": "Point A", "x": 10, "y": 20},
+         {"label": "Point B", "x": 20, "y": 30},
+         {"label": "Point C", "x": 30, "y": 40},
+         {"label": "Point D", "x": 40, "y": 50}
+      ]
+   }
 }
 
 For Table:-

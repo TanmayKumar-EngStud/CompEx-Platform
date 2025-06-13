@@ -119,11 +119,37 @@ Output:
 ## QuestionSolution: 
 Here you will have to generate the solution of the previously created question. For calculations, use code interpreter and maintain accuracy up to 2 decimal points.
 
+ENHANCED SOLUTION REQUIREMENTS:
+The solution must provide a comprehensive, step-by-step analysis that guides users through the problem-solving process:
+
+1. **Problem Understanding**: Clear identification of what the question is asking and key information given
+2. **Strategy Selection**: Explanation of the chosen approach (direct calculation, back-solving, number picking, etc.)
+3. **Step-by-Step Solution**: Detailed mathematical work with proper formatting
+4. **Alternative Methods**: Where applicable, mention alternative solving techniques (especially back-solving for algebra)
+5. **Verification**: Check the answer makes sense in context
+6. **Key Insights**: Highlight important concepts or common pitfalls to avoid
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use ~~mathematical expressions~~ for any mathematical notation
+- Structure the solution in clear, numbered steps
+- For Word Problems: Include key information extraction as first step
+- For Algebra: Show both algebraic solution and back-solving method when applicable
+- For Arithmetic: Emphasize number sense and critical reasoning
+
+**Example Structure for Different Question Types:**
+
+**Arithmetic/Word Problems:**
+{"solution": "<strong>Step 1: Extract Key Information</strong><br>[List key facts from the problem]<br><br><strong>Step 2: Set Up the Problem</strong><br>[Explain the mathematical relationships]<br><br><strong>Step 3: Calculate Step-by-Step</strong><br>[Show detailed calculations]<br>~~mathematical work~~<br><br><strong>Step 4: Verify Answer</strong><br>[Check if answer makes sense in context]<br><br><strong>Key Insight</strong><br>[Important concept or common pitfall to remember]"}
+
+**Algebra Problems:**
+{"solution": "<strong>Method 1: Algebraic Approach</strong><br><strong>Step 1: Set Up Equation</strong><br>[Algebraic setup]<br><br><strong>Step 2: Solve</strong><br>~~algebraic steps~~<br><br><strong>Method 2: Back-Solving (Recommended for GMAT)</strong><br><strong>Step 1: Test Answer Choices</strong><br>[Test each option systematically]<br><br><strong>Why Back-Solving Works Better</strong><br>[Explain efficiency advantages]"}
+
 Input: 
 `QuestionSolution`
 Output: 
 {
-   "solution": "complete solution passage should come here, explaining how to solve the given question"
+   "solution": "complete solution passage should come here, explaining how to solve the given question step by step with clear reasoning"
 }
 
 ## QuestionOptions:

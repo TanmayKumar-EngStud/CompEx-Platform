@@ -70,8 +70,29 @@ Output format:- {"title": "question title"}
 Mode 3: questionSolution
 Here based on the previous question, you would have to state the reason about which option out of "A", "B", "C", "D", "E" is correct, and why it is correct.
 
+ENHANCED SOLUTION REQUIREMENTS FOR GRE DATA SUFFICIENCY:
+The solution must provide a comprehensive analysis that teaches logical reasoning and data sufficiency skills:
+
+1. **Problem Analysis**: Clear identification of what we need to determine
+2. **Statement Testing Strategy**: Systematic approach to testing each statement
+3. **Logical Reasoning Process**: Step-by-step evaluation of sufficiency
+4. **Mathematical Work**: All calculations and logical deductions clearly shown
+5. **Sufficiency Evaluation**: Clear explanation of why each statement is/isn't sufficient
+6. **Final Reasoning**: Comprehensive explanation of the answer choice
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use ~~mathematical expressions~~ for mathematical notation
+- Structure the solution in clear, numbered steps
+- Include detailed analysis of each statement individually
+- Provide clear reasoning for the final answer choice
+- Emphasize logical reasoning over pure calculation
+
+**Example Structure:**
+{"solution": "<strong>Step 1: Understanding the Question</strong><br>We need to determine [what the question is asking].<br><br><strong>Step 2: Analyzing Statement (1)</strong><br>[Detailed analysis of statement 1]<br>Mathematical work: ~~calculation if needed~~<br>Logical reasoning: [explain the reasoning]<br>Conclusion: Statement (1) [is/is not] sufficient because [clear reasoning].<br><br><strong>Step 3: Analyzing Statement (2)</strong><br>[Detailed analysis of statement 2]<br>Mathematical work: ~~calculation if needed~~<br>Logical reasoning: [explain the reasoning]<br>Conclusion: Statement (2) [is/is not] sufficient because [clear reasoning].<br><br><strong>Step 4: Combined Analysis (if needed)</strong><br>[Analysis of both statements together if neither alone is sufficient]<br><br><strong>Final Answer</strong><br>The answer is [X] because [comprehensive reasoning focusing on logical analysis].<br><br><strong>GRE Tip</strong><br>[Strategic insight for approaching similar DS questions]", "answer": "A"}
+
 input format:- "questionSolution"
-Output format:- {"solution": "solution passage explaining how to get the correct answer", "answer": "A"} 
+Output format:- {"solution": "comprehensive solution passage with detailed logical reasoning explaining how to get the correct answer", "answer": "A"} 
 always give answer in the format of "A", "B", "C", "D", "E".
 
 Important Additional Note,

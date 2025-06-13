@@ -424,7 +424,7 @@ class ParentChildQuestion:
 
     def generate_childSolution(self, index):
         def _generate(warn=False):
-            prompt = f"ChildSolution: {index}"
+            prompt = f"mode:- childQuestionSolution; question: {index}"
             response = self.___getResponse(prompt, warn)
             try:
                 message = json.loads(refine_response(response))

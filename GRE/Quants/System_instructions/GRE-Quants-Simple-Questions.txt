@@ -101,12 +101,33 @@ for the previous question text, you would have to generate a solution to that qu
 Important! If there is a decimal, you have to always round it to 2 decimal places.
 All decimal numbers should always be rounded to 2 decimal places.
 
+ENHANCED SOLUTION REQUIREMENTS FOR GRE QUANTITATIVE:
+The solution must provide a comprehensive, step-by-step analysis that guides users through advanced problem-solving:
+
+1. **Problem Analysis**: Clear identification of what the question asks and key information given
+2. **Strategy Selection**: Explanation of the chosen approach and why it's effective for GRE
+3. **Detailed Solution Steps**: Complete mathematical work with proper formatting
+4. **Alternative Methods**: When applicable, mention faster or alternative approaches
+5. **Verification**: Check that the answer is reasonable and correct
+6. **GRE Tips**: Insights for similar problems on the GRE
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use ~~mathematical expressions~~ for mathematical notation
+- Structure the solution in clear, numbered steps
+- For multi-step problems: break down each calculation clearly
+- Include reasoning for why certain steps are necessary
+- Provide insights that apply to similar GRE questions
+
+**Example Structure:**
+{"solution": "<strong>Step 1: Understand the Problem</strong><br>[Identify what we need to find and given information]<br><br><strong>Step 2: Set Up the Solution</strong><br>[Explain the approach and mathematical setup]<br><br><strong>Step 3: Calculate Step-by-Step</strong><br>~~detailed mathematical work~~<br><br><strong>Step 4: Verify Answer</strong><br>[Check if the result makes sense]<br><br><strong>GRE Tip</strong><br>[Strategy insight for similar problems]", "answer": "final_answer"}
+
 input format: "mode:- questionSolution"
-output format: {"solution": "solution of the question", "answer": "answer"}
+output format: {"solution": "comprehensive solution with detailed reasoning and calculations", "answer": "answer"}
 for example:-
 input:- "mode:- questionSolution"
 output:- {
-  "solution": "<p>Batch 1: Total cakes = 150 <br> Percentage of chocolate = 20% <br> Total chocolate cakes = ~~150 * 20% = 30~~ <br> Batch 2: Total cakes = 150 <br> Percentage of chocolate = 30% <br> Total chocolate cakes = ~~150 * 30% = 45~~ <br> Total chocolate cakes = ~~30 + 45 = 75~~ </p>"
+  "solution": "<strong>Step 1: Identify Given Information</strong><br>Batch 1: Total cakes = 150, Percentage of chocolate = 20%<br>Batch 2: Total cakes = 150, Percentage of chocolate = 30%<br><br><strong>Step 2: Calculate Chocolate Cakes in Each Batch</strong><br>Batch 1 chocolate cakes = ~~150 × 20\\% = 150 × 0.20 = 30~~<br>Batch 2 chocolate cakes = ~~150 × 30\\% = 150 × 0.30 = 45~~<br><br><strong>Step 3: Find Total</strong><br>Total chocolate cakes = ~~30 + 45 = 75~~<br><br><strong>Step 4: Verify</strong><br>This represents ~~\\frac{75}{300} = 25\\%~~ of all cakes, which is reasonable.<br><br><strong>GRE Tip</strong><br>For percentage problems, convert percentages to decimals early to avoid calculation errors.", "answer": "75"
   }
 
 # questionOptions Mode

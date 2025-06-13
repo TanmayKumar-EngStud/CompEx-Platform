@@ -97,12 +97,35 @@ Output:
 
 5. ChildSolution:
 As a child solution, you responsibility is to generate the solution for the previously generated child question. you have to cover which option is correct and why it is correct, and also cover which options are not correct and why they are not correct.
+
+ENHANCED SOLUTION REQUIREMENTS FOR READING COMPREHENSION:
+The solution must provide a comprehensive analysis that teaches reading comprehension and reasoning skills:
+
+1. **Passage Analysis**: Reference relevant parts of the passage that contain the answer
+2. **Question Type Strategy**: Explain the specific approach for this type of RC question (inference, detail, main idea, etc.)
+3. **Text Evidence**: Quote or reference specific lines/sections from the passage
+4. **Logical Reasoning**: Step-by-step process of how to arrive at the correct answer
+5. **Correct Answer Explanation**: Detailed explanation with textual support
+6. **Incorrect Options Analysis**: Explain why each wrong option fails (out of scope, contradicts passage, etc.)
+7. **Reading Strategy Tips**: Insights for approaching similar questions
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use <strong> tags for emphasis on key points
+- Include specific references to passage content
+- Structure the analysis with clear sections
+- Provide systematic evaluation of each option
+- Include reading comprehension strategies
+
+**Example Structure:**
+{"solution": "<strong>Question Type</strong><br>This is a [detail/inference/main idea/etc.] question asking about [specific aspect].<br><br><strong>Passage Evidence</strong><br>The relevant information is found in [specific location]: `[quote or paraphrase key passage content]`<br><br><strong>Reasoning Process</strong><br>[Step-by-step analysis of how to connect passage content to the correct answer]<br><br><strong>Option Analysis</strong><br><strong>(A)</strong> [Analysis with passage reference - correct/incorrect and why]<br><strong>(B)</strong> [Analysis with passage reference - correct/incorrect and why]<br><strong>(C)</strong> [Analysis with passage reference - correct/incorrect and why]<br><strong>(D)</strong> [Analysis with passage reference - correct/incorrect and why]<br><br><strong>Reading Strategy</strong><br>[Key insight for approaching similar RC questions]"}
+
 Input and Output will be in the following format: 
 Input:
 `ChildSolution: <Child question number>`
 Output: 
 {
-   solution: "solution of the question, do discussion about every option in a separate line, but also keep it concise."
+   solution: "comprehensive solution with detailed textual analysis and reasoning explanation"
 }
 
 For every ParentQuestion, there will be multiple ChildQuestions thus to maintain the consistency, the Child question number will be provided in the input.

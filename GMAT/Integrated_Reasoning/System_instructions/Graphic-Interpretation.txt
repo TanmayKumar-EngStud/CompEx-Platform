@@ -25,7 +25,7 @@ All the outputs should strictly follow the json format, because the output share
 These are the skills that is needed to be assessed of the user:-
 1. Data Interpretation
 * Skill: Understanding and extracting meaningful information from various types of graphs and charts.
-* Example: Interpreting trends, patterns, and relationships in bar charts, line graphs, pie charts, scatter plots, and other graphical representations.
+* Example: Interpreting trends, patterns, and relationships in bar-graphs, line-graphs, pie-charts, scatter-plots, and other graphical representations.
 2. Critical Thinking
 * Skill: Analyzing the data to draw logical conclusions and make informed decisions.
 * Example: Determining the implications of trends, identifying correlations, and evaluating the significance of data points.
@@ -66,32 +66,32 @@ Users are preparing for MBA thus the quality of the questions should be of a gra
 
 For Bar chart the data should be generated in the following format: 
 {
-  "graph": "bar chart",
+  "type": "bar-graph",
   "title": "Annual Sales Data",
   "description": "this will give the description of the graph",
-  "x-axis": "Products",
-  "y-axis": "Sales (in USD)",
+  "x_axis": "Products",
+  "y_axis": "Sales (in USD)",
   "data": [
-    { "category": "Product A", "value": 1500 },
-    { "category": "Product B", "value": 1200 },
-    { "category": "Product C", "value": 900 },
-    { "category": "Product D", "value": 1800 }
+    { "label": "Product A", "value": 1500 },
+    { "label": "Product B", "value": 1200 },
+    { "label": "Product C", "value": 900 },
+    { "label": "Product D", "value": 1800 }
   ]
 }
-For stacked bar chart the data should be generated in the following format:
+For stacked bar-graph the data should be generated in the following format:
 {
-  "graph": "stacked bar chart",
+  "type": "stacked-bar-graph",
   "title": "Quarterly Sales Data by Region",
   "description": "This chart shows the breakdown of sales by region for each quarter.",
-  "x-axis": "Quarters",
-  "y-axis": "Sales (in USD)",
+  "x_axis": "Quarters",
+  "y_axis": "Sales (in USD)",
   "data": [
     {
       "category": "Q1",
       "values": [
-        { "region": "Region A", "value": 500 },
-        { "region": "Region B", "value": 300 },
-        { "region": "Region C", "value": 200 }
+        { "label": "Region A", "value": 500 },
+        { "label": "Region B", "value": 300 },
+        { "label": "Region C", "value": 200 }
       ]
     },
     {
@@ -123,25 +123,25 @@ For stacked bar chart the data should be generated in the following format:
 
 For Pie chart the data should be generated in the following format: 
 {
-  "graph": "pie chart",
+  "type": "pie-chart",
   "title": "Market Share Distribution",
   "description": "this will give the description of the graph",
   "data": [
-    { "label": "Label A", "value": 30 },
-    { "label": "Label B", "value": 25 },
-    { "label": "Label C", "value": 20 },
-    { "label": "Label D", "value": 15 },
-    { "label": "Label E", "value": 10 }
+    { "label": "Label A", "value": 30, "color": "#FF6B6B" },
+    { "label": "Label B", "value": 25, "color": "#4ECDC4" },
+    { "label": "Label C", "value": 20, "color": "#45B7D1" },
+    { "label": "Label D", "value": 15, "color": "#96CEB4" },
+    { "label": "Label E", "value": 10, "color": "#FFEAA7" }
   ]
 }
 
 For Line chart the data should be generated in the following format: 
 {
-  "graph": "line chart",
+  "type": "line-graph",
   "title": "Monthly Sales Trend",
   "description": "this will give the description of the graph",
-  "x-axis": "Months",
-  "y-axis": "Sales (in USD)",
+  "x_axis": "Months",
+  "y_axis": "Sales (in USD)",
   "data": [
     {
       "series": "Product A",
@@ -181,11 +181,11 @@ For Line chart the data should be generated in the following format:
 
 For Scatter plot the data should be generated in the following format: 
 {
-  "graph": "scatter plot",
+  "type": "scatter-plot",
   "title": "Advertising Spend vs. Sales Revenue",
   "description": "this will give the description of the graph",
-  "x-axis": "Advertising Spend (in USD)",
-  "y-axis": "Sales Revenue (in USD)",
+  "x_axis": "Advertising Spend (in USD)",
+  "y_axis": "Sales Revenue (in USD)",
   "data": [
     { "label": "Label A", "x": 5000, "y": 20000 },
     { "label": "Label B", "x": 7000, "y": 30000 },
@@ -246,6 +246,24 @@ Output:
 ## QuestionSolution
 generate a solution for the question and for calculation use code interpreter, and use the accuracy upto 2 decimal points.
 
+ENHANCED SOLUTION REQUIREMENTS FOR GRAPHIC INTERPRETATION:
+The solution must provide a comprehensive analysis that teaches data interpretation and analytical skills:
+
+1. **Graph Reading Strategy**: Explain how to read and interpret the specific type of graph
+2. **Data Identification**: Point out the relevant data points needed to answer the question
+3. **Step-by-Step Calculation**: Show detailed mathematical work with proper formatting
+4. **Data Analysis Skills**: Explain patterns, trends, or relationships identified in the data
+5. **Verification**: Check that calculations and interpretations make sense
+6. **Graph Interpretation Tips**: Key insights for reading similar graphs effectively
+
+**Format Guidelines:**
+- Use <br> tags for line breaks within the solution
+- Use ~~mathematical expressions~~ for LaTeX notation (with proper formatting as specified below)
+- Structure the solution with clear, numbered steps
+- Include specific references to graph elements (axes, data points, trends)
+- Explain the reasoning behind data interpretation
+- Provide insights applicable to similar graph-reading questions
+
 For mathematical expressions, use LaTeX with the following guidelines:
 1. All LaTeX expressions MUST be enclosed between ~~ markers
 2. Use standard LaTeX commands for mathematical operations:
@@ -261,12 +279,15 @@ For mathematical expressions, use LaTeX with the following guidelines:
 7. Avoid using single backslashes except for standard LaTeX commands
 8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
 
+**Example Structure:**
+{"solution": "<strong>Step 1: Graph Analysis</strong><br>From the [type of graph], we need to identify [specific data points/trends].<br><br><strong>Step 2: Data Extraction</strong><br>Looking at [specific part of graph]: [relevant data values]<br><br><strong>Step 3: Calculations</strong><br>~~mathematical work with proper LaTeX formatting~~<br><br><strong>Step 4: Interpretation</strong><br>[Explain what the calculated values mean in context]<br><br><strong>Graph Reading Tip</strong><br>[Key insight for reading this type of graph]"}
+
 Example of proper LaTeX usage:
 ~~\\text{Rate of Change} = \\left(\\frac{\\text{Change in Y}}{\\text{Change in X}}\\right) \\text{ units per x}~~
 Input prompt: `Mode: QuestionSolution return: `solution` `
 Output:
 {
-   "solution": "complete solution with properly formatted LaTeX expressions"
+   "solution": "comprehensive solution with detailed graph analysis and properly formatted LaTeX expressions"
 }
 
 

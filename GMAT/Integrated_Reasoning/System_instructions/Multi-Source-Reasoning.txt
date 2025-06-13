@@ -41,58 +41,57 @@ I want you to be creative with selecting the QuestionTheme, user will provide 1 
 1. SourceInfo_1, SourceInfo_2, SourceInfo_3 : Here you have to generate a Source Information of that index, for creating the source information you would have to generate graph or table content for source information, here are the following ways you can share the graph/table data:
 For Bar chart the data should be generated in the following format: 
 {
-  "type": "bar chart",
-  "graph": "bar chart",
+  "type": "bar-graph",
   "title": "Annual Sales Data",
   "description": "this will give the description of the graph",
-  "x-axis": "Products",
-  "y-axis": "Sales (in USD)",
+  "x_axis": "Products",
+  "y_axis": "Sales (in USD)",
   "data": [
-    { "category": "Product A", "value": 1500 },
-    { "category": "Product B", "value": 1200 },
-    { "category": "Product C", "value": 900 },
-    { "category": "Product D", "value": 1800 }
+    { "label": "Product A", "value": 1500 },
+    { "label": "Product B", "value": 1200 },
+    { "label": "Product C", "value": 900 },
+    { "label": "Product D", "value": 1800 }
   ]
 }
 
-For stacked bar chart the data should be generated in the following format:
+For stacked bar-graph the data should be generated in the following format:
 {
-  "graph": "stacked bar chart",
+  "type": "stacked-bar-graph",
   "title": "Quarterly Sales Data by Region",
   "description": "This chart shows the breakdown of sales by region for each quarter.",
-  "x-axis": "Quarters",
-  "y-axis": "Sales (in USD)",
+  "x_axis": "Quarters",
+  "y_axis": "Sales (in USD)",
   "data": [
     {
       "category": "Q1",
       "values": [
-        { "region": "Region A", "value": 500 },
-        { "region": "Region B", "value": 300 },
-        { "region": "Region C", "value": 200 }
+        { "label": "Region A", "value": 500 },
+        { "label": "Region B", "value": 300 },
+        { "label": "Region C", "value": 200 }
       ]
     },
     {
       "category": "Q2",
       "values": [
-        { "region": "Region A", "value": 600 },
-        { "region": "Region B", "value": 400 },
-        { "region": "Region C", "value": 250 }
+        { "label": "Region A", "value": 600 },
+        { "label": "Region B", "value": 400 },
+        { "label": "Region C", "value": 250 }
       ]
     },
     {
       "category": "Q3",
       "values": [
-        { "region": "Region A", "value": 700 },
-        { "region": "Region B", "value": 500 },
-        { "region": "Region C", "value": 300 }
+        { "label": "Region A", "value": 700 },
+        { "label": "Region B", "value": 500 },
+        { "label": "Region C", "value": 300 }
       ]
     },
     {
       "category": "Q4",
       "values": [
-        { "region": "Region A", "value": 800 },
-        { "region": "Region B", "value": 600 },
-        { "region": "Region C", "value": 400 }
+        { "label": "Region A", "value": 800 },
+        { "label": "Region B", "value": 600 },
+        { "label": "Region C", "value": 400 }
       ]
     }
   ]
@@ -100,8 +99,7 @@ For stacked bar chart the data should be generated in the following format:
 
 For Pie chart the data should be generated in the following format: 
 {
-  "type": "pie chart",
-  "graph": "pie chart",
+  "type": "pie-chart",
   "title": "Market Share Distribution",
   "description": "this will give the description of the graph",
   "data": [
@@ -115,12 +113,11 @@ For Pie chart the data should be generated in the following format:
 
 For Line chart the data should be generated in the following format: 
 {
-  "type": "line chart",
-  "graph": "line chart",
+  "type": "line-graph",
   "title": "Monthly Sales Trend",
   "description": "this will give the description of the graph",
-  "x-axis": "Months",
-  "y-axis": "Sales (in USD)",
+  "x_axis": "Months",
+  "y_axis": "Sales (in USD)",
   "data": [
     {
       "series": "Product A",
@@ -160,12 +157,11 @@ For Line chart the data should be generated in the following format:
 
 For Scatter plot the data should be generated in the following format: 
 {
-  "type": "scatter plot",
-  "graph": "scatter plot",
+  "type": "scatter-plot",
   "title": "Advertising Spend vs. Sales Revenue",
   "description": "this will give the description of the graph",
-  "x-axis": "Advertising Spend (in USD)",
-  "y-axis": "Sales Revenue (in USD)",
+  "x_axis": "Advertising Spend (in USD)",
+  "y_axis": "Sales Revenue (in USD)",
   "data": [
     { "label": "Label A", "x": 5000, "y": 20000 },
     { "label": "Label B", "x": 7000, "y": 30000 },
