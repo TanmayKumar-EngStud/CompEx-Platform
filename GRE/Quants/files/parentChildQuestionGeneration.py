@@ -1,5 +1,6 @@
-# GRE.Quants.files.
-from GRE.Quants.files.questionComponents import ParentChildQuestion
+# Use unified components
+from core.components.question_components import ParentChildQuestion
+from core.components.adapters.gre_adapter import GREAdapter
 from google import genai
 import os
 import json
@@ -39,8 +40,9 @@ class ParentChildQuestionGeneration:
                 f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
             tag = ["PS"]
 
-        parentChildQuestion = ParentChildQuestion(
-            self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+        base_component = ParentChildQuestion(
+            self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
+        parentChildQuestion = GREAdapter.adapt_parent_child_question(base_component)
         content = parentChildQuestion.generate_questionGraph()
         self.questionData["content"] = content
 

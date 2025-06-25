@@ -1,8 +1,9 @@
 from dotenv import load_dotenv
 from google import genai
 import os, json
-# GRE.Quants.files.
-from GRE.Quants.files.questionComponents import DataSufficiencyQuestion
+# Use unified components
+from core.components.question_components import DataSufficiencyQuestion
+from core.components.adapters.gre_adapter import GREAdapter
 import re
 class DataSufficiencyQuestionGeneration:
     def __init__(self, global_state, lock, api_IDX, prompt):
@@ -30,7 +31,8 @@ class DataSufficiencyQuestionGeneration:
             self.questionData["tags"] = tag
         except Exception as e:
             raise Exception(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))}")
-        dataSufficiencyQuestion = DataSufficiencyQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+        base_component = DataSufficiencyQuestion(self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
+        dataSufficiencyQuestion = GREAdapter.adapt_data_sufficiency_question(base_component)
         content = {}
 
         passage, statements, question = dataSufficiencyQuestion.generate_questionText()

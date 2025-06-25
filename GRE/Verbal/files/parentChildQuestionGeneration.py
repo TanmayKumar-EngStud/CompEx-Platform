@@ -1,5 +1,6 @@
-# GRE.Verbal.files.
-from GRE.Verbal.files.questionComponents import ParentChildQuestion
+# Use unified components
+from core.components.question_components import ParentChildQuestion
+from core.components.adapters.gre_adapter import GREAdapter
 import random, math, os, json
 from dotenv import load_dotenv
 from google import genai
@@ -52,7 +53,8 @@ class ParentChildQuestionGeneration:
         return option_list
 
     def generate_question(self):
-        parentChildQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+        base_component = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
+        parentChildQuestion = GREAdapter.adapt_parent_child_question(base_component)
         self.questionData["type"] = "RC"
         self.questionData["prompt"] = self.prompt
         passages= parentChildQuestion.generate_passages()

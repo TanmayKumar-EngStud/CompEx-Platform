@@ -1345,7 +1345,8 @@ def create_question_component(
     """
     component_map = {
         QuestionType.PROBLEM_SOLVING: SimpleQuestion,
-        QuestionType.MULTIPLE_CHOICE: SimpleQuestion,
+        QuestionType.MULTIPLE_CHOICE_SINGLE: SimpleQuestion,
+        QuestionType.MULTIPLE_CHOICE_MULTIPLE: SimpleQuestion,
         QuestionType.NUMERIC_ENTRY: SimpleQuestion,
         QuestionType.DATA_SUFFICIENCY: DataSufficiencyQuestion,
         QuestionType.READING_COMPREHENSION: ParentChildQuestion,

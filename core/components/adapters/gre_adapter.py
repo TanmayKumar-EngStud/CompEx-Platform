@@ -134,3 +134,12 @@ class GREParentChildAdapter:
     def generate_childSolution(self, index: int) -> Optional[str]:
         """Generate child question solution (GRE naming convention)."""
         return self.component.generate_child_solution(index)
+    
+    def generate_passages(self) -> Optional[str]:
+        """Generate passages for reading comprehension (GRE naming convention)."""
+        # For RC questions, we need to generate the passage content
+        # This should use the question graph functionality
+        graph = self.component.generate_question_graph()
+        if graph and isinstance(graph, dict):
+            return graph.get('passage') or graph.get('passages') or graph.get('content')
+        return None

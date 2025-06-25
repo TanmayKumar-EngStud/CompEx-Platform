@@ -1,0 +1,34 @@
+=== Question Generation Session Started ===
+Log file: logs/question_generation_2025-06-25_22-47-25.log
+Timestamp: 2025-06-25 22:47:25
+================================================================================
+Primary user already exists
+Initialized - Difficulty: 5, Mock: False
+================================================================================
+PAPER GENERATION SESSION STARTED
+================================================================================
+Starting GMAT paper generation - Difficulty: 5
+================================================================================
+DETAILED ERROR LOG - gmat TwoPartAnalysisQuestion generate_parent_question_content - JSON parsing failed
+================================================================================
+Error: refine_response returned error: Failed to parse JSON response
+----------------------------------------
+RAW RESPONSE:
+```json
+{
+  "content": {
+    "type": "Passage",
+    "passage": [
+      "InnovateTech, a rapidly growing tech startup, is in the process of finalizing its annual budget for the upcoming fiscal year. The company's total available budget for the year is `\$10 million`. This budget must cover both core operational expenditures and investments in new strategic projects. Core operational expenditures are categorized as follows: Research & Development (R&D), Marketing & Sales (M&S), Operations, and Administration. The minimum required allocations for these core departments are `\$3 million` for R&D, `\$2.5 million` for M&S, `\$1.5 million` for Operations, and `\$1 million` for Administration. Any budget remaining after these minimums are met can be allocated to new strategic projects.",
+      "Two key strategic projects are currently under consideration: `Project Alpha` and `Project Beta`. `Project Alpha` is a high-risk, high-reward initiative focused on developing a groundbreaking new technology. It requires `\$2.5 million` in R&D funding and `\$0.5 million` in Marketing & Sales funding. Completion of Project Alpha would also require 100% of the available senior engineering team`s capacity for the entire year, which comprises 15 engineers. `Project Beta` is a market expansion initiative aimed at capturing a larger share in existing markets. It requires `\$0.5 million` in R&D funding and `\$2 million` in Marketing & Sales funding. Project Beta would necessitate expanding the current sales team by 20%, incurring an additional `\$0.2 million` in administrative costs not included in the project`s direct funding requirements. InnovateTech has a strict policy that no project can be partially funded; a project must receive its full requested budget to be initiated. The company`s primary goal for the year is to maximize long-term growth potential, while maintaining core operational stability."
+    ]
+  }
+}
+```
+----------------------------------------
+Response type: <class 'str'>
+Response length: 1928
+Expected keys: ['content', 'question', 'graph', 'data']
+================================================================================
+
+Retrying _generate - attempt 1/3

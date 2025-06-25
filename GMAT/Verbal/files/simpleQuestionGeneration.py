@@ -6,8 +6,8 @@ sys.path.append(parent_dir)
 from dotenv import load_dotenv
 from google import genai
 
-# GMAT.Verbal.files.
-from GMAT.Verbal.files.questionComponents import SimpleQuestion
+# Import from unified core components
+from core.components.adapters.gmat_adapter import GMATAdapter
 import random
 class SimpleQuestionGeneration:
    def __init__(self, global_state, lock, api_IDX, prompt=None):
