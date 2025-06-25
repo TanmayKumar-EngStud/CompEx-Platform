@@ -2,7 +2,11 @@ import random, json, os, re
 from dotenv import load_dotenv
 from google import genai
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import MSR
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 
 class Generate_MSR:
     def __init__(self, global_state, lock, api_IDX, prompt):
@@ -25,7 +29,17 @@ class Generate_MSR:
         self.MSR = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/MSR.json")))
 
     def generate_question(self): 
-        msr = MSR(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+        # Create unified component and wrap with GMAT adapter
+        component = create_question_component(
+            question_type=QuestionType.MULTI_SOURCE_REASONING,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+        )
+        msr = GMATAdapter.adapt_multi_source_reasoning(component)
         cn = self.MSR["combination_number"]
         sources = {"sources": []}
         # region generating sources

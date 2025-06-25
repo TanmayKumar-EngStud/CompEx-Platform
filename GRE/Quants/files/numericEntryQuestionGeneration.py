@@ -1,9 +1,12 @@
-# GRE.Quants.files.
-from GRE.Quants.files.questionComponents import ParentChildQuestion, SimpleQuestion
-import json, re
+import json, re, os
 from dotenv import load_dotenv
 from google import genai
-import os
+
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gre_adapter import GREAdapter
 class NumericEntryQuestionGeneration:
    def __init__(self, global_state, lock, api_IDX, prompt):
       load_dotenv()
@@ -22,10 +25,31 @@ class NumericEntryQuestionGeneration:
       self.questionData["type"] = "NE"
       self.questionData["prompt"] = self.prompt
       if "graph" in self.prompt.lower() or "table" in self.prompt.lower():
-         numericEntryQuestion = ParentChildQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+         # Create parent-child component for graph/table content
+         pc_component = create_question_component(
+            question_type=QuestionType.READING_COMPREHENSION,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GRE
+         )
+         numericEntryQuestion = GREAdapter.adapt_parent_child_question(pc_component)
          content = numericEntryQuestion.generate_questionGraph()
          self.questionData["content"] = content
-      numericEntryQuestion = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+      
+      # Create simple question component for numeric entry
+      simple_component = create_question_component(
+         question_type=QuestionType.NUMERIC_ENTRY,
+         llm=self.llm,
+         system_instructions=self.system_instructions,
+         global_state=self.global_state,
+         lock=self.lock,
+         prompt=self.prompt,
+         exam_type=ExamType.GRE
+      )
+      numericEntryQuestion = GREAdapter.adapt_simple_question(simple_component)
       self.questionData["question"] = numericEntryQuestion.generate_questionText()
       self.questionData["title"] = numericEntryQuestion.generate_questionTitle()
       self.questionData["solution"], self.questionData["answer"] = numericEntryQuestion.generate_questionSolution(isNE = True)

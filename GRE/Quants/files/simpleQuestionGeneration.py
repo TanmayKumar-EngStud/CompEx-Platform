@@ -1,9 +1,12 @@
-# GRE.Quants.files.
-from GRE.Quants.files.questionComponents import SimpleQuestion
+import os, json, re, random
 from google import genai
-import os, json, re
 from dotenv import load_dotenv
-import random
+
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gre_adapter import GREAdapter
 class SimpleQuestionGeneration:
     def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
@@ -28,7 +31,17 @@ class SimpleQuestionGeneration:
         else:
             self.questionData["type"] = "MCQ-Single"
         self.questionData["prompt"] = self.prompt
-        questionContent = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+        # Create unified component and wrap with GRE adapter
+        component = create_question_component(
+            question_type=QuestionType.PROBLEM_SOLVING,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GRE
+        )
+        questionContent = GREAdapter.adapt_simple_question(component)
         self.questionData["question"] = questionContent.generate_questionText()
         self.questionData["title"] = questionContent.generate_questionTitle()
         self.questionData["solution"] = questionContent.generate_questionSolution()

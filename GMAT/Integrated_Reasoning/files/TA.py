@@ -2,7 +2,11 @@
 
 import random
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import TA
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 from google import genai
 from dotenv import load_dotenv
 import os, re, json
@@ -18,7 +22,17 @@ class Generate_TA:
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        ta = TA(self.llm, self.system_instructions, self.global_state, self.prompt, self.lock)
+        # Create unified component and wrap with GMAT adapter
+        component = create_question_component(
+            question_type=QuestionType.TABLE_ANALYSIS,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+        )
+        ta = GMATAdapter.adapt_table_analysis(component)
         self.questionData["type"] = "TA"
         self.questionData["prompt"] = self.prompt
         difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)

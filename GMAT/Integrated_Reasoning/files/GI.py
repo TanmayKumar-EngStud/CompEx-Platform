@@ -2,10 +2,14 @@ import random
 import json
 import os
 import re
-# GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import GI
 from google import genai
 from dotenv import load_dotenv
+
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 
 
 class Generate_GI:
@@ -21,8 +25,17 @@ class Generate_GI:
         self.questionData = {}
 
     def generate_question(self):
-        gi = GI(self.llm, self.system_instructions,
-                self.global_state, self.prompt, self.lock)
+        # Create unified component and wrap with GMAT adapter
+        component = create_question_component(
+            question_type=QuestionType.GRAPHIC_INTERPRETATION,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+        )
+        gi = GMATAdapter.adapt_graphic_interpretation(component)
         self.questionData["type"] = "GI"
         self.questionData["prompt"] = self.prompt
         self.questionData["content"] = gi.generate_questionGraph()

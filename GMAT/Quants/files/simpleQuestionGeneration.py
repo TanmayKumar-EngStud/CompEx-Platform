@@ -1,9 +1,13 @@
 import random
-# GMAT.Quants.files.
-from GMAT.Quants.files.questionComponents import SimpleQuestion
+import json, os, re
 from google import genai
 from dotenv import load_dotenv
-import json, os, re
+
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 
 class SimpleQuestionGeneration:
    def __init__(self, global_state, lock, api_IDX, prompt=None):
@@ -38,7 +42,17 @@ class SimpleQuestionGeneration:
    
    def generate_question(self):
       try:
-         questionContent = SimpleQuestion(self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
+         # Create unified component and wrap with GMAT adapter
+         component = create_question_component(
+            question_type=QuestionType.PROBLEM_SOLVING,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+         )
+         questionContent = GMATAdapter.adapt_simple_question(component)
          # Generate question text
          question = questionContent.generate_questionText(self.prompt)
          self.questionData["type"] = "MCQ-Single"

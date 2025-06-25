@@ -1,9 +1,12 @@
-import random, os, sys, json
+import random, os, sys, json, re
 from dotenv import load_dotenv
-# GMAT.Quants.files.
 from google import genai
-from GMAT.Quants.files.questionComponents import DataSufficiencyQuestion
-import re
+
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 class DataSufficiencyQuestionGeneration:
     def __init__(self, global_state, lock, api_IDX, prompt):
         load_dotenv()
@@ -16,7 +19,17 @@ class DataSufficiencyQuestionGeneration:
         self.prompt = prompt
         self.questionData = {}
     def generate_question(self):
-        questionContent = DataSufficiencyQuestion(self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
+        # Create unified component and wrap with GMAT adapter
+        component = create_question_component(
+            question_type=QuestionType.DATA_SUFFICIENCY,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+        )
+        questionContent = GMATAdapter.adapt_data_sufficiency_question(component)
         self.questionData["type"] = "Data Sufficiency"
         self.questionData["prompt"] = self.prompt
         passages, statements, question = questionContent.generate_questionText()

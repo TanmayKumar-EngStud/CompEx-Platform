@@ -1,4 +1,8 @@
-from GMAT.Verbal.files.questionComponents import ParentChildQuestion
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 from google import genai
 from dotenv import load_dotenv
 import random
@@ -77,9 +81,18 @@ class ParentChildQuestionGeneration:
     def generate_question(self):
         self.questionData["type"] = "RC"
         self.questionData["prompt"] = self.prompt
-        questionContent = ParentChildQuestion(
-            self.llm, self.system_instructions, self.global_state, self.prompt, self.lock, self.number_of_child_questions)
-        passages = questionContent.generate_parentPassage()
+        # Create unified component and wrap with GMAT adapter
+        component = create_question_component(
+            question_type=QuestionType.READING_COMPREHENSION,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+        )
+        questionContent = GMATAdapter.adapt_parent_child_question(component)
+        passages = questionContent.generate_parentTitle()  # Fixed method name
         self.questionData["content"] = {"passages": passages}
 
         difficulty = re.search(r'<difficulty_level: (\d+)>', self.prompt)

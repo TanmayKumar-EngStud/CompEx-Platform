@@ -1,5 +1,9 @@
 # GMAT.Integrated_Reasoning.files.
-from GMAT.Integrated_Reasoning.files.questionComponents import TPA
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.components.question_components import create_question_component
+from core.components.adapters.gmat_adapter import GMATAdapter
 import random
 import json
 from google import genai
@@ -26,8 +30,17 @@ class Generate_TPA:
         if difficulty_search:
             difficulty = int(difficulty_search.group(1))
 
-        tpa = TPA(self.llm, self.system_instructions,
-                  self.global_state, self.prompt, self.lock)
+        # Create unified component and wrap with GMAT adapter
+        component = create_question_component(
+            question_type=QuestionType.TWO_PART_ANALYSIS,
+            llm=self.llm,
+            system_instructions=self.system_instructions,
+            global_state=self.global_state,
+            lock=self.lock,
+            prompt=self.prompt,
+            exam_type=ExamType.GMAT
+        )
+        tpa = GMATAdapter.adapt_two_part_analysis(component)
 
         # Generate question text and components
         parentQuestionContent = tpa.generate_ParentQuestionContent()
