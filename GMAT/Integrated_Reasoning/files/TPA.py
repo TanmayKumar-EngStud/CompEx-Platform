@@ -1,123 +1,178 @@
-# GMAT.Integrated_Reasoning.files.
 # Import unified components
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
+from core.enums.section_types import SectionType
+from core.interfaces.question_generator import BaseQuestionGenerator
 from core.components.question_components import create_question_component
 from core.components.adapters.gmat_adapter import GMATAdapter
 import random
 import json
-from google import genai
-from dotenv import load_dotenv
 import os
 import re
+from typing import Dict, Any, Optional
 
 
-class Generate_TPA:
+class Generate_TPA(BaseQuestionGenerator):
+    """GMAT Two-Part Analysis Question Generator using unified architecture."""
+    
     def __init__(self, global_state, lock, api_IDX, prompt):
-        load_dotenv()
-        self.global_state = global_state
-        self.lock = lock
-        api_key = os.getenv(f"API_{api_IDX}")
-        self.llm = genai.Client(api_key=api_key)
-        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Two-Part-Analysis.txt"), "r") as f:
-            self.system_instructions = f.read()
-        self.prompt = prompt
-        self.questionData = {}
-
-    def generate_question(self):
-        difficulty_search = re.search(r"difficulty_level: (\d+)", self.prompt)
-        difficulty = 1
-        if difficulty_search:
-            difficulty = int(difficulty_search.group(1))
-
-        # Create unified component and wrap with GMAT adapter
-        component = create_question_component(
+        # Initialize base class with proper types
+        super().__init__(
+            exam_type=ExamType.GMAT,
             question_type=QuestionType.TWO_PART_ANALYSIS,
-            llm=self.llm,
-            system_instructions=self.system_instructions,
-            global_state=self.global_state,
-            lock=self.lock,
-            prompt=self.prompt,
-            exam_type=ExamType.GMAT
+            global_state=global_state,
+            lock=lock,
+            api_idx=api_IDX,
+            prompt=prompt
         )
-        tpa = GMATAdapter.adapt_two_part_analysis(component)
-
-        # Generate question text and components
-        parentQuestionContent = tpa.generate_ParentQuestionContent()
-        self.questionData["type"] = "TPA"
-        self.questionData["prompt"] = self.prompt
-        self.questionData["content"] = [parentQuestionContent]
-
-        # region preparing difficulty for child Questions
-        d1 = difficulty + random.randint(-1, 1)
-        d2 = difficulty + random.randint(-1, 1)
-        if d1 < 1:
-            d1 = 1
-        if d2 < 1:
-            d2 = 1
-        if d1 > 5:
-            d1 = 5
-        if d2 > 5:
-            d2 = 5
-        # endregion
-
-        # region generating child questions
-        questions = tpa.generate_QuestionText([d1, d2])
-        if not questions or len(questions) < 2:
-            print("Error: Failed to generate questions or insufficient questions returned")
-            return None
-        
-        q1 = {}
-        q2 = {}
-        q1["question"] = questions[0]
-        q2["question"] = questions[1]
-
-        solutions = tpa.generate_QuestionSolution()
-        if not solutions or len(solutions) < 2:
-            print("Error: Failed to generate solutions or insufficient solutions returned")
-            return None
-        q1["solution"] = solutions[0]
-        q2["solution"] = solutions[1]
-        common_options, answers = tpa.generate_QuestionOptions()
-        if not common_options or not answers:
-            print("Error: Failed to generate options or answers")
-            return None
-        
+    
+    def _load_default_system_instructions(self) -> str:
+        """Load GMAT Two-Part Analysis system instructions."""
+        instruction_path = os.path.join(
+            os.path.dirname(__file__), 
+            "../System_instructions/Two-Part-Analysis.txt"
+        )
         try:
-            ans1 = common_options[answers["question1"]]
-            ans2 = common_options[answers["question2"]]
-            q1["answer"] = ans1
-            q2["answer"] = ans2
-        except (KeyError, TypeError) as e:
-            print(f"Error: Invalid options or answers structure: {e}")
+            with open(instruction_path, "r") as f:
+                return f.read()
+        except FileNotFoundError:
+            print(f"System instructions file not found: {instruction_path}")
+            return ""
+
+    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """
+        Generate a GMAT Two-Part Analysis question.
+        
+        Args:
+            prompt: Optional prompt override
+            
+        Returns:
+            Generated question data or None if generation fails
+        """
+        try:
+            # Initialize question data using base class
+            self.initialize_question_data(prompt)
+            
+            # Create unified component and wrap with GMAT adapter
+            component = create_question_component(
+                question_type=QuestionType.TWO_PART_ANALYSIS,
+                llm=self.llm,
+                system_instructions=self.system_instructions,
+                global_state=self.global_state,
+                lock=self.lock,
+                prompt=self.prompt,
+                exam_type=ExamType.GMAT
+            )
+            tpa = GMATAdapter.adapt_two_part_analysis(component)
+
+            # Generate parent question content
+            parentQuestionContent = tpa.generate_ParentQuestionContent()
+            self.question_data["content"] = [parentQuestionContent]
+
+            # Prepare difficulty for child questions
+            difficulty = self.extract_difficulty_from_prompt()
+            d1 = max(1, min(5, difficulty + random.randint(-1, 1)))
+            d2 = max(1, min(5, difficulty + random.randint(-1, 1)))
+
+            # Generate child questions
+            questions = tpa.generate_QuestionText([d1, d2])
+            if not questions or len(questions) < 2:
+                print("Error: Failed to generate questions or insufficient questions returned")
+                return None
+            
+            solutions = tpa.generate_QuestionSolution()
+            if not solutions or len(solutions) < 2:
+                print("Error: Failed to generate solutions or insufficient solutions returned")
+                return None
+                
+            common_options, answers = tpa.generate_QuestionOptions()
+            if not common_options or not answers:
+                print("Error: Failed to generate options or answers")
+                return None
+            
+            try:
+                ans1 = common_options[answers["question1"]]
+                ans2 = common_options[answers["question2"]]
+            except (KeyError, TypeError) as e:
+                print(f"Error: Invalid options or answers structure: {e}")
+                return None
+
+            title = tpa.generate_QuestionTitle()
+            self.question_data["title"] = title or "Two Part Analysis Question"
+            
+            option_list = list(common_options.values())
+            random.shuffle(option_list)
+            
+            # Create child question objects
+            q1 = {
+                "type": "TPA",
+                "question": questions[0],
+                "solution": solutions[0],
+                "answer": ans1,
+                "title": title,
+                "prompt": self.prompt,
+                "options": option_list,
+                "difficulty": d1,
+                "tags": self.extract_tags_from_prompt()
+            }
+            
+            q2 = {
+                "type": "TPA",
+                "question": questions[1],
+                "solution": solutions[1],
+                "answer": ans2,
+                "title": title,
+                "prompt": self.prompt,
+                "options": option_list,
+                "difficulty": d2,
+                "tags": self.extract_tags_from_prompt()
+            }
+            
+            self.question_data["questions"] = [q1, q2]
+
+            return self.question_data
+            
+        except Exception as e:
+            print(f"Error generating GMAT Two-Part Analysis question: {e}")
             return None
-
-        title = tpa.generate_QuestionTitle()
-        self.questionData["title"] = title or "Two Part Analysis Question"
-        option_list = list(common_options.values())
-        random.shuffle(option_list)
-        q1["type"] = "TPA"
-        q2["type"] = "TPA"
-        q1["title"] = title
-        q2["title"] = title
-        q1["prompt"] = self.prompt
-        q2["prompt"] = self.prompt
-        q1["options"] = option_list
-        q2["options"] = option_list
-        q1["difficulty"] = d1
-        q2["difficulty"] = d2
-        q1["tags"] = [self.prompt.split(" - ")[1].strip().strip("<>").strip()]
-        q2["tags"] = [self.prompt.split(" - ")[1].strip().strip("<>").strip()]
-        # endregion
-        self.questionData["questions"] = [q1, q2]
-
-        # Set tags and difficulty
-        self.questionData["tags"] = ["TPA", self.prompt.split(
-            " - ")[1].strip().strip("<>").strip()]
-        self.questionData["difficulty"] = difficulty
-
-        return self.questionData
-
-# g = Generate_TPA("<Business> - <Quantitative Skills> - <difficulty_level: 3> - <Bar Chart>")
-# res = g.generate_TPA()
-# json.dump(res, open("tpa-component.json", "w"))
+    
+    def validate_output(self, question_data: Dict[str, Any]) -> bool:
+        """
+        Validate GMAT Two-Part Analysis question format.
+        
+        Args:
+            question_data: Generated question data to validate
+            
+        Returns:
+            True if valid, False otherwise
+        """
+        required_fields = ["type", "content", "questions"]
+        
+        # Check required fields
+        for field in required_fields:
+            if field not in question_data:
+                return False
+        
+        # Validate questions array
+        questions = question_data.get("questions", [])
+        if not isinstance(questions, list) or len(questions) != 2:
+            return False
+        
+        # Validate each child question
+        for question in questions:
+            if not isinstance(question, dict):
+                return False
+            required_question_fields = ["type", "question", "options", "answer"]
+            for field in required_question_fields:
+                if field not in question:
+                    return False
+        
+        return True
+    
+    def get_supported_types(self) -> list[QuestionType]:
+        """Get supported question types."""
+        return [QuestionType.TWO_PART_ANALYSIS]
+    
+    def get_exam_type(self) -> ExamType:
+        """Get exam type."""
+        return ExamType.GMAT

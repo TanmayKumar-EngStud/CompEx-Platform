@@ -1,0 +1,615 @@
+=== Question Generation Session Started ===
+Log file: logs/question_generation_2025-06-25_23-16-10.log
+Timestamp: 2025-06-25 23:16:10
+================================================================================
+Primary user already exists
+Initialized - Difficulty: 5, Mock: False
+================================================================================
+PAPER GENERATION SESSION STARTED
+================================================================================
+Starting GMAT paper generation - Difficulty: 5
+Failed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.GI.Generate_GI: Class GMAT.Integrated_Reasoning.files.GI.Generate_GI does not implement IQuestionGenerator
+
+
+
+
+
+Failed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGenerator
+
+Failed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.TPA.Generate_TPA: Class GMAT.Integrated_Reasoning.files.TPA.Generate_TPA does not implement IQuestionGenerator
+
+Failed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.TA.Generate_TA: Class GMAT.Integrated_Reasoning.files.TA.Generate_TA does not implement IQuestionGenerator
+
+
+
+
+
+
+
+Failed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGenerator
+
+Failed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGeneratorFailed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGenerator
+Failed to load generator GMAT.Integrated_Reasoning.files.MSR.Generate_MSR: Class GMAT.Integrated_Reasoning.files.MSR.Generate_MSR does not implement IQuestionGenerator
+
+
+Failed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGenerator
+
+
+Failed to load generator GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration: Class GRE.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGenerator
+
+
+
+
+
+Failed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration: Class GRE.Quants.files.numericEntryQuestionGeneration.NumericEntryQuestionGeneration does not implement IQuestionGenerator
+
+
+
+Failed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+
+
+Failed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Quants.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+
+
+Failed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+
+
+Failed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGenerator
+Failed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGeneratorNo generator found for gmat table_analysis integrated_reasoningFailed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration: Class GRE.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGeneratorFailed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+No generator found for gmat multi_source_reasoning integrated_reasoning
+
+
+
+
+
+
+Attempt 1 failed:
+No generator found for gmat table_analysis integrated_reasoningNo generator found for gmat table_analysis integrated_reasoningNo generator found for gmat graphic_interpretation integrated_reasoningFailed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+No generator found for gmat two_part_analysis integrated_reasoning
+Failed to load generator GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration: Class GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration does not implement IQuestionGenerator
+No generator found for gmat graphic_interpretation integrated_reasoning
+
+Attempt 1 failed:
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Generator class: GeneratorClass.GI_gen
+
+Attempt 1 failed:
+
+Traceback:No generator found for gmat graphic_interpretation integrated_reasoning
+
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+
+
+Attempt 1 failed:
+
+
+Attempt 1 failed:
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Generator class: GeneratorClass.GI_gen
+
+
+Attempt 1 failed:
+Error message: Factory failed to create generator for GeneratorClass.MSR_gen
+
+Generator class: GeneratorClass.TA_gen
+Traceback:
+
+Attempt 1 failed:
+Attempt 1 failed:
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+Generator class: GeneratorClass.TA_gen
+Traceback:
+Error message: Factory failed to create generator for GeneratorClass.TPA_gen
+Generator class: GeneratorClass.TPA_gen
+Traceback:Generator class: GeneratorClass.TA_gen
+Traceback:
+
+Error message: Factory failed to create generator for GeneratorClass.GI_genGenerator class: GeneratorClass.MSR_gen
+Traceback:
+
+Generator class: GeneratorClass.GI_gen
+Traceback:
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Accounting> - <Pattern Recognition> - <Bar Chart> - <difficulty_level: 2>
+
+
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Logistics and Supply Chain> - <Pattern Recognition> - <Bar Chart> - <difficulty_level: 4>
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Traceback:
+
+No generator found for gmat graphic_interpretation integrated_reasoning
+
+Attempt 2 failed:
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Generator class: GeneratorClass.GI_gen
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Traceback:  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.TA_gen
+No generator found for gmat graphic_interpretation integrated_reasoningError: Factory failed to create generator for GeneratorClass.TPA_genError: Factory failed to create generator for GeneratorClass.MSR_gen
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.MSR_gen
+Prompt: MSR - <total_child_questions: 2> - <Finance> - <Critical Reasoning> - <MCQ (5 options MCQ)> - <difficulty_level: 4>
+
+
+No generator found for gmat multi_source_reasoning integrated_reasoning
+
+
+Attempt 2 failed:Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Budget> - <Quantitative Reasoning> - <Stacked Bar Chart> - <difficulty_level: 3>
+
+
+
+Error: Factory failed to create generator for GeneratorClass.TA_gen
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.TA_gen
+Prompt: TA - <Strategy and Management> - <Comparative Analysis> - <Time_series Table> - <True/False type> - <difficulty_level: 2>
+
+
+No generator found for gmat graphic_interpretation integrated_reasoning
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Attempt 2 failed:
+Error message: Factory failed to create generator for GeneratorClass.MSR_gen
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.TA_gen
+Prompt: TA - <Resource Management> - <Comparative Analysis> - <Time_series Table> - <Acceptable/Not Acceptable type> - <difficulty_level: 4>
+
+
+
+
+Attempt 2 failed:
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+No generator found for gmat table_analysis integrated_reasoningGenerator class: GeneratorClass.MSR_gen
+Generator class: GeneratorClass.GI_gen
+Traceback:  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Traceback:
+
+
+
+Error: Factory failed to create generator for GeneratorClass.TA_gen
+Attempt 2 failed:No generator found for gmat table_analysis integrated_reasoning
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Accounting> - <Pattern Recognition> - <Bar Chart> - <difficulty_level: 2>
+
+
+
+
+
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.TA_gen
+Prompt: TA - <Resource Management> - <Critical Reasoning> - <Time_series Table> - <Inferred/Conflicting type> - <difficulty_level: 4>
+
+
+No generator found for gmat table_analysis integrated_reasoning
+
+Attempt 2 failed:
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+Generator class: GeneratorClass.TA_gen
+Traceback:
+No generator found for gmat graphic_interpretation integrated_reasoning
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.TPA_gen
+Prompt: TPA - <Marketing and Sales> - <Logical Reasoning> - <Bar Chart> - <difficulty_level: 5>
+
+
+No generator found for gmat two_part_analysis integrated_reasoning
+
+Generator class: GeneratorClass.GI_gen
+Traceback:
+Error: Factory failed to create generator for GeneratorClass.MSR_gen
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.MSR_gen
+Prompt: MSR - <total_child_questions: 2> - <Finance> - <Critical Reasoning> - <MCQ (5 options MCQ)> - <difficulty_level: 4>
+
+
+No generator found for gmat multi_source_reasoning integrated_reasoning  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+
+Attempt 3 failed:
+Attempt 2 failed:Generator class: GeneratorClass.TA_gen
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Attempt 3 failed:
+Attempt 2 failed:  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Logistics and Supply Chain> - <Pattern Recognition> - <Bar Chart> - <difficulty_level: 4>
+
+
+Traceback:
+Error message: Factory failed to create generator for GeneratorClass.MSR_gen
+Generator class: GeneratorClass.MSR_gen
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Error message: Factory failed to create generator for GeneratorClass.GI_genError: Factory failed to create generator for GeneratorClass.TA_gen
+
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Budget> - <Quantitative Reasoning> - <Stacked Bar Chart> - <difficulty_level: 3>
+
+Error: Factory failed to create generator for GeneratorClass.TA_genNo generator found for gmat graphic_interpretation integrated_reasoning
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.TA_gen
+Prompt: TA - <Resource Management> - <Critical Reasoning> - <Time_series Table> - <Inferred/Conflicting type> - <difficulty_level: 4>
+
+
+
+No generator found for gmat graphic_interpretation integrated_reasoning
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+Traceback:
+Attempt 3 failed:
+
+Error message: Factory failed to create generator for GeneratorClass.TPA_gen
+Generator class: GeneratorClass.TPA_gen
+No generator found for gmat table_analysis integrated_reasoning
+Error message: Factory failed to create generator for GeneratorClass.GI_genGenerator class: GeneratorClass.GI_gen
+Attempt 3 failed:
+Attempt 3 failed:  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+
+
+
+
+
+Error: Factory failed to create generator for GeneratorClass.MSR_genGenerator class: GeneratorClass.GI_gen
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.TA_gen
+Prompt: TA - <Strategy and Management> - <Comparative Analysis> - <Time_series Table> - <True/False type> - <difficulty_level: 2>
+
+
+
+
+Traceback:Traceback:
+Generator class: GeneratorClass.TA_gen
+Failed after 3 attempts for:Traceback:
+Error message: Factory failed to create generator for GeneratorClass.TA_genError message: Factory failed to create generator for GeneratorClass.GI_genNo generator found for gmat table_analysis integrated_reasoning
+
+
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Section: GMAT_IR
+Generator: MSR_gen
+Prompt: MSR - <total_child_questions: 2> - <Finance> - <Critical Reasoning> - <MCQ (5 options MCQ)> - <difficulty_level: 4>
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.TPA_gen
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.TPA_gen
+Prompt: TPA - <Marketing and Sales> - <Logical Reasoning> - <Bar Chart> - <difficulty_level: 5>
+
+
+No generator found for gmat two_part_analysis integrated_reasoning
+
+Traceback:
+
+Generator class: GeneratorClass.TA_gen
+Traceback:
+Generator class: GeneratorClass.GI_gen  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.TA_gen  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Failed after 3 attempts for:
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Traceback:
+
+Attempt 3 failed:
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.TA_gen
+Prompt: TA - <Resource Management> - <Comparative Analysis> - <Time_series Table> - <Acceptable/Not Acceptable type> - <difficulty_level: 4>
+
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Failed after 3 attempts for:
+Section: GMAT_IR
+
+Failed after 3 attempts for:
+Section: GMAT_IR
+
+Attempt 3 failed:
+Error message: Factory failed to create generator for GeneratorClass.TPA_gen
+Generator class: GeneratorClass.TPA_gen
+Traceback:
+Generator class: GeneratorClass.TA_gen
+Traceback:
+Generator: GI_gen
+Prompt: GI - <Logistics and Supply Chain> - <Pattern Recognition> - <Bar Chart> - <difficulty_level: 4>
+
+Section: GMAT_IRError: Factory failed to create generator for GeneratorClass.TA_gen  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.TA_gen
+
+Failed after 3 attempts for:
+Section: GMAT_IR
+Generator: TA_gen
+Generator: GI_genNo generator found for gmat table_analysis integrated_reasoning
+
+Error: Factory failed to create generator for GeneratorClass.TPA_genPrompt: TA - <Strategy and Management> - <Comparative Analysis> - <Time_series Table> - <True/False type> - <difficulty_level: 2>
+
+
+Attempt 3 failed:
+Error message: Factory failed to create generator for GeneratorClass.TA_gen
+
+Failed after 3 attempts for:
+
+Generator class: GeneratorClass.TA_genGenerator: GI_gen
+Prompt: GI - <Accounting> - <Pattern Recognition> - <Bar Chart> - <difficulty_level: 2>
+
+
+Section: GMAT_IR
+Failed after 3 attempts for:
+Prompt: GI - <Budget> - <Quantitative Reasoning> - <Stacked Bar Chart> - <difficulty_level: 3>
+Traceback:
+Generator: TA_genSection: GMAT_IR
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Prompt: TA - <Resource Management> - <Critical Reasoning> - <Time_series Table> - <Inferred/Conflicting type> - <difficulty_level: 4>Error: Factory failed to create generator for GeneratorClass.TA_gen
+
+
+
+Failed after 3 attempts for:Generator: TPA_gen
+
+Section: GMAT_IRPrompt: TPA - <Marketing and Sales> - <Logical Reasoning> - <Bar Chart> - <difficulty_level: 5>
+
+Generator: TA_gen
+Prompt: TA - <Resource Management> - <Comparative Analysis> - <Time_series Table> - <Acceptable/Not Acceptable type> - <difficulty_level: 4>
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+No generator found for gmat graphic_interpretation integrated_reasoning
+No generator found for gmat graphic_interpretation integrated_reasoning
+
+Attempt 1 failed:No generator found for gmat graphic_interpretation integrated_reasoning
+Attempt 1 failed:
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+
+
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Attempt 1 failed:Generator class: GeneratorClass.GI_gen
+
+Generator class: GeneratorClass.GI_genError message: Factory failed to create generator for GeneratorClass.GI_gen
+Traceback:
+
+Traceback:
+
+Generator class: GeneratorClass.GI_gen  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Traceback:Error: Factory failed to create generator for GeneratorClass.GI_gen
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Economics> - <Critical Thinking> - <Line Chart> - <difficulty_level: 3>
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Marketing and Sales> - <Logical Reasoning> - <Line Chart> - <difficulty_level: 4>
+
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+No generator found for gmat graphic_interpretation integrated_reasoning
+
+Attempt 2 failed:No generator found for gmat graphic_interpretation integrated_reasoning
+
+Attempt 2 failed:
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Generator class: GeneratorClass.GI_gen
+Traceback:
+
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Attempt 1 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Strategy and Management> - <Comparative Analysis> - <Stacked Bar Chart> - <difficulty_level: 4>
+
+Error message: Factory failed to create generator for GeneratorClass.GI_gen
+Error: Factory failed to create generator for GeneratorClass.GI_genNo generator found for gmat graphic_interpretation integrated_reasoning
+
+Generator class: GeneratorClass.GI_gen
+
+Traceback:
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Marketing and Sales> - <Logical Reasoning> - <Line Chart> - <difficulty_level: 4>
+
+
+Attempt 2 failed:
+
+No generator found for gmat graphic_interpretation integrated_reasoningError message: Factory failed to create generator for GeneratorClass.GI_gen  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+Attempt 3 failed:
+
+Error message: Factory failed to create generator for GeneratorClass.GI_genGenerator class: GeneratorClass.GI_gen
+
+
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Economics> - <Critical Thinking> - <Line Chart> - <difficulty_level: 3>
+
+Generator class: GeneratorClass.GI_genTraceback:
+Traceback:
+
+No generator found for gmat graphic_interpretation integrated_reasoning
+
+
+Attempt 3 failed:  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+
+Error: Factory failed to create generator for GeneratorClass.GI_genError message: Factory failed to create generator for GeneratorClass.GI_gen
+Generator class: GeneratorClass.GI_gen
+
+
+Failed after 3 attempts for:  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Traceback:Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+
+
+Attempt 2 failed, retrying: Factory failed to create generator for GeneratorClass.GI_gen
+Prompt: GI - <Strategy and Management> - <Comparative Analysis> - <Stacked Bar Chart> - <difficulty_level: 4>
+
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Section: GMAT_IR
+
+Error: Factory failed to create generator for GeneratorClass.GI_genNo generator found for gmat graphic_interpretation integrated_reasoning
+
+
+Attempt 3 failed:
+Failed after 3 attempts for:Generator: GI_gen
+Prompt: GI - <Marketing and Sales> - <Logical Reasoning> - <Line Chart> - <difficulty_level: 4>
+
+
+Error message: Factory failed to create generator for GeneratorClass.GI_genSection: GMAT_IR
+
+Generator class: GeneratorClass.GI_genGenerator: GI_gen
+
+Prompt: GI - <Economics> - <Critical Thinking> - <Line Chart> - <difficulty_level: 3>
+Traceback:
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 111, in generate_question_with_retry
+    raise ValueError(f"Factory failed to create generator for {generator_class}")
+Error: Factory failed to create generator for GeneratorClass.GI_gen
+
+Failed after 3 attempts for:
+Section: GMAT_IR
+Generator: GI_gen
+Prompt: GI - <Strategy and Management> - <Comparative Analysis> - <Stacked Bar Chart> - <difficulty_level: 4>
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Task execution failed: object of type 'NoneType' has no len()
+Traceback (most recent call last):
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 187, in generate
+    manager.add_task(create_task, method, section, prompt, gen_class)
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/core/threading/api_thread_pool_manager.py", line 123, in add_task
+    self._add_task_internal(task)
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/core/threading/api_thread_pool_manager.py", line 133, in _add_task_internal
+    self._wait_and_reuse_slot(task)
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/core/threading/api_thread_pool_manager.py", line 159, in _wait_and_reuse_slot
+    for future in as_completed(self.futures):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/_base.py", line 243, in as_completed
+    waiter.event.wait(wait_timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 622, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 320, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/main.py", line 131, in <module>
+    main.generate_paper()
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/main.py", line 44, in generate_paper
+    GMAT_paper = gmat_mock.generate(8)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/GMAT/Mock.py", line 154, in generate
+    with APIThreadPoolManager(config, paper) as manager:
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/core/threading/api_thread_pool_manager.py", line 339, in __exit__
+    self.shutdown(wait=True)
+  File "/Users/tanmaykumar/Desktop/QGen-py-compex/core/threading/api_thread_pool_manager.py", line 299, in shutdown
+    self.executor.shutdown(wait=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 235, in shutdown
+    t.join()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1112, in join
+    self._wait_for_tstate_lock()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1132, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Exception ignored in: <module 'threading' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py'>
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1553, in _shutdown
+    atexit_call()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 31, in _python_exit
+    t.join()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1112, in join
+    self._wait_for_tstate_lock()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1132, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: 

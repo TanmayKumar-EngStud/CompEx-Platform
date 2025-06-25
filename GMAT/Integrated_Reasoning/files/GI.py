@@ -2,65 +2,137 @@ import random
 import json
 import os
 import re
-from google import genai
-from dotenv import load_dotenv
+from typing import Dict, Any, Optional
 
 # Import unified components
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
+from core.enums.section_types import SectionType
+from core.interfaces.question_generator import BaseQuestionGenerator
 from core.components.question_components import create_question_component
 from core.components.adapters.gmat_adapter import GMATAdapter
 
 
-class Generate_GI:
+class Generate_GI(BaseQuestionGenerator):
+    """GMAT Graphic Interpretation Question Generator using unified architecture."""
+    
     def __init__(self, global_state, lock, api_IDX, prompt):
-        load_dotenv()
-        self.global_state = global_state
-        self.lock = lock
-        api_key = os.getenv(f"API_{api_IDX}")
-        self.llm = genai.Client(api_key=api_key)
-        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/Graphic-Interpretation.txt"), "r") as f:
-            self.system_instructions = f.read()
-        self.prompt = prompt
-        self.questionData = {}
-
-    def generate_question(self):
-        # Create unified component and wrap with GMAT adapter
-        component = create_question_component(
+        # Initialize base class with proper types
+        super().__init__(
+            exam_type=ExamType.GMAT,
             question_type=QuestionType.GRAPHIC_INTERPRETATION,
-            llm=self.llm,
-            system_instructions=self.system_instructions,
-            global_state=self.global_state,
-            lock=self.lock,
-            prompt=self.prompt,
-            exam_type=ExamType.GMAT
+            global_state=global_state,
+            lock=lock,
+            api_idx=api_IDX,
+            prompt=prompt
         )
-        gi = GMATAdapter.adapt_graphic_interpretation(component)
-        self.questionData["type"] = "GI"
-        self.questionData["prompt"] = self.prompt
-        self.questionData["content"] = gi.generate_questionGraph()
-        self.questionData["question"] = gi.generate_questionText()
-        self.questionData["title"] = gi.generate_questionTitle()
-        self.questionData["solution"] = gi.generate_questionSolution()
-        options_list, correct_option = gi.generate_questionOptions()
-        idx = 0
-        answer_list = []
-        options = []
-        while idx < len(options_list.values()):
-            answer_list.append(
-                options_list[f"blank_{idx+1}"][correct_option[f"blank_{idx+1}"]])
-            opts = list(options_list[f"blank_{idx+1}"].values())
-            random.shuffle(opts)
-            options.append(opts)
-            idx += 1
-        self.questionData["options"] = options
-        self.questionData["answer"] = answer_list
-        self.questionData["tags"] = ["GI", self.prompt.split(
-            "-")[2].strip().strip('<>').strip()]
-        difficulty = re.search(r"<difficulty_level: (\d+)>", self.prompt)
-        self.questionData["difficulty"] = int(difficulty.group(1))
-        return self.questionData
+    
+    def _load_default_system_instructions(self) -> str:
+        """Load GMAT Graphic Interpretation system instructions."""
+        instruction_path = os.path.join(
+            os.path.dirname(__file__), 
+            "../System_instructions/Graphic-Interpretation.txt"
+        )
+        try:
+            with open(instruction_path, "r") as f:
+                return f.read()
+        except FileNotFoundError:
+            print(f"System instructions file not found: {instruction_path}")
+            return ""
 
-# g = Generate_GI("<GI> - <Bar Chart> - <difficulty_level: 4>")
-# content = g.generate_GI()
-# json.dump(content, open(os.path.join(os.path.dirname(__file__), "GI-component.json"), "w"))
+    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """
+        Generate a GMAT Graphic Interpretation question.
+        
+        Args:
+            prompt: Optional prompt override
+            
+        Returns:
+            Generated question data or None if generation fails
+        """
+        try:
+            # Initialize question data using base class
+            self.initialize_question_data(prompt)
+            
+            # Create unified component and wrap with GMAT adapter
+            component = create_question_component(
+                question_type=QuestionType.GRAPHIC_INTERPRETATION,
+                llm=self.llm,
+                system_instructions=self.system_instructions,
+                global_state=self.global_state,
+                lock=self.lock,
+                prompt=self.prompt,
+                exam_type=ExamType.GMAT
+            )
+            gi = GMATAdapter.adapt_graphic_interpretation(component)
+            
+            # Generate question content
+            self.question_data["content"] = gi.generate_questionGraph()
+            self.question_data["question"] = gi.generate_questionText()
+            self.question_data["title"] = gi.generate_questionTitle()
+            self.question_data["solution"] = gi.generate_questionSolution()
+            
+            # Generate options and answers
+            options_list, correct_option = gi.generate_questionOptions()
+            if options_list and correct_option:
+                answer_list = []
+                options = []
+                idx = 0
+                while idx < len(options_list.values()):
+                    blank_key = f"blank_{idx+1}"
+                    if blank_key in options_list and blank_key in correct_option:
+                        answer_list.append(
+                            options_list[blank_key][correct_option[blank_key]])
+                        opts = list(options_list[blank_key].values())
+                        random.shuffle(opts)
+                        options.append(opts)
+                    idx += 1
+                
+                self.question_data["options"] = options
+                self.question_data["answer"] = answer_list
+            else:
+                self.question_data["options"] = [["Option A", "Option B"]]
+                self.question_data["answer"] = ["Option A"]
+
+            return self.question_data
+            
+        except Exception as e:
+            print(f"Error generating GMAT Graphic Interpretation question: {e}")
+            return None
+    
+    def validate_output(self, question_data: Dict[str, Any]) -> bool:
+        """
+        Validate GMAT Graphic Interpretation question format.
+        
+        Args:
+            question_data: Generated question data to validate
+            
+        Returns:
+            True if valid, False otherwise
+        """
+        required_fields = ["type", "content", "question", "answer", "solution", "options"]
+        
+        # Check required fields
+        for field in required_fields:
+            if field not in question_data:
+                return False
+        
+        # Validate options structure
+        options = question_data.get("options", [])
+        if not isinstance(options, list) or len(options) == 0:
+            return False
+        
+        # Validate answer structure
+        answer = question_data.get("answer", [])
+        if not isinstance(answer, list) or len(answer) == 0:
+            return False
+        
+        return True
+    
+    def get_supported_types(self) -> list[QuestionType]:
+        """Get supported question types."""
+        return [QuestionType.GRAPHIC_INTERPRETATION]
+    
+    def get_exam_type(self) -> ExamType:
+        """Get exam type."""
+        return ExamType.GMAT

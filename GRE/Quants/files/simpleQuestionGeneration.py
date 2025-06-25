@@ -1,78 +1,134 @@
 import os, json, re, random
-from google import genai
-from dotenv import load_dotenv
+from typing import Dict, Any, Optional
 
 # Import unified components
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
+from core.enums.section_types import SectionType
+from core.interfaces.question_generator import BaseQuestionGenerator
 from core.components.question_components import create_question_component
 from core.components.adapters.gre_adapter import GREAdapter
-class SimpleQuestionGeneration:
+
+
+class SimpleQuestionGeneration(BaseQuestionGenerator):
+    """GRE Quantitative Simple Question Generator using unified architecture."""
+    
     def __init__(self, global_state, lock, api_IDX, prompt):
-        load_dotenv()
-        self.global_state = global_state
-        self.lock = lock
-        api_key = os.getenv(f"API_{api_IDX}")
-        self.llm = genai.Client(api_key = api_key)
-        self.prompt = prompt
-        self.questionData = {}
-        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Simple-Questions.txt"), "r") as f:
-            self.system_instructions = f.read()
-
-    def getTagAtIndex(self, indexes):
-        tags = []
-        for index in indexes:
-            tags.extend([x.strip() for x in self.prompt.split(" - ")[index].strip("<>").strip("[]").split(",")])
-        return tags
-
-    def generate_question(self):
-        if "(multi-correct MCQ)" in self.prompt:
-            self.questionData["type"] = "MCQ-Multi"
-        else:
-            self.questionData["type"] = "MCQ-Single"
-        self.questionData["prompt"] = self.prompt
-        # Create unified component and wrap with GRE adapter
-        component = create_question_component(
+        # Initialize base class with proper types
+        super().__init__(
+            exam_type=ExamType.GRE,
             question_type=QuestionType.PROBLEM_SOLVING,
-            llm=self.llm,
-            system_instructions=self.system_instructions,
-            global_state=self.global_state,
-            lock=self.lock,
-            prompt=self.prompt,
-            exam_type=ExamType.GRE
+            global_state=global_state,
+            lock=lock,
+            api_idx=api_IDX,
+            prompt=prompt
         )
-        questionContent = GREAdapter.adapt_simple_question(component)
-        self.questionData["question"] = questionContent.generate_questionText()
-        self.questionData["title"] = questionContent.generate_questionTitle()
-        self.questionData["solution"] = questionContent.generate_questionSolution()
-        options, answer = questionContent.generate_questionOptions()
-        options_list = list(options.values())
-        
-        if isinstance(answer, list):
-            ans = []
-            for i in answer:
-                ans.append(options[i])
-            self.questionData["answer"] = ans
-        else:
-            self.questionData["answer"] = options[answer]
-        random.shuffle(options_list)
-        self.questionData["options"] = options_list
-
-        pattern = r'<difficulty-level: (\d+)>'
-        match = re.search(pattern, self.prompt)
-        self.questionData["difficulty"] = int(match.group(1))
+    
+    def _load_default_system_instructions(self) -> str:
+        """Load GRE Quantitative Simple system instructions."""
+        instruction_path = os.path.join(
+            os.path.dirname(__file__), 
+            "../System_instructions/GRE-Quants-Simple-Questions.txt"
+        )
         try:
-            match = re.search(r"<(.*?)>", self.prompt)
-            if "(multi-correct MCQ)" in self.prompt:
-                tag = ["MCQ-Multi correct"]
-            else:
-                tag = ["MCQ-Single correct"]
-            if match:
-                first_content = match.group(1)
-                tag.append(first_content)
-            self.questionData["tag"] = tag
-        except Exception as e:
-            print(f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
-            self.questionData["tag"] = ["MCQ"]
+            with open(instruction_path, "r") as f:
+                return f.read()
+        except FileNotFoundError:
+            print(f"System instructions file not found: {instruction_path}")
+            return ""
 
-        return self.questionData
+    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """
+        Generate a GRE Quantitative Simple question.
+        
+        Args:
+            prompt: Optional prompt override
+            
+        Returns:
+            Generated question data or None if generation fails
+        """
+        try:
+            # Initialize question data using base class
+            self.initialize_question_data(prompt)
+            
+            # Determine question type
+            if "(multi-correct MCQ)" in self.prompt:
+                self.question_data["type"] = "MCQ-Multi"
+            else:
+                self.question_data["type"] = "MCQ-Single"
+            
+            # Create unified component and wrap with GRE adapter
+            component = create_question_component(
+                question_type=QuestionType.PROBLEM_SOLVING,
+                llm=self.llm,
+                system_instructions=self.system_instructions,
+                global_state=self.global_state,
+                lock=self.lock,
+                prompt=self.prompt,
+                exam_type=ExamType.GRE
+            )
+            questionContent = GREAdapter.adapt_simple_question(component)
+            
+            # Generate question components
+            self.question_data["question"] = questionContent.generate_questionText()
+            self.question_data["title"] = questionContent.generate_questionTitle()
+            self.question_data["solution"] = questionContent.generate_questionSolution()
+            
+            # Generate options and answers
+            options, answer = questionContent.generate_questionOptions()
+            options_list = list(options.values())
+            
+            if isinstance(answer, list):
+                ans = []
+                for i in answer:
+                    if i in options:
+                        ans.append(options[i])
+                self.question_data["answer"] = ans
+            else:
+                self.question_data["answer"] = options[answer] if answer in options else list(options.values())[0]
+            
+            random.shuffle(options_list)
+            self.question_data["options"] = options_list
+            
+            return self.question_data
+            
+        except Exception as e:
+            print(f"Error generating GRE Quantitative Simple question: {e}")
+            return None
+    
+    def validate_output(self, question_data: Dict[str, Any]) -> bool:
+        """
+        Validate GRE Quantitative Simple question format.
+        
+        Args:
+            question_data: Generated question data to validate
+            
+        Returns:
+            True if valid, False otherwise
+        """
+        required_fields = ["type", "question", "answer", "solution", "options"]
+        
+        # Check required fields
+        for field in required_fields:
+            if field not in question_data:
+                return False
+        
+        # Validate options
+        options = question_data.get("options", [])
+        if not isinstance(options, list) or len(options) == 0:
+            return False
+        
+        # Validate answer
+        answer = question_data.get("answer")
+        if answer is None:
+            return False
+        
+        return True
+    
+    def get_supported_types(self) -> list[QuestionType]:
+        """Get supported question types."""
+        return [QuestionType.PROBLEM_SOLVING]
+    
+    def get_exam_type(self) -> ExamType:
+        """Get exam type."""
+        return ExamType.GRE

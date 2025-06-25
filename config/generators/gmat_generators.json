@@ -1,0 +1,135 @@
+{
+  "display_name": "GMAT Question Generators",
+  "total_time_minutes": 187,
+  "has_integrated_reasoning": true,
+  "sections": [
+    {
+      "section_type": "quantitative",
+      "display_name": "Quantitative Reasoning",
+      "questions_per_section": 31,
+      "time_limit_minutes": 62,
+      "generators": [
+        {
+          "generator_class": "GMAT.Quants.files.dataSufficiencyQuestionGeneration.DataSufficiencyQuestionGeneration",
+          "question_type": "data_sufficiency",
+          "display_name": "Data Sufficiency Generator",
+          "description": "Generates GMAT Data Sufficiency questions with passage and two statements",
+          "supports_multi_part": false,
+          "max_child_questions": 1,
+          "system_instruction_file": "GMAT/Quants/System_instructions/GMAT-Quants-Data-Sufficiency-Questions.txt",
+          "example_prompts": [
+            "DS - <Arithmetic> - <Logical Reasoning> - <difficulty_level: 3>",
+            "DS - <Algebra> - <Problem Solving> - <difficulty_level: 4>"
+          ]
+        },
+        {
+          "generator_class": "GMAT.Quants.files.simpleQuestionGeneration.SimpleQuestionGeneration",
+          "question_type": "problem_solving",
+          "display_name": "Problem Solving Generator",
+          "description": "Generates GMAT single-answer multiple choice quantitative questions",
+          "supports_multi_part": false,
+          "max_child_questions": 1,
+          "system_instruction_file": "GMAT/Quants/System_instructions/GMAT-Quants-Simple-Questions.txt",
+          "example_prompts": [
+            "MCQ - <Geometry> - <difficulty_level: 2>",
+            "MCQ - <Statistics> - <difficulty_level: 5>"
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "verbal",
+      "display_name": "Verbal Reasoning",
+      "questions_per_section": 36,
+      "time_limit_minutes": 65,
+      "generators": [
+        {
+          "generator_class": "GMAT.Verbal.files.parentChildQuestionGeneration.ParentChildQuestionGeneration",
+          "question_type": "reading_comprehension",
+          "display_name": "Reading Comprehension Generator", 
+          "description": "Generates GMAT Reading Comprehension passages with multiple questions",
+          "supports_multi_part": true,
+          "max_child_questions": 4,
+          "system_instruction_file": "GMAT/Verbal/System_instructions/GMAT-Verbal-Parent-Child-Questions.txt",
+          "example_prompts": [
+            "RC - <Business> - <difficulty_level: 3>",
+            "RC - <Science> - <difficulty_level: 4>"
+          ]
+        },
+        {
+          "generator_class": "GMAT.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration",
+          "question_type": "critical_reasoning",
+          "display_name": "Critical Reasoning Generator",
+          "description": "Generates GMAT Critical Reasoning questions",
+          "supports_multi_part": false,
+          "max_child_questions": 1,
+          "system_instruction_file": "GMAT/Verbal/System_instructions/GMAT-Verbal-Simple-Questions.txt",
+          "example_prompts": [
+            "CR - <Logical Reasoning> - <difficulty_level: 3>",
+            "CR - <Assumption> - <difficulty_level: 4>"
+          ]
+        }
+      ]
+    },
+    {
+      "section_type": "integrated_reasoning",
+      "display_name": "Integrated Reasoning",
+      "questions_per_section": 12,
+      "time_limit_minutes": 30,
+      "generators": [
+        {
+          "generator_class": "GMAT.Integrated_Reasoning.files.GI.Generate_GI",
+          "question_type": "graphic_interpretation",
+          "display_name": "Graphic Interpretation Generator",
+          "description": "Generates GMAT Graphic Interpretation questions with charts and graphs",
+          "supports_multi_part": false,
+          "max_child_questions": 1,
+          "system_instruction_file": "GMAT/Integrated_Reasoning/System_instructions/GMAT-IR-Graphic-Interpretation.txt",
+          "example_prompts": [
+            "GI - <Economics> - <Data Interpretation> - <Bar Chart> - <difficulty_level: 2>",
+            "GI - <Business> - <Analysis> - <Line Chart> - <difficulty_level: 4>"
+          ]
+        },
+        {
+          "generator_class": "GMAT.Integrated_Reasoning.files.TPA.Generate_TPA",
+          "question_type": "two_part_analysis",
+          "display_name": "Two-Part Analysis Generator",
+          "description": "Generates GMAT Two-Part Analysis questions with shared content and two related questions",
+          "supports_multi_part": true,
+          "max_child_questions": 2,
+          "system_instruction_file": "GMAT/Integrated_Reasoning/System_instructions/GMAT-IR-Two-Part-Analysis.txt",
+          "example_prompts": [
+            "TPA - <Business Analysis> - <Decision Making> - <difficulty_level: 3>",
+            "TPA - <Statistics> - <Data Analysis> - <difficulty_level: 4>"
+          ]
+        },
+        {
+          "generator_class": "GMAT.Integrated_Reasoning.files.TA.Generate_TA",
+          "question_type": "table_analysis",
+          "display_name": "Table Analysis Generator",
+          "description": "Generates GMAT Table Analysis questions with sortable data tables",
+          "supports_multi_part": false,
+          "max_child_questions": 1,
+          "system_instruction_file": "GMAT/Integrated_Reasoning/System_instructions/GMAT-IR-Table-Analysis.txt",
+          "example_prompts": [
+            "TA - <Finance> - <Data Analysis> - <difficulty_level: 3>",
+            "TA - <Demographics> - <Statistics> - <difficulty_level: 2>"
+          ]
+        },
+        {
+          "generator_class": "GMAT.Integrated_Reasoning.files.MSR.Generate_MSR",
+          "question_type": "multi_source_reasoning",
+          "display_name": "Multi-Source Reasoning Generator",
+          "description": "Generates GMAT Multi-Source Reasoning questions with multiple data sources",
+          "supports_multi_part": true,
+          "max_child_questions": 3,
+          "system_instruction_file": "GMAT/Integrated_Reasoning/System_instructions/GMAT-IR-Multi-Source-Reasoning.txt",
+          "example_prompts": [
+            "MSR - <Business Strategy> - <Data Integration> - <difficulty_level: 4>",
+            "MSR - <Market Analysis> - <Reasoning> - <difficulty_level: 5>"
+          ]
+        }
+      ]
+    }
+  ]
+}

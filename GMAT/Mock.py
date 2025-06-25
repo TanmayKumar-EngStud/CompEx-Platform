@@ -7,31 +7,23 @@ from GMAT.Mock_prompts.Integrated_Reasoning import Integrated_Reasoning_prompts
 import traceback
 from enum import Enum
 import time, os, threading
-from GMAT.Integrated_Reasoning.files.GI import Generate_GI as GI_gen
-from GMAT.Integrated_Reasoning.files.TPA import Generate_TPA as TPA_gen
-from GMAT.Integrated_Reasoning.files.TA import Generate_TA as TA_gen
-from GMAT.Integrated_Reasoning.files.MSR import Generate_MSR as MSR_gen
-from GMAT.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
-
-# region Quants generators:
-from GMAT.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
-# endregion
-
-# region Verbal generators:
-from GMAT.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
-from GMAT.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
-# endregion 
-
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import asyncio
 
 # Import unified threading components
 from core.threading import APIThreadPoolManager, ThreadConfig
 from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.enums.section_types import SectionType
+
+# Import factory pattern
+from core.factories.question_generator_factory import get_question_generator_factory
 
 def clear_terminal():
     os.system('clear')
 clear_terminal()
+
+# Legacy generator enum for backward compatibility
 class GeneratorClass(Enum):
     Q_DS_gen = "Q_DS_gen"
     Q_S_gen = "Q_S_gen"
@@ -42,15 +34,16 @@ class GeneratorClass(Enum):
     TA_gen = "TA_gen"
     MSR_gen = "MSR_gen"
 
-GENERATOR_MAP = {
-    GeneratorClass.Q_DS_gen: Q_DS_gen,
-    GeneratorClass.Q_S_gen: Q_S_gen,
-    GeneratorClass.V_PC_gen: V_PC_gen,
-    GeneratorClass.V_S_gen: V_S_gen,
-    GeneratorClass.GI_gen: GI_gen,
-    GeneratorClass.TPA_gen: TPA_gen,
-    GeneratorClass.TA_gen: TA_gen,
-    GeneratorClass.MSR_gen: MSR_gen,
+# Legacy mapping for backward compatibility
+LEGACY_GENERATOR_MAPPING = {
+    GeneratorClass.Q_DS_gen: (QuestionType.DATA_SUFFICIENCY, SectionType.QUANTITATIVE),
+    GeneratorClass.Q_S_gen: (QuestionType.PROBLEM_SOLVING, SectionType.QUANTITATIVE),
+    GeneratorClass.V_PC_gen: (QuestionType.READING_COMPREHENSION, SectionType.VERBAL),
+    GeneratorClass.V_S_gen: (QuestionType.CRITICAL_REASONING, SectionType.VERBAL),
+    GeneratorClass.GI_gen: (QuestionType.GRAPHIC_INTERPRETATION, SectionType.INTEGRATED_REASONING),
+    GeneratorClass.TPA_gen: (QuestionType.TWO_PART_ANALYSIS, SectionType.INTEGRATED_REASONING),
+    GeneratorClass.TA_gen: (QuestionType.TABLE_ANALYSIS, SectionType.INTEGRATED_REASONING),
+    GeneratorClass.MSR_gen: (QuestionType.MULTI_SOURCE_REASONING, SectionType.INTEGRATED_REASONING),
 }
 
 # Legacy APIThreadPoolManager removed - now using unified core.threading.APIThreadPoolManager
@@ -69,7 +62,7 @@ class GMAT_Mock:
 
     def generate_question_with_retry(self, api_state, lock, exam_section: str, prompt: str, generator_class, api_itr):
         """
-        Generate question with retry logic using the unified API state format.
+        Generate question with retry logic using the unified factory pattern.
         
         Args:
             api_state: APIState object or dict containing API state information
@@ -85,7 +78,12 @@ class GMAT_Mock:
         retries = 0
         if not isinstance(generator_class, GeneratorClass):
             raise ValueError(f"Invalid generator class: {generator_class}")
-        question_generator_class = GENERATOR_MAP[generator_class]
+        
+        # Get question and section types from legacy mapping
+        if generator_class not in LEGACY_GENERATOR_MAPPING:
+            raise ValueError(f"Unknown generator class: {generator_class}")
+        
+        question_type, section_type = LEGACY_GENERATOR_MAPPING[generator_class]
         
         # Handle both APIState objects and legacy dict format
         if hasattr(api_state, 'to_dict'):
@@ -93,19 +91,36 @@ class GMAT_Mock:
         else:
             global_state = api_state
             
+        # Get factory instance
+        factory = get_question_generator_factory()
+        
         while retries < self.max_retries:
             try:
-                question_generator = question_generator_class(global_state, lock, api_itr, prompt=prompt)
-                question_data = question_generator.generate_question()
+                # Create generator using factory
+                question_generator = factory.create_generator(
+                    exam_type=ExamType.GMAT,
+                    question_type=question_type,
+                    section_type=section_type,
+                    global_state=global_state,
+                    lock=lock,
+                    api_idx=api_itr,
+                    prompt=prompt
+                )
+                
+                if question_generator is None:
+                    raise ValueError(f"Factory failed to create generator for {generator_class}")
+                
+                question_data = question_generator.generate_question(prompt)
                 if not question_data:
                     raise ValueError("Question generator returned None")
+                    
                 return [api_itr, global_state["start_time"], global_state["request_count"], exam_section, question_data]
+                
             except Exception as e:
                 retries += 1
                 print(f"\nAttempt {retries} failed:")
-                print(f"Error type: {type(e).__name__}")
                 print(f"Error message: {str(e)}")
-                print(f"Generator class: {question_generator_class.__name__}")
+                print(f"Generator class: {generator_class}")
                 if hasattr(e, '__traceback__'):
                     print("Traceback:")
                     traceback.print_tb(e.__traceback__)

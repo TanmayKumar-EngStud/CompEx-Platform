@@ -5,18 +5,6 @@ from GRE.Mock_prompts.Quants import Quants_prompts
 
 from enum import Enum
 import time
-# region Quants generators:
-from GRE.Quants.files.dataSufficiencyQuestionGeneration import DataSufficiencyQuestionGeneration as Q_DS_gen
-from GRE.Quants.files.numericEntryQuestionGeneration import NumericEntryQuestionGeneration as Q_NE_gen
-from GRE.Quants.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as Q_PC_gen
-from GRE.Quants.files.simpleQuestionGeneration import SimpleQuestionGeneration as Q_S_gen
-# endregion
-
-# region Verbal generators:
-from GRE.Verbal.files.parentChildQuestionGeneration import ParentChildQuestionGeneration as V_PC_gen
-from GRE.Verbal.files.simpleQuestionGeneration import SimpleQuestionGeneration as V_S_gen
-# endregion 
-
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 import asyncio
@@ -24,7 +12,13 @@ import asyncio
 # Import unified threading components
 from core.threading import APIThreadPoolManager, ThreadConfig
 from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.enums.section_types import SectionType
 
+# Import factory pattern
+from core.factories.question_generator_factory import get_question_generator_factory
+
+# Legacy generator enum for backward compatibility
 class GeneratorClass(Enum):
     Q_PC_gen = "Q_PC_gen"
     Q_DS_gen = "Q_DS_gen"
@@ -33,13 +27,14 @@ class GeneratorClass(Enum):
     V_PC_gen = "V_PC_gen"
     V_S_gen = "V_S_gen"
 
-GENERATOR_MAP = {
-    GeneratorClass.Q_PC_gen: Q_PC_gen,
-    GeneratorClass.Q_DS_gen: Q_DS_gen,
-    GeneratorClass.Q_NE_gen: Q_NE_gen,
-    GeneratorClass.Q_S_gen: Q_S_gen,
-    GeneratorClass.V_PC_gen: V_PC_gen,
-    GeneratorClass.V_S_gen: V_S_gen,
+# Legacy mapping for backward compatibility
+LEGACY_GENERATOR_MAPPING = {
+    GeneratorClass.Q_PC_gen: (QuestionType.READING_COMPREHENSION, SectionType.QUANTITATIVE),
+    GeneratorClass.Q_DS_gen: (QuestionType.DATA_SUFFICIENCY, SectionType.QUANTITATIVE),
+    GeneratorClass.Q_NE_gen: (QuestionType.NUMERIC_ENTRY, SectionType.QUANTITATIVE),
+    GeneratorClass.Q_S_gen: (QuestionType.PROBLEM_SOLVING, SectionType.QUANTITATIVE),
+    GeneratorClass.V_PC_gen: (QuestionType.READING_COMPREHENSION, SectionType.VERBAL),
+    GeneratorClass.V_S_gen: (QuestionType.TEXT_COMPLETION, SectionType.VERBAL),
 }
 # Legacy APIThreadPoolManager removed - now using unified core.threading.APIThreadPoolManager
 
@@ -54,7 +49,7 @@ class GRE_Mock:
 
     def generate_question_with_retry(self, api_state, lock, exam_section: str, section_id: int, prompt: str, generator_class, api_itr):
         """
-        Generate question with retry logic using the unified API state format.
+        Generate question with retry logic using the unified factory pattern.
         
         Args:
             api_state: APIState object or dict containing API state information
@@ -71,6 +66,12 @@ class GRE_Mock:
         retries = 0
         if not isinstance(generator_class, GeneratorClass):
             raise ValueError(f"Invalid generator_class: {generator_class}")
+        
+        # Get question and section types from legacy mapping
+        if generator_class not in LEGACY_GENERATOR_MAPPING:
+            raise ValueError(f"Unknown generator class: {generator_class}")
+        
+        question_type, section_type = LEGACY_GENERATOR_MAPPING[generator_class]
             
         # Handle both APIState objects and legacy dict format
         if hasattr(api_state, 'to_dict'):
@@ -78,11 +79,26 @@ class GRE_Mock:
         else:
             global_state = api_state
             
+        # Get factory instance
+        factory = get_question_generator_factory()
+            
         while retries < self.max_retries:
             try:
-                question_generator_class = GENERATOR_MAP[generator_class]
-                question_generator = question_generator_class(global_state, lock, api_itr, prompt=prompt)
-                question_data = question_generator.generate_question()
+                # Create generator using factory
+                question_generator = factory.create_generator(
+                    exam_type=ExamType.GRE,
+                    question_type=question_type,
+                    section_type=section_type,
+                    global_state=global_state,
+                    lock=lock,
+                    api_idx=api_itr,
+                    prompt=prompt
+                )
+                
+                if question_generator is None:
+                    raise ValueError(f"Factory failed to create generator for {generator_class}")
+                
+                question_data = question_generator.generate_question(prompt)
                 
                 if not question_data:
                     raise ValueError("Question generator returned None")
@@ -93,7 +109,7 @@ class GRE_Mock:
                 print(f"\nAttempt {retries} failed:")
                 print(f"Error type: {type(e).__name__}")
                 print(f"Error message: {str(e)}")
-                print(f"Generator class: {question_generator_class.__name__}")
+                print(f"Generator class: {generator_class}")
                 if hasattr(e, '__traceback__'):
                     import traceback
                     print("Traceback:")

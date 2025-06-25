@@ -1,76 +1,149 @@
-# Use unified components
+import os, json, re, random
+from typing import Dict, Any, Optional
+
+# Import unified components
+from core.enums.exam_types import ExamType
+from core.enums.question_types import QuestionType
+from core.enums.section_types import SectionType
+from core.interfaces.question_generator import BaseQuestionGenerator
 from core.components.question_components import ParentChildQuestion
 from core.components.adapters.gre_adapter import GREAdapter
-from google import genai
-import os
-import json
-import re
-from dotenv import load_dotenv
-import random
 
 
-class ParentChildQuestionGeneration:
+class ParentChildQuestionGeneration(BaseQuestionGenerator):
+    """GRE Quantitative Parent-Child Question Generator using unified architecture."""
+    
     def __init__(self, global_state, lock, api_IDX, prompt):
-        load_dotenv()
-        self.global_state = global_state
-        self.lock = lock
-        api_key = os.getenv(f"API_{api_IDX}")
-        self.llm = genai.Client(api_key=api_key)
-        with open(os.path.join(os.path.dirname(__file__), "../System_instructions/GRE-Quants-Parent-Child-Questions.txt"), "r") as f:
-            self.system_instructions = f.read()
-        self.total_child_questions = int(
-            re.search(r"parent_child-(\d+)", prompt).group(1))
+        # Initialize base class with proper types
+        super().__init__(
+            exam_type=ExamType.GRE,
+            question_type=QuestionType.READING_COMPREHENSION,  # Using RC for parent-child structure
+            global_state=global_state,
+            lock=lock,
+            api_idx=api_IDX,
+            prompt=prompt
+        )
+        
+        # Extract total child questions from prompt
+        match = re.search(r"parent_child-(\d+)", prompt)
+        self.total_child_questions = int(match.group(1)) if match else 2
         self.prompt = re.sub(
-            r"parent_child-(\d+)", f'total child questions that you would have to generate for this parentChildQuestion will be {self.total_child_questions} so prepare other question data accordigly, prompt: ', prompt)
-        self.questionData = {}
-
-    def generate_question(self):
-        self.questionData["type"] = "PS"
-        self.questionData["prompt"] = self.prompt
-
-        tag = []
+            r"parent_child-(\d+)", 
+            f'total child questions that you would have to generate for this parentChildQuestion will be {self.total_child_questions} so prepare other question data accordigly, prompt: ', 
+            prompt
+        )
+    
+    def _load_default_system_instructions(self) -> str:
+        """Load GRE Quantitative Parent-Child system instructions."""
+        instruction_path = os.path.join(
+            os.path.dirname(__file__), 
+            "../System_instructions/GRE-Quants-Parent-Child-Questions.txt"
+        )
         try:
-            match = re.search(r"<(.*?)>", self.prompt)
-            tag = ["PS"]
-            if match:
-                first_content = match.group(1)
-                tag.append(first_content)
+            with open(instruction_path, "r") as f:
+                return f.read()
+        except FileNotFoundError:
+            print(f"System instructions file not found: {instruction_path}")
+            return ""
+
+    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """
+        Generate a GRE Quantitative Parent-Child question.
+        
+        Args:
+            prompt: Optional prompt override
+            
+        Returns:
+            Generated question data or None if generation fails
+        """
+        try:
+            # Initialize question data using base class
+            self.initialize_question_data(prompt)
+            
+            # Set GRE PS specific type
+            self.question_data["type"] = "PS"
+            
+            # Create base component and adapt for GRE
+            base_component = ParentChildQuestion(
+                self.llm, 
+                self.system_instructions, 
+                self.global_state, 
+                self.lock, 
+                self.prompt
+            )
+            parentChildQuestion = GREAdapter.adapt_parent_child_question(base_component)
+            
+            # Generate parent content
+            content = parentChildQuestion.generate_questionGraph()
+            self.question_data["content"] = content
+            self.question_data["title"] = parentChildQuestion.generate_parentTitle()
+            
+            # Generate child questions
+            self.question_data["questions"] = []
+            for i in range(self.total_child_questions):
+                childQuestionData = {
+                    "type": "PS",
+                    "prompt": self.prompt,
+                    "number": i + 1,
+                    "question": parentChildQuestion.generate_childQuestion(i + 1),
+                    "title": parentChildQuestion.generate_childQuestionTitle(i + 1),
+                    "solution": parentChildQuestion.generate_childSolution(i + 1),
+                    "tags": self.extract_tags_from_prompt(),
+                    "difficulty": self.extract_difficulty_from_prompt()
+                }
+                
+                # Generate options and answer
+                options, answer = parentChildQuestion.generate_childOptions(i + 1)
+                childQuestionData["answer"] = options[answer] if answer in options else list(options.values())[0]
+                option_list = list(options.values())
+                random.shuffle(option_list)
+                childQuestionData["options"] = option_list
+                
+                self.question_data["questions"].append(childQuestionData)
+            
+            return self.question_data
+            
         except Exception as e:
-            print(
-                f"Error: {self.prompt} the length of the prompt is {len(self.prompt.split('-'))} exception: {str(e)}")
-            tag = ["PS"]
-
-        base_component = ParentChildQuestion(
-            self.llm, self.system_instructions, self.global_state, self.lock, self.prompt)
-        parentChildQuestion = GREAdapter.adapt_parent_child_question(base_component)
-        content = parentChildQuestion.generate_questionGraph()
-        self.questionData["content"] = content
-
-        self.questionData["title"] = parentChildQuestion.generate_parentTitle()
-        number_of_child_questions = self.total_child_questions
-        self.questionData["questions"] = []
-        for i in range(number_of_child_questions):
-            childQuestionData = {}
-            childQuestionData["type"] = "PS"
-            childQuestionData["prompt"] = self.prompt
-            childQuestionData["question"] = parentChildQuestion.generate_childQuestion(
-                i+1)
-            childQuestionData["number"] = i+1
-            childQuestionData["title"] = parentChildQuestion.generate_childQuestionTitle(
-                i+1)
-            childQuestionData["solution"] = parentChildQuestion.generate_childSolution(
-                i+1)
-            options, answer = parentChildQuestion.generate_childOptions(i+1)
-            childQuestionData["answer"] = options[answer]
-            option_list = list(options.values())
-            random.shuffle(option_list)
-            childQuestionData["options"] = option_list
-            childQuestionData["tag"] = tag
-            self.questionData["questions"].append(childQuestionData)
-
-        pattern = r'<difficulty-level: (\d+)>'
-        match = re.search(pattern, self.prompt)
-        self.questionData["difficulty"] = int(match.group(1))
-        self.questionData["tag"] = tag
-
-        return self.questionData
+            print(f"Error generating GRE Quantitative Parent-Child question: {e}")
+            return None
+    
+    def validate_output(self, question_data: Dict[str, Any]) -> bool:
+        """
+        Validate GRE Quantitative Parent-Child question format.
+        
+        Args:
+            question_data: Generated question data to validate
+            
+        Returns:
+            True if valid, False otherwise
+        """
+        required_fields = ["type", "content", "questions", "title"]
+        
+        # Check required fields
+        for field in required_fields:
+            if field not in question_data:
+                return False
+        
+        # Validate questions array
+        questions = question_data.get("questions", [])
+        if not isinstance(questions, list) or len(questions) == 0:
+            return False
+        
+        # Validate each child question
+        for question in questions:
+            if not isinstance(question, dict):
+                return False
+            required_question_fields = ["type", "question", "options", "answer"]
+            for field in required_question_fields:
+                if field not in question:
+                    return False
+        
+        return True
+    
+    def get_supported_types(self) -> list[QuestionType]:
+        """Get supported question types."""
+        return [QuestionType.READING_COMPREHENSION]  # Using RC for parent-child structure
+    
+    def get_exam_type(self) -> ExamType:
+        """Get exam type."""
+        return ExamType.GRE
