@@ -79,6 +79,10 @@ class GMATSimpleQuestionAdapter:
         """Initialize with SimpleQuestion component."""
         self.component = component
     
+    def generate_QuestionPassage(self) -> str:
+        """Generate question passage/argument for Critical Reasoning (GMAT naming convention)."""
+        return self.component.generate_question_passage()
+    
     def generate_questionText(self, input_data: Optional[str] = None) -> str:
         """Generate question text (GMAT naming convention)."""
         return self.component.generate_question_text(input_data)

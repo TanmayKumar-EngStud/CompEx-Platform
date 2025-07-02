@@ -68,7 +68,7 @@ input format:- "questionTitle"
 Output format:- {"title": "question title"}
 
 Mode 3: questionSolution
-Here based on the previous question, you would have to state the reason about which option out of "A", "B", "C", "D", "E" is correct, and why it is correct.
+Here based on the previous question, you would have to provide the detailed reasoning for solving the Data Sufficiency question. Focus ONLY on the solution explanation without determining the final answer.
 
 ENHANCED SOLUTION REQUIREMENTS FOR GRE DATA SUFFICIENCY:
 The solution must provide a comprehensive analysis that teaches logical reasoning and data sufficiency skills:
@@ -78,22 +78,35 @@ The solution must provide a comprehensive analysis that teaches logical reasonin
 3. **Logical Reasoning Process**: Step-by-step evaluation of sufficiency
 4. **Mathematical Work**: All calculations and logical deductions clearly shown
 5. **Sufficiency Evaluation**: Clear explanation of why each statement is/isn't sufficient
-6. **Final Reasoning**: Comprehensive explanation of the answer choice
 
 **Format Guidelines:**
 - Use <br> tags for line breaks within the solution
-- Use ~~mathematical expressions~~ for mathematical notation
-- Structure the solution in clear, numbered steps
-- Include detailed analysis of each statement individually
-- Provide clear reasoning for the final answer choice
-- Emphasize logical reasoning over pure calculation
+- Keep mathematical expressions simple and readable (no special formatting needed)
+- Structure the solution in clear, concise steps
+- Focus on logical reasoning with brief explanations
+- Keep solutions concise but complete
+- Avoid overly detailed calculations
+- DO NOT include the final answer choice in the solution
 
 **Example Structure:**
-{"solution": "<strong>Step 1: Understanding the Question</strong><br>We need to determine [what the question is asking].<br><br><strong>Step 2: Analyzing Statement (1)</strong><br>[Detailed analysis of statement 1]<br>Mathematical work: ~~calculation if needed~~<br>Logical reasoning: [explain the reasoning]<br>Conclusion: Statement (1) [is/is not] sufficient because [clear reasoning].<br><br><strong>Step 3: Analyzing Statement (2)</strong><br>[Detailed analysis of statement 2]<br>Mathematical work: ~~calculation if needed~~<br>Logical reasoning: [explain the reasoning]<br>Conclusion: Statement (2) [is/is not] sufficient because [clear reasoning].<br><br><strong>Step 4: Combined Analysis (if needed)</strong><br>[Analysis of both statements together if neither alone is sufficient]<br><br><strong>Final Answer</strong><br>The answer is [X] because [comprehensive reasoning focusing on logical analysis].<br><br><strong>GRE Tip</strong><br>[Strategic insight for approaching similar DS questions]", "answer": "A"}
+{"solution": "<strong>Step 1: Understanding the Question</strong><br>We need to determine [what the question is asking].<br><br><strong>Step 2: Analyzing Statement (1)</strong><br>[Brief analysis of statement 1]<br>Calculation: [simple calculation if needed]<br>Conclusion: Statement (1) [is/is not] sufficient because [brief reasoning].<br><br><strong>Step 3: Analyzing Statement (2)</strong><br>[Brief analysis of statement 2]<br>Calculation: [simple calculation if needed]<br>Conclusion: Statement (2) [is/is not] sufficient because [brief reasoning]."}
 
 input format:- "questionSolution"
-Output format:- {"solution": "comprehensive solution passage with detailed logical reasoning explaining how to get the correct answer", "answer": "A"} 
-always give answer in the format of "A", "B", "C", "D", "E".
+Output format:- {"solution": "logical reasoning explanation without final answer choice"}
+
+Mode 4: questionAnswer
+Here based on the previous question and solution analysis, you would determine which option out of "A", "B", "C", "D", "E" is correct.
+
+For Data Sufficiency questions, these are the standard options:
+A: "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient."
+B: "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient."
+C: "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient."
+D: "EITHER statement ALONE is sufficient."
+E: "Statements (1) and (2) TOGETHER are NOT sufficient."
+
+input format:- "questionAnswer"
+Output format:- {"answer": "A"}
+always give answer in the format of "A", "B", "C", "D", or "E".
 
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

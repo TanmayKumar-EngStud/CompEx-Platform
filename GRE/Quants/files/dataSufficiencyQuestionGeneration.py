@@ -87,7 +87,7 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
             self.question_data["question"] = question
             self.question_data["title"] = dataSufficiencyQuestion.generate_questionTitle()
             
-            # Generate solution and answer
+            # Generate solution and answer using new two-step process
             solution, answer = dataSufficiencyQuestion.generate_questionSolution()
             self.question_data["solution"] = solution
             

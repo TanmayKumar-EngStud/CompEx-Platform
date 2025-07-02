@@ -309,6 +309,32 @@ class SimpleQuestion(BaseQuestionComponent):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.PROBLEM_SOLVING  # Default
     
+    def generate_question_passage(self) -> str:
+        """
+        Generate question passage/argument for Critical Reasoning questions.
+        
+        Returns:
+            Generated passage text
+        """
+        def _generate(warn: bool = False) -> Optional[str]:
+            response = self._get_response("QuestionPassage", warn)
+            
+            if not response:
+                return None
+            
+            message = self._process_json_response(
+                response,
+                ["passage"],
+                "SimpleQuestion generate_question_passage"
+            )
+            
+            if message and message.get("passage"):
+                return message["passage"]
+            return None
+        
+        result = self._retry_generate(_generate)
+        return result if result else "Error generating question passage"
+    
     def generate_question_text(self, input_data: Optional[str] = None) -> str:
         """
         Generate question text.
@@ -487,11 +513,8 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             if not response:
                 return None
             
-            # Different key patterns for GMAT vs GRE
-            if self.exam_type == ExamType.GMAT:
-                expected_keys = ["question_passage", "statements", "question"]
-            else:  # GRE
-                expected_keys = ["passage", "statements", "question"]
+            # Accept both GMAT and GRE key patterns for flexibility
+            expected_keys = ["passage", "question_passage", "statements", "question"]
             
             message = self._process_json_response(
                 response,
@@ -502,15 +525,10 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             if not message:
                 return None
             
-            # Extract components based on exam type
-            if self.exam_type == ExamType.GMAT:
-                passage = message.get("question_passage")
-                statements = message.get("statements")
-                question = message.get("question")
-            else:  # GRE
-                passage = message.get("passage")
-                statements = message.get("statements")
-                question = message.get("question")
+            # Extract components - try both formats
+            passage = message.get("question_passage") or message.get("passage")
+            statements = message.get("statements")
+            question = message.get("question")
             
             if passage and statements and question:
                 return passage, statements, question
@@ -543,30 +561,75 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
     
     def generate_question_solution(self) -> Tuple[Optional[str], Optional[str]]:
         """
-        Generate question solution and answer.
+        Generate question solution and answer using two-step process.
         
         Returns:
             Tuple of (solution, answer)
         """
-        def _generate(warn: bool = False) -> Optional[Tuple[str, str]]:
-            response = self._get_response("questionSolution", warn)
+        # Step 1: Generate solution only
+        solution = self._generate_solution_only()
+        
+        # Step 2: Generate answer only
+        answer = self._generate_answer_only()
+        
+        return solution, answer
+    
+    def _generate_solution_only(self) -> str:
+        """Generate only the solution text."""
+        def _generate(warn: bool = False) -> Optional[str]:
+            # Use exam-specific capitalization for solution mode
+            prompt = "QuestionSolution" if self.exam_type == ExamType.GMAT else "questionSolution"
+            response = self._get_response(prompt, warn)
             
             if not response:
                 return None
             
             message = self._process_json_response(
                 response,
-                ["solution", "answer"],
-                "DataSufficiencyQuestion generate_question_solution"
+                ["solution"],
+                "DataSufficiencyQuestion generate_solution_only"
             )
             
-            if message and message.get("solution") and message.get("answer"):
-                return message["solution"], str(message["answer"])
+            if message and message.get("solution"):
+                return message["solution"]
             return None
         
         result = self._retry_generate(_generate)
         if result is None:
-            return None, None
+            print("Warning: Solution generation failed, using fallback")
+            return "Solution could not be generated due to technical issues. Please refer to standard Data Sufficiency strategies."
+        return result
+    
+    def _generate_answer_only(self) -> str:
+        """Generate only the answer letter."""
+        def _generate(warn: bool = False) -> Optional[str]:
+            # Use exam-specific capitalization for answer mode
+            prompt = "QuestionAnswer" if self.exam_type == ExamType.GMAT else "questionAnswer"
+            response = self._get_response(prompt, warn)
+            
+            if not response:
+                return None
+            
+            message = self._process_json_response(
+                response,
+                ["answer"],
+                "DataSufficiencyQuestion generate_answer_only"
+            )
+            
+            if message and message.get("answer"):
+                answer = str(message["answer"]).upper().strip()
+                # Validate it's a valid DS answer
+                if answer in ['A', 'B', 'C', 'D', 'E']:
+                    return answer
+                else:
+                    print(f"Warning: Invalid answer '{answer}', using default 'A'")
+                    return "A"
+            return None
+        
+        result = self._retry_generate(_generate)
+        if result is None:
+            print("Warning: Answer generation failed, using fallback 'A'")
+            return "A"
         return result
     
     def generate_question_options(self) -> Tuple[List[str], str]:
@@ -621,26 +684,37 @@ class ParentChildQuestion(BaseQuestionComponent):
         self.question_type = QuestionType.READING_COMPREHENSION  # Default
     
     def generate_question_graph(self) -> Optional[Dict[str, Any]]:
-        """Generate shared graph/table for child questions."""
+        """Generate shared graph/table for child questions or passage for reading comprehension."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
+            # Try to generate content - let the AI decide the format based on the prompt
             prompt_text = f"questionGraph: {self.prompt}"
             response = self._get_response(prompt_text, warn)
             
             if not response:
                 return None
             
+            # Accept multiple possible key formats for flexibility
+            expected_keys = ["graph/table", "graph", "table", "Passage_Number", "passage", "content"]
+            
             message = self._process_json_response(
                 response,
-                ["graph/table", "graph"],
+                expected_keys,
                 "ParentChildQuestion generate_question_graph"
             )
             
             if message:
-                # Try different possible keys
-                graph = message.get("graph/table") or message.get("graph")
-                if graph is None and "graph" not in message and "graph/table" not in message:
-                    print(f"Warning: Expected 'graph' or 'graph/table' key, got: {list(message.keys())}")
-                return graph
+                # Check what type of content we received and return accordingly
+                if "Passage_Number" in message or "passage" in message:
+                    # This is Reading Comprehension passage data
+                    return message
+                elif "graph/table" in message or "graph" in message or "table" in message:
+                    # This is quantitative graph/table data
+                    return (message.get("graph/table") or 
+                           message.get("graph") or 
+                           message.get("table"))
+                else:
+                    # Fallback - return the whole message
+                    return message
             return None
         
         return self._retry_generate(_generate)
