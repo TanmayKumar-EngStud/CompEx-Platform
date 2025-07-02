@@ -2,3 +2,8 @@
 venv/
 compex_py/
 .DS_Store
+.vscode
+.claude
+__pycache__
+papers/
+logs/
