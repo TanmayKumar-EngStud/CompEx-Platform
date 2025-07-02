@@ -6,9 +6,9 @@ from db import DB
 import time
 from terminal_logger import start_terminal_logging, stop_terminal_logging
 
-# importing papers
-from GMAT.Mock import GMAT_Mock
-from GRE.Mock import GRE_Mock
+# Import unified mock generation system
+from core.mock.unified_mock_generator import UnifiedMockGenerator
+from core.enums.exam_types import ExamType
 
 class Main:
    def __init__(self):
@@ -40,8 +40,8 @@ class Main:
       try:
          # GRE Paper Generation (First)
          print(f"Starting GRE paper generation - Difficulty: {self._difficulty_and_is_mock['difficulty']}")
-         gre_mock = GRE_Mock(self._difficulty_and_is_mock['difficulty'])
-         GRE_paper = gre_mock.generate(8)
+         gre_mock = UnifiedMockGenerator(ExamType.GRE, self._difficulty_and_is_mock['difficulty'])
+         GRE_paper = gre_mock.generate_mock_paper()
          timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
          gre_filepath = f'papers/GRE/GRE_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json'
          
@@ -73,8 +73,8 @@ class Main:
       try:
          # GMAT Paper Generation (Second)
          print(f"Starting GMAT paper generation - Difficulty: {self._difficulty_and_is_mock['difficulty']}")
-         gmat_mock = GMAT_Mock(self._difficulty_and_is_mock['difficulty'])
-         GMAT_paper = gmat_mock.generate(8)
+         gmat_mock = UnifiedMockGenerator(ExamType.GMAT, self._difficulty_and_is_mock['difficulty'])
+         GMAT_paper = gmat_mock.generate_mock_paper()
          timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
          gmat_filepath = f'papers/GMAT/GMAT_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json'
          

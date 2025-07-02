@@ -179,9 +179,10 @@ class APIThreadPoolManager:
         # Handle different result formats for GMAT vs GRE
         if len(result) == 5:  # GMAT format: [api_idx, start_time, request_count, exam_section, data]
             api_idx, start_time, request_count, exam_section, data = result
-            section_id = "section0"
+            section_key = "section0"
         elif len(result) == 6:  # GRE format: [api_idx, start_time, request_count, exam_section, section_id, data]
             api_idx, start_time, request_count, exam_section, section_id, data = result
+            section_key = f"section{section_id}"
         else:
             raise APIThreadPoolException(f"Invalid result format: expected 5 or 6 elements, got {len(result)}")
         
@@ -191,10 +192,10 @@ class APIThreadPoolManager:
         self.locks.append(threading.Lock())
         
         # Store result in paper
-        if exam_section in self.paper and section_id in self.paper[exam_section]:
-            self.paper[exam_section][section_id].append(data)
+        if exam_section in self.paper and section_key in self.paper[exam_section]:
+            self.paper[exam_section][section_key].append(data)
         else:
-            self.logger.warning(f"Invalid paper structure: {exam_section}.{section_id}")
+            self.logger.warning(f"Invalid paper structure: {exam_section}.{section_key}")
         
         return api_idx
     
@@ -265,18 +266,19 @@ class APIThreadPoolManager:
         # Handle different result formats
         if len(result) == 5:  # GMAT format
             api_idx, start_time, request_count, exam_section, data = result
-            section_id = "section0"
+            section_key = "section0"
         elif len(result) == 6:  # GRE format
             api_idx, start_time, request_count, exam_section, section_id, data = result
+            section_key = f"section{section_id}"
         else:
             self.logger.warning(f"Unexpected result format: {result}")
             return
         
         # Store result in paper
-        if exam_section in self.paper and section_id in self.paper[exam_section]:
-            self.paper[exam_section][section_id].append(data)
+        if exam_section in self.paper and section_key in self.paper[exam_section]:
+            self.paper[exam_section][section_key].append(data)
         else:
-            self.logger.warning(f"Invalid paper structure for final result: {exam_section}.{section_id}")
+            self.logger.warning(f"Invalid paper structure for final result: {exam_section}.{section_key}")
     
     def shutdown(self, wait: bool = True) -> None:
         """

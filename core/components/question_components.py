@@ -186,16 +186,33 @@ class BaseQuestionComponent(ABC):
             response = self.chat.send_message(prompt)
             return response.text
         except Exception as e:
-            print(f"Failed to generate response for prompt: {prompt}")
-            print(f"Error: {str(e)}")
+            error_str = str(e).lower()
             
-            # On error, wait longer before retry
+            # Handle 429 errors with simple output
+            if "429" in error_str or "resource_exhausted" in error_str or "quota" in error_str:
+                print("API error code:- 429")
+                # Extract retry delay if available
+                if "retrydelay" in error_str or "retry" in error_str:
+                    try:
+                        # Try to extract retry delay from error message
+                        import re
+                        delay_match = re.search(r'(\d+)s', error_str)
+                        if delay_match:
+                            delay = int(delay_match.group(1))
+                            print(f"Waiting {delay} seconds for API rate limit reset...")
+                            time.sleep(delay + 1)  # Add 1 second buffer
+                        else:
+                            print("Waiting 60 seconds for API rate limit reset...")
+                            time.sleep(60)
+                    except:
+                        print("Waiting 60 seconds for API rate limit reset...")
+                        time.sleep(60)
+            else:
+                # For other errors, show minimal info
+                print(f"Generation error: {type(e).__name__}")
+            
+            # Reset rate limiting state on any error
             with self.lock:
-                current_time = time.time()
-                elapsed = current_time - self.global_state["start_time"]
-                if elapsed < RATE_LIMIT_WINDOW_SECONDS:
-                    wait_time = RATE_LIMIT_WINDOW_SECONDS - elapsed + 2  # Extra buffer
-                    time.sleep(wait_time)
                 self.global_state["start_time"] = time.time()
                 self.global_state["request_count"] = 0
             return None
