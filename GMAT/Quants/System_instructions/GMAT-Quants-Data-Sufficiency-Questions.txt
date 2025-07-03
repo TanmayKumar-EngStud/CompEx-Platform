@@ -46,7 +46,7 @@ You would have to provide the response in the following format:-
 
 Output format:-
 {
-  "question_passage": "there will be a small passage",
+  "passage": "there will be a small passage",
   "statements": ["statement 1", "statement 2"], 
   "question": "complete question text asked on the above provided statement"
 }
@@ -70,12 +70,18 @@ The solution must provide a comprehensive, step-by-step analysis that includes:
 2. **Statement Analysis**: Detailed examination of each statement individually
 3. **Sufficiency Testing**: Step-by-step evaluation of whether each statement provides sufficient information
 4. **Logical Reasoning**: Clear explanation of the logical steps taken to reach the conclusion
-5. **Mathematical Work**: All calculations shown with proper formatting using <br> tags for line breaks
+5. **Mathematical Work**: All calculations shown with clear formatting
+
+**IMPORTANT - SOLUTION FORMAT:**
+- The solution field will be extracted as PLAIN TEXT, not as formatted JSON
+- Do NOT use any special tags like <br>, <strong>, or mathematical symbol tags
+- Use regular line breaks, mathematical symbols, and formatting directly
+- Write the solution as you would naturally explain it to a student
+- Use standard mathematical notation (√, π, ≈, ≤, ≥, etc.) directly
+- Use regular formatting (bold, italics, etc.) as needed
 
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
-- Keep mathematical expressions simple and readable (no special formatting needed)
-- Structure the solution in clear, concise steps
+- Structure the solution in clear, concise steps using natural formatting
 - Focus on logical reasoning with brief explanations
 - Keep solutions concise but complete
 - Avoid overly detailed calculations
@@ -84,7 +90,8 @@ The solution must provide a comprehensive, step-by-step analysis that includes:
 Output format:- {"solution": "logical reasoning explanation without final answer choice"}
 
 **Example Structure:**
-{"solution": "<strong>Step 1: Understanding the Question</strong><br>We need to determine [what the question is asking].<br><br><strong>Step 2: Analyzing Statement (1)</strong><br>[Brief analysis of statement 1]<br>Calculation: [simple calculation if needed]<br>Conclusion: Statement (1) [is/is not] sufficient because [brief reason].<br><br><strong>Step 3: Analyzing Statement (2)</strong><br>[Brief analysis of statement 2]<br>Calculation: [simple calculation if needed]<br>Conclusion: Statement (2) [is/is not] sufficient because [brief reason]."}
+IMPORTANT!! PLEASE JUST RESPOND THIS QUESTION COMPONENT IN PLAIN TEXT like this:-
+"Step 1: Understanding the Question\nWe need to determine [what the question is asking].\n\nStep 2: Analyzing Statement (1)\n[Brief analysis of statement 1]\nCalculation: [simple calculation if needed]\nConclusion: Statement (1) [is/is not] sufficient because [brief reason].\n\nStep 3: Analyzing Statement (2)\n[Brief analysis of statement 2]\nCalculation: [simple calculation if needed]\nConclusion: Statement (2) [is/is not] sufficient because [brief reason]."
 
 ## QuestionAnswer
 Here based on the previous question and solution analysis, you would determine which option out of "A", "B", "C", "D", "E" is correct.
@@ -103,8 +110,8 @@ always give answer in the format of "A", "B", "C", "D", "E".
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+IMPORTANT NOTE FOR SOLUTION FORMAT:
+- The solution field will be extracted as plain text directly from the JSON
+- Use natural mathematical notation and formatting
+- No special tags or escape sequences needed
+- Write solutions as you would explain them naturally to a student

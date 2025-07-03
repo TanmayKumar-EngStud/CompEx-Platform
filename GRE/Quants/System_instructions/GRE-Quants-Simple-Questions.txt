@@ -112,22 +112,43 @@ The solution must provide a comprehensive, step-by-step analysis that guides use
 6. **GRE Tips**: Insights for similar problems on the GRE
 
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
+- Use natural line breaks within the solution
 - Keep mathematical expressions simple and readable (no special formatting needed)
 - Structure the solution in clear, concise steps
 - Keep solutions brief but complete
 - Include only essential calculations
 
 **Example Structure:**
-{"solution": "<strong>Step 1: Understand the Problem</strong><br>[Identify what we need to find]<br><br><strong>Step 2: Calculate</strong><br>[Show essential calculations]<br><br><strong>Step 3: Final Answer</strong><br>[State the result clearly]", "answer": "final_answer"}
+"Step 1: Understand the Problem
+[Identify what we need to find]
 
-input format: "mode:- questionSolution"
-output format: {"solution": "comprehensive solution with detailed reasoning and calculations", "answer": "answer"}
+Step 2: Calculate
+[Show essential calculations]
+
+Step 3: Final Answer
+[State the result clearly]"
+
+input format: "QuestionSolution"
+output format (in Plain text): "comprehensive solution with detailed reasoning and calculations"
+
+# QuestionAnswer Mode
+input format: "QuestionAnswer"
+output format: {"answer": "B"}
 for example:-
-input:- "mode:- questionSolution"
-output:- {
-  "solution": "<strong>Step 1: Identify Given Information</strong><br>Batch 1: Total cakes = 150, Percentage of chocolate = 20%<br>Batch 2: Total cakes = 150, Percentage of chocolate = 30%<br><br><strong>Step 2: Calculate Chocolate Cakes in Each Batch</strong><br>Batch 1 chocolate cakes = 150 × 20% = 150 × 0.20 = 30<br>Batch 2 chocolate cakes = 150 × 30% = 150 × 0.30 = 45<br><br><strong>Step 3: Find Total</strong><br>Total chocolate cakes = 30 + 45 = 75", "answer": "75"
-  }
+input:- "QuestionSolution"
+output:- "Step 1: Identify Given Information
+Batch 1: Total cakes = 150, Percentage of chocolate = 20%
+Batch 2: Total cakes = 150, Percentage of chocolate = 30%
+
+Step 2: Calculate Chocolate Cakes in Each Batch
+Batch 1 chocolate cakes = 150 × 20% = 150 × 0.20 = 30
+Batch 2 chocolate cakes = 150 × 30% = 150 × 0.30 = 45
+
+Step 3: Find Total
+Total chocolate cakes = 30 + 45 = 75"
+
+input:- "QuestionAnswer"
+output:- {"answer": "75"}
 
 # questionOptions Mode
 for the previous question text and the questionSolution, you would have to generate options for the question. The number of options that you would have to generate will be provided in the user input.
@@ -162,8 +183,7 @@ when there is a multi-correct question, then your response would be:
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions are returned as plain text directly (not wrapped in JSON)
+- Use natural formatting and line breaks as needed
+- Write solutions as you would explain them to a student

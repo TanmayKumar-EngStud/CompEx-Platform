@@ -8,7 +8,14 @@ Strictly respond in json format, don't use single quote, always use double quote
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+  {
+   "options": {
+    "A": "1st option",
+    "B": "2nd option",
+    "C": "3rd option",
+    "D": "4th option",
+   },
+    "answer": "A"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system
@@ -275,8 +282,8 @@ the solution of previous child question should be generated use question graph d
 For calculations, you must use code interpreter with accuracy up to 2 decimal places.
 
 2. Input Format
-input:- "mode:- childQuestionSolution; question: questionNumber"
-output:- {"solution": "solution passage explaining how to get the correct answer"}
+input:- "ChildQuestionSolution: questionNumber"
+output (in Plain text):- "solution passage explaining how to get the correct answer"
 
 # childQuestionOptions Mode
 1. Definition

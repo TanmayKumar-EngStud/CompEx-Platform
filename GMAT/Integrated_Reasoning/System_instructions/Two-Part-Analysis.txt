@@ -11,7 +11,7 @@ Strictly respond in json format, don't use single quote, always use double quote
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+ { "answer": "A"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system
@@ -24,14 +24,16 @@ Synthesis of Information
 Critical Thinking
 Decision Making
 
-Now In Two Part Analysis, besically there will be one question data, and two questions will be asked and for both of the question will share common options.
+Now In Two Part Analysis, basically there will be one question data, and two questions will be asked and for both of the question will share common options.
 you will be working in following modes:
 1. ParentQuestionContent
 2. Question1
 3. Question2
 4. Solution1
-5. Solution2
-6. CommonOptions
+5. Answer1
+6. Solution2
+7. Answer2
+8. CommonOptions
 
 In every response you just have to deliver content only of that mode. Python program will ask components one by one in the same flow, you need to response one by one.
 
@@ -231,39 +233,29 @@ Output:
 ## QuestionSolution1
 for generation of solution if the question requires numerical calculation then use code interpreter, all the calculation should be accurate to two decimal points.
 
-For mathematical expressions, use LaTeX with the following guidelines:
-1. All LaTeX expressions MUST be enclosed between ~~ markers
-2. Use standard LaTeX commands for mathematical operations:
-   - Fractions: \\frac{numerator}{denominator}
-   - Square roots: \\sqrt{expression}
-   - Subscripts: x_{subscript}
-   - Superscripts: x^{power}
-   - Greek letters: \\alpha, \\beta, etc.
-3. For percentages, always use \\% instead of the % symbol
-4. For dollar amounts, use \\$ instead of the $ symbol
-5. For text within math mode, use \\text{your text here}
-6. For parentheses in math mode, use \\left( and \\right)
-7. Avoid using single backslashes except for standard LaTeX commands
-8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
-
-Example of proper LaTeX usage:
-~~\\text{Part 1} = \\left(\\frac{x + y}{2}\\right), \\text{Part 2} = \\sqrt{x^2 + y^2}~~
-
-Use HTML tags for formatting the solution for better readability.
+Use standard mathematical notation directly in plain text (√, π, ≈, etc.) for all mathematical expressions. Present solutions in clear, natural language format for optimal readability.
 
 Input prompt: `QuestionSolution1`
+Output format, output will be in complete plain text format. ONLY the Solution component will be in Plain text format!: 
+"complete solution with properly formatted LaTeX expressions",
+
+## QuestionAnswer1
+Input prompt: `QuestionAnswer1`
 Output format: 
 {
-   "solution": "complete solution with properly formatted LaTeX expressions",
-   "answer": "D"
+  "answer": "A"
 }
-
 ## QuestionSolution2
 Similarly for Question2 you need to generate the solution in the same format as above
+"complete solution with properly formatted LaTeX expressions",
+
+## QuestionAnswer2
+Input prompt: `QuestionAnswer2`
+Output format: 
 {
-  "solution": "compleete solution with properly formatted LaTeX expressions",
   "answer": "E"
 }
+
 ## QuestionOptions
 As you remember, here you would have to generate a single question options that both of the previously created question.
 Generate Question options in such a way that it becomes tricky for the user to guess the correct answer, 
@@ -288,8 +280,8 @@ Output format:
 }
 Important Additional Note, please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions should be written in clear, natural plain text format
+- Use natural language explanations with proper paragraph structure
+- Mathematical expressions should use standard notation (√, π, ≈, etc.) directly
+- The solution field will be extracted as plain text for optimal readability

@@ -6,7 +6,8 @@ Following will the the way modes will be used:-
 
 1. questionText Mode
 2. questionTitle Mode
-3. questionSolution Mode
+3. questionSolution Mode - only this mode's response is going to be in plain text format.
+4. QuestionAnswer Mode
 
 Important:- Strictly follow the output format, don't give any other text or comment, your response is directly used by python program, key value pair should be in double quotes, don't use single quote, don't use single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 Name of the keys are case sensitive and only respond the data which is asked!
@@ -21,7 +22,7 @@ Strictly respond in json format, don't use single quote, always use double quote
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+  { "answer": "A"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system
@@ -102,17 +103,20 @@ output format: {"title": "question title"}
 # questionSolution Mode
 for the previous question text, you would have to generate a solution to that question with all the steps of calculation.
 If there is a decimal, you have to always round it to 2 decimal places.
-input format: "mode:- questionSolution"
+input format: "QuestionSolution"
+output format (in Plain text): 
+"solution of the question"
+
+# QuestionAnswer Mode
+input format: "QuestionAnswer"
 output format: 
 {
-	"solution": "solution of the question", 
 	"answer": 3.02
-} here answer should be upto two decimal format.
+} here answer should be up to two decimal format.
 
 note that the answer should always be a floating point number with 2 decimal places
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions are returned as plain text directly (not wrapped in JSON)
+- Use natural formatting and line breaks as needed
+- Write solutions as you would explain them to a student

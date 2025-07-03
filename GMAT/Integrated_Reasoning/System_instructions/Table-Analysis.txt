@@ -254,40 +254,36 @@ Output: {
 Here you need to give explanation for all 3 the options if the option is 'Yes' or 'no'.
 You don't have to show the calculation, but you need to put more emphasis on how the information in the QuestionText and Table(s) are enough/not enough for finding the value asked in the option.
 
-For any mathematical expressions in the solution, use LaTeX with the following guidelines:
-1. All LaTeX expressions MUST be enclosed between ~~ markers
-2. Use standard LaTeX commands for mathematical operations:
-   - Fractions: \\frac{numerator}{denominator}
-   - Square roots: \\sqrt{expression}
-   - Subscripts: x_{subscript}
-   - Superscripts: x^{power}
-   - Greek letters: \\alpha, \\beta, etc.
-3. For percentages, always use \\% instead of the % symbol
-4. For dollar amounts, use \\$ instead of the $ symbol
-5. For text within math mode, use \\text{your text here}
-6. For parentheses in math mode, use \\left( and \\right)
-7. Avoid using single backslashes except for standard LaTeX commands
-8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
+**IMPORTANT - SOLUTION FORMAT:**
+- The solution field will be extracted as PLAIN TEXT, not as formatted JSON
+- Do NOT use any special formatting tags or LaTeX
+- Use regular line breaks, mathematical symbols, and formatting directly
+- Write the solution as you would naturally explain it to a student
+- Use standard mathematical notation (√, π, ≈, ≤, ≥, %, $, etc.) directly
 
-Example of proper LaTeX usage:
-~~\\text{Average} = \\left(\\frac{\\sum \\text{Values}}{\\text{Count}}\\right)~~
+Example of proper plain text usage:
+Average = (Sum of Values) / Count
 
 Input: `QuestionSolution`
-Output:{
-   "solution": ["explanation for option 1 with properly formatted LaTeX", "explanation for option 2 with properly formatted LaTeX", "explanation for option 3 with properly formatted LaTeX"],
-   "answer": {
-      "A": "Yes",
-      "B": "No", 
-      "C": "Yes"
-   }
+Output (in Plain text):
+"Explanation for option 1 with natural formatting\n\nExplanation for option 2 with natural formatting\n\nExplanation for option 3 with natural formatting"
+
+## QuestionAnswer
+Input: `QuestionAnswer`
+Output: 
+{
+  "answer": {
+     "A": "Yes",
+     "B": "No", 
+     "C": "Yes"
+  }
 }
 
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, 
 use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions are returned as plain text directly (not wrapped in JSON)
+- Use natural formatting and line breaks as needed
+- Write solutions as you would explain them to a student

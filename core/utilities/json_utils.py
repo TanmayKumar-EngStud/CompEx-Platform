@@ -7,7 +7,26 @@ previously duplicated across multiple questionComponents files.
 
 import json
 import re
-from typing import Dict, Any, Optional, Union
+import os
+from typing import Dict, Any, Optional
+
+
+# Load character tags mapping once at module level
+def _load_tags_mapping() -> Dict[str, str]:
+    """Load character tags mapping from tags_char.json."""
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        tags_file = os.path.join(current_dir, 'tags_char.json')
+        
+        with open(tags_file, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Warning: Could not load tags_char.json: {e}")
+        # Return empty dict as fallback
+        return {}
+
+# Global tags mapping
+TAGS_MAPPING = _load_tags_mapping()
 
 
 def refine_response(response_text: str) -> str:
@@ -42,6 +61,79 @@ def refine_response(response_text: str) -> str:
         # Remove standalone backticks that might break JSON
         text = text.replace('`', "'")
         
+        # Fix LaTeX mathematical notation that commonly appears in AI responses
+        # Convert common LaTeX commands to tagged format for later processing
+        latex_replacements = {
+            r'\\implies': '<implies>',
+            r'\\Rightarrow': '<implies>',
+            r'\\rightarrow': '<arrow_right>',
+            r'\\leftarrow': '<arrow_left>', 
+            r'\\approx': '<approx>',
+            r'\\sim': '<sim>',
+            r'\\equiv': '<equiv>',
+            r'\\cong': '<cong>',
+            r'\\sqrt': '<sqrt>',
+            r'\\pi': '<pi>',
+            r'\\alpha': '<alpha>',
+            r'\\beta': '<beta>',
+            r'\\gamma': '<gamma>',
+            r'\\delta': '<delta>',
+            r'\\theta': '<theta>',
+            r'\\lambda': '<lambda>',
+            r'\\mu': '<mu>',
+            r'\\sigma': '<sigma>',
+            r'\\phi': '<phi>',
+            r'\\omega': '<omega>',
+            r'\\infty': '<infinity>',
+            r'\\infinity': '<infinity>',
+            r'\\times': '<times>',
+            r'\\cdot': '<cdot>',
+            r'\\div': '<div>',
+            r'\\pm': '<pm>',
+            r'\\neq': '<ne>',
+            r'\\ne': '<ne>',
+            r'\\leq': '<le>',
+            r'\\le': '<le>',
+            r'\\geq': '<ge>',
+            r'\\ge': '<ge>',
+            r'\\lt': '<lt>',
+            r'\\gt': '<gt>',
+            r'\\sum': '<sum>',
+            r'\\prod': '<prod>',
+            r'\\int': '<integral>',
+            r'\\partial': '<partial>',
+            r'\\nabla': '<nabla>',
+            r'\\forall': '<forall>',
+            r'\\exists': '<exists>',
+            r'\\in': '<in>',
+            r'\\subset': '<subset>',
+            r'\\superset': '<superset>',
+            r'\\cup': '<cup>',
+            r'\\cap': '<cap>',
+            r'\\union': '<union>',
+            r'\\intersection': '<intersection>',
+            r'\\emptyset': '<empty_set>',
+            r'\\varnothing': '<empty_set>',
+            r'\\angle': '<angle>',
+            r'\\triangle': '<triangle>',
+            r'\\parallel': '<parallel>',
+            r'\\perp': '<perp>',
+            r'\\therefore': '<therefore>',
+            r'\\because': '<because>',
+            r'\\iff': '<iff>',
+            r'\\Leftrightarrow': '<iff>',
+            r'\\lfloor': '<lfloor>',
+            r'\\rfloor': '<rfloor>',
+            r'\\lceil': '<lceil>',
+            r'\\rceil': '<rceil>',
+            r'\\langle': '<langle>',
+            r'\\rangle': '<rangle>'
+        }
+        
+        # Apply LaTeX replacements
+        for latex_cmd, tag in latex_replacements.items():
+            text = re.sub(latex_cmd, tag, text)
+        
         # Fix problematic characters that can break JSON parsing
         # Replace LaTeX math symbols that might not be properly escaped
         text = text.replace('\\$', '$')  # Fix escaped dollar signs
@@ -68,54 +160,36 @@ def refine_response(response_text: str) -> str:
         except json.JSONDecodeError:
             return None
 
-    def fix_br_tags_in_json(json_string: str) -> str:
-        """Parse JSON and fix HTML tags and special characters."""
+    def fix_tags_in_json(json_string: str) -> str:
+        """Parse JSON and fix custom tags using tags_char.json mapping."""
         try:
             # Parse the JSON
             data = json.loads(json_string)
 
-            # Recursively fix HTML tags and special characters in all string values
-            def fix_html_recursive(obj: Any) -> Any:
+            # Recursively replace custom tags in all string values
+            def fix_tags_recursive(obj: Any) -> Any:
                 if isinstance(obj, dict):
                     for key, value in obj.items():
-                        obj[key] = fix_html_recursive(value)
+                        obj[key] = fix_tags_recursive(value)
                 elif isinstance(obj, list):
                     for i, item in enumerate(obj):
-                        obj[i] = fix_html_recursive(item)
+                        obj[i] = fix_tags_recursive(item)
                 elif isinstance(obj, str):
-                    # Replace HTML tags with appropriate characters
-                    obj = obj.replace('<br>', '\n')
-                    obj = obj.replace('<strong>', '**')
-                    obj = obj.replace('</strong>', '**')
-                    obj = obj.replace('<em>', '*')
-                    obj = obj.replace('</em>', '*')
-                    obj = obj.replace('<b>', '**')
-                    obj = obj.replace('</b>', '**')
-                    obj = obj.replace('<i>', '*')
-                    obj = obj.replace('</i>', '*')
-                    
-                    # Handle common mathematical symbols and characters
-                    obj = obj.replace('\\cdot', '·')
-                    obj = obj.replace('\\times', '×')
-                    obj = obj.replace('\\div', '÷')
-                    obj = obj.replace('\\ne', '≠')
-                    obj = obj.replace('\\le', '≤')
-                    obj = obj.replace('\\ge', '≥')
-                    
-                    # Fix any remaining problematic sequences that might break JSON
-                    obj = obj.replace('\\"', '"')  # Fix escaped quotes
-                    obj = obj.replace('\\n', '\n')  # Fix escaped newlines
-                    obj = obj.replace('\\t', '\t')  # Fix escaped tabs
-                    
+                    # Replace all custom tags using the mapping
+                    for tag, replacement in TAGS_MAPPING.items():
+                        obj = obj.replace(tag, replacement)
                 return obj
 
             # Fix the data and return as formatted JSON
-            fixed_data = fix_html_recursive(data)
+            fixed_data = fix_tags_recursive(data)
             return json.dumps(fixed_data, indent=2, ensure_ascii=False)
 
-        except json.JSONDecodeError:
+        except json.JSONDecodeError as e:
+            print(f"JSON parsing failed in fix_tags_in_json: {e}")
+            print(f"Problematic JSON string: {json_string[:500]}...")
             return json_string
-        except Exception:
+        except Exception as e:
+            print(f"Unexpected error in fix_tags_in_json: {e}")
             return json_string
 
     # Extract JSON from various formats
@@ -177,14 +251,33 @@ def refine_response(response_text: str) -> str:
     if new_text is None:
         return '{"error": "Failed to parse JSON response"}'
 
-    # Fix <br> tags to proper newlines
-    new_text = fix_br_tags_in_json(new_text)
+    # Fix custom tags using tags_char.json mapping
+    new_text = fix_tags_in_json(new_text)
 
-    # Final validation and formatting
+    # Final validation and formatting with detailed error logging
     try:
         data = json.loads(new_text)
-        return json.dumps(data, indent=2)
-    except json.JSONDecodeError:
+        return json.dumps(data, indent=2, ensure_ascii=False)
+    except json.JSONDecodeError as e:
+        # Detailed error logging to identify problematic characters
+        print(f"FINAL JSON PARSING FAILED: {e}")
+        print(f"Error position: {e.pos if hasattr(e, 'pos') else 'unknown'}")
+        print(f"Error message: {e.msg if hasattr(e, 'msg') else 'unknown'}")
+        
+        # Show the problematic area around the error
+        if hasattr(e, 'pos') and e.pos is not None:
+            start = max(0, e.pos - 50)
+            end = min(len(new_text), e.pos + 50)
+            problematic_area = new_text[start:end]
+            print(f"Problematic area around position {e.pos}:")
+            print(f"'{problematic_area}'")
+            
+            # Try to identify the specific problematic character
+            if e.pos < len(new_text):
+                problematic_char = new_text[e.pos]
+                print(f"Problematic character at position {e.pos}: '{problematic_char}' (ASCII: {ord(problematic_char)})")
+        
+        print(f"Full response text (first 1000 chars): {new_text[:1000]}")
         return '{"error": "Failed to parse JSON response"}'
 
 

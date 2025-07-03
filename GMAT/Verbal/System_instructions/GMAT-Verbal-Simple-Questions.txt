@@ -109,16 +109,15 @@ The solution must provide a comprehensive analysis that teaches critical reasoni
 6. **Critical Reasoning Insights**: Key lessons about logical reasoning and common traps
 
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
-- Use <strong> tags for emphasis on key points
-- Structure the analysis with clear sections
+- Use clear, natural language explanations without special formatting tags
+- Structure the analysis in logical sections with clear reasoning
 - Include systematic evaluation of each option
 - Provide reasoning strategies that can be applied to similar questions
 
 **Example Structure:**
-{"solution": "<strong>Argument Structure</strong><br>Premise: [Identify the evidence/facts presented]<br>Conclusion: [Identify what the argument concludes]<br><br><strong>Question Strategy</strong><br>This is a [weaken/strengthen/assumption/etc.] question. Our approach: [specific strategy for this question type]<br><br><strong>Logical Analysis</strong><br>[Step-by-step reasoning process]<br><br><strong>Option Analysis</strong><br><strong>(A)</strong> [Detailed explanation of why A is correct/incorrect]<br><strong>(B)</strong> [Detailed explanation of why B is correct/incorrect]<br><strong>(C)</strong> [Detailed explanation of why C is correct/incorrect]<br><strong>(D)</strong> [Detailed explanation of why D is correct/incorrect]<br><strong>(E)</strong> [Detailed explanation of why E is correct/incorrect]<br><br><strong>Key Insight</strong><br>[Important critical reasoning principle or common trap to avoid]"}
+Solutions should identify the argument structure (premises and conclusion), explain the question type strategy, provide step-by-step logical analysis, systematically evaluate each option, and offer key critical reasoning insights. All explanations should be written in plain text format for optimal readability.
 
-you HTML tags such as <br> and <strong> tag to give explanation for every option in a separate line for better readability.
+Use clear paragraph structure and natural language formatting to explain each option systematically for better readability.
 Input format: `QuestionSolution`
 Output format:
 {
@@ -129,8 +128,8 @@ Output format:
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions should be written in clear, natural plain text format
+- Use natural language explanations with proper paragraph structure
+- Include systematic argument analysis and option evaluation
+- The solution field will be extracted as plain text for optimal readability

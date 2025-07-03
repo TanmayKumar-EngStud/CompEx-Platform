@@ -118,8 +118,8 @@ The solution must provide comprehensive analysis that teaches advanced verbal re
 6. **GRE Verbal Tips**: Strategic insights for similar question types
 
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
-- Use <strong> tags for emphasis on key points
+- Use natural line breaks within the solution
+- Use natural emphasis for key points
 - Structure the analysis with clear sections
 - For TC questions: explain the logical flow and context clues
 - For SE questions: explain why both correct answers are equivalent
@@ -128,23 +128,52 @@ The solution must provide comprehensive analysis that teaches advanced verbal re
 **Example Structure for Different Question Types:**
 
 **Text Completion (TC-1):**
-{"solution": "<strong>Context Analysis</strong><br>[Analyze the sentence structure and meaning]<br><br><strong>Strategy</strong><br>[Explain approach for this TC question]<br><br><strong>Option Analysis</strong><br><strong>(A)</strong> [Analysis of fit and meaning]<br><strong>(B)</strong> [Analysis of fit and meaning]<br>[Continue for all options]<br><br><strong>Correct Answer</strong><br>[Detailed explanation of why the correct option works best]<br><br><strong>GRE Tip</strong><br>[Strategy insight for similar TC questions]"}
+"Context Analysis
+[Analyze the sentence structure and meaning]
+
+Strategy
+[Explain approach for this TC question]
+
+Option Analysis
+[Analysis of fit and meaning of Option A]
+[Analysis of fit and meaning of Option B]
+[..Continue for all options]
+
+Correct Answer
+[Detailed explanation of why the correct option works best]
+
+GRE Tip
+[Strategy insight for similar TC questions]"
 
 **Text Completion (TC-2/TC-3):**
-{"solution": "<strong>Context Analysis</strong><br>[Analyze overall meaning and logical flow]<br><br><strong>First Blank Analysis</strong><br>[Context clues and reasoning for first blank]<br>Correct choice from Group 1: [explanation]<br><br><strong>Second Blank Analysis</strong><br>[Context clues and reasoning for second blank]<br>Correct choice from Group 2: [explanation]<br><br>[Continue for TC-3 third blank]<br><br><strong>Combined Logic</strong><br>[How the chosen words work together]<br><br><strong>GRE Tip</strong><br>[Strategy for multi-blank questions]"}
+"Context Analysis
+[Analyze overall meaning and logical flow]
 
-Output:
-{
-   "solution": "comprehensive explanation with detailed reasoning analysis and strategic insights"
-}
+First Blank Analysis
+[Context clues and reasoning for first blank]
+Correct choice from Group 1: [explanation]
+
+Second Blank Analysis
+[Context clues and reasoning for second blank]
+Correct choice from Group 2: [explanation]
+
+[Continue for TC-3 third blank]
+
+Combined Logic
+[How the chosen words work together]
+
+GRE Tip
+[Strategy for multi-blank questions]"
+
+Output (in Plain text):
+"comprehensive explanation with detailed reasoning analysis and strategic insights"
 
 please note that all the output response should be of json format.
 
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions are returned as plain text directly (not wrapped in JSON)
+- Use natural formatting and line breaks as needed
+- Write solutions as you would explain them to a student

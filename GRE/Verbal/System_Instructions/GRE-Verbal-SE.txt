@@ -75,10 +75,8 @@ output:
 Here you will have to generate the solution for the previously generated question text.
 
 input: `QuestionSolution`
-output:
-{
-   "solution": "solution explaining why those two options were fitting perfectly in that blank"
-}
+output (in Plain text):
+"solution explaining why those two options were fitting perfectly in that blank"
 
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

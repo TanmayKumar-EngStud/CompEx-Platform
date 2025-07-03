@@ -96,10 +96,8 @@ As a child solution, you responsibility is to generate the solution for the prev
 Input and Output will be in the following format: 
 Input:
 `ChildSolution: <Child question number>`
-Output: 
-{
-   "solution": "<p>explanation of the correct option (use html tags for bold, italic, underline, etc to make it more readable and give explanation of other options in points, bold the option if the option texts are small, and separate the option discussion by a line, For TC-2 and TC-3 questions give explanation of the option from the option group with a separate gap) and also keep the solution short and concise</p>"
-}
+Output (in Plain text): 
+"explanation of the correct option (use natural formatting to make it more readable and give explanation of other options in points, emphasize options when needed, and separate the option discussion by a line, For TC-2 and TC-3 questions give explanation of the option from the option group with a separate gap) and also keep the solution short and concise"
 
 For every ParentQuestion, there will be multiple ChildQuestions thus to maintain the consistency, the Child question number will be provided in the input.
 
@@ -108,8 +106,7 @@ please note that all the output response should be of json format.
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions are returned as plain text directly (not wrapped in JSON)
+- Use natural formatting and line breaks as needed
+- Write solutions as you would explain them to a student

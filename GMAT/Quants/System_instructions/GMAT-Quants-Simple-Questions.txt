@@ -129,10 +129,16 @@ The solution must provide a comprehensive, step-by-step analysis that guides use
 5. **Verification**: Check the answer makes sense in context
 6. **Key Insights**: Highlight important concepts or common pitfalls to avoid
 
+**IMPORTANT - SOLUTION FORMAT:**
+- The solution field will be extracted as PLAIN TEXT, not as formatted JSON
+- Do NOT use any special tags like <br>, <strong>, or mathematical symbol tags
+- Use regular line breaks, mathematical symbols, and formatting directly
+- Write the solution as you would naturally explain it to a student
+- Use standard mathematical notation (√, π, ≈, ≤, ≥, etc.) directly
+- Use regular formatting as needed
+
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
-- Use ~~mathematical expressions~~ for any mathematical notation
-- Structure the solution in clear, numbered steps
+- Structure the solution in clear, numbered steps using natural formatting
 - For Word Problems: Include key information extraction as first step
 - For Algebra: Show both algebraic solution and back-solving method when applicable
 - For Arithmetic: Emphasize number sense and critical reasoning
@@ -140,10 +146,10 @@ The solution must provide a comprehensive, step-by-step analysis that guides use
 **Example Structure for Different Question Types:**
 
 **Arithmetic/Word Problems:**
-{"solution": "<strong>Step 1: Extract Key Information</strong><br>[List key facts from the problem]<br><br><strong>Step 2: Set Up the Problem</strong><br>[Explain the mathematical relationships]<br><br><strong>Step 3: Calculate Step-by-Step</strong><br>[Show detailed calculations]<br>~~mathematical work~~<br><br><strong>Step 4: Verify Answer</strong><br>[Check if answer makes sense in context]<br><br><strong>Key Insight</strong><br>[Important concept or common pitfall to remember]"}
+{"solution": "Step 1: Extract Key Information\n[List key facts from the problem]\n\nStep 2: Set Up the Problem\n[Explain the mathematical relationships]\n\nStep 3: Calculate Step-by-Step\n[Show detailed calculations]\n\nStep 4: Verify Answer\n[Check if answer makes sense in context]\n\nKey Insight\n[Important concept or common pitfall to remember]"}
 
 **Algebra Problems:**
-{"solution": "<strong>Method 1: Algebraic Approach</strong><br><strong>Step 1: Set Up Equation</strong><br>[Algebraic setup]<br><br><strong>Step 2: Solve</strong><br>~~algebraic steps~~<br><br><strong>Method 2: Back-Solving (Recommended for GMAT)</strong><br><strong>Step 1: Test Answer Choices</strong><br>[Test each option systematically]<br><br><strong>Why Back-Solving Works Better</strong><br>[Explain efficiency advantages]"}
+{"solution": "Method 1: Algebraic Approach\nStep 1: Set Up Equation\n[Algebraic setup]\n\nStep 2: Solve\n[algebraic steps]\n\nMethod 2: Back-Solving (Recommended for GMAT)\nStep 1: Test Answer Choices\n[Test each option systematically]\n\nWhy Back-Solving Works Better\n[Explain efficiency advantages]"}
 
 Input: 
 `QuestionSolution`

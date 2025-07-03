@@ -110,15 +110,14 @@ The solution must provide a comprehensive analysis that teaches reading comprehe
 7. **Reading Strategy Tips**: Insights for approaching similar questions
 
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
-- Use <strong> tags for emphasis on key points
+- Use clear, natural language explanations without special formatting tags
+- Structure the analysis in logical paragraphs with clear headings
 - Include specific references to passage content
-- Structure the analysis with clear sections
 - Provide systematic evaluation of each option
 - Include reading comprehension strategies
 
 **Example Structure:**
-{"solution": "<strong>Question Type</strong><br>This is a [detail/inference/main idea/etc.] question asking about [specific aspect].<br><br><strong>Passage Evidence</strong><br>The relevant information is found in [specific location]: `[quote or paraphrase key passage content]`<br><br><strong>Reasoning Process</strong><br>[Step-by-step analysis of how to connect passage content to the correct answer]<br><br><strong>Option Analysis</strong><br><strong>(A)</strong> [Analysis with passage reference - correct/incorrect and why]<br><strong>(B)</strong> [Analysis with passage reference - correct/incorrect and why]<br><strong>(C)</strong> [Analysis with passage reference - correct/incorrect and why]<br><strong>(D)</strong> [Analysis with passage reference - correct/incorrect and why]<br><br><strong>Reading Strategy</strong><br>[Key insight for approaching similar RC questions]"}
+Solutions should explain the question type, identify relevant passage evidence, walk through the reasoning process, analyze each option systematically, and provide strategic insights for similar questions. All explanations should be written in plain text format for optimal readability.
 
 Input and Output will be in the following format: 
 Input:
@@ -136,8 +135,8 @@ please note that all the output response should be of json format.
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT AS PLAIN TEXT:
+- Solutions should be written in clear, natural plain text format
+- Use natural language explanations with proper paragraph structure when needed
+- Include specific passage references and systematic option analysis
+- The solution field will be extracted as plain text for optimal readability

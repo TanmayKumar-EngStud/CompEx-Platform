@@ -14,7 +14,8 @@ Your target is to create really good logical reasoning type Data Sufficiency que
 there will be x modes:-  
 1. questionText
 2. questionTitle
-3. questionSolution
+3. questionSolution - only this response should be in plain text!!
+4. QuestionAnswer
 
 For showing Math, use LaTeX notation, and use Single Dollar Sign as Delimiter, e.g:- $\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$
 Important:- Strictly follow the output format, don't give any other text or comment, your response is directly used by python program, key value pair should be in double quotes, don't use single quote, don't use single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
@@ -35,7 +36,7 @@ Strictly respond in json format, don't use single quote, always use double quote
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+  {"answer": "A"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system
@@ -69,6 +70,7 @@ Output format:- {"title": "question title"}
 
 Mode 3: questionSolution
 Here based on the previous question, you would have to provide the detailed reasoning for solving the Data Sufficiency question. Focus ONLY on the solution explanation without determining the final answer.
+For this mode, respond in plain text!
 
 ENHANCED SOLUTION REQUIREMENTS FOR GRE DATA SUFFICIENCY:
 The solution must provide a comprehensive analysis that teaches logical reasoning and data sufficiency skills:
@@ -89,12 +91,23 @@ The solution must provide a comprehensive analysis that teaches logical reasonin
 - DO NOT include the final answer choice in the solution
 
 **Example Structure:**
-{"solution": "<strong>Step 1: Understanding the Question</strong><br>We need to determine [what the question is asking].<br><br><strong>Step 2: Analyzing Statement (1)</strong><br>[Brief analysis of statement 1]<br>Calculation: [simple calculation if needed]<br>Conclusion: Statement (1) [is/is not] sufficient because [brief reasoning].<br><br><strong>Step 3: Analyzing Statement (2)</strong><br>[Brief analysis of statement 2]<br>Calculation: [simple calculation if needed]<br>Conclusion: Statement (2) [is/is not] sufficient because [brief reasoning]."}
+"Step 1: Understanding the Question
+We need to determine [what the question is asking].
 
-input format:- "questionSolution"
-Output format:- {"solution": "logical reasoning explanation without final answer choice"}
+Step 2: Analyzing Statement (1)
+[Brief analysis of statement 1]
+Calculation: [simple calculation if needed]
+Conclusion: Statement (1) [is/is not] sufficient because [brief reasoning].
 
-Mode 4: questionAnswer
+Step 3: Analyzing Statement (2)
+[Brief analysis of statement 2]
+Calculation: [simple calculation if needed]
+Conclusion: Statement (2) [is/is not] sufficient because [brief reasoning]."
+
+input format:- "QuestionSolution"
+Output format (in Plain text):- "logical reasoning explanation without final answer choice"
+
+Mode 4: QuestionAnswer
 Here based on the previous question and solution analysis, you would determine which option out of "A", "B", "C", "D", "E" is correct.
 
 For Data Sufficiency questions, these are the standard options:
@@ -104,7 +117,7 @@ C: "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is suff
 D: "EITHER statement ALONE is sufficient."
 E: "Statements (1) and (2) TOGETHER are NOT sufficient."
 
-input format:- "questionAnswer"
+input format:- "QuestionAnswer"
 Output format:- {"answer": "A"}
 always give answer in the format of "A", "B", "C", "D", or "E".
 
@@ -116,3 +129,26 @@ CRITICAL JSON FORMATTING:
 - Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
 - This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
 - Use <br> tags ONLY within JSON values, never in JSON keys
+
+MATHEMATICAL NOTATION GUIDELINES:
+When including mathematical symbols in your JSON responses, use these tagged formats to ensure proper parsing:
+- For "implies" use: <implies> instead of \\implies or ⇒
+- For "approximately equal" use: <approx> instead of \\approx or ≈
+- For "square root" use: <sqrt> instead of \\sqrt or √
+- For "pi" use: <pi> instead of \\pi or π
+- For "alpha, beta, gamma" etc. use: <alpha>, <beta>, <gamma> instead of \\alpha, \\beta, \\gamma
+- For "infinity" use: <infinity> instead of \\infty or ∞
+- For "not equal" use: <ne> instead of \\neq or ≠
+- For "less than or equal" use: <le> instead of \\leq or ≤
+- For "greater than or equal" use: <ge> instead of \\geq or ≥
+- For "plus/minus" use: <pm> instead of \\pm or ±
+- For "times" use: <times> instead of \\times or ×
+- For "division" use: <div> instead of \\div or ÷
+- For "therefore" use: <therefore> instead of \\therefore or ∴
+- For "because" use: <because> instead of \\because or ∵
+- For mathematical operators like sum, product, integral use: <sum>, <prod>, <integral>
+- For set notation use: <in>, <subset>, <union>, <intersection>, <empty_set>
+- For logical operators use: <forall>, <exists>, <iff>, <neg>, <vee>, <wedge>
+
+Example: Instead of "x \\implies y \\approx <pi>" write "x <implies> y <approx> <pi>"
+This ensures all mathematical symbols are properly processed and displayed.

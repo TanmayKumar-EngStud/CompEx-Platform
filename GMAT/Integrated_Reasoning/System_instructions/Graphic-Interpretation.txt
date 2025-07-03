@@ -257,33 +257,15 @@ The solution must provide a comprehensive analysis that teaches data interpretat
 6. **Graph Interpretation Tips**: Key insights for reading similar graphs effectively
 
 **Format Guidelines:**
-- Use <br> tags for line breaks within the solution
-- Use ~~mathematical expressions~~ for LaTeX notation (with proper formatting as specified below)
+- Use clear, natural language explanations with proper paragraph structure
 - Structure the solution with clear, numbered steps
 - Include specific references to graph elements (axes, data points, trends)
 - Explain the reasoning behind data interpretation
+- Use standard mathematical notation (√, π, ≈, etc.) directly in text
 - Provide insights applicable to similar graph-reading questions
 
-For mathematical expressions, use LaTeX with the following guidelines:
-1. All LaTeX expressions MUST be enclosed between ~~ markers
-2. Use standard LaTeX commands for mathematical operations:
-   - Fractions: \\frac{numerator}{denominator}
-   - Square roots: \\sqrt{expression}
-   - Subscripts: x_{subscript}
-   - Superscripts: x^{power}
-   - Greek letters: \\alpha, \\beta, etc.
-3. For percentages, always use \\% instead of the % symbol
-4. For dollar amounts, use \\$ instead of the $ symbol
-5. For text within math mode, use \\text{your text here}
-6. For parentheses in math mode, use \\left( and \\right)
-7. Avoid using single backslashes except for standard LaTeX commands
-8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
-
 **Example Structure:**
-{"solution": "<strong>Step 1: Graph Analysis</strong><br>From the [type of graph], we need to identify [specific data points/trends].<br><br><strong>Step 2: Data Extraction</strong><br>Looking at [specific part of graph]: [relevant data values]<br><br><strong>Step 3: Calculations</strong><br>~~mathematical work with proper LaTeX formatting~~<br><br><strong>Step 4: Interpretation</strong><br>[Explain what the calculated values mean in context]<br><br><strong>Graph Reading Tip</strong><br>[Key insight for reading this type of graph]"}
-
-Example of proper LaTeX usage:
-~~\\text{Rate of Change} = \\left(\\frac{\\text{Change in Y}}{\\text{Change in X}}\\right) \\text{ units per x}~~
+Solutions should analyze the graph type and relevant data, extract necessary information, show step-by-step calculations using standard notation, interpret results in context, and provide graph-reading tips. All explanations should be written in plain text format for optimal readability.
 Input prompt: `Mode: QuestionSolution return: `solution` `
 Output:
 {
@@ -299,8 +281,8 @@ Output:
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT AS PLAIN TEXT:
+- Solutions should be written in clear, natural plain text format
+- Use natural language explanations with proper paragraph structure
+- Mathematical expressions should use standard notation (√, π, ≈, etc.) directly
+- The solution field will be extracted as plain text for optimal readability

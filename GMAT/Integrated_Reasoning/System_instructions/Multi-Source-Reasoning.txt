@@ -286,35 +286,31 @@ Output:
 
 ## ChildQuestionSolution
 generate a solution from the above source information, and for calculation use code interpreter, and use the accuracy upto 2 decimal points.
-For mathematical expressions, use LaTeX with the following guidelines:
-1. All LaTeX expressions MUST be enclosed between ~~ markers
-2. Use standard LaTeX commands for mathematical operations:
-   - Fractions: \\frac{numerator}{denominator}
-   - Square roots: \\sqrt{expression}
-   - Subscripts: x_{subscript}
-   - Superscripts: x^{power}
-   - Greek letters: \\alpha, \\beta, etc.
-3. For percentages, always use \\% instead of the % symbol
-4. For dollar amounts, use \\$ instead of the $ symbol
-5. For text within math mode, use \\text{your text here}
-6. For parentheses in math mode, use \\left( and \\right)
-7. Avoid using single backslashes except for standard LaTeX commands
-8. Never nest LaTeX expressions (don't put ~~ inside another ~~ block)
 
-Example of proper LaTeX usage:
-~~\\text{Percentage} = \\left(\\frac{\\text{Final} - \\text{Initial}}{\\text{Initial}}\\right) \\times 100\\%~~
+**IMPORTANT - SOLUTION FORMAT:**
+- The solution field will be extracted as PLAIN TEXT, not as formatted JSON
+- Do NOT use any special formatting tags or LaTeX
+- Use regular line breaks, mathematical symbols, and formatting directly
+- Write the solution as you would naturally explain it to a student
+- Use standard mathematical notation (√, π, ≈, ≤, ≥, %, $, etc.) directly
+
+Example of proper plain text usage:
+Percentage = ((Final - Initial) / Initial) × 100%
 
 Input prompt: `ChildQuestionSolution: 1` // solution for 1st question asked from the source information.
+Output (in Plain text):
+"complete solution with natural formatting and mathematical expressions"
+
+## ChildQuestionAnswer
+Input prompt: `ChildQuestionAnswer: 1` // answer for 1st question asked from the source information.
 Output: 
 {
-   "solution": "complete solution with properly formatted LaTeX expressions",
    "answer": "A"
 }
 
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT NOTE:
+- Solutions are returned as plain text directly (not wrapped in JSON)
+- Use natural formatting and line breaks as needed
+- Write solutions as you would explain them to a student

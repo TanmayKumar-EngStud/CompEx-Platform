@@ -413,42 +413,54 @@ class SimpleQuestion(BaseQuestionComponent):
         Returns:
             Solution string for MCQ, or (solution, answer) tuple for numeric entry
         """
-        def _generate(warn: bool = False) -> Optional[Union[str, Tuple[str, float]]]:
+        if is_numeric_entry:
+            # For numeric entry, we need both solution and answer
+            # Solution is plain text, answer is JSON
+            solution = self._generate_solution_plain_text()
+            answer = self._generate_answer_numeric()
+            return solution, answer
+        else:
+            # For regular questions, just solution as plain text
+            return self._generate_solution_plain_text()
+    
+    def _generate_solution_plain_text(self) -> str:
+        """Generate solution as plain text."""
+        def _generate(warn: bool = False) -> Optional[str]:
             response = self._get_response("QuestionSolution", warn)
+            
+            if not response:
+                return None
+            
+            # For solution mode, AI returns plain text directly
+            return response.strip() if response else None
+        
+        result = self._retry_generate(_generate)
+        return result if result else ""
+    
+    def _generate_answer_numeric(self) -> float:
+        """Generate numeric answer for numeric entry questions."""
+        def _generate(warn: bool = False) -> Optional[float]:
+            response = self._get_response("QuestionAnswer", warn)
             
             if not response:
                 return None
             
             message = self._process_json_response(
                 response,
-                ["solution", "answer"] if is_numeric_entry else ["solution"],
-                "SimpleQuestion generate_question_solution"
+                ["answer"],
+                "SimpleQuestion generate_answer_numeric"
             )
             
-            if not message:
-                return None
-            
-            if is_numeric_entry:
-                solution = message.get("solution", "")
-                answer = message.get("answer")
-                if answer is not None:
-                    try:
-                        return solution, float(answer)
-                    except (ValueError, TypeError):
-                        print(f"Warning: Could not convert answer to float: {answer}")
-                        return solution, 0.0
-                return solution, 0.0
-            else:
-                return message.get("solution", "")
+            if message and message.get("answer") is not None:
+                try:
+                    return float(message["answer"])
+                except (ValueError, TypeError):
+                    print(f"Warning: Could not convert answer to float: {message['answer']}")
+                    return 0.0
+            return None
         
         result = self._retry_generate(_generate)
-        
-        if is_numeric_entry:
-            if result is None:
-                return "", 0.0
-            return result
-        else:
-            return result if result else ""
+        return result if result is not None else 0.0
     
     def generate_question_options(self) -> Tuple[List[str], str]:
         """
@@ -531,7 +543,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
                 return None
             
             # Accept both GMAT and GRE key patterns for flexibility
-            expected_keys = ["passage", "question_passage", "statements", "question"]
+            expected_keys = ["passage", "statements", "question"]
             
             message = self._process_json_response(
                 response,
@@ -542,8 +554,8 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             if not message:
                 return None
             
-            # Extract components - try both formats
-            passage = message.get("question_passage") or message.get("passage")
+            # Extract components - use consistent format
+            passage = message.get("passage")
             statements = message.get("statements")
             question = message.get("question")
             
@@ -594,22 +606,15 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
     def _generate_solution_only(self) -> str:
         """Generate only the solution text."""
         def _generate(warn: bool = False) -> Optional[str]:
-            # Use exam-specific capitalization for solution mode
-            prompt = "QuestionSolution" if self.exam_type == ExamType.GMAT else "questionSolution"
+            # Use standardized naming across all exams
+            prompt = "QuestionSolution"
             response = self._get_response(prompt, warn)
             
             if not response:
                 return None
             
-            message = self._process_json_response(
-                response,
-                ["solution"],
-                "DataSufficiencyQuestion generate_solution_only"
-            )
-            
-            if message and message.get("solution"):
-                return message["solution"]
-            return None
+            # For solution mode, AI returns plain text directly
+            return response.strip() if response else None
         
         result = self._retry_generate(_generate)
         if result is None:
@@ -620,8 +625,8 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
     def _generate_answer_only(self) -> str:
         """Generate only the answer letter."""
         def _generate(warn: bool = False) -> Optional[str]:
-            # Use exam-specific capitalization for answer mode
-            prompt = "QuestionAnswer" if self.exam_type == ExamType.GMAT else "questionAnswer"
+            # Use standardized naming across all exams
+            prompt = "QuestionAnswer"
             response = self._get_response(prompt, warn)
             
             if not response:
@@ -853,15 +858,8 @@ class ParentChildQuestion(BaseQuestionComponent):
             if not response:
                 return None
             
-            message = self._process_json_response(
-                response,
-                ["solution"],
-                f"ParentChildQuestion generate_child_solution {index}"
-            )
-            
-            if message:
-                return message.get("solution")
-            return None
+            # For solution mode, AI returns plain text directly
+            return response.strip() if response else None
         
         return self._retry_generate(_generate)
     
@@ -968,19 +966,8 @@ class GraphicInterpretationQuestion(SpecializedQuestion):
             if not response:
                 return None
             
-            message = self._process_json_response(
-                response,
-                ["solution", "answer", "explanation", "question"],
-                "GraphicInterpretationQuestion generate_question_solution"
-            )
-            
-            if message:
-                # Try different possible solution keys
-                return (message.get("solution") or 
-                       message.get("answer") or 
-                       message.get("explanation") or 
-                       message.get("question"))
-            return None
+            # For solution mode, AI returns plain text directly
+            return response.strip() if response else None
         
         return self._retry_generate(_generate)
     
@@ -1103,14 +1090,27 @@ class TableAnalysisQuestion(SpecializedQuestion):
             if not response:
                 return None
             
+            # For solution mode, AI returns plain text directly
+            return response.strip() if response else None
+        
+        return self._retry_generate(_generate)
+    
+    def generate_question_answer(self) -> Optional[Dict[str, Any]]:
+        """Generate TA question answer."""
+        def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
+            response = self._get_response("QuestionAnswer", warn)
+            
+            if not response:
+                return None
+            
             message = self._process_json_response(
                 response,
-                ["solution"],
-                "TableAnalysisQuestion generate_question_solution"
+                ["answer"],
+                "TableAnalysisQuestion generate_question_answer"
             )
             
             if message:
-                return message.get("solution")
+                return message.get("answer")
             return None
         
         return self._retry_generate(_generate)
@@ -1239,18 +1239,41 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
                 if not response:
                     return None
                 
-                message = self._process_json_response(
-                    response,
-                    ["solution"],
-                    f"TwoPartAnalysisQuestion generate_question_solution {i}"
-                )
-                
-                if message and message.get("solution"):
-                    solutions.append(message["solution"])
+                # For solution mode, AI returns plain text directly
+                solution_text = response.strip()
+                if solution_text:
+                    solutions.append(solution_text)
                 else:
                     return None
             
             return solutions
+        
+        result = self._retry_generate(_generate)
+        return result if result else []
+    
+    def generate_question_answers(self) -> List[str]:
+        """Generate TPA question answers."""
+        def _generate(warn: bool = False) -> Optional[List[str]]:
+            answers = []
+            for i in range(1, 3):  # Two answers
+                prompt_text = f"QuestionAnswer{i}"
+                response = self._get_response(prompt_text, warn)
+                
+                if not response:
+                    return None
+                
+                message = self._process_json_response(
+                    response,
+                    ["answer"],
+                    f"TwoPartAnalysisQuestion generate_question_answers {i}"
+                )
+                
+                if message and message.get("answer"):
+                    answers.append(str(message["answer"]))
+                else:
+                    return None
+            
+            return answers
         
         result = self._retry_generate(_generate)
         return result if result else []
@@ -1383,14 +1406,29 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
             if not response:
                 return None
             
+            # For solution mode, AI returns plain text directly
+            return response.strip() if response else None
+        
+        return self._retry_generate(_generate)
+    
+    def generate_question_answer(self, prompt: str) -> Optional[str]:
+        """Generate MSR question answer."""
+        self.temp_prompt = prompt
+        
+        def _generate(warn: bool = False) -> Optional[str]:
+            response = self._get_response(self.temp_prompt, warn)
+            
+            if not response:
+                return None
+            
             message = self._process_json_response(
                 response,
-                ["solution"],
-                "MultiSourceReasoningQuestion generate_question_solution"
+                ["answer"],
+                "MultiSourceReasoningQuestion generate_question_answer"
             )
             
             if message:
-                return message.get("solution")
+                return message.get("answer")
             return None
         
         return self._retry_generate(_generate)

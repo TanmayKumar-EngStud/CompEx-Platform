@@ -268,11 +268,14 @@ output:- { "title": "unique title for the child question"}
 ## ChildQuestionSolution Mode
 1. Definition
 the solution of previous child question should be generated use question graph data and graph description to find the solution of the question,
-in order to do every calculation you must use code interpretor, and for showing the math you must use latex, all the latex code should be present in the ~~latex~~ code block for example ~~2x+3=5~~.
-use HTML code block for the solution to make it look more readable.
+in order to do every calculation you must use code interpretor. The solution should be written in plain text format for natural readability.
 2. Input Format
 input:- "ChildQuestionSolution"
-output:- { "solution": "complete solution passage should come here, explaining how to solve the given question", "answer": "A"}
+output:- "complete solution passage should come here, explaining how to solve the given question in clear, natural language"
+Here just for Solution component it should be in plain text.
+## ChildQuestionAnswer Mode
+input:- "ChildQuestionAnswer"
+output:- {"answer" : "A"}
 
 ## ChildQuestionOptions Mode
 1. Definition
@@ -296,8 +299,8 @@ output:- { "options": {"A": "option1", "B": "option2", "C": "option3", "D": "opt
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 
-CRITICAL JSON FORMATTING:
-- If you need to include newlines within any JSON value (not keys), use <br> tag instead of actual newline characters (\n)
-- Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
-- This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
-- Use <br> tags ONLY within JSON values, never in JSON keys
+SOLUTION FORMAT PLAIN TEXT:
+- Solutions should be written in clear, natural plain text format
+- Use natural language explanations with proper paragraph breaks when needed
+- Mathematical expressions should use standard notation (√, π, ≈, etc.) rather than special tags
+- The solution field will be extracted as plain text for optimal readability
