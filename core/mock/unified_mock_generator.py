@@ -455,10 +455,16 @@ class UnifiedMockGenerator:
                 self._add_gmat_generation_tasks(thread_manager)
 
             # Execute all tasks and get the paper results
-            results = thread_manager.execute_all()
+            # The thread manager returns the properly structured paper dictionary
+            paper = thread_manager.execute_all()
 
-            # Transform results to proper paper format
-            paper = self._organize_results_into_paper(results)
+            # If the paper is empty or invalid, return the initial structure
+            if not paper or not isinstance(paper, dict):
+                # Create empty structure based on exam type
+                if self.exam_type == ExamType.GRE:
+                    paper = {"GRE_Q": {"section1": [], "section2": []}, "GRE_V": {"section1": [], "section2": []}}
+                else:
+                    paper = {"GMAT_Q": {"section0": []}, "GMAT_V": {"section0": []}, "GMAT_IR": {"section0": []}}
 
             return paper
 

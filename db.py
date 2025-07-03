@@ -139,19 +139,36 @@ class DB:
             "Q": "Quants",
             "IR": "Integrated Reasoning"
         }
-        exam_name, section = exam_section.split("_")
+        
+        # Handle empty or malformed exam_section
+        if not exam_section or "_" not in exam_section:
+            raise ValueError(f"Invalid exam section format: '{exam_section}'. Expected format: 'EXAM_SECTION' (e.g., 'GMAT_Q', 'GRE_V')")
+        
+        try:
+            exam_name, section = exam_section.split("_", 1)  # Split only on first underscore
+        except ValueError:
+            raise ValueError(f"Invalid exam section format: '{exam_section}'. Expected format: 'EXAM_SECTION'")
+        
+        # Validate that section is not empty
+        if not section:
+            raise ValueError(f"Invalid section name: empty section in '{exam_section}'")
+            
         try:
             section_name = section_components[section]
         except KeyError:
-            raise ValueError(f"Invalid section name: {section}")
+            raise ValueError(f"Invalid section name: '{section}'. Valid sections are: {list(section_components.keys())}")
+            
         exam = self.db.examtypes.find_first(where={'name': exam_name})
-        section = self.db.sections.find_first(
+        if not exam:
+            raise ValueError(f"Exam type not found: '{exam_name}'")
+            
+        section_obj = self.db.sections.find_first(
             where={'name': section_name, 'examtypeid': exam.examtypeid})
-        if not exam or not section:
-            raise ValueError(
-                f"Exam or section not found: {exam_name} {section_name}")
+        if not section_obj:
+            raise ValueError(f"Section not found: '{section_name}' for exam '{exam_name}'")
+            
         self.current_exam_id = int(exam.examtypeid)
-        self.current_section_id = int(section.sectionid)
+        self.current_section_id = int(section_obj.sectionid)
         return None
 
     def _register_problem(self, exam_section, question, isChildQuestion=False, isMockQuestion=False):

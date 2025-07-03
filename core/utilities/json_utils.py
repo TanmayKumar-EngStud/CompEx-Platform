@@ -35,6 +35,22 @@ def refine_response(response_text: str) -> str:
         text = re.sub(r'^```\s*$', '', text, flags=re.MULTILINE)
         text = re.sub(r'^```', '', text, flags=re.MULTILINE)
 
+        # Fix backticks inside JSON strings - replace backticks with single quotes
+        # This is done before JSON parsing to prevent parsing errors
+        text = re.sub(r'`([^`]*)`', r"'\1'", text)
+        
+        # Remove standalone backticks that might break JSON
+        text = text.replace('`', "'")
+        
+        # Fix problematic characters that can break JSON parsing
+        # Replace LaTeX math symbols that might not be properly escaped
+        text = text.replace('\\$', '$')  # Fix escaped dollar signs
+        text = text.replace('\\\\', '\\')  # Fix double backslashes
+        
+        # Fix unescaped quotes inside JSON strings
+        # This is a basic fix - more sophisticated handling would require proper parsing
+        text = re.sub(r'(?<!\\)"([^"]*)"(?=\s*[,}])', r'"\1"', text)
+
         # Normalize whitespace by joining all lines
         lines = text.split('\n')
         cleaned_text = ''
@@ -53,27 +69,49 @@ def refine_response(response_text: str) -> str:
             return None
 
     def fix_br_tags_in_json(json_string: str) -> str:
-        """Parse JSON and fix <br> tags to proper newlines."""
+        """Parse JSON and fix HTML tags and special characters."""
         try:
             # Parse the JSON
             data = json.loads(json_string)
 
-            # Recursively fix <br> tags in all string values
-            def fix_br_recursive(obj: Any) -> Any:
+            # Recursively fix HTML tags and special characters in all string values
+            def fix_html_recursive(obj: Any) -> Any:
                 if isinstance(obj, dict):
                     for key, value in obj.items():
-                        obj[key] = fix_br_recursive(value)
+                        obj[key] = fix_html_recursive(value)
                 elif isinstance(obj, list):
                     for i, item in enumerate(obj):
-                        obj[i] = fix_br_recursive(item)
+                        obj[i] = fix_html_recursive(item)
                 elif isinstance(obj, str):
-                    # Replace <br> with actual newlines
+                    # Replace HTML tags with appropriate characters
                     obj = obj.replace('<br>', '\n')
+                    obj = obj.replace('<strong>', '**')
+                    obj = obj.replace('</strong>', '**')
+                    obj = obj.replace('<em>', '*')
+                    obj = obj.replace('</em>', '*')
+                    obj = obj.replace('<b>', '**')
+                    obj = obj.replace('</b>', '**')
+                    obj = obj.replace('<i>', '*')
+                    obj = obj.replace('</i>', '*')
+                    
+                    # Handle common mathematical symbols and characters
+                    obj = obj.replace('\\cdot', '·')
+                    obj = obj.replace('\\times', '×')
+                    obj = obj.replace('\\div', '÷')
+                    obj = obj.replace('\\ne', '≠')
+                    obj = obj.replace('\\le', '≤')
+                    obj = obj.replace('\\ge', '≥')
+                    
+                    # Fix any remaining problematic sequences that might break JSON
+                    obj = obj.replace('\\"', '"')  # Fix escaped quotes
+                    obj = obj.replace('\\n', '\n')  # Fix escaped newlines
+                    obj = obj.replace('\\t', '\t')  # Fix escaped tabs
+                    
                 return obj
 
             # Fix the data and return as formatted JSON
-            fixed_data = fix_br_recursive(data)
-            return json.dumps(fixed_data, indent=2)
+            fixed_data = fix_html_recursive(data)
+            return json.dumps(fixed_data, indent=2, ensure_ascii=False)
 
         except json.JSONDecodeError:
             return json_string

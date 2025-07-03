@@ -759,7 +759,12 @@ class ParentChildQuestion(BaseQuestionComponent):
     def generate_child_question_title(self, index: int) -> Optional[str]:
         """Generate title for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"ChildQuestionTitle: {index}"
+            prompt_text = f"ChildTitle: {index} - 3"  # Include difficulty level as expected by AI
+            
+            # When warning (retry), include original prompt context
+            if warn:
+                prompt_text += f"\nOriginal Question Context: {self.prompt}"
+            
             response = self._get_response(prompt_text, warn)
             
             if not response:
@@ -780,7 +785,14 @@ class ParentChildQuestion(BaseQuestionComponent):
     def generate_child_question(self, index: int, child_prompt: str = "") -> Optional[str]:
         """Generate specific child question text."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"generate ChildQuestion: {index} of {child_prompt}"
+            prompt_text = f"ChildQuestion: {index}"
+            if child_prompt:
+                prompt_text += f" - {child_prompt}"
+            
+            # When warning (retry), include original prompt context
+            if warn:
+                prompt_text += f"\nOriginal Question Context: {self.prompt}"
+            
             response = self._get_response(prompt_text, warn)
             
             if not response:
@@ -802,6 +814,11 @@ class ParentChildQuestion(BaseQuestionComponent):
         """Generate options and answer for specific child question."""
         def _generate(warn: bool = False) -> Optional[Tuple[List[str], str]]:
             prompt_text = f"ChildOptions: {index}"
+            
+            # When warning (retry), include original prompt context
+            if warn:
+                prompt_text += f"\nOriginal Question Context: {self.prompt}"
+            
             response = self._get_response(prompt_text, warn)
             
             if not response:
@@ -825,7 +842,12 @@ class ParentChildQuestion(BaseQuestionComponent):
     def generate_child_solution(self, index: int) -> Optional[str]:
         """Generate solution for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"mode:- childQuestionSolution; question: {index}"
+            prompt_text = f"ChildSolution: {index}"
+            
+            # When warning (retry), include original prompt context
+            if warn:
+                prompt_text += f"\nOriginal Question Context: {self.prompt}"
+            
             response = self._get_response(prompt_text, warn)
             
             if not response:
