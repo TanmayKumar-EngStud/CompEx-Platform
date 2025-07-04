@@ -1,7 +1,7 @@
 {
     "verbal": {
         "total_questions": 23,
-        "combination_number": 1341,
+        "combination_number": 1342,
         "section": {
             "RC": [
                 13,
@@ -15,30 +15,30 @@
         "themes": [
             "culture",
             "business",
-            "literature",
-            "social_sciences",
-            "philosophy",
-            "biological_sciences",
             "psychology",
-            "physical_sciences",
+            "philosophy",
             "economics",
-            "history"
+            "history",
+            "biological_sciences",
+            "literature",
+            "physical_sciences",
+            "social_sciences"
         ],
         "cr_types": [
+            "find the assumption",
+            "structure of the argument dialogue structure question",
             "strengthen the argument",
             "evaluate the conclusion",
-            "structure of the argument dialogue structure question",
-            "draw inference/conclusion",
-            "Weaken the argument",
-            "paradox",
             "complete the argument",
-            "structure of the argument boldface structure question",
-            "find the assumption"
+            "paradox",
+            "Weaken the argument",
+            "draw inference/conclusion",
+            "structure of the argument boldface structure question"
         ]
     },
     "quants": {
         "total_questions": 21,
-        "combination_number": 3628,
+        "combination_number": 3649,
         "Problem_Solving": 13,
         "Data_Sufficiency": 8,
         "question_style": [
@@ -46,35 +46,35 @@
             "Pure Contextual"
         ],
         "options": [
+            "Word Problems",
             "Algebra",
-            "Arithmetic",
-            "Word Problems"
+            "Arithmetic"
         ],
         "Arithmetic": {
             "focused_skill": [
-                "Logical Reasoning",
                 "Critical Reasoning",
-                "common pitfalls",
-                "Number Sense"
+                "Number Sense",
+                "Logical Reasoning",
+                "common pitfalls"
             ],
             "topics": [
-                "Work and Time",
+                "Percentages",
                 "Ratio and Proportion",
-                "Rates",
-                "Unitary Method",
                 "Trial and Error Method(type of questions)",
                 "Discount, Profit and Loss",
-                "Percentages"
+                "Work and Time",
+                "Rates",
+                "Unitary Method"
             ]
         },
         "Algebra": {
             "focused_skill": [
-                "Backsolving",
-                "Number Picking(by logical and critical reasoning over constraints given in the question)"
+                "Number Picking(by logical and critical reasoning over constraints given in the question)",
+                "Backsolving"
             ],
             "topics": [
-                "Algebraic Equations",
                 "Inequalities",
+                "Algebraic Equations",
                 "Functions",
                 "Polynomials"
             ]
@@ -82,32 +82,32 @@
         "Word Problems": {
             "focused_skill": [
                 "Setting up proper steps(questions that require users to properly setting up the steps to solve the questions)",
-                "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)",
                 "Choosing mathematical tools(Questions which may have 2 or more mathematical approachs to solve, but user would have to choose the most optimal and efficient approach: generate question content in that manner)",
+                "Obtaining the best answer(which has confusing options, luring the user to choose the wrong one)",
                 "Assessing given Situation(checking the ability of accessing a given situation)"
             ],
             "topics": [
-                "Work and Time",
-                "Ratio and Proportion",
                 "Discount, Profit and Loss",
-                "Unitary Method",
-                "Trial and Error Method(type of questions)",
                 "Percentages",
-                "Polynomials",
                 "Algebraic Equations",
                 "Rates",
                 "Functions",
-                "Inequalities"
+                "Ratio and Proportion",
+                "Polynomials",
+                "Inequalities",
+                "Unitary Method",
+                "Trial and Error Method(type of questions)",
+                "Work and Time"
             ],
             "themes": [
-                "Accounting",
-                "Resource Management",
-                "Marketing and Sales",
-                "Logistics and Supply Chain",
-                "Business",
-                "Economics",
                 "Strategy and Management",
+                "Logistics and Supply Chain",
+                "Resource Management",
                 "Taxation",
+                "Economics",
+                "Marketing and Sales",
+                "Business",
+                "Accounting",
                 "Finance"
             ]
         }

@@ -36,7 +36,7 @@ Name of the keys are case sensitive and only respond the data which is asked!
 A model component designed exclusively to generate graph data for the question, take a random theme! 
 (theme could be literally anything like data on past weapons manufactured and how they are influenced by the weather during their manufacturing
 or data on number of toys sold in a year and how it is related to number of divorces in that year, etc. You just take few related things and for those things just create some relation between them)
-Take as random and as bizzare theme as possible, so that everytime a new unique question data is generated.
+Take as random and as bizarre theme as possible, so that every time a new unique question data is generated.
 2. Input Format
 The input will be provided in the following format:
 "mode:- questionGraph input:- <Tags[]> - <Difficulty> - <Question Style> - <Type> - <Graph Type>"

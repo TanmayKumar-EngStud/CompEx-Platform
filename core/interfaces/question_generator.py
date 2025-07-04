@@ -275,11 +275,18 @@ class BaseQuestionGenerator(ABC):
                 if result is not None:
                     return result
                 
-                print(f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+                print(f"\n🔄 RETRY - {self.__class__.__name__}.{func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+                print(f"   Exam: {self.exam_type.value if hasattr(self, 'exam_type') else 'Unknown'}")
+                print(f"   Prompt: {self.prompt[:100] if hasattr(self, 'prompt') and self.prompt else 'No prompt'}...")
+                print(f"   Reason: Function returned None")
                 
             except Exception as e:
                 last_error = str(e)
-                print(f"Error in attempt {attempt + 1}: {last_error}")
+                print(f"\n❌ ERROR - {self.__class__.__name__}.{func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+                print(f"   Exam: {self.exam_type.value if hasattr(self, 'exam_type') else 'Unknown'}")
+                print(f"   Prompt: {self.prompt[:100] if hasattr(self, 'prompt') and self.prompt else 'No prompt'}...")
+                print(f"   Error: {last_error}")
+                print(f"   API Index: {self.api_idx if hasattr(self, 'api_idx') else 'Unknown'}")
                 
                 # Wait before retry with exponential backoff
                 if attempt < self.max_retries - 1:
@@ -287,8 +294,9 @@ class BaseQuestionGenerator(ABC):
                     time.sleep(wait_time)
         
         # If we get here, all attempts failed
+        print(f"\n💥 FAILED - {self.__class__.__name__}.{func.__name__} - All {self.max_retries} attempts failed")
         if last_error:
-            print(f"All attempts failed. Last error: {last_error}")
+            print(f"   Final error: {last_error}")
         
         return None
     

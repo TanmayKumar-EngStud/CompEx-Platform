@@ -94,8 +94,22 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
                 
                 # Generate options and answer
                 options, answer = parentChildQuestion.generate_childOptions(i + 1)
-                childQuestionData["answer"] = options[answer] if answer in options else list(options.values())[0]
-                option_list = list(options.values())
+                
+                # Handle None options or empty options
+                if options is None:
+                    options = []
+                
+                # Check if options is already a list (from new unified system) or dict (from old system)
+                if isinstance(options, list):
+                    option_list = options
+                    childQuestionData["answer"] = answer if answer in options else (options[0] if options else "")
+                elif isinstance(options, dict):
+                    option_list = list(options.values())
+                    childQuestionData["answer"] = options[answer] if answer in options else (option_list[0] if option_list else "")
+                else:
+                    option_list = []
+                    childQuestionData["answer"] = ""
+                
                 random.shuffle(option_list)
                 childQuestionData["options"] = option_list
                 

@@ -76,16 +76,30 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
             
             # Generate options and answers
             options, answer = questionContent.generate_questionOptions()
-            options_list = list(options.values())
             
+            # Check if options is already a list (from new unified system) or dict (from old system)
+            if isinstance(options, list):
+                options_list = options
+            elif isinstance(options, dict):
+                options_list = list(options.values())
+            else:
+                options_list = []
+                
             if isinstance(answer, list):
                 ans = []
                 for i in answer:
-                    if i in options:
+                    if isinstance(options, dict) and i in options:
                         ans.append(options[i])
+                    elif i in options_list:
+                        ans.append(i)
                 self.question_data["answer"] = ans
             else:
-                self.question_data["answer"] = options[answer] if answer in options else list(options.values())[0]
+                if isinstance(options, dict) and answer in options:
+                    self.question_data["answer"] = options[answer]
+                elif answer in options_list:
+                    self.question_data["answer"] = answer
+                else:
+                    self.question_data["answer"] = options_list[0] if options_list else ""
             
             random.shuffle(options_list)
             self.question_data["options"] = options_list

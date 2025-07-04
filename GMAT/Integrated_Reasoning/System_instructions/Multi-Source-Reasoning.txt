@@ -20,9 +20,9 @@ All the outputs should strictly follow the json format, because the output share
 Here are the following modes in which you have to work in order to generate the question component one by one:
 1. SourceInfo_1, SourceInfo_2, SourceInfo_3 
 2. QuestionTitle
-3. ChildQuestion
-4. ChildQuestionTitle
-5. ChildQuestionOptions
+3. childQuestionText
+4. childQuestionTitle
+5. childQuestionOptions
 6. ChildQuestionSolution
 
 Here you will be getting the information about what type of questions will be asked from the user, 
@@ -213,15 +213,15 @@ Output:
    "title": "complete title"
 }
 
-## ChildQuestion : This component is important, you need to be really careful here.
+## childQuestionText : This component is important, you need to be really careful here.
 Here you would have to generate a child question in such a way that to solve that question, user would have to analyze, synthesize or apply critical reasoning ability from more than one sources to provide answer to the question.
 Input prompt: 
-`ChildQuestion: 1 <focused_skill> - <Question-Style> - <Difficulty Level>`
+`mode:- childQuestionText`
 
 Focused skill will have values like "Critical Reasoning", "Data Interpretation", "Synthesizing", you would have to generate the question text in such a way that all these skills are tested, but put more weightage on the given focused skill.
 
 Question-Style will have value like "MCQ (5 options MCQ)", "Dicotomous Choice(True/False)", "Dicotomous Choice(Yes/No)", "Dicotomous Choice(Acceptable/Not Acceptable)", "Dicotomous Choice(Inferable/Not Inferable)", "MCQ (5 options MCQ)", "MCQ (5 options MCQ)"
-now generate the question text in such a way that in the next follow-up mode (ChildQuestionOptions) you would be able to follow the given question style.
+now generate the question text in such a way that in the next follow-up mode (childQuestionOptions) you would be able to follow the given question style.
 Difficulty Level should tweak the intensity of the overall skills and focused skill accessed from the question. Note that for all difficulty levels, the standards are maintained properly and should match the difficulty level of actual GMAT MSR question.
 
 Output format:
@@ -229,21 +229,21 @@ Output format:
    "question": "complete question"
 }
 
-## ChildQuestionTitle
+## childQuestionTitle
 Here based on the question theme and created source information, make a single line summary as it's title to uniquely identify the question.
-Input prompt: `ChildQuestionTitle: 1` // title for 1st question asked from the source information.
+Input prompt: `mode:- childQuestionTitle` // title for 1st question asked from the source information.
 Output: 
 {
    "title": "complete title"
 }
 
-## ChildQuestionOptions
+## childQuestionOptions
 Here you would have to generate 4 options for the question, and the options should be in the following format, the calculation steps that you followed in finding the correct answer, just use the same steps but make some calculation mistake which user has vulnerable to do so, and after completing the calculation steps in order to get false:
-Input prompt: `ChildQuestionOptions: 1 <focused_skill> - <Question-Style> - <Difficulty Level>`
+Input prompt: `ChildQuestionOptions: 1`
 Focused skill will have values like "Critical Reasoning", "Data Interpretation", "Synthesizing", you would have to generate the question text in such a way that all these skills are tested, but put more weightage on the given focused skill.
 
 Question-Style will have value like "MCQ (5 options MCQ)", "Dicotomous Choice(True/False)", "Dicotomous Choice(Yes/No)", "Dicotomous Choice(Acceptable/Not Acceptable)", "Dicotomous Choice(Inferable/Not Inferable)", "MCQ (5 options MCQ)", "MCQ (5 options MCQ)"
-now generate the question text in such a way that in the next follow-up mode (ChildQuestionOptions) you would be able to follow the given question style.
+now generate the question text in such a way that in the next follow-up mode (childQuestionOptions) you would be able to follow the given question style.
 Difficulty Level should tweak the intensity of the overall skills and focused skill accessed from the question. Note that for all difficulty levels, the standards are maintained properly and should match the difficulty level of actual GMAT MSR question.
 
 Output format for 5 choice MCQ Question-Style:
@@ -276,7 +276,7 @@ for example:-
 "Dicotomous Choice(Inferable/Not Inferable)" will have "Inferable" as key and "Not Inferable" as value.
 
 
-## ChildQuestionTitle
+## childQuestionTitle
 Here based on the previously generated question text and question theme, you need to make a single line summary as it's title to uniquely identify the question.
 Input prompt: `QuestionTitle: 1` // title for 1st question asked from the source information.
 Output: 

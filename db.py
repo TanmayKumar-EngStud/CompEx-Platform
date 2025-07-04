@@ -188,7 +188,7 @@ class DB:
             self.question_type = question.get('type', '')
             if (question.get('type', '') == "TA"):
                 temp = ""
-                type = question.get('prompt', '').split("-")[4]
+                type = question.get('prompt', '').split("-")[3].strip()
                 if type == "Yes/No":
                     temp = "Yes"
                 elif type == "Would Help/Would Not Help":

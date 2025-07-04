@@ -114,7 +114,7 @@ class GREParentChildAdapter:
     
     def generate_questionGraph(self) -> Optional[Dict[str, Any]]:
         """Generate question graph/table (for GRE Quants parent-child questions)."""
-        return self.component.generate_question_graph()
+        return self.component.generate_question_metadata()
     
     def generate_parentTitle(self) -> Optional[str]:
         """Generate parent title (GRE naming convention)."""
@@ -139,8 +139,8 @@ class GREParentChildAdapter:
     def generate_passages(self) -> Optional[str]:
         """Generate passages for reading comprehension (GRE naming convention)."""
         # For RC questions, we need to generate the passage content
-        # This should use the question graph functionality
-        graph = self.component.generate_question_graph()
+        # This should use the question metadata functionality, Here we also need to add the value of i and total for telling which passage number and what are the total number of passages.
+        graph = self.component.generate_question_metadata()
         if graph and isinstance(graph, dict):
             return graph.get('passage') or graph.get('passages') or graph.get('content')
         return None

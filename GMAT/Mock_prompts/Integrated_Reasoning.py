@@ -55,7 +55,7 @@ class Integrated_Reasoning_prompts:
          table_type = random.choice(self.component_allocation["TA"]["table_type"])
          theme = random.choice(self.component_allocation["TA"]["themes"])
          type = random.choice(self.component_allocation["TA"]["type"])
-         question_prompt = f"TA - <{theme}> - <{focused_skill}> - <{table_type}> - <{type}> - <difficulty_level: {difficulty_pool.pop()}>"
+         question_prompt = f"TA - <{focused_skill}> - <{table_type}> - <{type}> - <{theme}> - <difficulty_level: {difficulty_pool.pop()}>"
          prompts.append(question_prompt)
       self.remaining_questions -= total_ta
       

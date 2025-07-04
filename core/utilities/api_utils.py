@@ -226,19 +226,23 @@ class APIRequestHandler:
                 result = func(*args, warn=(attempt > 0), **kwargs)
                 if result:  # If we got any non-None result, return it
                     return result
-                print(f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+                print(f"\n🔄 RETRY - APIUtils.{func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+                print(f"   Reason: Function returned None/empty result")
             except Exception as e:
                 last_error = str(e)
-                print(f"Error in attempt {attempt + 1}: {last_error}")
+                print(f"\n❌ ERROR - APIUtils.{func.__name__} - attempt {attempt + 1}/{self.max_retries}")
+                print(f"   Error: {last_error}")
                 
                 # Wait before retry with exponential backoff
                 if attempt < self.max_retries - 1:
                     wait_time = 2 ** attempt
+                    print(f"   Waiting {wait_time}s before retry...")
                     time.sleep(wait_time)
         
         # If we get here, all attempts failed
+        print(f"\n💥 FAILED - APIUtils.{func.__name__} - All {self.max_retries} attempts failed")
         if last_error:
-            print(f"All attempts failed. Last error: {last_error}")
+            print(f"   Final error: {last_error}")
         return None
 
 

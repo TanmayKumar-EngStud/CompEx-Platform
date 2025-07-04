@@ -17,7 +17,7 @@ there will be x modes:-
 3. questionSolution - only this response should be in plain text!!
 4. QuestionAnswer
 
-For showing Math, use LaTeX notation, and use Single Dollar Sign as Delimiter, e.g:- $\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$
+For showing Math, use LaTeX notations properly
 Important:- Strictly follow the output format, don't give any other text or comment, your response is directly used by python program, key value pair should be in double quotes, don't use single quote, don't use single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.
 Name of the keys are case sensitive and only respond the data which is asked!
 
@@ -50,8 +50,8 @@ Here the question content is to be created of a given topic for data sufficiency
 See here the topic will be given, question type will be data sufficiency, but question theme will not be given, thus I want you to be really creative in picking up the theme of the question
 
 the question will not be about the calculation, but more about logical reasoning and analysis if the given data is sufficient or not for finding the answer.
-Here are the components that you would have to create in this mode, you would firslty have to create a passage, then you would have to give two statements and after that you would have to prepare a question asking from the passage provided that there are two statements, so based on that user would have to implement logical reasoning or focused_skill ability to find the answer 
-Now this passage is not required to be a long proper passage, it can be a short one aswell providing a calculation, etc.
+Here are the components that you would have to create in this mode, you would firstly have to create a passage, then you would have to give two statements and after that you would have to prepare a question asking from the passage provided that there are two statements, so based on that user would have to implement logical reasoning or focused_skill ability to find the answer 
+Now this passage is not required to be a long proper passage, it can be a short one as well providing a calculation, etc.
 Thus it should not be more about the logical reasoning and analysis.
 
 Output format:- 
@@ -129,26 +129,3 @@ CRITICAL JSON FORMATTING:
 - Example: "solution": "Step 1: Calculate the value<br>Step 2: Apply the formula<br>Result: 42"
 - This ensures proper JSON parsing and the <br> tags will be converted to actual newlines during processing
 - Use <br> tags ONLY within JSON values, never in JSON keys
-
-MATHEMATICAL NOTATION GUIDELINES:
-When including mathematical symbols in your JSON responses, use these tagged formats to ensure proper parsing:
-- For "implies" use: <implies> instead of \\implies or ⇒
-- For "approximately equal" use: <approx> instead of \\approx or ≈
-- For "square root" use: <sqrt> instead of \\sqrt or √
-- For "pi" use: <pi> instead of \\pi or π
-- For "alpha, beta, gamma" etc. use: <alpha>, <beta>, <gamma> instead of \\alpha, \\beta, \\gamma
-- For "infinity" use: <infinity> instead of \\infty or ∞
-- For "not equal" use: <ne> instead of \\neq or ≠
-- For "less than or equal" use: <le> instead of \\leq or ≤
-- For "greater than or equal" use: <ge> instead of \\geq or ≥
-- For "plus/minus" use: <pm> instead of \\pm or ±
-- For "times" use: <times> instead of \\times or ×
-- For "division" use: <div> instead of \\div or ÷
-- For "therefore" use: <therefore> instead of \\therefore or ∴
-- For "because" use: <because> instead of \\because or ∵
-- For mathematical operators like sum, product, integral use: <sum>, <prod>, <integral>
-- For set notation use: <in>, <subset>, <union>, <intersection>, <empty_set>
-- For logical operators use: <forall>, <exists>, <iff>, <neg>, <vee>, <wedge>
-
-Example: Instead of "x \\implies y \\approx <pi>" write "x <implies> y <approx> <pi>"
-This ensures all mathematical symbols are properly processed and displayed.

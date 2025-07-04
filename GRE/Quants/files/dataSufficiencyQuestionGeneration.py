@@ -66,6 +66,10 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
             # Generate question content
             passage, statements, question = dataSufficiencyQuestion.generate_questionText()
             
+            # Handle None statements
+            if statements is None:
+                statements = []
+            
             # Handle statements formatting
             if len(statements) == 1:
                 value = statements[0]
