@@ -206,7 +206,7 @@ For Passage the data should be generated in the following format:
 Here based on the Parent Child content you would have to generate the Question text, in such a way that when the follow up Question 2 will be asked, they both can share the same QuestionOptions
 here you have to generate a question text based on the parentQuestion content in such a way that for solving this question it would required the given focused_skill. Difficulty level will be ranging from 1 to 5, and all the questions must maintain the difficulty level of actual GMAT exam.
 
-Input prompt: `Question1: difficulty level`
+Input prompt: `Question1`
 Output:
 {
    "question": "complete question"
@@ -216,7 +216,7 @@ Output:
 Here based on the Parent Child content you would have to generate the Question text, in such a way that when the follow up Question 1 will be asked, they both can share the same QuestionOptions
 here you have to generate a question text based on the parentQuestion content in such a way that for solving this question it would required the given focused_skill. Difficulty level will be ranging from 1 to 5, and all the questions must maintain the difficulty level of actual GMAT exam.
 
-Input prompt: `Question2: difficulty level`
+Input prompt: `Question2`
 Output:
 {
    "question": "complete question"
@@ -236,8 +236,8 @@ for generation of solution if the question requires numerical calculation then u
 Use standard mathematical notation directly in plain text (√, π, ≈, etc.) for all mathematical expressions. Present solutions in clear, natural language format for optimal readability.
 
 Input prompt: `QuestionSolution1`
-Output format, output will be in complete plain text format. ONLY the Solution component will be in Plain text format!: 
-"complete solution with properly formatted LaTeX expressions",
+Output (Plain Text):
+"complete solution with detailed step-by-step reasoning"
 
 ## QuestionAnswer1
 Input prompt: `QuestionAnswer1`
@@ -247,7 +247,10 @@ Output format:
 }
 ## QuestionSolution2
 Similarly for Question2 you need to generate the solution in the same format as above
-"complete solution with properly formatted LaTeX expressions",
+
+Input prompt: `QuestionSolution2`
+Output (Plain Text):
+"complete solution with detailed step-by-step reasoning"
 
 ## QuestionAnswer2
 Input prompt: `QuestionAnswer2`
@@ -263,7 +266,7 @@ it should in such a way that guessing the answer for both of the questions is di
 make the question options in a generalized format in order to achieve that.
 
 
-Input prompt: `QuestionOptions: number of options (5)`
+Input prompt: `QuestionOptions`
 Output format:
 {
   "options": {

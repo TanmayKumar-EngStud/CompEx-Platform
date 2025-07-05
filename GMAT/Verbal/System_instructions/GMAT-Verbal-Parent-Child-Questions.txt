@@ -9,6 +9,7 @@ Now there are going to be following modes in which you are going to operate:
 4. childQuestionTitle
 5. childQuestionOptions
 6. ChildSolution
+7. ChildAnswer
 
 Important Note:
 Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.
@@ -36,7 +37,7 @@ As a parent question, your responsibility is to focus on generating the reading 
 Input and Output will be in the following format:
 Every single passage should be big. So that making it's child questions is possible.
 Input:
-`Passage <PassageNumber> of <TotalPassages>: <QuestionTheme> - <QuestionType> - <Difficulty> - <Vocabulary>`
+`ParentQuestion`
 Output: 
 {
    "passage": "passage content"
@@ -122,9 +123,16 @@ Solutions should explain the question type, identify relevant passage evidence, 
 Input and Output will be in the following format: 
 Input:
 `ChildSolution: <Child question number>`
+Output (respond in PLAIN TEXT): 
+comprehensive solution with detailed textual analysis and reasoning explanation
+
+6. ChildAnswer:
+As a child answer, you responsibility is to generate the correct answer letter for the previously generated child question.
+Input and Output will be in the following format: 
+Input:
+`ChildAnswer: <Child question number>`
 Output: 
 {
-   "solution": "comprehensive solution with detailed textual analysis and reasoning explanation",
    "answer": "A"
 }
 

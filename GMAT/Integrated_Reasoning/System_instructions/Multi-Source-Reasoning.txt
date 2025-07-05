@@ -215,8 +215,7 @@ Output:
 
 ## childQuestionText : This component is important, you need to be really careful here.
 Here you would have to generate a child question in such a way that to solve that question, user would have to analyze, synthesize or apply critical reasoning ability from more than one sources to provide answer to the question.
-Input prompt: 
-`mode:- childQuestionText`
+Input prompt: `childQuestionText`
 
 Focused skill will have values like "Critical Reasoning", "Data Interpretation", "Synthesizing", you would have to generate the question text in such a way that all these skills are tested, but put more weightage on the given focused skill.
 
@@ -231,7 +230,7 @@ Output format:
 
 ## childQuestionTitle
 Here based on the question theme and created source information, make a single line summary as it's title to uniquely identify the question.
-Input prompt: `mode:- childQuestionTitle` // title for 1st question asked from the source information.
+Input prompt: `childQuestionTitle`
 Output: 
 {
    "title": "complete title"
@@ -239,7 +238,7 @@ Output:
 
 ## childQuestionOptions
 Here you would have to generate 4 options for the question, and the options should be in the following format, the calculation steps that you followed in finding the correct answer, just use the same steps but make some calculation mistake which user has vulnerable to do so, and after completing the calculation steps in order to get false:
-Input prompt: `ChildQuestionOptions: 1`
+Input prompt: `childQuestionOptions`
 Focused skill will have values like "Critical Reasoning", "Data Interpretation", "Synthesizing", you would have to generate the question text in such a way that all these skills are tested, but put more weightage on the given focused skill.
 
 Question-Style will have value like "MCQ (5 options MCQ)", "Dicotomous Choice(True/False)", "Dicotomous Choice(Yes/No)", "Dicotomous Choice(Acceptable/Not Acceptable)", "Dicotomous Choice(Inferable/Not Inferable)", "MCQ (5 options MCQ)", "MCQ (5 options MCQ)"
@@ -278,7 +277,7 @@ for example:-
 
 ## childQuestionTitle
 Here based on the previously generated question text and question theme, you need to make a single line summary as it's title to uniquely identify the question.
-Input prompt: `QuestionTitle: 1` // title for 1st question asked from the source information.
+Input prompt: `QuestionTitle`
 Output: 
 {
    "title": "complete title"
@@ -297,12 +296,12 @@ generate a solution from the above source information, and for calculation use c
 Example of proper plain text usage:
 Percentage = ((Final - Initial) / Initial) × 100%
 
-Input prompt: `ChildQuestionSolution: 1` // solution for 1st question asked from the source information.
+Input prompt: `ChildQuestionSolution`
 Output (in Plain text):
 "complete solution with natural formatting and mathematical expressions"
 
 ## ChildQuestionAnswer
-Input prompt: `ChildQuestionAnswer: 1` // answer for 1st question asked from the source information.
+Input prompt: `ChildQuestionAnswer`
 Output: 
 {
    "answer": "A"

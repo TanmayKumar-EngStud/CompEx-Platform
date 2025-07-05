@@ -189,13 +189,17 @@ class BaseQuestionComponent(ABC):
 
         try:
             response = self.chat.send_message(prompt)
-            return response.text
+            if response and response.text:
+                return response.text
+            else:
+                print(f"Empty response from AI - response: {response}")
+                return None
         except Exception as e:
             error_str = str(e).lower()
 
             # Handle 429 errors with simple output
             if "429" in error_str or "resource_exhausted" in error_str or "quota" in error_str:
-                print("API error code:- 429")
+                print(f"API error code:- 429\t\t {time.strftime('%H:%M:%S')}")
                 # Extract retry delay if available
                 if "retrydelay" in error_str or "retry" in error_str:
                     try:
@@ -215,7 +219,7 @@ class BaseQuestionComponent(ABC):
                         time.sleep(60)
             else:
                 # For other errors, show minimal info
-                print(f"Generation error: {type(e).__name__}")
+                print(f"Generation error: {type(e).__name__} - {str(e)}")
 
             # Reset rate limiting state on any error
             with self.lock:
@@ -256,15 +260,16 @@ class BaseQuestionComponent(ABC):
                 if result is not None:  # Accept any non-None result
                     return result
                 failure_reason = "No result returned (None)"
-                if (attempt+1 > 1):
+                if (attempt > 0):  # Only print retry messages for attempts 2 and 3
                     print(
                         f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}\t\tParent Function: {parent_function}\t\tReason: {failure_reason}")
 
             except Exception as e:
                 last_error = str(e)
                 failure_reason = f"Exception: {last_error}"
-                print(
-                    f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}\t\tParent Function: {parent_function}\t\tReason: {failure_reason}")
+                if (attempt > 0):  # Only print retry messages for attempts 2 and 3
+                    print(
+                        f"Retrying {func.__name__} - attempt {attempt + 1}/{self.max_retries}\t\tParent Function: {parent_function}\t\tReason: {failure_reason}")
 
                 # Exponential backoff
                 if attempt < self.max_retries - 1:
@@ -298,7 +303,15 @@ class BaseQuestionComponent(ABC):
             Parsed JSON dict or None if failed
         """
         try:
+            if not response or not response.strip():
+                print(f"Empty response received for {context}")
+                return None
+
             refined = refine_response(response)
+            if not refined:
+                print(f"Refine response returned empty for {context}")
+                return None
+
             message = json.loads(refined)
 
             # Check if this is an error response
@@ -395,6 +408,8 @@ class SimpleQuestion(BaseQuestionComponent):
             response = self._get_response(prompt_text, warn)
 
             if not response:
+                print(
+                    f"No response received for QuestionText prompt: {prompt_text}")
                 return None
 
             message = self._process_json_response(
@@ -405,7 +420,12 @@ class SimpleQuestion(BaseQuestionComponent):
 
             if message and message.get("question"):
                 return message["question"]
-            return None
+            else:
+                print(
+                    f"No question field found in response for prompt: {prompt_text}")
+                if message:
+                    print(f"Available fields: {list(message.keys())}")
+                return None
 
         result = self._retry_generate(_generate)
         return result if result else "Error generating question text"
@@ -452,15 +472,20 @@ class SimpleQuestion(BaseQuestionComponent):
             return self._generate_solution_plain_text()
 
     def _generate_solution_plain_text(self) -> str:
-        """Generate solution as plain text."""
+        """Generate solution as plain text for all the questions regardless of type of question!."""
         def _generate(warn: bool = False) -> Optional[str]:
             response = self._get_response("QuestionSolution", warn)
 
             if not response:
+                print("No response received for QuestionSolution")
                 return None
 
             # For solution mode, AI returns plain text directly
-            return response.strip() if response else None
+            stripped_response = response.strip()
+            if not stripped_response:
+                print("Empty response after stripping for QuestionSolution")
+                return None
+            return stripped_response
 
         result = self._retry_generate(_generate)
         return result if result else ""
@@ -490,6 +515,25 @@ class SimpleQuestion(BaseQuestionComponent):
 
         result = self._retry_generate(_generate)
         return result if result is not None else 0.0
+
+    def generate_question_answer(self) -> str:
+        """Generate question answer letter only."""
+        def _generate(warn: bool = False) -> Optional[str]:
+            response = self._get_response("QuestionAnswer", warn)
+            if not response:
+                print("No response received for QuestionAnswer")
+                return None
+            # Parse JSON response to extract answer
+            message = self._process_json_response(
+                response,
+                ["answer"],
+                "SimpleQuestion generate_question_answer"
+            )
+            if message and message.get("answer"):
+                return str(message["answer"]).strip()
+            return None
+        result = self._retry_generate(_generate)
+        return result if result else ""
 
     def generate_question_options(self) -> Tuple[List[str], str]:
         """
@@ -642,7 +686,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             if not response:
                 return None
 
-            # For solution mode, AI returns plain text directly
+            # receiving as Plain text for all the questions
             return response.strip() if response else None
 
         result = self._retry_generate(_generate)
@@ -661,6 +705,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             if not response:
                 return None
 
+            # Try to process as JSON first
             message = self._process_json_response(
                 response,
                 ["answer"],
@@ -668,20 +713,18 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             )
 
             if message and message.get("answer"):
-                answer = str(message["answer"]).upper().strip()
-                # Validate it's a valid DS answer
-                if answer in ['A', 'B', 'C', 'D', 'E']:
-                    return answer
-                else:
-                    print(
-                        f"Warning: Invalid answer '{answer}', using default 'A'")
-                    return "A"
+                answer = str(message["answer"]).strip()
+                return answer
+
+            # If JSON parsing failed, the AI might have returned plain text
+            # In this case, we should return the response as-is since it's supposed to be JSON
+            print(f"Warning: Answer generation returned non-JSON format, using fallback")
             return None
 
         result = self._retry_generate(_generate)
         if result is None:
-            print("Warning: Answer generation failed, using fallback 'A'")
-            return "A"
+            print("Warning: Answer generation failed, using fallback")
+            return "A"  # Use reasonable fallback - could be made configurable
         return result
 
     def generate_question_options(self) -> Tuple[List[str], str]:
@@ -804,6 +847,28 @@ class ParentChildQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
+    def generate_parent_question(self) -> Optional[str]:
+        """Generate parent question content (passages for reading comprehension)."""
+        def _generate(warn: bool = False) -> Optional[str]:
+            response = self._get_response("ParentQuestion", warn)
+
+            if not response:
+                return None
+
+            message = self._process_json_response(
+                response,
+                ["passage"],
+                "ParentChildQuestion generate_parent_question"
+            )
+
+            if message and message.get("passage"):
+                return message.get("passage")
+
+            # If not JSON format, return as plain text
+            return response.strip() if response else None
+
+        return self._retry_generate(_generate)
+
     def generate_child_question_title(self, index: int) -> Optional[str]:
         """Generate title for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
@@ -901,7 +966,7 @@ class ParentChildQuestion(BaseQuestionComponent):
     def generate_child_solution(self, index: int) -> Optional[str]:
         """Generate solution for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"ChildQuestionSolution: {index}"
+            prompt_text = f"ChildSolution: {index}"
 
             # When warning (retry), include original prompt context
             if warn:
@@ -915,6 +980,27 @@ class ParentChildQuestion(BaseQuestionComponent):
             # For solution mode, AI returns plain text directly
             return response.strip() if response else None
 
+        return self._retry_generate(_generate)
+
+    def generate_child_answer(self, index: int) -> Optional[str]:
+        """Generate answer for specific child question."""
+        def _generate(warn: bool = False) -> Optional[str]:
+            prompt_text = f"ChildAnswer: {index}"
+            # When warning (retry), include original prompt context
+            if warn:
+                prompt_text += f"\nOriginal Question Context: {self.prompt}"
+            response = self._get_response(prompt_text, warn)
+            if not response:
+                return None
+            # Parse JSON response to extract answer
+            message = self._process_json_response(
+                response,
+                ["answer"],
+                f"ParentChildQuestion generate_child_answer {index}"
+            )
+            if message:
+                return message.get("answer")
+            return None
         return self._retry_generate(_generate)
 
     # Required abstract method implementations

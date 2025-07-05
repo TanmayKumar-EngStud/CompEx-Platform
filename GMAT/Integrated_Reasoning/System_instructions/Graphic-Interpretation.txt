@@ -205,7 +205,7 @@ you have to give output in the following format:
 
 ## QuestionText
 Here you will have to ask question in such a way that there is exactly 2 fill in the blanks in a sentence where the values are needed to be filled, and in order to fill the values the user has to do some analysis and calculation from the graph.
-Input: `Mode: QuestionText return: `question` `
+Input: `QuestionText`
 Output:
 {
    "question": "a question which has ___________ two fill in the blanks, ___________ like this."
@@ -213,7 +213,7 @@ Output:
 
 ## QuestionTitle
 Here based on the question theme and created graph and the question text, make a single line summary as it's title, in order to uniquely identify the question.
-Input prompt: `Mode: QuestionTitle return: `title` `
+Input prompt: `QuestionTitle`
 Output: 
 {
    "title": "complete title"
@@ -222,7 +222,7 @@ Output:
 ## QuestionOptions
 generate 2 option set with 3 options each for the fill in the blanks of previously created question, and the options should be in the following format, the calculation steps that you followed in finding the correct answer, 
 just use the same steps but make some calculation mistake which user has vulnerable to do so, and after completing the calculation steps in order to get false options to trick the user:
-Input prompt: `Mode: QuestionOptions return: `options`, `answer` `
+Input prompt: `QuestionOptions`
 Output:
 {
    "options": {
@@ -236,12 +236,8 @@ Output:
       "B": "option B",
       "C": "option C"
     }
-   },
-   "answer": {
-    "blank_1": "A",
-    "blank_2": "C"
-   } // whichever option is correct in both of the option sets!
-} // one of the options should be the correct answer, it is case sensitive..
+   }
+}
 
 ## QuestionSolution
 generate a solution for the question and for calculation use code interpreter, and use the accuracy upto 2 decimal points.
@@ -266,17 +262,19 @@ The solution must provide a comprehensive analysis that teaches data interpretat
 
 **Example Structure:**
 Solutions should analyze the graph type and relevant data, extract necessary information, show step-by-step calculations using standard notation, interpret results in context, and provide graph-reading tips. All explanations should be written in plain text format for optimal readability.
-Input prompt: `Mode: QuestionSolution return: `solution` `
-Output:
+Input prompt: `QuestionSolution`
+Output (Plain Text):
+"comprehensive solution with detailed graph analysis and step-by-step reasoning"
+
+## QuestionAnswer
+Input: `QuestionAnswer`
+Output: 
 {
-   "solution": "comprehensive solution with detailed graph analysis and properly formatted LaTeX expressions",
    "answer": {
-    "blank_1": "A",
-    "blank_2": "C"
+      "blank_1": "A",
+      "blank_2": "B"
    }
 }
-
-
 
 Important Additional Note,
 please always use double quotes for json output key and value pair, don't use single quote, furthermore, instead of using single quote inside the key or value, use this symbol (`) so that there is no issue for json.loads() to function over the output returned.

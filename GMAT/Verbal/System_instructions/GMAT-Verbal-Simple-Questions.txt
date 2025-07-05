@@ -42,6 +42,7 @@ Now there will be multiple modes in which you will be operating to generate the 
 3. QuestionTitle
 4. QuestionOptions
 5. QuestionSolution
+6. QuestionAnswer
 
 ## QuestionPassage
 In the input prompt what type of question will be asked, thus you would need to generate the question passage in such a way that that particular type of question could be prepared well from the passage.
@@ -119,9 +120,14 @@ Solutions should identify the argument structure (premises and conclusion), expl
 
 Use clear paragraph structure and natural language formatting to explain each option systematically for better readability.
 Input format: `QuestionSolution`
+Output (respond in PLAIN TEXT):
+comprehensive explanation of the solution with detailed reasoning analysis
+
+## QuestionAnswer
+Description: for the previous question generated, you need to generate the correct answer letter.
+Input format: `QuestionAnswer`
 Output format:
 {
-   "solution": "comprehensive explanation of the solution with detailed reasoning analysis",
    "answer": "A"
 }
 

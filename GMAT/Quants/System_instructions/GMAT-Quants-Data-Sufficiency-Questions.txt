@@ -34,7 +34,7 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."
 
 ## QuestionText
 Strictly follow the output format of every mode, because input is created and shared by a python program and output is also fetched by a python program, which fetches the information as json, key values are case sensitive.
-Input will be in the following format:- "questionText: <question_topic> - <focused_skill> - <Difficulty Level>"
+Input will be in the following format:- "QuestionText: <question_topic> - <focused_skill> - <Difficulty Level>"
 
 Question Topic will be like:- "Algebra", "Geometry", "Number Theory", "Arithmetic", "Data Analysis", "Statistics", "Logical Reasoning", "Word Problems", "Probability", "Combinatorics", "Advanced Topics"
 Focused Skill will be like:- "Attention to Detail", "Logical Reasoning", "Critical Reasoning", "Mathematical Knowledge", "Efficiency and Time Management"

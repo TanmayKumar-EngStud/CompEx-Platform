@@ -330,9 +330,12 @@ class DB:
                     ansVal = finder if finder else "Yes"
                     try:
                         if "dicotomous" in self.current_question_type.lower():
-                            match = re.search(r"\(([^/]*)(?:/|$)", self.current_question_type)
-                            if match:
-                                is_correct = answers[match]
+                            # For dichotomous questions, check if option matches any value in answers dict
+                            is_correct = False
+                            for answer_key, answer_value in answers.items():
+                                if str(option).strip() == str(answer_value).strip():
+                                    is_correct = True
+                                    break
                         else:
                             is_correct = answers[option].lower().strip() == ansVal.lower().strip()
                     except KeyError:
