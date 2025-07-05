@@ -17,7 +17,7 @@ CRITICAL: Your response MUST be valid JSON format only. No text before or after 
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+  {"question": "What is the value of x?", "title": "Linear Equation Problem"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system

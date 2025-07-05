@@ -10,7 +10,7 @@ Strictly respond in json format, don't use single quote, always use double quote
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+  {"question": "Based on the multiple sources, what conclusion can be drawn?", "title": "Multi-Source Analysis"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system

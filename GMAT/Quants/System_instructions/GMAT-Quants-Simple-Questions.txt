@@ -14,7 +14,7 @@ Strictly respond in json format, don't use single quote, always use double quote
 - Format: ```json\n{your json data}\n```
 - Example:
   ```json
-  {"solution": "Step 1: Calculate...", "answer": "A"}
+  {"question": "What is the value of x?", "title": "Linear Equation Problem"}
   ```
 - Never return raw JSON without the ```json wrapper
 - This ensures proper parsing by the system
@@ -143,21 +143,13 @@ The solution must provide a comprehensive, step-by-step analysis that guides use
 - For Algebra: Show both algebraic solution and back-solving method when applicable
 - For Arithmetic: Emphasize number sense and critical reasoning
 
-**Example Structure for Different Question Types:**
-
-**Arithmetic/Word Problems:**
-{"solution": "Step 1: Extract Key Information\n[List key facts from the problem]\n\nStep 2: Set Up the Problem\n[Explain the mathematical relationships]\n\nStep 3: Calculate Step-by-Step\n[Show detailed calculations]\n\nStep 4: Verify Answer\n[Check if answer makes sense in context]\n\nKey Insight\n[Important concept or common pitfall to remember]"}
-
-**Algebra Problems:**
-{"solution": "Method 1: Algebraic Approach\nStep 1: Set Up Equation\n[Algebraic setup]\n\nStep 2: Solve\n[algebraic steps]\n\nMethod 2: Back-Solving (Recommended for GMAT)\nStep 1: Test Answer Choices\n[Test each option systematically]\n\nWhy Back-Solving Works Better\n[Explain efficiency advantages]"}
+**IMPORTANT: Solution Format**
+Solutions should be provided as plain text only, NOT in JSON format.
 
 Input: 
 `QuestionSolution`
-Output: 
-{
-   "solution": "complete solution passage should come here, explaining how to solve the given question step by step with clear reasoning",
-   "answer": "A"
-}
+Output (Plain Text): 
+"complete solution passage should come here, explaining how to solve the given question step by step with clear reasoning"
 
 ## QuestionOptions:
 for the previous question text and the questionSolution, you would have to generate options for the question. The number of options that you would have to generate will be provided in the user input.
