@@ -122,7 +122,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
             questionContent = GMATAdapter.adapt_parent_child_question(component)
             
             # Generate parent content
-            passages = questionContent.generate_parentTitle()
+            passages = questionContent.generate_parentQuestion()
             self.question_data["content"] = {"passages": passages}
             self.question_data["title"] = questionContent.generate_parentTitle()
 

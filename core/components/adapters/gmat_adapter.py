@@ -135,6 +135,10 @@ class GMATParentChildAdapter:
         """Generate parent title."""
         return self.component.generate_parent_title()
     
+    def generate_parentQuestion(self) -> Optional[str]:
+        """Generate parent question (passage content)."""
+        return self.component.generate_parent_question()
+    
     def generate_childQuestionTitle(self, index: int) -> Optional[str]:
         """Generate child question title."""
         return self.component.generate_child_question_title(index)
