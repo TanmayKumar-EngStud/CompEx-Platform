@@ -1,0 +1,45 @@
+{
+  "data_sufficiency": {
+    "exam_focus": "GRE Data Sufficiency emphasizes analytical skills over computational prowess",
+    "question_features": [
+      "Focus on Logical Reasoning over Calculation",
+      "Subtlety and Nuance in question wording",
+      "Implicit vs. Explicit Information between statements",
+      "Ambiguity Resolution through statement analysis",
+      "Fair tricks that test analytical thoroughness"
+    ],
+    "academic_context": "Questions should reflect academic and research scenarios",
+    "vocabulary_level": "Use advanced academic vocabulary appropriate for graduate studies"
+  },
+  "numeric_entry": {
+    "exam_focus": "GRE Numeric Entry tests precise mathematical computation",
+    "answer_format": "Open-ended numerical answers with 2 decimal places precision",
+    "academic_context": "Mathematical problems suitable for graduate-level academic work"
+  },
+  "problem_solving": {
+    "exam_focus": "GRE Problem Solving tests quantitative reasoning and mathematical knowledge",
+    "academic_context": "Academic and research-oriented mathematical scenarios",
+    "difficulty_scaling": "Progressive complexity in mathematical reasoning and concepts"
+  },
+  "quantitative_comparison": {
+    "exam_focus": "GRE Quantitative Comparison tests ability to compare mathematical expressions",
+    "question_structure": "Compare Quantity A and Quantity B with shared graphs/tables",
+    "academic_context": "Mathematical comparisons relevant to graduate studies"
+  },
+  "reading_comprehension": {
+    "exam_focus": "GRE Reading Comprehension emphasizes academic and scholarly passages",
+    "passage_types": "Academic research, scientific studies, literary analysis, historical texts",
+    "length_variations": "rc-s (2 questions), rc-m (3 questions), rc-l (4 questions)",
+    "academic_context": "Passages should reflect graduate-level academic content and complexity"
+  },
+  "text_completion": {
+    "exam_focus": "GRE Text Completion tests vocabulary and contextual reasoning",
+    "academic_context": "Academic and scholarly text with sophisticated vocabulary",
+    "completion_types": "Single blank, double blank, triple blank completions"
+  },
+  "sentence_equivalence": {
+    "exam_focus": "GRE Sentence Equivalence tests vocabulary and meaning equivalence",
+    "academic_context": "Academic writing with precise vocabulary choices",
+    "question_structure": "Select two answers that create equivalent meanings"
+  }
+}

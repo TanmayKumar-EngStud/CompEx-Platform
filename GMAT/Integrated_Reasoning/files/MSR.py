@@ -36,18 +36,7 @@ class Generate_MSR(BaseQuestionGenerator):
             print("MSR combinations file not found, using default values")
             self.MSR = {}
     
-    def _load_default_system_instructions(self) -> str:
-        """Load GMAT Multi-Source Reasoning system instructions."""
-        instruction_path = os.path.join(
-            os.path.dirname(__file__), 
-            "../System_instructions/Multi-Source-Reasoning.txt"
-        )
-        try:
-            with open(instruction_path, "r") as f:
-                return f.read()
-        except FileNotFoundError:
-            print(f"System instructions file not found: {instruction_path}")
-            return ""
+    # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
     def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
         """

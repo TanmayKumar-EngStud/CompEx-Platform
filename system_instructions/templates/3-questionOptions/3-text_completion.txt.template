@@ -1,0 +1,50 @@
+## Text Completion Options
+${JSON_FORMAT_REQUIREMENT}
+
+Generate options for a Text Completion question. The number of blanks and options per blank will vary depending on the question type (TC-1, TC-2, or TC-3).
+
+Input format: `TextCompletionOptions: <TC_Type>`
+
+- **TC_Type:** The type of Text Completion question (`TC-1`, `TC-2`, or `TC-3`).
+
+**CRITICAL: Required Output Format - MUST BE EXACT:**
+
+- **For TC-1 (Single Blank):**
+  A JSON object with a single `options` dictionary and a single `answer` string.
+  ```json
+  {
+    "options": {
+      "A": "option 1",
+      "B": "option 2",
+      "C": "option 3",
+      "D": "option 4",
+      "E": "option 5"
+    },
+    "answer": "A"
+  }
+  ```
+
+- **For TC-2 (Double Blank):**
+  A JSON object with a list of two `options` dictionaries and a list of two `answer` strings.
+  ```json
+  {
+    "options": [
+      { "A": "option 1", "B": "option 2", "C": "option 3" },
+      { "D": "option 4", "E": "option 5", "F": "option 6" }
+    ],
+    "answer": ["A", "F"]
+  }
+  ```
+
+- **For TC-3 (Triple Blank):**
+  A JSON object with a list of three `options` dictionaries and a list of three `answer` strings.
+  ```json
+  {
+    "options": [
+      { "A": "option 1", "B": "option 2", "C": "option 3" },
+      { "D": "option 4", "E": "option 5", "F": "option 6" },
+      { "G": "option 7", "H": "option 8", "I": "option 9" }
+    ],
+    "answer": ["A", "F", "I"]
+}
+```

@@ -1,0 +1,14 @@
+## QuestionAnswer
+${JSON_FORMAT_REQUIREMENT}
+
+Here based on the previous question, you would determine the correct numerical answer.
+
+input format:- "QuestionAnswer"
+
+For ${QUESTION_TYPE_DISPLAY} questions:
+- Answer must be a precise numerical value
+- Round to 2 decimal places if necessary
+- Provide only the numerical value
+
+Output format:- {"answer": 42.75}
+always give answer as a number (integer or decimal).

@@ -36,18 +36,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
             except FileNotFoundError:
                 print(f"SE instruction file not found: {se_instruction_path}")
     
-    def _load_default_system_instructions(self) -> str:
-        """Load GRE Verbal Simple system instructions."""
-        instruction_path = os.path.join(
-            os.path.dirname(__file__), 
-            "../System_instructions/GRE-Verbal-Simple-Questions.txt"
-        )
-        try:
-            with open(instruction_path, "r") as f:
-                return f.read()
-        except FileNotFoundError:
-            print(f"System instructions file not found: {instruction_path}")
-            return ""
+    # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
     def shuffle_options(self,options):
         option_list = []
@@ -111,23 +100,21 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
             # Generate options and answers
             options, answer = questionContent.generate_questionOptions(num_options)
             
-            if isinstance(answer, str):
-                self.question_data["answer"] = options[answer] if answer in options else list(options.values())[0]
+            # Options should now be in dictionary format from AI
+            # Convert values to list for shuffling, but preserve original answer mapping
+            if isinstance(options, dict) and isinstance(answer, str):
+                # Single answer case
+                self.question_data["answer"] = options.get(answer, "")
+            elif isinstance(options, dict) and isinstance(answer, list):
+                # Multiple answers case (for SE)
+                answer_values = []
+                for ans_key in answer:
+                    if ans_key in options:
+                        answer_values.append(options[ans_key])
+                self.question_data["answer"] = answer_values
             else:
-                answers = []
-                if "<se>" in self.prompt.lower() and isinstance(answer, list) and len(answer) >= 2:
-                    answers.append(options[answer[0]] if answer[0] in options else list(options.values())[0])
-                    answers.append(options[answer[1]] if answer[1] in options else list(options.values())[1])
-                else:
-                    option_idx = 0
-                    for ans in answer:
-                        if isinstance(options, list) and option_idx < len(options):
-                            if isinstance(options[option_idx], dict) and ans in options[option_idx]:
-                                answers.append(options[option_idx][ans])
-                        elif isinstance(options, dict) and ans in options:
-                            answers.append(options[ans])
-                        option_idx += 1
-                self.question_data["answer"] = answers
+                # Fallback for unexpected format
+                self.question_data["answer"] = answer
             
             self.question_data["options"] = self.shuffle_options(options)
             self.question_data["solution"] = questionContent.generate_questionSolution()

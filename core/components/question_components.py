@@ -35,6 +35,7 @@ from core.enums.question_types import QuestionType
 from core.enums.difficulty_levels import DifficultyLevel
 from core.utilities.json_utils import refine_response
 from core.utilities.validation_utils import validate_prompt
+from core.utilities.debug_utils import log_system_instruction
 # Define exception locally since core.exceptions module doesn't exist yet
 
 
@@ -158,6 +159,9 @@ class BaseQuestionComponent(ABC):
         Returns:
             AI response text or None if failed
         """
+        # Store the original prompt for debugging
+        self._last_prompt_sent = prompt
+        
         if warn:
             prompt += WARNING_MESSAGE
 
@@ -227,6 +231,34 @@ class BaseQuestionComponent(ABC):
                 self.global_state["request_count"] = 0
             return None
 
+    def _log_debug_info(self, component_name: str, prompt_used: str, response: Optional[str] = None, 
+                       error: Optional[str] = None, call_priority_index: int = 1, success: bool = False):
+        """
+        Log debug information to system_instructions/in_the_run/ directory.
+        
+        Args:
+            component_name: Name of the component being generated
+            prompt_used: Actual prompt sent to AI
+            response: AI response (if any)
+            error: Error message (if any)
+            call_priority_index: Order of component call (1, 2, 3, ...)
+            success: Whether the generation was successful
+        """
+        try:
+            log_system_instruction(
+                exam_type=self.exam_type,
+                question_type=self.question_type or QuestionType.PROBLEM_SOLVING,
+                component_name=component_name,
+                system_instruction=self.system_instructions,
+                prompt=prompt_used,
+                component_system_instruction="",  # We'll extract this later if needed
+                response=response,
+                call_priority_index=call_priority_index
+            )
+        except Exception as e:
+            # Don't let debug logging break the generation process
+            print(f"Debug logging failed: {e}")
+
     def _retry_generate(self, func, *args, **kwargs) -> Any:
         """
         Retry a generation function with exponential backoff.
@@ -252,12 +284,31 @@ class BaseQuestionComponent(ABC):
 
         last_error = None
         failure_reason = None
+        last_response = None
+
+        # Global counter for call priority across all components
+        if not hasattr(self, '_call_priority_counter'):
+            self._call_priority_counter = 1
+        else:
+            self._call_priority_counter += 1
 
         for attempt in range(self.max_retries):
             try:
                 # Add warn parameter for retries
                 result = func(*args, warn=(attempt > 0), **kwargs)
+                
                 if result is not None:  # Accept any non-None result
+                    # Get the actual prompt that was sent to AI
+                    actual_prompt_used = getattr(self, '_last_prompt_sent', "Prompt not captured")
+                    
+                    # Log successful generation
+                    self._log_debug_info(
+                        component_name=parent_function,
+                        prompt_used=actual_prompt_used,
+                        response=str(result) if result else None,
+                        call_priority_index=self._call_priority_counter,
+                        success=True
+                    )
                     return result
                 failure_reason = "No result returned (None)"
                 if (attempt > 0):  # Only print retry messages for attempts 2 and 3
@@ -276,7 +327,17 @@ class BaseQuestionComponent(ABC):
                     wait_time = 2 ** attempt
                     time.sleep(wait_time)
 
-        # All attempts failed
+        # All attempts failed - log debug information
+        actual_prompt_used = getattr(self, '_last_prompt_sent', "Prompt not captured")
+        self._log_debug_info(
+            component_name=parent_function,
+            prompt_used=actual_prompt_used,
+            response=last_response,
+            error=last_error or failure_reason,
+            call_priority_index=self._call_priority_counter,
+            success=False
+        )
+
         if last_error:
             print(
                 f"All attempts failed for {parent_function}. Last error: {last_error}")
@@ -535,14 +596,17 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else ""
 
-    def generate_question_options(self) -> Tuple[List[str], str]:
+    def generate_question_options(self) -> Tuple[Dict[str, str], str]:
         """
         Generate question options and correct answer.
 
         Returns:
-            Tuple of (options_list, correct_answer)
+            Tuple of (options_dict, correct_answer_key)
+            
+        The options_dict will be in format: {"A": "option1", "B": "option2", ...}
+        The correct_answer_key will be the letter key: "A", "B", etc.
         """
-        def _generate(warn: bool = False) -> Optional[Tuple[List[str], str]]:
+        def _generate(warn: bool = False) -> Optional[Tuple[Dict[str, str], str]]:
             response = self._get_response("QuestionOptions", warn)
 
             if not response:
@@ -555,11 +619,39 @@ class SimpleQuestion(BaseQuestionComponent):
             )
 
             if message and message.get("options") and message.get("answer"):
-                return message["options"], message["answer"]
+                options = message["options"]
+                answer = message["answer"]
+                
+                # Validate that options is a dictionary
+                if not isinstance(options, dict):
+                    print(f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+                    return None
+                
+                # Validate that all option keys are single letters
+                for key in options.keys():
+                    if not isinstance(key, str) or len(key) != 1 or not key.isalpha():
+                        print(f"ERROR: Option key should be single letter but got: {key}")
+                        return None
+                
+                # Validate that answer is a valid key or list of valid keys
+                if isinstance(answer, str):
+                    if answer not in options:
+                        print(f"ERROR: Answer key '{answer}' not found in options: {list(options.keys())}")
+                        return None
+                elif isinstance(answer, list):
+                    for ans_key in answer:
+                        if ans_key not in options:
+                            print(f"ERROR: Answer key '{ans_key}' not found in options: {list(options.keys())}")
+                            return None
+                else:
+                    print(f"ERROR: Answer should be string or list but got {type(answer)}: {answer}")
+                    return None
+                
+                return options, answer
             return None
 
         result = self._retry_generate(_generate)
-        return result if result else ([], "")
+        return result if result else ({}, "")
 
 
 class DataSufficiencyQuestion(BaseQuestionComponent):

@@ -75,7 +75,7 @@ class GRESimpleQuestionAdapter:
         """
         return self.component.generate_question_solution(is_numeric_entry=isNE)
     
-    def generate_questionOptions(self, num_options: Optional[int] = None) -> Tuple[List[str], str]:
+    def generate_questionOptions(self, num_options: Optional[int] = None) -> Tuple[Dict[str, str], str]:
         """Generate question options (GRE naming convention)."""
         # The base component doesn't use num_options parameter, but we accept it for compatibility
         return self.component.generate_question_options()

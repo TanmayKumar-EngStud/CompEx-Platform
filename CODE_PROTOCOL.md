@@ -174,11 +174,26 @@ QGen-py-compex/
 │       └── ir_config.json
 ├── system_instructions/            # Centralized instruction templates
 │   ├── templates/                  # Template files
-│   │   ├── data_sufficiency.txt.template
-│   │   ├── simple_question.txt.template
-│   │   ├── reading_comprehension.txt.template
-│   │   ├── critical_reasoning.txt.template
-│   │   └── integrated_reasoning.txt.template
+│   │   ├── 0-questionMetadata/
+│   │   │   ├── 0-passage.txt.template
+│   │   │   └── 1-graph.txt.template
+│   │   ├── 1-questionText/
+│   │   │   ├── 0-generic.txt.template
+│   │   │   ├── 1-critical_reasoning.txt.template
+│   │   │   ├── 2-data_sufficiency.txt.template
+│   │   │   └── 3-numeric_entry.txt.template
+│   │   ├── 2-questionTitle/
+│   │   │   └── 0-generic.txt.template
+│   │   ├── 3-questionOptions/
+│   │   │   └── 0-generic.txt.template
+│   │   ├── 4-questionSolution/
+│   │   │   ├── 0-generic.txt.template
+│   │   │   ├── 1-critical_reasoning.txt.template
+│   │   │   └── 2-data_sufficiency.txt.template
+│   │   └── 5-questionAnswer/
+│   │       ├── 0-generic.txt.template
+│   │       ├── 1-data_sufficiency.txt.template
+│   │       └── 2-numeric_entry.txt.template
 │   ├── gmat/
 │   │   └── customizations.json     # GMAT-specific template variables
 │   └── gre/
@@ -1201,7 +1216,7 @@ from typing import List
 class InputSanitizer:
     """Input sanitization utilities."""
     
-    ALLOWED_PROMPT_PATTERN = re.compile(r'^[a-zA-Z0-9\s\-<>:\[\],\.]+$')
+    ALLOWED_PROMPT_PATTERN = re.compile(r'^[a-zA-Z0-9\s\-<>:\[\],\.]+)
     MAX_PROMPT_LENGTH = 1000
     
     @classmethod

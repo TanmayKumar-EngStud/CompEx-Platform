@@ -1,0 +1,21 @@
+## Sentence Equivalence Options
+${JSON_FORMAT_REQUIREMENT}
+
+Generate six options for a Sentence Equivalence question. Two of the options must be synonyms that, when inserted into the blank, produce sentences with the same meaning.
+
+Input format: `SentenceEquivalenceOptions`
+
+**CRITICAL: Required Output Format - MUST BE EXACT:**
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2",
+    "C": "option 3",
+    "D": "option 4",
+    "E": "option 5",
+    "F": "option 6"
+  },
+  "answer": ["A", "F"]
+}
+```

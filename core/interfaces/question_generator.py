@@ -132,13 +132,53 @@ class BaseQuestionGenerator(ABC):
     
     def _load_default_system_instructions(self) -> str:
         """
-        Load default system instructions for this generator type.
+        Load default system instructions for this generator type using the unified instruction system.
         
         Returns:
             System instructions string
         """
-        # This will be overridden by subclasses to load appropriate instruction files
-        return ""
+        from core.instructions.instruction_manager import InstructionManager
+        
+        # Initialize instruction manager
+        instruction_manager = InstructionManager()
+        
+        # Load ALL mode instructions concatenated together
+        # Pass the prompt for graph style detection if available
+        use_prompt = getattr(self, 'prompt', None)
+        instructions = instruction_manager.get_all_modes_instruction(
+            self.exam_type,
+            self.question_type,
+            use_prompt
+        )
+        
+        return instructions
+    
+    def get_instruction_for_mode(self, mode: str, prompt: Optional[str] = None) -> str:
+        """
+        Get instruction text for a specific mode.
+        
+        Args:
+            mode: Instruction mode (e.g., "questionText", "questionTitle", etc.)
+            prompt: Optional prompt for graph style detection
+            
+        Returns:
+            Instruction text for the specified mode
+        """
+        from core.instructions.instruction_manager import InstructionManager
+        
+        instruction_manager = InstructionManager()
+        
+        # Use self.prompt if no prompt is provided
+        use_prompt = prompt or getattr(self, 'prompt', None)
+        
+        instructions = instruction_manager.get_instruction(
+            self.exam_type,
+            self.question_type,
+            mode,
+            use_prompt
+        )
+        
+        return instructions
     
     @abstractmethod
     def generate_question(self, prompt: str) -> Optional[Dict[str, Any]]:

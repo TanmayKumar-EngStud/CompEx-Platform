@@ -1,0 +1,39 @@
+## QuestionGraph
+${JSON_FORMAT_REQUIREMENT}
+Here you will get the type of question user wants you to generate, 
+
+The following will the information user will provide:-
+Input prompt: `Mode: QuestionGraph 
+Prompt: <Graphic Interpretation> - <focused_skill> - <graph type> - <QuestionTheme> - <Difficulty Level>
+return \`graph\``
+
+I want you to be creative with selecting the QuestionTheme, user will provide 1 question theme and you have to choose another theme by your own, and then you can merge both the themes to create a unique question, but make sure that the question maintains the ${EXAM_NAME} quality of question.
+
+please make sure that from the generated graph you are able to prepare other question data such that it accesses the given focused skill!
+
+Difficulty level of every question will range from 1 to 5, and for difficulty level 4 and 5, you need to generate one more graph of different type, which has a relation with the previous graph so that more complex questions could be asked. The difficulty level of every question should meet the difficulty level of actual ${EXAM_NAME} exam.
+
+Users are preparing for MBA thus the quality of the questions should be of a graduate level for all the focused skill assessment.
+
+**GRAPH STYLE REQUIREMENTS:**
+{{GRAPH_DISPLAY_INSTRUCTIONS}}
+
+**REQUIRED JSON FORMAT:**
+Please use the exact JSON format specified below for the graph type requested:
+
+{{GRAPH_JSON_FORMAT}}
+
+**STRUCTURE EXAMPLE:**
+{{GRAPH_STRUCTURE_EXAMPLE}}
+
+**ADDITIONAL CONSIDERATIONS:**
+- Ensure the graph data is realistic and appropriate for the business/academic context
+- For difficulty levels 4 and 5, consider creating multi-layered or related graphs
+- All data should support meaningful analytical questions that test the specified skill
+- Graph titles should be clear and descriptive of the content
+- Use appropriate scales and ranges for the data values
+
+you have to give output in the following format: 
+{
+   "graphs":[ // list of graphs asked]
+}

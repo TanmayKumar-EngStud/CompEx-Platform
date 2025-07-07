@@ -27,18 +27,7 @@ class Generate_GI(BaseQuestionGenerator):
             prompt=prompt
         )
     
-    def _load_default_system_instructions(self) -> str:
-        """Load GMAT Graphic Interpretation system instructions."""
-        instruction_path = os.path.join(
-            os.path.dirname(__file__), 
-            "../System_instructions/Graphic-Interpretation.txt"
-        )
-        try:
-            with open(instruction_path, "r") as f:
-                return f.read()
-        except FileNotFoundError:
-            print(f"System instructions file not found: {instruction_path}")
-            return ""
+    # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
     def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
         """

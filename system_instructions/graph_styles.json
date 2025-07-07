@@ -1,0 +1,292 @@
+{
+  "chart_styles": {
+    "bar_chart": {
+      "type": "bar",
+      "description": "Vertical bar chart with categorical data",
+      "structure": {
+        "title": "Chart Title",
+        "x_axis": {
+          "label": "Categories",
+          "type": "categorical"
+        },
+        "y_axis": {
+          "label": "Values",
+          "type": "numerical"
+        },
+        "data_format": {
+          "categories": ["Category 1", "Category 2", "Category 3", "Category 4"],
+          "values": [25, 45, 30, 60],
+          "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"]
+        }
+      },
+      "json_format": {
+        "type": "bar_chart",
+        "title": "{{title}}",
+        "x_axis": "{{x_axis_label}}",
+        "y_axis": "{{y_axis_label}}",
+        "data": [
+          {"category": "{{category}}", "value": "{{value}}", "color": "{{color}}"}
+        ]
+      },
+      "display_instructions": "Create a vertical bar chart with clearly labeled axes. Each bar should have a distinct color. Include a title at the top. Values should be displayed on the y-axis, categories on the x-axis. Ensure proper scaling and readability."
+    },
+    "pie_chart": {
+      "type": "pie",
+      "description": "Circular pie chart showing proportional data",
+      "structure": {
+        "title": "Chart Title",
+        "data_format": {
+          "segments": [
+            {"label": "Segment 1", "value": 30, "percentage": 25.0},
+            {"label": "Segment 2", "value": 45, "percentage": 37.5},
+            {"label": "Segment 3", "value": 25, "percentage": 20.8},
+            {"label": "Segment 4", "value": 20, "percentage": 16.7}
+          ],
+          "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"]
+        }
+      },
+      "json_format": {
+        "type": "pie_chart",
+        "title": "{{title}}",
+        "data": [
+          {"label": "{{label}}", "value": "{{value}}", "percentage": "{{percentage}}", "color": "{{color}}"}
+        ]
+      },
+      "display_instructions": "Create a circular pie chart with clearly labeled segments. Each segment should show both the label and percentage. Use distinct colors for each segment. Include a legend if space permits. Ensure the chart is properly proportioned."
+    },
+    "line_chart": {
+      "type": "line",
+      "description": "Line graph showing trends over time or continuous data",
+      "structure": {
+        "title": "Chart Title",
+        "x_axis": {
+          "label": "Time/Continuous Variable",
+          "type": "continuous"
+        },
+        "y_axis": {
+          "label": "Values",
+          "type": "numerical"
+        },
+        "data_format": {
+          "points": [
+            {"x": 0, "y": 25},
+            {"x": 1, "y": 45},
+            {"x": 2, "y": 30},
+            {"x": 3, "y": 60},
+            {"x": 4, "y": 55}
+          ],
+          "line_color": "#3498db",
+          "point_color": "#2c3e50"
+        }
+      },
+      "json_format": {
+        "type": "line_chart",
+        "title": "{{title}}",
+        "x_axis": "{{x_axis_label}}",
+        "y_axis": "{{y_axis_label}}",
+        "data": [
+          {"x": "{{x_value}}", "y": "{{y_value}}"}
+        ],
+        "line_color": "{{line_color}}",
+        "point_color": "{{point_color}}"
+      },
+      "display_instructions": "Create a line graph with connected data points. Clearly label both axes. Use a consistent line color and mark data points clearly. Include a title at the top. Ensure proper scaling on both axes for readability."
+    },
+    "scatter_plot": {
+      "type": "scatter",
+      "description": "Scatter plot showing relationship between two variables",
+      "structure": {
+        "title": "Chart Title",
+        "x_axis": {
+          "label": "X Variable",
+          "type": "numerical"
+        },
+        "y_axis": {
+          "label": "Y Variable",
+          "type": "numerical"
+        },
+        "data_format": {
+          "points": [
+            {"x": 10, "y": 25},
+            {"x": 20, "y": 45},
+            {"x": 30, "y": 30},
+            {"x": 40, "y": 60},
+            {"x": 50, "y": 55}
+          ],
+          "point_color": "#3498db",
+          "point_size": 6
+        }
+      },
+      "json_format": {
+        "type": "scatter_plot",
+        "title": "{{title}}",
+        "x_axis": "{{x_axis_label}}",
+        "y_axis": "{{y_axis_label}}",
+        "data": [
+          {"x": "{{x_value}}", "y": "{{y_value}}"}
+        ],
+        "point_color": "{{point_color}}",
+        "point_size": "{{point_size}}"
+      },
+      "display_instructions": "Create a scatter plot with individual data points. Clearly label both axes. Use consistent point styling (color and size). Include a title at the top. Ensure proper scaling on both axes to show the relationship clearly."
+    },
+    "horizontal_bar_chart": {
+      "type": "horizontal_bar",
+      "description": "Horizontal bar chart with categorical data",
+      "structure": {
+        "title": "Chart Title",
+        "x_axis": {
+          "label": "Values",
+          "type": "numerical"
+        },
+        "y_axis": {
+          "label": "Categories",
+          "type": "categorical"
+        },
+        "data_format": {
+          "categories": ["Category 1", "Category 2", "Category 3", "Category 4"],
+          "values": [25, 45, 30, 60],
+          "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"]
+        }
+      },
+      "json_format": {
+        "type": "horizontal_bar_chart",
+        "title": "{{title}}",
+        "x_axis": "{{x_axis_label}}",
+        "y_axis": "{{y_axis_label}}",
+        "data": [
+          {"category": "{{category}}", "value": "{{value}}", "color": "{{color}}"}
+        ]
+      },
+      "display_instructions": "Create a horizontal bar chart with clearly labeled axes. Each bar should have a distinct color. Include a title at the top. Values should be displayed on the x-axis, categories on the y-axis. Ensure proper scaling and readability."
+    },
+    "area_chart": {
+      "type": "area",
+      "description": "Area chart showing cumulative data over time",
+      "structure": {
+        "title": "Chart Title",
+        "x_axis": {
+          "label": "Time/Continuous Variable",
+          "type": "continuous"
+        },
+        "y_axis": {
+          "label": "Values",
+          "type": "numerical"
+        },
+        "data_format": {
+          "points": [
+            {"x": 0, "y": 25},
+            {"x": 1, "y": 45},
+            {"x": 2, "y": 30},
+            {"x": 3, "y": 60},
+            {"x": 4, "y": 55}
+          ],
+          "fill_color": "#3498db",
+          "line_color": "#2c3e50",
+          "opacity": 0.6
+        }
+      },
+      "json_format": {
+        "type": "area_chart",
+        "title": "{{title}}",
+        "x_axis": "{{x_axis_label}}",
+        "y_axis": "{{y_axis_label}}",
+        "data": [
+          {"x": "{{x_value}}", "y": "{{y_value}}"}
+        ],
+        "fill_color": "{{fill_color}}",
+        "line_color": "{{line_color}}",
+        "opacity": "{{opacity}}"
+      },
+      "display_instructions": "Create an area chart with filled area under the line. Clearly label both axes. Use appropriate fill color with transparency. Include a title at the top. Ensure proper scaling on both axes for readability."
+    },
+    "stacked_bar_chart": {
+      "type": "stacked_bar",
+      "description": "Stacked bar chart showing multiple data series",
+      "structure": {
+        "title": "Chart Title",
+        "x_axis": {
+          "label": "Categories",
+          "type": "categorical"
+        },
+        "y_axis": {
+          "label": "Values",
+          "type": "numerical"
+        },
+        "data_format": {
+          "categories": ["Category 1", "Category 2", "Category 3"],
+          "series": [
+            {"name": "Series 1", "values": [20, 30, 25], "color": "#3498db"},
+            {"name": "Series 2", "values": [15, 20, 18], "color": "#e74c3c"},
+            {"name": "Series 3", "values": [10, 15, 12], "color": "#2ecc71"}
+          ]
+        }
+      },
+      "json_format": {
+        "type": "stacked_bar_chart",
+        "title": "{{title}}",
+        "x_axis": "{{x_axis_label}}",
+        "y_axis": "{{y_axis_label}}",
+        "categories": ["{{category}}"],
+        "series": [
+          {"name": "{{series_name}}", "values": ["{{value}}"], "color": "{{color}}"}
+        ]
+      },
+      "display_instructions": "Create a stacked bar chart with multiple data series stacked on top of each other. Clearly label both axes. Use distinct colors for each series. Include a legend to identify each series. Include a title at the top. Ensure proper scaling and readability."
+    },
+    "donut_chart": {
+      "type": "donut",
+      "description": "Donut chart (pie chart with center hollow)",
+      "structure": {
+        "title": "Chart Title",
+        "data_format": {
+          "segments": [
+            {"label": "Segment 1", "value": 30, "percentage": 25.0},
+            {"label": "Segment 2", "value": 45, "percentage": 37.5},
+            {"label": "Segment 3", "value": 25, "percentage": 20.8},
+            {"label": "Segment 4", "value": 20, "percentage": 16.7}
+          ],
+          "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"],
+          "inner_radius": 0.4
+        }
+      },
+      "json_format": {
+        "type": "donut_chart",
+        "title": "{{title}}",
+        "data": [
+          {"label": "{{label}}", "value": "{{value}}", "percentage": "{{percentage}}", "color": "{{color}}"}
+        ],
+        "inner_radius": "{{inner_radius}}"
+      },
+      "display_instructions": "Create a donut chart (pie chart with hollow center). Clearly label each segment with percentages. Use distinct colors for each segment. Include a legend if space permits. The center can contain summary information if relevant. Ensure the chart is properly proportioned."
+    }
+  },
+  "graph_type_mapping": {
+    "bar chart": "bar_chart",
+    "pie chart": "pie_chart",
+    "line chart": "line_chart",
+    "line graph": "line_chart",
+    "scatter plot": "scatter_plot",
+    "scatter chart": "scatter_plot",
+    "horizontal bar chart": "horizontal_bar_chart",
+    "area chart": "area_chart",
+    "stacked bar chart": "stacked_bar_chart",
+    "donut chart": "donut_chart"
+  },
+  "default_colors": {
+    "primary": "#3498db",
+    "secondary": "#e74c3c",
+    "success": "#2ecc71",
+    "warning": "#f39c12",
+    "info": "#17a2b8",
+    "light": "#f8f9fa",
+    "dark": "#343a40"
+  },
+  "metadata": {
+    "version": "1.0",
+    "description": "Unified graph styling configuration for GMAT/GRE question generation system",
+    "last_updated": "2024-01-01",
+    "supported_formats": ["json", "svg", "canvas"],
+    "frontend_compatibility": ["react", "vue", "angular"]
+  }
+}

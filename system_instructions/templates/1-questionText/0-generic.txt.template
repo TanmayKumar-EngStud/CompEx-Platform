@@ -1,0 +1,83 @@
+## QuestionText
+
+${JSON_FORMAT_REQUIREMENT}
+
+Here you have to create a question based on the given topic focusing the provided skill set that would be required to solve the question.
+
+Input will be in the following format:- "QuestionText: <question_topic> - <focused_skill> - <Difficulty Level>"
+
+{{#if_gmat}}
+**GMAT-Specific Requirements:**
+- Use business vocabulary: "entities", "operations", "optimization", "efficiency", "strategic"
+- Focus on practical business problems: profit/loss, resource allocation, production planning
+- Emphasize critical reasoning and number sense over pure calculation
+- Include business themes: Finance, Economics, Market Analysis, Operations Management
+
+Question Topic will be like:- "Algebra", "Geometry", "Number Theory", "Arithmetic", "Data Analysis", "Statistics", "Logical Reasoning", "Word Problems", "Probability", "Combinatorics", "Advanced Topics"
+Focused Skill will be like:- "Attention to Detail", "Logical Reasoning", "Critical Reasoning", "Mathematical Knowledge", "Efficiency and Time Management"
+
+**Question Categories:**
+1. **Arithmetic**: Critical reasoning, number sense, avoiding common pitfalls
+   - Topics: Ratio/proportion, discount/profit/loss, rates, unitary method
+2. **Algebra**: Back-solving capability, strategic number picking
+   - Topics: Equations, inequalities, functions, polynomials
+3. **Word Problems**: Situation assessment, step setup, tool selection
+   - Business contexts with complex scenarios requiring multiple steps
+{{/if_gmat}}
+
+{{#if_gre}}
+Tags will be like:- "Algebra", "Geometry", "Number Theory", "Arithmetic", "Data Analysis", "Statistics", "Logical Reasoning", "Word Problems", "Probability", "Combinatorics", "Advanced Topics"
+{{/if_gre}}
+
+${DIFFICULTY_DESCRIPTION}, and ${DIFFICULTY_SCALING}, make the questions more perplexed, confusing, time consuming, use hard ${EXAM_NAME} vocabulary, etc.
+
+{{#if_gmat}}
+**Difficulty Scaling for GMAT:**
+- Level 1: Minimum 3 calculation steps, straightforward business context
+- Level 2: Minimum 5 steps, moderate complexity with business terminology
+- Level 3: 5+ steps with confusing wording and business jargon
+- Level 4: 7+ steps, multiple concepts, advanced business scenarios
+- Level 5: 10+ steps, trial-and-error reasoning, highly complex business operations
+{{/if_gmat}}
+
+**Required Output Format:**
+```json
+{
+  "question": "complete question text with appropriate context and difficulty"
+}
+```
+
+**Important Notes:**
+- Use double quotes only, replace single quotes with (`) symbol
+{{#if_gmat}}
+- Include detailed business context for every question
+- Make questions realistic but solvable without domain expertise
+- Focus on testing mathematical reasoning, not business knowledge
+{{/if_gmat}}
+{{#if_gre}}
+- Focus on academic and analytical reasoning
+- Use formal academic vocabulary appropriate for graduate studies
+{{/if_gre}}
+
+{{#if_critical_reasoning}}
+Description: Here in the QuestionText you have to generate the question of the above prepared passages fulfilling the passage theme.
+
+Based on the respective question requirements, you need to generate the question text component,
+
+{{#if_gmat}}
+**GMAT Critical Reasoning Requirements:**
+- Focus on business and management scenarios
+- Test logical reasoning and critical thinking skills
+- Use professional vocabulary appropriate for MBA candidates
+- Include realistic business contexts and decision-making scenarios
+{{/if_gmat}}
+
+{{#if_gre}}
+**GRE Critical Reasoning Requirements:**
+- Focus on academic and analytical reasoning
+- Use formal academic vocabulary
+- Include scholarly and research-based contexts
+{{/if_gre}}
+
+Input format: `QuestionText`
+{{/if_critical_reasoning}}

@@ -43,18 +43,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
             prompt=prompt
         )
     
-    def _load_default_system_instructions(self) -> str:
-        """Load GRE Verbal Parent-Child system instructions."""
-        instruction_path = os.path.join(
-            os.path.dirname(__file__), 
-            "../System_instructions/GRE-Verbal-Parent-Child-Questions.txt"
-        )
-        try:
-            with open(instruction_path, "r") as f:
-                return f.read()
-        except FileNotFoundError:
-            print(f"System instructions file not found: {instruction_path}")
-            return ""
+    # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
     def shuffle_options(self,options):
         option_list = []

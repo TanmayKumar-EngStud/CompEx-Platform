@@ -24,18 +24,7 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
             prompt=prompt
         )
     
-    def _load_default_system_instructions(self) -> str:
-        """Load GMAT Data Sufficiency system instructions."""
-        instruction_path = os.path.join(
-            os.path.dirname(__file__), 
-            "../System_instructions/GMAT-Quants-Data-Sufficiency-Questions.txt"
-        )
-        try:
-            with open(instruction_path, "r") as f:
-                return f.read()
-        except FileNotFoundError:
-            print(f"System instructions file not found: {instruction_path}")
-            return ""
+    # Removed _load_default_system_instructions override - now uses unified instruction system
     def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
         """
         Generate a GMAT Data Sufficiency question.

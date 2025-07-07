@@ -82,18 +82,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
         
         self.child_prompt = self.generate_child_prompt(child_question_numbers, difficulty)
     
-    def _load_default_system_instructions(self) -> str:
-        """Load GMAT Verbal Parent-Child Questions system instructions."""
-        instruction_path = os.path.join(
-            os.path.dirname(__file__), 
-            "../System_instructions/GMAT-Verbal-Parent-Child-Questions.txt"
-        )
-        try:
-            with open(instruction_path, "r") as f:
-                return f.read()
-        except FileNotFoundError:
-            print(f"System instructions file not found: {instruction_path}")
-            return ""
+    # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
     def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
         """

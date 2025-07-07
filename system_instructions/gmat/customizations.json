@@ -1,0 +1,80 @@
+{
+  "problem_solving": {
+    "exam_focus": "GMAT Problem Solving questions test quantitative reasoning in business contexts",
+    "question_topics": "Algebra, Geometry, Number Theory, Arithmetic, Data Analysis, Statistics, Logical Reasoning, Word Problems, Probability, Combinatorics, Advanced Topics",
+    "focused_skills": "Attention to Detail, Logical Reasoning, Critical Reasoning, Mathematical Knowledge, Efficiency and Time Management",
+    "business_themes": [
+      "Manufacturing Operations",
+      "Financial Analysis", 
+      "Market Research",
+      "Supply Chain Management",
+      "Strategic Planning",
+      "Investment Analysis",
+      "Resource Allocation",
+      "Performance Optimization"
+    ],
+    "vocabulary_requirements": {
+      "formal_terms": ["entities", "optimization", "efficiency", "strategic", "operational", "allocation", "utilization", "profitability"],
+      "business_context": "All questions must include realistic business scenarios",
+      "complexity_scaling": "Increase business scenario complexity with difficulty level"
+    },
+    "question_categories": {
+      "arithmetic": "Critical reasoning, number sense, avoiding common pitfalls - Topics: Ratio/proportion, discount/profit/loss, rates, unitary method",
+      "algebra": "Back-solving capability, strategic number picking - Topics: Equations, inequalities, functions, polynomials", 
+      "word_problems": "Situation assessment, step setup, tool selection - Business contexts with complex scenarios requiring multiple steps"
+    },
+    "difficulty_scaling": {
+      "level_1": "Minimum 3 calculation steps, straightforward business context",
+      "level_2": "Minimum 5 steps, moderate complexity with business terminology",
+      "level_3": "5+ steps with confusing wording and business jargon",
+      "level_4": "7+ steps, multiple concepts, advanced business scenarios",
+      "level_5": "10+ steps, trial-and-error reasoning, highly complex business operations"
+    },
+    "json_format": {
+      "wrapper_required": true,
+      "wrapper_format": "```json\\n{content}\\n```",
+      "error_handling": "Retry with format warnings if JSON parsing fails"
+    }
+  },
+  "data_sufficiency": {
+    "exam_focus": "GMAT Data Sufficiency questions focus on logical reasoning and mathematical analysis",
+    "question_topics": "Algebra, Geometry, Number Theory, Arithmetic, Data Analysis, Statistics, Logical Reasoning, Word Problems, Probability, Combinatorics, Advanced Topics",
+    "focused_skills": "Attention to Detail, Logical Reasoning, Critical Reasoning, Mathematical Knowledge, Efficiency and Time Management",
+    "complexity_requirements": "Make statements more complex and confusing to make question more difficult",
+    "business_context": "Questions should reflect business and management scenarios where appropriate"
+  },
+  "critical_reasoning": {
+    "exam_focus": "GMAT Critical Reasoning tests business judgment and logical analysis",
+    "question_categories": "Weaken the argument, strengthen the argument, find the assumption, draw inference/conclusion, structure of the argument, paradox, evaluate the conclusion, complete the argument",
+    "business_context": "Questions should focus on business scenarios, management decisions, and corporate strategy",
+    "difficulty_scaling": "Higher difficulty levels should include complex business scenarios and sophisticated logical reasoning",
+    "variations": "Boldface Questions, Cause and Effect, Plan and Outcome"
+  },
+  "reading_comprehension": {
+    "exam_focus": "GMAT Reading Comprehension emphasizes business and academic passages",
+    "passage_types": "Business strategy, economics, science, social sciences, humanities",
+    "question_types": "Main idea, supporting details, inference, author's tone, structure",
+    "business_context": "Include passages about business management, organizational behavior, and market analysis"
+  },
+  "graphic_interpretation": {
+    "exam_focus": "GMAT Integrated Reasoning tests data interpretation and analysis skills",
+    "chart_types": "bar-graph, stacked-bar-graph, pie-chart, line-graph, scatter-plot",
+    "business_context": "Use business-relevant data such as sales, revenue, market share, performance metrics",
+    "difficulty_scaling": "Difficulty levels 4 and 5 require multiple related graphs for complex analysis"
+  },
+  "table_analysis": {
+    "exam_focus": "GMAT Table Analysis tests data sorting and analysis capabilities",
+    "business_context": "Use business data tables with financial, operational, or market information",
+    "table_requirements": "Dynamic table size based on difficulty (rows: difficulty + 5-7, cols: difficulty + 3-5)"
+  },
+  "two_part_analysis": {
+    "exam_focus": "GMAT Two-Part Analysis tests multi-step reasoning and analysis",
+    "business_context": "Questions should involve business decisions requiring two related determinations",
+    "question_structure": "Shared content with two related questions that test different aspects"
+  },
+  "multi_source_reasoning": {
+    "exam_focus": "GMAT Multi-Source Reasoning tests synthesis of information from multiple sources",
+    "source_types": "Text, tables, graphs combined to create comprehensive business scenarios",
+    "business_context": "Use business case studies with multiple data sources requiring integrated analysis"
+  }
+}

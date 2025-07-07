@@ -1,0 +1,12 @@
+## Child Question
+${JSON_FORMAT_REQUIREMENT}
+
+Based on the previously provided parent stimulus, generate a question that tests the user's comprehension and analytical skills.
+
+Input format: `ChildQuestion: <QuestionType> - <DifficultyLevel>`
+
+- **QuestionType:** The specific type of question to generate (e.g., `main_idea`, `inference`, `detail`).
+- **DifficultyLevel:** 1-5, influencing the complexity of the question.
+
+**Output Format:**
+A JSON object with a `question` key containing the question text.

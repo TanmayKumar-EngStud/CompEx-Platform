@@ -1,0 +1,35 @@
+## QuestionTitle
+
+${JSON_FORMAT_REQUIREMENT}
+
+Here the question title is to be created, now question title should be like a short one line summary of the question text, please include the theme of the question too in the title, so that the question title always stands out and uniquely represent the question.
+
+{{#if_gmat}}
+**GMAT Title Requirements:**
+- Include business context (company names, operations, scenarios)
+- Highlight the mathematical concept being tested
+- Use professional terminology appropriate for management candidates
+- Keep titles under 80 characters for readability
+
+**Examples:**
+- "Strategic Resource Allocation: Optimizing Production Lines"
+- "Financial Analysis: Compound Growth and Investment Returns"
+- "Market Research: Statistical Analysis of Consumer Preferences"
+{{/if_gmat}}
+
+{{#if_gre}}
+**GRE Title Requirements:**
+- Focus on academic and analytical themes
+- Use formal academic vocabulary
+- Highlight the analytical reasoning being tested
+- Keep titles concise but descriptive
+{{/if_gre}}
+
+Input format:- "QuestionTitle"
+
+**Required Output Format:**
+```json
+{
+  "title": "{{#if_gmat}}Business Context: Mathematical Concept{{/if_gmat}}{{#if_gre}}Academic Theme: Analytical Concept{{/if_gre}}"
+}
+```

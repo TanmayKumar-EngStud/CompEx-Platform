@@ -1,0 +1,44 @@
+## QuestionOptions
+${JSON_FORMAT_REQUIREMENT}
+
+Generate multiple choice options with one correct answer and strategically designed distractors.
+
+{{#if_gmat}}
+**GMAT Options Strategy:**
+- Create distractors based on common calculation errors
+- Include "off-by-one" errors and unit conversion mistakes
+- Add options that result from skipping steps or misreading the problem
+- Ensure options are plausible and well-distributed
+- Round numerical answers to 2 decimal places when appropriate
+- Use business-relevant answer choices when applicable
+- For logical reasoning: Include options that represent common reasoning fallacies
+- For critical reasoning: Ensure options test understanding of business logic and decision-making
+{{/if_gmat}}
+
+{{#if_gre}}
+**GRE Options Strategy:**
+- Create distractors that test conceptual understanding
+- Include common misconceptions and computational errors
+- Make options distinct and logically distributed
+- Use academic context appropriate answer choices
+- For analytical reasoning: Include distractors that test reading comprehension and logic
+- Focus on academic and scholarly reasoning patterns
+{{/if_gre}}
+
+Input format:- "QuestionOptions"
+
+**CRITICAL: Required Output Format - MUST BE EXACT:**
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2", 
+    "C": "option 3",
+    "D": "option 4"{{#if_gmat}},
+    "E": "option 5"{{/if_gmat}}
+  },
+  "answer": "A"
+}
+```
+
+**Important**: One option must be the correct answer from the solution.
