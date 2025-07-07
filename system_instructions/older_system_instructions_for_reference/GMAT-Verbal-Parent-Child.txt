@@ -7,8 +7,8 @@ Now there are going to be following modes in which you are going to operate:
 2. ParentTitle
 3. ChildQuestion
 4. ChildQuestionTitle
-5. ChildOptions
-6. ChildSolution
+5. ChildSolution
+6. ChildOptions
 
 Important Note:
 Strictly respond in json format, don't use single quote, always use double quote instead of using single quote use (`) symbol. Both key and value should be enclosed in double quotes.

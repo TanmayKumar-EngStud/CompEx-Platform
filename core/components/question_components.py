@@ -148,6 +148,46 @@ class BaseQuestionComponent(ABC):
             config=config
         )
 
+    def _get_component_instruction(self, component_name: str) -> str:
+        """
+        Get template-based instruction for a specific component.
+        
+        Args:
+            component_name: Name of the component (e.g. "QuestionSolution", "QuestionOptions")
+            
+        Returns:
+            Template-based instruction text
+        """
+        try:
+            from core.instructions.instruction_manager import InstructionManager
+            
+            # Map component names to template modes
+            mode_mapping = {
+                "QuestionSolution": "questionSolution",
+                "QuestionOptions": "questionOptions", 
+                "QuestionText": "questionText",
+                "QuestionTitle": "questionTitle",
+                "QuestionAnswer": "questionAnswer",
+                "QuestionPassage": "questionPassage"
+            }
+            
+            mode = mode_mapping.get(component_name, component_name.lower())
+            
+            manager = InstructionManager()
+            instruction = manager.get_instruction(
+                exam_type=self.exam_type,
+                question_type=self.question_type,
+                mode=mode,
+                prompt=self.prompt
+            )
+            
+            return instruction
+            
+        except Exception as e:
+            print(f"Warning: Could not load template instruction for {component_name}: {e}")
+            # Fallback to simple component name
+            return component_name
+    
     def _get_response(self, prompt: str, warn: bool = False) -> Optional[str]:
         """
         Get response from AI with rate limiting and error handling.
@@ -159,6 +199,11 @@ class BaseQuestionComponent(ABC):
         Returns:
             AI response text or None if failed
         """
+        # Check if this is a component instruction and enhance with template if needed
+        if prompt in ["QuestionSolution", "QuestionOptions", "QuestionText", "QuestionTitle", "QuestionAnswer", "QuestionPassage"]:
+            template_instruction = self._get_component_instruction(prompt)
+            prompt = f"{template_instruction}\n\nUser prompt: {self.prompt}"
+        
         # Store the original prompt for debugging
         self._last_prompt_sent = prompt
         
@@ -753,20 +798,37 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_question_solution(self) -> Tuple[Optional[str], Optional[str]]:
+    def generate_question_solution(self) -> str:
         """
-        Generate question solution and answer using two-step process.
+        Generate question solution only (without answer).
 
         Returns:
-            Tuple of (solution, answer)
+            Solution text as plain text
         """
-        # Step 1: Generate solution only
-        solution = self._generate_solution_only()
-
-        # Step 2: Generate answer only
+        # Generate solution only - answer will be generated with options
+        return self._generate_solution_only()
+    
+    def generate_question_options_with_answer(self) -> Tuple[Dict[str, str], str]:
+        """
+        Generate question options and answer together.
+        
+        Returns:
+            Tuple of (options_dict, correct_answer_key)
+        """
+        # For Data Sufficiency, we use standard options but still need to determine the answer
+        # Standard data sufficiency options
+        standard_options = {
+            "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+            "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+            "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement ALONE is sufficient.",
+            "D": "EACH statement ALONE is sufficient.",
+            "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        }
+        
+        # Generate the answer key using the AI
         answer = self._generate_answer_only()
-
-        return solution, answer
+        
+        return standard_options, answer
 
     def _generate_solution_only(self) -> str:
         """Generate only the solution text."""

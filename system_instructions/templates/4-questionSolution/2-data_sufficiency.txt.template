@@ -1,33 +1,14 @@
-## QuestionSolution
-${JSON_FORMAT_REQUIREMENT}
+RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)
+Provide detailed reasoning for Data Sufficiency question without final answer choice.
 
-Here based on the previous question, you would have to provide the detailed reasoning for solving the Data Sufficiency question. Focus ONLY on the solution explanation without determining the final answer.
+**Structure:**
+Step 1: Understanding the Question - Identify what the question is asking for
+Step 2: Analyzing Statement (1) - Brief analysis and sufficiency evaluation
+Step 3: Analyzing Statement (2) - Brief analysis and sufficiency evaluation
 
-input format:- "QuestionSolution"
-
-CRITICAL: Your response must be ONLY the JSON object below. No explanatory text before or after.
-
-ENHANCED SOLUTION REQUIREMENTS:
-The solution must provide a comprehensive, step-by-step analysis that includes:
-
-1. **Problem Analysis**: Clear identification of what the question is asking for
-2. **Statement Analysis**: Detailed examination of each statement individually
-3. **Sufficiency Testing**: Step-by-step evaluation of whether each statement provides sufficient information
-4. **Logical Reasoning**: Clear explanation of the logical steps taken to reach the conclusion
-5. **Mathematical Work**: All calculations shown with clear formatting
-
-${SOLUTION_PLAIN_TEXT_FORMAT}
-
-**Format Guidelines:**
-- Structure the solution in clear, concise steps using natural formatting
+**Important Notes:**
 - Focus on logical reasoning with brief explanations
+- Show calculations when needed with clear formatting
 - Keep solutions concise but complete
-- Avoid overly detailed calculations
 - DO NOT include the final answer choice in the solution
-
-Output format:-
-"logical reasoning explanation without final answer choice"
-
-**Example Structure:**
-IMPORTANT!! PLEASE JUST RESPOND THIS QUESTION COMPONENT IN PLAIN TEXT like this:-
-"Step 1: Understanding the Question\nWe need to determine [what the question is asking].\n\nStep 2: Analyzing Statement (1)\n[Brief analysis of statement 1]\nCalculation: [simple calculation if needed]\nConclusion: Statement (1) [is/is not] sufficient because [brief reason].\n\nStep 3: Analyzing Statement (2)\n[Brief analysis of statement 2]\nCalculation: [simple calculation if needed]\nConclusion: Statement (2) [is/is not] sufficient because [brief reason]."
+- Evaluate each statement individually for sufficiency

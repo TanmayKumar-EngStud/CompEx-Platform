@@ -32,7 +32,7 @@ class GraphStyleManager:
         instruction = manager.inject_graph_style(template, "pie chart")
     """
     
-    def __init__(self, styles_file: str = "system_instructions/graph_styles.json"):
+    def __init__(self, styles_file: str = "system_instructions/templates/0-questionMetadata/metadata.json"):
         """
         Initialize the graph style manager.
         
@@ -65,9 +65,11 @@ class GraphStyleManager:
             
             config = load_json_file(str(styles_path))
             
-            # Load main configuration sections
-            self._styles = config.get("chart_styles", {})
-            self._graph_type_mapping = config.get("graph_type_mapping", {})
+            # Load main configuration sections from new structure
+            content_types = config.get("content_types", {})
+            graph_config = content_types.get("graph", {})
+            self._styles = graph_config.get("chart_styles", {})
+            self._graph_type_mapping = graph_config.get("graph_type_mapping", {})
             self._default_colors = config.get("default_colors", {})
             
             self._logger.log_graph_styles_loaded(len(self._styles))

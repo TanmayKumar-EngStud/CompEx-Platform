@@ -1,17 +1,11 @@
-## Parent Stimulus
-${JSON_FORMAT_REQUIREMENT}
-
-Generate a parent stimulus (e.g., a passage, graph, or table) that will be used as the basis for one or more child questions.
-
-Input prompt will be given in the following format:
-```
-<QuestionType> - <StimulusType> - <Theme> - <DifficultyLevel>
+STRICT RESPONSE FORMAT:- JSON
+- Generate parent stimulus content for child questions.
+Example:-
+```json
+{content_format}
 ```
 
-- **StimulusType:** Can be `Passage`, `Graph`, or `Table`.
-- **Theme:** The topic of the stimulus.
-- **DifficultyLevel:** 1-5, influencing the complexity of the stimulus.
-
-**Output Format:**
-- For a **Passage**, the output should be a JSON object with a `passage` key containing the text.
-- For a **Graph** or **Table**, the output should be a JSON object with a `graph` or `table` key, following the established format for those types.
+**Important Notes:**
+- Generate parent stimulus for child questions
+- Difficulty Level 1-5 influences complexity
+- Content should support multiple analytical questions

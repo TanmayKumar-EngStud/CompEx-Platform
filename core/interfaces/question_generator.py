@@ -142,13 +142,22 @@ class BaseQuestionGenerator(ABC):
         # Initialize instruction manager
         instruction_manager = InstructionManager()
         
-        # Load ALL mode instructions concatenated together
         # Pass the prompt for graph style detection if available
         use_prompt = getattr(self, 'prompt', None)
-        instructions = instruction_manager.get_all_modes_instruction(
+        
+        # Extract difficulty level from prompt if available
+        difficulty_level = None
+        if use_prompt:
+            difficulty_match = re.search(r'difficulty.?level:\s*(\d+)', use_prompt.lower())
+            if difficulty_match:
+                difficulty_level = int(difficulty_match.group(1))
+        
+        # Use optimized instruction generation for better context-aware instructions
+        instructions = instruction_manager.get_optimized_instruction(
             self.exam_type,
             self.question_type,
-            use_prompt
+            use_prompt,
+            difficulty_level
         )
         
         return instructions

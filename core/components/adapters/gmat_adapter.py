@@ -119,9 +119,13 @@ class GMATDataSufficiencyAdapter:
         """Generate question title."""
         return self.component.generate_question_title()
     
-    def generate_questionSolution(self) -> Tuple[Optional[str], Optional[str]]:
-        """Generate question solution and answer."""
+    def generate_questionSolution(self) -> str:
+        """Generate question solution only (plain text)."""
         return self.component.generate_question_solution()
+    
+    def generate_questionOptions(self) -> Tuple[Dict[str, str], str]:
+        """Generate question options and answer."""
+        return self.component.generate_question_options_with_answer()
 
 
 class GMATParentChildAdapter:

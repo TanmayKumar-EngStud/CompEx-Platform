@@ -1,5 +1,7 @@
 {
-  "chart_styles": {
+  "content_types": {
+    "graph": {
+      "chart_styles": {
     "bar_chart": {
       "type": "bar",
       "description": "Vertical bar chart with categorical data",
@@ -260,8 +262,8 @@
       },
       "display_instructions": "Create a donut chart (pie chart with hollow center). Clearly label each segment with percentages. Use distinct colors for each segment. Include a legend if space permits. The center can contain summary information if relevant. Ensure the chart is properly proportioned."
     }
-  },
-  "graph_type_mapping": {
+      },
+      "graph_type_mapping": {
     "bar chart": "bar_chart",
     "pie chart": "pie_chart",
     "line chart": "line_chart",
@@ -272,6 +274,142 @@
     "area chart": "area_chart",
     "stacked bar chart": "stacked_bar_chart",
     "donut chart": "donut_chart"
+      }
+    },
+    "passage": {
+      "passage_styles": {
+        "reading_comprehension": {
+          "type": "reading_passage",
+          "description": "Academic or business passage for reading comprehension questions",
+          "structure": {
+            "title": "Passage Title",
+            "content": "Main passage text with multiple paragraphs",
+            "word_count_range": {"min": 150, "max": 500},
+            "difficulty_scaling": {
+              "1": "Simple vocabulary, clear structure",
+              "2": "Moderate vocabulary, straightforward arguments",
+              "3": "Complex vocabulary, multiple viewpoints",
+              "4": "Advanced vocabulary, implicit meanings",
+              "5": "Graduate-level vocabulary, nuanced arguments"
+            }
+          },
+          "json_format": {
+            "type": "passage",
+            "title": "{{title}}",
+            "content": "{{content}}"
+          },
+          "display_instructions": "Create a well-structured passage with clear paragraphs. Use appropriate vocabulary for the target difficulty level. Ensure the content supports multiple analytical questions."
+        },
+        "critical_reasoning": {
+          "type": "argument_passage",
+          "description": "Logical argument passage for critical reasoning questions",
+          "structure": {
+            "premise": "Background information and context",
+            "argument": "Main argument or claim being made",
+            "evidence": "Supporting evidence or data",
+            "conclusion": "Conclusion or recommendation"
+          },
+          "json_format": {
+            "type": "passage",
+            "content": "{{content}}"
+          },
+          "display_instructions": "Create a logical argument with clear premises and conclusion. Include realistic business or academic scenarios. Ensure the argument has identifiable logical structure."
+        }
+      },
+      "passage_type_mapping": {
+        "reading comprehension": "reading_comprehension",
+        "critical reasoning": "critical_reasoning",
+        "argument": "critical_reasoning",
+        "rc": "reading_comprehension",
+        "cr": "critical_reasoning"
+      }
+    },
+    "table": {
+      "table_styles": {
+        "data_table": {
+          "type": "data_table",
+          "description": "Standard data table with rows and columns",
+          "structure": {
+            "title": "Table Title",
+            "headers": ["Column 1", "Column 2", "Column 3", "Column 4"],
+            "rows": [
+              ["Data 1", "Data 2", "Data 3", "Data 4"],
+              ["Data 5", "Data 6", "Data 7", "Data 8"]
+            ],
+            "formatting": {
+              "alternating_rows": true,
+              "border_style": "standard"
+            }
+          },
+          "json_format": {
+            "type": "table",
+            "title": "{{title}}",
+            "headers": ["{{header}}"],
+            "data": [
+              ["{{cell_value}}"]
+            ]
+          },
+          "display_instructions": "Create a clean data table with clear headers and organized data. Use alternating row colors for readability. Ensure data supports analytical questions."
+        },
+        "pivot_table": {
+          "type": "pivot_table",
+          "description": "Pivot table with summarized data across dimensions",
+          "structure": {
+            "title": "Pivot Table Title",
+            "row_headers": ["Category A", "Category B"],
+            "column_headers": ["Metric 1", "Metric 2", "Total"],
+            "data_matrix": [
+              [100, 150, 250],
+              [200, 100, 300]
+            ],
+            "summary_row": [300, 250, 550]
+          },
+          "json_format": {
+            "type": "pivot_table",
+            "title": "{{title}}",
+            "row_headers": ["{{row_header}}"],
+            "column_headers": ["{{column_header}}"],
+            "data": [
+              ["{{cell_value}}"]
+            ],
+            "summary_row": ["{{summary_value}}"]
+          },
+          "display_instructions": "Create a pivot table with clear row and column headers. Include summary calculations. Use highlighting for totals and key metrics."
+        },
+        "comparison_table": {
+          "type": "comparison_table",
+          "description": "Table comparing multiple entities across various attributes",
+          "structure": {
+            "title": "Comparison Table Title",
+            "entities": ["Entity A", "Entity B", "Entity C"],
+            "attributes": ["Attribute 1", "Attribute 2", "Attribute 3"],
+            "comparison_data": [
+              ["High", "Medium", "Low"],
+              ["85%", "72%", "91%"],
+              ["$500", "$300", "$750"]
+            ]
+          },
+          "json_format": {
+            "type": "comparison_table",
+            "title": "{{title}}",
+            "entities": ["{{entity}}"],
+            "attributes": ["{{attribute}}"],
+            "data": [
+              ["{{comparison_value}}"]
+            ]
+          },
+          "display_instructions": "Create a comparison table with entities as columns and attributes as rows. Use consistent formatting for similar data types. Highlight key differences."
+        }
+      },
+      "table_type_mapping": {
+        "data table": "data_table",
+        "table": "data_table",
+        "pivot table": "pivot_table",
+        "pivot": "pivot_table",
+        "comparison table": "comparison_table",
+        "comparison": "comparison_table"
+      }
+    }
   },
   "default_colors": {
     "primary": "#3498db",
@@ -282,11 +420,38 @@
     "light": "#f8f9fa",
     "dark": "#343a40"
   },
+  "content_type_mapping": {
+    "graph": "graph",
+    "chart": "graph", 
+    "passage": "passage",
+    "text": "passage",
+    "table": "table",
+    "data": "table"
+  },
   "metadata": {
     "version": "1.0",
-    "description": "Unified graph styling configuration for GMAT/GRE question generation system",
-    "last_updated": "2024-01-01",
+    "description": "Unified content metadata configuration for GMAT/GRE question generation system",
+    "last_updated": "2025-07-07",
+    "supported_content_types": ["graph", "passage", "table"],
     "supported_formats": ["json", "svg", "canvas"],
-    "frontend_compatibility": ["react", "vue", "angular"]
+    "frontend_compatibility": ["react", "vue", "angular"],
+    "class_structure": {
+      "content": {
+        "description": "Base content class",
+        "child_classes": ["graph", "passage", "table"]
+      },
+      "graph": {
+        "description": "Graph content class for charts and visualizations",
+        "data_source": "content_types.graph.chart_styles"
+      },
+      "passage": {
+        "description": "Passage content class for text-based content",
+        "data_source": "content_types.passage.passage_styles"
+      },
+      "table": {
+        "description": "Table content class for structured data",
+        "data_source": "content_types.table.table_styles"
+      }
+    }
   }
 }

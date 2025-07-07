@@ -1,0 +1,69 @@
+# Data Sufficiency Question Generation - Technical Specification
+
+## Inherits From: {{GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Data Sufficiency
+**Primary Cognitive Assessment**: Critical thinking and logical reasoning over pure mathematical computation
+
+## Available Modes
+
+### questionText Mode
+**Returns**: `passage`, `statements[]`, `question`
+
+### questionTitle Mode  
+**Returns**: `title`
+
+### questionSolution Mode
+**Returns**: `solution`
+
+### questionAnswer Mode
+**Returns**: `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### questionText → questionTitle
+- Extract key concept from `question` field to create focused title
+
+### questionText → questionSolution  
+- Analyze `passage` + `statements[]` to determine sufficiency
+- Identify common student errors for trap generation
+- Document specific error pathways and their resulting incorrect sufficiency conclusions (in your thinking mode, access what sufficiency conclusions you will get if made potential mistakes)
+- Content responded should be brief and readable for user.
+
+### questionSolution → questionAnswer
+- Extract sufficiency conclusion to select correct DS option (A/B/C/D/E), the solution should be readable and should be in brief
+- Use documented mistake pathways from solution to understand why other options are incorrect
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Data Sufficiency
+- Business scenarios requiring managerial decision-making
+- Professional terminology for MBA candidates
+- Business reasoning emphasis in solutions
+- Mistake patterns: business assumption errors, contextual misunderstandings
+{{/if_gmat}}
+
+{{#if_gre}}
+### GRE Data Sufficiency  
+- Academic scenarios requiring analytical reasoning
+- Academic terminology for graduate studies
+- Mathematical completeness emphasis in solutions
+- Mistake patterns: mathematical assumption errors, variable identification mistakes
+{{/if_gre}}
+
+## Standard DS Options
+- **(A)** Statement (1) alone sufficient, statement (2) alone not sufficient
+- **(B)** Statement (2) alone sufficient, statement (1) alone not sufficient  
+- **(C)** Both together sufficient, neither alone sufficient
+- **(D)** Each statement alone sufficient
+- **(E)** Both together not sufficient
+
+## Key Trap Patterns
+- **Computational Trap**: Solving instead of assessing sufficiency
+- **Assumption Trap**: Assuming unstated information
+- **Interdependency Blindness**: Ignoring statement interactions
+- **Statement Isolation Error**: Overestimating individual statement completeness

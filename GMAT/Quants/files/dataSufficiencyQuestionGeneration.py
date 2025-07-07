@@ -56,27 +56,39 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
             self.question_data["content"] = {"passages": passages, "statements": statements}
             self.question_data["question"] = question
             self.question_data["title"] = questionContent.generate_questionTitle()
-            solution, answer = questionContent.generate_questionSolution()
+            
+            # Generate solution first (plain text)
+            solution = questionContent.generate_questionSolution()
             self.question_data["solution"] = solution
             
-            # Set standard Data Sufficiency options
-            self.question_data["options"] = [
-                "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient", 
-                "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient", 
-                "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient", 
-                "EITHER statement ALONE is sufficient", 
-                "Statements (1) and (2) TOGETHER are NOT sufficient"
-            ]
+            # Generate options and answer together
+            options_dict, answer = questionContent.generate_questionOptions()
             
-            # Convert letter answer to full text
-            if isinstance(answer, str) and len(answer) == 1 and answer.isalpha():
-                answer_index = ord(answer.upper()) - ord("A")
-                if 0 <= answer_index < len(self.question_data["options"]):
-                    self.question_data["answer"] = self.question_data["options"][answer_index]
+            # Convert options dictionary to list format for backward compatibility
+            if isinstance(options_dict, dict):
+                # Sort by keys to ensure consistent order (A, B, C, D, E)
+                sorted_keys = sorted(options_dict.keys())
+                self.question_data["options"] = [options_dict[key] for key in sorted_keys]
+                
+                # Convert letter answer to full text
+                if isinstance(answer, str) and len(answer) == 1 and answer.isalpha():
+                    answer_upper = answer.upper()
+                    if answer_upper in options_dict:
+                        self.question_data["answer"] = options_dict[answer_upper]
+                    else:
+                        self.question_data["answer"] = answer
                 else:
                     self.question_data["answer"] = answer
             else:
-                self.question_data["answer"] = answer
+                # Fallback to standard DS options if generation fails
+                self.question_data["options"] = [
+                    "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient", 
+                    "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient", 
+                    "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient", 
+                    "EITHER statement ALONE is sufficient", 
+                    "Statements (1) and (2) TOGETHER are NOT sufficient"
+                ]
+                self.question_data["answer"] = answer if answer else "A"
             
             return self.question_data
             

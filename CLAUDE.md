@@ -16,6 +16,8 @@ This is a sophisticated AI-powered question generation system for GMAT and GRE s
 2. **Mock Classes**: `GMAT/Mock.py` and `GRE/Mock.py` - Handle exam paper generation
 3. **Database Layer**: `db.py` with Prisma client for question storage
 4. **Question Generators**: Modular generators for different question types
+5. **Template System**: Philosophy-driven instruction templates for cognitive testing
+6. **Instruction Management**: Dynamic template loading and processing system
 
 ## Database Schema (Prisma)
 
@@ -150,9 +152,19 @@ All questions follow this standardized format:
 - `combinations/`: JSON files tracking question combinations for variety
 - `tests/`: Sample question outputs for each question type
 
-### System Instructions
-- `System_instructions/`: Text files containing detailed AI prompts for each question type
-- Each question type has specific instructions for format, difficulty, and content requirements
+### System Instructions & Template System
+- `system_instructions/`: New centralized template system with philosophy-driven architecture
+- `system_instructions/templates/`: Modular templates for different instruction components
+- `system_instructions/templates/!Main Instructions/`: Core philosophy templates for each question type
+- `core/instructions/`: Instruction management and template processing system
+- `config/schemas/`: Validation schemas for instruction templates
+
+#### Template Architecture
+The system uses a modular template architecture with the following components:
+- **Main Instructions**: Philosophy-driven templates defining cognitive testing approach
+- **Question Components**: Specialized templates for metadata, text, options, solutions, and answers
+- **Dynamic Processing**: Template variables populated based on question type and difficulty
+- **Validation**: Schema-based validation ensuring template compliance
 
 ## Threading and API Management
 

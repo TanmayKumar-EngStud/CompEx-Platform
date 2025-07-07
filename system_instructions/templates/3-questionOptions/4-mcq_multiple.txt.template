@@ -1,0 +1,22 @@
+STRICT RESPONSE FORMAT:- JSON
+- "options" key with value as dictionary.
+- "answer" key with list of options.
+
+For Example:
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2",
+    "C": "option 3",
+    "D": "option 4",
+    "E": "option 5"
+  },
+  "answer": ["A", "C", "E"]
+}
+```
+
+**Important Notes:**
+- The "answer" field must be an array of correct option letters
+- Multiple options can be correct (typically 2-3 out of 5)
+- Each option should be independently evaluable as correct or incorrect

@@ -180,6 +180,15 @@ class InstructionManager:
         available_modes = self.get_available_modes(question_type)
         
         instructions = []
+        
+        # First, load the main instruction template (philosophy)
+        try:
+            main_instruction = self.get_main_instruction(exam_type, question_type)
+            instructions.append(main_instruction)
+        except Exception:
+            # If main instruction fails to load, continue with component instructions
+            pass
+        
         for mode in sorted(available_modes):
             try:
                 mode_instruction = self._get_instruction_direct(exam_type, question_type, mode, prompt)
@@ -189,6 +198,170 @@ class InstructionManager:
                 continue
         
         return "\n\n".join(instructions)
+    
+    def get_main_instruction(
+        self,
+        exam_type: ExamType,
+        question_type: QuestionType
+    ) -> str:
+        """
+        Get main instruction template (philosophy) for a question type.
+        
+        Args:
+            exam_type: Target exam type (GMAT or GRE)
+            question_type: Question type classification
+            
+        Returns:
+            Main instruction text with philosophy and guidelines
+            
+        Raises:
+            InstructionNotFoundError: If main instruction cannot be found
+        """
+        self._logger.log_instruction_request(exam_type, question_type, "mainInstruction")
+        
+        # Load main instruction template
+        main_template = self._loader.load_main_instruction_template(question_type)
+        
+        # Get exam-specific customizations
+        customizations = self._loader.load_customizations(exam_type, question_type)
+        
+        # Process template with customizations
+        instruction = self._processor.process_template(
+            main_template, 
+            exam_type, 
+            question_type, 
+            customizations
+        )
+        
+        self._logger.log_instruction_success(exam_type, question_type, "mainInstruction")
+        return instruction
+    
+    def get_optimized_instruction(
+        self,
+        exam_type: ExamType,
+        question_type: QuestionType,
+        prompt: Optional[str] = None,
+        difficulty_level: Optional[int] = None
+    ) -> str:
+        """
+        Get optimized instruction based on question type characteristics and context.
+        
+        Args:
+            exam_type: Target exam type (GMAT or GRE)
+            question_type: Question type classification
+            prompt: Optional prompt for context analysis
+            difficulty_level: Optional difficulty level (1-5)
+            
+        Returns:
+            Optimized instruction text tailored to the specific context
+        """
+        # Get base instruction with all modes
+        base_instruction = self.get_all_modes_instruction(exam_type, question_type, prompt)
+        
+        # Apply dynamic optimizations based on question characteristics
+        optimized_instruction = self._apply_dynamic_optimizations(
+            base_instruction,
+            exam_type,
+            question_type,
+            prompt,
+            difficulty_level
+        )
+        
+        return optimized_instruction
+    
+    def _apply_dynamic_optimizations(
+        self,
+        instruction: str,
+        exam_type: ExamType,
+        question_type: QuestionType,
+        prompt: Optional[str] = None,
+        difficulty_level: Optional[int] = None
+    ) -> str:
+        """Apply dynamic optimizations to instruction based on context."""
+        optimized = instruction
+        
+        # Apply difficulty-based optimizations
+        if difficulty_level:
+            optimized = self._apply_difficulty_optimizations(optimized, difficulty_level)
+        
+        # Apply prompt-based optimizations
+        if prompt:
+            optimized = self._apply_prompt_optimizations(optimized, prompt, question_type)
+        
+        # Apply question-type specific optimizations
+        optimized = self._apply_question_type_optimizations(optimized, question_type, exam_type)
+        
+        return optimized
+    
+    def _apply_difficulty_optimizations(self, instruction: str, difficulty_level: int) -> str:
+        """Apply difficulty-based optimizations to instruction."""
+        if difficulty_level >= 4:
+            # For high difficulty, emphasize trap generation
+            emphasis = "\n\n**HIGH DIFFICULTY EMPHASIS:**\n"
+            emphasis += "- Create more sophisticated traps that catch students with partial understanding\n"
+            emphasis += "- Include multi-step reasoning errors in option generation\n"
+            emphasis += "- Ensure distractors require careful analysis to eliminate\n"
+            instruction += emphasis
+        elif difficulty_level <= 2:
+            # For low difficulty, emphasize fundamental concepts
+            emphasis = "\n\n**FUNDAMENTAL LEVEL EMPHASIS:**\n"
+            emphasis += "- Focus on core concepts without excessive complexity\n"
+            emphasis += "- Create clear, educationally sound distractors\n"
+            emphasis += "- Ensure question tests basic understanding of the skill\n"
+            instruction += emphasis
+        
+        return instruction
+    
+    def _apply_prompt_optimizations(self, instruction: str, prompt: str, question_type: QuestionType) -> str:
+        """Apply prompt-based optimizations to instruction."""
+        prompt_lower = prompt.lower()
+        
+        # Check for specific skill emphasis
+        if "logical reasoning" in prompt_lower:
+            instruction += "\n\n**LOGICAL REASONING EMPHASIS:**\n"
+            instruction += "- Prioritize logical structure and reasoning chains\n"
+            instruction += "- Create options that test different logical pathways\n"
+        
+        if "data interpretation" in prompt_lower:
+            instruction += "\n\n**DATA INTERPRETATION EMPHASIS:**\n"
+            instruction += "- Focus on data analysis and interpretation skills\n"
+            instruction += "- Create options that test different data reading approaches\n"
+        
+        # Check for specific content areas
+        if any(term in prompt_lower for term in ["graph", "chart", "table"]):
+            instruction += "\n\n**VISUAL DATA EMPHASIS:**\n"
+            instruction += "- Ensure visual elements are integral to the solution\n"
+            instruction += "- Create options that test different visual interpretation methods\n"
+        
+        return instruction
+    
+    def _apply_question_type_optimizations(self, instruction: str, question_type: QuestionType, exam_type: ExamType) -> str:
+        """Apply question-type specific optimizations."""
+        # Parent-child question types need coordination emphasis
+        if question_type.is_parent_child_type:
+            instruction += "\n\n**PARENT-CHILD COORDINATION:**\n"
+            instruction += "- Ensure all child questions relate to the parent stimulus\n"
+            instruction += "- Create variety in child question difficulty and focus\n"
+            instruction += "- Maintain consistent context across all questions\n"
+        
+        # Data sufficiency questions need specific emphasis
+        if question_type == QuestionType.DATA_SUFFICIENCY:
+            instruction += "\n\n**DATA SUFFICIENCY FOCUS:**\n"
+            instruction += "- Emphasize sufficiency analysis over computation\n"
+            instruction += "- Create options that test different sufficiency reasoning paths\n"
+            instruction += "- Ensure statements have clear logical relationships\n"
+        
+        # Exam-specific optimizations
+        if exam_type == ExamType.GMAT:
+            instruction += "\n\n**GMAT BUSINESS CONTEXT:**\n"
+            instruction += "- Use business scenarios and professional terminology\n"
+            instruction += "- Focus on managerial decision-making skills\n"
+        elif exam_type == ExamType.GRE:
+            instruction += "\n\n**GRE ACADEMIC CONTEXT:**\n"
+            instruction += "- Use academic scenarios and scholarly terminology\n"
+            instruction += "- Focus on analytical and research skills\n"
+        
+        return instruction
     
     def validate_mode(self, question_type: QuestionType, mode: str) -> bool:
         """

@@ -1,18 +1,11 @@
-## QuestionPassage
-${JSON_FORMAT_REQUIREMENT}
-
-In the input prompt what type of question will be asked, thus you would need to generate the question passage in such a way that that particular type of question could be prepared well from the passage.
-
-Input prompt will be given in following format:
-```
-<Passage Number>: <PassageTheme> - <QuestionType> - <QuestionCategory> - <DifficultyLevel: 1-5>
+STRICT RESPONSE FORMAT:- JSON
+- Generate passage content matching exam quality.
+Example:-
+```json
+{passage_format}
 ```
 
-The difficulty level is scaled from 1 to 5, Question with difficulty level 1 should also mimic the type of question that could be asked in actual ${EXAM_NAME} Verbal section for Critical Reasoning.
-
-you would need to generate the content of that specific passage number and then you have to generate response in this format:
-you can be creative but you need to make sure that the quality of the passage created is maintained and does match with the quality of passages that are expected to be asked in ${EXAM_NAME} Verbal section
-
-{
-   "passage": "passage content"
-}
+**Important Notes:**
+- Generate passage suitable for specified question type and difficulty
+- Maintain quality matching actual exam standards
+- Use appropriate vocabulary and complexity for target difficulty level

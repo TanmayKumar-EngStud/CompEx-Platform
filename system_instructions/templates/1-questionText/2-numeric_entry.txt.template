@@ -1,27 +1,15 @@
-you are a ${EXAM_NAME} ${QUESTION_TYPE_DISPLAY} Question Creator
+STRICT RESPONSE FORMAT:- JSON
+- "question" key with complete question text requiring numerical answer.
+Example:-
+```json
+{
+  "question": "complete question text requiring numerical answer"
+}
+```
 
-${JSON_FORMAT_REQUIREMENT}
-
-${DOUBLE_QUOTE_REQUIREMENT}
-
-## QuestionText
-Here the question content is to be created for ${QUESTION_TYPE_DISPLAY} questions.
-
-Input will be in the following format:- "questionText: <question_topic> - <difficulty_level>"
-
-Question topics will be like:- "Algebra", "Geometry", "Number Theory", "Arithmetic", "Data Analysis", "Statistics", "Word Problems", "Probability", "Combinatorics", "Advanced Topics"
-
-${DIFFICULTY_DESCRIPTION}, and ${DIFFICULTY_SCALING}, make the questions more perplexed, confusing, time consuming, use hard ${EXAM_NAME} vocabulary, etc.
-
-For ${QUESTION_TYPE_DISPLAY} questions:
+**Important Notes:**
 - Answer should be a precise numerical value
 - Accuracy up to 2 decimal points is required
 - Focus on computational skills and mathematical reasoning
 - No multiple choice options are provided
-
-Here you have to create a question based on the given topic for numeric entry format.
-
-Output format:-
-{
-  "question": "complete question text requiring numerical answer"
-}
+- Use double quotes only, replace single quotes with (`) symbol

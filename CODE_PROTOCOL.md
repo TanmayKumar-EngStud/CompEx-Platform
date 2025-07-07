@@ -15,7 +15,8 @@ This document establishes comprehensive coding standards, naming conventions, an
 7. [Configuration Management](#configuration-management)
 8. [Testing Standards](#testing-standards)
 9. [Documentation Standards](#documentation-standards)
-10. [Import Organization](#import-organization)
+10. [Template System Compliance](#template-system-compliance)
+11. [Import Organization](#import-organization)
 
 ---
 
@@ -985,6 +986,441 @@ Example:
     ... )
     >>> question = generator.generate_question("sample prompt")
 """
+```
+
+---
+
+## Template System Compliance
+
+### 1. Template Structure Standards
+
+#### Main Instructions Templates
+All main instruction templates must follow this structure:
+
+```
+# {question_type} Question Generation - {exam_type}
+
+## Core Philosophy
+[Define cognitive testing approach and question philosophy]
+
+## Your Role
+[Explain AI model's responsibilities and operational modes]
+
+## Component Relationships
+[Explain how components integrate and work together]
+
+## Trap Generation Strategy
+[Detail realistic distractor creation methodology]
+
+## Quality Standards
+[Define real exam alignment and validation requirements]
+
+## Dynamic Variables
+[Document variable substitution and conditional processing]
+```
+
+#### Component Templates
+Component templates must include:
+
+```
+# {component_name} Component - {exam_type}
+
+## Purpose
+[Clear explanation of component's specific role]
+
+## Input Requirements
+[Required variables and their formats]
+
+## Output Specification
+[Expected output structure and validation rules]
+
+## Dynamic Processing
+[Variable substitution and conditional logic]
+```
+
+### 2. Template Variable Naming
+
+#### Standard Variables
+```python
+# ✅ Good - Standard template variables
+{exam_type}         # "GMAT" or "GRE"
+{question_type}     # Specific question type
+{difficulty_level}  # 1-5 difficulty scale
+{focused_skill}     # The specific skill being tested
+{topic}            # Subject area or topic
+{content_type}     # Type of content (graph, passage, table)
+
+# ❌ Bad - Inconsistent variable naming
+{examType}         # Should be {exam_type}
+{questiontype}     # Should be {question_type}
+{difficulty}       # Should be {difficulty_level}
+```
+
+#### Dynamic Array Variables
+```python
+# ✅ Good - Array variable patterns
+{graphs_array}     # Populated with graph format objects
+{content}          # Populated with content format objects
+{options_array}    # Populated with option format objects
+
+# ❌ Bad - Non-standard array naming
+{graphs}           # Should be {graphs_array}
+{content_list}     # Should be {content}
+{option_data}      # Should be {options_array}
+```
+
+#### Conditional Variables
+```python
+# ✅ Good - Conditional block patterns
+{{#if_difficulty_1_2}}...{{/if_difficulty_1_2}}
+{{#if_TC-1}}...{{/if_TC-1}}
+{{#if_gmat}}...{{/if_gmat}}
+
+# ❌ Bad - Inconsistent conditional naming
+{{#difficulty_low}}...{{/difficulty_low}}
+{{#TC1}}...{{/TC1}}
+{{#GMAT}}...{{/GMAT}}
+```
+
+### 3. Template Processing Requirements
+
+#### Variable Substitution Order
+```python
+class TemplateProcessor:
+    """Process templates in the correct order."""
+    
+    def process_template(self, template_content: str, variables: Dict[str, Any]) -> str:
+        """Process template with correct variable substitution order."""
+        # 1. Process conditional blocks first
+        template_content = self._process_conditional_blocks(template_content, variables)
+        
+        # 2. Process array variables
+        template_content = self._process_array_variables(template_content, variables)
+        
+        # 3. Process simple variables
+        template_content = self._process_simple_variables(template_content, variables)
+        
+        # 4. Validate final output
+        self._validate_processed_template(template_content)
+        
+        return template_content
+```
+
+#### Conditional Processing Standards
+```python
+def process_difficulty_conditionals(template_content: str, difficulty_level: int) -> str:
+    """Process difficulty-based conditional blocks."""
+    conditions = {
+        'if_difficulty_1_2': difficulty_level in [1, 2],
+        'if_difficulty_3_4': difficulty_level in [3, 4],
+        'if_difficulty_5': difficulty_level == 5
+    }
+    
+    for condition, is_active in conditions.items():
+        pattern = f"{{{{#{condition}}}}}(.*?){{{{/{condition}}}}}"
+        if is_active:
+            template_content = re.sub(pattern, r'\1', template_content, flags=re.DOTALL)
+        else:
+            template_content = re.sub(pattern, '', template_content, flags=re.DOTALL)
+    
+    return template_content
+```
+
+### 4. Template Validation Standards
+
+#### Schema Validation
+```python
+from config.schemas.instruction_schemas import InstructionSchema
+from config.schemas.template_schemas import TemplateSchema
+
+class TemplateValidator:
+    """Validate templates against schema requirements."""
+    
+    def validate_main_instruction_template(self, template_content: str) -> bool:
+        """Validate main instruction template structure."""
+        required_sections = [
+            "Core Philosophy",
+            "Your Role", 
+            "Component Relationships",
+            "Trap Generation Strategy",
+            "Quality Standards"
+        ]
+        
+        for section in required_sections:
+            if f"## {section}" not in template_content:
+                raise ValidationException(f"Missing required section: {section}")
+        
+        return True
+    
+    def validate_component_template(self, template_content: str) -> bool:
+        """Validate component template structure."""
+        required_sections = [
+            "Purpose",
+            "Input Requirements",
+            "Output Specification"
+        ]
+        
+        for section in required_sections:
+            if f"## {section}" not in template_content:
+                raise ValidationException(f"Missing required section: {section}")
+        
+        return True
+```
+
+#### Content Quality Validation
+```python
+def validate_template_philosophy_compliance(template_content: str) -> bool:
+    """Validate template includes philosophy-driven content."""
+    required_keywords = {
+        'cognitive': 'cognitive testing approach',
+        'trap': 'trap generation strategy',
+        'skill': 'skill-focused assessment',
+        'realistic': 'realistic mistake patterns',
+        'educational': 'educationally sound approach'
+    }
+    
+    missing_keywords = []
+    for keyword, description in required_keywords.items():
+        if keyword.lower() not in template_content.lower():
+            missing_keywords.append(description)
+    
+    if missing_keywords:
+        raise ValidationException(f"Template missing philosophy elements: {missing_keywords}")
+    
+    return True
+```
+
+### 5. Template File Organization
+
+#### Directory Structure Compliance
+```
+system_instructions/
+├── templates/
+│   ├── !Main Instructions/           # Main philosophy templates
+│   │   ├── generic.txt.template     # Universal principles
+│   │   ├── data_sufficiency.txt.template
+│   │   ├── problem_solving.txt.template
+│   │   └── [question_type].txt.template
+│   ├── 0-questionMetadata/          # Content structure templates
+│   ├── 1-questionText/              # Question text templates
+│   ├── 2-questionTitle/             # Question title templates
+│   ├── 3-questionOptions/           # Option generation templates
+│   ├── 4-questionSolution/          # Solution templates
+│   └── 5-questionAnswer/            # Answer format templates
+├── graph_styles.json               # Graph format definitions
+├── gmat/customizations.json        # GMAT-specific customizations
+└── gre/customizations.json         # GRE-specific customizations
+```
+
+#### Template File Naming
+```python
+# ✅ Good - Template file naming
+data_sufficiency.txt.template
+problem_solving.txt.template
+reading_comprehension.txt.template
+graphic_interpretation.txt.template
+
+# ❌ Bad - Non-standard naming
+DataSufficiency.txt.template
+problemSolving.txt.template
+ReadingComprehension.txt.template
+GraphicInterpretation.txt.template
+```
+
+### 6. Integration Requirements
+
+#### Template Loading
+```python
+class TemplateLoader:
+    """Load templates with proper error handling."""
+    
+    def load_template(self, template_name: str, exam_type: ExamType) -> str:
+        """Load template with validation and error handling."""
+        try:
+            template_path = self._get_template_path(template_name, exam_type)
+            
+            if not os.path.exists(template_path):
+                raise FileNotFoundError(f"Template not found: {template_path}")
+            
+            with open(template_path, 'r', encoding='utf-8') as file:
+                template_content = file.read()
+            
+            # Validate template structure
+            self._validate_template_structure(template_content, template_name)
+            
+            return template_content
+            
+        except Exception as e:
+            logger.error(f"Failed to load template {template_name}: {str(e)}")
+            raise TemplateLoadingException(f"Template loading failed: {str(e)}")
+```
+
+#### Template Caching
+```python
+from functools import lru_cache
+import os
+
+class TemplateCache:
+    """Template caching with file modification tracking."""
+    
+    def __init__(self):
+        self._cache = {}
+        self._cache_timestamps = {}
+    
+    @lru_cache(maxsize=64)
+    def get_template(self, template_path: str) -> str:
+        """Get template with caching and modification tracking."""
+        file_mtime = os.path.getmtime(template_path)
+        
+        if (template_path in self._cache and 
+            file_mtime <= self._cache_timestamps.get(template_path, 0)):
+            return self._cache[template_path]
+        
+        # Load and cache template
+        with open(template_path, 'r', encoding='utf-8') as file:
+            template_content = file.read()
+        
+        self._cache[template_path] = template_content
+        self._cache_timestamps[template_path] = file_mtime
+        
+        return template_content
+```
+
+### 7. Testing Requirements
+
+#### Template Testing Standards
+```python
+class TestTemplateCompliance:
+    """Test template system compliance."""
+    
+    def test_all_main_instruction_templates_exist(self):
+        """Test that all question types have main instruction templates."""
+        required_templates = [
+            'data_sufficiency.txt.template',
+            'problem_solving.txt.template',
+            'reading_comprehension.txt.template',
+            'critical_reasoning.txt.template',
+            # ... other question types
+        ]
+        
+        for template_name in required_templates:
+            template_path = f"system_instructions/templates/!Main Instructions/{template_name}"
+            assert os.path.exists(template_path), f"Missing template: {template_name}"
+    
+    def test_template_variable_substitution(self):
+        """Test template variable substitution works correctly."""
+        processor = TemplateProcessor()
+        template_content = "This is a {exam_type} {question_type} question."
+        
+        variables = {
+            'exam_type': 'GMAT',
+            'question_type': 'Data Sufficiency'
+        }
+        
+        result = processor.process_template(template_content, variables)
+        assert result == "This is a GMAT Data Sufficiency question."
+    
+    def test_conditional_processing(self):
+        """Test conditional block processing."""
+        processor = TemplateProcessor()
+        template_content = """
+        {{#if_difficulty_1_2}}
+        Use simple vocabulary.
+        {{/if_difficulty_1_2}}
+        {{#if_difficulty_5}}
+        Use advanced concepts.
+        {{/if_difficulty_5}}
+        """
+        
+        # Test low difficulty
+        result = processor.process_template(template_content, {'difficulty_level': 1})
+        assert 'simple vocabulary' in result
+        assert 'advanced concepts' not in result
+        
+        # Test high difficulty
+        result = processor.process_template(template_content, {'difficulty_level': 5})
+        assert 'simple vocabulary' not in result
+        assert 'advanced concepts' in result
+```
+
+### 8. Documentation Requirements
+
+#### Template Documentation Standards
+Each template must include:
+
+```
+# Template Name: [Template File Name]
+# Purpose: [Brief description of template's role]
+# Variables: [List of required and optional variables]
+# Conditionals: [List of conditional blocks and their triggers]
+# Output: [Description of expected output format]
+# Dependencies: [Other templates or files this template depends on]
+# Validation: [Validation rules and requirements]
+# Example: [Usage example with sample variables]
+```
+
+#### Integration Documentation
+```python
+class InstructionManager:
+    """
+    Manages instruction templates and dynamic processing.
+    
+    This class handles the loading, processing, and validation of instruction
+    templates for question generation. It supports dynamic variable substitution,
+    conditional processing, and template caching for optimal performance.
+    
+    Template Processing Order:
+        1. Load base template from file system
+        2. Process conditional blocks based on variables
+        3. Substitute array variables with configuration data
+        4. Replace simple variables with provided values
+        5. Validate final instruction format
+    
+    Example:
+        >>> manager = InstructionManager()
+        >>> instruction = manager.build_instruction(
+        ...     exam_type="gmat",
+        ...     question_type="data_sufficiency",
+        ...     difficulty_level=3,
+        ...     focused_skill="logical_reasoning"
+        ... )
+        >>> print(instruction)
+        # Complete instruction for GMAT Data Sufficiency generation
+    """
+```
+
+### 9. Quality Assurance
+
+#### Template Quality Checklist
+- [ ] Template includes all required sections
+- [ ] Philosophy-driven content is present
+- [ ] Variable naming follows conventions
+- [ ] Conditional blocks are properly formatted
+- [ ] Template integrates with existing system
+- [ ] Validation rules are implemented
+- [ ] Documentation is complete and accurate
+- [ ] Testing coverage is adequate
+
+#### Continuous Validation
+```python
+def validate_template_system_integrity():
+    """Validate entire template system integrity."""
+    validators = [
+        validate_all_templates_exist,
+        validate_template_structure_compliance,
+        validate_variable_naming_conventions,
+        validate_conditional_processing,
+        validate_integration_compatibility,
+        validate_documentation_completeness
+    ]
+    
+    for validator in validators:
+        try:
+            validator()
+            logger.info(f"Template validation passed: {validator.__name__}")
+        except ValidationException as e:
+            logger.error(f"Template validation failed: {validator.__name__}: {str(e)}")
+            raise
 ```
 
 ---

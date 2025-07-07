@@ -33,9 +33,9 @@ These files provide the exam-specific data that is injected into the templates. 
 
 When a request for a GMAT Problem Solving question comes in, the system loads the `problem_solving` object from `gmat/customizations.json` and uses its values to populate the placeholders in the chosen template. This is how a generic template is transformed into a highly specific GMAT or GRE instruction.
 
-### 3. `graph_styles.json`
+### 3. `templates/0-questionMetadata/metadata.json`
 
-This file defines the structure, styling, and JSON format for various types of graphs that can be generated as part of a question's stimulus. It ensures consistency in the visual representation of data across the platform.
+This file defines the structure, styling, and JSON format for various types of content that can be generated as part of a question's stimulus, including graphs, passages, and tables. It follows a unified content type architecture with a class structure: content (base class) → graph, passage, table (child classes). This ensures consistency in content representation across the platform.
 
 ## The Code Logic: How It All Comes Together
 

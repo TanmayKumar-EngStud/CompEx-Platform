@@ -1,79 +1,28 @@
-## QuestionSolution
+RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)
+Write naturally as you would explain to a student.
 
-**SOLUTION FORMAT - PLAIN TEXT ONLY:**
-The solution will be extracted as plain text, NOT as JSON. Write naturally as you would explain to a student.
+**Structure:**
+Step 1: {{#if_gmat}}Extract key information from business scenario{{/if_gmat}}{{#if_gre}}Analyze given information and identify what needs to be found{{/if_gre}}
+Step 2: Set up mathematical relationship or logical framework
+Step 3: Perform calculations with proper units / Apply reasoning
+Step 4: {{#if_gmat}}Verify answer makes business sense{{/if_gmat}}{{#if_gre}}Check solution using logical reasoning{{/if_gre}}
+Step 5: {{#if_gmat}}Consider alternative solving methods{{/if_gmat}}{{#if_gre}}Confirm solution addresses original question{{/if_gre}}
 
-{{#if_gmat}}
-**GMAT Solution Requirements:**
-1. **Problem Understanding**: Identify key information and what's being asked
-2. **Strategy Selection**: Explain the chosen approach (calculation, back-solving, number picking)
-3. **Step-by-Step Solution**: Show detailed mathematical work
-4. **Alternative Methods**: Mention back-solving or estimation when applicable
-5. **Verification**: Check that the answer makes business sense
-6. **Key Insights**: Highlight important concepts or common pitfalls
-
-**Structure Guidelines:**
+**Important Notes:**
 - Use numbered steps with clear explanations
 - Show all calculations with proper mathematical notation
-- For algebra problems, demonstrate both direct solution and back-solving
-- For word problems, extract key information in the first step
-- Use business context to verify reasonableness of answers
+- Use LaTeX for mathematical expressions
+{{#if_gmat}}
+- Demonstrate both direct solution and back-solving when applicable
+- Use business context to verify reasonableness
 {{/if_gmat}}
-
 {{#if_gre}}
-**GRE Solution Requirements:**
-1. **Problem Analysis**: Break down what the question is asking
-2. **Method Selection**: Choose the most efficient solving approach
-3. **Step-by-Step Work**: Show detailed reasoning and calculations
-4. **Concept Application**: Demonstrate understanding of underlying principles
-5. **Answer Verification**: Check the solution makes logical sense
-
-**Structure Guidelines:**
-- Use clear, numbered steps
-- Show mathematical reasoning and calculations
 - Explain conceptual insights where relevant
-- Verify the answer using alternative methods when possible
+- Verify using alternative methods when possible
 {{/if_gre}}
-
-Input format:- "QuestionSolution"
-
-**Output Format**: Plain text solution (NOT JSON)
-
-**Example Structure:**
-Step 1: {{#if_gmat}}Extract key information from the business scenario{{/if_gmat}}{{#if_gre}}Analyze the given information and identify what needs to be found{{/if_gre}}
-Step 2: Set up the mathematical relationship
-Step 3: Perform calculations with proper units
-Step 4: {{#if_gmat}}Verify the answer makes business sense{{/if_gmat}}{{#if_gre}}Check the answer using logical reasoning{{/if_gre}}
-Step 5: {{#if_gmat}}Consider alternative solving methods{{/if_gmat}}{{#if_gre}}Confirm the solution addresses the original question{{/if_gre}}
-
 {{#if_critical_reasoning}}
-## QuestionSolution
-${JSON_FORMAT_REQUIREMENT}
-Description: for the previous question generated and the options provided, you need to generate the explanation of the solution of that question, plus you also have to give the explanation of why other options are incorrect.
-
-ENHANCED SOLUTION REQUIREMENTS FOR VERBAL QUESTIONS:
-The solution must provide a comprehensive analysis that teaches critical reasoning skills:
-
-1. **Argument Structure Analysis**: Break down the passage into premise(s) and conclusion
-2. **Question Type Strategy**: Explain the specific approach for this type of CR question
-3. **Logical Reasoning Process**: Step-by-step thinking process to identify the correct answer
-4. **Correct Answer Explanation**: Detailed explanation of why the correct option works
-5. **Incorrect Options Analysis**: Clear explanation of why each incorrect option fails
-6. **Critical Reasoning Insights**: Key lessons about logical reasoning and common traps
-
-**Format Guidelines:**
-- Use clear, natural language explanations without special formatting tags
-- Structure the analysis in logical sections with clear reasoning
-- Include systematic evaluation of each option
-- Provide reasoning strategies that can be applied to similar questions
-
-**Example Structure:**
-Solutions should identify the argument structure (premises and conclusion), explain the question type strategy, provide step-by-step logical analysis, systematically evaluate each option, and offer key critical reasoning insights. All explanations should be written in plain text format for optimal readability.
-
-Use clear paragraph structure and natural language formatting to explain each option systematically for better readability.
-
-Input format: `QuestionSolution`
-Output (respond in PLAIN TEXT):
-"A Question's Solution should be in this format that it explains everything in plain natural language, use latex for mathematical expressions and its representation"
-comprehensive explanation of the solution with detailed reasoning analysis
+- Break down argument structure (premises and conclusion)
+- Explain question type strategy and logical reasoning process
+- Provide systematic evaluation of each option
+- Highlight key critical reasoning insights and common traps
 {{/if_critical_reasoning}}

@@ -1,0 +1,68 @@
+# Table Analysis Question Generation - Technical Specification
+
+## Inherits From: {{0_GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Table Analysis (GMAT Integrated Reasoning)
+**Primary Cognitive Assessment**: Data analysis, sorting capabilities, and logical reasoning with tabular data
+
+## Available Modes
+
+### QuestionTable Mode
+**Returns**: `tables[]`
+
+### QuestionText Mode
+**Returns**: `question`
+
+### QuestionTitle Mode  
+**Returns**: `title`
+
+### QuestionSolution Mode
+**Returns**: `solution[]`, `answer`
+
+### QuestionOptions Mode
+**Returns**: `options{}`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### QuestionTable → QuestionText
+- Generate question text that provides additional context and asks questions requiring focused_skill analysis
+
+### QuestionTable → QuestionTitle
+- Extract main data analysis concept from table theme for concise title
+
+### QuestionText → QuestionSolution  
+- Analyze tabular data to identify correct responses for each of the 3 options
+- Identify common data sorting and analysis errors for trap generation
+- Document specific error pathways and their resulting incorrect conclusions (in your thinking mode, access what conclusions you will get if made potential table analysis mistakes)
+- Content responded should be brief and readable for user
+
+### QuestionSolution → QuestionOptions
+- Generate 3 options (A, B, C) that require table data analysis and focused_skill application
+- Use documented mistake pathways to create options with strategic complexity
+- Include the correct answers from solution, the solution should be readable and should be in brief
+- Ensure options test realistic data interpretation skills and avoid direct information lookup
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Table Analysis
+- Business data tables with sortable columns and rows
+- 8 Question Types: Yes/No, Would Help/Would Not Help, True/False, Inference/Conflicting, Sufficient/Insufficient, Valid/Invalid, Consistent/Inconsistent, Conclusion/Assumption
+- 3 options (A, B, C) with binary answers based on QuestionType
+- Focus on sorting, filtering, and comparative analysis capabilities
+- Business contexts: financial data, operational metrics, market research
+- For difficulty 4-5: Generate 2-3 related tables for complex analysis
+- Emphasis on data manipulation and business insight extraction
+- Professional vocabulary appropriate for MBA candidates
+- Questions require close observation and focused_skill application, not direct data lookup
+{{/if_gmat}}
+
+## Key Trap Patterns for QuestionOptions Mode
+- **Sorting Errors**: Misunderstanding ranking when table is sorted by different criteria
+- **Comparative Analysis Mistakes**: Incorrect relative comparisons between data points
+- **Filtering Confusion**: Misapplying conditions or criteria when analyzing subsets
+- **Data Sufficiency Errors**: Misjudging whether table data is sufficient for conclusions
+- **Logical Reasoning Flaws**: Incorrect inferences or assumptions from table patterns

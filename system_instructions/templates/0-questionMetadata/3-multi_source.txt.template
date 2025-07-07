@@ -1,16 +1,18 @@
-## Multi-Source Reasoning
-${JSON_FORMAT_REQUIREMENT}
-
-Generate three distinct sources of information (e.g., text, graphs, tables) that are related to a common theme. These sources will be used to answer a series of questions that require synthesizing information from multiple sources.
-
-Input prompt will be given in the following format:
+STRICT RESPONSE FORMAT:- JSON
+- "sources" key with array of exactly 3 content objects.
+Example:-
+```json
+{
+   "sources": [
+      {content},
+      {content},
+      {content}
+   ]
+}
 ```
-<QuestionType> - <SourceTypes> - <Theme> - <DifficultyLevel>
-```
 
-- **SourceTypes:** A list of the types of sources to generate (e.g., `[Passage, Graph, Table]`).
-- **Theme:** The common theme for all three sources.
-- **DifficultyLevel:** 1-5, influencing the complexity of the sources.
-
-**Output Format:**
-A JSON object with a `sources` key, which is a list of three JSON objects, each representing a source.
+**Important Notes:**
+- Generate exactly 3 distinct sources related to common theme
+- Content types can include passages, graphs, and tables
+- Difficulty Level 1-5 influences complexity
+- Sources used for multi-source reasoning questions requiring synthesis

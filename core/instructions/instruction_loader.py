@@ -57,6 +57,21 @@ class InstructionLoader:
         """
         return self._load_template_file(question_type, mode)
     
+    def load_main_instruction_template(self, question_type: QuestionType) -> str:
+        """
+        Load main instruction template (philosophy) for a question type.
+        
+        Args:
+            question_type: Question type classification
+            
+        Returns:
+            Main instruction template content as string
+            
+        Raises:
+            TemplateLoadError: If main instruction template loading fails
+        """
+        return self._load_main_instruction_file(question_type)
+    
     def load_customizations(
         self, 
         exam_type: ExamType, 
@@ -185,6 +200,49 @@ class InstructionLoader:
             self._logger.log_customization_error(e, str(customization_path))
             return {}
 
+    def _load_main_instruction_file(self, question_type: QuestionType) -> str:
+        """Load main instruction template from !Main Instructions directory."""
+        
+        # Map question types to their corresponding main instruction templates
+        main_instruction_map = {
+            QuestionType.DATA_SUFFICIENCY: "data_sufficiency.txt.template",
+            QuestionType.PROBLEM_SOLVING: "problem_solving.txt.template",
+            QuestionType.READING_COMPREHENSION: "reading_comprehension.txt.template",
+            QuestionType.CRITICAL_REASONING: "critical_reasoning.txt.template",
+            QuestionType.GRAPHIC_INTERPRETATION: "graphic_interpretation.txt.template",
+            QuestionType.TABLE_ANALYSIS: "table_analysis.txt.template",
+            QuestionType.TWO_PART_ANALYSIS: "two_part_analysis.txt.template",
+            QuestionType.MULTI_SOURCE_REASONING: "multi_source_reasoning.txt.template",
+            QuestionType.NUMERIC_ENTRY: "numeric_entry.txt.template",
+            QuestionType.TEXT_COMPLETION: "text_completion.txt.template",
+            QuestionType.SENTENCE_EQUIVALENCE: "sentence_equivalence.txt.template",
+            QuestionType.QUANTITATIVE_COMPARISON: "mcq_single.txt.template",  # Map to MCQ Single
+            QuestionType.SENTENCE_CORRECTION: "mcq_single.txt.template"  # Map to MCQ Single
+        }
+        
+        # Get the template filename
+        template_filename = main_instruction_map.get(question_type)
+        if not template_filename:
+            # Fall back to generic template
+            template_filename = "0_generic.txt.template"
+        
+        # Construct the template path
+        template_path = Path("system_instructions") / "templates" / "!Main Instructions" / template_filename
+        
+        if not template_path.exists():
+            # Fall back to generic template
+            template_path = Path("system_instructions") / "templates" / "!Main Instructions" / "0_generic.txt.template"
+        
+        if not template_path.exists():
+            raise TemplateLoadError(f"Main instruction template not found for question_type '{question_type.value}'")
+        
+        try:
+            with open(template_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            self._logger.log_template_loaded(str(template_path))
+            return content
+        except Exception as e:
+            raise TemplateLoadError(f"Failed to load main instruction template {template_path}: {e}")
 
     def get_available_templates(self) -> List[str]:
         """

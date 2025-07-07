@@ -8,6 +8,7 @@ and exam-specific customization application.
 import re
 from typing import Dict, Any, Optional, List
 from string import Template
+from pathlib import Path
 
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
@@ -101,6 +102,9 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
             
             # Process conditional content
             processed = self._process_conditionals(template, exam_type, question_type)
+            
+            # Process template inheritance (e.g., {{GENERIC_PHILOSOPHY_TEMPLATE}})
+            processed = self._process_template_inheritance(processed)
             
             # Apply graph style injection if prompt is provided
             if prompt:
@@ -203,6 +207,35 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
             template = re.sub(pc_pattern, r'\1', template, flags=re.DOTALL)
         else:
             template = re.sub(pc_pattern, '', template, flags=re.DOTALL)
+        
+        return template
+    
+    def _process_template_inheritance(self, template: str) -> str:
+        """Process template inheritance, such as {{GENERIC_PHILOSOPHY_TEMPLATE}}."""
+        # Define inheritance patterns to handle
+        inheritance_patterns = [
+            "{{GENERIC_PHILOSOPHY_TEMPLATE}}",
+            "{{0_GENERIC_PHILOSOPHY_TEMPLATE}}"
+        ]
+        
+        # Check if the template contains any generic philosophy template placeholder
+        for pattern in inheritance_patterns:
+            if pattern in template:
+                try:
+                    # Load the generic template
+                    generic_template_path = Path("system_instructions") / "templates" / "!Main Instructions" / "0_generic.txt.template"
+                    if generic_template_path.exists():
+                        with open(generic_template_path, 'r', encoding='utf-8') as f:
+                            generic_content = f.read()
+                        
+                        # Replace the placeholder with the generic content
+                        template = template.replace(pattern, generic_content)
+                    else:
+                        # Remove the placeholder if generic template doesn't exist
+                        template = template.replace(pattern, "")
+                except Exception:
+                    # If loading fails, remove the placeholder
+                    template = template.replace(pattern, "")
         
         return template
     
