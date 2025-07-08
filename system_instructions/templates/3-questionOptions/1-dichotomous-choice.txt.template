@@ -1,0 +1,24 @@
+
+STRICT RESPONSE FORMAT:- JSON
+- "options" key with value as dictionary.
+- "answer" key with value as dictionary.
+Example:- 
+```json
+{
+  "options": {
+    "A": "option A",
+    "B": "option B",
+    "C": "option C"
+  },
+  "answer": {
+    "A": "{type_A}",
+    "B": "{type_B}",
+    "C": "{type_C}"
+  }
+}
+```
+
+**Important Notes:**
+- Answer values depend on question type (Yes/No, True/False, Would Help/Would Not Help, etc.)
+- Each option gets a dichotomous choice answer
+- All statements must be answered correctly to receive credit

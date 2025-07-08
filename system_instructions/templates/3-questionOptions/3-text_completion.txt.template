@@ -1,0 +1,60 @@
+STRICT RESPONSE FORMAT:- JSON
+{{#if_TC-1}}
+- "options" key with value as dictionary.
+- "answer" key with single correct option letter.
+Example:-
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2",
+    "C": "option 3",
+    "D": "option 4",
+    "E": "option 5"
+  },
+  "answer": "A"
+}
+```
+{{/if_TC-1}}
+
+{{#if_TC-2}}
+- "options" key with value as dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2
+- "answer" key with array of correct option letters of length exactly 2. 
+Example:-
+```json
+{
+  "options": [
+    { "A": "option 1", "B": "option 2", "C": "option 3" },
+    { "D": "option 4", "E": "option 5", "F": "option 6" }
+  ],
+  "answer": ["A", "F"]
+}
+```
+{{/if_TC-2}}
+
+{{#if_TC-3}}
+- "options" key with value as array of dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2 and index 2 will provide options for blank 3
+- "answer" key with array of correct option letters of length exactly 3.
+Example:-
+```json
+{
+  "options": [
+    { "A": "option 1", "B": "option 2", "C": "option 3" },
+    { "D": "option 4", "E": "option 5", "F": "option 6" },
+    { "G": "option 7", "H": "option 8", "I": "option 9" }
+  ],
+  "answer": ["A", "F", "I"]
+}
+```
+{{/if_TC-3}}
+
+**Important Notes:**
+{{#if_TC-1}}
+- TC-1: Single blank, 5 options, single answer
+{{/if_TC-1}}
+{{#if_TC-2}}
+- TC-2: Multiple blanks, 3 options per blank, array answers
+{{/if_TC-2}}
+{{#if_TC-3}}
+- TC-3: Multiple blanks, 3 options per blank, array answers
+{{/if_TC-3}}

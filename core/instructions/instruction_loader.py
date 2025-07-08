@@ -130,16 +130,27 @@ class InstructionLoader:
         question_style_map = {
             "generic": "0-generic",
             "data_sufficiency": "1-data_sufficiency",
+            "problem_solving": "0-problem_solving",
             "numeric_entry": "2-numeric_entry",
+            "quantitative_comparison": "3-quantitative_comparison",
+            "reading_comprehension": "0-reading_comprehension",
+            "critical_reasoning": "1-critical_reasoning",
+            "sentence_correction": "2-sentence_correction",
+            "text_completion": "3-text_completion",
+            "sentence_equivalence": "2-sentence_equivalence",
+            "graphic_interpretation": "0-graphic_interpretation",
+            "table_analysis": "1-table_analysis",
+            "two_part_analysis": "2-two_part_analysis",
+            "multi_source_reasoning": "3-multi_source_reasoning",
+            "multiple_choice_single": "0-multiple_choice_single",
+            "multiple_choice_multiple": "1-multiple_choice_multiple",
             "passage": "0-passage",
             "graph": "1-graph",
             "parent_stimulus": "2-parent_stimulus",
             "child_question": "3-child_question",
             "multi_source": "3-multi_source",
             "dichotomous_choice": "1-dichotomous_choice",
-            "specialized_table": "4-specialized_table",
-            "sentence_equivalence": "2-sentence_equivalence",
-            "text_completion": "3-text_completion"
+            "specialized_table": "4-specialized_table"
         }
         
         component_folder = component_map.get(mode)

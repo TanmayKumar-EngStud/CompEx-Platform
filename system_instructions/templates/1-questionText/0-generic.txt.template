@@ -1,0 +1,25 @@
+STRICT RESPONSE FORMAT:- JSON
+- "question" key with complete question text.
+Example:-
+```json
+{
+  "question": "complete question text with appropriate context and difficulty"
+}
+```
+
+**Important Notes:**
+- Create questions based on given topic focusing provided skill set
+- Use double quotes only, replace single quotes with (`) symbol
+{{#if_gmat}}
+- Include business context and vocabulary
+- Focus on critical reasoning over pure calculation
+- Scale difficulty: Level 1 (3 steps) → Level 5 (10+ steps)
+{{/if_gmat}}
+{{#if_gre}}
+- Focus on academic and analytical reasoning
+- Use formal academic vocabulary for graduate studies
+{{/if_gre}}
+{{#if_critical_reasoning}}
+- Generate questions fulfilling the passage theme
+- Test logical reasoning and critical thinking skills
+{{/if_critical_reasoning}}

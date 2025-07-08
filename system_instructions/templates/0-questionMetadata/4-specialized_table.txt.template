@@ -1,0 +1,12 @@
+STRICT RESPONSE FORMAT:- JSON
+- Table object following specific format for table type.
+Example:-
+```json
+{table_format}
+```
+
+**Important Notes:**
+- Generate specialized tables based on requested table type
+- Follow specific format for each table type
+- Difficulty Level 1-5 influences data complexity
+- Table theme determines content context

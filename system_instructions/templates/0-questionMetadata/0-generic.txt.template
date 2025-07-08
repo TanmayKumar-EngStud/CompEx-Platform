@@ -1,0 +1,8 @@
+Generate metadata for the question based on the provided context.
+
+Return the result in valid JSON format only.
+
+Expected JSON structure:
+{
+    "metadata": "relevant metadata content here"
+}

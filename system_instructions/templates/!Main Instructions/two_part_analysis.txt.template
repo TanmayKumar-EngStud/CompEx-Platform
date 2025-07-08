@@ -1,0 +1,79 @@
+# Two-Part Analysis Question Generation - Technical Specification
+
+## Inherits From: {{0_GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Two-Part Analysis (GMAT Integrated Reasoning)
+**Primary Cognitive Assessment**: Logical reasoning, analytical thinking, and synthesis of information with shared option constraints
+
+## Available Modes
+
+### ParentQuestionContent Mode
+**Returns**: `content`
+
+### Question1 Mode
+**Returns**: `question`
+
+### Question2 Mode
+**Returns**: `question`
+
+### QuestionTitle Mode  
+**Returns**: `title`
+
+### QuestionSolution1 Mode
+**Returns**: `solution`, `answer`
+
+### QuestionSolution2 Mode
+**Returns**: `solution`, `answer`
+
+### QuestionOptions Mode
+**Returns**: `options{}`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### ParentQuestionContent Mode (Active)
+- Generate rich foundational content (graph, table, or passage) that contains sufficient data for two different analytical questions
+- Ensure content complexity matches difficulty level and supports focused_skill assessment
+- Create content that can be analyzed from multiple perspectives to enable shared option design
+- Merge provided theme with self-selected complementary theme for unique question context
+
+### ParentQuestionContent → Question1/Question2
+- Generate two related questions that can share the same set of answer options
+- Ensure both questions test the specified focused_skill using the same parent content
+
+### ParentQuestionContent → QuestionTitle
+- Extract main analytical concept from parent content theme for concise title
+
+### Question1/Question2 → QuestionSolution1/QuestionSolution2
+- Analyze parent content to determine correct answers for each question independently
+- Identify common reasoning errors for trap generation
+- Document specific error pathways and their resulting incorrect conclusions (in your thinking mode, access what answers you will get if made potential analytical mistakes)
+- Content responded should be brief and readable for user
+
+### QuestionSolution1/QuestionSolution2 → QuestionOptions
+- Generate single option set that works for both questions with different correct answers
+- Use documented mistake pathways to create strategic distractors
+- Include the correct answers from both solutions, the solutions should be readable and should be in brief
+- Ensure options are generalized enough to be plausible for both questions but with different correct choices
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Two-Part Analysis
+- Shared content: graphs, tables, or passages that support two related questions
+- Two questions that share the same 5 answer options (A, B, C, D, E)
+- Focus on logical reasoning, analytical reasoning, quantitative skills, synthesis of information, critical thinking, and decision making
+- Business contexts with integrated data analysis requirements
+- Questions must be designed so that different options are correct for each question
+- Emphasis on testing ability to apply the same information to different analytical challenges
+- Professional vocabulary appropriate for MBA candidates
+{{/if_gmat}}
+
+## Key Trap Patterns for QuestionOptions Mode
+- **Option Overlap Confusion**: Students selecting the same option for both questions when they should be different
+- **Partial Analysis Errors**: Correctly solving one question but misapplying logic to the second question
+- **Content Misinterpretation**: Misreading shared content leading to wrong answers for both questions
+- **Generalization Mistakes**: Incorrectly generalizing from one question's context to the other
+- **Analytical Framework Errors**: Using inappropriate analytical approach for one or both questions

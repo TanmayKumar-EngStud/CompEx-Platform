@@ -1,0 +1,13 @@
+STRICT RESPONSE FORMAT:- JSON
+- "question" key with question text testing comprehension and analytical skills.
+Example:-
+```json
+{
+  "question": "question text based on previously provided parent stimulus"
+}
+```
+
+**Important Notes:**
+- Generate question based on parent stimulus
+- Question types: main_idea, inference, detail, analysis
+- Difficulty Level 1-5 influences complexity

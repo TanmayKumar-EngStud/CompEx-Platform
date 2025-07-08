@@ -1,0 +1,21 @@
+STRICT RESPONSE FORMAT:- JSON
+- "title" key with short one line summary of the question.
+Example:-
+```json
+{
+  "title": "{{#if_gmat}}Business Context: Mathematical Concept{{/if_gmat}}{{#if_gre}}Academic Theme: Analytical Concept{{/if_gre}}"
+}
+```
+
+**Important Notes:**
+- Include theme of the question in the title
+- Title should uniquely represent the question
+- Keep titles under 80 characters for readability
+{{#if_gmat}}
+- Include business context and professional terminology
+- Highlight mathematical concept being tested
+{{/if_gmat}}
+{{#if_gre}}
+- Focus on academic and analytical themes
+- Use formal academic vocabulary
+{{/if_gre}}

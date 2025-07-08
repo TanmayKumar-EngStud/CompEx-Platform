@@ -1,0 +1,15 @@
+STRICT RESPONSE FORMAT:- JSON
+- "graphs" key with array of graph objects.
+Example:-
+```json
+{
+   "graphs": [{graphs_array}]
+}
+```
+
+**Important Notes:**
+- Generate graphs suitable for specified question type and focused skill
+- Maintain graduate-level quality for MBA preparation
+- Difficulty Level 4-5: Create multiple related graphs
+- Use realistic data appropriate for business/academic context
+- Graph titles should be clear and descriptive

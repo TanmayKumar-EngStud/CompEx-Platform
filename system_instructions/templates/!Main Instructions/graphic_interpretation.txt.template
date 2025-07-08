@@ -1,0 +1,67 @@
+# Graphic Interpretation Question Generation - Technical Specification
+
+## Inherits From: {{0_GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Graphic Interpretation (GMAT Integrated Reasoning)
+**Primary Cognitive Assessment**: Data interpretation, visual analysis, and quantitative reasoning with graphical data
+
+## Available Modes
+
+### QuestionGraph Mode
+**Returns**: `graphs[]`
+
+### QuestionText Mode
+**Returns**: `question`
+
+### QuestionTitle Mode  
+**Returns**: `title`
+
+### QuestionSolution Mode
+**Returns**: `solution`
+
+### QuestionOptions Mode
+**Returns**: `options{}`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### QuestionGraph → QuestionText
+- Generate question with exactly 2 fill-in-the-blanks depicted by `_______` requiring graph analysis and calculation
+
+### QuestionGraph → QuestionTitle
+- Extract main data analysis concept from graph theme for concise title
+
+### QuestionText → QuestionSolution  
+- Analyze graphical data to identify correct calculations for both blanks
+- Identify common data interpretation and visual analysis errors for trap generation
+- Document specific error pathways and their resulting incorrect calculations (in your thinking mode, access what answers you will get if made potential graph reading mistakes)
+- Content responded should be brief and readable for user
+
+### QuestionSolution → QuestionOptions
+- Generate 2 option sets with 3 choices each for the two blanks
+- Use documented mistake pathways to create strategic distractors based on calculation errors
+- Include the correct answers from solution, the solution should be readable and should be in brief
+- Ensure each incorrect option corresponds to realistic data interpretation or calculation errors
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Graphic Interpretation
+- Business-relevant graphs: bar charts, line graphs, pie charts, scatter plots, stacked bar charts
+- Two fill-in-the-blank statements per question requiring numerical answers
+- 3 choices per dropdown menu for each blank
+- Focus on data analysis, trend identification, and quantitative reasoning
+- Business contexts: financial performance, market analysis, operational metrics
+- Emphasis on interpreting complex data relationships and drawing business insights
+- Professional vocabulary appropriate for MBA candidates
+- For difficulty 4-5: Generate multiple related graphs for complex analysis
+{{/if_gmat}}
+
+## Key Trap Patterns for QuestionOptions Mode
+- **Scale Misreading**: Misinterpreting axis scales, units, or proportions
+- **Calculation Errors**: Arithmetic mistakes in percentages, ratios, or trend analysis
+- **Data Point Confusion**: Misreading specific values or coordinates on the graph
+- **Trend Misidentification**: Confusing correlation patterns or directional relationships
+- **Visual Interpretation Errors**: Misunderstanding graph type conventions or visual representations
