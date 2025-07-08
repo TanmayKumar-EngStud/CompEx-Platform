@@ -144,35 +144,35 @@ class BaseQuestionComponent(ABC):
                 include_thoughts=True)
 
         return self.llm.chats.create(
-            model=os.getenv("MODEL", "gemini-1.5-pro"),
+            model=os.getenv("MODEL", "gemini-2.5-flash-preview-05-20"),
             config=config
         )
 
     def _get_component_instruction(self, component_name: str) -> str:
         """
         Get template-based instruction for a specific component.
-        
+
         Args:
             component_name: Name of the component (e.g. "QuestionSolution", "QuestionOptions")
-            
+
         Returns:
             Template-based instruction text
         """
         try:
             from core.instructions.instruction_manager import InstructionManager
-            
+
             # Map component names to template modes
             mode_mapping = {
                 "QuestionSolution": "questionSolution",
-                "QuestionOptions": "questionOptions", 
+                "QuestionOptions": "questionOptions",
                 "QuestionText": "questionText",
                 "QuestionTitle": "questionTitle",
                 "QuestionAnswer": "questionAnswer",
                 "QuestionPassage": "questionPassage"
             }
-            
+
             mode = mode_mapping.get(component_name, component_name.lower())
-            
+
             manager = InstructionManager()
             instruction = manager.get_instruction(
                 exam_type=self.exam_type,
@@ -180,14 +180,15 @@ class BaseQuestionComponent(ABC):
                 mode=mode,
                 prompt=self.prompt
             )
-            
+
             return instruction
-            
+
         except Exception as e:
-            print(f"Warning: Could not load template instruction for {component_name}: {e}")
+            print(
+                f"Warning: Could not load template instruction for {component_name}: {e}")
             # Fallback to simple component name
             return component_name
-    
+
     def _get_response(self, prompt: str, warn: bool = False) -> Optional[str]:
         """
         Get response from AI with rate limiting and error handling.
@@ -202,11 +203,11 @@ class BaseQuestionComponent(ABC):
         # Check if this is a component instruction and enhance with template if needed
         if prompt in ["QuestionSolution", "QuestionOptions", "QuestionText", "QuestionTitle", "QuestionAnswer", "QuestionPassage"]:
             template_instruction = self._get_component_instruction(prompt)
-            prompt = f"{template_instruction}\n\nUser prompt: {self.prompt}"
-        
+            prompt = f"Mode: {prompt} (Active)\n{template_instruction}"
+
         # Store the original prompt for debugging
         self._last_prompt_sent = prompt
-        
+
         if warn:
             prompt += WARNING_MESSAGE
 
@@ -276,11 +277,11 @@ class BaseQuestionComponent(ABC):
                 self.global_state["request_count"] = 0
             return None
 
-    def _log_debug_info(self, component_name: str, prompt_used: str, response: Optional[str] = None, 
-                       error: Optional[str] = None, call_priority_index: int = 1, success: bool = False):
+    def _log_debug_info(self, component_name: str, prompt_used: str, response: Optional[str] = None,
+                        error: Optional[str] = None, call_priority_index: int = 1, success: bool = False):
         """
         Log debug information to system_instructions/in_the_run/ directory.
-        
+
         Args:
             component_name: Name of the component being generated
             prompt_used: Actual prompt sent to AI
@@ -341,11 +342,12 @@ class BaseQuestionComponent(ABC):
             try:
                 # Add warn parameter for retries
                 result = func(*args, warn=(attempt > 0), **kwargs)
-                
+
                 if result is not None:  # Accept any non-None result
                     # Get the actual prompt that was sent to AI
-                    actual_prompt_used = getattr(self, '_last_prompt_sent', "Prompt not captured")
-                    
+                    actual_prompt_used = getattr(
+                        self, '_last_prompt_sent', "Prompt not captured")
+
                     # Log successful generation
                     self._log_debug_info(
                         component_name=parent_function,
@@ -373,7 +375,8 @@ class BaseQuestionComponent(ABC):
                     time.sleep(wait_time)
 
         # All attempts failed - log debug information
-        actual_prompt_used = getattr(self, '_last_prompt_sent', "Prompt not captured")
+        actual_prompt_used = getattr(
+            self, '_last_prompt_sent', "Prompt not captured")
         self._log_debug_info(
             component_name=parent_function,
             prompt_used=actual_prompt_used,
@@ -647,7 +650,7 @@ class SimpleQuestion(BaseQuestionComponent):
 
         Returns:
             Tuple of (options_dict, correct_answer_key)
-            
+
         The options_dict will be in format: {"A": "option1", "B": "option2", ...}
         The correct_answer_key will be the letter key: "A", "B", etc.
         """
@@ -666,32 +669,37 @@ class SimpleQuestion(BaseQuestionComponent):
             if message and message.get("options") and message.get("answer"):
                 options = message["options"]
                 answer = message["answer"]
-                
+
                 # Validate that options is a dictionary
                 if not isinstance(options, dict):
-                    print(f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+                    print(
+                        f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
                     return None
-                
+
                 # Validate that all option keys are single letters
                 for key in options.keys():
                     if not isinstance(key, str) or len(key) != 1 or not key.isalpha():
-                        print(f"ERROR: Option key should be single letter but got: {key}")
+                        print(
+                            f"ERROR: Option key should be single letter but got: {key}")
                         return None
-                
+
                 # Validate that answer is a valid key or list of valid keys
                 if isinstance(answer, str):
                     if answer not in options:
-                        print(f"ERROR: Answer key '{answer}' not found in options: {list(options.keys())}")
+                        print(
+                            f"ERROR: Answer key '{answer}' not found in options: {list(options.keys())}")
                         return None
                 elif isinstance(answer, list):
                     for ans_key in answer:
                         if ans_key not in options:
-                            print(f"ERROR: Answer key '{ans_key}' not found in options: {list(options.keys())}")
+                            print(
+                                f"ERROR: Answer key '{ans_key}' not found in options: {list(options.keys())}")
                             return None
                 else:
-                    print(f"ERROR: Answer should be string or list but got {type(answer)}: {answer}")
+                    print(
+                        f"ERROR: Answer should be string or list but got {type(answer)}: {answer}")
                     return None
-                
+
                 return options, answer
             return None
 
@@ -807,11 +815,11 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
         """
         # Generate solution only - answer will be generated with options
         return self._generate_solution_only()
-    
+
     def generate_question_options_with_answer(self) -> Tuple[Dict[str, str], str]:
         """
         Generate question options and answer together.
-        
+
         Returns:
             Tuple of (options_dict, correct_answer_key)
         """
@@ -824,10 +832,10 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             "D": "EACH statement ALONE is sufficient.",
             "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
         }
-        
+
         # Generate the answer key using the AI
         answer = self._generate_answer_only()
-        
+
         return standard_options, answer
 
     def _generate_solution_only(self) -> str:
