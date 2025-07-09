@@ -201,9 +201,16 @@ class BaseQuestionComponent(ABC):
             AI response text or None if failed
         """
         # Check if this is a component instruction and enhance with template if needed
-        if prompt in ["QuestionSolution", "QuestionOptions", "QuestionText", "QuestionTitle", "QuestionAnswer", "QuestionPassage"]:
-            template_instruction = self._get_component_instruction(prompt)
-            prompt = f"Mode: {prompt} (Active)\n{template_instruction}"
+        component_types = ["QuestionSolution", "QuestionOptions", "QuestionText", "QuestionTitle", "QuestionAnswer", "QuestionPassage"]
+        component_match = None
+        for component_type in component_types:
+            if prompt.startswith(component_type):
+                component_match = component_type
+                break
+        
+        if component_match:
+            template_instruction = self._get_component_instruction(component_match)
+            prompt = f"{prompt}\n\nComponent Template:\n{template_instruction}"
 
         # Store the original prompt for debugging
         self._last_prompt_sent = prompt

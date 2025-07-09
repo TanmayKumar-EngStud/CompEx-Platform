@@ -152,13 +152,15 @@ class BaseQuestionGenerator(ABC):
             if difficulty_match:
                 difficulty_level = int(difficulty_match.group(1))
         
-        # Use optimized instruction generation for better context-aware instructions
-        instructions = instruction_manager.get_optimized_instruction(
+        # Use only the main instruction template, not all modes (to avoid format conflicts)
+        instructions = instruction_manager.get_main_instruction(
             self.exam_type,
-            self.question_type,
-            use_prompt,
-            difficulty_level
+            self.question_type
         )
+        
+        # Apply difficulty-level optimizations if available
+        if difficulty_level:
+            instructions = instruction_manager._apply_difficulty_optimizations(instructions, difficulty_level)
         
         return instructions
     

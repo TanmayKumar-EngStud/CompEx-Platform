@@ -55,7 +55,7 @@ When called, user prompt will specify the mode and expected output format. Each 
 - Mistake patterns: mathematical assumption errors, variable identification mistakes
 {{/if_gre}}
 
-## Standard DS Options
+## !!IMPORTANT Standard DS Options So make statements in a way that these option seems relevant:
 - **(A)** Statement (1) alone sufficient, statement (2) alone not sufficient
 - **(B)** Statement (2) alone sufficient, statement (1) alone not sufficient  
 - **(C)** Both together sufficient, neither alone sufficient

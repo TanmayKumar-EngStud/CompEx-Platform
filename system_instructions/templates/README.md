@@ -44,12 +44,14 @@ system_instructions/
 These templates define the core philosophy and approach for each question type:
 
 #### Key Features:
-- **Cognitive Testing Philosophy**: How to create questions that test specific skills
-- **Trap Generation Strategy**: How to create realistic distractors
-- **Component Relationships**: How different question components work together
-- **Real Exam Alignment**: Standards for matching actual exam conditions
+
+-  **Cognitive Testing Philosophy**: How to create questions that test specific skills
+-  **Trap Generation Strategy**: How to create realistic distractors
+-  **Component Relationships**: How different question components work together
+-  **Real Exam Alignment**: Standards for matching actual exam conditions
 
 #### Usage Example:
+
 ```python
 from core.instructions.instruction_manager import InstructionManager
 
@@ -62,32 +64,37 @@ instruction = manager.get_main_instruction("data_sufficiency", "gmat")
 These templates handle specific parts of question generation:
 
 #### 0-questionMetadata Templates:
-- `passage.txt.template`: Reading comprehension passages
-- `graph.txt.template`: Charts and graphs with dynamic population
-- `parent_stimulus.txt.template`: Shared content for parent-child questions
-- `multi_source.txt.template`: Multiple data sources
-- `specialized_table.txt.template`: Data tables
+
+-  `passage.txt.template`: Reading comprehension passages
+-  `graph.txt.template`: Charts and graphs with dynamic population
+-  `parent_stimulus.txt.template`: Shared content for parent-child questions
+-  `multi_source.txt.template`: Multiple data sources
+-  `specialized_table.txt.template`: Data tables
 
 #### 1-questionText Templates:
-- `generic.txt.template`: Standard question text
-- `data_sufficiency.txt.template`: DS-specific format
-- `numeric_entry.txt.template`: Open-ended numerical questions
-- `child_question.txt.template`: Sub-questions for parent-child format
+
+-  `generic.txt.template`: Standard question text
+-  `data_sufficiency.txt.template`: DS-specific format
+-  `numeric_entry.txt.template`: Open-ended numerical questions
+-  `child_question.txt.template`: Sub-questions for parent-child format
 
 #### 3-questionOptions Templates:
-- `generic.txt.template`: Standard multiple choice
-- `dichotomous_choice.txt.template`: True/False, Yes/No, etc.
-- `sentence_equivalence.txt.template`: GRE sentence equivalence format
-- `text_completion.txt.template`: GRE text completion format
+
+-  `generic.txt.template`: Standard multiple choice
+-  `dichotomous_choice.txt.template`: True/False, Yes/No, etc.
+-  `sentence_equivalence.txt.template`: GRE sentence equivalence format
+-  `text_completion.txt.template`: GRE text completion format
 
 #### 4-questionSolution Templates:
-- `generic.txt.template`: Standard solution format
-- `data_sufficiency.txt.template`: DS-specific solution approach
+
+-  `generic.txt.template`: Standard solution format
+-  `data_sufficiency.txt.template`: DS-specific solution approach
 
 #### 5-questionAnswer Templates:
-- `generic.txt.template`: Standard answer format
-- `data_sufficiency.txt.template`: DS answer options
-- `numeric_entry.txt.template`: Numerical answer format
+
+-  `generic.txt.template`: Standard answer format
+-  `data_sufficiency.txt.template`: DS answer options
+-  `numeric_entry.txt.template`: Numerical answer format
 
 ## Dynamic Template Processing
 
@@ -96,30 +103,35 @@ These templates handle specific parts of question generation:
 Templates use placeholder variables that are populated dynamically:
 
 #### Common Variables:
-- `{exam_type}`: "GMAT" or "GRE"
-- `{question_type}`: Specific question type (e.g., "Data Sufficiency")
-- `{difficulty_level}`: 1-5 difficulty scale
-- `{focused_skill}`: The specific skill being tested
+
+-  `{exam_type}`: "GMAT" or "GRE"
+-  `{question_type}`: Specific question type (e.g., "Data Sufficiency")
+-  `{difficulty_level}`: 1-5 difficulty scale
+-  `{focused_skill}`: The specific skill being tested
 
 #### Special Variables:
 
 **Graph Template (`graph.txt.template`)**:
-- `{graphs_array}`: Populated with exact graph formats from `graph_styles.json`
+
+-  `{graphs_array}`: Populated with exact graph formats from `graph_styles.json`
 
 **Dichotomous Choice Template (`dichotomous_choice.txt.template`)**:
-- `{type_A}`, `{type_B}`, `{type_C}`: Dynamically set based on question type
-  - "Would Help/Would Not Help"
-  - "Yes/No"
-  - "True/False"
-  - "Correct/Incorrect"
+
+-  `{type_A}`, `{type_B}`, `{type_C}`: Dynamically set based on question type
+   -  "Would Help/Would Not Help"
+   -  "Yes/No"
+   -  "True/False"
+   -  "Correct/Incorrect"
 
 **Text Completion Template (`text_completion.txt.template`)**:
-- `{{#if_TC-1}}`: Single blank instructions
-- `{{#if_TC-2}}`: Double blank instructions
-- `{{#if_TC-3}}`: Triple blank instructions
+
+-  `{{#if_TC-1}}`: Single blank instructions
+-  `{{#if_TC-2}}`: Double blank instructions
+-  `{{#if_TC-3}}`: Triple blank instructions
 
 **Multi-Source Template (`multi_source.txt.template`)**:
-- `{content}`: Populated with content formats from metadata configurations
+
+-  `{content}`: Populated with content formats from metadata configurations
 
 ### Template Processing Flow
 
@@ -180,7 +192,9 @@ dichotomous_instruction = manager.build_instruction(
 ## Configuration Files
 
 ### Graph Styles (`graph_styles.json`)
+
 Defines exact JSON formats for different graph types:
+
 ```json
 {
   "pie_chart": {
@@ -195,7 +209,9 @@ Defines exact JSON formats for different graph types:
 ```
 
 ### Exam Customizations (`gmat/customizations.json`, `gre/customizations.json`)
+
 Exam-specific settings and variations:
+
 ```json
 {
   "data_sufficiency": {
@@ -209,28 +225,32 @@ Exam-specific settings and variations:
 ## Best Practices
 
 ### 1. Template Maintenance
-- Keep templates focused on single responsibilities
-- Use descriptive variable names
-- Include comments for complex logic
-- Regular validation against real exam standards
+
+-  Keep templates focused on single responsibilities
+-  Use descriptive variable names
+-  Include comments for complex logic
+-  Regular validation against real exam standards
 
 ### 2. Variable Management
-- Validate all variables before template processing
-- Use default values for optional variables
-- Log missing variables for debugging
-- Maintain variable naming consistency
+
+-  Validate all variables before template processing
+-  Use default values for optional variables
+-  Log missing variables for debugging
+-  Maintain variable naming consistency
 
 ### 3. Content Quality
-- Ensure trap options are educationally sound
-- Maintain cognitive testing principles
-- Regular review of generated content
-- Alignment with official exam standards
+
+-  Ensure trap options are educationally sound
+-  Maintain cognitive testing principles
+-  Regular review of generated content
+-  Alignment with official exam standards
 
 ### 4. Performance Optimization
-- Cache frequently used templates
-- Minimize template parsing overhead
-- Use lazy loading for large templates
-- Monitor template processing times
+
+-  Cache frequently used templates
+-  Minimize template parsing overhead
+-  Use lazy loading for large templates
+-  Monitor template processing times
 
 ## Troubleshooting
 
@@ -259,6 +279,7 @@ manager.get_template_variables("data_sufficiency")
 ## Testing Templates
 
 ### Unit Testing
+
 ```python
 def test_data_sufficiency_template():
     manager = InstructionManager()
@@ -268,13 +289,14 @@ def test_data_sufficiency_template():
         difficulty_level=3,
         focused_skill="logical_reasoning"
     )
-    
+
     assert "Data Sufficiency" in instruction
     assert "trap" in instruction.lower()
     assert "cognitive" in instruction.lower()
 ```
 
 ### Integration Testing
+
 ```python
 def test_full_question_generation():
     # Test complete question generation pipeline
@@ -282,7 +304,7 @@ def test_full_question_generation():
     question = generator.generate_question(
         prompt="DS - Arithmetic - Logical Reasoning - difficulty_level: 3"
     )
-    
+
     # Validate output format
     assert question["type"] == "Data Sufficiency"
     assert len(question["options"]) == 5
@@ -292,12 +314,14 @@ def test_full_question_generation():
 ## Migration Guide
 
 ### From Legacy System
+
 1. **Backup existing instructions**: Copy to `older_system_instructions_for_reference/`
 2. **Update generator classes**: Modify to use new template system
 3. **Test thoroughly**: Validate output quality and format
 4. **Monitor performance**: Ensure no degradation in generation speed
 
 ### Template Updates
+
 1. **Version control**: Track template changes
 2. **Validation**: Test against existing question sets
 3. **Documentation**: Update usage guide with changes
@@ -306,16 +330,18 @@ def test_full_question_generation():
 ## Support and Maintenance
 
 ### Regular Tasks
-- Review template effectiveness quarterly
-- Update based on exam changes
-- Monitor generation quality metrics
-- Optimize performance bottlenecks
+
+-  Review template effectiveness quarterly
+-  Update based on exam changes
+-  Monitor generation quality metrics
+-  Optimize performance bottlenecks
 
 ### Contact Information
-- Technical issues: Check `CLAUDE.md` for system architecture
-- Template bugs: Review `config/schemas/` for validation rules
-- Performance issues: Monitor `core/instructions/` components
-- Documentation: Update this guide with changes
+
+-  Technical issues: Check `CLAUDE.md` for system architecture
+-  Template bugs: Review `config/schemas/` for validation rules
+-  Performance issues: Monitor `core/instructions/` components
+-  Documentation: Update this guide with changes
 
 ---
 
