@@ -1,80 +1,280 @@
 {
-  "problem_solving": {
-    "exam_focus": "GMAT Problem Solving questions test quantitative reasoning in business contexts",
-    "question_topics": "Algebra, Geometry, Number Theory, Arithmetic, Data Analysis, Statistics, Logical Reasoning, Word Problems, Probability, Combinatorics, Advanced Topics",
-    "focused_skills": "Attention to Detail, Logical Reasoning, Critical Reasoning, Mathematical Knowledge, Efficiency and Time Management",
-    "business_themes": [
-      "Manufacturing Operations",
-      "Financial Analysis", 
-      "Market Research",
-      "Supply Chain Management",
-      "Strategic Planning",
-      "Investment Analysis",
-      "Resource Allocation",
-      "Performance Optimization"
-    ],
-    "vocabulary_requirements": {
-      "formal_terms": ["entities", "optimization", "efficiency", "strategic", "operational", "allocation", "utilization", "profitability"],
-      "business_context": "All questions must include realistic business scenarios",
-      "complexity_scaling": "Increase business scenario complexity with difficulty level"
-    },
-    "question_categories": {
-      "arithmetic": "Critical reasoning, number sense, avoiding common pitfalls - Topics: Ratio/proportion, discount/profit/loss, rates, unitary method",
-      "algebra": "Back-solving capability, strategic number picking - Topics: Equations, inequalities, functions, polynomials", 
-      "word_problems": "Situation assessment, step setup, tool selection - Business contexts with complex scenarios requiring multiple steps"
-    },
-    "difficulty_scaling": {
-      "level_1": "Minimum 3 calculation steps, straightforward business context",
-      "level_2": "Minimum 5 steps, moderate complexity with business terminology",
-      "level_3": "5+ steps with confusing wording and business jargon",
-      "level_4": "7+ steps, multiple concepts, advanced business scenarios",
-      "level_5": "10+ steps, trial-and-error reasoning, highly complex business operations"
-    },
-    "json_format": {
-      "wrapper_required": true,
-      "wrapper_format": "```json\\n{content}\\n```",
-      "error_handling": "Retry with format warnings if JSON parsing fails"
-    }
-  },
-  "data_sufficiency": {
-    "exam_focus": "GMAT Data Sufficiency questions focus on logical reasoning and mathematical analysis",
-    "question_topics": "Algebra, Geometry, Number Theory, Arithmetic, Data Analysis, Statistics, Logical Reasoning, Word Problems, Probability, Combinatorics, Advanced Topics",
-    "focused_skills": "Attention to Detail, Logical Reasoning, Critical Reasoning, Mathematical Knowledge, Efficiency and Time Management",
-    "complexity_requirements": "Make statements more complex and confusing to make question more difficult",
-    "business_context": "Questions should reflect business and management scenarios where appropriate"
-  },
-  "critical_reasoning": {
-    "exam_focus": "GMAT Critical Reasoning tests business judgment and logical analysis",
-    "question_categories": "Weaken the argument, strengthen the argument, find the assumption, draw inference/conclusion, structure of the argument, paradox, evaluate the conclusion, complete the argument",
-    "business_context": "Questions should focus on business scenarios, management decisions, and corporate strategy",
-    "difficulty_scaling": "Higher difficulty levels should include complex business scenarios and sophisticated logical reasoning",
-    "variations": "Boldface Questions, Cause and Effect, Plan and Outcome"
-  },
-  "reading_comprehension": {
-    "exam_focus": "GMAT Reading Comprehension emphasizes business and academic passages",
-    "passage_types": "Business strategy, economics, science, social sciences, humanities",
-    "question_types": "Main idea, supporting details, inference, author's tone, structure",
-    "business_context": "Include passages about business management, organizational behavior, and market analysis"
-  },
-  "graphic_interpretation": {
-    "exam_focus": "GMAT Integrated Reasoning tests data interpretation and analysis skills",
-    "chart_types": "bar-graph, stacked-bar-graph, pie-chart, line-graph, scatter-plot",
-    "business_context": "Use business-relevant data such as sales, revenue, market share, performance metrics",
-    "difficulty_scaling": "Difficulty levels 4 and 5 require multiple related graphs for complex analysis"
-  },
-  "table_analysis": {
-    "exam_focus": "GMAT Table Analysis tests data sorting and analysis capabilities",
-    "business_context": "Use business data tables with financial, operational, or market information",
-    "table_requirements": "Dynamic table size based on difficulty (rows: difficulty + 5-7, cols: difficulty + 3-5)"
-  },
-  "two_part_analysis": {
-    "exam_focus": "GMAT Two-Part Analysis tests multi-step reasoning and analysis",
-    "business_context": "Questions should involve business decisions requiring two related determinations",
-    "question_structure": "Shared content with two related questions that test different aspects"
-  },
-  "multi_source_reasoning": {
-    "exam_focus": "GMAT Multi-Source Reasoning tests synthesis of information from multiple sources",
-    "source_types": "Text, tables, graphs combined to create comprehensive business scenarios",
-    "business_context": "Use business case studies with multiple data sources requiring integrated analysis"
-  }
+   "quants": {
+      "data sufficiency": {
+         "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
+         "questionStyle": [
+            "Single Variable Equation",
+            "Inequalities",
+            "Geometric Properties*",
+            "Word Problems&",
+            "Numeric Comparisons",
+            "Data Interpretation$"
+         ],
+         "difficulty": 5,
+         "questionTopic": [
+            "Number Properties and Fractions, Decimals, Percentages$",
+            "Ratio and Proportion$",
+            "Simple Interest and Compound Interest",
+            "work and rate problem$",
+            "Profit, Loss and Discount$",
+            "Mixtures and Alligations$",
+            "Linear Equations, Quadratic Equations and Inequalities",
+            "Functions and Polynomials",
+            "Exponents and Powers",
+            "Algebraic Expressions and Simplification",
+            "Lines and Angles*",
+            "Triangles (Type, Properties, Pythagoras Theorem)*",
+            "Circles (arc, sector, cord, etc)*",
+            "Quadrilaterals and Polygons*",
+            "Coordinate Geometry*",
+            "3D Geometry*",
+            "Mensuration (Area, Perimeter, Volume, Surface Area)*",
+            "Mean, Median, Mode, Range$",
+            "Standard Deviation and Variance$",
+            "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "Permutations and Combinations",
+            "Sets and Venn Diagrams"
+         ],
+         "graphType/tableType$": [
+            null,
+            "Line Graph",
+            "Bar Graph",
+            "Pie Chart graph",
+            "Scatter Plot graph",
+            "Standard Data Table",
+            "Pivot Table",
+            "Highlight Table",
+            "Heat Table",
+            "Text Table",
+            "Matrix Table",
+            "Frequency Table",
+            "Contingency Table"
+         ],
+         "questionTheme": [
+            "Business and Finance",
+            "Marketing and Sales",
+            "Logistics and Operations",
+            "Science and Technology",
+            "Human Resources",
+            "Environment and Sustainability",
+            "Government Policies and Regulations"
+         ]
+      },
+      "problem solving": {
+         "nomenclature": "S - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
+         "questionStyle": [
+            "Unitary Method",
+            "Algebraic Manipulations",
+            "Word Problems&",
+            "Geometric Calculations",
+            "Data Analysis$",
+            "Logical Reasoning",
+            "Mixed Concepts"
+         ],
+         "difficulty": 5,
+         "questionTopic": [
+            "Number Properties",
+            "Fractions, Decimals, and Percentages",
+            "Ratios and Proportions",
+            "Algebra",
+            "Geometry",
+            "Word Problems",
+            "Statistics$",
+            "Probability$",
+            "Functions and Graphs*"
+         ],
+         "questionTheme&": [
+            "Business and Finance",
+            "Science and Technology",
+            "Education and Academia",
+            "Everyday Mathematics",
+            "Health and Medicine",
+            "Environmental Issues",
+            "Sports and Entertainment"
+         ],
+         "graphType/tableType*": [
+            null,
+            "Line Graph",
+            "Bar Graph",
+            "Pie Chart graph",
+            "Scatter Plot graph",
+            "Standard Data Table",
+            "Pivot Table",
+            "Highlight Table",
+            "Heat Table",
+            "Text Table",
+            "Matrix Table",
+            "Frequency Table",
+            "Contingency Table"
+         ]
+      }
+   },
+   "verbal": {
+      "nomenclature": "<questionType> - <questionTheme> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
+      "questionTheme": [
+         "Science and Technology",
+         "Business",
+         "Economics",
+         "Humanities",
+         "Social Sciences",
+         "Current Affairs",
+         "Global Issues",
+         "Health and Medicine",
+         "Environment and Sustainability",
+         "Art and Culture",
+         "Education and Learning",
+         "Sports and Recreation",
+         "Technology and Innovation"
+      ],
+      "questionType": [
+         "sentence correction",
+         "rc-s",
+         "rc-m",
+         "rc-l",
+         "critical reasoning"
+      ],
+      "difficulty": 5,
+      "vocabulary": 3,
+      "child-question": {
+         "nomenclature": "RC ChildQuestion - <focused_skill>",
+         "focused_skill": [
+            "Main Idea Question",
+            "Inference Question",
+            "Assumption Question",
+            "Strengthen Question",
+            "Weaken Question",
+            "Evaluate Question",
+            "Conclusion Question"
+         ]
+      }
+   },
+   "integrated reasoning": {
+      "combination number": 91,
+      "graphic interpretation": {
+         "nomenclature": "GI - <questionTheme> - <graphType> - <difficulty_level: {1-5}>",
+         "graphType": [
+            "bar chart",
+            "pie chart",
+            "line chart",
+            "scatter plot",
+            "quantitative venn diagram",
+            "qualitative venn diagram"
+         ],
+         "questionTheme": [
+            "economics",
+            "finance",
+            "marketing",
+            "politics",
+            "business",
+            "history",
+            "science and technology"
+         ],
+         "difficultyLevel": 5
+      },
+      "multi source reasoning": {
+         "nomenclature": "MSR - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill> - <question_style> - <difficulty_level: {1-5}>",
+         "source_types": [
+            "Passage",
+            "Scatter Plot",
+            "Line Chart",
+            "2 Category Table",
+            "Pie Chart",
+            "Bar Chart"
+         ],
+         "child-question": {
+            "nomenclature": "MSR ChildQuestion - <focused_skill> - <question_style>",
+            "focused_skill": [
+               "Critical Reasoning",
+               "Data Interpretation",
+               "Synthesis",
+               "Logical Reasoning"
+            ],
+            "question_style": [
+               "MCQ (5 options MCQ)",
+               "Dichotomous Choice(True/False)",
+               "Dichotomous Choice(Yes/No)",
+               "Dichotomous Choice(Acceptable/Not Acceptable)",
+               "Dichotomous Choice(Inferable/Not Inferable)"
+            ]
+         },
+         "questionTheme": [
+            "economics",
+            "business",
+            "history",
+            "science and technology"
+         ],
+         "difficultyLevel": 5
+      },
+      "table analysis": {
+         "nomenclature": "TA - <questionTheme> - <tableType> - <dichotomousType> - <difficulty_level: {1-5}>",
+         "tableType": [
+            "simple table",
+            "time_series table",
+            "multi_variable table"
+         ],
+         "dichotomousType": [
+            "Yes/No",
+            "Would Help/Would Not Help",
+            "True/False",
+            "Inference/Conflicting",
+            "Sufficient/Insufficient",
+            "Valid/Invalid",
+            "Consistent/Inconsistent",
+            "Conclusion/Assumption"
+         ],
+         "questionTheme": [
+            "sales",
+            "marketing",
+            "finance",
+            "operations",
+            "human resources",
+            "technology",
+            "environment",
+            "health",
+            "education",
+            "government",
+            "international relations",
+            "science",
+            "engineering",
+            "art",
+            "culture",
+            "sports",
+            "entertainment"
+         ],
+         "difficultyLevel": 5
+      },
+      "two part analysis": {
+         "nomenclature": "TPA - <questionTheme> - <part1> - <part2> - <difficulty_level: {1-5}>",
+         "questionTheme": [
+            "economics",
+            "finance",
+            "marketing",
+            "politics",
+            "business",
+            "history",
+            "science and technology"
+         ],
+         "difficultyLevel": 5,
+         "part1": [
+            "part1- bar chart",
+            "part1- pie chart",
+            "part1- line chart",
+            "part1- scatter plot",
+            "part1- quantitative venn diagram",
+            "part1- qualitative venn diagram",
+            "part1- 2 category table",
+            "part1- 2 category hybrid table"
+         ],
+         "part2": [
+            "part2- bar chart",
+            "part2- pie chart",
+            "part2- line chart",
+            "part2- scatter plot",
+            "part2- quantitative venn diagram",
+            "part2- qualitative venn diagram",
+            "part2- 2 category table",
+            "part2- 2 category hybrid table"
+         ]
+      }
+   }
 }

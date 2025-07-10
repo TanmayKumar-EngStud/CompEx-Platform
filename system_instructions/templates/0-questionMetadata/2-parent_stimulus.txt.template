@@ -2,7 +2,7 @@ STRICT RESPONSE FORMAT:- JSON
 - Generate parent stimulus content for child questions.
 Example:-
 ```json
-{content_format}
+{content}
 ```
 
 **Important Notes:**

@@ -1,5 +1,6 @@
 import json
 import os
+import random
 
 def binary_search_instance(x: int, y: int) -> int:
     x %= y 
@@ -17,7 +18,8 @@ class Combination:
     def __init__(self):
         with open(os.path.join(os.path.dirname(__file__), "combination.json"), "r") as file:
             self.combination = json.load(file)
-        self.original_combination_number = self.combination["combination number"]
+        # Use random number instead of persistent state
+        self.original_combination_number = random.randint(1, 1000)
         total_number_of_combinations = self.find_total_number_of_combinations()
         self.combination_number = binary_search_instance(self.original_combination_number, total_number_of_combinations)
       #   print(f"combination number found: {self.combination_number}")
@@ -109,8 +111,6 @@ class Combination:
 
                 prompt.append(" - ".join(prompt_items))
         
-        self.original_combination_number += 1
-        self.combination["combination number"] = self.original_combination_number
-        with open(os.path.join(os.path.dirname(__file__), "combination.json"), "w") as file:
-           json.dump(self.combination, file, indent = 4)
+        # No persistent state - generate new random number for variety
+        self.original_combination_number = random.randint(1, 1000)
         return prompt

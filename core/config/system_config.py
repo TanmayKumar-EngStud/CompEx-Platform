@@ -47,8 +47,6 @@ class SystemConfig:
     # Generation settings
     default_max_retries: int = 3
     default_timeout_seconds: int = 300
-    enable_caching: bool = True
-    cache_size_limit: int = 1000
     
     # Model settings
     model_name: str = "gemini-1.5-flash"
@@ -135,8 +133,6 @@ class SystemConfig:
             thread_pool_timeout_seconds=config_dict.get('thread_pool_timeout_seconds', 300),
             default_max_retries=config_dict.get('default_max_retries', 3),
             default_timeout_seconds=config_dict.get('default_timeout_seconds', 300),
-            enable_caching=config_dict.get('enable_caching', True),
-            cache_size_limit=config_dict.get('cache_size_limit', 1000),
             model_name=config_dict.get('model_name', 'gemini-1.5-flash'),
             enable_thinking_mode=config_dict.get('enable_thinking_mode', True)
         )
@@ -166,9 +162,7 @@ class SystemConfig:
             thread_pool_timeout_seconds=int(os.getenv('THREAD_POOL_TIMEOUT', '300')),
             default_max_retries=int(os.getenv('DEFAULT_MAX_RETRIES', '3')),
             default_timeout_seconds=int(os.getenv('DEFAULT_TIMEOUT_SECONDS', '300')),
-            enable_caching=os.getenv('ENABLE_CACHING', 'true').lower() == 'true',
-            cache_size_limit=int(os.getenv('CACHE_SIZE_LIMIT', '1000')),
-            model_name=os.getenv('MODEL', 'gemini-1.5-flash'),
+            model_name=os.getenv('MODEL', 'gemini-2.5-flash-preview-05-20'),
             enable_thinking_mode=os.getenv('ENABLE_THINKING_MODE', 'true').lower() == 'true'
         )
     
@@ -196,8 +190,6 @@ class SystemConfig:
             'thread_pool_timeout_seconds': self.thread_pool_timeout_seconds,
             'default_max_retries': self.default_max_retries,
             'default_timeout_seconds': self.default_timeout_seconds,
-            'enable_caching': self.enable_caching,
-            'cache_size_limit': self.cache_size_limit,
             'model_name': self.model_name,
             'enable_thinking_mode': self.enable_thinking_mode
         }

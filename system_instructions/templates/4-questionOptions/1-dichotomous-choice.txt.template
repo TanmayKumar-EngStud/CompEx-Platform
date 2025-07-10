@@ -11,9 +11,9 @@ Example:-
     "C": "option C"
   },
   "answer": {
-    "A": "{type_A}",
-    "B": "{type_B}",
-    "C": "{type_C}"
+    "A": "{type}",
+    "B": "{type}",
+    "C": "{type}"
   }
 }
 ```

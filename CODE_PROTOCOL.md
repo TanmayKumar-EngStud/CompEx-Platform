@@ -15,8 +15,8 @@ This document establishes comprehensive coding standards, naming conventions, an
 7. [Configuration Management](#configuration-management)
 8. [Testing Standards](#testing-standards)
 9. [Documentation Standards](#documentation-standards)
-10. [Template System Compliance](#template-system-compliance)
-11. [Import Organization](#import-organization)
+10.   [Template System Compliance](#template-system-compliance)
+11.   [Import Organization](#import-organization)
 
 ---
 
@@ -185,9 +185,9 @@ QGen-py-compex/
 │   │   │   └── 3-numeric_entry.txt.template
 │   │   ├── 2-questionTitle/
 │   │   │   └── 0-generic.txt.template
-│   │   ├── 3-questionOptions/
+│   │   ├── 4-questionOptions/
 │   │   │   └── 0-generic.txt.template
-│   │   ├── 4-questionSolution/
+│   │   ├── 3-questionSolution/
 │   │   │   ├── 0-generic.txt.template
 │   │   │   ├── 1-critical_reasoning.txt.template
 │   │   │   └── 2-data_sufficiency.txt.template
@@ -438,46 +438,46 @@ from generators.base.base_question_generator import BaseQuestionGenerator
 class ExampleQuestionGenerator(BaseQuestionGenerator):
     """
     Brief description of the class purpose.
-    
+
     Attributes:
         attribute_name (type): Description of attribute
-        
+
     Example:
         generator = ExampleQuestionGenerator(config)
         question = generator.generate_question(prompt)
     """
-    
+
     # Class-level constants
     DEFAULT_RETRIES: int = 3
     SUPPORTED_TYPES: List[str] = ["type1", "type2"]
-    
+
     def __init__(self, config: ExampleConfig) -> None:
         """Initialize the generator with configuration."""
         super().__init__(config)
         self._private_attribute: Optional[str] = None
         self.public_attribute: int = 0
-    
+
     # Public methods first
     def generate_question(self, prompt: str) -> Dict[str, Any]:
         """
         Generate a question based on the provided prompt.
-        
+
         Args:
             prompt: The input prompt for question generation
-            
+
         Returns:
             Dictionary containing the generated question data
-            
+
         Raises:
             QuestionGenerationException: If generation fails
         """
         pass
-    
+
     # Private methods last
     def _validate_prompt(self, prompt: str) -> bool:
         """Validate the input prompt format."""
         pass
-    
+
     def _process_response(self, response: str) -> Dict[str, Any]:
         """Process the API response into structured data."""
         pass
@@ -493,15 +493,15 @@ def process_question_data(
 ) -> ProcessedQuestion:
     """
     Process raw question data into a standardized format.
-    
+
     Args:
         question_data: Raw question data from API
         exam_type: Target exam type (GMAT or GRE)
         difficulty: Question difficulty level (default: MEDIUM)
-        
+
     Returns:
         ProcessedQuestion object with standardized format
-        
+
     Raises:
         ValidationException: If question data is invalid
         ProcessingException: If processing fails
@@ -509,10 +509,10 @@ def process_question_data(
     # Input validation
     if not question_data:
         raise ValidationException("Question data cannot be empty")
-    
+
     # Main processing logic
     processed = ProcessedQuestion()
-    
+
     # Return statement
     return processed
 ```
@@ -546,6 +546,7 @@ def generate_questions(
 ### 2. Enum Definitions
 
 #### core/enums/exam_types.py
+
 ```python
 from enum import Enum, auto
 
@@ -553,7 +554,7 @@ class ExamType(Enum):
     """Supported examination types."""
     GMAT = "gmat"
     GRE = "gre"
-    
+
     @classmethod
     def from_string(cls, value: str) -> 'ExamType':
         """Create ExamType from string value."""
@@ -564,6 +565,7 @@ class ExamType(Enum):
 ```
 
 #### core/enums/section_types.py
+
 ```python
 class SectionType(Enum):
     """Examination section types."""
@@ -574,6 +576,7 @@ class SectionType(Enum):
 ```
 
 #### core/enums/question_types.py
+
 ```python
 class QuestionType(Enum):
     """Question type classifications."""
@@ -581,14 +584,14 @@ class QuestionType(Enum):
     DATA_SUFFICIENCY = "data_sufficiency"
     PROBLEM_SOLVING = "problem_solving"
     NUMERIC_ENTRY = "numeric_entry"
-    
+
     # Verbal types
     READING_COMPREHENSION = "reading_comprehension"
     CRITICAL_REASONING = "critical_reasoning"
     SENTENCE_CORRECTION = "sentence_correction"
     TEXT_COMPLETION = "text_completion"
     SENTENCE_EQUIVALENCE = "sentence_equivalence"
-    
+
     # Integrated Reasoning types (GMAT only)
     GRAPHIC_INTERPRETATION = "graphic_interpretation"
     TABLE_ANALYSIS = "table_analysis"
@@ -597,6 +600,7 @@ class QuestionType(Enum):
 ```
 
 #### core/enums/difficulty_levels.py
+
 ```python
 class DifficultyLevel(Enum):
     """Question difficulty levels."""
@@ -605,7 +609,7 @@ class DifficultyLevel(Enum):
     MEDIUM = 3
     HARD = 4
     VERY_HARD = 5
-    
+
     @property
     def display_name(self) -> str:
         """Human-readable difficulty name."""
@@ -620,11 +624,11 @@ from typing import Protocol, runtime_checkable
 @runtime_checkable
 class IQuestionGenerator(Protocol):
     """Protocol for question generators."""
-    
+
     def generate_question(self, prompt: str) -> Dict[str, Any]:
         """Generate a single question."""
         ...
-    
+
     def validate_output(self, question_data: Dict[str, Any]) -> bool:
         """Validate generated question format."""
         ...
@@ -640,7 +644,7 @@ class IQuestionGenerator(Protocol):
 # core/exceptions/base_exceptions.py
 class QGenBaseException(Exception):
     """Base exception for all QGen-related errors."""
-    
+
     def __init__(self, message: str, error_code: Optional[str] = None):
         super().__init__(message)
         self.error_code = error_code
@@ -680,12 +684,12 @@ def safe_question_generation(
 ) -> Optional[Dict[str, Any]]:
     """
     Safely generate a question with retry logic.
-    
+
     Args:
         generator: Question generator instance
         prompt: Generation prompt
         max_retries: Maximum retry attempts
-        
+
     Returns:
         Generated question data or None if all attempts fail
     """
@@ -696,21 +700,21 @@ def safe_question_generation(
                 return question_data
             else:
                 logger.warning(f"Invalid output on attempt {attempt + 1}")
-                
+
         except APIRateLimitException as e:
             logger.warning(f"Rate limit hit on attempt {attempt + 1}: {e}")
             time.sleep(2 ** attempt)  # Exponential backoff
-            
+
         except QuestionGenerationException as e:
             logger.error(f"Generation failed on attempt {attempt + 1}: {e}")
             if attempt == max_retries - 1:
                 raise
-                
+
         except Exception as e:
             logger.error(f"Unexpected error on attempt {attempt + 1}: {e}")
             if attempt == max_retries - 1:
                 raise QuestionGenerationException(f"Generation failed after {max_retries} attempts") from e
-    
+
     return None
 ```
 
@@ -733,12 +737,12 @@ class BaseConfig(ABC):
     exam_type: ExamType
     debug_mode: bool = False
     log_level: str = "INFO"
-    
+
     @abstractmethod
     def validate(self) -> bool:
         """Validate configuration values."""
         pass
-    
+
     @classmethod
     @abstractmethod
     def from_dict(cls, config_dict: Dict[str, Any]) -> 'BaseConfig':
@@ -757,7 +761,7 @@ class GMATConfig(BaseConfig):
     ir_questions_per_section: int = 12
     quant_questions_per_section: int = 31
     verbal_questions_per_section: int = 36
-    
+
     def validate(self) -> bool:
         """Validate GMAT configuration."""
         return (
@@ -765,7 +769,7 @@ class GMATConfig(BaseConfig):
             self.quant_questions_per_section > 0 and
             self.verbal_questions_per_section > 0
         )
-    
+
     @classmethod
     def from_dict(cls, config_dict: Dict[str, Any]) -> 'GMATConfig':
         """Create GMAT config from dictionary."""
@@ -794,30 +798,30 @@ from .exams.gre_config import GREConfig
 
 class ConfigLoader:
     """Centralized configuration loading."""
-    
+
     CONFIG_CLASSES: Dict[ExamType, Type[BaseConfig]] = {
         ExamType.GMAT: GMATConfig,
         ExamType.GRE: GREConfig
     }
-    
+
     @classmethod
     def load_exam_config(cls, exam_type: ExamType, config_path: Optional[str] = None) -> BaseConfig:
         """Load configuration for specific exam type."""
         if config_path is None:
             config_path = f"config/exams/{exam_type.value}_config.json"
-        
+
         if not os.path.exists(config_path):
             raise FileNotFoundError(f"Config file not found: {config_path}")
-        
+
         with open(config_path, 'r') as f:
             config_dict = json.load(f)
-        
+
         config_class = cls.CONFIG_CLASSES[exam_type]
         config = config_class.from_dict(config_dict)
-        
+
         if not config.validate():
             raise ValueError(f"Invalid configuration for {exam_type.value}")
-        
+
         return config
 ```
 
@@ -854,15 +858,15 @@ tests/
 # test_data_sufficiency_generator.py
 class TestDataSufficiencyGenerator:
     """Test suite for DataSufficiencyGenerator."""
-    
+
     def test_generate_question_with_valid_prompt_should_return_valid_data(self):
         """Test question generation with valid prompt returns properly formatted data."""
         pass
-    
+
     def test_generate_question_with_invalid_prompt_should_raise_exception(self):
         """Test question generation with invalid prompt raises ValidationException."""
         pass
-    
+
     def test_validate_output_with_correct_format_should_return_true(self):
         """Test output validation returns True for correctly formatted questions."""
         pass
@@ -922,27 +926,27 @@ def generate_question_batch(
 ) -> List[Dict[str, Any]]:
     """
     Generate multiple questions in batches for improved performance.
-    
+
     This function processes prompts in batches to optimize API usage and
     improve generation speed while maintaining quality standards.
-    
+
     Args:
         prompts: List of question generation prompts
         exam_type: Target examination type (GMAT or GRE)
         batch_size: Number of questions to generate per batch (default: 10)
-        
+
     Returns:
         List of generated question dictionaries, each containing:
             - type: Question type classification
             - content: Question content and data
             - difficulty: Numerical difficulty level (1-5)
             - metadata: Additional question metadata
-    
+
     Raises:
         ValidationException: If any prompt is invalid or malformed
         APIException: If API communication fails
         QuestionGenerationException: If question generation fails
-        
+
     Example:
         >>> prompts = ["DS - <Arithmetic> - <difficulty_level: 3>"]
         >>> questions = generate_question_batch(prompts, ExamType.GMAT)
@@ -950,7 +954,7 @@ def generate_question_batch(
         1
         >>> questions[0]["type"]
         "Data Sufficiency"
-    
+
     Note:
         Batch processing may take longer for initial requests due to
         API connection establishment, but subsequent batches will be faster.
@@ -971,11 +975,11 @@ the Factory Method pattern to enable dynamic generator creation and registration
 Classes:
     QuestionGeneratorFactory: Main factory for creating generators
     GeneratorRegistry: Registry for managing available generators
-    
+
 Functions:
     register_generator: Register a new generator type
     get_available_types: Get list of supported question types
-    
+
 Example:
     >>> from generators.factory import QuestionGeneratorFactory
     >>> from core.enums import ExamType, QuestionType
@@ -995,6 +999,7 @@ Example:
 ### 1. Template Structure Standards
 
 #### Main Instructions Templates
+
 All main instruction templates must follow this structure:
 
 ```
@@ -1020,6 +1025,7 @@ All main instruction templates must follow this structure:
 ```
 
 #### Component Templates
+
 Component templates must include:
 
 ```
@@ -1041,6 +1047,7 @@ Component templates must include:
 ### 2. Template Variable Naming
 
 #### Standard Variables
+
 ```python
 # ✅ Good - Standard template variables
 {exam_type}         # "GMAT" or "GRE"
@@ -1057,6 +1064,7 @@ Component templates must include:
 ```
 
 #### Dynamic Array Variables
+
 ```python
 # ✅ Good - Array variable patterns
 {graphs_array}     # Populated with graph format objects
@@ -1070,6 +1078,7 @@ Component templates must include:
 ```
 
 #### Conditional Variables
+
 ```python
 # ✅ Good - Conditional block patterns
 {{#if_difficulty_1_2}}...{{/if_difficulty_1_2}}
@@ -1085,28 +1094,30 @@ Component templates must include:
 ### 3. Template Processing Requirements
 
 #### Variable Substitution Order
+
 ```python
 class TemplateProcessor:
     """Process templates in the correct order."""
-    
+
     def process_template(self, template_content: str, variables: Dict[str, Any]) -> str:
         """Process template with correct variable substitution order."""
         # 1. Process conditional blocks first
         template_content = self._process_conditional_blocks(template_content, variables)
-        
+
         # 2. Process array variables
         template_content = self._process_array_variables(template_content, variables)
-        
+
         # 3. Process simple variables
         template_content = self._process_simple_variables(template_content, variables)
-        
+
         # 4. Validate final output
         self._validate_processed_template(template_content)
-        
+
         return template_content
 ```
 
 #### Conditional Processing Standards
+
 ```python
 def process_difficulty_conditionals(template_content: str, difficulty_level: int) -> str:
     """Process difficulty-based conditional blocks."""
@@ -1115,43 +1126,44 @@ def process_difficulty_conditionals(template_content: str, difficulty_level: int
         'if_difficulty_3_4': difficulty_level in [3, 4],
         'if_difficulty_5': difficulty_level == 5
     }
-    
+
     for condition, is_active in conditions.items():
         pattern = f"{{{{#{condition}}}}}(.*?){{{{/{condition}}}}}"
         if is_active:
             template_content = re.sub(pattern, r'\1', template_content, flags=re.DOTALL)
         else:
             template_content = re.sub(pattern, '', template_content, flags=re.DOTALL)
-    
+
     return template_content
 ```
 
 ### 4. Template Validation Standards
 
 #### Schema Validation
+
 ```python
 from config.schemas.instruction_schemas import InstructionSchema
 from config.schemas.template_schemas import TemplateSchema
 
 class TemplateValidator:
     """Validate templates against schema requirements."""
-    
+
     def validate_main_instruction_template(self, template_content: str) -> bool:
         """Validate main instruction template structure."""
         required_sections = [
             "Core Philosophy",
-            "Your Role", 
+            "Your Role",
             "Component Relationships",
             "Trap Generation Strategy",
             "Quality Standards"
         ]
-        
+
         for section in required_sections:
             if f"## {section}" not in template_content:
                 raise ValidationException(f"Missing required section: {section}")
-        
+
         return True
-    
+
     def validate_component_template(self, template_content: str) -> bool:
         """Validate component template structure."""
         required_sections = [
@@ -1159,15 +1171,16 @@ class TemplateValidator:
             "Input Requirements",
             "Output Specification"
         ]
-        
+
         for section in required_sections:
             if f"## {section}" not in template_content:
                 raise ValidationException(f"Missing required section: {section}")
-        
+
         return True
 ```
 
 #### Content Quality Validation
+
 ```python
 def validate_template_philosophy_compliance(template_content: str) -> bool:
     """Validate template includes philosophy-driven content."""
@@ -1178,21 +1191,22 @@ def validate_template_philosophy_compliance(template_content: str) -> bool:
         'realistic': 'realistic mistake patterns',
         'educational': 'educationally sound approach'
     }
-    
+
     missing_keywords = []
     for keyword, description in required_keywords.items():
         if keyword.lower() not in template_content.lower():
             missing_keywords.append(description)
-    
+
     if missing_keywords:
         raise ValidationException(f"Template missing philosophy elements: {missing_keywords}")
-    
+
     return True
 ```
 
 ### 5. Template File Organization
 
 #### Directory Structure Compliance
+
 ```
 system_instructions/
 ├── templates/
@@ -1204,8 +1218,8 @@ system_instructions/
 │   ├── 0-questionMetadata/          # Content structure templates
 │   ├── 1-questionText/              # Question text templates
 │   ├── 2-questionTitle/             # Question title templates
-│   ├── 3-questionOptions/           # Option generation templates
-│   ├── 4-questionSolution/          # Solution templates
+│   ├── 4-questionOptions/           # Option generation templates
+│   ├── 3-questionSolution/          # Solution templates
 │   └── 5-questionAnswer/            # Answer format templates
 ├── graph_styles.json               # Graph format definitions
 ├── gmat/customizations.json        # GMAT-specific customizations
@@ -1213,6 +1227,7 @@ system_instructions/
 ```
 
 #### Template File Naming
+
 ```python
 # ✅ Good - Template file naming
 data_sufficiency.txt.template
@@ -1230,69 +1245,72 @@ GraphicInterpretation.txt.template
 ### 6. Integration Requirements
 
 #### Template Loading
+
 ```python
 class TemplateLoader:
     """Load templates with proper error handling."""
-    
+
     def load_template(self, template_name: str, exam_type: ExamType) -> str:
         """Load template with validation and error handling."""
         try:
             template_path = self._get_template_path(template_name, exam_type)
-            
+
             if not os.path.exists(template_path):
                 raise FileNotFoundError(f"Template not found: {template_path}")
-            
+
             with open(template_path, 'r', encoding='utf-8') as file:
                 template_content = file.read()
-            
+
             # Validate template structure
             self._validate_template_structure(template_content, template_name)
-            
+
             return template_content
-            
+
         except Exception as e:
             logger.error(f"Failed to load template {template_name}: {str(e)}")
             raise TemplateLoadingException(f"Template loading failed: {str(e)}")
 ```
 
 #### Template Caching
+
 ```python
 from functools import lru_cache
 import os
 
 class TemplateCache:
     """Template caching with file modification tracking."""
-    
+
     def __init__(self):
         self._cache = {}
         self._cache_timestamps = {}
-    
+
     @lru_cache(maxsize=64)
     def get_template(self, template_path: str) -> str:
         """Get template with caching and modification tracking."""
         file_mtime = os.path.getmtime(template_path)
-        
-        if (template_path in self._cache and 
+
+        if (template_path in self._cache and
             file_mtime <= self._cache_timestamps.get(template_path, 0)):
             return self._cache[template_path]
-        
+
         # Load and cache template
         with open(template_path, 'r', encoding='utf-8') as file:
             template_content = file.read()
-        
+
         self._cache[template_path] = template_content
         self._cache_timestamps[template_path] = file_mtime
-        
+
         return template_content
 ```
 
 ### 7. Testing Requirements
 
 #### Template Testing Standards
+
 ```python
 class TestTemplateCompliance:
     """Test template system compliance."""
-    
+
     def test_all_main_instruction_templates_exist(self):
         """Test that all question types have main instruction templates."""
         required_templates = [
@@ -1302,24 +1320,24 @@ class TestTemplateCompliance:
             'critical_reasoning.txt.template',
             # ... other question types
         ]
-        
+
         for template_name in required_templates:
             template_path = f"system_instructions/templates/!Main Instructions/{template_name}"
             assert os.path.exists(template_path), f"Missing template: {template_name}"
-    
+
     def test_template_variable_substitution(self):
         """Test template variable substitution works correctly."""
         processor = TemplateProcessor()
         template_content = "This is a {exam_type} {question_type} question."
-        
+
         variables = {
             'exam_type': 'GMAT',
             'question_type': 'Data Sufficiency'
         }
-        
+
         result = processor.process_template(template_content, variables)
         assert result == "This is a GMAT Data Sufficiency question."
-    
+
     def test_conditional_processing(self):
         """Test conditional block processing."""
         processor = TemplateProcessor()
@@ -1331,12 +1349,12 @@ class TestTemplateCompliance:
         Use advanced concepts.
         {{/if_difficulty_5}}
         """
-        
+
         # Test low difficulty
         result = processor.process_template(template_content, {'difficulty_level': 1})
         assert 'simple vocabulary' in result
         assert 'advanced concepts' not in result
-        
+
         # Test high difficulty
         result = processor.process_template(template_content, {'difficulty_level': 5})
         assert 'simple vocabulary' not in result
@@ -1346,6 +1364,7 @@ class TestTemplateCompliance:
 ### 8. Documentation Requirements
 
 #### Template Documentation Standards
+
 Each template must include:
 
 ```
@@ -1360,22 +1379,23 @@ Each template must include:
 ```
 
 #### Integration Documentation
+
 ```python
 class InstructionManager:
     """
     Manages instruction templates and dynamic processing.
-    
+
     This class handles the loading, processing, and validation of instruction
     templates for question generation. It supports dynamic variable substitution,
     conditional processing, and template caching for optimal performance.
-    
+
     Template Processing Order:
         1. Load base template from file system
         2. Process conditional blocks based on variables
         3. Substitute array variables with configuration data
         4. Replace simple variables with provided values
         5. Validate final instruction format
-    
+
     Example:
         >>> manager = InstructionManager()
         >>> instruction = manager.build_instruction(
@@ -1392,16 +1412,18 @@ class InstructionManager:
 ### 9. Quality Assurance
 
 #### Template Quality Checklist
-- [ ] Template includes all required sections
-- [ ] Philosophy-driven content is present
-- [ ] Variable naming follows conventions
-- [ ] Conditional blocks are properly formatted
-- [ ] Template integrates with existing system
-- [ ] Validation rules are implemented
-- [ ] Documentation is complete and accurate
-- [ ] Testing coverage is adequate
+
+-  [ ] Template includes all required sections
+-  [ ] Philosophy-driven content is present
+-  [ ] Variable naming follows conventions
+-  [ ] Conditional blocks are properly formatted
+-  [ ] Template integrates with existing system
+-  [ ] Validation rules are implemented
+-  [ ] Documentation is complete and accurate
+-  [ ] Testing coverage is adequate
 
 #### Continuous Validation
+
 ```python
 def validate_template_system_integrity():
     """Validate entire template system integrity."""
@@ -1413,7 +1435,7 @@ def validate_template_system_integrity():
         validate_integration_compatibility,
         validate_documentation_completeness
     ]
-    
+
     for validator in validators:
         try:
             validator()
@@ -1490,18 +1512,18 @@ if TYPE_CHECKING:
 ```python
 class QuestionGeneratorFactory:
     """Factory with lazy loading of generators."""
-    
+
     def __init__(self):
         self._generators: Dict[str, Type[IQuestionGenerator]] = {}
         self._loaded: bool = False
-    
+
     def _load_generators(self):
         """Load generators only when needed."""
         if not self._loaded:
             # Load generator classes
             self._generators = self._discover_generators()
             self._loaded = True
-    
+
     def create_generator(self, generator_type: str) -> IQuestionGenerator:
         """Create generator with lazy loading."""
         self._load_generators()
@@ -1516,14 +1538,14 @@ from typing import Dict, Any
 
 class InstructionManager:
     """Manage system instructions with caching."""
-    
+
     @lru_cache(maxsize=128)
     def load_instruction(self, instruction_type: str, exam_type: ExamType) -> str:
         """Load instruction with LRU caching."""
         instruction_path = self._get_instruction_path(instruction_type, exam_type)
         with open(instruction_path, 'r') as f:
             return f.read()
-    
+
     def clear_cache(self):
         """Clear instruction cache."""
         self.load_instruction.cache_clear()
@@ -1565,10 +1587,10 @@ from typing import Dict, Any
 
 class StructuredLogger:
     """Structured logging utility."""
-    
+
     def __init__(self, name: str):
         self.logger = logging.getLogger(name)
-    
+
     def log_generation_start(self, prompt: str, exam_type: ExamType):
         """Log question generation start."""
         self.logger.info(
@@ -1580,7 +1602,7 @@ class StructuredLogger:
                 "timestamp": time.time()
             }
         )
-    
+
     def log_generation_success(self, question_data: Dict[str, Any]):
         """Log successful question generation."""
         self.logger.info(
@@ -1592,7 +1614,7 @@ class StructuredLogger:
                 "timestamp": time.time()
             }
         )
-    
+
     def log_generation_error(self, error: Exception, context: Dict[str, Any]):
         """Log generation error with context."""
         self.logger.error(
@@ -1621,21 +1643,21 @@ from core.exceptions.api_exceptions import APIConfigurationException
 
 class APIKeyManager:
     """Secure API key management."""
-    
+
     @staticmethod
     def get_api_key(key_index: int) -> str:
         """Get API key by index with validation."""
         key_name = f"API_{key_index}"
         api_key = os.getenv(key_name)
-        
+
         if not api_key:
             raise APIConfigurationException(f"API key {key_name} not found in environment")
-        
+
         if not APIKeyManager._validate_key_format(api_key):
             raise APIConfigurationException(f"Invalid API key format for {key_name}")
-        
+
         return api_key
-    
+
     @staticmethod
     def _validate_key_format(api_key: str) -> bool:
         """Validate API key format."""
@@ -1651,22 +1673,22 @@ from typing import List
 
 class InputSanitizer:
     """Input sanitization utilities."""
-    
+
     ALLOWED_PROMPT_PATTERN = re.compile(r'^[a-zA-Z0-9\s\-<>:\[\],\.]+)
     MAX_PROMPT_LENGTH = 1000
-    
+
     @classmethod
     def sanitize_prompt(cls, prompt: str) -> str:
         """Sanitize question generation prompt."""
         if not prompt or len(prompt.strip()) == 0:
             raise ValidationException("Prompt cannot be empty")
-        
+
         if len(prompt) > cls.MAX_PROMPT_LENGTH:
             raise ValidationException(f"Prompt too long (max {cls.MAX_PROMPT_LENGTH} chars)")
-        
+
         if not cls.ALLOWED_PROMPT_PATTERN.match(prompt):
             raise ValidationException("Prompt contains invalid characters")
-        
+
         return prompt.strip()
 ```
 

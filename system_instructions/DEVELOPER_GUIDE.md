@@ -9,6 +9,7 @@ This guide provides developers with detailed instructions for customizing and ex
 ### 1. Understanding Template Structure
 
 #### Main Instructions Template Format
+
 ```
 # {question_type} Question Generation - {exam_type}
 
@@ -32,6 +33,7 @@ This guide provides developers with detailed instructions for customizing and ex
 ```
 
 #### Component Template Format
+
 ```
 # {component_name} Component
 
@@ -54,6 +56,7 @@ This guide provides developers with detailed instructions for customizing and ex
 ### 2. Creating New Templates
 
 #### Step 1: Define Template Purpose
+
 ```python
 # Document the template's specific role
 PURPOSE = """
@@ -64,7 +67,7 @@ questions in the [exam type] format.
 # Define required variables
 REQUIRED_VARIABLES = [
     "exam_type",
-    "question_type", 
+    "question_type",
     "difficulty_level",
     "focused_skill"
 ]
@@ -78,15 +81,17 @@ OPTIONAL_VARIABLES = [
 ```
 
 #### Step 2: Create Template File
+
 ```bash
 # Create template in appropriate directory
 touch system_instructions/templates/!Main\ Instructions/new_question_type.txt.template
 
 # Or for component templates
-touch system_instructions/templates/3-questionOptions/new_option_type.txt.template
+touch system_instructions/templates/4-questionOptions/new_option_type.txt.template
 ```
 
 #### Step 3: Implement Template Logic
+
 ```
 # New Question Type Generation - {exam_type}
 
@@ -156,6 +161,7 @@ You are generating {question_type} questions that test {focused_skill} at diffic
 #### Variable Types
 
 **Simple Variables**
+
 ```python
 # String replacement
 template_content = template_content.replace("{exam_type}", exam_type)
@@ -163,6 +169,7 @@ template_content = template_content.replace("{difficulty_level}", str(difficulty
 ```
 
 **Complex Variables**
+
 ```python
 # Array population for graphs
 if "{graphs_array}" in template_content:
@@ -170,12 +177,13 @@ if "{graphs_array}" in template_content:
     for graph_type in requested_graphs:
         graph_format = load_graph_format(graph_type)
         graph_formats.append(graph_format)
-    
+
     graphs_array = json.dumps(graph_formats, indent=2)
     template_content = template_content.replace("{graphs_array}", graphs_array)
 ```
 
 **Conditional Variables**
+
 ```python
 # Process conditional blocks
 def process_conditional_blocks(template_content, conditions):
@@ -188,18 +196,19 @@ def process_conditional_blocks(template_content, conditions):
             # Remove content between conditional tags
             pattern = f"{{{{#{condition}}}}}.*?{{{{/{condition}}}}}"
             template_content = re.sub(pattern, '', template_content, flags=re.DOTALL)
-    
+
     return template_content
 ```
 
 #### Advanced Variable Processing
 
 **Multi-Source Content Population**
+
 ```python
 def populate_multi_source_content(template_content, content_types):
     """Populate {content} variables with appropriate formats"""
     content_formats = []
-    
+
     for content_type in content_types:
         if content_type == "graph":
             format_data = load_graph_format(requested_graph_type)
@@ -207,21 +216,22 @@ def populate_multi_source_content(template_content, content_types):
             format_data = load_passage_format(requested_passage_type)
         elif content_type == "table":
             format_data = load_table_format(requested_table_type)
-        
+
         content_formats.append(format_data)
-    
+
     # Replace {content} placeholders sequentially
     for i, content_format in enumerate(content_formats):
         template_content = template_content.replace(
-            "{content}", 
-            json.dumps(content_format, indent=2), 
+            "{content}",
+            json.dumps(content_format, indent=2),
             1  # Replace only first occurrence
         )
-    
+
     return template_content
 ```
 
 **Dichotomous Choice Processing**
+
 ```python
 def process_dichotomous_choices(template_content, choice_type):
     """Process dichotomous choice variables"""
@@ -231,23 +241,24 @@ def process_dichotomous_choices(template_content, choice_type):
         "would_help": ["Would Help", "Would Not Help"],
         "correct_incorrect": ["Correct", "Incorrect"]
     }
-    
+
     choices = choice_mappings.get(choice_type, ["Option A", "Option B"])
-    
+
     # Randomly distribute choices
     random.shuffle(choices)
-    
+
     # Map to template variables
     template_content = template_content.replace("{type_A}", choices[0])
     template_content = template_content.replace("{type_B}", choices[1])
     template_content = template_content.replace("{type_C}", random.choice(choices))
-    
+
     return template_content
 ```
 
 ### 4. Template Validation
 
 #### Schema Validation
+
 ```python
 from config.schemas.instruction_schemas import InstructionSchema
 from config.schemas.validation_schemas import ValidationSchema
@@ -257,18 +268,19 @@ def validate_template(template_content, template_type):
     try:
         # Parse template structure
         parsed_template = parse_template_structure(template_content)
-        
+
         # Validate against schema
         schema = InstructionSchema.get_schema(template_type)
         ValidationSchema.validate(parsed_template, schema)
-        
+
         return True, "Template validation successful"
-    
+
     except ValidationError as e:
         return False, f"Template validation failed: {str(e)}"
 ```
 
 #### Content Quality Validation
+
 ```python
 def validate_template_quality(template_content, question_type):
     """Validate template content quality"""
@@ -279,18 +291,19 @@ def validate_template_quality(template_content, question_type):
         "has_validation": "validation" in template_content.lower(),
         "has_components": "component" in template_content.lower()
     }
-    
+
     failed_checks = [check for check, passed in quality_checks.items() if not passed]
-    
+
     if failed_checks:
         raise ValueError(f"Template quality validation failed: {failed_checks}")
-    
+
     return True
 ```
 
 ### 5. Integration with Instruction Manager
 
 #### Registering New Templates
+
 ```python
 # In core/instructions/instruction_manager.py
 
@@ -300,52 +313,54 @@ class InstructionManager:
             # Main instructions
             "data_sufficiency": "!Main Instructions/data_sufficiency.txt.template",
             "new_question_type": "!Main Instructions/new_question_type.txt.template",
-            
+
             # Component templates
-            "generic_options": "3-questionOptions/generic.txt.template",
-            "new_option_type": "3-questionOptions/new_option_type.txt.template"
+            "generic_options": "4-questionOptions/generic.txt.template",
+            "new_option_type": "4-questionOptions/new_option_type.txt.template"
         }
-    
+
     def register_template(self, template_name, template_path):
         """Register a new template"""
         self.template_registry[template_name] = template_path
-    
+
     def get_template_path(self, template_name):
         """Get template file path"""
         return self.template_registry.get(template_name)
 ```
 
 #### Template Loading and Caching
+
 ```python
 class TemplateCache:
     def __init__(self):
         self._cache = {}
         self._cache_timestamps = {}
-    
+
     def get_template(self, template_path):
         """Get template with caching"""
         # Check if template is cached and up-to-date
         if template_path in self._cache:
             file_mtime = os.path.getmtime(template_path)
             cache_time = self._cache_timestamps.get(template_path, 0)
-            
+
             if file_mtime <= cache_time:
                 return self._cache[template_path]
-        
+
         # Load template from file
         with open(template_path, 'r', encoding='utf-8') as file:
             template_content = file.read()
-        
+
         # Cache template
         self._cache[template_path] = template_content
         self._cache_timestamps[template_path] = time.time()
-        
+
         return template_content
 ```
 
 ### 6. Testing New Templates
 
 #### Unit Tests
+
 ```python
 import unittest
 from core.instructions.instruction_manager import InstructionManager
@@ -353,13 +368,13 @@ from core.instructions.instruction_manager import InstructionManager
 class TestNewQuestionTypeTemplate(unittest.TestCase):
     def setUp(self):
         self.manager = InstructionManager()
-    
+
     def test_template_loading(self):
         """Test template loads correctly"""
         template = self.manager.get_template("new_question_type")
         self.assertIsNotNone(template)
         self.assertIn("New Question Type", template)
-    
+
     def test_variable_substitution(self):
         """Test variable substitution works"""
         instruction = self.manager.build_instruction(
@@ -368,11 +383,11 @@ class TestNewQuestionTypeTemplate(unittest.TestCase):
             difficulty_level=3,
             focused_skill="logical_reasoning"
         )
-        
+
         self.assertIn("GMAT", instruction)
         self.assertIn("difficulty level 3", instruction)
         self.assertIn("logical_reasoning", instruction)
-    
+
     def test_conditional_processing(self):
         """Test conditional blocks process correctly"""
         # Test difficulty 1-2 conditions
@@ -382,9 +397,9 @@ class TestNewQuestionTypeTemplate(unittest.TestCase):
             difficulty_level=1,
             focused_skill="basic_math"
         )
-        
+
         self.assertIn("simpler vocabulary", low_difficulty)
-        
+
         # Test difficulty 5 conditions
         high_difficulty = self.manager.build_instruction(
             exam_type="gmat",
@@ -392,28 +407,29 @@ class TestNewQuestionTypeTemplate(unittest.TestCase):
             difficulty_level=5,
             focused_skill="advanced_reasoning"
         )
-        
+
         self.assertIn("advanced reasoning", high_difficulty)
 ```
 
 #### Integration Tests
+
 ```python
 def test_template_integration():
     """Test template integration with question generation"""
     from GMAT.Quants.files.newQuestionTypeGeneration import NewQuestionTypeGenerator
-    
+
     generator = NewQuestionTypeGenerator()
     prompt = "New Question Type - Mathematics - Problem Solving - difficulty_level: 3"
-    
+
     # Generate question using new template
     question = generator.generate_question(prompt)
-    
+
     # Validate output structure
     assert question["type"] == "New Question Type"
     assert question["difficulty"] == 3
     assert "options" in question
     assert "solution" in question
-    
+
     # Validate template philosophy implementation
     assert len(question["options"]) >= 4  # Sufficient trap options
     assert question["solution"] != ""     # Solution provided
@@ -422,27 +438,28 @@ def test_template_integration():
 ### 7. Performance Optimization
 
 #### Template Caching Strategy
+
 ```python
 class OptimizedTemplateManager:
     def __init__(self):
         self.template_cache = {}
         self.compiled_templates = {}
-    
+
     def get_compiled_template(self, template_name):
         """Get pre-compiled template for faster processing"""
         if template_name not in self.compiled_templates:
             template_content = self.load_template(template_name)
             compiled_template = self.compile_template(template_content)
             self.compiled_templates[template_name] = compiled_template
-        
+
         return self.compiled_templates[template_name]
-    
+
     def compile_template(self, template_content):
         """Pre-compile template for faster variable substitution"""
         # Extract variables and conditional blocks
         variables = re.findall(r'\{(\w+)\}', template_content)
         conditionals = re.findall(r'\{\{#(\w+)\}\}', template_content)
-        
+
         return {
             'content': template_content,
             'variables': variables,
@@ -451,19 +468,20 @@ class OptimizedTemplateManager:
 ```
 
 #### Lazy Loading Implementation
+
 ```python
 class LazyTemplateLoader:
     def __init__(self):
         self._templates = {}
         self._loaded = set()
-    
+
     def __getitem__(self, template_name):
         if template_name not in self._loaded:
             self._load_template(template_name)
             self._loaded.add(template_name)
-        
+
         return self._templates[template_name]
-    
+
     def _load_template(self, template_name):
         """Load template only when needed"""
         template_path = self._get_template_path(template_name)
@@ -474,6 +492,7 @@ class LazyTemplateLoader:
 ### 8. Debugging and Troubleshooting
 
 #### Debug Logging
+
 ```python
 import logging
 
@@ -483,23 +502,24 @@ def debug_template_processing(template_name, variables):
     """Debug template processing"""
     logger.debug(f"Processing template: {template_name}")
     logger.debug(f"Variables: {variables}")
-    
+
     # Log template loading
     template_content = load_template(template_name)
     logger.debug(f"Template content length: {len(template_content)}")
-    
+
     # Log variable substitution
     for var_name, var_value in variables.items():
         logger.debug(f"Substituting {var_name} = {var_value}")
-    
+
     # Log final result
     processed_template = process_template(template_content, variables)
     logger.debug(f"Processed template length: {len(processed_template)}")
-    
+
     return processed_template
 ```
 
 #### Error Handling
+
 ```python
 class TemplateProcessingError(Exception):
     """Custom exception for template processing errors"""
@@ -511,31 +531,31 @@ def safe_template_processing(template_name, variables):
         # Validate inputs
         if not template_name:
             raise ValueError("Template name cannot be empty")
-        
+
         if not isinstance(variables, dict):
             raise TypeError("Variables must be a dictionary")
-        
+
         # Load template
         template_content = load_template(template_name)
-        
+
         # Validate required variables
         required_vars = extract_required_variables(template_content)
         missing_vars = [var for var in required_vars if var not in variables]
-        
+
         if missing_vars:
             raise TemplateProcessingError(
                 f"Missing required variables: {missing_vars}"
             )
-        
+
         # Process template
         result = process_template(template_content, variables)
-        
+
         # Validate result
         if not result.strip():
             raise TemplateProcessingError("Template processing resulted in empty content")
-        
+
         return result
-    
+
     except Exception as e:
         logger.error(f"Template processing failed: {str(e)}")
         raise TemplateProcessingError(f"Failed to process template {template_name}: {str(e)}")
@@ -544,6 +564,7 @@ def safe_template_processing(template_name, variables):
 ### 9. Best Practices
 
 #### Template Design
+
 1. **Single Responsibility**: Each template should have one clear purpose
 2. **Clear Documentation**: Include comprehensive comments and examples
 3. **Variable Naming**: Use descriptive, consistent variable names
@@ -551,12 +572,14 @@ def safe_template_processing(template_name, variables):
 5. **Modularity**: Design templates to be reusable across question types
 
 #### Code Organization
+
 1. **Directory Structure**: Follow established conventions
 2. **File Naming**: Use descriptive, consistent file names
 3. **Version Control**: Track template changes with meaningful commits
 4. **Documentation**: Keep guides updated with template changes
 
 #### Performance Considerations
+
 1. **Caching**: Cache frequently used templates
 2. **Lazy Loading**: Load templates only when needed
 3. **Pre-compilation**: Pre-process templates for faster runtime
@@ -565,6 +588,7 @@ def safe_template_processing(template_name, variables):
 ### 10. Advanced Features
 
 #### Custom Template Processors
+
 ```python
 class CustomTemplateProcessor:
     def __init__(self):
@@ -573,7 +597,7 @@ class CustomTemplateProcessor:
             'dichotomous': self.process_dichotomous_variables,
             'conditional': self.process_conditional_blocks
         }
-    
+
     def process_template(self, template_content, variables, processor_type):
         """Process template with custom processor"""
         if processor_type in self.processors:
@@ -583,16 +607,17 @@ class CustomTemplateProcessor:
 ```
 
 #### Template Inheritance
+
 ```python
 class BaseQuestionTemplate:
     """Base template for all question types"""
     def __init__(self):
         self.base_template = self.load_base_template()
-    
+
     def extend_template(self, specific_template):
         """Extend base template with specific template"""
         return self.base_template + "\n\n" + specific_template
-    
+
     def load_base_template(self):
         """Load base template shared by all question types"""
         return load_template("!Main Instructions/generic.txt.template")

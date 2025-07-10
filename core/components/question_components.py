@@ -24,6 +24,7 @@ import json
 import re
 import time
 import os
+import random
 from abc import ABC, abstractmethod
 from typing import Dict, Any, List, Optional, Tuple, Union
 from google import genai
@@ -36,7 +37,6 @@ from core.enums.difficulty_levels import DifficultyLevel
 from core.utilities.json_utils import refine_response
 from core.utilities.validation_utils import validate_prompt
 from core.utilities.debug_utils import log_system_instruction
-# Define exception locally since core.exceptions module doesn't exist yet
 
 
 class QuestionGenerationException(Exception):
@@ -72,6 +72,55 @@ def log_detailed_error(context: str, raw_response: str, error: str, expected_key
         print(f"Expected keys: {expected_keys}")
     print("=" * 80)
     print()
+
+
+def extract_dichotomous_type_from_prompt(prompt: str) -> Optional[List[str]]:
+    """Extract dichotomous type from prompt.
+
+    Args:
+        prompt: The prompt string containing dichotomous type info
+
+    Returns:
+        List of dichotomous options or None if not found
+
+    Examples:
+        "ChildQuestion: 1 <Data Interpretation> - <Dichotomous Choice(Yes/No)> - <3>" -> ["Yes", "No"]
+        "ChildQuestion: 2 <Critical Reasoning> - <Dichotomous Choice(Would Help/Would Not Help)> - <4>" -> ["Would Help", "Would Not Help"]
+    """
+    # Look for dichotomous choice pattern
+    dichotomous_pattern = r'<Dichotomous Choice\(([^)]+)\)>'
+    match = re.search(dichotomous_pattern, prompt)
+
+    if match:
+        choices_str = match.group(1)
+        # Split by / and clean up
+        choices = [choice.strip() for choice in choices_str.split('/')]
+        return choices
+
+    return None
+
+
+def replace_dichotomous_tokens(template_text: str, dichotomous_options: List[str]) -> str:
+    """Replace {type} tokens in template with random dichotomous options.
+
+    Args:
+        template_text: Template text containing {type} tokens
+        dichotomous_options: List of dichotomous options (e.g., ["Yes", "No"])
+
+    Returns:
+        Template text with {type} tokens replaced
+    """
+    if not dichotomous_options:
+        return template_text
+
+    # Replace each {type} token with a random choice
+    def replace_token(match):
+        return random.choice(dichotomous_options)
+
+    # Replace all {type} tokens
+    result = re.sub(r'\{type\}', replace_token, template_text)
+
+    return result
 
 
 class BaseQuestionComponent(ABC):
@@ -123,6 +172,9 @@ class BaseQuestionComponent(ABC):
             raise QuestionGenerationException(
                 f"Invalid prompt format: {prompt}")
 
+        # Initialize exam-specific adapter
+        self._adapter = self._initialize_adapter()
+
         # Create chat session
         self.chat = self._create_chat_session()
 
@@ -148,9 +200,28 @@ class BaseQuestionComponent(ABC):
             config=config
         )
 
+    def _initialize_adapter(self):
+        """Initialize the appropriate adapter for the exam type."""
+        if self.exam_type == ExamType.GMAT:
+            from core.components.adapters.gmat_adapter import GMATAdapter
+            return GMATAdapter()
+        else:  # GRE
+            from core.components.adapters.gre_adapter import GREAdapter
+            return GREAdapter()
+
+    def _load_customizations(self) -> Optional[Dict[str, Any]]:
+        """Load exam-specific customizations for template processing."""
+        try:
+            from core.instructions.instruction_loader import InstructionLoader
+            loader = InstructionLoader()
+            return loader.load_customizations(self.exam_type, self.question_type)
+        except Exception as e:
+            print(f"Warning: Could not load customizations: {e}")
+            return {}
+
     def _get_component_instruction(self, component_name: str) -> str:
         """
-        Get template-based instruction for a specific component.
+        Get template-based instruction for a specific component using new template classes.
 
         Args:
             component_name: Name of the component (e.g. "QuestionSolution", "QuestionOptions")
@@ -159,27 +230,48 @@ class BaseQuestionComponent(ABC):
             Template-based instruction text
         """
         try:
-            from core.instructions.instruction_manager import InstructionManager
+            # Load customizations for template processing
+            customizations = self._load_customizations()
 
-            # Map component names to template modes
-            mode_mapping = {
-                "QuestionSolution": "questionSolution",
-                "QuestionOptions": "questionOptions",
-                "QuestionText": "questionText",
-                "QuestionTitle": "questionTitle",
-                "QuestionAnswer": "questionAnswer",
-                "QuestionPassage": "questionPassage"
-            }
+            # Use adapter to get appropriate template based on component type
+            if component_name == "QuestionSolution":
+                instruction = self._adapter.get_solution_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "QuestionOptions":
+                instruction = self._adapter.get_options_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "QuestionText":
+                instruction = self._adapter.get_text_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "QuestionTitle":
+                instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "QuestionAnswer":
+                instruction = self._adapter.get_answer_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "QuestionPassage" or component_name == "multiSource":
+                # Both QuestionPassage and multiSource map to metadata templates
+                instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
+            else:
+                # Fallback for any unmapped component types
+                instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
 
-            mode = mode_mapping.get(component_name, component_name.lower())
-
-            manager = InstructionManager()
-            instruction = manager.get_instruction(
-                exam_type=self.exam_type,
-                question_type=self.question_type,
-                mode=mode,
-                prompt=self.prompt
-            )
+            # Handle dichotomous token replacement for QuestionOptions
+            if component_name == "QuestionOptions" and instruction:
+                dichotomous_options = extract_dichotomous_type_from_prompt(
+                    self.prompt)
+                if dichotomous_options:
+                    instruction = replace_dichotomous_tokens(
+                        instruction, dichotomous_options)
 
             return instruction
 
@@ -200,17 +292,6 @@ class BaseQuestionComponent(ABC):
         Returns:
             AI response text or None if failed
         """
-        # Check if this is a component instruction and enhance with template if needed
-        component_types = ["QuestionSolution", "QuestionOptions", "QuestionText", "QuestionTitle", "QuestionAnswer", "QuestionPassage"]
-        component_match = None
-        for component_type in component_types:
-            if prompt.startswith(component_type):
-                component_match = component_type
-                break
-        
-        if component_match:
-            template_instruction = self._get_component_instruction(component_match)
-            prompt = f"{prompt}\n\nComponent Template:\n{template_instruction}"
 
         # Store the original prompt for debugging
         self._last_prompt_sent = prompt
@@ -509,23 +590,22 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else "Error generating question passage"
 
-    def generate_question_text(self, input_data: Optional[str] = None) -> str:
+    def generate_question_text(self, instruction_prompt: str) -> str:
         """
         Generate question text.
 
         Args:
-            input_data: Optional input data for question generation
+            instruction_prompt: Full instruction prompt including component template
 
         Returns:
             Generated question text
         """
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"QuestionText: {input_data or self.prompt}"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 print(
-                    f"No response received for QuestionText prompt: {prompt_text}")
+                    f"No response received for QuestionText prompt: {instruction_prompt}")
                 return None
 
             message = self._process_json_response(
@@ -538,7 +618,7 @@ class SimpleQuestion(BaseQuestionComponent):
                 return message["question"]
             else:
                 print(
-                    f"No question field found in response for prompt: {prompt_text}")
+                    f"No question field found in response for prompt: {instruction_prompt}")
                 if message:
                     print(f"Available fields: {list(message.keys())}")
                 return None
@@ -546,10 +626,10 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else "Error generating question text"
 
-    def generate_question_title(self) -> str:
+    def generate_question_title(self, instruction_prompt: str) -> str:
         """Generate question title."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionTitle", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -567,11 +647,12 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else ""
 
-    def generate_question_solution(self, is_numeric_entry: bool = False) -> Union[str, Tuple[str, float]]:
+    def generate_question_solution(self, instruction_prompt: str, is_numeric_entry: bool = False) -> Union[str, Tuple[str, float]]:
         """
         Generate question solution.
 
         Args:
+            instruction_prompt: 
             is_numeric_entry: Whether this is a numeric entry question (GRE only)
 
         Returns:
@@ -585,12 +666,12 @@ class SimpleQuestion(BaseQuestionComponent):
             return solution, answer
         else:
             # For regular questions, just solution as plain text
-            return self._generate_solution_plain_text()
+            return self._generate_solution_plain_text(instruction_prompt)
 
-    def _generate_solution_plain_text(self) -> str:
+    def _generate_solution_plain_text(self, instruction_prompt: str) -> str:
         """Generate solution as plain text for all the questions regardless of type of question!."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionSolution", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 print("No response received for QuestionSolution")
@@ -651,7 +732,7 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else ""
 
-    def generate_question_options(self) -> Tuple[Dict[str, str], str]:
+    def generate_question_options(self, instruction_prompt: str) -> Tuple[Dict[str, str], str]:
         """
         Generate question options and correct answer.
 
@@ -662,7 +743,7 @@ class SimpleQuestion(BaseQuestionComponent):
         The correct_answer_key will be the letter key: "A", "B", etc.
         """
         def _generate(warn: bool = False) -> Optional[Tuple[Dict[str, str], str]]:
-            response = self._get_response("QuestionOptions", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -951,9 +1032,13 @@ class ParentChildQuestion(BaseQuestionComponent):
         """Generate shared graph/table for child questions or passage for reading comprehension."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
             # Determine command format based on exam type and question content
-            if self.exam_type == ExamType.GRE and any(term in self.prompt.lower() for term in ["rc-", "reading", "comprehension"]):
-                # For GRE Verbal RC questions, use ParentQuestion format
-                prompt_text = f"ParentQuestion: {self.prompt} generate passage {i} of {total}"
+            if any(term in self.prompt.lower() for term in ["rc-", "reading", "comprehension"]):
+                # For Verbal RC questions, generating passage paragraph by paragraph
+                # Thus allowing better word count balance across paragraphs
+                if total > 1:
+                    prompt_text = f"ParentQuestion: {self.prompt} generate passage paragraph {i} of {total}"
+                else:
+                    prompt_text = f"ParentQuestion: {self.prompt} generate passage {i} of {total}"
             else:
                 # For GRE Quantitative and other types, use questionGraph format
                 prompt_text = f"mode:- questionGraph input:- {self.prompt}"
@@ -964,18 +1049,18 @@ class ParentChildQuestion(BaseQuestionComponent):
                 return None
 
             # Accept multiple possible key formats for flexibility
-            expected_keys = ["graph/table", "graph", "table",
-                             "Passage_Number", "passage", "content"]
+            expected_keys = ["Passage_Number",
+                             "passage", "content", "paragraph"]
 
             message = self._process_json_response(
                 response,
                 expected_keys,
-                "ParentChildQuestion generate_question_graph"
+                "ParentChildQuestion generate_question_metadata"
             )
 
             if message:
                 # Check what type of content we received and return accordingly
-                if "Passage_Number" in message or "passage" in message:
+                if "Passage_Number" in message or "passage" in message or "paragraph" in message:
                     # This is Reading Comprehension passage data
                     return message
                 elif "graph/table" in message or "graph" in message or "table" in message:
@@ -1227,11 +1312,10 @@ class GraphicInterpretationQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_text(self) -> Optional[str]:
+    def generate_question_text(self, instruction_prompt: str) -> Optional[str]:
         """Generate GI question text."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(
-                "Mode: QuestionText return: `question`", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1248,11 +1332,10 @@ class GraphicInterpretationQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_title(self) -> Optional[str]:
+    def generate_question_title(self, instruction_prompt: str) -> Optional[str]:
         """Generate GI question title."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(
-                "Mode: QuestionTitle return: `title`", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1431,6 +1514,13 @@ class TableAnalysisQuestion(SpecializedQuestion):
     def generate_question_options(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate TA question options and answers."""
         def _generate(warn: bool = False) -> Optional[Tuple[Any, Any]]:
+            # TODO: Add dichotomous choice handling for Table Analysis questions
+            # This should work similar to MSR dichotomous handling where we:
+            # 1. Extract dichotomous type from prompt (e.g., "Yes/No", "True/False")
+            # 2. Replace {type} tokens in template with random dichotomous options
+            # 3. Process the template instruction before sending to AI
+            # Implementation will be added when Table Analysis dichotomous support is needed
+
             response = self._get_response("QuestionOptions", warn)
 
             if not response:
@@ -1624,9 +1714,26 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
         self.question_type = QuestionType.MULTI_SOURCE_REASONING
         self.temp_prompt = None
 
-    def generate_source_info(self, prompt: str) -> Optional[Dict[str, Any]]:
-        """Generate source information for MSR questions."""
-        self.temp_prompt = prompt
+    def generate_source_info(self, prompt: str, source_index: int = 1) -> Optional[Dict[str, Any]]:
+        """Generate source information for MSR questions with proper template formatting."""
+        # Change the prompt format to match metadata.json structure
+        # From: "Generate SourceInfo_1 having Line Chart of question: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
+        # To: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
+
+        if "Generate SourceInfo_" in prompt and "having" in prompt and "of question:" in prompt:
+            # Extract source index, component type, and parent content
+            source_match = re.search(
+                r'Generate SourceInfo_(\d+) having ([^\s]+(?:\s+[^\s]+)*) of question: (.+)', prompt)
+            if source_match:
+                source_num = source_match.group(1)
+                component_type = source_match.group(2)
+                parent_content = source_match.group(3)
+                # Format the new prompt to match expected template structure
+                self.temp_prompt = f"SourceInfo_{source_num} having {component_type}: {parent_content}"
+            else:
+                self.temp_prompt = prompt
+        else:
+            self.temp_prompt = prompt
 
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
             response = self._get_response(self.temp_prompt, warn)
@@ -1636,7 +1743,7 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
             message = self._process_json_response(
                 response,
-                ["sources", "source", "content"],
+                ["source_info", "content", "sources", "source"],
                 "MultiSourceReasoningQuestion generate_source_info"
             )
 

@@ -29,8 +29,8 @@ system_instructions/
 │   ├── 0-questionMetadata/          # Content structure templates
 │   ├── 1-questionText/              # Question text templates
 │   ├── 2-questionTitle/             # Question title templates
-│   ├── 3-questionOptions/           # Option generation templates
-│   ├── 4-questionSolution/          # Solution templates
+│   ├── 3-questionSolution/          # Solution templates
+│   ├── 4-questionOptions/           # Option generation templates
 │   └── 5-questionAnswer/            # Answer format templates
 ├── graph_styles.json               # Graph format definitions
 ├── gmat/customizations.json        # GMAT-specific customizations
@@ -78,14 +78,14 @@ These templates handle specific parts of question generation:
 -  `numeric_entry.txt.template`: Open-ended numerical questions
 -  `child_question.txt.template`: Sub-questions for parent-child format
 
-#### 3-questionOptions Templates:
+#### 4-questionOptions Templates:
 
 -  `generic.txt.template`: Standard multiple choice
 -  `dichotomous_choice.txt.template`: True/False, Yes/No, etc.
 -  `sentence_equivalence.txt.template`: GRE sentence equivalence format
 -  `text_completion.txt.template`: GRE text completion format
 
-#### 4-questionSolution Templates:
+#### 3-questionSolution Templates:
 
 -  `generic.txt.template`: Standard solution format
 -  `data_sufficiency.txt.template`: DS-specific solution approach
@@ -117,7 +117,7 @@ Templates use placeholder variables that are populated dynamically:
 
 **Dichotomous Choice Template (`dichotomous_choice.txt.template`)**:
 
--  `{type_A}`, `{type_B}`, `{type_C}`: Dynamically set based on question type
+-  `{type}`, `{type}`, `{type}`: Dynamically set based on question type
    -  "Would Help/Would Not Help"
    -  "Yes/No"
    -  "True/False"

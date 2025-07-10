@@ -137,15 +137,6 @@ class StructuredLogger:
             }
         )
     
-    def log_cache_cleared(self):
-        """Log cache clearing."""
-        self.logger.info(
-            "Instruction cache cleared",
-            extra={
-                "event": "cache_cleared",
-                "timestamp": time.time()
-            }
-        )
     
     def log_template_loaded(self, template_path: str):
         """Log template loading."""
@@ -241,41 +232,6 @@ class StructuredLogger:
             }
         )
     
-    def log_preload_skipped(self):
-        """Log preload operation skipped."""
-        self.logger.info(
-            "Instruction preload skipped (cache disabled)",
-            extra={
-                "event": "preload_skipped",
-                "timestamp": time.time()
-            }
-        )
-    
-    def log_preload_error(self, error: Exception, exam_type: ExamType, question_type: QuestionType, mode: str):
-        """Log preload error for specific instruction."""
-        self.logger.warning(
-            f"Preload failed for {exam_type.value} {question_type.value} {mode}: {error}",
-            extra={
-                "event": "preload_error",
-                "exam_type": exam_type.value,
-                "question_type": question_type.value,
-                "mode": mode,
-                "error_type": type(error).__name__,
-                "error_message": str(error),
-                "timestamp": time.time()
-            }
-        )
-    
-    def log_preload_completed(self, preload_count: int):
-        """Log preload operation completion."""
-        self.logger.info(
-            f"Instruction preload completed ({preload_count} instructions loaded)",
-            extra={
-                "event": "preload_completed",
-                "preload_count": preload_count,
-                "timestamp": time.time()
-            }
-        )
     
     def log_system_warning(self, message: str):
         """Log system warning."""

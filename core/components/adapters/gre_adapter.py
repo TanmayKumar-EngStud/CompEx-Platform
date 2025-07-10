@@ -18,6 +18,14 @@ from core.components.question_components import (
     DataSufficiencyQuestion,
     ParentChildQuestion
 )
+from core.template import (
+    QuestionMetadata,
+    QuestionText,
+    QuestionTitle,
+    QuestionSolution,
+    QuestionOptions,
+    QuestionAnswer
+)
 
 
 class GREAdapter:
@@ -31,6 +39,12 @@ class GREAdapter:
     def __init__(self):
         """Initialize GRE adapter."""
         self.exam_type = ExamType.GRE
+        self.question_metadata = QuestionMetadata()
+        self.question_text = QuestionText()
+        self.question_title = QuestionTitle()
+        self.question_solution = QuestionSolution()
+        self.question_options = QuestionOptions()
+        self.question_answer = QuestionAnswer()
     
     @staticmethod
     def adapt_simple_question(component: SimpleQuestion) -> 'GRESimpleQuestionAdapter':
@@ -46,6 +60,150 @@ class GREAdapter:
     def adapt_parent_child_question(component: ParentChildQuestion) -> 'GREParentChildAdapter':
         """Adapt ParentChildQuestion for GRE-specific behavior."""
         return GREParentChildAdapter(component)
+    
+    def get_metadata_template(
+        self, 
+        question_type: QuestionType, 
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate metadata template for GRE questions.
+        
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+            
+        Returns:
+            Processed metadata template
+        """
+        if question_type == QuestionType.READING_COMPREHENSION:
+            return self.question_metadata.passage(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif "parent" in prompt.lower() and "quant" in prompt.lower():
+            return self.question_metadata.graph(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif question_type == QuestionType.QUANTITATIVE_COMPARISON:
+            return self.question_metadata.graph(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif "parent" in prompt.lower() or "child" in prompt.lower():
+            return self.question_metadata.parent_stimulus(
+                self.exam_type, question_type, customizations, prompt
+            )
+        else:
+            return self.question_metadata.generic(
+                self.exam_type, question_type, customizations, prompt
+            )
+    
+    def get_text_template(
+        self, 
+        question_type: QuestionType, 
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate text template for GRE questions.
+        
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+            
+        Returns:
+            Processed text template
+        """
+        if question_type == QuestionType.NUMERIC_ENTRY:
+            return self.question_text.numeric_entry(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif "child" in prompt.lower():
+            return self.question_text.child_question(
+                self.exam_type, question_type, customizations, prompt
+            )
+        else:
+            return self.question_text.generic(
+                self.exam_type, question_type, customizations, prompt
+            )
+    
+    def get_solution_template(
+        self, 
+        question_type: QuestionType, 
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate solution template for GRE questions.
+        
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+            
+        Returns:
+            Processed solution template
+        """
+        return self.question_solution.generic(
+            self.exam_type, question_type, customizations, prompt
+        )
+    
+    def get_options_template(
+        self, 
+        question_type: QuestionType, 
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate options template for GRE questions.
+        
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+            
+        Returns:
+            Processed options template
+        """
+        if question_type == QuestionType.SENTENCE_EQUIVALENCE:
+            return self.question_options.sentence_equivalence(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif question_type == QuestionType.TEXT_COMPLETION:
+            return self.question_options.text_completion(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif "true" in prompt.lower() or "false" in prompt.lower():
+            return self.question_options.dichotomous_choice(
+                self.exam_type, question_type, customizations, prompt
+            )
+        else:
+            return self.question_options.generic(
+                self.exam_type, question_type, customizations, prompt
+            )
+    
+    def get_answer_template(
+        self, 
+        question_type: QuestionType, 
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate answer template for GRE questions.
+        
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+            
+        Returns:
+            Processed answer template
+        """
+        # GRE questions typically don't use separate answer templates
+        # Parameters are included for interface compatibility
+        return ""
 
 
 class GRESimpleQuestionAdapter:
@@ -78,6 +236,7 @@ class GRESimpleQuestionAdapter:
     def generate_questionOptions(self, num_options: Optional[int] = None) -> Tuple[Dict[str, str], str]:
         """Generate question options (GRE naming convention)."""
         # The base component doesn't use num_options parameter, but we accept it for compatibility
+        _ = num_options  # Explicitly mark as unused
         return self.component.generate_question_options()
 
 

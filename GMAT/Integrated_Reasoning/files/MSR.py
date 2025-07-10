@@ -71,7 +71,8 @@ class Generate_MSR(BaseQuestionGenerator):
             # Generate sources
             for source_index in range(1, 4):
                 source_type = random.choice(self.MSR.get("source_types", ["text", "table", "chart"]))
-                source = msr.generate_SourceInfo(f"Generate SourceInfo_{source_index} having {source_type} of question: {self.prompt}")
+                # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
+                source = msr.generate_SourceInfo(f"SourceInfo_{source_index} having {source_type}: {self.prompt}", source_index)
                 sources["sources"].append(source)
                 cn += 1
 
@@ -103,7 +104,9 @@ class Generate_MSR(BaseQuestionGenerator):
                     question["answer"] = options[correct_option] if correct_option in options else list(options.values())[0]
                     options = list(options.values())
                 else:
-                    answer_data = msr.generate_QuestionOptions(f"ChildQuestionOptions: {source_index}", question_style)
+                    
+                    options_prompt = question["prompt"]  # Contains info telling what ChildQuesiton type is requested
+                    answer_data = msr.generate_QuestionOptions(f"ChildQuestionOptions for  ChildQuestion {source_index}: {options_prompt}", question_style)
                     question["answer"] = answer_data
                     options = list(answer_data.values()) if isinstance(answer_data, dict) else [str(answer_data)]
                 

@@ -54,6 +54,7 @@ class BasePromptGenerator(ABC):
         # Load configuration data
         self.difficulty_distribution = self._load_difficulty_distribution()
         self.component_allocation = self._load_component_allocation()
+        self.customizations = self._load_customizations()
         
         # Section-specific configurations
         self.total_questions = self._get_total_questions()
@@ -131,6 +132,27 @@ class BasePromptGenerator(ABC):
                 "section_type": self.section_type.value
             })
             return self._get_default_component_allocation()
+    
+    def _load_customizations(self) -> Dict[str, Any]:
+        """Load customizations configuration with nomenclature patterns."""
+        try:
+            # Load from system_instructions directory
+            exam_name = self.exam_type.value.lower()
+            customizations_path = Path("system_instructions") / exam_name / "customizations.json"
+            
+            if customizations_path.exists():
+                return load_json_file(str(customizations_path))
+            
+            # Return empty config if file doesn't exist
+            return {}
+            
+        except Exception as e:
+            self.logger.log_generation_error(e, {
+                "operation": "load_customizations",
+                "exam_type": self.exam_type.value,
+                "section_type": self.section_type.value
+            })
+            return {}
     
     def _get_legacy_config_path(self, filename: str) -> Optional[Path]:
         """Get the path to legacy configuration files."""
@@ -258,6 +280,178 @@ class BasePromptGenerator(ABC):
         prompt_parts.append(f"<difficulty_level: {difficulty}>")
         
         return " - ".join(prompt_parts)
+    
+    def generate_nomenclature_based_prompt(
+        self, 
+        question_type: str, 
+        combination_number: int,
+        difficulty: int
+    ) -> str:
+        """
+        Generate prompt based on nomenclature pattern from customizations.json.
+        
+        Args:
+            question_type: Type of question (e.g., 'data sufficiency', 'problem solving')
+            combination_number: Current combination number for element selection
+            difficulty: Difficulty level (1-5)
+            
+        Returns:
+            Formatted prompt string based on nomenclature pattern
+        """
+        section_key = self._get_legacy_section_key()
+        section_config = self.customizations.get(section_key, {})
+        question_config = section_config.get(question_type, {})
+        
+        if not question_config:
+            # Fallback to basic prompt creation
+            return self._create_prompt("S", "general", "general", difficulty)
+        
+        nomenclature = question_config.get("nomenclature", "")
+        if not nomenclature:
+            return self._create_prompt("S", "general", "general", difficulty)
+        
+        # Parse nomenclature pattern and substitute values
+        return self._substitute_nomenclature_variables(
+            nomenclature, question_config, combination_number, difficulty
+        )
+    
+    def _substitute_nomenclature_variables(
+        self, 
+        nomenclature: str, 
+        question_config: Dict[str, Any], 
+        combination_number: int,
+        difficulty: int
+    ) -> str:
+        """
+        Substitute variables in nomenclature pattern with actual values.
+        
+        Args:
+            nomenclature: Nomenclature pattern string
+            question_config: Configuration for this question type
+            combination_number: Current combination number
+            difficulty: Difficulty level
+            
+        Returns:
+            Prompt with substituted values
+        """
+        import re
+        
+        # Find all variables in angle brackets
+        variables = re.findall(r'<([^>]+)>', nomenclature)
+        
+        substituted = nomenclature
+        selectors = ["*", "&", "$"]
+        selected_type = None
+        
+        # First pass: determine the type from the first variable with special characters
+        for var in variables:
+            if any(selector in var for selector in selectors):
+                continue
+                
+            var_values = question_config.get(var, [])
+            if var_values and isinstance(var_values, list):
+                # Check first selected value for type determination
+                idx = combination_number % len(var_values)
+                selected_value = var_values[idx]
+                
+                for selector in selectors:
+                    if selector in str(selected_value):
+                        selected_type = selector
+                        break
+                break
+        
+        # Second pass: substitute all variables
+        for var in variables:
+            var_clean = var
+            
+            # Handle difficulty_level specially
+            if "difficulty_level:" in var:
+                substituted = substituted.replace(f"<{var}>", f"<difficulty_level: {difficulty}>")
+                continue
+            
+            # Handle vocabulary_level specially
+            if "vocabulary_level:" in var:
+                vocab_level = question_config.get("vocabulary", 3)
+                substituted = substituted.replace(f"<{var}>", f"<vocabulary_level: {vocab_level}>")
+                continue
+            
+            # Get values for this variable
+            var_values = question_config.get(var_clean, [])
+            
+            if not var_values or not isinstance(var_values, list):
+                # Try without special characters
+                base_var = var_clean.rstrip("*&$")
+                var_values = question_config.get(base_var, [])
+                
+            if not var_values:
+                substituted = substituted.replace(f"<{var}>", "<general>")
+                continue
+            
+            # Apply special character filtering logic
+            filtered_values = self._filter_values_by_type(var_values, var_clean, selected_type)
+            
+            if filtered_values:
+                idx = combination_number % len(filtered_values)
+                selected_value = filtered_values[idx]
+                
+                # Clean the selected value
+                for selector in selectors:
+                    selected_value = str(selected_value).replace(selector, '')
+                
+                substituted = substituted.replace(f"<{var}>", f"<{selected_value}>")
+            else:
+                substituted = substituted.replace(f"<{var}>", "<general>")
+        
+        return substituted
+    
+    def _filter_values_by_type(
+        self, 
+        values: List[str], 
+        variable_name: str, 
+        selected_type: Optional[str]
+    ) -> List[str]:
+        """
+        Filter values based on special character logic.
+        
+        Args:
+            values: List of possible values
+            variable_name: Variable name (may contain special characters)
+            selected_type: The selected type marker (*, &, $)
+            
+        Returns:
+            Filtered list of values
+        """
+        selectors = ["*", "&", "$"]
+        
+        # If variable name has special character, check if it matches selected type
+        for selector in selectors:
+            if selector in variable_name:
+                if selected_type == selector:
+                    # Return values that have this selector
+                    return [v for v in values if v and selector in str(v)]
+                else:
+                    # Skip this variable as it doesn't match the selected type
+                    return []
+        
+        # Variable has no special character - apply type filtering
+        if selected_type:
+            # First try to get values that match the selected type
+            matching_values = [v for v in values if v and selected_type in str(v)]
+            if matching_values:
+                return [str(v).replace(selected_type, '') for v in matching_values]
+            
+            # If no matching values, get values without any special characters
+            clean_values = []
+            for v in values:
+                if not v:
+                    continue
+                has_selector = any(selector in str(v) for selector in selectors if selector != selected_type)
+                if not has_selector:
+                    clean_values.append(str(v).replace(selected_type, '') if selected_type in str(v) else str(v))
+            return clean_values
+        
+        # No type selected, return all values without special characters
+        return [str(v).replace(s, '') for v in values for s in selectors if v and s in str(v)] or values
     
     def _update_combination_counter(self):
         """Update the combination counter for variety."""

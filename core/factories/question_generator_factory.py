@@ -31,7 +31,6 @@ class QuestionGeneratorFactory:
         """Initialize the question generator factory."""
         self._registry: GeneratorRegistry = get_generator_registry()
         self._config: GeneratorConfig = get_generator_config()
-        self._system_instructions_cache: Dict[str, str] = {}
     
     def create_generator(self, exam_type: ExamType, question_type: QuestionType,
                         section_type: SectionType, global_state: Any = None,
@@ -202,8 +201,6 @@ class QuestionGeneratorFactory:
         Returns:
             System instructions text or None if not found
         """
-        if instruction_file in self._system_instructions_cache:
-            return self._system_instructions_cache[instruction_file]
         
         try:
             # Try absolute path first
@@ -218,7 +215,6 @@ class QuestionGeneratorFactory:
             if os.path.exists(instruction_path):
                 with open(instruction_path, 'r') as f:
                     instructions = f.read()
-                    self._system_instructions_cache[instruction_file] = instructions
                     return instructions
             else:
                 print(f"System instruction file not found: {instruction_file}")
@@ -297,7 +293,6 @@ class QuestionGeneratorFactory:
     def reload_configurations(self) -> None:
         """Force reload of all configurations and generators."""
         self._registry.reload_generators()
-        self._system_instructions_cache.clear()
     
     def create_generator_from_legacy_enum(self, exam_type: ExamType, 
                                         generator_enum_value: str,

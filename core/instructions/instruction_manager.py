@@ -8,7 +8,6 @@ processing for all question types across both exam systems.
 import os
 import json
 from typing import Dict, Optional, Any, Set
-from functools import lru_cache
 from pathlib import Path
 
 from core.enums.exam_types import ExamType
@@ -22,14 +21,13 @@ class InstructionManager:
     """
     Centralized system for managing question generation instructions.
     
-    Provides caching, template processing, and exam-specific customization
+    Provides template processing and exam-specific customization
     for all question types and instruction modes.
     
     Attributes:
         _loader: Instruction file loader instance
         _processor: Template processor instance
         _logger: Structured logger instance
-        _cache_enabled: Whether instruction caching is enabled
         
     Example:
         manager = InstructionManager()
@@ -60,17 +58,13 @@ class InstructionManager:
         QuestionType.TEXT_COMPLETION: {"questionOptions"}
     }
     
-    def __init__(self, cache_enabled: bool = True):
+    def __init__(self):
         """
         Initialize the instruction manager.
-        
-        Args:
-            cache_enabled: Whether to enable instruction caching (default: True)
         """
         self._loader = InstructionLoader()
         self._processor = TemplateProcessor()
         self._logger = StructuredLogger(__name__)
-        self._cache_enabled = cache_enabled
         
         # Initialize and validate system
         self._validate_instruction_system()
@@ -98,30 +92,7 @@ class InstructionManager:
             InstructionNotFoundError: If instruction cannot be found
             TemplateProcessingError: If template processing fails
         """
-        if self._cache_enabled and not prompt:
-            # Only use cache if no prompt is provided (graph styles are dynamic)
-            return self._get_instruction_cached(exam_type, question_type, mode)
-        else:
-            return self._get_instruction_direct(exam_type, question_type, mode, prompt)
-    
-    @lru_cache(maxsize=256)
-    def _get_instruction_cached(
-        self,
-        exam_type: ExamType,
-        question_type: QuestionType,
-        mode: str
-    ) -> str:
-        """Get instruction with caching enabled."""
-        return self._get_instruction_direct(exam_type, question_type, mode, None)
-    
-    def _get_instruction_direct(
-        self,
-        exam_type: ExamType,
-        question_type: QuestionType,
-        mode: str,
-        prompt: Optional[str] = None
-    ) -> str:
-        """Get instruction without caching."""
+        """Get instruction directly without caching."""
         self._logger.log_instruction_request(exam_type, question_type, mode)
         
         # Load base template
@@ -377,61 +348,6 @@ class InstructionManager:
         available_modes = self.get_available_modes(question_type)
         return mode in available_modes
     
-    def clear_cache(self) -> None:
-        """Clear all cached instructions."""
-        if hasattr(self, '_get_instruction_cached'):
-            self._get_instruction_cached.cache_clear()
-        self._logger.log_cache_cleared()
-    
-    def get_cache_info(self) -> Dict[str, Any]:
-        """
-        Get cache statistics.
-        
-        Returns:
-            Dictionary containing cache hit/miss statistics
-        """
-        if hasattr(self, '_get_instruction_cached'):
-            cache_info = self._get_instruction_cached.cache_info()
-            return {
-                "hits": cache_info.hits,
-                "misses": cache_info.misses,
-                "maxsize": cache_info.maxsize,
-                "currsize": cache_info.currsize,
-                "hit_rate": cache_info.hits / (cache_info.hits + cache_info.misses) if (cache_info.hits + cache_info.misses) > 0 else 0
-            }
-        return {"cache_enabled": False}
-    
-    def preload_instructions(
-        self, 
-        exam_types: Optional[Set[ExamType]] = None,
-        question_types: Optional[Set[QuestionType]] = None
-    ) -> None:
-        """
-        Preload instructions into cache for faster access.
-        
-        Args:
-            exam_types: Exam types to preload (default: all)
-            question_types: Question types to preload (default: all)
-        """
-        if not self._cache_enabled:
-            self._logger.log_preload_skipped()
-            return
-            
-        exam_types = exam_types or set(ExamType)
-        question_types = question_types or set(QuestionType)
-        
-        preload_count = 0
-        for exam_type in exam_types:
-            for question_type in question_types:
-                available_modes = self.get_available_modes(question_type)
-                for mode in available_modes:
-                    try:
-                        self.get_instruction(exam_type, question_type, mode)
-                        preload_count += 1
-                    except Exception as e:
-                        self._logger.log_preload_error(e, exam_type, question_type, mode)
-        
-        self._logger.log_preload_completed(preload_count)
     
     def _validate_instruction_system(self) -> None:
         """Validate that the instruction system is properly configured."""
@@ -460,8 +376,6 @@ class InstructionManager:
             Dictionary containing system status and statistics
         """
         return {
-            "cache_enabled": self._cache_enabled,
-            "cache_info": self.get_cache_info(),
             "available_question_types": len(QuestionType),
             "available_exam_types": len(ExamType),
             "total_possible_instructions": len(ExamType) * len(QuestionType) * len(self.STANDARD_MODES),

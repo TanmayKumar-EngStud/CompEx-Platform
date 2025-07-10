@@ -1,6 +1,6 @@
 print("Startup in progress...")
 
-import json, pickle
+import json
 from prisma import Prisma
 from db import DB
 import time
@@ -15,13 +15,11 @@ class Main:
       # Start terminal logging to capture all output
       self.terminal_logger = start_terminal_logging()
       
+      # Set default difficulty and mock settings (no persistence)
       self._difficulty_and_is_mock = {
-         'difficulty': 1,
+         'difficulty': 3,  # Start with medium difficulty
          'is_mock': True
       }
-
-      with open('difficulty_and_is_mock.pkl', 'rb') as f:
-         self._difficulty_and_is_mock = pickle.load(f)
       self.db = Prisma(auto_register=True)
       self.db.connect()
       self.database = DB(self.db)
@@ -100,17 +98,8 @@ class Main:
          print(f"GRE paper generation failed: {str(e)}")
          gre_success = False
       
-      # Update difficulty level
-      try:
-         self._difficulty_and_is_mock['difficulty'] += 1
-         if self._difficulty_and_is_mock['difficulty'] > 5:
-            self._difficulty_and_is_mock['difficulty'] = 1
-            self._difficulty_and_is_mock['is_mock'] = not self._difficulty_and_is_mock['is_mock']
-         with open('difficulty_and_is_mock.pkl', 'wb') as f:
-            pickle.dump(self._difficulty_and_is_mock, f)
-         print(f"Updated difficulty to {self._difficulty_and_is_mock['difficulty']}, mock: {self._difficulty_and_is_mock['is_mock']}")
-      except Exception as e:
-         print(f"Failed to update difficulty settings: {str(e)}")
+      # Note: No persistent difficulty tracking - keeping simple
+      print(f"Session used difficulty {self._difficulty_and_is_mock['difficulty']}, mock: {self._difficulty_and_is_mock['is_mock']}")
       
       # Session Summary
       total_time = time.time() - start_time
