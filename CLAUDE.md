@@ -1,260 +1,276 @@
-# Claude Code-Companion Onboarding Guide
+# GMAT/GRE Question Generation System - Claude Notes
 
 ## Project Overview
 
-This project is a sophisticated, domain-specific question generation system, meticulously designed to produce high-quality questions for standardized tests like the GMAT and GRE. It leverages a modular architecture, where each component is responsible for a specific part of the question generation process, such as text generation, solution creation, and diagrammatic representation. The system is engineered for continuous improvement, incorporating feedback loops to refine and enhance the quality of the generated content. This is a sophisticated AI-powered question generation system for GMAT and GRE standardized tests. The system uses Google's Gemini AI models to generate various types of exam questions with proper difficulty calibration and format validation.
+This is a sophisticated AI-powered question generation system for GMAT and GRE standardized tests. The system uses Google's Gemini AI models to generate various types of exam questions with proper difficulty calibration and format validation.
 
-### Core Functionality
+## System Architecture
 
-The system operates through a pipeline of specialized components:
+### Core Technologies
 
-1. **Question Text Generation**: Creates the title and text of questions based on specified parameters like tags and difficulty levels.
-2. **Solution Generation**: Produces detailed, step-by-step solutions for the generated questions, including identifying the correct answer and creating plausible distractors.
-3. **Metadata Generation**: When required, this component generates visual aids such as graphs and tables to accompany the questions.
-4. **Feedback Integration**: A crucial component that allows for the collection and analysis of user feedback to iteratively improve the models.
+-  **AI Model**: Google GenerativeAI (Gemini) with API key rotation
+-  **Database**: PostgreSQL with Prisma ORM
+-  **Threading**: ThreadPoolExecutor for concurrent question generation
+-  **Languages**: Python with asyncio support
 
-This modular approach ensures that each part of the question generation process can be independently developed, tested, and refined, leading to a robust and scalable system.
+### Key Components
 
-## Development Process with Claude
+1. **Main Entry Point**: `main.py` - Orchestrates paper generation for both GMAT and GRE
+2. **Mock Classes**: `GMAT/Mock.py` and `GRE/Mock.py` - Handle exam paper generation
+3. **Database Layer**: `db.py` with Prisma client for question storage
+4. **Question Generators**: Modular generators for different question types
 
-To ensure a streamlined and efficient development process, we will adhere to the following guidelines:
+## Database Schema (Prisma)
 
-### Single Source of Truth: `README.md`
+### Key Tables
 
-For every folder and subfolder, a `README.md` file will serve as the primary source of documentation. These files will detail:
+-  **ProblemsSet**: Question collections with metadata, content (JSON), difficulty
+-  **problems**: Individual questions with solution, metadata, difficulty tracking
+-  **examtypes**: GMAT/GRE exam type definitions
+-  **sections**: Quantitative, Verbal, Integrated Reasoning sections
+-  **tags**: Topic and skill categorization
+-  **mocktests**: Test sessions with timing and difficulty
+-  **userattempts**: User performance tracking
 
--  **Data Flow**: How data is manipulated, stored, and fetched within the files of that folder.
--  **Function Descriptions**: A clear explanation of each function's purpose, its role in the overall feature, its input parameters, and its expected output.
--  **Example Usage**: Concrete examples of input and output for each function, covering all relevant use cases.
+### Important Fields
 
-For higher-level `README.md` files (in folders containing multiple subfolders), the documentation will provide a more abstract overview, focusing on the interaction and data flow between the subfolders rather than the implementation details within each file.
+-  `content`: JSON field storing question structure (passages, statements, options)
+-  `solution`: JSON field with detailed step-by-step solutions
+-  `difficulty`: Integer 1-5 difficulty scale
+-  `isMockQuestion`: Boolean to distinguish practice vs mock questions
+-  `mockquestionnumber`: Order within mock tests
 
-### Testing Framework: The `/.testing` Folder
+## Question Types and Generators
 
-A dedicated `/.testing` folder will be established to house all testing-related files. This will include:
+### GMAT Question Types
 
--  **Unit Tests**: To verify the functionality of individual functions and components.
--  **Integration Tests**: To ensure that different parts of the system work together as expected.
+#### Quantitative Section
 
-When a function's logic is modified, the corresponding tests in the `/.testing` folder must be updated to reflect the changes. The development workflow will be as follows:
+1. **Data Sufficiency (`Q_DS_gen`)**
 
-1. **Understand the Change**: First, review the relevant `README.md` to understand the current implementation.
-2. **Update Tests**: Modify the tests in the `/.testing` folder to validate the new functionality.
-3. **Modify Code**: Implement the required changes in the source code.
-4. **Run Tests**: Execute the updated tests to ensure the changes are working correctly and have not introduced any regressions.
-5. **Update Documentation**: Once the tests pass, update the corresponding `README.md` file to reflect the new functionality.
+   -  Format: Passage + 2 statements + standard 5 DS options
+   -  File: `GMAT/Quants/files/dataSufficiencyQuestionGeneration.py`
+   -  Output: `{"type": "Data Sufficiency", "content": {"passages": str, "statements": [str, str]}}`
 
-This test-driven approach ensures that the codebase remains stable and that the documentation is always in sync with the implementation.
+2. **Simple Questions (`Q_S_gen`)**
+   -  Format: Multiple choice with 4-5 options
+   -  File: `GMAT/Quants/files/simpleQuestionGeneration.py`
+   -  Type: "MCQ-Single"
 
-### Continuous Improvement
+#### Verbal Section
 
-This `CLAUDE.md` file, along with all other documentation, is a living document. It will be updated as the project evolves to reflect any changes in functionality or workflow.
+1. **Parent-Child Questions (`V_PC_gen`)**
 
-## Project Structure
+   -  Format: Reading Comprehension with 3-4 child questions
+   -  File: `GMAT/Verbal/files/parentChildQuestionGeneration.py`
+   -  Type: "RC"
 
-Below is the complete folder structure of the project, with a brief description of each file and folder's purpose.
+2. **Simple Questions (`V_S_gen`)**
+   -  Format: Critical Reasoning questions
+   -  File: `GMAT/Verbal/files/simpleQuestionGeneration.py`
+   -  Type: "CR"
 
+#### Integrated Reasoning Section
+
+1. **Graphic Interpretation (`GI_gen`)**
+
+   -  Format: Charts/graphs with fill-in-the-blank
+   -  File: `GMAT/Integrated_Reasoning/files/GI.py`
+   -  Content: Bar charts, pie charts, line charts, scatter plots
+
+2. **Two-Part Analysis (`TPA_gen`)**
+
+   -  Format: Shared content with two related questions
+   -  File: `GMAT/Integrated_Reasoning/files/TPA.py`
+
+3. **Table Analysis (`TA_gen`)**
+
+   -  Format: Data tables with True/False questions
+   -  File: `GMAT/Integrated_Reasoning/files/TA.py`
+   -  Features: Dynamic table size (rows: difficulty + 5-7, cols: difficulty + 3-5)
+
+4. **Multi-Source Reasoning (`MSR_gen`)**
+   -  Format: 3 sources with 3 child questions
+   -  File: `GMAT/Integrated_Reasoning/files/MSR.py`
+   -  Sources: Text, tables, graphs combined
+
+### GRE Question Types
+
+#### Quantitative Section
+
+1. **Data Sufficiency (`Q_DS_gen`)**
+
+   -  Similar to GMAT but GRE-specific formatting
+   -  Type: "DS"
+
+2. **Numeric Entry (`Q_NE_gen`)**
+
+   -  Format: Open-ended numerical answers (2 decimal places)
+   -  File: `GRE/Quants/files/numericEntryQuestionGeneration.py`
+   -  Type: "NE"
+
+3. **Parent-Child Questions (`Q_PC_gen`)**
+
+   -  Format: Problem-solving with shared graphs/tables
+   -  File: `GRE/Quants/files/parentChildQuestionGeneration.py`
+   -  Type: "PS"
+
+4. **Simple Questions (`Q_S_gen`)**
+   -  Standard multiple choice quantitative questions
+
+#### Verbal Section
+
+1. **Parent-Child Questions (`V_PC_gen`)**
+
+   -  Format: Reading Comprehension with variable length
+   -  Types: "rc-s" (2 questions), "rc-m" (3 questions), "rc-l" (4 questions)
+
+2. **Simple Questions (`V_S_gen`)**
+   -  Text completion and sentence equivalence questions
+
+## Input Prompt Structure
+
+**Standard Format**: `<topic> - <skill> - <question_type> - <difficulty_level: 1-5>`
+
+**Examples**:
+
+-  GMAT DS: `"DS - <Arithmetic> - <Logical Reasoning> - <difficulty_level: 4>"`
+-  GRE NE: `"<work and time> - <difficulty-level: 2>"`
+-  GMAT GI: `"GI - <Economics> - <Data Interpretation> - <Pie Chart> - <difficulty_level: 2>"`
+
+## Output JSON Structure
+
+All questions follow this standardized format:
+
+```json
+{
+  "type": "question_type",
+  "prompt": "original_prompt",
+  "content": {...}, // Passages, tables, graphs
+  "question": "question_text",
+  "title": "question_title",
+  "options": [...], // For MCQ types
+  "answer": "correct_answer",
+  "solution": "detailed_solution",
+  "difficulty": 1-5,
+  "tags": [...]
+}
 ```
-/Users/tanmaykumar/Desktop/QGen-py-compex/
-├───.gitignore # Files and folders to be ignored by Git.
-├───CLAUDE.md # Documentation related to the Claude model.
-├───CODE_PROTOCOL.md # Guidelines and protocols for coding standards.
-├───db.py # Database connection and management.
-├───deletion_all_questions.py # Script for deleting all questions from the database.
-├───difficulty_and_is_mock.pkl # Pickled file for difficulty and mock exam data.
-├───docker-compose.yml # Docker Compose configuration for setting up the environment.
-├───Dockerfile # Dockerfile for building the project's Docker image.
-├───GRE-paper.json # JSON file containing a GRE paper.
-├───HANDOFF.md # Handoff documentation for project transfer.
-├───IMPROVISATION_ROADMAP.md # Roadmap for project improvisations.
-├───main.py # Main entry point for the application.
-├───MIGRATION_ROADMAP.md # Roadmap for database migrations.
-├───PrimaryTablesDefinitions.json # JSON file defining the primary database tables.
-├───Readme.md # Project overview and milestones.
-├───register-json-paper.py # Script for registering a JSON paper.
-├───requirements.txt # List of Python dependencies.
-├───requirements.yaml # YAML file for project requirements.
-├───STANDARDIZED_GRAPH_STRUCTURES.md # Documentation on standardized graph structures.
-├───temp.json # Temporary JSON file.
-├───terminal_logger.py # Logger for terminal output.
-├───validation_summary_2025-06-13_17-17-42.json # Validation summary report.
-├───__pycache__/ # Python cache directory.
-├───.claude/ # Claude model related files.
-├───.git/ # Git version control directory.
-├───.vscode/ # VSCode editor configuration.
-├───backup/ # Backup directory.
-│   └───instructions_backup_1751729652/ # Backup of instructions.
-│       ├───GMAT/ # GMAT related backups.
-│       └───GRE/ # GRE related backups.
-├───Backup_DB/ # Database backup directory.
-│   └───backup(26-02-2025).sql # SQL backup file.
-├───config/ # Configuration files.
-│   ├───exams/ # Exam-specific configurations.
-│   │   ├───__init__.py
-│   │   ├───base_exam_config.py # Base configuration for exams.
-│   │   ├───gmat_config.py # GMAT specific configuration.
-│   │   ├───gre_config.py # GRE specific configuration.
-│   │   └───__pycache__/
-│   ├───generators/ # Generator configurations.
-│   │   ├───gmat_generators.json # GMAT generator settings.
-│   │   └───gre_generators.json # GRE generator settings.
-│   └───schemas/ # Schema definitions.
-│       ├───__init__.py
-│       ├───instruction_schemas.py # Schemas for instructions.
-│       ├───question_schemas.py # Schemas for questions.
-│       └───validation_schemas.py # Schemas for validation.
-├───core/ # Core application logic.
-│   ├───__init__.py
-│   ├───__pycache__/
-│   ├───components/ # Core components of the application.
-│   │   ├───question_components.py # Components related to questions.
-│   │   ├───__pycache__/
-│   │   └───adapters/ # Adapters for different exams.
-│   ├───config/ # Core configuration.
-│   │   ├───__init__.py
-│   │   ├───exam_config.py # Exam configuration.
-│   │   ├───system_config.py # System configuration.
-│   │   └───__pycache__/
-│   ├───enums/ # Enumerations used in the project.
-│   │   ├───__init__.py
-│   │   ├───difficulty_levels.py # Enum for difficulty levels.
-│   │   ├───exam_types.py # Enum for exam types.
-│   │   ├───question_types.py # Enum for question types.
-│   │   ├───section_types.py # Enum for section types.
-│   │   └───__pycache__/
-│   ├───exceptions/ # Custom exception classes.
-│   │   ├───__init__.py
-│   │   └───generation_exceptions.py # Exceptions related to generation.
-│   ├───factories/ # Factories for creating objects.
-│   │   ├───__init__.py
-│   │   ├───generator_config.py # Generator configuration factory.
-│   │   ├───generator_registry.py # Registry for generators.
-│   │   ├───question_generator_factory.py # Factory for question generators.
-│   │   └───__pycache__/
-│   ├───instructions/ # Instruction management.
-│   │   ├───__init__.py
-│   │   ├───graph_style_manager.py # Manager for graph styles.
-│   │   ├───instruction_loader.py # Loader for instructions.
-│   │   ├───instruction_manager.py # Manager for instructions.
-│   │   ├───template_processor.py # Processor for templates.
-│   │   └───__pycache__/
-│   ├───interfaces/ # Interfaces for different components.
-│   │   ├───__init__.py
-│   │   ├───mock_generator.py # Interface for mock generators.
-│   │   ├───prompt_generator.py # Interface for prompt generators.
-│   │   ├───question_generator.py # Interface for question generators.
-│   │   └───__pycache__/
-│   ├───mock/ # Mock exam generation.
-│   │   ├───__init__.py
-│   │   ├───paper_builder.py # Builder for mock papers.
-│   │   ├───section_builder.py # Builder for mock sections.
-│   │   ├───unified_mock_generator.py # Unified mock generator.
-│   │   └───__pycache__/
-│   ├───prompts/ # Prompt generation.
-│   │   ├───__init__.py
-│   │   ├───prompt_generator_factory.py # Factory for prompt generators.
-│   │   ├───__pycache__/
-│   │   ├───base/ # Base prompts.
-│   │   ├───gmat/ # GMAT specific prompts.
-│   │   └───gre/ # GRE specific prompts.
-│   ├───threading/ # Threading management.
-│   │   ├───__init__.py
-│   │   ├───api_thread_pool_manager.py # Thread pool manager for APIs.
-│   │   ├───exceptions.py # Threading exceptions.
-│   │   ├───thread_config.py # Threading configuration.
-│   │   └───__pycache__/
-│   └───utilities/ # Utility functions.
-│       ├───__init__.py
-│       ├───api_utils.py # API utilities.
-│       ├───debug_utils.py # Debugging utilities.
-│       ├───file_utils.py # File utilities.
-│       ├───json_utils.py # JSON utilities.
-│       ├───logging_utils.py # Logging utilities.
-│       ├───options_converter.py # Options converter.
-│       ├───tags_char.json # JSON for tags characters.
-│       ├───validation_utils.py # Validation utilities.
-│       └───__pycache__/
-├───GMAT/ # GMAT specific files.
-│   ├───assistant_ids.json # Assistant IDs for GMAT.
-│   ├───Mock.py # GMAT mock exam generation.
-│   ├───__pycache__/
-│   ├───Integrated_Reasoning/ # Integrated Reasoning section.
-│   │   ├───__pycache__/
-│   │   ├───combinations/ # Combinations for IR.
-│   │   ├───files/ # Files for IR.
-│   │   └───Generate Assistants/ # Scripts to generate assistants.
-│   ├───Mock_prompts/ # Prompts for GMAT mock exams.
-│   │   ├───Integrated_Reasoning.py
-│   │   ├───Quants.py
-│   │   ├───Verbal.py
-│   │   ├───__pycache__/
-│   │   └───jsonfiles/
-│   ├───Quants/ # Quantitative section.
-│   │   ├───__pycache__/
-│   │   ├───combinations/ # Combinations for Quants.
-│   │   ├───files/ # Files for Quants.
-│   │   └───Generate Assistants/ # Scripts to generate assistants.
-│   └───Verbal/ # Verbal section.
-│       ├───__pycache__/
-│       ├───combinations/ # Combinations for Verbal.
-│       ├───files/ # Files for Verbal.
-│       └───Generate Assistants/ # Scripts to generate assistants.
-├───GRE/ # GRE specific files.
-│   ├───assistant_ids.json # Assistant IDs for GRE.
-│   ├───Mock.py # GRE mock exam generation.
-│   ├───__pycache__/
-│   ├───Mock_prompts/ # Prompts for GRE mock exams.
-│   │   ├───Quants.py
-│   │   ├───Verbal.py
-│   │   ├───__pycache__/
-│   │   └───jsonfiles/
-│   ├───Quants/ # Quantitative section.
-│   │   ├───__init__.py
-│   │   ├───__pycache__/
-│   │   ├───combinations/ # Combinations for Quants.
-│   │   ├───files/ # Files for Quants.
-│   │   └───...
-│   └───Verbal/ # Verbal section.
-├───IMPROVEMENT REQUIRED/ # Documentation on required improvements.
-│   ├───GENERAL-ARCHITECTURE-IMPROVEMENT.md
-│   └───ROADMAP-FOR-INCORPORATING-THESE-IMPROVEMENT.md
-├───ISSUES/ # Issue tracking.
-│   └───log_22-41-20.md
-├───logs/ # Log files.
-├───papers/ # Generated papers.
-│   ├───GMAT/
-│   └───GRE/
-├───prisma/ # Prisma ORM files.
-│   ├───schema.prisma # Prisma schema.
-│   ├───schema.prisma.txt
-│   └───migrations/ # Database migrations.
-├───scripts/ # Utility scripts.
-│   └───migration/
-├───SECURITY/ # Security related documentation.
-│   └───README.md
-├───system_instructions/ # System-level instructions.
-│   ├───DEVELOPER_GUIDE.md
-│   ├───README.md
-│   ├───gmat/
-│   ├───gre/
-│   ├───in_the_run/
-│   ├───older_system_instructions_for_reference/
-│   └───templates/
-├───testing/ # Testing directory.
-│   ├───README_validation.md
-│   ├───README.md
-│   ├───run_all_tests.py # Script to run all tests.
-│   ├───test_dynamic_selection.py
-│   ├───test_generator_integration.py
-│   ├───test_graph_styles.py
-│   ├───test_instruction_system.py
-│   ├───test_main_instructions.py
-│   ├───test_philosophical_alignment.py
-│   ├───validate_all_papers.py # Script to validate all papers.
-│   ├───validate_question_paper.py # Script to validate a single paper.
-│   └───__pycache__/
-└───venv/ # Python virtual environment.
-    ├───bin/
-    ├───include/
-    └───lib/
-```
+
+## Key Files and Directories
+
+### Configuration Files
+
+-  `assistant_ids.json`: AI assistant configuration for both GMAT and GRE
+-  `requirements.txt`: Python dependencies
+-  `prisma/schema.prisma`: Database schema definition
+-  `difficulty_and_is_mock.pkl`: Current difficulty level and mock test status
+
+### Generation Logic
+
+-  `GMAT/Mock_prompts/`: Prompt generation for different GMAT sections
+-  `GRE/Mock_prompts/`: Prompt generation for different GRE sections
+-  `combinations/`: JSON files tracking question combinations for variety
+-  `tests/`: Sample question outputs for each question type
+
+### System Instructions
+
+-  `System_instructions/`: Text files containing detailed AI prompts for each question type
+-  Each question type has specific instructions for format, difficulty, and content requirements
+
+## Threading and API Management
+
+### APIThreadPoolManager
+
+-  Manages concurrent question generation across multiple API keys
+-  Features API rotation, state management, and task queuing
+-  Handles rate limiting and retry logic
+-  Located in both `GMAT/Mock.py` and `GRE/Mock.py`
+
+### Thread Safety
+
+-  Global state management with locks for each API instance
+-  Request count tracking and timing management
+-  Graceful handling of API failures with retry mechanisms
+
+## Paper Generation Process
+
+1. **Initialization**: Load difficulty level and mock status from pickle file
+2. **Prompt Generation**: Create prompts for each section based on difficulty
+3. **Concurrent Generation**: Use ThreadPoolExecutor to generate questions in parallel
+4. **Storage**: Save generated papers as JSON files in `papers/` directory
+5. **Database Registration**: Store questions in PostgreSQL database
+6. **State Update**: Increment difficulty level and toggle mock status
+
+## Development Notes
+
+### When Adding New Question Types
+
+1. Create generator class inheriting from base question components
+2. Add system instructions file with detailed prompts
+3. Update GENERATOR_MAP in respective Mock.py file
+4. Add combination JSON for tracking question variety
+5. Create test files with expected output formats
+
+### When Modifying Existing Types
+
+1. Update system instructions files
+2. Modify generator classes while maintaining output format
+3. Update test files with new expected outputs
+4. Consider database schema changes if metadata structure changes
+
+### Testing and Validation
+
+-  Each question type has test JSON files showing expected outputs
+-  System validates JSON formatting and required fields
+-  Built-in retry logic handles generation failures
+-  Error responses are logged for debugging
+
+## Common Issues and Solutions
+
+### API Rate Limiting
+
+-  System uses multiple API keys with rotation
+-  Built-in delays between API calls
+-  Global state tracking to respect rate limits
+
+### JSON Format Validation
+
+-  Preprocessing and postprocessing of AI responses
+-  JSON refinement utilities in questionComponents.py
+-  Strict format validation before database storage
+
+### Thread Synchronization
+
+-  Locks prevent race conditions in global state
+-  Atomic operations for request counting
+-  Proper cleanup of thread resources
+
+## File Paths for Quick Reference
+
+### Core System Files
+
+-  Main orchestrator: `/main.py`
+-  Database interface: `/db.py`
+-  GMAT paper generation: `/GMAT/Mock.py`
+-  GRE paper generation: `/GRE/Mock.py`
+
+### Question Generators (GMAT)
+
+-  Data Sufficiency: `/GMAT/Quants/files/dataSufficiencyQuestionGeneration.py`
+-  Simple Quants: `/GMAT/Quants/files/simpleQuestionGeneration.py`
+-  Verbal RC: `/GMAT/Verbal/files/parentChildQuestionGeneration.py`
+-  Verbal CR: `/GMAT/Verbal/files/simpleQuestionGeneration.py`
+-  Graphic Interpretation: `/GMAT/Integrated_Reasoning/files/GI.py`
+-  Two-Part Analysis: `/GMAT/Integrated_Reasoning/files/TPA.py`
+-  Table Analysis: `/GMAT/Integrated_Reasoning/files/TA.py`
+-  Multi-Source Reasoning: `/GMAT/Integrated_Reasoning/files/MSR.py`
+
+### Question Generators (GRE)
+
+-  Data Sufficiency: `/GRE/Quants/files/dataSufficiencyQuestionGeneration.py`
+-  Numeric Entry: `/GRE/Quants/files/numericEntryQuestionGeneration.py`
+-  Parent-Child Quants: `/GRE/Quants/files/parentChildQuestionGeneration.py`
+-  Simple Quants: `/GRE/Quants/files/simpleQuestionGeneration.py`
+-  Verbal RC: `/GRE/Verbal/files/parentChildQuestionGeneration.py`
+-  Verbal Simple: `/GRE/Verbal/files/simpleQuestionGeneration.py`

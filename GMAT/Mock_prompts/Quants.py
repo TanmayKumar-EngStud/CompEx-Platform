@@ -5,10 +5,10 @@ class Quants_prompts:
       self.mock_difficulty = mock_difficulty
       self.total_questions = 21
 
-      with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "difficulty_distribution.json"), "r") as file:
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/difficulty_distribution.json"), "r") as file:
          self.difficulty_distribution = json.load(file)["quants"]
 
-      with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "r") as file:
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/component_allocation.json"), "r") as file:
          self.complete_component_allocation = json.load(file)
          self.component_allocation = self.complete_component_allocation["quants"]
 
@@ -69,7 +69,7 @@ class Quants_prompts:
          prompts.append(prompt)
 
       self.complete_component_allocation["quants"] = self.component_allocation
-      with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "w") as file:
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/component_allocation.json"), "w") as file:
          json.dump(self.complete_component_allocation, file, indent=4)
       return prompts
 

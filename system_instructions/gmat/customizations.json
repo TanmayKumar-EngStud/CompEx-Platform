@@ -37,12 +37,12 @@
          ],
          "graphType/tableType$": [
             null,
-            "Line Graph",
-            "Bar Graph",
-            "Pie Chart graph",
-            "Scatter Plot graph",
-            "Standard Data Table",
-            "Pivot Table",
+            "line graph",
+            "bar chart",
+            "pie chart",
+            "scatter plot",
+            "data table",
+            "pivot table",
             "Highlight Table",
             "Heat Table",
             "Text Table",
@@ -94,12 +94,12 @@
          ],
          "graphType/tableType*": [
             null,
-            "Line Graph",
-            "Bar Graph",
-            "Pie Chart graph",
-            "Scatter Plot graph",
-            "Standard Data Table",
-            "Pivot Table",
+            "line graph",
+            "bar chart",
+            "pie chart",
+            "scatter plot",
+            "data table",
+            "pivot table",
             "Highlight Table",
             "Heat Table",
             "Text Table",
@@ -173,13 +173,13 @@
       },
       "multi source reasoning": {
          "nomenclature": "MSR - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill> - <question_style> - <difficulty_level: {1-5}>",
-         "source_types": [
+         "source_info": [
             "Passage",
-            "Scatter Plot",
-            "Line Chart",
+            "scatter plot",
+            "line chart",
             "2 Category Table",
-            "Pie Chart",
-            "Bar Chart"
+            "pie chart",
+            "bar chart"
          ],
          "child-question": {
             "nomenclature": "MSR ChildQuestion - <focused_skill> - <question_style>",

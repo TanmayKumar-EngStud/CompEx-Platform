@@ -5,8 +5,6 @@ This adapter handles GMAT-specific behaviors and adaptations for the unified
 question components, ensuring backward compatibility with existing GMAT
 question generators.
 
-Author: Claude Code (Migration CHUNK 2)
-Date: 2025-06-25
 """
 
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -81,9 +79,9 @@ class GMATAdapter:
         return GMATTwoPartAnalysisAdapter(component)
 
     @staticmethod
-    def adapt_multi_source_reasoning(component: MultiSourceReasoningQuestion) -> 'GMATMultiSourceReasoningAdapter':
+    def adapt_multi_source_reasoning(prompt: str, component: MultiSourceReasoningQuestion) -> 'GMATMultiSourceReasoningAdapter':
         """Adapt MultiSourceReasoningQuestion for GMAT-specific behavior."""
-        return GMATMultiSourceReasoningAdapter(component)
+        return GMATMultiSourceReasoningAdapter(prompt, component)
 
     def get_metadata_template(
         self,
@@ -103,7 +101,7 @@ class GMATAdapter:
             Processed metadata template
         """
         if question_type == QuestionType.MULTI_SOURCE_REASONING:
-            return self.question_metadata.multi_source(
+            return self.question_metadata.multi_sourceInfo(
                 self.exam_type, question_type, customizations, prompt
             )
         elif question_type == QuestionType.GRAPHIC_INTERPRETATION:
@@ -200,10 +198,14 @@ class GMATAdapter:
         Returns:
             Processed options template
         """
-        if "true" in prompt.lower() or "false" in prompt.lower():
+        if "dichotomous" in prompt.lower():
             return self.question_options.dichotomous_choice(
                 self.exam_type, question_type, customizations, prompt
             )
+        elif "GI" in prompt:
+            return self.question_options.text_completion(
+                "gre", "text_completion", customizations, "TC-2"+prompt
+            )  # mimicking TC-2 format for question_option generation for Graphical Interpretation
         else:
             return self.question_options.generic(
                 self.exam_type, question_type, customizations, prompt
@@ -238,26 +240,31 @@ class GMATAdapter:
 class GMATSimpleQuestionAdapter:
     """GMAT-specific adapter for SimpleQuestion components."""
 
-    def __init__(self, component: SimpleQuestion):
+    def __init__(self, prompt: str, component: SimpleQuestion):  # ✅
         """Initialize with SimpleQuestion component."""
+        self.prompt = prompt
         self.component = component
 
-    def generate_QuestionPassage(self) -> str:
-        """Generate question passage/argument for Critical Reasoning (GMAT naming convention)."""
+    def generate_QuestionPassage(self, idx: int) -> str:  # ✅
+        """Generate question passage/argument for Critical Reasoning [Not for Reading Comprehension](GMAT naming convention).
+            Args:
+                idx: total number of paragraphs that passage should have
+            Returns **passages** as string
+        """
         component_template = self.component._get_component_instruction(
             "QuestionPassage")
-        # idx =
-        prompt = f"{self.component.prompt}"
-        return self.component.generate_question_passage()
+        total_passage = ""
+        for i in range(idx):
+            instruction_prompt = f"{self.prompt}\nmode:- QuestionPassage; generate paragraph {i+1} of {idx}: \n{component_template}"
+            total_passage += f"{self.component.generate_question_passage(instruction_prompt)}\n"
+        return total_passage
 
-    # ✅
-    def generate_questionText(self, input_data: Optional[str] = None) -> str:
+    def generate_questionText(self) -> str:  # ✅
         """Generate question text (GMAT naming convention)."""
         # Get component template and combine with prompt
         component_template = self.component._get_component_instruction(
             "QuestionText")
-        prompt = input_data if input_data else "QuestionText"
-        instruction_prompt = f"{prompt}\n\n{component_template}"
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionText\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
     def generate_questionTitle(self) -> str:  # ✅
@@ -265,101 +272,148 @@ class GMATSimpleQuestionAdapter:
         # Get component template and combine with prompt
         component_template = self.component._get_component_instruction(
             "QuestionTitle")
-        instruction_prompt = f"QuestionTitle\n\n{component_template}"
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionTitle\n\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
     def generate_questionSolution(self) -> str:  # ✅
         """Generate question solution (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
             "QuestionSolution")
-        instruction_prompt = f"QuestionSolution\n\n{component_template}"
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionSolution\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt, is_numeric_entry=False)
 
     def generate_questionOptions(self) -> Tuple[List[str], str]:  # ✅
         """Generate question options (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
             "QuestionOptions")
-        instruction_prompt = f"QuestionOptions\n\n{component_template}"
-        return self.component.generate_question_options(component_template)
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionOptions\n\n{component_template}"
+        return self.component.generate_question_options(instruction_prompt)
 
 
 class GMATDataSufficiencyAdapter:
     """GMAT-specific adapter for DataSufficiencyQuestion components."""
 
-    def __init__(self, component: DataSufficiencyQuestion):
+    def __init__(self, prompt: str, component: DataSufficiencyQuestion):
         """Initialize with DataSufficiencyQuestion component."""
         self.component = component
+        self.prompt = prompt
 
     def generate_questionGraph(self) -> Optional[Dict[str, Any]]:
         """Generate question graph/table."""
-        return self.component.generate_question_graph()
+        component_template = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionGraph\n{component_template}"
+        return self.component.generate_question_graph(instruction_prompt)
 
     def generate_questionText(self) -> Tuple[Optional[str], Optional[List[str]], Optional[str]]:
         """Generate question text components."""
-        return self.component.generate_question_text()
+        component_template = self.component._get_component_instruction(
+            'QuestionText')
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionText\n{component_template}"
+        return self.component.generate_question_text(instruction_prompt)
 
     def generate_questionTitle(self) -> Optional[str]:
         """Generate question title."""
-        return self.component.generate_question_title()
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionTitle\n{component_template}"
+        return self.component.generate_question_title(instruction_prompt)
 
     def generate_questionSolution(self) -> str:
         """Generate question solution only (plain text)."""
-        return self.component.generate_question_solution()
+        component_template = self.component._get_component_instruction(
+            'QuestionSolution')
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionSolution\n{component_template}"
+        return self.component.generate_question_solution(instruction_prompt)
 
     def generate_questionOptions(self) -> Tuple[Dict[str, str], str]:
         """Generate question options and answer."""
-        return self.component.generate_question_options_with_answer()
+        component_template = self.component._get_component_instruction(
+            'QuestionOptions')
+        instruction_prompt = f"{self.prompt}\nmode:- QuestionOptions\n{component_template}"
+        return self.component.generate_question_options_with_answer(instruction_prompt)
 
 
 class GMATParentChildAdapter:
     """GMAT-specific adapter for ParentChildQuestion components (Verbal RC)."""
 
-    def __init__(self, component: ParentChildQuestion):
+    def __init__(self, prompt: str, component: ParentChildQuestion):
         """Initialize with ParentChildQuestion component."""
+        self.prompt = prompt
+        self.child_prompt = None
         self.component = component
+        self.flow = []
 
     def generate_parentTitle(self) -> Optional[str]:
         """Generate parent title."""
-        return self.component.generate_parent_title()
+        self.flow.append('ParentTitle')
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        instruction_prompt = f"{self.prompt}\n mode: ParentTitle\n{component_template}"
+        return self.component.generate_parent_title(instruction_prompt)
 
-    def generate_parentQuestion(self) -> Optional[str]:
-        """Generate parent question (passage content)."""
-        return self.component.generate_parent_question()
-
-    def generate_childQuestionTitle(self, index: int) -> Optional[str]:
+    def generate_childTitle(self, index: int) -> Optional[str]:
         """Generate child question title."""
-        return self.component.generate_child_question_title(index)
+        self.flow.append('ChildTitle')
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        if self.child_prompt is None:
+            raise ValueError(
+                f"{self.__class__.__name__}.{self.generate_childTitle.__name__} was called before childQuestion({self.__class__.__name__}.{self.generate_childQuestion.__name__}), thus child_prompt was not saved")
+        instruction_prompt = f"{self.child_prompt}\n{component_template}"
+        return self.component.generate_child_question_title(index, instruction_prompt)
 
-    def generate_childQuestion(self, index: int, child_prompt: str = "") -> Optional[str]:
+    def generate_childQuestion(self, index: int, child_prompt: str) -> Optional[str]:
         """Generate child question text."""
-        return self.component.generate_child_question(index, child_prompt)
+        self.flow.append('ChildQuestion')
+        self.child_prompt = child_prompt
+        component_template = self.component._get_component_instruction(
+            'QuestionText')
+        instruction_prompt = f"Child Prompt: {self.child_prompt}\n{component_template}"
+        return self.component.generate_child_question(index, instruction_prompt)
 
     def generate_childOptions(self, index: int) -> Tuple[Optional[List[str]], Optional[str]]:
         """Generate child question options."""
-        return self.component.generate_child_options(index)
+        component_template = self.component._get_component_instruction(
+            'QuestionOptions')
+        instruction_prompt = f"Child Prompt: {self.child_prompt}\n {component_template}"
+        if self.child_prompt is None:
+            raise ValueError(
+                f"{self.__class__.__name__}.{self.generate_childOptions.__name__} was called before childQuestion({self.__class__.__name__}.{self.generate_childQuestion.__name__}), thus child_prompt was not saved")
+        return self.component.generate_child_options(index, instruction_prompt)
 
     def generate_childSolution(self, index: int) -> Optional[str]:
         """Generate child question solution."""
-        return self.component.generate_child_solution(index)
+        component_template = self.component._get_component_instruction(
+            'QuestionSolution')
+        if self.child_prompt is None:
+            raise ValueError(
+                f"{self.__class__.__name__}.{self.generate_childOptions.__name__} was called before childQuestion({self.__class__.__name__}.{self.generate_childQuestion.__name__}), thus child_prompt was not saved")
+        instruction_prompt = f"Child Prompt: {self.child_prompt}\n {component_template}"
+        return self.component.generate_child_solution(index, instruction_prompt)
 
 
 class GMATGraphicInterpretationAdapter:
     """GMAT-specific adapter for GraphicInterpretationQuestion components."""
 
-    def __init__(self, component: GraphicInterpretationQuestion):
+    def __init__(self, prompt: str, component: GraphicInterpretationQuestion):
         """Initialize with GraphicInterpretationQuestion component."""
         self.component = component
+        self.prompt = prompt
 
     def generate_questionGraph(self) -> Optional[Dict[str, Any]]:
         """Generate question graph."""
-        return self.component.generate_question_graph()
+        component_template = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionGraph\n{component_template}"
+        return self.component.generate_question_graph(instruction_prompt)
 
     def generate_questionText(self) -> Optional[str]:
         """Generate question text."""
         # Get component template and combine with prompt
         component_template = self.component._get_component_instruction(
             "QuestionText")
-        instruction_prompt = f"Mode: QuestionText return: `question`\n\n{component_template}"
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
     def generate_questionTitle(self) -> Optional[str]:
@@ -367,85 +421,139 @@ class GMATGraphicInterpretationAdapter:
         # Get component template and combine with prompt
         component_template = self.component._get_component_instruction(
             "QuestionTitle")
-        instruction_prompt = f"Mode: QuestionTitle return: `title`\n\n{component_template}"
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionTitle\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
     def generate_questionSolution(self) -> Optional[str]:
         """Generate question solution."""
-        return self.component.generate_question_solution()
+        component_template = self.component._get_component_instruction(
+            "QuestionSolution")
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{component_template}"
+        return self.component.generate_question_solution(instruction_prompt)
 
     def generate_questionOptions(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate question options."""
-        return self.component.generate_question_options()
+        component_template = self.component._get_component_instruction(
+            "QuestionOptions")
+        instruction_prompt = f"{self.prompt}\nMode: QuestionOptions\n{component_template}"
+        return self.component.generate_question_options(instruction_prompt)
 
 
 class GMATTableAnalysisAdapter:
     """GMAT-specific adapter for TableAnalysisQuestion components."""
 
-    def __init__(self, component: TableAnalysisQuestion):
+    def __init__(self, prompt: str, component: TableAnalysisQuestion):
         """Initialize with TableAnalysisQuestion component."""
         self.component = component
+        self.prompt = prompt
 
     def generate_QuestionTable(self, no_rows: int, no_cols: int) -> Optional[Dict[str, Any]]:
         """Generate question table (GMAT naming convention)."""
-        return self.component.generate_question_table(no_rows, no_cols)
+        component_template = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"{self.prompt}\n{component_template}"
+        return self.component.generate_question_table(instruction_prompt, no_rows, no_cols)
 
     def generate_QuestionText(self) -> Optional[str]:
         """Generate question text (GMAT naming convention)."""
-        return self.component.generate_question_text()
+        component_template = self.component._get_component_instruction(
+            'QuestionText')
+        instruction_prompt = f"{self.prompt}\n{component_template}"
+        return self.component.generate_question_text(instruction_prompt)
 
     def generate_QuestionTitle(self) -> Optional[str]:
         """Generate question title (GMAT naming convention)."""
-        return self.component.generate_question_title()
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        instruction_prompt = f"{self.prompt}\n{component_template}"
+        return self.component.generate_question_title(instruction_prompt)
 
     def generate_QuestionSolution(self) -> Optional[str]:
         """Generate question solution (GMAT naming convention)."""
-        return self.component.generate_question_solution()
+        component_template = self.component._get_component_instruction(
+            'QuestionSolution')
+        instruction_prompt = f"{self.prompt}\n{component_template}"
+        return self.component.generate_question_solution(instruction_prompt)
 
     def generate_QuestionOptions(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate question options (GMAT naming convention)."""
-        return self.component.generate_question_options()
+        component_template = self.component._get_component_instruction(
+            'QuestionOptions')
+        instruction_prompt = f"{self.prompt}\n{component_template}"
+        return self.component.generate_question_options(instruction_prompt)
 
 
 class GMATTwoPartAnalysisAdapter:
     """GMAT-specific adapter for TwoPartAnalysisQuestion components."""
 
-    def __init__(self, component: TwoPartAnalysisQuestion):
+    def __init__(self, prompt: str, component: TwoPartAnalysisQuestion):
         """Initialize with TwoPartAnalysisQuestion component."""
+        self.prompt = prompt
         self.component = component
+        self.child_prompt = None
 
     def generate_ParentQuestionContent(self) -> Optional[Dict[str, Any]]:
         """Generate parent question content (GMAT naming convention)."""
-        return self.component.generate_parent_question_content()
+        component_template = self.component._get_component_instruction(
+            "QuestionMetadata")
+        instruction_prompt = f"{self.prompt}\nMode: \n{component_template}"
+        return self.component.generate_parent_question_content(instruction_prompt)
 
     def generate_QuestionText(self, difficulties: List[int]) -> List[str]:
-        """Generate question texts (GMAT naming convention)."""
-        return self.component.generate_question_text(difficulties)
+        """Generate question texts (GMAT naming convention).
+            Args:
+                difficulties: list of both the child prompt's difficulties
+            Return:
+                List of both the child question text
+        """
+        component_template = self.component._get_component_instruction(
+            'QuestionText')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_template}"
+        return self.component.generate_question_text(instruction_prompt, difficulties)
 
     def generate_QuestionTitle(self) -> Optional[str]:
         """Generate question title (GMAT naming convention)."""
-        return self.component.generate_question_title()
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode:- QuestionTitle\n{component_template}"
+        return self.component.generate_question_title(instruction_prompt)
 
     def generate_QuestionSolution(self) -> List[str]:
         """Generate question solutions (GMAT naming convention)."""
-        return self.component.generate_question_solution()
+        component_template = self.component._get_component_instruction(
+            'QuestionSolution')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{component_template}"
+        return self.component.generate_question_solution(instruction_prompt)
 
     def generate_QuestionOptions(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate question options (GMAT naming convention)."""
-        return self.component.generate_question_options()
+        component_template = self.component._get_component_instruction(
+            'QuestionOptions')
+        instruction_prompt = f"{self.prompt}\nMode: QuestionOptions\n{component_template}"
+        return self.component.generate_question_options(instruction_prompt)
 
 
 class GMATMultiSourceReasoningAdapter:
     """GMAT-specific adapter for MultiSourceReasoningQuestion components."""
 
-    def __init__(self, component: MultiSourceReasoningQuestion):
+    def __init__(self, prompt: str, component: MultiSourceReasoningQuestion):
         """Initialize with MultiSourceReasoningQuestion component."""
         self.component = component
+        self.prompt = prompt
 
     def generate_SourceInfo(self, prompt: str, idx: int) -> Optional[Dict[str, Any]]:
-        """Generate source information (GMAT naming convention)."""
+        """Generate source information (GMAT naming convention).
+            Args: 
+                prompt: prompt of source_info{i}
+                idx: source_info index
+            Return:
+                value for "source" key is to be sent directly
+        """
         # idx parameter is included for compatibility but not used
-        return self.component.generate_source_info(prompt)
+        component_template = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"Main Prompt:- {self.prompt}\nSection Prompt: {prompt}\n{component_template}"
+        return self.component.generate_source_info(prompt, instruction_prompt, idx)
 
     def generate_MainQuestionTitle(self) -> Optional[str]:
         """Generate main question title (GMAT naming convention)."""

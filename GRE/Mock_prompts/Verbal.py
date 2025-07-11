@@ -5,10 +5,10 @@ class Verbal_prompts:
         self.mock_difficulty = mock_difficulty
         self.total_questions = 27
         
-        with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "difficulty_distribution.json"), "r") as file:
+        with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/difficulty_distribution.json"), "r") as file:
             self.difficulty_distribution = json.load(file)["verbal"]
 
-        with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "r") as file:
+        with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/component_allocation.json"), "r") as file:
             self.complete_component_allocation = json.load(file)
         self.component_allocation = self.complete_component_allocation["verbal"]
         self.combination_number = self.component_allocation["combination_number"]
@@ -48,7 +48,7 @@ class Verbal_prompts:
           self.component_allocation["combination_number"] = self.combination_number
           self.component_allocation["themes"] = self.themes
 
-          with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "w") as file:
+          with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/component_allocation.json"), "w") as file:
               self.complete_component_allocation["verbal"] = self.component_allocation
               json.dump(self.complete_component_allocation, file)
 

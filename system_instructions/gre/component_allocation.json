@@ -42,7 +42,7 @@
          "History",
          "Economics"
       ],
-      "rc_types": { "rc-s": 2, "rc-m": 3, "rc-l": 4 }, //rc-s will have 2 child questions, so on.
+      "rc_types": { "rc-s": 2, "rc-m": 3, "rc-l": 4 },
       "tc_types": ["TC-1", "TC-2", "TC-3"],
       "se_types": ["SE"]
    }

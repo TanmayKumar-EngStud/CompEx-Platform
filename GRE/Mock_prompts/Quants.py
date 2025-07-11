@@ -7,10 +7,10 @@ class Quants_prompts:
       self.total_questions = 27
 
       
-      with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "difficulty_distribution.json"), "r") as file:
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/difficulty_distribution.json"), "r") as file:
          self.difficulty_distribution = json.load(file)["quants"]
 
-      with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "component_allocation.json"), "r") as file:
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/component_allocation.json"), "r") as file:
          self.complete_component_allocation = json.load(file)
          self.component_allocation = self.complete_component_allocation["quants"]
       
@@ -41,7 +41,7 @@ class Quants_prompts:
       # qType2 = "simple", "parent_child"
 
       primary_qType = qType if qType == "simple" else "parent_child"
-      with open(os.path.join(os.path.dirname(__file__), "jsonfiles", "combination.json"), "r") as file:
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/combination.json"), "r") as file:
          parameters = json.load(file)[qStyle][primary_qType]
       elements = []
 

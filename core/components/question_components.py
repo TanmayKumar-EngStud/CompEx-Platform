@@ -26,7 +26,7 @@ import time
 import os
 import random
 from abc import ABC, abstractmethod
-from typing import Dict, Any, List, Optional, Tuple, Union
+from typing import Dict, Any, List, Optional, Tuple, Union, Literal
 from google import genai
 from google.genai import types
 
@@ -219,13 +219,26 @@ class BaseQuestionComponent(ABC):
             print(f"Warning: Could not load customizations: {e}")
             return {}
 
-    def _get_component_instruction(self, component_name: str) -> str:
+    def _get_component_instruction(self, component_name: Literal[
+        'QuestionMetadata',
+        'QuestionSolution',
+        'QuestionOptions',
+        'QuestionText',
+        'QuestionTitle',
+        'QuestionAnswer',
+        'QuestionPassage',
+        'ParentQuestion',
+        'ParentTitle',
+        'ChildQuestion',
+        'ChildTitle',
+        'ChildSolution',
+    ]) -> str:
         """
         Get template-based instruction for a specific component using new template classes.
 
         Args:
-            component_name: Name of the component (e.g. "QuestionSolution", "QuestionOptions")
-
+            component_name: Name of the component
+            options: ['QuestionMetadata', 'QuestionSolution', 'QuestionOptions', 'QuestionText', 'QuestionTitle', 'QuestionAnswer', 'QuestionPassage', 'ParentQuestion', 'ParentTitle', 'ChildQuestion','ChildTitle', 'ChildSolution']
         Returns:
             Template-based instruction text
         """
@@ -254,9 +267,39 @@ class BaseQuestionComponent(ABC):
                 instruction = self._adapter.get_answer_template(
                     self.question_type, self.prompt, customizations
                 )
-            elif component_name == "QuestionPassage" or component_name == "multiSource":
+            elif component_name == "QuestionPassage" or component_name == "QuestionMetadata":
                 # Both QuestionPassage and multiSource map to metadata templates
                 instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "ParentQuestion":
+                # Parent question content (passages for RC)
+                instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "ParentTitle":
+                # Parent title
+                instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "ChildQuestion":
+                # Child question text
+                instruction = self._adapter.get_text_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "ChildTitle":
+                # Child question title
+                instruction = self._adapter.get_metadata_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "ChildSolution":
+                # Child question solution
+                instruction = self._adapter.get_solution_template(
+                    self.question_type, self.prompt, customizations
+                )
+            elif component_name == "ChildOptions":
+                # Child question options
+                instruction = self._adapter.get_options_template(
                     self.question_type, self.prompt, customizations
                 )
             else:
@@ -379,13 +422,17 @@ class BaseQuestionComponent(ABC):
             success: Whether the generation was successful
         """
         try:
+            # Get the component template for logging
+            component_template = self._get_component_instruction(
+                component_name)
+
             log_system_instruction(
                 exam_type=self.exam_type,
                 question_type=self.question_type or QuestionType.PROBLEM_SOLVING,
                 component_name=component_name,
                 system_instruction=self.system_instructions,
                 prompt=prompt_used,
-                component_system_instruction="",  # We'll extract this later if needed
+                component_system_instruction=component_template,
                 response=response,
                 call_priority_index=call_priority_index
             )
@@ -564,7 +611,7 @@ class SimpleQuestion(BaseQuestionComponent):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.PROBLEM_SOLVING  # Default
 
-    def generate_question_passage(self) -> str:
+    def generate_question_passage(self, instruction_prompt: str) -> str:
         """
         Generate question passage/argument for Critical Reasoning questions.
 
@@ -572,7 +619,7 @@ class SimpleQuestion(BaseQuestionComponent):
             Generated passage text
         """
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionPassage", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -687,10 +734,10 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else ""
 
-    def _generate_answer_numeric(self) -> float:
+    def _generate_answer_numeric(self, instruction_prompt: str) -> float:
         """Generate numeric answer for numeric entry questions."""
         def _generate(warn: bool = False) -> Optional[float]:
-            response = self._get_response("QuestionAnswer", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -713,10 +760,10 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result is not None else 0.0
 
-    def generate_question_answer(self) -> str:
+    def generate_question_answer(self, instruction_prompt: str) -> str:
         """Generate question answer letter only."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionAnswer", warn)
+            response = self._get_response(instruction_prompt, warn)
             if not response:
                 print("No response received for QuestionAnswer")
                 return None
@@ -810,11 +857,10 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.DATA_SUFFICIENCY
 
-    def generate_question_graph(self) -> Optional[Dict[str, Any]]:
+    def generate_question_graph(self, instruction_prompt: str) -> Optional[Dict[str, Any]]:
         """Generate question graph/table if needed."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
-            prompt_text = f"questionGraph: {self.prompt}"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -834,7 +880,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_question_text(self) -> Tuple[Optional[str], Optional[List[str]], Optional[str]]:
+    def generate_question_text(self, instruction_prompt: str) -> Tuple[Optional[str], Optional[List[str]], Optional[str]]:
         """
         Generate question text components.
 
@@ -842,8 +888,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             Tuple of (passage, statements_list, question)
         """
         def _generate(warn: bool = False) -> Optional[Tuple[str, List[str], str]]:
-            prompt_text = f"QuestionText: {self.prompt}"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -874,10 +919,10 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             return None, None, None
         return result
 
-    def generate_question_title(self) -> Optional[str]:
+    def generate_question_title(self, instruction_prompt: str) -> Optional[str]:
         """Generate question title."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionTitle", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -894,7 +939,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_question_solution(self) -> str:
+    def generate_question_solution(self, instruction_prompt: str) -> str:
         """
         Generate question solution only (without answer).
 
@@ -902,9 +947,9 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             Solution text as plain text
         """
         # Generate solution only - answer will be generated with options
-        return self._generate_solution_only()
+        return self._generate_solution_only(instruction_prompt)
 
-    def generate_question_options_with_answer(self) -> Tuple[Dict[str, str], str]:
+    def generate_question_options_with_answer(self, instruction_prompt: str) -> Tuple[Dict[str, str], str]:
         """
         Generate question options and answer together.
 
@@ -922,16 +967,14 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
         }
 
         # Generate the answer key using the AI
-        answer = self._generate_answer_only()
+        answer = self._generate_answer_only(instruction_prompt)
 
         return standard_options, answer
 
-    def _generate_solution_only(self) -> str:
+    def _generate_solution_only(self, instruction_prompt: str) -> str:
         """Generate only the solution text."""
         def _generate(warn: bool = False) -> Optional[str]:
-            # Use standardized naming across all exams
-            prompt = "QuestionSolution"
-            response = self._get_response(prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -945,12 +988,11 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             return "Solution could not be generated due to technical issues. Please refer to standard Data Sufficiency strategies."
         return result
 
-    def _generate_answer_only(self) -> str:
+    def _generate_answer_only(self, instruction_prompt: str) -> str:
         """Generate only the answer letter."""
         def _generate(warn: bool = False) -> Optional[str]:
             # Use standardized naming across all exams
-            prompt = "QuestionAnswer"
-            response = self._get_response(prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -977,7 +1019,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             return "A"  # Use reasonable fallback - could be made configurable
         return result
 
-    def generate_question_options(self) -> Tuple[List[str], str]:
+    def generate_question_options(self, instruction_prompt: str) -> Tuple[List[str], str]:
         """
         Generate standard DS options and answer.
 
@@ -994,7 +1036,7 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
         ]
 
         def _generate(warn: bool = False) -> Optional[Tuple[List[str], str]]:
-            response = self._get_response("QuestionOptions", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1028,20 +1070,14 @@ class ParentChildQuestion(BaseQuestionComponent):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.READING_COMPREHENSION  # Default
 
-    def generate_question_metadata(self, i=0, total=0) -> Optional[Dict[str, Any]]:
+    def generate_question_metadata(self, instruction_prompt: str, i=0, total=0) -> Optional[Dict[str, Any]]:
         """Generate shared graph/table for child questions or passage for reading comprehension."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
             # Determine command format based on exam type and question content
-            if any(term in self.prompt.lower() for term in ["rc-", "reading", "comprehension"]):
-                # For Verbal RC questions, generating passage paragraph by paragraph
-                # Thus allowing better word count balance across paragraphs
-                if total > 1:
-                    prompt_text = f"ParentQuestion: {self.prompt} generate passage paragraph {i} of {total}"
-                else:
-                    prompt_text = f"ParentQuestion: {self.prompt} generate passage {i} of {total}"
+            if any(term in instruction_prompt.lower() for term in ["rc-", "reading", "comprehension"]):
+                prompt_text = f"mode:- ParentQuestion (Active) generate passage paragraph {i} of {total};\n {instruction_prompt}"
             else:
-                # For GRE Quantitative and other types, use questionGraph format
-                prompt_text = f"mode:- questionGraph input:- {self.prompt}"
+                prompt_text = f"mode:- questionGraph input:- {instruction_prompt}"
 
             response = self._get_response(prompt_text, warn)
 
@@ -1049,8 +1085,7 @@ class ParentChildQuestion(BaseQuestionComponent):
                 return None
 
             # Accept multiple possible key formats for flexibility
-            expected_keys = ["Passage_Number",
-                             "passage", "content", "paragraph"]
+            expected_keys = ["passage", "graph/table"]
 
             message = self._process_json_response(
                 response,
@@ -1060,7 +1095,7 @@ class ParentChildQuestion(BaseQuestionComponent):
 
             if message:
                 # Check what type of content we received and return accordingly
-                if "Passage_Number" in message or "passage" in message or "paragraph" in message:
+                if "passage" in message:
                     # This is Reading Comprehension passage data
                     return message
                 elif "graph/table" in message or "graph" in message or "table" in message:
@@ -1075,17 +1110,10 @@ class ParentChildQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_parent_title(self) -> Optional[str]:
+    def generate_parent_title(self, instruction_prompt: str = "") -> Optional[str]:
         """Generate title for parent question set."""
         def _generate(warn: bool = False) -> Optional[str]:
-            # Use the format based on exam type and content type
-            if self.exam_type == ExamType.GRE and any(term in self.prompt.lower() for term in ["rc-", "reading", "comprehension"]):
-                # For GRE Verbal RC questions, use ParentTitle format
-                response = self._get_response("ParentTitle", warn)
-            else:
-                # For GRE Quantitative and other types, use questionTitle format
-                response = self._get_response("mode: questionTitle", warn)
-
+            response = self._get_response(instruction_prompt, warn)
             if not response:
                 return None
 
@@ -1101,45 +1129,11 @@ class ParentChildQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_parent_question(self) -> Optional[str]:
-        """Generate parent question content (passages for reading comprehension)."""
-        def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("ParentQuestion", warn)
-
-            if not response:
-                return None
-
-            message = self._process_json_response(
-                response,
-                ["passage"],
-                "ParentChildQuestion generate_parent_question"
-            )
-
-            if message and message.get("passage"):
-                return message.get("passage")
-
-            # If not JSON format, return as plain text
-            return response.strip() if response else None
-
-        return self._retry_generate(_generate)
-
-    def generate_child_question_title(self, index: int) -> Optional[str]:
+    def generate_child_question_title(self, index: int, instruction_prompt: str = "") -> Optional[str]:
         """Generate title for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
-            # Use the format based on exam type and content type
-            if self.exam_type == ExamType.GRE and any(term in self.prompt.lower() for term in ["rc-", "reading", "comprehension"]):
-                # For GRE Verbal RC questions, use ChildTitle format with index and difficulty
-                # Default difficulty 3
-                prompt_text = f"ChildTitle: {index} - 3"
-            else:
-                # For GRE Quantitative and other types, use mode format
-                prompt_text = f"mode:- childQuestionTitle"
-
-            # When warning (retry), include original prompt context
-            if warn:
-                prompt_text += f"\nOriginal Question Context: {self.prompt}"
-
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(
+                f"mode:- childQuestionTitle for question {index}:\n{instruction_prompt}", warn)
 
             if not response:
                 return None
@@ -1156,22 +1150,11 @@ class ParentChildQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_child_question(self, index: int, child_prompt: str = "") -> Optional[str]:
+    def generate_child_question(self, index: int, instruction_prompt: str = "") -> Optional[str]:
         """Generate specific child question text."""
         def _generate(warn: bool = False) -> Optional[str]:
-            # Use the format based on exam type and content type
-            if self.exam_type == ExamType.GRE and any(term in self.prompt.lower() for term in ["rc-", "reading", "comprehension"]):
-                # For GRE Verbal RC questions, use ChildQuestion format with index
-                prompt_text = f"ChildQuestion: {index}"
-            else:
-                # For GRE Quantitative and other types, use mode format
-                prompt_text = f"mode:- childQuestionText"
-
-            # When warning (retry), include original prompt context
-            if warn:
-                prompt_text += f"\nOriginal Question Context: {self.prompt}"
-
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(
+                f"mode:- childQuestionText for question {index}:\n{instruction_prompt}", warn)
 
             if not response:
                 return None
@@ -1188,16 +1171,11 @@ class ParentChildQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_child_options(self, index: int) -> Tuple[Optional[List[str]], Optional[str]]:
+    def generate_child_options(self, index: int, instruction_prompt: str = "") -> Tuple[Optional[List[str]], Optional[str]]:
         """Generate options and answer for specific child question."""
         def _generate(warn: bool = False) -> Optional[Tuple[List[str], str]]:
-            prompt_text = f"ChildQuestionOptions: {index}"
-
-            # When warning (retry), include original prompt context
-            if warn:
-                prompt_text += f"\nOriginal Question Context: {self.prompt}"
-
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(
+                f"mode:- childOptions for question {index}:\n{instruction_prompt}", warn)
 
             if not response:
                 return None
@@ -1217,16 +1195,11 @@ class ParentChildQuestion(BaseQuestionComponent):
             return None, None
         return result
 
-    def generate_child_solution(self, index: int) -> Optional[str]:
+    def generate_child_solution(self, index: int, instruction_prompt: str = "") -> Optional[str]:
         """Generate solution for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"ChildSolution: {index}"
-
-            # When warning (retry), include original prompt context
-            if warn:
-                prompt_text += f"\nOriginal Question Context: {self.prompt}"
-
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(
+                f"mode:- childSolution for question {index}:\n{instruction_prompt}", warn)
 
             if not response:
                 return None
@@ -1236,14 +1209,10 @@ class ParentChildQuestion(BaseQuestionComponent):
 
         return self._retry_generate(_generate)
 
-    def generate_child_answer(self, index: int) -> Optional[str]:
+    def generate_child_answer(self, index: int, instruction_prompt: str) -> Optional[str]:
         """Generate answer for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = f"ChildAnswer: {index}"
-            # When warning (retry), include original prompt context
-            if warn:
-                prompt_text += f"\nOriginal Question Context: {self.prompt}"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
             if not response:
                 return None
             # Parse JSON response to extract answer
@@ -1293,11 +1262,10 @@ class GraphicInterpretationQuestion(SpecializedQuestion):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.GRAPHIC_INTERPRETATION
 
-    def generate_question_graph(self) -> Optional[Dict[str, Any]]:
+    def generate_question_graph(self, instruction_prompt: str) -> Optional[Dict[str, Any]]:
         """Generate graph/chart for GI question."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
-            prompt_text = f"Mode: QuestionGraph\nPrompt: {self.prompt}\nreturn: `graph`"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1352,11 +1320,10 @@ class GraphicInterpretationQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_solution(self) -> Optional[str]:
+    def generate_question_solution(self, instruction_prompt: str) -> Optional[str]:
         """Generate GI question solution."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(
-                "Mode: QuestionSolution return: `solution`", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1366,11 +1333,10 @@ class GraphicInterpretationQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_options(self) -> Tuple[Optional[Any], Optional[Any]]:
+    def generate_question_options(self, instruction_prompt) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate GI question options and answers."""
         def _generate(warn: bool = False) -> Optional[Tuple[Any, Any]]:
-            response = self._get_response(
-                "Mode: QuestionOptions return: `options`, `answer`", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1410,12 +1376,12 @@ class TableAnalysisQuestion(SpecializedQuestion):
         self.question_type = QuestionType.TABLE_ANALYSIS
         self.temp_data = None
 
-    def generate_question_table(self, num_rows: int, num_cols: int) -> Optional[Dict[str, Any]]:
+    def generate_question_table(self, instruction_prompt: str, num_rows: int, num_cols: int) -> Optional[Dict[str, Any]]:
         """Generate table for TA question."""
         self.temp_data = [num_rows, num_cols]
 
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
-            prompt_text = f"QuestionTable, no_rows: {num_rows}, no_cols: {num_cols}; InputPrompt: {self.prompt}"
+            prompt_text = f"mode:- QuestionTable, no_rows: {num_rows}, no_cols: {num_cols};\n {instruction_prompt}"
             response = self._get_response(prompt_text, warn)
 
             if not response:
@@ -1435,10 +1401,10 @@ class TableAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_text(self) -> Optional[str]:
+    def generate_question_text(self, instruction_prompt: str) -> Optional[str]:
         """Generate TA question text."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionText", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1458,10 +1424,10 @@ class TableAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_title(self) -> Optional[str]:
+    def generate_question_title(self, instruction_prompt: str) -> Optional[str]:
         """Generate TA question title."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionTitle", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1478,10 +1444,10 @@ class TableAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_solution(self) -> Optional[str]:
+    def generate_question_solution(self, instruction_prompt: str) -> Optional[str]:
         """Generate TA question solution."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionSolution", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1491,10 +1457,10 @@ class TableAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_answer(self) -> Optional[Dict[str, Any]]:
+    def generate_question_answer(self, instruction_prompt: str) -> Optional[Dict[str, Any]]:
         """Generate TA question answer."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
-            response = self._get_response("QuestionAnswer", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1511,17 +1477,10 @@ class TableAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_options(self) -> Tuple[Optional[Any], Optional[Any]]:
+    def generate_question_options(self, instruction_prompt: str) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate TA question options and answers."""
         def _generate(warn: bool = False) -> Optional[Tuple[Any, Any]]:
-            # TODO: Add dichotomous choice handling for Table Analysis questions
-            # This should work similar to MSR dichotomous handling where we:
-            # 1. Extract dichotomous type from prompt (e.g., "Yes/No", "True/False")
-            # 2. Replace {type} tokens in template with random dichotomous options
-            # 3. Process the template instruction before sending to AI
-            # Implementation will be added when Table Analysis dichotomous support is needed
-
-            response = self._get_response("QuestionOptions", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1560,11 +1519,10 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.TWO_PART_ANALYSIS
 
-    def generate_parent_question_content(self) -> Optional[Dict[str, Any]]:
+    def generate_parent_question_content(self, instruction_prompt) -> Optional[Dict[str, Any]]:
         """Generate shared content for TPA questions."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
-            prompt_text = f"ParentQuestionContent: {self.prompt}"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1584,12 +1542,12 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_text(self, difficulties: List[int]) -> List[str]:
+    def generate_question_text(self, instruction_prompt: str, difficulties: List[int]) -> List[str]:
         """Generate TPA question texts with different difficulties."""
         def _generate(warn: bool = False) -> Optional[List[str]]:
             questions = []
             for i in range(1, 3):  # Two questions
-                prompt_text = f"Question{i}: difficulty Level:{difficulties[i-1]}"
+                prompt_text = f"Question{i}: difficulty Level:{difficulties[i-1]}\n {instruction_prompt}"
                 response = self._get_response(prompt_text, warn)
 
                 if not response:
@@ -1611,10 +1569,11 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
         result = self._retry_generate(_generate)
         return result if result else []
 
-    def generate_question_title(self) -> Optional[str]:
+    def generate_question_title(self, instruction_prompt) -> Optional[str]:
         """Generate TPA question title."""
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response("QuestionTitle", warn)
+            response = self._get_response(
+                f"mode:- QuestionTitle\n{instruction_prompt}", warn)
 
             if not response:
                 return None
@@ -1631,12 +1590,12 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_solution(self) -> List[str]:
+    def generate_question_solution(self, instruction_prompt: str) -> List[str]:
         """Generate TPA question solutions."""
         def _generate(warn: bool = False) -> Optional[List[str]]:
             solutions = []
             for i in range(1, 3):  # Two solutions
-                prompt_text = f"QuestionSolution {i}"
+                prompt_text = f"QuestionSolution {i}:- \n {instruction_prompt}"
                 response = self._get_response(prompt_text, warn)
 
                 if not response:
@@ -1654,12 +1613,12 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
         result = self._retry_generate(_generate)
         return result if result else []
 
-    def generate_question_answers(self) -> List[str]:
+    def generate_question_answers(self, instruction_prompt: str) -> List[str]:
         """Generate TPA question answers."""
         def _generate(warn: bool = False) -> Optional[List[str]]:
             answers = []
             for i in range(1, 3):  # Two answers
-                prompt_text = f"QuestionAnswer{i}"
+                prompt_text = f"QuestionAnswer {i}:\n{instruction_prompt}"
                 response = self._get_response(prompt_text, warn)
 
                 if not response:
@@ -1681,10 +1640,10 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
         result = self._retry_generate(_generate)
         return result if result else []
 
-    def generate_question_options(self) -> Tuple[Optional[Any], Optional[Any]]:
+    def generate_question_options(self, instruction_prompt: str) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate TPA question options and answers."""
         def _generate(warn: bool = False) -> Optional[Tuple[Any, Any]]:
-            response = self._get_response("QuestionOptions", warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1714,7 +1673,7 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
         self.question_type = QuestionType.MULTI_SOURCE_REASONING
         self.temp_prompt = None
 
-    def generate_source_info(self, prompt: str, source_index: int = 1) -> Optional[Dict[str, Any]]:
+    def generate_source_info(self, prompt: str, instruction_prompt: List[str], source_index: int = 1) -> Optional[Dict[str, Any]]:
         """Generate source information for MSR questions with proper template formatting."""
         # Change the prompt format to match metadata.json structure
         # From: "Generate SourceInfo_1 having Line Chart of question: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
@@ -1729,7 +1688,7 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
                 component_type = source_match.group(2)
                 parent_content = source_match.group(3)
                 # Format the new prompt to match expected template structure
-                self.temp_prompt = f"SourceInfo_{source_num} having {component_type}: {parent_content}"
+                self.temp_prompt = f"SourceInfo_{source_num} having {component_type}: {parent_content}\n{instruction_prompt[source_num]}"
             else:
                 self.temp_prompt = prompt
         else:
@@ -1751,11 +1710,10 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_main_question_title(self) -> Optional[str]:
+    def generate_main_question_title(self, instruction_prompt: str) -> Optional[str]:
         """Generate main title for MSR question set."""
         def _generate(warn: bool = False) -> Optional[str]:
-            prompt_text = "MainQuestionTitle (based on the given question data what would be a unique question title of complete Multi Source Reasoning question)"
-            response = self._get_response(prompt_text, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1772,12 +1730,11 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_text(self, prompt: str) -> Optional[str]:
+    def generate_question_text(self, instruction_prompt: str) -> Optional[str]:
         """Generate MSR question text."""
-        self.temp_prompt = prompt
 
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(self.temp_prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1794,12 +1751,10 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_title(self, prompt: str) -> Optional[str]:
+    def generate_question_title(self, instruction_prompt: str) -> Optional[str]:
         """Generate MSR question title."""
-        self.temp_prompt = prompt
-
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(self.temp_prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1816,12 +1771,11 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_solution(self, prompt: str) -> Optional[str]:
+    def generate_question_solution(self, instruction_prompt: str) -> Optional[str]:
         """Generate MSR question solution."""
-        self.temp_prompt = prompt
 
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(self.temp_prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1831,12 +1785,11 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_answer(self, prompt: str) -> Optional[str]:
+    def generate_question_answer(self, instruction_prompt: str) -> Optional[str]:
         """Generate MSR question answer."""
-        self.temp_prompt = prompt
 
         def _generate(warn: bool = False) -> Optional[str]:
-            response = self._get_response(self.temp_prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None
@@ -1853,12 +1806,11 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
 
         return self._retry_generate(_generate)
 
-    def generate_question_options(self, prompt: str, question_style: str) -> Union[Tuple[Any, Any], Any]:
+    def generate_question_options(self, instruction_prompt: str, question_style: str = "MCQ (5 options MCQ)") -> Union[Tuple[Any, Any], Any]:
         """Generate MSR question options based on question style."""
-        self.temp_prompt = [prompt, question_style]
 
         def _generate(warn: bool = False) -> Optional[Union[Tuple[Any, Any], Any]]:
-            response = self._get_response(prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None

@@ -257,7 +257,7 @@ class GraphStyleManager:
             placeholder = f"{{{{{key}}}}}"
             result = result.replace(placeholder, str(value))
         
-        self._logger.log_graph_style_injected(graph_type, len(replacements))
+        # self._logger.log_graph_style_injected(graph_type, len(replacements))
         return result
     
     def get_available_graph_types(self) -> List[str]:
