@@ -8,9 +8,9 @@ class Quants_prompts:
       with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/difficulty_distribution.json"), "r") as file:
          self.difficulty_distribution = json.load(file)["quants"]
 
-      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/component_allocation.json"), "r") as file:
-         self.complete_component_allocation = json.load(file)
-         self.component_allocation = self.complete_component_allocation["quants"]
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/customizations.json"), "r") as file:
+         self.complete_customizations = json.load(file)
+         self.customizations = self.complete_customizations["quants"]
 
    def get_difficulty_pool(self) -> list[int]:
       difficulty_ratio = self.difficulty_distribution[str(self.mock_difficulty)]
@@ -35,42 +35,42 @@ class Quants_prompts:
       prompts = []
       
       for i in range(self.total_questions):
-         cn = self.component_allocation["combination_number"]
          prompt_elements = []
-         question_style = self.component_allocation["question_style"][cn%len(self.component_allocation["question_style"])]
-         if cn%len(self.component_allocation["question_style"]) == 0:
-            random.shuffle(self.component_allocation["question_style"])
-         prompt_elements.append(question_style)
          
-         option = self.component_allocation["options"][cn%len(self.component_allocation["options"])]
-         if cn%len(self.component_allocation["options"]) == 0:
-            random.shuffle(self.component_allocation["options"])
-         prompt_elements.append(option)
+         # Generate DS or PS questions based on distribution
+         if i < self.customizations["Data_Sufficiency"]:
+            # Data Sufficiency nomenclature: "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>"
+            # graphType/tableType is optional (can be None)
+            question_type = "DS"
+            topic = random.choice(self.customizations["data sufficiency"]["questionTopic"])
+            theme = random.choice(self.customizations["data sufficiency"]["questionTheme"])
+            question_style = random.choice(self.customizations["data sufficiency"]["questionStyle"])
+            graph_table_type = random.choice(self.customizations["data sufficiency"]["graphType/tableType$"])
+            focused_skill = random.choice(self.customizations["data sufficiency"]["focused_skill"])
+            
+            prompt_elements = [question_type, topic, theme, question_style]
+            if graph_table_type is not None:
+               prompt_elements.append(graph_table_type)
+            prompt_elements.extend([focused_skill, f"difficulty_level: {difficulty_pool.pop()}"])
+         else:
+            # Problem Solving nomenclature: "S - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>"
+            # graphType/tableType is optional (can be None)
+            question_type = "S"
+            topic = random.choice(self.customizations["problem solving"]["questionTopic"])
+            theme = random.choice(self.customizations["problem solving"]["questionTheme&"])
+            question_style = random.choice(self.customizations["problem solving"]["questionStyle"])
+            graph_table_type = random.choice(self.customizations["problem solving"]["graphType/tableType*"])
+            focused_skill = random.choice(self.customizations["problem solving"]["focused_skill"])
+            
+            prompt_elements = [question_type, topic, theme, question_style]
+            if graph_table_type is not None:
+               prompt_elements.append(graph_table_type)
+            prompt_elements.extend([focused_skill, f"difficulty_level: {difficulty_pool.pop()}"])
          
-         focused_skill = self.component_allocation[option]["focused_skill"][cn%len(self.component_allocation[option]["focused_skill"])]
-         if cn%len(self.component_allocation[option]["focused_skill"]) == 0:
-            random.shuffle(self.component_allocation[option]["focused_skill"])
-         prompt_elements.append(focused_skill)
-         
-         topics = self.component_allocation[option]["topics"][cn%len(self.component_allocation[option]["topics"])]
-         if cn%len(self.component_allocation[option]["topics"]) == 0:
-            random.shuffle(self.component_allocation[option]["topics"])
-         prompt_elements.append(topics)
-         
-         if option == "Word Problems":
-            theme = self.component_allocation[option]["themes"][cn%len(self.component_allocation[option]["themes"])]
-            if cn%len(self.component_allocation[option]["themes"]) == 0:
-               random.shuffle(self.component_allocation[option]["themes"])
-            prompt_elements.append(theme)
-         
-         prompt_elements.append(f"difficulty_level: {difficulty_pool.pop()}")
          prompt = " - ".join(f"<{element}>" for element in prompt_elements)
-         self.component_allocation["combination_number"] += 1
          prompts.append(prompt)
 
-      self.complete_component_allocation["quants"] = self.component_allocation
-      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/component_allocation.json"), "w") as file:
-         json.dump(self.complete_component_allocation, file, indent=4)
+      # No need to write back to customizations.json as it's a read-only config
       return prompts
 
 # q = Quants(5)

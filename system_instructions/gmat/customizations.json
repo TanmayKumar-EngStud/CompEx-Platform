@@ -1,7 +1,11 @@
 {
    "quants": {
+      "total_questions": 21,
+      "Problem_Solving": 13,
+      "Data_Sufficiency": 8,
+      "question_style": ["Pure Contextual", "Real Contextual"],
       "data sufficiency": {
-         "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
+         "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>",
          "questionStyle": [
             "Single Variable Equation",
             "Inequalities",
@@ -38,16 +42,27 @@
          "graphType/tableType$": [
             null,
             "line graph",
+            null,
             "bar chart",
+            null,
             "pie chart",
+            null,
             "scatter plot",
+            null,
             "data table",
+            null,
             "pivot table",
+            null,
             "Highlight Table",
+            null,
             "Heat Table",
+            null,
             "Text Table",
+            null,
             "Matrix Table",
+            null,
             "Frequency Table",
+            null,
             "Contingency Table"
          ],
          "questionTheme": [
@@ -58,10 +73,22 @@
             "Human Resources",
             "Environment and Sustainability",
             "Government Policies and Regulations"
+         ],
+         "focused_skill": [
+            "Information Sufficiency Assessment",
+            "Business Context Analysis",
+            "Multi-Variable Dependency Analysis",
+            "Constraint Evaluation",
+            "Scenario Planning Logic",
+            "Data Completeness Analysis",
+            "Logical Reasoning",
+            "Critical Reasoning",
+            "Mathematical Knowledge",
+            "Efficiency and Time Management"
          ]
       },
       "problem solving": {
-         "nomenclature": "S - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
+         "nomenclature": "S - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>",
          "questionStyle": [
             "Unitary Method",
             "Algebraic Manipulations",
@@ -95,22 +122,59 @@
          "graphType/tableType*": [
             null,
             "line graph",
+            null,
             "bar chart",
+            null,
             "pie chart",
+            null,
             "scatter plot",
+            null,
             "data table",
+            null,
             "pivot table",
+            null,
             "Highlight Table",
+            null,
             "Heat Table",
+            null,
             "Text Table",
+            null,
             "Matrix Table",
+            null,
             "Frequency Table",
+            null,
             "Contingency Table"
+         ],
+         "focused_skill": [
+            "Estimation and Approximation",
+            "Business Model Analysis",
+            "Financial Calculations",
+            "Optimization Problems",
+            "Pattern Recognition",
+            "Strategic Quantitative Reasoning",
+            "Computational Skills",
+            "Conceptual Understanding",
+            "Mathematical Application",
+            "Analytical Reasoning"
+         ],
+         "themes": [
+            "Business and Finance",
+            "Science and Technology",
+            "Education and Academia",
+            "Everyday Mathematics",
+            "Health and Medicine",
+            "Environmental Issues",
+            "Sports and Entertainment"
          ]
       }
    },
    "verbal": {
-      "nomenclature": "<questionType> - <questionTheme> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
+      "total_questions": 23,
+      "section": {
+         "RC": [13, 14],
+         "CR": [10, 9]
+      },
+      "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>", // for normal critical reasoning use focused_skill lists from the "child-question" key
       "questionTheme": [
          "Science and Technology",
          "Business",
@@ -139,17 +203,25 @@
          "nomenclature": "RC ChildQuestion - <focused_skill>",
          "focused_skill": [
             "Main Idea Question",
-            "Inference Question",
-            "Assumption Question",
-            "Strengthen Question",
-            "Weaken Question",
-            "Evaluate Question",
-            "Conclusion Question"
+            "Weaken the argument",
+            "structure of the argument boldface structure question",
+            "draw inference/conclusion",
+            "structure of the argument dialogue structure question",
+            "strengthen the argument",
+            "find the assumption",
+            "complete the argument",
+            "paradox",
+            "evaluate the conclusion"
          ]
       }
    },
    "integrated reasoning": {
-      "combination number": 91,
+      "total_questions": 20,
+      "Multi_Source_Reasoning": 6,
+      "Table_Analysis": 5,
+      "Graphics_Interpretation": 5,
+      "Two_Part_Analysis": 4,
+      "question_type": ["MSR", "TPA", "TA", "GI"],
       "graphic interpretation": {
          "nomenclature": "GI - <questionTheme> - <graphType> - <difficulty_level: {1-5}>",
          "graphType": [
@@ -172,7 +244,8 @@
          "difficultyLevel": 5
       },
       "multi source reasoning": {
-         "nomenclature": "MSR - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill> - <question_style> - <difficulty_level: {1-5}>",
+         "nomenclature": "MSR - <total_child_questions> - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill_1/focused_skill_2/focused_skill_3> - <question_style_1/question_style_2/question_style_3> - <difficulty_level: {1-5}>",
+         "total_child_questions": [2, 3],
          "source_info": [
             "Passage",
             "scatter plot",
@@ -198,10 +271,17 @@
             ]
          },
          "questionTheme": [
-            "economics",
-            "business",
-            "history",
-            "science and technology"
+            "Marketing and Sales",
+            "Taxation",
+            "Logistics and Supply Chain",
+            "Accounting",
+            "Budget",
+            "Strategy and Management",
+            "Resource Management",
+            "Economics",
+            "Finance",
+            "Business",
+            "Analysis (over any Miscellaneous topic)"
          ],
          "difficultyLevel": 5
       },
@@ -244,15 +324,40 @@
          "difficultyLevel": 5
       },
       "two part analysis": {
-         "nomenclature": "TPA - <questionTheme> - <part1> - <part2> - <difficulty_level: {1-5}>",
+         "nomenclature": "TPA - <questionTheme> - <focused_skill> - <type> - <difficulty_level: {1-5}>",
          "questionTheme": [
-            "economics",
-            "finance",
-            "marketing",
-            "politics",
-            "business",
-            "history",
-            "science and technology"
+            "Marketing and Sales",
+            "Taxation",
+            "Logistics and Supply Chain",
+            "Accounting",
+            "Budget",
+            "Strategy and Management",
+            "Resource Management",
+            "Economics",
+            "Finance",
+            "Business",
+            "Analysis (over any Miscellaneous topic)"
+         ],
+         "focused_skill": [
+            "Simultaneous Equation Solving",
+            "Constraint Optimization",
+            "Multi-Variable Analysis",
+            "Cost-Benefit Analysis",
+            "Resource Allocation",
+            "Break-even Analysis",
+            "Trade-off Analysis",
+            "Scenario Planning",
+            "Conditional Logic",
+            "System of Relationships"
+         ],
+         "type": [
+            "Bar Chart",
+            "Stacked Bar Chart",
+            "Pie Chart",
+            "Line Chart",
+            "Scatter Plot",
+            "2 Category Hybrid Table",
+            "Passage"
          ],
          "difficultyLevel": 5,
          "part1": [

@@ -65,21 +65,23 @@ class Generate_MSR(BaseQuestionGenerator):
                 prompt=self.prompt,
                 exam_type=ExamType.GMAT
             )
-            # "nomenclature": "MSR - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skills> - <question_style> - <difficulty_level: {1-5}>",
-            questionTheme = random.choice(self.MSR.get("questionTheme"))
-            source_infos = []
-            focused_skill = []
-            question_style = []
-            for _ in range(1, 4):
-                source_infos.append(random.choice(self.MSR.get("source_info")))
-                focused_skill.append(random.choice(
-                    self.MSR.get("child-question").get("focused_skill")))
-                question_style.append(random.choice(
-                    self.MSR.get("child-question").get("question-style")))
-
-            main_prompt = f"MSR - <{questionTheme}> - <{'> - <'.join(source_infos)}> - <{'/'.join(focused_skill)}> - <{'/'.join(question_style)}> - "
+            # Parse source_infos from the prompt generated in Integrated_Reasoning.py
+            # Extract source types from the structured prompt
+            import re
+            # "nomenclature": "MSR - <total_child_questions: {3}> <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skills> - <question_style> - <difficulty_level: {1-5}>",
+            pattern = r'MSR - <total_child_questions: \d+> - <[^>]+> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <[^>]+> - <[^>]+> - <difficulty_level: \d+>'
+            match = re.search(pattern, self.prompt)
+            
+            if match:
+                source_infos = [match.group(1), match.group(2), match.group(3)]
+            else:
+                # Fallback to default if parsing fails
+                source_infos = []
+                for _ in range(3):
+                    source_infos.append(random.choice(self.MSR.get("source_info", ["Passage"])))
+            
             msr = GMATAdapter.adapt_multi_source_reasoning(
-                main_prompt, component)
+                self.prompt, component)
 
             # Load combinations data
             sources = {"sources": []}
@@ -87,12 +89,11 @@ class Generate_MSR(BaseQuestionGenerator):
             # Generate sources
             for idx in range(1, 4):
                 # "nomenclature": "MSR Source_info{i} - <source_info>"
-                source_type = source_infos[idx]
+                source_type = source_infos[idx-1]  # Fix: 0-indexed array but 1-indexed loop
                 # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
                 source = msr.generate_SourceInfo(
                     f"SourceInfo_{idx} having {source_type}: {self.prompt}", idx)
                 sources["sources"].append(source)
-                cn += 1
 
             self.question_data["content"] = sources
             self.question_data["title"] = msr.generate_MainQuestionTitle()
@@ -150,14 +151,6 @@ class Generate_MSR(BaseQuestionGenerator):
                 self.question_data["questions"].append(question)
 
             self.question_data["tags"] = list(collective_tags)
-
-            # Save combinations data
-            self.MSR["combination_number"] = cn
-            try:
-                json.dump(self.MSR, open(os.path.join(os.path.dirname(
-                    __file__), "../combinations/MSR.json"), "w"))
-            except Exception as e:
-                print(f"Warning: Failed to save MSR combinations: {e}")
 
             return self.question_data
 

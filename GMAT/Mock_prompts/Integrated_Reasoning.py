@@ -10,10 +10,10 @@ class Integrated_Reasoning_prompts:
             self.difficulty_distribution = json.load(
                 file)["integrated_reasoning"]
 
-        with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/component_allocation.json"), "r") as file:
-            self.complete_component_allocation = json.load(file)
-            self.component_allocation = self.complete_component_allocation["integrated_reasoning"]
-        self.total_questions = self.component_allocation["total_questions"]
+        with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gmat/customizations.json"), "r") as file:
+            self.complete_customizations = json.load(file)
+            self.customizations = self.complete_customizations["integrated reasoning"]
+        self.total_questions = self.customizations["total_questions"]
         self.remaining_questions = 12
 
     def get_difficulty_pool(self) -> list[int]:
@@ -38,23 +38,39 @@ class Integrated_Reasoning_prompts:
         difficulty_pool = self.get_difficulty_pool()
         prompts = []
 
-        # MSR - 1 PQ
+        # region MSR - 1 PQ
         total_child_questions = random.choice(
-            self.component_allocation["MSR"]["total_child_questions"])
-        question_style = random.choice(
-            self.component_allocation["MSR"]["question_style"])
-        focused_skill = random.choice(
-            self.component_allocation["MSR"]["focused_skill"])
-        theme = random.choice(self.component_allocation["MSR"]["themes"])
-        question_prompt = f"MSR - <total_child_questions: {total_child_questions}> - <{theme}> - <{focused_skill}> - <{question_style}> - <difficulty_level: {difficulty_pool.pop()}>"
-        prompts.append(question_prompt)
+            self.customizations["multi source reasoning"]["total_child_questions"])
+
+        # Use already loaded MSR customizations for detailed prompt generation
+        MSR_config = self.customizations["multi source reasoning"]
+        
+        # Generate detailed MSR prompt similar to MSR.py logic
+        questionTheme = random.choice(
+            MSR_config.get("questionTheme", ["business"]))
+        source_infos = []
+        focused_skills = []
+        question_styles = []
+
+        for _ in range(total_child_questions):
+            source_infos.append(random.choice(
+                MSR_config.get("source_info", ["Passage"])))
+            focused_skills.append(random.choice(MSR_config.get(
+                "child-question", {}).get("focused_skill", ["Critical Reasoning"])))
+            question_styles.append(random.choice(MSR_config.get(
+                "child-question", {}).get("question_style", ["MCQ (5 options MCQ)"])))
+
+        # Create main prompt with detailed structure
+        main_prompt = f"MSR - <total_child_questions: {total_child_questions}> - <{questionTheme}> - <{'> - <'.join(source_infos)}> - <{'/'.join(focused_skills)}> - <{'/'.join(question_styles)}> - <difficulty_level: {difficulty_pool.pop()}>"
+        prompts.append(main_prompt)
         self.remaining_questions -= total_child_questions
-        # TPA - 1 PQ
+        # endregion
+        # region TPA - 1 PQ
         total_child_questions = 2
-        theme = random.choice(self.component_allocation["TPA"]["themes"])
+        theme = random.choice(self.customizations["two part analysis"]["questionTheme"])
         focused_skill = random.choice(
-            self.component_allocation["TPA"]["focused_skill"])
-        type = random.choice(self.component_allocation["TPA"]["type"])
+            self.customizations["two part analysis"]["focused_skill"])
+        type = random.choice(self.customizations["two part analysis"]["type"])
         question_prompt = f"TPA - <{theme}> - <{focused_skill}> - <{type}> - <difficulty_level: {difficulty_pool.pop()}>"
         prompts.append(question_prompt)
         self.remaining_questions -= total_child_questions
@@ -62,11 +78,11 @@ class Integrated_Reasoning_prompts:
         total_ta = random.choice([2, 3])
         for _ in range(total_ta):
             focused_skill = random.choice(
-                self.component_allocation["TA"]["focused_skill"])
+                ["Comparative Analysis", "Pattern Recognition", "Data Synthesis", "Logical Reasoning", "Critical Reasoning"])
             table_type = random.choice(
-                self.component_allocation["TA"]["table_type"])
-            theme = random.choice(self.component_allocation["TA"]["themes"])
-            type = random.choice(self.component_allocation["TA"]["type"])
+                self.customizations["table analysis"]["tableType"])
+            theme = random.choice(self.customizations["table analysis"]["questionTheme"])
+            type = random.choice(self.customizations["table analysis"]["dichotomousType"])
             question_prompt = f"TA - <{focused_skill}> - <{table_type}> - <{type}> - <{theme}> - <difficulty_level: {difficulty_pool.pop()}>"
             prompts.append(question_prompt)
         self.remaining_questions -= total_ta
@@ -74,10 +90,10 @@ class Integrated_Reasoning_prompts:
         total_gi = 12 - self.remaining_questions
         for _ in range(total_gi):
             focused_skill = random.choice(
-                self.component_allocation["GI"]["focused_skill"])
+                ["Data Interpretation", "Critical Thinking", "Quantitative Reasoning", "Attention to Detail", "Synthesis of Information", "Logical Reasoning", "Comparative Analysis", "Pattern Recognition", "Data Sufficiency"])
             chart_type = random.choice(
-                self.component_allocation["GI"]["chart_type"])
-            theme = random.choice(self.component_allocation["GI"]["themes"])
+                self.customizations["graphic interpretation"]["graphType"])
+            theme = random.choice(self.customizations["graphic interpretation"]["questionTheme"])
             question_prompt = f"GI - <{theme}> - <{focused_skill}> - <{chart_type}> - <difficulty_level: {difficulty_pool.pop()}>"
             prompts.append(question_prompt)
         self.remaining_questions -= total_gi
@@ -85,9 +101,9 @@ class Integrated_Reasoning_prompts:
         total_ds = 8
         # print(f"difficulty_level:- {difficulty_pool}\n length remaining:- {len(difficulty_pool)}")
         for _ in range(total_ds):
-            topic = random.choice(self.component_allocation["DS"]["topics"])
+            topic = random.choice(["Algebra", "Word Problems", "Arithmetic", "Data Sufficiency"])
             focused_skill = random.choice(
-                self.component_allocation["DS"]["focused_skill"])
+                ["Attention to Detail", "Logical Reasoning", "Critical Reasoning", "Mathematical Knowledge", "Efficiency and Time Management"])
             question_prompt = f"DS - <{topic}> - <{focused_skill}> - <difficulty_level: {difficulty_pool.pop()}>"
             prompts.append(question_prompt)
         self.remaining_questions -= total_ds
