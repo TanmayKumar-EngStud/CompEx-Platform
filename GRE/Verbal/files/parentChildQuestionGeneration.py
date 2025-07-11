@@ -1,4 +1,4 @@
-import random, math, os, json, re
+import random, re
 from typing import Dict, Any, Optional
 
 # Import unified components
@@ -13,25 +13,65 @@ from core.components.adapters.gre_adapter import GREAdapter
 class ParentChildQuestionGeneration(BaseQuestionGenerator):
     """GRE Verbal Parent-Child Question Generator using unified architecture."""
     def generate_child_prompt(self, idx):
-        child_prompt = json.load(open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "r"))
+        """
+        Generate child prompts by parsing focused skills from parent prompt.
+        
+        Args:
+            idx: Number of child questions to generate
+            
+        Returns:
+            List of child prompts
+        """
         prompts = []
-        t = child_prompt["combination number"]
-        indexes = []
+        
+        # Parse focused skills from parent prompt
+        focused_skills = self.parse_focused_skills_from_parent_prompt()
+        
+        # Generate child prompts using the nomenclature: "RC ChildQuestion - <focused_skill>"
         for i in range(idx):
-            option = child_prompt["reading comprehension"]
-            idx = t%len(option)
-            counter = 0
-            for j in indexes:
-                if j <= idx+counter:
-                    counter += 1
-            indexes.append((idx+counter)%len(option))
-            t = math.floor(t/len(option))
-            difficulty = random.randint(1, 5)
-            prompts.append(f"{option[idx]} - {difficulty}")
-        child_prompt["combination number"] += 1
-        json.dump(child_prompt, open(os.path.join(os.path.dirname(__file__), "../combinations/child-combination.json"), "w"))
-        # print(f"indexes: {indexes}")
+            if i < len(focused_skills):
+                focused_skill = focused_skills[i]
+            else:
+                # If we need more child questions than skills provided, cycle through them
+                focused_skill = focused_skills[i % len(focused_skills)] if focused_skills else "Main Idea Question"
+            
+            child_prompt = f"RC ChildQuestion - {focused_skill}"
+            prompts.append(child_prompt)
+        
         return prompts
+    
+    def parse_focused_skills_from_parent_prompt(self):
+        """
+        Parse focused skills from parent prompt based on GRE nomenclature.
+        
+        Expected format: <rc-s/rc-m/rc-l> - <theme> - <focused_skill_1/focused_skill_2/focused_skill_3> - <difficulty_level>
+        
+        Returns:
+            List of focused skills
+        """
+        try:
+            # Split the prompt by ' - '
+            parts = self.prompt.split(' - ')
+            
+            if len(parts) >= 3:
+                # The third part should contain focused skills
+                focused_skills_part = parts[2]
+                
+                # Split by '/' to get individual skills
+                if '/' in focused_skills_part:
+                    skills = [skill.strip() for skill in focused_skills_part.split('/')]
+                else:
+                    skills = [focused_skills_part.strip()]
+                
+                # Remove any angle brackets
+                skills = [skill.strip('<>') for skill in skills]
+                
+                return skills
+            
+        except Exception as e:
+            print(f"Error parsing focused skills from prompt: {e}")
+        
+        return ["Main Idea Question"]  # Default fallback
     def __init__(self, global_state, lock, api_IDX, prompt):
         # Initialize base class with proper types
         super().__init__(

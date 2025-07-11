@@ -47,13 +47,19 @@ class Verbal_prompts:
         num_cr_questions = self.customizations["section"]["CR"][itr]
 
         # Generate RC questions
+        # num_rc_questions represents the number of CHILD questions needed
+        # We need to generate RC passages that will produce exactly that many child questions
         rcs = []
         if num_rc_questions == 13:
-            # 13 child questions: 3+3+3+2+2+3 = 16 total but we use 13
-            rcs = ["rc-s", "rc-s", "rc-s", "rc-m", "rc-m", "rc-l"]
+            # Need 13 child questions total
+            # Option 1: rc-l(3) + rc-l(3) + rc-l(3) + rc-m(2) + rc-m(2) = 13
+            # Option 2: rc-l(3) + rc-l(3) + rc-m(2) + rc-m(2) + rc-s(1) + rc-s(1) + rc-s(1) = 13
+            rcs = ["rc-l", "rc-l", "rc-l", "rc-m", "rc-m"]  # 3+3+3+2+2 = 13
         else:
-            # 14 child questions: 3+3+2+2+3+3 = 16 total but we use 14
-            rcs = ["rc-s", "rc-s", "rc-m", "rc-m", "rc-l", "rc-l"]
+            # Need 14 child questions total
+            # Option 1: rc-l(3) + rc-l(3) + rc-m(2) + rc-m(2) + rc-m(2) + rc-m(2) = 14
+            # Option 2: rc-l(3) + rc-l(3) + rc-l(3) + rc-l(3) + rc-m(2) = 14
+            rcs = ["rc-l", "rc-l", "rc-m", "rc-m", "rc-m", "rc-m"]  # 3+3+2+2+2+2 = 14
 
         # Generate RC prompts
         for rc in rcs:
@@ -64,20 +70,25 @@ class Verbal_prompts:
 
             # Generate focused skills based on question type
             if rc == "rc-s":
+                # 1 child question
                 focused_skill = random.choice(
                     self.customizations["child-question"]["focused_skill"])
-                focused_skills_str = focused_skill
+                prompt = f"<{rc}> - <{theme}> - <{focused_skill}> - <vocabulary_level: {vocabulary_level}> - <difficulty_level: {difficulty_pool.pop()}>"
+                prompts.append(prompt)
             elif rc == "rc-m":
+                # 2 child questions - generate 2 separate focused skills
                 focused_skills = random.sample(
                     self.customizations["child-question"]["focused_skill"], 2)
                 focused_skills_str = "/".join(focused_skills)
+                prompt = f"<{rc}> - <{theme}> - <{focused_skills_str}> - <vocabulary_level: {vocabulary_level}> - <difficulty_level: {difficulty_pool.pop()}>"
+                prompts.append(prompt)
             else:  # rc-l
+                # 3 child questions - generate 3 separate focused skills
                 focused_skills = random.sample(
                     self.customizations["child-question"]["focused_skill"], 3)
                 focused_skills_str = "/".join(focused_skills)
-
-            prompt = f"<{rc}> - <{theme}> - <{focused_skills_str}> - <vocabulary_level: {vocabulary_level}> - <difficulty_level: {difficulty_pool.pop()}>"
-            prompts.append(prompt)
+                prompt = f"<{rc}> - <{theme}> - <{focused_skills_str}> - <vocabulary_level: {vocabulary_level}> - <difficulty_level: {difficulty_pool.pop()}>"
+                prompts.append(prompt)
 
         # Generate CR questions
         for cr in range(num_cr_questions):

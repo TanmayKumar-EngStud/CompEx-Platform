@@ -174,7 +174,7 @@
          "RC": [13, 14],
          "CR": [10, 9]
       },
-      "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>", // for normal critical reasoning use focused_skill lists from the "child-question" key
+      "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
       "questionTheme": [
          "Science and Technology",
          "Business",

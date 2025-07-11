@@ -43,12 +43,16 @@ class Verbal_prompts:
           
           if "rc" in q_type.lower():
              # Reading Comprehension questions
-             if q_type == "RC-S":
+             # rc-s = 1 child question, rc-m = 2 child questions, rc-l = 3 child questions
+             if q_type == "rc-s":
+                # 1 child question
                 focused_skill = random.choice(self.customizations["child-question"]["focused_skill"])
-             elif q_type == "RC-M":
+             elif q_type == "rc-m":
+                # 2 child questions - generate 2 separate focused skills
                 focused_skills = random.sample(self.customizations["child-question"]["focused_skill"], 2)
                 focused_skill = "/".join(focused_skills)
-             else:  # RC-L
+             else:  # rc-l
+                # 3 child questions - generate 3 separate focused skills
                 focused_skills = random.sample(self.customizations["child-question"]["focused_skill"], 3)
                 focused_skill = "/".join(focused_skills)
              
@@ -61,45 +65,36 @@ class Verbal_prompts:
       
       def allocate_questions(section_allocation):
           section_prompts = []
-          num_rc = 0
-          rc_combination = []
-          if section_allocation == self.section_1:
-              rc_combination = random.choice([["RC-S", "RC-L"], ["RC-M", "RC-M"], ["RC-L", "RC-M"]])
-          else:
-              rc_combination = random.choice([["RC-S", "RC-L", "RC-M"], ["RC-M", "RC-M", "RC-M"], ["RC-L", "RC-M", "RC-M"]])
-          for _ in rc_combination:
-              num_rc += 2 if _ == "RC-S" else 3 if _ == "RC-M" else 4
-          num_tc = random.randint(*section_allocation["TC"])
-          num_se = 12 if section_allocation == self.section_1 else 15
-          remaining_questions = num_se
-          num_se -= (num_rc + num_tc)
-          no_prompts = num_se + num_tc + len(rc_combination)
-          if num_se <= 0:
-              num_tc += (num_se - 2)
-              num_se = 2 #atleast some SE questions should be there in any of the section
-
-          num_rc_questions = 0
-          for q_type in rc_combination[: num_rc]:
+          
+          # GRE RC sections need exactly 10 child questions
+          # rc-s = 2 child questions, rc-m = 3 child questions, rc-l = 4 child questions
+          # Generate combinations that total exactly 10 child questions
+          rc_combinations = [
+              ["rc-s", "rc-l", "rc-l"],    # 2 + 4 + 4 = 10
+              ["rc-m", "rc-m", "rc-l"],    # 3 + 3 + 4 = 10
+              ["rc-s", "rc-m", "rc-s", "rc-m"],  # 2 + 3 + 2 + 3 = 10
+              ["rc-l", "rc-m", "rc-m"]     # 4 + 3 + 3 = 10
+          ]
+          
+          rc_combination = random.choice(rc_combinations)
+          
+          # Calculate actual child questions to verify
+          num_rc = sum(2 if _ == "rc-s" else 3 if _ == "rc-m" else 4 for _ in rc_combination)
+          
+          # Get TC and SE counts from section allocation
+          num_tc = section_allocation["TC"][0]  # Should be 6 for both sections
+          num_se = section_allocation["SE"][0]  # Should be 4 for both sections
+          # Generate RC prompts
+          for q_type in rc_combination:
               section_prompts.append(generate_prompt(q_type, difficulty_pool.pop()))
-              num_rc_questions += 2 if q_type == "RC-S" else 3 if q_type == "RC-M" else 4
-          remaining_questions -= num_rc_questions
 
-          tc_combination = ["TC-1", "TC-2", "TC-3"]
-          if num_tc == 3:
-              for tc in tc_combination[: num_tc]:
-                  section_prompts.append(generate_prompt(tc, difficulty_pool.pop()))
-          else:
-              pin = random.randint(0, 2) # pinning system for TC question prompt generation
-              itr = 0
-              i=0
-              while i < num_tc:
-
-                  section_prompts.append(generate_prompt(f"TC-{itr%3+1}", difficulty_pool.pop()))
-                  if i == pin:
-                      section_prompts.append(generate_prompt(f"TC-{itr%3+1}", difficulty_pool.pop()))
-                      i +=1
-                  itr += 1
-                  i+=1
+          # Generate TC prompts
+          tc_types = ["TC-1", "TC-2", "TC-3"]
+          for _ in range(num_tc):
+              tc_type = random.choice(tc_types)
+              section_prompts.append(generate_prompt(tc_type, difficulty_pool.pop()))
+          
+          # Generate SE prompts
           for _ in range(num_se):
               section_prompts.append(generate_prompt("SE", difficulty_pool.pop()))
           return section_prompts

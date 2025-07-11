@@ -7,6 +7,7 @@ It eliminates code duplication by using a strategy pattern with exam-specific co
 from calendar import c
 import json
 import time
+import os
 from typing import Dict, List, Any, Optional, Tuple
 from enum import Enum
 
@@ -24,17 +25,27 @@ from config.exams.base_exam_config import BaseExamConfig
 from config.exams.gmat_config import GMATConfig
 from config.exams.gre_config import GREConfig
 
-with open("././system_instructions/gmat/customizations.json") as f:
+# Get the project root directory (assuming we're running from the project root)
+project_root = os.getcwd()
+
+# Load customization files using absolute paths
+gmat_customizations_path = os.path.join(project_root, "system_instructions", "gmat", "customizations.json")
+gre_customizations_path = os.path.join(project_root, "system_instructions", "gre", "customizations.json")
+
+with open(gmat_customizations_path) as f:
     customization_gmat = json.load(f)
 
-with open("././system_instructions/gre/customizations.json") as f:
+with open(gre_customizations_path) as f:
     customization_gre = json.load(f)
 
 # Load difficulty distribution files
-with open("././system_instructions/gmat/difficulty_distribution.json") as f:
+gmat_difficulty_path = os.path.join(project_root, "system_instructions", "gmat", "difficulty_distribution.json")
+gre_difficulty_path = os.path.join(project_root, "system_instructions", "gre", "difficulty_distribution.json")
+
+with open(gmat_difficulty_path) as f:
     gmat_difficulty_distribution = json.load(f)
 
-with open("././system_instructions/gre/difficulty_distribution.json") as f:
+with open(gre_difficulty_path) as f:
     gre_difficulty_distribution = json.load(f)
 
 
@@ -120,51 +131,58 @@ class UnifiedMockGenerator:
     def prepare_difficulty_pool(self, section_type: str, total_questions: int) -> List[int]:
         """
         Prepare difficulty pool based on the difficulty distribution for the given section.
-        
+
         Args:
             section_type: Section type (e.g., 'quants', 'verbal', 'integrated_reasoning')
             total_questions: Total number of questions needed
-            
+
         Returns:
             List of difficulty levels (1-5) distributed according to the configuration
         """
         import random
-        
+
         # Get section-specific difficulty distribution
         section_key = section_type.lower()
         if section_key not in self.difficulty_distribution:
             # Fallback to a default distribution if section not found
             section_key = 'quants' if section_key == 'quantitative' else section_key
-            
+
         if section_key not in self.difficulty_distribution:
-            raise ValueError(f"No difficulty distribution found for section: {section_type}")
-            
-        difficulty_ratio = self.difficulty_distribution[section_key][str(self.mock_difficulty)]
-        
+            raise ValueError(
+                f"No difficulty distribution found for section: {section_type}")
+
+        difficulty_ratio = self.difficulty_distribution[section_key][str(
+            self.mock_difficulty)]
+
         # Calculate question counts for each difficulty level
         easy_count = int(total_questions * difficulty_ratio["easy"])
         medium_count = int(total_questions * difficulty_ratio["medium"])
         hard_count = total_questions - (easy_count + medium_count)
 
         # Create the original distribution pattern (1-5 scale)
-        one = random.randint(1, max(1, easy_count - 1)) if easy_count > 1 else easy_count
-        three = random.randint(1, max(1, medium_count - 1)) if medium_count > 1 else medium_count
-        five = random.randint(1, max(1, hard_count - 1)) if hard_count > 1 else hard_count
+        one = random.randint(1, max(1, easy_count - 1)
+                             ) if easy_count > 1 else easy_count
+        three = random.randint(1, max(1, medium_count - 1)
+                               ) if medium_count > 1 else medium_count
+        five = random.randint(1, max(1, hard_count - 1)
+                              ) if hard_count > 1 else hard_count
 
-        two_three = random.randint(1, max(1, medium_count - three)) if medium_count > three else 0
+        two_three = random.randint(
+            1, max(1, medium_count - three)) if medium_count > three else 0
         two = easy_count - one + two_three
         four = hard_count - five + medium_count - three - two_three
-        
+
         # Ensure non-negative counts
         two = max(0, two)
         four = max(0, four)
-        
+
         # Create difficulty pool
-        difficulty_pool = ([1] * one + [2] * two + [3] * three + [4] * four + [5] * five)
-        
+        difficulty_pool = ([1] * one + [2] * two + [3] *
+                           three + [4] * four + [5] * five)
+
         # Shuffle the pool
         random.shuffle(difficulty_pool)
-        
+
         return difficulty_pool
 
     def _initialize_prompts_with_factory(self) -> Dict[str, List[str]]:
@@ -189,13 +207,14 @@ class UnifiedMockGenerator:
                     prompt_factory, SectionType.VERBAL, 15)
 
             return prompts
-            
+
         except Exception as e:
             self.logger.log_generation_error(e, {
                 "operation": "prompt_initialization",
                 "exam_type": self.exam_type.value
             })
-            raise RuntimeError(f"Failed to initialize prompts using nomenclature system: {e}")
+            raise RuntimeError(
+                f"Failed to initialize prompts using nomenclature system: {e}")
 
     def _generate_factory_prompts(self, prompt_factory: PromptGeneratorFactory, section_type: SectionType, total_questions: int) -> List[str]:
         """Generate prompts using the factory system with nomenclature patterns."""
@@ -206,18 +225,18 @@ class UnifiedMockGenerator:
                 section_type=section_type,
                 difficulty=self.mock_difficulty
             )
-            
+
             # Generate prompts using nomenclature system
             prompts = prompt_generator.generate_question_prompts()
-            
+
             # Ensure we have enough prompts
             while len(prompts) < total_questions:
                 additional_prompts = prompt_generator.generate_question_prompts()
                 prompts.extend(additional_prompts)
-            
+
             # Return only the required number
             return prompts[:total_questions]
-            
+
         except Exception as e:
             self.logger.log_generation_error(e, {
                 "operation": "factory_prompt_generation",
@@ -225,10 +244,10 @@ class UnifiedMockGenerator:
                 "exam_type": self.exam_type.value,
                 "error_details": str(e)
             })
-            
-            # Re-raise the exception instead of falling back
-            raise RuntimeError(f"Failed to generate prompts using nomenclature system for {self.exam_type.value} {section_type.value}: {e}")
 
+            # Re-raise the exception instead of falling back
+            raise RuntimeError(
+                f"Failed to generate prompts using nomenclature system for {self.exam_type.value} {section_type.value}: {e}")
 
     def _get_legacy_mappings(self) -> Dict[GeneratorClass, Tuple[QuestionType, SectionType]]:
         """Get legacy generator mappings for backward compatibility."""
