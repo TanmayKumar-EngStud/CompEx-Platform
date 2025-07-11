@@ -10,12 +10,12 @@ class Quants_prompts:
       with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/difficulty_distribution.json"), "r") as file:
          self.difficulty_distribution = json.load(file)["quants"]
 
-      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/component_allocation.json"), "r") as file:
-         self.complete_component_allocation = json.load(file)
-         self.component_allocation = self.complete_component_allocation["quants"]
+      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/customizations.json"), "r") as file:
+         self.complete_customizations = json.load(file)
+         self.customizations = self.complete_customizations["quants"]
       
-      self.section_1 = self.component_allocation["section1"]
-      self.section_2 = self.component_allocation["section2"]
+      self.section_1 = self.customizations["section1"]
+      self.section_2 = self.customizations["section2"]
       self.sections = [self.section_1, self.section_2]
 
    def prepare_difficulty_pool(self, total_questions):
@@ -39,15 +39,46 @@ class Quants_prompts:
    def generate_prompt(self, difficulty, qStyle, qType = "simple"):
       # qStyle = "ds", "mcq_single", "mcq_multiple", "ne"
       # qType2 = "simple", "parent_child"
-
-      primary_qType = qType if qType == "simple" else "parent_child"
-      with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/combination.json"), "r") as file:
-         parameters = json.load(file)[qStyle][primary_qType]
-      elements = []
-
-      for value in parameters.values():
-         elements.append(f"<{random.choice(value)}>")
-      prompt = {f"{qStyle} {qType}":" - ".join(elements)+ f"- <difficulty-level: {difficulty}>"}
+      
+      prompt_elements = []
+      
+      if qStyle == "ds":
+         # Data Sufficiency nomenclature: "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>"
+         topic = random.choice(self.customizations["data sufficiency"]["questionTopic"])
+         theme = random.choice(self.customizations["data sufficiency"]["questionTheme$"])
+         question_style = random.choice(self.customizations["data sufficiency"]["questionStyle"])
+         graph_table_type = random.choice(self.customizations["data sufficiency"]["graphType/tableType$"])
+         
+         prompt_elements = ["DS", topic, theme, question_style]
+         if graph_table_type is not None:
+            prompt_elements.append(graph_table_type)
+         prompt_elements.append(f"difficulty_level: {difficulty}")
+         
+      elif qStyle == "ne":
+         # Numeric Entry nomenclature: "NE - <questionTopic> - <questionTheme> - <graphType/TableType> - <difficulty_level: {1-5}>"
+         topic = random.choice(self.customizations["numeric entry"]["questionTopic"])
+         theme = random.choice(self.customizations["numeric entry"]["questionTheme*"])
+         graph_table_type = random.choice(self.customizations["numeric entry"]["graphType/TableType"])
+         
+         prompt_elements = ["NE", topic, theme]
+         if graph_table_type is not None:
+            prompt_elements.append(graph_table_type)
+         prompt_elements.append(f"difficulty_level: {difficulty}")
+         
+      else:  # mcq_single, mcq_multiple
+         # Problem Solving nomenclature: "S - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>"
+         topic = random.choice(self.customizations["problem solving"]["questionTopic"])
+         theme = random.choice(self.customizations["problem solving"]["questionTheme"])
+         question_style = random.choice(self.customizations["problem solving"]["questionStyle"])
+         graph_table_type = random.choice(self.customizations["problem solving"]["graphType/tableType$"])
+         
+         prompt_elements = ["S", topic, theme, question_style]
+         if graph_table_type is not None:
+            prompt_elements.append(graph_table_type)
+         prompt_elements.append(f"difficulty_level: {difficulty}")
+      
+      prompt_str = " - ".join(f"<{element}>" for element in prompt_elements)
+      prompt = {f"{qStyle} {qType}": prompt_str}
       return prompt
    
    def generate_question_prompts(self) -> list[str]:

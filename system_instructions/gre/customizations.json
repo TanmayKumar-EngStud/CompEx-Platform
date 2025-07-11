@@ -1,5 +1,23 @@
 {
    "quants": {
+      "section1": {
+         "total_questions": 20,
+         "QC": [8, 8],
+         "MCQ_Single": [9, 9],
+         "MCQ_Multiple": [2, 2],
+         "NE": [1, 1],
+         "simple_questions": [10, 10],
+         "parent_child_questions": [2, 2]
+      },
+      "section2": {
+         "total_questions": 20,
+         "QC": [7, 7],
+         "MCQ_Single": [10, 10],
+         "MCQ_Multiple": [2, 2],
+         "NE": [1, 1],
+         "simple_questions": [11, 11],
+         "parent_child_questions": [2, 2]
+      },
       "data sufficiency": {
          "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
          "questionStyle": [
@@ -38,16 +56,27 @@
          "graphType/tableType$": [
             null,
             "Line Graph",
+            null,
             "Bar Graph",
+            null,
             "Pie Chart graph",
+            null,
             "Scatter Plot graph",
+            null,
             "Standard Data Table",
+            null,
             "Pivot Table",
+            null,
             "Highlight Table",
+            null,
             "Heat Table",
+            null,
             "Text Table",
+            null,
             "Matrix Table",
+            null,
             "Frequency Table",
+            null,
             "Contingency Table"
          ],
          "questionTheme$": [
@@ -98,16 +127,27 @@
          "graphType/tableType$": [
             null,
             "Line Graph",
+            null,
             "Bar Graph",
+            null,
             "Pie Chart graph",
+            null,
             "Scatter Plot graph",
+            null,
             "Standard Data Table",
+            null,
             "Pivot Table",
+            null,
             "Highlight Table",
+            null,
             "Heat Table",
+            null,
             "Text Table",
+            null,
             "Matrix Table",
+            null,
             "Frequency Table",
+            null,
             "Contingency Table"
          ],
          "questionTheme": [
@@ -173,7 +213,19 @@
       }
    },
    "verbal": {
-      "nomenclature": "<questionType> - <questionTheme> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
+      "section1": {
+         "total_questions": 20,
+         "RC": [10, 10],
+         "TC": [6, 6],
+         "SE": [4, 4]
+      },
+      "section2": {
+         "total_questions": 20,
+         "RC": [10, 10],
+         "TC": [6, 6],
+         "SE": [4, 4]
+      },
+      "nomenclature": "<questionType> - <questionTheme> - <focusedSkill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
       "questionTheme": [
          "Economics",
          "Finance",
@@ -198,17 +250,17 @@
       ],
       "difficulty": 5,
       "vocabulary": 3,
-      "child-question":{
+      "child-question": {
          "nomenclature": "RC ChildQuestion - <focused_skill>",
-         "focused_skill":[
-      "Main Idea Question",
-      "Inference Question",
-      "Assumption Question",
-      "Strengthen Question",
-      "Weaken Question",
-      "Evaluate Question",
-      "Conclusion Question"
-   ]
+         "focused_skill": [
+            "Main Idea Question",
+            "Inference Question",
+            "Assumption Question",
+            "Strengthen Question",
+            "Weaken Question",
+            "Evaluate Question",
+            "Conclusion Question"
+         ]
       }
    }
 }

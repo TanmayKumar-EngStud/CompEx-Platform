@@ -8,17 +8,17 @@ class Verbal_prompts:
         with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/difficulty_distribution.json"), "r") as file:
             self.difficulty_distribution = json.load(file)["verbal"]
 
-        with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/component_allocation.json"), "r") as file:
-            self.complete_component_allocation = json.load(file)
-        self.component_allocation = self.complete_component_allocation["verbal"]
-        self.combination_number = self.component_allocation["combination_number"]
+        with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/customizations.json"), "r") as file:
+            self.complete_customizations = json.load(file)
+        self.customizations = self.complete_customizations["verbal"]
+        self.combination_number = 0
 
-        self.section_1 = self.component_allocation["section1"]
-        self.section_2 = self.component_allocation["section2"]
-        self.themes = self.component_allocation["themes"]
-        self.rc_types = self.component_allocation["rc_types"]
-        self.tc_types = self.component_allocation["tc_types"]
-        self.se_types = self.component_allocation["se_types"]
+        self.section_1 = self.customizations["section1"]
+        self.section_2 = self.customizations["section2"]
+        self.themes = self.customizations["questionTheme"]
+        self.rc_types = ["rc-s", "rc-m", "rc-l"]
+        self.tc_types = ["tc-1", "tc-2", "tc-3"]
+        self.se_types = ["sentence equivalence"]
 
     def generate_question_prompts(self) -> list[str]:
 
@@ -38,21 +38,26 @@ class Verbal_prompts:
       random.shuffle(difficulty_pool)
       # shuffle the difficulty pool
       def generate_prompt(q_type, difficulty):
-          questionTheme = self.themes[self.combination_number%len(self.themes)]
-          vocab = str(random.randint(1,3)) if "tc" in q_type.lower() or "se" in q_type.lower() else ""
-          self.combination_number += 1
+          # GRE Verbal nomenclature: "<questionType> - <questionTheme> - <focusedSkill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>"
+          questionTheme = random.choice(self.themes)
           
-          if self.combination_number%len(self.themes) == 0:
-              random.shuffle(self.themes)
-
-          self.component_allocation["combination_number"] = self.combination_number
-          self.component_allocation["themes"] = self.themes
-
-          with open(os.path.join(os.path.dirname(__file__), "../../system_instructions/gre/component_allocation.json"), "w") as file:
-              self.complete_component_allocation["verbal"] = self.component_allocation
-              json.dump(self.complete_component_allocation, file)
-
-          return f"<{questionTheme}> - <{q_type}> - <difficulty-level: {difficulty}> - <vocabulary-level:{vocab}>" if "rc" not in q_type.lower() else f"<{questionTheme}> - <{q_type}> - <difficulty-level: {difficulty}>"
+          if "rc" in q_type.lower():
+             # Reading Comprehension questions
+             if q_type == "RC-S":
+                focused_skill = random.choice(self.customizations["child-question"]["focused_skill"])
+             elif q_type == "RC-M":
+                focused_skills = random.sample(self.customizations["child-question"]["focused_skill"], 2)
+                focused_skill = "/".join(focused_skills)
+             else:  # RC-L
+                focused_skills = random.sample(self.customizations["child-question"]["focused_skill"], 3)
+                focused_skill = "/".join(focused_skills)
+             
+             return f"<{q_type}> - <{questionTheme}> - <{focused_skill}> - <difficulty-level: {difficulty}>"
+          else:
+             # TC and SE questions - include vocabulary level
+             vocab = str(random.randint(1,3))
+             focused_skill = "Text Completion" if "tc" in q_type.lower() else "Sentence Equivalence"
+             return f"<{q_type}> - <{questionTheme}> - <{focused_skill}> - <vocabulary-level: {vocab}> - <difficulty-level: {difficulty}>"
       
       def allocate_questions(section_allocation):
           section_prompts = []
