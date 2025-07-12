@@ -49,34 +49,34 @@ class GMATAdapter:
         self.question_answer = QuestionAnswer()
 
     @staticmethod
-    def adapt_simple_question(component: SimpleQuestion) -> 'GMATSimpleQuestionAdapter':
+    def adapt_simple_question(prompt: str, component: SimpleQuestion) -> 'GMATSimpleQuestionAdapter':
         """Adapt SimpleQuestion for GMAT-specific behavior."""
-        return GMATSimpleQuestionAdapter(component)
+        return GMATSimpleQuestionAdapter(prompt, component)
 
     @staticmethod
-    def adapt_data_sufficiency_question(component: DataSufficiencyQuestion) -> 'GMATDataSufficiencyAdapter':
+    def adapt_data_sufficiency_question(prompt: str, component: DataSufficiencyQuestion) -> 'GMATDataSufficiencyAdapter':
         """Adapt DataSufficiencyQuestion for GMAT-specific behavior."""
-        return GMATDataSufficiencyAdapter(component)
+        return GMATDataSufficiencyAdapter(prompt, component)
 
     @staticmethod
-    def adapt_parent_child_question(component: ParentChildQuestion) -> 'GMATParentChildAdapter':
+    def adapt_parent_child_question(prompt: str, component: ParentChildQuestion) -> 'GMATParentChildAdapter':
         """Adapt ParentChildQuestion for GMAT-specific behavior."""
-        return GMATParentChildAdapter(component)
+        return GMATParentChildAdapter(prompt, component)
 
     @staticmethod
-    def adapt_graphic_interpretation(component: GraphicInterpretationQuestion) -> 'GMATGraphicInterpretationAdapter':
+    def adapt_graphic_interpretation(prompt: str, component: GraphicInterpretationQuestion) -> 'GMATGraphicInterpretationAdapter':
         """Adapt GraphicInterpretationQuestion for GMAT-specific behavior."""
-        return GMATGraphicInterpretationAdapter(component)
+        return GMATGraphicInterpretationAdapter(prompt, component)
 
     @staticmethod
-    def adapt_table_analysis(component: TableAnalysisQuestion) -> 'GMATTableAnalysisAdapter':
+    def adapt_table_analysis(prompt: str,  component: TableAnalysisQuestion) -> 'GMATTableAnalysisAdapter':
         """Adapt TableAnalysisQuestion for GMAT-specific behavior."""
-        return GMATTableAnalysisAdapter(component)
+        return GMATTableAnalysisAdapter(prompt, component)
 
     @staticmethod
-    def adapt_two_part_analysis(component: TwoPartAnalysisQuestion) -> 'GMATTwoPartAnalysisAdapter':
+    def adapt_two_part_analysis(prompt: str, component: TwoPartAnalysisQuestion) -> 'GMATTwoPartAnalysisAdapter':
         """Adapt TwoPartAnalysisQuestion for GMAT-specific behavior."""
-        return GMATTwoPartAnalysisAdapter(component)
+        return GMATTwoPartAnalysisAdapter(prompt, component)
 
     @staticmethod
     def adapt_multi_source_reasoning(prompt: str, component: MultiSourceReasoningQuestion) -> 'GMATMultiSourceReasoningAdapter':

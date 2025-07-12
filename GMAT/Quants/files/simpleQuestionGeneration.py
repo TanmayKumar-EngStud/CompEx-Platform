@@ -1,5 +1,7 @@
 import random
-import json, os, re
+import json
+import os
+import re
 from typing import Dict, Any, Optional
 
 # Import unified components
@@ -13,7 +15,7 @@ from core.components.adapters.gmat_adapter import GMATAdapter
 
 class SimpleQuestionGeneration(BaseQuestionGenerator):
     """GMAT Simple/Problem Solving Question Generator using unified architecture."""
-    
+
     def __init__(self, global_state, lock, api_IDX, prompt=None):
         # Initialize base class with proper types
         super().__init__(
@@ -24,23 +26,23 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
             api_idx=api_IDX,
             prompt=prompt or ""
         )
-    
+
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
     def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
         """
         Generate a GMAT Simple/Problem Solving question.
-        
+
         Args:
             prompt: Optional prompt override
-            
+
         Returns:
             Generated question data or None if generation fails
         """
         try:
             # Initialize question data using base class
             self.initialize_question_data(prompt)
-            
+
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(
                 question_type=QuestionType.PROBLEM_SOLVING,
@@ -51,8 +53,9 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 prompt=self.prompt,
                 exam_type=ExamType.GMAT
             )
-            questionContent = GMATAdapter.adapt_simple_question(component)
-            
+            questionContent = GMATAdapter.adapt_simple_question(
+                self.prompt, component)
+
             # Generate question text
             question = questionContent.generate_questionText(self.prompt)
             self.question_data["question"] = question if question else ""
@@ -71,50 +74,52 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 options_list = list(options.values())
                 random.shuffle(options_list)
                 self.question_data["options"] = options_list
-                self.question_data["answer"] = options.get(answer, options_list[0] if options_list else "")
+                self.question_data["answer"] = options.get(
+                    answer, options_list[0] if options_list else "")
             else:
-                self.question_data["options"] = ["Option A", "Option B", "Option C", "Option D"]
+                self.question_data["options"] = [
+                    "Option A", "Option B", "Option C", "Option D"]
                 self.question_data["answer"] = "Option A"
 
             return self.question_data
-            
+
         except Exception as e:
             print(f"Error generating GMAT Simple question: {e}")
             return None
-    
+
     def validate_output(self, question_data: Dict[str, Any]) -> bool:
         """
         Validate GMAT Simple question format.
-        
+
         Args:
             question_data: Generated question data to validate
-            
+
         Returns:
             True if valid, False otherwise
         """
         required_fields = ["type", "question", "answer", "solution", "options"]
-        
+
         # Check required fields
         for field in required_fields:
             if field not in question_data:
                 return False
-        
+
         # Validate options
         options = question_data.get("options", [])
         if not isinstance(options, list) or len(options) < 2:
             return False
-        
+
         # Validate answer is in options
         answer = question_data.get("answer", "")
         if answer not in options:
             return False
-        
+
         return True
-    
+
     def get_supported_types(self) -> list[QuestionType]:
         """Get supported question types."""
         return [QuestionType.PROBLEM_SOLVING]
-    
+
     def get_exam_type(self) -> ExamType:
         """Get exam type."""
         return ExamType.GMAT
