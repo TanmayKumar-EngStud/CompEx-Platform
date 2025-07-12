@@ -5,7 +5,6 @@ This module provides prompt generation specifically for GMAT Integrated Reasonin
 handling GI, TPA, TA, and MSR question types.
 """
 
-import random
 from typing import List
 from core.enums.exam_types import ExamType
 from core.enums.section_types import SectionType
@@ -30,119 +29,80 @@ class GMATIRPrompts(BasePromptGenerator):
     
     def generate_question_prompts(self) -> List[str]:
         """
-        Generate question prompts for GMAT Integrated Reasoning section.
+        Generate question prompts for GMAT Integrated Reasoning section using nomenclature patterns.
         
         Returns:
-            List of formatted prompt strings for question generation
+            nomenclature:
+            GI: `GI - <questionTheme> - <focused_skill> - <graphType> - <difficulty_level: {1-5}>`
+            MSR: `MSR - <total_child_questions> - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill_1/focused_skill_2/focused_skill_3> - <question_style_1/question_style_2/question_style_3> - <difficulty_level: {1-5}>`
+            TA: `TA - <focused_skill> - <tableType> - <dichotomousType> - <questionTheme> - <difficulty_level: {1-5}>`
+            TPA: `TPA - <questionTheme> - <focused_skill> - <type> - <difficulty_level: {1-5}>`
         """
         difficulty_pool = self.get_difficulty_pool()
         prompts = []
         
-        # Get combination number for variety
-        cn = self.component_allocation.get("combination_number", 0)
-        
-        # IR question type distribution (typically 2 of each type for 8 questions)
-        ir_types = ["GI", "TPA", "TA", "MSR"]
-        questions_per_type = 2
+        # Get question distribution from customizations
+        section_config = self.customizations.get("integrated reasoning", {})
+        num_msr = section_config.get("Multi_Source_Reasoning", 6)
+        num_ta = section_config.get("Table_Analysis", 5)
+        num_gi = section_config.get("Graphics_Interpretation", 5)
+        num_tpa = section_config.get("Two_Part_Analysis", 4)
         
         question_index = 0
         
-        for ir_type in ir_types:
-            for i in range(questions_per_type):
-                if question_index >= self.total_questions:
-                    break
-                
-                difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-                
-                # Generate type-specific prompt
-                if ir_type == "GI":
-                    prompt = self._generate_gi_prompt(difficulty, cn + question_index)
-                elif ir_type == "TPA":
-                    prompt = self._generate_tpa_prompt(difficulty, cn + question_index)
-                elif ir_type == "TA":
-                    prompt = self._generate_ta_prompt(difficulty, cn + question_index)
-                elif ir_type == "MSR":
-                    prompt = self._generate_msr_prompt(difficulty, cn + question_index)
-                else:
-                    prompt = self._create_prompt(ir_type, "integrated_reasoning", "analysis", difficulty)
-                
-                prompts.append(prompt)
-                question_index += 1
+        # Generate MSR prompts using nomenclature
+        for _ in range(num_msr):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "multi source reasoning",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
-        # Update combination counter
-        self._update_combination_counter()
+        # Generate TA prompts using nomenclature
+        for _ in range(num_ta):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "table analysis",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
+        
+        # Generate GI prompts using nomenclature
+        for _ in range(num_gi):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "graphic interpretation",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
+        
+        # Generate TPA prompts using nomenclature
+        for _ in range(num_tpa):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "two part analysis",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
         return prompts
     
-    def _generate_gi_prompt(self, difficulty: int, cn: int) -> str:
-        """Generate Graphic Interpretation prompt."""
-        # GI specific elements
-        chart_types = ["Bar Chart", "Pie Chart", "Line Chart", "Scatter Plot"]
-        topics = ["Economics", "Business", "Science", "Demographics", "Finance"]
-        skills = ["Data Interpretation", "Trend Analysis", "Comparison", "Calculation"]
-        
-        chart_type = self._get_next_element(chart_types, cn)
-        topic = self._get_next_element(topics, cn)
-        skill = self._get_next_element(skills, cn)
-        
-        return self._create_prompt(
-            "GI", 
-            topic, 
-            skill, 
-            difficulty,
-            additional_elements=[chart_type]
-        )
-    
-    def _generate_tpa_prompt(self, difficulty: int, cn: int) -> str:
-        """Generate Two-Part Analysis prompt."""
-        topics = ["Business Strategy", "Economics", "Logic", "Science", "Operations"]
-        skills = ["Analysis", "Evaluation", "Comparison", "Problem Solving"]
-        
-        topic = self._get_next_element(topics, cn)
-        skill = self._get_next_element(skills, cn)
-        
-        return self._create_prompt("TPA", topic, skill, difficulty)
-    
-    def _generate_ta_prompt(self, difficulty: int, cn: int) -> str:
-        """Generate Table Analysis prompt."""
-        topics = ["Business Data", "Scientific Data", "Survey Results", "Financial Data"]
-        skills = ["Data Analysis", "Sorting", "Filtering", "Statistical Analysis"]
-        
-        topic = self._get_next_element(topics, cn)
-        skill = self._get_next_element(skills, cn)
-        
-        return self._create_prompt("TA", topic, skill, difficulty)
-    
-    def _generate_msr_prompt(self, difficulty: int, cn: int) -> str:
-        """Generate Multi-Source Reasoning prompt."""
-        topics = ["Business Case", "Research Study", "Policy Analysis", "Market Analysis"]
-        skills = ["Integration", "Synthesis", "Evaluation", "Critical Thinking"]
-        
-        topic = self._get_next_element(topics, cn)
-        skill = self._get_next_element(skills, cn)
-        
-        return self._create_prompt("MSR", topic, skill, difficulty)
     
     def _get_default_component_allocation(self):
-        """Get GMAT IR specific component allocation."""
+        """
+        Get GMAT Integrated Reasoning specific component allocation.
+        
+        Note: This is now primarily loaded from customizations.json file.
+        These are fallback defaults if customizations file is not available.
+        """
         return {
-            "combination_number": 0,
-            "question_types": ["GI", "TPA", "TA", "MSR"],
-            "gi": {
-                "chart_types": ["Bar Chart", "Pie Chart", "Line Chart", "Scatter Plot"],
-                "topics": ["Economics", "Business", "Science", "Demographics", "Finance"],
-                "skills": ["Data Interpretation", "Trend Analysis", "Comparison", "Calculation"]
-            },
-            "tpa": {
-                "topics": ["Business Strategy", "Economics", "Logic", "Science", "Operations"],
-                "skills": ["Analysis", "Evaluation", "Comparison", "Problem Solving"]
-            },
-            "ta": {
-                "topics": ["Business Data", "Scientific Data", "Survey Results", "Financial Data"],
-                "skills": ["Data Analysis", "Sorting", "Filtering", "Statistical Analysis"]
-            },
-            "msr": {
-                "topics": ["Business Case", "Research Study", "Policy Analysis", "Market Analysis"],
-                "skills": ["Integration", "Synthesis", "Evaluation", "Critical Thinking"]
-            }
+            "Multi_Source_Reasoning": 6,
+            "Table_Analysis": 5,
+            "Graphics_Interpretation": 5,
+            "Two_Part_Analysis": 4
         }

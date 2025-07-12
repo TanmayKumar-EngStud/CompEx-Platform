@@ -15,30 +15,96 @@
             "Data Interpretation$"
          ],
          "difficulty": 5,
-         "questionTopic": [
-            "Number Properties and Fractions, Decimals, Percentages$",
-            "Ratio and Proportion$",
-            "Simple Interest and Compound Interest",
-            "work and rate problem$",
-            "Profit, Loss and Discount$",
-            "Mixtures and Alligations$",
-            "Linear Equations, Quadratic Equations and Inequalities",
-            "Functions and Polynomials",
-            "Exponents and Powers",
-            "Algebraic Expressions and Simplification",
-            "Lines and Angles*",
-            "Triangles (Type, Properties, Pythagoras Theorem)*",
-            "Circles (arc, sector, cord, etc)*",
-            "Quadrilaterals and Polygons*",
-            "Coordinate Geometry*",
-            "3D Geometry*",
-            "Mensuration (Area, Perimeter, Volume, Surface Area)*",
-            "Mean, Median, Mode, Range$",
-            "Standard Deviation and Variance$",
-            "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
-            "Permutations and Combinations",
-            "Sets and Venn Diagrams"
-         ],
+         "questionTopic": {
+            "Number Properties and Fractions, Decimals, Percentages$": [
+               "prime_factorization", "divisibility_rules", "LCM_GCD", "fraction_operations",
+               "decimal_conversions", "percentage_calculations", "number_properties"
+            ],
+            "Ratio and Proportion$": [
+               "direct_proportion", "inverse_proportion", "ratio_calculations", 
+               "proportion_solving", "scale_problems", "unit_conversions"
+            ],
+            "Simple Interest and Compound Interest": [
+               "simple_interest_calculations", "compound_interest_formulas", 
+               "annual_growth_rate", "investment_problems", "loan_calculations"
+            ],
+            "work and rate problem$": [
+               "work_efficiency", "time_and_work", "combined_work_rate", 
+               "pipe_and_cistern", "work_completion_time"
+            ],
+            "Profit, Loss and Discount$": [
+               "profit_loss_calculations", "cost_price_selling_price", "discount_problems",
+               "markup_calculations", "successive_discounts", "break_even_analysis"
+            ],
+            "Mixtures and Alligations$": [
+               "mixture_ratio", "alligation_method", "concentration_problems",
+               "weighted_average", "replacement_problems"
+            ],
+            "Linear Equations, Quadratic Equations and Inequalities": [
+               "linear_equation_solving", "quadratic_formulas", "inequality_solving",
+               "system_of_equations", "graphical_solutions"
+            ],
+            "Functions and Polynomials": [
+               "function_evaluation", "polynomial_operations", "domain_range",
+               "composite_functions", "inverse_functions"
+            ],
+            "Exponents and Powers": [
+               "exponent_rules", "power_calculations", "scientific_notation",
+               "exponential_equations", "logarithmic_properties"
+            ],
+            "Algebraic Expressions and Simplification": [
+               "algebraic_manipulation", "factorization", "expression_simplification",
+               "substitution_method", "algebraic_identities"
+            ],
+            "Lines and Angles*": [
+               "angle_relationships", "parallel_lines", "perpendicular_lines",
+               "angle_measurements", "geometric_theorems"
+            ],
+            "Triangles (Type, Properties, Pythagoras Theorem)*": [
+               "triangle_classification", "pythagorean_theorem", "triangle_inequality",
+               "area_calculations", "similarity_congruence"
+            ],
+            "Circles (arc, sector, cord, etc)*": [
+               "circle_properties", "arc_length", "sector_area", "chord_properties",
+               "tangent_secant", "circle_equations"
+            ],
+            "Quadrilaterals and Polygons*": [
+               "quadrilateral_properties", "polygon_angles", "area_perimeter",
+               "regular_polygons", "coordinate_geometry"
+            ],
+            "Coordinate Geometry*": [
+               "distance_formula", "slope_calculations", "line_equations",
+               "circle_equations", "geometric_transformations"
+            ],
+            "3D Geometry*": [
+               "surface_area", "volume_calculations", "3d_coordinates",
+               "spatial_relationships", "solid_geometry"
+            ],
+            "Mensuration (Area, Perimeter, Volume, Surface Area)*": [
+               "area_calculations", "perimeter_formulas", "volume_formulas",
+               "surface_area_calculations", "unit_conversions"
+            ],
+            "Mean, Median, Mode, Range$": [
+               "central_tendency", "data_analysis", "statistical_measures",
+               "data_interpretation", "distribution_analysis"
+            ],
+            "Standard Deviation and Variance$": [
+               "variance_calculations", "standard_deviation", "data_spread",
+               "statistical_analysis", "normal_distribution"
+            ],
+            "Probability Rules (Basic, Independent, Mutually Exclusive, etc)": [
+               "basic_probability", "conditional_probability", "independent_events",
+               "mutually_exclusive_events", "probability_rules"
+            ],
+            "Permutations and Combinations": [
+               "permutation_formulas", "combination_calculations", "counting_principles",
+               "arrangement_problems", "selection_problems"
+            ],
+            "Sets and Venn Diagrams": [
+               "set_operations", "venn_diagram_analysis", "union_intersection",
+               "complement_sets", "set_theory"
+            ]
+         },
          "graphType/tableType$": [
             null,
             "line graph",
@@ -99,17 +165,44 @@
             "Mixed Concepts"
          ],
          "difficulty": 5,
-         "questionTopic": [
-            "Number Properties",
-            "Fractions, Decimals, and Percentages",
-            "Ratios and Proportions",
-            "Algebra",
-            "Geometry",
-            "Word Problems",
-            "Statistics$",
-            "Probability$",
-            "Functions and Graphs*"
-         ],
+         "questionTopic": {
+            "Number Properties": [
+               "prime_factorization", "divisibility_rules", "LCM_GCD", "number_theory",
+               "even_odd_properties", "integer_properties"
+            ],
+            "Fractions, Decimals, and Percentages": [
+               "fraction_operations", "decimal_conversions", "percentage_calculations",
+               "fraction_to_decimal", "percentage_increase_decrease"
+            ],
+            "Ratios and Proportions": [
+               "ratio_calculations", "proportion_solving", "scale_problems",
+               "unit_conversions", "rate_problems"
+            ],
+            "Algebra": [
+               "linear_equations", "quadratic_equations", "inequalities",
+               "functions", "sequences", "coordinate_geometry"
+            ],
+            "Geometry": [
+               "triangles", "circles", "rectangles_and_squares",
+               "coordinate_geometry", "area_and_perimeter", "volume"
+            ],
+            "Word Problems": [
+               "work_and_time", "speed_distance_time", "age_problems",
+               "mixture_problems", "investment_problems"
+            ],
+            "Statistics$": [
+               "mean_median_mode", "standard_deviation", "data_interpretation",
+               "frequency_distribution", "probability_statistics"
+            ],
+            "Probability$": [
+               "basic_probability", "conditional_probability", "independent_events",
+               "permutations_combinations", "probability_distributions"
+            ],
+            "Functions and Graphs*": [
+               "function_analysis", "graphical_interpretation", "domain_range",
+               "function_transformations", "coordinate_systems"
+            ]
+         },
          "questionTheme&": [
             "Business and Finance",
             "Science and Technology",

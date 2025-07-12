@@ -381,6 +381,42 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(f"<{var}>", f"<{question_type}>")
                 continue
             
+            # Enhanced questionTopic handling
+            if var == "questionTopic":
+                topic_values = question_config.get("questionTopic", [])
+                if isinstance(topic_values, dict):
+                    # New: Dictionary format - select topic and store for skill mapping
+                    selected_topic = self.get_random_element(list(topic_values.keys()))
+                    substituted = substituted.replace(f"<{var}>", f"<{selected_topic}>")
+                    # Store selected topic for focused_skill selection
+                    self._selected_topic = selected_topic
+                    self._topic_skills = topic_values[selected_topic]
+                    continue
+                elif isinstance(topic_values, list):
+                    # Existing: List format - works as before
+                    selected_topic = self.get_random_element(topic_values)
+                    substituted = substituted.replace(f"<{var}>", f"<{selected_topic}>")
+                    continue
+            
+            # Enhanced focused_skill handling  
+            if var == "focused_skill":
+                # First priority: Use skills from selected topic (if dictionary format)
+                if hasattr(self, '_topic_skills') and self._topic_skills:
+                    selected_skill = self.get_random_element(self._topic_skills)
+                    substituted = substituted.replace(f"<{var}>", f"<{selected_skill}>")
+                    continue
+                
+                # Second priority: Use general focused_skill array
+                skill_values = question_config.get("focused_skill", [])
+                if skill_values:
+                    selected_skill = self.get_random_element(skill_values)
+                    substituted = substituted.replace(f"<{var}>", f"<{selected_skill}>")
+                    continue
+                
+                # Fallback
+                substituted = substituted.replace(f"<{var}>", "<general>")
+                continue
+            
             # Get values for this variable
             var_values = question_config.get(var_clean, [])
             

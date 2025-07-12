@@ -5,7 +5,6 @@ This module provides prompt generation specifically for GRE Quantitative section
 handling the specific requirements and question types for GRE math questions.
 """
 
-import random
 from typing import List
 from core.enums.exam_types import ExamType
 from core.enums.section_types import SectionType
@@ -30,141 +29,80 @@ class GREQuantsPrompts(BasePromptGenerator):
     
     def generate_question_prompts(self) -> List[str]:
         """
-        Generate question prompts for GRE Quantitative section.
+        Generate question prompts for GRE Quantitative section using nomenclature patterns.
         
         Returns:
-            List of formatted prompt strings for question generation
+            nomenclature:
+            Data Sufficiency: `DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>`
+            Problem Solving: `S - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>`
+            Numeric Entry: `NE - <questionTopic> - <questionTheme> - <graphType/TableType> - <difficulty_level: {1-5}>`
         """
         difficulty_pool = self.get_difficulty_pool()
         prompts = []
         
-        # Get combination number for variety
-        cn = self.component_allocation.get("combination_number", 0)
+        # Get section configuration from customizations
+        section_config = self.customizations.get("quants", {})
         
-        # GRE Quantitative question type distribution
-        question_types = ["S", "DS", "NE", "PC"]  # Problem Solving, Data Sufficiency, Numeric Entry, Parent-Child
-        type_distribution = {
-            "S": 8,   # Problem Solving (most common)
-            "DS": 3,  # Quantitative Comparison (Data Sufficiency style)
-            "NE": 2,  # Numeric Entry
-            "PC": 2   # Parent-Child (shared data)
-        }
+        # Get question distribution based on section (GRE has section1 and section2)
+        # For now, using section1 as default pattern
+        section1_config = section_config.get("section1", {})
         
-        # Get available topics
-        topics = self.component_allocation.get("options", [
-            "arithmetic", "algebra", "geometry", "data_analysis"
-        ])
+        # Question type counts
+        qc_count = section1_config.get("QC", [8, 8])[0]  # Quantitative Comparison (Data Sufficiency style)
+        mcq_single_count = section1_config.get("MCQ_Single", [9, 9])[0]  # Problem Solving
+        ne_count = section1_config.get("NE", [1, 1])[0]  # Numeric Entry
         
         question_index = 0
         
-        for question_type, count in type_distribution.items():
-            for i in range(count):
-                if question_index >= self.total_questions:
-                    break
-                
-                # Select topic cyclically
-                topic = self._get_next_element(topics, cn + question_index)
-                
-                # Get focused skill for the selected topic
-                topic_config = self.component_allocation.get(topic, {})
-                skills = topic_config.get("focused_skill", self._get_default_skills(topic))
-                skill = self._get_next_element(skills, cn + question_index)
-                
-                # Get difficulty level
-                difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-                
-                # Create the prompt based on question type
-                if question_type == "PC":
-                    # Parent-Child questions need special formatting
-                    prompt = self._create_pc_prompt(topic, skill, difficulty)
-                elif question_type == "NE":
-                    # Numeric Entry questions
-                    prompt = self._create_prompt(question_type, topic, skill, difficulty, ["numeric_answer"])
-                else:
-                    # Standard questions
-                    prompt = self._create_prompt(question_type, topic, skill, difficulty)
-                
-                prompts.append(prompt)
-                question_index += 1
+        # Generate Quantitative Comparison (Data Sufficiency) prompts
+        for _ in range(qc_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "data sufficiency",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
-        # Update combination counter for variety
-        self._update_combination_counter()
+        # Generate Problem Solving (MCQ Single) prompts
+        for _ in range(mcq_single_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "problem solving",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
+        
+        # Generate Numeric Entry prompts
+        for _ in range(ne_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "numeric entry",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
         return prompts
     
-    def _create_pc_prompt(self, topic: str, skill: str, difficulty: int) -> str:
-        """Create Parent-Child (shared data) prompt."""
-        # PC questions share data across multiple questions
-        data_types = ["graph", "table", "chart", "diagram"]
-        data_type = random.choice(data_types)
-        
-        return self._create_prompt(
-            "PC", 
-            topic, 
-            skill, 
-            difficulty,
-            additional_elements=[f"shared_{data_type}"]
-        )
-    
-    def _get_default_skills(self, topic: str) -> List[str]:
-        """
-        Get default skills for a given topic.
-        
-        Args:
-            topic: The topic name
-            
-        Returns:
-            List of skills for the topic
-        """
-        default_skills = {
-            "arithmetic": [
-                "integers", "fractions", "decimals", "percentages",
-                "ratios_and_proportions", "exponents_and_roots"
-            ],
-            "algebra": [
-                "linear_equations", "quadratic_equations", "inequalities",
-                "functions", "coordinate_geometry", "sequences"
-            ],
-            "geometry": [
-                "lines_and_angles", "triangles", "quadrilaterals", "circles",
-                "three_dimensional_figures", "coordinate_geometry"
-            ],
-            "data_analysis": [
-                "descriptive_statistics", "probability", "data_interpretation",
-                "counting_methods", "distributions", "graphical_methods"
-            ]
-        }
-        
-        return default_skills.get(topic, ["general"])
     
     def _get_default_component_allocation(self):
-        """Get GRE Quantitative specific component allocation."""
+        """
+        Get GRE Quantitative specific component allocation.
+        
+        Note: This is now primarily loaded from customizations.json file.
+        These are fallback defaults if customizations file is not available.
+        """
         return {
-            "combination_number": 0,
-            "question_style": ["S", "DS", "NE", "PC"],
-            "options": ["arithmetic", "algebra", "geometry", "data_analysis"],
-            "arithmetic": {
-                "focused_skill": [
-                    "integers", "fractions", "decimals", "percentages",
-                    "ratios_and_proportions", "exponents_and_roots"
-                ]
+            "section1": {
+                "QC": [8, 8],
+                "MCQ_Single": [9, 9],
+                "NE": [1, 1]
             },
-            "algebra": {
-                "focused_skill": [
-                    "linear_equations", "quadratic_equations", "inequalities",
-                    "functions", "coordinate_geometry", "sequences"
-                ]
-            },
-            "geometry": {
-                "focused_skill": [
-                    "lines_and_angles", "triangles", "quadrilaterals", "circles",
-                    "three_dimensional_figures", "coordinate_geometry"
-                ]
-            },
-            "data_analysis": {
-                "focused_skill": [
-                    "descriptive_statistics", "probability", "data_interpretation",
-                    "counting_methods", "distributions", "graphical_methods"
-                ]
+            "section2": {
+                "QC": [7, 7],
+                "MCQ_Single": [10, 10],
+                "NE": [1, 1]
             }
         }

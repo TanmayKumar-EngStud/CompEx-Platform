@@ -3,10 +3,13 @@
 ## Overview
 This guide explains how to modernize prompt generator files to use the new nomenclature-based system with random selection instead of the old combination_number approach. It also includes enhanced topic-skill mapping for better contextual accuracy.
 
-## Files to Update
-1. `/core/prompts/gmat/gmat_ir_prompts.py` 
-2. `/core/prompts/gre/gre_quants_prompts.py`
-3. `/core/prompts/gre/gre_verbal_prompts.py`
+## Completed Updates
+✅ **GMAT Customizations**: Updated `/system_instructions/gmat/customizations.json` quant sections  
+✅ **GRE Customizations**: Updated `/system_instructions/gre/customizations.json` quant sections  
+✅ **BasePromptGenerator**: Enhanced to handle dictionary format questionTopic  
+✅ **GMAT IR Prompts**: Updated `/core/prompts/gmat/gmat_ir_prompts.py` to use nomenclature  
+✅ **GRE Quants Prompts**: Updated `/core/prompts/gre/gre_quants_prompts.py` to use nomenclature  
+✅ **GRE Verbal Prompts**: Updated `/core/prompts/gre/gre_verbal_prompts.py` to use nomenclature
 
 ## Enhanced Topic-Skill Mapping (Advanced Feature)
 
@@ -67,7 +70,7 @@ Transform questionTopic from array to dictionary where each topic contains its s
 
 ### Required BasePromptGenerator Enhancement
 
-Add to `_substitute_nomenclature_variables` method:
+✅ **COMPLETED** - Enhanced logic has been implemented in `_substitute_nomenclature_variables` method:
 
 ```python
 # Enhanced questionTopic handling
