@@ -708,8 +708,8 @@ class SimpleQuestion(BaseQuestionComponent):
         if is_numeric_entry:
             # For numeric entry, we need both solution and answer
             # Solution is plain text, answer is JSON
-            solution = self._generate_solution_plain_text()
-            answer = self._generate_answer_numeric()
+            solution = self._generate_solution_plain_text(instruction_prompt)
+            answer = self._generate_answer_numeric(instruction_prompt)
             return solution, answer
         else:
             # For regular questions, just solution as plain text
@@ -1133,7 +1133,7 @@ class ParentChildQuestion(BaseQuestionComponent):
         """Generate title for specific child question."""
         def _generate(warn: bool = False) -> Optional[str]:
             response = self._get_response(
-                f"mode:- childQuestionTitle for question {index}:\n{instruction_prompt}", warn)
+                f"mode:- ChildQuestionTitle for question {index}:\n{instruction_prompt}", warn)
 
             if not response:
                 return None
