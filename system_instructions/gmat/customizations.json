@@ -223,7 +223,7 @@
       "Two_Part_Analysis": 4,
       "question_type": ["MSR", "TPA", "TA", "GI"],
       "graphic interpretation": {
-         "nomenclature": "GI - <questionTheme> - <graphType> - <difficulty_level: {1-5}>",
+         "nomenclature": "GI - <questionTheme> - <focused_skill> - <graphType> - <difficulty_level: {1-5}>",
          "graphType": [
             "bar chart",
             "pie chart",
@@ -240,6 +240,17 @@
             "business",
             "history",
             "science and technology"
+         ],
+         "focused_skill": [
+            "Data Interpretation",
+            "Critical Thinking",
+            "Quantitative Reasoning",
+            "Attention to Detail",
+            "Synthesis of Information",
+            "Logical Reasoning",
+            "Comparative Analysis",
+            "Pattern Recognition",
+            "Data Sufficiency"
          ],
          "difficultyLevel": 5
       },
@@ -286,7 +297,7 @@
          "difficultyLevel": 5
       },
       "table analysis": {
-         "nomenclature": "TA - <questionTheme> - <tableType> - <dichotomousType> - <difficulty_level: {1-5}>",
+         "nomenclature": "TA - <focused_skill> - <tableType> - <dichotomousType> - <questionTheme> - <difficulty_level: {1-5}>",
          "tableType": [
             "simple table",
             "time_series table",
@@ -320,6 +331,13 @@
             "culture",
             "sports",
             "entertainment"
+         ],
+         "focused_skill": [
+            "Comparative Analysis",
+            "Pattern Recognition",
+            "Data Synthesis",
+            "Logical Reasoning",
+            "Critical Reasoning"
          ],
          "difficultyLevel": 5
       },

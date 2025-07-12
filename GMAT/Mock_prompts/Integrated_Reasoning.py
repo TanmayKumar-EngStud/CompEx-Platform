@@ -78,7 +78,7 @@ class Integrated_Reasoning_prompts:
         total_ta = random.choice([2, 3])
         for _ in range(total_ta):
             focused_skill = random.choice(
-                ["Comparative Analysis", "Pattern Recognition", "Data Synthesis", "Logical Reasoning", "Critical Reasoning"])
+                self.customizations["table analysis"]["focused_skill"])
             table_type = random.choice(
                 self.customizations["table analysis"]["tableType"])
             theme = random.choice(self.customizations["table analysis"]["questionTheme"])
@@ -90,7 +90,7 @@ class Integrated_Reasoning_prompts:
         total_gi = 12 - self.remaining_questions
         for _ in range(total_gi):
             focused_skill = random.choice(
-                ["Data Interpretation", "Critical Thinking", "Quantitative Reasoning", "Attention to Detail", "Synthesis of Information", "Logical Reasoning", "Comparative Analysis", "Pattern Recognition", "Data Sufficiency"])
+                self.customizations["graphic interpretation"]["focused_skill"])
             chart_type = random.choice(
                 self.customizations["graphic interpretation"]["graphType"])
             theme = random.choice(self.customizations["graphic interpretation"]["questionTheme"])
@@ -101,9 +101,9 @@ class Integrated_Reasoning_prompts:
         total_ds = 8
         # print(f"difficulty_level:- {difficulty_pool}\n length remaining:- {len(difficulty_pool)}")
         for _ in range(total_ds):
-            topic = random.choice(["Algebra", "Word Problems", "Arithmetic", "Data Sufficiency"])
+            topic = random.choice(self.complete_customizations["quants"]["data sufficiency"]["questionTopic"])
             focused_skill = random.choice(
-                ["Attention to Detail", "Logical Reasoning", "Critical Reasoning", "Mathematical Knowledge", "Efficiency and Time Management"])
+                self.complete_customizations["quants"]["data sufficiency"]["focused_skill"])
             question_prompt = f"DS - <{topic}> - <{focused_skill}> - <difficulty_level: {difficulty_pool.pop()}>"
             prompts.append(question_prompt)
         self.remaining_questions -= total_ds

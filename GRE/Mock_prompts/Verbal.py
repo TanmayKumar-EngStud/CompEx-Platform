@@ -16,9 +16,9 @@ class Verbal_prompts:
         self.section_1 = self.customizations["section1"]
         self.section_2 = self.customizations["section2"]
         self.themes = self.customizations["questionTheme"]
-        self.rc_types = ["rc-s", "rc-m", "rc-l"]
-        self.tc_types = ["tc-1", "tc-2", "tc-3"]
-        self.se_types = ["sentence equivalence"]
+        self.rc_types = self.customizations["reading_comprehension"]["question_types"]
+        self.tc_types = self.customizations["text_completion"]["question_types"]
+        self.se_types = self.customizations["sentence_equivalence"]["question_types"]
 
     def generate_question_prompts(self) -> list[str]:
 
@@ -60,7 +60,10 @@ class Verbal_prompts:
           else:
              # TC and SE questions - include vocabulary level
              vocab = str(random.randint(1,3))
-             focused_skill = "Text Completion" if "tc" in q_type.lower() else "Sentence Equivalence"
+             if "tc" in q_type.lower():
+                 focused_skill = random.choice(self.customizations["text_completion"]["focused_skill"])
+             else:  # SE question
+                 focused_skill = random.choice(self.customizations["sentence_equivalence"]["focused_skill"])
              return f"<{q_type}> - <{questionTheme}> - <{focused_skill}> - <vocabulary-level: {vocab}> - <difficulty-level: {difficulty}>"
       
       def allocate_questions(section_allocation):
@@ -69,12 +72,7 @@ class Verbal_prompts:
           # GRE RC sections need exactly 10 child questions
           # rc-s = 2 child questions, rc-m = 3 child questions, rc-l = 4 child questions
           # Generate combinations that total exactly 10 child questions
-          rc_combinations = [
-              ["rc-s", "rc-l", "rc-l"],    # 2 + 4 + 4 = 10
-              ["rc-m", "rc-m", "rc-l"],    # 3 + 3 + 4 = 10
-              ["rc-s", "rc-m", "rc-s", "rc-m"],  # 2 + 3 + 2 + 3 = 10
-              ["rc-l", "rc-m", "rc-m"]     # 4 + 3 + 3 = 10
-          ]
+          rc_combinations = self.customizations["reading_comprehension"]["combinations"]
           
           rc_combination = random.choice(rc_combinations)
           
@@ -89,14 +87,15 @@ class Verbal_prompts:
               section_prompts.append(generate_prompt(q_type, difficulty_pool.pop()))
 
           # Generate TC prompts
-          tc_types = ["TC-1", "TC-2", "TC-3"]
+          tc_types = [tc.upper() for tc in self.customizations["text_completion"]["question_types"]]
           for _ in range(num_tc):
               tc_type = random.choice(tc_types)
               section_prompts.append(generate_prompt(tc_type, difficulty_pool.pop()))
           
           # Generate SE prompts
           for _ in range(num_se):
-              section_prompts.append(generate_prompt("SE", difficulty_pool.pop()))
+              se_type = self.customizations["sentence_equivalence"]["question_types"][0].upper()
+              section_prompts.append(generate_prompt(se_type, difficulty_pool.pop()))
           return section_prompts
       
       section_1_prompts = allocate_questions(self.section_1)

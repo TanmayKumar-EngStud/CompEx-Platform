@@ -41,19 +41,16 @@ class Generate_MSR(BaseQuestionGenerator):
             print("MSR combinations file not found, using default values")
             self.MSR = {}
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GMAT Multi-Source Reasoning question.
-
-        Args:
-            prompt: Optional prompt override
 
         Returns:
             Generated question data or None if generation fails
         """
         try:
             # Initialize question data using base class
-            self.initialize_question_data(prompt)
+            self.initialize_question_data(self.prompt)
 
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(
@@ -65,21 +62,43 @@ class Generate_MSR(BaseQuestionGenerator):
                 prompt=self.prompt,
                 exam_type=ExamType.GMAT
             )
-            # Parse source_infos from the prompt generated in Integrated_Reasoning.py
+            # Parse source_infos, focused_skills, and question_style from the prompt generated in Integrated_Reasoning.py
             # Extract source types from the structured prompt
             import re
-            # "nomenclature": "MSR - <total_child_questions: {3}> <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skills> - <question_style> - <difficulty_level: {1-5}>",
-            pattern = r'MSR - <total_child_questions: \d+> - <[^>]+> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <[^>]+> - <[^>]+> - <difficulty_level: \d+>'
+            # "nomenclature": "MSR - <total_child_questions: {3}> <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill_1/focused_skill_2/focused_skill_3> - <question_style_1/question_style_2/question_style_3> - <difficulty_level: {1-5}>",
+            pattern = r'MSR - <total_child_questions: \d+> - <[^>]+> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <difficulty_level: \d+>'
             match = re.search(pattern, self.prompt)
-            
+
             if match:
                 source_infos = [match.group(1), match.group(2), match.group(3)]
+                focused_skills_string = match.group(4)
+                question_styles_string = match.group(5)
+
+                # Parse focused skills and question styles separated by '/'
+                focused_skills_from_prompt = focused_skills_string.split('/')
+                question_styles_from_prompt = question_styles_string.split('/')
+
+                # Ensure we have enough skills and styles for all child questions
+                while len(focused_skills_from_prompt) < self.total_child_questions:
+                    focused_skills_from_prompt.extend(
+                        focused_skills_from_prompt)
+                focused_skills_from_prompt = focused_skills_from_prompt[:self.total_child_questions]
+
+                while len(question_styles_from_prompt) < self.total_child_questions:
+                    question_styles_from_prompt.extend(
+                        question_styles_from_prompt)
+                question_styles_from_prompt = question_styles_from_prompt[:self.total_child_questions]
             else:
                 # Fallback to default if parsing fails
                 source_infos = []
                 for _ in range(3):
-                    source_infos.append(random.choice(self.MSR.get("source_info", ["Passage"])))
-            
+                    source_infos.append(random.choice(
+                        self.MSR.get("source_info", ["Passage"])))
+                focused_skills_from_prompt = [
+                    "Critical Reasoning"] * self.total_child_questions
+                question_styles_from_prompt = [
+                    "MCQ (5 options MCQ)"] * self.total_child_questions
+
             msr = GMATAdapter.adapt_multi_source_reasoning(
                 self.prompt, component)
 
@@ -89,7 +108,8 @@ class Generate_MSR(BaseQuestionGenerator):
             # Generate sources
             for idx in range(1, 4):
                 # "nomenclature": "MSR Source_info{i} - <source_info>"
-                source_type = source_infos[idx-1]  # Fix: 0-indexed array but 1-indexed loop
+                # Fix: 0-indexed array but 1-indexed loop
+                source_type = source_infos[idx-1]
                 # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
                 source = msr.generate_SourceInfo(
                     f"SourceInfo_{idx} having {source_type}: {self.prompt}", idx)
@@ -104,38 +124,35 @@ class Generate_MSR(BaseQuestionGenerator):
             # Generate child questions
             for idx in range(1, self.total_child_questions + 1):
                 question = {}
-                focused_skill = random.choice(self.MSR.get(
-                    "focused_skill", ["Critical Reasoning"]))
-                question_style = random.choice(self.MSR.get(
-                    "question_style", ["MCQ (5 options MCQ)"]))
+                focused_skill = focused_skills_from_prompt[idx-1]
+                question_style = question_styles_from_prompt[idx-1]
 
-                # Set difficulty level
-                difficulty = self.extract_difficulty_from_prompt()
-                difficulty_level = max(
-                    1, min(5, difficulty + random.randint(-1, 1)))
+                # Set difficulty level with variation logic
+                main_difficulty = self.extract_difficulty_from_prompt()
+                if main_difficulty == 1:
+                    difficulty_level = random.choice([1, 2])
+                elif main_difficulty == 5:
+                    difficulty_level = random.choice([4, 5])
+                else:
+                    difficulty_level = random.choice(
+                        [main_difficulty-1, main_difficulty, main_difficulty+1])
 
                 question["type"] = question_style
-                question["prompt"] = f"ChildQuestion: {idx} <{focused_skill}> - <{question_style}> - <{difficulty_level}>"
+                question["prompt"] = f"<{focused_skill}> - <{question_style}> - <{difficulty_level}>"
                 question["question"] = msr.generate_QuestionText(
-                    question["prompt"])
-                question["title"] = msr.generate_QuestionTitle(
-                    f"ChildQuestionTitle: {idx}")
-                question["solution"] = msr.generate_QuestionSolution(
-                    f"ChildQuestionSolution: {idx}")
-
+                    question["prompt"], idx)
+                question["title"] = msr.generate_QuestionTitle()
+                question["solution"] = msr.generate_QuestionSolution()
+                answer_data = msr.generate_QuestionOptions(question_style)
                 # Generate options and answers
                 if question_style == "MCQ (5 options MCQ)":
-                    options, correct_option = msr.generate_QuestionOptions(
-                        f"ChildQuestionOptions: {idx}", question_style)
+                    options, correct_option = answer_data
                     question["answer"] = options[correct_option] if correct_option in options else list(
                         options.values())[0]
                     options = list(options.values())
                 else:
 
                     # Contains info telling what ChildQuestion type is requested
-                    options_prompt = question["prompt"]
-                    answer_data = msr.generate_QuestionOptions(
-                        f"ChildQuestionOptions for  ChildQuestion {idx}: {options_prompt}", question_style)
                     question["answer"] = answer_data
                     options = list(answer_data.values()) if isinstance(
                         answer_data, dict) else [str(answer_data)]

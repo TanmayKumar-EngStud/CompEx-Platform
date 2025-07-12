@@ -1673,29 +1673,13 @@ class MultiSourceReasoningQuestion(SpecializedQuestion):
         self.question_type = QuestionType.MULTI_SOURCE_REASONING
         self.temp_prompt = None
 
-    def generate_source_info(self, prompt: str, instruction_prompt: List[str], source_index: int = 1) -> Optional[Dict[str, Any]]:
+    def generate_source_info(self, instruction_prompt: List[str], source_index: int = 1) -> Optional[Dict[str, Any]]:
         """Generate source information for MSR questions with proper template formatting."""
         # Change the prompt format to match metadata.json structure
         # From: "Generate SourceInfo_1 having Line Chart of question: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
-        # To: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
-
-        if "Generate SourceInfo_" in prompt and "having" in prompt and "of question:" in prompt:
-            # Extract source index, component type, and parent content
-            source_match = re.search(
-                r'Generate SourceInfo_(\d+) having ([^\s]+(?:\s+[^\s]+)*) of question: (.+)', prompt)
-            if source_match:
-                source_num = source_match.group(1)
-                component_type = source_match.group(2)
-                parent_content = source_match.group(3)
-                # Format the new prompt to match expected template structure
-                self.temp_prompt = f"SourceInfo_{source_num} having {component_type}: {parent_content}\n{instruction_prompt[source_num]}"
-            else:
-                self.temp_prompt = prompt
-        else:
-            self.temp_prompt = prompt
 
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
-            response = self._get_response(self.temp_prompt, warn)
+            response = self._get_response(instruction_prompt, warn)
 
             if not response:
                 return None

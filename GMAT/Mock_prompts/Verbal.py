@@ -16,7 +16,7 @@ class Verbal_prompts:
             self.complete_customizations = json.load(file)
             self.customizations = self.complete_customizations["verbal"]
         self.combination_number = 0
-        self.themes = self.customizations["themes"]
+        self.themes = self.customizations["questionTheme"]
         self.cr_types = self.customizations["child-question"]["focused_skill"]
 
     def get_difficulty_pool(self) -> list[int]:

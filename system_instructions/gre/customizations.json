@@ -261,6 +261,41 @@
             "Evaluate Question",
             "Conclusion Question"
          ]
+      },
+      "reading_comprehension": {
+         "question_types": ["rc-s", "rc-m", "rc-l"],
+         "combinations": [
+            ["rc-s", "rc-l", "rc-l"],
+            ["rc-m", "rc-m", "rc-l"],
+            ["rc-s", "rc-m", "rc-s", "rc-m"],
+            ["rc-l", "rc-m", "rc-m"]
+         ]
+      },
+      "text_completion": {
+         "question_types": ["tc-1", "tc-2", "tc-3"],
+         "focused_skill": [
+            "Vocabulary in Context",
+            "Contextual Analysis",
+            "Sentence Logic and Structure",
+            "Word Connotation Recognition",
+            "Critical Reading Comprehension",
+            "Semantic Relationships",
+            "Transitional Logic",
+            "Contrast and Support Clues"
+         ]
+      },
+      "sentence_equivalence": {
+         "question_types": ["se"],
+         "focused_skill": [
+            "Synonym Recognition",
+            "Contextual Vocabulary",
+            "Sentence Coherence",
+            "Logical Consistency",
+            "Semantic Equivalence",
+            "Word Meaning Precision",
+            "Structural Analysis",
+            "Tone and Connotation"
+         ]
       }
    }
 }

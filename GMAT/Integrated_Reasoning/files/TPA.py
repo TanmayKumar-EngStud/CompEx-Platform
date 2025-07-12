@@ -1,14 +1,10 @@
 # Import unified components
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
-from core.enums.section_types import SectionType
 from core.interfaces.question_generator import BaseQuestionGenerator
 from core.components.question_components import create_question_component
 from core.components.adapters.gmat_adapter import GMATAdapter
 import random
-import json
-import os
-import re
 from typing import Dict, Any, Optional
 
 
@@ -28,19 +24,16 @@ class Generate_TPA(BaseQuestionGenerator):
 
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GMAT Two-Part Analysis question.
-
-        Args:
-            prompt: Optional prompt override
 
         Returns:
             Generated question data or None if generation fails
         """
         try:
             # Initialize question data using base class
-            self.initialize_question_data(prompt)
+            self.initialize_question_data(self.prompt)
 
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(

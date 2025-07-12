@@ -540,6 +540,8 @@ class GMATMultiSourceReasoningAdapter:
         """Initialize with MultiSourceReasoningQuestion component."""
         self.component = component
         self.prompt = prompt
+        self.child_prompt = None
+        self.child_idx = 0
 
     def generate_SourceInfo(self, prompt: str, idx: int) -> Optional[Dict[str, Any]]:
         """Generate source information (GMAT naming convention).
@@ -552,25 +554,45 @@ class GMATMultiSourceReasoningAdapter:
         # idx parameter is included for compatibility but not used
         component_template = self.component._get_component_instruction(
             'QuestionMetadata')
-        instruction_prompt = f"Main Prompt:- {self.prompt}\nSection Prompt: {prompt}\n{component_template}"
-        return self.component.generate_source_info(prompt, instruction_prompt, idx)
+        instruction_prompt = f"Main Prompt:- {self.prompt}\n Mode:- Source_info{idx} Prompt: {prompt}\n{component_template}"
+        return self.component.generate_source_info(instruction_prompt, idx)
 
     def generate_MainQuestionTitle(self) -> Optional[str]:
         """Generate main question title (GMAT naming convention)."""
-        return self.component.generate_main_question_title()
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        instruction_prompt = f"Main Prompt:- {self.prompt}\nMode:- MainQuestionTitle\n{component_template}"
+        return self.component.generate_main_question_title(instruction_prompt)
 
-    def generate_QuestionText(self, prompt: str) -> Optional[str]:
+    def generate_QuestionText(self, child_prompt: str, idx: int) -> Optional[str]:
         """Generate question text (GMAT naming convention)."""
-        return self.component.generate_question_text(prompt)
+        self.child_prompt = child_prompt
+        self.child_idx = idx
+        component_template = self.component._get_component_instruction(
+            'QuestionText')
+        instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionText of question number: {idx}\n{component_template}"
+        return self.component.generate_question_text(instruction_prompt)
 
-    def generate_QuestionTitle(self, prompt: str) -> Optional[str]:
+    def generate_QuestionTitle(self) -> Optional[str]:
         """Generate question title (GMAT naming convention)."""
-        return self.component.generate_question_title(prompt)
+        if self.child_prompt is None:
+            raise ValueError(
+                f"{self.__class__.__name__}.{self.generate_QuestionTitle.__name__} was called before {self.__class__.__name__}.{self.generate_QuestionText.__name__} function, that is why, Child prompt waws not set")
+        component_template = self.component._get_component_instruction(
+            'QuestionTitle')
+        instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionTitle of question number: {self.child_idx}\n{component_template}"
+        return self.component.generate_question_title(instruction_prompt)
 
-    def generate_QuestionSolution(self, prompt: str) -> Optional[str]:
+    def generate_QuestionSolution(self) -> Optional[str]:
         """Generate question solution (GMAT naming convention)."""
-        return self.component.generate_question_solution(prompt)
+        component_template = self.component._get_component_instruction(
+            'QuestionSolution')
+        instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionSolution of question number: {self.child_idx}\n{component_template}"
+        return self.component.generate_question_solution(instruction_prompt)
 
-    def generate_QuestionOptions(self, prompt: str, question_style: str) -> Union[Tuple[Any, Any], Any]:
+    def generate_QuestionOptions(self, question_style: str) -> Union[Tuple[Any, Any], Any]:
         """Generate question options (GMAT naming convention)."""
-        return self.component.generate_question_options(prompt, question_style)
+        component_template = self.component._get_component_instruction(
+            'QuestionOptions')
+        instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionOptions of question number: {self.child_idx}\n{component_template}"
+        return self.component.generate_question_options(instruction_prompt, question_style)

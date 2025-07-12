@@ -1,7 +1,4 @@
 import random
-import json
-import os
-import re
 from typing import Dict, Any, Optional
 
 # Import unified components
@@ -29,19 +26,16 @@ class Generate_GI(BaseQuestionGenerator):
 
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GMAT Graphic Interpretation question.
-
-        Args:
-            prompt: Optional prompt override
 
         Returns:
             Generated question data or None if generation fails
         """
         try:
             # Initialize question data using base class
-            self.initialize_question_data(prompt)
+            self.initialize_question_data(self.prompt)
 
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(
