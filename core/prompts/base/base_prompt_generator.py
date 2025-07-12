@@ -231,7 +231,6 @@ class BasePromptGenerator(ABC):
     def _get_default_component_allocation(self) -> Dict[str, Any]:
         """Get default component allocation."""
         return {
-            "combination_number": 0,
             "question_style": ["DS", "S"],
             "options": ["arithmetic", "algebra", "geometry"],
             "arithmetic": {
@@ -284,15 +283,13 @@ class BasePromptGenerator(ABC):
     def generate_nomenclature_based_prompt(
         self, 
         question_type: str, 
-        combination_number: int,
         difficulty: int
     ) -> str:
         """
-        Generate prompt based on nomenclature pattern from customizations.json.
+        Generate prompt based on nomenclature pattern from customizations.json using random selection.
         
         Args:
             question_type: Type of question (e.g., 'data sufficiency', 'problem solving')
-            combination_number: Current combination number for element selection
             difficulty: Difficulty level (1-5)
             
         Returns:
@@ -302,25 +299,31 @@ class BasePromptGenerator(ABC):
         section_config = self.customizations.get(section_key, {})
         question_config = section_config.get(question_type, {})
         
-        if not question_config:
-            # Fallback to basic prompt creation
-            return self._create_prompt("S", "general", "general", difficulty)
+        # Try to get nomenclature from question-specific config first
+        nomenclature = question_config.get("nomenclature", "") if question_config else ""
         
-        nomenclature = question_config.get("nomenclature", "")
+        # If no question-specific nomenclature, use section-level nomenclature
+        if not nomenclature:
+            nomenclature = section_config.get("nomenclature", "")
+        
+        # If still no nomenclature found, fallback to basic prompt
         if not nomenclature:
             return self._create_prompt("S", "general", "general", difficulty)
         
-        # Parse nomenclature pattern and substitute values
+        # Use section config as the source for variable values when no question-specific config
+        config_to_use = question_config if question_config else section_config
+        
+        # Parse nomenclature pattern and substitute values using random selection
         return self._substitute_nomenclature_variables(
-            nomenclature, question_config, combination_number, difficulty
+            nomenclature, config_to_use, difficulty, question_type
         )
     
     def _substitute_nomenclature_variables(
         self, 
         nomenclature: str, 
         question_config: Dict[str, Any], 
-        combination_number: int,
-        difficulty: int
+        difficulty: int,
+        question_type: str = ""
     ) -> str:
         """
         Substitute variables in nomenclature pattern with actual values.
@@ -328,7 +331,6 @@ class BasePromptGenerator(ABC):
         Args:
             nomenclature: Nomenclature pattern string
             question_config: Configuration for this question type
-            combination_number: Current combination number
             difficulty: Difficulty level
             
         Returns:
@@ -350,9 +352,8 @@ class BasePromptGenerator(ABC):
                 
             var_values = question_config.get(var, [])
             if var_values and isinstance(var_values, list):
-                # Check first selected value for type determination
-                idx = combination_number % len(var_values)
-                selected_value = var_values[idx]
+                # Check randomly selected value for type determination
+                selected_value = self.get_random_element(var_values)
                 
                 for selector in selectors:
                     if selector in str(selected_value):
@@ -375,6 +376,11 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(f"<{var}>", f"<vocabulary_level: {vocab_level}>")
                 continue
             
+            # Handle questionType specially - use the passed question_type parameter
+            if var == "questionType" and question_type:
+                substituted = substituted.replace(f"<{var}>", f"<{question_type}>")
+                continue
+            
             # Get values for this variable
             var_values = question_config.get(var_clean, [])
             
@@ -391,8 +397,7 @@ class BasePromptGenerator(ABC):
             filtered_values = self._filter_values_by_type(var_values, var_clean, selected_type)
             
             if filtered_values:
-                idx = combination_number % len(filtered_values)
-                selected_value = filtered_values[idx]
+                selected_value = self.get_random_element(filtered_values)
                 
                 # Clean the selected value
                 for selector in selectors:
@@ -453,29 +458,41 @@ class BasePromptGenerator(ABC):
         # No type selected, return all values without special characters
         return [str(v).replace(s, '') for v in values for s in selectors if v and s in str(v)] or values
     
-    def _update_combination_counter(self):
-        """Update the combination counter for variety."""
-        if "combination_number" in self.component_allocation:
-            self.component_allocation["combination_number"] += 1
-    
-    def _get_next_element(self, element_list: List[str], combination_number: int) -> str:
+    def get_random_element(self, element_list: List[str], count: Optional[int] = None):
         """
-        Get the next element from a list using combination number.
+        Get random element(s) from a list with optional bracket formatting.
         
         Args:
             element_list: List of elements to choose from
-            combination_number: Current combination number
+            count: Number of elements to select (None for single element)
             
         Returns:
-            Selected element
+            If count is None: Single string element
+            If count is specified: Dict with:
+                - "items": List of selected strings
+                - "formatted": Formatted string with angle brackets "<item_1/item_2/...>"
         """
         if not element_list:
-            return ""
+            if count is None:
+                return ""
+            else:
+                return {"items": [], "formatted": "<general>"}
         
-        index = combination_number % len(element_list)
-        
-        # Shuffle the list when we complete a cycle
-        if index == 0 and combination_number > 0:
-            random.shuffle(element_list)
-        
-        return element_list[index]
+        if count is None:
+            # Return single random element
+            return random.choice(element_list)
+        else:
+            # Return multiple elements with formatting
+            actual_count = min(count, len(element_list))
+            selected_items = random.sample(element_list, actual_count)
+            
+            if len(selected_items) == 1:
+                formatted = f"<{selected_items[0]}>"
+            else:
+                joined_values = "/".join(selected_items)
+                formatted = f"<{joined_values}>"
+            
+            return {
+                "items": selected_items,
+                "formatted": formatted
+            }

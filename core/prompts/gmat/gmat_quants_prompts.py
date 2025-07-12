@@ -5,7 +5,6 @@ This module provides prompt generation specifically for GMAT Quantitative sectio
 handling the specific requirements and question types for GMAT math questions.
 """
 
-import random
 from typing import List
 from core.enums.exam_types import ExamType
 from core.enums.section_types import SectionType
@@ -30,47 +29,45 @@ class GMATQuantsPrompts(BasePromptGenerator):
     
     def generate_question_prompts(self) -> List[str]:
         """
-        Generate question prompts for GMAT Quantitative section.
+        Generate question prompts for GMAT Quantitative section using nomenclature patterns.
         
         Returns:
-            List of formatted prompt strings for question generation
+            nomenclature:
+            Data Sufficiency/Problem Solving: `{DS/S} - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>`
         """
         difficulty_pool = self.get_difficulty_pool()
         prompts = []
         
-        # Get combination number for variety
-        cn = self.component_allocation.get("combination_number", 0)
+        # Get question distribution from customizations
+        section_config = self.customizations.get("quants", {})
+        num_problem_solving = section_config.get("Problem_Solving", 13)
+        num_data_sufficiency = section_config.get("Data_Sufficiency", 8)
         
-        # Get question styles (DS and Problem Solving)
-        question_styles = self.component_allocation.get("question_style", ["DS", "S"])
+        question_index = 0
         
-        # Get available topics
-        topics = self.component_allocation.get("options", [
-            "arithmetic", "algebra", "geometry", "word_problems", 
-            "data_analysis", "number_theory"
-        ])
-        
-        for i in range(self.total_questions):
-            # Select question style cyclically
-            style = self._get_next_element(question_styles, cn + i)
+        # Generate Problem Solving prompts using nomenclature
+        for _ in range(num_problem_solving):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
             
-            # Select topic cyclically  
-            topic = self._get_next_element(topics, cn + i)
-            
-            # Get focused skill for the selected topic
-            topic_config = self.component_allocation.get(topic, {})
-            skills = topic_config.get("focused_skill", self._get_default_skills(topic))
-            skill = self._get_next_element(skills, cn + i)
-            
-            # Get difficulty level
-            difficulty = difficulty_pool[i] if i < len(difficulty_pool) else 3
-            
-            # Create the prompt
-            prompt = self._create_prompt(style, topic, skill, difficulty)
+            # Use nomenclature-based generation for Problem Solving
+            prompt = self.generate_nomenclature_based_prompt(
+                "problem solving",
+                difficulty
+            )
             prompts.append(prompt)
+            question_index += 1
         
-        # Update combination counter for variety
-        self._update_combination_counter()
+        # Generate Data Sufficiency prompts using nomenclature
+        for _ in range(num_data_sufficiency):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            
+            # Use nomenclature-based generation for Data Sufficiency
+            prompt = self.generate_nomenclature_based_prompt(
+                "data sufficiency",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
         return prompts
     
