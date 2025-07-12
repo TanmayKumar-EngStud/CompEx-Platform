@@ -29,19 +29,16 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
         )
 
     # Removed _load_default_system_instructions override - now uses unified instruction system
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GMAT Data Sufficiency question.
-
-        Args:
-            prompt: Optional prompt override
 
         Returns:
             Generated question data or None if generation fails
         """
         try:
             # Initialize question data using base class
-            self.initialize_question_data(prompt)
+            self.initialize_question_data(self.prompt)
 
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(
