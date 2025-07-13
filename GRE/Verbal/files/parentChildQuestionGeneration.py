@@ -99,7 +99,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
                 option_list.append(shuffled_values)
         return option_list
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GRE Verbal Parent-Child question.
         
@@ -124,7 +124,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
                 self.lock, 
                 self.prompt
             )
-            parentChildQuestion = GREAdapter.adapt_parent_child_question(base_component)
+            parentChildQuestion = GREAdapter.adapt_parent_child_question(self.prompt, base_component)
             
             # Generate passages
             passages = parentChildQuestion.generate_passages()

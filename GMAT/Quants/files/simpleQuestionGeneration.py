@@ -54,7 +54,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 self.prompt, component)
 
             # Generate question text
-            question = questionContent.generate_questionText(self.prompt)
+            question = questionContent.generate_questionText()
             self.question_data["question"] = question if question else ""
 
             # Generate title

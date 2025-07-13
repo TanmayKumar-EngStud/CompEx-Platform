@@ -35,7 +35,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GRE Quantitative Parent-Child question.
         
@@ -60,7 +60,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
                 self.lock, 
                 self.prompt
             )
-            parentChildQuestion = GREAdapter.adapt_parent_child_question(base_component)
+            parentChildQuestion = GREAdapter.adapt_parent_child_question(self.prompt, base_component)
             
             # Generate parent content
             content = parentChildQuestion.generate_questionGraph()

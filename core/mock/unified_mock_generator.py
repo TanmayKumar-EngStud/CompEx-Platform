@@ -341,8 +341,7 @@ class UnifiedMockGenerator:
                         f"Factory failed to create generator for {generator_class}")
 
                 # Generate the question
-                question_response = question_generator.generate_question(
-                    prompt)
+                question_response = question_generator.generate_question()
 
                 if question_response:
                     self.logger.log_generation_success(question_response)
@@ -399,8 +398,7 @@ class UnifiedMockGenerator:
                             prompt=refined_prompt
                         )
 
-                        question_response = question_generator.generate_question(
-                            refined_prompt)
+                        question_response = question_generator.generate_question()
 
                         if question_response:
                             self.logger.log_generation_success(

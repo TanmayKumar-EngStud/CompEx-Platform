@@ -26,7 +26,7 @@ class NumericEntryQuestionGeneration(BaseQuestionGenerator):
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
    
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GRE Numeric Entry question.
         
@@ -55,7 +55,7 @@ class NumericEntryQuestionGeneration(BaseQuestionGenerator):
                     prompt=self.prompt,
                     exam_type=ExamType.GRE
                 )
-                numericEntryQuestion = GREAdapter.adapt_parent_child_question(pc_component)
+                numericEntryQuestion = GREAdapter.adapt_parent_child_question(self.prompt, pc_component)
                 content = numericEntryQuestion.generate_questionGraph()
                 self.question_data["content"] = content
             
@@ -69,7 +69,7 @@ class NumericEntryQuestionGeneration(BaseQuestionGenerator):
                 prompt=self.prompt,
                 exam_type=ExamType.GRE
             )
-            numericEntryQuestion = GREAdapter.adapt_simple_question(simple_component)
+            numericEntryQuestion = GREAdapter.adapt_simple_question(self.prompt, simple_component)
             
             # Generate question components
             self.question_data["question"] = numericEntryQuestion.generate_questionText()

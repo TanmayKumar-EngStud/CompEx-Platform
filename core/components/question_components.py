@@ -260,7 +260,7 @@ class BaseQuestionComponent(ABC):
                     self.question_type, self.prompt, customizations
                 )
             elif component_name == "QuestionTitle":
-                instruction = self._adapter.get_metadata_template(
+                instruction = self._adapter.get_title_template(
                     self.question_type, self.prompt, customizations
                 )
             elif component_name == "QuestionAnswer":

@@ -47,19 +47,19 @@ class GREAdapter:
         self.question_answer = QuestionAnswer()
 
     @staticmethod
-    def adapt_simple_question(component: SimpleQuestion) -> 'GRESimpleQuestionAdapter':
+    def adapt_simple_question(prompt: str, component: SimpleQuestion) -> 'GRESimpleQuestionAdapter':
         """Adapt SimpleQuestion for GRE-specific behavior."""
-        return GRESimpleQuestionAdapter(component)
+        return GRESimpleQuestionAdapter(prompt, component)
 
     @staticmethod
-    def adapt_data_sufficiency_question(component: DataSufficiencyQuestion) -> 'GREDataSufficiencyAdapter':
+    def adapt_data_sufficiency_question(prompt: str, component: DataSufficiencyQuestion) -> 'GREDataSufficiencyAdapter':
         """Adapt DataSufficiencyQuestion for GRE-specific behavior."""
-        return GREDataSufficiencyAdapter(component)
+        return GREDataSufficiencyAdapter(prompt, component)
 
     @staticmethod
-    def adapt_parent_child_question(component: ParentChildQuestion) -> 'GREParentChildAdapter':
+    def adapt_parent_child_question(prompt: str, component: ParentChildQuestion) -> 'GREParentChildAdapter':
         """Adapt ParentChildQuestion for GRE-specific behavior."""
-        return GREParentChildAdapter(component)
+        return GREParentChildAdapter(prompt, component)
 
     def get_metadata_template(
         self,

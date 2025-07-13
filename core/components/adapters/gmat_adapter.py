@@ -155,6 +155,27 @@ class GMATAdapter:
                 self.exam_type, question_type, customizations, prompt
             )
 
+    def get_title_template(
+        self,
+        question_type: QuestionType,
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate text template for GMAT questions.
+
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+
+        Returns:
+            Processed title template
+        """
+        return self.question_title.generic(
+            self.exam_type, question_type, customizations, prompt
+        )
+
     def get_solution_template(
         self,
         question_type: QuestionType,

@@ -52,7 +52,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 option_list.append(shuffled_values)
         return option_list
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GRE Verbal Simple question.
         
@@ -74,7 +74,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 self.lock, 
                 self.prompt
             )
-            questionContent = GREAdapter.adapt_simple_question(base_component)
+            questionContent = GREAdapter.adapt_simple_question(self.prompt, base_component)
             
             # Generate question content
             self.question_data["question"] = questionContent.generate_questionText()

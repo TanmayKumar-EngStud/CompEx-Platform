@@ -26,7 +26,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
 
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GRE Quantitative Simple question.
         
@@ -56,7 +56,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 prompt=self.prompt,
                 exam_type=ExamType.GRE
             )
-            questionContent = GREAdapter.adapt_simple_question(component)
+            questionContent = GREAdapter.adapt_simple_question(self.prompt, component)
             
             # Generate question components
             self.question_data["question"] = questionContent.generate_questionText()

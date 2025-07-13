@@ -25,7 +25,7 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
         )
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
-    def generate_question(self, prompt: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    def generate_question(self) -> Optional[Dict[str, Any]]:
         """
         Generate a GRE Data Sufficiency question.
         
@@ -50,7 +50,7 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
                 self.lock, 
                 self.prompt
             )
-            dataSufficiencyQuestion = GREAdapter.adapt_data_sufficiency_question(base_component)
+            dataSufficiencyQuestion = GREAdapter.adapt_data_sufficiency_question(self.prompt, base_component)
             
             # Generate question content
             passage, statements, question = dataSufficiencyQuestion.generate_questionText()
