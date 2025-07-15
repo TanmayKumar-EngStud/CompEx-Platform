@@ -1,8 +1,8 @@
 {
    "quants": {
-      "total_questions": 2,
-      "Problem_Solving": 1,
-      "Data_Sufficiency": 1,
+      "total_questions": 21,
+      "Problem_Solving": 13,
+      "Data_Sufficiency": 8,
       "question_style": ["Pure Contextual", "Real Contextual"],
       "data sufficiency": {
          "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>",
@@ -17,156 +17,88 @@
          "difficulty": 5,
          "questionTopic": {
             "Number Properties and Fractions, Decimals, Percentages$": [
-               "prime_factorization",
-               "divisibility_rules",
-               "LCM_GCD",
-               "fraction_operations",
-               "decimal_conversions",
-               "percentage_calculations",
-               "number_properties"
+               "prime_factorization", "divisibility_rules", "LCM_GCD", "fraction_operations",
+               "decimal_conversions", "percentage_calculations", "number_properties"
             ],
             "Ratio and Proportion$": [
-               "direct_proportion",
-               "inverse_proportion",
-               "ratio_calculations",
-               "proportion_solving",
-               "scale_problems",
-               "unit_conversions"
+               "direct_proportion", "inverse_proportion", "ratio_calculations", 
+               "proportion_solving", "scale_problems", "unit_conversions"
             ],
             "Simple Interest and Compound Interest": [
-               "simple_interest_calculations",
-               "compound_interest_formulas",
-               "annual_growth_rate",
-               "investment_problems",
-               "loan_calculations"
+               "simple_interest_calculations", "compound_interest_formulas", 
+               "annual_growth_rate", "investment_problems", "loan_calculations"
             ],
             "work and rate problem$": [
-               "work_efficiency",
-               "time_and_work",
-               "combined_work_rate",
-               "pipe_and_cistern",
-               "work_completion_time"
+               "work_efficiency", "time_and_work", "combined_work_rate", 
+               "pipe_and_cistern", "work_completion_time"
             ],
             "Profit, Loss and Discount$": [
-               "profit_loss_calculations",
-               "cost_price_selling_price",
-               "discount_problems",
-               "markup_calculations",
-               "successive_discounts",
-               "break_even_analysis"
+               "profit_loss_calculations", "cost_price_selling_price", "discount_problems",
+               "markup_calculations", "successive_discounts", "break_even_analysis"
             ],
             "Mixtures and Alligations$": [
-               "mixture_ratio",
-               "alligation_method",
-               "concentration_problems",
-               "weighted_average",
-               "replacement_problems"
+               "mixture_ratio", "alligation_method", "concentration_problems",
+               "weighted_average", "replacement_problems"
             ],
             "Linear Equations, Quadratic Equations and Inequalities": [
-               "linear_equation_solving",
-               "quadratic_formulas",
-               "inequality_solving",
-               "system_of_equations",
-               "graphical_solutions"
+               "linear_equation_solving", "quadratic_formulas", "inequality_solving",
+               "system_of_equations", "graphical_solutions"
             ],
             "Functions and Polynomials": [
-               "function_evaluation",
-               "polynomial_operations",
-               "domain_range",
-               "composite_functions",
-               "inverse_functions"
+               "function_evaluation", "polynomial_operations", "domain_range",
+               "composite_functions", "inverse_functions"
             ],
             "Exponents and Powers": [
-               "exponent_rules",
-               "power_calculations",
-               "scientific_notation",
-               "exponential_equations",
-               "logarithmic_properties"
+               "exponent_rules", "power_calculations", "scientific_notation",
+               "exponential_equations", "logarithmic_properties"
             ],
             "Algebraic Expressions and Simplification": [
-               "algebraic_manipulation",
-               "factorization",
-               "expression_simplification",
-               "substitution_method",
-               "algebraic_identities"
+               "algebraic_manipulation", "factorization", "expression_simplification",
+               "substitution_method", "algebraic_identities"
             ],
             "Lines and Angles*": [
-               "angle_relationships",
-               "parallel_lines",
-               "perpendicular_lines",
-               "angle_measurements",
-               "geometric_theorems"
+               "angle_relationships", "parallel_lines", "perpendicular_lines",
+               "angle_measurements", "geometric_theorems"
             ],
             "Triangles (Type, Properties, Pythagoras Theorem)*": [
-               "triangle_classification",
-               "pythagorean_theorem",
-               "triangle_inequality",
-               "area_calculations",
-               "similarity_congruence"
+               "triangle_classification", "pythagorean_theorem", "triangle_inequality",
+               "area_calculations", "similarity_congruence"
             ],
             "Circles (arc, sector, cord, etc)*": [
-               "circle_properties",
-               "arc_length",
-               "sector_area",
-               "chord_properties",
-               "tangent_secant",
-               "circle_equations"
+               "circle_properties", "arc_length", "sector_area", "chord_properties",
+               "tangent_secant", "circle_equations"
             ],
             "Quadrilaterals and Polygons*": [
-               "quadrilateral_properties",
-               "polygon_angles",
-               "area_perimeter",
-               "regular_polygons",
-               "coordinate_geometry"
+               "quadrilateral_properties", "polygon_angles", "area_perimeter",
+               "regular_polygons", "coordinate_geometry"
             ],
             "Coordinate Geometry*": [
-               "distance_formula",
-               "slope_calculations",
-               "line_equations",
-               "circle_equations",
-               "geometric_transformations"
+               "distance_formula", "slope_calculations", "line_equations",
+               "circle_equations", "geometric_transformations"
             ],
             "3D Geometry*": [
-               "surface_area",
-               "volume_calculations",
-               "3d_coordinates",
-               "spatial_relationships",
-               "solid_geometry"
+               "surface_area", "volume_calculations", "3d_coordinates",
+               "spatial_relationships", "solid_geometry"
             ],
             "Mensuration (Area, Perimeter, Volume, Surface Area)*": [
-               "area_calculations",
-               "perimeter_formulas",
-               "volume_formulas",
-               "surface_area_calculations",
-               "unit_conversions"
+               "area_calculations", "perimeter_formulas", "volume_formulas",
+               "surface_area_calculations", "unit_conversions"
             ],
             "Mean, Median, Mode, Range$": [
-               "central_tendency",
-               "data_analysis",
-               "statistical_measures",
-               "data_interpretation",
-               "distribution_analysis"
+               "central_tendency", "data_analysis", "statistical_measures",
+               "data_interpretation", "distribution_analysis"
             ],
             "Standard Deviation and Variance$": [
-               "variance_calculations",
-               "standard_deviation",
-               "data_spread",
-               "statistical_analysis",
-               "normal_distribution"
+               "variance_calculations", "standard_deviation", "data_spread",
+               "statistical_analysis", "normal_distribution"
             ],
             "Probability Rules (Basic, Independent, Mutually Exclusive, etc)": [
-               "basic_probability",
-               "conditional_probability",
-               "independent_events",
-               "mutually_exclusive_events",
-               "probability_rules"
+               "basic_probability", "conditional_probability", "independent_events",
+               "mutually_exclusive_events", "probability_rules"
             ],
             "Permutations and Combinations": [
-               "permutation_formulas",
-               "combination_calculations",
-               "counting_principles",
-               "arrangement_problems",
-               "selection_problems"
+               "permutation_formulas", "combination_calculations", "counting_principles",
+               "arrangement_problems", "selection_problems"
             ]
          },
          "graphType/tableType$": [
@@ -231,70 +163,40 @@
          "difficulty": 5,
          "questionTopic": {
             "Number Properties": [
-               "prime_factorization",
-               "divisibility_rules",
-               "LCM_GCD",
-               "number_theory",
-               "even_odd_properties",
-               "integer_properties"
+               "prime_factorization", "divisibility_rules", "LCM_GCD", "number_theory",
+               "even_odd_properties", "integer_properties"
             ],
             "Fractions, Decimals, and Percentages": [
-               "fraction_operations",
-               "decimal_conversions",
-               "percentage_calculations",
-               "fraction_to_decimal",
-               "percentage_increase_decrease"
+               "fraction_operations", "decimal_conversions", "percentage_calculations",
+               "fraction_to_decimal", "percentage_increase_decrease"
             ],
             "Ratios and Proportions": [
-               "ratio_calculations",
-               "proportion_solving",
-               "scale_problems",
-               "unit_conversions",
-               "rate_problems"
+               "ratio_calculations", "proportion_solving", "scale_problems",
+               "unit_conversions", "rate_problems"
             ],
             "Algebra": [
-               "linear_equations",
-               "quadratic_equations",
-               "inequalities",
-               "functions",
-               "sequences",
-               "coordinate_geometry"
+               "linear_equations", "quadratic_equations", "inequalities",
+               "functions", "sequences", "coordinate_geometry"
             ],
             "Geometry": [
-               "triangles",
-               "circles",
-               "rectangles_and_squares",
-               "coordinate_geometry",
-               "area_and_perimeter",
-               "volume"
+               "triangles", "circles", "rectangles_and_squares",
+               "coordinate_geometry", "area_and_perimeter", "volume"
             ],
             "Word Problems": [
-               "work_and_time",
-               "speed_distance_time",
-               "age_problems",
-               "mixture_problems",
-               "investment_problems"
+               "work_and_time", "speed_distance_time", "age_problems",
+               "mixture_problems", "investment_problems"
             ],
             "Statistics$": [
-               "mean_median_mode",
-               "standard_deviation",
-               "data_interpretation",
-               "frequency_distribution",
-               "probability_statistics"
+               "mean_median_mode", "standard_deviation", "data_interpretation",
+               "frequency_distribution", "probability_statistics"
             ],
             "Probability$": [
-               "basic_probability",
-               "conditional_probability",
-               "independent_events",
-               "permutations_combinations",
-               "probability_distributions"
+               "basic_probability", "conditional_probability", "independent_events",
+               "permutations_combinations", "probability_distributions"
             ],
             "Functions and Graphs*": [
-               "function_analysis",
-               "graphical_interpretation",
-               "domain_range",
-               "function_transformations",
-               "coordinate_systems"
+               "function_analysis", "graphical_interpretation", "domain_range",
+               "function_transformations", "coordinate_systems"
             ]
          },
          "questionTheme&": [
@@ -356,10 +258,10 @@
       }
    },
    "verbal": {
-      "total_questions": 2,
+      "total_questions": 23,
       "section": {
-         "RC": [1, 1],
-         "CR": [1, 1]
+         "RC": [13, 14],
+         "CR": [10, 9]
       },
       "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
       "questionTheme": [
@@ -403,11 +305,11 @@
       }
    },
    "integrated reasoning": {
-      "total_questions": 4,
-      "Multi_Source_Reasoning": 1,
-      "Table_Analysis": 1,
-      "Graphics_Interpretation": 1,
-      "Two_Part_Analysis": 1,
+      "total_questions": 20,
+      "Multi_Source_Reasoning": 6,
+      "Table_Analysis": 5,
+      "Graphics_Interpretation": 5,
+      "Two_Part_Analysis": 4,
       "question_type": ["MSR", "TPA", "TA", "GI"],
       "graphic interpretation": {
          "nomenclature": "GI - <questionTheme> - <focused_skill> - <graphType> - <difficulty_level: {1-5}>",
@@ -452,14 +354,6 @@
             "pie_chart",
             "bar_chart"
          ],
-         "graph_types": [
-            "scatter_plot",
-            "line_chart",
-            "pie_chart",
-            "bar_chart",
-            "donut_chart"
-         ],
-         "table_types": ["comparison_table", "data_table", "pivot_table"],
          "child-question": {
             "nomenclature": "MSR ChildQuestion - <focused_skill> - <question_style>",
             "focused_skill": [
@@ -493,7 +387,11 @@
       },
       "table analysis": {
          "nomenclature": "TA - <focused_skill> - <tableType> - <dichotomousType> - <questionTheme> - <difficulty_level: {1-5}>",
-         "tableType": ["data_table", "data_table", "data_table"],
+         "tableType": [
+            "data_table",
+            "data_table",
+            "data_table"
+         ],
          "dichotomousType": [
             "Yes/No",
             "Would Help/Would Not Help",

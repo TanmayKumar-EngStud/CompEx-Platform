@@ -197,8 +197,8 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
     def _process_question_type_conditionals(self, template: str, question_type: QuestionType) -> str:
         """Process question-type specific conditional blocks."""
         # Debug logging to understand what question type is being processed
-        print(f"DEBUG: Template processor processing question_type: {question_type}")
-        
+        # print(f"DEBUG: Template processor processing question_type: {question_type}")
+
         # Process data sufficiency blocks
         ds_pattern = r'{{#if_data_sufficiency}}(.*?){{/if_data_sufficiency}}'
         if question_type == QuestionType.DATA_SUFFICIENCY:
@@ -231,7 +231,7 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
         tc1_pattern = r'{{#if_TC-1}}(.*?){{/if_TC-1}}'
         tc2_pattern = r'{{#if_TC-2}}(.*?){{/if_TC-2}}'
         tc3_pattern = r'{{#if_TC-3}}(.*?){{/if_TC-3}}'
-        
+
         if question_type == QuestionType.TEXT_COMPLETION:
             # For now, default to TC-1 format unless prompt specifies otherwise
             template = re.sub(tc1_pattern, r'\1', template, flags=re.DOTALL)

@@ -114,9 +114,38 @@ class Generate_MSR(BaseQuestionGenerator):
                 source = msr.generate_SourceInfo(
                     f"SourceInfo_{idx} having {source_type}: {self.prompt}", idx)
                 if source is None:
-                    print(f"Error: Failed to generate source info {idx} for MSR")
+                    print(
+                        f"Error: Failed to generate source info {idx} for MSR")
                     return None
-                sources["sources"].append(source)
+
+                # Transform to required structure based on customizations.json
+                transformed_source = {
+                    "source_info": source.get("source_info", ""),
+                }
+
+                # Add the appropriate content based on type from customizations.json
+                content = source.get("content", {})
+                content_type = content.get("type", source_type.lower())
+
+                # Get graph types and table types from customizations.json
+                graph_types = self.MSR.get("graph_types", [])
+                table_types = self.MSR.get("table_types", [])
+
+                if content_type == "passage" or source_type.lower() == "passage":
+                    transformed_source["type"] = "passage"
+                    transformed_source["passage"] = content.get("text", "")
+                elif content_type in graph_types or source_type.lower() in graph_types:
+                    transformed_source["type"] = "graphs"
+                    transformed_source["graphs"] = [content]
+                elif content_type in table_types or source_type.lower() in table_types:
+                    transformed_source["type"] = "tables"
+                    transformed_source["tables"] = [content]
+                else:
+                    # Default fallback
+                    transformed_source["type"] = content_type
+                    transformed_source[content_type] = content
+
+                sources["sources"].append(transformed_source)
 
             self.question_data["content"] = sources
             self.question_data["title"] = msr.generate_MainQuestionTitle()
@@ -150,8 +179,13 @@ class Generate_MSR(BaseQuestionGenerator):
                 # Generate options and answers
                 if question_style == "MCQ (5 options MCQ)":
                     options, correct_option = answer_data
-                    question["answer"] = options[correct_option] if correct_option in options else list(
-                        options.values())[0]
+                    try:
+                        question["answer"] = options[correct_option] if correct_option in options else list(
+                            options.values())[0]
+                    except:
+                        # checking if it is failing here
+                        raise ValueError(
+                            f"question_style is being {question_style} while correct_option is being: \n{correct_option}")
                     options = list(options.values())
                 else:
 
@@ -166,10 +200,8 @@ class Generate_MSR(BaseQuestionGenerator):
                 if all(isinstance(opt, str) for opt in options):
                     random.shuffle(options)
                 question["options"] = options
-                # Ensure source_type is a string for tags
-                source_type_str = str(source_type) if source_type is not None else "Unknown"
-                question["tags"] = [focused_skill,
-                                    question_style_clean, "MSR", source_type_str]
+                # Tags for child questions should include focused skill, question style
+                question["tags"] = [focused_skill, question_style_clean]
                 collective_tags.update(question["tags"])
                 question["difficulty"] = difficulty_level
                 self.question_data["questions"].append(question)

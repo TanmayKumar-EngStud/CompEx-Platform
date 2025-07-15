@@ -1,22 +1,22 @@
 {
    "quants": {
       "section1": {
-         "total_questions": 4,
-         "QC": [1, 1],
-         "MCQ_Single": [1, 1],
-         "MCQ_Multiple": [1, 1],
+         "total_questions": 20,
+         "QC": [8, 8],
+         "MCQ_Single": [9, 9],
+         "MCQ_Multiple": [2, 2],
          "NE": [1, 1],
-         "simple_questions": [1, 1],
-         "parent_child_questions": [1, 1]
+         "simple_questions": [10, 10],
+         "parent_child_questions": [2, 2]
       },
       "section2": {
-         "total_questions": 4,
-         "QC": [1, 1],
-         "MCQ_Single": [1, 1],
-         "MCQ_Multiple": [1, 1],
+         "total_questions": 20,
+         "QC": [7, 7],
+         "MCQ_Single": [10, 10],
+         "MCQ_Multiple": [2, 2],
          "NE": [1, 1],
-         "simple_questions": [1, 1],
-         "parent_child_questions": [1, 1]
+         "simple_questions": [11, 11],
+         "parent_child_questions": [2, 2]
       },
       "data sufficiency": {
          "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
@@ -401,16 +401,16 @@
    },
    "verbal": {
       "section1": {
-         "total_questions": 3,
-         "RC": [1, 1],
-         "TC": [1, 1],
-         "SE": [1, 1]
+         "total_questions": 20,
+         "RC": [10, 10],
+         "TC": [6, 6],
+         "SE": [4, 4]
       },
       "section2": {
-         "total_questions": 3,
-         "RC": [1, 1],
-         "TC": [1, 1],
-         "SE": [1, 1]
+         "total_questions": 20,
+         "RC": [10, 10],
+         "TC": [6, 6],
+         "SE": [4, 4]
       },
       "nomenclature": "<questionType> - <questionTheme> - <focusedSkill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
       "questionTheme": [
