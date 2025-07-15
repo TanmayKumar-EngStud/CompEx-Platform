@@ -25,7 +25,10 @@ class GREQuantsPrompts(BasePromptGenerator):
     
     def _get_total_questions(self) -> int:
         """Get total number of questions for GRE Quantitative section."""
-        return 15  # Base number per section (GRE has 2 quant sections)
+        # Get total from configuration
+        section_config = self.customizations.get("quants", {})
+        section1_config = section_config.get("section1", {})
+        return section1_config.get("total_questions", 20)
     
     def generate_question_prompts(self) -> List[str]:
         """
@@ -47,9 +50,10 @@ class GREQuantsPrompts(BasePromptGenerator):
         # For now, using section1 as default pattern
         section1_config = section_config.get("section1", {})
         
-        # Question type counts
+        # Question type counts from configuration
         qc_count = section1_config.get("QC", [8, 8])[0]  # Quantitative Comparison (Data Sufficiency style)
         mcq_single_count = section1_config.get("MCQ_Single", [9, 9])[0]  # Problem Solving
+        mcq_multiple_count = section1_config.get("MCQ_Multiple", [2, 2])[0]  # Multiple Choice Multiple Answer
         ne_count = section1_config.get("NE", [1, 1])[0]  # Numeric Entry
         
         question_index = 0
@@ -69,6 +73,16 @@ class GREQuantsPrompts(BasePromptGenerator):
             difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
             prompt = self.generate_nomenclature_based_prompt(
                 "problem solving",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
+        
+        # Generate MCQ Multiple Answer prompts (also problem solving type)
+        for _ in range(mcq_multiple_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            prompt = self.generate_nomenclature_based_prompt(
+                "problem solving",  # MCQ_Multiple uses same nomenclature as problem solving
                 difficulty
             )
             prompts.append(prompt)

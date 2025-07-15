@@ -99,37 +99,33 @@
             "Permutations and Combinations": [
                "permutation_formulas", "combination_calculations", "counting_principles",
                "arrangement_problems", "selection_problems"
-            ],
-            "Sets and Venn Diagrams": [
-               "set_operations", "venn_diagram_analysis", "union_intersection",
-               "complement_sets", "set_theory"
             ]
          },
          "graphType/tableType$": [
             null,
-            "line graph",
+            "line_chart",
             null,
-            "bar chart",
+            "bar_chart",
             null,
-            "pie chart",
+            "pie_chart",
             null,
-            "scatter plot",
+            "scatter_plot",
             null,
-            "data table",
+            "data_table",
             null,
-            "pivot table",
+            "pivot_table",
             null,
-            "Highlight Table",
+            "comparison_table",
             null,
-            "Heat Table",
+            "data_table",
             null,
-            "Text Table",
+            "data_table",
             null,
-            "Matrix Table",
+            "data_table",
             null,
-            "Frequency Table",
+            "data_table",
             null,
-            "Contingency Table"
+            "data_table"
          ],
          "questionTheme": [
             "Business and Finance",
@@ -214,29 +210,29 @@
          ],
          "graphType/tableType*": [
             null,
-            "line graph",
+            "line_chart",
             null,
-            "bar chart",
+            "bar_chart",
             null,
-            "pie chart",
+            "pie_chart",
             null,
-            "scatter plot",
+            "scatter_plot",
             null,
-            "data table",
+            "data_table",
             null,
-            "pivot table",
+            "pivot_table",
             null,
-            "Highlight Table",
+            "comparison_table",
             null,
-            "Heat Table",
+            "data_table",
             null,
-            "Text Table",
+            "data_table",
             null,
-            "Matrix Table",
+            "data_table",
             null,
-            "Frequency Table",
+            "data_table",
             null,
-            "Contingency Table"
+            "data_table"
          ],
          "focused_skill": [
             "Estimation and Approximation",
@@ -318,12 +314,12 @@
       "graphic interpretation": {
          "nomenclature": "GI - <questionTheme> - <focused_skill> - <graphType> - <difficulty_level: {1-5}>",
          "graphType": [
-            "bar chart",
-            "pie chart",
-            "line chart",
-            "scatter plot",
-            "quantitative venn diagram",
-            "qualitative venn diagram"
+            "bar_chart",
+            "pie_chart",
+            "line_chart",
+            "scatter_plot",
+            "donut_chart",
+            "donut_chart"
          ],
          "questionTheme": [
             "economics",
@@ -352,11 +348,11 @@
          "total_child_questions": [2, 3],
          "source_info": [
             "Passage",
-            "scatter plot",
-            "line chart",
-            "2 Category Table",
-            "pie chart",
-            "bar chart"
+            "scatter_plot",
+            "line_chart",
+            "comparison_table",
+            "pie_chart",
+            "bar_chart"
          ],
          "child-question": {
             "nomenclature": "MSR ChildQuestion - <focused_skill> - <question_style>",
@@ -392,9 +388,9 @@
       "table analysis": {
          "nomenclature": "TA - <focused_skill> - <tableType> - <dichotomousType> - <questionTheme> - <difficulty_level: {1-5}>",
          "tableType": [
-            "simple table",
-            "time_series table",
-            "multi_variable table"
+            "data_table",
+            "data_table",
+            "data_table"
          ],
          "dichotomousType": [
             "Yes/No",
@@ -462,34 +458,34 @@
             "System of Relationships"
          ],
          "type": [
-            "Bar Chart",
-            "Stacked Bar Chart",
-            "Pie Chart",
-            "Line Chart",
-            "Scatter Plot",
-            "2 Category Hybrid Table",
+            "bar_chart",
+            "stacked_bar_chart",
+            "pie_chart",
+            "line_chart",
+            "scatter_plot",
+            "comparison_table",
             "Passage"
          ],
          "difficultyLevel": 5,
          "part1": [
-            "part1- bar chart",
-            "part1- pie chart",
-            "part1- line chart",
-            "part1- scatter plot",
-            "part1- quantitative venn diagram",
-            "part1- qualitative venn diagram",
-            "part1- 2 category table",
-            "part1- 2 category hybrid table"
+            "part1- bar_chart",
+            "part1- pie_chart",
+            "part1- line_chart",
+            "part1- scatter_plot",
+            "part1- donut_chart",
+            "part1- donut_chart",
+            "part1- comparison_table",
+            "part1- comparison_table"
          ],
          "part2": [
-            "part2- bar chart",
-            "part2- pie chart",
-            "part2- line chart",
-            "part2- scatter plot",
-            "part2- quantitative venn diagram",
-            "part2- qualitative venn diagram",
-            "part2- 2 category table",
-            "part2- 2 category hybrid table"
+            "part2- bar_chart",
+            "part2- pie_chart",
+            "part2- line_chart",
+            "part2- scatter_plot",
+            "part2- donut_chart",
+            "part2- donut_chart",
+            "part2- comparison_table",
+            "part2- comparison_table"
          ]
       }
    }

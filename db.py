@@ -205,7 +205,10 @@ class DB:
                     temp = "Consistent"
                 elif type == "Conclusion/Assumption":
                     temp = "Conclusion"
-                if question['answer'][question['options'][0]] in "Yes/No":
+                # Check if the answer values are strings that contain "Yes" or "No"
+                first_option = question['options'][0]
+                answer_value = question['answer'][first_option]
+                if isinstance(answer_value, str) and answer_value in "Yes/No":
                     temp = "Yes"
                 question["content"]["connection_validator"] = temp
                 self.question_correction_validator = temp
@@ -405,6 +408,20 @@ class DB:
 
             # remove anything after comma
             tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag
+            
+            # Truncate tag to 50 characters maximum (database limit)
+            # Try to truncate at word boundaries for better readability
+            MAX_TAG_LENGTH = 50
+            if len(tag) > MAX_TAG_LENGTH:
+                original_tag = tag
+                # Try to truncate at the last complete word within the limit
+                truncated = tag[:MAX_TAG_LENGTH]
+                last_space = truncated.rfind(' ')
+                if last_space > MAX_TAG_LENGTH * 0.7:  # Only truncate at word boundary if it's not too short
+                    tag = truncated[:last_space].strip()
+                else:
+                    tag = truncated.strip()
+                print(f"Warning: Tag truncated from '{original_tag}' to '{tag}' (length: {len(tag)})")
             tagid = self.db.tags.find_first(where={
                 'name': tag,
                 'examtypeid': self.current_exam_id,

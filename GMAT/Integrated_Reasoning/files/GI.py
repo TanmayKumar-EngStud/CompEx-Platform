@@ -59,21 +59,26 @@ class Generate_GI(BaseQuestionGenerator):
             # Generate options and answers
             options_list, correct_option = gi.generate_questionOptions()
             if options_list and correct_option:
-                answer_list = []
-                options = []
-                idx = 0
-                while idx < len(options_list.values()):
-                    blank_key = f"blank_{idx+1}"
-                    if blank_key in options_list and blank_key in correct_option:
-                        answer_list.append(
-                            options_list[blank_key][correct_option[blank_key]])
-                        opts = list(options_list[blank_key].values())
-                        random.shuffle(opts)
-                        options.append(opts)
-                    idx += 1
-
-                self.question_data["options"] = options
-                self.question_data["answer"] = answer_list
+                # GI uses TC-2 format: options is array of dicts, answer is array of letters
+                if isinstance(options_list, list) and isinstance(correct_option, list):
+                    # TC-2 format: options=[{A:..., B:..., C:...}, {D:..., E:..., F:...}], answer=["A", "F"]
+                    answer_list = []
+                    options = []
+                    for i, option_dict in enumerate(options_list):
+                        if i < len(correct_option) and isinstance(option_dict, dict):
+                            # Add the correct answer for this blank
+                            answer_list.append(correct_option[i])
+                            # Convert option dict to list of values and shuffle
+                            opts = list(option_dict.values())
+                            random.shuffle(opts)
+                            options.append(opts)
+                    
+                    self.question_data["options"] = options
+                    self.question_data["answer"] = answer_list
+                else:
+                    # Fallback for unexpected formats
+                    self.question_data["options"] = [["Option A", "Option B"]]
+                    self.question_data["answer"] = ["Option A"]
             else:
                 self.question_data["options"] = [["Option A", "Option B"]]
                 self.question_data["answer"] = ["Option A"]

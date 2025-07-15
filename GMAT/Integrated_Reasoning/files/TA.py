@@ -60,6 +60,9 @@ class Generate_TA(BaseQuestionGenerator):
 
             # Generate table content
             content = ta.generate_QuestionTable(no_rows, no_cols)
+            if content is None:
+                print("Error: Failed to generate table content for TA question")
+                return None
             self.question_data["content"] = {"tables": content}
 
             # Generate question components
@@ -70,11 +73,18 @@ class Generate_TA(BaseQuestionGenerator):
             # Generate options and answers
             options, answers = ta.generate_QuestionOptions()
             if options and answers:
-                option_list = list(options.values())
-                random.shuffle(option_list)
-                self.question_data["options"] = option_list
-                self.question_data["answer"] = {
-                    options[key]: answers[key] for key in options}
+                # TA uses dichotomous choice format: options={A: ..., B: ..., C: ...}, answer={A: True, B: False, C: True}
+                if isinstance(options, dict) and isinstance(answers, dict):
+                    option_list = list(options.values())
+                    random.shuffle(option_list)
+                    self.question_data["options"] = option_list
+                    # Map option values to their True/False answers
+                    self.question_data["answer"] = {
+                        options[key]: answers[key] for key in options if key in answers}
+                else:
+                    # Fallback for unexpected formats
+                    self.question_data["options"] = ["True", "False"]
+                    self.question_data["answer"] = {"True": True, "False": False}
             else:
                 self.question_data["options"] = ["True", "False"]
                 self.question_data["answer"] = {"True": True, "False": False}

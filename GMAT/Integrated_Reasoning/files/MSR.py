@@ -113,6 +113,9 @@ class Generate_MSR(BaseQuestionGenerator):
                 # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
                 source = msr.generate_SourceInfo(
                     f"SourceInfo_{idx} having {source_type}: {self.prompt}", idx)
+                if source is None:
+                    print(f"Error: Failed to generate source info {idx} for MSR")
+                    return None
                 sources["sources"].append(source)
 
             self.question_data["content"] = sources
@@ -159,10 +162,14 @@ class Generate_MSR(BaseQuestionGenerator):
 
                 # Clean up question style and shuffle options
                 question_style_clean = re.sub(r' \(.*?\)', '', question_style)
-                random.shuffle(options)
+                # Only shuffle if options is a list of strings, not dicts
+                if all(isinstance(opt, str) for opt in options):
+                    random.shuffle(options)
                 question["options"] = options
+                # Ensure source_type is a string for tags
+                source_type_str = str(source_type) if source_type is not None else "Unknown"
                 question["tags"] = [focused_skill,
-                                    question_style_clean, "MSR", source_type]
+                                    question_style_clean, "MSR", source_type_str]
                 collective_tags.update(question["tags"])
                 question["difficulty"] = difficulty_level
                 self.question_data["questions"].append(question)

@@ -38,7 +38,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
         """
         try:
             # Initialize question data using base class
-            self.initialize_question_data(prompt)
+            self.initialize_question_data(self.prompt)
             
             # Determine question type
             if "(multi-correct MCQ)" in self.prompt:

@@ -49,6 +49,9 @@ class Generate_TPA(BaseQuestionGenerator):
 
             # Generate parent question content
             parentQuestionContent = tpa.generate_ParentQuestionContent()
+            if parentQuestionContent is None:
+                print("Error: Failed to generate parent question content for TPA")
+                return None
             self.question_data["content"] = [parentQuestionContent]
 
             # Prepare difficulty for child questions
@@ -74,11 +77,26 @@ class Generate_TPA(BaseQuestionGenerator):
                 print("Error: Failed to generate options or answers")
                 return None
 
-            try:
-                ans1 = common_options[answers["question1"]]
-                ans2 = common_options[answers["question2"]]
-            except (KeyError, TypeError) as e:
-                print(f"Error: Invalid options or answers structure: {e}")
+            # TPA uses generic MCQ format: options={A: ..., B: ..., C: ..., D: ..., E: ...}, answer={question1: A, question2: C}
+            if isinstance(common_options, dict):
+                if isinstance(answers, dict):
+                    try:
+                        ans1 = common_options[answers["question1"]]
+                        ans2 = common_options[answers["question2"]]
+                    except (KeyError, TypeError) as e:
+                        print(f"Error: Invalid options or answers structure: {e}")
+                        return None
+                elif isinstance(answers, str):
+                    # Handle case where AI returns answer as single string instead of dict
+                    print(f"Warning: TPA received string answer '{answers}', but expects dict format. Using fallback.")
+                    # Create a default dict structure for TPA
+                    ans1 = common_options.get("A", "Option A")
+                    ans2 = common_options.get("B", "Option B")
+                else:
+                    print(f"Error: Unexpected answer format: {type(answers)}")
+                    return None
+            else:
+                print(f"Error: Unexpected options format: {type(common_options)}")
                 return None
 
             title = tpa.generate_QuestionTitle()

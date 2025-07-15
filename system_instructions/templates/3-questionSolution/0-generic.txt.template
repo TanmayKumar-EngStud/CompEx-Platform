@@ -9,9 +9,10 @@ Step 4: {{#if_gmat}}Verify answer makes business sense{{/if_gmat}}{{#if_gre}}Che
 Step 5: {{#if_gmat}}Consider alternative solving methods{{/if_gmat}}{{#if_gre}}Confirm solution addresses original question{{/if_gre}}
 
 **Important Notes:**
-- Use numbered steps with clear explanations
+- Use numbered steps with clear explanations, solution should be human readable and should be brief
 - Show all calculations with proper mathematical notation
 - Use LaTeX for mathematical expressions
+- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format. Basically, Don't have LaTeX format in answer and question options.
 {{#if_gmat}}
 - Demonstrate both direct solution and back-solving when applicable
 - Use business context to verify reasonableness

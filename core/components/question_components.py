@@ -380,7 +380,7 @@ class BaseQuestionComponent(ABC):
 
             # Handle 429 errors with simple output
             if "429" in error_str or "resource_exhausted" in error_str or "quota" in error_str:
-                print(f"API error code:- 429\t\t {time.strftime('%H:%M:%S')}")
+                # print(f"API error code:- 429\t\t {time.strftime('%H:%M:%S')}")
                 # Extract retry delay if available
                 if "retrydelay" in error_str or "retry" in error_str:
                     try:
@@ -389,14 +389,13 @@ class BaseQuestionComponent(ABC):
                         delay_match = re.search(r'(\d+)s', error_str)
                         if delay_match:
                             delay = int(delay_match.group(1))
-                            print(
-                                f"Waiting {delay} seconds for API rate limit reset...")
+                            # print(f"Waiting {delay} seconds for API rate limit reset...")
                             time.sleep(delay + 1)  # Add 1 second buffer
                         else:
-                            print("Waiting 60 seconds for API rate limit reset...")
+                            # print("Waiting 60 seconds for API rate limit reset...")
                             time.sleep(60)
                     except:
-                        print("Waiting 60 seconds for API rate limit reset...")
+                        # print("Waiting 60 seconds for API rate limit reset...")
                         time.sleep(60)
             else:
                 # For other errors, show minimal info
@@ -609,7 +608,9 @@ class SimpleQuestion(BaseQuestionComponent):
     def __init__(self, *args, **kwargs):
         """Initialize simple question component."""
         super().__init__(*args, **kwargs)
-        self.question_type = QuestionType.PROBLEM_SOLVING  # Default
+        # Use the question_type passed from parent, don't override it
+        if self.question_type is None:
+            self.question_type = QuestionType.PROBLEM_SOLVING  # Default only if not set
 
     def generate_question_passage(self, instruction_prompt: str) -> str:
         """
@@ -694,12 +695,13 @@ class SimpleQuestion(BaseQuestionComponent):
         result = self._retry_generate(_generate)
         return result if result else ""
 
-    def generate_question_solution(self, instruction_prompt: str, is_numeric_entry: bool = False) -> Union[str, Tuple[str, float]]:
+    def generate_question_solution(self, instruction_prompt: str, instruction_prompt2: str = None, is_numeric_entry: bool = False) -> Union[str, Tuple[str, float]]:
         """
         Generate question solution.
 
         Args:
-            instruction_prompt: 
+            instruction_prompt: for question component
+            instruction_prompt2: for answer component
             is_numeric_entry: Whether this is a numeric entry question (GRE only)
 
         Returns:
@@ -709,7 +711,7 @@ class SimpleQuestion(BaseQuestionComponent):
             # For numeric entry, we need both solution and answer
             # Solution is plain text, answer is JSON
             solution = self._generate_solution_plain_text(instruction_prompt)
-            answer = self._generate_answer_numeric(instruction_prompt)
+            answer = self._generate_answer_numeric(instruction_prompt2)
             return solution, answer
         else:
             # For regular questions, just solution as plain text
@@ -872,10 +874,13 @@ class DataSufficiencyQuestion(BaseQuestionComponent):
             )
 
             if message:
-                # Try different possible keys
-                return (message.get("graph/table") or
-                        message.get("graph") or
-                        message.get("table"))
+                # Return the first non-None value from the response
+                for key in ["graph/table", "graph", "table"]:
+                    value = message.get(key)
+                    if value is not None:
+                        return value
+                # If all values are None, return the entire message as fallback
+                return message
             return None
 
         return self._retry_generate(_generate)
@@ -1074,7 +1079,7 @@ class ParentChildQuestion(BaseQuestionComponent):
         """Generate shared graph/table for child questions or passage for reading comprehension."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
             # Determine command format based on exam type and question content
-            if any(term in instruction_prompt.lower() for term in ["rc-", "reading", "comprehension"]):
+            if any(term in instruction_prompt.lower() for term in ["rc-", "reading_comprehension", "questionpassage"]):
                 prompt_text = f"mode:- ParentQuestion (Active) generate passage paragraph {i} of {total};\n {instruction_prompt}"
             else:
                 prompt_text = f"mode:- questionGraph input:- {instruction_prompt}"
@@ -1100,9 +1105,13 @@ class ParentChildQuestion(BaseQuestionComponent):
                     return message
                 elif "graph/table" in message or "graph" in message or "table" in message:
                     # This is quantitative graph/table data
-                    return (message.get("graph/table") or
-                            message.get("graph") or
-                            message.get("table"))
+                    # Return the first non-None value from the response
+                    for key in ["graph/table", "graph", "table"]:
+                        value = message.get(key)
+                        if value is not None:
+                            return value
+                    # If all values are None, return the entire message
+                    return message
                 else:
                     # Fallback - return the whole message
                     return message
@@ -1394,9 +1403,13 @@ class TableAnalysisQuestion(SpecializedQuestion):
             )
 
             if message:
-                return (message.get("tables") or
-                        message.get("content") or
-                        message.get("table"))
+                # Return the first non-None value from the response
+                for key in ["tables", "content", "table"]:
+                    value = message.get(key)
+                    if value is not None:
+                        return value
+                # If all values are None, return the entire message as fallback
+                return message
             return None
 
         return self._retry_generate(_generate)
@@ -1416,10 +1429,13 @@ class TableAnalysisQuestion(SpecializedQuestion):
             )
 
             if message:
-                return (message.get("question") or
-                        message.get("text") or
-                        message.get("content") or
-                        message.get("title"))
+                # Return the first non-None value from the response
+                for key in ["question", "text", "content", "title"]:
+                    value = message.get(key)
+                    if value is not None:
+                        return value
+                # If all values are None, return the entire message as fallback
+                return message
             return None
 
         return self._retry_generate(_generate)
@@ -1534,10 +1550,13 @@ class TwoPartAnalysisQuestion(SpecializedQuestion):
             )
 
             if message:
-                return (message.get("content") or
-                        message.get("question") or
-                        message.get("graph") or
-                        message.get("data"))
+                # Return the first non-None value from the response
+                for key in ["content", "question", "graph", "data"]:
+                    value = message.get(key)
+                    if value is not None:
+                        return value
+                # If all values are None, return the entire message as fallback
+                return message
             return None
 
         return self._retry_generate(_generate)

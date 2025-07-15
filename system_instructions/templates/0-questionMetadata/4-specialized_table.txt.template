@@ -2,7 +2,7 @@ STRICT RESPONSE FORMAT:- JSON
 - Table object following specific format for table type.
 Example:-
 ```json
-{table_format}
+{content}
 ```
 
 **Important Notes:**

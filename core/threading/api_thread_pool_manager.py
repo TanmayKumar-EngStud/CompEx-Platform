@@ -10,6 +10,8 @@ import time
 import threading
 import asyncio
 import logging
+import json
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed, Future
 from typing import Dict, List, Any, Callable, Optional, Tuple, Union
 from dataclasses import asdict
@@ -81,12 +83,97 @@ class APIThreadPoolManager:
         # Thread safety
         self._manager_lock = threading.Lock()
         self._shutdown_initiated = False
+        
+        # Section completion tracking
+        self.section_completion_tracker = self._init_section_tracker()
+        self.section_targets = self._load_section_targets_from_config()
+        self.completed_sections = set()
     
     def _setup_api_states(self) -> None:
         """Initialize API states and locks for each worker thread."""
         for _ in range(self.config.max_workers):
             self.api_states.append(APIState())
             self.locks.append(threading.Lock())
+    
+    def _init_section_tracker(self) -> Dict[str, Dict[str, int]]:
+        """Initialize section completion tracking dictionary."""
+        tracker = {}
+        for section_name in self.paper.keys():
+            tracker[section_name] = {}
+            for subsection_name in self.paper[section_name].keys():
+                tracker[section_name][subsection_name] = 0
+        return tracker
+    
+    def _load_section_targets_from_config(self) -> Dict[str, Dict[str, int]]:
+        """Load section targets from customizations.json files based on exam type."""
+        project_root = os.getcwd()
+        targets = {}
+        
+        try:
+            if self.config.exam_type == ExamType.GMAT:
+                config_path = os.path.join(project_root, "system_instructions", "gmat", "customizations.json")
+                with open(config_path) as f:
+                    gmat_config = json.load(f)
+                
+                targets = {
+                    "GMAT_Q": {"section0": gmat_config.get("quants", {}).get("total_questions", 21)},
+                    "GMAT_V": {"section0": gmat_config.get("verbal", {}).get("total_questions", 23)},
+                    "GMAT_IR": {"section0": gmat_config.get("integrated reasoning", {}).get("total_questions", 8)}
+                }
+                
+            elif self.config.exam_type == ExamType.GRE:
+                config_path = os.path.join(project_root, "system_instructions", "gre", "customizations.json")
+                with open(config_path) as f:
+                    gre_config = json.load(f)
+                
+                quants_section1 = gre_config.get("quants", {}).get("section1", {})
+                verbal_section1 = gre_config.get("verbal", {}).get("section1", {})
+                quants_total = quants_section1.get("total_questions", 20)
+                verbal_total = verbal_section1.get("total_questions", 20)
+                
+                targets = {
+                    "GRE_Q": {"section1": quants_total, "section2": quants_total},
+                    "GRE_V": {"section1": verbal_total, "section2": verbal_total}
+                }
+        
+        except Exception as e:
+            self.logger.warning(f"Could not load section targets from config: {e}")
+            # Fallback to default values
+            if self.config.exam_type == ExamType.GMAT:
+                targets = {"GMAT_Q": {"section0": 21}, "GMAT_V": {"section0": 23}, "GMAT_IR": {"section0": 8}}
+            else:
+                targets = {"GRE_Q": {"section1": 20, "section2": 20}, "GRE_V": {"section1": 20, "section2": 20}}
+        
+        return targets
+    
+    def _check_section_completion(self, exam_section: str, section_key: str) -> None:
+        """Check if a section is complete and print completion message."""
+        current_count = self.section_completion_tracker[exam_section][section_key]
+        target_count = self.section_targets.get(exam_section, {}).get(section_key, 0)
+        
+        if current_count >= target_count and target_count > 0:
+            section_display_name = self._get_section_display_name(exam_section, section_key)
+            
+            if section_display_name not in self.completed_sections:
+                print(f"✅ {section_display_name} generation complete")
+                self.completed_sections.add(section_display_name)
+    
+    def _get_section_display_name(self, exam_section: str, section_key: str) -> str:
+        """Convert internal section names to display names."""
+        if exam_section == "GMAT_Q":
+            return "GMAT > Quants"
+        elif exam_section == "GMAT_V":
+            return "GMAT > Verbal"
+        elif exam_section == "GMAT_IR":
+            return "GMAT > Integrated Reasoning"
+        elif exam_section == "GRE_Q":
+            section_num = section_key.replace("section", "")
+            return f"GRE > Quants Section {section_num}"
+        elif exam_section == "GRE_V":
+            section_num = section_key.replace("section", "")
+            return f"GRE > Verbal Section {section_num}"
+        else:
+            return f"{exam_section} > {section_key}"
     
     def _init_event_loop(self) -> None:
         """Initialize event loop for asyncio compatibility in worker threads."""
@@ -194,6 +281,12 @@ class APIThreadPoolManager:
         # Store result in paper
         if exam_section in self.paper and section_key in self.paper[exam_section]:
             self.paper[exam_section][section_key].append(data)
+            
+            # Update section completion tracking
+            if exam_section in self.section_completion_tracker and section_key in self.section_completion_tracker[exam_section]:
+                self.section_completion_tracker[exam_section][section_key] += 1
+                # Check if section is complete
+                self._check_section_completion(exam_section, section_key)
         else:
             self.logger.warning(f"Invalid paper structure: {exam_section}.{section_key}")
         
@@ -265,10 +358,10 @@ class APIThreadPoolManager:
         """Process a final task result and update paper structure."""
         # Handle different result formats
         if len(result) == 5:  # GMAT format
-            api_idx, start_time, request_count, exam_section, data = result
+            _, _, _, exam_section, data = result
             section_key = "section0"
         elif len(result) == 6:  # GRE format
-            api_idx, start_time, request_count, exam_section, section_id, data = result
+            _, _, _, exam_section, section_id, data = result
             section_key = f"section{section_id}"
         else:
             self.logger.warning(f"Unexpected result format: {result}")
@@ -277,6 +370,12 @@ class APIThreadPoolManager:
         # Store result in paper
         if exam_section in self.paper and section_key in self.paper[exam_section]:
             self.paper[exam_section][section_key].append(data)
+            
+            # Update section completion tracking
+            if exam_section in self.section_completion_tracker and section_key in self.section_completion_tracker[exam_section]:
+                self.section_completion_tracker[exam_section][section_key] += 1
+                # Check if section is complete
+                self._check_section_completion(exam_section, section_key)
         else:
             self.logger.warning(f"Invalid paper structure for final result: {exam_section}.{section_key}")
     
@@ -338,4 +437,5 @@ class APIThreadPoolManager:
     
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Context manager exit with proper cleanup."""
+        _ = exc_type, exc_val, exc_tb  # Ignore unused parameters
         self.shutdown(wait=True)

@@ -281,23 +281,52 @@ class QuestionMetadata:
             if content_type == "graph" and prompt:
                 # Detect specific graph type from prompt
                 graph_type = self._detect_graph_type(prompt)
-                if graph_type and graph_type in metadata.get("graphs", {}):
-                    return json.dumps(metadata["graphs"][graph_type], indent=2)
+                if graph_type and "content_types" in metadata and "graph" in metadata["content_types"]:
+                    chart_styles = metadata["content_types"]["graph"].get("chart_styles", {})
+                    if graph_type in chart_styles:
+                        chart_format = chart_styles[graph_type].get("json_format", {})
+                        return json.dumps(chart_format, indent=2)
 
             # Get default structure for content type
             content_map = {
-                "passage": "passages",
-                "graph": "graphs",
-                "specialized_table": "tables",
+                "passage": "content_types.passage",
+                "graph": "content_types.graph",
+                "specialized_table": "content_types.table",
                 "multi_source": "multi_source",
                 "parent_stimulus": "parent_stimulus"
             }
 
             category = content_map.get(content_type)
-            if category and category in metadata:
-                # Return first available structure as default
-                structures = metadata[category]
+            if category:
+                # Navigate nested structure using dot notation
+                structures = metadata
+                for key in category.split('.'):
+                    if isinstance(structures, dict) and key in structures:
+                        structures = structures[key]
+                    else:
+                        return "{}"  # Path not found
+                
                 if isinstance(structures, dict) and structures:
+                    # Special handling for table structure
+                    if content_type == "specialized_table":
+                        # Navigate to table_styles -> data_table -> json_format
+                        if "table_styles" in structures:
+                            table_styles = structures["table_styles"]
+                            if isinstance(table_styles, dict) and table_styles:
+                                first_table_type = list(table_styles.keys())[0]
+                                table_format = table_styles[first_table_type].get("json_format", {})
+                                return json.dumps(table_format, indent=2)
+                    
+                    # Special handling for graph structure
+                    elif content_type == "graph":
+                        # Navigate to chart_styles -> first_chart -> json_format
+                        if "chart_styles" in structures:
+                            chart_styles = structures["chart_styles"]
+                            if isinstance(chart_styles, dict) and chart_styles:
+                                first_chart_type = list(chart_styles.keys())[0]
+                                chart_format = chart_styles[first_chart_type].get("json_format", {})
+                                return json.dumps(chart_format, indent=2)
+                    
                     first_key = list(structures.keys())[0]
                     return json.dumps(structures[first_key], indent=2)
                 elif isinstance(structures, list) and structures:

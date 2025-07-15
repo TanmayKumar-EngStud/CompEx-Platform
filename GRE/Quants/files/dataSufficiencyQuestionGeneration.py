@@ -37,7 +37,7 @@ class DataSufficiencyQuestionGeneration(BaseQuestionGenerator):
         """
         try:
             # Initialize question data using base class
-            self.initialize_question_data(prompt)
+            self.initialize_question_data(self.prompt)
             
             # Set GRE DS specific type
             self.question_data["type"] = "DS"

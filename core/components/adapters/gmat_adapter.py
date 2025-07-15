@@ -224,8 +224,10 @@ class GMATAdapter:
                 self.exam_type, question_type, customizations, prompt
             )
         elif "GI" in prompt:
+            from core.enums.exam_types import ExamType
+            from core.enums.question_types import QuestionType as QType
             return self.question_options.text_completion(
-                "gre", "text_completion", customizations, "TC-2"+prompt
+                ExamType.GRE, QType.TEXT_COMPLETION, customizations, "TC-2"+prompt
             )  # mimicking TC-2 format for question_option generation for Graphical Interpretation
         else:
             return self.question_options.generic(
@@ -365,6 +367,22 @@ class GMATParentChildAdapter:
         self.component = component
         self.flow = []
 
+    def generate_parentQuestion(self) -> Optional[str]:
+        """Generate parent question passage for reading comprehension (GMAT naming convention)."""
+        # For RC questions, we need to generate the passage content
+        component_structure = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionPassage\n{component_structure}"
+        result = self.component.generate_question_metadata(instruction_prompt, i=1, total=1)
+        
+        # Extract the passage text from the JSON response
+        if result and isinstance(result, dict) and "passage" in result:
+            return result["passage"]
+        elif result and isinstance(result, str):
+            return result
+        else:
+            return None
+
     def generate_parentTitle(self) -> Optional[str]:
         """Generate parent title."""
         self.flow.append('ParentTitle')
@@ -373,7 +391,7 @@ class GMATParentChildAdapter:
         instruction_prompt = f"{self.prompt}\n mode: ParentTitle\n{component_template}"
         return self.component.generate_parent_title(instruction_prompt)
 
-    def generate_childTitle(self, index: int) -> Optional[str]:
+    def generate_childQuestionTitle(self, index: int) -> Optional[str]:
         """Generate child question title."""
         self.flow.append('ChildTitle')
         component_template = self.component._get_component_instruction(

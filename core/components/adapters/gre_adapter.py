@@ -129,6 +129,28 @@ class GREAdapter:
                 self.exam_type, question_type, customizations, prompt
             )
 
+    def get_title_template(
+        self,
+        question_type: QuestionType,
+        prompt: str,
+        customizations: Optional[Dict[str, Any]] = None
+    ) -> str:
+        """
+        Get appropriate text template for GRE questions.
+
+        Args:
+            question_type: Question type classification
+            prompt: Original prompt for context
+            customizations: Exam-specific customizations
+
+        Returns:
+            Processed text template
+        """
+
+        return self.question_title.generic(
+            self.exam_type, question_type, customizations, prompt
+        )
+
     def get_solution_template(
         self,
         question_type: QuestionType,
@@ -241,8 +263,11 @@ class GRESimpleQuestionAdapter:
         component_structure = self.component._get_component_instruction(
             'QuestionSolution')
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{component_structure}"
+        component_structure2 = self.component._get_component_instruction(
+            'QuestionAnswer')
+        instruction_prompt2 = f"Prompt: {self.prompt}\nMode: QuestionAnswer\n{component_structure2}"
         # supposed to work fine for NE types as well
-        return self.component.generate_question_solution(instruction_prompt, is_numeric_entry=isNE)
+        return self.component.generate_question_solution(instruction_prompt, instruction_prompt2, is_numeric_entry=isNE)
 
     def generate_questionOptions(self, num_options: Optional[int] = None) -> Tuple[Dict[str, str], str]:
         """Generate question options (GRE naming convention)."""
@@ -278,10 +303,20 @@ class GREDataSufficiencyAdapter:
 
     def generate_questionSolution(self) -> Tuple[Optional[str], Optional[str]]:
         """Generate question solution and answer (GRE naming convention)."""
-        component_structure = self.component._get_component_instruction(
+        # Get solution
+        solution_structure = self.component._get_component_instruction(
             'QuestionSolution')
-        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{component_structure}"
-        return self.component.generate_question_solution(instruction_prompt)
+        solution_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{solution_structure}"
+        solution = self.component.generate_question_solution(solution_prompt)
+
+        # Get answer separately using options method
+        answer_structure = self.component._get_component_instruction(
+            'QuestionOptions')
+        answer_prompt = f"Prompt: {self.prompt}\nMode: QuestionOptions\n{answer_structure}"
+        _, answer = self.component.generate_question_options_with_answer(
+            answer_prompt)
+
+        return solution, answer
 
     def generate_questionOptions(self) -> Tuple[List[str], str]:
         """Generate question options (GRE naming convention)."""
@@ -349,8 +384,16 @@ class GREParentChildAdapter:
     def generate_passages(self) -> Optional[str]:
         """Generate passages for reading comprehension (GRE naming convention)."""
         # For RC questions, we need to generate the passage content
-        # This should use the question metadata functionality, Here we also need to add the value of i and total for telling which passage number and what are the total number of passages.
         component_structure = self.component._get_component_instruction(
             'QuestionMetadata')
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionPassage\n{component_structure}"
-        return self.component.generate_question_metadata(instruction_prompt)
+        result = self.component.generate_question_metadata(
+            instruction_prompt, i=1, total=1)
+
+        # Extract the passage text from the JSON response
+        if result and isinstance(result, dict) and "passage" in result:
+            return result["passage"]
+        elif result and isinstance(result, str):
+            return result
+        else:
+            return None

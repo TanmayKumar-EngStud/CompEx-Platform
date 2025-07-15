@@ -170,7 +170,7 @@ class BasePromptGenerator(ABC):
         elif self.section_type == SectionType.VERBAL:
             return "verbal"
         elif self.section_type == SectionType.INTEGRATED_REASONING:
-            return "integrated_reasoning"
+            return "integrated reasoning"
         else:
             return self.section_type.value
     
@@ -381,6 +381,47 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(f"<{var}>", f"<{question_type}>")
                 continue
             
+            # Handle slash-separated variables (e.g., focused_skill_1/focused_skill_2/focused_skill_3)
+            if "/" in var:
+                # Split into individual variables and process each
+                individual_vars = var.split("/")
+                values_list = []
+                
+                for individual_var in individual_vars:
+                    # Clean the individual variable
+                    clean_individual_var = individual_var.strip()
+                    
+                    # Handle numbered variables
+                    if any(char.isdigit() for char in clean_individual_var):
+                        import re
+                        base_var_match = re.match(r'^([a-zA-Z_]+?)_?\d', clean_individual_var)
+                        if base_var_match:
+                            base_var = base_var_match.group(1)
+                            # For question_style and focused_skill in MSR, check child-question config
+                            if base_var in ["question_style", "focused_skill"]:
+                                child_config = question_config.get("child-question", {})
+                                individual_values = child_config.get(base_var, [])
+                                # Fallback to main config if not found in child-question
+                                if not individual_values:
+                                    individual_values = question_config.get(base_var, [])
+                            else:
+                                individual_values = question_config.get(base_var, [])
+                        else:
+                            individual_values = []
+                    else:
+                        individual_values = question_config.get(clean_individual_var, [])
+                    
+                    if individual_values:
+                        selected_value = self.get_random_element(individual_values)
+                        values_list.append(selected_value)
+                    else:
+                        values_list.append("general")
+                
+                # Join the selected values with slashes
+                final_value = "/".join(values_list)
+                substituted = substituted.replace(f"<{var}>", f"<{final_value}>")
+                continue
+            
             # Enhanced questionTopic handling
             if var == "questionTopic":
                 topic_values = question_config.get("questionTopic", [])
@@ -417,13 +458,32 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(f"<{var}>", "<general>")
                 continue
             
-            # Get values for this variable
-            var_values = question_config.get(var_clean, [])
-            
-            if not var_values or not isinstance(var_values, list):
-                # Try without special characters
-                base_var = var_clean.rstrip("*&$")
-                var_values = question_config.get(base_var, [])
+            # Handle special numbered variables (e.g., source_info1, source_info2, source_info3)
+            if any(char.isdigit() for char in var_clean):
+                # Extract base variable name without numbers
+                import re
+                base_var_match = re.match(r'^([a-zA-Z_]+?)_?\d', var_clean)
+                if base_var_match:
+                    base_var = base_var_match.group(1)
+                    # For question_style and focused_skill in MSR, check child-question config
+                    if base_var in ["question_style", "focused_skill"]:
+                        child_config = question_config.get("child-question", {})
+                        var_values = child_config.get(base_var, [])
+                        # Fallback to main config if not found in child-question
+                        if not var_values:
+                            var_values = question_config.get(base_var, [])
+                    else:
+                        var_values = question_config.get(base_var, [])
+                else:
+                    var_values = []
+            else:
+                # Get values for this variable
+                var_values = question_config.get(var_clean, [])
+                
+                if not var_values or not isinstance(var_values, list):
+                    # Try without special characters
+                    base_var = var_clean.rstrip("*&$")
+                    var_values = question_config.get(base_var, [])
                 
             if not var_values:
                 substituted = substituted.replace(f"<{var}>", "<general>")

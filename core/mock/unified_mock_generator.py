@@ -192,19 +192,30 @@ class UnifiedMockGenerator:
 
         try:
             if self.exam_type == ExamType.GMAT:
-                # Generate GMAT prompts using nomenclature system
+                # Generate GMAT prompts using nomenclature system - read counts from customizations
+                gmat_config = customization_gmat
+                quants_total = gmat_config.get("quants", {}).get("total_questions", 21)
+                verbal_total = gmat_config.get("verbal", {}).get("total_questions", 23) 
+                ir_total = gmat_config.get("integrated reasoning", {}).get("total_questions", 8)
+                
                 prompts["quants"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.QUANTITATIVE, 21)
+                    prompt_factory, SectionType.QUANTITATIVE, quants_total)
                 prompts["verbal"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.VERBAL, 23)
+                    prompt_factory, SectionType.VERBAL, verbal_total)
                 prompts["integrated_reasoning"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.INTEGRATED_REASONING, 8)
+                    prompt_factory, SectionType.INTEGRATED_REASONING, ir_total)
             elif self.exam_type == ExamType.GRE:
-                # Generate GRE prompts using nomenclature system
+                # Generate GRE prompts using nomenclature system - read counts from customizations
+                gre_config = customization_gre
+                quants_section1 = gre_config.get("quants", {}).get("section1", {})
+                verbal_section1 = gre_config.get("verbal", {}).get("section1", {})
+                quants_total = quants_section1.get("total_questions", 20)
+                verbal_total = verbal_section1.get("total_questions", 20)
+                
                 prompts["quants"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.QUANTITATIVE, 15)
+                    prompt_factory, SectionType.QUANTITATIVE, quants_total)
                 prompts["verbal"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.VERBAL, 15)
+                    prompt_factory, SectionType.VERBAL, verbal_total)
 
             return prompts
 
@@ -501,6 +512,11 @@ class UnifiedMockGenerator:
             # Execute all tasks and get the paper results
             # The thread manager returns the properly structured paper dictionary
             paper = thread_manager.execute_all()
+            
+            # Print overall completion message
+            exam_name = self.exam_type.value.upper()
+            print(f"🎉 {exam_name} mock paper generation complete!")
+            print(f"📊 Total questions generated: {self._count_total_questions(paper)}")
 
             # If the paper is empty or invalid, return the initial structure
             if not paper or not isinstance(paper, dict):
