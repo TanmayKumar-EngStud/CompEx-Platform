@@ -412,33 +412,37 @@
          "TC": [1, 1],
          "SE": [1, 1]
       },
-      "nomenclature": "<questionType> - <questionTheme> - <focusedSkill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
-      "questionTheme": [
-         "Economics",
-         "Finance",
-         "Science and Technology",
-         "Sports",
-         "philosophy",
-         "History",
-         "Geography",
-         "Art",
-         "Literature",
-         "Fiction"
-      ],
-      "questionType": [
-         "tc-3",
-         "rc-s",
-         "rc-m",
-         "rc-l",
-         "sentence equivalence",
-         "critical reasoning",
-         "tc-1",
-         "tc-2"
-      ],
-      "difficulty": 5,
-      "vocabulary": 3,
-      "child-question": {
-         "nomenclature": "RC ChildQuestion - <focused_skill>",
+      "reading comprehension": {
+         "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}> - <paragraphs_{1-3}> - <child_questions_{2-4}>",
+         "questionType": {
+            "rc-s": {
+               "child_questions": 2,
+               "paragraphs": 1
+            },
+            "rc-m": {
+               "child_questions": 3,
+               "paragraphs": 2
+            },
+            "rc-l": {
+               "child_questions": 4,
+               "paragraphs": 3
+            }
+         },
+         "questionTheme": [
+            "Economics",
+            "Finance",
+            "Science and Technology",
+            "Sports",
+            "Philosophy",
+            "History",
+            "Geography",
+            "Art",
+            "Literature",
+            "Fiction",
+            "Social Sciences",
+            "Business",
+            "Current Affairs"
+         ],
          "focused_skill": [
             "Main Idea Question",
             "Inference Question",
@@ -446,20 +450,60 @@
             "Strengthen Question",
             "Weaken Question",
             "Evaluate Question",
-            "Conclusion Question"
-         ]
+            "Conclusion Question",
+            "Supporting Details",
+            "Tone and Attitude",
+            "Author's Purpose"
+         ],
+         "vocabulary": 3,
+         "difficulty": 5,
+         "child-question": {
+            "nomenclature": "RC ChildQuestion - <focused_skill>",
+            "focused_skill": [
+               "Main Idea Question",
+               "Inference Question",
+               "Assumption Question",
+               "Strengthen Question",
+               "Weaken Question",
+               "Evaluate Question",
+               "Conclusion Question",
+               "Supporting Details",
+               "Tone and Attitude",
+               "Author's Purpose"
+            ]
+         }
       },
-      "reading_comprehension": {
-         "question_types": ["rc-s", "rc-m", "rc-l"],
-         "combinations": [
-            ["rc-s", "rc-l", "rc-l"],
-            ["rc-m", "rc-m", "rc-l"],
-            ["rc-s", "rc-m", "rc-s", "rc-m"],
-            ["rc-l", "rc-m", "rc-m"]
-         ]
-      },
-      "text_completion": {
-         "question_types": ["tc-1", "tc-2", "tc-3"],
+      "text completion": {
+         "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
+         "questionType": {
+            "tc-1": {
+               "blanks": 1,
+               "description": "Single Blank Text Completion"
+            },
+            "tc-2": {
+               "blanks": 2,
+               "description": "Double Blank Text Completion"
+            },
+            "tc-3": {
+               "blanks": 3,
+               "description": "Triple Blank Text Completion"
+            }
+         },
+         "questionTheme": [
+            "Economics",
+            "Finance",
+            "Science and Technology",
+            "Sports",
+            "Philosophy",
+            "History",
+            "Geography",
+            "Art",
+            "Literature",
+            "Fiction",
+            "Social Sciences",
+            "Business",
+            "Current Affairs"
+         ],
          "focused_skill": [
             "Vocabulary in Context",
             "Contextual Analysis",
@@ -468,11 +512,30 @@
             "Critical Reading Comprehension",
             "Semantic Relationships",
             "Transitional Logic",
-            "Contrast and Support Clues"
-         ]
+            "Contrast and Support Clues",
+            "Logical Consistency",
+            "Tone Recognition"
+         ],
+         "vocabulary": 3,
+         "difficulty": 5
       },
-      "sentence_equivalence": {
-         "question_types": ["se"],
+      "sentence equivalence": {
+         "nomenclature": "SE - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
+         "questionTheme": [
+            "Economics",
+            "Finance",
+            "Science and Technology",
+            "Sports",
+            "Philosophy",
+            "History",
+            "Geography",
+            "Art",
+            "Literature",
+            "Fiction",
+            "Social Sciences",
+            "Business",
+            "Current Affairs"
+         ],
          "focused_skill": [
             "Synonym Recognition",
             "Contextual Vocabulary",
@@ -481,8 +544,12 @@
             "Semantic Equivalence",
             "Word Meaning Precision",
             "Structural Analysis",
-            "Tone and Connotation"
-         ]
+            "Tone and Connotation",
+            "Vocabulary in Context",
+            "Word Relationships"
+         ],
+         "vocabulary": 3,
+         "difficulty": 5
       }
    }
 }

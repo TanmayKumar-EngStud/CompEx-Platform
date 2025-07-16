@@ -54,7 +54,8 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 self.prompt, component)
 
             # Generate content
-            passages = questionContent.generate_QuestionPassage()
+            passages = questionContent.generate_questionPassage(
+                1)  # Critical Reasoning typically has 1 paragraph
             self.question_data["content"] = {"passages": passages}
 
             self.question_data["question"] = questionContent.generate_questionText(

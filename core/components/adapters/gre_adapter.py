@@ -26,6 +26,7 @@ from core.template import (
     QuestionOptions,
     QuestionAnswer
 )
+from core.components.adapters.debug_decorator import debug_log_method
 
 
 class GREAdapter:
@@ -236,6 +237,7 @@ class GRESimpleQuestionAdapter:
         self.component = component
         self.prompt = prompt
 
+    @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
     def generate_questionText(self) -> Optional[str]:
         """Generate question text (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -243,6 +245,7 @@ class GRESimpleQuestionAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_structure}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
     def generate_questionTitle(self) -> Optional[str]:
         """Generate question title (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -250,6 +253,7 @@ class GRESimpleQuestionAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionTitle\n{component_structure}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
     def generate_questionSolution(self, isNE: bool = False) -> Union[str, Tuple[str, float]]:
         """
         Generate question solution (GRE naming convention).
@@ -269,6 +273,7 @@ class GRESimpleQuestionAdapter:
         # supposed to work fine for NE types as well
         return self.component.generate_question_solution(instruction_prompt, instruction_prompt2, is_numeric_entry=isNE)
 
+    @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
     def generate_questionOptions(self, num_options: Optional[int] = None) -> Tuple[Dict[str, str], str]:
         """Generate question options (GRE naming convention)."""
         # The base component doesn't use num_options parameter, but we accept it for compatibility
@@ -287,6 +292,7 @@ class GREDataSufficiencyAdapter:
         self.component = component
         self.prompt = prompt
 
+    @debug_log_method(ExamType.GRE, QuestionType.DATA_SUFFICIENCY)
     def generate_questionText(self) -> Tuple[Optional[str], Optional[List[str]], Optional[str]]:
         """Generate question text components (GRE format: passage, statements, question)."""
         component_structure = self.component._get_component_instruction(
@@ -294,6 +300,7 @@ class GREDataSufficiencyAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_structure}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.DATA_SUFFICIENCY)
     def generate_questionTitle(self) -> Optional[str]:
         """Generate question title (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -301,6 +308,7 @@ class GREDataSufficiencyAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionTitle\n{component_structure}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.DATA_SUFFICIENCY)
     def generate_questionSolution(self) -> Tuple[Optional[str], Optional[str]]:
         """Generate question solution and answer (GRE naming convention)."""
         # Get solution
@@ -318,6 +326,7 @@ class GREDataSufficiencyAdapter:
 
         return solution, answer
 
+    @debug_log_method(ExamType.GRE, QuestionType.DATA_SUFFICIENCY)
     def generate_questionOptions(self) -> Tuple[List[str], str]:
         """Generate question options (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -335,6 +344,7 @@ class GREParentChildAdapter:
         self.component = component
         self.child_prompt = None
 
+    @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
     def generate_questionGraph(self) -> Optional[Dict[str, Any]]:
         """Generate question graph/table (for GRE Quants parent-child questions)."""
         component_structure = self.component._get_component_instruction(
@@ -342,6 +352,7 @@ class GREParentChildAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionGraph\n{component_structure}"
         return self.component.generate_question_metadata(instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
     def generate_parentTitle(self) -> Optional[str]:
         """Generate parent title (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -349,6 +360,7 @@ class GREParentChildAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: ParentTitle\n{component_structure}"
         return self.component.generate_parent_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
     def generate_childQuestionTitle(self, index: int) -> Optional[str]:
         """Generate child question title (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -359,6 +371,7 @@ class GREParentChildAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Current Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionTitle\n{component_structure}"
         return self.component.generate_child_question_title(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
     def generate_childQuestion(self, index: int, child_prompt: str) -> Optional[str]:
         """Generate child question text (GRE naming convention)."""
         self.child_prompt = child_prompt
@@ -367,6 +380,7 @@ class GREParentChildAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Current Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionText\n{component_structure}"
         return self.component.generate_child_question(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
     def generate_childOptions(self, index: int) -> Tuple[Optional[List[str]], Optional[str]]:
         """Generate child question options (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -374,6 +388,7 @@ class GREParentChildAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Current Active Child Prompt: {self.child_prompt}\nMode: ChildOptions\n{component_structure}"
         return self.component.generate_child_options(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
     def generate_childSolution(self, index: int) -> Optional[str]:
         """Generate child question solution (GRE naming convention)."""
         component_structure = self.component._get_component_instruction(
@@ -381,6 +396,7 @@ class GREParentChildAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Current Active Child Prompt: {self.child_prompt}\nMode: ChildSolution\n{component_structure}"
         return self.component.generate_child_solution(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
     def generate_passages(self) -> Optional[str]:
         """Generate passages for reading comprehension (GRE naming convention)."""
         # For RC questions, we need to generate the passage content

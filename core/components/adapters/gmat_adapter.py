@@ -1,3 +1,5 @@
+
+
 """
 GMAT-Specific Adapter
 
@@ -6,7 +8,6 @@ question components, ensuring backward compatibility with existing GMAT
 question generators.
 
 """
-
 from typing import Any, Dict, List, Optional, Tuple, Union
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
@@ -28,6 +29,7 @@ from core.template import (
     QuestionOptions,
     QuestionAnswer
 )
+from core.components.adapters.debug_decorator import debug_log_method
 
 
 class GMATAdapter:
@@ -268,6 +270,7 @@ class GMATSimpleQuestionAdapter:
         self.prompt = prompt
         self.component = component
 
+    @debug_log_method(ExamType.GMAT, QuestionType.CRITICAL_REASONING)
     def generate_QuestionPassage(self, idx: int) -> str:  # ✅
         """Generate question passage/argument for Critical Reasoning [Not for Reading Comprehension](GMAT naming convention).
             Args:
@@ -282,6 +285,7 @@ class GMATSimpleQuestionAdapter:
             total_passage += f"{self.component.generate_question_passage(instruction_prompt)}\n"
         return total_passage
 
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
     def generate_questionText(self) -> str:  # ✅
         """Generate question text (GMAT naming convention)."""
         # Get component template and combine with prompt
@@ -290,6 +294,7 @@ class GMATSimpleQuestionAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionText\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
     def generate_questionTitle(self) -> str:  # ✅
         """Generate question title (GMAT naming convention)."""
         # Get component template and combine with prompt
@@ -298,6 +303,7 @@ class GMATSimpleQuestionAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionTitle\n\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
     def generate_questionSolution(self) -> str:  # ✅
         """Generate question solution (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -305,6 +311,7 @@ class GMATSimpleQuestionAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionSolution\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt, is_numeric_entry=False)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
     def generate_questionOptions(self) -> Tuple[List[str], str]:  # ✅
         """Generate question options (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -321,6 +328,7 @@ class GMATDataSufficiencyAdapter:
         self.component = component
         self.prompt = prompt
 
+    @debug_log_method(ExamType.GMAT, QuestionType.DATA_SUFFICIENCY)
     def generate_questionGraph(self) -> Optional[Dict[str, Any]]:
         """Generate question graph/table."""
         component_template = self.component._get_component_instruction(
@@ -328,6 +336,7 @@ class GMATDataSufficiencyAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionGraph\n{component_template}"
         return self.component.generate_question_graph(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.DATA_SUFFICIENCY)
     def generate_questionText(self) -> Tuple[Optional[str], Optional[List[str]], Optional[str]]:
         """Generate question text components."""
         component_template = self.component._get_component_instruction(
@@ -335,6 +344,7 @@ class GMATDataSufficiencyAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionText\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.DATA_SUFFICIENCY)
     def generate_questionTitle(self) -> Optional[str]:
         """Generate question title."""
         component_template = self.component._get_component_instruction(
@@ -342,6 +352,7 @@ class GMATDataSufficiencyAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionTitle\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.DATA_SUFFICIENCY)
     def generate_questionSolution(self) -> str:
         """Generate question solution only (plain text)."""
         component_template = self.component._get_component_instruction(
@@ -349,6 +360,7 @@ class GMATDataSufficiencyAdapter:
         instruction_prompt = f"{self.prompt}\nmode:- QuestionSolution\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.DATA_SUFFICIENCY)
     def generate_questionOptions(self) -> Tuple[Dict[str, str], str]:
         """Generate question options and answer."""
         component_template = self.component._get_component_instruction(
@@ -367,14 +379,16 @@ class GMATParentChildAdapter:
         self.component = component
         self.flow = []
 
-    def generate_parentQuestion(self) -> Optional[str]:
+    @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
+    def generate_parentQuestionPassage(self) -> Optional[str]:
         """Generate parent question passage for reading comprehension (GMAT naming convention)."""
         # For RC questions, we need to generate the passage content
         component_structure = self.component._get_component_instruction(
             'QuestionMetadata')
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionPassage\n{component_structure}"
-        result = self.component.generate_question_metadata(instruction_prompt, i=1, total=1)
-        
+        result = self.component.generate_question_passage(
+            instruction_prompt, i=1, total=1)
+
         # Extract the passage text from the JSON response
         if result and isinstance(result, dict) and "passage" in result:
             return result["passage"]
@@ -383,6 +397,33 @@ class GMATParentChildAdapter:
         else:
             return None
 
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
+    def generate_parentQuestionGraphs(self) -> Optional[str]:
+        """Generate parent question graphs for reading comprehension (GMAT naming convention)."""
+        component_structure = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionGraph\n{component_structure}"
+        result = self.component.generate_question_graph(instruction_prompt)
+
+        if result and isinstance(result, dict):
+            return result
+        else:
+            return None
+
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
+    def generate_parentQuestionTable(self) -> Optional[str]:
+        """Generate parent question table for reading comprehension (GMAT naming convention)."""
+        component_structure = self.component._get_component_instruction(
+            'QuestionMetadata')
+        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionTable\n{component_structure}"
+        result = self.component.generate_question_table(instruction_prompt)
+
+        if result and isinstance(result, dict):
+            return result
+        else:
+            return None
+
+    @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
     def generate_parentTitle(self) -> Optional[str]:
         """Generate parent title."""
         self.flow.append('ParentTitle')
@@ -391,6 +432,7 @@ class GMATParentChildAdapter:
         instruction_prompt = f"{self.prompt}\n mode: ParentTitle\n{component_template}"
         return self.component.generate_parent_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
     def generate_childQuestionTitle(self, index: int) -> Optional[str]:
         """Generate child question title."""
         self.flow.append('ChildTitle')
@@ -402,6 +444,7 @@ class GMATParentChildAdapter:
         instruction_prompt = f"{self.child_prompt}\n{component_template}"
         return self.component.generate_child_question_title(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
     def generate_childQuestion(self, index: int, child_prompt: str) -> Optional[str]:
         """Generate child question text."""
         self.flow.append('ChildQuestion')
@@ -411,6 +454,7 @@ class GMATParentChildAdapter:
         instruction_prompt = f"Child Prompt: {self.child_prompt}\n{component_template}"
         return self.component.generate_child_question(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
     def generate_childOptions(self, index: int) -> Tuple[Optional[List[str]], Optional[str]]:
         """Generate child question options."""
         component_template = self.component._get_component_instruction(
@@ -421,6 +465,7 @@ class GMATParentChildAdapter:
                 f"{self.__class__.__name__}.{self.generate_childOptions.__name__} was called before childQuestion({self.__class__.__name__}.{self.generate_childQuestion.__name__}), thus child_prompt was not saved")
         return self.component.generate_child_options(index, instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
     def generate_childSolution(self, index: int) -> Optional[str]:
         """Generate child question solution."""
         component_template = self.component._get_component_instruction(
@@ -440,6 +485,7 @@ class GMATGraphicInterpretationAdapter:
         self.component = component
         self.prompt = prompt
 
+    @debug_log_method(ExamType.GMAT, QuestionType.GRAPHIC_INTERPRETATION)
     def generate_questionGraph(self) -> Optional[Dict[str, Any]]:
         """Generate question graph."""
         component_template = self.component._get_component_instruction(
@@ -447,6 +493,7 @@ class GMATGraphicInterpretationAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionGraph\n{component_template}"
         return self.component.generate_question_graph(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.GRAPHIC_INTERPRETATION)
     def generate_questionText(self) -> Optional[str]:
         """Generate question text."""
         # Get component template and combine with prompt
@@ -455,6 +502,7 @@ class GMATGraphicInterpretationAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.GRAPHIC_INTERPRETATION)
     def generate_questionTitle(self) -> Optional[str]:
         """Generate question title."""
         # Get component template and combine with prompt
@@ -463,6 +511,7 @@ class GMATGraphicInterpretationAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionTitle\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.GRAPHIC_INTERPRETATION)
     def generate_questionSolution(self) -> Optional[str]:
         """Generate question solution."""
         component_template = self.component._get_component_instruction(
@@ -470,6 +519,7 @@ class GMATGraphicInterpretationAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.GRAPHIC_INTERPRETATION)
     def generate_questionOptions(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate question options."""
         component_template = self.component._get_component_instruction(
@@ -486,6 +536,7 @@ class GMATTableAnalysisAdapter:
         self.component = component
         self.prompt = prompt
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TABLE_ANALYSIS)
     def generate_QuestionTable(self, no_rows: int, no_cols: int) -> Optional[Dict[str, Any]]:
         """Generate question table (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -493,6 +544,7 @@ class GMATTableAnalysisAdapter:
         instruction_prompt = f"{self.prompt}\n{component_template}"
         return self.component.generate_question_table(instruction_prompt, no_rows, no_cols)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TABLE_ANALYSIS)
     def generate_QuestionText(self) -> Optional[str]:
         """Generate question text (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -500,6 +552,7 @@ class GMATTableAnalysisAdapter:
         instruction_prompt = f"{self.prompt}\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TABLE_ANALYSIS)
     def generate_QuestionTitle(self) -> Optional[str]:
         """Generate question title (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -507,6 +560,7 @@ class GMATTableAnalysisAdapter:
         instruction_prompt = f"{self.prompt}\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TABLE_ANALYSIS)
     def generate_QuestionSolution(self) -> Optional[str]:
         """Generate question solution (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -514,6 +568,7 @@ class GMATTableAnalysisAdapter:
         instruction_prompt = f"{self.prompt}\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TABLE_ANALYSIS)
     def generate_QuestionOptions(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate question options (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -531,6 +586,7 @@ class GMATTwoPartAnalysisAdapter:
         self.component = component
         self.child_prompt = None
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TWO_PART_ANALYSIS)
     def generate_ParentQuestionContent(self) -> Optional[Dict[str, Any]]:
         """Generate parent question content (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -538,6 +594,7 @@ class GMATTwoPartAnalysisAdapter:
         instruction_prompt = f"{self.prompt}\nMode: \n{component_template}"
         return self.component.generate_parent_question_content(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TWO_PART_ANALYSIS)
     def generate_QuestionText(self, difficulties: List[int]) -> List[str]:
         """Generate question texts (GMAT naming convention).
             Args:
@@ -550,6 +607,7 @@ class GMATTwoPartAnalysisAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_template}"
         return self.component.generate_question_text(instruction_prompt, difficulties)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TWO_PART_ANALYSIS)
     def generate_QuestionTitle(self) -> Optional[str]:
         """Generate question title (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -557,6 +615,7 @@ class GMATTwoPartAnalysisAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode:- QuestionTitle\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TWO_PART_ANALYSIS)
     def generate_QuestionSolution(self) -> List[str]:
         """Generate question solutions (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -564,6 +623,7 @@ class GMATTwoPartAnalysisAdapter:
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionSolution\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.TWO_PART_ANALYSIS)
     def generate_QuestionOptions(self) -> Tuple[Optional[Any], Optional[Any]]:
         """Generate question options (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -582,6 +642,7 @@ class GMATMultiSourceReasoningAdapter:
         self.child_prompt = None
         self.child_idx = 0
 
+    @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
     def generate_SourceInfo(self, prompt: str, idx: int) -> Optional[Dict[str, Any]]:
         """Generate source information (GMAT naming convention).
             Args: 
@@ -596,6 +657,7 @@ class GMATMultiSourceReasoningAdapter:
         instruction_prompt = f"Main Prompt:- {self.prompt}\n Mode:- Source_info{idx} Prompt: {prompt}\n{component_template}"
         return self.component.generate_source_info(instruction_prompt, idx)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
     def generate_MainQuestionTitle(self) -> Optional[str]:
         """Generate main question title (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -603,6 +665,7 @@ class GMATMultiSourceReasoningAdapter:
         instruction_prompt = f"Main Prompt:- {self.prompt}\nMode:- MainQuestionTitle\n{component_template}"
         return self.component.generate_main_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
     def generate_QuestionText(self, child_prompt: str, idx: int) -> Optional[str]:
         """Generate question text (GMAT naming convention)."""
         self.child_prompt = child_prompt
@@ -612,6 +675,7 @@ class GMATMultiSourceReasoningAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionText of question number: {idx}\n{component_template}"
         return self.component.generate_question_text(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
     def generate_QuestionTitle(self) -> Optional[str]:
         """Generate question title (GMAT naming convention)."""
         if self.child_prompt is None:
@@ -622,6 +686,7 @@ class GMATMultiSourceReasoningAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionTitle of question number: {self.child_idx}\n{component_template}"
         return self.component.generate_question_title(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
     def generate_QuestionSolution(self) -> Optional[str]:
         """Generate question solution (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(
@@ -629,6 +694,7 @@ class GMATMultiSourceReasoningAdapter:
         instruction_prompt = f"Main Prompt: {self.prompt}\n Active Child Prompt: {self.child_prompt}\nMode: ChildQuestionSolution of question number: {self.child_idx}\n{component_template}"
         return self.component.generate_question_solution(instruction_prompt)
 
+    @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
     def generate_QuestionOptions(self, question_style: str) -> Union[Tuple[Any, Any], Any]:
         """Generate question options (GMAT naming convention)."""
         component_template = self.component._get_component_instruction(

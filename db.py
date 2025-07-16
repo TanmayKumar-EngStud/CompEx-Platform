@@ -22,7 +22,7 @@ class DB:
         self.question_type = ""
         self.current_question_type = ""
         self.question_correction_validator = ""
-        
+
         # Define answer type mappings
         self.answer_type_mappings = {
             "Yes/No": {"positive": "Yes", "negative": "No"},
@@ -40,49 +40,50 @@ class DB:
     def process_table_analysis_answers(self, problem_id: int, answer_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
         Process Table Analysis answers and prepare them for database insertion.
-        
+
         Args:
             problem_id: The ID of the problem
             answer_data: Dictionary containing answer group and options
-            
+
         Returns:
             List of dictionaries containing processed options ready for database insertion
         """
         processed_options = []
-        
+
         # Get the answer group and options
         group = answer_data.get('group')
         options = answer_data.get('options', {})
-        
+
         # Get the mapping for this answer type
         mapping = self.answer_type_mappings.get(group)
         if not mapping:
             raise ValueError(f"Unknown answer group type: {group}")
-            
+
         # Process each option
         for option_text, option_data in options.items():
             is_correct = option_data.get('isCorrect', False)
             value = option_data.get('value')
-            
+
             processed_options.append({
                 'problemid': problem_id,
                 'optiontext': option_text,
                 'iscorrect': is_correct,
                 'group': group
             })
-            
+
         return processed_options
 
     def create_problem_options(self, problem_id: int, answer_data: Dict[str, Any]) -> None:
         """
         Create problem options in the database.
-        
+
         Args:
             problem_id: The ID of the problem
             answer_data: Dictionary containing answer data
         """
-        processed_options = self.process_table_analysis_answers(problem_id, answer_data)
-        
+        processed_options = self.process_table_analysis_answers(
+            problem_id, answer_data)
+
         # Create all options in the database
         for option in processed_options:
             self.db.problemoptions.create(data=option)
@@ -139,34 +140,40 @@ class DB:
             "Q": "Quants",
             "IR": "Integrated Reasoning"
         }
-        
+
         # Handle empty or malformed exam_section
         if not exam_section or "_" not in exam_section:
-            raise ValueError(f"Invalid exam section format: '{exam_section}'. Expected format: 'EXAM_SECTION' (e.g., 'GMAT_Q', 'GRE_V')")
-        
+            raise ValueError(
+                f"Invalid exam section format: '{exam_section}'. Expected format: 'EXAM_SECTION' (e.g., 'GMAT_Q', 'GRE_V')")
+
         try:
-            exam_name, section = exam_section.split("_", 1)  # Split only on first underscore
+            exam_name, section = exam_section.split(
+                "_", 1)  # Split only on first underscore
         except ValueError:
-            raise ValueError(f"Invalid exam section format: '{exam_section}'. Expected format: 'EXAM_SECTION'")
-        
+            raise ValueError(
+                f"Invalid exam section format: '{exam_section}'. Expected format: 'EXAM_SECTION'")
+
         # Validate that section is not empty
         if not section:
-            raise ValueError(f"Invalid section name: empty section in '{exam_section}'")
-            
+            raise ValueError(
+                f"Invalid section name: empty section in '{exam_section}'")
+
         try:
             section_name = section_components[section]
         except KeyError:
-            raise ValueError(f"Invalid section name: '{section}'. Valid sections are: {list(section_components.keys())}")
-            
+            raise ValueError(
+                f"Invalid section name: '{section}'. Valid sections are: {list(section_components.keys())}")
+
         exam = self.db.examtypes.find_first(where={'name': exam_name})
         if not exam:
             raise ValueError(f"Exam type not found: '{exam_name}'")
-            
+
         section_obj = self.db.sections.find_first(
             where={'name': section_name, 'examtypeid': exam.examtypeid})
         if not section_obj:
-            raise ValueError(f"Section not found: '{section_name}' for exam '{exam_name}'")
-            
+            raise ValueError(
+                f"Section not found: '{section_name}' for exam '{exam_name}'")
+
         self.current_exam_id = int(exam.examtypeid)
         self.current_section_id = int(section_obj.sectionid)
         return None
@@ -216,13 +223,14 @@ class DB:
             # Ensure text field has a value (required field, handle null/empty)
             question_text = question.get('question') or ''
             if not question_text or question_text == '':
-                question_text = question.get('title') or 'Question text not available'
-            
+                question_text = question.get(
+                    'title') or 'Question text not available'
+
             # Ensure title field has a value (required field, handle null/empty)
             question_title = question.get('title') or ''
             if not question_title or question_title == '':
                 question_title = f"Question {question.get('type', 'Unknown')} - Difficulty {question.get('difficulty', 1)}"
-            
+
             question_data = {
                 "type": question.get('type', ''),
                 "prompt": question.get('prompt', ''),
@@ -239,9 +247,11 @@ class DB:
             }
 
             if isChildQuestion:
-                question_data["problemsSetId"] = self.current_problemset_id  # Direct field assignment
+                # Direct field assignment
+                question_data["problemsSetId"] = self.current_problemset_id
             if isMockQuestion:
-                question_data["mocksectionid"] = self.current_mocksection_id  # Direct field assignment
+                # Direct field assignment
+                question_data["mocksectionid"] = self.current_mocksection_id
                 question_data["mockquestionnumber"] = self.current_mockquestion_number
             if self.question_type == "NE":
                 question_data["metadata"] = json.dumps(
@@ -277,7 +287,7 @@ class DB:
 
     def _register_problem_options(self, option, answers, group=None):
         """Register problem options in the database.
-        
+
         Args:
             option: The option text or object
             answers: The correct answers (can be dict, list, or single value)
@@ -289,13 +299,13 @@ class DB:
             # {"group": "Acceptable/Not Acceptable", "options": {"option1": {"value": "Acceptable", "isCorrect": true}, ...}}
             answer_group = None
             is_correct = False
-            
+
             # Find the appropriate answer group based on the question content
             for group_name, mapping in self.answer_type_mappings.items():
                 if mapping["positive"] in str(answers) or mapping["negative"] in str(answers):
                     answer_group = group_name
                     break
-            
+
             # Determine if this option is correct based on the answer mapping
             if isinstance(answers, dict) and option in answers:
                 answer_value = answers[option]
@@ -307,14 +317,14 @@ class DB:
                         if answer_value == mapping["positive"]:
                             is_correct = True
                             break
-            
+
             option_data = {
                 'optiontext': str(option),
                 'iscorrect': is_correct,
                 'problemid': self.current_problem_id,  # Direct field assignment
                 'group': answer_group if answer_group else group
             }
-            
+
         else:
             # Handle all other question types as before
             correct_answers = []
@@ -340,9 +350,11 @@ class DB:
                                     is_correct = True
                                     break
                         else:
-                            is_correct = answers[option].lower().strip() == ansVal.lower().strip()
+                            is_correct = answers[option].lower(
+                            ).strip() == ansVal.lower().strip()
                     except KeyError:
-                        print(f"Warning: Option '{option}' not found in answers dictionary")
+                        print(
+                            f"Warning: Option '{option}' not found in answers dictionary")
                         is_correct = False
             elif isinstance(answers, list):
                 is_correct = option in answers
@@ -389,7 +401,8 @@ class DB:
                 tagid = self._register_tag(tag)
                 tag_data = {
                     'tagid': tagid,  # Direct field assignment
-                    'problemsSetId': self.current_problemset_id  # Direct field assignment (fix: was using current_problem_id)
+                    # Direct field assignment (fix: was using current_problem_id)
+                    'problemsSetId': self.current_problemset_id
                 }
                 self.db.problemssettags.create(
                     data=tag_data
@@ -408,20 +421,20 @@ class DB:
 
             # remove anything after comma
             tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag
-            
+
             # Truncate tag to 50 characters maximum (database limit)
             # Try to truncate at word boundaries for better readability
             MAX_TAG_LENGTH = 50
             if len(tag) > MAX_TAG_LENGTH:
                 original_tag = tag
                 # Try to truncate at the last complete word within the limit
-                truncated = tag[:MAX_TAG_LENGTH]
+                truncated = tag.split(',')[0]  # tag[:MAX_TAG_LENGTH]
                 last_space = truncated.rfind(' ')
                 if last_space > MAX_TAG_LENGTH * 0.7:  # Only truncate at word boundary if it's not too short
                     tag = truncated[:last_space].strip()
                 else:
                     tag = truncated.strip()
-                print(f"Warning: Tag truncated from '{original_tag}' to '{tag}' (length: {len(tag)})")
+                # print(f"Warning: Tag truncated from '{original_tag}' to '{tag}' (length: {len(tag)})")
             tagid = self.db.tags.find_first(where={
                 'name': tag,
                 'examtypeid': self.current_exam_id,
@@ -454,19 +467,22 @@ class DB:
             title = parent_question.get('title') or ''
             if not title or title == '':
                 title = f"{parent_question.get('type', 'Question')} - {exam_section}"
-            
+
             # Determine content type and data
             problemsset_data = {
                 'type': parent_question.get('type', ''),
                 'content': json.dumps(parent_question.get('content', {})),
                 'title': title,  # Ensure title is not empty
-                'sectionid': self.current_section_id,    # Direct field assignment (required)
-                'examtypeid': self.current_exam_id       # Direct field assignment (required)
+                # Direct field assignment (required)
+                'sectionid': self.current_section_id,
+                # Direct field assignment (required)
+                'examtypeid': self.current_exam_id
             }
 
             if isMockQuestion:
                 problemsset_data['mockquestionnumber'] = self.current_mockquestion_number
-                problemsset_data['mocksectionid'] = self.current_mocksection_id  # Direct field assignment
+                # Direct field assignment
+                problemsset_data['mocksectionid'] = self.current_mocksection_id
 
             # Create problem set
             try:

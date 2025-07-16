@@ -303,8 +303,8 @@ class BasePromptGenerator(ABC):
             Formatted prompt string based on nomenclature pattern
         """
         section_key = self._get_legacy_section_key()
-        section_config = self.customizations.get(section_key, {})
-        question_config = section_config.get(question_type, {})
+        section_config = self.customizations.get(section_key, None)
+        question_config = section_config.get(question_type, None)
 
         # Try to get nomenclature from question-specific config first
         nomenclature = question_config.get(
@@ -369,6 +369,12 @@ class BasePromptGenerator(ABC):
                         break
                 break
 
+        # Reset RC state for each prompt
+        if hasattr(self, '_selected_rc_type'):
+            delattr(self, '_selected_rc_type')
+        if hasattr(self, '_selected_rc_config'):
+            delattr(self, '_selected_rc_config')
+
         # Second pass: substitute all variables
         for var in variables:
             var_clean = var
@@ -390,8 +396,50 @@ class BasePromptGenerator(ABC):
 
             # Handle questionType specially - use the passed question_type parameter
             if var == "questionType" and question_type:
-                substituted = substituted.replace(
-                    f"<{var}>", f"<{question_type}>")
+                if question_type == "reading comprehension":
+                    # For RC, select from available questionType options
+                    rc_config = question_config.get("questionType", {})
+                    if isinstance(rc_config, dict):
+                        rc_types = list(rc_config.keys())
+                        selected_rc_type = self.get_random_element(rc_types)
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<{selected_rc_type}>")
+                        # Store selected RC type for paragraph and child_question substitution
+                        self._selected_rc_type = selected_rc_type
+                        self._selected_rc_config = rc_config[selected_rc_type]
+                    else:
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<{question_type}>")
+                elif question_type == "text completion":
+                    # For TC, select from available questionType options
+                    tc_config = question_config.get("questionType", {})
+                    if isinstance(tc_config, dict):
+                        tc_types = list(tc_config.keys())
+                        selected_tc_type = self.get_random_element(tc_types)
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<{selected_tc_type}>")
+                    else:
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<{question_type}>")
+                else:
+                    substituted = substituted.replace(
+                        f"<{var}>", f"<{question_type}>")
+                continue
+
+            # Handle paragraph and child_question variables for RC
+            if var.startswith("paragraphs_") or var.startswith("child_questions_"):
+                if hasattr(self, '_selected_rc_config'):
+                    if var.startswith("paragraphs_"):
+                        paragraph_count = self._selected_rc_config.get("paragraphs", 1)
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<paragraphs_{paragraph_count}>")
+                    elif var.startswith("child_questions_"):
+                        child_count = self._selected_rc_config.get("child_questions", 1)
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<child_questions_{child_count}>")
+                else:
+                    # Fallback if no RC type selected
+                    substituted = substituted.replace(f"<{var}>", f"<{var}>")
                 continue
 
             # Handle slash-separated variables (e.g., focused_skill_1/focused_skill_2/focused_skill_3)
@@ -534,6 +582,21 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(f"<{var}>", "<general>")
 
         return substituted
+
+    def get_rc_configuration(self) -> Dict[str, Any]:
+        """
+        Get the selected RC configuration for the last generated prompt.
+        
+        Returns:
+            Dictionary containing selected RC type and configuration,
+            or empty dict if no RC type was selected.
+        """
+        if hasattr(self, '_selected_rc_type') and hasattr(self, '_selected_rc_config'):
+            return {
+                'type': self._selected_rc_type,
+                'config': self._selected_rc_config
+            }
+        return {}
 
     def _filter_values_by_type(
         self,

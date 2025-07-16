@@ -139,7 +139,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
                 self.prompt, component)
 
             # Generate parent content
-            passages = questionContent.generate_parentQuestion()
+            passages = questionContent.generate_parentQuestionPassage()
             self.question_data["content"] = {"passages": passages}
             self.question_data["title"] = questionContent.generate_parentTitle()
 

@@ -361,45 +361,98 @@
          "RC": [1, 1],
          "CR": [1, 1]
       },
-      "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
-      "questionTheme": [
-         "Science and Technology",
-         "Business",
-         "Economics",
-         "Humanities",
-         "Social Sciences",
-         "Current Affairs",
-         "Global Issues",
-         "Health and Medicine",
-         "Environment and Sustainability",
-         "Art and Culture",
-         "Education and Learning",
-         "Sports and Recreation",
-         "Technology and Innovation"
-      ],
-      "questionType": [
-         "sentence correction",
-         "rc-s",
-         "rc-m",
-         "rc-l",
-         "critical reasoning"
-      ],
-      "difficulty": 5,
-      "vocabulary": 3,
-      "child-question": {
-         "nomenclature": "RC ChildQuestion - <focused_skill>",
+      "critical reasoning": {
+         "nomenclature": "CR - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
+         "questionTheme": [
+            "Science and Technology",
+            "Business",
+            "Economics",
+            "Humanities",
+            "Social Sciences",
+            "Current Affairs",
+            "Global Issues",
+            "Health and Medicine",
+            "Environment and Sustainability",
+            "Art and Culture",
+            "Education and Learning",
+            "Sports and Recreation",
+            "Technology and Innovation"
+         ],
+         "focused_skill": [
+            "Weaken the argument",
+            "Strengthen the argument",
+            "Find the assumption",
+            "Complete the argument",
+            "Paradox",
+            "Evaluate the conclusion",
+            "Structure of the argument",
+            "Draw inference/conclusion",
+            "Method of reasoning",
+            "Parallel reasoning"
+         ],
+         "vocabulary": 3,
+         "difficulty": 5
+      },
+      "reading comprehension": {
+         "nomenclature": "<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}> - <paragraphs_{1-3}> - <child_questions_{1-3}>",
+         "questionType": {
+            "rc-s": {
+               "child_questions": 2,
+               "paragraphs": 1
+            },
+            "rc-m": {
+               "child_questions": 3,
+               "paragraphs": 2
+            },
+            "rc-l": {
+               "child_questions": 4,
+               "paragraphs": 3
+            }
+         },
+         "questionTheme": [
+            "Science and Technology",
+            "Business",
+            "Economics",
+            "Humanities",
+            "Social Sciences",
+            "Current Affairs",
+            "Global Issues",
+            "Health and Medicine",
+            "Environment and Sustainability",
+            "Art and Culture",
+            "Education and Learning",
+            "Sports and Recreation",
+            "Technology and Innovation"
+         ],
          "focused_skill": [
             "Main Idea Question",
-            "Weaken the argument",
-            "structure of the argument boldface structure question",
-            "draw inference/conclusion",
-            "structure of the argument dialogue structure question",
-            "strengthen the argument",
-            "find the assumption",
-            "complete the argument",
-            "paradox",
-            "evaluate the conclusion"
-         ]
+            "Supporting Details",
+            "Inference Question",
+            "Tone and Attitude",
+            "Author's Purpose",
+            "Strengthen the passage",
+            "Weaken the passage",
+            "Function of a sentence",
+            "Logical Structure",
+            "Application Question"
+         ],
+         "vocabulary": 3,
+         "difficulty": 5,
+         "child-question": {
+            "nomenclature": "RC ChildQuestion - <focused_skill>",
+            "focused_skill": [
+               "Main Idea Question",
+               "Supporting Details",
+               "Inference Question",
+               "Tone and Attitude",
+               "Author's Purpose",
+               "Strengthen the passage",
+               "Weaken the passage",
+               "Function of a sentence",
+               "Logical Structure",
+               "Application Question"
+            ]
+         }
       }
    },
    "integrated reasoning": {

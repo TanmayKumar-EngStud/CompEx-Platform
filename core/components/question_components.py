@@ -36,7 +36,6 @@ from core.enums.question_types import QuestionType
 from core.enums.difficulty_levels import DifficultyLevel
 from core.utilities.json_utils import refine_response
 from core.utilities.validation_utils import validate_prompt
-from core.utilities.debug_utils import log_system_instruction
 
 
 class QuestionGenerationException(Exception):
@@ -407,37 +406,6 @@ class BaseQuestionComponent(ABC):
                 self.global_state["request_count"] = 0
             return None
 
-    def _log_debug_info(self, component_name: str, prompt_used: str, response: Optional[str] = None,
-                        error: Optional[str] = None, call_priority_index: int = 1, success: bool = False):
-        """
-        Log debug information to system_instructions/in_the_run/ directory.
-
-        Args:
-            component_name: Name of the component being generated
-            prompt_used: Actual prompt sent to AI
-            response: AI response (if any)
-            error: Error message (if any)
-            call_priority_index: Order of component call (1, 2, 3, ...)
-            success: Whether the generation was successful
-        """
-        try:
-            # Get the component template for logging
-            component_template = self._get_component_instruction(
-                component_name)
-
-            log_system_instruction(
-                exam_type=self.exam_type,
-                question_type=self.question_type or QuestionType.PROBLEM_SOLVING,
-                component_name=component_name,
-                system_instruction=self.system_instructions,
-                prompt=prompt_used,
-                component_system_instruction=component_template,
-                response=response,
-                call_priority_index=call_priority_index
-            )
-        except Exception as e:
-            # Don't let debug logging break the generation process
-            print(f"Debug logging failed: {e}")
 
     def _retry_generate(self, func, *args, **kwargs) -> Any:
         """
@@ -478,18 +446,6 @@ class BaseQuestionComponent(ABC):
                 result = func(*args, warn=(attempt > 0), **kwargs)
 
                 if result is not None:  # Accept any non-None result
-                    # Get the actual prompt that was sent to AI
-                    actual_prompt_used = getattr(
-                        self, '_last_prompt_sent', "Prompt not captured")
-
-                    # Log successful generation
-                    self._log_debug_info(
-                        component_name=parent_function,
-                        prompt_used=actual_prompt_used,
-                        response=str(result) if result else None,
-                        call_priority_index=self._call_priority_counter,
-                        success=True
-                    )
                     return result
                 failure_reason = "No result returned (None)"
                 if (attempt > 0):  # Only print retry messages for attempts 2 and 3
@@ -508,17 +464,7 @@ class BaseQuestionComponent(ABC):
                     wait_time = 2 ** attempt
                     time.sleep(wait_time)
 
-        # All attempts failed - log debug information
-        actual_prompt_used = getattr(
-            self, '_last_prompt_sent', "Prompt not captured")
-        self._log_debug_info(
-            component_name=parent_function,
-            prompt_used=actual_prompt_used,
-            response=last_response,
-            error=last_error or failure_reason,
-            call_priority_index=self._call_priority_counter,
-            success=False
-        )
+        # All attempts failed
 
         if last_error:
             print(
@@ -1115,6 +1061,54 @@ class ParentChildQuestion(BaseQuestionComponent):
                 else:
                     # Fallback - return the whole message
                     return message
+            return None
+
+        return self._retry_generate(_generate)
+
+    def generate_question_graph(self, instruction_prompt: str) -> Optional[Dict[str, Any]]:
+        """Generate question graph/table if needed."""
+        def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
+            response = self._get_response(instruction_prompt, warn)
+
+            if not response:
+                return None
+
+            message = self._process_json_response(
+                response,
+                ["graph/table", "graph"],
+                "ParentChildQuestion generate_question_graph"
+            )
+
+            if message:
+                for key in ["graph/table", "graph", "table"]:
+                    value = message.get(key)
+                    if value is not None:
+                        return value
+                return message
+            return None
+
+        return self._retry_generate(_generate)
+
+    def generate_question_table(self, instruction_prompt: str) -> Optional[Dict[str, Any]]:
+        """Generate question table if needed."""
+        def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:
+            response = self._get_response(instruction_prompt, warn)
+
+            if not response:
+                return None
+
+            message = self._process_json_response(
+                response,
+                ["tables", "content", "table"],
+                "ParentChildQuestion generate_question_table"
+            )
+
+            if message:
+                for key in ["tables", "content", "table"]:
+                    value = message.get(key)
+                    if value is not None:
+                        return value
+                return message
             return None
 
         return self._retry_generate(_generate)
