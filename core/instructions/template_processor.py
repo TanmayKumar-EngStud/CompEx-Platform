@@ -237,6 +237,11 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
             template = re.sub(tc1_pattern, r'\1', template, flags=re.DOTALL)
             template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)
             template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
+        elif question_type == QuestionType.GRAPHIC_INTERPRETATION:
+            # GI questions use TC-2 format (fill-in-the-blank with 2 blanks)
+            template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
+            template = re.sub(tc2_pattern, r'\1', template, flags=re.DOTALL)
+            template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
         else:
             template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
             template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)

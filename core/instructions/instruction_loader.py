@@ -142,7 +142,7 @@ class InstructionLoader:
             "sentence_correction": "2-sentence_correction",
             "text_completion": "3-text_completion",
             "sentence_equivalence": "2-sentence_equivalence",
-            "graphic_interpretation": "0-graphic_interpretation",
+            "graphic_interpretation": "3-text_completion",
             "table_analysis": "1-table_analysis",
             "two_part_analysis": "2-two_part_analysis",
             "multi_source_reasoning": "3-multi_source_reasoning",
@@ -153,7 +153,7 @@ class InstructionLoader:
             "parent_stimulus": "2-parent_stimulus",
             "child_question": "3-child_question",
             "multi_source": "3-multi_source",
-            "dichotomous_choice": "1-dichotomous_choice",
+            "dichotomous_choice": "1-dichotomous-choice",
             "table": "4-table"
         }
 
@@ -169,9 +169,9 @@ class InstructionLoader:
                 "parentStimulus": "parent_stimulus",
                 "childQuestion": "child_question",
                 "multiSource": "multi_source",
-                "dichotomousChoiceOptions": "dichotomous_choice",
+                "dichotomousChoiceOptions": self._determine_question_options_style(prompt, question_type),  # Dynamic template selection
                 "specializedTable": "table",
-                "questionOptions": self._determine_question_options_style(prompt)  # Dynamic template selection
+                "questionOptions": self._determine_question_options_style(prompt, question_type)  # Dynamic template selection
             }
             question_style = style_key_map.get(mode, question_type.value)
 
@@ -291,34 +291,28 @@ class InstructionLoader:
 
         return sorted(templates)
     
-    def _determine_question_options_style(self, prompt: str = "") -> str:
+    def _determine_question_options_style(self, prompt: str = "", question_type: QuestionType = None) -> str:
         """
-        Determine the appropriate question options template style based on prompt.
+        Determine the appropriate question options template style based on prompt and question type.
         
         Args:
             prompt: The prompt string to analyze
+            question_type: The question type being processed
             
         Returns:
-            Template style key ("generic" for MCQ, "dichotomous_choice" for dichotomous)
+            Template style key ("generic" for MCQ, "dichotomous_choice" for dichotomous, "text_completion" for fill-in-blank)
         """
+        # Handle GI questions specifically - they use text completion format
+        if question_type == QuestionType.GRAPHIC_INTERPRETATION:
+            return "text_completion"
+        
         if not prompt:
             return "generic"
         
         prompt_lower = prompt.lower()
         
-        # Check for dichotomous choice indicators
-        dichotomous_indicators = [
-            "dichotomous choice",
-            "yes/no",
-            "true/false", 
-            "acceptable/not acceptable",
-            "inferable/not inferable",
-            "would help/would not help",
-            "sufficient/insufficient",
-            "valid/invalid",
-            "consistent/inconsistent",
-            "conclusion/assumption"
-        ]
+        # Load dichotomous indicators from customizations
+        dichotomous_indicators = self._load_dichotomous_indicators()
         
         for indicator in dichotomous_indicators:
             if indicator in prompt_lower:
@@ -326,6 +320,82 @@ class InstructionLoader:
         
         # Default to generic MCQ format
         return "generic"
+    
+    def _load_dichotomous_indicators(self) -> List[str]:
+        """
+        Load dichotomous choice indicators from customizations.json files.
+        
+        Returns:
+            List of dichotomous choice indicators in lowercase
+            
+        Raises:
+            TemplateLoadError: If customizations cannot be loaded
+        """
+        indicators = []
+        
+        # Load from GMAT customizations
+        gmat_customizations = self._load_exam_customizations("gmat")
+        
+        # Get MSR child-question styles
+        msr_config = gmat_customizations.get("integrated reasoning", {}).get("multi source reasoning", {})
+        msr_child_styles = msr_config.get("child-question", {}).get("question_style", [])
+        
+        if not msr_child_styles:
+            raise TemplateLoadError("MSR child-question styles not found in GMAT customizations")
+        
+        # Get TA dichotomous types
+        ta_config = gmat_customizations.get("integrated reasoning", {}).get("table analysis", {})
+        ta_dichotomous_types = ta_config.get("dichotomousType", [])
+        
+        if not ta_dichotomous_types:
+            raise TemplateLoadError("TA dichotomous types not found in GMAT customizations")
+        
+        # Extract dichotomous indicators from MSR styles
+        for style in msr_child_styles:
+            if "dichotomous choice" in style.lower():
+                # Extract the type from "Dichotomous Choice(True/False)" format
+                if "(" in style and ")" in style:
+                    choice_type = style.split("(")[1].split(")")[0].lower()
+                    indicators.append(choice_type)
+                indicators.append("dichotomous choice")
+        
+        # Add TA dichotomous types
+        for choice_type in ta_dichotomous_types:
+            indicators.append(choice_type.lower())
+        
+        # Load from GRE customizations
+        gre_customizations = self._load_exam_customizations("gre")
+        
+        # Add GRE-specific dichotomous types if they exist
+        # (Similar processing as above for GRE when needed)
+        
+        if not indicators:
+            raise TemplateLoadError("No dichotomous indicators found in customizations")
+        
+        return list(set(indicators))  # Remove duplicates
+    
+    def _load_exam_customizations(self, exam_type: str) -> Dict[str, Any]:
+        """
+        Load customizations for a specific exam type.
+        
+        Args:
+            exam_type: Exam type ("gmat" or "gre")
+            
+        Returns:
+            Dictionary of customizations
+            
+        Raises:
+            TemplateLoadError: If customizations cannot be loaded
+        """
+        customization_path = Path("system_instructions") / exam_type / "customizations.json"
+        
+        if not customization_path.exists():
+            raise TemplateLoadError(f"Customizations file not found: {customization_path}")
+        
+        try:
+            return load_json_file(str(customization_path))
+        except Exception as e:
+            raise TemplateLoadError(f"Failed to load customizations from {customization_path}: {e}")
 
     def get_available_customizations(self, exam_type: ExamType) -> List[str]:
         """
