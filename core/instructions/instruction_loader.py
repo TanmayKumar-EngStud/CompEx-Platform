@@ -40,13 +40,14 @@ class InstructionLoader:
         # Validate that the new system is properly set up
         self._validate_new_system()
 
-    def load_template(self, question_type: QuestionType, mode: str) -> str:
+    def load_template(self, question_type: QuestionType, mode: str, prompt: str = "") -> str:
         """
         Load instruction template for a question type and mode.
 
         Args:
             question_type: Question type classification
             mode: Instruction mode (e.g., "questionText")
+            prompt: Optional prompt for dynamic template selection
 
         Returns:
             Template content as string
@@ -54,7 +55,7 @@ class InstructionLoader:
         Raises:
             TemplateLoadError: If template loading fails
         """
-        return self._load_template_file(question_type, mode)
+        return self._load_template_file(question_type, mode, prompt)
 
     def load_main_instruction_template(self, question_type: QuestionType) -> str:
         """
@@ -112,7 +113,7 @@ class InstructionLoader:
             raise FileNotFoundError(
                 "GRE customizations file not found - unified instruction system required")
 
-    def _load_template_file(self, question_type: QuestionType, mode: str) -> str:
+    def _load_template_file(self, question_type: QuestionType, mode: str, prompt: str = "") -> str:
         """Load template from centralized template system."""
 
         component_map = {
@@ -161,7 +162,7 @@ class InstructionLoader:
             raise TemplateLoadError(f"Invalid mode: {mode}")
 
         question_style = question_type.value
-        if mode in ["questionPassage", "questionGraph", "parentStimulus", "multiSource", "specializedTable", "childQuestion", "dichotomousChoiceOptions"]:
+        if mode in ["questionPassage", "questionGraph", "parentStimulus", "multiSource", "specializedTable", "childQuestion", "dichotomousChoiceOptions", "questionOptions"]:
             style_key_map = {
                 "questionPassage": "passage",
                 "questionGraph": "graph",
@@ -169,7 +170,8 @@ class InstructionLoader:
                 "childQuestion": "child_question",
                 "multiSource": "multi_source",
                 "dichotomousChoiceOptions": "dichotomous_choice",
-                "specializedTable": "table"
+                "specializedTable": "table",
+                "questionOptions": self._determine_question_options_style(prompt)  # Dynamic template selection
             }
             question_style = style_key_map.get(mode, question_type.value)
 
@@ -288,6 +290,42 @@ class InstructionLoader:
             templates.append(template_name)
 
         return sorted(templates)
+    
+    def _determine_question_options_style(self, prompt: str = "") -> str:
+        """
+        Determine the appropriate question options template style based on prompt.
+        
+        Args:
+            prompt: The prompt string to analyze
+            
+        Returns:
+            Template style key ("generic" for MCQ, "dichotomous_choice" for dichotomous)
+        """
+        if not prompt:
+            return "generic"
+        
+        prompt_lower = prompt.lower()
+        
+        # Check for dichotomous choice indicators
+        dichotomous_indicators = [
+            "dichotomous choice",
+            "yes/no",
+            "true/false", 
+            "acceptable/not acceptable",
+            "inferable/not inferable",
+            "would help/would not help",
+            "sufficient/insufficient",
+            "valid/invalid",
+            "consistent/inconsistent",
+            "conclusion/assumption"
+        ]
+        
+        for indicator in dichotomous_indicators:
+            if indicator in prompt_lower:
+                return "dichotomous_choice"
+        
+        # Default to generic MCQ format
+        return "generic"
 
     def get_available_customizations(self, exam_type: ExamType) -> List[str]:
         """

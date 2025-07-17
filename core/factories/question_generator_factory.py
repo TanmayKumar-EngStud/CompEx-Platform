@@ -193,7 +193,7 @@ class QuestionGeneratorFactory:
     
     def _load_system_instructions(self, instruction_file: str) -> Optional[str]:
         """
-        Load system instructions from file with caching.
+        Load system instructions from file without caching.
         
         Args:
             instruction_file: Path to instruction file

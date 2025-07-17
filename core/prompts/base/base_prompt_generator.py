@@ -5,8 +5,6 @@ This module provides the abstract base class for all prompt generators,
 defining the common interface and shared functionality.
 """
 
-import json
-import os
 import random
 from abc import ABC, abstractmethod
 from typing import Dict, List, Any, Optional
@@ -291,7 +289,8 @@ class BasePromptGenerator(ABC):
     def generate_nomenclature_based_prompt(
         self,
         question_type: str,
-        difficulty: int
+        difficulty: int,
+        is_child_prompt: bool = False
     ) -> str:
         """
         Generate prompt based on nomenclature pattern from customizations.json using random selection.
@@ -299,10 +298,14 @@ class BasePromptGenerator(ABC):
         Args:
             question_type: Type of question (e.g., 'data sufficiency', 'problem solving')
             difficulty: Difficulty level (1-5)
+            is_child_prompt: If True, preserves parent prompt context (default: False)
 
         Returns:
             Formatted prompt string based on nomenclature pattern
         """
+        # Only clear cached state for base prompts, not child prompts
+        if not is_child_prompt:
+            self._clear_cached_state()
         section_key = self._get_legacy_section_key()
         section_config = self.customizations.get(section_key, None)
         question_config = section_config.get(question_type, None)
@@ -373,7 +376,7 @@ class BasePromptGenerator(ABC):
                         break
                 break
 
-        # Reset RC state for each prompt
+        # Reset RC state for each new prompt (but preserve topic state for child prompts)
         if hasattr(self, '_selected_rc_type'):
             delattr(self, '_selected_rc_type')
         if hasattr(self, '_selected_rc_config'):
@@ -392,9 +395,11 @@ class BasePromptGenerator(ABC):
                 continue
             if "total_child_questions" in var:
                 # Get a random value from the total_child_questions array
-                child_questions_values = question_config.get("total_child_questions", [3])
+                child_questions_values = question_config.get(
+                    "total_child_questions", [3])
                 if isinstance(child_questions_values, list) and child_questions_values:
-                    selected_count = self.get_random_element(child_questions_values)
+                    selected_count = self.get_random_element(
+                        child_questions_values)
                 else:
                     selected_count = 3  # Default fallback
                 substituted = substituted.replace(
@@ -458,9 +463,9 @@ class BasePromptGenerator(ABC):
                 continue
 
             # Handle slash-separated variables (e.g., focused_skill_1/focused_skill_2/focused_skill_3)
-            if "/" in var:
+            if "|" in var:
                 # Split into individual variables and process each
-                individual_vars = var.split("/")
+                individual_vars = var.split("|")
                 values_list = []
 
                 for individual_var in individual_vars:
@@ -500,7 +505,7 @@ class BasePromptGenerator(ABC):
 
                 # Only use the combined value if we have at least one valid value
                 if values_list:
-                    final_value = "/".join(values_list)
+                    final_value = "|".join(values_list)
                     substituted = substituted.replace(
                         f"<{var}>", f"<{final_value}>")
                 else:
@@ -637,6 +642,14 @@ class BasePromptGenerator(ABC):
 
         return substituted
 
+    def _clear_cached_state(self):
+        """Clear all cached state variables to ensure fresh generation."""
+        cached_vars = ['_selected_rc_type', '_selected_rc_config',
+                       '_selected_topic', '_topic_skills']
+        for var in cached_vars:
+            if hasattr(self, var):
+                delattr(self, var)
+
     def get_rc_configuration(self) -> Dict[str, Any]:
         """
         Get the selected RC configuration for the last generated prompt.
@@ -769,7 +782,7 @@ class BasePromptGenerator(ABC):
             if len(selected_items) == 1:
                 formatted = f"<{selected_items[0]}>"
             else:
-                joined_values = "/".join(selected_items)
+                joined_values = "|".join(selected_items)
                 formatted = f"<{joined_values}>"
 
             return {

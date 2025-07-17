@@ -92,11 +92,11 @@ class InstructionManager:
             InstructionNotFoundError: If instruction cannot be found
             TemplateProcessingError: If template processing fails
         """
-        """Get instruction directly without caching."""
+        """Get instruction with fresh generation each time."""
         self._logger.log_instruction_request(exam_type, question_type, mode)
         
         # Load base template
-        template = self._loader.load_template(question_type, mode)
+        template = self._loader.load_template(question_type, mode, prompt)
         
         # Get exam-specific customizations
         customizations = self._loader.load_customizations(exam_type, question_type)
@@ -162,7 +162,7 @@ class InstructionManager:
         
         for mode in sorted(available_modes):
             try:
-                mode_instruction = self._get_instruction_direct(exam_type, question_type, mode, prompt)
+                mode_instruction = self.get_instruction(exam_type, question_type, mode, prompt)
                 instructions.append(mode_instruction)
             except Exception:
                 # Skip modes that fail to load

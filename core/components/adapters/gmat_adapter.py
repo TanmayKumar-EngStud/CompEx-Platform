@@ -89,7 +89,8 @@ class GMATAdapter:
         self,
         question_type: QuestionType,
         prompt: str,
-        customizations: Optional[Dict[str, Any]] = None
+        customizations: Optional[Dict[str, Any]] = None,
+        source_type: Optional[str] = None
     ) -> str:
         """
         Get appropriate metadata template for GMAT questions.
@@ -104,7 +105,7 @@ class GMATAdapter:
         """
         if question_type == QuestionType.MULTI_SOURCE_REASONING:
             return self.question_metadata.multi_sourceInfo(
-                self.exam_type, question_type, customizations, prompt
+                self.exam_type, question_type, customizations, prompt, source_type
             )
         elif question_type == QuestionType.GRAPHIC_INTERPRETATION:
             return self.question_metadata.graph(
@@ -694,7 +695,7 @@ class GMATMultiSourceReasoningAdapter:
         self.child_idx = 0
 
     @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
-    def generate_SourceInfo(self, prompt: str, idx: int) -> Optional[Dict[str, Any]]:
+    def generate_SourceInfo(self, idx: int, source_type: str, prompt: str) -> Optional[Dict[str, Any]]:
         """Generate source information (GMAT naming convention).
             Args: 
                 prompt: prompt of source_info{i}
@@ -704,8 +705,9 @@ class GMATMultiSourceReasoningAdapter:
         """
         # idx parameter is included for compatibility but not used
         component_template = self.component._get_component_instruction(
-            'QuestionMetadata')
-        instruction_prompt = f"Active SourceInfo Prompt: {prompt}\n{component_template}"
+            'QuestionMetadata', source_type)
+
+        instruction_prompt = f"Generate SourceInfo_{idx} having {source_type}: {prompt}\n{component_template}"
         return self.component.generate_source_info(instruction_prompt, idx)
 
     @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)

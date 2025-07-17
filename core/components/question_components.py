@@ -231,7 +231,7 @@ class BaseQuestionComponent(ABC):
         'ChildQuestion',
         'ChildTitle',
         'ChildSolution',
-    ]) -> str:
+    ], source_type: str = None) -> str:
         """
         Get template-based instruction for a specific component using new template classes.
 
@@ -269,7 +269,7 @@ class BaseQuestionComponent(ABC):
             elif component_name == "QuestionPassage" or component_name == "QuestionMetadata":
                 # Both QuestionPassage and multiSource map to metadata templates
                 instruction = self._adapter.get_metadata_template(
-                    self.question_type, self.prompt, customizations
+                    self.question_type, self.prompt, customizations, source_type
                 )
             elif component_name == "ParentQuestion":
                 # Parent question content (passages for RC)

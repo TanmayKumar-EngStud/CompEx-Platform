@@ -155,7 +155,8 @@ class QuestionMetadata:
         exam_type: ExamType,
         question_type: QuestionType,
         customizations: Optional[Dict[str, Any]] = None,
-        prompt: Optional[str] = None
+        prompt: Optional[str] = None,
+        source_type: Optional[str] = None
     ) -> str:
         """
         Load multi-sourceInfo metadata template.
@@ -174,9 +175,9 @@ class QuestionMetadata:
         template = self._load_template_file(
             "0-questionMetadata/3-multi_source.txt.template")
 
-        # Apply multi-source content token replacement
+        # Apply multi-source content token replacement with specific source type
         processed_template = self._apply_content_tokens(
-            template, "multi_source", prompt)
+            template, "multi_source", prompt, source_type)
 
         return self._template_processor.process_template(
             processed_template, exam_type, question_type, customizations, prompt
@@ -218,7 +219,8 @@ class QuestionMetadata:
         self,
         template: str,
         content_type: str,
-        prompt: Optional[str] = None
+        prompt: Optional[str] = None,
+        source_type: Optional[str] = None
     ) -> str:
         """
         Apply content-specific token replacement using metadata.json.
@@ -244,9 +246,9 @@ class QuestionMetadata:
             with open(metadata_path, 'r', encoding='utf-8') as f:
                 metadata = json.load(f)
 
-            # Get content structure based on type
+            # Get content structure based on type and source_type for multi_source
             content_structure = self._get_content_structure(
-                metadata, content_type, prompt)
+                metadata, content_type, prompt, source_type)
 
             # Replace {content} tokens in template
             processed_template = template.replace(
@@ -270,7 +272,8 @@ class QuestionMetadata:
         self,
         metadata: Dict[str, Any],
         content_type: str,
-        prompt: Optional[str] = None
+        prompt: Optional[str] = None,
+        source_type: Optional[str] = None
     ) -> str:
         """
         Get appropriate content structure from metadata.json.
@@ -295,9 +298,16 @@ class QuestionMetadata:
                             "json_format", {})
                         return json.dumps(chart_format, indent=2)
 
-            # Handle multi_source content type by detecting specific content type from prompt
-            if content_type == "multi_source" and prompt:
-                return self._get_multi_source_content_structure(metadata, prompt)
+            # Handle multi_source content type by using specific source_type if provided
+            if content_type == "multi_source":
+                if source_type:
+                    # Use the specific source_type provided
+                    return self._get_multi_source_content_structure_for_type(metadata, source_type)
+                elif prompt:
+                    # Fallback to detecting from prompt
+                    return self._get_multi_source_content_structure(metadata, prompt)
+                else:
+                    raise ValueError("multi_source content type requires either source_type or prompt")
 
             # Get default structure for content type
             content_map = {
@@ -527,6 +537,87 @@ class QuestionMetadata:
             passage_format = passage_styles["reading_comprehension"].get("json_format")
             if not passage_format:
                 raise ValueError("JSON format not found for reading comprehension passage")
+            return json.dumps(passage_format, indent=2)
+            
+        raise ValueError(f"Unsupported content category: {content_category}")
+
+    def _get_multi_source_content_structure_for_type(self, metadata: Dict[str, Any], source_type: str) -> str:
+        """
+        Get content structure for a specific source type directly.
+        
+        Args:
+            metadata: Loaded metadata.json content
+            source_type: Specific source type (e.g., 'bar_chart', 'comparison_table', 'Passage')
+            
+        Returns:
+            JSON structure string for the specific source type
+            
+        Raises:
+            ValueError: If source type structure cannot be found
+        """
+        # Load MSR customizations to categorize the source type
+        customizations_path = Path("system_instructions/gmat/customizations.json")
+        if not customizations_path.exists():
+            raise ValueError(f"MSR customizations file not found: {customizations_path}")
+            
+        with open(customizations_path, 'r', encoding='utf-8') as f:
+            customizations = json.load(f)
+            
+        msr_config = customizations.get("integrated reasoning", {}).get("multi source reasoning", {})
+        if not msr_config:
+            raise ValueError("MSR configuration not found in customizations")
+            
+        graph_types = msr_config.get("graph_types", [])
+        table_types = msr_config.get("table_types", [])
+        
+        source_type_lower = source_type.lower()
+        
+        # Determine category based on MSR configuration
+        content_category = None
+        if source_type_lower in [gt.lower() for gt in graph_types]:
+            content_category = "graph"
+            actual_type = source_type_lower
+        elif source_type_lower in [tt.lower() for tt in table_types]:
+            content_category = "table"
+            actual_type = source_type_lower
+        elif "passage" in source_type_lower:
+            content_category = "passage"
+            actual_type = "reading_comprehension"
+        else:
+            raise ValueError(f"Source type '{source_type}' not found in MSR configuration")
+            
+        # Get the appropriate structure from metadata
+        content_types = metadata.get("content_types", {})
+        if content_category not in content_types:
+            raise ValueError(f"Content category '{content_category}' not found in metadata")
+            
+        category_config = content_types[content_category]
+        
+        if content_category == "graph":
+            chart_styles = category_config.get("chart_styles", {})
+            if actual_type not in chart_styles:
+                raise ValueError(f"Graph type '{actual_type}' not found in chart_styles")
+            chart_format = chart_styles[actual_type].get("json_format")
+            if not chart_format:
+                raise ValueError(f"JSON format not found for graph type '{actual_type}'")
+            return json.dumps(chart_format, indent=2)
+            
+        elif content_category == "table":
+            table_styles = category_config.get("table_styles", {})
+            if actual_type not in table_styles:
+                raise ValueError(f"Table type '{actual_type}' not found in table_styles")
+            table_format = table_styles[actual_type].get("json_format")
+            if not table_format:
+                raise ValueError(f"JSON format not found for table type '{actual_type}'")
+            return json.dumps(table_format, indent=2)
+            
+        elif content_category == "passage":
+            passage_styles = category_config.get("passage_styles", {})
+            if actual_type not in passage_styles:
+                raise ValueError(f"Passage style '{actual_type}' not found in passage_styles")
+            passage_format = passage_styles[actual_type].get("json_format")
+            if not passage_format:
+                raise ValueError(f"JSON format not found for passage style '{actual_type}'")
             return json.dumps(passage_format, indent=2)
             
         raise ValueError(f"Unsupported content category: {content_category}")

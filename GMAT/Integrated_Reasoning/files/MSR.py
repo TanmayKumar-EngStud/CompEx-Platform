@@ -103,11 +103,11 @@ class Generate_MSR(BaseQuestionGenerator):
                 # "nomenclature": "MSR Source_info{i} - <source_info>"
                 # Fix: 0-indexed array but 1-indexed loop
                 source_type = source_infos[idx-1]
-                # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
+                # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <line_chart> - <difficulty_level: 2>"
                 # Construct a focused prompt for each source
                 source_prompt = f"MSR - <{question_theme}> - <{source_type}> - <difficulty_level: {self.extract_difficulty_from_prompt()}>"
                 source = msr.generate_SourceInfo(
-                    f"SourceInfo_{idx} having {source_type}: {source_prompt}", idx)
+                    idx, source_type, source_prompt)
                 if source is None or not isinstance(source, dict):
                     print(
                         f"Error: Failed to generate source info {idx} for MSR. Got: {type(source)}, Value: {source}")
@@ -130,7 +130,7 @@ class Generate_MSR(BaseQuestionGenerator):
                     print(f"Error accessing source.get('content'): {e}")
                     print(f"source type: {type(source)}, value: {source}")
                     return None
-                    
+
                 try:
                     content_type = content.get("type", source_type.lower())
                 except AttributeError as e:
@@ -147,8 +147,10 @@ class Generate_MSR(BaseQuestionGenerator):
                     try:
                         transformed_source["passage"] = content.get("text", "")
                     except AttributeError as e:
-                        print(f"Error accessing content.get('text') for passage: {e}")
-                        print(f"content type: {type(content)}, value: {content}")
+                        print(
+                            f"Error accessing content.get('text') for passage: {e}")
+                        print(
+                            f"content type: {type(content)}, value: {content}")
                         return None
                 elif content_type in graph_types or source_type.lower() in graph_types:
                     transformed_source["type"] = "graphs"
@@ -198,26 +200,30 @@ class Generate_MSR(BaseQuestionGenerator):
                         options, correct_option = answer_data
                     except (ValueError, TypeError) as e:
                         print(f"Error unpacking answer_data for MCQ: {e}")
-                        print(f"answer_data type: {type(answer_data)}, value: {answer_data}")
+                        print(
+                            f"answer_data type: {type(answer_data)}, value: {answer_data}")
                         return None
-                        
+
                     try:
                         question["answer"] = options[correct_option] if correct_option in options else list(
                             options.values())[0]
                     except AttributeError as e:
                         print(f"Error accessing options.values() in MCQ: {e}")
-                        print(f"options type: {type(options)}, value: {options}")
+                        print(
+                            f"options type: {type(options)}, value: {options}")
                         return None
                     except Exception as e:
                         # checking if it is failing here
                         raise ValueError(
                             f"question_style is being {question_style} while correct_option is being: \n{correct_option}")
-                    
+
                     try:
                         options = list(options.values())
                     except AttributeError as e:
-                        print(f"Error accessing options.values() for list conversion: {e}")
-                        print(f"options type: {type(options)}, value: {options}")
+                        print(
+                            f"Error accessing options.values() for list conversion: {e}")
+                        print(
+                            f"options type: {type(options)}, value: {options}")
                         return None
                 else:
                     # Contains info telling what ChildQuestion type is requested
@@ -227,7 +233,8 @@ class Generate_MSR(BaseQuestionGenerator):
                             answer_data, dict) else [str(answer_data)]
                     except AttributeError as e:
                         print(f"Error accessing answer_data.values(): {e}")
-                        print(f"answer_data type: {type(answer_data)}, value: {answer_data}")
+                        print(
+                            f"answer_data type: {type(answer_data)}, value: {answer_data}")
                         return None
 
                 # Clean up question style and shuffle options
