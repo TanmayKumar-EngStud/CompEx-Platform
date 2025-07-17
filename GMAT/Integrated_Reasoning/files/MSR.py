@@ -6,6 +6,7 @@ import re
 from typing import Dict, Any, Optional
 
 # Import unified components
+from click import prompt
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
 from core.enums.section_types import SectionType
@@ -66,38 +67,30 @@ class Generate_MSR(BaseQuestionGenerator):
             # Extract source types from the structured prompt
             import re
             # "nomenclature": "MSR - <total_child_questions: {3}> <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill_1/focused_skill_2/focused_skill_3> - <question_style_1/question_style_2/question_style_3> - <difficulty_level: {1-5}>",
-            pattern = r'MSR - <total_child_questions: \d+> - <[^>]+> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <difficulty_level: \d+>'
+            pattern = r'MSR - <total_child_questions: \d+> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <([^>]+)> - <difficulty_level: \d+>'
             match = re.search(pattern, self.prompt)
+            if not match:
+                raise ValueError(
+                    f"This is the fucking problem here this prompt: \n{self.prompt}\n it is not having any match ")
+            question_theme = match.group(1)
+            source_infos = [match.group(2), match.group(3), match.group(4)]
+            focused_skills_string = match.group(5)
+            question_styles_string = match.group(6)
 
-            if match:
-                source_infos = [match.group(1), match.group(2), match.group(3)]
-                focused_skills_string = match.group(4)
-                question_styles_string = match.group(5)
+            # Parse focused skills and question styles separated by '/'
+            focused_skills_from_prompt = focused_skills_string.split('/')
+            question_styles_from_prompt = question_styles_string.split('/')
 
-                # Parse focused skills and question styles separated by '/'
-                focused_skills_from_prompt = focused_skills_string.split('/')
-                question_styles_from_prompt = question_styles_string.split('/')
+            # Ensure we have enough skills and styles for all child questions
+            while len(focused_skills_from_prompt) < self.total_child_questions:
+                focused_skills_from_prompt.extend(
+                    focused_skills_from_prompt)
+            focused_skills_from_prompt = focused_skills_from_prompt[:self.total_child_questions]
 
-                # Ensure we have enough skills and styles for all child questions
-                while len(focused_skills_from_prompt) < self.total_child_questions:
-                    focused_skills_from_prompt.extend(
-                        focused_skills_from_prompt)
-                focused_skills_from_prompt = focused_skills_from_prompt[:self.total_child_questions]
-
-                while len(question_styles_from_prompt) < self.total_child_questions:
-                    question_styles_from_prompt.extend(
-                        question_styles_from_prompt)
-                question_styles_from_prompt = question_styles_from_prompt[:self.total_child_questions]
-            else:
-                # Fallback to default if parsing fails
-                source_infos = []
-                for _ in range(3):
-                    source_infos.append(random.choice(
-                        self.MSR.get("source_info", ["Passage"])))
-                focused_skills_from_prompt = [
-                    "Critical Reasoning"] * self.total_child_questions
-                question_styles_from_prompt = [
-                    "MCQ (5 options MCQ)"] * self.total_child_questions
+            while len(question_styles_from_prompt) < self.total_child_questions:
+                question_styles_from_prompt.extend(
+                    question_styles_from_prompt)
+            question_styles_from_prompt = question_styles_from_prompt[:self.total_child_questions]
 
             msr = GMATAdapter.adapt_multi_source_reasoning(
                 self.prompt, component)
@@ -111,21 +104,39 @@ class Generate_MSR(BaseQuestionGenerator):
                 # Fix: 0-indexed array but 1-indexed loop
                 source_type = source_infos[idx-1]
                 # Format: "SourceInfo_1 having Line Chart: MSR - <Business> - <Data Interpretation> - <difficulty_level: 2>"
+                # Construct a focused prompt for each source
+                source_prompt = f"MSR - <{question_theme}> - <{source_type}> - <difficulty_level: {self.extract_difficulty_from_prompt()}>"
                 source = msr.generate_SourceInfo(
-                    f"SourceInfo_{idx} having {source_type}: {self.prompt}", idx)
-                if source is None:
+                    f"SourceInfo_{idx} having {source_type}: {source_prompt}", idx)
+                if source is None or not isinstance(source, dict):
                     print(
-                        f"Error: Failed to generate source info {idx} for MSR")
+                        f"Error: Failed to generate source info {idx} for MSR. Got: {type(source)}, Value: {source}")
                     return None
 
                 # Transform to required structure based on customizations.json
-                transformed_source = {
-                    "source_info": source.get("source_info", ""),
-                }
+                try:
+                    transformed_source = {
+                        "source_info": source.get("source_info", ""),
+                    }
+                except AttributeError as e:
+                    print(f"Error accessing source.get('source_info'): {e}")
+                    print(f"source type: {type(source)}, value: {source}")
+                    return None
 
                 # Add the appropriate content based on type from customizations.json
-                content = source.get("content", {})
-                content_type = content.get("type", source_type.lower())
+                try:
+                    content = source.get("content", {})
+                except AttributeError as e:
+                    print(f"Error accessing source.get('content'): {e}")
+                    print(f"source type: {type(source)}, value: {source}")
+                    return None
+                    
+                try:
+                    content_type = content.get("type", source_type.lower())
+                except AttributeError as e:
+                    print(f"Error accessing content.get('type'): {e}")
+                    print(f"content type: {type(content)}, value: {content}")
+                    return None
 
                 # Get graph types and table types from customizations.json
                 graph_types = self.MSR.get("graph_types", [])
@@ -133,7 +144,12 @@ class Generate_MSR(BaseQuestionGenerator):
 
                 if content_type == "passage" or source_type.lower() == "passage":
                     transformed_source["type"] = "passage"
-                    transformed_source["passage"] = content.get("text", "")
+                    try:
+                        transformed_source["passage"] = content.get("text", "")
+                    except AttributeError as e:
+                        print(f"Error accessing content.get('text') for passage: {e}")
+                        print(f"content type: {type(content)}, value: {content}")
+                        return None
                 elif content_type in graph_types or source_type.lower() in graph_types:
                     transformed_source["type"] = "graphs"
                     transformed_source["graphs"] = [content]
@@ -178,24 +194,44 @@ class Generate_MSR(BaseQuestionGenerator):
                 answer_data = msr.generate_QuestionOptions(question_style)
                 # Generate options and answers
                 if question_style == "MCQ (5 options MCQ)":
-                    options, correct_option = answer_data
+                    try:
+                        options, correct_option = answer_data
+                    except (ValueError, TypeError) as e:
+                        print(f"Error unpacking answer_data for MCQ: {e}")
+                        print(f"answer_data type: {type(answer_data)}, value: {answer_data}")
+                        return None
+                        
                     try:
                         question["answer"] = options[correct_option] if correct_option in options else list(
                             options.values())[0]
-                    except:
+                    except AttributeError as e:
+                        print(f"Error accessing options.values() in MCQ: {e}")
+                        print(f"options type: {type(options)}, value: {options}")
+                        return None
+                    except Exception as e:
                         # checking if it is failing here
                         raise ValueError(
                             f"question_style is being {question_style} while correct_option is being: \n{correct_option}")
-                    options = list(options.values())
+                    
+                    try:
+                        options = list(options.values())
+                    except AttributeError as e:
+                        print(f"Error accessing options.values() for list conversion: {e}")
+                        print(f"options type: {type(options)}, value: {options}")
+                        return None
                 else:
-
                     # Contains info telling what ChildQuestion type is requested
                     question["answer"] = answer_data
-                    options = list(answer_data.values()) if isinstance(
-                        answer_data, dict) else [str(answer_data)]
+                    try:
+                        options = list(answer_data.values()) if isinstance(
+                            answer_data, dict) else [str(answer_data)]
+                    except AttributeError as e:
+                        print(f"Error accessing answer_data.values(): {e}")
+                        print(f"answer_data type: {type(answer_data)}, value: {answer_data}")
+                        return None
 
                 # Clean up question style and shuffle options
-                question_style_clean = re.sub(r' \(.*?\)', '', question_style)
+                question_style_clean = re.sub(r' \(.*\)', '', question_style)
                 # Only shuffle if options is a list of strings, not dicts
                 if all(isinstance(opt, str) for opt in options):
                     random.shuffle(options)

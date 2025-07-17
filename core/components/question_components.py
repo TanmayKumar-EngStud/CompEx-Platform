@@ -273,12 +273,12 @@ class BaseQuestionComponent(ABC):
                 )
             elif component_name == "ParentQuestion":
                 # Parent question content (passages for RC)
-                instruction = self._adapter.get_metadata_template(
+                instruction = self._adapter.get_text_template(
                     self.question_type, self.prompt, customizations
                 )
             elif component_name == "ParentTitle":
                 # Parent title
-                instruction = self._adapter.get_metadata_template(
+                instruction = self._adapter.get_title_template(
                     self.question_type, self.prompt, customizations
                 )
             elif component_name == "ChildQuestion":
@@ -288,7 +288,7 @@ class BaseQuestionComponent(ABC):
                 )
             elif component_name == "ChildTitle":
                 # Child question title
-                instruction = self._adapter.get_metadata_template(
+                instruction = self._adapter.get_title_template(
                     self.question_type, self.prompt, customizations
                 )
             elif component_name == "ChildSolution":
@@ -405,7 +405,6 @@ class BaseQuestionComponent(ABC):
                 self.global_state["start_time"] = time.time()
                 self.global_state["request_count"] = 0
             return None
-
 
     def _retry_generate(self, func, *args, **kwargs) -> Any:
         """

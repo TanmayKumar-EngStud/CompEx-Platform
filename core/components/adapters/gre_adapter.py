@@ -13,7 +13,6 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
 from core.components.question_components import (
-    BaseQuestionComponent,
     SimpleQuestion,
     DataSufficiencyQuestion,
     ParentChildQuestion
@@ -96,9 +95,21 @@ class GREAdapter:
                 self.exam_type, question_type, customizations, prompt
             )
         else:
-            return self.question_metadata.generic(
-                self.exam_type, question_type, customizations, prompt
-            )
+            # For other question types, check prompt for special content types
+            if "graph" in prompt.lower():
+                return self.question_metadata.graph(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            elif "table" in prompt.lower():
+                return self.question_metadata.table(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            else:
+                # Default to passage template for generic cases
+                print(f"no template found for {prompt}")
+                return self.question_metadata.passage(
+                    self.exam_type, question_type, customizations, prompt
+                )
 
     def get_text_template(
         self,
@@ -397,19 +408,23 @@ class GREParentChildAdapter:
         return self.component.generate_child_solution(index, instruction_prompt)
 
     @debug_log_method(ExamType.GRE, QuestionType.READING_COMPREHENSION)
-    def generate_passages(self) -> Optional[str]:
-        """Generate passages for reading comprehension (GRE naming convention)."""
-        # For RC questions, we need to generate the passage content
-        component_structure = self.component._get_component_instruction(
-            'QuestionMetadata')
-        instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionPassage\n{component_structure}"
-        result = self.component.generate_question_metadata(
-            instruction_prompt, i=1, total=1)
-
-        # Extract the passage text from the JSON response
-        if result and isinstance(result, dict) and "passage" in result:
-            return result["passage"]
-        elif result and isinstance(result, str):
-            return result
-        else:
-            return None
+    def generate_parentQuestionPassage(self, idx: int = 1) -> List[str]:  # ✅
+        """Generate question passage/argument for Critical Reasoning [Not for Reading Comprehension](GMAT naming convention).
+            Args:
+                idx: total number of paragraphs that passage should have
+            Returns **passages** as list of string (all the paragraphs)
+        """
+        component_template = self.component._get_component_instruction(
+            "QuestionPassage")
+        total_passage = []
+        for i in range(idx):
+            instruction_prompt = f"{self.prompt}\nmode:- QuestionPassage; generate paragraph {i+1} of {idx}: \n{component_template}"
+            metadata = self.component.generate_question_metadata(
+                instruction_prompt, i=i + 1, total=idx)
+            passage_text = ""
+            if metadata and isinstance(metadata, dict) and metadata.get("passage"):
+                passage_text = metadata["passage"]
+            elif isinstance(metadata, str):  # Fallback for string response
+                passage_text = metadata
+            total_passage.append(passage_text)
+        return total_passage

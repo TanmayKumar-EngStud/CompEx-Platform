@@ -294,9 +294,7 @@
             }
           },
           "json_format": {
-            "type": "passage",
-            "title": "{{title}}",
-            "content": "{{content}}"
+            "passage": "{{content}}"
           },
           "display_instructions": "Create a well-structured passage with clear paragraphs. Use appropriate vocabulary for the target difficulty level. Ensure the content supports multiple analytical questions."
         },
@@ -310,8 +308,7 @@
             "conclusion": "Conclusion or recommendation"
           },
           "json_format": {
-            "type": "passage",
-            "content": "{{content}}"
+            "passage": "{{content}}"
           },
           "display_instructions": "Create a logical argument with clear premises and conclusion. Include realistic business or academic scenarios. Ensure the argument has identifiable logical structure."
         }

@@ -153,7 +153,7 @@ class InstructionLoader:
             "child_question": "3-child_question",
             "multi_source": "3-multi_source",
             "dichotomous_choice": "1-dichotomous_choice",
-            "specialized_table": "4-specialized_table"
+            "table": "4-table"
         }
 
         component_folder = component_map.get(mode)
@@ -169,7 +169,7 @@ class InstructionLoader:
                 "childQuestion": "child_question",
                 "multiSource": "multi_source",
                 "dichotomousChoiceOptions": "dichotomous_choice",
-                "specializedTable": "specialized_table"
+                "specializedTable": "table"
             }
             question_style = style_key_map.get(mode, question_type.value)
 

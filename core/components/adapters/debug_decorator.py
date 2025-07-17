@@ -167,53 +167,131 @@ def debug_log_method(exam_type: ExamType, question_type: QuestionType):
             logger = get_debug_logger()
             function_name = func.__name__
             
-            # Extract instruction prompt from the function call
-            instruction_prompt = ""
-            try:
-                # Try to get instruction prompt from the function execution
-                # This is a placeholder - we'll capture it during execution
-                if hasattr(args[0], 'component') and hasattr(args[0].component, '_get_component_instruction'):
-                    # Try to get the component template if available
-                    component_name = function_name.replace('generate_', '').replace('generate', '')
-                    if component_name:
-                        component_template = args[0].component._get_component_instruction(component_name)
-                        instruction_prompt = f"Prompt: {getattr(args[0], 'prompt', 'Unknown')}\\nMode: {component_name}\\n{component_template}"
-                
-                if not instruction_prompt:
-                    instruction_prompt = f"Function: {function_name}, Args: {str(args[1:])}, Kwargs: {str(kwargs)}"
-            except Exception as e:
-                instruction_prompt = f"Error extracting prompt: {str(e)}"
+            # We'll capture the actual instruction prompt by monkey-patching the component methods
+            original_instruction_prompt = ""
             
-            # Call the original function
-            try:
-                result = func(*args, **kwargs)
+            # Create a list to store the captured instruction prompt
+            captured_prompts = []
+            
+            # Get the self object (adapter instance)
+            adapter_self = args[0]
+            
+            # If this adapter has a component, we'll monkey-patch its generate methods
+            if hasattr(adapter_self, 'component'):
+                component = adapter_self.component
                 
-                # Log successful function call
-                logger.log_function_call(
-                    exam_type=exam_type,
-                    question_type=question_type,
-                    function_name=function_name,
-                    instruction_prompt=instruction_prompt,
-                    function_return=result,
-                    success=True
-                )
+                # List of component methods that take instruction_prompt as first parameter
+                component_methods = [
+                    'generate_question_text', 'generate_question_title', 
+                    'generate_question_solution', 'generate_question_options',
+                    'generate_question_passage', 'generate_question_graph',
+                    'generate_question_table', 'generate_question_metadata',
+                    'generate_parent_title', 'generate_child_question',
+                    'generate_child_options', 'generate_child_solution',
+                    'generate_child_question_title', 'generate_source_info',
+                    'generate_main_question_title', 'generate_parent_question_content',
+                    'generate_question_options_with_answer'
+                ]
                 
-                return result
+                # Store original methods
+                original_methods = {}
                 
-            except Exception as e:
-                # Log failed function call
-                logger.log_function_call(
-                    exam_type=exam_type,
-                    question_type=question_type,
-                    function_name=function_name,
-                    instruction_prompt=instruction_prompt,
-                    function_return=None,
-                    success=False,
-                    error=str(e)
-                )
+                # Monkey-patch each component method to capture instruction prompt
+                for method_name in component_methods:
+                    if hasattr(component, method_name):
+                        original_method = getattr(component, method_name)
+                        original_methods[method_name] = original_method
+                        
+                        def create_wrapper(orig_method, method_name):
+                            def method_wrapper(*method_args, **method_kwargs):
+                                # The first argument is usually the instruction prompt
+                                if method_args and isinstance(method_args[0], str):
+                                    captured_prompts.append(method_args[0])
+                                return orig_method(*method_args, **method_kwargs)
+                            return method_wrapper
+                        
+                        # Set the wrapped method
+                        setattr(component, method_name, create_wrapper(original_method, method_name))
                 
-                # Re-raise the exception
-                raise
+                try:
+                    # Call the original function
+                    result = func(*args, **kwargs)
+                    
+                    # Use the captured instruction prompt if available
+                    if captured_prompts:
+                        instruction_prompt = captured_prompts[0]  # Use the first captured prompt
+                    else:
+                        instruction_prompt = f"Function: {function_name}, Args: {str(args[1:])}, Kwargs: {str(kwargs)}"
+                    
+                    # Log successful function call
+                    logger.log_function_call(
+                        exam_type=exam_type,
+                        question_type=question_type,
+                        function_name=function_name,
+                        instruction_prompt=instruction_prompt,
+                        function_return=result,
+                        success=True
+                    )
+                    
+                    return result
+                    
+                except Exception as e:
+                    # Use the captured instruction prompt if available
+                    if captured_prompts:
+                        instruction_prompt = captured_prompts[0]
+                    else:
+                        instruction_prompt = f"Function: {function_name}, Args: {str(args[1:])}, Kwargs: {str(kwargs)}"
+                    
+                    # Log failed function call
+                    logger.log_function_call(
+                        exam_type=exam_type,
+                        question_type=question_type,
+                        function_name=function_name,
+                        instruction_prompt=instruction_prompt,
+                        function_return=None,
+                        success=False,
+                        error=str(e)
+                    )
+                    
+                    # Re-raise the exception
+                    raise
+                
+                finally:
+                    # Restore original methods
+                    for method_name, original_method in original_methods.items():
+                        setattr(component, method_name, original_method)
+            
+            else:
+                # Fallback for adapters without component
+                try:
+                    result = func(*args, **kwargs)
+                    instruction_prompt = f"Function: {function_name}, Args: {str(args[1:])}, Kwargs: {str(kwargs)}"
+                    
+                    logger.log_function_call(
+                        exam_type=exam_type,
+                        question_type=question_type,
+                        function_name=function_name,
+                        instruction_prompt=instruction_prompt,
+                        function_return=result,
+                        success=True
+                    )
+                    
+                    return result
+                    
+                except Exception as e:
+                    instruction_prompt = f"Function: {function_name}, Args: {str(args[1:])}, Kwargs: {str(kwargs)}"
+                    
+                    logger.log_function_call(
+                        exam_type=exam_type,
+                        question_type=question_type,
+                        function_name=function_name,
+                        instruction_prompt=instruction_prompt,
+                        function_return=None,
+                        success=False,
+                        error=str(e)
+                    )
+                    
+                    raise
         
         return wrapper
     return decorator

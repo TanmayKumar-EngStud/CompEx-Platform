@@ -14,6 +14,7 @@ from pathlib import Path
 
 from core.enums.exam_types import ExamType
 from core.enums.section_types import SectionType
+from core.enums.question_types import QuestionType
 from core.utilities.file_utils import load_json_file
 from core.utilities.logging_utils import StructuredLogger
 
@@ -316,7 +317,10 @@ class BasePromptGenerator(ABC):
 
         # If still no nomenclature found, fallback to basic prompt
         if not nomenclature:
-            return self._create_prompt("S", "general", "general", difficulty)
+            # Use pure random selection for topic and skill
+            topic, skill = self.select_topic_and_skill(
+                SectionType.QUANTITATIVE, QuestionType.PROBLEM_SOLVING)
+            return self._create_prompt("S", topic, skill, difficulty)
 
         # Use section config as the source for variable values when no question-specific config
         config_to_use = question_config if question_config else section_config
@@ -386,7 +390,16 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(
                     f"<{var}>", f"<difficulty_level: {difficulty}>")
                 continue
-
+            if "total_child_questions" in var:
+                # Get a random value from the total_child_questions array
+                child_questions_values = question_config.get("total_child_questions", [3])
+                if isinstance(child_questions_values, list) and child_questions_values:
+                    selected_count = self.get_random_element(child_questions_values)
+                else:
+                    selected_count = 3  # Default fallback
+                substituted = substituted.replace(
+                    f"<{var}>", f"<total_child_questions: {selected_count}>"
+                )
             # Handle vocabulary_level specially
             if "vocabulary_level:" in var:
                 vocab_level = question_config.get("vocabulary", 3)
@@ -430,11 +443,13 @@ class BasePromptGenerator(ABC):
             if var.startswith("paragraphs_") or var.startswith("child_questions_"):
                 if hasattr(self, '_selected_rc_config'):
                     if var.startswith("paragraphs_"):
-                        paragraph_count = self._selected_rc_config.get("paragraphs", 1)
+                        paragraph_count = self._selected_rc_config.get(
+                            "paragraphs", 1)
                         substituted = substituted.replace(
                             f"<{var}>", f"<paragraphs_{paragraph_count}>")
                     elif var.startswith("child_questions_"):
-                        child_count = self._selected_rc_config.get("child_questions", 1)
+                        child_count = self._selected_rc_config.get(
+                            "child_questions", 1)
                         substituted = substituted.replace(
                             f"<{var}>", f"<child_questions_{child_count}>")
                 else:
@@ -482,13 +497,17 @@ class BasePromptGenerator(ABC):
                         selected_value = self.get_random_element(
                             individual_values)
                         values_list.append(selected_value)
-                    else:
-                        values_list.append("general")
 
-                # Join the selected values with slashes
-                final_value = "/".join(values_list)
-                substituted = substituted.replace(
-                    f"<{var}>", f"<{final_value}>")
+                # Only use the combined value if we have at least one valid value
+                if values_list:
+                    final_value = "/".join(values_list)
+                    substituted = substituted.replace(
+                        f"<{var}>", f"<{final_value}>")
+                else:
+                    # If no valid values, remove this variable from the prompt
+                    substituted = substituted.replace(f" - <{var}>", "")
+                    substituted = substituted.replace(f"<{var}> - ", "")
+                    substituted = substituted.replace(f"<{var}>", "")
                 continue
 
             # Enhanced questionTopic handling
@@ -496,20 +515,47 @@ class BasePromptGenerator(ABC):
                 topic_values = question_config.get("questionTopic", [])
                 if isinstance(topic_values, dict):
                     # New: Dictionary format - select topic and store for skill mapping
-                    selected_topic = self.get_random_element(
-                        list(topic_values.keys()))
-                    substituted = substituted.replace(
-                        f"<{var}>", f"<{selected_topic}>")
-                    # Store selected topic for focused_skill selection
-                    self._selected_topic = selected_topic
-                    self._topic_skills = topic_values[selected_topic]
-                    continue
+                    # Apply special character filtering to topic keys
+                    topic_keys = list(topic_values.keys())
+                    filtered_topic_keys = self._filter_topic_keys_by_type(
+                        topic_keys, selected_type)
+
+                    if filtered_topic_keys:
+                        selected_topic_with_chars = self.get_random_element(
+                            filtered_topic_keys)
+                        # Clean the topic name for display
+                        clean_topic = selected_topic_with_chars
+                        for selector in ["*", "&", "$"]:
+                            clean_topic = clean_topic.replace(selector, "")
+
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<{clean_topic}>")
+                        # Store selected topic for focused_skill selection (use original key with special chars)
+                        self._selected_topic = selected_topic_with_chars
+                        self._topic_skills = topic_values[selected_topic_with_chars]
+                        continue
+                    else:
+                        # No matching topics found, remove variable
+                        substituted = substituted.replace(f" - <{var}>", "")
+                        substituted = substituted.replace(f"<{var}> - ", "")
+                        substituted = substituted.replace(f"<{var}>", "")
+                        continue
                 elif isinstance(topic_values, list):
                     # Existing: List format - works as before
-                    selected_topic = self.get_random_element(topic_values)
-                    substituted = substituted.replace(
-                        f"<{var}>", f"<{selected_topic}>")
-                    continue
+                    filtered_topics = self._filter_values_by_type(
+                        topic_values, var, selected_type)
+                    if filtered_topics:
+                        selected_topic = self.get_random_element(
+                            filtered_topics)
+                        substituted = substituted.replace(
+                            f"<{var}>", f"<{selected_topic}>")
+                        continue
+                    else:
+                        # No matching topics found, remove variable
+                        substituted = substituted.replace(f" - <{var}>", "")
+                        substituted = substituted.replace(f"<{var}> - ", "")
+                        substituted = substituted.replace(f"<{var}>", "")
+                        continue
 
             # Enhanced focused_skill handling
             if var == "focused_skill":
@@ -529,8 +575,10 @@ class BasePromptGenerator(ABC):
                         f"<{var}>", f"<{selected_skill}>")
                     continue
 
-                # Fallback
-                substituted = substituted.replace(f"<{var}>", "<general>")
+                # Remove variable if no valid values found
+                substituted = substituted.replace(f" - <{var}>", "")
+                substituted = substituted.replace(f"<{var}> - ", "")
+                substituted = substituted.replace(f"<{var}>", "")
                 continue
 
             # Handle special numbered variables (e.g., source_info1, source_info2, source_info3)
@@ -562,7 +610,10 @@ class BasePromptGenerator(ABC):
                     var_values = question_config.get(base_var, [])
 
             if not var_values:
-                substituted = substituted.replace(f"<{var}>", "<general>")
+                # Remove variable if no valid values found
+                substituted = substituted.replace(f" - <{var}>", "")
+                substituted = substituted.replace(f"<{var}> - ", "")
+                substituted = substituted.replace(f"<{var}>", "")
                 continue
 
             # Apply special character filtering logic
@@ -579,14 +630,17 @@ class BasePromptGenerator(ABC):
                 substituted = substituted.replace(
                     f"<{var}>", f"<{selected_value}>")
             else:
-                substituted = substituted.replace(f"<{var}>", "<general>")
+                # Remove variable if no valid values found
+                substituted = substituted.replace(f" - <{var}>", "")
+                substituted = substituted.replace(f"<{var}> - ", "")
+                substituted = substituted.replace(f"<{var}>", "")
 
         return substituted
 
     def get_rc_configuration(self) -> Dict[str, Any]:
         """
         Get the selected RC configuration for the last generated prompt.
-        
+
         Returns:
             Dictionary containing selected RC type and configuration,
             or empty dict if no RC type was selected.
@@ -597,6 +651,40 @@ class BasePromptGenerator(ABC):
                 'config': self._selected_rc_config
             }
         return {}
+
+    def _filter_topic_keys_by_type(
+        self,
+        topic_keys: List[str],
+        selected_type: Optional[str]
+    ) -> List[str]:
+        """
+        Filter topic keys based on special character logic, preserving original keys.
+
+        Args:
+            topic_keys: List of topic keys (may contain special characters)
+            selected_type: The selected type marker (*, &, $)
+
+        Returns:
+            Filtered list of topic keys with special characters preserved
+        """
+        if not selected_type:
+            return topic_keys
+
+        # Return topic keys that have the selected type
+        matching_keys = [key for key in topic_keys if selected_type in key]
+
+        if matching_keys:
+            return matching_keys
+
+        # If no matching keys, return topics without any special characters
+        selectors = ["*", "&", "$"]
+        clean_keys = []
+        for key in topic_keys:
+            has_selector = any(selector in key for selector in selectors)
+            if not has_selector:
+                clean_keys.append(key)
+
+        return clean_keys
 
     def _filter_values_by_type(
         self,
@@ -668,7 +756,7 @@ class BasePromptGenerator(ABC):
             if count is None:
                 return ""
             else:
-                return {"items": [], "formatted": "<general>"}
+                return {"items": [], "formatted": ""}
 
         if count is None:
             # Return single random element

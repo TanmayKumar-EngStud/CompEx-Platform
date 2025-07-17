@@ -1,15 +1,14 @@
 # Import unified components
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
-from core.enums.section_types import SectionType
+
 from core.interfaces.question_generator import BaseQuestionGenerator, IMultiPartQuestionGenerator
 from core.components.question_components import create_question_component
 from core.components.adapters.gmat_adapter import GMATAdapter
-from google import genai
-from dotenv import load_dotenv
+
 import random
 import os
-import json
+
 import re
 import sys
 from typing import Dict, Any, Optional
@@ -96,14 +95,12 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
         )
 
         # Parent-child specific initialization
-        child_question_numbers = 0
-        if "rc_3" in self.prompt.lower():
-            child_question_numbers = 3
-        elif "rc_4" in self.prompt.lower():
-            child_question_numbers = 4
-        self.number_of_child_questions = child_question_numbers
 
         difficulty = re.search(r'<difficulty_level: (\d+)>', self.prompt)
+        self.no_of_paragraphs = int(
+            re.search(r'<paragraphs_(\d+)>', self.prompt).group(1))
+        child_question_numbers = int(
+            re.search(r'<child_questions_(\d+)>').group(1))
         if difficulty:
             difficulty = int(difficulty.group(1))
         else:
@@ -139,7 +136,8 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
                 self.prompt, component)
 
             # Generate parent content
-            passages = questionContent.generate_parentQuestionPassage()
+            passages = questionContent.generate_parentQuestionPassage(
+                self.no_of_paragraphs)
             self.question_data["content"] = {"passages": passages}
             self.question_data["title"] = questionContent.generate_parentTitle()
 

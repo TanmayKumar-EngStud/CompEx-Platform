@@ -69,7 +69,7 @@ These templates handle specific parts of question generation:
 -  `graph.txt.template`: Charts and graphs with dynamic population
 -  `parent_stimulus.txt.template`: Shared content for parent-child questions
 -  `multi_source.txt.template`: Multiple data sources
--  `specialized_table.txt.template`: Data tables
+-  `table.txt.template`: Data tables
 
 #### 1-questionText Templates:
 

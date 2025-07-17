@@ -344,7 +344,7 @@ class TestTemplateFileNaming(unittest.TestCase):
             "child_question": "3-child_question",
             "multi_source": "3-multi_source",
             "dichotomous_choice": "1-dichotomous_choice",
-            "specialized_table": "4-specialized_table"
+            "table": "4-table"
         }
 
         for question_style, expected_filename in test_mappings:

@@ -208,14 +208,24 @@ class UnifiedMockGenerator:
                 # Generate GRE prompts using nomenclature system - read counts from customizations
                 gre_config = customization_gre
                 quants_section1 = gre_config.get("quants", {}).get("section1", {})
+                quants_section2 = gre_config.get("quants", {}).get("section2", {})
                 verbal_section1 = gre_config.get("verbal", {}).get("section1", {})
-                quants_total = quants_section1.get("total_questions", 20)
-                verbal_total = verbal_section1.get("total_questions", 20)
+                verbal_section2 = gre_config.get("verbal", {}).get("section2", {})
                 
-                prompts["quants"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.QUANTITATIVE, quants_total)
-                prompts["verbal"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.VERBAL, verbal_total)
+                quants_total_s1 = quants_section1.get("total_questions", 20)
+                quants_total_s2 = quants_section2.get("total_questions", 20)
+                verbal_total_s1 = verbal_section1.get("total_questions", 20)
+                verbal_total_s2 = verbal_section2.get("total_questions", 20)
+                
+                # Generate separate prompts for each section
+                prompts["quants_section1"] = self._generate_factory_prompts(
+                    prompt_factory, SectionType.QUANTITATIVE, quants_total_s1)
+                prompts["quants_section2"] = self._generate_factory_prompts(
+                    prompt_factory, SectionType.QUANTITATIVE, quants_total_s2)
+                prompts["verbal_section1"] = self._generate_factory_prompts(
+                    prompt_factory, SectionType.VERBAL, verbal_total_s1)
+                prompts["verbal_section2"] = self._generate_factory_prompts(
+                    prompt_factory, SectionType.VERBAL, verbal_total_s2)
 
             return prompts
 
@@ -537,8 +547,8 @@ class UnifiedMockGenerator:
     def _add_gre_generation_tasks(self, thread_manager: APIThreadPoolManager) -> None:
         """Add GRE question generation tasks to the thread manager."""
 
-        # Quantitative section tasks
-        for i, prompt in enumerate(self.prompts.get("quants", [])):
+        # Quantitative section 1 tasks
+        for i, prompt in enumerate(self.prompts.get("quants_section1", [])):
             generator_class = self._get_generator_class_for_prompt(
                 prompt, SectionType.QUANTITATIVE)
 
@@ -548,14 +558,19 @@ class UnifiedMockGenerator:
                     'GRE_Q', 1, prompt, generator_class, i)
             thread_manager.add_task(task_factory_1)
 
-            # Add task for section 2 (duplicate for GRE)
+        # Quantitative section 2 tasks (different prompts)
+        for i, prompt in enumerate(self.prompts.get("quants_section2", [])):
+            generator_class = self._get_generator_class_for_prompt(
+                prompt, SectionType.QUANTITATIVE)
+
+            # Add task for section 2
             def task_factory_2():
                 return self._create_question_task_factory(
                     'GRE_Q', 2, prompt, generator_class, i)
             thread_manager.add_task(task_factory_2)
 
-        # Verbal section tasks
-        for i, prompt in enumerate(self.prompts.get("verbal", [])):
+        # Verbal section 1 tasks
+        for i, prompt in enumerate(self.prompts.get("verbal_section1", [])):
             generator_class = self._get_generator_class_for_prompt(
                 prompt, SectionType.VERBAL)
 
@@ -564,6 +579,11 @@ class UnifiedMockGenerator:
                 return self._create_question_task_factory(
                     'GRE_V', 1, prompt, generator_class, i)
             thread_manager.add_task(task_factory_v1)
+
+        # Verbal section 2 tasks (different prompts)
+        for i, prompt in enumerate(self.prompts.get("verbal_section2", [])):
+            generator_class = self._get_generator_class_for_prompt(
+                prompt, SectionType.VERBAL)
 
             # Add task for section 2
             def task_factory_v2():

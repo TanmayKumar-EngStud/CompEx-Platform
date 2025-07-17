@@ -111,21 +111,64 @@ class GMATAdapter:
                 self.exam_type, question_type, customizations, prompt
             )
         elif question_type == QuestionType.TABLE_ANALYSIS:
-            return self.question_metadata.specialized_table(
+            return self.question_metadata.table(
                 self.exam_type, question_type, customizations, prompt
             )
-        elif question_type == QuestionType.READING_COMPREHENSION:
+        elif question_type == QuestionType.READING_COMPREHENSION or question_type == QuestionType.CRITICAL_REASONING:
             return self.question_metadata.passage(
                 self.exam_type, question_type, customizations, prompt
             )
-        elif "parent" in prompt.lower() or "child" in prompt.lower():
-            return self.question_metadata.parent_stimulus(
+        elif question_type == QuestionType.DATA_SUFFICIENCY:
+            # Data Sufficiency questions typically use passage-style templates
+            return self.question_metadata.passage(
                 self.exam_type, question_type, customizations, prompt
             )
+        elif question_type == QuestionType.PROBLEM_SOLVING:
+            # Check for special content types first
+            if "graph" in prompt.lower():
+                return self.question_metadata.graph(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            elif "table" in prompt.lower():
+                return self.question_metadata.table(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            else:
+                # Default to passage template for basic problem solving
+                return self.question_metadata.passage(
+                    self.exam_type, question_type, customizations, prompt
+                )
+        elif question_type == QuestionType.TWO_PART_ANALYSIS:
+            # TPA questions can have graphs, tables, or passages - detect from prompt
+            if "graph" in prompt.lower():
+                return self.question_metadata.graph(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            elif "table" in prompt.lower():
+                return self.question_metadata.table(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            else:
+                # Default to passage for TPA without specific graph/table mentions
+                return self.question_metadata.passage(
+                    self.exam_type, question_type, customizations, prompt
+                )
         else:
-            return self.question_metadata.generic(
-                self.exam_type, question_type, customizations, prompt
-            )
+            # For other question types, check prompt for special content types
+            if "graph" in prompt.lower():
+                return self.question_metadata.graph(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            elif "table" in prompt.lower():
+                return self.question_metadata.table(
+                    self.exam_type, question_type, customizations, prompt
+                )
+            else:
+                # Default to passage template for generic cases
+                print(f"no correct template found for {prompt}")
+                return self.question_metadata.passage(
+                    self.exam_type, question_type, customizations, prompt
+                )
 
     def get_text_template(
         self,
@@ -271,18 +314,19 @@ class GMATSimpleQuestionAdapter:
         self.component = component
 
     @debug_log_method(ExamType.GMAT, QuestionType.CRITICAL_REASONING)
-    def generate_QuestionPassage(self, idx: int) -> str:  # ✅
+    def generate_QuestionPassage(self, idx: int) -> List[str]:  # ✅
         """Generate question passage/argument for Critical Reasoning [Not for Reading Comprehension](GMAT naming convention).
             Args:
                 idx: total number of paragraphs that passage should have
-            Returns **passages** as string
+            Returns **passages** as list of string (all the paragraphs)
         """
         component_template = self.component._get_component_instruction(
             "QuestionPassage")
-        total_passage = ""
+        total_passage = []
         for i in range(idx):
             instruction_prompt = f"{self.prompt}\nmode:- QuestionPassage; generate paragraph {i+1} of {idx}: \n{component_template}"
-            total_passage += f"{self.component.generate_question_passage(instruction_prompt)}\n"
+            total_passage.append(
+                f"{self.component.generate_question_passage(instruction_prompt)}")
         return total_passage
 
     @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
@@ -379,23 +423,30 @@ class GMATParentChildAdapter:
         self.component = component
         self.flow = []
 
+    @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
+    def generate_parentQuestionMetadata(self) -> Optional[str]:
+        """Generate parent question graph for problem solving type of questions in GMAT"""
+        component_structure = self.component._get_component_instruction(
+            'QuestionMetadata')
+
+        if "graph" in self.prompt:
+            instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionGraph\n{component_structure}"
+            result = self.component.generate_question_graph(instruction_prompt)
+        else:
+            instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionTable\n{component_structure}"
+            result = self.component.generate_question_table(instruction_prompt)
+        return result
+
     @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
     def generate_parentQuestionPassage(self) -> Optional[str]:
         """Generate parent question passage for reading comprehension (GMAT naming convention)."""
         # For RC questions, we need to generate the passage content
         component_structure = self.component._get_component_instruction(
-            'QuestionMetadata')
+            'QuestionPassage')
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionPassage\n{component_structure}"
-        result = self.component.generate_question_passage(
-            instruction_prompt, i=1, total=1)
-
-        # Extract the passage text from the JSON response
-        if result and isinstance(result, dict) and "passage" in result:
-            return result["passage"]
-        elif result and isinstance(result, str):
-            return result
-        else:
-            return None
+        result = self.component.generate_question_passage(instruction_prompt)
+        # generate_question_passage returns a string directly
+        return result
 
     @debug_log_method(ExamType.GMAT, QuestionType.PROBLEM_SOLVING)
     def generate_parentQuestionGraphs(self) -> Optional[str]:
@@ -654,7 +705,7 @@ class GMATMultiSourceReasoningAdapter:
         # idx parameter is included for compatibility but not used
         component_template = self.component._get_component_instruction(
             'QuestionMetadata')
-        instruction_prompt = f"Main Prompt:- {self.prompt}\n Mode:- Source_info{idx} Prompt: {prompt}\n{component_template}"
+        instruction_prompt = f"Active SourceInfo Prompt: {prompt}\n{component_template}"
         return self.component.generate_source_info(instruction_prompt, idx)
 
     @debug_log_method(ExamType.GMAT, QuestionType.MULTI_SOURCE_REASONING)
