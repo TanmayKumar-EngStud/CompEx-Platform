@@ -25,7 +25,10 @@ class GMATVerbalPrompts(BasePromptGenerator):
 
     def _get_total_questions(self) -> int:
         """Get total number of questions for GMAT Verbal section."""
-        return 23  # Base number for mock generation
+        # Get total from customizations under "verbal" → "total_questions", fallback to 23 for regular mock generation
+        verbal_config = self.customizations.get("verbal", {})
+        total_from_customizations = verbal_config.get("total_questions", 23)
+        return total_from_customizations
 
     def generate_question_prompts(self) -> List[str]:
         """
@@ -39,28 +42,31 @@ class GMATVerbalPrompts(BasePromptGenerator):
         prompts = []
 
         # Get section configuration for RC and CR distribution from customizations
-        section_config = self.customizations.get("section", {})
+        # Look for section config under "verbal" → "section"
+        verbal_config = self.customizations.get("verbal", {})
+        section_config = verbal_config.get("section", {})
 
         # Determine RC and CR question distribution using random selection
         rc_options = section_config.get("RC", [13, 14])
         num_rc_questions = self.get_random_element(
-            rc_options) if rc_options else 13
+            rc_options) if rc_options and max(rc_options) > 0 else 13
 
         cr_options = section_config.get("CR", [10, 9])
         num_cr_questions = self.get_random_element(
-            cr_options) if cr_options else 9
+            cr_options) if cr_options and max(cr_options) > 0 else 0
 
-        # Calculate total child questions for RC to maintain constant total
-        total_child_questions = self._calculate_rc_child_questions(num_rc_questions)
-
-        # Adjust total questions to maintain constant count
-        # Total questions = CR questions + RC parent questions + RC child questions
+        # For our RC-only setup, don't apply complex child question logic
+        # Just generate the configured number of RC parent questions
         total_questions_needed = self._get_total_questions()
-        remaining_questions = total_questions_needed - num_cr_questions - total_child_questions
-
-        # Ensure we have enough RC parent questions
-        if remaining_questions < num_rc_questions:
-            num_rc_questions = remaining_questions
+        
+        # Ensure we don't exceed total questions needed
+        if num_rc_questions + num_cr_questions > total_questions_needed:
+            # Prioritize RC questions for our RC-only setup
+            if num_rc_questions > 0:
+                num_rc_questions = min(num_rc_questions, total_questions_needed)
+                num_cr_questions = max(0, total_questions_needed - num_rc_questions)
+            else:
+                num_cr_questions = min(num_cr_questions, total_questions_needed)
 
         # Generate prompts using nomenclature patterns
         question_index = 0
@@ -77,12 +83,12 @@ class GMATVerbalPrompts(BasePromptGenerator):
                 difficulty
             )
             prompts.append(prompt)
-            
+
             # Store RC configuration for child question calculation
             rc_config = self.get_rc_configuration()
             if rc_config:
                 rc_configurations.append(rc_config)
-            
+
             question_index += 1
 
         # Store RC configurations for later use
@@ -117,12 +123,14 @@ class GMATVerbalPrompts(BasePromptGenerator):
             # Use actual RC configurations from generated prompts
             total_child_questions = 0
             for rc_config in self._rc_configurations:
-                child_count = rc_config.get('config', {}).get('child_questions', 1)
+                child_count = rc_config.get(
+                    'config', {}).get('child_questions', 1)
                 total_child_questions += child_count
             return total_child_questions
         else:
             # Fallback: calculate based on random distribution
-            rc_config = self.customizations.get("reading comprehension", {})
+            verbal_config = self.customizations.get("verbal", {})
+            rc_config = verbal_config.get("reading comprehension", {})
             question_type_config = rc_config.get("questionType", {})
 
             if not question_type_config:
@@ -144,7 +152,7 @@ class GMATVerbalPrompts(BasePromptGenerator):
     def get_rc_configurations(self) -> List[Dict[str, Any]]:
         """
         Get the RC configurations for all generated RC prompts.
-        
+
         Returns:
             List of RC configurations with type and config details
         """

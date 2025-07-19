@@ -135,6 +135,12 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
             # Initialize question data using base class
             self.initialize_question_data(self.prompt)
 
+            # Remove parent-specific fields that should only be in child questions
+            parent_excluded_fields = ["question", "options", "answer", "solution"]
+            for field in parent_excluded_fields:
+                if field in self.question_data:
+                    del self.question_data[field]
+
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(
                 question_type=QuestionType.READING_COMPREHENSION,

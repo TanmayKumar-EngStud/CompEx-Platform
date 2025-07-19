@@ -1,8 +1,8 @@
 {
    "quants": {
-      "total_questions": 2,
-      "Problem_Solving": 1,
-      "Data_Sufficiency": 1,
+      "total_questions": 0,
+      "Problem_Solving": 0,
+      "Data_Sufficiency": 0,
       "question_style": ["Pure Contextual", "Real Contextual"],
       "data sufficiency": {
          "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <focused_skill> - <difficulty_level: {1-5}>",
@@ -356,10 +356,10 @@
       }
    },
    "verbal": {
-      "total_questions": 2,
+      "total_questions": 1,
       "section": {
          "RC": [1, 1],
-         "CR": [1, 1]
+         "CR": [0, 0]
       },
       "critical reasoning": {
          "nomenclature": "CR - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>",
@@ -456,11 +456,11 @@
       }
    },
    "integrated reasoning": {
-      "total_questions": 4,
-      "Multi_Source_Reasoning": 1,
-      "Table_Analysis": 1,
-      "Graphics_Interpretation": 1,
-      "Two_Part_Analysis": 1,
+      "total_questions": 0,
+      "Multi_Source_Reasoning": 0,
+      "Table_Analysis": 0,
+      "Graphics_Interpretation": 0,
+      "Two_Part_Analysis": 0,
       "question_type": ["MSR", "TPA", "TA", "GI"],
       "graphic interpretation": {
          "nomenclature": "GI - <questionTheme> - <focused_skill> - <graphType> - <difficulty_level: {1-5}>",

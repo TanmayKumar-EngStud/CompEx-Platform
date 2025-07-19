@@ -439,7 +439,7 @@ class GMATParentChildAdapter:
         return result
 
     @debug_log_method(ExamType.GMAT, QuestionType.READING_COMPREHENSION)
-    def generate_parentQuestionPassage(self) -> Optional[str]:
+    def generate_parentQuestionPassage(self, no_of_paragraphs: int = 1) -> Optional[str]:
         """Generate parent question passage for reading comprehension (GMAT naming convention)."""
         # For RC questions, we need to generate the passage content
         component_structure = self.component._get_component_instruction(

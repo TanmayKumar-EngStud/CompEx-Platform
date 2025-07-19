@@ -199,12 +199,15 @@ class UnifiedMockGenerator:
                 verbal_total = gmat_config.get("verbal", {}).get("total_questions", 23) 
                 ir_total = gmat_config.get("integrated reasoning", {}).get("total_questions", 8)
                 
-                prompts["quants"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.QUANTITATIVE, quants_total)
-                prompts["verbal"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.VERBAL, verbal_total)
-                prompts["integrated_reasoning"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.INTEGRATED_REASONING, ir_total)
+                if quants_total > 0:
+                    prompts["quants"] = self._generate_factory_prompts(
+                        prompt_factory, SectionType.QUANTITATIVE, quants_total)
+                if verbal_total > 0:
+                    prompts["verbal"] = self._generate_factory_prompts(
+                        prompt_factory, SectionType.VERBAL, verbal_total)
+                if ir_total > 0:
+                    prompts["integrated_reasoning"] = self._generate_factory_prompts(
+                        prompt_factory, SectionType.INTEGRATED_REASONING, ir_total)
             elif self.exam_type == ExamType.GRE:
                 # Generate GRE prompts using nomenclature system - read counts from customizations
                 gre_config = customization_gre
@@ -252,10 +255,22 @@ class UnifiedMockGenerator:
             # Generate prompts using nomenclature system
             prompts = prompt_generator.generate_question_prompts()
 
-            # Ensure we have enough prompts
-            while len(prompts) < total_questions:
+            # Ensure we have enough prompts with safety check to prevent infinite loops
+            attempts = 0
+            max_attempts = 5
+            while len(prompts) < total_questions and attempts < max_attempts:
                 additional_prompts = prompt_generator.generate_question_prompts()
+                if not additional_prompts:  # If no prompts generated, break to avoid infinite loop
+                    print(f"WARNING: No additional prompts generated on attempt {attempts + 1}. Breaking to prevent infinite loop.")
+                    break
                 prompts.extend(additional_prompts)
+                attempts += 1
+            
+            if attempts >= max_attempts:
+                print(f"WARNING: Maximum attempts ({max_attempts}) reached for prompt generation.")
+            
+            if len(prompts) == 0:
+                raise RuntimeError(f"No prompts generated for {section_type.value} section")
 
             # Return only the required number
             return prompts[:total_questions]
@@ -598,35 +613,40 @@ class UnifiedMockGenerator:
     def _add_gmat_generation_tasks(self, thread_manager: APIThreadPoolManager) -> None:
         """Add GMAT question generation tasks to the thread manager."""
 
+        # Only add tasks for sections that have prompts
+        
         # Quantitative section tasks
-        for i, prompt in enumerate(self.prompts.get("quants", [])):
-            generator_class = self._get_generator_class_for_prompt(
-                prompt, SectionType.QUANTITATIVE)
+        if "quants" in self.prompts:
+            for i, prompt in enumerate(self.prompts.get("quants", [])):
+                generator_class = self._get_generator_class_for_prompt(
+                    prompt, SectionType.QUANTITATIVE)
 
-            def task_factory_q():
-                return self._create_question_task_factory(
-                    'GMAT_Q', 0, prompt, generator_class, i)
-            thread_manager.add_task(task_factory_q)
+                def task_factory_q():
+                    return self._create_question_task_factory(
+                        'GMAT_Q', 0, prompt, generator_class, i)
+                thread_manager.add_task(task_factory_q)
 
         # Verbal section tasks
-        for i, prompt in enumerate(self.prompts.get("verbal", [])):
-            generator_class = self._get_generator_class_for_prompt(
-                prompt, SectionType.VERBAL)
+        if "verbal" in self.prompts:
+            for i, prompt in enumerate(self.prompts.get("verbal", [])):
+                generator_class = self._get_generator_class_for_prompt(
+                    prompt, SectionType.VERBAL)
 
-            def task_factory_v():
-                return self._create_question_task_factory(
-                    'GMAT_V', 0, prompt, generator_class, i)
-            thread_manager.add_task(task_factory_v)
+                def task_factory_v():
+                    return self._create_question_task_factory(
+                        'GMAT_V', 0, prompt, generator_class, i)
+                thread_manager.add_task(task_factory_v)
 
         # Integrated Reasoning section tasks
-        for i, prompt in enumerate(self.prompts.get("integrated_reasoning", [])):
-            generator_class = self._get_generator_class_for_prompt(
-                prompt, SectionType.INTEGRATED_REASONING)
+        if "integrated_reasoning" in self.prompts:
+            for i, prompt in enumerate(self.prompts.get("integrated_reasoning", [])):
+                generator_class = self._get_generator_class_for_prompt(
+                    prompt, SectionType.INTEGRATED_REASONING)
 
-            def task_factory_ir():
-                return self._create_question_task_factory(
-                    'GMAT_IR', 0, prompt, generator_class, i)
-            thread_manager.add_task(task_factory_ir)
+                def task_factory_ir():
+                    return self._create_question_task_factory(
+                        'GMAT_IR', 0, prompt, generator_class, i)
+                thread_manager.add_task(task_factory_ir)
 
     def _create_question_task_factory(self, section: str, section_id: int, prompt: str, generator_class: GeneratorClass, question_index: int):
         """Factory function to create question generation tasks."""

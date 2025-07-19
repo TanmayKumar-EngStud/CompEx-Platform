@@ -1085,6 +1085,47 @@ class ParentChildQuestion(BaseQuestionComponent):
         super().__init__(*args, **kwargs)
         self.question_type = QuestionType.READING_COMPREHENSION  # Default
 
+    def generate_question_passage(self, instruction_prompt: str) -> str:
+        """
+        Generate question passage for Reading Comprehension questions.
+
+        Returns:
+            Generated passage text
+        """
+        def _generate(warn: bool = False) -> str:
+            prompt_text = f"mode:- ParentQuestion (Active) generate passage;\n {instruction_prompt}"
+            response = self._get_response(prompt_text, warn)
+
+            if not response:
+                return ""
+
+            parsed_data = self._process_json_response(
+                response, 
+                expected_keys=["passage"], 
+                context="generate_question_passage"
+            )
+            
+            if parsed_data and isinstance(parsed_data, dict):
+                passage = parsed_data.get("passage", "")
+                return passage.strip() if passage else ""
+            else:
+                return response.strip()
+
+        # Generate the passage
+        try:
+            result = _generate()
+            if not result:
+                # Retry with warning
+                result = _generate(warn=True)
+            
+            return result if result else ""
+        except Exception as e:
+            self.logger.log_generation_error(e, {
+                "operation": "ParentChildQuestion generate_question_passage",
+                "instruction_prompt": instruction_prompt[:100]
+            })
+            return ""
+
     def generate_question_metadata(self, instruction_prompt: str, i=0, total=0) -> Optional[Dict[str, Any]]:
         """Generate shared graph/table for child questions or passage for reading comprehension."""
         def _generate(warn: bool = False) -> Optional[Dict[str, Any]]:

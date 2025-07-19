@@ -100,7 +100,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
         self.no_of_paragraphs = int(
             re.search(r'<paragraphs_(\d+)>', self.prompt).group(1))
         child_question_numbers = int(
-            re.search(r'<child_questions_(\d+)>').group(1))
+            re.search(r'<child_questions_(\d+)>', self.prompt).group(1))
         if difficulty:
             difficulty = int(difficulty.group(1))
         else:
@@ -121,6 +121,12 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
         try:
             # Initialize question data using base class
             self.initialize_question_data(self.prompt)
+
+            # Remove parent-specific fields that should only be in child questions
+            parent_excluded_fields = ["question", "options", "answer", "solution"]
+            for field in parent_excluded_fields:
+                if field in self.question_data:
+                    del self.question_data[field]
 
             # Create unified component and wrap with GMAT adapter
             component = create_question_component(
