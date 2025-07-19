@@ -55,13 +55,13 @@ def _is_text_completion_prompt(prompt: str) -> bool:
     prompt_lower = prompt.lower()
     return any(tc_type in prompt_lower for tc_type in ['<tc-1>', '<tc-2>', '<tc-3>', 'tc-1', 'tc-2', 'tc-3'])
 
-def _is_sentence_equivalence_prompt(prompt: str) -> bool:
-    """Check if a prompt is for Sentence Equivalence questions."""
+def _is_reading_comprehension_prompt(prompt: str) -> bool:
+    """Check if a prompt is for Reading Comprehension questions."""
     prompt_lower = prompt.lower()
-    return '<se>' in prompt_lower or 'se' in prompt_lower
+    return '<rc-' in prompt_lower
 
-def _log_sentence_equivalence_data(prompt: str, response: str, mode: str = "unknown"):
-    """Log Sentence Equivalence instruction prompt and AI response for debugging."""
+def _log_reading_comprehension_data(prompt: str, response: str, mode: str = "unknown"):
+    """Log Reading Comprehension instruction prompt and AI response for debugging."""
     try:
         # Create log entry
         log_entry = {
@@ -69,38 +69,47 @@ def _log_sentence_equivalence_data(prompt: str, response: str, mode: str = "unkn
             "mode": mode,
             "instruction_prompt": prompt,
             "ai_response": response,
-            "se_type_detected": None
+            "rc_type_detected": None
         }
         
-        # Detect SE type
+        # Detect RC type
         prompt_lower = prompt.lower()
-        if '<se>' in prompt_lower or 'se' in prompt_lower:
-            log_entry["se_type_detected"] = "SE"
+        if '<rc-' in prompt_lower:
+            if 'rc-s' in prompt_lower:
+                log_entry["rc_type_detected"] = "RC-S"
+            elif 'rc-m' in prompt_lower:
+                log_entry["rc_type_detected"] = "RC-M"
+            elif 'rc-l' in prompt_lower:
+                log_entry["rc_type_detected"] = "RC-L"
+            else:
+                log_entry["rc_type_detected"] = "RC"
+        elif 'reading comprehension' in prompt_lower:
+            log_entry["rc_type_detected"] = "RC"
         
         # Store original prompt for reference
         if "Prompt: " in prompt:
             original_prompt = prompt.split("Prompt: ")[1].split("\n")[0]
             log_entry["original_prompt"] = original_prompt
         
-        # Ensure testing-se.json exists
-        log_file = "testing-se.json"
+        # Ensure testing-rc.json exists
+        log_file = "testing-rc.json"
         
         # Load existing data or create new
         if os.path.exists(log_file):
             with open(log_file, 'r') as f:
                 data = json.load(f)
         else:
-            data = {"sentence_equivalence_logs": []}
+            data = {"reading_comprehension_logs": []}
         
         # Add new entry
-        data["sentence_equivalence_logs"].append(log_entry)
+        data["reading_comprehension_logs"].append(log_entry)
         
         # Save back to file
         with open(log_file, 'w') as f:
             json.dump(data, f, indent=2)
             
     except Exception as e:
-        print(f"Error logging Sentence Equivalence data: {e}")
+        print(f"Error logging Reading Comprehension data: {e}")
 
 
 def is_error_response(message: Dict[str, Any]) -> bool:
@@ -423,9 +432,9 @@ class BaseQuestionComponent(ABC):
         try:
             response = self.chat.send_message(prompt)
             if response and response.text:
-                # Log Sentence Equivalence questions for debugging
-                if _is_sentence_equivalence_prompt(prompt):
-                    _log_sentence_equivalence_data(prompt, response.text, "AI_Response")
+                # Log Reading Comprehension questions for debugging
+                if _is_reading_comprehension_prompt(prompt):
+                    _log_reading_comprehension_data(prompt, response.text, "AI_Response")
                 return response.text
             else:
                 print(f"Empty response from AI - response: {response}")

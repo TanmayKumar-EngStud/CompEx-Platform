@@ -755,7 +755,7 @@ class UnifiedMockGenerator:
             return "DS"
         elif prompt.startswith("S") or prompt.startswith("<S>"):
             return "S"
-        elif prompt.startswith("RC") or prompt.startswith("<RC>"):
+        elif prompt.startswith("RC") or prompt.startswith("<RC>") or any(prompt.startswith(f"<rc-{suffix}>") for suffix in ["s", "m", "l"]):
             return "RC"
         elif prompt.startswith("CR") or prompt.startswith("<CR>"):
             return "CR"

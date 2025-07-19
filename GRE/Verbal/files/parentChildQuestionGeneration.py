@@ -21,12 +21,13 @@ sys.path.append(parent_dir)
 class ParentChildQuestionGeneration(BaseQuestionGenerator):
     """GRE Verbal Parent-Child Question Generator using unified architecture."""
 
-    def generate_child_prompt(self, idx):
+    def generate_child_prompt(self, idx, difficulty=3):
         """
         Generate child prompts by parsing focused skills from parent prompt.
 
         Args:
             idx: Number of child questions to generate
+            difficulty: Difficulty level for child questions
 
         Returns:
             List of child prompts
@@ -97,7 +98,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
         self.no_of_paragraphs = int(
             re.search(r'<paragraphs_(\d+)>', self.prompt).group(1))
         child_question_numbers = int(
-            re.search(r'<child_questions_(\d+)>').group(1))
+            re.search(r'<child_questions_(\d+)>', self.prompt).group(1))
 
         difficulty = re.search(r'<difficulty_level: (\d+)>', self.prompt)
         if difficulty:

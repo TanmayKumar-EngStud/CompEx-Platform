@@ -66,27 +66,27 @@ class GREVerbalPrompts(BasePromptGenerator):
         
         question_index = 0
         
-        # TEMPORARILY COMMENTED OUT: Generate RC prompts using nomenclature and store configurations
-        # rc_configurations = []
-        # for _ in range(rc_count):
-        #     difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-        #     
-        #     # Use nomenclature-based generation for RC
-        #     prompt = self.generate_nomenclature_based_prompt(
-        #         "reading comprehension",
-        #         difficulty
-        #     )
-        #     prompts.append(prompt)
-        #     
-        #     # Store RC configuration for child question calculation
-        #     rc_config = self.get_rc_configuration()
-        #     if rc_config:
-        #         rc_configurations.append(rc_config)
-        #     
-        #     question_index += 1
-        # 
-        # # Store RC configurations for later use
-        # self._rc_configurations = rc_configurations
+        # Generate RC prompts using nomenclature and store configurations
+        rc_configurations = []
+        for _ in range(rc_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            
+            # Use nomenclature-based generation for RC
+            prompt = self.generate_nomenclature_based_prompt(
+                "reading comprehension",
+                difficulty
+            )
+            prompts.append(prompt)
+            
+            # Store RC configuration for child question calculation
+            rc_config = self.get_rc_configuration()
+            if rc_config:
+                rc_configurations.append(rc_config)
+            
+            question_index += 1
+        
+        # Store RC configurations for later use
+        self._rc_configurations = rc_configurations
         
         # TEMPORARILY COMMENTED OUT: Generate TC prompts using nomenclature
         # for _ in range(tc_count):
@@ -100,17 +100,17 @@ class GREVerbalPrompts(BasePromptGenerator):
         #     prompts.append(prompt)
         #     question_index += 1
         
-        # Generate SE prompts using nomenclature
-        for _ in range(se_count):
-            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-            
-            # Use nomenclature-based generation for SE
-            prompt = self.generate_nomenclature_based_prompt(
-                "sentence equivalence",
-                difficulty
-            )
-            prompts.append(prompt)
-            question_index += 1
+        # TEMPORARILY COMMENTED OUT: Generate SE prompts using nomenclature
+        # for _ in range(se_count):
+        #     difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+        #     
+        #     # Use nomenclature-based generation for SE
+        #     prompt = self.generate_nomenclature_based_prompt(
+        #         "sentence equivalence",
+        #         difficulty
+        #     )
+        #     prompts.append(prompt)
+        #     question_index += 1
         
         return prompts
     
