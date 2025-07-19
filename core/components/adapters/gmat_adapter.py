@@ -273,7 +273,7 @@ class GMATAdapter:
             from core.enums.exam_types import ExamType
             from core.enums.question_types import QuestionType as QType
             return self.question_options.text_completion(
-                ExamType.GRE, QType.TEXT_COMPLETION, customizations, "TC-2"+prompt
+                ExamType.GRE, QType.GRAPHIC_INTERPRETATION, customizations, "TC-2"+prompt
             )  # mimicking TC-2 format for question_option generation for Graphical Interpretation
         else:
             return self.question_options.generic(

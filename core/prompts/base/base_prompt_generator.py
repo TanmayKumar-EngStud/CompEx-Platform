@@ -385,6 +385,12 @@ class BasePromptGenerator(ABC):
         # Second pass: substitute all variables
         for var in variables:
             var_clean = var
+            
+            # Handle SE as a literal prefix (not a variable to substitute)
+            if var == "SE" and question_type == "sentence equivalence":
+                # Keep <SE> as is - don't substitute it
+                continue
+                
             if "dichotomous" in var.lower():
                 substituted = substituted.replace(
                     f"<{var}>", f"<Dichotomous Choice({var})>")  # if key is explicitly saying that this variable is of type Dichotomous type in the nomenclature itself.
@@ -439,6 +445,10 @@ class BasePromptGenerator(ABC):
                     else:
                         substituted = substituted.replace(
                             f"<{var}>", f"<{question_type}>")
+                elif question_type == "sentence equivalence":
+                    # For SE, use the SE format directly
+                    substituted = substituted.replace(
+                        f"<{var}>", f"<SE>")
                 else:
                     substituted = substituted.replace(
                         f"<{var}>", f"<{question_type}>")

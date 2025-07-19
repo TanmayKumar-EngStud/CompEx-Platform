@@ -148,6 +148,38 @@ class QuestionText:
             processed_template, exam_type, question_type, customizations, prompt
         )
 
+    def text_completion(
+        self,
+        exam_type: ExamType,
+        question_type: QuestionType,
+        customizations: Optional[Dict[str, Any]] = None,
+        prompt: Optional[str] = None
+    ) -> str:
+        """
+        Load text completion question text template from 1-questionText/4-text_completion.txt.template
+        
+        Handles GRE text completion question format with proper fill-in-the-blank styles.
+        
+        Args:
+            exam_type: Target exam type (GMAT/GRE)
+            question_type: Question type classification
+            customizations: Exam-specific customizations
+            prompt: Original prompt for processing
+            
+        Returns:
+            Processed text completion question text template
+        """
+        template = self._load_template_file(
+            "1-questionText/4-text_completion.txt.template")
+        
+        # Apply text completion specific processing
+        processed_template = self._apply_conditional_blocks(
+            template, exam_type)
+        
+        return self._template_processor.process_template(
+            processed_template, exam_type, question_type, customizations, prompt
+        )
+
     def _apply_conditional_blocks(self, template: str, exam_type: ExamType) -> str:
         """
         Apply exam-specific conditional blocks to template.
@@ -183,10 +215,91 @@ class QuestionText:
                 )
 
             return processed_template
-
         except Exception as e:
             self._logger.error(f"Failed to apply conditional blocks: {e}")
             return template
+
+    def _apply_se_conditional_blocks(self, template: str, exam_type: ExamType) -> str:
+        """
+        Apply SE-specific conditional blocks to template.
+
+        Processes {{#if_se}}, {{/if_se}} blocks for sentence equivalence modifications.
+
+        Args:
+            template: Raw template content
+            exam_type: Target exam type
+
+        Returns:
+            Template with SE conditional blocks processed
+        """
+        try:
+            processed_template = template
+
+            # Keep SE content, remove TC content
+            processed_template = self._process_conditional_block(
+                processed_template, "{{#if_se}}", "{{/if_se}}", keep=True
+            )
+            
+            # Remove TC-specific content that doesn't apply to SE
+            processed_template = self._process_conditional_block(
+                processed_template, "{{#if_tc}}", "{{/if_tc}}", keep=False
+            )
+
+            # Apply standard exam-specific blocks
+            if exam_type == ExamType.GMAT:
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gmat}}", "{{/if_gmat}}", keep=True
+                )
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gre}}", "{{/if_gre}}", keep=False
+                )
+            else:  # GRE
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gre}}", "{{/if_gre}}", keep=True
+                )
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gmat}}", "{{/if_gmat}}", keep=False
+                )
+
+            return processed_template
+
+        except Exception as e:
+            self._logger.error(f"Failed to apply SE conditional blocks: {e}")
+            return template
+
+    def sentence_equivalence(
+        self,
+        exam_type: ExamType,
+        question_type: QuestionType,
+        customizations: Optional[Dict[str, Any]] = None,
+        prompt: Optional[str] = None
+    ) -> str:
+        """
+        Load sentence equivalence question text template.
+        
+        SE questions use the same TC-1 template (single blank) but with SE-specific 
+        conditional blocks that describe the two-word selection requirement.
+        
+        Args:
+            exam_type: Target exam type (GMAT/GRE)
+            question_type: Question type classification
+            customizations: Exam-specific customizations
+            prompt: Original prompt for processing
+            
+        Returns:
+            Processed template string with SE-specific modifications
+        """
+        # Load the text completion template
+        template = self._load_template_file(
+            "1-questionText/4-text_completion.txt.template")
+        
+        # Apply SE-specific conditional blocks processing
+        processed_template = self._apply_se_conditional_blocks(
+            template, exam_type)
+        
+        return self._template_processor.process_template(
+            processed_template, exam_type, question_type, customizations, prompt
+        )
 
     def _process_conditional_block(
         self,

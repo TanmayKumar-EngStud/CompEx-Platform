@@ -12,6 +12,10 @@ Date: 2025-06-25
 from typing import Any, Dict, List, Optional, Tuple, Union
 from core.enums.exam_types import ExamType
 from core.enums.question_types import QuestionType
+# REMOVED: unused imports for TC logging
+# import json
+# import os
+# from datetime import datetime
 from core.components.question_components import (
     SimpleQuestion,
     DataSufficiencyQuestion,
@@ -45,6 +49,16 @@ class GREAdapter:
         self.question_solution = QuestionSolution()
         self.question_options = QuestionOptions()
         self.question_answer = QuestionAnswer()
+
+    def _is_text_completion_question_from_prompt(self, prompt: str) -> bool:
+        """Check if this is a Text Completion question from prompt."""
+        prompt_lower = prompt.lower()
+        return any(tc_type in prompt_lower for tc_type in ['<tc-1>', '<tc-2>', '<tc-3>', 'tc-1', 'tc-2', 'tc-3'])
+
+    def _is_sentence_equivalence_question_from_prompt(self, prompt: str) -> bool:
+        """Check if this is a Sentence Equivalence question from prompt."""
+        prompt_lower = prompt.lower()
+        return '<se>' in prompt_lower
 
     @staticmethod
     def adapt_simple_question(prompt: str, component: SimpleQuestion) -> 'GRESimpleQuestionAdapter':
@@ -128,8 +142,26 @@ class GREAdapter:
         Returns:
             Processed text template
         """
+        # Debug logging for Text Completion questions
+        if self._is_text_completion_question_from_prompt(prompt):
+            print(
+                f"DEBUG: get_text_template called with question_type={question_type}, prompt={prompt}")
+
+        # Debug logging for Sentence Equivalence questions
+        if self._is_sentence_equivalence_question_from_prompt(prompt):
+            print(
+                f"DEBUG: get_text_template called with question_type={question_type}, prompt={prompt}")
+
         if question_type == QuestionType.NUMERIC_ENTRY:
             return self.question_text.numeric_entry(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif question_type == QuestionType.TEXT_COMPLETION:
+            return self.question_text.text_completion(
+                self.exam_type, question_type, customizations, prompt
+            )
+        elif question_type == QuestionType.SENTENCE_EQUIVALENCE:
+            return self.question_text.sentence_equivalence(
                 self.exam_type, question_type, customizations, prompt
             )
         elif "child" in prompt.lower():
@@ -247,13 +279,36 @@ class GRESimpleQuestionAdapter:
         """Initialize with SimpleQuestion component."""
         self.component = component
         self.prompt = prompt
+        self.question_type = self._infer_question_type(prompt)
 
-    @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
+    def _infer_question_type(self, prompt: str) -> QuestionType:
+        """Infer question type from prompt."""
+        prompt_lower = prompt.lower()
+
+        # Check for SE (Sentence Equivalence) questions
+        if "<se>" in prompt_lower:
+            return QuestionType.SENTENCE_EQUIVALENCE
+
+        # Check for TC (Text Completion) questions
+        if any(tc_type in prompt_lower for tc_type in ["<tc-1>", "<tc-2>", "<tc-3>"]):
+            return QuestionType.TEXT_COMPLETION
+
+        # Default to PROBLEM_SOLVING for other questions
+        return QuestionType.PROBLEM_SOLVING
+
     def generate_questionText(self) -> Optional[str]:
         """Generate question text (GRE naming convention)."""
+        # Extract question style from prompt
+        question_style = self._extract_question_style(self.prompt)
+
         component_structure = self.component._get_component_instruction(
-            'QuestionText')
+            'QuestionText', question_style)
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionText\n{component_structure}"
+
+        # REMOVED: TC logging - we're now focusing on SE only
+        # if self._is_text_completion_question():
+        #     self._log_tc_instruction(instruction_prompt, "QuestionText")
+
         return self.component.generate_question_text(instruction_prompt)
 
     @debug_log_method(ExamType.GRE, QuestionType.PROBLEM_SOLVING)
@@ -289,10 +344,50 @@ class GRESimpleQuestionAdapter:
         """Generate question options (GRE naming convention)."""
         # The base component doesn't use num_options parameter, but we accept it for compatibility
         _ = num_options  # Explicitly mark as unused
+        # Extract question style from prompt
+        question_style = self._extract_question_style(self.prompt)
+
         component_structure = self.component._get_component_instruction(
-            'QuestionOptions')
+            'QuestionOptions', question_style)
         instruction_prompt = f"Prompt: {self.prompt}\nMode: QuestionOptions\n{component_structure}"
+
+        # REMOVED: TC logging - we're now focusing on SE only
+        # if self._is_text_completion_question():
+        #     self._log_tc_instruction(instruction_prompt, "QuestionOptions")
+
         return self.component.generate_question_options(instruction_prompt)
+
+    def _extract_question_style(self, prompt: str) -> str:
+        """Extract question style from prompt."""
+        prompt_lower = prompt.lower()
+
+        # Define style mappings
+        style_patterns = [
+            ("TC-1", ["<tc-1>", "tc-1"]),
+            ("TC-2", ["<tc-2>", "tc-2"]),
+            ("TC-3", ["<tc-3>", "tc-3"]),
+            ("SE", ["<se>"])
+        ]
+
+        for style, patterns in style_patterns:
+            if any(pattern in prompt_lower for pattern in patterns):
+                return style
+
+        return None  # Use default template
+
+    def _is_text_completion_question(self) -> bool:
+        """Check if this is a Text Completion question."""
+        prompt_lower = self.prompt.lower()
+        return any(tc_type in prompt_lower for tc_type in ['<tc-1>', '<tc-2>', '<tc-3>', 'tc-1', 'tc-2', 'tc-3'])
+
+    # REMOVED: TC logging method - we're now focusing on SE only
+    # def _log_tc_instruction(self, instruction_prompt: str, mode: str):
+    #     """Log Text Completion instruction prompt for debugging."""
+
+    def _is_text_completion_question_from_prompt(self, prompt: str) -> bool:
+        """Check if this is a Text Completion question from prompt."""
+        prompt_lower = prompt.lower()
+        return any(tc_type in prompt_lower for tc_type in ['<tc-1>', '<tc-2>', '<tc-3>', 'tc-1', 'tc-2', 'tc-3'])
 
 
 class GREDataSufficiencyAdapter:

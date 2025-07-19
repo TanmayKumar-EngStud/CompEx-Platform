@@ -347,6 +347,7 @@ class QuestionGeneratorFactory:
             # GRE generators  
             "Q_PC_gen": (QuestionType.READING_COMPREHENSION, SectionType.QUANTITATIVE),
             "Q_NE_gen": (QuestionType.NUMERIC_ENTRY, SectionType.QUANTITATIVE),
+            "V_SE_gen": (QuestionType.SENTENCE_EQUIVALENCE, SectionType.VERBAL),
             # Q_DS_gen and Q_S_gen are same as GMAT for GRE
             # V_PC_gen and V_S_gen are same as GMAT for GRE
         }

@@ -64,6 +64,7 @@ class GeneratorClass(Enum):
     # GRE generators
     Q_PC_gen = "Q_PC_gen"
     Q_NE_gen = "Q_NE_gen"
+    V_SE_gen = "V_SE_gen"
 
 
 class UnifiedMockGenerator:
@@ -218,10 +219,11 @@ class UnifiedMockGenerator:
                 verbal_total_s2 = verbal_section2.get("total_questions", 20)
                 
                 # Generate separate prompts for each section
-                prompts["quants_section1"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.QUANTITATIVE, quants_total_s1)
-                prompts["quants_section2"] = self._generate_factory_prompts(
-                    prompt_factory, SectionType.QUANTITATIVE, quants_total_s2)
+                # COMMENTED OUT FOR TEXT COMPLETION DEBUGGING
+                # prompts["quants_section1"] = self._generate_factory_prompts(
+                #     prompt_factory, SectionType.QUANTITATIVE, quants_total_s1)
+                # prompts["quants_section2"] = self._generate_factory_prompts(
+                #     prompt_factory, SectionType.QUANTITATIVE, quants_total_s2)
                 prompts["verbal_section1"] = self._generate_factory_prompts(
                     prompt_factory, SectionType.VERBAL, verbal_total_s1)
                 prompts["verbal_section2"] = self._generate_factory_prompts(
@@ -291,6 +293,7 @@ class UnifiedMockGenerator:
                 GeneratorClass.Q_S_gen: (QuestionType.PROBLEM_SOLVING, SectionType.QUANTITATIVE),
                 GeneratorClass.V_PC_gen: (QuestionType.READING_COMPREHENSION, SectionType.VERBAL),
                 GeneratorClass.V_S_gen: (QuestionType.TEXT_COMPLETION, SectionType.VERBAL),
+                GeneratorClass.V_SE_gen: (QuestionType.SENTENCE_EQUIVALENCE, SectionType.VERBAL),
             }
         else:
             return {}
@@ -547,27 +550,28 @@ class UnifiedMockGenerator:
     def _add_gre_generation_tasks(self, thread_manager: APIThreadPoolManager) -> None:
         """Add GRE question generation tasks to the thread manager."""
 
-        # Quantitative section 1 tasks
-        for i, prompt in enumerate(self.prompts.get("quants_section1", [])):
-            generator_class = self._get_generator_class_for_prompt(
-                prompt, SectionType.QUANTITATIVE)
+        # COMMENTED OUT FOR TEXT COMPLETION DEBUGGING
+        # # Quantitative section 1 tasks
+        # for i, prompt in enumerate(self.prompts.get("quants_section1", [])):
+        #     generator_class = self._get_generator_class_for_prompt(
+        #         prompt, SectionType.QUANTITATIVE)
 
-            # Add task for section 1
-            def task_factory_1():
-                return self._create_question_task_factory(
-                    'GRE_Q', 1, prompt, generator_class, i)
-            thread_manager.add_task(task_factory_1)
+        #     # Add task for section 1
+        #     def task_factory_1():
+        #         return self._create_question_task_factory(
+        #             'GRE_Q', 1, prompt, generator_class, i)
+        #     thread_manager.add_task(task_factory_1)
 
-        # Quantitative section 2 tasks (different prompts)
-        for i, prompt in enumerate(self.prompts.get("quants_section2", [])):
-            generator_class = self._get_generator_class_for_prompt(
-                prompt, SectionType.QUANTITATIVE)
+        # # Quantitative section 2 tasks (different prompts)
+        # for i, prompt in enumerate(self.prompts.get("quants_section2", [])):
+        #     generator_class = self._get_generator_class_for_prompt(
+        #         prompt, SectionType.QUANTITATIVE)
 
-            # Add task for section 2
-            def task_factory_2():
-                return self._create_question_task_factory(
-                    'GRE_Q', 2, prompt, generator_class, i)
-            thread_manager.add_task(task_factory_2)
+        #     # Add task for section 2
+        #     def task_factory_2():
+        #         return self._create_question_task_factory(
+        #             'GRE_Q', 2, prompt, generator_class, i)
+        #     thread_manager.add_task(task_factory_2)
 
         # Verbal section 1 tasks
         for i, prompt in enumerate(self.prompts.get("verbal_section1", [])):
@@ -747,29 +751,29 @@ class UnifiedMockGenerator:
 
     def _extract_question_type(self, prompt: str) -> str:
         """Extract question type from prompt string."""
-        if prompt.startswith("DS"):
+        if prompt.startswith("DS") or prompt.startswith("<DS>"):
             return "DS"
-        elif prompt.startswith("S"):
+        elif prompt.startswith("S") or prompt.startswith("<S>"):
             return "S"
-        elif prompt.startswith("RC"):
+        elif prompt.startswith("RC") or prompt.startswith("<RC>"):
             return "RC"
-        elif prompt.startswith("CR"):
+        elif prompt.startswith("CR") or prompt.startswith("<CR>"):
             return "CR"
-        elif prompt.startswith("GI"):
+        elif prompt.startswith("GI") or prompt.startswith("<GI>"):
             return "GI"
-        elif prompt.startswith("TPA"):
+        elif prompt.startswith("TPA") or prompt.startswith("<TPA>"):
             return "TPA"
-        elif prompt.startswith("TA"):
+        elif prompt.startswith("TA") or prompt.startswith("<TA>"):
             return "TA"
-        elif prompt.startswith("MSR"):
+        elif prompt.startswith("MSR") or prompt.startswith("<MSR>"):
             return "MSR"
-        elif prompt.startswith("NE"):
+        elif prompt.startswith("NE") or prompt.startswith("<NE>"):
             return "NE"
-        elif prompt.startswith("PC"):
+        elif prompt.startswith("PC") or prompt.startswith("<PC>"):
             return "PC"
-        elif prompt.startswith("TC"):
+        elif prompt.startswith("TC") or prompt.startswith("<TC>") or any(prompt.startswith(f"<tc-{i}>") for i in [1, 2, 3]):
             return "TC"
-        elif prompt.startswith("SE"):
+        elif prompt.startswith("SE") or prompt.startswith("<SE>"):
             return "SE"
         else:
             return "S"  # Default to simple
@@ -801,7 +805,7 @@ class UnifiedMockGenerator:
             "NE": GeneratorClass.Q_NE_gen,
             "PC": GeneratorClass.Q_PC_gen,
             "TC": GeneratorClass.V_S_gen,
-            "SE": GeneratorClass.V_S_gen
+            "SE": GeneratorClass.V_SE_gen
         }
 
         return type_mapping.get(question_type, GeneratorClass.Q_S_gen)
@@ -1014,6 +1018,8 @@ class UnifiedMockGenerator:
             return "TA"
         elif "MSR" in class_name:
             return "MSR"
+        elif "SE" in class_name:
+            return "SE"
         else:
             return "S"
 

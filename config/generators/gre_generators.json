@@ -86,13 +86,26 @@
           "generator_class": "GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration",
           "question_type": "text_completion",
           "display_name": "Text Completion Generator",
-          "description": "Generates GRE Text Completion and Sentence Equivalence questions",
+          "description": "Generates GRE Text Completion questions",
           "supports_multi_part": false,
           "max_child_questions": 1,
           "system_instruction_file": "GRE/Verbal/System_instructions/GRE-Verbal-Simple-Questions.txt",
           "example_prompts": [
             "TC - <vocabulary> - <difficulty-level: 3>",
-            "SE - <reasoning> - <difficulty-level: 4>"
+            "<tc-1> - <vocabulary> - <difficulty-level: 4>"
+          ]
+        },
+        {
+          "generator_class": "GRE.Verbal.files.simpleQuestionGeneration.SimpleQuestionGeneration",
+          "question_type": "sentence_equivalence",
+          "display_name": "Sentence Equivalence Generator",
+          "description": "Generates GRE Sentence Equivalence questions",
+          "supports_multi_part": false,
+          "max_child_questions": 1,
+          "system_instruction_file": "GRE/Verbal/System_instructions/GRE-Verbal-Simple-Questions.txt",
+          "example_prompts": [
+            "<SE> - <reasoning> - <difficulty-level: 4>",
+            "<SE> - <vocabulary> - <difficulty-level: 3>"
           ]
         }
       ]

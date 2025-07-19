@@ -1,0 +1,64 @@
+STRICT RESPONSE FORMAT:- JSON
+- "question" key with complete question text including appropriate blanks.
+Example:-
+```json
+{
+  "question": "complete question text with _______ blanks positioned appropriately"
+}
+```
+
+**Important Notes:**
+- Create questions based on given topic focusing provided skill set
+- Use double quotes only, replace single quotes with (`) symbol
+{{#if_gmat}}
+- Include business context and vocabulary
+- Focus on critical reasoning over pure calculation
+- Scale difficulty: Level 1 (3 steps) → Level 5 (10+ steps)
+{{/if_gmat}}
+{{#if_gre}}
+- Focus on academic and analytical reasoning
+- Use formal academic vocabulary for graduate studies
+{{/if_gre}}
+
+{{#if_TC-1}}
+**TC-1 Format Instructions:**
+- Create ONE blank using exactly 5 underscores: _____
+- Position the blank strategically within the sentence
+- Ensure the blank tests vocabulary and contextual understanding
+- The completed sentence should make logical sense
+{{/if_TC-1}}
+
+{{#if_TC-2}}
+**TC-2 Format Instructions:**
+- Create TWO blanks using exactly 5 underscores each: _____ and _____
+- Position blanks strategically within the sentence or passage
+- Ensure blanks test vocabulary, logical connections, and contextual understanding
+- The completed sentence should demonstrate coherent reasoning
+- Consider relationships between the two blanks (cause-effect, contrast, elaboration)
+{{/if_TC-2}}
+
+{{#if_TC-3}}
+**TC-3 Format Instructions:**
+- Create THREE blanks using exactly 5 underscores each: _____, _____, and _____
+- Position blanks strategically within the passage
+- Ensure blanks test vocabulary, logical flow, and complex reasoning
+- The completed passage should demonstrate sophisticated understanding
+- Consider relationships between all three blanks (sequential logic, thematic coherence)
+{{/if_TC-3}}
+
+{{#if_se}}
+**SE (Sentence Equivalence) Format Instructions:**
+- Create ONE blank using exactly 5 underscores: _____
+- Position the blank strategically within the sentence
+- Ensure the blank can be filled with TWO DIFFERENT WORDS that produce equivalent meanings
+- The sentence should make logical sense with either of the two correct words
+- Focus on testing vocabulary where multiple words can convey the same essential meaning
+- Both correct answers should result in sentences with the same overall meaning and tone
+{{/if_se}}
+
+**Fill-in-the-Blank Style Guidelines:**
+- Use exactly 5 underscores (____) for each blank
+- Ensure blanks are clearly distinguishable and logically positioned
+- Create meaningful context around each blank
+- Test appropriate vocabulary level for the given difficulty
+- Maintain grammatical correctness when blanks are filled

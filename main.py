@@ -35,38 +35,44 @@ class Main:
       print("PAPER GENERATION SESSION STARTED")
       print("=" * 80)
       
-      try:
-         # GMAT Paper Generation (First)
-         print(f"Starting GMAT paper generation - Difficulty: {self._difficulty_and_is_mock['difficulty']}")
-         gmat_mock = UnifiedMockGenerator(ExamType.GMAT, self._difficulty_and_is_mock['difficulty'])
-         GMAT_paper = gmat_mock.generate_mock_paper()
-         timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
-         gmat_filepath = f'papers/GMAT/GMAT_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json'
-         
-         with open(gmat_filepath, 'w') as f:
-            try:
-               json.dump(GMAT_paper, f, indent=2)
-               print(f"GMAT paper saved successfully: {gmat_filepath}")
-            except Exception as e:
-               print(f"GMAT paper storing Error: {str(e)}")
-               raise e
-         
-         try:
-            self.database.registerQuestion(GMAT_paper, isMockQuestion=self._difficulty_and_is_mock['is_mock'], difficulty=self._difficulty_and_is_mock['difficulty'])
-            print("GMAT questions registered in database successfully")
-         except Exception as e:
-            print(f"GMAT database registration failed: {str(e)}")
-            raise e
-            
-         gmat_success = True
-         print("GMAT paper generation completed successfully")
-         
-      except Exception as e:
-         print(f"GMAT paper generation failed: {str(e)}")
-         gmat_success = False
+      # COMMENTED OUT FOR TEXT COMPLETION DEBUGGING
+      # try:
+      #    # GMAT Paper Generation (First)
+      #    print(f"Starting GMAT paper generation - Difficulty: {self._difficulty_and_is_mock['difficulty']}")
+      #    gmat_mock = UnifiedMockGenerator(ExamType.GMAT, self._difficulty_and_is_mock['difficulty'])
+      #    GMAT_paper = gmat_mock.generate_mock_paper()
+      #    timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
+      #    gmat_filepath = f'papers/GMAT/GMAT_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json'
+      #    
+      #    with open(gmat_filepath, 'w') as f:
+      #       try:
+      #          json.dump(GMAT_paper, f, indent=2)
+      #          print(f"GMAT paper saved successfully: {gmat_filepath}")
+      #       except Exception as e:
+      #          print(f"GMAT paper storing Error: {str(e)}")
+      #          raise e
+      #    
+      #    try:
+      #       self.database.registerQuestion(GMAT_paper, isMockQuestion=self._difficulty_and_is_mock['is_mock'], difficulty=self._difficulty_and_is_mock['difficulty'])
+      #       print("GMAT questions registered in database successfully")
+      #    except Exception as e:
+      #       print(f"GMAT database registration failed: {str(e)}")
+      #       raise e
+      #       
+      #    gmat_success = True
+      #    print("GMAT paper generation completed successfully")
+      #    
+      # except Exception as e:
+      #    print(f"GMAT paper generation failed: {str(e)}")
+      #    gmat_success = False
       
-      print("Sleeping for 60 seconds for API rate limit reset")
-      time.sleep(60)
+      # Skip GMAT for debugging
+      gmat_success = True
+      print("GMAT paper generation SKIPPED for debugging")
+      
+      # Skip sleep since we're not using GMAT API
+      # print("Sleeping for 60 seconds for API rate limit reset")
+      # time.sleep(60)
       
       try:
          # GRE Paper Generation (Second)

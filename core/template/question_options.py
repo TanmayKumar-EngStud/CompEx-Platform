@@ -80,6 +80,60 @@ class QuestionOptions:
         return self._template_processor.process_template(
             processed_template, exam_type, question_type, customizations, prompt
         )
+
+    def _apply_se_conditional_blocks(self, template: str, exam_type: ExamType) -> str:
+        """
+        Apply SE-specific conditional blocks to template.
+
+        Processes {{#if_se}}, {{/if_se}} blocks for sentence equivalence modifications.
+
+        Args:
+            template: Raw template content
+            exam_type: Target exam type
+
+        Returns:
+            Template with SE conditional blocks processed
+        """
+        try:
+            processed_template = template
+
+            # Keep SE content, remove TC content
+            processed_template = self._process_conditional_block(
+                processed_template, "{{#if_se}}", "{{/if_se}}", keep=True
+            )
+            
+            # Remove TC-specific content that doesn't apply to SE
+            processed_template = self._process_conditional_block(
+                processed_template, "{{#if_TC-1}}", "{{/if_TC-1}}", keep=False
+            )
+            processed_template = self._process_conditional_block(
+                processed_template, "{{#if_TC-2}}", "{{/if_TC-2}}", keep=False
+            )
+            processed_template = self._process_conditional_block(
+                processed_template, "{{#if_TC-3}}", "{{/if_TC-3}}", keep=False
+            )
+
+            # Apply standard exam-specific blocks
+            if exam_type == ExamType.GMAT:
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gmat}}", "{{/if_gmat}}", keep=True
+                )
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gre}}", "{{/if_gre}}", keep=False
+                )
+            else:  # GRE
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gre}}", "{{/if_gre}}", keep=True
+                )
+                processed_template = self._process_conditional_block(
+                    processed_template, "{{#if_gmat}}", "{{/if_gmat}}", keep=False
+                )
+
+            return processed_template
+
+        except Exception as e:
+            self._logger.error(f"Failed to apply SE conditional blocks: {e}")
+            return template
     
     def sentence_equivalence(
         self,
@@ -89,9 +143,11 @@ class QuestionOptions:
         prompt: Optional[str] = None
     ) -> str:
         """
-        Load sentence equivalence options template from 4-questionOptions/2-sentence_equivalence.txt.template
+        Load sentence equivalence options template using TC template with SE modifications.
         
-        Handles GRE sentence equivalence question format.
+        SE questions reuse TC-1 template (single blank) but with SE-specific format:
+        - 6 options (A-F) instead of 5 (A-E)
+        - Array answer with exactly 2 correct choices instead of single answer
         
         Args:
             exam_type: Target exam type (GMAT/GRE)
@@ -100,11 +156,16 @@ class QuestionOptions:
             prompt: Original prompt for processing
             
         Returns:
-            Processed sentence equivalence options template
+            Processed SE options template based on TC-1 with SE modifications
         """
-        template = self._load_template_file("4-questionOptions/2-sentence_equivalence.txt.template")
+        # Load the text completion template and apply SE-specific processing
+        template = self._load_template_file("4-questionOptions/3-text_completion.txt.template")
+        
+        # Apply SE-specific conditional blocks processing
+        processed_template = self._apply_se_conditional_blocks(template, exam_type)
+        
         return self._template_processor.process_template(
-            template, exam_type, question_type, customizations, prompt
+            processed_template, exam_type, question_type, customizations, prompt
         )
     
     def text_completion(
@@ -228,3 +289,43 @@ class QuestionOptions:
             return content
         except Exception as e:
             raise IOError(f"Failed to load template {template_path}: {e}")
+
+    def _process_conditional_block(
+        self,
+        template: str,
+        start_tag: str,
+        end_tag: str,
+        keep: bool
+    ) -> str:
+        """
+        Process a single conditional block in the template.
+
+        Args:
+            template: Template content
+            start_tag: Opening conditional tag
+            end_tag: Closing conditional tag
+            keep: Whether to keep the content inside the block
+
+        Returns:
+            Template with conditional block processed
+        """
+        while start_tag in template and end_tag in template:
+            start_index = template.find(start_tag)
+            end_index = template.find(end_tag, start_index)
+
+            if start_index == -1 or end_index == -1:
+                break
+
+            # Extract content between tags
+            content_start = start_index + len(start_tag)
+            content = template[content_start:end_index]
+
+            # Replace the entire block with content or empty string
+            replacement = content if keep else ""
+            template = (
+                template[:start_index] +
+                replacement +
+                template[end_index + len(end_tag):]
+            )
+
+        return template

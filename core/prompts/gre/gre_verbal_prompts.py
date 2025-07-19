@@ -35,7 +35,7 @@ class GREVerbalPrompts(BasePromptGenerator):
             nomenclature:
             RC: `<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}> - <paragraphs_{1-3}> - <child_questions_{2-4}>`
             TC: `<questionType> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>`
-            SE: `SE - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>`
+            SE: `<SE> - <questionTheme> - <focused_skill> - <vocabulary_level: {1-3}> - <difficulty_level: {1-5}>`
         """
         difficulty_pool = self.get_difficulty_pool()
         prompts = []
@@ -66,39 +66,39 @@ class GREVerbalPrompts(BasePromptGenerator):
         
         question_index = 0
         
-        # Generate RC prompts using nomenclature and store configurations
-        rc_configurations = []
-        for _ in range(rc_count):
-            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-            
-            # Use nomenclature-based generation for RC
-            prompt = self.generate_nomenclature_based_prompt(
-                "reading comprehension",
-                difficulty
-            )
-            prompts.append(prompt)
-            
-            # Store RC configuration for child question calculation
-            rc_config = self.get_rc_configuration()
-            if rc_config:
-                rc_configurations.append(rc_config)
-            
-            question_index += 1
+        # TEMPORARILY COMMENTED OUT: Generate RC prompts using nomenclature and store configurations
+        # rc_configurations = []
+        # for _ in range(rc_count):
+        #     difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+        #     
+        #     # Use nomenclature-based generation for RC
+        #     prompt = self.generate_nomenclature_based_prompt(
+        #         "reading comprehension",
+        #         difficulty
+        #     )
+        #     prompts.append(prompt)
+        #     
+        #     # Store RC configuration for child question calculation
+        #     rc_config = self.get_rc_configuration()
+        #     if rc_config:
+        #         rc_configurations.append(rc_config)
+        #     
+        #     question_index += 1
+        # 
+        # # Store RC configurations for later use
+        # self._rc_configurations = rc_configurations
         
-        # Store RC configurations for later use
-        self._rc_configurations = rc_configurations
-        
-        # Generate TC prompts using nomenclature
-        for _ in range(tc_count):
-            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-            
-            # Use nomenclature-based generation for TC
-            prompt = self.generate_nomenclature_based_prompt(
-                "text completion",
-                difficulty
-            )
-            prompts.append(prompt)
-            question_index += 1
+        # TEMPORARILY COMMENTED OUT: Generate TC prompts using nomenclature
+        # for _ in range(tc_count):
+        #     difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+        #     
+        #     # Use nomenclature-based generation for TC
+        #     prompt = self.generate_nomenclature_based_prompt(
+        #         "text completion",
+        #         difficulty
+        #     )
+        #     prompts.append(prompt)
+        #     question_index += 1
         
         # Generate SE prompts using nomenclature
         for _ in range(se_count):

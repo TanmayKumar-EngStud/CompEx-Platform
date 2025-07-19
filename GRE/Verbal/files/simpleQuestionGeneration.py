@@ -14,10 +14,13 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
     """GRE Verbal Simple Question Generator using unified architecture."""
     
     def __init__(self, global_state, lock, api_IDX, prompt):
+        # Determine the correct question type based on prompt
+        question_type = self._infer_question_type(prompt)
+        
         # Initialize base class with proper types
         super().__init__(
             exam_type=ExamType.GRE,
-            question_type=QuestionType.TEXT_COMPLETION,  # Default, will be refined based on prompt
+            question_type=question_type,
             global_state=global_state,
             lock=lock,
             api_idx=api_IDX,
@@ -25,7 +28,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
         )
         
         # Load SE-specific instructions if needed
-        if "SE" in prompt:
+        if "<SE>" in prompt or "SE" in prompt:
             se_instruction_path = os.path.join(
                 os.path.dirname(__file__), 
                 "../System_instructions/GRE-Verbal-SE.txt"
@@ -37,6 +40,29 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 print(f"SE instruction file not found: {se_instruction_path}")
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
+    
+    def _infer_question_type(self, prompt):
+        """
+        Infer the question type based on the prompt content.
+        
+        Args:
+            prompt: The input prompt string
+            
+        Returns:
+            QuestionType enum value
+        """
+        prompt_lower = prompt.lower()
+        
+        # Check for SE (Sentence Equivalence) questions
+        if "<se>" in prompt_lower:
+            return QuestionType.SENTENCE_EQUIVALENCE
+        
+        # Check for TC (Text Completion) questions
+        if any(tc_type in prompt_lower for tc_type in ["<tc-1>", "<tc-2>", "<tc-3>"]):
+            return QuestionType.TEXT_COMPLETION
+        
+        # Default to TEXT_COMPLETION if no clear identifier found
+        return QuestionType.TEXT_COMPLETION
 
     def shuffle_options(self,options):
         option_list = []
@@ -72,7 +98,9 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
                 self.system_instructions, 
                 self.global_state, 
                 self.lock, 
-                self.prompt
+                self.prompt,
+                exam_type=ExamType.GRE,
+                question_type=self.question_type
             )
             questionContent = GREAdapter.adapt_simple_question(self.prompt, base_component)
             
@@ -123,8 +151,20 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
             try:
                 prompt_parts = self.prompt.split(" - ")
                 if len(prompt_parts) >= 2:
-                    theme = prompt_parts[0].strip().strip("<>").lower()
-                    question_type = prompt_parts[1].strip("<>").lower()
+                    # Handle both old format (SE - <theme>) and new format (<SE> - <theme>)
+                    first_part = prompt_parts[0].strip().strip("<>").lower()
+                    second_part = prompt_parts[1].strip().strip("<>").lower()
+                    
+                    # Check if first part is a question type code
+                    if first_part in ["se", "tc", "tc-1", "tc-2", "tc-3", "rc"]:
+                        # New format: <SE> - <theme>
+                        question_type = first_part
+                        theme = second_part
+                    else:
+                        # Old format: theme - question_type (fallback)
+                        theme = first_part
+                        question_type = second_part
+                    
                     self.question_data["tags"] = [theme, question_type]
                 else:
                     self.question_data["tags"] = self.extract_tags_from_prompt()
@@ -174,3 +214,8 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
     def get_exam_type(self) -> ExamType:
         """Get exam type."""
         return ExamType.GRE
+
+
+# Legacy compatibility aliases for factory
+V_S_gen = SimpleQuestionGeneration  # For Text Completion
+V_SE_gen = SimpleQuestionGeneration  # For Sentence Equivalence

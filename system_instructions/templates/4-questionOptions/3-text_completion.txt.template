@@ -48,6 +48,25 @@ Example:-
 ```
 {{/if_TC-3}}
 
+{{#if_se}}
+- "options" key with value as dictionary.
+- "answer" key with array with exactly two correctly fitting options.
+Example:-
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2",
+    "C": "option 3",
+    "D": "option 4",
+    "E": "option 5",
+    "F": "option 6"
+  },
+  "answer": ["A", "F"]
+}
+```
+{{/if_se}}
+
 **Important Notes:**
 {{#if_TC-1}}
 - TC-1: Single blank, 5 options, single answer
@@ -58,3 +77,6 @@ Example:-
 {{#if_TC-3}}
 - TC-3: Multiple blanks, 3 options per blank, array answers
 {{/if_TC-3}}
+{{#if_se}}
+- SE: Single blank, 6 options (A-F), exactly 2 correct answers that produce equivalent meanings
+{{/if_se}}

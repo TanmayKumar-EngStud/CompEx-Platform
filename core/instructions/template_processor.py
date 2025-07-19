@@ -103,7 +103,7 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
 
             # Process conditional content
             processed = self._process_conditionals(
-                template, exam_type, question_type)
+                template, exam_type, question_type, prompt)
 
             # Process template inheritance (e.g., {{GENERIC_PHILOSOPHY_TEMPLATE}})
             processed = self._process_template_inheritance(processed)
@@ -164,7 +164,8 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
         self,
         template: str,
         exam_type: ExamType,
-        question_type: QuestionType
+        question_type: QuestionType,
+        prompt: str = None
     ) -> str:
         """Process conditional content blocks in template."""
         # Handle exam-specific conditionals
@@ -172,7 +173,7 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
 
         # Handle question-type conditionals
         template = self._process_question_type_conditionals(
-            template, question_type)
+            template, question_type, prompt)
 
         return template
 
@@ -194,7 +195,7 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
 
         return template
 
-    def _process_question_type_conditionals(self, template: str, question_type: QuestionType) -> str:
+    def _process_question_type_conditionals(self, template: str, question_type: QuestionType, prompt: str = None) -> str:
         """Process question-type specific conditional blocks."""
         # Debug logging to understand what question type is being processed
         # print(f"DEBUG: Template processor processing question_type: {question_type}")
@@ -233,10 +234,28 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
         tc3_pattern = r'{{#if_TC-3}}(.*?){{/if_TC-3}}'
 
         if question_type == QuestionType.TEXT_COMPLETION:
-            # For now, default to TC-1 format unless prompt specifies otherwise
-            template = re.sub(tc1_pattern, r'\1', template, flags=re.DOTALL)
-            template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)
-            template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
+            # Detect TC type from prompt
+            self._logger.debug(f"Template processing - Prompt: {prompt}")
+            self._logger.debug(f"Template processing - Question type: {question_type}")
+            
+            if prompt and ("<tc-3>" in prompt.lower() or "tc-3" in prompt.lower()):
+                self._logger.debug("Template processing - Detected TC-3 format")
+                # TC-3 format: 3 blanks
+                template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
+                template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)
+                template = re.sub(tc3_pattern, r'\1', template, flags=re.DOTALL)
+            elif prompt and ("<tc-2>" in prompt.lower() or "tc-2" in prompt.lower()):
+                self._logger.debug("Template processing - Detected TC-2 format")
+                # TC-2 format: 2 blanks
+                template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
+                template = re.sub(tc2_pattern, r'\1', template, flags=re.DOTALL)
+                template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
+            else:
+                self._logger.debug("Template processing - Defaulting to TC-1 format")
+                # TC-1 format: 1 blank (default)
+                template = re.sub(tc1_pattern, r'\1', template, flags=re.DOTALL)
+                template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)
+                template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
         elif question_type == QuestionType.GRAPHIC_INTERPRETATION:
             # GI questions use TC-2 format (fill-in-the-blank with 2 blanks)
             template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
