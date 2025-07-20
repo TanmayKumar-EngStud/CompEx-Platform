@@ -597,6 +597,17 @@ class BaseQuestionComponent(ABC):
                 elif "ParentChild" in class_name:
                     question_style = "Reading Comprehension (RC)"
             
+            # Determine expected format based on question style
+            is_tc2_question = '<tc-2>' in question_style.lower()
+            is_tc3_question = '<tc-3>' in question_style.lower()
+            
+            if is_tc2_question:
+                expected_format = "List of dictionaries (for TC-2)"
+            elif is_tc3_question:
+                expected_format = "List of dictionaries (for TC-3)"
+            else:
+                expected_format = "Dictionary with single letter keys (A, B, C, etc.)"
+            
             # Create error log entry
             error_entry = {
                 "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -605,11 +616,11 @@ class BaseQuestionComponent(ABC):
                 "exam_type": self.exam_type.value if hasattr(self, 'exam_type') else "Unknown",
                 "instruction_prompt": instruction_prompt,
                 "original_prompt": getattr(self, 'prompt', 'Not available'),
-                "expected_format": "Dictionary with single letter keys (A, B, C, etc.)",
+                "expected_format": expected_format,
                 "actual_format": str(type(options).__name__),
                 "actual_options": options,
                 "full_response": response_message,
-                "error_message": f"Options should be a dictionary but got {type(options)}: {options}"
+                "error_message": f"Options should be {expected_format.lower()} but got {type(options)}: {options}"
             }
             
             # Load existing errors or create new file
@@ -628,14 +639,14 @@ class BaseQuestionComponent(ABC):
                 json.dump(error_data, f, indent=2)
             
             # Print error with question style info
-            print(f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+            print(f"ERROR: Options should be {expected_format.lower()} but got {type(options)}: {options}")
             print(f"Question Style: {question_style}")
             print(f"Error logged to question_generation_errors.json")
             
         except Exception as e:
             print(f"Error logging options error: {e}")
             # Fallback to simple print
-            print(f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+            print(f"ERROR: Options format validation failed. Type: {type(options)}, Value: {options}")
 
     @abstractmethod
     def generate_question_text(self, *args, **kwargs) -> Any:
@@ -866,34 +877,67 @@ class SimpleQuestion(BaseQuestionComponent):
                 options = message["options"]
                 answer = message["answer"]
 
-                # Validate that options is a dictionary
-                if not isinstance(options, dict):
-                    self._log_options_error(options, instruction_prompt, message)
-                    return None
-
-                # Validate that all option keys are single letters
-                for key in options.keys():
-                    if not isinstance(key, str) or len(key) != 1 or not key.isalpha():
-                        print(
-                            f"ERROR: Option key should be single letter but got: {key}")
+                # Validate options format based on question type
+                is_tc2_question = hasattr(self, 'prompt') and '<tc-2>' in self.prompt.lower()
+                is_tc3_question = hasattr(self, 'prompt') and '<tc-3>' in self.prompt.lower()
+                
+                if is_tc2_question or is_tc3_question:
+                    # TC-2 and TC-3 questions should have options as a list of dictionaries
+                    question_type_name = "TC-2" if is_tc2_question else "TC-3"
+                    if not isinstance(options, list):
+                        self._log_options_error(options, instruction_prompt, message)
                         return None
-
-                # Validate that answer is a valid key or list of valid keys
-                if isinstance(answer, str):
-                    if answer not in options:
-                        print(
-                            f"ERROR: Answer key '{answer}' not found in options: {list(options.keys())}")
+                    # Validate each dictionary in the list
+                    for i, option_dict in enumerate(options):
+                        if not isinstance(option_dict, dict):
+                            print(f"ERROR: {question_type_name} options[{i}] should be a dictionary but got {type(option_dict)}: {option_dict}")
+                            self._log_options_error(options, instruction_prompt, message)
+                            return None
+                        # Validate that all option keys are single letters
+                        for key in option_dict.keys():
+                            if not isinstance(key, str) or len(key) != 1 or not key.isalpha():
+                                print(f"ERROR: {question_type_name} option key should be single letter but got: {key}")
+                                return None
+                else:
+                    # Regular questions (SE, TC-1, etc.) should have options as a dictionary
+                    if not isinstance(options, dict):
+                        self._log_options_error(options, instruction_prompt, message)
                         return None
-                elif isinstance(answer, list):
-                    for ans_key in answer:
-                        if ans_key not in options:
-                            print(
-                                f"ERROR: Answer key '{ans_key}' not found in options: {list(options.keys())}")
+                    # Validate that all option keys are single letters
+                    for key in options.keys():
+                        if not isinstance(key, str) or len(key) != 1 or not key.isalpha():
+                            print(f"ERROR: Option key should be single letter but got: {key}")
+                            return None
+
+                # Validate that answer is valid based on question type
+                if is_tc2_question or is_tc3_question:
+                    # TC-2 and TC-3 answers should be a list with one answer per blank
+                    question_type_name = "TC-2" if is_tc2_question else "TC-3"
+                    if not isinstance(answer, list):
+                        print(f"ERROR: {question_type_name} answer should be a list but got {type(answer)}: {answer}")
+                        return None
+                    if len(answer) != len(options):
+                        print(f"ERROR: {question_type_name} answer list length ({len(answer)}) should match number of option sets ({len(options)})")
+                        return None
+                    # Validate each answer against its corresponding option set
+                    for i, ans_key in enumerate(answer):
+                        if ans_key not in options[i]:
+                            print(f"ERROR: {question_type_name} answer key '{ans_key}' not found in options[{i}]: {list(options[i].keys())}")
                             return None
                 else:
-                    print(
-                        f"ERROR: Answer should be string or list but got {type(answer)}: {answer}")
-                    return None
+                    # Regular questions - validate answer against options dictionary
+                    if isinstance(answer, str):
+                        if answer not in options:
+                            print(f"ERROR: Answer key '{answer}' not found in options: {list(options.keys())}")
+                            return None
+                    elif isinstance(answer, list):
+                        for ans_key in answer:
+                            if ans_key not in options:
+                                print(f"ERROR: Answer key '{ans_key}' not found in options: {list(options.keys())}")
+                                return None
+                    else:
+                        print(f"ERROR: Answer should be string or list but got {type(answer)}: {answer}")
+                        return None
 
                 return options, answer
             return None
