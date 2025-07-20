@@ -27,17 +27,7 @@ class SimpleQuestionGeneration(BaseQuestionGenerator):
             prompt=prompt
         )
         
-        # Load SE-specific instructions if needed
-        if "<SE>" in prompt or "SE" in prompt:
-            se_instruction_path = os.path.join(
-                os.path.dirname(__file__), 
-                "../System_instructions/GRE-Verbal-SE.txt"
-            )
-            try:
-                with open(se_instruction_path, "r") as f:
-                    self.system_instructions = f.read()
-            except FileNotFoundError:
-                print(f"SE instruction file not found: {se_instruction_path}")
+        # SE-specific instructions are now handled by the unified template system
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
     

@@ -198,8 +198,6 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
     def _process_question_type_conditionals(self, template: str, question_type: QuestionType, prompt: str = None) -> str:
         """Process question-type specific conditional blocks."""
         # Debug logging to understand what question type is being processed
-        # print(f"DEBUG: Template processor processing question_type: {question_type}")
-
         # Process data sufficiency blocks
         ds_pattern = r'{{#if_data_sufficiency}}(.*?){{/if_data_sufficiency}}'
         if question_type == QuestionType.DATA_SUFFICIENCY:
@@ -236,24 +234,31 @@ E: "Statements (1) and (2) TOGETHER are NOT sufficient."'''
         if question_type == QuestionType.TEXT_COMPLETION:
             # Detect TC type from prompt
             self._logger.debug(f"Template processing - Prompt: {prompt}")
-            self._logger.debug(f"Template processing - Question type: {question_type}")
-            
+            self._logger.debug(
+                f"Template processing - Question type: {question_type}")
+
             if prompt and ("<tc-3>" in prompt.lower() or "tc-3" in prompt.lower()):
-                self._logger.debug("Template processing - Detected TC-3 format")
+                self._logger.debug(
+                    "Template processing - Detected TC-3 format")
                 # TC-3 format: 3 blanks
                 template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
                 template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)
-                template = re.sub(tc3_pattern, r'\1', template, flags=re.DOTALL)
+                template = re.sub(tc3_pattern, r'\1',
+                                  template, flags=re.DOTALL)
             elif prompt and ("<tc-2>" in prompt.lower() or "tc-2" in prompt.lower()):
-                self._logger.debug("Template processing - Detected TC-2 format")
+                self._logger.debug(
+                    "Template processing - Detected TC-2 format")
                 # TC-2 format: 2 blanks
                 template = re.sub(tc1_pattern, '', template, flags=re.DOTALL)
-                template = re.sub(tc2_pattern, r'\1', template, flags=re.DOTALL)
+                template = re.sub(tc2_pattern, r'\1',
+                                  template, flags=re.DOTALL)
                 template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
             else:
-                self._logger.debug("Template processing - Defaulting to TC-1 format")
+                self._logger.debug(
+                    "Template processing - Defaulting to TC-1 format")
                 # TC-1 format: 1 blank (default)
-                template = re.sub(tc1_pattern, r'\1', template, flags=re.DOTALL)
+                template = re.sub(tc1_pattern, r'\1',
+                                  template, flags=re.DOTALL)
                 template = re.sub(tc2_pattern, '', template, flags=re.DOTALL)
                 template = re.sub(tc3_pattern, '', template, flags=re.DOTALL)
         elif question_type == QuestionType.GRAPHIC_INTERPRETATION:

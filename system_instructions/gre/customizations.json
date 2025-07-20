@@ -5,18 +5,14 @@
          "QC": [1, 1],
          "MCQ_Single": [1, 1],
          "MCQ_Multiple": [1, 1],
-         "NE": [1, 1],
-         "simple_questions": [1, 1],
-         "parent_child_questions": [1, 1]
+         "NE": [1, 1]
       },
       "section2": {
-         "total_questions": 4,
-         "QC": [1, 1],
-         "MCQ_Single": [1, 1],
-         "MCQ_Multiple": [1, 1],
-         "NE": [1, 1],
-         "simple_questions": [1, 1],
-         "parent_child_questions": [1, 1]
+         "total_questions": 0,
+         "QC": [0, 0],
+         "MCQ_Single": [0, 0],
+         "MCQ_Multiple": [0, 0],
+         "NE": [0, 0]
       },
       "data sufficiency": {
          "nomenclature": "DS - <questionTopic> - <questionTheme> - <questionStyle> - <graphType/tableType> - <difficulty_level: {1-5}>",
@@ -584,14 +580,14 @@
    },
    "verbal": {
       "section1": {
-         "total_questions": 1,
+         "total_questions": 3,
          "RC": [1, 1],
-         "TC": [0, 0],
-         "SE": [0, 0]
+         "TC": [1, 1],
+         "SE": [1, 1]
       },
       "section2": {
-         "total_questions": 1,
-         "RC": [1, 1],
+         "total_questions": 0,
+         "RC": [0, 0],
          "TC": [0, 0],
          "SE": [0, 0]
       },

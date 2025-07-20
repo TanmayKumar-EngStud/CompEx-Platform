@@ -222,11 +222,10 @@ class UnifiedMockGenerator:
                 verbal_total_s2 = verbal_section2.get("total_questions", 20)
                 
                 # Generate separate prompts for each section
-                # COMMENTED OUT FOR TEXT COMPLETION DEBUGGING
-                # prompts["quants_section1"] = self._generate_factory_prompts(
-                #     prompt_factory, SectionType.QUANTITATIVE, quants_total_s1)
-                # prompts["quants_section2"] = self._generate_factory_prompts(
-                #     prompt_factory, SectionType.QUANTITATIVE, quants_total_s2)
+                prompts["quants_section1"] = self._generate_factory_prompts(
+                    prompt_factory, SectionType.QUANTITATIVE, quants_total_s1)
+                prompts["quants_section2"] = self._generate_factory_prompts(
+                    prompt_factory, SectionType.QUANTITATIVE, quants_total_s2)
                 prompts["verbal_section1"] = self._generate_factory_prompts(
                     prompt_factory, SectionType.VERBAL, verbal_total_s1)
                 prompts["verbal_section2"] = self._generate_factory_prompts(
@@ -565,28 +564,27 @@ class UnifiedMockGenerator:
     def _add_gre_generation_tasks(self, thread_manager: APIThreadPoolManager) -> None:
         """Add GRE question generation tasks to the thread manager."""
 
-        # COMMENTED OUT FOR TEXT COMPLETION DEBUGGING
-        # # Quantitative section 1 tasks
-        # for i, prompt in enumerate(self.prompts.get("quants_section1", [])):
-        #     generator_class = self._get_generator_class_for_prompt(
-        #         prompt, SectionType.QUANTITATIVE)
+        # Quantitative section 1 tasks
+        for i, prompt in enumerate(self.prompts.get("quants_section1", [])):
+            generator_class = self._get_generator_class_for_prompt(
+                prompt, SectionType.QUANTITATIVE)
 
-        #     # Add task for section 1
-        #     def task_factory_1():
-        #         return self._create_question_task_factory(
-        #             'GRE_Q', 1, prompt, generator_class, i)
-        #     thread_manager.add_task(task_factory_1)
+            # Add task for section 1
+            def task_factory_1():
+                return self._create_question_task_factory(
+                    'GRE_Q', 1, prompt, generator_class, i)
+            thread_manager.add_task(task_factory_1)
 
-        # # Quantitative section 2 tasks (different prompts)
-        # for i, prompt in enumerate(self.prompts.get("quants_section2", [])):
-        #     generator_class = self._get_generator_class_for_prompt(
-        #         prompt, SectionType.QUANTITATIVE)
+        # Quantitative section 2 tasks (different prompts)
+        for i, prompt in enumerate(self.prompts.get("quants_section2", [])):
+            generator_class = self._get_generator_class_for_prompt(
+                prompt, SectionType.QUANTITATIVE)
 
-        #     # Add task for section 2
-        #     def task_factory_2():
-        #         return self._create_question_task_factory(
-        #             'GRE_Q', 2, prompt, generator_class, i)
-        #     thread_manager.add_task(task_factory_2)
+            # Add task for section 2
+            def task_factory_2():
+                return self._create_question_task_factory(
+                    'GRE_Q', 2, prompt, generator_class, i)
+            thread_manager.add_task(task_factory_2)
 
         # Verbal section 1 tasks
         for i, prompt in enumerate(self.prompts.get("verbal_section1", [])):

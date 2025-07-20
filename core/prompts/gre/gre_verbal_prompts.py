@@ -88,29 +88,29 @@ class GREVerbalPrompts(BasePromptGenerator):
         # Store RC configurations for later use
         self._rc_configurations = rc_configurations
         
-        # TEMPORARILY COMMENTED OUT: Generate TC prompts using nomenclature
-        # for _ in range(tc_count):
-        #     difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-        #     
-        #     # Use nomenclature-based generation for TC
-        #     prompt = self.generate_nomenclature_based_prompt(
-        #         "text completion",
-        #         difficulty
-        #     )
-        #     prompts.append(prompt)
-        #     question_index += 1
+        # Generate TC prompts using nomenclature
+        for _ in range(tc_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            
+            # Use nomenclature-based generation for TC
+            prompt = self.generate_nomenclature_based_prompt(
+                "text completion",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
-        # TEMPORARILY COMMENTED OUT: Generate SE prompts using nomenclature
-        # for _ in range(se_count):
-        #     difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
-        #     
-        #     # Use nomenclature-based generation for SE
-        #     prompt = self.generate_nomenclature_based_prompt(
-        #         "sentence equivalence",
-        #         difficulty
-        #     )
-        #     prompts.append(prompt)
-        #     question_index += 1
+        # Generate SE prompts using nomenclature
+        for _ in range(se_count):
+            difficulty = difficulty_pool[question_index] if question_index < len(difficulty_pool) else 3
+            
+            # Use nomenclature-based generation for SE
+            prompt = self.generate_nomenclature_based_prompt(
+                "sentence equivalence",
+                difficulty
+            )
+            prompts.append(prompt)
+            question_index += 1
         
         return prompts
     

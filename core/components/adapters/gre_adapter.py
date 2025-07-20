@@ -142,16 +142,6 @@ class GREAdapter:
         Returns:
             Processed text template
         """
-        # Debug logging for Text Completion questions
-        if self._is_text_completion_question_from_prompt(prompt):
-            print(
-                f"DEBUG: get_text_template called with question_type={question_type}, prompt={prompt}")
-
-        # Debug logging for Sentence Equivalence questions
-        if self._is_sentence_equivalence_question_from_prompt(prompt):
-            print(
-                f"DEBUG: get_text_template called with question_type={question_type}, prompt={prompt}")
-
         if question_type == QuestionType.NUMERIC_ENTRY:
             return self.question_text.numeric_entry(
                 self.exam_type, question_type, customizations, prompt
