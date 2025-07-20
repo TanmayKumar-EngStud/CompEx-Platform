@@ -79,7 +79,8 @@ class GREAdapter:
         self,
         question_type: QuestionType,
         prompt: str,
-        customizations: Optional[Dict[str, Any]] = None
+        customizations: Optional[Dict[str, Any]] = None,
+        source_type: Optional[str] = None
     ) -> str:
         """
         Get appropriate metadata template for GRE questions.
@@ -88,6 +89,7 @@ class GREAdapter:
             question_type: Question type classification
             prompt: Original prompt for context
             customizations: Exam-specific customizations
+            source_type: Specific source type for multi-source content
 
         Returns:
             Processed metadata template
