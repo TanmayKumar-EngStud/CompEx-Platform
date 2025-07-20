@@ -62,54 +62,8 @@ def _is_reading_comprehension_prompt(prompt: str) -> bool:
 
 def _log_reading_comprehension_data(prompt: str, response: str, mode: str = "unknown"):
     """Log Reading Comprehension instruction prompt and AI response for debugging."""
-    try:
-        # Create log entry
-        log_entry = {
-            "timestamp": datetime.now().isoformat(),
-            "mode": mode,
-            "instruction_prompt": prompt,
-            "ai_response": response,
-            "rc_type_detected": None
-        }
-        
-        # Detect RC type
-        prompt_lower = prompt.lower()
-        if '<rc-' in prompt_lower:
-            if 'rc-s' in prompt_lower:
-                log_entry["rc_type_detected"] = "RC-S"
-            elif 'rc-m' in prompt_lower:
-                log_entry["rc_type_detected"] = "RC-M"
-            elif 'rc-l' in prompt_lower:
-                log_entry["rc_type_detected"] = "RC-L"
-            else:
-                log_entry["rc_type_detected"] = "RC"
-        elif 'reading comprehension' in prompt_lower:
-            log_entry["rc_type_detected"] = "RC"
-        
-        # Store original prompt for reference
-        if "Prompt: " in prompt:
-            original_prompt = prompt.split("Prompt: ")[1].split("\n")[0]
-            log_entry["original_prompt"] = original_prompt
-        
-        # Ensure testing-rc.json exists
-        log_file = "testing-rc.json"
-        
-        # Load existing data or create new
-        if os.path.exists(log_file):
-            with open(log_file, 'r') as f:
-                data = json.load(f)
-        else:
-            data = {"reading_comprehension_logs": []}
-        
-        # Add new entry
-        data["reading_comprehension_logs"].append(log_entry)
-        
-        # Save back to file
-        with open(log_file, 'w') as f:
-            json.dump(data, f, indent=2)
-            
-    except Exception as e:
-        print(f"Error logging Reading Comprehension data: {e}")
+    # DISABLED: No longer generating testing-rc.json file as requested
+    pass
 
 
 def is_error_response(message: Dict[str, Any]) -> bool:
@@ -588,6 +542,101 @@ class BaseQuestionComponent(ABC):
             )
             return None
 
+    def _log_options_error(self, options, instruction_prompt, response_message):
+        """
+        Log comprehensive error information for options format issues.
+        
+        Args:
+            options: The incorrect options that caused the error
+            instruction_prompt: The instruction prompt used
+            response_message: The full response message from AI
+        """
+        try:
+            # Determine question style from prompt and class
+            question_style = "Unknown"
+            
+            # Extract question style from prompt
+            if hasattr(self, 'prompt') and self.prompt:
+                prompt_lower = self.prompt.lower()
+                if '<se>' in prompt_lower:
+                    question_style = "Sentence Equivalence (SE)"
+                elif '<tc-1>' in prompt_lower:
+                    question_style = "Text Completion 1-blank (TC-1)"
+                elif '<tc-2>' in prompt_lower:
+                    question_style = "Text Completion 2-blank (TC-2)"
+                elif '<tc-3>' in prompt_lower:
+                    question_style = "Text Completion 3-blank (TC-3)"
+                elif '<rc-s>' in prompt_lower:
+                    question_style = "Reading Comprehension Short (RC-S)"
+                elif '<rc-m>' in prompt_lower:
+                    question_style = "Reading Comprehension Medium (RC-M)"
+                elif '<rc-l>' in prompt_lower:
+                    question_style = "Reading Comprehension Long (RC-L)"
+                elif 'ds -' in prompt_lower or '<ds>' in prompt_lower:
+                    question_style = "Data Sufficiency (DS)"
+                elif 's -' in prompt_lower or 'problem solving' in prompt_lower:
+                    question_style = "Problem Solving (PS)"
+                elif 'ne -' in prompt_lower:
+                    question_style = "Numeric Entry (NE)"
+                elif 'gi -' in prompt_lower:
+                    question_style = "Graphic Interpretation (GI)"
+                elif 'tpa -' in prompt_lower:
+                    question_style = "Two Part Analysis (TPA)"
+                elif 'ta -' in prompt_lower:
+                    question_style = "Table Analysis (TA)"
+                elif 'msr -' in prompt_lower:
+                    question_style = "Multi Source Reasoning (MSR)"
+            
+            # Also check class type as fallback
+            if question_style == "Unknown":
+                class_name = self.__class__.__name__
+                if "SimpleQuestion" in class_name:
+                    question_style = "Simple Question (SE/TC/CR)"
+                elif "DataSufficiency" in class_name:
+                    question_style = "Data Sufficiency (DS)"
+                elif "ParentChild" in class_name:
+                    question_style = "Reading Comprehension (RC)"
+            
+            # Create error log entry
+            error_entry = {
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "error_type": "OPTIONS_FORMAT_ERROR",
+                "question_style": question_style,
+                "exam_type": self.exam_type.value if hasattr(self, 'exam_type') else "Unknown",
+                "instruction_prompt": instruction_prompt,
+                "original_prompt": getattr(self, 'prompt', 'Not available'),
+                "expected_format": "Dictionary with single letter keys (A, B, C, etc.)",
+                "actual_format": str(type(options).__name__),
+                "actual_options": options,
+                "full_response": response_message,
+                "error_message": f"Options should be a dictionary but got {type(options)}: {options}"
+            }
+            
+            # Load existing errors or create new file
+            error_log_file = "question_generation_errors.json"
+            if os.path.exists(error_log_file):
+                with open(error_log_file, 'r') as f:
+                    error_data = json.load(f)
+            else:
+                error_data = {"question_generation_errors": []}
+            
+            # Add new error entry
+            error_data["question_generation_errors"].append(error_entry)
+            
+            # Save to file
+            with open(error_log_file, 'w') as f:
+                json.dump(error_data, f, indent=2)
+            
+            # Print error with question style info
+            print(f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+            print(f"Question Style: {question_style}")
+            print(f"Error logged to question_generation_errors.json")
+            
+        except Exception as e:
+            print(f"Error logging options error: {e}")
+            # Fallback to simple print
+            print(f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+
     @abstractmethod
     def generate_question_text(self, *args, **kwargs) -> Any:
         """Generate question text. Must be implemented by subclasses."""
@@ -819,8 +868,7 @@ class SimpleQuestion(BaseQuestionComponent):
 
                 # Validate that options is a dictionary
                 if not isinstance(options, dict):
-                    print(
-                        f"ERROR: Options should be a dictionary but got {type(options)}: {options}")
+                    self._log_options_error(options, instruction_prompt, message)
                     return None
 
                 # Validate that all option keys are single letters

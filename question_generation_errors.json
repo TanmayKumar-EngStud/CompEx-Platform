@@ -1,0 +1,160 @@
+{
+  "question_generation_errors": [
+    {
+      "timestamp": "2025-07-21 00:46:59",
+      "error_type": "OPTIONS_FORMAT_ERROR",
+      "question_style": "Text Completion 3-blank (TC-3)",
+      "exam_type": "gre",
+      "instruction_prompt": "Prompt: <tc-3> - <Fiction> - <Tone Recognition> - <vocabulary_level: 3> - <difficulty_level: 1>\nMode: QuestionOptions\nSTRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as array of dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2 and index 2 will provide options for blank 3\n- \"answer\" key with array of correct option letters of length exactly 3.\nExample:-\n```json\n{\n  \"options\": [\n    { \"A\": \"option 1\", \"B\": \"option 2\", \"C\": \"option 3\" },\n    { \"D\": \"option 4\", \"E\": \"option 5\", \"F\": \"option 6\" },\n    { \"G\": \"option 7\", \"H\": \"option 8\", \"I\": \"option 9\" }\n  ],\n  \"answer\": [\"A\", \"F\", \"I\"]\n}\n```\n- \"options\" key with value as dictionary.\n- \"answer\" key with array with exactly two correctly fitting options.\nExample:-\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\",\n    \"F\": \"option 6\"\n  },\n  \"answer\": [\"A\", \"F\"]\n}\n```\n**Important Notes:**\n- TC-3: Multiple blanks, 3 options per blank, array answers\n- SE: Single blank, 6 options (A-F), exactly 2 correct answers that produce equivalent meanings",
+      "original_prompt": "<tc-3> - <Fiction> - <Tone Recognition> - <vocabulary_level: 3> - <difficulty_level: 1>",
+      "expected_format": "Dictionary with single letter keys (A, B, C, etc.)",
+      "actual_format": "list",
+      "actual_options": [
+        {
+          "A": "pervade",
+          "B": "lighten",
+          "C": "decorate"
+        },
+        {
+          "D": "hush",
+          "E": "lull",
+          "F": "commotion"
+        },
+        {
+          "G": "eerie",
+          "H": "jubilant",
+          "I": "tranquil"
+        }
+      ],
+      "full_response": {
+        "options": [
+          {
+            "A": "pervade",
+            "B": "lighten",
+            "C": "decorate"
+          },
+          {
+            "D": "hush",
+            "E": "lull",
+            "F": "commotion"
+          },
+          {
+            "G": "eerie",
+            "H": "jubilant",
+            "I": "tranquil"
+          }
+        ],
+        "answer": [
+          "A",
+          "D",
+          "G"
+        ]
+      },
+      "error_message": "Options should be a dictionary but got <class 'list'>: [{'A': 'pervade', 'B': 'lighten', 'C': 'decorate'}, {'D': 'hush', 'E': 'lull', 'F': 'commotion'}, {'G': 'eerie', 'H': 'jubilant', 'I': 'tranquil'}]"
+    },
+    {
+      "timestamp": "2025-07-21 00:47:07",
+      "error_type": "OPTIONS_FORMAT_ERROR",
+      "question_style": "Text Completion 3-blank (TC-3)",
+      "exam_type": "gre",
+      "instruction_prompt": "Prompt: <tc-3> - <Fiction> - <Tone Recognition> - <vocabulary_level: 3> - <difficulty_level: 1>\nMode: QuestionOptions\nSTRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as array of dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2 and index 2 will provide options for blank 3\n- \"answer\" key with array of correct option letters of length exactly 3.\nExample:-\n```json\n{\n  \"options\": [\n    { \"A\": \"option 1\", \"B\": \"option 2\", \"C\": \"option 3\" },\n    { \"D\": \"option 4\", \"E\": \"option 5\", \"F\": \"option 6\" },\n    { \"G\": \"option 7\", \"H\": \"option 8\", \"I\": \"option 9\" }\n  ],\n  \"answer\": [\"A\", \"F\", \"I\"]\n}\n```\n- \"options\" key with value as dictionary.\n- \"answer\" key with array with exactly two correctly fitting options.\nExample:-\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\",\n    \"F\": \"option 6\"\n  },\n  \"answer\": [\"A\", \"F\"]\n}\n```\n**Important Notes:**\n- TC-3: Multiple blanks, 3 options per blank, array answers\n- SE: Single blank, 6 options (A-F), exactly 2 correct answers that produce equivalent meanings",
+      "original_prompt": "<tc-3> - <Fiction> - <Tone Recognition> - <vocabulary_level: 3> - <difficulty_level: 1>",
+      "expected_format": "Dictionary with single letter keys (A, B, C, etc.)",
+      "actual_format": "list",
+      "actual_options": [
+        {
+          "A": "pervade",
+          "B": "lighten",
+          "C": "decorate"
+        },
+        {
+          "D": "hush",
+          "E": "lull",
+          "F": "commotion"
+        },
+        {
+          "G": "eerie",
+          "H": "jubilant",
+          "I": "tranquil"
+        }
+      ],
+      "full_response": {
+        "options": [
+          {
+            "A": "pervade",
+            "B": "lighten",
+            "C": "decorate"
+          },
+          {
+            "D": "hush",
+            "E": "lull",
+            "F": "commotion"
+          },
+          {
+            "G": "eerie",
+            "H": "jubilant",
+            "I": "tranquil"
+          }
+        ],
+        "answer": [
+          "A",
+          "D",
+          "G"
+        ]
+      },
+      "error_message": "Options should be a dictionary but got <class 'list'>: [{'A': 'pervade', 'B': 'lighten', 'C': 'decorate'}, {'D': 'hush', 'E': 'lull', 'F': 'commotion'}, {'G': 'eerie', 'H': 'jubilant', 'I': 'tranquil'}]"
+    },
+    {
+      "timestamp": "2025-07-21 00:47:13",
+      "error_type": "OPTIONS_FORMAT_ERROR",
+      "question_style": "Text Completion 3-blank (TC-3)",
+      "exam_type": "gre",
+      "instruction_prompt": "Prompt: <tc-3> - <Fiction> - <Tone Recognition> - <vocabulary_level: 3> - <difficulty_level: 1>\nMode: QuestionOptions\nSTRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as array of dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2 and index 2 will provide options for blank 3\n- \"answer\" key with array of correct option letters of length exactly 3.\nExample:-\n```json\n{\n  \"options\": [\n    { \"A\": \"option 1\", \"B\": \"option 2\", \"C\": \"option 3\" },\n    { \"D\": \"option 4\", \"E\": \"option 5\", \"F\": \"option 6\" },\n    { \"G\": \"option 7\", \"H\": \"option 8\", \"I\": \"option 9\" }\n  ],\n  \"answer\": [\"A\", \"F\", \"I\"]\n}\n```\n- \"options\" key with value as dictionary.\n- \"answer\" key with array with exactly two correctly fitting options.\nExample:-\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\",\n    \"F\": \"option 6\"\n  },\n  \"answer\": [\"A\", \"F\"]\n}\n```\n**Important Notes:**\n- TC-3: Multiple blanks, 3 options per blank, array answers\n- SE: Single blank, 6 options (A-F), exactly 2 correct answers that produce equivalent meanings",
+      "original_prompt": "<tc-3> - <Fiction> - <Tone Recognition> - <vocabulary_level: 3> - <difficulty_level: 1>",
+      "expected_format": "Dictionary with single letter keys (A, B, C, etc.)",
+      "actual_format": "list",
+      "actual_options": [
+        {
+          "A": "pervade",
+          "B": "lighten",
+          "C": "decorate"
+        },
+        {
+          "D": "hush",
+          "E": "lull",
+          "F": "commotion"
+        },
+        {
+          "G": "eerie",
+          "H": "jubilant",
+          "I": "tranquil"
+        }
+      ],
+      "full_response": {
+        "options": [
+          {
+            "A": "pervade",
+            "B": "lighten",
+            "C": "decorate"
+          },
+          {
+            "D": "hush",
+            "E": "lull",
+            "F": "commotion"
+          },
+          {
+            "G": "eerie",
+            "H": "jubilant",
+            "I": "tranquil"
+          }
+        ],
+        "answer": [
+          "A",
+          "D",
+          "G"
+        ]
+      },
+      "error_message": "Options should be a dictionary but got <class 'list'>: [{'A': 'pervade', 'B': 'lighten', 'C': 'decorate'}, {'D': 'hush', 'E': 'lull', 'F': 'commotion'}, {'G': 'eerie', 'H': 'jubilant', 'I': 'tranquil'}]"
+    }
+  ]
+}
