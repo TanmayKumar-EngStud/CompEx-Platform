@@ -1,0 +1,14 @@
+STRICT RESPONSE FORMAT:- JSON
+- "para" key with value as string for that particular paragraph
+
+Example:-
+
+```json
+{
+    "para": "complete paragraph which is being asked sequentially for that passage should come here"
+}
+```
+**Important Notes:**
+- Generate paragraphs which are in sync of the content that is being asked in the main instruction prompt.
+- Maintain the level and quality for {{#if_GMAT}}MBA preparation{{/if_GMAT}}{{#if_GRE}}Masters Studies{{/if_GRE}}
+- Create realistic content appropriate for business/academic context

@@ -1,0 +1,62 @@
+{
+   "Data Sufficiency": {
+      "has-metadata": true,
+      "meta-count": 1,
+      "type": "simple",
+      "options": "single",
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level:<difficulty>",
+      "system-instruction": "data-sufficiency-system-instruction.txt.template"
+   },
+   "Problem Solving Simple": {
+      "has-metadata": false,
+      "type": "simple",
+      "options": { "single": 2, "multi": 1 },
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "system-instruction": "problem-solving-simple-system-instruction.txt.template"
+   },
+   "Problem Solving Meta": {
+      "has-metadata": true,
+      "meta-count": 2,
+      "type": "parent",
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "system-instruction": "problem-solving-meta-system-instruction.txt.template",
+      "child-question": {
+         "type": "child",
+         "options": { "single": 2, "multi": 1 },
+         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+      }
+   },
+   "Numerical Entry": {
+      "has-metadata": false,
+      "type": "simple",
+      "options": "numeric",
+      "nomenclature": "<questionTopic> - <questionTheme> - difficulty_level: <difficulty>",
+      "system-instruction": "numerical-entry-system-instruction.txt.template"
+   },
+   "Sentence Equivalence": {
+      "has-metadata": false,
+      "type": "simple",
+      "options": "multi",
+      "nomenclature": "<questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
+      "system-instruction": "sentence-equivalence-system-instruction.txt.template"
+   },
+   "Text Completion": {
+      "has-metadata": false,
+      "type": "simple",
+      "options": "blank",
+      "nomenclature": "<TC_QuestionType> - <questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
+      "system-instruction": "text-completion-system-instruction.txt.template"
+   },
+   "Reading Comprehension": {
+      "has-metadata": true,
+      "meta-count": 1,
+      "type": "parent",
+      "nomenclature": "<RC_QuestionType> - <questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
+      "system-instruction": "reading-comprehension-system-instruction.txt.template",
+      "child-question": {
+         "options": { "single": 2, "multi": 1 },
+         "type": "child",
+         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+      }
+   }
+}

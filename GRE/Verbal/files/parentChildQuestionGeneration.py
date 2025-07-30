@@ -8,6 +8,7 @@ from core.components.adapters.gre_adapter import GREAdapter
 
 import random
 import os
+import json
 
 import re
 import sys
@@ -23,7 +24,7 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
 
     def generate_child_prompt(self, idx, difficulty=3):
         """
-        Generate child prompts by parsing focused skills from parent prompt.
+        Generate child prompts using varied focused skills from configuration.
 
         Args:
             idx: Number of child questions to generate
@@ -34,8 +35,8 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
         """
         prompts = []
 
-        # Parse focused skills from parent prompt
-        focused_skills = self.parse_focused_skills_from_parent_prompt()
+        # Load focused skills from GRE configuration instead of parsing from parent prompt
+        focused_skills = self._load_focused_skills_from_config()
 
         # Generate child prompts using the nomenclature: "RC ChildQuestion - <focused_skill>"
         for i in range(idx):
@@ -50,6 +51,43 @@ class ParentChildQuestionGeneration(BaseQuestionGenerator):
             prompts.append(child_prompt)
 
         return prompts
+
+    def _load_focused_skills_from_config(self) -> list:
+        """
+        Load focused skills from GRE configuration file.
+
+        Returns:
+            List of focused skills for child questions
+        """
+        try:
+            customizations_path = os.path.join(
+                os.path.dirname(__file__), "..", "..", "..", 
+                "system_instructions", "gre", "customizations.json"
+            )
+            
+            with open(customizations_path, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+            
+            # Extract focused skills from reading comprehension section
+            focused_skills = config.get("verbal", {}).get("reading comprehension", {}).get("focused_skill", [])
+            
+            # Return the list, shuffling it to provide variety
+            import random
+            skills_copy = focused_skills.copy()
+            random.shuffle(skills_copy)
+            return skills_copy
+            
+        except Exception as e:
+            print(f"Warning: Could not load GRE focused skills from customizations.json: {e}")
+            # Fallback to basic skills
+            return [
+                "Main Idea Question",
+                "Inference Question", 
+                "Assumption Question",
+                "Supporting Details",
+                "Tone and Attitude",
+                "Author's Purpose"
+            ]
 
     def parse_focused_skills_from_parent_prompt(self):
         """

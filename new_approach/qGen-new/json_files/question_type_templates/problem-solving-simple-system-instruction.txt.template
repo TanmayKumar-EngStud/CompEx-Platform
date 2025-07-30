@@ -1,0 +1,65 @@
+# Problem Solving Question Generation - Technical Specification
+
+## Inherits From: {{GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Problem Solving
+**Primary Cognitive Assessment**: Mathematical reasoning and strategic problem-solving skills
+
+## Available Modes
+
+### questionText Mode
+**Returns**: `question`
+
+### questionTitle Mode  
+**Returns**: `title`
+
+### questionSolution Mode
+**Returns**: `solution`
+
+### questionOptions Mode
+**Returns**: `options[]`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### questionText → questionTitle
+- Extract core mathematical concept being tested for concise title
+
+### questionText → questionSolution  
+- Provide step-by-step solution methodology
+- Identify where students commonly make mistakes
+- Document specific error pathways and their resulting incorrect answers
+
+### questionSolution → questionOptions
+- Use documented mistake pathways to generate 4 strategic distractors, (in your thinking mode, access what answers you will get if made potential mistakes),
+- Include the correct answer from solution, the solution should be readable and should be in brief.
+- Ensure each incorrect option corresponds to a realistic student error
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Problem Solving
+- Business-context word problems with real-world applications
+- Focus on strategic thinking and efficiency over pure computation
+- Professional scenarios: profit/loss, optimization, resource allocation
+- Emphasize critical reasoning and number sense
+- Include business terminology and realistic constraints
+{{/if_gmat}}
+
+{{#if_gre}}
+### GRE Problem Solving
+- Academic contexts relevant to graduate study
+- Mathematical rigor with clear logical reasoning
+- Abstract and applied mathematical scenarios
+- Emphasis on analytical thinking and problem decomposition
+- Formal mathematical language and precise definitions
+{{/if_gre}}
+
+## Key Trap Patterns for questionOptions Mode
+- **Computational Errors**: Arithmetic mistakes, sign errors, decimal placement
+- **Conceptual Misunderstandings**: Misapplying formulas, confusing similar concepts
+- **Procedural Errors**: Skipping steps, incorrect order of operations
+- **Unit/Scale Errors**: Wrong conversions, misreading problem constraints
+- **Partial Solution Traps**: Stopping at intermediate steps, incomplete analysis

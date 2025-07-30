@@ -1,0 +1,37 @@
+[
+  {
+    "QuestionText": {
+      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"question\" key with complete question text including appropriate blanks.\nExample:-\n```json\n{\n  \"question\": \"complete question text with _______ blanks positioned appropriately\"\n}\n```\n**Important Notes:**\n- Create questions based on given topic focusing provided skill set\n- Use double quotes only, replace single quotes with (`) symbol\n**Fill-in-the-Blank Style Guidelines:**\n- Use exactly 5 underscores (____) for each blank\n- Ensure blanks are clearly distinguishable and logically positioned\n- Create meaningful context around each blank\n- Test appropriate vocabulary level for the given difficulty\n- Maintain grammatical correctness when blanks are filled\n- Focus on academic and analytical reasoning\n- Use formal academic vocabulary for graduate studies\n**TC-2 Format Instructions:**\n- Create TWO blanks using exactly 5 underscores each: _____ and _____\n- Position blanks strategically within the sentence or passage\n- Ensure blanks test vocabulary, logical connections, and contextual understanding\n- The completed sentence should demonstrate coherent reasoning\n- Consider relationships between the two blanks (cause-effect, contrast, elaboration)",
+      "output": {
+        "question": "str"
+      },
+      "file-name": "blank-question-text.txt.template"
+    }
+  },
+  {
+    "QuestionTitle": {
+      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"title\" key with short one line summary of the question.\nExample:-\n```json\n{\n  \"title\": \"Whatever that uniquely identifies this question based on this title\"\n}\n```\n**Important Notes:**\n- Include theme of the question in the title\n- Title should uniquely represent the question\n- Keep titles under 80 characters for readability\n- Focus on academic and analytical themes\n- Use formal academic vocabulary",
+      "output": {
+        "title": "str"
+      },
+      "file-name": "simple-question-title.txt.template"
+    }
+  },
+  {
+    "QuestionSolution": {
+      "instruction statement": "RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)\nWrite naturally as you would explain to a student.\n**Structure:**\nStep 1: \nStep 2: Set up mathematical relationship or logical framework\nStep 3: Perform calculations with proper units / Apply reasoning\nStep 4: \nStep 5: \n**Important Notes:**\n- Use numbered steps with clear explanations, solution should be human readable and should be brief\n- Show all calculations with proper mathematical notation\n- Use LaTeX for mathematical expressions\n- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format. Basically, Don't have LaTeX format in answer and question options.\nAnalyze given information and identify what needs to be foundCheck solution using logical reasoningConfirm solution addresses original question\n- Explain conceptual insights where relevant\n- Verify using alternative methods when possible",
+      "output": "str",
+      "file-name": "simple-question-solution.txt.template"
+    }
+  },
+  {
+    "QuestionOptions/Answer": {
+      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n**Important Notes:**\n- \"options\" key with value as dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2\n- \"answer\" key with array of correct option letters of length exactly 2. \nExample:-\n```json\n{\n  \"options\": [\n    { \"A\": \"option 1\", \"B\": \"option 2\", \"C\": \"option 3\" },\n    { \"D\": \"option 4\", \"E\": \"option 5\", \"F\": \"option 6\" }\n  ],\n  \"answer\": [\"A\", \"F\"]\n}\n```\n- TC-2: Multiple blanks, 3 options per blank, array answers",
+      "output": {
+        "options": "dict",
+        "answer": "List[str]"
+      },
+      "file-name": "blank-question-option-answer.txt.template"
+    }
+  }
+]

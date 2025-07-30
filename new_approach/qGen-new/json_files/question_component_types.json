@@ -1,0 +1,140 @@
+[
+   {
+      "simple": [
+         "QuestionMetadata",
+         "QuestionText",
+         "QuestionTitle",
+         "QuestionSolution",
+         "QuestionOptions/Answer"
+      ],
+      "parent": ["QuestionMetadata", "QuestionTitle", "ChildQuestions"],
+      "child": [
+         "QuestionText",
+         "QuestionTitle",
+         "QuestionSolution",
+         "QuestionOptions/Answer"
+      ]
+   },
+   {
+      "QuestionMetadata": {
+         "charts": {
+            "file-name": "graph.txt.template",
+            "variables": "graph_data",
+            "output": { "graphs": "dict" }
+         },
+         "tables": {
+            "file-name": "tables.txt.template",
+            "variables": "table_data",
+            "output": { "tables": "dict" }
+         },
+         "passage": {
+            "file-name": "passage.txt.template",
+            "variables": "",
+            "output": { "para": "str" }
+         },
+         "statements": {
+            "file-name": "passage-statement.txt.template",
+            "variables": "",
+            "output": { "passage": "str", "statements": "List[str]" }
+         }
+      },
+      "QuestionText": [
+         {
+            "QuestionType": [
+               "Data Sufficiency",
+               "Problem Solving Simple",
+               "Problem Solving Meta",
+               "Reading Comprehension",
+               "Numerical Entry"
+            ],
+            "file-name": "simple-question-text.txt.template",
+            "variables": null,
+            "output": { "question": "str" }
+         },
+         {
+            "QuestionType": ["Sentence Equivalence", "Text Completion"],
+            "file-name": "blank-question-text.txt.template",
+            "variables": null,
+            "output": { "question": "str" }
+         }
+      ],
+      "QuestionTitle": [
+         {
+            "QuestionType": [
+               "Data Sufficiency",
+               "Problem Solving Simple",
+               "Problem Solving Meta",
+               "Reading Comprehension",
+               "Numerical Entry",
+               "Text Completion",
+               "Sentence Equivalence"
+            ],
+            "file-name": "simple-question-title.txt.template",
+            "variables": null,
+            "output": { "title": "str" }
+         }
+      ],
+      "QuestionSolution": [
+         {
+            "QuestionType": [
+               "Data Sufficiency",
+               "Problem Solving Simple",
+               "Problem Solving Meta",
+               "Numerical Entry",
+               "Reading Comprehension",
+               "Text Completion",
+               "Sentence Equivalence"
+            ],
+            "file-name": "simple-question-solution.txt.template",
+            "variables": null,
+            "output": "str"
+         }
+      ],
+      "QuestionOptions/Answer": [
+         {
+            "type": "single",
+            "QuestionType": ["Data Sufficiency"],
+            "file-name": "ds-question-answer.txt.template",
+            "variables": null,
+            "output": { "answer": "str" }
+         },
+         {
+            "type": "numeric",
+            "QuestionType": ["Numerical Entry"],
+            "file-name": "ne-question-answer.txt.template",
+            "variables": null,
+            "output": { "answer": "int" }
+         },
+         {
+            "type": "single",
+            "QuestionType": [
+               "Reading Comprehension",
+               "Problem Solving Simple",
+               "Problem Solving Meta"
+            ],
+            "file-name": "generic-question-option-answer.txt.template",
+            "variables": null,
+            "output": { "options": "dict", "answer": "str" }
+         },
+         {
+            "type": "multi",
+            "QuestionType": [
+               "Problem Solving Meta",
+               "Sentence Equivalence",
+               "Reading Comprehension",
+               "Problem Solving Simple"
+            ],
+            "file-name": "multi-correct-question-option-answer.txt.template",
+            "variables": null,
+            "output": { "options": "dict", "answer": "List[str]" }
+         },
+         {
+            "type": "blank",
+            "QuestionType": ["Text Completion"],
+            "file-name": "blank-question-option-answer.txt.template",
+            "variables": null,
+            "output": { "options": "dict", "answer": "List[str]" }
+         }
+      ]
+   }
+]

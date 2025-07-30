@@ -1,0 +1,19 @@
+STRICT RESPONSE FORMAT:- JSON
+- "passage" key with value as string the passage component of the question type asked.
+- "statements" key that will have list of two strings for the requested question type.
+
+Example:-
+
+```json
+{
+    "passage": "complete passage should come here",
+    "statements": [
+        "First statement will come here",
+        "Second statement will come here"
+    ]
+}
+```
+**Important Notes:**
+- Statements should give a specific kind of hypothesis based on passage that is being generated, from which the question will be asked later for this type of component, it is expected that these statements are partial because we will be generating question text component next which will later ask some kind of relation, And based on that relation the user would have to answer the sufficiency of the statement(s)
+- Maintain the level and quality for {{#if_GMAT}}MBA preparation{{/if_GMAT}}{{#if_GRE}}Masters Studies{{/if_GRE}}
+- Create realistic content appropriate for business/academic context

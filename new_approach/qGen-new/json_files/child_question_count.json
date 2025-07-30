@@ -1,0 +1,16 @@
+{
+   "RC_QuestionType": [
+      {
+         "value": "RC-S",
+         "count": 2
+      },
+      {
+         "value": "RC-M",
+         "count": 3
+      },
+      {
+         "value": "RC-L",
+         "count": 4
+      }
+   ]
+}

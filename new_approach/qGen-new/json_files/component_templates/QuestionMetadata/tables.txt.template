@@ -1,0 +1,17 @@
+STRICT RESPONSE FORMAT: JSON
+- "tables key with array of table objects.
+Example:-
+```json
+{
+    "table": <table_data>
+}
+```
+**Important Notes:**
+- Generate specialized tables based on requested table type (data table, pivot table, comparison table)
+- Table type will be determined from prompt context automatically
+- For data tables: Create structured data with clear headers and organized rows
+- For pivot tables: Include summarized data across dimensions with totals
+- For comparison tables: Compare entities across multiple attributes
+- Difficulty Level 1-5 influences data complexity and analytical depth required
+- Ensure data is realistic and supports meaningful analysis
+- Use appropriate business or academic context based on exam type

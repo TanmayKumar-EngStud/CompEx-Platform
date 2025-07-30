@@ -1,0 +1,35 @@
+[
+  {
+    "question_component": "QuestionText",
+    "returned_value": {
+      "question": "The dissertation argued that the existing theoretical frameworks were _____ in accounting for the observed anomalies, necessitating a _____ paradigm shift to reconcile the empirical data."
+    }
+  },
+  {
+    "question_component": "QuestionTitle",
+    "returned_value": {
+      "title": "Formal Component Generation Based on Prescribed Format"
+    }
+  },
+  {
+    "question_component": "QuestionSolution",
+    "returned_value": "Step 1: Analyze given information and identify what needs to be found\nWe are given the constant speed of a car and the duration of its travel.\nGiven:\n*   Speed ($v$) = 60 km/h\n*   Time ($t$) = 2.5 hours\n\nWe need to find the total distance ($d$) traveled by the car.\n\nStep 2: Set up mathematical relationship or logical framework\nFor an object moving at a constant speed, the relationship between distance, speed, and time is given by the formula:\n$\\text{Distance} = \\text{Speed} \\times \\text{Time}$\nIn mathematical notation:\n$d = v \\times t$\n\nStep 3: Perform calculations with proper units / Apply reasoning\nSubstitute the given values into the formula:\n$d = 60 \\text{ km/h} \\times 2.5 \\text{ h}$\nThe 'hours' unit in the denominator of speed and the 'hours' unit of time will cancel out, leaving the unit in kilometers, which is appropriate for distance.\n$d = 150 \\text{ km}$\n\nStep 4: Check solution using logical reasoning\nIf the car travels 60 kilometers in one hour, then in two hours it would travel $60 \\text{ km/h} \\times 2 \\text{ h} = 120 \\text{ km}$. For the remaining half hour (0.5 h), it would travel $60 \\text{ km/h} \\times 0.5 \\text{ h} = 30 \\text{ km}$.\nAdding these two distances: $120 \\text{ km} + 30 \\text{ km} = 150 \\text{ km}$. This confirms the calculated distance is reasonable.\n\nStep 5: Confirm solution addresses original question\nThe original question asked for the total distance the car travels. We have calculated this distance to be 150 km, which directly answers the question.\n\nFinal Answer: The car travels 150 km."
+  },
+  {
+    "question_component": "QuestionOptions/Answer",
+    "returned_value": {
+      "options": {
+        "A": "reduce",
+        "B": "enhance",
+        "C": "neglect",
+        "D": "prices",
+        "E": "services",
+        "F": "products"
+      },
+      "answer": [
+        "B",
+        "E"
+      ]
+    }
+  }
+]

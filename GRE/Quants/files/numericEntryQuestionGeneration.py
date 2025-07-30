@@ -23,6 +23,28 @@ class NumericEntryQuestionGeneration(BaseQuestionGenerator):
             api_idx=api_IDX,
             prompt=prompt
         )
+        self._content_types = self._load_content_types()
+    
+    def _load_content_types(self) -> list:
+        """Load supported content types from GRE customizations."""
+        try:
+            customizations_path = os.path.join(
+                os.path.dirname(__file__), "..", "..", "..", 
+                "system_instructions", "gre", "customizations.json"
+            )
+            
+            with open(customizations_path, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+            
+            # Extract content types from numeric entry section
+            content_types = config.get("quants", {}).get("numeric entry", {}).get("graphType/TableType", [])
+            # Filter out null values and return list of valid content types
+            return [ct for ct in content_types if ct is not None]
+            
+        except Exception as e:
+            print(f"Warning: Could not load GRE content types from customizations.json: {e}")
+            # Fallback to basic types
+            return ["graph", "table", "bar_chart", "pie_chart", "line_chart", "scatter_plot"]
     
     # Removed _load_default_system_instructions - now uses unified instruction system from base class
    
@@ -43,8 +65,8 @@ class NumericEntryQuestionGeneration(BaseQuestionGenerator):
             # Set GRE NE specific type
             self.question_data["type"] = "NE"
             
-            # Check if question needs graph/table content
-            if "graph" in self.prompt.lower() or "table" in self.prompt.lower():
+            # Check if question needs graph/table content based on loaded content types
+            if any(content_type in self.prompt.lower() for content_type in self._content_types):
                 # Create parent-child component for graph/table content
                 pc_component = create_question_component(
                     question_type=QuestionType.READING_COMPREHENSION,
