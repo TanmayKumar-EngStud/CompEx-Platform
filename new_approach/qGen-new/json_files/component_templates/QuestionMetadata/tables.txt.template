@@ -1,5 +1,5 @@
 STRICT RESPONSE FORMAT: JSON
-- "tables key with array of table objects.
+- "table key with array of table objects.
 Example:-
 ```json
 {

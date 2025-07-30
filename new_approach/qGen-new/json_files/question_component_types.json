@@ -20,12 +20,12 @@
          "charts": {
             "file-name": "graph.txt.template",
             "variables": "graph_data",
-            "output": { "graphs": "dict" }
+            "output": { "graph": "dict" }
          },
          "tables": {
             "file-name": "tables.txt.template",
             "variables": "table_data",
-            "output": { "tables": "dict" }
+            "output": { "table": "dict" }
          },
          "passage": {
             "file-name": "passage.txt.template",

@@ -237,11 +237,11 @@ class GenQ:
 
         return None
 
-    def _process_single_question(self, prompt_data: Dict[str, Any], qt_info: Dict[str, Any], 
-                                exam: str, section: str, qt: str, api_key_index: int) -> Dict[str, Any]:
+    def _process_single_question(self, prompt_data: Dict[str, Any], qt_info: Dict[str, Any],
+                                 exam: str, section: str, qt: str, api_key_index: int) -> Dict[str, Any]:
         """
         Process a single question in a separate thread with its own API key index.
-        
+
         Args:
             prompt_data: Individual prompt data
             qt_info: Question type info
@@ -249,7 +249,7 @@ class GenQ:
             section: Section name
             qt: Question type
             api_key_index: API key index for this thread
-            
+
         Returns:
             Generated question content or error info
         """
@@ -263,40 +263,44 @@ class GenQ:
                 'option': prompt_data.get('option'),
                 'prompt': prompt_data.get('prompt')
             }
-            
+
             if prompt_data.get('child-prompt'):
                 prompt_details['child-prompt'] = prompt_data['child-prompt']
                 prompt_details['metadata-type'] = prompt_data['metadata-type']
-            
+
             # Initialize Gemini generator with specific API key index for this thread
             thread_id = threading.current_thread().ident
-            
+
             # Create a thread-local generator instance
-            gemini_generator = get_gemini_generator(api_key_index=api_key_index, question_type=qt)
-            
+            gemini_generator = get_gemini_generator(
+                api_key_index=api_key_index, question_type=qt)
+
             try:
                 # Temporarily assign to self for get_question_data to use
                 # Note: This is thread-safe since each thread has its own execution context
                 original_generator = getattr(self, 'gemini_generator', None)
                 self.gemini_generator = gemini_generator
-                
+
                 question_content = self.get_question_data(prompt_details)
-                
-                print(f"✅ Thread {thread_id}: Successfully generated question for {prettify(qt, 'Green')}")
+
+                print(
+                    f"✅ Thread {thread_id}: Successfully generated question for {prettify(qt, 'Green')}")
                 return {
                     'prompt': prompt_details['prompt'],
                     'question_content': question_content,
                 }
-                
+
             finally:
                 # Restore original generator state
                 self.gemini_generator = original_generator
-                print(f"🧹 Thread {thread_id}: Cleaned up Gemini generator for {prettify(qt, 'Cyan')}")
-                
+                print(
+                    f"🧹 Thread {thread_id}: Cleaned up Gemini generator for {prettify(qt, 'Cyan')}")
+
         except Exception as e:
             thread_id = threading.current_thread().ident
             error_msg = str(e)
-            print(f"❌ Thread {thread_id}: Failed to generate question for {prettify(qt, 'Red')}: {error_msg}")
+            print(
+                f"❌ Thread {thread_id}: Failed to generate question for {prettify(qt, 'Red')}: {error_msg}")
             return {
                 'success': False,
                 'error': error_msg,
@@ -323,19 +327,21 @@ class GenQ:
                     if qt == test[1]:
                         # Prepare threading for parallel question generation
                         prompts_to_process = qt_info['prompts']
-                        max_workers = min(len(prompts_to_process), 10)  # Limit concurrent threads
-                        
-                        print(f"🚀 Starting parallel generation for {len(prompts_to_process)} {prettify(qt, 'Yellow')} questions using {max_workers} threads")
-                        
+                        # Limit concurrent threads
+                        max_workers = min(len(prompts_to_process), 10)
+
+                        print(
+                            f"🚀 Starting parallel generation for {len(prompts_to_process)} {prettify(qt, 'Yellow')} questions using {max_workers} threads")
+
                         # Create thread pool and submit tasks
                         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
                             # Submit all question generation tasks
                             future_to_prompt = {}
-                            
+
                             for i, prompt_data in enumerate(prompts_to_process):
                                 # Assign API key index cyclically to distribute load
                                 api_key_index = i % max_workers
-                                
+
                                 future = executor.submit(
                                     self._process_single_question,
                                     prompt_data, qt_info, exam, section, qt, api_key_index
@@ -345,56 +351,58 @@ class GenQ:
                                     'api_key_index': api_key_index,
                                     'question_index': i
                                 }
-                            
+
                             # Collect results as they complete
                             completed_questions = []
                             failed_questions = []
-                            
+
                             for future in concurrent.futures.as_completed(future_to_prompt):
                                 prompt_info = future_to_prompt[future]
-                                
+
                                 try:
                                     result = future.result()
-                                    
-                                    if result.get('success', True):  # Default to True if not specified
+
+                                    # Default to True if not specified
+                                    if result.get('success', True):
                                         completed_questions.append({
                                             'question_index': prompt_info['question_index'],
                                             'result': result,
                                             'api_key_used': prompt_info['api_key_index']
                                         })
-                                        print(f"✅ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} completed")
+                                        print(
+                                            f"✅ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} completed")
                                     else:
                                         failed_questions.append({
                                             'question_index': prompt_info['question_index'],
                                             'error': result.get('error', 'Unknown error'),
                                             'api_key_used': prompt_info['api_key_index']
                                         })
-                                        print(f"❌ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} failed")
-                                
+                                        print(
+                                            f"❌ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} failed")
+
                                 except Exception as e:
                                     failed_questions.append({
                                         'question_index': prompt_info['question_index'],
                                         'error': str(e),
                                         'api_key_used': prompt_info['api_key_index']
                                     })
-                                    print(f"❌ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} failed with exception: {str(e)}")
-                        
-                        # Report results
-                        print(f"📊 Generation Summary for {prettify(qt, 'Yellow')}:")
-                        print(f"   ✅ Successful: {len(completed_questions)}")
-                        print(f"   ❌ Failed: {len(failed_questions)}")
-                        
+                                    print(
+                                        f"❌ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} failed with exception: {str(e)}")
+
                         if failed_questions:
                             print(f"   🔍 Failed question details:")
                             for failure in failed_questions:
-                                print(f"      Question {failure['question_index'] + 1}: {failure['error']}")
-                        
+                                print(
+                                    f"      Question {failure['question_index'] + 1}: {failure['error']}")
+
                         # Add successful questions to paper (sorted by original index)
-                        completed_questions.sort(key=lambda x: x['question_index'])
+                        completed_questions.sort(
+                            key=lambda x: x['question_index'])
                         for question_result in completed_questions:
-                            paper[_]['questions'].append(question_result['result'])
-                        
+                            paper[_]['questions'].append(
+                                question_result['result'])
+
                         # Only process first question type for now (break after first match)
                         break
-                            # print(
-                            #     f"{prettify(qt, 'Yellow')} is having this question component\n{prettify(question_content, 'Magenta')}\n")
+                        # print(
+                        #     f"{prettify(qt, 'Yellow')} is having this question component\n{prettify(question_content, 'Magenta')}\n")

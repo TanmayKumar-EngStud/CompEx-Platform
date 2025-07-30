@@ -99,22 +99,18 @@ QuestionComponent = Literal['QuestionMetadata', 'QuestionText',
 def _get_Template(file_path: str, question_component: QuestionComponent, filename: str, exam_type: str, Section_name: str, question_type: str, variable: str, type: str = None, item: str = None, rand_var: str = None):
     if exam_type == None:
         raise ValueError(f"exam_type was not mentioned, received None")
-
+    other_file_path = file_path
+    file_path = os.path.join(file_path, filename)
     try:
         with open(file_path, 'r') as f:
             component_template = f.read()
     except FileNotFoundError:
         raise FileNotFoundError(
             f"component {prettify(question_component, 'Yellow')} -> {prettify(filename, 'Magenta')} not found in component_templates folder inside json_files\nfile_path:- {prettify(file_path, 'Cyan')}")
-    component_template = build_template(exam_type, question_type.lower().replace(
-        ' ', '_'), Section_name.lower().replace(
-        ' ', '_'),
-        rand_var if rand_var is not None else None,
-        component_template)
+
     if variable not in [None, '']:
         # now from the component template we need to handle these variables.
-        var_path = os.path.join(script_dir, 'json_files', 'component_templates', str.replace(
-            question_component, '/', '|'), f'{type}.json')
+        var_path = os.path.join(other_file_path, f'{type}.json')
         with open(var_path, 'r') as f:
             replaced_value: Any = json.load(f)
         if replaced_value.get(item, None) is None:
@@ -122,8 +118,23 @@ def _get_Template(file_path: str, question_component: QuestionComponent, filenam
                 f"the file path: {prettify(var_path, 'Cyan')}\nis not having {prettify(item, 'Red')} as it's primary key\nfor generation of question_component: {prettify(question_component, 'Yellow')}")
         replaced_value = json.dumps(replaced_value.get(item), indent=2)
         component_template = component_template.replace(
-            f'<{variable}>', replaced_value).replace("""{{GENERIC_PHILOSOPHY_TEMPLATE}}""")
-        return component_template
+            f'<{variable}>', replaced_value)
+
+    generic_template = os.path.join(other_file_path, 'generic.txt.template')
+    try:
+        with open(generic_template) as f:
+            generic_philosophy_template = f.read()
+    except:
+        generic_philosophy_template = ''
+        pass
+    component_template = component_template.replace(
+        """{{GENERIC_PHILOSOPHY_TEMPLATE}}""", generic_philosophy_template)
+    component_template = build_template(exam_type, question_type.lower().replace(
+        ' ', '_'), Section_name.lower().replace(
+        ' ', '_'),
+        rand_var if rand_var is not None else None,
+        component_template)
+    return component_template
 
 
 def get_Component_Template(question_component: QuestionComponent, filename: str, exam_type: str, Section_name: str, question_type: str, variable: str, type: str = None, item: str = None, rand_var: str = None) -> str:
@@ -142,7 +153,7 @@ def get_Component_Template(question_component: QuestionComponent, filename: str,
     """
 
     file = os.path.join(script_dir, 'json_files', 'component_templates', str.replace(
-        question_component, '/', '|'), filename)
+        question_component, '/', '|'))
     return _get_Template(file_path=file,
                          question_component=question_component,
                          filename=filename,
@@ -157,7 +168,7 @@ def get_Component_Template(question_component: QuestionComponent, filename: str,
 
 def get_Question_Template(question_component: QuestionComponent, filename: str, exam_type: str, Section_name: str, question_type: str, variable: str, type: str = None, item: str = None, rand_var: str = None):
     file = os.path.join(script_dir, 'json_files',
-                        'question_type_templates', filename)
+                        'question_type_templates')
     return _get_Template(file_path=file,
                          question_component=question_component,
                          filename=filename,

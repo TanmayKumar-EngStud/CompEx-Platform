@@ -1,5 +1,5 @@
 STRICT RESPONSE FORMAT:- JSON
-- "graphs" key with array of graph objects.
+- "graph" key with array of graph objects.
 Example:-
 ```json
 {
