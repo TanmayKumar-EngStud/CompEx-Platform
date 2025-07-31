@@ -26,12 +26,12 @@
   },
   {
     "QuestionOptions/Answer": {
-      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as dictionary.\n- \"answer\" key with single correct option letter.\nExample:-\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\"\n  },\n  \"answer\": \"A\"\n}\n```\n**Important Notes:**\n- GMAT: 5 options (A-E), GRE: 4-5 options\n- Create strategic distractors based on common errors\n- One option must match the correct solution\n- No values are supposed to have LaTeX format, it should be in normal string format",
+      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as dictionary.\n- \"answer\" key with list of options.\nFor Example:\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\"\n  },\n  \"answer\": [\"A\", \"C\"]\n}\n```\n**Important Notes:**\n- The \"answer\" field must be an array of correct option letters\n- Multiple options can be correct (typically 2-3 out of 5)\n- Each option should be independently valuable as correct or incorrect",
       "output": {
         "options": "dict",
-        "answer": "str"
+        "answer": "List[str]"
       },
-      "file-name": "generic-question-option-answer.txt.template"
+      "file-name": "multi-correct-question-option-answer.txt.template"
     }
   }
 ]

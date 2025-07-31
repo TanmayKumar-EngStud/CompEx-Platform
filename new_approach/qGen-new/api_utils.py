@@ -137,10 +137,7 @@ class GeminiGenerator:
         self.question_type = question_type
         self.lock = threading.Lock()
 
-        # Rate limiting - 9 requests per minute for safety
-        self.requests_per_minute = 9
-        self.request_count = 0
-        self.start_time = time.time()
+        # Remove manual rate limiting - rely on API's resource exhaustion handling
 
         # Load system instructions based on question type
         self.system_instructions = self._load_system_instructions()
@@ -215,31 +212,7 @@ class GeminiGenerator:
 
         return api_key
 
-    def _wait_if_rate_limited(self):
-        """Apply rate limiting to prevent API quota exceeded errors."""
-        with self.lock:
-            current_time = time.time()
-            elapsed = current_time - self.start_time
-
-            # Reset window if more than 60 seconds have passed
-            if elapsed >= 60:
-                self.start_time = current_time
-                self.request_count = 0
-                elapsed = 0
-
-            # Check if we're at the limit
-            if self.request_count >= self.requests_per_minute:
-                wait_time = 60 - elapsed + 1  # Add 1 second buffer
-                if wait_time > 0:
-                    print(f"⏳ Rate limit safety: waiting {wait_time:.1f}s "
-                          f"(requests: {self.request_count}, elapsed: {elapsed:.1f}s)")
-                    time.sleep(wait_time)
-                    # Reset after waiting
-                    self.start_time = time.time()
-                    self.request_count = 0
-
-            # Increment request count
-            self.request_count += 1
+    # Removed manual rate limiting - API handles this with resource exhaustion errors
 
     def _create_chat_instance(self, system_instructions: str) -> Any:
         """Create a chat instance with system instructions."""
@@ -372,11 +345,9 @@ class GeminiGenerator:
             raise ValueError(
                 f"Missing required {prettify('original_prompt', 'Red')} in context for {prettify(component_type, 'Yellow')} generation")
 
-        for attempt in range(self.max_retries):
+        attempt = 0
+        while attempt < self.max_retries:
             try:
-                # Apply rate limiting
-                self._wait_if_rate_limited()
-
                 # Create chat instance with system instructions (not component instruction)
                 chat_instance = self._create_chat_instance(
                     self.system_instructions)
@@ -385,10 +356,10 @@ class GeminiGenerator:
                 # 1. The component mode being activated
                 # 2. The original question prompt
                 # 3. The specific component instructions
-                comprehensive_prompt = f"""Mode: {component_type} \nGeneration
+                comprehensive_prompt = f"""Mode: {component_type} Generation
 
 Original Question Prompt: {original_prompt}
-\n
+
 Component Instructions:
 {instruction_statement}
 
@@ -428,19 +399,23 @@ Generate the requested {component_type} component following the format specifica
                             error_data = e.response.json()
                         else:
                             # Parse from string representation
-                            error_data = json.loads(error_msg.split("'. ")[-1] if "'. " in error_msg else error_msg)
-                        
+                            error_data = json.loads(error_msg.split(
+                                "'. ")[-1] if "'. " in error_msg else error_msg)
+
                         # Extract retryDelay from details
                         if 'error' in error_data and 'details' in error_data['error']:
                             for detail in error_data['error']['details']:
                                 if detail.get('@type') == 'type.googleapis.com/google.rpc.RetryInfo':
-                                    retry_delay_str = detail.get('retryDelay', '60s')
-                                    retry_wait = int(retry_delay_str.rstrip('s'))
+                                    retry_delay_str = detail.get(
+                                        'retryDelay', '60s')
+                                    retry_wait = int(
+                                        retry_delay_str.rstrip('s'))
                                     break
                     except:
                         # Fallback to regex if JSON parsing fails
                         import re
-                        delay_match = re.search(r'"retryDelay":\s*"(\d+)s"', error_msg)
+                        delay_match = re.search(
+                            r'"retryDelay":\s*"(\d+)s"', error_msg)
                         if delay_match:
                             retry_wait = int(delay_match.group(1))
 
@@ -458,25 +433,25 @@ Generate the requested {component_type} component following the format specifica
                     else:
                         # Short retry delay - temporary rate limit, worth retrying
                         print(f"⚠️  Rate limit exceeded for {prettify(component_type, 'Yellow')} "
-                              f"({prettify(question_type, 'Yellow')})")
-                        print(
-                            f"⏳ Rate limit safety: waiting {prettify(f'{retry_wait}s', 'Cyan')} (API suggested retry delay)")
+                              f"({prettify(question_type, 'Yellow')}) waiting {prettify(f'{retry_wait}s', 'Cyan')} (API suggested retry delay)")
                         time.sleep(retry_wait)
-                        # Don't increment the attempt counter for rate limit errors
-                        attempt -= 1
+                        # Don't increment attempt counter for rate limit errors - just continue
                         continue
 
-                # For real errors, count the attempt
-                print(f"❌ Attempt {attempt + 1}/{self.max_retries} failed for {prettify(component_type, 'Red')} "
+                # For real errors, increment attempt counter
+                attempt += 1
+                
+                # Print error info
+                print(f"❌ Attempt {attempt}/{self.max_retries} failed for {prettify(component_type, 'Red')} "
                       f"({prettify(question_type, 'Yellow')}): {error_msg}")
 
                 # If this was the last attempt, raise the error
-                if attempt == self.max_retries - 1:
+                if attempt >= self.max_retries:
                     raise RuntimeError(f"Failed to generate component after {self.max_retries} attempts. "
                                        f"Last error: {error_msg}")
 
                 # Wait before retry with exponential backoff for real errors
-                wait_time = 2 ** attempt
+                wait_time = 2 ** (attempt - 1)
                 print(f"⏳ Waiting {wait_time}s before retry...")
                 time.sleep(wait_time)
 
