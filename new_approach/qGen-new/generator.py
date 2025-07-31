@@ -150,7 +150,9 @@ class GenQ:
             raise RuntimeError(
                 "Gemini generator not initialized. Call from generate() method.")
 
-        calls_generation = []
+        # Initialize result buffer to merge components by type
+        result_buffer = {}
+        calls_generation = []  # Keep for logging purposes
 
         # Process each component call and generate using Gemini
         for component_call in component_calls:
@@ -164,7 +166,8 @@ class GenQ:
                                 'component_type': component_type,
                                 'question_type': prompt_details['question-type'],
                                 'exam': prompt_details['exam'],
-                                'section': prompt_details['section']
+                                'section': prompt_details['section'],
+                                'original_prompt': prompt_details['prompt']
                             }
 
                             result = self.gemini_generator.generate_component(
@@ -180,10 +183,20 @@ class GenQ:
                             # Add error placeholder to maintain structure
                             component_results.append({"error": str(e)})
 
+                    # Store in calls_generation for logging
                     calls_generation.append({
                         "question_component": component_type,
                         "returned_values": component_results
                     })
+
+                    # Merge into result_buffer based on component type
+                    if component_type == 'QuestionMetadata':
+                        # Special handling for QuestionMetadata - merge as 'metadata'
+                        pass  # TODO: Implement QuestionMetadata merging logic
+                    else:
+                        # Default handling - store directly with component key
+                        result_buffer[component_type] = component_results
+
                 else:
                     # Single call for this component type
                     try:
@@ -191,7 +204,8 @@ class GenQ:
                             'component_type': component_type,
                             'question_type': prompt_details['question-type'],
                             'exam': prompt_details['exam'],
-                            'section': prompt_details['section']
+                            'section': prompt_details['section'],
+                            'original_prompt': prompt_details['prompt']
                         }
 
                         result = self.gemini_generator.generate_component(
@@ -200,10 +214,37 @@ class GenQ:
                             context=context
                         )
 
+                        # Store in calls_generation for logging
                         calls_generation.append({
                             "question_component": component_type,
                             "returned_value": result
                         })
+
+                        # Merge into result_buffer based on component type
+                        if component_type == 'QuestionMetadata':
+                            # Special handling for QuestionMetadata - merge as 'metadata'
+                            pass  # TODO: Implement QuestionMetadata merging logic
+                        elif component_type == 'QuestionOptions/Answer':
+                            # Special handling for QuestionOptions/Answer
+                            pass  # TODO: Implement QuestionOptions/Answer merging logic
+                        elif component_type == 'QuestionSolution':
+                            # Special handling for QuestionSolution - must be plain string, store as 'solution'
+                            if not isinstance(result, str):
+                                raise ValueError(
+                                    f"Component {prettify('QuestionSolution', 'Yellow')} for question-type "
+                                    f"{prettify(prompt_details['question-type'], 'Red')} returned {prettify(type(result).__name__, 'Red')} "
+                                    f"instead of expected {prettify('str', 'Green')}. Received: {prettify(str(result), 'Magenta')}"
+                                )
+                            result_buffer['solution'] = result
+                        else:
+                            # Default handling - store directly with component key
+                            if isinstance(result, dict):
+                                # If result is a dict, merge its keys directly into result_buffer
+                                for key, value in result.items():
+                                    result_buffer[key] = value
+                            else:
+                                # If result is not a dict, store with component type as key
+                                result_buffer[component_type] = result
 
                     except Exception as e:
                         print(
@@ -213,10 +254,14 @@ class GenQ:
                             "question_component": component_type,
                             "returned_value": {"error": str(e)}
                         })
+                        # Store error in result_buffer too
+                        result_buffer[component_type] = {"error": str(e)}
 
-        # Record the generated components before child recursion
+        # Record the generated components before child recursion (for logging)
         record(calls_generation, 'calls_generation',
                prompt_details['question-type'])
+
+        # Record the merged result buffer
 
         # Handle child recursion AFTER component generation and recording
         if prompt_details.get('type') == 'parent':
@@ -234,8 +279,11 @@ class GenQ:
 
             child_prompt_data = [self.get_question_data(
                 _child_add(child_prompt)) for child_prompt in prompt_details.get('child-prompt')]
-
-        return None
+            result_buffer['child-questions'] = child_prompt_data
+        if prompt_details['type'] != 'child':
+            record(result_buffer, 'result_buffer',
+                   prompt_details['question-type'])
+        return result_buffer
 
     def _process_single_question(self, prompt_data: Dict[str, Any], qt_info: Dict[str, Any],
                                  exam: str, section: str, qt: str, api_key_index: int) -> Dict[str, Any]:

@@ -248,8 +248,7 @@ class GeminiGenerator:
                 system_instruction=system_instructions
             )
 
-            model_name = os.getenv("MODEL", "gemini-1.5-flash")
-
+            model_name = os.getenv("MODEL2", "gemini-1.5-flash")
             return self.client.chats.create(
                 model=model_name,
                 config=config
@@ -307,18 +306,21 @@ class GeminiGenerator:
                     if expected_type == "str" and not isinstance(parsed_data[key], str):
                         raise ValueError(
                             f"Expected string for '{key}', got {type(parsed_data[key])}")
-                    elif expected_type == "dict" and not isinstance(parsed_data[key], dict):
+                    elif expected_type == "dict" and not isinstance(parsed_data[key], (dict, list)):
+                        # Accept both dict and list for expected dict types (since both can be JSON serialized)
+                        raise ValueError(
+                            f"Expected dict or list for '{key}', got {type(parsed_data[key])}")
+                    elif expected_type == "dict" and isinstance(parsed_data[key], list):
                         # Special handling for options that might come as list of dicts
-                        if key == "options" and isinstance(parsed_data[key], list):
+                        if key == "options":
                             # Convert list of option dicts to single dict
                             options_dict = {}
                             for item in parsed_data[key]:
                                 if isinstance(item, dict):
                                     options_dict.update(item)
                             parsed_data[key] = options_dict
-                        else:
-                            raise ValueError(
-                                f"Expected dict for '{key}', got {type(parsed_data[key])}")
+                        # For other keys like 'graph', 'table', etc., keep the list as-is
+                        # since it's valid JSON data
                     elif expected_type == "List[str]" and not isinstance(parsed_data[key], list):
                         raise ValueError(
                             f"Expected list for '{key}', got {type(parsed_data[key])}")
@@ -358,18 +360,41 @@ class GeminiGenerator:
         """
         context = context or {}
 
+        # Validate required context information
+        component_type = context.get('component_type')
+        original_prompt = context.get('original_prompt')
+
+        if not component_type:
+            raise ValueError(
+                f"Missing required {prettify('component_type', 'Red')} in context for component generation")
+
+        if not original_prompt:
+            raise ValueError(
+                f"Missing required {prettify('original_prompt', 'Red')} in context for {prettify(component_type, 'Yellow')} generation")
+
         for attempt in range(self.max_retries):
             try:
                 # Apply rate limiting
                 self._wait_if_rate_limited()
 
-                # Create chat instance with instruction as system prompt
+                # Create chat instance with system instructions (not component instruction)
                 chat_instance = self._create_chat_instance(
-                    instruction_statement)
+                    self.system_instructions)
 
-                # Send generation request
-                prompt = "Generate the requested component following the format specifications."
-                response = chat_instance.send_message(prompt)
+                # Build comprehensive prompt that includes:
+                # 1. The component mode being activated
+                # 2. The original question prompt
+                # 3. The specific component instructions
+                comprehensive_prompt = f"""Mode: {component_type} \nGeneration
+
+Original Question Prompt: {original_prompt}
+\n
+Component Instructions:
+{instruction_statement}
+
+Generate the requested {component_type} component following the format specifications."""
+
+                response = chat_instance.send_message(comprehensive_prompt)
 
                 if not response or not response.text:
                     raise ValueError("Empty response from Gemini API")
@@ -392,18 +417,54 @@ class GeminiGenerator:
                 question_type = context.get('question_type', 'Unknown')
 
                 # Check if this is a 429 RESOURCE_EXHAUSTED error
-                is_rate_limit_error = "429 RESOURCE_EXHAUSTED" in error_msg or "RESOURCE_EXHAUSTED" in error_msg
+                is_resource_exhausted = "429 RESOURCE_EXHAUSTED" in error_msg or "RESOURCE_EXHAUSTED" in error_msg
 
-                if is_rate_limit_error:
-                    # For rate limit errors, don't count as a real attempt and wait 60s
-                    print(f"⚠️  Rate limit exceeded for {prettify(component_type, 'Yellow')} "
-                          f"({prettify(question_type, 'Yellow')}): {error_msg}")
-                    print(
-                        f"⏳ Rate limit safety: waiting 60.0s (requests: {self.request_count}, elapsed: 0.0s)")
-                    time.sleep(60)
-                    # Don't increment the attempt counter for rate limit errors
-                    attempt -= 1
-                    continue
+                if is_resource_exhausted:
+                    # Parse JSON error to extract retryDelay
+                    retry_wait = 60  # default fallback
+                    try:
+                        # Try to parse the error as JSON
+                        if hasattr(e, 'response') and hasattr(e.response, 'json'):
+                            error_data = e.response.json()
+                        else:
+                            # Parse from string representation
+                            error_data = json.loads(error_msg.split("'. ")[-1] if "'. " in error_msg else error_msg)
+                        
+                        # Extract retryDelay from details
+                        if 'error' in error_data and 'details' in error_data['error']:
+                            for detail in error_data['error']['details']:
+                                if detail.get('@type') == 'type.googleapis.com/google.rpc.RetryInfo':
+                                    retry_delay_str = detail.get('retryDelay', '60s')
+                                    retry_wait = int(retry_delay_str.rstrip('s'))
+                                    break
+                    except:
+                        # Fallback to regex if JSON parsing fails
+                        import re
+                        delay_match = re.search(r'"retryDelay":\s*"(\d+)s"', error_msg)
+                        if delay_match:
+                            retry_wait = int(delay_match.group(1))
+
+                    # Use retryDelay as the deciding factor:
+                    # < 60s = temporary limit (worth retrying)
+                    # >= 60s = daily quota exhausted (not worth waiting)
+                    if retry_wait >= 60:
+                        # Daily quota exhausted or long-term limit - raise error
+                        raise RuntimeError(
+                            f"💸 Daily quota exceeded for API key {prettify(str(self.api_key_index), 'Red')}. "
+                            f"Component: {prettify(component_type, 'Yellow')}, "
+                            f"Question: {prettify(question_type, 'Yellow')}, "
+                            f"RetryDelay: {prettify(f'{retry_wait}s', 'Magenta')}. "
+                            f"Error: {error_msg}")
+                    else:
+                        # Short retry delay - temporary rate limit, worth retrying
+                        print(f"⚠️  Rate limit exceeded for {prettify(component_type, 'Yellow')} "
+                              f"({prettify(question_type, 'Yellow')})")
+                        print(
+                            f"⏳ Rate limit safety: waiting {prettify(f'{retry_wait}s', 'Cyan')} (API suggested retry delay)")
+                        time.sleep(retry_wait)
+                        # Don't increment the attempt counter for rate limit errors
+                        attempt -= 1
+                        continue
 
                 # For real errors, count the attempt
                 print(f"❌ Attempt {attempt + 1}/{self.max_retries} failed for {prettify(component_type, 'Red')} "
