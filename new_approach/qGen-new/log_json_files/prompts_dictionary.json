@@ -53,10 +53,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "tables": [
-                        "data_table",
-                        "comparison_table"
-                     ]
+                     "tables": ["data_table", "comparison_table"]
                   }
                },
                {
@@ -72,10 +69,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "tables": [
-                        "data_table",
-                        "pivot_table"
-                     ]
+                     "tables": ["data_table", "pivot_table"]
                   }
                }
             ]
@@ -88,63 +82,49 @@
                   "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Human Resources> - <Numeric Comparisons> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Mean, Median, Mode, Range> - <Science and Technology> - <Word Problems&> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<work and rate problem> - <Human Resources> - <Data Interpretation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Exponents and Powers> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<work and rate problem> - <Business and Finance> - <Word Problems&> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Mean, Median, Mode, Range> - <Human Resources> - <Numeric Comparisons> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                }
             ]
@@ -239,9 +219,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                },
                {
@@ -261,9 +239,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                },
                {
@@ -287,9 +263,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                }
             ]
@@ -348,12 +322,8 @@
                      }
                   ],
                   "metadata-type": {
-                     "charts": [
-                        "pie_chart"
-                     ],
-                     "tables": [
-                        "data_table"
-                     ]
+                     "charts": ["pie_chart"],
+                     "tables": ["data_table"]
                   }
                },
                {
@@ -369,10 +339,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "charts": [
-                        "pie_chart",
-                        "pie_chart"
-                     ]
+                     "charts": ["pie_chart", "pie_chart"]
                   }
                }
             ]
@@ -385,63 +352,49 @@
                   "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Human Resources> - <Single Variable Equation> - difficulty_level:<2>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Standard Deviation and Variance> - <Human Resources> - <Single Variable Equation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Standard Deviation and Variance> - <Human Resources> - <Numeric Comparisons> - difficulty_level:<2>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Mean, Median, Mode, Range> - <Environment and Sustainability> - <Single Variable Equation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Single Variable Equation> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Mixtures and Alligations> - <Human Resources> - <Data Interpretation> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                },
                {
                   "prompt": "<Simple Interest and Compound Interest> - <Science and Technology> - <Data Interpretation> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
+                     "statements": ["statements"]
                   }
                }
             ]
@@ -536,9 +489,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                },
                {
@@ -562,9 +513,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                },
                {
@@ -580,9 +529,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                },
                {
@@ -602,9 +549,7 @@
                      }
                   ],
                   "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
+                     "passage": ["passage"]
                   }
                }
             ]

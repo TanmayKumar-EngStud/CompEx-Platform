@@ -10,7 +10,7 @@ import json
 import time
 import threading
 import re
-from typing import Dict, Any, Optional, Union, List
+from typing import Dict, Any, Optional, Union, List, get_origin
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
@@ -138,6 +138,7 @@ class GeminiGenerator:
         self.lock = threading.Lock()
 
         # Remove manual rate limiting - rely on API's resource exhaustion handling
+        # Remove manual rate limiting - rely on API's resource exhaustion handling
 
         # Load system instructions based on question type
         self.system_instructions = self._load_system_instructions()
@@ -212,8 +213,6 @@ class GeminiGenerator:
 
         return api_key
 
-    # Removed manual rate limiting - API handles this with resource exhaustion errors
-
     def _create_chat_instance(self, system_instructions: str) -> Any:
         """Create a chat instance with system instructions."""
         try:
@@ -269,7 +268,7 @@ class GeminiGenerator:
                     f"refine_response error: {parsed_data['error']}")
 
             # Validate expected output keys
-            if isinstance(expected_output, dict):
+            if get_origin(expected_output) is dict:
                 for key, expected_type in expected_output.items():
                     if key not in parsed_data:
                         raise ValueError(
@@ -402,6 +401,9 @@ Generate the requested {component_type} component following the format specifica
                             error_data = json.loads(error_msg.split(
                                 "'. ")[-1] if "'. " in error_msg else error_msg)
 
+                            error_data = json.loads(error_msg.split(
+                                "'. ")[-1] if "'. " in error_msg else error_msg)
+
                         # Extract retryDelay from details
                         if 'error' in error_data and 'details' in error_data['error']:
                             for detail in error_data['error']['details']:
@@ -410,10 +412,16 @@ Generate the requested {component_type} component following the format specifica
                                         'retryDelay', '60s')
                                     retry_wait = int(
                                         retry_delay_str.rstrip('s'))
+                                    retry_delay_str = detail.get(
+                                        'retryDelay', '60s')
+                                    retry_wait = int(
+                                        retry_delay_str.rstrip('s'))
                                     break
                     except:
                         # Fallback to regex if JSON parsing fails
                         import re
+                        delay_match = re.search(
+                            r'"retryDelay":\s*"(\d+)s"', error_msg)
                         delay_match = re.search(
                             r'"retryDelay":\s*"(\d+)s"', error_msg)
                         if delay_match:
@@ -433,14 +441,15 @@ Generate the requested {component_type} component following the format specifica
                     else:
                         # Short retry delay - temporary rate limit, worth retrying
                         print(f"⚠️  Rate limit exceeded for {prettify(component_type, 'Yellow')} "
-                              f"({prettify(question_type, 'Yellow')}) waiting {prettify(f'{retry_wait}s', 'Cyan')} (API suggested retry delay)")
+                              f"({prettify(question_type, 'Yellow')}) waiting {prettify(f'{retry_wait}s', 'Cyan')}")
                         time.sleep(retry_wait)
-                        # Don't increment attempt counter for rate limit errors - just continue
+                        # Don't increment the attempt counter for rate limit errors
+
                         continue
 
                 # For real errors, increment attempt counter
                 attempt += 1
-                
+
                 # Print error info
                 print(f"❌ Attempt {attempt}/{self.max_retries} failed for {prettify(component_type, 'Red')} "
                       f"({prettify(question_type, 'Yellow')}): {error_msg}")

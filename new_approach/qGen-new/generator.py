@@ -7,9 +7,9 @@ from api_utils import get_gemini_generator
 import os
 import json
 import threading
-import concurrent.futures
+# import concurrent.futures
 from typing import Dict, Any, List
-
+from content_generation_manager import manage_generated_content
 
 all_question_structure = get_json('question_component_types')[0]
 
@@ -55,7 +55,7 @@ class GenQ:
         #     prompt_details['type'] = 'child'
         prefix = '' if prompt_details['type'] == 'simple' else prompt_details['type']
 
-        # fetching raw templates
+        # region fetching raw templates
         component_calls = []
         for question_component in question_components:
             component_call_buffer = {}
@@ -79,7 +79,7 @@ class GenQ:
                                     "output": component_instruction[question_component][prompt_metadata_type]['output']
                                 })
                     else:
-                        component_call_buffer[prompt_metadata_type] = list()
+                        component_call_buffer[question_component] = []
                         for prompt_metadata_item in prompt_details['metadata-type'][prompt_metadata_type]:
                             """prompt_metadata_item = 'data_table' or 'area_chart' or 'pie_chart' """
                             file_name = component_instruction[question_component][prompt_metadata_type]['file-name']
@@ -109,7 +109,8 @@ class GenQ:
                         component_call_buffer[question_component] = {
                             'instruction statement': get_Component_Template(question_component, file_name, prompt_details['exam'], prompt_details['section'], prompt_details['question-type'], variables, rand_var=rand_var),
                             'output': output,
-                            'file-name': file_name
+                            'file-name': file_name,
+                            'option-type': prompt_details['option']
                         }
                         # option category is matching
             else:
@@ -139,8 +140,8 @@ class GenQ:
                     raise ValueError(
                         f"the value of component_call_buffer for {prettify(question_component, 'Red')} is not present for {prettify(question_type, 'Yellow')}")
             component_calls.append(component_call_buffer)
+        # endregion
 
-        # Record component calls first
         record(component_calls, 'component_calls',
                prompt_details['question-type'])
 
@@ -155,111 +156,40 @@ class GenQ:
         calls_generation = []  # Keep for logging purposes
 
         # Process each component call and generate using Gemini
-        for component_call in component_calls:
-            for component_type, call_data in component_call.items():
-                if isinstance(call_data, list):
-                    # Multiple calls for this component type (e.g., metadata with multiple items)
-                    component_results = []
-                    for call in call_data:
-                        try:
-                            context = {
-                                'component_type': component_type,
-                                'question_type': prompt_details['question-type'],
-                                'exam': prompt_details['exam'],
-                                'section': prompt_details['section'],
-                                'original_prompt': prompt_details['prompt']
-                            }
-
-                            result = self.gemini_generator.generate_component(
-                                instruction_statement=call['instruction statement'],
-                                expected_output=call['output'],
-                                context=context
-                            )
-                            component_results.append(result)
-
-                        except Exception as e:
-                            print(
-                                f"❌ Failed to generate {prettify(component_type, 'Red')} component: {str(e)}")
-                            # Add error placeholder to maintain structure
-                            component_results.append({"error": str(e)})
-
-                    # Store in calls_generation for logging
-                    calls_generation.append({
-                        "question_component": component_type,
-                        "returned_values": component_results
-                    })
-
-                    # Merge into result_buffer based on component type
-                    if component_type == 'QuestionMetadata':
-                        # Special handling for QuestionMetadata - merge as 'metadata'
-                        pass  # TODO: Implement QuestionMetadata merging logic
-                    else:
-                        # Default handling - store directly with component key
-                        result_buffer[component_type] = component_results
-
+        # ---- 1️⃣  Build a flat list of every individual call -----------------
+        flat_calls = []
+        for cc in component_calls:
+            for comp_type, data in cc.items():
+                if isinstance(data, list):
+                    flat_calls.extend([(comp_type, d) for d in data])
                 else:
-                    # Single call for this component type
-                    try:
-                        context = {
-                            'component_type': component_type,
-                            'question_type': prompt_details['question-type'],
-                            'exam': prompt_details['exam'],
-                            'section': prompt_details['section'],
-                            'original_prompt': prompt_details['prompt']
-                        }
+                    flat_calls.append((comp_type, data))
+                # Record the generated components before child recursion (for logging)
+                record(calls_generation, 'calls_generation',
+                       prompt_details['question-type'])
 
-                        result = self.gemini_generator.generate_component(
-                            instruction_statement=call_data['instruction statement'],
-                            expected_output=call_data['output'],
-                            context=context
-                        )
+        # ---- 2️⃣  Generate & merge every single call into result_buffer ------
+        for comp_type, call in flat_calls:
+            context = {
+                'component_type': comp_type,
+                'question_type': question_type,
+                'exam': prompt_details['exam'],
+                'section': prompt_details['section'],
+                'original_prompt': prompt_details['prompt']
+            }
+            try:
+                generated = self.gemini_generator.generate_component(
+                    instruction_statement=call['instruction statement'],
+                    expected_output=call['output'],
+                    context=context
+                )
+            except Exception as e:
+                generated = {"error": str(e)}
 
-                        # Store in calls_generation for logging
-                        calls_generation.append({
-                            "question_component": component_type,
-                            "returned_value": result
-                        })
-
-                        # Merge into result_buffer based on component type
-                        if component_type == 'QuestionMetadata':
-                            # Special handling for QuestionMetadata - merge as 'metadata'
-                            pass  # TODO: Implement QuestionMetadata merging logic
-                        elif component_type == 'QuestionOptions/Answer':
-                            # Special handling for QuestionOptions/Answer
-                            pass  # TODO: Implement QuestionOptions/Answer merging logic
-                        elif component_type == 'QuestionSolution':
-                            # Special handling for QuestionSolution - must be plain string, store as 'solution'
-                            if not isinstance(result, str):
-                                raise ValueError(
-                                    f"Component {prettify('QuestionSolution', 'Yellow')} for question-type "
-                                    f"{prettify(prompt_details['question-type'], 'Red')} returned {prettify(type(result).__name__, 'Red')} "
-                                    f"instead of expected {prettify('str', 'Green')}. Received: {prettify(str(result), 'Magenta')}"
-                                )
-                            result_buffer['solution'] = result
-                        else:
-                            # Default handling - store directly with component key
-                            if isinstance(result, dict):
-                                # If result is a dict, merge its keys directly into result_buffer
-                                for key, value in result.items():
-                                    result_buffer[key] = value
-                            else:
-                                # If result is not a dict, store with component type as key
-                                result_buffer[component_type] = result
-
-                    except Exception as e:
-                        print(
-                            f"❌ Failed to generate {prettify(component_type, 'Red')} component: {str(e)}")
-                        # Add error placeholder to maintain structure
-                        calls_generation.append({
-                            "question_component": component_type,
-                            "returned_value": {"error": str(e)}
-                        })
-                        # Store error in result_buffer too
-                        result_buffer[component_type] = {"error": str(e)}
-
-        # Record the generated components before child recursion (for logging)
-        record(calls_generation, 'calls_generation',
-               prompt_details['question-type'])
+            manage_generated_content(
+                result_buffer, question_type, comp_type, generated,
+                option_type=prompt_details.get('option')
+            )
 
         # Record the merged result buffer
 
@@ -277,85 +207,18 @@ class GenQ:
                 }
                 return child_prompt_details
 
-            child_prompt_data = [self.get_question_data(
-                _child_add(child_prompt)) for child_prompt in prompt_details.get('child-prompt')]
+            child_prompt_data = []
+            for child_prompt in prompt_details.get('child-prompt'):
+                child_prompt = _child_add(child_prompt)
+                child_data = self.get_question_data(child_prompt)
+                child_prompt_data.append(child_data)
+            # child_prompt_data = [self.get_question_data(
+            #     _child_add(child_prompt)) for child_prompt in prompt_details.get('child-prompt')]
             result_buffer['child-questions'] = child_prompt_data
         if prompt_details['type'] != 'child':
             record(result_buffer, 'result_buffer',
                    prompt_details['question-type'])
         return result_buffer
-
-    def _process_single_question(self, prompt_data: Dict[str, Any], qt_info: Dict[str, Any],
-                                 exam: str, section: str, qt: str, api_key_index: int) -> Dict[str, Any]:
-        """
-        Process a single question in a separate thread with its own API key index.
-
-        Args:
-            prompt_data: Individual prompt data
-            qt_info: Question type info
-            exam: Exam type (GRE/GMAT)
-            section: Section name
-            qt: Question type
-            api_key_index: API key index for this thread
-
-        Returns:
-            Generated question content or error info
-        """
-        try:
-            # Create prompt details for this specific question
-            prompt_details = {
-                'type': qt_info['type'],
-                'exam': exam,
-                'section': section,
-                'question-type': qt,
-                'option': prompt_data.get('option'),
-                'prompt': prompt_data.get('prompt')
-            }
-
-            if prompt_data.get('child-prompt'):
-                prompt_details['child-prompt'] = prompt_data['child-prompt']
-                prompt_details['metadata-type'] = prompt_data['metadata-type']
-
-            # Initialize Gemini generator with specific API key index for this thread
-            thread_id = threading.current_thread().ident
-
-            # Create a thread-local generator instance
-            gemini_generator = get_gemini_generator(
-                api_key_index=api_key_index, question_type=qt)
-
-            try:
-                # Temporarily assign to self for get_question_data to use
-                # Note: This is thread-safe since each thread has its own execution context
-                original_generator = getattr(self, 'gemini_generator', None)
-                self.gemini_generator = gemini_generator
-
-                question_content = self.get_question_data(prompt_details)
-
-                print(
-                    f"✅ Thread {thread_id}: Successfully generated question for {prettify(qt, 'Green')}")
-                return {
-                    'prompt': prompt_details['prompt'],
-                    'question_content': question_content,
-                }
-
-            finally:
-                # Restore original generator state
-                self.gemini_generator = original_generator
-                print(
-                    f"🧹 Thread {thread_id}: Cleaned up Gemini generator for {prettify(qt, 'Cyan')}")
-
-        except Exception as e:
-            thread_id = threading.current_thread().ident
-            error_msg = str(e)
-            print(
-                f"❌ Thread {thread_id}: Failed to generate question for {prettify(qt, 'Red')}: {error_msg}")
-            return {
-                'success': False,
-                'error': error_msg,
-                'prompt_details': prompt_details if 'prompt_details' in locals() else None,
-                'api_key_index': api_key_index,
-                'thread_id': thread_id
-            }
 
     def generate(self) -> dict:
         for exam, sections in self.prompts_dictionary.items():
@@ -373,84 +236,24 @@ class GenQ:
                     test = ['Problem Solving Simple', 'Problem Solving Meta', 'Data Sufficiency',
                             'Reading Comprehension', 'Text Completion', 'Sentence Equivalence']
                     if qt == test[1]:
-                        # Prepare threading for parallel question generation
-                        prompts_to_process = qt_info['prompts']
-                        # Limit concurrent threads
-                        max_workers = min(len(prompts_to_process), 10)
 
-                        print(
-                            f"🚀 Starting parallel generation for {len(prompts_to_process)} {prettify(qt, 'Yellow')} questions using {max_workers} threads")
+                        for i, prompt_data in enumerate(qt_info['prompts']):
+                            # Assign API key index cyclically to distribute load
+                            api_key_index = 0
+                            prompt_details = {
+                                'type': qt_info['type'],
+                                'exam': exam,
+                                'section': section,
+                                'question-type': qt,
+                                'option': prompt_data.get('option'),
+                                'prompt': prompt_data.get('prompt'),
+                                'child-prompt': prompt_data.get('child-prompt')
+                            }
 
-                        # Create thread pool and submit tasks
-                        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-                            # Submit all question generation tasks
-                            future_to_prompt = {}
-
-                            for i, prompt_data in enumerate(prompts_to_process):
-                                # Assign API key index cyclically to distribute load
-                                api_key_index = i % max_workers
-
-                                future = executor.submit(
-                                    self._process_single_question,
-                                    prompt_data, qt_info, exam, section, qt, api_key_index
-                                )
-                                future_to_prompt[future] = {
-                                    'prompt_data': prompt_data,
-                                    'api_key_index': api_key_index,
-                                    'question_index': i
-                                }
-
-                            # Collect results as they complete
-                            completed_questions = []
-                            failed_questions = []
-
-                            for future in concurrent.futures.as_completed(future_to_prompt):
-                                prompt_info = future_to_prompt[future]
-
-                                try:
-                                    result = future.result()
-
-                                    # Default to True if not specified
-                                    if result.get('success', True):
-                                        completed_questions.append({
-                                            'question_index': prompt_info['question_index'],
-                                            'result': result,
-                                            'api_key_used': prompt_info['api_key_index']
-                                        })
-                                        print(
-                                            f"✅ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} completed")
-                                    else:
-                                        failed_questions.append({
-                                            'question_index': prompt_info['question_index'],
-                                            'error': result.get('error', 'Unknown error'),
-                                            'api_key_used': prompt_info['api_key_index']
-                                        })
-                                        print(
-                                            f"❌ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} failed")
-
-                                except Exception as e:
-                                    failed_questions.append({
-                                        'question_index': prompt_info['question_index'],
-                                        'error': str(e),
-                                        'api_key_used': prompt_info['api_key_index']
-                                    })
-                                    print(
-                                        f"❌ Question {prompt_info['question_index'] + 1}/{len(prompts_to_process)} failed with exception: {str(e)}")
-
-                        if failed_questions:
-                            print(f"   🔍 Failed question details:")
-                            for failure in failed_questions:
-                                print(
-                                    f"      Question {failure['question_index'] + 1}: {failure['error']}")
-
-                        # Add successful questions to paper (sorted by original index)
-                        completed_questions.sort(
-                            key=lambda x: x['question_index'])
-                        for question_result in completed_questions:
-                            paper[_]['questions'].append(
-                                question_result['result'])
-
-                        # Only process first question type for now (break after first match)
+                            gemini_generator = get_gemini_generator(
+                                api_key_index=api_key_index, question_type=qt)
+                            self.gemini_generator = gemini_generator
+                            question_data = self.get_question_data(
+                                prompt_details)
+                            paper[_]['questions'].append(question_data)
                         break
-                        # print(
-                        #     f"{prettify(qt, 'Yellow')} is having this question component\n{prettify(question_content, 'Magenta')}\n")

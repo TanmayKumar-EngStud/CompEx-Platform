@@ -169,7 +169,7 @@ def _get_child_count(nomenclature: str, parent_prompt: str, child_info: dict) ->
     if len(merged_list) > 1:
         print(
             f"{warn} For capturing total child questions for {prettify(question_type, 'Yellow', True)} \n\twith nomenclature :- {prettify(nomenclature, 'Magenta')}\nThese are the {len(merged_list)} identifiers for child-count {prettify(merged_list, 'Red', True)}\nTaking the first one for identification")
-    if len(merged_list) is 0:
+    if len(merged_list) == 0:
         # it means these are the parent-child questions with default child count
         return default_value
     identifier = merged_list[0]
@@ -301,8 +301,8 @@ for exam, sections in exam_definition.items():
             total_prompt_count += prompt_count
         _remove_extra_and_shuffle_created_prompts(
             prompts_dictionary[exam][_idx], total_prompt_count - n_items)
-
-file_path = 'log_json_files/prompts_dictionary.json'
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, 'log_json_files/prompts_dictionary.json')
 
 with open(file_path, 'w') as json_file:
     json.dump(prompts_dictionary, json_file, indent=3)

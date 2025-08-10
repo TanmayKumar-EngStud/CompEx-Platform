@@ -1,12 +1,14 @@
 [
   {
-    "QuestionText": {
-      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"question\" key with complete question text.\nExample:-\n```json\n{\n  \"question\": \"complete question text with appropriate context and difficulty\"\n}\n```\n**Important Notes:**\n- Create questions based on given topic focusing provided skill set\n- Use double quotes only, replace single quotes with (`) symbol\n- Focus on academic and analytical reasoning\n- Use formal academic vocabulary for graduate studies",
-      "output": {
-        "question": "str"
-      },
-      "file-name": "simple-question-text.txt.template"
-    }
+    "QuestionMetadata": [
+      {
+        "instruction statement": "STRICT RESPONSE FORMAT: JSON\n- \"table key with array of table objects.\nExample:-\n```json\n{\n    \"table\": {\n  \"type\": \"comparison_table\",\n  \"description\": \"Table comparing multiple entities across various attributes\",\n  \"structure\": {\n    \"title\": \"Comparison Table Title\",\n    \"entities\": [\n      \"Entity A\",\n      \"Entity B\",\n      \"Entity C\"\n    ],\n    \"attributes\": [\n      \"Attribute 1\",\n      \"Attribute 2\",\n      \"Attribute 3\"\n    ],\n    \"comparison_data\": [\n      [\n        \"High\",\n        \"Medium\",\n        \"Low\"\n      ],\n      [\n        \"85%\",\n        \"72%\",\n        \"91%\"\n      ],\n      [\n        \"$500\",\n        \"$300\",\n        \"$750\"\n      ]\n    ]\n  }\n}\n}\n```\n**Important Notes:**\n- Generate specialized tables based on requested table type (data table, pivot table, comparison table)\n- Table type will be determined from prompt context automatically\n- For data tables: Create structured data with clear headers and organized rows\n- For pivot tables: Include summarized data across dimensions with totals\n- For comparison tables: Compare entities across multiple attributes\n- Difficulty Level 1-5 influences data complexity and analytical depth required\n- Ensure data is realistic and supports meaningful analysis\n- Use appropriate business or academic context based on exam type",
+        "output": {
+          "table": "dict"
+        },
+        "file-name": "tables.txt.template"
+      }
+    ]
   },
   {
     "QuestionTitle": {
@@ -16,22 +18,23 @@
       },
       "file-name": "simple-question-title.txt.template"
     }
-  },
-  {
-    "QuestionSolution": {
-      "instruction statement": "RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)\nWrite naturally as you would explain to a student.\n**Structure:**\nStep 1: \nStep 2: Set up mathematical relationship or logical framework\nStep 3: Perform calculations with proper units / Apply reasoning\nStep 4: \nStep 5: \n**Important Notes:**\n- Use numbered steps with clear explanations, solution should be human readable and should be brief\n- Show all calculations with proper mathematical notation\n- Use LaTeX for mathematical expressions\n- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format. Basically, Don't have LaTeX format in answer and question options.\nAnalyze given information and identify what needs to be foundCheck solution using logical reasoningConfirm solution addresses original question\n- Explain conceptual insights where relevant\n- Verify using alternative methods when possible",
-      "output": "str",
-      "file-name": "simple-question-solution.txt.template"
-    }
+  }
+]ors\": [\n        \"#3498db\",\n        \"#e74c3c\",\n        \"#2ecc71\",\n        \"#f39c12\"\n      ]\n    }\n  }\n}\n}\n```\n**Important Notes:**\n- Generate graphs suitable for specified question type and focused skill\n- Maintain graduate-level quality for \n- Use realistic data appropriate for business/academic context\n- Graph titles should be clear and descriptiveMasters Studies",
+        "output": {
+          "graph": "dict"
+        },
+        "file-name": "graph.txt.template"
+      }
+    ]
   },
   {
     "QuestionOptions/Answer": {
-      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as dictionary.\n- \"answer\" key with list of options.\nFor Example:\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\"\n  },\n  \"answer\": [\"A\", \"C\"]\n}\n```\n**Important Notes:**\n- The \"answer\" field must be an array of correct option letters\n- Multiple options can be correct (typically 2-3 out of 5)\n- Each option should be independently valuable as correct or incorrect",
+      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as dictionary.\n- \"answer\" key with single correct option letter.\nExample:-\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\"\n  },\n  \"answer\": \"A\"\n}\n```\n**Important Notes:**\n- GMAT: 5 options (A-E), GRE: 4-5 options\n- Create strategic distractors based on common errors\n- One option must match the correct solution\n- No values are supposed to have LaTeX format, it should be in normal string format",
       "output": {
         "options": "dict",
-        "answer": "List[str]"
+        "answer": "str"
       },
-      "file-name": "multi-correct-question-option-answer.txt.template"
+      "file-name": "generic-question-option-answer.txt.template"
     }
   }
 ]
