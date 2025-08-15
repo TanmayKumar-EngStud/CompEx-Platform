@@ -18,44 +18,13 @@ class GenQ:
     def __init__(self, prompts_dictionary: dict) -> None:
         self.prompts_dictionary = prompts_dictionary
 
-    def get_question_data(self, prompt_details):
+    def get_templates(self, question_components, prompt_details, component_instruction):
         """
-        1. Generates question call wise {'instruction statements', 'output' types}
-        2. for every call wise, we will use generate function,
-        3. if that specific question-type is having any wrapper format for any specific question component, the fetched data is then wrapped in that envelope.
-        4. returns the complete question data of that component.
-
-            Args:
-
-                {
-                    'type': 'simple'/'parent'/'child',
-                    'exam': 'GRE'/'GMAT'/etc.,
-                    'section': 'Verbal'/'Quants',
-                    'question-type': 'Data Sufficiency'/'Reading Comprehension',
-                    'option': 'blank'/'single'/'multi',
-                    'prompt': prompt_data['prompt']
-                }
-
-            Returns:
-
-                complete question of that prompt with values of question components.
+            it gets all the question types 
         """
-        rand_var = None
-        if prompt_details['question-type'] == 'Text Completion':
-            rand_var = prompt_details['prompt'].split(' - ', 1)[0].strip('<>')
-        component_instruction = all_question_structure[1]
-        question_components = list(
-            all_question_structure[0][prompt_details.get('type', 'child')])
-        question_type = prompt_details['question-type']
-        if not prompt_details.get('metadata-type', None):
-            if 'QuestionMetadata' in question_components:
-                question_components.remove('QuestionMetadata')
-        # if prompt_details.get('type') is None:
-        #     # only child prompts are not having 'type'
-        #     prompt_details['type'] = 'child'
-        prefix = '' if prompt_details['type'] == 'simple' else prompt_details['type']
-
-        # region fetching raw templates
+        rand_var = self.rand_var
+        prefix = self.prefix
+        question_type = self.question_type
         component_calls = []
         for question_component in question_components:
             component_call_buffer = {}
@@ -140,7 +109,48 @@ class GenQ:
                     raise ValueError(
                         f"the value of component_call_buffer for {prettify(question_component, 'Red')} is not present for {prettify(question_type, 'Yellow')}")
             component_calls.append(component_call_buffer)
-        # endregion
+        return component_calls
+
+    def get_question_data(self, prompt_details):
+        """
+        1. Generates question call wise {'instruction statements', 'output' types}
+        2. for every call wise, we will use generate function,
+        3. if that specific question-type is having any wrapper format for any specific question component, the fetched data is then wrapped in that envelope.
+        4. returns the complete question data of that component.
+
+            Args:
+
+                {
+                    'type': 'simple'/'parent'/'child',
+                    'exam': 'GRE'/'GMAT'/etc.,
+                    'section': 'Verbal'/'Quants',
+                    'question-type': 'Data Sufficiency'/'Reading Comprehension',
+                    'option': 'blank'/'single'/'multi',
+                    'prompt': prompt_data['prompt']
+                }
+
+            Returns:
+
+                complete question of that prompt with values of question components.
+        """
+        self.rand_var = None  # sets how many blanks for text completion
+        if prompt_details['question-type'] == 'Text Completion':
+            self.rand_var = prompt_details['prompt'].split(
+                ' - ', 1)[0].strip('<>')
+        component_instruction = all_question_structure[1]
+        question_components = list(
+            all_question_structure[0][prompt_details.get('type', 'child')])
+        self.question_type = prompt_details['question-type']
+        if not prompt_details.get('metadata-type', None):
+            if 'QuestionMetadata' in question_components:
+                question_components.remove('QuestionMetadata')
+        # if prompt_details.get('type') is None:
+        #     # only child prompts are not having 'type'
+        #     prompt_details['type'] = 'child'
+        self.prefix = '' if prompt_details['type'] == 'simple' else prompt_details['type']
+
+        component_calls = self.get_templates(
+            question_components, prompt_details, component_instruction)
 
         record(component_calls, 'component_calls',
                prompt_details['question-type'])
@@ -172,7 +182,7 @@ class GenQ:
         for comp_type, call in flat_calls:
             context = {
                 'component_type': comp_type,
-                'question_type': question_type,
+                'question_type': self.question_type,
                 'exam': prompt_details['exam'],
                 'section': prompt_details['section'],
                 'original_prompt': prompt_details['prompt']
@@ -187,7 +197,7 @@ class GenQ:
                 generated = {"error": str(e)}
 
             manage_generated_content(
-                result_buffer, question_type, comp_type, generated,
+                result_buffer, self.question_type, comp_type, generated,
                 option_type=prompt_details.get('option')
             )
 
@@ -235,7 +245,7 @@ class GenQ:
                     # here we need to use threading, inside this function, like every question complete generation task will be given to a separate thread
                     test = ['Problem Solving Simple', 'Problem Solving Meta', 'Data Sufficiency',
                             'Reading Comprehension', 'Text Completion', 'Sentence Equivalence']
-                    if qt == test[1]:
+                    if qt == test[3]:
 
                         for i, prompt_data in enumerate(qt_info['prompts']):
                             # Assign API key index cyclically to distribute load
