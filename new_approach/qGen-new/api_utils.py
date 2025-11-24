@@ -15,7 +15,7 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 
-from io_utils import prettify
+from io_utils import prettify, record
 
 # Load environment variables from the root directory
 # Get the project root directory (two levels up from qGen-new)
@@ -136,12 +136,24 @@ class GeminiGenerator:
         self.max_retries = max_retries
         self.question_type = question_type
         self.lock = threading.Lock()
+        self.request_counter = 0
+        self._last_request_ts = 0.0
+        self._rate_limit_hits = 0
+        self.min_request_interval = float(
+            os.getenv('GEMINI_MIN_INTERVAL', '0'))
+        self.min_retry_wait = int(os.getenv('GEMINI_MIN_RETRY_WAIT', '5'))
+        self.question_type_slug = re.sub(
+            r'[^a-zA-Z0-9]+', '-',
+            (self.question_type or 'unknown')).strip('-') or 'question'
 
         # Remove manual rate limiting - rely on API's resource exhaustion handling
         # Remove manual rate limiting - rely on API's resource exhaustion handling
 
         # Load system instructions based on question type
         self.system_instructions = self._load_system_instructions()
+        record(self.system_instructions,
+               fname=f'system_instruction_{self.question_type_slug}',
+               addresses=('gemini', 'system_instructions'))
 
         # Initialize API client
         self._initialize_api_client()
@@ -355,16 +367,41 @@ class GeminiGenerator:
                 # 1. The component mode being activated
                 # 2. The original question prompt
                 # 3. The specific component instructions
+                metadata_block = ""
+                metadata_content = context.get('metadata_content') if context else None
+                if metadata_content:
+                    if isinstance(metadata_content, str):
+                        formatted_metadata = metadata_content
+                    else:
+                        formatted_metadata = json.dumps(
+                            metadata_content, indent=2, ensure_ascii=False)
+                    metadata_block = f"\nShared Metadata Context:\n{formatted_metadata}\n"
+
                 comprehensive_prompt = f"""Mode: {component_type} Generation
 
-Original Question Prompt: {original_prompt}
+Original Question Prompt: {original_prompt}{metadata_block}
 
 Component Instructions:
 {instruction_statement}
 
 Generate the requested {component_type} component following the format specifications."""
 
+                self.request_counter += 1
+                if self.min_request_interval > 0:
+                    elapsed = time.time() - self._last_request_ts
+                    if elapsed < self.min_request_interval:
+                        time.sleep(self.min_request_interval - elapsed)
+                # record({
+                #     'system_instruction': self.system_instructions,
+                #     'component_instruction': instruction_statement,
+                #     'expected_output': expected_output,
+                #     'context': context
+                # }, fname=f'request_{self.question_type_slug}_{self.request_counter}',
+                #     addresses=('gemini', 'requests'))
+
                 response = chat_instance.send_message(comprehensive_prompt)
+                self._last_request_ts = time.time()
+                self._rate_limit_hits = 0
 
                 if not response or not response.text:
                     raise ValueError("Empty response from Gemini API")
@@ -372,6 +409,13 @@ Generate the requested {component_type} component following the format specifica
                 # Parse and validate JSON response
                 parsed_data = self._parse_json_response(
                     response.text, expected_output)
+
+                # record({
+                #     'response_text': response.text,
+                #     'parsed': parsed_data,
+                #     'context': context
+                # }, fname=f'response_{self.question_type_slug}_{self.request_counter}',
+                #     addresses=('gemini', 'responses'))
 
                 # Success - log and return
                 component_type = context.get('component_type', 'Unknown')
@@ -440,9 +484,15 @@ Generate the requested {component_type} component following the format specifica
                             f"Error: {error_msg}")
                     else:
                         # Short retry delay - temporary rate limit, worth retrying
+                        if retry_wait < self.min_retry_wait:
+                            retry_wait = self.min_retry_wait
                         print(f"⚠️  Rate limit exceeded for {prettify(component_type, 'Yellow')} "
                               f"({prettify(question_type, 'Yellow')}) waiting {prettify(f'{retry_wait}s', 'Cyan')}")
                         time.sleep(retry_wait)
+                        self._rate_limit_hits += 1
+                        if self._rate_limit_hits >= self.max_retries:
+                            raise RuntimeError(
+                                "Exceeded maximum retries due to rate limiting. Try again later or lower request frequency.")
                         # Don't increment the attempt counter for rate limit errors
 
                         continue

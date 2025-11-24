@@ -2,10 +2,9 @@
     main function that creates prompts based on given difficulty pool, then it will make the generate the question data by calling the generate function.
 """
 import os
-from typing import List, Any
 import random
 import json
-import re
+from typing import Any, Optional
 
 from difficulty_pool import get_difficulty_pool
 from io_utils import get_json, prettify
@@ -15,40 +14,71 @@ from generator import GenQ
 
 os.system('clear')
 os.system('clear')
-warn = prettify('⚠️ Warning:', 'Yellow')
-sp_char = ['*']
-sp = None
-
+MOCK_PAPER_LEVEL = 2
 exam_definition, qt_info, prompt_component_info = get_json(
     'exam_definition', 'question_type_info', 'prompt_component_info')
 
+TARGET_QTYPE = os.getenv('TARGET_QTYPE', 'Data Sufficiency') or None
+TARGET_QTYPE_LIMIT = int(os.getenv('TARGET_QTYPE_LIMIT', '1'))
+
 prompts_dictionary = {}
 
+
+def log_stage(exam: str,
+              section: Optional[str] = None,
+              detail: Optional[str] = None) -> None:
+    """Emit a colored progress line showing where generation currently is."""
+    segments = [
+        f"{prettify('Exam', 'Cyan')}: {prettify(exam, 'Green')}"
+    ]
+    if section:
+        segments.append(
+            f"{prettify('Section', 'Cyan')}: {prettify(section, 'Yellow')}"
+        )
+    if detail:
+        segments.append(detail)
+    print(" | ".join(segments))
+
+
 for exam, sections in exam_definition.items():
+    log_stage(exam, detail=prettify('Preparing exam structure', 'Blue'))
     prompts_dictionary[exam] = {}
-    for _idx, section in sections.items():
+    for section_number, section in sections.items():
         section_name = section['name']
+        log_stage(
+            exam,
+            section_name,
+            detail=prettify('Building prompts', 'Magenta')
+        )
         n_items = section['total']
         total_prompt_count = 0
-        difficulty_list = get_difficulty_pool(exam, section_name, n_items+5, 2)
+        difficulty_list = get_difficulty_pool(
+            exam, section_name, n_items+5, MOCK_PAPER_LEVEL)
         # print(f"{exam}: {section_name}:- {difficulty_list} #AVG:- ({sum(difficulty_list)/len(difficulty_list)})")
 
         # add to dictionary
-        prompts_dictionary[exam][_idx] = {}
-        prompts_dictionary[exam][_idx]['section'] = section_name
+        prompts_dictionary[exam][section_number] = {}
+        prompts_dictionary[exam][section_number]['section'] = section_name
         for question_type in section['question types']:
+            log_stage(
+                exam,
+                section_name,
+                detail=f"{prettify('Question type', 'Cyan')}: {prettify(question_type, 'Magenta')}"
+            )
             question_type_info = PromptPrep._must_get(qt_info, question_type,
-                                                      f'@combination-variant.json')
+                                                      '@combination-variant.json')
             count_of_this_question_type = section[question_type]
-            prompts_dictionary[exam][_idx][question_type] = {
+            prompts_dictionary[exam][section_number][question_type] = {
                 "has-metadata": question_type_info['has-metadata'],
                 'type': question_type_info['type']
             }
-            prompts_dictionary[exam][_idx][question_type]['prompts'] = []
+            prompts_dictionary[exam][section_number][question_type]['prompts'] = [
+            ]
             prompt_count = 0
+
             while prompt_count < count_of_this_question_type:
-                count_question_type = PromptPrep._must_get(section, question_type,
-                                                           f'section({_idx}) -> {section_name}: @exam_definition.json')
+                PromptPrep._must_get(section, question_type,
+                                     f'section({section_number}) -> {section_name}: @exam_definition.json')
 
                 current_difficulty = difficulty_list.pop()
                 nomenclature = question_type_info["nomenclature"]
@@ -58,14 +88,14 @@ for exam, sections in exam_definition.items():
                     raise ValueError(
                         f"{prettify('Error:', 'Red', True)} received {prettify('None', 'Magenta')} for {prettify('prompt', 'Yellow')}\nwhere, questionType is {prettify(question_type, 'Magenta')} of {prettify(section_name, 'Magenta')}")
 
-                prompt_buffer = {
+                prompt_buffer: dict[str, Any] = {
                     'prompt': prompt,
                 }
                 if question_type_info.get('options'):
                     option = question_type_info['options']
                     if isinstance(option, dict):
                         option = random.choices(
-                            list(option.keys()), weights=option.values())[0]
+                            list(option.keys()), weights=list(option.values()))[0]
                     prompt_buffer['option'] = option
                 prompt_count += 1
                 # check if it is parent-child or simple question
@@ -88,10 +118,10 @@ for exam, sections in exam_definition.items():
                         if isinstance(child_option, dict):
                             try:
                                 child_option = random.choices(
-                                    list(child_option.keys()), weights=child_option.values())[0]
+                                    list(child_option.keys()), weights=list(child_option.values()))[0]
                             except:
                                 raise ValueError(
-                                    f"this was the child_option that was causing \n")
+                                    "this was the child_option that was causing \n")
                         child_prompt_buffer = {
                             'prompt': child_prompt,
                             'option': child_option
@@ -105,7 +135,7 @@ for exam, sections in exam_definition.items():
                         question_type)
                     if len(metadata_options_dict.keys()) == 0:
                         raise ValueError(
-                            f"metadata of {prettify(question_type, 'Yellow')} is getting \n{prettify(metadata_options_dict, 'Magenta')}\n as `metadata_options_dict`")
+                            f"metadata of {prettify(question_type, 'Yellow')} is getting \n{prettify(json.dumps(metadata_options_dict, indent=2), 'Magenta')}\n as `metadata_options_dict`")
                     metadata_buffer = {}
 
                     for _ in range(count):
@@ -122,22 +152,24 @@ for exam, sections in exam_definition.items():
                         else:
                             raise ValueError(
                                 f"Due to some reason metadata_buffer key is not being a proper list format For,\n\t'question_type': {prettify(question_type, 'Yellow')},\n\t'category': {prettify(category, 'Magenta')}\n we are getting metadata_buffer[category] as\n{prettify(metadata_buffer[category], 'Red')}")
-                    if metadata_buffer is {}:
+                    if not metadata_buffer:
                         raise ValueError(
                             f"metadata_buffer is being empty for {prettify(question_type, 'Red')}")
 
                     prompt_buffer['metadata-type'] = metadata_buffer
 
-                prompts_dictionary[exam][_idx][question_type]['prompts'].append(
+                prompts_dictionary[exam][section_number][question_type]['prompts'].append(
                     prompt_buffer)
             total_prompt_count += prompt_count
         PromptPrep._remove_extra_and_shuffle_created_prompts(
-            prompts_dictionary[exam][_idx], total_prompt_count - n_items)
+            prompts_dictionary[exam][section_number], total_prompt_count - n_items)
 script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, 'log_json_files/prompts_dictionary.json')
 
 with open(file_path, 'w') as json_file:
     json.dump(prompts_dictionary, json_file, indent=3)
 
-paper_gen = GenQ(prompts_dictionary)
+paper_gen = GenQ(prompts_dictionary,
+                 target_question_type=TARGET_QTYPE,
+                 max_questions=TARGET_QTYPE_LIMIT)
 paper_gen.generate()

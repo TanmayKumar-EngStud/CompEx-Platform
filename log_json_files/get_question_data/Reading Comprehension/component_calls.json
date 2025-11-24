@@ -1,12 +1,25 @@
 [
   {
-    "QuestionText": {
-      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"question\" key with complete question text.\nExample:-\n```json\n{\n  \"question\": \"complete question text with appropriate context and difficulty\"\n}\n```\n**Important Notes:**\n- Create questions based on given topic focusing provided skill set\n- Use double quotes only, replace single quotes with (`) symbol\n- Focus on academic and analytical reasoning\n- Use formal academic vocabulary for graduate studies",
-      "output": {
-        "question": "str"
+    "QuestionMetadata": [
+      {
+        "instruction statement": "Generate para 1 of 3:\nSTRICT RESPONSE FORMAT:- JSON\n- \"para\" key with value as string for that particular paragraph\nExample:-\n```json\n{\n    \"para\": \"complete paragraph which is being asked sequentially for that passage should come here\"\n}\n```\n**Important Notes:**\n- Generate paragraphs which are in sync of the content that is being asked in the main instruction prompt.\n- Maintain the level and quality for \n- Create realistic content appropriate for business/academic context\nMasters Studies",
+        "output": {
+          "para": "str"
+        }
       },
-      "file-name": "simple-question-text.txt.template"
-    }
+      {
+        "instruction statement": "Generate para 2 of 3:\nSTRICT RESPONSE FORMAT:- JSON\n- \"para\" key with value as string for that particular paragraph\nExample:-\n```json\n{\n    \"para\": \"complete paragraph which is being asked sequentially for that passage should come here\"\n}\n```\n**Important Notes:**\n- Generate paragraphs which are in sync of the content that is being asked in the main instruction prompt.\n- Maintain the level and quality for \n- Create realistic content appropriate for business/academic context\nMasters Studies",
+        "output": {
+          "para": "str"
+        }
+      },
+      {
+        "instruction statement": "Generate para 3 of 3:\nSTRICT RESPONSE FORMAT:- JSON\n- \"para\" key with value as string for that particular paragraph\nExample:-\n```json\n{\n    \"para\": \"complete paragraph which is being asked sequentially for that passage should come here\"\n}\n```\n**Important Notes:**\n- Generate paragraphs which are in sync of the content that is being asked in the main instruction prompt.\n- Maintain the level and quality for \n- Create realistic content appropriate for business/academic context\nMasters Studies",
+        "output": {
+          "para": "str"
+        }
+      }
+    ]
   },
   {
     "QuestionTitle": {
@@ -15,24 +28,6 @@
         "title": "str"
       },
       "file-name": "simple-question-title.txt.template"
-    }
-  },
-  {
-    "QuestionSolution": {
-      "instruction statement": "RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)\nWrite naturally as you would explain to a student.\n**Structure:**\nStep 1: \nStep 2: Set up mathematical relationship or logical framework\nStep 3: Perform calculations with proper units / Apply reasoning\nStep 4: \nStep 5: \n**Important Notes:**\n- Use numbered steps with clear explanations, solution should be human readable and should be brief\n- Show all calculations with proper mathematical notation\n- Use LaTeX for mathematical expressions\n- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format. Basically, Don't have LaTeX format in answer and question options.\nAnalyze given information and identify what needs to be foundCheck solution using logical reasoningConfirm solution addresses original question\n- Explain conceptual insights where relevant\n- Verify using alternative methods when possible",
-      "output": "str",
-      "file-name": "simple-question-solution.txt.template"
-    }
-  },
-  {
-    "QuestionOptions/Answer": {
-      "instruction statement": "STRICT RESPONSE FORMAT:- JSON\n- \"options\" key with value as dictionary.\n- \"answer\" key with single correct option letter.\nExample:-\n```json\n{\n  \"options\": {\n    \"A\": \"option 1\",\n    \"B\": \"option 2\",\n    \"C\": \"option 3\",\n    \"D\": \"option 4\",\n    \"E\": \"option 5\"\n  },\n  \"answer\": \"A\"\n}\n```\n**Important Notes:**\n- GMAT: 5 options (A-E), GRE: 4-5 options\n- Create strategic distractors based on common errors\n- One option must match the correct solution\n- No values are supposed to have LaTeX format, it should be in normal string format",
-      "output": {
-        "options": "dict",
-        "answer": "str"
-      },
-      "file-name": "generic-question-option-answer.txt.template",
-      "option-type": "single"
     }
   }
 ]

@@ -6,7 +6,7 @@ import json
 import os
 import re
 import inspect
-from typing import List, Any, Literal
+from typing import List, Any, Literal, Optional, Iterable
 script_dir = os.path.dirname(os.path.abspath(__file__))
 ColorName = Literal["Red", "Green",
                     "Yellow", "Blue", "Magenta", "Cyan"]
@@ -19,22 +19,29 @@ def extract_blocks(var: str, template: str) -> str:
     return ''.join(blocks)
 
 
-def build_template(exam: str, qtype: str, req: str, rand_var: str, template: str) -> str:
+def build_template(exam: str,
+                   qtype: str,
+                   req: str,
+                   rand_var: Optional[str],
+                   template: str) -> str:
     """Remove every conditional block except those matching exam, qtype, req,
     then append the requested blocks and collapse extra blank lines."""
     # 1. keep only unconditional text
     base = re.sub(r'\{\{#if_.*?\}\}.*?\{\{/if_.*?\}\}',
                   '', template, flags=re.S)
     # 2. collect requested blocks
-    blocks = ''.join(extract_blocks(v, template)
-                     for v in (exam, qtype, req, rand_var) if v is not None)
+    blocks = ''.join(
+        extract_blocks(v, template)
+        for v in (exam, qtype, req, rand_var)
+        if v not in (None, '')
+    )
     # 3. merge and trim blank lines
     merged = base + blocks
     merged = re.sub(r'\n\s*\n+', '\n', merged)  # collapse ≥2 newlines → 1
     return merged.strip()
 
 
-def prettify(string: str, color: ColorName, bold: bool = False):
+def prettify(string: Any, color: ColorName, bold: bool = False):
     """
     ### Follow this color mapping:-
         1. Path: Cyan
@@ -55,7 +62,8 @@ def prettify(string: str, color: ColorName, bold: bool = False):
     }
     b = '1;' if bold else ''
     postfix = prefix + "0m"
-    return f'{prefix}{b}{color_map[color]}{string}{postfix}'
+    text = str(string)
+    return f'{prefix}{b}{color_map[color]}{text}{postfix}'
 
 
 def get_json(*filenames: str) -> List[Any]:
@@ -96,9 +104,18 @@ QuestionComponent = Literal['QuestionMetadata', 'QuestionText',
                             'QuestionTitle', 'QuestionSolution', 'QuestionOptions/Answer']
 
 
-def _get_Template(file_path: str, question_component: QuestionComponent, filename: str, exam_type: str, Section_name: str, question_type: str, variable: str, type: str = None, item: str = None, rand_var: str = None):
-    if exam_type == None:
-        raise ValueError(f"exam_type was not mentioned, received None")
+def _get_Template(file_path: str,
+                  question_component: QuestionComponent,
+                  filename: str,
+                  exam_type: str,
+                  Section_name: str,
+                  question_type: str,
+                  variable: Optional[str],
+                  type: Optional[str] = None,
+                  item: Optional[str] = None,
+                  rand_var: Optional[str] = None):
+    if exam_type is None:
+        raise ValueError("exam_type was not mentioned, received None")
     other_file_path = file_path
     file_path = os.path.join(file_path, filename)
     try:
@@ -110,6 +127,9 @@ def _get_Template(file_path: str, question_component: QuestionComponent, filenam
 
     if variable not in [None, '']:
         # now from the component template we need to handle these variables.
+        if type is None:
+            raise ValueError(
+                f"Missing metadata type for component {prettify(question_component, 'Yellow')}")
         var_path = os.path.join(other_file_path, f'{type}.json')
         with open(var_path, 'r') as f:
             replaced_value: Any = json.load(f)
@@ -129,15 +149,24 @@ def _get_Template(file_path: str, question_component: QuestionComponent, filenam
         pass
     component_template = component_template.replace(
         """{{GENERIC_PHILOSOPHY_TEMPLATE}}""", generic_philosophy_template)
-    component_template = build_template(exam_type, question_type.lower().replace(
-        ' ', '_'), Section_name.lower().replace(
-        ' ', '_'),
-        rand_var if rand_var is not None else None,
+    component_template = build_template(
+        exam_type,
+        question_type.lower().replace(' ', '_'),
+        Section_name.lower().replace(' ', '_'),
+        rand_var,
         component_template)
     return component_template
 
 
-def get_Component_Template(question_component: QuestionComponent, filename: str, exam_type: str, Section_name: str, question_type: str, variable: str, type: str = None, item: str = None, rand_var: str = None) -> str:
+def get_Component_Template(question_component: QuestionComponent,
+                           filename: str,
+                           exam_type: str,
+                           Section_name: str,
+                           question_type: str,
+                           variable: Optional[str],
+                           type: Optional[str] = None,
+                           item: Optional[str] = None,
+                           rand_var: Optional[str] = None) -> str:
     """
     Provide question component name, filename and get it's respective RAW Data.
         Args: 
@@ -166,7 +195,15 @@ def get_Component_Template(question_component: QuestionComponent, filename: str,
                          rand_var=rand_var)
 
 
-def get_Question_Template(question_component: QuestionComponent, filename: str, exam_type: str, Section_name: str, question_type: str, variable: str, type: str = None, item: str = None, rand_var: str = None):
+def get_Question_Template(question_component: QuestionComponent,
+                          filename: str,
+                          exam_type: str,
+                          Section_name: str,
+                          question_type: str,
+                          variable: Optional[str],
+                          type: Optional[str] = None,
+                          item: Optional[str] = None,
+                          rand_var: Optional[str] = None):
     file = os.path.join(script_dir, 'json_files',
                         'question_type_templates')
     return _get_Template(file_path=file,
@@ -181,8 +218,15 @@ def get_Question_Template(question_component: QuestionComponent, filename: str, 
                          rand_var=rand_var)
 
 
-def record(value: Any, fname: str = None, *addresses: str):
-    caller = inspect.currentframe().f_back
+def record(value: Any,
+           fname: Optional[str] = None,
+           addresses: Optional[Iterable[str]] = None):
+    """
+        For logging, to record any kind of value in json file with file name as **fname** belonging to **addresses** list sequentially
+        Root folder is the default address.
+    """
+    frame = inspect.currentframe()
+    caller = frame.f_back if frame else None
     func_name = caller.f_code.co_name if caller else 'unknown'
     if func_name == 'unknown':
         raise ValueError(f"""we are getting an unknown value for func_name.
@@ -190,7 +234,9 @@ def record(value: Any, fname: str = None, *addresses: str):
                             {prettify(json.dumps(value, indent= 2), 'Magenta')}
                             fname: {prettify(fname, 'Yellow')}
                          """)
-    base = os.path.join('log_json_files', func_name, *addresses)
+    path_segments = tuple(addresses or ())
+    path_segments = tuple(addresses or ())
+    base = os.path.join(script_dir, 'log_json_files', func_name, *path_segments)
     os.makedirs(base, exist_ok=True)
     ext = 'txt' if isinstance(value, str) else 'json'
     filename = f'{fname or "record"}.{ext}'
@@ -200,3 +246,36 @@ def record(value: Any, fname: str = None, *addresses: str):
             json.dump(value, f, indent=2, ensure_ascii=False)
         else:
             f.write(str(value))
+
+
+def append_record(value: Any,
+                  fname: str,
+                  addresses: Optional[Iterable[str]] = None):
+    """
+    Appends a record to a JSON list file. If file doesn't exist, creates a new list.
+    """
+    path_segments = tuple(addresses or ())
+    base = os.path.join(script_dir, 'log_json_files', *path_segments)
+    os.makedirs(base, exist_ok=True)
+    
+    filename = f'{fname}.json'
+    path = os.path.join(base, filename)
+    
+    current_data = []
+    if os.path.exists(path):
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                current_data = json.load(f)
+                if not isinstance(current_data, list):
+                    # If existing content is not a list, wrap it or warn
+                    print(f"Warning: {path} content is not a list. Converting to list.")
+                    current_data = [current_data]
+        except (json.JSONDecodeError, Exception) as e:
+            print(f"Error reading {path}: {e}. Starting with empty list.")
+            current_data = []
+            
+    current_data.append(value)
+    
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(current_data, f, indent=2, ensure_ascii=False)
+
