@@ -1,0 +1,20 @@
+STRICT RESPONSE FORMAT:
+- JSON
+- "options" key with value as a list of 3 statements.
+- "answer" key with value as a dictionary mapping each statement to "Yes"/"No" (or True/False).
+
+Example:
+```json
+{
+  "options": [
+    "Statement 1 text...",
+    "Statement 2 text...",
+    "Statement 3 text..."
+  ],
+  "answer": {
+    "Statement 1 text...": "Yes",
+    "Statement 2 text...": "No",
+    "Statement 3 text...": "Yes"
+  }
+}
+```

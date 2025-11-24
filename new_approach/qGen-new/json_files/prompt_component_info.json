@@ -1,7 +1,6 @@
 {
    "difficulty": 5,
    "vocabulary": 3,
-
    "questionStyle": [
       {
          "QuestionType": [
@@ -18,6 +17,19 @@
             "Numeric Comparisons",
             "Data Interpretation"
          ]
+      },
+      {
+         "QuestionType": [
+            "Multi-Source Reasoning",
+            "Two-Part Analysis",
+            "Table Analysis",
+            "Graphic Interpretation"
+         ],
+         "list": [
+            "Data Interpretation",
+            "Verbal Reasoning",
+            "Quantitative Reasoning"
+         ]
       }
    ],
    "questionTopic": [
@@ -25,7 +37,11 @@
          "QuestionType": [
             "Data Sufficiency",
             "Problem Solving Simple",
-            "Numerical Entry"
+            "Numerical Entry",
+            "Multi-Source Reasoning",
+            "Two-Part Analysis",
+            "Table Analysis",
+            "Graphic Interpretation"
          ],
          "list": {
             "Number Properties and Fractions, Decimals, Percentages": [
@@ -183,7 +199,9 @@
          }
       },
       {
-         "QuestionType": ["Problem Solving Meta"],
+         "QuestionType": [
+            "Problem Solving Meta"
+         ],
          "list": {
             "Number Properties and Fractions, Decimals, Percentages": [
                "prime_factorization",
@@ -235,24 +253,81 @@
    ],
    "metadataType": [
       {
-         "QuestionType": ["Problem Solving Meta"],
+         "QuestionType": [
+            "Problem Solving Meta"
+         ],
          "category": "charts",
-         "list": ["line_chart", "bar_chart", "pie_chart", "scatter_chart"]
+         "list": [
+            "line_chart",
+            "bar_chart",
+            "pie_chart",
+            "scatter_chart"
+         ]
       },
       {
-         "QuestionType": ["Problem Solving Meta"],
+         "QuestionType": [
+            "Problem Solving Meta"
+         ],
          "category": "tables",
-         "list": ["data_table", "pivot_table", "comparison_table"]
+         "list": [
+            "data_table",
+            "pivot_table",
+            "comparison_table"
+         ]
       },
       {
-         "QuestionType": ["Reading Comprehension", "Critical Reasoning"],
+         "QuestionType": [
+            "Reading Comprehension",
+            "Critical Reasoning"
+         ],
          "category": "passage",
-         "list": ["passage"]
+         "list": [
+            "passage"
+         ]
       },
       {
-         "QuestionType": ["Data Sufficiency"],
+         "QuestionType": [
+            "Data Sufficiency"
+         ],
          "category": "statements",
-         "list": ["statements"]
+         "list": [
+            "statements"
+         ]
+      },
+      {
+         "QuestionType": [
+            "Graphic Interpretation",
+            "Multi-Source Reasoning"
+         ],
+         "category": "charts",
+         "list": [
+            "line_chart",
+            "bar_chart",
+            "pie_chart",
+            "scatter_chart"
+         ]
+      },
+      {
+         "QuestionType": [
+            "Table Analysis",
+            "Multi-Source Reasoning"
+         ],
+         "category": "tables",
+         "list": [
+            "data_table",
+            "sortable_table"
+         ]
+      },
+      {
+         "QuestionType": [
+            "Two-Part Analysis",
+            "Multi-Source Reasoning"
+         ],
+         "category": "passage",
+         "list": [
+            "scenario",
+            "passage"
+         ]
       }
    ],
    "questionTheme": [
@@ -261,7 +336,11 @@
             "Data Sufficiency",
             "Problem Solving Simple",
             "Problem Solving Meta",
-            "Numerical Entry"
+            "Numerical Entry",
+            "Multi-Source Reasoning",
+            "Two-Part Analysis",
+            "Table Analysis",
+            "Graphic Interpretation"
          ],
          "list": [
             "Business and Finance",
@@ -294,13 +373,22 @@
          ]
       },
       {
-         "QuestionType": ["Sentence Equivalence", "Text Completion"],
-         "list": ["Social Sciences", "Business", "Current Affairs"]
+         "QuestionType": [
+            "Sentence Equivalence",
+            "Text Completion"
+         ],
+         "list": [
+            "Social Sciences",
+            "Business",
+            "Current Affairs"
+         ]
       }
    ],
    "focused_skill": [
       {
-         "QuestionType": ["Sentence Equivalence"],
+         "QuestionType": [
+            "Sentence Equivalence"
+         ],
          "list": [
             "Synonym Recognition",
             "Contextual Vocabulary",
@@ -315,7 +403,9 @@
          ]
       },
       {
-         "QuestionType": ["Text Completion"],
+         "QuestionType": [
+            "Text Completion"
+         ],
          "list": [
             "Vocabulary in Context",
             "Contextual Analysis",
@@ -330,7 +420,9 @@
          ]
       },
       {
-         "QuestionType": ["Reading Comprehension"],
+         "QuestionType": [
+            "Reading Comprehension"
+         ],
          "list": [
             "Main Idea Comprehension",
             "Inference Making",
@@ -349,19 +441,33 @@
    ],
    "TC_QuestionType": [
       {
-         "QuestionType": ["Text Completion"],
-         "list": ["TC-1", "TC-2", "TC-3"]
+         "QuestionType": [
+            "Text Completion"
+         ],
+         "list": [
+            "TC-1",
+            "TC-2",
+            "TC-3"
+         ]
       }
    ],
    "RC_QuestionType": [
       {
-         "QuestionType": ["Reading Comprehension"],
-         "list": ["RC-S", "RC-M", "RC-L"]
+         "QuestionType": [
+            "Reading Comprehension"
+         ],
+         "list": [
+            "RC-S",
+            "RC-M",
+            "RC-L"
+         ]
       }
    ],
    "child-focused_skill": [
       {
-         "QuestionType": ["Reading Comprehension"],
+         "QuestionType": [
+            "Reading Comprehension"
+         ],
          "list": [
             "Main Idea Question",
             "Inference Question",
@@ -376,7 +482,9 @@
          ]
       },
       {
-         "QuestionType": ["Problem Solving Meta"],
+         "QuestionType": [
+            "Problem Solving Meta"
+         ],
          "list": [
             "Data Extraction from Graphs",
             "Trend Identification",
@@ -394,6 +502,20 @@
             "Logical Inference from Graphical Data",
             "Cross-Referencing with Textual Information",
             "Understanding Cumulative Data Representations"
+         ]
+      },
+      {
+         "QuestionType": [
+            "Two-Part Analysis",
+            "Multi-Source Reasoning"
+         ],
+         "list": [
+            "Evaluating Trade-offs",
+            "Synthesizing Information",
+            "Identifying Assumptions",
+            "Logical Inference",
+            "Data Interpretation",
+            "Verbal Reasoning"
          ]
       }
    ]

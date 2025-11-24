@@ -7,7 +7,7 @@ from io_utils import prettify
 import json
 
 
-OptionType = Literal['blank', 'single', 'multi', 'numeric']
+OptionType = Literal['blank', 'single', 'multi', 'numeric', 'dichotomous']
 
 
 def _expect(obj: Any, expected: type, label: str) -> None:
@@ -91,7 +91,7 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
         result['answer'] = answer
         return
 
-    if option_type != 'numeric':
+    if option_type not in ('numeric', 'dichotomous'):
         if options is None and question_type == 'Data Sufficiency':
             options = ds_default_options.copy()
         if not isinstance(options, dict):
@@ -130,6 +130,29 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
     elif option_type == 'blank':
         pass
         # have to write code for this one.
+
+    elif option_type == 'dichotomous':
+        # For Table Analysis: options is list of statements, answer is dict {statement: bool}
+        if not isinstance(options, list):
+            raise TypeError(
+                f"{prettify('options', 'Yellow')} must be {prettify('list', 'Green')} for dichotomous questions; got {prettify(type(options).__name__, 'Red')}"
+            )
+        if not isinstance(answer, dict):
+            raise TypeError(
+                f"{prettify('answer', 'Yellow')} must be {prettify('dict', 'Green')} for dichotomous questions; got {prettify(type(answer).__name__, 'Red')}"
+            )
+        
+        # Validate answer keys match options
+        # Note: In some cases, answer might be partial or full, but ideally should cover all options
+        # For now, we just ensure answer keys are in options
+        unknown_keys = [k for k in answer.keys() if k not in options]
+        if unknown_keys:
+             raise ValueError(
+                f"{prettify('answer', 'Red')} keys {prettify(unknown_keys, 'Magenta')} not found in options list"
+            )
+        
+        result['options'] = options
+        result['answer'] = answer
 
     elif option_type == 'numeric':
         # For numeric entry, there are no options, just an answer

@@ -176,6 +176,8 @@ class GenQ:
                 domain = "Quants"
             elif qt in ["Sentence Equivalence", "Text Completion", "Reading Comprehension"]:
                 domain = "Verbal"
+            elif qt in ["Multi-Source Reasoning", "Two-Part Analysis", "Table Analysis", "Graphic Interpretation"]:
+                domain = "Integrated Reasoning"
             else:
                 domain = None
 
@@ -218,6 +220,13 @@ class GenQ:
         if not hasattr(self, 'gemini_generator') or self.gemini_generator is None:
             raise RuntimeError(
                 "Gemini generator not initialized. Call from generate() method.")
+        
+        # Ensure generator matches current question type (crucial for child questions with different types)
+        if self.gemini_generator.question_type != self.question_type:
+            self.gemini_generator = get_gemini_generator(
+                api_key_index=self.gemini_generator.api_key_index, 
+                question_type=self.question_type
+            )
 
         # Initialize result buffer to merge components by type
         result_buffer = {}
@@ -284,7 +293,7 @@ class GenQ:
                     'type': 'child',
                     'exam': prompt_details['exam'],
                     'section': prompt_details['section'],
-                    'question-type': prompt_details['question-type'],
+                    'question-type': child_prompt.get('question-type', prompt_details['question-type']),
                     'option': child_prompt['option'],
                     'prompt': child_prompt['prompt'],
                     'metadata': parent_metadata

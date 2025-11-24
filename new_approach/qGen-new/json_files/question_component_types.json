@@ -7,7 +7,11 @@
          "QuestionSolution",
          "QuestionOptions/Answer"
       ],
-      "parent": ["QuestionMetadata", "QuestionTitle", "ChildQuestions"],
+      "parent": [
+         "QuestionMetadata",
+         "QuestionTitle",
+         "ChildQuestions"
+      ],
       "child": [
          "QuestionText",
          "QuestionTitle",
@@ -20,22 +24,31 @@
          "charts": {
             "file-name": "graph.txt.template",
             "variables": "graph_data",
-            "output": { "graph": "dict" }
+            "output": {
+               "graph": "dict"
+            }
          },
          "tables": {
             "file-name": "tables.txt.template",
             "variables": "table_data",
-            "output": { "table": "dict" }
+            "output": {
+               "table": "dict"
+            }
          },
          "passage": {
             "file-name": "passage.txt.template",
             "variables": "",
-            "output": { "para": "str" }
+            "output": {
+               "para": "str"
+            }
          },
          "statements": {
             "file-name": "passage-statement.txt.template",
             "variables": "",
-            "output": { "passage": "str", "statements": "List[str]" }
+            "output": {
+               "passage": "str",
+               "statements": "List[str]"
+            }
          }
       },
       "QuestionText": [
@@ -45,17 +58,28 @@
                "Problem Solving Simple",
                "Problem Solving Meta",
                "Reading Comprehension",
-               "Numerical Entry"
+               "Numerical Entry",
+               "Multi-Source Reasoning Child",
+               "Two-Part Analysis Child",
+               "Table Analysis"
             ],
             "file-name": "simple-question-text.txt.template",
             "variables": null,
-            "output": { "question": "str" }
+            "output": {
+               "question": "str"
+            }
          },
          {
-            "QuestionType": ["Sentence Equivalence", "Text Completion"],
+            "QuestionType": [
+               "Sentence Equivalence",
+               "Text Completion",
+               "Graphic Interpretation"
+            ],
             "file-name": "blank-question-text.txt.template",
             "variables": null,
-            "output": { "question": "str" }
+            "output": {
+               "question": "str"
+            }
          }
       ],
       "QuestionTitle": [
@@ -67,11 +91,19 @@
                "Reading Comprehension",
                "Numerical Entry",
                "Text Completion",
-               "Sentence Equivalence"
+               "Sentence Equivalence",
+               "Multi-Source Reasoning",
+               "Two-Part Analysis",
+               "Table Analysis",
+               "Graphic Interpretation",
+               "Multi-Source Reasoning Child",
+               "Two-Part Analysis Child"
             ],
             "file-name": "simple-question-title.txt.template",
             "variables": null,
-            "output": { "title": "str" }
+            "output": {
+               "title": "str"
+            }
          }
       ],
       "QuestionSolution": [
@@ -83,7 +115,13 @@
                "Numerical Entry",
                "Reading Comprehension",
                "Text Completion",
-               "Sentence Equivalence"
+               "Sentence Equivalence",
+               "Multi-Source Reasoning",
+               "Two-Part Analysis",
+               "Table Analysis",
+               "Graphic Interpretation",
+               "Multi-Source Reasoning Child",
+               "Two-Part Analysis Child"
             ],
             "file-name": "simple-question-solution.txt.template",
             "variables": null,
@@ -93,28 +131,41 @@
       "QuestionOptions/Answer": [
          {
             "type": "single",
-            "QuestionType": ["Data Sufficiency"],
+            "QuestionType": [
+               "Data Sufficiency"
+            ],
             "file-name": "ds-question-answer.txt.template",
             "variables": null,
-            "output": { "answer": "str" }
+            "output": {
+               "answer": "str"
+            }
          },
          {
             "type": "numeric",
-            "QuestionType": ["Numerical Entry"],
+            "QuestionType": [
+               "Numerical Entry"
+            ],
             "file-name": "ne-question-answer.txt.template",
             "variables": null,
-            "output": { "answer": "int" }
+            "output": {
+               "answer": "int"
+            }
          },
          {
             "type": "single",
             "QuestionType": [
                "Reading Comprehension",
                "Problem Solving Simple",
-               "Problem Solving Meta"
+               "Problem Solving Meta",
+               "Multi-Source Reasoning Child",
+               "Two-Part Analysis Child"
             ],
             "file-name": "generic-question-option-answer.txt.template",
             "variables": null,
-            "output": { "options": "dict", "answer": "str" }
+            "output": {
+               "options": "dict",
+               "answer": "str"
+            }
          },
          {
             "type": "multi",
@@ -122,18 +173,41 @@
                "Problem Solving Meta",
                "Sentence Equivalence",
                "Reading Comprehension",
-               "Problem Solving Simple"
+               "Problem Solving Simple",
+               "Multi-Source Reasoning Child"
             ],
             "file-name": "multi-correct-question-option-answer.txt.template",
             "variables": null,
-            "output": { "options": "dict", "answer": "List[str]" }
+            "output": {
+               "options": "dict",
+               "answer": "List[str]"
+            }
          },
          {
             "type": "blank",
-            "QuestionType": ["Text Completion"],
+            "QuestionType": [
+               "Text Completion",
+               "Graphic Interpretation"
+            ],
             "file-name": "blank-question-option-answer.txt.template",
             "variables": null,
-            "output": { "options": "dict", "answer": "List[str]" }
+            "output": {
+               "options": "dict",
+               "answer": "List[str]"
+            }
+         },
+         {
+            "type": "dichotomous",
+            "QuestionType": [
+               "Table Analysis",
+               "Multi-Source Reasoning Child"
+            ],
+            "file-name": "generic-table-analysis-options.txt.template",
+            "variables": null,
+            "output": {
+               "options": "list",
+               "answer": "dict"
+            }
          }
       ]
    }

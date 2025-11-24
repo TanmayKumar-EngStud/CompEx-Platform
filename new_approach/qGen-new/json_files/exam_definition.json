@@ -52,5 +52,21 @@
          "Text Completion": 6,
          "Reading Comprehension": 10
       }
+   },
+   "GMAT": {
+      "1": {
+         "name": "Integrated Reasoning",
+         "total": 12,
+         "question types": [
+            "Multi-Source Reasoning",
+            "Two-Part Analysis",
+            "Table Analysis",
+            "Graphic Interpretation"
+         ],
+         "Multi-Source Reasoning": 3,
+         "Two-Part Analysis": 3,
+         "Table Analysis": 3,
+         "Graphic Interpretation": 3
+      }
    }
 }

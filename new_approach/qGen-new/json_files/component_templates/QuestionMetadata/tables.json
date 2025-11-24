@@ -4,10 +4,25 @@
       "description": "Standard data table with rows and columns",
       "structure": {
          "title": "Table Title",
-         "headers": ["Column 1", "Column 2", "Column 3", "Column 4"],
+         "headers": [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4"
+         ],
          "rows": [
-            ["Data 1", "Data 2", "Data 3", "Data 4"],
-            ["Data 5", "Data 6", "Data 7", "Data 8"]
+            [
+               "Data 1",
+               "Data 2",
+               "Data 3",
+               "Data 4"
+            ],
+            [
+               "Data 5",
+               "Data 6",
+               "Data 7",
+               "Data 8"
+            ]
          ],
          "formatting": {
             "alternating_rows": true,
@@ -20,13 +35,32 @@
       "description": "Pivot table with summarized data across dimensions",
       "structure": {
          "title": "Pivot Table Title",
-         "row_headers": ["Category A", "Category B"],
-         "column_headers": ["Metric 1", "Metric 2", "Total"],
-         "data_matrix": [
-            [100, 150, 250],
-            [200, 100, 300]
+         "row_headers": [
+            "Category A",
+            "Category B"
          ],
-         "summary_row": [300, 250, 550]
+         "column_headers": [
+            "Metric 1",
+            "Metric 2",
+            "Total"
+         ],
+         "data_matrix": [
+            [
+               100,
+               150,
+               250
+            ],
+            [
+               200,
+               100,
+               300
+            ]
+         ],
+         "summary_row": [
+            300,
+            250,
+            550
+         ]
       }
    },
    "comparison_table": {
@@ -34,13 +68,67 @@
       "description": "Table comparing multiple entities across various attributes",
       "structure": {
          "title": "Comparison Table Title",
-         "entities": ["Entity A", "Entity B", "Entity C"],
-         "attributes": ["Attribute 1", "Attribute 2", "Attribute 3"],
+         "entities": [
+            "Entity A",
+            "Entity B",
+            "Entity C"
+         ],
+         "attributes": [
+            "Attribute 1",
+            "Attribute 2",
+            "Attribute 3"
+         ],
          "comparison_data": [
-            ["High", "Medium", "Low"],
-            ["85%", "72%", "91%"],
-            ["$500", "$300", "$750"]
+            [
+               "High",
+               "Medium",
+               "Low"
+            ],
+            [
+               "85%",
+               "72%",
+               "91%"
+            ],
+            [
+               "$500",
+               "$300",
+               "$750"
+            ]
          ]
+      }
+   },
+   "sortable_table": {
+      "type": "sortable_table",
+      "description": "Table with sortable columns, typically used in Table Analysis",
+      "structure": {
+         "title": "Table Title",
+         "headers": [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+         ],
+         "rows": [
+            [
+               "Data 1",
+               "Data 2",
+               "Data 3",
+               "Data 4",
+               "Data 5"
+            ],
+            [
+               "Data 6",
+               "Data 7",
+               "Data 8",
+               "Data 9",
+               "Data 10"
+            ]
+         ],
+         "formatting": {
+            "sortable": true,
+            "alternating_rows": true
+         }
       }
    }
 }

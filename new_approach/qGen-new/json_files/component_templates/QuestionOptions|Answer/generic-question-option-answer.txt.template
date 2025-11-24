@@ -1,6 +1,7 @@
 STRICT RESPONSE FORMAT:- JSON
 - "options" key with value as dictionary.
 - "answer" key with single correct option letter.
+- DO NOT include "metadata", "scenario", or "question" keys. Output ONLY options and answer.
 Example:-
 ```json
 {

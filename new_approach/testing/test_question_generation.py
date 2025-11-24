@@ -111,10 +111,14 @@ def test_question_generation(target_style=None):
             if isinstance(child_opt, dict):
                  child_opt = random.choices(list(child_opt.keys()), weights=list(child_opt.values()))[0]
 
-            prompt_buffer['child-prompt'].append({
+            child_prompt_data = {
                 'prompt': child_prompt_str,
                 'option': child_opt
-            })
+            }
+            if child_info.get('question-type'):
+                child_prompt_data['question-type'] = child_info['question-type']
+            
+            prompt_buffer['child-prompt'].append(child_prompt_data)
 
     # Construct the dictionary
     prompts_dictionary = {

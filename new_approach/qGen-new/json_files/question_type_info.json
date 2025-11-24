@@ -10,7 +10,10 @@
    "Problem Solving Simple": {
       "has-metadata": false,
       "type": "simple",
-      "options": { "single": 2, "multi": 1 },
+      "options": {
+         "single": 2,
+         "multi": 1
+      },
       "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
       "system-instruction": "problem-solving-simple-system-instruction.txt.template"
    },
@@ -22,7 +25,10 @@
       "system-instruction": "problem-solving-meta-system-instruction.txt.template",
       "child-question": {
          "type": "child",
-         "options": { "single": 2, "multi": 1 },
+         "options": {
+            "single": 2,
+            "multi": 1
+         },
          "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
       }
    },
@@ -54,9 +60,74 @@
       "nomenclature": "<RC_QuestionType> - <questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
       "system-instruction": "reading-comprehension-system-instruction.txt.template",
       "child-question": {
-         "options": { "single": 2, "multi": 1 },
+         "options": {
+            "single": 2,
+            "multi": 1
+         },
          "type": "child",
          "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
       }
+   },
+   "Multi-Source Reasoning": {
+      "has-metadata": true,
+      "meta-count": 3,
+      "type": "parent",
+      "nomenclature": "MSR - <total_child_questions: 3> - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill_1/focused_skill_2/focused_skill_3> - <question_style_1/question_style_2/question_style_3> - difficulty_level: <difficulty>",
+      "system-instruction": "msr-system-instruction.txt.template",
+      "child-question": {
+         "question-type": "Multi-Source Reasoning Child",
+         "options": {
+            "single": 1,
+            "multi": 1,
+            "dichotomous": 1
+         },
+         "type": "child",
+         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+      }
+   },
+   "Multi-Source Reasoning Child": {
+      "type": "child",
+      "options": {
+         "single": 1,
+         "multi": 1,
+         "dichotomous": 1
+      },
+      "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>",
+      "system-instruction": "problem-solving-simple-system-instruction.txt.template"
+   },
+   "Two-Part Analysis": {
+      "has-metadata": true,
+      "meta-count": 1,
+      "type": "parent",
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "system-instruction": "tpa-system-instruction.txt.template",
+      "child-question": {
+         "question-type": "Two-Part Analysis Child",
+         "options": "single",
+         "type": "child",
+         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+      }
+   },
+   "Two-Part Analysis Child": {
+      "type": "child",
+      "options": "single",
+      "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>",
+      "system-instruction": "problem-solving-simple-system-instruction.txt.template"
+   },
+   "Table Analysis": {
+      "has-metadata": true,
+      "meta-count": 1,
+      "type": "simple",
+      "options": "dichotomous",
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "system-instruction": "ta-system-instruction.txt.template"
+   },
+   "Graphic Interpretation": {
+      "has-metadata": true,
+      "meta-count": 1,
+      "type": "simple",
+      "options": "blank",
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "system-instruction": "gi-system-instruction.txt.template"
    }
 }
