@@ -1,6 +1,7 @@
 .env
 .agent/*
 venv/
+venv_backup_old/
 compex_py/
 .DS_Store
 .vscode
