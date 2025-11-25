@@ -72,7 +72,7 @@
       "has-metadata": true,
       "meta-count": 3,
       "type": "parent",
-      "nomenclature": "MSR - <total_child_questions: 3> - <questionTheme> - <source_info1> - <source_info2> - <source_info3> - <focused_skill_1/focused_skill_2/focused_skill_3> - <question_style_1/question_style_2/question_style_3> - difficulty_level: <difficulty>",
+      "nomenclature": "<questionTopic> - <questionTheme> - <source_info> - <source_info> - <source_info> - <focused_skill> - <focused_skill> - <focused_skill> - difficulty_level: <difficulty>",
       "system-instruction": "msr-system-instruction.txt.template",
       "child-question": {
          "question-type": "Multi-Source Reasoning Child",

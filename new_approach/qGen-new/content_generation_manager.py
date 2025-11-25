@@ -20,14 +20,17 @@ def _expect(obj: Any, expected: type, label: str) -> None:
             f"{prettify(label, 'Yellow')} must be {prettify(expected.__name__, 'Green')}; got {prettify(type(obj).__name__, 'Red')}\n{obj.__name__} = {prettify(obj_print, 'Magenta')}")
 
 
-def manage_generated_content(result: dict, question_type: str, question_component: str, generated_data: Union[str, dict], option_type: str = None):
+def manage_generated_content(result: dict, question_type: str, question_component: str, generated_data: Union[str, dict], option_type: str = None, source_info: dict = None):
     """
         Manages to arrange all the question components individually to be stored in the correct key of the `result`
+        
+        Args:
+            source_info: Optional dict containing MSR source metadata (source_number, source_type, focused_skill)
     """
     if question_component in ('QuestionMetadata', 'QuestionOptions/Answer'):
         _expect(generated_data, dict, question_component)
         return (
-            manage_metadata_content(result, question_type, generated_data) if question_component == 'QuestionMetadata' else
+            manage_metadata_content(result, question_type, generated_data, source_info) if question_component == 'QuestionMetadata' else
             manage_options_answer_content(
                 result, question_type, generated_data, option_type)
         )
@@ -46,23 +49,37 @@ def manage_generated_content(result: dict, question_type: str, question_componen
                     result[k].append(v)
 
 
-def manage_metadata_content(result: dict, question_type: str, generated_data: dict):
+def manage_metadata_content(result: dict, question_type: str, generated_data: dict, source_info: dict = None):
     """
         Manages all the question metadata components to be stored with the correct key for `result` <br>it handles [Passage, Graph, Tables]; <br>`Graphs` and `Tables` are stored directly.
+        
+        Args:
+            source_info: Optional dict with 'source_number' for MSR questions
     """
     metadata = result.setdefault('metadata', {})
-    for key, value in generated_data.items():
-        if key == 'para' or key == 'passage':
-            existing = metadata.get('Passage', '')
-            separator = '\n' if existing else ''
-            metadata['Passage'] = f"{existing}{separator}{value}"
-        elif key == 'statements':
-            if not isinstance(value, list):
-                raise TypeError(
-                    f"{prettify('statements', 'Yellow')} must be a list; got {prettify(type(value).__name__, 'Red')}")
-            metadata['Statements'] = value
-        else:
-            metadata.setdefault(key, []).append(value)
+    
+    # Special handling for Multi-Source Reasoning
+    if question_type == 'Multi-Source Reasoning' and source_info and 'source_number' in source_info:
+        source_num = source_info['source_number']
+        source_key = f"Source{source_num}"
+        
+        # Store entire generated_data under Source1/2/3
+        metadata[source_key] = generated_data
+    else:
+        # Standard metadata handling
+        for key, value in generated_data.items():
+            if key == 'para' or key == 'passage':
+                existing = metadata.get('Passage', '')
+                separator = '\n' if existing else ''
+                metadata['Passage'] = f"{existing}{separator}{value}"
+            elif key == 'statements':
+                if not isinstance(value, list):
+                    raise TypeError(
+                        f"{prettify('statements', 'Yellow')} must be a list; got {prettify(type(value).__name__, 'Red')}")
+                metadata['Statements'] = value
+            else:
+                metadata.setdefault(key, []).append(value)
+
 
 
 def manage_options_answer_content(result: dict, question_type: str, generated_data: Union[str, dict], option_type: str):

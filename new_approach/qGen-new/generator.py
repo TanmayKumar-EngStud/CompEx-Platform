@@ -80,17 +80,112 @@ class GenQ:
                                 })
                     else:
                         component_call_buffer[question_component] = []
-                        for prompt_metadata_item in prompt_details['metadata-type'][prompt_metadata_type]:
-                            """prompt_metadata_item = 'data_table' or 'area_chart' or 'pie_chart' """
-                            file_name = component_instruction[question_component][prompt_metadata_type]['file-name']
-                            variables = component_instruction[question_component][prompt_metadata_type]['variables']
-                            component_call_buffer[question_component].append(
-                                {
-                                    "instruction statement": get_Component_Template(question_component, file_name, prompt_details['exam'], prompt_details['section'], prompt_details['question-type'], variables, prompt_metadata_type, prompt_metadata_item, rand_var=rand_var),
-                                    "output": component_instruction[question_component][prompt_metadata_type]['output'],
-                                    'file-name': file_name
-                                }
-                            )
+                        
+                        # Special handling for Multi-Source Reasoning (MSR) with meta-count=3
+                        if question_type == 'Multi-Source Reasoning':
+                            # Parse source types and focused skills from the prompt
+                            # Prompt format: "<topic> - <theme> - passage - table - graph - Skill1 - Skill2 - Skill3 - difficulty_level:<N>"
+                            import re
+                            prompt_text = prompt_details.get('prompt', '')
+                            
+                            # Split prompt by ' - ' to extract components
+                            parts = prompt_text.split(' - ')
+                            
+                            # Extract 3 source types (positions vary, but after theme)
+                            source_types = []
+                            focused_skills = []
+                            
+                            # Find source types: look for passage, table, graph, chart, email, memo
+                            source_keywords = ['passage', 'table', 'graph', 'chart', 'email', 'memo']
+                            for part in parts:
+                                clean_part = part.strip().lower()
+                                if clean_part in source_keywords and len(source_types) < 3:
+                                    source_types.append(clean_part)
+                            
+                            # Find focused skills: anything that's not a source type or difficulty
+                            # (typically appear after sources)
+                            for i, part in enumerate(parts):
+                                if i > 1 and 'difficulty' not in part.lower():  # Skip topic and theme
+                                    clean_part = part.strip()
+                                    if clean_part.lower() not in source_keywords and clean_part and len(focused_skills) < 3:
+                                        focused_skills.append(clean_part)
+                            
+                            # Fallback if parsing fails
+                            if len(source_types) < 3:
+                                source_types = ['passage', 'table', 'graph'][:3]
+                            if len(focused_skills) < 3:
+                                focused_skills = ['Data Interpretation', 'Trend Analysis', 'Comparison and Contrast'][:3]
+                            
+                            # Generate 3 separate metadata calls - one for each source
+                            for source_num in range(1, 4):
+                                source_type = source_types[source_num - 1]
+                                focused_skill = focused_skills[source_num - 1]
+                                
+                                # Determine appropriate component template and metadata type based on source_type
+                                if source_type in ['passage', 'email', 'memo']:
+                                    metadata_item = 'passage'  # Use passage template
+                                    meta_type = 'passage'
+                                elif source_type in ['table']:
+                                    metadata_item = prompt_details['metadata-type'][prompt_metadata_type][0] if prompt_details['metadata-type'][prompt_metadata_type] else 'data_table'
+                                    meta_type = prompt_metadata_type
+                                elif source_type in ['graph', 'chart']:
+                                    metadata_item = prompt_details['metadata-type'][prompt_metadata_type][0] if prompt_details['metadata-type'][prompt_metadata_type] else 'line_chart'
+                                    meta_type = prompt_metadata_type
+                                else:
+                                    # Fallback
+                                    metadata_item = prompt_details['metadata-type'][prompt_metadata_type][0]
+                                    meta_type = prompt_metadata_type
+                                
+                                # Get the appropriate component template
+                                file_name = component_instruction[question_component][meta_type]['file-name']
+                                variables = component_instruction[question_component][meta_type]['variables']
+                                
+                                # Build base template instruction
+                                base_template = get_Component_Template(
+                                    question_component, file_name, 
+                                    prompt_details['exam'], prompt_details['section'], 
+                                    prompt_details['question-type'], variables, 
+                                    meta_type, metadata_item, 
+                                    rand_var=rand_var
+                                )
+                                
+                                # Add MSR-specific context
+                                theme = parts[1] if len(parts) > 1 else 'Business scenario'
+                                instruction_with_context = f"""Current Source to Generate: Source {source_num}
+- Source Type: {source_type}
+- Targeted Focused Skill: {focused_skill}
+- Overall Theme: {theme}
+
+{base_template}
+
+CRITICAL INSTRUCTIONS:
+- Generate ONLY Source {source_num} (not all 3 sources)
+- Format must match the template above exactly
+- This source should enable testing: {focused_skill}
+- Ensure this source provides unique information that complements the other sources
+"""
+                                
+                                component_call_buffer[question_component].append({
+                                    "instruction statement": instruction_with_context,
+                                    "output": component_instruction[question_component][meta_type]['output'],
+                                    'file-name': file_name,
+                                    'source_number': source_num,
+                                    'source_type': source_type,
+                                    'focused_skill': focused_skill
+                                })
+                        else:
+                            # Standard metadata generation for non-MSR questions
+                            for prompt_metadata_item in prompt_details['metadata-type'][prompt_metadata_type]:
+                                """prompt_metadata_item = 'data_table' or 'area_chart' or 'pie_chart' """
+                                file_name = component_instruction[question_component][prompt_metadata_type]['file-name']
+                                variables = component_instruction[question_component][prompt_metadata_type]['variables']
+                                component_call_buffer[question_component].append(
+                                    {
+                                        "instruction statement": get_Component_Template(question_component, file_name, prompt_details['exam'], prompt_details['section'], prompt_details['question-type'], variables, prompt_metadata_type, prompt_metadata_item, rand_var=rand_var),
+                                        "output": component_instruction[question_component][prompt_metadata_type]['output'],
+                                        'file-name': file_name
+                                    }
+                                )
             # Metadata component is being handled (I guess) moving forward for now. {Data Sufficiency type of content is still left.}
             # We need to add another else if block for handling question options as well.
             elif question_component == "QuestionOptions/Answer":
@@ -276,9 +371,16 @@ class GenQ:
                 print(
                     f"      {prettify(comp_type, 'Red')}: {prettify(str(e), 'Yellow')}")
 
+
+            # Extract source info for MSR metadata
+            source_info = None
+            if comp_type == 'QuestionMetadata' and self.question_type == 'Multi-Source Reasoning':
+                source_info = {k: call.get(k) for k in ['source_number', 'source_type', 'focused_skill'] if k in call}
+            
             manage_generated_content(
                 result_buffer, self.question_type, comp_type, generated,
-                option_type=prompt_details.get('option')
+                option_type=prompt_details.get('option'),
+                source_info=source_info
             )
 
         # Record the merged result buffer

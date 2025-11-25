@@ -437,6 +437,21 @@
             "Assumption and Bias Identification",
             "Summarization and Paraphrasing"
          ]
+      },
+      {
+         "QuestionType": [
+            "Multi-Source Reasoning"
+         ],
+         "list": [
+            "Data Interpretation",
+            "Trend Analysis",
+            "Comparison and Contrast",
+            "Inference from Multiple Sources",
+            "Quantitative Reasoning",
+            "Logical Deduction",
+            "Strategic Analysis",
+            "Financial Reasoning"
+         ]
       }
    ],
    "TC_QuestionType": [
@@ -516,6 +531,21 @@
             "Logical Inference",
             "Data Interpretation",
             "Verbal Reasoning"
+         ]
+      }
+   ],
+   "source_info": [
+      {
+         "QuestionType": [
+            "Multi-Source Reasoning"
+         ],
+         "list": [
+            "passage",
+            "table",
+            "graph",
+            "chart",
+            "email",
+            "memo"
          ]
       }
    ]
