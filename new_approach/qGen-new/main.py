@@ -14,12 +14,9 @@ from generator import GenQ
 
 os.system('clear')
 os.system('clear')
-MOCK_PAPER_LEVEL = 2
+MOCK_PAPER_LEVEL = 5
 exam_definition, qt_info, prompt_component_info = get_json(
     'exam_definition', 'question_type_info', 'prompt_component_info')
-
-TARGET_QTYPE = os.getenv('TARGET_QTYPE', 'Data Sufficiency') or None
-TARGET_QTYPE_LIMIT = int(os.getenv('TARGET_QTYPE_LIMIT', '1'))
 
 prompts_dictionary = {}
 
@@ -169,7 +166,5 @@ file_path = os.path.join(script_dir, 'log_json_files/prompts_dictionary.json')
 with open(file_path, 'w') as json_file:
     json.dump(prompts_dictionary, json_file, indent=3)
 
-paper_gen = GenQ(prompts_dictionary,
-                 target_question_type=TARGET_QTYPE,
-                 max_questions=TARGET_QTYPE_LIMIT)
+paper_gen = GenQ(prompts_dictionary)
 paper_gen.generate()

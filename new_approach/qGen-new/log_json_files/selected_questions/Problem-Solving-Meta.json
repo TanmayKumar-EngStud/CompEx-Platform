@@ -1,114 +1,117 @@
 {
   "metadata": {
+    "table": [
+      {
+        "type": "data_table",
+        "description": "This table displays the weekly sales figures for 'Product Alpha' over a five-week period, which can be used to analyze its sales consistency.",
+        "structure": {
+          "title": "Weekly Sales Performance for Product Alpha (Units Sold)",
+          "headers": [
+            "Week",
+            "Units Sold"
+          ],
+          "data": [
+            [
+              "Week 1",
+              120
+            ],
+            [
+              "Week 2",
+              135
+            ],
+            [
+              "Week 3",
+              110
+            ],
+            [
+              "Week 4",
+              140
+            ],
+            [
+              "Week 5",
+              125
+            ]
+          ]
+        }
+      }
+    ],
     "graph": [
       {
         "type": "bar_chart",
-        "description": "Bar chart illustrating the Revenue, Cost of Goods Sold (COGS), and Marketing Spend for four distinct product lines (Product A, Product B, Product C, and Product D) for a company during Q3 2023. All financial values are presented in thousands of USD.",
+        "description": "This bar chart visually represents the weekly sales units for Product Alpha, complementing the tabular data by illustrating the sales fluctuations over the five-week period. This visualization can aid in understanding the spread and consistency of sales, which are crucial for calculating standard deviation and variance.",
         "structure": {
-          "title": "Q3 2023 Product Line Performance Overview (in '000 USD)",
-          "x_axis_label": "Product Line",
-          "y_axis_label": "Monetary Value (USD)",
+          "title": "Weekly Sales Performance for Product Alpha (Units Sold)",
+          "x_axis": {
+            "label": "Week",
+            "type": "categorical"
+          },
+          "y_axis": {
+            "label": "Units Sold",
+            "type": "numerical"
+          },
           "data_format": {
             "categories": [
-              "Product A",
-              "Product B",
-              "Product C",
-              "Product D"
+              "Week 1",
+              "Week 2",
+              "Week 3",
+              "Week 4",
+              "Week 5"
             ],
-            "series": [
-              {
-                "name": "Revenue",
-                "values": [
-                  200,
-                  180,
-                  250,
-                  150
-                ],
-                "unit": "thousand USD"
-              },
-              {
-                "name": "Cost of Goods Sold (COGS)",
-                "values": [
-                  120,
-                  100,
-                  160,
-                  90
-                ],
-                "unit": "thousand USD"
-              },
-              {
-                "name": "Marketing Spend",
-                "values": [
-                  30,
-                  25,
-                  40,
-                  20
-                ],
-                "unit": "thousand USD"
-              }
+            "values": [
+              120,
+              135,
+              110,
+              140,
+              125
             ],
             "colors": [
-              "#3498db",
-              "#e74c3c",
-              "#2ecc71"
+              "#4CAF50",
+              "#2196F3",
+              "#FFC107",
+              "#9C27B0",
+              "#FF5722"
             ]
           }
         }
       }
     ]
   },
-  "title": "Product Line Profitability & Marketing Spend Analysis",
+  "title": "Analyzing Product Alpha's Weekly Sales Consistency",
   "child-questions": [
     {
-      "question": "Based on the provided Q3 2023 Product Line Performance Overview, which product line generated the highest net contribution for the company? Assume net contribution is calculated as Revenue minus Cost of Goods Sold (COGS) and Marketing Spend.",
-      "title": "Product Performance Analysis: Q3 Financial Maxima and Minima",
-      "solution": "**Step 1: Analyze given information and identify what needs to be found**\nThe problem requires identifying the product line with either the maximum or minimum value of a calculated metric. Based on common business analysis questions related to revenue and costs, a likely metric to calculate is *Net Profit*. Net Profit is defined as Revenue minus Cost of Goods Sold (COGS) and Marketing Spend. The goal is to calculate the net profit for each product line and then find the one with the highest net profit.\n\n**Step 2: Set up mathematical relationship or logical framework**\nThe mathematical relationship for Net Profit (NP) for each product line is:\n$\\text{Net Profit} = \\text{Revenue} - \\text{COGS} - \\text{Marketing Spend}$\nAll values are in thousands of USD.\n\n**Step 3: Perform calculations with proper units / Apply reasoning**\nWe will apply the formula to each product line using the values provided in the bar chart data:\n\n*   **Product A**:\n    *   Revenue = 200 (thousand USD)\n    *   COGS = 120 (thousand USD)\n    *   Marketing Spend = 30 (thousand USD)\n    *   $\\text{Net Profit (Product A)} = 200 - 120 - 30 = 50 \\text{ thousand USD}$\n\n*   **Product B**:\n    *   Revenue = 180 (thousand USD)\n    *   COGS = 100 (thousand USD)\n    *   Marketing Spend = 25 (thousand USD)\n    *   $\\text{Net Profit (Product B)} = 180 - 100 - 25 = 55 \\text{ thousand USD}$\n\n*   **Product C**:\n    *   Revenue = 250 (thousand USD)\n    *   COGS = 160 (thousand USD)\n    *   Marketing Spend = 40 (thousand USD)\n    *   $\\text{Net Profit (Product C)} = 250 - 160 - 40 = 50 \\text{ thousand USD}$\n\n*   **Product D**:\n    *   Revenue = 150 (thousand USD)\n    *   COGS = 90 (thousand USD)\n    *   Marketing Spend = 20 (thousand USD)\n    *   $\\text{Net Profit (Product D)} = 150 - 90 - 20 = 40 \\text{ thousand USD}$\n\n**Step 4: Check solution using logical reasoning**\nNow we compare the calculated Net Profits for all product lines:\n*   Product A: $50,000\n*   Product B: $55,000\n*   Product C: $50,000\n*   Product D: $40,000\n\nBy comparing these values, we can see that $55,000 is the highest net profit among the four product lines.\n\n**Step 5: Confirm solution addresses original question**\nThe product line with the highest net profit in Q3 2023 is Product B.\n\n**Potential Student Mistakes and Corresponding Incorrect Results:**\n1.  **Forgetting to subtract Marketing Spend (calculating Gross Profit instead of Net Profit)**:\n    *   Product A (Revenue - COGS): $200 - $120 = $80 thousand\n    *   Product B (Revenue - COGS): $180 - $100 = $80 thousand\n    *   Product C (Revenue - COGS): $250 - $160 = $90 thousand\n    *   Product D (Revenue - COGS): $150 - $90 = $60 thousand\n    *   *Resulting maximum (incorrect)*: Product C ($90 thousand)\n2.  **Simple Arithmetic Errors**: A common error could be miscalculation, e.g., for Product C, $250 - $160 - $40 = $250 - $200 = $50. If a student mistakenly calculates $250 - $160 - $40 as $250 - $160 = $90, and then forgets to subtract $40, or makes an error such as $90 - $40 = $60, leading to an incorrect result for Product C. Or, a simple addition error $160 + $40 = $200 then $250 - $200 = $50. If they add $160 + $40 as say $190, then $250 - $190 = $60.\n    *   *Example: Mistake in Product D calculation*: $150 - $90 - $20 = $150 - $110 = $40. If a student miscalculates $90 + $20 = $100, then $150 - $100 = $50.\n    *   *Resulting maximum if Product D was $50 and others same*: Could lead to multiple options or a different maximum.\n3.  **Identifying highest Revenue instead of Profit**: Students might simply look at the highest bar for Revenue.\n    *   Product C has the highest Revenue ($250 thousand).\n    *   *Resulting maximum (incorrect)*: Product C\n4.  **Identifying lowest COGS/Marketing Spend instead of highest Profit**: Students might mistakenly pick the product with the lowest costs assuming it means highest profit.\n    *   Product D has the lowest COGS ($90 thousand) and Marketing Spend ($20 thousand).\n    *   *Resulting maximum (incorrect)*: Product D",
+      "question": "A market analyst is tasked with evaluating the operational consistency of Product Alpha's sales performance over a recent five-week period, a key factor in assessing its market stability and informing strategic supply chain optimizations. Utilizing the provided 'Weekly Sales Performance for Product Alpha (Units Sold)' data table, determine the sample standard deviation of units sold. This metric will quantify the inherent variability in sales, thereby indicating the reliability of its observed sales trend. Round your final answer to two decimal places.",
+      "title": "Product Alpha Sales Trend: Weekly Variability Analysis",
+      "solution": "To determine the consistency of Product Alpha's weekly sales performance, we need to calculate the standard deviation of the units sold. The standard deviation measures the average amount of variability or dispersion around the mean, indicating how spread out the sales figures are. A lower standard deviation suggests greater consistency.\n\n**Given Data:**\nWeekly sales figures for Product Alpha: 120, 135, 110, 140, 125 units.\nNumber of weeks (N) = 5.\n\n---\n\n**Step 1: Calculate the Mean (Average) Sales.**\nThe mean ($\\mu$) is the sum of all sales figures divided by the number of weeks.\n$\\mu = \\frac{\\Sigma x_i}{N}$\n$\\mu = \\frac{120 + 135 + 110 + 140 + 125}{5}$\n$\\mu = \\frac{630}{5}$\n$\\mu = 126$ units\n\n---\n\n**Step 2: Calculate the Deviation of each week's sales from the Mean.**\nFor each data point ($x_i$), subtract the mean ($\\mu$).\n*   Week 1: $120 - 126 = -6$\n*   Week 2: $135 - 126 = 9$\n*   Week 3: $110 - 126 = -16$\n*   Week 4: $140 - 126 = 14$\n*   Week 5: $125 - 126 = -1$\n\n---\n\n**Step 3: Square each Deviation.**\nSquaring the deviations eliminates negative values and gives greater weight to larger deviations.\n*   Week 1: $(-6)^2 = 36$\n*   Week 2: $(9)^2 = 81$\n*   Week 3: $(-16)^2 = 256$\n*   Week 4: $(14)^2 = 196$\n*   Week 5: $(-1)^2 = 1$\n\n---\n\n**Step 4: Sum the Squared Deviations.**\n$\\Sigma (x_i - \\mu)^2 = 36 + 81 + 256 + 196 + 1$\n$\\Sigma (x_i - \\mu)^2 = 570$\n\n---\n\n**Step 5: Calculate the Variance ($\\sigma^2$).**\nThe variance is the average of the squared deviations. For a population, we divide by N.\n$\\sigma^2 = \\frac{\\Sigma (x_i - \\mu)^2}{N}$\n$\\sigma^2 = \\frac{570}{5}$\n$\\sigma^2 = 114$\n\n*   **Common Error 1 (Stopping Early):** A student might stop at this point and mistakenly provide the variance (114) as the answer for consistency. The variance is in units squared, which is not directly comparable to the original sales units.\n\n---\n\n**Step 6: Calculate the Standard Deviation ($\\sigma$).**\nThe standard deviation is the square root of the variance, bringing the units back to the original scale.\n$\\sigma = \\sqrt{\\sigma^2}$\n$\\sigma = \\sqrt{114}$\n$\\sigma \\approx 10.677$\n\n*   **Common Error 2 (Using N-1 for Sample Variance):** If a student mistakenly treats these 5 weeks as a sample rather than a complete observation period (population), they might divide by N-1 (which is 4) in Step 5.\n    *   Calculated Variance (sample): $570 / 4 = 142.5$\n    *   Resulting Standard Deviation: $\\sqrt{142.5} \\approx 11.937$\n\n*   **Common Error 3 (Mean Calculation Error):** If a student makes a slight error in calculating the mean (e.g., miscalculating the sum or division), all subsequent steps will be incorrect. For instance, if the sum was mistakenly seen as 625, the mean would be 125.\n    *   If $\\mu = 125$: Deviations would be -5, 10, -15, 15, 0.\n    *   Squared Deviations: 25, 100, 225, 225, 0.\n    *   Sum of Squared Deviations: 575.\n    *   Variance: $575/5 = 115$.\n    *   Standard Deviation: $\\sqrt{115} \\approx 10.724$.\n\n*   **Common Error 4 (Misinterpretation of Consistency):** A student might only calculate the range (Max-Min = 140-110 = 30) or the average absolute deviation (sum of absolute deviations / N = 46/5 = 9.2), which are simpler measures of spread but not the standard deviation specifically requested to quantify consistency at this difficulty level.\n\n---\n\n**Final Answer:**\nThe standard deviation of Product Alpha's weekly sales is approximately 10.68 units.",
       "options": {
-        "A": "Product C achieved the highest Gross Profit among all product lines.",
-        "B": "Product B generated the highest Net Profit.",
-        "C": "Product D recorded the lowest Revenue, but not the lowest Marketing Spend.",
-        "D": "Product A and Product D had the same Gross Profit Margin.",
-        "E": "Product C, despite having the highest Cost of Goods Sold (COGS), did not have the highest Gross Profit."
+        "A": "The average weekly sales for Product Alpha was 126 units.",
+        "B": "The sample standard deviation of Product Alpha's weekly sales was approximately 11.94 units.",
+        "C": "The range of weekly sales, from lowest to highest, was 25 units.",
+        "D": "The weekly sales figures showed a consistent upward trend across the five weeks.",
+        "E": "The calculated variance for these sales figures, assuming it's a sample, is 114 units²."
       },
       "answer": [
         "A",
-        "B",
-        "D"
+        "B"
       ],
-      "prompt": "<Identifying Maximum/Minimum Values> - difficulty_level: <3>"
+      "prompt": "<Trend Identification> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+      "question-type": "Problem Solving Meta"
     },
     {
-      "question": "Given the \"Q3 2023 Product Line Performance Overview\" bar chart, determine the approximate operating income for Product C. Operating income is defined as Revenue less the sum of Cost of Goods Sold (COGS) and Marketing Spend. Express your answer in thousands of USD.",
-      "title": "Financial Analysis of Q3 Product Line Performance",
-      "solution": "Step 1: Understand the Goal and Extract Data\nThe objective is to determine which product line achieved the highest Net Profit in Q3 2023. We define Net Profit as the Revenue minus the Cost of Goods Sold (COGS) and minus the Marketing Spend. We carefully extract these financial values (in '000 USD) for each product line from the provided bar chart data:\n*   **Product A:** Revenue = 200; COGS = 120; Marketing Spend = 30\n*   **Product B:** Revenue = 180; COGS = 100; Marketing Spend = 25\n*   **Product C:** Revenue = 250; COGS = 160; Marketing Spend = 40\n*   **Product D:** Revenue = 150; COGS = 90; Marketing Spend = 20\n\nStep 2: Set up Mathematical Relationship or Logical Framework\nTo calculate the Net Profit for each product line, we will use the following formula:\n$\\text{Net Profit} = \\text{Revenue} - \\text{COGS} - \\text{Marketing Spend}$\n\nStep 3: Perform Calculations with Proper Units / Apply Reasoning\nNow, we apply the Net Profit formula to the values extracted for each product line. All values are in thousands of USD ('000 USD).\n*   **Product A:** $\\text{Net Profit}_A = 200 - 120 - 30 = 50$ ('000 USD)\n*   **Product B:** $\\text{Net Profit}_B = 180 - 100 - 25 = 55$ ('000 USD)\n*   **Product C:** $\\text{Net Profit}_C = 250 - 160 - 40 = 50$ ('000 USD)\n*   **Product D:** $\\text{Net Profit}_D = 150 - 90 - 20 = 40$ ('000 USD)\n\nStep 4: Identify the Highest Net Profit\nBy comparing the calculated Net Profits for all four product lines:\n*   Product A: $50,000\n*   Product B: $55,000\n*   Product C: $50,000\n*   Product D: $40,000\nProduct B generated the highest Net Profit of $55,000 in Q3 2023.\n\nStep 5: Conceptual Insight and Verification\nThis analysis reveals that a product line with the highest revenue (Product C) does not necessarily yield the highest net profit. It is crucial to consider all direct and indirect costs, such as COGS and marketing spend, to assess true profitability. Product B, despite having lower revenue than Product C, manages its costs more efficiently, resulting in the highest Net Profit. This underscores the importance of cost management alongside revenue generation for overall business health. The calculations have been double-checked for arithmetic accuracy.",
+      "question": "Using the provided weekly sales data for 'Product Alpha' from the table and chart, if an anomalous weekly sales performance is defined as a deviation of more than 15 units from the mean weekly sales, which week, if any, would be identified as exhibiting anomalous performance?",
+      "title": "Product Alpha Weekly Sales: Outlier Analysis",
+      "solution": "**Step 1: Analyze the Sales Data and Identify the Goal**\nThe problem requires us to analyze the given weekly sales data for Product Alpha to determine if a new sales figure (for Week 6) qualifies as an anomaly. First, we need to calculate the average sales for the initial five weeks. Then, we will compare the Week 6 sales to this average and assess it against the anomaly criterion.\n\nThe sales figures for Weeks 1 through 5 are: 120, 135, 110, 140, 125 units.\nThe sales figure for Week 6 is 70 units.\nAn anomaly is defined as sales more than 30 units different from the average of the first five weeks.\n\n**Step 2: Calculate the Average Sales for Weeks 1-5**\nTo find the average, we sum the sales for the first five weeks and then divide by the number of weeks (5).\n\nSum of sales:\n$ \\text{Sum} = 120 + 135 + 110 + 140 + 125 = 630 \\text{ units} $\n\nAverage sales:\n$ \\text{Average} = \\frac{\\text{Sum}}{\\text{Number of Weeks}} = \\frac{630}{5} = 126 \\text{ units} $\n\nThe average weekly sales for Product Alpha over the first five weeks is 126 units.\n\n**Step 3: Calculate the Difference Between Week 6 Sales and the Average**\nNow we compare the sales for Week 6 (70 units) to the calculated average (126 units).\n\nDifference:\n$ \\text{Difference} = \\text{Average Sales} - \\text{Week 6 Sales} = 126 - 70 = 56 \\text{ units} $\n\nWeek 6 sales are 56 units below the average of the first five weeks.\n\n**Step 4: Determine if Week 6 Sales Constitutes an Anomaly**\nThe problem defines an anomaly as sales more than 30 units different from the average. We compare our calculated difference to this threshold.\n\nAnomaly check:\n$ \\text{Is } |\\text{Difference}| > 30\\text{ units}? $\n$ |56| > 30 $\n$ 56 > 30 $\n\nSince 56 is greater than 30, the sales for Week 6 are considered an anomaly.\n\n**Step 5: Conclude the Analysis**\nWeek 6 sales were 56 units below the average of the first five weeks. Based on the given criteria that an anomaly is more than 30 units different from the average, Week 6 sales of 70 units clearly represent an anomaly.",
       "options": {
-        "A": "Product A",
-        "B": "Product B",
-        "C": "Product C",
-        "D": "Product D",
-        "E": "More information is needed to determine the highest operating profit."
+        "A": "100",
+        "B": "120",
+        "C": "140",
+        "D": "195",
+        "E": "110"
       },
-      "answer": "B",
-      "prompt": "<Estimation of Values from Visual Data> - difficulty_level: <3>"
-    },
-    {
-      "question": "Utilizing the provided 'Q3 2023 Product Line Performance Overview' bar chart, meticulously analyze the relationships among the financial metrics for Product A, Product B, Product C, and Product D. Which of the following statements most precisely characterizes a significant trend or correlation observed across these product lines?",
-      "title": "Q3 2023 Product Line Financial Metric Correlation Analysis",
-      "solution": "Step 1: Analyze the data for 'Revenue' and 'Cost of Goods Sold (COGS)' for each product line.\nWe extract the relevant values from the bar chart:\n*   **Product A:** Revenue = 200 ('000 USD), COGS = 120 ('000 USD)\n*   **Product B:** Revenue = 180 ('000 USD), COGS = 100 ('000 USD)\n*   **Product C:** Revenue = 250 ('000 USD), COGS = 160 ('000 USD)\n*   **Product D:** Revenue = 150 ('000 USD), COGS = 90 ('000 USD)\n\nStep 2: Set up mathematical relationship or logical framework to observe trends.\nTo identify correlation, we observe how COGS changes as Revenue changes across the different product lines. We can sort the products by Revenue (or COGS) to make the trend clearer.\n\nSorted by Revenue (lowest to highest):\n*   **Product D:** Revenue = 150, COGS = 90\n*   **Product B:** Revenue = 180, COGS = 100\n*   **Product A:** Revenue = 200, COGS = 120\n*   **Product C:** Revenue = 250, COGS = 160\n\nStep 3: Perform calculations or apply reasoning to identify the correlation.\nAs we move from Product D (lowest Revenue) to Product C (highest Revenue), we observe the corresponding COGS values.\n*   Revenue increases from 150 (D) to 180 (B) to 200 (A) to 250 (C).\n*   Simultaneously, COGS increases from 90 (D) to 100 (B) to 120 (A) to 160 (C).\n\nThis consistent movement in the same direction for both variables indicates a positive relationship. When one variable increases, the other variable also tends to increase.\n\nTo further quantify, we can look at the ratio of COGS to Revenue for each product:\n*   Product A: $\\frac{120}{200} = 0.60$\n*   Product B: $\\frac{100}{180} \\approx 0.556$\n*   Product C: $\\frac{160}{250} = 0.64$\n*   Product D: $\\frac{90}{150} = 0.60$\nThe ratios are all relatively close (between 0.556 and 0.64), indicating that COGS is a significant and somewhat consistent proportion of Revenue, reinforcing the strong positive correlation.\n\nStep 4: Conclude on the type of correlation.\nBased on the analysis, as Revenue increases across the product lines, COGS also consistently increases. This demonstrates a strong positive correlation between Revenue and Cost of Goods Sold.\n\n**Common Student Mistakes and How They Lead to Incorrect Options:**\n1.  **Confusing with profit or other metrics:** Students might calculate profit (Revenue - COGS) or gross margin percentage instead of directly observing the relationship between Revenue and COGS. If they calculated profit for each product (80, 80, 90, 60 respectively) and observed that profit doesn't strictly increase with revenue, they might mistakenly conclude there's no clear correlation, or even a negative one if they focus on specific differences.\n2.  **Focusing on individual differences rather than overall trend:** A student might notice that the *difference* between Revenue and COGS varies slightly (e.g., Product A: 80, Product B: 80, Product C: 90, Product D: 60) and conclude there isn't a strong direct proportional relationship, leading to an incorrect conclusion about weak or no correlation.\n3.  **Misinterpreting \"positive correlation\":** Some students might only recognize a perfect 1:1 relationship as positive, leading them to think that if the ratio isn't identical, the correlation isn't strong. Or they might look for an absolute constant difference.\n4.  **Reversing the interpretation:** A student might misread the bars or incorrectly relate the increase in one variable to a decrease in another, leading them to conclude a negative correlation. This is less likely with simple positive trends but possible if they misunderstand axis values or bar heights.",
-      "options": {
-        "A": "Revenue and Cost of Goods Sold (COGS) demonstrate a strong positive correlation across the product lines.",
-        "B": "Product lines with higher Revenue tend to have a higher absolute Marketing Spend.",
-        "C": "There is no clear linear relationship between a product line's Gross Profit Margin (Revenue - COGS / Revenue) and its Marketing Spend.",
-        "D": "Product lines that generate higher Gross Profit (Revenue - COGS) consistently allocate a lower percentage of their Revenue to Marketing Spend.",
-        "E": "Marketing Spend per product line consistently represents a fixed proportion of its respective Cost of Goods Sold (COGS)."
-      },
-      "answer": [
-        "A",
-        "B",
-        "C"
-      ],
-      "prompt": "<Correlation Recognition> - difficulty_level: <3>"
+      "answer": "D",
+      "prompt": "<Recognizing Outliers and Anomalies> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+      "question-type": "Problem Solving Meta"
     }
   ],
-  "prompt": "<Profit, Loss and Discount> - <Marketing and Sales> - <Inequalities> - difficulty_level: <3>"
+  "prompt": "<Standard Deviation and Variance> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "question-type": "Problem Solving Meta"
 }

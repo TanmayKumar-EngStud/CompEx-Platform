@@ -1,171 +1,175 @@
 {
   "metadata": {
-    "graph": [
+    "metadata": [
       {
-        "type": "line_chart",
-        "description": "The line chart displays the annual electricity generation (in Gigawatt-hours, GWh) from five different renewable energy sources (Solar PV, Wind Onshore, Wind Offshore, Hydroelectric, and Bioenergy) in Country X from 2010 to 2023. Each line represents a specific renewable energy source, showing its contribution to the total electricity grid over time.",
-        "structure": {
-          "title": "Annual Electricity Generation from Renewable Sources (Country X, 2010-2023)",
-          "x_axis": {
-            "label": "Year",
-            "type": "categorical",
-            "categories": [
-              2010,
-              2011,
-              2012,
-              2013,
-              2014,
-              2015,
-              2016,
-              2017,
-              2018,
-              2019,
-              2020,
-              2021,
-              2022,
-              2023
-            ]
-          },
-          "y_axis": {
-            "label": "Electricity Generation (GWh)",
-            "type": "numerical",
-            "min": 0,
-            "max": 9000,
-            "grid_lines": true
-          },
-          "data_format": {
-            "datasets": [
-              {
-                "label": "Solar PV",
-                "values": [
-                  100,
-                  150,
-                  220,
-                  350,
-                  500,
-                  700,
-                  950,
-                  1300,
-                  1800,
-                  2400,
-                  3100,
-                  3900,
-                  4800,
-                  5800
-                ],
-                "color": "#FFC300",
-                "line_style": "solid"
-              },
-              {
-                "label": "Wind Onshore",
-                "values": [
-                  1500,
-                  1700,
-                  1950,
-                  2200,
-                  2500,
-                  2850,
-                  3200,
-                  3600,
-                  4050,
-                  4550,
-                  5100,
-                  5700,
-                  6350,
-                  7050
-                ],
-                "color": "#3498db",
-                "line_style": "solid"
-              },
-              {
-                "label": "Wind Offshore",
-                "values": [
-                  50,
-                  70,
-                  90,
-                  120,
-                  160,
-                  210,
-                  280,
-                  380,
-                  500,
-                  650,
-                  850,
-                  1100,
-                  1400,
-                  1800
-                ],
-                "color": "#2ecc71",
-                "line_style": "solid"
-              },
-              {
-                "label": "Hydroelectric",
-                "values": [
-                  8000,
-                  8100,
-                  7900,
-                  8050,
-                  8200,
-                  8150,
-                  8300,
-                  8250,
-                  8400,
-                  8350,
-                  8500,
-                  8450,
-                  8600,
-                  8550
-                ],
-                "color": "#8e44ad",
-                "line_style": "solid"
-              },
-              {
-                "label": "Bioenergy",
-                "values": [
-                  1200,
-                  1250,
-                  1300,
-                  1350,
-                  1400,
-                  1450,
-                  1500,
-                  1550,
-                  1600,
-                  1650,
-                  1700,
-                  1750,
-                  1800,
-                  1850
-                ],
-                "color": "#e74c3c",
-                "line_style": "solid"
-              }
+        "graph": {
+          "type": "table",
+          "description": "A table detailing various government policy initiatives, their focus areas, target sectors, financial allocations, direct impact, and public reception.",
+          "structure": {
+            "title": "Selected Government Policy Initiatives: Impact and Public Perception (2020-2023)",
+            "headers": [
+              "Policy ID",
+              "Focus Area",
+              "Target Sector(s)",
+              "Implementation Year",
+              "Budget Allocated (Millions USD)",
+              "Direct Beneficiaries (Thousands)",
+              "Estimated GDP Impact (Percentage Points)",
+              "Public Approval Rating (%)"
+            ],
+            "data": [
+              [
+                "P101",
+                "Environmental Protection",
+                "Manufacturing",
+                2021,
+                300,
+                120,
+                "+0.3",
+                70
+              ],
+              [
+                "P102",
+                "Economic Stimulus",
+                "Technology",
+                2020,
+                800,
+                350,
+                "+1.5",
+                60
+              ],
+              [
+                "P103",
+                "Social Welfare",
+                "Education",
+                2022,
+                150,
+                200,
+                "+0.1",
+                85
+              ],
+              [
+                "P104",
+                "Infrastructure Dev",
+                "Multiple",
+                2023,
+                2500,
+                1500,
+                "+1.8",
+                55
+              ],
+              [
+                "P105",
+                "Environmental Protection",
+                "Agriculture",
+                2022,
+                400,
+                80,
+                "+0.2",
+                75
+              ],
+              [
+                "P106",
+                "Economic Stimulus",
+                "Manufacturing",
+                2021,
+                600,
+                280,
+                "+1.0",
+                68
+              ],
+              [
+                "P107",
+                "Social Welfare",
+                "Healthcare",
+                2020,
+                200,
+                400,
+                "+0.4",
+                88
+              ],
+              [
+                "P108",
+                "Infrastructure Dev",
+                "Technology",
+                2023,
+                1200,
+                600,
+                "+1.3",
+                62
+              ],
+              [
+                "P109",
+                "Environmental Protection",
+                "Multiple",
+                2021,
+                550,
+                180,
+                "+0.6",
+                72
+              ],
+              [
+                "P110",
+                "Economic Stimulus",
+                "Agriculture",
+                2020,
+                700,
+                300,
+                "+0.9",
+                65
+              ]
             ]
           }
         }
       }
+    ],
+    "question": [
+      "Based on the provided data, a policy maker seeking initiatives with a primary focus on [Dropdown 1] that have also achieved [Dropdown 2] should prioritize policies P106 and P110."
+    ],
+    "options": [
+      [
+        {
+          "A": "Environmental Protection",
+          "B": "Economic Stimulus",
+          "C": "Social Welfare",
+          "D": "Infrastructure Development"
+        },
+        {
+          "A": "a Public Approval Rating above 70%",
+          "B": "an Estimated GDP Impact of more than +1.0 percentage points",
+          "C": "at least 65% Public Approval Rating",
+          "D": "Direct Beneficiaries exceeding 300 thousand"
+        }
+      ]
+    ],
+    "answer": [
+      [
+        "B",
+        "C"
+      ]
     ]
   },
-  "question": "While Hydroelectric power has consistently been the largest contributor to Country X's renewable energy generation from 2010 to 2023, the data indicates a significant shift in growth dynamics across other sources. Over this period, [Dropdown 1] exhibited the most rapid absolute increase in annual GWh output. Consequently, if current growth trends continue, this particular source is poised to become [Dropdown 2] in driving future renewable energy expansion.",
+  "question": "Based on the provided data, a policy maker seeking initiatives with a primary focus on _____ that have also achieved _____ should prioritize policies P106 and P110.",
+  "title": "Policy Prioritization: Economic Stimulus & Public Approval Metrics",
+  "solution": "**Step 1: Understand the Goal**\nThe question asks us to identify the specific criteria (Focus Area and an additional achievement) that, when applied, lead a policymaker to prioritize policies P106 and P110. We need to find the options for [Dropdown 1] and [Dropdown 2] that consistently describe both P106 and P110, and ideally, distinguish them from other policies if the term \"prioritize\" implies a specific selection.\n\n**Step 2: Analyze Policies P106 and P110 based on the table data**\nFirst, let's extract the relevant information for policies P106 and P110 from the \"Selected Government Policy Initiatives: Impact and Public Perception (2020-2023)\" table:\n\n*   **Policy P106:**\n    *   Focus Area: Economic Stimulus\n    *   Public Approval Rating (%): 68\n    *   Estimated GDP Impact (Percentage Points): +1.0\n    *   Direct Beneficiaries (Thousands): 280\n\n*   **Policy P110:**\n    *   Focus Area: Economic Stimulus\n    *   Public Approval Rating (%): 65\n    *   Estimated GDP Impact (Percentage Points): +0.9\n    *   Direct Beneficiaries (Thousands): 300\n\n**Step 3: Evaluate Dropdown 1 options (Focus Area)**\nWe need a \"Focus Area\" that is common to both P106 and P110.\n*   A: Environmental Protection (Incorrect, both are Economic Stimulus)\n*   B: Economic Stimulus (Correct, both P106 and P110 are 'Economic Stimulus' policies)\n*   C: Social Welfare (Incorrect)\n*   D: Infrastructure Development (Incorrect)\n\nTherefore, for [Dropdown 1], the correct option is **B: Economic Stimulus**.\n\n**Step 4: Evaluate Dropdown 2 options (Additional Achievement) for \"Economic Stimulus\" policies P106 and P110**\nNow we check which achievement criterion from Dropdown 2 is met by *both* P106 and P110.\n\n*   **A: a Public Approval Rating above 70%**\n    *   P106: 68% (NOT above 70%)\n    *   P110: 65% (NOT above 70%)\n    *   This option is incorrect.\n\n*   **B: an Estimated GDP Impact of more than +1.0 percentage points**\n    *   P106: +1.0% (NOT more than +1.0%)\n    *   P110: +0.9% (NOT more than +1.0%)\n    *   This option is incorrect.\n\n*   **C: at least 65% Public Approval Rating**\n    *   P106: 68% (is $\\geq$ 65%) - YES\n    *   P110: 65% (is $\\geq$ 65%) - YES\n    *   This option is consistent with both policies.\n\n*   **D: Direct Beneficiaries exceeding 300 thousand**\n    *   P106: 280 thousand (NOT exceeding 300 thousand)\n    *   P110: 300 thousand (NOT exceeding 300 thousand, as \"exceeding\" means >300)\n    *   This option is incorrect.\n\nTherefore, for [Dropdown 2], the correct option is **C: at least 65% Public Approval Rating**.\n\n**Step 5: Verify the selection**\nWith \"Focus Area: Economic Stimulus\" and \"at least 65% Public Approval Rating\", let's check all policies in the table:\n*   P101: Environmental Protection (No)\n*   P102: Economic Stimulus, Approval 60% (No, approval < 65%)\n*   P103: Social Welfare (No)\n*   P104: Infrastructure Dev (No)\n*   P105: Environmental Protection (No)\n*   **P106: Economic Stimulus, Approval 68% (Yes)**\n*   P107: Social Welfare (No)\n*   P108: Infrastructure Dev (No)\n*   P109: Environmental Protection (No)\n*   **P110: Economic Stimulus, Approval 65% (Yes)**\n\nOnly P106 and P110 satisfy both criteria. Thus, a policymaker seeking policies with a primary focus on \"Economic Stimulus\" that have also achieved \"at least 65% Public Approval Rating\" should indeed prioritize P106 and P110.\n\nThe final answer is $\\boxed{\\text{B, C}}$.",
   "options": [
     {
-      "A": "exponential",
-      "B": "linear",
-      "C": "decelerating",
-      "D": "oscillating"
+      "A": "Environmental Protection",
+      "B": "Economic Stimulus",
+      "C": "Social Welfare",
+      "D": "Infrastructure Development"
     },
     {
-      "A": "quadratic",
-      "B": "linear",
-      "C": "stagnant",
-      "D": "erratic"
+      "A": "a Public Approval Rating above 70%",
+      "B": "an Estimated GDP Impact of more than +1.0 percentage points",
+      "C": "at least 65% Public Approval Rating",
+      "D": "Direct Beneficiaries exceeding 300 thousand"
     }
   ],
   "answer": [
-    "A",
+    "B",
     "C"
   ],
-  "title": "Renewable Energy Portfolio Evolution: Growth & Dominance Shifts",
-  "solution": "Step 1: Calculate the percentage growth for each renewable energy source from 2010 to 2023 to determine which experienced the most substantial increase. The formula for percentage growth is $\\frac{\\text{(Generation in 2023 - Generation in 2010)}}{\\text{Generation in 2010}} \\times 100\\%$.\n\nStep 2: Perform calculations for each source for Blank 1:\n*   **Solar PV:**\n    *   Generation in 2010: 100 GWh\n    *   Generation in 2023: 5800 GWh\n    *   Percentage growth: $\\frac{(5800 - 100)}{100} \\times 100\\% = \\frac{5700}{100} \\times 100\\% = 5700\\%$\n*   **Wind Onshore:**\n    *   Generation in 2010: 1500 GWh\n    *   Generation in 2023: 7050 GWh\n    *   Percentage growth: $\\frac{(7050 - 1500)}{1500} \\times 100\\% = \\frac{5550}{1500} \\times 100\\% = 370\\%$\n*   **Wind Offshore:**\n    *   Generation in 2010: 50 GWh\n    *   Generation in 2023: 1800 GWh\n    *   Percentage growth: $\\frac{(1800 - 50)}{50} \\times 100\\% = \\frac{1750}{50} \\times 100\\% = 3500\\%$\n*   **Hydroelectric:**\n    *   Generation in 2010: 8000 GWh\n    *   Generation in 2023: 8550 GWh\n    *   Percentage growth: $\\frac{(8550 - 8000)}{8000} \\times 100\\% = \\frac{550}{8000} \\times 100\\% = 6.875\\%$\n*   **Bioenergy:**\n    *   Generation in 2010: 1200 GWh\n    *   Generation in 2023: 1850 GWh\n    *   Percentage growth: $\\frac{(1850 - 1200)}{1200} \\times 100\\% = \\frac{650}{1200} \\times 100\\% \\approx 54.17\\%$\n\nStep 3: Compare the percentage growth values. Solar PV has the highest percentage growth at 5700%. Therefore, for Dropdown 1, the correct option is Solar PV.\n\nStep 4: Calculate the total absolute increase in generation from all wind-based sources (Wind Onshore and Wind Offshore combined) over the period from 2010 to 2023. This requires summing the individual absolute increases for each wind source. The formula for absolute increase is $\\text{Generation in 2023 - Generation in 2010}$.\n\nStep 5: Perform calculations for Blank 2:\n*   **Absolute increase for Wind Onshore:**\n    *   Generation in 2023: 7050 GWh\n    *   Generation in 2010: 1500 GWh\n    *   Absolute increase: $7050 - 1500 = 5550$ GWh\n*   **Absolute increase for Wind Offshore:**\n    *   Generation in 2023: 1800 GWh\n    *   Generation in 2010: 50 GWh\n    *   Absolute increase: $1800 - 50 = 1750$ GWh\n*   **Total absolute increase from all wind-based sources:**\n    *   $5550 \\text{ GWh (Wind Onshore)} + 1750 \\text{ GWh (Wind Offshore)} = 7300 \\text{ GWh}$\n\nStep 6: The total absolute increase in generation from all wind-based sources is 7300 GWh. Therefore, for Dropdown 2, the correct option is 7,300.\n\nStep 7: Match the calculated results with the given options.\nFor Dropdown 1: Solar PV corresponds to option C.\nFor Dropdown 2: 7,300 GWh corresponds to option D.\n\nThe final answer is $\\boxed{C,D}$",
-  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Environment and Sustainability> - <Verbal Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps."
+  "prompt": "<Permutations and Combinations> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+  "question-type": "Graphic Interpretation"
 }

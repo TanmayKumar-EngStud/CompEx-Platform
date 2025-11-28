@@ -67,6 +67,24 @@
          "Two-Part Analysis": 3,
          "Table Analysis": 3,
          "Graphic Interpretation": 3
+      },
+      "2": {
+         "name": "Quants",
+         "total": 20,
+         "question types": [
+            "Problem Solving Simple",
+            "Data Sufficiency"
+         ],
+         "Problem Solving Simple": 10,
+         "Data Sufficiency": 10
+      },
+      "3": {
+         "name": "Verbal",
+         "total": 20,
+         "question types": [
+            "Reading Comprehension"
+         ],
+         "Reading Comprehension": 20
       }
    }
 }

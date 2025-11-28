@@ -208,8 +208,8 @@ class GeminiGenerator:
         try:
             api_key = self._get_api_key(self.api_key_index)
             self.client = genai.Client(api_key=api_key)
-            print(
-                f"✅ Gemini generator initialized with API key index {self.api_key_index}")
+            # print(
+            #     f"✅ Gemini generator initialized with API key index {self.api_key_index}")
         except Exception as e:
             raise RuntimeError(
                 f"Failed to initialize Gemini API client: {str(e)}")
@@ -357,6 +357,8 @@ class GeminiGenerator:
                 f"Missing required {prettify('original_prompt', 'Red')} in context for {prettify(component_type, 'Yellow')} generation")
 
         attempt = 0
+        rpd_flag = 0 # Request Per Day flag: 0 = OK, 1 = Warning/Waiting
+        
         while attempt < self.max_retries:
             try:
                 # Create chat instance with system instructions (not component instruction)
@@ -401,7 +403,7 @@ Generate the requested {component_type} component following the format specifica
 
                 response = chat_instance.send_message(comprehensive_prompt)
                 self._last_request_ts = time.time()
-                self._rate_limit_hits = 0
+                # self._rate_limit_hits = 0 # This line is removed as rpd_flag replaces its functionality
 
                 if not response or not response.text:
                     raise ValueError("Empty response from Gemini API")
@@ -423,6 +425,10 @@ Generate the requested {component_type} component following the format specifica
                 # print(
                 #     f"✅ Generated {prettify(component_type, 'Green')} for {prettify(question_type, 'Yellow')}")
 
+                # Reset RPD flag on success
+                if rpd_flag == 1:
+                    rpd_flag = 0
+                    
                 return parsed_data
 
             except Exception as e:
@@ -434,68 +440,18 @@ Generate the requested {component_type} component following the format specifica
                 is_resource_exhausted = "429 RESOURCE_EXHAUSTED" in error_msg or "RESOURCE_EXHAUSTED" in error_msg
 
                 if is_resource_exhausted:
-                    # Parse JSON error to extract retryDelay
-                    retry_wait = 60  # default fallback
-                    try:
-                        # Try to parse the error as JSON
-                        if hasattr(e, 'response') and hasattr(e.response, 'json'):
-                            error_data = e.response.json()
-                        else:
-                            # Parse from string representation
-                            error_data = json.loads(error_msg.split(
-                                "'. ")[-1] if "'. " in error_msg else error_msg)
-
-                            error_data = json.loads(error_msg.split(
-                                "'. ")[-1] if "'. " in error_msg else error_msg)
-
-                        # Extract retryDelay from details
-                        if 'error' in error_data and 'details' in error_data['error']:
-                            for detail in error_data['error']['details']:
-                                if detail.get('@type') == 'type.googleapis.com/google.rpc.RetryInfo':
-                                    retry_delay_str = detail.get(
-                                        'retryDelay', '60s')
-                                    retry_wait = int(
-                                        retry_delay_str.rstrip('s'))
-                                    retry_delay_str = detail.get(
-                                        'retryDelay', '60s')
-                                    retry_wait = int(
-                                        retry_delay_str.rstrip('s'))
-                                    break
-                    except:
-                        # Fallback to regex if JSON parsing fails
-                        import re
-                        delay_match = re.search(
-                            r'"retryDelay":\s*"(\d+)s"', error_msg)
-                        delay_match = re.search(
-                            r'"retryDelay":\s*"(\d+)s"', error_msg)
-                        if delay_match:
-                            retry_wait = int(delay_match.group(1))
-
-                    # Use retryDelay as the deciding factor:
-                    # < 60s = temporary limit (worth retrying)
-                    # >= 60s = daily quota exhausted (not worth waiting)
-                    if retry_wait >= 60:
-                        # Daily quota exhausted or long-term limit - raise error
-                        raise RuntimeError(
-                            f"💸 Daily quota exceeded for API key {prettify(str(self.api_key_index), 'Red')}. "
-                            f"Component: {prettify(component_type, 'Yellow')}, "
-                            f"Question: {prettify(question_type, 'Yellow')}, "
-                            f"RetryDelay: {prettify(f'{retry_wait}s', 'Magenta')}. "
-                            f"Error: {error_msg}")
-                    else:
-                        # Short retry delay - temporary rate limit, worth retrying
-                        if retry_wait < self.min_retry_wait:
-                            retry_wait = self.min_retry_wait
-                        print(f"⚠️  Rate limit exceeded for {prettify(component_type, 'Yellow')} "
-                              f"({prettify(question_type, 'Yellow')}) waiting {prettify(f'{retry_wait}s', 'Cyan')}")
-                        time.sleep(retry_wait)
-                        self._rate_limit_hits += 1
-                        if self._rate_limit_hits >= self.max_retries:
-                            raise RuntimeError(
-                                "Exceeded maximum retries due to rate limiting. Try again later or lower request frequency.")
-                        # Don't increment the attempt counter for rate limit errors
-
+                    # RPD State Machine Logic
+                    if rpd_flag == 0:
+                        # First hit: Warning state
+                        rpd_flag = 1
+                        print(f"⚠️  Rate limit exceeded for {prettify(self.api_key_index, 'Yellow')} "
+                              f"({prettify(question_type, 'Yellow')}) waiting {prettify('60s', 'Cyan')}")
+                        time.sleep(60)
+                        # Retry immediately without incrementing attempt counter
                         continue
+                    elif rpd_flag == 1:
+                        # Second hit (consecutive): Daily limit exceeded
+                        raise RuntimeError(f"⚠️ Request Per Day limit exceeded for {prettify(self.api_key_index, 'Red')}")
 
                 # For real errors, increment attempt counter
                 attempt += 1

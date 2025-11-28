@@ -1,0 +1,2 @@
+datetime,model_used,total_api_calls,total_input_tokens,total_output_tokens,total_time_seconds,gre_questions,gmat_questions
+2025-11-26T08:08:50.534333,gemini-2.5-flash,0,0,0,0.04,0,0

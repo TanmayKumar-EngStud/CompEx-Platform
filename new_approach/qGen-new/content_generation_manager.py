@@ -2,13 +2,10 @@
 This file handles all the question components, how they are needed to be managed based on question component type.
 """
 from typing import Literal, Union, Any, get_args
-
 from io_utils import prettify
 import json
 
-
 OptionType = Literal['blank', 'single', 'multi', 'numeric', 'dichotomous']
-
 
 def _expect(obj: Any, expected: type, label: str) -> None:
     """
@@ -18,7 +15,6 @@ def _expect(obj: Any, expected: type, label: str) -> None:
     if not isinstance(obj, expected):
         raise TypeError(
             f"{prettify(label, 'Yellow')} must be {prettify(expected.__name__, 'Green')}; got {prettify(type(obj).__name__, 'Red')}\n{obj.__name__} = {prettify(obj_print, 'Magenta')}")
-
 
 def manage_generated_content(result: dict, question_type: str, question_component: str, generated_data: Union[str, dict], option_type: str = None, source_info: dict = None):
     """
@@ -47,7 +43,6 @@ def manage_generated_content(result: dict, question_type: str, question_componen
                     result[k] = [result[k]] if not isinstance(
                         result[k], list) else result[k]
                     result[k].append(v)
-
 
 def manage_metadata_content(result: dict, question_type: str, generated_data: dict, source_info: dict = None):
     """
@@ -79,8 +74,6 @@ def manage_metadata_content(result: dict, question_type: str, generated_data: di
                 metadata['Statements'] = value
             else:
                 metadata.setdefault(key, []).append(value)
-
-
 
 def manage_options_answer_content(result: dict, question_type: str, generated_data: Union[str, dict], option_type: str):
     """

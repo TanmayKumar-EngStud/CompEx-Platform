@@ -1,122 +1,133 @@
 {
   "metadata": {
-    "table": [
+    "metadata": [
       {
-        "type": "sortable_table",
-        "description": "Table detailing various investment projects, their financial characteristics, and probabilities of success under different market conditions.",
-        "structure": {
-          "title": "Investment Projects Analysis",
-          "headers": [
-            "Project ID",
-            "Industry Segment",
-            "Initial Investment ($M)",
-            "Probability of Success (Normal Conditions)",
-            "Expected Net Profit if Successful ($M)",
-            "Probability of Major Market Downturn",
-            "Probability of Success (Downturn Scenario)"
-          ],
-          "rows": [
-            [
-              "P101",
-              "Tech - AI",
-              15,
-              0.7,
-              35,
-              0.2,
-              0.4
+        "Table": {
+          "type": "sortable_table",
+          "description": "Table with sortable columns detailing employee data, including current base salary, years of service, annual salary growth factor, and last performance score.",
+          "structure": {
+            "title": "Employee Compensation and Performance Data",
+            "headers": [
+              "Employee ID",
+              "Department",
+              "Years of Service",
+              "Current Base Salary (USD)",
+              "Annual Salary Growth Factor",
+              "Last Performance Score"
             ],
-            [
-              "P102",
-              "Healthcare - Biotech",
-              20,
-              0.6,
-              50,
-              0.15,
-              0.5
+            "rows": [
+              [
+                "EMP001",
+                "Engineering",
+                5,
+                95000,
+                1.06,
+                88
+              ],
+              [
+                "EMP002",
+                "Marketing",
+                3,
+                80000,
+                1.04,
+                75
+              ],
+              [
+                "EMP003",
+                "Sales",
+                8,
+                110000,
+                1.07,
+                92
+              ],
+              [
+                "EMP004",
+                "Human Resources",
+                10,
+                105000,
+                1.03,
+                80
+              ],
+              [
+                "EMP005",
+                "Engineering",
+                2,
+                70000,
+                1.05,
+                78
+              ],
+              [
+                "EMP006",
+                "Sales",
+                6,
+                90000,
+                1.06,
+                85
+              ],
+              [
+                "EMP007",
+                "Marketing",
+                4,
+                78000,
+                1.04,
+                72
+              ],
+              [
+                "EMP008",
+                "Human Resources",
+                7,
+                98000,
+                1.05,
+                83
+              ]
             ],
-            [
-              "P103",
-              "Retail - E-commerce",
-              10,
-              0.85,
-              25,
-              0.25,
-              0.6
-            ],
-            [
-              "P104",
-              "Renewable Energy",
-              25,
-              0.55,
-              60,
-              0.1,
-              0.5
-            ],
-            [
-              "P105",
-              "FinTech - Payments",
-              12,
-              0.75,
-              30,
-              0.2,
-              0.3
-            ],
-            [
-              "P106",
-              "Logistics - Automation",
-              18,
-              0.65,
-              45,
-              0.15,
-              0.45
-            ],
-            [
-              "P107",
-              "Education - Online",
-              8,
-              0.9,
-              18,
-              0.3,
-              0.7
-            ]
-          ],
-          "formatting": {
-            "sortable": true,
-            "alternating_rows": true
+            "formatting": {
+              "sortable": true,
+              "alternating_rows": true,
+              "column_types": {
+                "Employee ID": "string",
+                "Department": "string",
+                "Years of Service": "integer",
+                "Current Base Salary (USD)": "currency",
+                "Annual Salary Growth Factor": "float",
+                "Last Performance Score": "integer"
+              }
+            }
           }
         }
       }
     ],
     "question": [
-      "Based on the information provided in the 'Investment Projects Analysis' table, determine whether each of the following statements is supported or not supported."
+      "The table below provides data on employees within a company, including their current base salary, years of service, annual salary growth factor, and last performance score. Assume the 'Annual Salary Growth Factor' consistently applies to the base salary each year to project future salaries (i.e., a salary after 'n' years is Current Base Salary * (Factor)^n). Evaluate each of the following statements based on the information provided in the table."
     ],
     "options": [
       [
-        "For Project P101, the overall probability of success, calculated by weighting the probabilities under normal and downturn scenarios, is less than 65%.",
-        "Considering only projects in the Tech-related Industry Segments (Tech - AI and FinTech - Payments), the project with the lower Initial Investment also has a higher overall expected net profit (considering both potential profit and initial loss if unsuccessful).",
-        "More than 50% of the listed projects have an absolute difference of 0.30 or more between their Probability of Success (Normal Conditions) and their Probability of Success (Downturn Scenario)."
+        "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.",
+        "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.",
+        "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055."
       ]
     ],
     "answer": [
       {
-        "For Project P101, the overall probability of success, calculated by weighting the probabilities under normal and downturn scenarios, is less than 65%.": "Yes",
-        "Considering only projects in the Tech-related Industry Segments (Tech - AI and FinTech - Payments), the project with the lower Initial Investment also has a higher overall expected net profit (considering both potential profit and initial loss if unsuccessful).": "No",
-        "More than 50% of the listed projects have an absolute difference of 0.30 or more between their Probability of Success (Normal Conditions) and their Probability of Success (Downturn Scenario).": "No"
+        "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.": "No",
+        "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.": "No",
+        "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055.": "Yes"
       }
     ]
   },
-  "question": "Based on the information provided in the 'Investment Projects Analysis' table, determine whether each of the following statements is supported or not supported.",
-  "title": "Investment Project Probabilities & Expected Profit Evaluation",
-  "solution": "**Statement 1: For Project P101, the overall probability of success, calculated by weighting the probabilities under normal and downturn scenarios, is less than 65%.**\n\n**Step 1: Identify relevant data for Project P101.**\nFrom the table for Project P101:\n*   Probability of Success (Normal Conditions) = 0.7\n*   Probability of Major Market Downturn = 0.2\n*   Probability of Success (Downturn Scenario) = 0.4\n\n**Step 2: Calculate the probability of 'Normal Conditions'.**\nThe probability of a major market downturn is 0.2. Therefore, the probability of normal conditions (no downturn) is $1 - 0.2 = 0.8$.\n\n**Step 3: Calculate the overall probability of success for P101.**\nThe overall probability of success is a weighted average of the success probabilities under each scenario:\nOverall P(Success) = (P(Success | Normal) $\\times$ P(Normal Conditions)) + (P(Success | Downturn) $\\times$ P(Major Market Downturn))\nOverall P(Success) = $(0.7 \\times 0.8) + (0.4 \\times 0.2)$\nOverall P(Success) = $0.56 + 0.08$\nOverall P(Success) = $0.64$\n\n**Step 4: Compare the calculated probability with 65%.**\n$0.64 = 64\\%$.\nSince $64\\% < 65\\%$, the statement is supported.\n\n**Answer:** Yes\n\n---\n\n**Statement 2: Considering only projects in the Tech-related Industry Segments (Tech - AI and FinTech - Payments), the project with the lower Initial Investment also has a higher overall expected net profit (considering both potential profit and initial loss if unsuccessful).**\n\n**Step 1: Identify the Tech-related projects and their data.**\n*   **Project P101 (Tech - AI):**\n    *   Initial Investment ($M) = 15\n    *   P(Success Normal) = 0.7\n    *   Expected Net Profit if Successful ($M) = 35\n    *   P(Downturn) = 0.2\n    *   P(Success Downturn) = 0.4\n*   **Project P105 (FinTech - Payments):**\n    *   Initial Investment ($M) = 12\n    *   P(Success Normal) = 0.75\n    *   Expected Net Profit if Successful ($M) = 30\n    *   P(Downturn) = 0.2\n    *   P(Success Downturn) = 0.3\n\n**Step 2: Determine the project with the lower Initial Investment.**\nProject P105 has an initial investment of $12M, which is lower than P101's $15M.\n\n**Step 3: Calculate the overall probability of success for both projects.**\n*   **P101:** P(Normal) = $1 - 0.2 = 0.8$\n    Overall P(Success) = $(0.7 \\times 0.8) + (0.4 \\times 0.2) = 0.56 + 0.08 = 0.64$\n*   **P105:** P(Normal) = $1 - 0.2 = 0.8$\n    Overall P(Success) = $(0.75 \\times 0.8) + (0.3 \\times 0.2) = 0.60 + 0.06 = 0.66$\n\n**Step 4: Calculate the overall expected net profit (ENP) for both projects.**\nThe formula for Expected Net Profit is:\nENP = (Overall P(Success) $\\times$ Expected Net Profit if Successful) + ((1 - Overall P(Success)) $\\times$ (-Initial Investment))\n\n*   **P101:**\n    *   ENP P101 = $(0.64 \\times 35) + ((1 - 0.64) \\times (-15))$\n    *   ENP P101 = $(0.64 \\times 35) + (0.36 \\times (-15))$\n    *   ENP P101 = $22.40 - 5.40 = 17.00$ ($M)\n\n*   **P105:**\n    *   ENP P105 = $(0.66 \\times 30) + ((1 - 0.66) \\times (-12))$\n    *   ENP P105 = $(0.66 \\times 30) + (0.34 \\times (-12))$\n    *   ENP P105 = $19.80 - 4.08 = 15.72$ ($M)\n\n**Step 5: Compare the ENP for the project with lower initial investment (P105).**\nProject P105 has the lower initial investment ($12M). Its ENP is $15.72M.\nProject P101 has an ENP of $17.00M.\nSince $15.72M$ is not higher than $17.00M$, the statement is not supported.\n\n**Answer:** No\n\n---\n\n**Statement 3: More than 50% of the listed projects have an absolute difference of 0.30 or more between their Probability of Success (Normal Conditions) and their Probability of Success (Downturn Scenario).**\n\n**Step 1: Calculate the absolute difference for each project.**\nAbsolute Difference = $| \\text{P(Success Normal)} - \\text{P(Success Downturn)} |$\n\n*   **P101:** $|0.7 - 0.4| = 0.30$\n*   **P102:** $|0.6 - 0.5| = 0.10$\n*   **P103:** $|0.85 - 0.6| = 0.25$\n*   **P104:** $|0.55 - 0.5| = 0.05$\n*   **P105:** $|0.75 - 0.3| = 0.45$\n*   **P106:** $|0.65 - 0.45| = 0.20$\n*   **P107:** $|0.9 - 0.7| = 0.20$\n\n**Step 2: Identify projects with an absolute difference of 0.30 or more.**\nThe projects meeting this criterion are P101 (0.30) and P105 (0.45).\nThere are 2 such projects.\n\n**Step 3: Calculate the percentage of projects meeting the criterion.**\nTotal number of projects = 7\nNumber of projects with difference $\\ge 0.30 = 2$\nPercentage = $(2 / 7) \\times 100\\% \\approx 28.57\\%$\n\n**Step 4: Compare the percentage with 50%.**\nSince $28.57\\%$ is not more than $50\\%$, the statement is not supported.\n\n**Answer:** No",
+  "question": "The table below provides data on employees within a company, including their current base salary, years of service, annual salary growth factor, and last performance score. Assume the 'Annual Salary Growth Factor' consistently applies to the base salary each year to project future salaries (i.e., a salary after 'n' years is Current Base Salary * (Factor)^n). Evaluate each of the following statements based on the information provided in the table, selecting 'Yes' if the statement is supported by the data and 'No' if it is not.",
+  "title": "HR Compensation: Projecting Salaries using Exponential Growth & Performance",
+  "solution": "**Statement 1: In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.**\n\n**Step 1: Identify the relevant employee.**\nFirst, filter the table to include only employees from the 'Engineering' department. These are EMP001 and EMP005.\n*   EMP001 (Engineering): Last Performance Score = 88\n*   EMP005 (Engineering): Last Performance Score = 78\nThe employee from the Engineering department with the highest 'Last Performance Score' is EMP001.\n\n**Step 2: Extract relevant data for the identified employee.**\nFor EMP001:\n*   Current Base Salary (B) = $95,000\n*   Annual Salary Growth Factor (F) = 1.06\n*   Number of years (N) = 3\n\n**Step 3: Calculate the projected salary.**\nThe formula for projected salary is `Projected Salary = Current Base Salary * (Annual Salary Growth Factor)^N`.\n*   Projected Salary = $95,000 * (1.06)^3$\n*   Calculate `(1.06)^3 = 1.06 * 1.06 * 1.06 = 1.191016`\n*   Projected Salary = $95,000 * 1.191016 = $113,146.52\n\n**Step 4: Compare with the threshold.**\nThe calculated projected salary is $113,146.52.\nThe statement claims the salary will exceed $120,000.\nSince $113,146.52$ is not greater than $120,000, the statement is false.\n\n**Answer for Statement 1:** No\n\n---\n\n**Statement 2: If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.**\n\n**Step 1: Identify the employee with the highest 'Years of Service' and calculate their projected salary in two years.**\nScan the 'Years of Service' column: EMP004 has 10 years, which is the highest.\nFor EMP004:\n*   Current Base Salary (B) = $105,000\n*   Annual Salary Growth Factor (F) = 1.03\n*   Number of years (N) = 2\nProjected Salary for EMP004 = $105,000 * (1.03)^2$\n*   ` (1.03)^2 = 1.03 * 1.03 = 1.0609`\n*   Projected Salary for EMP004 = $105,000 * 1.0609 = $111,394.50\n\n**Step 2: Identify employees from the Sales department and calculate their projected salaries in two years.**\nFilter the table for 'Sales' department employees: EMP003 and EMP006.\nFor EMP003 (Sales):\n*   Current Base Salary (B) = $110,000\n*   Annual Salary Growth Factor (F) = 1.07\n*   Number of years (N) = 2\nProjected Salary for EMP003 = $110,000 * (1.07)^2$\n*   ` (1.07)^2 = 1.07 * 1.07 = 1.1449`\n*   Projected Salary for EMP003 = $110,000 * 1.1449 = $125,939.00\n\nFor EMP006 (Sales):\n*   Current Base Salary (B) = $90,000\n*   Annual Salary Growth Factor (F) = 1.06\n*   Number of years (N) = 2\nProjected Salary for EMP006 = $90,000 * (1.06)^2$\n*   ` (1.06)^2 = 1.06 * 1.06 = 1.1236`\n*   Projected Salary for EMP006 = $90,000 * 1.1236 = $101,124.00\n\n**Step 3: Compare the projected salaries.**\nProjected salary of the employee with highest 'Years of Service' (EMP004) = $111,394.50.\nProjected salaries of Sales employees: $125,939.00 (EMP003) and $101,124.00 (EMP006).\nThe statement claims EMP004's projected salary would be *higher than any* Sales employee's projected salary.\nSince $111,394.50$ is not greater than $125,939.00, the statement is false.\n\n**Answer for Statement 2:** No\n\n---\n\n**Statement 3: For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055.**\n\n**Step 1: Identify employees with a 'Last Performance Score' above 80.**\nScan the 'Last Performance Score' column for values greater than 80:\n*   EMP001: Score 88 (>80)\n*   EMP003: Score 92 (>80)\n*   EMP006: Score 85 (>80)\n*   EMP008: Score 83 (>80)\n(Note: EMP004 has a score of 80, which is not *above* 80, so it is excluded).\n\n**Step 2: Extract the 'Annual Salary Growth Factor' for these identified employees.**\n*   EMP001: 1.06\n*   EMP003: 1.07\n*   EMP006: 1.06\n*   EMP008: 1.05\n\n**Step 3: Calculate the sum and count of these factors.**\n*   Sum of factors = $1.06 + 1.07 + 1.06 + 1.05 = 4.24$\n*   Number of employees = 4\n\n**Step 4: Calculate the average 'Annual Salary Growth Factor'.**\n*   Average Factor = Sum of factors / Number of employees\n*   Average Factor = $4.24 / 4 = 1.06$\n\n**Step 5: Compare the average with the given value.**\nThe calculated average 'Annual Salary Growth Factor' is 1.06.\nThe statement claims the average is greater than 1.055.\nSince $1.06$ is indeed greater than $1.055$, the statement is true.\n\n**Answer for Statement 3:** Yes",
   "options": [
-    "For Project P101, the overall probability of success, calculated by weighting the probabilities under normal and downturn scenarios, is less than 65%.",
-    "Considering only projects in the Tech-related Industry Segments (Tech - AI and FinTech - Payments), the project with the lower Initial Investment also has a higher overall expected net profit (considering both potential profit and initial loss if unsuccessful).",
-    "More than 50% of the listed projects have an absolute difference of 0.30 or more between their Probability of Success (Normal Conditions) and their Probability of Success (Downturn Scenario)."
+    "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.",
+    "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.",
+    "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055."
   ],
   "answer": {
-    "For Project P101, the overall probability of success, calculated by weighting the probabilities under normal and downturn scenarios, is less than 65%.": "Yes",
-    "Considering only projects in the Tech-related Industry Segments (Tech - AI and FinTech - Payments), the project with the lower Initial Investment also has a higher overall expected net profit (considering both potential profit and initial loss if unsuccessful).": "No",
-    "More than 50% of the listed projects have an absolute difference of 0.30 or more between their Probability of Success (Normal Conditions) and their Probability of Success (Downturn Scenario).": "No"
+    "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.": "No",
+    "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.": "No",
+    "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055.": "Yes"
   },
-  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Business and Finance> - <Verbal Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps."
+  "prompt": "<Exponents and Powers> - <Human Resources> - <Quantitative Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+  "question-type": "Table Analysis"
 }
