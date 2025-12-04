@@ -10,7 +10,7 @@ import json
 import time
 import threading
 import re
-from typing import Dict, Any, Optional, Union, List, get_origin
+from typing import Dict, Any, Optional, Union, List, get_origin, Tuple
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
@@ -280,7 +280,7 @@ class GeminiGenerator:
                     f"refine_response error: {parsed_data['error']}")
 
             # Validate expected output keys
-            if get_origin(expected_output) is dict:
+            if isinstance(expected_output, dict):
                 for key, expected_type in expected_output.items():
                     if key not in parsed_data:
                         raise ValueError(
@@ -327,7 +327,7 @@ class GeminiGenerator:
     def generate_component(self,
                            instruction_statement: str,
                            expected_output: Union[str, Dict[str, str]],
-                           context: Optional[Dict[str, Any]] = None) -> Union[str, Dict[str, Any]]:
+                           context: Optional[Dict[str, Any]] = None) -> Tuple[Union[str, Dict[str, Any]], Dict[str, int]]:
         """
         Generate a question component using Gemini API.
 
@@ -337,7 +337,9 @@ class GeminiGenerator:
             context: Optional context information for debugging/logging
 
         Returns:
-            Generated component data as dictionary
+            Tuple containing:
+            - Generated component data as dictionary or string
+            - Usage statistics dictionary {'input_tokens': int, 'output_tokens': int}
 
         Raises:
             RuntimeError: If generation fails after all retries
@@ -425,16 +427,30 @@ Generate the requested {component_type} component following the format specifica
                 # print(
                 #     f"✅ Generated {prettify(component_type, 'Green')} for {prettify(question_type, 'Yellow')}")
 
+                # Extract usage stats
+                usage_stats = {
+                    'input_tokens': 0,
+                    'output_tokens': 0
+                }
+                if hasattr(response, 'usage_metadata'):
+                    usage_stats['input_tokens'] = response.usage_metadata.prompt_token_count
+                    usage_stats['output_tokens'] = response.usage_metadata.candidates_token_count
+
                 # Reset RPD flag on success
                 if rpd_flag == 1:
                     rpd_flag = 0
                     
-                return parsed_data
+                return parsed_data, usage_stats
 
             except Exception as e:
                 error_msg = str(e)
                 component_type = context.get('component_type', 'Unknown')
                 question_type = context.get('question_type', 'Unknown')
+
+                # Check if this is a 503 Service Unavailable error
+                if "503" in error_msg:
+                    time.sleep(5)
+                    continue
 
                 # Check if this is a 429 RESOURCE_EXHAUSTED error
                 is_resource_exhausted = "429 RESOURCE_EXHAUSTED" in error_msg or "RESOURCE_EXHAUSTED" in error_msg
@@ -444,7 +460,7 @@ Generate the requested {component_type} component following the format specifica
                     if rpd_flag == 0:
                         # First hit: Warning state
                         rpd_flag = 1
-                        print(f"⚠️  Rate limit exceeded for {prettify(self.api_key_index, 'Yellow')} "
+                        print(f"Rate limit exceeded for {prettify(self.api_key_index, 'Yellow')} "
                               f"({prettify(question_type, 'Yellow')}) waiting {prettify('60s', 'Cyan')}")
                         time.sleep(60)
                         # Retry immediately without incrementing attempt counter

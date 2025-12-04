@@ -62,7 +62,8 @@
                "Multi-Source Reasoning Child",
                "Two-Part Analysis Child",
                "Table Analysis",
-               "Two-Part Analysis"
+               "Two-Part Analysis",
+               "Multi-Source Reasoning"
             ],
             "file-name": "simple-question-text.txt.template",
             "variables": null,

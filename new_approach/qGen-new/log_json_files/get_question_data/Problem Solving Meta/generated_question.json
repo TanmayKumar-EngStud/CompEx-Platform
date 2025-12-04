@@ -1,115 +1,137 @@
 {
   "metadata": {
-    "graph": [
-      {
-        "type": "line_chart",
-        "description": "Line graph showing the number of distinct promotional elements available for the 'QuantumFlow' product line across four fiscal quarters.",
-        "structure": {
-          "title": "InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)",
-          "x_axis": {
-            "label": "Fiscal Quarter",
-            "type": "continuous",
-            "min": 0,
-            "max": 5,
-            "tick_labels": {
-              "1": "Q1",
-              "2": "Q2",
-              "3": "Q3",
-              "4": "Q4"
-            }
-          },
-          "y_axis": {
-            "label": "Number of Distinct Promotional Elements",
-            "type": "numerical",
-            "min": 0,
-            "max": 10
-          },
-          "data_format": {
-            "points": [
-              {
-                "x": 1,
-                "y": 5
-              },
-              {
-                "x": 2,
-                "y": 7
-              },
-              {
-                "x": 3,
-                "y": 6
-              },
-              {
-                "x": 4,
-                "y": 8
-              }
-            ],
-            "line_color": "#3498db",
-            "point_color": "#2c3e50"
-          }
-        }
-      }
-    ],
     "table": [
       {
         "type": "data_table",
-        "description": "Table showing the number of available options for key components of a marketing campaign for the 'QuantumFlow' product line during Q4.",
+        "description": "This table outlines key performance indicators for three primary distribution hubs (Alpha, Beta, Gamma) within a global logistics network for the third quarter of 2023. These metrics are crucial for strategic resource allocation, operational efficiency assessments, and constraint-based decision-making to optimize overall supply chain performance.",
         "structure": {
-          "title": "InnovateTech: Q4 Marketing Campaign Component Options",
-          "headers": [
-            "Campaign Component",
-            "Number of Available Options"
+          "title": "Global Logistics Hub Performance Overview - Q3 2023",
+          "column_headers": [
+            "Hub ID",
+            "Maximum Daily Throughput (Units)",
+            "Average Operational Cost per Unit ($)",
+            "Energy Consumption per 100 Units (kWh)",
+            "On-time Delivery Rate (%)",
+            "Average Package Dimensions (Volume m³)",
+            "Overtime Labor Cost Factor"
           ],
-          "rows": [
-            {
-              "Campaign Component": "Primary Marketing Channel",
-              "Number of Available Options": 4
-            },
-            {
-              "Campaign Component": "Creative Theme",
-              "Number of Available Options": 3
-            },
-            {
-              "Campaign Component": "Call-to-Action (CTA)",
-              "Number of Available Options": 2
-            }
+          "data_rows": [
+            [
+              "Alpha",
+              12000,
+              0.75,
+              5.0,
+              98.2,
+              0.012,
+              1.6
+            ],
+            [
+              "Beta",
+              18000,
+              0.68,
+              4.5,
+              97.5,
+              0.01,
+              1.5
+            ],
+            [
+              "Gamma",
+              10000,
+              0.82,
+              6.0,
+              99.1,
+              0.015,
+              1.7
+            ]
           ]
         }
-      }
+      },
+      [
+        {
+          "type": "data_table",
+          "description": "This table outlines key performance indicators for three primary distribution hubs (Alpha, Beta, Gamma) within a global logistics network for the third quarter of 2023. These metrics are crucial for strategic resource allocation, operational efficiency assessments, and constraint-based decision-making to optimize overall supply chain performance.",
+          "structure": {
+            "title": "Global Logistics Hub Performance Overview - Q3 2023",
+            "column_headers": [
+              "Hub ID",
+              "Maximum Daily Throughput (Units)",
+              "Average Operational Cost per Unit ($)",
+              "Energy Consumption per 100 Units (kWh)",
+              "On-time Delivery Rate (%)",
+              "Average Package Dimensions (Volume m³)",
+              "Overtime Labor Cost Factor"
+            ],
+            "data_rows": [
+              [
+                "Alpha",
+                12000,
+                0.75,
+                5.0,
+                98.2,
+                0.012,
+                1.6
+              ],
+              [
+                "Beta",
+                18000,
+                0.68,
+                4.5,
+                97.5,
+                0.01,
+                1.5
+              ],
+              [
+                "Gamma",
+                10000,
+                0.82,
+                6.0,
+                99.1,
+                0.015,
+                1.7
+              ]
+            ]
+          }
+        }
+      ]
     ]
   },
-  "title": "InnovateTech Q4 Marketing Campaign Configuration Analysis",
+  "title": "Logistics Hub Performance: Efficiency and Constraint Analysis",
   "child-questions": [
     {
-      "question": "Based on the provided InnovateTech data, if each distinct promotional element available for the 'QuantumFlow' product line in Q4 (as depicted in the line graph) necessitated the utilization of a unique creative theme, how many additional creative themes would be required beyond those listed as available for the Q4 marketing campaign in the data table?",
-      "title": "InnovateTech: Quarterly Promotional Elements and Q4 Campaign Options Analysis",
-      "solution": "Step 1: Understand the Question and Identify Necessary Data\nThe question asks for the total number of distinct elements and component options available for a Q4 marketing initiative. This requires two main pieces of information:\n1.  The number of distinct promotional elements available in Q4. This can be found in the \"InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)\" line graph.\n2.  The total number of options for the Q4 marketing campaign components. This requires summing the options listed in the \"InnovateTech: Q4 Marketing Campaign Component Options\" table.\n\nStep 2: Extract the Number of Distinct Promotional Elements for Q4\nReferring to the line graph titled \"InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)\":\nLocate Q4 on the x-axis. The corresponding y-value on the graph represents the number of distinct promotional elements.\nFor Q4, the graph shows $\\text{8 promotional elements}$.\n\nStep 3: Calculate the Total Number of Q4 Marketing Campaign Component Options\nReferring to the table titled \"InnovateTech: Q4 Marketing Campaign Component Options\":\nSum the \"Number of Available Options\" for each campaign component.\nNumber of Primary Marketing Channel options = $\\text{4}$\nNumber of Creative Theme options = $\\text{3}$\nNumber of Call-to-Action (CTA) options = $\\text{2}$\nTotal campaign component options = $\\text{4} + \\text{3} + \\text{2} = \\text{9 options}$.\n\nStep 4: Combine the Totals to Find the Grand Total\nAdd the number of promotional elements from Step 2 to the total campaign component options from Step 3.\nGrand Total = Promotional Elements (Q4) + Total Campaign Component Options (Q4)\nGrand Total = $\\text{8} + \\text{9} = \\text{17}$\n\nStep 5: Review and Identify Potential Mistakes\n*   **Reading Error (Graph):** A common mistake could be misreading the graph for a different quarter (e.g., using Q3's 6 elements instead of Q4's 8). This would lead to a total of $\\text{6} + \\text{9} = \\text{15}$.\n*   **Calculation Error (Table):** Students might make an arithmetic error when summing the component options, for example, incorrectly adding $\\text{4} + \\text{3} + \\text{2}$ as $\\text{8}$ (instead of $\\text{9}$). This would result in $\\text{8} + \\text{8} = \\text{16}$.\n*   **Conceptual Misunderstanding (Table):** Another trap could be incorrectly multiplying the component options ($\\text{4} \\times \\text{3} \\times \\text{2} = \\text{24}$) instead of adding them, assuming combinations rather than total distinct options. This would lead to $\\text{8} + \\text{24} = \\text{32}$. This is a good outlier option.\n*   **Incomplete Analysis:** A student might only consider one data source, leading to answers like 8 (only graph) or 9 (only table).\n\nThe final answer is 17.",
+      "question": "Based on the 'Global Logistics Hub Performance Overview - Q3 2023' table, calculate the absolute difference in projected total daily energy consumption (in kilowatt-hours, kWh) between Hub Alpha and Hub Beta. This analysis should assume that both hubs are operating continuously at their respective maximum daily throughput capacities.",
+      "title": "Logistics Hub Performance Metrics and Cost Factor Analysis",
+      "solution": "**Solution for Calculating the Energy Cost Difference Between Hub Gamma and Hub Beta**\n\nThe problem asks for the difference in total energy cost to process 50,000 units between Hub Gamma and Hub Beta, given an electricity cost of $0.15 per kWh. We must carefully extract the relevant data and perform multi-step calculations.\n\n**Step 1: Understand the Goal and Extract Relevant Data**\nThe objective is to find the monetary difference in energy costs for processing 50,000 units between Hub Gamma and Hub Beta.\nFrom the \"Global Logistics Hub Performance Overview - Q3 2023\" table, we extract:\n*   **Hub Beta:** Energy Consumption per 100 Units = `4.5 kWh`\n*   **Hub Gamma:** Energy Consumption per 100 Units = `6.0 kWh`\n*   **Total Units to Process:** `50,000 units`\n*   **Electricity Cost:** `$0.15 per kWh`\n\nWe are instructed to disregard \"Maximum Daily Throughput\" and \"On-time Delivery Rate,\" which are extraneous for this specific calculation.\n\n**Step 2: Calculate Energy Consumption (kWh) for Each Hub for 50,000 Units**\nFirst, we need to find the energy consumption per unit for each hub, then multiply by the total units.\n\n*   **For Hub Beta:**\n    *   Energy per unit for Beta = `4.5 \\text{ kWh} / 100 \\text{ units} = 0.045 \\text{ kWh/unit}`\n    *   Total kWh for 50,000 units at Beta = `0.045 \\text{ kWh/unit} \\times 50,000 \\text{ units} = 2250 \\text{ kWh}`\n\n*   **For Hub Gamma:**\n    *   Energy per unit for Gamma = `6.0 \\text{ kWh} / 100 \\text{ units} = 0.060 \\text{ kWh/unit}`\n    *   Total kWh for 50,000 units at Gamma = `0.060 \\text{ kWh/unit} \\times 50,000 \\text{ units} = 3000 \\text{ kWh}`\n\n**Step 3: Calculate Total Energy Cost for Each Hub for 50,000 Units**\nNow, we multiply the total kWh calculated in Step 2 by the electricity cost per kWh.\n\n*   **Cost for Hub Beta:**\n    *   Total Energy Cost for Beta = `2250 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$337.50`\n\n*   **Cost for Hub Gamma:**\n    *   Total Energy Cost for Gamma = `3000 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$450.00`\n\n**Step 4: Determine the Cost Difference and Final Answer**\nFinally, we find how much more it would cost to process the units at Hub Gamma compared to Hub Beta.\n\n*   **Cost Difference** = `Cost for Gamma - Cost for Beta`\n*   **Cost Difference** = `\\$450.00 - \\$337.50 = \\$112.50`\n\nTherefore, it would cost $112.50 more to process 50,000 units at Hub Gamma compared to Hub Beta.\n\n---\n\n**Common Mistakes and Traps:**\n\n1.  **Stopping at the kWh difference:** A common error is to calculate the difference in total energy (kWh) and mistakenly present that as the final monetary cost.\n    *   `3000 \\text{ kWh (Gamma)} - 2250 \\text{ kWh (Beta)} = 750 \\text{ kWh}`. If an option is $750, students might select it, forgetting to multiply by the electricity cost. This is a classic \"stopping one step early\" trap.\n\n2.  **Incorrectly handling \"per 100 units\":** Students might forget to divide the energy consumption value by 100 when converting to kWh per unit, or multiply by 100 incorrectly.\n    *   If a student calculates `4.5 \\text{ kWh} \\times 50,000 \\text{ units} = 225,000 \\text{ kWh}` for Beta (instead of 2250 kWh) and `6.0 \\text{ kWh} \\times 50,000 \\text{ units} = 300,000 \\text{ kWh}` for Gamma.\n    *   Then, `\\text{Cost for Beta} = 225,000 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$33,750`.\n    *   And, `\\text{Cost for Gamma} = 300,000 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$45,000`.\n    *   The difference would then be `\\$45,000 - \\$33,750 = \\$11,250`. This leads to a significantly larger, but numerically consistent, incorrect answer.\n\n3.  **Using incorrect data (e.g., Average Operational Cost per Unit):** Some students might misread the column headers and use the \"Average Operational Cost per Unit\" instead of the energy-related data for their calculations.\n    *   `\\text{Cost for Beta (incorrect)} = \\$0.68/\\text{unit} \\times 50,000 \\text{ units} = \\$34,000`.\n    *   `\\text{Cost for Gamma (incorrect)} = \\$0.82/\\text{unit} \\times 50,000 \\text{ units} = \\$41,000`.\n    *   The difference would then be `\\$41,000 - \\$34,000 = \\$7,000`. This tests careful data extraction.\n\n4.  **Arithmetic Errors:** Simple calculation mistakes in any of the steps, such as miscalculating `0.045 \\times 50,000` or `2250 \\times 0.15`. This could lead to various incorrect numerical results close to the correct answer.",
       "options": {
-        "A": "2 more",
-        "B": "2 fewer",
-        "C": "10 more",
-        "D": "3 more",
-        "E": "34 more"
+        "A": "Hub Alpha's total daily energy cost is $57.60.",
+        "B": "Hub Gamma consumes 60 kWh more energy daily than Hub Alpha at their specified operational levels.",
+        "C": "If Hub Gamma were to operate at its maximum daily throughput, its total daily energy cost would be exactly $72.00.",
+        "D": "The combined daily energy consumption of Hub Alpha and Hub Gamma, at their specified operational levels, is 1000 kWh.",
+        "E": "Hub Alpha incurs a higher average operational cost per unit than Hub Gamma."
       },
-      "answer": "A",
-      "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "prompt": "<Data Extraction from Graphs> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
       "question-type": "Problem Solving Meta"
     },
     {
-      "question": "Based on the provided graphical and tabular data, determine the extent to which the number of distinct promotional elements available for the 'QuantumFlow' product line in Q4 exceeded the combined total of available options for 'Creative Theme' and 'Call-to-Action (CTA)' within the Q4 marketing campaign components.",
-      "title": "QuantumFlow Product Line: Promotional Elements & Q4 Campaign Data Analysis",
-      "solution": "**Step 1: Analyze given information and identify what needs to be found.**\n\nThe question asks for the difference between two values for Quarter 4 (Q4):\n1.  The total number of options for the three key marketing campaign components. This information must be extracted from the provided data table.\n2.  The number of distinct promotional elements available for QuantumFlow. This information must be extracted from the provided line graph.\nOnce both values are identified, we will calculate their difference.\n\n**Step 2: Set up mathematical relationship or logical framework.**\n\n*   From the line graph, we need to locate Q4 on the x-axis and read the corresponding value on the y-axis for \"Number of Distinct Promotional Elements\".\n*   From the data table, we need to sum the \"Number of Available Options\" for each of the three listed \"Campaign Component\" categories: \"Primary Marketing Channel\", \"Creative Theme\", and \"Call-to-Action (CTA)\".\n*   The final difference will be calculated as:\n    Total Campaign Component Options in Q4 - Distinct Promotional Elements in Q4\n\n**Step 3: Perform calculations with proper units / Apply reasoning.**\n\n*   **Extracting data from the graph:**\n    Looking at the \"InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)\" line graph, for Q4 (which corresponds to x=4), the data point is at y=8.\n    So, Distinct Promotional Elements in Q4 = 8.\n\n*   **Extracting and summing data from the table:**\n    Looking at the \"InnovateTech: Q4 Marketing Campaign Component Options\" table:\n    Primary Marketing Channel Options = 4\n    Creative Theme Options = 3\n    Call-to-Action (CTA) Options = 2\n    Total Campaign Component Options in Q4 = $4 + 3 + 2 = 9$.\n\n*   **Calculating the difference:**\n    Difference = Total Campaign Component Options in Q4 - Distinct Promotional Elements in Q4\n    Difference = $9 - 8 = 1$.\n\n**Step 4: Check solution using logical reasoning.**\n\nWe have performed a two-step calculation as required: first, extracting/summing data from both sources, and second, finding the difference. The values used (8 and 9) were correctly identified from their respective sources for Q4. The subtraction is straightforward.\n\nCommon student mistakes might include:\n*   **Reading the wrong quarter from the graph:** A student might incorrectly read Q3 (6 elements) instead of Q4. This would lead to a difference of $9 - 6 = 3$.\n*   **Arithmetic error in summing table values:** A student might miscalculate the sum of the table options, e.g., $4+3+2 = 10$ instead of 9. This would lead to a difference of $10 - 8 = 2$.\n*   **Only providing one component:** A student might just give the number of promotional elements (8) or total campaign options (9) without calculating the difference.\n*   **Reversing the subtraction:** A student might calculate $8 - 9 = -1$.\n*   **Adding instead of subtracting:** A student might mistakenly add the two values: $8 + 9 = 17$. This would be a clear conceptual misunderstanding of \"difference.\"\n\nOur calculation correctly follows the established framework and avoids these pitfalls.\n\n**Step 5: Confirm solution addresses original question.**\n\nThe solution correctly calculates the difference between the total number of options for the three key marketing campaign components combined (9) and the number of distinct promotional elements available for QuantumFlow (8) in Q4, yielding a result of 1.",
+      "question": "A global logistics firm is evaluating the comparative efficiency of its Alpha and Beta distribution hubs, specifically concerning operational expenditures. Management requires an assessment of which hub would incur a lower total operational and energy cost if both hubs were to simultaneously process exactly 80% of their respective Maximum Daily Throughput capacities. Information regarding other performance indicators, such as On-time Delivery Rate and Average Package Dimensions, should be disregarded for this particular cost analysis. Given an average energy cost of $0.15 per kilowatt-hour (kWh), what is the absolute difference in this combined operational and energy cost between Hub Alpha and Hub Beta when operating under these specified conditions?",
+      "title": "Logistics Hub Performance: Operational Efficiency Analysis",
+      "solution": "Step 1: Understand the Objective and Identify Relevant Data\nThe question asks for the approximate difference in the average energy cost per unit between Hub Alpha and Hub Beta. To calculate this, we need the \"Energy Consumption per 100 Units (kWh)\" for both hubs from the table and the given energy cost per kWh.\n\nRelevant data:\n*   Hub Alpha Energy Consumption per 100 Units: 5.0 kWh\n*   Hub Beta Energy Consumption per 100 Units: 4.5 kWh\n*   Energy cost: \\$0.15 per kWh\n\nIrrelevant data (extraneous information for this specific calculation): Maximum Daily Throughput, Average Operational Cost per Unit, On-time Delivery Rate (%), Average Package Dimensions (Volume m³), and Overtime Labor Cost Factor.\n\nStep 2: Calculate Energy Consumption per Unit for Each Hub\nThe table provides energy consumption per 100 units. To find the consumption per single unit, we divide by 100.\n\n*   For Hub Alpha:\n    Energy Consumption per Unit$_{\\text{Alpha}} = \\frac{5.0 \\text{ kWh}}{100 \\text{ units}} = 0.05 \\text{ kWh/unit}$\n*   For Hub Beta:\n    Energy Consumption per Unit$_{\\text{Beta}} = \\frac{4.5 \\text{ kWh}}{100 \\text{ units}} = 0.045 \\text{ kWh/unit}$\n\nStep 3: Calculate the Average Energy Cost per Unit for Each Hub\nNow, multiply the energy consumption per unit by the given energy cost per kWh (\\$0.15).\n\n*   For Hub Alpha:\n    Average Energy Cost per Unit$_{\\text{Alpha}} = 0.05 \\text{ kWh/unit} \\times \\$0.15/\\text{kWh} = \\$0.0075 \\text{ per unit}$\n*   For Hub Beta:\n    Average Energy Cost per Unit$_{\\text{Beta}} = 0.045 \\text{ kWh/unit} \\times \\$0.15/\\text{kWh} = \\$0.00675 \\text{ per unit}$\n\nStep 4: Calculate the Difference in Average Energy Cost per Unit\nSubtract the average energy cost per unit of Hub Beta from that of Hub Alpha to find the difference.\n\nDifference = Average Energy Cost per Unit$_{\\text{Alpha}}$ - Average Energy Cost per Unit$_{\\text{Beta}}$\nDifference = $\\$0.0075 - \\$0.00675 = \\$0.00075$\n\nThe approximate difference in the average energy cost per unit between Hub Alpha and Hub Beta is \\$0.00075.\n\n**Potential Student Mistakes & Trap Analysis:**\n*   **Common Error 1: Stopping one step early (not converting to 'per unit')**: A common mistake is to calculate the energy cost for 100 units and then find the difference, without dividing by 100 at the end or converting to 'per unit' at the beginning.\n    *   Cost for 100 units (Alpha): $5.0 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$0.75$\n    *   Cost for 100 units (Beta): $4.5 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$0.675$\n    *   Difference (incorrect): $\\$0.75 - \\$0.675 = \\$0.075$. This is a very plausible distractor.\n*   **Common Error 2: Calculation or Sign Error**: Simple arithmetic mistakes, such as adding instead of subtracting, or misplacing a decimal. For example, if a student calculates 0.0075 - 0.00675 incorrectly as 0.007.\n*   **Common Error 3: Comparing Raw kWh Values**: Some students might mistakenly just compare the raw energy consumption values from the table (5.0 and 4.5) without converting to cost or per unit, leading to a difference of 0.5.\n*   **Common Error 4: Incorrect Division by 100**: Instead of dividing by 100, a student might multiply by 100 or make a mistake in decimal placement, leading to results like $0.075$ or $0.75$ as a final difference.",
       "options": {
-        "A": "1",
-        "B": "4",
-        "C": "5",
-        "D": "6",
-        "E": "16"
+        "A": "$121,200",
+        "B": "$216,000",
+        "C": "$363,600",
+        "D": "$525,600",
+        "E": "$1,101,600"
       },
-      "answer": "B",
-      "prompt": "<Logical Inference from Graphical Data> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+      "answer": "C",
+      "prompt": "<Comparison of Data Points> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
       "question-type": "Problem Solving Meta"
     }
   ],
-  "prompt": "<Permutations and Combinations> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Inequalities> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
   "question-type": "Problem Solving Meta"
 }

@@ -2,113 +2,143 @@
   "metadata": {
     "metadata": [
       {
-        "graph": {
+        "Graph": {
           "type": "table",
-          "description": "A table titled 'Growth of Employee Retirement Savings Under Different Investment Plans (Initial Investment: $10,000 at start of 2018)' displays the accumulated value of an initial $10,000 investment over six years (2018-2023) under two different hypothetical retirement savings plans: Simple Interest and Compound Interest. Both plans assume an annual interest rate of 5%. Additionally, the table includes two columns of unrelated HR metrics: 'Average Employee Tenure (Years)' and 'New Enrollments (Total)' in plans for each year.",
+          "description": "A table presenting performance metrics for four distinct Neural Network Architectures (A, B, C, D) across three different deployment scenarios (Real-time Edge, Cloud Batch, Mobile On-Device). Each architecture's performance is detailed with four key metrics for each scenario.",
           "structure": {
-            "title": "Growth of Employee Retirement Savings Under Different Investment Plans (Initial Investment: $10,000 at start of 2018)",
-            "columns": [
-              "Year",
-              "Simple Interest Plan (Value $)",
-              "Compound Interest Plan (Value $)",
-              "Average Employee Tenure (Years)",
-              "New Enrollments (Total)"
+            "title": "Performance Metrics of Neural Network Architectures Across Deployment Scenarios",
+            "headers": [
+              "Architecture",
+              "Deployment Scenario",
+              "Accuracy (%)",
+              "Training Time (hours)",
+              "Inference Speed (predictions/second)",
+              "Memory Footprint (GB)"
             ],
             "data": [
               {
-                "Year": "2018 (End)",
-                "Simple Interest Plan (Value $)": 10500,
-                "Compound Interest Plan (Value $)": 10500,
-                "Average Employee Tenure (Years)": 4.2,
-                "New Enrollments (Total)": 120
+                "Architecture": "A",
+                "Deployment Scenario": "Real-time Edge",
+                "Accuracy (%)": 88.5,
+                "Training Time (hours)": 12.5,
+                "Inference Speed (predictions/second)": 1500,
+                "Memory Footprint (GB)": 0.8
               },
               {
-                "Year": "2019 (End)",
-                "Simple Interest Plan (Value $)": 11000,
-                "Compound Interest Plan (Value $)": 11025,
-                "Average Employee Tenure (Years)": 4.5,
-                "New Enrollments (Total)": 135
+                "Architecture": "A",
+                "Deployment Scenario": "Cloud Batch",
+                "Accuracy (%)": 92.1,
+                "Training Time (hours)": 45.0,
+                "Inference Speed (predictions/second)": 5000,
+                "Memory Footprint (GB)": 3.2
               },
               {
-                "Year": "2020 (End)",
-                "Simple Interest Plan (Value $)": 11500,
-                "Compound Interest Plan (Value $)": 11576,
-                "Average Employee Tenure (Years)": 4.8,
-                "New Enrollments (Total)": 150
+                "Architecture": "A",
+                "Deployment Scenario": "Mobile On-Device",
+                "Accuracy (%)": 87.0,
+                "Training Time (hours)": 10.0,
+                "Inference Speed (predictions/second)": 800,
+                "Memory Footprint (GB)": 0.5
               },
               {
-                "Year": "2021 (End)",
-                "Simple Interest Plan (Value $)": 12000,
-                "Compound Interest Plan (Value $)": 12155,
-                "Average Employee Tenure (Years)": 5.0,
-                "New Enrollments (Total)": 162
+                "Architecture": "B",
+                "Deployment Scenario": "Real-time Edge",
+                "Accuracy (%)": 90.2,
+                "Training Time (hours)": 18.0,
+                "Inference Speed (predictions/second)": 1200,
+                "Memory Footprint (GB)": 1.1
               },
               {
-                "Year": "2022 (End)",
-                "Simple Interest Plan (Value $)": 12500,
-                "Compound Interest Plan (Value $)": 12763,
-                "Average Employee Tenure (Years)": 5.3,
-                "New Enrollments (Total)": 175
+                "Architecture": "B",
+                "Deployment Scenario": "Cloud Batch",
+                "Accuracy (%)": 93.5,
+                "Training Time (hours)": 55.0,
+                "Inference Speed (predictions/second)": 4500,
+                "Memory Footprint (GB)": 4.0
               },
               {
-                "Year": "2023 (End)",
-                "Simple Interest Plan (Value $)": 13000,
-                "Compound Interest Plan (Value $)": 13401,
-                "Average Employee Tenure (Years)": 5.5,
-                "New Enrollments (Total)": 188
+                "Architecture": "B",
+                "Deployment Scenario": "Mobile On-Device",
+                "Accuracy (%)": 89.1,
+                "Training Time (hours)": 14.0,
+                "Inference Speed (predictions/second)": 700,
+                "Memory Footprint (GB)": 0.7
+              },
+              {
+                "Architecture": "C",
+                "Deployment Scenario": "Real-time Edge",
+                "Accuracy (%)": 89.0,
+                "Training Time (hours)": 15.0,
+                "Inference Speed (predictions/second)": 1600,
+                "Memory Footprint (GB)": 0.9
+              },
+              {
+                "Architecture": "C",
+                "Deployment Scenario": "Cloud Batch",
+                "Accuracy (%)": 92.8,
+                "Training Time (hours)": 48.0,
+                "Inference Speed (predictions/second)": 5200,
+                "Memory Footprint (GB)": 3.5
+              },
+              {
+                "Architecture": "C",
+                "Deployment Scenario": "Mobile On-Device",
+                "Accuracy (%)": 88.2,
+                "Training Time (hours)": 12.0,
+                "Inference Speed (predictions/second)": 850,
+                "Memory Footprint (GB)": 0.6
+              },
+              {
+                "Architecture": "D",
+                "Deployment Scenario": "Real-time Edge",
+                "Accuracy (%)": 91.5,
+                "Training Time (hours)": 22.0,
+                "Inference Speed (predictions/second)": 1100,
+                "Memory Footprint (GB)": 1.5
+              },
+              {
+                "Architecture": "D",
+                "Deployment Scenario": "Cloud Batch",
+                "Accuracy (%)": 94.0,
+                "Training Time (hours)": 60.0,
+                "Inference Speed (predictions/second)": 4800,
+                "Memory Footprint (GB)": 4.5
+              },
+              {
+                "Architecture": "D",
+                "Deployment Scenario": "Mobile On-Device",
+                "Accuracy (%)": 90.5,
+                "Training Time (hours)": 17.0,
+                "Inference Speed (predictions/second)": 650,
+                "Memory Footprint (GB)": 0.9
               }
             ]
           }
         }
       }
-    ],
-    "question": [
-      "By the end of 2023, the total interest earned by the Compound Interest Plan was approximately [Dropdown 1] greater than that earned by the Simple Interest Plan. This increased disparity highlights how [Dropdown 2] becomes more impactful over longer investment horizons."
-    ],
-    "options": [
-      [
-        {
-          "A": "$350",
-          "B": "$400",
-          "C": "$450",
-          "D": "$500"
-        },
-        {
-          "A": "initial investment amounts",
-          "B": "annual contribution rates",
-          "C": "the power of compounding",
-          "D": "market volatility"
-        }
-      ]
-    ],
-    "answer": [
-      [
-        "B",
-        "C"
-      ]
     ]
   },
-  "question": "By the end of 2023, the total interest earned by the Compound Interest Plan was approximately _____ greater than that earned by the Simple Interest Plan. This increased disparity highlights how _____ becomes more impactful over longer investment horizons.",
-  "title": "HR Retirement Savings: Compound vs. Simple Interest Disparity & Long-Term Gain",
-  "solution": "**Step 1: Understand the question and identify relevant data.**\nThe question asks for two things:\n1.  The approximate difference in *total interest earned* between the Compound Interest Plan and the Simple Interest Plan by the end of 2023.\n2.  The financial principle that explains why this disparity increases over longer investment horizons.\n\nWe need to use the \"Year\" and the \"Simple Interest Plan (Value $)\" and \"Compound Interest Plan (Value $)\" columns from the table. The initial investment for both plans is stated as $10,000 at the start of 2018. The columns \"Average Employee Tenure (Years)\" and \"New Enrollments (Total)\" are distractors and are not relevant to this question.\n\n**Step 2: Set up mathematical relationship and logical framework.**\nTo find the total interest earned by each plan, we subtract the initial investment from the final accumulated value.\nTotal Interest Earned = Final Value - Initial Investment\n\nThen, to find the difference, we subtract the total interest earned by the Simple Interest Plan from that of the Compound Interest Plan.\n\nFor the second blank, we need to recognize the fundamental difference between simple and compound interest and how their growth patterns diverge over time.\n\n**Step 3: Perform calculations and apply reasoning.**\n\n*   **Calculate Total Interest for Simple Interest Plan by end of 2023:**\n    Final Value (Simple Interest Plan) = $13,000\n    Initial Investment = $10,000\n    Total Interest Earned (Simple Interest) = $13,000 - $10,000 = $3,000\n\n*   **Calculate Total Interest for Compound Interest Plan by end of 2023:**\n    Final Value (Compound Interest Plan) = $13,401\n    Initial Investment = $10,000\n    Total Interest Earned (Compound Interest) = $13,401 - $10,000 = $3,401\n\n*   **Calculate the difference in total interest earned:**\n    Difference = Total Interest Earned (Compound Interest) - Total Interest Earned (Simple Interest)\n    Difference = $3,401 - $3,000 = $401\n\n    Comparing $401 to the options for Dropdown 1:\n    A: $350\n    B: $400\n    C: $450\n    D: $500\n    The closest approximation is $400. So, **B** is the correct option for Dropdown 1.\n\n*   **Reasoning for Dropdown 2:**\n    The difference between simple and compound interest grows over time because compound interest earns interest not only on the initial principal but also on the accumulated interest from previous periods. This effect, where money grows exponentially due to interest being reinvested, is known as the \"power of compounding.\" As the investment horizon lengthens, this effect becomes increasingly significant, leading to a much larger disparity in values compared to simple interest.\n\n    Comparing this reasoning to the options for Dropdown 2:\n    A: initial investment amounts (Initial investment is the same for both plans, so this does not explain the growing disparity.)\n    B: annual contribution rates (The problem specifies an initial investment only, not ongoing contributions.)\n    C: the power of compounding (This accurately describes why compound interest outperforms simple interest over time, with the disparity growing.)\n    D: market volatility (The table assumes a fixed annual interest rate of 5%, so market volatility is not a factor in this specific scenario.)\n\n    Therefore, **C** is the correct option for Dropdown 2.\n\n**Step 4: Connect back to the question and options.**\nBy the end of 2023, the total interest earned by the Compound Interest Plan was approximately **$400** greater than that earned by the Simple Interest Plan. This increased disparity highlights how **the power of compounding** becomes more impactful over longer investment horizons.\n\n**Step 5: Verify answer makes business sense.**\nThe results align with the fundamental financial principle that compound interest leads to significantly higher returns than simple interest over longer periods, due to the reinvestment of earned interest. The difference of $401 after 6 years on a $10,000 investment at 5% annual interest is a reasonable outcome demonstrating this principle.\n\nThe final answer is $\\boxed{\\text{B, C}}$.",
+  "question": "To select the Neural Network Architecture that generally requires the least training effort across all deployment scenarios while maintaining an average accuracy above 90%, one should choose Architecture [Dropdown 1]. This architecture provides an average Inference Speed of approximately [Dropdown 2] predictions/second across all three scenarios, highlighting its efficiency in execution.",
+  "title": "Neural Network Architecture Analysis: Performance Ratios and Percentages",
+  "solution": "```json\n{\n  \"metadata\": {\n    \"Graph\": {\n      \"type\": \"table\",\n      \"description\": \"A table presenting performance metrics for four distinct Neural Network Architectures (A, B, C, D) across three different deployment scenarios (Real-time Edge, Cloud Batch, Mobile On-Device). Each architecture's performance is detailed with four key metrics for each scenario.\",\n      \"structure\": {\n        \"title\": \"Performance Metrics of Neural Network Architectures Across Deployment Scenarios\",\n        \"headers\": [\n          \"Architecture\",\n          \"Deployment Scenario\",\n          \"Accuracy (%)\",\n          \"Training Time (hours)\",\n          \"Inference Speed (predictions/second)\",\n          \"Memory Footprint (GB)\"\n        ],\n        \"data\": [\n          {\n            \"Architecture\": \"A\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 88.5,\n            \"Training Time (hours)\": 12.5,\n            \"Inference Speed (predictions/second)\": 1500,\n            \"Memory Footprint (GB)\": 0.8\n          },\n          {\n            \"Architecture\": \"A\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 92.1,\n            \"Training Time (hours)\": 45.0,\n            \"Inference Speed (predictions/second)\": 5000,\n            \"Memory Footprint (GB)\": 3.2\n          },\n          {\n            \"Architecture\": \"A\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 87.0,\n            \"Training Time (hours)\": 10.0,\n            \"Inference Speed (predictions/second)\": 800,\n            \"Memory Footprint (GB)\": 0.5\n          },\n          {\n            \"Architecture\": \"B\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 90.2,\n            \"Training Time (hours)\": 18.0,\n            \"Inference Speed (predictions/second)\": 1200,\n            \"Memory Footprint (GB)\": 1.1\n          },\n          {\n            \"Architecture\": \"B\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 93.5,\n            \"Training Time (hours)\": 55.0,\n            \"Inference Speed (predictions/second)\": 4500,\n            \"Memory Footprint (GB)\": 4.0\n          },\n          {\n            \"Architecture\": \"B\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 89.1,\n            \"Training Time (hours)\": 14.0,\n            \"Inference Speed (predictions/second)\": 700,\n            \"Memory Footprint (GB)\": 0.7\n          },\n          {\n            \"Architecture\": \"C\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 89.0,\n            \"Training Time (hours)\": 15.0,\n            \"Inference Speed (predictions/second)\": 1600,\n            \"Memory Footprint (GB)\": 0.9\n          },\n          {\n            \"Architecture\": \"C\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 92.8,\n            \"Training Time (hours)\": 48.0,\n            \"Inference Speed (predictions/second)\": 5200,\n            \"Memory Footprint (GB)\": 3.5\n          },\n          {\n            \"Architecture\": \"C\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 88.2,\n            \"Training Time (hours)\": 12.0,\n            \"Inference Speed (predictions/second)\": 850,\n            \"Memory Footprint (GB)\": 0.6\n          },\n          {\n            \"Architecture\": \"D\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 91.5,\n            \"Training Time (hours)\": 22.0,\n            \"Inference Speed (predictions/second)\": 1100,\n            \"Memory Footprint (GB)\": 1.5\n          },\n          {\n            \"Architecture\": \"D\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 94.0,\n            \"Training Time (hours)\": 60.0,\n            \"Inference Speed (predictions/second)\": 4800,\n            \"Memory Footprint (GB)\": 4.5\n          },\n          {\n            \"Architecture\": \"D\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 90.5,\n            \"Training Time (hours)\": 17.0,\n            \"Inference Speed (predictions/second)\": 650,\n            \"Memory Footprint (GB)\": 0.9\n          }\n        ]\n      }\n    }\n  },\n  \"question\": \"The architecture with the highest *average Inference Speed* across all deployment scenarios is [Dropdown 1]. When considering only the 'Mobile On-Device' scenario, Architecture [Dropdown 1]'s Memory Footprint is approximately [Dropdown 2] percent higher than the architecture with the *lowest* Memory Footprint in that same scenario.\",\n  \"options\": [\n    {\n      \"A\": \"A\",\n      \"B\": \"B\",\n      \"C\": \"C\",\n      \"D\": \"D\"\n    },\n    {\n      \"A\": \"10\",\n      \"B\": \"15\",\n      \"C\": \"20\",\n      \"D\": \"25\"\n    }\n  ],\n  \"answer\": [\n    \"C\",\n    \"C\"\n  ]\n}\n```\n**Step 1: Calculate the average Inference Speed for each architecture across all deployment scenarios.**\n\n*   **Architecture A:**\n    Average Inference Speed = $\\frac{(1500 + 5000 + 800)}{3} = \\frac{7300}{3} \\approx 2433.33$ predictions/second\n*   **Architecture B:**\n    Average Inference Speed = $\\frac{(1200 + 4500 + 700)}{3} = \\frac{6400}{3} \\approx 2133.33$ predictions/second\n*   **Architecture C:**\n    Average Inference Speed = $\\frac{(1600 + 5200 + 850)}{3} = \\frac{7650}{3} = 2550$ predictions/second\n*   **Architecture D:**\n    Average Inference Speed = $\\frac{(1100 + 4800 + 650)}{3} = \\frac{6550}{3} \\approx 2183.33$ predictions/second\n\n**Step 2: Identify the architecture with the highest average Inference Speed.**\n\nComparing the averages:\n*   Architecture A: 2433.33\n*   Architecture B: 2133.33\n*   Architecture C: 2550\n*   Architecture D: 2183.33\n\nArchitecture C has the highest average Inference Speed (2550 predictions/second).\nSo, for [Dropdown 1], the answer is **C**.\n\n**Step 3: Identify Architecture C's Memory Footprint in the 'Mobile On-Device' scenario.**\n\nFrom the table, for Architecture C, 'Mobile On-Device' scenario, the Memory Footprint is **0.6 GB**.\n\n**Step 4: Identify the architecture with the lowest Memory Footprint in the 'Mobile On-Device' scenario.**\n\nLooking at the 'Mobile On-Device' scenario for all architectures:\n*   Architecture A: 0.5 GB\n*   Architecture B: 0.7 GB\n*   Architecture C: 0.6 GB\n*   Architecture D: 0.9 GB\n\nThe lowest Memory Footprint is 0.5 GB, belonging to Architecture A.\n\n**Step 5: Calculate the percentage higher of Architecture C's Memory Footprint compared to the lowest in the 'Mobile On-Device' scenario.**\n\nPercentage higher = $\\frac{(\\text{Architecture C's Memory Footprint} - \\text{Lowest Memory Footprint})}{\\text{Lowest Memory Footprint}} \\times 100\\%$\nPercentage higher = $\\frac{(0.6 \\text{ GB} - 0.5 \\text{ GB})}{0.5 \\text{ GB}} \\times 100\\%$\nPercentage higher = $\\frac{0.1}{0.5} \\times 100\\%$\nPercentage higher = $0.2 \\times 100\\%$\nPercentage higher = $20\\%$\n\nSo, for [Dropdown 2], the answer is **20**.\n\nThe final answers are:\n*   Dropdown 1: C\n*   Dropdown 2: C (corresponding to 20%)",
   "options": [
     {
-      "A": "$350",
-      "B": "$400",
-      "C": "$450",
-      "D": "$500"
+      "A": "Architecture A",
+      "B": "Architecture B",
+      "C": "Architecture C",
+      "D": "Architecture D"
     },
     {
-      "A": "initial investment amounts",
-      "B": "annual contribution rates",
-      "C": "the power of compounding",
-      "D": "market volatility"
+      "A": "1.07 times",
+      "B": "0.94 times",
+      "C": "1.15 times",
+      "D": "0.88 times"
     }
   ],
   "answer": [
-    "B",
-    "C"
+    "C",
+    "A"
   ],
-  "prompt": "<Simple Interest and Compound Interest> - <Human Resources> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
   "question-type": "Graphic Interpretation"
 }

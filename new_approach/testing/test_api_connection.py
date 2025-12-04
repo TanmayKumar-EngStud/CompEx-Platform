@@ -78,5 +78,52 @@ class TestAPIConnection(unittest.TestCase):
                         print(f"❌ API_{index} failed with error: {error_str}")
                         self.fail(f"❌ API_{index} failed: {error_str}")
 
-if __name__ == '__main__':
-    unittest.main()
+def test_single_key(index: int):
+    """Test a specific API key with a custom prompt."""
+    print(f"\n🧪 Testing specific API Key: API_{index}")
+    
+    # Load env vars if not already loaded (though module level load might have happened, good to be safe)
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    dotenv_path = os.path.join(project_root, '.env')
+    load_dotenv(dotenv_path)
+    
+    api_key = os.getenv(f"API_{index}")
+    if not api_key:
+        print(f"❌ API_{index} not found in .env file.")
+        return
+
+    try:
+        # Initialize generator
+        generator = GeminiGenerator(api_key_index=index, question_type="Data Sufficiency")
+        
+        # Find a valid model (reuse logic or just default)
+        valid_model = "gemini-2.5-flash"
+        try:
+            models_list = list(generator.client.models.list())
+            for m in models_list:
+                if "flash" in m.name and "2.5" in m.name:
+                    valid_model = m.name
+                    break
+        except:
+            pass
+            
+        print(f"   Using model: {valid_model}")
+        print("   Sending prompt: 'Hello Gemini, how are you doing?'")
+        
+        response = generator.client.models.generate_content(
+            model=valid_model,
+            contents="Hello Gemini, how are you doing?"
+        )
+        
+        if response and response.text:
+            print(f"\n✅ Response received:\n{response.text.strip()}")
+        else:
+            print("\n⚠️  Empty response received.")
+            
+    except Exception as e:
+        print(f"\n❌ Error testing API_{index}: {e}")
+
+
+
+key_index = int(9)
+test_single_key(key_index)

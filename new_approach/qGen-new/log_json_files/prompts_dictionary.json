@@ -7,15 +7,15 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<Exponents and Powers> - <Human Resources> - <table> - <table> - <table> - <Financial Reasoning> - <Financial Reasoning> - <Financial Reasoning> - difficulty_level: <5>",
+                  "prompt": "<Mixtures and Alligations> - <Business and Finance> - <graph> - <graph> - <graph> - <Data Interpretation> - <Data Interpretation> - <Data Interpretation> - difficulty_level: <1>",
                   "child-prompt": [
                      {
-                        "prompt": "<Data Interpretation> - difficulty_level: <4>",
-                        "option": "single"
+                        "prompt": "<Synthesizing Information> - difficulty_level: <1>",
+                        "option": "dichotomous"
                      },
                      {
-                        "prompt": "<Data Interpretation> - difficulty_level: <5>",
-                        "option": "dichotomous"
+                        "prompt": "<Identifying Assumptions> - difficulty_level: <1>",
+                        "option": "multi"
                      }
                   ],
                   "metadata-type": {
@@ -23,30 +23,32 @@
                         "data_table",
                         "data_table"
                      ],
-                     "charts": [
-                        "line_chart"
+                     "passage": [
+                        "passage"
                      ]
                   }
                },
                {
-                  "prompt": "<Standard Deviation and Variance> - <Government Policies and Regulations> - <graph> - <graph> - <graph> - <Trend Analysis> - <Trend Analysis> - <Trend Analysis> - difficulty_level: <5>",
+                  "prompt": "<Profit, Loss and Discount> - <Business and Finance> - <memo> - <memo> - <memo> - <Trend Analysis> - <Trend Analysis> - <Trend Analysis> - difficulty_level: <4>",
                   "child-prompt": [
                      {
-                        "prompt": "<Verbal Reasoning> - difficulty_level: <5>",
-                        "option": "dichotomous"
+                        "prompt": "<Verbal Reasoning> - difficulty_level: <4>",
+                        "option": "multi"
                      },
                      {
-                        "prompt": "<Identifying Assumptions> - difficulty_level: <5>",
+                        "prompt": "<Logical Inference> - difficulty_level: <5>",
                         "option": "multi"
                      }
                   ],
                   "metadata-type": {
-                     "charts": [
-                        "line_chart",
-                        "pie_chart"
-                     ],
                      "tables": [
                         "sortable_table"
+                     ],
+                     "charts": [
+                        "scatter_chart"
+                     ],
+                     "passage": [
+                        "passage"
                      ]
                   }
                }
@@ -57,32 +59,32 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<Simple Interest and Compound Interest> - <Environment and Sustainability> - <Quantitative Reasoning> - difficulty_level: <2>",
+                  "prompt": "<Exponents and Powers> - <Logistics and Operations> - <Quantitative Reasoning> - difficulty_level: <1>",
                   "child-prompt": [
                      {
                         "prompt": "<Evaluating Trade-offs> - difficulty_level: <2>",
                         "option": "single"
                      },
                      {
-                        "prompt": "<Identifying Assumptions> - difficulty_level: <3>",
+                        "prompt": "<Synthesizing Information> - difficulty_level: <2>",
                         "option": "single"
                      }
                   ],
                   "metadata-type": {
                      "passage": [
-                        "passage"
+                        "scenario"
                      ]
                   }
                },
                {
-                  "prompt": "<Permutations and Combinations> - <Business and Finance> - <Verbal Reasoning> - difficulty_level: <3>",
+                  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Marketing and Sales> - <Quantitative Reasoning> - difficulty_level: <4>",
                   "child-prompt": [
                      {
-                        "prompt": "<Data Interpretation> - difficulty_level: <3>",
+                        "prompt": "<Identifying Assumptions> - difficulty_level: <5>",
                         "option": "single"
                      },
                      {
-                        "prompt": "<Identifying Assumptions> - difficulty_level: <4>",
+                        "prompt": "<Synthesizing Information> - difficulty_level: <5>",
                         "option": "single"
                      }
                   ],
@@ -99,7 +101,7 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Human Resources> - <Verbal Reasoning> - difficulty_level: <2>",
+                  "prompt": "<Mixtures and Alligations> - <Science and Technology> - <Quantitative Reasoning> - difficulty_level: <3>",
                   "option": "dichotomous",
                   "metadata-type": {
                      "tables": [
@@ -108,16 +110,16 @@
                   }
                },
                {
-                  "prompt": "<Exponents and Powers> - <Logistics and Operations> - <Quantitative Reasoning> - difficulty_level: <4>",
+                  "prompt": "<Permutations and Combinations> - <Environment and Sustainability> - <Quantitative Reasoning> - difficulty_level: <1>",
                   "option": "dichotomous",
                   "metadata-type": {
                      "tables": [
-                        "data_table"
+                        "sortable_table"
                      ]
                   }
                },
                {
-                  "prompt": "<Functions and Polynomials> - <Science and Technology> - <Data Interpretation> - difficulty_level: <5>",
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <1>",
                   "option": "dichotomous",
                   "metadata-type": {
                      "tables": [
@@ -132,29 +134,29 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Mean, Median, Mode, Range> - <Business and Finance> - <Data Interpretation> - difficulty_level: <5>",
-                  "option": "blank",
-                  "metadata-type": {
-                     "charts": [
-                        "pie_chart"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<Simple Interest and Compound Interest> - <Human Resources> - <Data Interpretation> - difficulty_level: <2>",
-                  "option": "blank",
-                  "metadata-type": {
-                     "charts": [
-                        "pie_chart"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Human Resources> - <Quantitative Reasoning> - difficulty_level: <2>",
+                  "prompt": "<Exponents and Powers> - <Marketing and Sales> - <Quantitative Reasoning> - difficulty_level: <5>",
                   "option": "blank",
                   "metadata-type": {
                      "charts": [
                         "scatter_chart"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <3>",
+                  "option": "blank",
+                  "metadata-type": {
+                     "charts": [
+                        "scatter_chart"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Data Interpretation> - difficulty_level: <3>",
+                  "option": "blank",
+                  "metadata-type": {
+                     "charts": [
+                        "line_chart"
                      ]
                   }
                }
@@ -168,43 +170,43 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Simple Interest and Compound Interest> - <Human Resources> - <Numeric Comparisons> - difficulty_level: <4>",
-                  "option": "single"
-               },
-               {
-                  "prompt": "<Simple Interest and Compound Interest> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <4>",
-                  "option": "single"
-               },
-               {
-                  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Marketing and Sales> - <Inequalities> - difficulty_level: <4>",
+                  "prompt": "<Profit, Loss and Discount> - <Science and Technology> - <Numeric Comparisons> - difficulty_level: <4>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Permutations and Combinations> - <Environment and Sustainability> - <Word Problems&> - difficulty_level: <2>",
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <2>",
                   "option": "single"
                },
                {
-                  "prompt": "<Permutations and Combinations> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "prompt": "<Standard Deviation and Variance> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <5>",
                   "option": "single"
                },
                {
-                  "prompt": "<Mixtures and Alligations> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "prompt": "<Ratio and Proportion> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level: <3>",
                   "option": "single"
                },
                {
-                  "prompt": "<Ratio and Proportion> - <Human Resources> - <Data Interpretation> - difficulty_level: <5>",
+                  "prompt": "<Mixtures and Alligations> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <2>",
                   "option": "single"
                },
                {
-                  "prompt": "<Functions and Polynomials> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <5>",
+                  "prompt": "<Profit, Loss and Discount> - <Science and Technology> - <Data Interpretation> - difficulty_level: <3>",
+                  "option": "single"
+               },
+               {
+                  "prompt": "<Exponents and Powers> - <Human Resources> - <Single Variable Equation> - difficulty_level: <3>",
+                  "option": "single"
+               },
+               {
+                  "prompt": "<Mean, Median, Mode, Range> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <5>",
                   "option": "multi"
                },
                {
-                  "prompt": "<work and rate problem> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "prompt": "<Profit, Loss and Discount> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <4>",
                   "option": "single"
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level: <3>",
+                  "prompt": "<Standard Deviation and Variance> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <5>",
                   "option": "single"
                }
             ]
@@ -214,7 +216,7 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Mixtures and Alligations> - <Marketing and Sales> - <Data Interpretation> - difficulty_level:<1>",
+                  "prompt": "<Mixtures and Alligations> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -223,7 +225,7 @@
                   }
                },
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level:<2>",
+                  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -232,7 +234,7 @@
                   }
                },
                {
-                  "prompt": "<Simple Interest and Compound Interest> - <Marketing and Sales> - <Inequalities> - difficulty_level:<1>",
+                  "prompt": "<work and rate problem> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -241,7 +243,7 @@
                   }
                },
                {
-                  "prompt": "<Functions and Polynomials> - <Government Policies and Regulations> - <Numeric Comparisons> - difficulty_level:<5>",
+                  "prompt": "<work and rate problem> - <Science and Technology> - <Numeric Comparisons> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -250,7 +252,7 @@
                   }
                },
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<4>",
+                  "prompt": "<Mixtures and Alligations> - <Science and Technology> - <Word Problems&> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -259,7 +261,7 @@
                   }
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Business and Finance> - <Data Interpretation> - difficulty_level:<4>",
+                  "prompt": "<Ratio and Proportion> - <Human Resources> - <Data Interpretation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -268,7 +270,7 @@
                   }
                },
                {
-                  "prompt": "<Mixtures and Alligations> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level:<4>",
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Word Problems&> - difficulty_level:<4>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -277,7 +279,7 @@
                   }
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Science and Technology> - <Numeric Comparisons> - difficulty_level:<1>",
+                  "prompt": "<Algebraic Expressions and Simplification> - <Science and Technology> - <Single Variable Equation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -286,7 +288,7 @@
                   }
                },
                {
-                  "prompt": "<Mixtures and Alligations> - <Science and Technology> - <Data Interpretation> - difficulty_level:<4>",
+                  "prompt": "<Simple Interest and Compound Interest> - <Human Resources> - <Single Variable Equation> - difficulty_level:<2>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -295,7 +297,7 @@
                   }
                },
                {
-                  "prompt": "<work and rate problem> - <Science and Technology> - <Single Variable Equation> - difficulty_level:<4>",
+                  "prompt": "<Mixtures and Alligations> - <Logistics and Operations> - <Inequalities> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -313,51 +315,11 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<RC-S> - <Finance> - <Evidence-Based Reasoning> - vocabulary_level: <3> - difficulty_level: <5>",
+                  "prompt": "<RC-S> - <Fiction> - <Logical Structure Analysis> - vocabulary_level: <2> - difficulty_level: <4>",
                   "child-prompt": [
                      {
-                        "prompt": "<Weaken Question> - difficulty_level: <4>",
+                        "prompt": "<Inference Question> - difficulty_level: <4>",
                         "option": "single"
-                     },
-                     {
-                        "prompt": "<Author's Purpose> - difficulty_level: <4>",
-                        "option": "multi"
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<RC-M> - <philosophy> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <2> - difficulty_level: <4>",
-                  "child-prompt": [
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <5>",
-                        "option": "multi"
-                     },
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <5>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <4>",
-                        "option": "single"
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<RC-S> - <Geography> - <Summarization and Paraphrasing> - vocabulary_level: <3> - difficulty_level: <4>",
-                  "child-prompt": [
-                     {
-                        "prompt": "<Conclusion Question> - difficulty_level: <5>",
-                        "option": "multi"
                      },
                      {
                         "prompt": "<Author's Purpose> - difficulty_level: <4>",
@@ -371,14 +333,18 @@
                   }
                },
                {
-                  "prompt": "<RC-S> - <Sports> - <Passage Organization and Cohesion> - vocabulary_level: <3> - difficulty_level: <5>",
+                  "prompt": "<RC-M> - <History> - <Vocabulary in Context> - vocabulary_level: <3> - difficulty_level: <4>",
                   "child-prompt": [
                      {
-                        "prompt": "<Supporting Details> - difficulty_level: <5>",
+                        "prompt": "<Evaluate Question> - difficulty_level: <4>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Tone and Attitude> - difficulty_level: <3>",
                         "option": "multi"
                      },
                      {
-                        "prompt": "<Main Idea Question> - difficulty_level: <5>",
+                        "prompt": "<Supporting Details> - difficulty_level: <4>",
                         "option": "single"
                      }
                   ],
@@ -389,14 +355,14 @@
                   }
                },
                {
-                  "prompt": "<RC-S> - <Finance> - <Vocabulary in Context> - vocabulary_level: <3> - difficulty_level: <3>",
+                  "prompt": "<RC-S> - <Finance> - <Main Idea Comprehension> - vocabulary_level: <2> - difficulty_level: <2>",
                   "child-prompt": [
                      {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <4>",
-                        "option": "single"
+                        "prompt": "<Inference Question> - difficulty_level: <1>",
+                        "option": "multi"
                      },
                      {
-                        "prompt": "<Strengthen Question> - difficulty_level: <4>",
+                        "prompt": "<Weaken Question> - difficulty_level: <1>",
                         "option": "single"
                      }
                   ],
@@ -407,18 +373,74 @@
                   }
                },
                {
-                  "prompt": "<RC-M> - <Geography> - <Summarization and Paraphrasing> - vocabulary_level: <1> - difficulty_level: <4>",
+                  "prompt": "<RC-L> - <Geography> - <Author's Purpose and Tone Recognition> - vocabulary_level: <3> - difficulty_level: <4>",
                   "child-prompt": [
+                     {
+                        "prompt": "<Main Idea Question> - difficulty_level: <4>",
+                        "option": "multi"
+                     },
+                     {
+                        "prompt": "<Conclusion Question> - difficulty_level: <3>",
+                        "option": "multi"
+                     },
                      {
                         "prompt": "<Inference Question> - difficulty_level: <3>",
                         "option": "single"
                      },
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <4>",
+                        "prompt": "<Assumption Question> - difficulty_level: <4>",
                         "option": "multi"
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<RC-L> - <Science and Technology> - <Evidence-Based Reasoning> - vocabulary_level: <2> - difficulty_level: <4>",
+                  "child-prompt": [
+                     {
+                        "prompt": "<Inference Question> - difficulty_level: <5>",
+                        "option": "multi"
+                     },
+                     {
+                        "prompt": "<Supporting Details> - difficulty_level: <4>",
+                        "option": "single"
                      },
                      {
                         "prompt": "<Evaluate Question> - difficulty_level: <5>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Inference Question> - difficulty_level: <5>",
+                        "option": "single"
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<RC-L> - <Literature> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <2> - difficulty_level: <2>",
+                  "child-prompt": [
+                     {
+                        "prompt": "<Main Idea Question> - difficulty_level: <1>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Assumption Question> - difficulty_level: <2>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Strengthen Question> - difficulty_level: <2>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Main Idea Question> - difficulty_level: <3>",
                         "option": "multi"
                      }
                   ],
@@ -429,40 +451,14 @@
                   }
                },
                {
-                  "prompt": "<RC-M> - <Fiction> - <Critical Reasoning (Argument Evaluation)> - vocabulary_level: <2> - difficulty_level: <5>",
+                  "prompt": "<RC-S> - <philosophy> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <1> - difficulty_level: <4>",
                   "child-prompt": [
+                     {
+                        "prompt": "<Weaken Question> - difficulty_level: <5>",
+                        "option": "single"
+                     },
                      {
                         "prompt": "<Supporting Details> - difficulty_level: <5>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Conclusion Question> - difficulty_level: <5>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Weaken Question> - difficulty_level: <4>",
-                        "option": "single"
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<RC-M> - <Fiction> - <Author's Purpose and Tone Recognition> - vocabulary_level: <1> - difficulty_level: <3>",
-                  "child-prompt": [
-                     {
-                        "prompt": "<Weaken Question> - difficulty_level: <2>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Inference Question> - difficulty_level: <2>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Author's Purpose> - difficulty_level: <2>",
                         "option": "single"
                      }
                   ],
@@ -484,32 +480,32 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Mean, Median, Mode, Range> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <4>",
-                  "option": "single"
-               },
-               {
-                  "prompt": "<Permutations and Combinations> - <Marketing and Sales> - <Inequalities> - difficulty_level: <2>",
+                  "prompt": "<Mixtures and Alligations> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <1>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Exponents and Powers> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <5>",
+                  "prompt": "<work and rate problem> - <Business and Finance> - <Single Variable Equation> - difficulty_level: <1>",
                   "option": "single"
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level: <2>",
-                  "option": "single"
-               },
-               {
-                  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <3>",
+                  "prompt": "<Mixtures and Alligations> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <2>",
                   "option": "multi"
                },
                {
-                  "prompt": "<work and rate problem> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <3>",
+                  "prompt": "<Standard Deviation and Variance> - <Human Resources> - <Inequalities> - difficulty_level: <3>",
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<Exponents and Powers> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level: <3>",
                   "option": "single"
                },
                {
-                  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <2>",
-                  "option": "multi"
+                  "prompt": "<Mixtures and Alligations> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level: <1>",
+                  "option": "single"
+               },
+               {
+                  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Human Resources> - <Word Problems&> - difficulty_level: <5>",
+                  "option": "single"
                }
             ]
          },
@@ -518,42 +514,44 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<Standard Deviation and Variance> - <Science and Technology> - <Numeric Comparisons> - difficulty_level: <2>",
+                  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Environment and Sustainability> - <Word Problems&> - difficulty_level: <2>",
                   "child-prompt": [
                      {
-                        "prompt": "<Correlation Recognition> - difficulty_level: <3>",
-                        "option": "multi"
+                        "prompt": "<Cross-Referencing with Textual Information> - difficulty_level: <2>",
+                        "option": "single"
                      },
                      {
-                        "prompt": "<Recognizing Outliers and Anomalies> - difficulty_level: <3>",
-                        "option": "single"
+                        "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <1>",
+                        "option": "multi"
                      }
                   ],
                   "metadata-type": {
                      "charts": [
-                        "line_chart",
-                        "scatter_chart"
+                        "bar_chart"
+                     ],
+                     "tables": [
+                        "comparison_table"
                      ]
                   }
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Science and Technology> - <Inequalities> - difficulty_level: <3>",
+                  "prompt": "<Standard Deviation and Variance> - <Science and Technology> - <Word Problems&> - difficulty_level: <1>",
                   "child-prompt": [
                      {
-                        "prompt": "<Rate of Change Analysis> - difficulty_level: <4>",
+                        "prompt": "<Reading and Interpreting Labels and Legends> - difficulty_level: <2>",
                         "option": "multi"
                      },
                      {
-                        "prompt": "<Logical Inference from Graphical Data> - difficulty_level: <3>",
-                        "option": "single"
+                        "prompt": "<Data Extraction from Graphs> - difficulty_level: <1>",
+                        "option": "multi"
                      }
                   ],
                   "metadata-type": {
+                     "tables": [
+                        "comparison_table"
+                     ],
                      "charts": [
                         "line_chart"
-                     ],
-                     "tables": [
-                        "pivot_table"
                      ]
                   }
                }
@@ -564,7 +562,7 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Standard Deviation and Variance> - <Business and Finance> - <Inequalities> - difficulty_level:<5>",
+                  "prompt": "<Algebraic Expressions and Simplification> - <Human Resources> - <Data Interpretation> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -573,7 +571,7 @@
                   }
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Logistics and Operations> - <Word Problems&> - difficulty_level:<2>",
+                  "prompt": "<Ratio and Proportion> - <Science and Technology> - <Single Variable Equation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -582,7 +580,7 @@
                   }
                },
                {
-                  "prompt": "<Exponents and Powers> - <Science and Technology> - <Numeric Comparisons> - difficulty_level:<4>",
+                  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - <Word Problems&> - difficulty_level:<2>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -591,7 +589,7 @@
                   }
                },
                {
-                  "prompt": "<Profit, Loss and Discount> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<2>",
+                  "prompt": "<Algebraic Expressions and Simplification> - <Marketing and Sales> - <Word Problems&> - difficulty_level:<2>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -600,7 +598,7 @@
                   }
                },
                {
-                  "prompt": "<Mean, Median, Mode, Range> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<2>",
+                  "prompt": "<Exponents and Powers> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -609,7 +607,7 @@
                   }
                },
                {
-                  "prompt": "<Mixtures and Alligations> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<4>",
+                  "prompt": "<Functions and Polynomials> - <Human Resources> - <Inequalities> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -618,7 +616,7 @@
                   }
                },
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Word Problems&> - difficulty_level:<3>",
+                  "prompt": "<Mean, Median, Mode, Range> - <Business and Finance> - <Numeric Comparisons> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -633,11 +631,11 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Functions and Polynomials> - <Government Policies and Regulations> - difficulty_level: <5>",
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Marketing and Sales> - difficulty_level: <4>",
                   "option": "numeric"
                },
                {
-                  "prompt": "<Permutations and Combinations> - <Science and Technology> - difficulty_level: <3>",
+                  "prompt": "<Profit, Loss and Discount> - <Science and Technology> - difficulty_level: <4>",
                   "option": "numeric"
                }
             ]
@@ -650,19 +648,19 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Economics> - <Contextual Vocabulary> - vocabulary_level: <1> - difficulty_level: <2>",
+                  "prompt": "<Economics> - <Tone and Connotation> - vocabulary_level: <3> - difficulty_level: <2>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Finance> - <Semantic Equivalence> - vocabulary_level: <2> - difficulty_level: <5>",
+                  "prompt": "<Fiction> - <Semantic Equivalence> - vocabulary_level: <2> - difficulty_level: <5>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Social Sciences> - <Tone and Connotation> - vocabulary_level: <1> - difficulty_level: <2>",
+                  "prompt": "<Social Sciences> - <Word Meaning Precision> - vocabulary_level: <1> - difficulty_level: <2>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Economics> - <Vocabulary in Context> - vocabulary_level: <2> - difficulty_level: <5>",
+                  "prompt": "<Economics> - <Structural Analysis> - vocabulary_level: <2> - difficulty_level: <4>",
                   "option": "multi"
                }
             ]
@@ -672,27 +670,27 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<TC-2> - <Finance> - <Semantic Relationships> - vocabulary_level: <1> - difficulty_level: <5>",
+                  "prompt": "<TC-3> - <Geography> - <Sentence Logic and Structure> - vocabulary_level: <3> - difficulty_level: <4>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-3> - <Art> - <Vocabulary in Context> - vocabulary_level: <3> - difficulty_level: <2>",
+                  "prompt": "<TC-3> - <Geography> - <Sentence Logic and Structure> - vocabulary_level: <1> - difficulty_level: <1>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-2> - <Finance> - <Critical Comprehension> - vocabulary_level: <1> - difficulty_level: <2>",
+                  "prompt": "<TC-3> - <Art> - <Vocabulary in Context> - vocabulary_level: <2> - difficulty_level: <5>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-2> - <History> - <Logical Consistency> - vocabulary_level: <2> - difficulty_level: <1>",
+                  "prompt": "<TC-3> - <Art> - <Word Connotation Recognition> - vocabulary_level: <2> - difficulty_level: <5>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-3> - <Current Affairs> - <Logical Consistency> - vocabulary_level: <1> - difficulty_level: <2>",
+                  "prompt": "<TC-1> - <Sports> - <Logical Consistency> - vocabulary_level: <2> - difficulty_level: <5>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-2> - <Business> - <Word Connotation Recognition> - vocabulary_level: <2> - difficulty_level: <5>",
+                  "prompt": "<TC-3> - <Economics> - <Word Connotation Recognition> - vocabulary_level: <1> - difficulty_level: <1>",
                   "option": "blank"
                }
             ]
@@ -702,67 +700,67 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<RC-L> - <Art> - <Summarization and Paraphrasing> - vocabulary_level: <3> - difficulty_level: <5>",
+                  "prompt": "<RC-L> - <Literature> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <1> - difficulty_level: <2>",
                   "child-prompt": [
                      {
-                        "prompt": "<Main Idea Question> - difficulty_level: <5>",
+                        "prompt": "<Evaluate Question> - difficulty_level: <1>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Tone and Attitude> - difficulty_level: <1>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Supporting Details> - difficulty_level: <3>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Strengthen Question> - difficulty_level: <2>",
+                        "option": "single"
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<RC-S> - <Fiction> - <Summarization and Paraphrasing> - vocabulary_level: <1> - difficulty_level: <1>",
+                  "child-prompt": [
+                     {
+                        "prompt": "<Strengthen Question> - difficulty_level: <1>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Conclusion Question> - difficulty_level: <1>",
+                        "option": "multi"
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<RC-L> - <Economics> - <Logical Structure Analysis> - vocabulary_level: <1> - difficulty_level: <5>",
+                  "child-prompt": [
+                     {
+                        "prompt": "<Main Idea Question> - difficulty_level: <4>",
                         "option": "single"
                      },
                      {
                         "prompt": "<Evaluate Question> - difficulty_level: <4>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Conclusion Question> - difficulty_level: <5>",
-                        "option": "single"
+                        "option": "multi"
                      },
                      {
                         "prompt": "<Main Idea Question> - difficulty_level: <4>",
                         "option": "single"
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<RC-L> - <History> - <Logical Structure Analysis> - vocabulary_level: <1> - difficulty_level: <3>",
-                  "child-prompt": [
+                     },
                      {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <2>",
+                        "prompt": "<Evaluate Question> - difficulty_level: <5>",
                         "option": "multi"
-                     },
-                     {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <4>",
-                        "option": "multi"
-                     },
-                     {
-                        "prompt": "<Main Idea Question> - difficulty_level: <3>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Evaluate Question> - difficulty_level: <2>",
-                        "option": "multi"
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<RC-S> - <Finance> - <Vocabulary in Context> - vocabulary_level: <2> - difficulty_level: <4>",
-                  "child-prompt": [
-                     {
-                        "prompt": "<Author's Purpose> - difficulty_level: <5>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Author's Purpose> - difficulty_level: <3>",
-                        "option": "single"
                      }
                   ],
                   "metadata-type": {
@@ -781,31 +779,31 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Permutations and Combinations> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <3>",
+                  "prompt": "<work and rate problem> - <Environment and Sustainability> - <Single Variable Equation> - difficulty_level: <3>",
                   "option": "single"
                },
                {
-                  "prompt": "<Simple Interest and Compound Interest> - <Science and Technology> - <Inequalities> - difficulty_level: <3>",
-                  "option": "single"
-               },
-               {
-                  "prompt": "<Standard Deviation and Variance> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <3>",
+                  "prompt": "<Algebraic Expressions and Simplification> - <Science and Technology> - <Single Variable Equation> - difficulty_level: <3>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Functions and Polynomials> - <Science and Technology> - <Single Variable Equation> - difficulty_level: <5>",
+                  "prompt": "<Exponents and Powers> - <Science and Technology> - <Data Interpretation> - difficulty_level: <5>",
                   "option": "single"
                },
                {
-                  "prompt": "<Simple Interest and Compound Interest> - <Government Policies and Regulations> - <Word Problems&> - difficulty_level: <2>",
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<Ratio and Proportion> - <Human Resources> - <Inequalities> - difficulty_level: <4>",
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Numeric Comparisons> - difficulty_level: <4>",
                   "option": "single"
                },
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <4>",
+                  "prompt": "<Ratio and Proportion> - <Science and Technology> - <Data Interpretation> - difficulty_level: <3>",
+                  "option": "single"
+               },
+               {
+                  "prompt": "<work and rate problem> - <Business and Finance> - <Single Variable Equation> - difficulty_level: <5>",
+                  "option": "single"
+               },
+               {
+                  "prompt": "<Mean, Median, Mode, Range> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <4>",
                   "option": "single"
                }
             ]
@@ -815,41 +813,41 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<Permutations and Combinations> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <2>",
+                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Inequalities> - difficulty_level: <4>",
                   "child-prompt": [
                      {
-                        "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <2>",
-                        "option": "single"
+                        "prompt": "<Data Extraction from Graphs> - difficulty_level: <3>",
+                        "option": "multi"
                      },
                      {
-                        "prompt": "<Logical Inference from Graphical Data> - difficulty_level: <2>",
-                        "option": "single"
-                     }
-                  ],
-                  "metadata-type": {
-                     "charts": [
-                        "line_chart"
-                     ],
-                     "tables": [
-                        "comparison_table"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<Profit, Loss and Discount> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <1>",
-                  "child-prompt": [
-                     {
-                        "prompt": "<Comparison of Data Points> - difficulty_level: <1>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Cross-Referencing with Textual Information> - difficulty_level: <1>",
+                        "prompt": "<Comparison of Data Points> - difficulty_level: <3>",
                         "option": "single"
                      }
                   ],
                   "metadata-type": {
                      "tables": [
                         "pivot_table",
+                        "pivot_table"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<Standard Deviation and Variance> - <Government Policies and Regulations> - <Single Variable Equation> - difficulty_level: <1>",
+                  "child-prompt": [
+                     {
+                        "prompt": "<Interpolation and Extrapolation> - difficulty_level: <1>",
+                        "option": "multi"
+                     },
+                     {
+                        "prompt": "<Making Predictions Based on Trends> - difficulty_level: <1>",
+                        "option": "multi"
+                     }
+                  ],
+                  "metadata-type": {
+                     "charts": [
+                        "pie_chart"
+                     ],
+                     "tables": [
                         "comparison_table"
                      ]
                   }
@@ -861,7 +859,7 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Mixtures and Alligations> - <Government Policies and Regulations> - <Word Problems&> - difficulty_level:<3>",
+                  "prompt": "<Mixtures and Alligations> - <Business and Finance> - <Data Interpretation> - difficulty_level:<3>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -870,7 +868,7 @@
                   }
                },
                {
-                  "prompt": "<Ratio and Proportion> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level:<3>",
+                  "prompt": "<Mixtures and Alligations> - <Marketing and Sales> - <Inequalities> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -879,7 +877,7 @@
                   }
                },
                {
-                  "prompt": "<Permutations and Combinations> - <Science and Technology> - <Word Problems&> - difficulty_level:<1>",
+                  "prompt": "<work and rate problem> - <Business and Finance> - <Numeric Comparisons> - difficulty_level:<4>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -888,7 +886,7 @@
                   }
                },
                {
-                  "prompt": "<Standard Deviation and Variance> - <Government Policies and Regulations> - <Single Variable Equation> - difficulty_level:<4>",
+                  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Environment and Sustainability> - <Single Variable Equation> - difficulty_level:<2>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -897,7 +895,7 @@
                   }
                },
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Environment and Sustainability> - <Inequalities> - difficulty_level:<3>",
+                  "prompt": "<Standard Deviation and Variance> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -906,7 +904,7 @@
                   }
                },
                {
-                  "prompt": "<Standard Deviation and Variance> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level:<2>",
+                  "prompt": "<Mean, Median, Mode, Range> - <Business and Finance> - <Word Problems&> - difficulty_level:<5>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -915,7 +913,7 @@
                   }
                },
                {
-                  "prompt": "<Ratio and Proportion> - <Human Resources> - <Inequalities> - difficulty_level:<2>",
+                  "prompt": "<work and rate problem> - <Government Policies and Regulations> - <Word Problems&> - difficulty_level:<1>",
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -930,11 +928,11 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Simple Interest and Compound Interest> - <Marketing and Sales> - difficulty_level: <4>",
+                  "prompt": "<Algebraic Expressions and Simplification> - <Government Policies and Regulations> - difficulty_level: <1>",
                   "option": "numeric"
                },
                {
-                  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Business and Finance> - difficulty_level: <3>",
+                  "prompt": "<Ratio and Proportion> - <Business and Finance> - difficulty_level: <5>",
                   "option": "numeric"
                }
             ]
@@ -947,19 +945,19 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<Geography> - <Synonym Recognition> - vocabulary_level: <2> - difficulty_level: <4>",
+                  "prompt": "<History> - <Word Relationships> - vocabulary_level: <3> - difficulty_level: <2>",
                   "option": "multi"
                },
                {
-                  "prompt": "<philosophy> - <Word Meaning Precision> - vocabulary_level: <2> - difficulty_level: <1>",
+                  "prompt": "<Fiction> - <Word Relationships> - vocabulary_level: <2> - difficulty_level: <1>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Literature> - <Vocabulary in Context> - vocabulary_level: <3> - difficulty_level: <5>",
+                  "prompt": "<Social Sciences> - <Word Meaning Precision> - vocabulary_level: <1> - difficulty_level: <2>",
                   "option": "multi"
                },
                {
-                  "prompt": "<Art> - <Contextual Vocabulary> - vocabulary_level: <3> - difficulty_level: <5>",
+                  "prompt": "<Science and Technology> - <Logical Consistency> - vocabulary_level: <2> - difficulty_level: <4>",
                   "option": "multi"
                }
             ]
@@ -969,27 +967,27 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<TC-2> - <Economics> - <Contextual Analysis> - vocabulary_level: <3> - difficulty_level: <5>",
+                  "prompt": "<TC-1> - <Economics> - <Contrast and Support Clues> - vocabulary_level: <2> - difficulty_level: <2>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-2> - <Art> - <Word Connotation Recognition> - vocabulary_level: <2> - difficulty_level: <3>",
+                  "prompt": "<TC-1> - <Literature> - <Contextual Analysis> - vocabulary_level: <2> - difficulty_level: <4>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-3> - <Sports> - <Contextual Analysis> - vocabulary_level: <3> - difficulty_level: <3>",
+                  "prompt": "<TC-3> - <Social Sciences> - <Logical Consistency> - vocabulary_level: <1> - difficulty_level: <2>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-3> - <History> - <Logical Consistency> - vocabulary_level: <2> - difficulty_level: <3>",
+                  "prompt": "<TC-2> - <History> - <Word Connotation Recognition> - vocabulary_level: <3> - difficulty_level: <5>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-3> - <History> - <Tone Recognition> - vocabulary_level: <1> - difficulty_level: <3>",
+                  "prompt": "<TC-3> - <Business> - <Tone Recognition> - vocabulary_level: <3> - difficulty_level: <2>",
                   "option": "blank"
                },
                {
-                  "prompt": "<TC-3> - <History> - <Vocabulary in Context> - vocabulary_level: <2> - difficulty_level: <2>",
+                  "prompt": "<TC-2> - <History> - <Vocabulary in Context> - vocabulary_level: <2> - difficulty_level: <5>",
                   "option": "blank"
                }
             ]
@@ -999,23 +997,19 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<RC-L> - <Sports> - <Logical Structure Analysis> - vocabulary_level: <2> - difficulty_level: <1>",
+                  "prompt": "<RC-M> - <History> - <Summarization and Paraphrasing> - vocabulary_level: <2> - difficulty_level: <5>",
                   "child-prompt": [
                      {
-                        "prompt": "<Author's Purpose> - difficulty_level: <1>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Supporting Details> - difficulty_level: <2>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <1>",
+                        "prompt": "<Inference Question> - difficulty_level: <4>",
                         "option": "multi"
                      },
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <2>",
+                        "prompt": "<Evaluate Question> - difficulty_level: <4>",
                         "option": "single"
+                     },
+                     {
+                        "prompt": "<Strengthen Question> - difficulty_level: <5>",
+                        "option": "multi"
                      }
                   ],
                   "metadata-type": {
@@ -1025,19 +1019,23 @@
                   }
                },
                {
-                  "prompt": "<RC-M> - <Economics> - <Author's Purpose and Tone Recognition> - vocabulary_level: <3> - difficulty_level: <4>",
+                  "prompt": "<RC-L> - <History> - <Summarization and Paraphrasing> - vocabulary_level: <3> - difficulty_level: <5>",
                   "child-prompt": [
                      {
-                        "prompt": "<Conclusion Question> - difficulty_level: <4>",
-                        "option": "single"
-                     },
-                     {
-                        "prompt": "<Weaken Question> - difficulty_level: <3>",
+                        "prompt": "<Assumption Question> - difficulty_level: <5>",
                         "option": "multi"
                      },
                      {
-                        "prompt": "<Weaken Question> - difficulty_level: <4>",
+                        "prompt": "<Main Idea Question> - difficulty_level: <4>",
                         "option": "single"
+                     },
+                     {
+                        "prompt": "<Tone and Attitude> - difficulty_level: <4>",
+                        "option": "single"
+                     },
+                     {
+                        "prompt": "<Conclusion Question> - difficulty_level: <5>",
+                        "option": "multi"
                      }
                   ],
                   "metadata-type": {
@@ -1047,23 +1045,23 @@
                   }
                },
                {
-                  "prompt": "<RC-L> - <Literature> - <Logical Structure Analysis> - vocabulary_level: <1> - difficulty_level: <4>",
+                  "prompt": "<RC-L> - <Literature> - <Evidence-Based Reasoning> - vocabulary_level: <2> - difficulty_level: <4>",
                   "child-prompt": [
                      {
                         "prompt": "<Supporting Details> - difficulty_level: <4>",
                         "option": "single"
                      },
                      {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <4>",
+                        "prompt": "<Main Idea Question> - difficulty_level: <5>",
                         "option": "multi"
                      },
                      {
-                        "prompt": "<Weaken Question> - difficulty_level: <4>",
+                        "prompt": "<Assumption Question> - difficulty_level: <3>",
                         "option": "single"
                      },
                      {
-                        "prompt": "<Inference Question> - difficulty_level: <4>",
-                        "option": "multi"
+                        "prompt": "<Assumption Question> - difficulty_level: <5>",
+                        "option": "single"
                      }
                   ],
                   "metadata-type": {

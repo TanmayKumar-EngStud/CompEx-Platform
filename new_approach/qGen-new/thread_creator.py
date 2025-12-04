@@ -23,7 +23,7 @@ class SectionThread:
                 }
                 self.work_queue.put(prompt_details)
         self.work_report = queue.Queue()
-        self.api_keys = [i for i in range(6)]
+        self.api_keys = [i for i in range(10)]
 
         # Creating the threads:
         threads = []
@@ -56,13 +56,13 @@ class SectionThread:
                     gemini_generator = gemini_generator,
                     target_question_type = prompt_details['question-type']
                 )
-                question_data = question_manager.get_question_data()
+                question_data, stats = question_manager.get_question_data()
 
-                self.work_report.put(question_data, block = False)
+                self.work_report.put({'data': question_data, 'stats': stats}, block = False)
                 self.work_queue.task_done()
             except Exception as e:
                 print(f"Error in thread {thread_id} with key {api_key}: {e}")
                 import traceback
                 traceback.print_exc()
-                self.work_report.put({'error': str(e), 'prompt_details': prompt_details}, block=False)
+                self.work_report.put({'error': str(e), 'prompt_details': prompt_details, 'stats': {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}}, block=False)
                 self.work_queue.task_done()

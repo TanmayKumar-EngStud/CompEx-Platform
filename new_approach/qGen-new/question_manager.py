@@ -1,7 +1,7 @@
 import os
 import json
 import re
-from typing import Optional, List, Dict, Any
+from typing import Optional, List, Dict, Any, Tuple
 
 from io_utils import get_json, prettify, get_Component_Template, record
 from api_utils import get_gemini_generator
@@ -241,7 +241,7 @@ class ManageQuestionData:
         )
         self.rand_var = None
 
-    def get_question_data(self) -> dict:
+    def get_question_data(self) -> Tuple[dict, dict]:
         """Main entry point to generate data for this question."""
         
         # 1. Dynamic Difficulty Injection
@@ -269,10 +269,15 @@ class ManageQuestionData:
         component_calls = template_manager.templates
 
         # 4. Generate Content via Gemini
-        result_buffer = self._generate_components(component_calls)
+        result_buffer, stats = self._generate_components(component_calls)
 
         # 5. Handle Recursion (Child Questions)
-        self._handle_child_questions(result_buffer)
+        child_stats = self._handle_child_questions(result_buffer)
+        
+        # Accumulate child stats
+        stats['input_tokens'] += child_stats['input_tokens']
+        stats['output_tokens'] += child_stats['output_tokens']
+        stats['api_calls'] += child_stats['api_calls']
 
         # 6. Logging and Recording
         result_buffer['prompt'] = self.prompt_details['prompt']
@@ -280,7 +285,7 @@ class ManageQuestionData:
         record(result_buffer, fname="generated_question", addresses=[self.question_type])
         self._persist_selected_question(self.question_type, result_buffer)
         
-        return result_buffer
+        return result_buffer, stats
 
     def _inject_difficulty(self):
         try:
@@ -306,8 +311,9 @@ class ManageQuestionData:
         except Exception as e:
             print(f"Warning: Failed to inject difficulty instruction: {e}")
 
-    def _generate_components(self, component_calls: list) -> dict:
+    def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
         result_buffer = {}
+        total_stats = {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}
         
         # Ensure generator matches current question type
         if self.gemini_generator.question_type != self.question_type:
@@ -342,11 +348,16 @@ class ManageQuestionData:
             }
 
             try:
-                generated = self.gemini_generator.generate_component(
+                generated, stats = self.gemini_generator.generate_component(
                     instruction_statement=call['instruction statement'],
                     expected_output=call['output'],
                     context=context
                 )
+                
+                # Accumulate stats
+                total_stats['input_tokens'] += stats['input_tokens']
+                total_stats['output_tokens'] += stats['output_tokens']
+                total_stats['api_calls'] += 1
                 
                 # # Preview logging
                 # preview = json.dumps(generated, ensure_ascii=False) if isinstance(generated, (dict, list)) else str(generated)
@@ -367,9 +378,11 @@ class ManageQuestionData:
                 source_info=source_info
             )
         
-        return result_buffer
+        return result_buffer, total_stats
 
-    def _handle_child_questions(self, result_buffer: dict):
+    def _handle_child_questions(self, result_buffer: dict) -> dict:
+        total_child_stats = {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}
+        
         if self.prompt_details.get('type') == 'parent':
             parent_metadata = result_buffer.get('metadata')
             child_prompt_data = []
@@ -390,10 +403,17 @@ class ManageQuestionData:
                     gemini_generator=self.gemini_generator,
                     target_question_type=self.target_question_type
                 )
-                child_data = child_manager.get_question_data()
+                child_data, child_stats = child_manager.get_question_data()
                 child_prompt_data.append(child_data)
                 
+                # Accumulate stats
+                total_child_stats['input_tokens'] += child_stats['input_tokens']
+                total_child_stats['output_tokens'] += child_stats['output_tokens']
+                total_child_stats['api_calls'] += child_stats['api_calls']
+                
             result_buffer['child-questions'] = child_prompt_data
+            
+        return total_child_stats
 
     def _persist_selected_question(self, question_type: str, payload: dict) -> None:
         if not self.target_question_type or question_type != self.target_question_type:

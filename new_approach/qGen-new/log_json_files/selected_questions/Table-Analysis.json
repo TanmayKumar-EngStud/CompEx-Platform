@@ -1,111 +1,117 @@
 {
-  "metadata": [
-    {
-      "error": [
-        "Failed to generate component after 3 attempts. Last error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}"
-      ]
-    },
-    {
-      "Table": {
-        "headers": [
-          "Model ID",
-          "Model Class",
-          "Polynomial Degree",
-          "Data Volume (GB)",
-          "Prediction Accuracy (%)",
-          "Training Time (hours)",
-          "Deployment Cost Factor"
-        ],
-        "rows": [
-          [
-            "P_Reg_L1_S1",
-            "Polynomial Regression",
-            "1",
-            50,
-            88.5,
-            0.2,
-            1.0
-          ],
-          [
-            "P_Reg_Q2_S1",
-            "Polynomial Regression",
-            "2",
-            50,
-            91.2,
-            0.4,
-            1.5
-          ],
-          [
-            "P_Reg_C3_S1",
-            "Polynomial Regression",
-            "3",
-            50,
-            93.1,
-            0.8,
-            2.0
-          ],
-          [
-            "P_Reg_Q2_S2",
-            "Polynomial Regression",
-            "2",
-            150,
-            90.5,
-            2.5,
-            1.6
-          ],
-          [
-            "Exp_Sm_S1",
-            "Exponential Smoothing",
-            "N/A",
-            50,
-            87.9,
-            0.1,
-            0.8
-          ],
-          [
-            "Exp_Sm_S2",
-            "Exponential Smoothing",
-            "N/A",
-            200,
-            89.2,
-            0.5,
-            0.9
-          ],
-          [
-            "Lin_Reg_S1",
-            "Linear Regression",
-            "1",
-            100,
-            89.1,
-            0.15,
-            1.0
-          ],
-          [
-            "Tree_Ens_S1",
-            "Ensemble Tree",
-            "N/A",
-            200,
-            94.8,
-            3.2,
-            2.2
-          ]
-        ]
+  "metadata": {
+    "metadata": [
+      {
+        "table": {
+          "type": "sortable_table",
+          "description": "Inventory of various chemical solutions detailing their properties and costs.",
+          "structure": {
+            "title": "Chemical Solutions Inventory (Q3-2023)",
+            "headers": [
+              "Solution ID",
+              "Type",
+              "Volume (L)",
+              "Concentration (%)",
+              "Cost per Liter ($)",
+              "Density (kg/L)"
+            ],
+            "rows": [
+              [
+                "S001",
+                "Acid",
+                10.0,
+                25.0,
+                12.5,
+                1.05
+              ],
+              [
+                "S002",
+                "Base",
+                15.0,
+                30.0,
+                18.0,
+                1.1
+              ],
+              [
+                "S003",
+                "Alcohol",
+                8.0,
+                90.0,
+                25.0,
+                0.8
+              ],
+              [
+                "S004",
+                "Salt",
+                20.0,
+                10.0,
+                9.0,
+                1.02
+              ],
+              [
+                "S005",
+                "Acid",
+                12.0,
+                40.0,
+                15.0,
+                1.08
+              ],
+              [
+                "S006",
+                "Base",
+                18.0,
+                20.0,
+                16.5,
+                1.09
+              ],
+              [
+                "S007",
+                "Alcohol",
+                5.0,
+                95.0,
+                30.0,
+                0.78
+              ]
+            ],
+            "formatting": {
+              "sortable": true,
+              "alternating_rows": true
+            }
+          }
+        }
       }
-    }
-  ],
-  "question": "A FinTech firm, 'QuantInsight Analytics', is evaluating various predictive models for market forecasting. The models, which vary in their underlying mathematical complexity (e.g., polynomial degree), are benchmarked on different data volumes. The table below presents the performance metrics for these models. Analyze the data in the table and, for each of the following statements, indicate whether it is Supported by the information provided. Select 'Yes' if the statement is fully supported; otherwise, select 'No'.",
+    ],
+    "question": [
+      "For each of the following statements, indicate whether it is supported by the information provided in the table."
+    ],
+    "options": [
+      [
+        "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.",
+        "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.",
+        "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003."
+      ]
+    ],
+    "answer": [
+      {
+        "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.": "Yes",
+        "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.": "Yes",
+        "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003.": "No"
+      }
+    ]
+  },
+  "question": "For each of the following statements, indicate whether it is supported by the information provided in the table.",
+  "title": "Chemical Inventory Analysis: Blending & Active Ingredient Cost Efficiency",
+  "solution": "**Statement 1: If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.**\n\nStep 1: Identify the relevant data for S001 and S005.\nFrom the table:\n*   Solution S001: Volume = 10.0 L, Concentration = 25.0%\n*   Solution S005: Volume = 12.0 L, Concentration = 40.0%\n\nStep 2: Calculate the total amount of solute and the total volume in the mixture.\nThe amount of solute in a solution is given by $\\text{Volume} \\times \\text{Concentration}$.\n*   Solute from S001: $10.0 \\, \\text{L} \\times 0.25 = 2.5 \\, \\text{L}$ (assuming concentration is volume/volume for simplicity, or mass/mass if density were involved, but for mixtures without density, volume-weighted average concentration is standard).\n*   Solute from S005: $12.0 \\, \\text{L} \\times 0.40 = 4.8 \\, \\text{L}$\n*   Total solute in mixture: $2.5 \\, \\text{L} + 4.8 \\, \\text{L} = 7.3 \\, \\text{L}$\n*   Total volume of mixture: $10.0 \\, \\text{L} + 12.0 \\, \\text{L} = 22.0 \\, \\text{L}$\n\nStep 3: Calculate the concentration of the resulting mixture.\nMixture Concentration = $(\\text{Total Solute} / \\text{Total Volume}) \\times 100\\%$\nMixture Concentration = $(7.3 \\, \\text{L} / 22.0 \\, \\text{L}) \\times 100\\%$\nMixture Concentration $\\approx 0.3318 \\times 100\\% \\approx 33.18\\%$\n\nStep 4: Compare the calculated concentration with 33%.\nSince $33.18\\% > 33\\%$, the statement is supported.\n\n**Answer:** Yes\n\n---\n\n**Statement 2: Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.**\n\nStep 1: Filter the solutions based on the condition \"Concentration strictly less than 30%\".\nFrom the table:\n*   S001: Concentration = 25.0% (< 30%), Cost per Liter = $12.5\n*   S004: Concentration = 10.0% (< 30%), Cost per Liter = $9.0\n*   S006: Concentration = 20.0% (< 30%), Cost per Liter = $16.5\nSolutions S002 (30%) and S005 (40%), S003 (90%), S007 (95%) do not meet the \"strictly less than 30%\" condition.\n\nStep 2: List the Cost per Liter for the filtered solutions.\n*   S001: $12.5\n*   S004: $9.0\n*   S006: $16.5\n\nStep 3: Calculate the average cost per liter for these solutions.\nAverage Cost per Liter = (Sum of Costs per Liter) / (Number of Solutions)\nAverage Cost per Liter = $(\\$12.5 + \\$9.0 + \\$16.5) / 3$\nAverage Cost per Liter = $\\$38.0 / 3$\nAverage Cost per Liter $\\approx \\$12.67$\n\nStep 4: Compare the calculated average cost per liter with $13.00.\nSince $\\$12.67 < \\$13.00$, the statement is supported.\n\n**Answer:** Yes\n\n---\n\n**Statement 3: To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003.**\n\nStep 1: Determine the amount of active ingredient per liter for S003 and S007.\n*   **For Solution S003:**\n    *   Density = 0.8 kg/L\n    *   Concentration = 90.0% (meaning 0.90 active ingredient by mass)\n    *   Mass of active ingredient per liter = Density $\\times$ Concentration\n    *   Mass of active ingredient per liter (S003) = $0.8 \\, \\text{kg/L} \\times 0.90 = 0.72 \\, \\text{kg/L}$\n*   **For Solution S007:**\n    *   Density = 0.78 kg/L\n    *   Concentration = 95.0% (meaning 0.95 active ingredient by mass)\n    *   Mass of active ingredient per liter (S007) = $0.78 \\, \\text{kg/L} \\times 0.95 = 0.741 \\, \\text{kg/L}$\n\nStep 2: Calculate the volume needed to acquire 10 kg of active ingredient for each solution.\nVolume needed = Total active ingredient desired / (Mass of active ingredient per liter)\n*   Volume needed for S003 = $10 \\, \\text{kg} / 0.72 \\, \\text{kg/L} \\approx 13.889 \\, \\text{L}$\n*   Volume needed for S007 = $10 \\, \\text{kg} / 0.741 \\, \\text{kg/L} \\approx 13.495 \\, \\text{L}$\n\nStep 3: Calculate the total cost for 10 kg of active ingredient for each solution.\nTotal Cost = Volume needed $\\times$ Cost per Liter\n*   Cost per Liter for S003 = $25.0\n*   Cost per Liter for S007 = $30.0\n*   Total Cost for S003 = $13.889 \\, \\text{L} \\times \\$25.0/\\text{L} \\approx \\$347.23$\n*   Total Cost for S007 = $13.495 \\, \\text{L} \\times \\$30.0/\\text{L} \\approx \\$404.85$\n\nStep 4: Compare the total costs.\nSince $\\$347.23$ (for S003) $< \\$404.85$ (for S007), Solution S003 is more cost-effective.\nThe statement claims S007 would be more cost-effective, which is incorrect.\n\n**Answer:** No",
   "options": [
-    "Among models classified as 'Polynomial Regression', increasing the 'Polynomial Degree' consistently corresponds to an increase in 'Prediction Accuracy (%)', 'Training Time (hours)', and 'Deployment Cost Factor'.",
-    "No model in the table achieves both a 'Prediction Accuracy (%)' above 90% and a 'Training Time (hours)' less than 0.5 hours.",
-    "For 'Exponential Smoothing' models, increasing the 'Data Volume (GB)' by 300% results in a 'Prediction Accuracy (%)' increase of less than 2% but more than doubles the 'Training Time (hours)'."
+    "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.",
+    "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.",
+    "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003."
   ],
   "answer": {
-    "Among models classified as 'Polynomial Regression', increasing the 'Polynomial Degree' consistently corresponds to an increase in 'Prediction Accuracy (%)', 'Training Time (hours)', and 'Deployment Cost Factor'.": "No",
-    "No model in the table achieves both a 'Prediction Accuracy (%)' above 90% and a 'Training Time (hours)' less than 0.5 hours.": "No",
-    "For 'Exponential Smoothing' models, increasing the 'Data Volume (GB)' by 300% results in a 'Prediction Accuracy (%)' increase of less than 2% but more than doubles the 'Training Time (hours)'.": "Yes"
+    "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.": "Yes",
+    "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.": "Yes",
+    "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003.": "No"
   },
-  "title": "Evaluating Predictive Models: Accuracy, Cost, and Polynomial Degree Trade-offs",
-  "solution": "**Statement 1: Among Polynomial Regression models trained on 50GB data, increasing the polynomial degree by one always leads to an increase in Prediction Accuracy by at least 2.5 percentage points, while doubling the Training Time.**\n\n**Step 1: Identify relevant data.**\nFirst, filter the table to include only \"Polynomial Regression\" models with \"Data Volume (GB)\" equal to 50.\nThe relevant models are:\n*   P_Reg_L1_S1: Degree 1, Accuracy 88.5%, Training Time 0.2 hours\n*   P_Reg_Q2_S1: Degree 2, Accuracy 91.2%, Training Time 0.4 hours\n*   P_Reg_C3_S1: Degree 3, Accuracy 93.1%, Training Time 0.8 hours\n\n**Step 2: Analyze the change from Degree 1 to Degree 2.**\n*   **Accuracy Increase:** $91.2\\% - 88.5\\% = 2.7$ percentage points. This is $\\geq 2.5$ percentage points.\n*   **Training Time Ratio:** $0.4 \\text{ hours} / 0.2 \\text{ hours} = 2$. This indicates doubling the Training Time.\nBoth conditions hold for the increase from Degree 1 to Degree 2.\n\n**Step 3: Analyze the change from Degree 2 to Degree 3.**\n*   **Accuracy Increase:** $93.1\\% - 91.2\\% = 1.9$ percentage points. This is NOT $\\geq 2.5$ percentage points.\n*   **Training Time Ratio:** $0.8 \\text{ hours} / 0.4 \\text{ hours} = 2$. This indicates doubling the Training Time.\nOne condition (accuracy increase) does not hold for the increase from Degree 2 to Degree 3.\n\n**Step 4: Conclude based on the analysis.**\nSince the statement uses the word \"always,\" it implies that the conditions must hold for every incremental increase in polynomial degree within the filtered subset. We found that the prediction accuracy increase from Degree 2 to Degree 3 (1.9 percentage points) is not \"at least 2.5 percentage points.\"\n\n**Final Answer:** No\n\n---\n\n**Statement 2: Excluding models with 'N/A' Polynomial Degree, if a model is selected solely based on achieving over 90% Prediction Accuracy, then the model offering the lowest Training Time per percentage point of Accuracy must have a Data Volume of 150 GB.**\n\n**Step 1: Exclude models with 'N/A' Polynomial Degree.**\nThe models to consider are:\n*   P_Reg_L1_S1\n*   P_Reg_Q2_S1\n*   P_Reg_C3_S1\n*   P_Reg_Q2_S2\n*   Lin_Reg_S1\n\n**Step 2: Filter for models with over 90% Prediction Accuracy.**\nFrom the refined list, identify models with Prediction Accuracy $> 90\\%$:\n*   P_Reg_Q2_S1: Accuracy 91.2%, Training Time 0.4 hours, Data Volume 50 GB\n*   P_Reg_C3_S1: Accuracy 93.1%, Training Time 0.8 hours, Data Volume 50 GB\n*   P_Reg_Q2_S2: Accuracy 90.5%, Training Time 2.5 hours, Data Volume 150 GB\n\n**Step 3: Calculate \"Training Time per percentage point of Accuracy\" for each selected model.**\n*   **P_Reg_Q2_S1:** $\\frac{\\text{Training Time}}{\\text{Accuracy}} = \\frac{0.4 \\text{ hours}}{91.2\\%} \\approx 0.004386 \\text{ hours/\\%}$\n*   **P_Reg_C3_S1:** $\\frac{\\text{Training Time}}{\\text{Accuracy}} = \\frac{0.8 \\text{ hours}}{93.1\\%} \\approx 0.008593 \\text{ hours/\\%}$\n*   **P_Reg_Q2_S2:** $\\frac{\\text{Training Time}}{\\text{Accuracy}} = \\frac{2.5 \\text{ hours}}{90.5\\%} \\approx 0.027624 \\text{ hours/\\%}$\n\n**Step 4: Identify the model with the lowest Training Time per percentage point of Accuracy.**\nComparing the calculated values:\n*   $0.004386$ (P_Reg_Q2_S1)\n*   $0.008593$ (P_Reg_C3_S1)\n*   $0.027624$ (P_Reg_Q2_S2)\nThe lowest value is $0.004386$, which corresponds to model P_Reg_Q2_S1.\n\n**Step 5: Check the Data Volume for the identified model.**\nThe Data Volume for P_Reg_Q2_S1 is 50 GB.\n\n**Step 6: Conclude based on the analysis.**\nThe statement claims that the model offering the lowest Training Time per percentage point of Accuracy *must have* a Data Volume of 150 GB. Our analysis shows the model with the lowest value (P_Reg_Q2_S1) has a Data Volume of 50 GB.\n\n**Final Answer:** No\n\n---\n\n**Statement 3: There is no model in the dataset that achieves a Prediction Accuracy of 90% or higher while maintaining both a Training Time less than 0.5 hours and a Deployment Cost Factor below 1.5.**\n\n**Step 1: Identify models with Prediction Accuracy of 90% or higher.**\n*   P_Reg_Q2_S1: Accuracy 91.2%, Training Time 0.4 hours, Deployment Cost Factor 1.5\n*   P_Reg_C3_S1: Accuracy 93.1%, Training Time 0.8 hours, Deployment Cost Factor 2.0\n*   P_Reg_Q2_S2: Accuracy 90.5%, Training Time 2.5 hours, Deployment Cost Factor 1.6\n*   Tree_Ens_S1: Accuracy 94.8%, Training Time 3.2 hours, Deployment Cost Factor 2.2\n\n**Step 2: From these models, filter for Training Time less than 0.5 hours.**\n*   P_Reg_Q2_S1: Training Time 0.4 hours (This meets the condition: $0.4 < 0.5$)\n*   P_Reg_C3_S1: Training Time 0.8 hours (Does not meet the condition)\n*   P_Reg_Q2_S2: Training Time 2.5 hours (Does not meet the condition)\n*   Tree_Ens_S1: Training Time 3.2 hours (Does not meet the condition)\nOnly P_Reg_Q2_S1 remains.\n\n**Step 3: From the remaining models (P_Reg_Q2_S1), check if Deployment Cost Factor is below 1.5.**\nFor P_Reg_Q2_S1: Deployment Cost Factor is 1.5.\nThe condition is \"Deployment Cost Factor *below* 1.5\". Since $1.5$ is not *below* $1.5$ (it is equal to $1.5$), P_Reg_Q2_S1 does not meet this condition.\n\n**Step 4: Conclude based on the analysis.**\nWe started with all models meeting the accuracy criteria, then filtered by training time, and finally by deployment cost factor. No model satisfied all three conditions (Accuracy $\\ge 90\\%$, Training Time $< 0.5$ hours, AND Deployment Cost Factor $< 1.5$). Therefore, the statement \"There is no model...\" is true.\n\n**Final Answer:** Yes",
-  "prompt": "<Functions and Polynomials> - <Science and Technology> - <Data Interpretation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
+  "prompt": "<Mixtures and Alligations> - <Science and Technology> - <Quantitative Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
   "question-type": "Table Analysis"
 }
