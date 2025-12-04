@@ -37,7 +37,10 @@ def log_stage(exam: str,
     print(" | ".join(segments))
 
 
-for exam, sections in exam_definition.items():
+# Sort exams to ensure consistent order (e.g., GMAT before GRE)
+sorted_exams = sorted(exam_definition.items(), key=lambda x: x[0])
+
+for exam, sections in sorted_exams:
     log_stage(exam, detail=prettify('Preparing exam structure', 'Blue'))
     prompts_dictionary[exam] = {}
     for section_number, section in sections.items():

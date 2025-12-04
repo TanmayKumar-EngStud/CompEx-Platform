@@ -1,133 +1,111 @@
 {
-  "metadata": {
-    "metadata": [
-      {
-        "Table": {
-          "type": "sortable_table",
-          "description": "Table with sortable columns detailing employee data, including current base salary, years of service, annual salary growth factor, and last performance score.",
-          "structure": {
-            "title": "Employee Compensation and Performance Data",
-            "headers": [
-              "Employee ID",
-              "Department",
-              "Years of Service",
-              "Current Base Salary (USD)",
-              "Annual Salary Growth Factor",
-              "Last Performance Score"
-            ],
-            "rows": [
-              [
-                "EMP001",
-                "Engineering",
-                5,
-                95000,
-                1.06,
-                88
-              ],
-              [
-                "EMP002",
-                "Marketing",
-                3,
-                80000,
-                1.04,
-                75
-              ],
-              [
-                "EMP003",
-                "Sales",
-                8,
-                110000,
-                1.07,
-                92
-              ],
-              [
-                "EMP004",
-                "Human Resources",
-                10,
-                105000,
-                1.03,
-                80
-              ],
-              [
-                "EMP005",
-                "Engineering",
-                2,
-                70000,
-                1.05,
-                78
-              ],
-              [
-                "EMP006",
-                "Sales",
-                6,
-                90000,
-                1.06,
-                85
-              ],
-              [
-                "EMP007",
-                "Marketing",
-                4,
-                78000,
-                1.04,
-                72
-              ],
-              [
-                "EMP008",
-                "Human Resources",
-                7,
-                98000,
-                1.05,
-                83
-              ]
-            ],
-            "formatting": {
-              "sortable": true,
-              "alternating_rows": true,
-              "column_types": {
-                "Employee ID": "string",
-                "Department": "string",
-                "Years of Service": "integer",
-                "Current Base Salary (USD)": "currency",
-                "Annual Salary Growth Factor": "float",
-                "Last Performance Score": "integer"
-              }
-            }
-          }
-        }
-      }
-    ],
-    "question": [
-      "The table below provides data on employees within a company, including their current base salary, years of service, annual salary growth factor, and last performance score. Assume the 'Annual Salary Growth Factor' consistently applies to the base salary each year to project future salaries (i.e., a salary after 'n' years is Current Base Salary * (Factor)^n). Evaluate each of the following statements based on the information provided in the table."
-    ],
-    "options": [
-      [
-        "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.",
-        "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.",
-        "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055."
+  "metadata": [
+    {
+      "error": [
+        "Failed to generate component after 3 attempts. Last error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}"
       ]
-    ],
-    "answer": [
-      {
-        "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.": "No",
-        "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.": "No",
-        "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055.": "Yes"
+    },
+    {
+      "Table": {
+        "headers": [
+          "Model ID",
+          "Model Class",
+          "Polynomial Degree",
+          "Data Volume (GB)",
+          "Prediction Accuracy (%)",
+          "Training Time (hours)",
+          "Deployment Cost Factor"
+        ],
+        "rows": [
+          [
+            "P_Reg_L1_S1",
+            "Polynomial Regression",
+            "1",
+            50,
+            88.5,
+            0.2,
+            1.0
+          ],
+          [
+            "P_Reg_Q2_S1",
+            "Polynomial Regression",
+            "2",
+            50,
+            91.2,
+            0.4,
+            1.5
+          ],
+          [
+            "P_Reg_C3_S1",
+            "Polynomial Regression",
+            "3",
+            50,
+            93.1,
+            0.8,
+            2.0
+          ],
+          [
+            "P_Reg_Q2_S2",
+            "Polynomial Regression",
+            "2",
+            150,
+            90.5,
+            2.5,
+            1.6
+          ],
+          [
+            "Exp_Sm_S1",
+            "Exponential Smoothing",
+            "N/A",
+            50,
+            87.9,
+            0.1,
+            0.8
+          ],
+          [
+            "Exp_Sm_S2",
+            "Exponential Smoothing",
+            "N/A",
+            200,
+            89.2,
+            0.5,
+            0.9
+          ],
+          [
+            "Lin_Reg_S1",
+            "Linear Regression",
+            "1",
+            100,
+            89.1,
+            0.15,
+            1.0
+          ],
+          [
+            "Tree_Ens_S1",
+            "Ensemble Tree",
+            "N/A",
+            200,
+            94.8,
+            3.2,
+            2.2
+          ]
+        ]
       }
-    ]
-  },
-  "question": "The table below provides data on employees within a company, including their current base salary, years of service, annual salary growth factor, and last performance score. Assume the 'Annual Salary Growth Factor' consistently applies to the base salary each year to project future salaries (i.e., a salary after 'n' years is Current Base Salary * (Factor)^n). Evaluate each of the following statements based on the information provided in the table, selecting 'Yes' if the statement is supported by the data and 'No' if it is not.",
-  "title": "HR Compensation: Projecting Salaries using Exponential Growth & Performance",
-  "solution": "**Statement 1: In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.**\n\n**Step 1: Identify the relevant employee.**\nFirst, filter the table to include only employees from the 'Engineering' department. These are EMP001 and EMP005.\n*   EMP001 (Engineering): Last Performance Score = 88\n*   EMP005 (Engineering): Last Performance Score = 78\nThe employee from the Engineering department with the highest 'Last Performance Score' is EMP001.\n\n**Step 2: Extract relevant data for the identified employee.**\nFor EMP001:\n*   Current Base Salary (B) = $95,000\n*   Annual Salary Growth Factor (F) = 1.06\n*   Number of years (N) = 3\n\n**Step 3: Calculate the projected salary.**\nThe formula for projected salary is `Projected Salary = Current Base Salary * (Annual Salary Growth Factor)^N`.\n*   Projected Salary = $95,000 * (1.06)^3$\n*   Calculate `(1.06)^3 = 1.06 * 1.06 * 1.06 = 1.191016`\n*   Projected Salary = $95,000 * 1.191016 = $113,146.52\n\n**Step 4: Compare with the threshold.**\nThe calculated projected salary is $113,146.52.\nThe statement claims the salary will exceed $120,000.\nSince $113,146.52$ is not greater than $120,000, the statement is false.\n\n**Answer for Statement 1:** No\n\n---\n\n**Statement 2: If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.**\n\n**Step 1: Identify the employee with the highest 'Years of Service' and calculate their projected salary in two years.**\nScan the 'Years of Service' column: EMP004 has 10 years, which is the highest.\nFor EMP004:\n*   Current Base Salary (B) = $105,000\n*   Annual Salary Growth Factor (F) = 1.03\n*   Number of years (N) = 2\nProjected Salary for EMP004 = $105,000 * (1.03)^2$\n*   ` (1.03)^2 = 1.03 * 1.03 = 1.0609`\n*   Projected Salary for EMP004 = $105,000 * 1.0609 = $111,394.50\n\n**Step 2: Identify employees from the Sales department and calculate their projected salaries in two years.**\nFilter the table for 'Sales' department employees: EMP003 and EMP006.\nFor EMP003 (Sales):\n*   Current Base Salary (B) = $110,000\n*   Annual Salary Growth Factor (F) = 1.07\n*   Number of years (N) = 2\nProjected Salary for EMP003 = $110,000 * (1.07)^2$\n*   ` (1.07)^2 = 1.07 * 1.07 = 1.1449`\n*   Projected Salary for EMP003 = $110,000 * 1.1449 = $125,939.00\n\nFor EMP006 (Sales):\n*   Current Base Salary (B) = $90,000\n*   Annual Salary Growth Factor (F) = 1.06\n*   Number of years (N) = 2\nProjected Salary for EMP006 = $90,000 * (1.06)^2$\n*   ` (1.06)^2 = 1.06 * 1.06 = 1.1236`\n*   Projected Salary for EMP006 = $90,000 * 1.1236 = $101,124.00\n\n**Step 3: Compare the projected salaries.**\nProjected salary of the employee with highest 'Years of Service' (EMP004) = $111,394.50.\nProjected salaries of Sales employees: $125,939.00 (EMP003) and $101,124.00 (EMP006).\nThe statement claims EMP004's projected salary would be *higher than any* Sales employee's projected salary.\nSince $111,394.50$ is not greater than $125,939.00, the statement is false.\n\n**Answer for Statement 2:** No\n\n---\n\n**Statement 3: For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055.**\n\n**Step 1: Identify employees with a 'Last Performance Score' above 80.**\nScan the 'Last Performance Score' column for values greater than 80:\n*   EMP001: Score 88 (>80)\n*   EMP003: Score 92 (>80)\n*   EMP006: Score 85 (>80)\n*   EMP008: Score 83 (>80)\n(Note: EMP004 has a score of 80, which is not *above* 80, so it is excluded).\n\n**Step 2: Extract the 'Annual Salary Growth Factor' for these identified employees.**\n*   EMP001: 1.06\n*   EMP003: 1.07\n*   EMP006: 1.06\n*   EMP008: 1.05\n\n**Step 3: Calculate the sum and count of these factors.**\n*   Sum of factors = $1.06 + 1.07 + 1.06 + 1.05 = 4.24$\n*   Number of employees = 4\n\n**Step 4: Calculate the average 'Annual Salary Growth Factor'.**\n*   Average Factor = Sum of factors / Number of employees\n*   Average Factor = $4.24 / 4 = 1.06$\n\n**Step 5: Compare the average with the given value.**\nThe calculated average 'Annual Salary Growth Factor' is 1.06.\nThe statement claims the average is greater than 1.055.\nSince $1.06$ is indeed greater than $1.055$, the statement is true.\n\n**Answer for Statement 3:** Yes",
+    }
+  ],
+  "question": "A FinTech firm, 'QuantInsight Analytics', is evaluating various predictive models for market forecasting. The models, which vary in their underlying mathematical complexity (e.g., polynomial degree), are benchmarked on different data volumes. The table below presents the performance metrics for these models. Analyze the data in the table and, for each of the following statements, indicate whether it is Supported by the information provided. Select 'Yes' if the statement is fully supported; otherwise, select 'No'.",
   "options": [
-    "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.",
-    "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.",
-    "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055."
+    "Among models classified as 'Polynomial Regression', increasing the 'Polynomial Degree' consistently corresponds to an increase in 'Prediction Accuracy (%)', 'Training Time (hours)', and 'Deployment Cost Factor'.",
+    "No model in the table achieves both a 'Prediction Accuracy (%)' above 90% and a 'Training Time (hours)' less than 0.5 hours.",
+    "For 'Exponential Smoothing' models, increasing the 'Data Volume (GB)' by 300% results in a 'Prediction Accuracy (%)' increase of less than 2% but more than doubles the 'Training Time (hours)'."
   ],
   "answer": {
-    "In three years, the projected salary of an employee from the Engineering department with the highest 'Last Performance Score' will exceed $120,000.": "No",
-    "If all employees maintained their current 'Annual Salary Growth Factor', the employee with the highest 'Years of Service' would have a higher projected salary in two years than any employee from the Sales department has in two years.": "No",
-    "For employees with a 'Last Performance Score' above 80, the average 'Annual Salary Growth Factor' is greater than 1.055.": "Yes"
+    "Among models classified as 'Polynomial Regression', increasing the 'Polynomial Degree' consistently corresponds to an increase in 'Prediction Accuracy (%)', 'Training Time (hours)', and 'Deployment Cost Factor'.": "No",
+    "No model in the table achieves both a 'Prediction Accuracy (%)' above 90% and a 'Training Time (hours)' less than 0.5 hours.": "No",
+    "For 'Exponential Smoothing' models, increasing the 'Data Volume (GB)' by 300% results in a 'Prediction Accuracy (%)' increase of less than 2% but more than doubles the 'Training Time (hours)'.": "Yes"
   },
-  "prompt": "<Exponents and Powers> - <Human Resources> - <Quantitative Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+  "title": "Evaluating Predictive Models: Accuracy, Cost, and Polynomial Degree Trade-offs",
+  "solution": "**Statement 1: Among Polynomial Regression models trained on 50GB data, increasing the polynomial degree by one always leads to an increase in Prediction Accuracy by at least 2.5 percentage points, while doubling the Training Time.**\n\n**Step 1: Identify relevant data.**\nFirst, filter the table to include only \"Polynomial Regression\" models with \"Data Volume (GB)\" equal to 50.\nThe relevant models are:\n*   P_Reg_L1_S1: Degree 1, Accuracy 88.5%, Training Time 0.2 hours\n*   P_Reg_Q2_S1: Degree 2, Accuracy 91.2%, Training Time 0.4 hours\n*   P_Reg_C3_S1: Degree 3, Accuracy 93.1%, Training Time 0.8 hours\n\n**Step 2: Analyze the change from Degree 1 to Degree 2.**\n*   **Accuracy Increase:** $91.2\\% - 88.5\\% = 2.7$ percentage points. This is $\\geq 2.5$ percentage points.\n*   **Training Time Ratio:** $0.4 \\text{ hours} / 0.2 \\text{ hours} = 2$. This indicates doubling the Training Time.\nBoth conditions hold for the increase from Degree 1 to Degree 2.\n\n**Step 3: Analyze the change from Degree 2 to Degree 3.**\n*   **Accuracy Increase:** $93.1\\% - 91.2\\% = 1.9$ percentage points. This is NOT $\\geq 2.5$ percentage points.\n*   **Training Time Ratio:** $0.8 \\text{ hours} / 0.4 \\text{ hours} = 2$. This indicates doubling the Training Time.\nOne condition (accuracy increase) does not hold for the increase from Degree 2 to Degree 3.\n\n**Step 4: Conclude based on the analysis.**\nSince the statement uses the word \"always,\" it implies that the conditions must hold for every incremental increase in polynomial degree within the filtered subset. We found that the prediction accuracy increase from Degree 2 to Degree 3 (1.9 percentage points) is not \"at least 2.5 percentage points.\"\n\n**Final Answer:** No\n\n---\n\n**Statement 2: Excluding models with 'N/A' Polynomial Degree, if a model is selected solely based on achieving over 90% Prediction Accuracy, then the model offering the lowest Training Time per percentage point of Accuracy must have a Data Volume of 150 GB.**\n\n**Step 1: Exclude models with 'N/A' Polynomial Degree.**\nThe models to consider are:\n*   P_Reg_L1_S1\n*   P_Reg_Q2_S1\n*   P_Reg_C3_S1\n*   P_Reg_Q2_S2\n*   Lin_Reg_S1\n\n**Step 2: Filter for models with over 90% Prediction Accuracy.**\nFrom the refined list, identify models with Prediction Accuracy $> 90\\%$:\n*   P_Reg_Q2_S1: Accuracy 91.2%, Training Time 0.4 hours, Data Volume 50 GB\n*   P_Reg_C3_S1: Accuracy 93.1%, Training Time 0.8 hours, Data Volume 50 GB\n*   P_Reg_Q2_S2: Accuracy 90.5%, Training Time 2.5 hours, Data Volume 150 GB\n\n**Step 3: Calculate \"Training Time per percentage point of Accuracy\" for each selected model.**\n*   **P_Reg_Q2_S1:** $\\frac{\\text{Training Time}}{\\text{Accuracy}} = \\frac{0.4 \\text{ hours}}{91.2\\%} \\approx 0.004386 \\text{ hours/\\%}$\n*   **P_Reg_C3_S1:** $\\frac{\\text{Training Time}}{\\text{Accuracy}} = \\frac{0.8 \\text{ hours}}{93.1\\%} \\approx 0.008593 \\text{ hours/\\%}$\n*   **P_Reg_Q2_S2:** $\\frac{\\text{Training Time}}{\\text{Accuracy}} = \\frac{2.5 \\text{ hours}}{90.5\\%} \\approx 0.027624 \\text{ hours/\\%}$\n\n**Step 4: Identify the model with the lowest Training Time per percentage point of Accuracy.**\nComparing the calculated values:\n*   $0.004386$ (P_Reg_Q2_S1)\n*   $0.008593$ (P_Reg_C3_S1)\n*   $0.027624$ (P_Reg_Q2_S2)\nThe lowest value is $0.004386$, which corresponds to model P_Reg_Q2_S1.\n\n**Step 5: Check the Data Volume for the identified model.**\nThe Data Volume for P_Reg_Q2_S1 is 50 GB.\n\n**Step 6: Conclude based on the analysis.**\nThe statement claims that the model offering the lowest Training Time per percentage point of Accuracy *must have* a Data Volume of 150 GB. Our analysis shows the model with the lowest value (P_Reg_Q2_S1) has a Data Volume of 50 GB.\n\n**Final Answer:** No\n\n---\n\n**Statement 3: There is no model in the dataset that achieves a Prediction Accuracy of 90% or higher while maintaining both a Training Time less than 0.5 hours and a Deployment Cost Factor below 1.5.**\n\n**Step 1: Identify models with Prediction Accuracy of 90% or higher.**\n*   P_Reg_Q2_S1: Accuracy 91.2%, Training Time 0.4 hours, Deployment Cost Factor 1.5\n*   P_Reg_C3_S1: Accuracy 93.1%, Training Time 0.8 hours, Deployment Cost Factor 2.0\n*   P_Reg_Q2_S2: Accuracy 90.5%, Training Time 2.5 hours, Deployment Cost Factor 1.6\n*   Tree_Ens_S1: Accuracy 94.8%, Training Time 3.2 hours, Deployment Cost Factor 2.2\n\n**Step 2: From these models, filter for Training Time less than 0.5 hours.**\n*   P_Reg_Q2_S1: Training Time 0.4 hours (This meets the condition: $0.4 < 0.5$)\n*   P_Reg_C3_S1: Training Time 0.8 hours (Does not meet the condition)\n*   P_Reg_Q2_S2: Training Time 2.5 hours (Does not meet the condition)\n*   Tree_Ens_S1: Training Time 3.2 hours (Does not meet the condition)\nOnly P_Reg_Q2_S1 remains.\n\n**Step 3: From the remaining models (P_Reg_Q2_S1), check if Deployment Cost Factor is below 1.5.**\nFor P_Reg_Q2_S1: Deployment Cost Factor is 1.5.\nThe condition is \"Deployment Cost Factor *below* 1.5\". Since $1.5$ is not *below* $1.5$ (it is equal to $1.5$), P_Reg_Q2_S1 does not meet this condition.\n\n**Step 4: Conclude based on the analysis.**\nWe started with all models meeting the accuracy criteria, then filtered by training time, and finally by deployment cost factor. No model satisfied all three conditions (Accuracy $\\ge 90\\%$, Training Time $< 0.5$ hours, AND Deployment Cost Factor $< 1.5$). Therefore, the statement \"There is no model...\" is true.\n\n**Final Answer:** Yes",
+  "prompt": "<Functions and Polynomials> - <Science and Technology> - <Data Interpretation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
   "question-type": "Table Analysis"
 }

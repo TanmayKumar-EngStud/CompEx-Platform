@@ -61,7 +61,8 @@
                "Numerical Entry",
                "Multi-Source Reasoning Child",
                "Two-Part Analysis Child",
-               "Table Analysis"
+               "Table Analysis",
+               "Two-Part Analysis"
             ],
             "file-name": "simple-question-text.txt.template",
             "variables": null,

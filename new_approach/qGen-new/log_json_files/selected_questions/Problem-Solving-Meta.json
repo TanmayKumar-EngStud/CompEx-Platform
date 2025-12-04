@@ -1,117 +1,115 @@
 {
   "metadata": {
-    "table": [
+    "graph": [
       {
-        "type": "data_table",
-        "description": "This table displays the weekly sales figures for 'Product Alpha' over a five-week period, which can be used to analyze its sales consistency.",
+        "type": "line_chart",
+        "description": "Line graph showing the number of distinct promotional elements available for the 'QuantumFlow' product line across four fiscal quarters.",
         "structure": {
-          "title": "Weekly Sales Performance for Product Alpha (Units Sold)",
-          "headers": [
-            "Week",
-            "Units Sold"
-          ],
-          "data": [
-            [
-              "Week 1",
-              120
+          "title": "InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)",
+          "x_axis": {
+            "label": "Fiscal Quarter",
+            "type": "continuous",
+            "min": 0,
+            "max": 5,
+            "tick_labels": {
+              "1": "Q1",
+              "2": "Q2",
+              "3": "Q3",
+              "4": "Q4"
+            }
+          },
+          "y_axis": {
+            "label": "Number of Distinct Promotional Elements",
+            "type": "numerical",
+            "min": 0,
+            "max": 10
+          },
+          "data_format": {
+            "points": [
+              {
+                "x": 1,
+                "y": 5
+              },
+              {
+                "x": 2,
+                "y": 7
+              },
+              {
+                "x": 3,
+                "y": 6
+              },
+              {
+                "x": 4,
+                "y": 8
+              }
             ],
-            [
-              "Week 2",
-              135
-            ],
-            [
-              "Week 3",
-              110
-            ],
-            [
-              "Week 4",
-              140
-            ],
-            [
-              "Week 5",
-              125
-            ]
-          ]
+            "line_color": "#3498db",
+            "point_color": "#2c3e50"
+          }
         }
       }
     ],
-    "graph": [
+    "table": [
       {
-        "type": "bar_chart",
-        "description": "This bar chart visually represents the weekly sales units for Product Alpha, complementing the tabular data by illustrating the sales fluctuations over the five-week period. This visualization can aid in understanding the spread and consistency of sales, which are crucial for calculating standard deviation and variance.",
+        "type": "data_table",
+        "description": "Table showing the number of available options for key components of a marketing campaign for the 'QuantumFlow' product line during Q4.",
         "structure": {
-          "title": "Weekly Sales Performance for Product Alpha (Units Sold)",
-          "x_axis": {
-            "label": "Week",
-            "type": "categorical"
-          },
-          "y_axis": {
-            "label": "Units Sold",
-            "type": "numerical"
-          },
-          "data_format": {
-            "categories": [
-              "Week 1",
-              "Week 2",
-              "Week 3",
-              "Week 4",
-              "Week 5"
-            ],
-            "values": [
-              120,
-              135,
-              110,
-              140,
-              125
-            ],
-            "colors": [
-              "#4CAF50",
-              "#2196F3",
-              "#FFC107",
-              "#9C27B0",
-              "#FF5722"
-            ]
-          }
+          "title": "InnovateTech: Q4 Marketing Campaign Component Options",
+          "headers": [
+            "Campaign Component",
+            "Number of Available Options"
+          ],
+          "rows": [
+            {
+              "Campaign Component": "Primary Marketing Channel",
+              "Number of Available Options": 4
+            },
+            {
+              "Campaign Component": "Creative Theme",
+              "Number of Available Options": 3
+            },
+            {
+              "Campaign Component": "Call-to-Action (CTA)",
+              "Number of Available Options": 2
+            }
+          ]
         }
       }
     ]
   },
-  "title": "Analyzing Product Alpha's Weekly Sales Consistency",
+  "title": "InnovateTech Q4 Marketing Campaign Configuration Analysis",
   "child-questions": [
     {
-      "question": "A market analyst is tasked with evaluating the operational consistency of Product Alpha's sales performance over a recent five-week period, a key factor in assessing its market stability and informing strategic supply chain optimizations. Utilizing the provided 'Weekly Sales Performance for Product Alpha (Units Sold)' data table, determine the sample standard deviation of units sold. This metric will quantify the inherent variability in sales, thereby indicating the reliability of its observed sales trend. Round your final answer to two decimal places.",
-      "title": "Product Alpha Sales Trend: Weekly Variability Analysis",
-      "solution": "To determine the consistency of Product Alpha's weekly sales performance, we need to calculate the standard deviation of the units sold. The standard deviation measures the average amount of variability or dispersion around the mean, indicating how spread out the sales figures are. A lower standard deviation suggests greater consistency.\n\n**Given Data:**\nWeekly sales figures for Product Alpha: 120, 135, 110, 140, 125 units.\nNumber of weeks (N) = 5.\n\n---\n\n**Step 1: Calculate the Mean (Average) Sales.**\nThe mean ($\\mu$) is the sum of all sales figures divided by the number of weeks.\n$\\mu = \\frac{\\Sigma x_i}{N}$\n$\\mu = \\frac{120 + 135 + 110 + 140 + 125}{5}$\n$\\mu = \\frac{630}{5}$\n$\\mu = 126$ units\n\n---\n\n**Step 2: Calculate the Deviation of each week's sales from the Mean.**\nFor each data point ($x_i$), subtract the mean ($\\mu$).\n*   Week 1: $120 - 126 = -6$\n*   Week 2: $135 - 126 = 9$\n*   Week 3: $110 - 126 = -16$\n*   Week 4: $140 - 126 = 14$\n*   Week 5: $125 - 126 = -1$\n\n---\n\n**Step 3: Square each Deviation.**\nSquaring the deviations eliminates negative values and gives greater weight to larger deviations.\n*   Week 1: $(-6)^2 = 36$\n*   Week 2: $(9)^2 = 81$\n*   Week 3: $(-16)^2 = 256$\n*   Week 4: $(14)^2 = 196$\n*   Week 5: $(-1)^2 = 1$\n\n---\n\n**Step 4: Sum the Squared Deviations.**\n$\\Sigma (x_i - \\mu)^2 = 36 + 81 + 256 + 196 + 1$\n$\\Sigma (x_i - \\mu)^2 = 570$\n\n---\n\n**Step 5: Calculate the Variance ($\\sigma^2$).**\nThe variance is the average of the squared deviations. For a population, we divide by N.\n$\\sigma^2 = \\frac{\\Sigma (x_i - \\mu)^2}{N}$\n$\\sigma^2 = \\frac{570}{5}$\n$\\sigma^2 = 114$\n\n*   **Common Error 1 (Stopping Early):** A student might stop at this point and mistakenly provide the variance (114) as the answer for consistency. The variance is in units squared, which is not directly comparable to the original sales units.\n\n---\n\n**Step 6: Calculate the Standard Deviation ($\\sigma$).**\nThe standard deviation is the square root of the variance, bringing the units back to the original scale.\n$\\sigma = \\sqrt{\\sigma^2}$\n$\\sigma = \\sqrt{114}$\n$\\sigma \\approx 10.677$\n\n*   **Common Error 2 (Using N-1 for Sample Variance):** If a student mistakenly treats these 5 weeks as a sample rather than a complete observation period (population), they might divide by N-1 (which is 4) in Step 5.\n    *   Calculated Variance (sample): $570 / 4 = 142.5$\n    *   Resulting Standard Deviation: $\\sqrt{142.5} \\approx 11.937$\n\n*   **Common Error 3 (Mean Calculation Error):** If a student makes a slight error in calculating the mean (e.g., miscalculating the sum or division), all subsequent steps will be incorrect. For instance, if the sum was mistakenly seen as 625, the mean would be 125.\n    *   If $\\mu = 125$: Deviations would be -5, 10, -15, 15, 0.\n    *   Squared Deviations: 25, 100, 225, 225, 0.\n    *   Sum of Squared Deviations: 575.\n    *   Variance: $575/5 = 115$.\n    *   Standard Deviation: $\\sqrt{115} \\approx 10.724$.\n\n*   **Common Error 4 (Misinterpretation of Consistency):** A student might only calculate the range (Max-Min = 140-110 = 30) or the average absolute deviation (sum of absolute deviations / N = 46/5 = 9.2), which are simpler measures of spread but not the standard deviation specifically requested to quantify consistency at this difficulty level.\n\n---\n\n**Final Answer:**\nThe standard deviation of Product Alpha's weekly sales is approximately 10.68 units.",
+      "question": "Based on the provided InnovateTech data, if each distinct promotional element available for the 'QuantumFlow' product line in Q4 (as depicted in the line graph) necessitated the utilization of a unique creative theme, how many additional creative themes would be required beyond those listed as available for the Q4 marketing campaign in the data table?",
+      "title": "InnovateTech: Quarterly Promotional Elements and Q4 Campaign Options Analysis",
+      "solution": "Step 1: Understand the Question and Identify Necessary Data\nThe question asks for the total number of distinct elements and component options available for a Q4 marketing initiative. This requires two main pieces of information:\n1.  The number of distinct promotional elements available in Q4. This can be found in the \"InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)\" line graph.\n2.  The total number of options for the Q4 marketing campaign components. This requires summing the options listed in the \"InnovateTech: Q4 Marketing Campaign Component Options\" table.\n\nStep 2: Extract the Number of Distinct Promotional Elements for Q4\nReferring to the line graph titled \"InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)\":\nLocate Q4 on the x-axis. The corresponding y-value on the graph represents the number of distinct promotional elements.\nFor Q4, the graph shows $\\text{8 promotional elements}$.\n\nStep 3: Calculate the Total Number of Q4 Marketing Campaign Component Options\nReferring to the table titled \"InnovateTech: Q4 Marketing Campaign Component Options\":\nSum the \"Number of Available Options\" for each campaign component.\nNumber of Primary Marketing Channel options = $\\text{4}$\nNumber of Creative Theme options = $\\text{3}$\nNumber of Call-to-Action (CTA) options = $\\text{2}$\nTotal campaign component options = $\\text{4} + \\text{3} + \\text{2} = \\text{9 options}$.\n\nStep 4: Combine the Totals to Find the Grand Total\nAdd the number of promotional elements from Step 2 to the total campaign component options from Step 3.\nGrand Total = Promotional Elements (Q4) + Total Campaign Component Options (Q4)\nGrand Total = $\\text{8} + \\text{9} = \\text{17}$\n\nStep 5: Review and Identify Potential Mistakes\n*   **Reading Error (Graph):** A common mistake could be misreading the graph for a different quarter (e.g., using Q3's 6 elements instead of Q4's 8). This would lead to a total of $\\text{6} + \\text{9} = \\text{15}$.\n*   **Calculation Error (Table):** Students might make an arithmetic error when summing the component options, for example, incorrectly adding $\\text{4} + \\text{3} + \\text{2}$ as $\\text{8}$ (instead of $\\text{9}$). This would result in $\\text{8} + \\text{8} = \\text{16}$.\n*   **Conceptual Misunderstanding (Table):** Another trap could be incorrectly multiplying the component options ($\\text{4} \\times \\text{3} \\times \\text{2} = \\text{24}$) instead of adding them, assuming combinations rather than total distinct options. This would lead to $\\text{8} + \\text{24} = \\text{32}$. This is a good outlier option.\n*   **Incomplete Analysis:** A student might only consider one data source, leading to answers like 8 (only graph) or 9 (only table).\n\nThe final answer is 17.",
       "options": {
-        "A": "The average weekly sales for Product Alpha was 126 units.",
-        "B": "The sample standard deviation of Product Alpha's weekly sales was approximately 11.94 units.",
-        "C": "The range of weekly sales, from lowest to highest, was 25 units.",
-        "D": "The weekly sales figures showed a consistent upward trend across the five weeks.",
-        "E": "The calculated variance for these sales figures, assuming it's a sample, is 114 units²."
+        "A": "2 more",
+        "B": "2 fewer",
+        "C": "10 more",
+        "D": "3 more",
+        "E": "34 more"
       },
-      "answer": [
-        "A",
-        "B"
-      ],
-      "prompt": "<Trend Identification> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+      "answer": "A",
+      "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
       "question-type": "Problem Solving Meta"
     },
     {
-      "question": "Using the provided weekly sales data for 'Product Alpha' from the table and chart, if an anomalous weekly sales performance is defined as a deviation of more than 15 units from the mean weekly sales, which week, if any, would be identified as exhibiting anomalous performance?",
-      "title": "Product Alpha Weekly Sales: Outlier Analysis",
-      "solution": "**Step 1: Analyze the Sales Data and Identify the Goal**\nThe problem requires us to analyze the given weekly sales data for Product Alpha to determine if a new sales figure (for Week 6) qualifies as an anomaly. First, we need to calculate the average sales for the initial five weeks. Then, we will compare the Week 6 sales to this average and assess it against the anomaly criterion.\n\nThe sales figures for Weeks 1 through 5 are: 120, 135, 110, 140, 125 units.\nThe sales figure for Week 6 is 70 units.\nAn anomaly is defined as sales more than 30 units different from the average of the first five weeks.\n\n**Step 2: Calculate the Average Sales for Weeks 1-5**\nTo find the average, we sum the sales for the first five weeks and then divide by the number of weeks (5).\n\nSum of sales:\n$ \\text{Sum} = 120 + 135 + 110 + 140 + 125 = 630 \\text{ units} $\n\nAverage sales:\n$ \\text{Average} = \\frac{\\text{Sum}}{\\text{Number of Weeks}} = \\frac{630}{5} = 126 \\text{ units} $\n\nThe average weekly sales for Product Alpha over the first five weeks is 126 units.\n\n**Step 3: Calculate the Difference Between Week 6 Sales and the Average**\nNow we compare the sales for Week 6 (70 units) to the calculated average (126 units).\n\nDifference:\n$ \\text{Difference} = \\text{Average Sales} - \\text{Week 6 Sales} = 126 - 70 = 56 \\text{ units} $\n\nWeek 6 sales are 56 units below the average of the first five weeks.\n\n**Step 4: Determine if Week 6 Sales Constitutes an Anomaly**\nThe problem defines an anomaly as sales more than 30 units different from the average. We compare our calculated difference to this threshold.\n\nAnomaly check:\n$ \\text{Is } |\\text{Difference}| > 30\\text{ units}? $\n$ |56| > 30 $\n$ 56 > 30 $\n\nSince 56 is greater than 30, the sales for Week 6 are considered an anomaly.\n\n**Step 5: Conclude the Analysis**\nWeek 6 sales were 56 units below the average of the first five weeks. Based on the given criteria that an anomaly is more than 30 units different from the average, Week 6 sales of 70 units clearly represent an anomaly.",
+      "question": "Based on the provided graphical and tabular data, determine the extent to which the number of distinct promotional elements available for the 'QuantumFlow' product line in Q4 exceeded the combined total of available options for 'Creative Theme' and 'Call-to-Action (CTA)' within the Q4 marketing campaign components.",
+      "title": "QuantumFlow Product Line: Promotional Elements & Q4 Campaign Data Analysis",
+      "solution": "**Step 1: Analyze given information and identify what needs to be found.**\n\nThe question asks for the difference between two values for Quarter 4 (Q4):\n1.  The total number of options for the three key marketing campaign components. This information must be extracted from the provided data table.\n2.  The number of distinct promotional elements available for QuantumFlow. This information must be extracted from the provided line graph.\nOnce both values are identified, we will calculate their difference.\n\n**Step 2: Set up mathematical relationship or logical framework.**\n\n*   From the line graph, we need to locate Q4 on the x-axis and read the corresponding value on the y-axis for \"Number of Distinct Promotional Elements\".\n*   From the data table, we need to sum the \"Number of Available Options\" for each of the three listed \"Campaign Component\" categories: \"Primary Marketing Channel\", \"Creative Theme\", and \"Call-to-Action (CTA)\".\n*   The final difference will be calculated as:\n    Total Campaign Component Options in Q4 - Distinct Promotional Elements in Q4\n\n**Step 3: Perform calculations with proper units / Apply reasoning.**\n\n*   **Extracting data from the graph:**\n    Looking at the \"InnovateTech: Available Promotional Elements for QuantumFlow (Q1-Q4)\" line graph, for Q4 (which corresponds to x=4), the data point is at y=8.\n    So, Distinct Promotional Elements in Q4 = 8.\n\n*   **Extracting and summing data from the table:**\n    Looking at the \"InnovateTech: Q4 Marketing Campaign Component Options\" table:\n    Primary Marketing Channel Options = 4\n    Creative Theme Options = 3\n    Call-to-Action (CTA) Options = 2\n    Total Campaign Component Options in Q4 = $4 + 3 + 2 = 9$.\n\n*   **Calculating the difference:**\n    Difference = Total Campaign Component Options in Q4 - Distinct Promotional Elements in Q4\n    Difference = $9 - 8 = 1$.\n\n**Step 4: Check solution using logical reasoning.**\n\nWe have performed a two-step calculation as required: first, extracting/summing data from both sources, and second, finding the difference. The values used (8 and 9) were correctly identified from their respective sources for Q4. The subtraction is straightforward.\n\nCommon student mistakes might include:\n*   **Reading the wrong quarter from the graph:** A student might incorrectly read Q3 (6 elements) instead of Q4. This would lead to a difference of $9 - 6 = 3$.\n*   **Arithmetic error in summing table values:** A student might miscalculate the sum of the table options, e.g., $4+3+2 = 10$ instead of 9. This would lead to a difference of $10 - 8 = 2$.\n*   **Only providing one component:** A student might just give the number of promotional elements (8) or total campaign options (9) without calculating the difference.\n*   **Reversing the subtraction:** A student might calculate $8 - 9 = -1$.\n*   **Adding instead of subtracting:** A student might mistakenly add the two values: $8 + 9 = 17$. This would be a clear conceptual misunderstanding of \"difference.\"\n\nOur calculation correctly follows the established framework and avoids these pitfalls.\n\n**Step 5: Confirm solution addresses original question.**\n\nThe solution correctly calculates the difference between the total number of options for the three key marketing campaign components combined (9) and the number of distinct promotional elements available for QuantumFlow (8) in Q4, yielding a result of 1.",
       "options": {
-        "A": "100",
-        "B": "120",
-        "C": "140",
-        "D": "195",
-        "E": "110"
+        "A": "1",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "16"
       },
-      "answer": "D",
-      "prompt": "<Recognizing Outliers and Anomalies> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+      "answer": "B",
+      "prompt": "<Logical Inference from Graphical Data> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
       "question-type": "Problem Solving Meta"
     }
   ],
-  "prompt": "<Standard Deviation and Variance> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "prompt": "<Permutations and Combinations> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
   "question-type": "Problem Solving Meta"
 }
