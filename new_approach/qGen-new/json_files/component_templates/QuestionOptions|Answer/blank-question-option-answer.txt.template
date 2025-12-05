@@ -2,6 +2,7 @@ STRICT RESPONSE FORMAT:- JSON
 {{#if_TC-1}}
 - "options" key with value as dictionary.
 - "answer" key with single correct option letter.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 Example:-
 ```json
 {

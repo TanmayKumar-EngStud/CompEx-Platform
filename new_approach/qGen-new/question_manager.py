@@ -185,13 +185,42 @@ class ManageComponentTemplates:
                 file_name = category_list['file-name']
                 variables = category_list['variables']
                 output = category_list['output']
+
+                # Special handling for blank options to select correct template (single vs multi)
+                if self.prompt_details['option'] == 'blank':
+                    # Determine number of blanks from variables or context
+                    # variables is usually None for options in config, but we need to check prompt_details or similar
+                    # Actually, for Text Completion, the number of blanks is usually in the question type or determined elsewhere.
+                    # But here we need to pick the template.
+                    # Let's check prompt_details['question-type'] or variables if available.
+                    # Wait, variables is passed to get_Component_Template.
+                    # In config, variables is null for options.
+                    # We need a way to know if it's TC-1, TC-2, TC-3.
+                    # This information might be in self.prompt_details['variables'] if it exists?
+                    # Let's assume we can infer it or use a default.
+                    # Actually, the template had {{#if_TC-1}}, which implies the variable is passed to the template.
+                    # We can check self.rand_var or variables passed to get_Component_Template.
+                    # But get_Component_Template is called *after* this selection.
+                    
+                    # Workaround: Check if 'TC-1' is in self.rand_var (if available) or just default to multi if unsure?
+                    # Or better, check the question type subtype if available.
+                    # For now, let's try to detect it from self.rand_var if possible.
+                    is_single_blank = False
+                    if self.rand_var and 'TC-1' in self.rand_var:
+                         is_single_blank = True
+                    
+                    if is_single_blank:
+                        file_name = 'blank-single-question-option-answer.txt.template'
+                    else:
+                        file_name = 'blank-multi-question-option-answer.txt.template'
+
                 return {
                     'instruction statement': get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, rand_var=self.rand_var),
                     'output': output,
                     'file-name': file_name,
                     'option-type': self.prompt_details['option']
                 }
-        return {}
+        raise ValueError(f"No matching option instruction found for component '{component_name}', option type '{self.prompt_details['option']}', question type '{self.prompt_details['question-type']}'")
 
     def _handle_generic_component(self, component_name: str) -> Dict:
         """Handles other components via recursion through instruction list."""
@@ -338,6 +367,7 @@ class ManageQuestionData:
             context = {
                 'component_type': comp_type,
                 'question_type': self.question_type,
+                'template_filename': call.get('file-name'),
                 'exam': self.prompt_details['exam'],
                 'section': self.prompt_details['section'],
                 'original_prompt': self.prompt_details['prompt'],

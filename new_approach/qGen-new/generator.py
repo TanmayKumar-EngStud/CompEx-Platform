@@ -72,7 +72,7 @@ class GenQ:
             'total_time_seconds': 0,
             'gre_questions': 0,
             'gmat_questions': 0,
-            'model_used': os.getenv("MODEL2", "gemini-1.5-flash") # Default or from env
+            'model_used': os.getenv("MODEL2", "gemini-2.5-flash") # Default or from env
         }
         
         start_time_global = time.time()

@@ -17,7 +17,4 @@ Example:-
 ```
 
 **Important Notes:**
-- GMAT: 5 options (A-E), GRE: 4-5 options
-- Create strategic distractors based on common errors
-- One option must match the correct solution
-- No values are supposed to have LaTeX format, it should be in normal string format
+- TC-1: Single blank, 5 options, single answer

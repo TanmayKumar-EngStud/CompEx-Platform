@@ -1,144 +1,64 @@
 {
   "metadata": {
-    "metadata": [
-      {
-        "Graph": {
+    "graph": [
+      [
+        {
           "type": "table",
-          "description": "A table presenting performance metrics for four distinct Neural Network Architectures (A, B, C, D) across three different deployment scenarios (Real-time Edge, Cloud Batch, Mobile On-Device). Each architecture's performance is detailed with four key metrics for each scenario.",
+          "description": "A table providing detailed human resources metrics for different departments, serving as input for complex mixture and alligation problems involving employee averages. Data includes number of employees, average monthly salary, and average years of experience for each department.",
           "structure": {
-            "title": "Performance Metrics of Neural Network Architectures Across Deployment Scenarios",
-            "headers": [
-              "Architecture",
-              "Deployment Scenario",
-              "Accuracy (%)",
-              "Training Time (hours)",
-              "Inference Speed (predictions/second)",
-              "Memory Footprint (GB)"
+            "title": "Departmental Employee Metrics (as of Q1 2024)",
+            "labels": [
+              "Department",
+              "Number of Employees",
+              "Average Monthly Salary ($)",
+              "Average Years of Experience"
             ],
-            "data": [
+            "segments": [
               {
-                "Architecture": "A",
-                "Deployment Scenario": "Real-time Edge",
-                "Accuracy (%)": 88.5,
-                "Training Time (hours)": 12.5,
-                "Inference Speed (predictions/second)": 1500,
-                "Memory Footprint (GB)": 0.8
+                "label": "Sales",
+                "value": 150,
+                "percentage": "25%"
               },
               {
-                "Architecture": "A",
-                "Deployment Scenario": "Cloud Batch",
-                "Accuracy (%)": 92.1,
-                "Training Time (hours)": 45.0,
-                "Inference Speed (predictions/second)": 5000,
-                "Memory Footprint (GB)": 3.2
+                "label": "Marketing",
+                "value": 100,
+                "percentage": "16.67%"
               },
               {
-                "Architecture": "A",
-                "Deployment Scenario": "Mobile On-Device",
-                "Accuracy (%)": 87.0,
-                "Training Time (hours)": 10.0,
-                "Inference Speed (predictions/second)": 800,
-                "Memory Footprint (GB)": 0.5
+                "label": "Engineering",
+                "value": 200,
+                "percentage": "33.33%"
               },
               {
-                "Architecture": "B",
-                "Deployment Scenario": "Real-time Edge",
-                "Accuracy (%)": 90.2,
-                "Training Time (hours)": 18.0,
-                "Inference Speed (predictions/second)": 1200,
-                "Memory Footprint (GB)": 1.1
-              },
-              {
-                "Architecture": "B",
-                "Deployment Scenario": "Cloud Batch",
-                "Accuracy (%)": 93.5,
-                "Training Time (hours)": 55.0,
-                "Inference Speed (predictions/second)": 4500,
-                "Memory Footprint (GB)": 4.0
-              },
-              {
-                "Architecture": "B",
-                "Deployment Scenario": "Mobile On-Device",
-                "Accuracy (%)": 89.1,
-                "Training Time (hours)": 14.0,
-                "Inference Speed (predictions/second)": 700,
-                "Memory Footprint (GB)": 0.7
-              },
-              {
-                "Architecture": "C",
-                "Deployment Scenario": "Real-time Edge",
-                "Accuracy (%)": 89.0,
-                "Training Time (hours)": 15.0,
-                "Inference Speed (predictions/second)": 1600,
-                "Memory Footprint (GB)": 0.9
-              },
-              {
-                "Architecture": "C",
-                "Deployment Scenario": "Cloud Batch",
-                "Accuracy (%)": 92.8,
-                "Training Time (hours)": 48.0,
-                "Inference Speed (predictions/second)": 5200,
-                "Memory Footprint (GB)": 3.5
-              },
-              {
-                "Architecture": "C",
-                "Deployment Scenario": "Mobile On-Device",
-                "Accuracy (%)": 88.2,
-                "Training Time (hours)": 12.0,
-                "Inference Speed (predictions/second)": 850,
-                "Memory Footprint (GB)": 0.6
-              },
-              {
-                "Architecture": "D",
-                "Deployment Scenario": "Real-time Edge",
-                "Accuracy (%)": 91.5,
-                "Training Time (hours)": 22.0,
-                "Inference Speed (predictions/second)": 1100,
-                "Memory Footprint (GB)": 1.5
-              },
-              {
-                "Architecture": "D",
-                "Deployment Scenario": "Cloud Batch",
-                "Accuracy (%)": 94.0,
-                "Training Time (hours)": 60.0,
-                "Inference Speed (predictions/second)": 4800,
-                "Memory Footprint (GB)": 4.5
-              },
-              {
-                "Architecture": "D",
-                "Deployment Scenario": "Mobile On-Device",
-                "Accuracy (%)": 90.5,
-                "Training Time (hours)": 17.0,
-                "Inference Speed (predictions/second)": 650,
-                "Memory Footprint (GB)": 0.9
+                "label": "Operations",
+                "value": 150,
+                "percentage": "25%"
               }
             ]
           }
         }
-      }
+      ]
     ]
   },
-  "question": "To select the Neural Network Architecture that generally requires the least training effort across all deployment scenarios while maintaining an average accuracy above 90%, one should choose Architecture [Dropdown 1]. This architecture provides an average Inference Speed of approximately [Dropdown 2] predictions/second across all three scenarios, highlighting its efficiency in execution.",
-  "title": "Neural Network Architecture Analysis: Performance Ratios and Percentages",
-  "solution": "```json\n{\n  \"metadata\": {\n    \"Graph\": {\n      \"type\": \"table\",\n      \"description\": \"A table presenting performance metrics for four distinct Neural Network Architectures (A, B, C, D) across three different deployment scenarios (Real-time Edge, Cloud Batch, Mobile On-Device). Each architecture's performance is detailed with four key metrics for each scenario.\",\n      \"structure\": {\n        \"title\": \"Performance Metrics of Neural Network Architectures Across Deployment Scenarios\",\n        \"headers\": [\n          \"Architecture\",\n          \"Deployment Scenario\",\n          \"Accuracy (%)\",\n          \"Training Time (hours)\",\n          \"Inference Speed (predictions/second)\",\n          \"Memory Footprint (GB)\"\n        ],\n        \"data\": [\n          {\n            \"Architecture\": \"A\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 88.5,\n            \"Training Time (hours)\": 12.5,\n            \"Inference Speed (predictions/second)\": 1500,\n            \"Memory Footprint (GB)\": 0.8\n          },\n          {\n            \"Architecture\": \"A\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 92.1,\n            \"Training Time (hours)\": 45.0,\n            \"Inference Speed (predictions/second)\": 5000,\n            \"Memory Footprint (GB)\": 3.2\n          },\n          {\n            \"Architecture\": \"A\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 87.0,\n            \"Training Time (hours)\": 10.0,\n            \"Inference Speed (predictions/second)\": 800,\n            \"Memory Footprint (GB)\": 0.5\n          },\n          {\n            \"Architecture\": \"B\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 90.2,\n            \"Training Time (hours)\": 18.0,\n            \"Inference Speed (predictions/second)\": 1200,\n            \"Memory Footprint (GB)\": 1.1\n          },\n          {\n            \"Architecture\": \"B\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 93.5,\n            \"Training Time (hours)\": 55.0,\n            \"Inference Speed (predictions/second)\": 4500,\n            \"Memory Footprint (GB)\": 4.0\n          },\n          {\n            \"Architecture\": \"B\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 89.1,\n            \"Training Time (hours)\": 14.0,\n            \"Inference Speed (predictions/second)\": 700,\n            \"Memory Footprint (GB)\": 0.7\n          },\n          {\n            \"Architecture\": \"C\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 89.0,\n            \"Training Time (hours)\": 15.0,\n            \"Inference Speed (predictions/second)\": 1600,\n            \"Memory Footprint (GB)\": 0.9\n          },\n          {\n            \"Architecture\": \"C\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 92.8,\n            \"Training Time (hours)\": 48.0,\n            \"Inference Speed (predictions/second)\": 5200,\n            \"Memory Footprint (GB)\": 3.5\n          },\n          {\n            \"Architecture\": \"C\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 88.2,\n            \"Training Time (hours)\": 12.0,\n            \"Inference Speed (predictions/second)\": 850,\n            \"Memory Footprint (GB)\": 0.6\n          },\n          {\n            \"Architecture\": \"D\",\n            \"Deployment Scenario\": \"Real-time Edge\",\n            \"Accuracy (%)\": 91.5,\n            \"Training Time (hours)\": 22.0,\n            \"Inference Speed (predictions/second)\": 1100,\n            \"Memory Footprint (GB)\": 1.5\n          },\n          {\n            \"Architecture\": \"D\",\n            \"Deployment Scenario\": \"Cloud Batch\",\n            \"Accuracy (%)\": 94.0,\n            \"Training Time (hours)\": 60.0,\n            \"Inference Speed (predictions/second)\": 4800,\n            \"Memory Footprint (GB)\": 4.5\n          },\n          {\n            \"Architecture\": \"D\",\n            \"Deployment Scenario\": \"Mobile On-Device\",\n            \"Accuracy (%)\": 90.5,\n            \"Training Time (hours)\": 17.0,\n            \"Inference Speed (predictions/second)\": 650,\n            \"Memory Footprint (GB)\": 0.9\n          }\n        ]\n      }\n    }\n  },\n  \"question\": \"The architecture with the highest *average Inference Speed* across all deployment scenarios is [Dropdown 1]. When considering only the 'Mobile On-Device' scenario, Architecture [Dropdown 1]'s Memory Footprint is approximately [Dropdown 2] percent higher than the architecture with the *lowest* Memory Footprint in that same scenario.\",\n  \"options\": [\n    {\n      \"A\": \"A\",\n      \"B\": \"B\",\n      \"C\": \"C\",\n      \"D\": \"D\"\n    },\n    {\n      \"A\": \"10\",\n      \"B\": \"15\",\n      \"C\": \"20\",\n      \"D\": \"25\"\n    }\n  ],\n  \"answer\": [\n    \"C\",\n    \"C\"\n  ]\n}\n```\n**Step 1: Calculate the average Inference Speed for each architecture across all deployment scenarios.**\n\n*   **Architecture A:**\n    Average Inference Speed = $\\frac{(1500 + 5000 + 800)}{3} = \\frac{7300}{3} \\approx 2433.33$ predictions/second\n*   **Architecture B:**\n    Average Inference Speed = $\\frac{(1200 + 4500 + 700)}{3} = \\frac{6400}{3} \\approx 2133.33$ predictions/second\n*   **Architecture C:**\n    Average Inference Speed = $\\frac{(1600 + 5200 + 850)}{3} = \\frac{7650}{3} = 2550$ predictions/second\n*   **Architecture D:**\n    Average Inference Speed = $\\frac{(1100 + 4800 + 650)}{3} = \\frac{6550}{3} \\approx 2183.33$ predictions/second\n\n**Step 2: Identify the architecture with the highest average Inference Speed.**\n\nComparing the averages:\n*   Architecture A: 2433.33\n*   Architecture B: 2133.33\n*   Architecture C: 2550\n*   Architecture D: 2183.33\n\nArchitecture C has the highest average Inference Speed (2550 predictions/second).\nSo, for [Dropdown 1], the answer is **C**.\n\n**Step 3: Identify Architecture C's Memory Footprint in the 'Mobile On-Device' scenario.**\n\nFrom the table, for Architecture C, 'Mobile On-Device' scenario, the Memory Footprint is **0.6 GB**.\n\n**Step 4: Identify the architecture with the lowest Memory Footprint in the 'Mobile On-Device' scenario.**\n\nLooking at the 'Mobile On-Device' scenario for all architectures:\n*   Architecture A: 0.5 GB\n*   Architecture B: 0.7 GB\n*   Architecture C: 0.6 GB\n*   Architecture D: 0.9 GB\n\nThe lowest Memory Footprint is 0.5 GB, belonging to Architecture A.\n\n**Step 5: Calculate the percentage higher of Architecture C's Memory Footprint compared to the lowest in the 'Mobile On-Device' scenario.**\n\nPercentage higher = $\\frac{(\\text{Architecture C's Memory Footprint} - \\text{Lowest Memory Footprint})}{\\text{Lowest Memory Footprint}} \\times 100\\%$\nPercentage higher = $\\frac{(0.6 \\text{ GB} - 0.5 \\text{ GB})}{0.5 \\text{ GB}} \\times 100\\%$\nPercentage higher = $\\frac{0.1}{0.5} \\times 100\\%$\nPercentage higher = $0.2 \\times 100\\%$\nPercentage higher = $20\\%$\n\nSo, for [Dropdown 2], the answer is **20**.\n\nThe final answers are:\n*   Dropdown 1: C\n*   Dropdown 2: C (corresponding to 20%)",
+  "question": "A company aims to optimize project team compositions by forming a specialized 'Innovation Hub' combining employees from its Engineering (200 employees) and Marketing (100 employees) departments. Given that the average monthly salary for the Engineering department is $6000 and for Marketing is $4500, if the target average monthly salary for the Innovation Hub is $5500, the required ratio of employees from Engineering to Marketing is ____. Concurrently, if the average years of experience for Engineering is 8 years and for Marketing is 6 years, and the desired average experience for the Innovation Hub is 7.5 years, the ratio of employees from Engineering to Marketing based on experience targets would be ____. Based on the departmental employee counts and these derived ratios, the maximum number of employees that can be drawn to form this 'Innovation Hub' while adhering strictly to *both* the salary and experience target average profiles simultaneously, is ____. This constraint highlights a significant ____ in optimizing combined team profiles, necessitating a sophisticated HR approach to reconcile competing metrics and ensure overall organizational ____.",
+  "title": "Mixture & Alligation: HR Departmental Average Salary & Experience Analysis",
+  "solution": "\"The company decides to form a new 'Special Projects Division' by transferring 60% of the employees from the Engineering department and 40% of the employees from the Sales department. To further boost its capabilities, the company plans to hire additional data analysts for this division. Each new data analyst has an average monthly salary of $6,000 and an average experience of 6 years. If, after these new hires, the overall average monthly salary of the 'Special Projects Division' becomes $7,000, what is the number of new data analysts hired? Also, what would be the overall average years of experience of the 'Special Projects Division' after these new hires?\"",
   "options": [
     {
-      "A": "Architecture A",
-      "B": "Architecture B",
-      "C": "Architecture C",
-      "D": "Architecture D"
+      "A": "$5800",
+      "B": "$5750",
+      "C": "$5900"
     },
     {
-      "A": "1.07 times",
-      "B": "0.94 times",
-      "C": "1.15 times",
-      "D": "0.88 times"
+      "A": "6.57 years",
+      "B": "6.50 years",
+      "C": "6.71 years"
     }
   ],
   "answer": [
-    "C",
+    "A",
     "A"
   ],
-  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+  "prompt": "<Mixtures and Alligations> - <Human Resources> - <Quantitative Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
   "question-type": "Graphic Interpretation"
 }

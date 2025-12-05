@@ -160,7 +160,9 @@
                "Problem Solving Simple",
                "Problem Solving Meta",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child"
+               "Two-Part Analysis Child",
+               "Multi-Source Reasoning",
+               "Two-Part Analysis"
             ],
             "file-name": "generic-question-option-answer.txt.template",
             "variables": null,
@@ -176,7 +178,9 @@
                "Sentence Equivalence",
                "Reading Comprehension",
                "Problem Solving Simple",
-               "Multi-Source Reasoning Child"
+               "Multi-Source Reasoning Child",
+               "Multi-Source Reasoning",
+               "Two-Part Analysis"
             ],
             "file-name": "multi-correct-question-option-answer.txt.template",
             "variables": null,

@@ -1,5 +1,6 @@
 STRICT RESPONSE FORMAT:- JSON
 - "title" key with short one line summary of the question.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 Example:-
 ```json
 {

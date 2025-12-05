@@ -1,6 +1,6 @@
 STRICT RESPONSE FORMAT:- JSON
 - "para" key with value as string for that particular paragraph
-
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 Example:-
 
 ```json

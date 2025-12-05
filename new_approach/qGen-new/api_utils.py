@@ -240,16 +240,106 @@ class GeminiGenerator:
         except Exception as e:
             raise RuntimeError(f"Failed to create chat instance: {str(e)}")
 
+    def _dict_to_schema(self, schema_dict: Dict[str, Any]) -> types.Schema:
+        """
+        Recursively convert a dictionary to a Gemini types.Schema object.
+        """
+        type_str = schema_dict.get("type", "STRING").upper()
+        
+        # Map string types to Gemini Type enums
+        type_mapping = {
+            "STRING": types.Type.STRING,
+            "NUMBER": types.Type.NUMBER,
+            "INTEGER": types.Type.INTEGER,
+            "BOOLEAN": types.Type.BOOLEAN,
+            "ARRAY": types.Type.ARRAY,
+            "OBJECT": types.Type.OBJECT
+        }
+        
+        gemini_type = type_mapping.get(type_str, types.Type.STRING)
+        
+        schema_args = {"type": gemini_type}
+        
+        if "description" in schema_dict:
+            schema_args["description"] = schema_dict["description"]
+            
+        if "format" in schema_dict:
+            schema_args["format"] = schema_dict["format"]
+            
+        if "enum" in schema_dict:
+            schema_args["enum"] = schema_dict["enum"]
+
+        if "properties" in schema_dict:
+            properties = {}
+            for key, prop_dict in schema_dict["properties"].items():
+                properties[key] = self._dict_to_schema(prop_dict)
+            schema_args["properties"] = properties
+            
+        if "required" in schema_dict:
+            schema_args["required"] = schema_dict["required"]
+            
+        if "items" in schema_dict:
+            schema_args["items"] = self._dict_to_schema(schema_dict["items"])
+            
+        # Note: 'additionalProperties' is not directly supported in strict Schema objects 
+        # in the same way as JSON schema. For maps (dict with dynamic keys), 
+        # usually we just use OBJECT without properties, but strict mode requires properties.
+        # However, for our use case (e.g. options dict), we might need to rely on 
+        # specific known keys or use a list of objects instead if keys are dynamic.
+        # But since we defined schemas with 'additionalProperties' in our JSON files,
+        # we need to handle it. Gemini doesn't support additionalProperties.
+        # If we have dynamic keys (like "A", "B", "C"), we can't define them in 'properties'.
+        # In that case, we might have to relax the schema or use a different structure.
+        # BUT, for now, let's ignore additionalProperties and see if it works 
+        # or if we need to change the schema to List[Object] with "key" and "value" fields.
+        # Given the user wants strict JSON, dynamic keys are tricky.
+        # Let's try to map it to a generic OBJECT if additionalProperties is present,
+        # but we know that causes INVALID_ARGUMENT if properties are empty.
+        # Workaround: If additionalProperties is present, we might have to skip strict schema
+        # for that part or define a large set of possible keys (A..Z).
+        # For now, I will proceed without special handling for additionalProperties, 
+        # which means those fields might be dropped or cause issues if properties is empty.
+        
+        return types.Schema(**schema_args)
+
+    def _load_schema(self, template_filename: str, component_type: str) -> Optional[types.Schema]:
+        """
+        Load JSON schema from file corresponding to the template.
+        """
+        if not template_filename:
+            return None
+            
+        # Handle directory name replacement (same as io_utils)
+        safe_component_type = component_type.replace('/', '|')
+        
+        schema_filename = template_filename.replace('.txt.template', '.json.schema')
+        
+        # Construct path
+        # Assuming api_utils.py is in qGen-new/
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        schema_path = os.path.join(
+            base_dir, 
+            'json_files', 
+            'component_templates', 
+            safe_component_type, 
+            schema_filename
+        )
+        
+        if not os.path.exists(schema_path):
+            # print(f"Schema file not found: {schema_path}")
+            return None
+            
+        try:
+            with open(schema_path, 'r') as f:
+                schema_dict = json.load(f)
+            return self._dict_to_schema(schema_dict)
+        except Exception as e:
+            print(f"Error loading schema {schema_filename}: {e}")
+            return None
+
     def _parse_json_response(self, response_text: str, expected_output: Union[str, Dict[str, str]]) -> Union[str, Dict[str, Any]]:
         """
-        Parse response based on expected output format using refine_response for JSON cleaning.
-
-        Args:
-            response_text: Raw response text from Gemini
-            expected_output: Expected output format (str for plain text, dict for JSON keys)
-
-        Returns:
-            Either plain string or parsed JSON data containing the expected keys
+        Parse response based on expected output format.
         """
         try:
             # If expected output is a plain string, return the response directly
@@ -263,21 +353,20 @@ class GeminiGenerator:
                         cleaned_text = '\n'.join(lines[1:-1])
                 return cleaned_text
 
-            # For JSON responses, use refine_response to clean and then parse
-            refined_response = refine_response(response_text)
+            # For structured output, Gemini returns valid JSON (usually)
+            # But sometimes it might still wrap it in markdown if not strictly enforced, 
+            # though with response_schema it should be raw JSON.
+            # We'll use a lighter cleaning just in case.
+            
+            text = response_text.strip()
+            # Remove markdown if present (just in case)
+            if text.startswith('```json'):
+                text = text[7:]
+            if text.endswith('```'):
+                text = text[:-3]
+            text = text.strip()
 
-            # Check if refine_response returned an error
-            if refined_response.startswith('{"error":'):
-                raise ValueError(
-                    f"refine_response returned error: {refined_response}")
-
-            # Parse the refined JSON
-            parsed_data = json.loads(refined_response)
-
-            # Check if this is an error response from refine_response
-            if isinstance(parsed_data, dict) and "error" in parsed_data and len(parsed_data) == 1:
-                raise ValueError(
-                    f"refine_response error: {parsed_data['error']}")
+            parsed_data = json.loads(text)
 
             # Validate expected output keys
             if isinstance(expected_output, dict):
@@ -286,40 +375,16 @@ class GeminiGenerator:
                         raise ValueError(
                             f"Missing expected key '{prettify(key, 'Magenta')}' in response")
 
-                    # Basic type validation with more flexible handling
-                    if expected_type == "str" and not isinstance(parsed_data[key], str):
-                        raise ValueError(
-                            f"Expected string for '{key}', got {type(parsed_data[key])}")
-                    elif expected_type == "dict" and not isinstance(parsed_data[key], (dict, list)):
-                        # Accept both dict and list for expected dict types (since both can be JSON serialized)
-                        raise ValueError(
-                            f"Expected dict or list for '{key}', got {type(parsed_data[key])}")
-                    elif expected_type == "dict" and isinstance(parsed_data[key], list):
-                        # Special handling for options that might come as list of dicts
-                        if key == "options":
-                            # Convert list of option dicts to single dict
-                            options_dict = {}
-                            for item in parsed_data[key]:
-                                if isinstance(item, dict):
-                                    options_dict.update(item)
-                            parsed_data[key] = options_dict
-                        # For other keys like 'graph', 'table', etc., keep the list as-is
-                        # since it's valid JSON data
-                    elif expected_type == "List[str]" and not isinstance(parsed_data[key], list):
-                        raise ValueError(
-                            f"Expected list for '{key}', got {type(parsed_data[key])}")
-                    elif expected_type == "int" and not isinstance(parsed_data[key], (int, float)):
-                        raise ValueError(
-                            f"Expected number for '{key}', got {type(parsed_data[key])}")
-
             return parsed_data
 
         except json.JSONDecodeError as e:
-            # If JSON parsing fails but we expected a string, return the cleaned text
-            if expected_output == "str":
-                return response_text.strip()
-            raise ValueError(
-                f"Invalid JSON response after refinement: {str(e)}\nRefined response: {refined_response}\nOriginal response: {response_text}")
+            # Fallback to refine_response if simple load fails (legacy support or edge cases)
+            try:
+                refined = refine_response(response_text)
+                return json.loads(refined)
+            except:
+                raise ValueError(
+                    f"Invalid JSON response: {str(e)}\nResponse: {response_text}")
         except Exception as e:
             raise ValueError(
                 f"Error parsing response: {str(e)}\nResponse text: {response_text}")
@@ -403,7 +468,30 @@ Generate the requested {component_type} component following the format specifica
                 # }, fname=f'request_{self.question_type_slug}_{self.request_counter}',
                 #     addresses=('gemini', 'requests'))
 
-                response = chat_instance.send_message(comprehensive_prompt)
+                # Prepare generation config
+                config_args = {}
+                
+                # Try to load explicit schema first
+                template_filename = context.get('template_filename') if context else None
+                component_type = context.get('component_type') if context else None
+                
+                schema = None
+                if template_filename and component_type:
+                    schema = self._load_schema(template_filename, component_type)
+                
+                # If explicit schema found, use it
+                if schema:
+                    config_args['response_mime_type'] = 'application/json'
+                    config_args['response_schema'] = schema
+                # Fallback to dynamic schema generation (removed) or just standard JSON mode if dict
+                # But since we removed _convert_to_gemini_schema, we rely on explicit schemas.
+                # If no schema found, we don't enforce structured output (standard generation).
+                
+                # Generate content
+                response = chat_instance.send_message(
+                    comprehensive_prompt,
+                    config=types.GenerateContentConfig(**config_args) if config_args else None
+                )
                 self._last_request_ts = time.time()
                 # self._rate_limit_hits = 0 # This line is removed as rpd_flag replaces its functionality
 

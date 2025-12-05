@@ -94,6 +94,16 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
         "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
     }
 
+    # Handle new strict schema format (options_list)
+    options_list = generated_data.get('options_list')
+    if options_list:
+        if option_type == 'blank':
+             # For blank, values is a list
+             options = {item['key']: item['values'] for item in options_list}
+        else:
+             # For single/multi, value is a string
+             options = {item['key']: item['value'] for item in options_list}
+    
     if option_type == 'blank':
         # For Text Completion, options are a list of dictionaries (one per blank)
         # We keep the original structure as requested by the user
@@ -101,7 +111,7 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
         result['answer'] = answer
         return
 
-    if option_type not in ('numeric', 'dichotomous'):
+    if option_type not in ('numeric', 'dichotomous', 'blank'):
         if options is None and question_type == 'Data Sufficiency':
             options = ds_default_options.copy()
         if not isinstance(options, dict):
@@ -138,11 +148,28 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
         result['answer'] = answer
 
     elif option_type == 'blank':
-        pass
-        # have to write code for this one.
+        # For Text Completion, options can be a dict (TC-1) or list of dicts (TC-2/3)
+        if not isinstance(options, (dict, list)):
+             raise TypeError(
+                f"{prettify('options', 'Yellow')} must be {prettify('dict or list', 'Green')} for blank questions; got {prettify(type(options).__name__, 'Red')}"
+            )
+        result['options'] = options
+        result['answer'] = answer
 
     elif option_type == 'dichotomous':
         # For Table Analysis: options is list of statements, answer is dict {statement: bool}
+        
+        # Handle user-defined schema format where answer is a list of objects
+        if isinstance(answer, list):
+             # Convert list of objects back to dict {statement: response}
+             # Assuming list items are dicts with 'statement' and 'response' keys
+             try:
+                answer = {item['statement']: item['response'] for item in answer}
+             except (KeyError, TypeError) as e:
+                 raise ValueError(f"Failed to convert answer list to dict: {e}. Expected list of objects with 'statement' and 'response' keys.")
+
+        # For Table Analysis: options is list of statements, answer is dict {statement: bool}
+        
         if not isinstance(options, list):
             raise TypeError(
                 f"{prettify('options', 'Yellow')} must be {prettify('list', 'Green')} for dichotomous questions; got {prettify(type(options).__name__, 'Red')}"

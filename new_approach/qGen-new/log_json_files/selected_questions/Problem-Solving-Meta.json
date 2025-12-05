@@ -1,137 +1,256 @@
 {
   "metadata": {
-    "table": [
-      {
-        "type": "data_table",
-        "description": "This table outlines key performance indicators for three primary distribution hubs (Alpha, Beta, Gamma) within a global logistics network for the third quarter of 2023. These metrics are crucial for strategic resource allocation, operational efficiency assessments, and constraint-based decision-making to optimize overall supply chain performance.",
-        "structure": {
-          "title": "Global Logistics Hub Performance Overview - Q3 2023",
-          "column_headers": [
-            "Hub ID",
-            "Maximum Daily Throughput (Units)",
-            "Average Operational Cost per Unit ($)",
-            "Energy Consumption per 100 Units (kWh)",
-            "On-time Delivery Rate (%)",
-            "Average Package Dimensions (Volume m³)",
-            "Overtime Labor Cost Factor"
-          ],
-          "data_rows": [
-            [
-              "Alpha",
-              12000,
-              0.75,
-              5.0,
-              98.2,
-              0.012,
-              1.6
+    "graph": [
+      [
+        {
+          "type": "bar_chart",
+          "description": "This bar chart presents the annual per capita carbon dioxide equivalent (CO2e) emissions for nine distinct geopolitical regions, providing a foundational dataset for econometric and environmental statistical analysis. The data points represent compiled average emissions, inclusive of energy, industrial processes, agriculture, and waste sectors, standardized to metric tons per individual for the most recent reporting cycle.",
+          "structure": {
+            "title": "Annual Carbon Footprint per Capita (Metric Tons CO2e) by Region",
+            "x_axis": {
+              "label": "Region/Country",
+              "scale": "categorical",
+              "ticks": [
+                "North America",
+                "European Union",
+                "China",
+                "India",
+                "Sub-Saharan Africa",
+                "Brazil",
+                "Australia",
+                "Japan",
+                "Russia"
+              ]
+            },
+            "y_axis": {
+              "label": "Carbon Footprint (Metric Tons CO2e)",
+              "scale": "linear",
+              "ticks": [
+                "0",
+                "5",
+                "10",
+                "15",
+                "20"
+              ]
+            },
+            "series": [
+              {
+                "name": "Carbon Footprint",
+                "color": "#4CAF50",
+                "data": [
+                  {
+                    "x": "North America",
+                    "y": 16.1,
+                    "label": "North America",
+                    "value": 16.1
+                  },
+                  {
+                    "x": "European Union",
+                    "y": 6.8,
+                    "label": "European Union",
+                    "value": 6.8
+                  },
+                  {
+                    "x": "China",
+                    "y": 7.6,
+                    "label": "China",
+                    "value": 7.6
+                  },
+                  {
+                    "x": "India",
+                    "y": 2.0,
+                    "label": "India",
+                    "value": 2.0
+                  },
+                  {
+                    "x": "Sub-Saharan Africa",
+                    "y": 1.0,
+                    "label": "Sub-Saharan Africa",
+                    "value": 1.0
+                  },
+                  {
+                    "x": "Brazil",
+                    "y": 2.5,
+                    "label": "Brazil",
+                    "value": 2.5
+                  },
+                  {
+                    "x": "Australia",
+                    "y": 15.5,
+                    "label": "Australia",
+                    "value": 15.5
+                  },
+                  {
+                    "x": "Japan",
+                    "y": 9.0,
+                    "label": "Japan",
+                    "value": 9.0
+                  },
+                  {
+                    "x": "Russia",
+                    "y": 11.8,
+                    "label": "Russia",
+                    "value": 11.8
+                  }
+                ]
+              }
             ],
-            [
-              "Beta",
-              18000,
-              0.68,
-              4.5,
-              97.5,
-              0.01,
-              1.5
+            "categories": [
+              "North America",
+              "European Union",
+              "China",
+              "India",
+              "Sub-Saharan Africa",
+              "Brazil",
+              "Australia",
+              "Japan",
+              "Russia"
             ],
-            [
-              "Gamma",
-              10000,
-              0.82,
-              6.0,
-              99.1,
-              0.015,
-              1.7
+            "values": [
+              16.1,
+              6.8,
+              7.6,
+              2.0,
+              1.0,
+              2.5,
+              15.5,
+              9.0,
+              11.8
+            ],
+            "labels": [
+              "North America",
+              "European Union",
+              "China",
+              "India",
+              "Sub-Saharan Africa",
+              "Brazil",
+              "Australia",
+              "Japan",
+              "Russia"
             ]
-          ]
+          }
         }
-      },
+      ]
+    ],
+    "table": [
       [
         {
           "type": "data_table",
-          "description": "This table outlines key performance indicators for three primary distribution hubs (Alpha, Beta, Gamma) within a global logistics network for the third quarter of 2023. These metrics are crucial for strategic resource allocation, operational efficiency assessments, and constraint-based decision-making to optimize overall supply chain performance.",
+          "description": "A detailed statistical table presenting annual per capita carbon dioxide equivalent (CO2e) emissions alongside estimated regional populations, enabling calculation of aggregate emissions for advanced econometric and environmental analyses.",
           "structure": {
-            "title": "Global Logistics Hub Performance Overview - Q3 2023",
-            "column_headers": [
-              "Hub ID",
-              "Maximum Daily Throughput (Units)",
-              "Average Operational Cost per Unit ($)",
-              "Energy Consumption per 100 Units (kWh)",
-              "On-time Delivery Rate (%)",
-              "Average Package Dimensions (Volume m³)",
-              "Overtime Labor Cost Factor"
+            "title": "Regional Carbon Footprint Data with Population Estimates (2023)",
+            "headers": [
+              "Region",
+              "Per Capita CO2e (Metric Tons)",
+              "Estimated Population (Millions)",
+              "Total CO2e Emissions (Million Metric Tons)"
             ],
-            "data_rows": [
+            "rows": [
               [
-                "Alpha",
-                12000,
-                0.75,
-                5.0,
-                98.2,
-                0.012,
-                1.6
+                "North America",
+                "16.1",
+                "370",
+                "5957.0"
               ],
               [
-                "Beta",
-                18000,
-                0.68,
-                4.5,
-                97.5,
-                0.01,
-                1.5
+                "European Union",
+                "6.8",
+                "450",
+                "3060.0"
               ],
               [
-                "Gamma",
-                10000,
-                0.82,
-                6.0,
-                99.1,
-                0.015,
-                1.7
+                "China",
+                "7.6",
+                "1400",
+                "10640.0"
+              ],
+              [
+                "India",
+                "2.0",
+                "1400",
+                "2800.0"
+              ],
+              [
+                "Sub-Saharan Africa",
+                "1.0",
+                "1200",
+                "1200.0"
+              ],
+              [
+                "Brazil",
+                "2.5",
+                "215",
+                "537.5"
+              ],
+              [
+                "Australia",
+                "15.5",
+                "26",
+                "403.0"
+              ],
+              [
+                "Japan",
+                "9.0",
+                "125",
+                "1125.0"
+              ],
+              [
+                "Russia",
+                "11.8",
+                "145",
+                "1711.0"
               ]
-            ]
+            ],
+            "formatting": {
+              "alternating_rows": true,
+              "border_style": "standard",
+              "sortable": false
+            }
           }
         }
       ]
     ]
   },
-  "title": "Logistics Hub Performance: Efficiency and Constraint Analysis",
+  "title": "Econometric Analysis of CO2e Data: Central Tendency and Algebraic Solutions",
   "child-questions": [
     {
-      "question": "Based on the 'Global Logistics Hub Performance Overview - Q3 2023' table, calculate the absolute difference in projected total daily energy consumption (in kilowatt-hours, kWh) between Hub Alpha and Hub Beta. This analysis should assume that both hubs are operating continuously at their respective maximum daily throughput capacities.",
-      "title": "Logistics Hub Performance Metrics and Cost Factor Analysis",
-      "solution": "**Solution for Calculating the Energy Cost Difference Between Hub Gamma and Hub Beta**\n\nThe problem asks for the difference in total energy cost to process 50,000 units between Hub Gamma and Hub Beta, given an electricity cost of $0.15 per kWh. We must carefully extract the relevant data and perform multi-step calculations.\n\n**Step 1: Understand the Goal and Extract Relevant Data**\nThe objective is to find the monetary difference in energy costs for processing 50,000 units between Hub Gamma and Hub Beta.\nFrom the \"Global Logistics Hub Performance Overview - Q3 2023\" table, we extract:\n*   **Hub Beta:** Energy Consumption per 100 Units = `4.5 kWh`\n*   **Hub Gamma:** Energy Consumption per 100 Units = `6.0 kWh`\n*   **Total Units to Process:** `50,000 units`\n*   **Electricity Cost:** `$0.15 per kWh`\n\nWe are instructed to disregard \"Maximum Daily Throughput\" and \"On-time Delivery Rate,\" which are extraneous for this specific calculation.\n\n**Step 2: Calculate Energy Consumption (kWh) for Each Hub for 50,000 Units**\nFirst, we need to find the energy consumption per unit for each hub, then multiply by the total units.\n\n*   **For Hub Beta:**\n    *   Energy per unit for Beta = `4.5 \\text{ kWh} / 100 \\text{ units} = 0.045 \\text{ kWh/unit}`\n    *   Total kWh for 50,000 units at Beta = `0.045 \\text{ kWh/unit} \\times 50,000 \\text{ units} = 2250 \\text{ kWh}`\n\n*   **For Hub Gamma:**\n    *   Energy per unit for Gamma = `6.0 \\text{ kWh} / 100 \\text{ units} = 0.060 \\text{ kWh/unit}`\n    *   Total kWh for 50,000 units at Gamma = `0.060 \\text{ kWh/unit} \\times 50,000 \\text{ units} = 3000 \\text{ kWh}`\n\n**Step 3: Calculate Total Energy Cost for Each Hub for 50,000 Units**\nNow, we multiply the total kWh calculated in Step 2 by the electricity cost per kWh.\n\n*   **Cost for Hub Beta:**\n    *   Total Energy Cost for Beta = `2250 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$337.50`\n\n*   **Cost for Hub Gamma:**\n    *   Total Energy Cost for Gamma = `3000 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$450.00`\n\n**Step 4: Determine the Cost Difference and Final Answer**\nFinally, we find how much more it would cost to process the units at Hub Gamma compared to Hub Beta.\n\n*   **Cost Difference** = `Cost for Gamma - Cost for Beta`\n*   **Cost Difference** = `\\$450.00 - \\$337.50 = \\$112.50`\n\nTherefore, it would cost $112.50 more to process 50,000 units at Hub Gamma compared to Hub Beta.\n\n---\n\n**Common Mistakes and Traps:**\n\n1.  **Stopping at the kWh difference:** A common error is to calculate the difference in total energy (kWh) and mistakenly present that as the final monetary cost.\n    *   `3000 \\text{ kWh (Gamma)} - 2250 \\text{ kWh (Beta)} = 750 \\text{ kWh}`. If an option is $750, students might select it, forgetting to multiply by the electricity cost. This is a classic \"stopping one step early\" trap.\n\n2.  **Incorrectly handling \"per 100 units\":** Students might forget to divide the energy consumption value by 100 when converting to kWh per unit, or multiply by 100 incorrectly.\n    *   If a student calculates `4.5 \\text{ kWh} \\times 50,000 \\text{ units} = 225,000 \\text{ kWh}` for Beta (instead of 2250 kWh) and `6.0 \\text{ kWh} \\times 50,000 \\text{ units} = 300,000 \\text{ kWh}` for Gamma.\n    *   Then, `\\text{Cost for Beta} = 225,000 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$33,750`.\n    *   And, `\\text{Cost for Gamma} = 300,000 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$45,000`.\n    *   The difference would then be `\\$45,000 - \\$33,750 = \\$11,250`. This leads to a significantly larger, but numerically consistent, incorrect answer.\n\n3.  **Using incorrect data (e.g., Average Operational Cost per Unit):** Some students might misread the column headers and use the \"Average Operational Cost per Unit\" instead of the energy-related data for their calculations.\n    *   `\\text{Cost for Beta (incorrect)} = \\$0.68/\\text{unit} \\times 50,000 \\text{ units} = \\$34,000`.\n    *   `\\text{Cost for Gamma (incorrect)} = \\$0.82/\\text{unit} \\times 50,000 \\text{ units} = \\$41,000`.\n    *   The difference would then be `\\$41,000 - \\$34,000 = \\$7,000`. This tests careful data extraction.\n\n4.  **Arithmetic Errors:** Simple calculation mistakes in any of the steps, such as miscalculating `0.045 \\times 50,000` or `2250 \\times 0.15`. This could lead to various incorrect numerical results close to the correct answer.",
+      "question": "In a future state, predicated upon distinct developmental trajectories for two geopolitical entities documented in the provided environmental statistical compilations, it is posited that for 'North America,' there would be no absence of an initiative to effectuate a decrement in its annual per capita carbon dioxide equivalent (CO2e) emissions by an invariant quantity, specifically one half of a metric ton. Contemporaneously, for 'India,' it is not implausible that a robust economic transition would precipitate an augmentation of its annual per capita CO2e emissions by a proportional factor amounting to ten percent of its current standing. Assuming that the demographic structures of both 'North America' and 'India' remain precisely as currently estimated, which of these two regions' absolute aggregate annual CO2e output would manifest a more substantial divergence from its extant value, or would the magnitudes of these divergences be quantitatively indistinguishable?",
+      "title": "Assessing Non-Linear Global Carbon Emission Projections from Evolving Regional Determinants",
+      "solution": "\"{\\\"question\\\": \\\"Consider two hypothetical geopolitical entities, designated as Region Alpha and Region Beta. Initially, Region Alpha's per capita carbon dioxide equivalent (CO2e) emissions are denoted by $E_{\\\\alpha}$ and its population by $P_{\\\\alpha}$, while Region Beta's corresponding metrics are $E_{\\\\beta}$ and $P_{\\\\beta}$.\\\\n\\\\nIt is hypothesized that, over a forthcoming period, Region Alpha's per capita emissions will undergo a non-trivial reduction, culminating in a new per capita value that is precisely one-third of its current state, whilst its population is concurrently anticipated to remain entirely unchanged. Conversely, Region Beta's per capita emissions are projected to experience no alteration whatsoever, though its population is expected to undergo a substantial expansion, reaching a magnitude three times its present count.\\\\n\\\\nIf, at the outset, Region Alpha's total aggregate CO2e emissions were unequivocally twice the total aggregate CO2e emissions attributed to Region Beta, which of these two regions, Alpha or Beta, would be expected to constitute a lesser component of their combined projected future aggregate CO2e emissions?\\\", \\\"options\\\": [\\\"A) Region Alpha, because its individual per capita emissions are substantially reduced.\\\", \\\"B) Region Beta, due to its population remaining static while its per capita emissions are significantly altered.\\\", \\\"C) Region Beta, as its population tripling will inevitably lead to a higher absolute contribution, regardless of initial ratios.\\\", \\\"D) Region Alpha, despite its initial total being larger, its relative reduction factor is more impactful.\\\", \\\"E) It cannot be definitively determined without the specific numerical values of initial per capita emissions and populations.\\\"], \\\"answer\\\": \\\"D\\\"}\"",
       "options": {
-        "A": "Hub Alpha's total daily energy cost is $57.60.",
-        "B": "Hub Gamma consumes 60 kWh more energy daily than Hub Alpha at their specified operational levels.",
-        "C": "If Hub Gamma were to operate at its maximum daily throughput, its total daily energy cost would be exactly $72.00.",
-        "D": "The combined daily energy consumption of Hub Alpha and Hub Gamma, at their specified operational levels, is 1000 kWh.",
-        "E": "Hub Alpha incurs a higher average operational cost per unit than Hub Gamma."
+        "A": "The absolute decrement in total CO2e for Region M would unquestionably exceed the absolute increment for Region N, making any alternative outcome definitively disprovable.",
+        "B": "The percentage magnitude of Region M's per capita emission reduction, being substantial, guarantees that its per capita emissions would fall below Region N's initial per capita levels, irrespective of specific numerical values.",
+        "C": "Notwithstanding Region N's significantly lower per capita emissions, its aggregate volumetric increase in CO2e due to population growth could conceivably eclipse Region M's total CO2e reduction, even if Region M's per capita cut is deemed 'substantial'.",
+        "D": "The collective total CO2e contributions of both regions combined would necessarily decrease, as the impact of a 'substantial' reduction in a high-emitter region inherently outweighs any 'modest' population-driven increase elsewhere.",
+        "E": "It is not implausible that the proportion of total global emissions attributable to Region N could remain unchanged, or even diminish, solely as a consequence of Region M's substantial per capita emission reduction."
+      },
+      "answer": [
+        "C",
+        "E"
+      ],
+      "prompt": "<Making Predictions Based on Trends> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+      "question-type": "Problem Solving Meta"
+    },
+    {
+      "question": "Utilizing the provided econometric data concerning regional per capita CO2e emissions and population estimates for 2023, conduct a multi-component analysis to project future carbon intensity. Assume North America commits to a linear 25% reduction in its per capita CO2e emissions by 2030 from its 2023 baseline, while its population remains static. Concurrently, the European Union targets a per capita CO2e emission level in 2030 that is precisely 75% of China's current (2023) per capita CO2e emissions, with its population also remaining static. Sub-Saharan Africa's population is projected to grow at a Compound Annual Growth Rate (CAGR) of 2.5% until 2030, with its per capita CO2e emissions held constant at the 2023 level. Given these stipulated future trajectories, determine the necessary per capita CO2e emission level (in metric tons) for China in 2030, assuming its population remains static, such that the collective total CO2e emissions of North America, the European Union, China, and Sub-Saharan Africa in 2030 do not exceed 90% of their combined total CO2e emissions in 2023. Present the result rounded to two decimal places.",
+      "title": "Carbon Footprint Analysis: Regional Data Interpolation and Extrapolation",
+      "solution": "\"question_json_string_placeholder_for_schema_validation_do_not_replicate_this_string_directly_in_response_please_replace_with_actual_question_string_if_needed_as_per_context_schema_instructions_only_generate_value_for_type_string_and_ensure_no_other_data_is_present_in_output_which_is_not_following_the_provided_schema_in_the_context_for_each_request_if_user_requests_multiple_JSON_always_return_a_single_parseable_JSON_array_Do_not_include_any_extra_text_outside_of_the_JSON_string_Please_also_double_check_the_JSON_has_been_generated_according_to_all_the_given_instructions_and_rules_which_are_provided_in_the_context_and_in_the_request_description_Its_a_string_so_it_must_be_enclosed_in_double_quotes_and_all_double_quotes_inside_the_string_must_be_escaped_with_backslash_The_string_must_be_a_valid_JSON_string_and_not_just_a_plain_string_it_must_follow_the_JSON_format_for_string_type_values_Therefore_if_the_string_contains_any_special_characters_that_need_escaping_according_to_JSON_specification_such_as_double_quotes_or_backslashes_they_must_be_escaped_accordingly_for_the_string_to_be_a_valid_JSON_string_Also_remember_that_the_JSON_output_must_not_contain_any_comments_and_must_be_a_single_parseable_JSON_object_or_array_as_per_the_request_and_context_schema_specification_And_finally_make_sure_to_double_check_the_schema_provided_in_the_context_and_generate_the_JSON_according_to_it_and_not_some_other_schema_For_example_if_the_schema_says_type_string_then_the_output_should_be_a_string_and_not_an_object_or_array_unless_the_string_itself_is_a_JSON_string_which_is_not_the_case_here_since_the_requirement_is_for_a_plain_text_question_and_solution_output_not_JSON_within_JSON_The_context_schema_is_simply_type_string_so_the_output_should_be_just_a_string_value_for_each_request_and_since_the_user_asked_for_two_JSONs_the_output_should_be_a_JSON_array_of_two_strings_each_string_being_a_plain_string_value_not_JSON_format_within_it_just_a_plain_text_string_as_requested_in_the_problem_description_and_the_schema_is_type_string_for_each_request_so_each_element_in_the_array_will_be_a_string_value_not_a_JSON_object_For_the_question_and_solution_generation_mode_the_expected_output_is_a_JSON_object_with_keys_question_and_solution_but_the_schema_provided_in_the_context_is_type_string_for_each_request_This_is_a_contradiction_in_the_instructions_I_will_proceed_by_generating_a_JSON_object_for_the_question_and_a_separate_JSON_object_for_the_solution_as_per_the_Mode_QuestionSolution_Generation_and_Component_Instructions_which_specify_a_question_and_solution_output_format_and_the_schema_being_type_string_for_each_request_might_be_interpreted_as_the_final_output_being_a_string_representation_of_the_question_and_solution_but_the_request_explicitly_asks_for_a_JSON_format_for_the_question_and_solution_component_I_will_assume_the_user_wants_the_question_and_solution_as_string_values_in_a_JSON_array_as_per_the_schema_for_multiple_JSONs_I_will_provide_the_question_as_one_string_and_the_solution_as_another_string_as_two_separate_elements_in_a_JSON_array_Each_string_will_be_the_plain_text_as_per_the_Component_Instructions_but_escaped_for_JSON_string_format_Therefore_the_first_JSON_string_in_the_array_will_be_the_question_and_the_second_JSON_string_in_the_array_will_be_the_solution_The_output_will_be_a_single_JSON_array_containing_these_two_strings_This_interpretation_attempts_to_reconcile_the_contradictory_instructions_of_generating_JSON_for_question_and_solution_components_while_adhering_to_the_provided_schema_type_string_for_each_request_and_returning_a_single_JSON_array_for_multiple_JSONs_The_question_and_solution_will_be_presented_as_plain_text_strings_within_the_JSON_array_elements_as_per_Component_Instructions_and_the_schema_I_will_now_generate_the_content_for_the_question_and_solution_according_to_all_the_rules_and_instructions_above_and_then_format_it_into_a_single_JSON_array_of_two_strings_as_the_final_output_The_question_string_and_solution_string_will_be_the_plain_text_output_expected_by_the_user_for_the_question_and_solution_respectively_This_is_the_most_reasonable_interpretation_given_all_constraints_If_the_user_had_provided_a_schema_like_{\"",
+      "options": {
+        "A": "Post-intervention, the aggregated population-weighted average per capita CO2e emissions across all ten geopolitical entities (including Region X) would parametrically approximate 4.34 metric tons, indicative of a substantial decarbonization trajectory from the pre-intervention global average.",
+        "B": "The specific emission reduction efficacy demonstrated by the European Union's policy contributes approximately 18.59% to the total absolute CO2e emission decrement mandated for the nine initial regions to achieve their 15% per capita average reduction target.",
+        "C": "Despite the demographic and carbon footprint augmentation by Region X, the synergistic total CO2e emissions originating from China, India, and Sub-Saharan Africa would persistently constitute over 62% of the revised global aggregate emissions from all ten regions, contingent on their intrinsic per capita emission rates remaining invariant.",
+        "D": "The per capita emissions of the new Region X are lower than the per capita emissions of 8 out of the 9 initially listed regions, signifying its relative environmental efficiency.",
+        "E": "The overall reduction in total CO2e emissions from the initial state (considering only the nine original regions) to the new comprehensive state (all ten regions with updated emissions) would exceed 20%."
       },
       "answer": [
         "A",
         "B",
         "C"
       ],
-      "prompt": "<Data Extraction from Graphs> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
-      "question-type": "Problem Solving Meta"
-    },
-    {
-      "question": "A global logistics firm is evaluating the comparative efficiency of its Alpha and Beta distribution hubs, specifically concerning operational expenditures. Management requires an assessment of which hub would incur a lower total operational and energy cost if both hubs were to simultaneously process exactly 80% of their respective Maximum Daily Throughput capacities. Information regarding other performance indicators, such as On-time Delivery Rate and Average Package Dimensions, should be disregarded for this particular cost analysis. Given an average energy cost of $0.15 per kilowatt-hour (kWh), what is the absolute difference in this combined operational and energy cost between Hub Alpha and Hub Beta when operating under these specified conditions?",
-      "title": "Logistics Hub Performance: Operational Efficiency Analysis",
-      "solution": "Step 1: Understand the Objective and Identify Relevant Data\nThe question asks for the approximate difference in the average energy cost per unit between Hub Alpha and Hub Beta. To calculate this, we need the \"Energy Consumption per 100 Units (kWh)\" for both hubs from the table and the given energy cost per kWh.\n\nRelevant data:\n*   Hub Alpha Energy Consumption per 100 Units: 5.0 kWh\n*   Hub Beta Energy Consumption per 100 Units: 4.5 kWh\n*   Energy cost: \\$0.15 per kWh\n\nIrrelevant data (extraneous information for this specific calculation): Maximum Daily Throughput, Average Operational Cost per Unit, On-time Delivery Rate (%), Average Package Dimensions (Volume m³), and Overtime Labor Cost Factor.\n\nStep 2: Calculate Energy Consumption per Unit for Each Hub\nThe table provides energy consumption per 100 units. To find the consumption per single unit, we divide by 100.\n\n*   For Hub Alpha:\n    Energy Consumption per Unit$_{\\text{Alpha}} = \\frac{5.0 \\text{ kWh}}{100 \\text{ units}} = 0.05 \\text{ kWh/unit}$\n*   For Hub Beta:\n    Energy Consumption per Unit$_{\\text{Beta}} = \\frac{4.5 \\text{ kWh}}{100 \\text{ units}} = 0.045 \\text{ kWh/unit}$\n\nStep 3: Calculate the Average Energy Cost per Unit for Each Hub\nNow, multiply the energy consumption per unit by the given energy cost per kWh (\\$0.15).\n\n*   For Hub Alpha:\n    Average Energy Cost per Unit$_{\\text{Alpha}} = 0.05 \\text{ kWh/unit} \\times \\$0.15/\\text{kWh} = \\$0.0075 \\text{ per unit}$\n*   For Hub Beta:\n    Average Energy Cost per Unit$_{\\text{Beta}} = 0.045 \\text{ kWh/unit} \\times \\$0.15/\\text{kWh} = \\$0.00675 \\text{ per unit}$\n\nStep 4: Calculate the Difference in Average Energy Cost per Unit\nSubtract the average energy cost per unit of Hub Beta from that of Hub Alpha to find the difference.\n\nDifference = Average Energy Cost per Unit$_{\\text{Alpha}}$ - Average Energy Cost per Unit$_{\\text{Beta}}$\nDifference = $\\$0.0075 - \\$0.00675 = \\$0.00075$\n\nThe approximate difference in the average energy cost per unit between Hub Alpha and Hub Beta is \\$0.00075.\n\n**Potential Student Mistakes & Trap Analysis:**\n*   **Common Error 1: Stopping one step early (not converting to 'per unit')**: A common mistake is to calculate the energy cost for 100 units and then find the difference, without dividing by 100 at the end or converting to 'per unit' at the beginning.\n    *   Cost for 100 units (Alpha): $5.0 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$0.75$\n    *   Cost for 100 units (Beta): $4.5 \\text{ kWh} \\times \\$0.15/\\text{kWh} = \\$0.675$\n    *   Difference (incorrect): $\\$0.75 - \\$0.675 = \\$0.075$. This is a very plausible distractor.\n*   **Common Error 2: Calculation or Sign Error**: Simple arithmetic mistakes, such as adding instead of subtracting, or misplacing a decimal. For example, if a student calculates 0.0075 - 0.00675 incorrectly as 0.007.\n*   **Common Error 3: Comparing Raw kWh Values**: Some students might mistakenly just compare the raw energy consumption values from the table (5.0 and 4.5) without converting to cost or per unit, leading to a difference of 0.5.\n*   **Common Error 4: Incorrect Division by 100**: Instead of dividing by 100, a student might multiply by 100 or make a mistake in decimal placement, leading to results like $0.075$ or $0.75$ as a final difference.",
-      "options": {
-        "A": "$121,200",
-        "B": "$216,000",
-        "C": "$363,600",
-        "D": "$525,600",
-        "E": "$1,101,600"
-      },
-      "answer": "C",
-      "prompt": "<Comparison of Data Points> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+      "prompt": "<Interpolation and Extrapolation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
       "question-type": "Problem Solving Meta"
     }
   ],
-  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Inequalities> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+  "prompt": "<Mean, Median, Mode, Range> - <Environment and Sustainability> - <Single Variable Equation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
   "question-type": "Problem Solving Meta"
 }

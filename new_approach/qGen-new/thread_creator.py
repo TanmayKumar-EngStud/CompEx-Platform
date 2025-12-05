@@ -23,7 +23,7 @@ class SectionThread:
                 }
                 self.work_queue.put(prompt_details)
         self.work_report = queue.Queue()
-        self.api_keys = [i for i in range(10)]
+        self.api_keys = [i for i in range(6,13)]
 
         # Creating the threads:
         threads = []

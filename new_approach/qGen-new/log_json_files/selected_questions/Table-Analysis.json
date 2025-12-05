@@ -1,117 +1,109 @@
 {
   "metadata": {
-    "metadata": [
-      {
-        "table": {
-          "type": "sortable_table",
-          "description": "Inventory of various chemical solutions detailing their properties and costs.",
+    "table": [
+      [
+        {
+          "type": "data_table",
+          "description": "Standard data table showing key operational metrics for various regional logistics distribution hubs over a month.",
           "structure": {
-            "title": "Chemical Solutions Inventory (Q3-2023)",
+            "title": "Monthly Operational Performance of Regional Distribution Hubs",
             "headers": [
-              "Solution ID",
-              "Type",
-              "Volume (L)",
-              "Concentration (%)",
-              "Cost per Liter ($)",
-              "Density (kg/L)"
+              "Hub ID",
+              "Region",
+              "Total Shipments Handled",
+              "On-Time Deliveries",
+              "Delayed Shipments",
+              "Average Delivery Cost per Shipment ($)",
+              "Warehouse Utilization Rate (%)"
             ],
             "rows": [
               [
-                "S001",
-                "Acid",
-                10.0,
-                25.0,
-                12.5,
-                1.05
+                "HUB001",
+                "Central",
+                "12500",
+                "11875",
+                "625",
+                "8.50",
+                "85.0"
               ],
               [
-                "S002",
-                "Base",
-                15.0,
-                30.0,
-                18.0,
-                1.1
+                "HUB002",
+                "North",
+                "9800",
+                "9212",
+                "588",
+                "9.20",
+                "78.5"
               ],
               [
-                "S003",
-                "Alcohol",
-                8.0,
-                90.0,
-                25.0,
-                0.8
+                "HUB003",
+                "South",
+                "15200",
+                "14592",
+                "608",
+                "7.80",
+                "92.3"
               ],
               [
-                "S004",
-                "Salt",
-                20.0,
-                10.0,
-                9.0,
-                1.02
+                "HUB004",
+                "East",
+                "11000",
+                "10230",
+                "770",
+                "8.90",
+                "81.7"
               ],
               [
-                "S005",
-                "Acid",
-                12.0,
-                40.0,
-                15.0,
-                1.08
+                "HUB005",
+                "West",
+                "8500",
+                "7990",
+                "510",
+                "9.50",
+                "75.1"
               ],
               [
-                "S006",
-                "Base",
-                18.0,
-                20.0,
-                16.5,
-                1.09
+                "HUB006",
+                "Central",
+                "13000",
+                "12350",
+                "650",
+                "8.60",
+                "88.2"
               ],
               [
-                "S007",
-                "Alcohol",
-                5.0,
-                95.0,
-                30.0,
-                0.78
+                "HUB007",
+                "North",
+                "10500",
+                "9870",
+                "630",
+                "9.10",
+                "79.4"
               ]
             ],
             "formatting": {
-              "sortable": true,
-              "alternating_rows": true
+              "alternating_rows": true,
+              "border_style": "standard",
+              "sortable": true
             }
           }
         }
-      }
-    ],
-    "question": [
-      "For each of the following statements, indicate whether it is supported by the information provided in the table."
-    ],
-    "options": [
-      [
-        "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.",
-        "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.",
-        "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003."
       ]
-    ],
-    "answer": [
-      {
-        "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.": "Yes",
-        "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.": "Yes",
-        "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003.": "No"
-      }
     ]
   },
-  "question": "For each of the following statements, indicate whether it is supported by the information provided in the table.",
-  "title": "Chemical Inventory Analysis: Blending & Active Ingredient Cost Efficiency",
-  "solution": "**Statement 1: If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.**\n\nStep 1: Identify the relevant data for S001 and S005.\nFrom the table:\n*   Solution S001: Volume = 10.0 L, Concentration = 25.0%\n*   Solution S005: Volume = 12.0 L, Concentration = 40.0%\n\nStep 2: Calculate the total amount of solute and the total volume in the mixture.\nThe amount of solute in a solution is given by $\\text{Volume} \\times \\text{Concentration}$.\n*   Solute from S001: $10.0 \\, \\text{L} \\times 0.25 = 2.5 \\, \\text{L}$ (assuming concentration is volume/volume for simplicity, or mass/mass if density were involved, but for mixtures without density, volume-weighted average concentration is standard).\n*   Solute from S005: $12.0 \\, \\text{L} \\times 0.40 = 4.8 \\, \\text{L}$\n*   Total solute in mixture: $2.5 \\, \\text{L} + 4.8 \\, \\text{L} = 7.3 \\, \\text{L}$\n*   Total volume of mixture: $10.0 \\, \\text{L} + 12.0 \\, \\text{L} = 22.0 \\, \\text{L}$\n\nStep 3: Calculate the concentration of the resulting mixture.\nMixture Concentration = $(\\text{Total Solute} / \\text{Total Volume}) \\times 100\\%$\nMixture Concentration = $(7.3 \\, \\text{L} / 22.0 \\, \\text{L}) \\times 100\\%$\nMixture Concentration $\\approx 0.3318 \\times 100\\% \\approx 33.18\\%$\n\nStep 4: Compare the calculated concentration with 33%.\nSince $33.18\\% > 33\\%$, the statement is supported.\n\n**Answer:** Yes\n\n---\n\n**Statement 2: Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.**\n\nStep 1: Filter the solutions based on the condition \"Concentration strictly less than 30%\".\nFrom the table:\n*   S001: Concentration = 25.0% (< 30%), Cost per Liter = $12.5\n*   S004: Concentration = 10.0% (< 30%), Cost per Liter = $9.0\n*   S006: Concentration = 20.0% (< 30%), Cost per Liter = $16.5\nSolutions S002 (30%) and S005 (40%), S003 (90%), S007 (95%) do not meet the \"strictly less than 30%\" condition.\n\nStep 2: List the Cost per Liter for the filtered solutions.\n*   S001: $12.5\n*   S004: $9.0\n*   S006: $16.5\n\nStep 3: Calculate the average cost per liter for these solutions.\nAverage Cost per Liter = (Sum of Costs per Liter) / (Number of Solutions)\nAverage Cost per Liter = $(\\$12.5 + \\$9.0 + \\$16.5) / 3$\nAverage Cost per Liter = $\\$38.0 / 3$\nAverage Cost per Liter $\\approx \\$12.67$\n\nStep 4: Compare the calculated average cost per liter with $13.00.\nSince $\\$12.67 < \\$13.00$, the statement is supported.\n\n**Answer:** Yes\n\n---\n\n**Statement 3: To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003.**\n\nStep 1: Determine the amount of active ingredient per liter for S003 and S007.\n*   **For Solution S003:**\n    *   Density = 0.8 kg/L\n    *   Concentration = 90.0% (meaning 0.90 active ingredient by mass)\n    *   Mass of active ingredient per liter = Density $\\times$ Concentration\n    *   Mass of active ingredient per liter (S003) = $0.8 \\, \\text{kg/L} \\times 0.90 = 0.72 \\, \\text{kg/L}$\n*   **For Solution S007:**\n    *   Density = 0.78 kg/L\n    *   Concentration = 95.0% (meaning 0.95 active ingredient by mass)\n    *   Mass of active ingredient per liter (S007) = $0.78 \\, \\text{kg/L} \\times 0.95 = 0.741 \\, \\text{kg/L}$\n\nStep 2: Calculate the volume needed to acquire 10 kg of active ingredient for each solution.\nVolume needed = Total active ingredient desired / (Mass of active ingredient per liter)\n*   Volume needed for S003 = $10 \\, \\text{kg} / 0.72 \\, \\text{kg/L} \\approx 13.889 \\, \\text{L}$\n*   Volume needed for S007 = $10 \\, \\text{kg} / 0.741 \\, \\text{kg/L} \\approx 13.495 \\, \\text{L}$\n\nStep 3: Calculate the total cost for 10 kg of active ingredient for each solution.\nTotal Cost = Volume needed $\\times$ Cost per Liter\n*   Cost per Liter for S003 = $25.0\n*   Cost per Liter for S007 = $30.0\n*   Total Cost for S003 = $13.889 \\, \\text{L} \\times \\$25.0/\\text{L} \\approx \\$347.23$\n*   Total Cost for S007 = $13.495 \\, \\text{L} \\times \\$30.0/\\text{L} \\approx \\$404.85$\n\nStep 4: Compare the total costs.\nSince $\\$347.23$ (for S003) $< \\$404.85$ (for S007), Solution S003 is more cost-effective.\nThe statement claims S007 would be more cost-effective, which is incorrect.\n\n**Answer:** No",
+  "question": "An operations manager wants to assess the performance of distribution hubs based on their efficiency. First, identify all hubs with a 'Warehouse Utilization Rate' strictly greater than 85%. From this group, determine the highest 'On-Time Delivery Rate' (calculated as On-Time Deliveries divided by Total Shipments Handled). Second, identify all hubs with an 'Average Delivery Cost per Shipment' strictly less than $9.00. From this second group, determine the lowest 'On-Time Delivery Rate'. What is the approximate ratio of the highest 'On-Time Delivery Rate' from the first group to the lowest 'On-Time Delivery Rate' from the second group, expressed as a simplified ratio of integers?",
+  "title": "Analyze Logistics Hub On-Time Delivery Ratios and Average Costs",
+  "solution": "\"For all hubs that have an On-Time Delivery Rate of 92% or higher, calculate the ratio of their total combined delayed shipments to their total combined average delivery cost per shipment (in dollars). Round your final answer to two decimal places.\"",
   "options": [
-    "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.",
-    "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.",
-    "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003."
+    "The Central region (combining HUB001 and HUB006) has a higher average on-time delivery rate than the North region (HUB002 and HUB007) and a lower average delivery cost per shipment.",
+    "HUB004 has the highest proportion of delayed shipments among all hubs, and its Warehouse Utilization Rate is above the average utilization rate of all hubs.",
+    "Only two hubs, HUB003 and HUB006, achieve both an on-time delivery rate of 96% or higher AND an average delivery cost per shipment below $8.00."
   ],
   "answer": {
-    "If solutions S001 and S005 are fully mixed, the concentration of the resulting mixture will be greater than 33%.": "Yes",
-    "Among all solutions with a concentration strictly less than 30%, the average cost per liter is less than $13.00.": "Yes",
-    "To acquire 10 kg of the active ingredient, purchasing Solution S007 would be a more cost-effective option (lower total cost) than purchasing Solution S003.": "No"
+    "The Central region (combining HUB001 and HUB006) has a higher average on-time delivery rate than the North region (HUB002 and HUB007) and a lower average delivery cost per shipment.": "Yes",
+    "HUB004 has the highest proportion of delayed shipments among all hubs, and its Warehouse Utilization Rate is above the average utilization rate of all hubs.": "No",
+    "Only two hubs, HUB003 and HUB006, achieve both an on-time delivery rate of 96% or higher AND an average delivery cost per shipment below $8.00.": "No"
   },
-  "prompt": "<Mixtures and Alligations> - <Science and Technology> - <Quantitative Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
   "question-type": "Table Analysis"
 }

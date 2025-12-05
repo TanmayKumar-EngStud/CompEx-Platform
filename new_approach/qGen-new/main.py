@@ -34,7 +34,7 @@ def log_stage(exam: str,
         )
     if detail:
         segments.append(detail)
-    print(" | ".join(segments))
+    # print(" | ".join(segments))
 
 
 # Sort exams to ensure consistent order (e.g., GMAT before GRE)

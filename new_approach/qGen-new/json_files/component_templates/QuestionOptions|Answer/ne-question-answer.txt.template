@@ -1,6 +1,6 @@
 STRICT RESPONSE FORMAT:- JSON
 - "answer" key with numeric value
-
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 Example:-
 ```json
 {

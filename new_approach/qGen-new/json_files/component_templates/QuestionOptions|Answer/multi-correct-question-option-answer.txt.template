@@ -1,7 +1,7 @@
-STRICT RESPONSE FORMAT:- JSON
+STRICT RESPONSE FORMAT: JSON
 - "options" key with value as dictionary.
-- "answer" key with list of options.
-
+- "answer" key with list of correct option letters.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 For Example:
 ```json
 {
@@ -12,7 +12,7 @@ For Example:
     "D": "option 4",
     "E": "option 5"
   },
-  "answer": ["A", "C"]
+    "answer": ["A", "C"]
 }
 ```
 

@@ -1,7 +1,7 @@
 STRICT RESPONSE FORMAT:- JSON
 - "passage" key with value as string the passage component of the question type asked.
 - "statements" key that will have list of two strings for the requested question type.
-
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 Example:-
 
 ```json
