@@ -1,256 +1,145 @@
 {
   "metadata": {
-    "graph": [
-      [
-        {
-          "type": "bar_chart",
-          "description": "This bar chart presents the annual per capita carbon dioxide equivalent (CO2e) emissions for nine distinct geopolitical regions, providing a foundational dataset for econometric and environmental statistical analysis. The data points represent compiled average emissions, inclusive of energy, industrial processes, agriculture, and waste sectors, standardized to metric tons per individual for the most recent reporting cycle.",
-          "structure": {
-            "title": "Annual Carbon Footprint per Capita (Metric Tons CO2e) by Region",
-            "x_axis": {
-              "label": "Region/Country",
-              "scale": "categorical",
-              "ticks": [
-                "North America",
-                "European Union",
-                "China",
-                "India",
-                "Sub-Saharan Africa",
-                "Brazil",
-                "Australia",
-                "Japan",
-                "Russia"
-              ]
-            },
-            "y_axis": {
-              "label": "Carbon Footprint (Metric Tons CO2e)",
-              "scale": "linear",
-              "ticks": [
-                "0",
-                "5",
-                "10",
-                "15",
-                "20"
-              ]
-            },
-            "series": [
-              {
-                "name": "Carbon Footprint",
-                "color": "#4CAF50",
-                "data": [
-                  {
-                    "x": "North America",
-                    "y": 16.1,
-                    "label": "North America",
-                    "value": 16.1
-                  },
-                  {
-                    "x": "European Union",
-                    "y": 6.8,
-                    "label": "European Union",
-                    "value": 6.8
-                  },
-                  {
-                    "x": "China",
-                    "y": 7.6,
-                    "label": "China",
-                    "value": 7.6
-                  },
-                  {
-                    "x": "India",
-                    "y": 2.0,
-                    "label": "India",
-                    "value": 2.0
-                  },
-                  {
-                    "x": "Sub-Saharan Africa",
-                    "y": 1.0,
-                    "label": "Sub-Saharan Africa",
-                    "value": 1.0
-                  },
-                  {
-                    "x": "Brazil",
-                    "y": 2.5,
-                    "label": "Brazil",
-                    "value": 2.5
-                  },
-                  {
-                    "x": "Australia",
-                    "y": 15.5,
-                    "label": "Australia",
-                    "value": 15.5
-                  },
-                  {
-                    "x": "Japan",
-                    "y": 9.0,
-                    "label": "Japan",
-                    "value": 9.0
-                  },
-                  {
-                    "x": "Russia",
-                    "y": 11.8,
-                    "label": "Russia",
-                    "value": 11.8
-                  }
-                ]
-              }
-            ],
-            "categories": [
-              "North America",
-              "European Union",
-              "China",
-              "India",
-              "Sub-Saharan Africa",
-              "Brazil",
-              "Australia",
-              "Japan",
-              "Russia"
-            ],
-            "values": [
-              16.1,
-              6.8,
-              7.6,
-              2.0,
-              1.0,
-              2.5,
-              15.5,
-              9.0,
-              11.8
-            ],
-            "labels": [
-              "North America",
-              "European Union",
-              "China",
-              "India",
-              "Sub-Saharan Africa",
-              "Brazil",
-              "Australia",
-              "Japan",
-              "Russia"
-            ]
-          }
-        }
-      ]
-    ],
     "table": [
       [
         {
           "type": "data_table",
-          "description": "A detailed statistical table presenting annual per capita carbon dioxide equivalent (CO2e) emissions alongside estimated regional populations, enabling calculation of aggregate emissions for advanced econometric and environmental analyses.",
+          "description": "Table showing the efficiency test results for various filtration systems, detailing initial and remaining impurity levels, and the calculated percentage of impurities removed.",
           "structure": {
-            "title": "Regional Carbon Footprint Data with Population Estimates (2023)",
+            "title": "Filtration System Efficiency Test Results",
             "headers": [
-              "Region",
-              "Per Capita CO2e (Metric Tons)",
-              "Estimated Population (Millions)",
-              "Total CO2e Emissions (Million Metric Tons)"
+              "System ID",
+              "Initial Impurities (grams)",
+              "Remaining Impurities (grams)",
+              "Percentage Removed"
             ],
             "rows": [
               [
-                "North America",
-                "16.1",
-                "370",
-                "5957.0"
+                "FS-001",
+                "20",
+                "2",
+                "90%"
               ],
               [
-                "European Union",
-                "6.8",
-                "450",
-                "3060.0"
+                "FS-002",
+                "25",
+                "5",
+                "80%"
               ],
               [
-                "China",
-                "7.6",
-                "1400",
-                "10640.0"
+                "FS-003",
+                "30",
+                "3",
+                "90%"
               ],
               [
-                "India",
-                "2.0",
-                "1400",
-                "2800.0"
+                "FS-004",
+                "10",
+                "1",
+                "90%"
               ],
               [
-                "Sub-Saharan Africa",
-                "1.0",
-                "1200",
-                "1200.0"
-              ],
-              [
-                "Brazil",
-                "2.5",
-                "215",
-                "537.5"
-              ],
-              [
-                "Australia",
-                "15.5",
-                "26",
-                "403.0"
-              ],
-              [
-                "Japan",
-                "9.0",
-                "125",
-                "1125.0"
-              ],
-              [
-                "Russia",
-                "11.8",
-                "145",
-                "1711.0"
+                "FS-005",
+                "40",
+                "20",
+                "50%"
               ]
             ],
             "formatting": {
               "alternating_rows": true,
-              "border_style": "standard",
-              "sortable": false
+              "border_style": "dashed",
+              "sortable": true
+            }
+          }
+        }
+      ],
+      [
+        {
+          "type": "data_table",
+          "description": "Table showing the efficiency test results for various filtration systems, detailing initial and remaining impurity levels, and the calculated percentage of impurities removed.",
+          "structure": {
+            "title": "Filtration System Efficiency Test Results",
+            "headers": [
+              "System ID",
+              "Initial Impurities (grams)",
+              "Remaining Impurities (grams)",
+              "Percentage Removed"
+            ],
+            "rows": [
+              [
+                "FS-001",
+                "20",
+                "2",
+                "90%"
+              ],
+              [
+                "FS-002",
+                "25",
+                "5",
+                "80%"
+              ],
+              [
+                "FS-003",
+                "30",
+                "3",
+                "90%"
+              ],
+              [
+                "FS-004",
+                "10",
+                "1",
+                "90%"
+              ],
+              [
+                "FS-005",
+                "40",
+                "20",
+                "50%"
+              ]
+            ],
+            "formatting": {
+              "alternating_rows": true,
+              "border_style": "dashed",
+              "sortable": true
             }
           }
         }
       ]
     ]
   },
-  "title": "Econometric Analysis of CO2e Data: Central Tendency and Algebraic Solutions",
+  "title": "Filtration system efficiency: Impurity removal and residual mass calculation",
   "child-questions": [
     {
-      "question": "In a future state, predicated upon distinct developmental trajectories for two geopolitical entities documented in the provided environmental statistical compilations, it is posited that for 'North America,' there would be no absence of an initiative to effectuate a decrement in its annual per capita carbon dioxide equivalent (CO2e) emissions by an invariant quantity, specifically one half of a metric ton. Contemporaneously, for 'India,' it is not implausible that a robust economic transition would precipitate an augmentation of its annual per capita CO2e emissions by a proportional factor amounting to ten percent of its current standing. Assuming that the demographic structures of both 'North America' and 'India' remain precisely as currently estimated, which of these two regions' absolute aggregate annual CO2e output would manifest a more substantial divergence from its extant value, or would the magnitudes of these divergences be quantitatively indistinguishable?",
-      "title": "Assessing Non-Linear Global Carbon Emission Projections from Evolving Regional Determinants",
-      "solution": "\"{\\\"question\\\": \\\"Consider two hypothetical geopolitical entities, designated as Region Alpha and Region Beta. Initially, Region Alpha's per capita carbon dioxide equivalent (CO2e) emissions are denoted by $E_{\\\\alpha}$ and its population by $P_{\\\\alpha}$, while Region Beta's corresponding metrics are $E_{\\\\beta}$ and $P_{\\\\beta}$.\\\\n\\\\nIt is hypothesized that, over a forthcoming period, Region Alpha's per capita emissions will undergo a non-trivial reduction, culminating in a new per capita value that is precisely one-third of its current state, whilst its population is concurrently anticipated to remain entirely unchanged. Conversely, Region Beta's per capita emissions are projected to experience no alteration whatsoever, though its population is expected to undergo a substantial expansion, reaching a magnitude three times its present count.\\\\n\\\\nIf, at the outset, Region Alpha's total aggregate CO2e emissions were unequivocally twice the total aggregate CO2e emissions attributed to Region Beta, which of these two regions, Alpha or Beta, would be expected to constitute a lesser component of their combined projected future aggregate CO2e emissions?\\\", \\\"options\\\": [\\\"A) Region Alpha, because its individual per capita emissions are substantially reduced.\\\", \\\"B) Region Beta, due to its population remaining static while its per capita emissions are significantly altered.\\\", \\\"C) Region Beta, as its population tripling will inevitably lead to a higher absolute contribution, regardless of initial ratios.\\\", \\\"D) Region Alpha, despite its initial total being larger, its relative reduction factor is more impactful.\\\", \\\"E) It cannot be definitively determined without the specific numerical values of initial per capita emissions and populations.\\\"], \\\"answer\\\": \\\"D\\\"}\"",
+      "question": "Using the provided 'Filtration System Efficiency Test Results' data, System FS-001 consistently removes 90% of initial impurities, whereas System FS-002 consistently removes 80%. If both systems were to process distinct solutions each containing an initial mass of 50 grams of impurities, calculate the absolute difference in the quantity of impurities, in grams, that would be removed by FS-001 compared to FS-002.",
+      "title": "Analysis of Filtration System Impurity Removal Rates",
+      "solution": "\"{\\\"question\\\": \\\"Filtration System FS-001 processes an initial amount of impurities as listed in the table. If Filtration System FS-003 were to process an initial amount of impurities that is twice its listed initial amount, while maintaining its removal efficiency, what would be the difference in the remaining impurities between FS-003 (under this new condition) and FS-001?\\\", \\\"options\\\": {\\\"A\\\": \\\"4 grams\\\", \\\"B\\\": \\\"2 grams\\\", \\\"C\\\": \\\"8 grams\\\", \\\"D\\\": \\\"15 grams\\\", \\\"E\\\": \\\"6 grams\\\"}, \\\"solution\\\": \\\"Step 1: Analyze given information and identify what needs to be found\\\\nWe need to determine the difference in the amount of impurities remaining after filtration for System FS-003 (under a modified condition) and System FS-001.\\\\n\\\\nFrom the 'Filtration System Efficiency Test Results' table:\\\\n- For FS-001: Initial Impurities = 20 grams, Percentage Removed = 90%\\\\n- For FS-003: Initial Impurities = 30 grams, Percentage Removed = 90%\\\\n\\\\nThe new condition for FS-003 states that its initial impurities will be twice its listed amount.\\\\n\\\\nStep 2: Set up mathematical relationship or logical framework\\\\nTo find the remaining impurities for any system, we use the formula: Remaining Impurities = Initial Impurities $\\\\\\\\times$ (1 - Percentage Removed as a decimal).\\\\nFirst, calculate the remaining impurities for FS-001.\\\\nNext, calculate the new initial impurities for FS-003.\\\\nThen, calculate the remaining impurities for FS-003 using its new initial amount.\\\\nFinally, find the absolute difference between these two remaining impurity amounts.\\\\n\\\\nStep 3: Perform calculations with proper units / Apply reasoning\\\\n- **For Filtration System FS-001:**\\\\n  Initial Impurities = 20 grams\\\\n  Percentage Removed = 90% = 0.90\\\\n  Remaining Impurities (FS-001) = $20\\\\\\\\text{ g} \\\\\\\\times (1 - 0.90) = 20\\\\\\\\text{ g} \\\\\\\\times 0.10 = 2\\\\\\\\text{ g}$\\\\n\\\\n- **For Filtration System FS-003 (under new condition):**\\\\n  Original Initial Impurities = 30 grams\\\\n  New Initial Impurities = $2 \\\\\\\\times 30\\\\\\\\text{ g} = 60\\\\\\\\text{ g}$\\\\n  Percentage Removed (remains the same) = 90% = 0.90\\\\n  Remaining Impurities (FS-003 new) = $60\\\\\\\\text{ g} \\\\\\\\times (1 - 0.90) = 60\\\\\\\\text{ g} \\\\\\\\times 0.10 = 6\\\\\\\\text{ g}$\\\\n\\\\n- **Difference in Remaining Impurities:**\\\\n  Difference = Remaining Impurities (FS-003 new) - Remaining Impurities (FS-001)\\\\n  Difference = $6\\\\\\\\text{ g} - 2\\\\\\\\text{ g} = 4\\\\\\\\text{ g}$\\\\n\\\\nStep 4: Check solution using logical reasoning\\\\nFor FS-001, 90% removal of 20g means 18g removed, leaving 2g. This is correct.\\\\nFor FS-003 with double the initial amount, it means 60g initially. 90% removal of 60g means 54g removed, leaving 6g. This is correct.\\\\nThe difference between 6g and 2g is 4g. The calculations are consistent and logical.\\\\n\\\\nStep 5: Confirm solution addresses original question\\\\nThe final calculation of 4 grams directly answers the question about the difference in remaining impurities between FS-003 (under the new condition) and FS-001.\\\"}\"",
       "options": {
-        "A": "The absolute decrement in total CO2e for Region M would unquestionably exceed the absolute increment for Region N, making any alternative outcome definitively disprovable.",
-        "B": "The percentage magnitude of Region M's per capita emission reduction, being substantial, guarantees that its per capita emissions would fall below Region N's initial per capita levels, irrespective of specific numerical values.",
-        "C": "Notwithstanding Region N's significantly lower per capita emissions, its aggregate volumetric increase in CO2e due to population growth could conceivably eclipse Region M's total CO2e reduction, even if Region M's per capita cut is deemed 'substantial'.",
-        "D": "The collective total CO2e contributions of both regions combined would necessarily decrease, as the impact of a 'substantial' reduction in a high-emitter region inherently outweighs any 'modest' population-driven increase elsewhere.",
-        "E": "It is not implausible that the proportion of total global emissions attributable to Region N could remain unchanged, or even diminish, solely as a consequence of Region M's substantial per capita emission reduction."
+        "A": "18 grams",
+        "B": "20 grams",
+        "C": "11 grams",
+        "D": "27 grams",
+        "E": "54 grams"
       },
-      "answer": [
-        "C",
-        "E"
-      ],
-      "prompt": "<Making Predictions Based on Trends> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+      "answer": "A",
+      "prompt": "<Rate of Change Analysis> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
       "question-type": "Problem Solving Meta"
     },
     {
-      "question": "Utilizing the provided econometric data concerning regional per capita CO2e emissions and population estimates for 2023, conduct a multi-component analysis to project future carbon intensity. Assume North America commits to a linear 25% reduction in its per capita CO2e emissions by 2030 from its 2023 baseline, while its population remains static. Concurrently, the European Union targets a per capita CO2e emission level in 2030 that is precisely 75% of China's current (2023) per capita CO2e emissions, with its population also remaining static. Sub-Saharan Africa's population is projected to grow at a Compound Annual Growth Rate (CAGR) of 2.5% until 2030, with its per capita CO2e emissions held constant at the 2023 level. Given these stipulated future trajectories, determine the necessary per capita CO2e emission level (in metric tons) for China in 2030, assuming its population remains static, such that the collective total CO2e emissions of North America, the European Union, China, and Sub-Saharan Africa in 2030 do not exceed 90% of their combined total CO2e emissions in 2023. Present the result rounded to two decimal places.",
-      "title": "Carbon Footprint Analysis: Regional Data Interpolation and Extrapolation",
-      "solution": "\"question_json_string_placeholder_for_schema_validation_do_not_replicate_this_string_directly_in_response_please_replace_with_actual_question_string_if_needed_as_per_context_schema_instructions_only_generate_value_for_type_string_and_ensure_no_other_data_is_present_in_output_which_is_not_following_the_provided_schema_in_the_context_for_each_request_if_user_requests_multiple_JSON_always_return_a_single_parseable_JSON_array_Do_not_include_any_extra_text_outside_of_the_JSON_string_Please_also_double_check_the_JSON_has_been_generated_according_to_all_the_given_instructions_and_rules_which_are_provided_in_the_context_and_in_the_request_description_Its_a_string_so_it_must_be_enclosed_in_double_quotes_and_all_double_quotes_inside_the_string_must_be_escaped_with_backslash_The_string_must_be_a_valid_JSON_string_and_not_just_a_plain_string_it_must_follow_the_JSON_format_for_string_type_values_Therefore_if_the_string_contains_any_special_characters_that_need_escaping_according_to_JSON_specification_such_as_double_quotes_or_backslashes_they_must_be_escaped_accordingly_for_the_string_to_be_a_valid_JSON_string_Also_remember_that_the_JSON_output_must_not_contain_any_comments_and_must_be_a_single_parseable_JSON_object_or_array_as_per_the_request_and_context_schema_specification_And_finally_make_sure_to_double_check_the_schema_provided_in_the_context_and_generate_the_JSON_according_to_it_and_not_some_other_schema_For_example_if_the_schema_says_type_string_then_the_output_should_be_a_string_and_not_an_object_or_array_unless_the_string_itself_is_a_JSON_string_which_is_not_the_case_here_since_the_requirement_is_for_a_plain_text_question_and_solution_output_not_JSON_within_JSON_The_context_schema_is_simply_type_string_so_the_output_should_be_just_a_string_value_for_each_request_and_since_the_user_asked_for_two_JSONs_the_output_should_be_a_JSON_array_of_two_strings_each_string_being_a_plain_string_value_not_JSON_format_within_it_just_a_plain_text_string_as_requested_in_the_problem_description_and_the_schema_is_type_string_for_each_request_so_each_element_in_the_array_will_be_a_string_value_not_a_JSON_object_For_the_question_and_solution_generation_mode_the_expected_output_is_a_JSON_object_with_keys_question_and_solution_but_the_schema_provided_in_the_context_is_type_string_for_each_request_This_is_a_contradiction_in_the_instructions_I_will_proceed_by_generating_a_JSON_object_for_the_question_and_a_separate_JSON_object_for_the_solution_as_per_the_Mode_QuestionSolution_Generation_and_Component_Instructions_which_specify_a_question_and_solution_output_format_and_the_schema_being_type_string_for_each_request_might_be_interpreted_as_the_final_output_being_a_string_representation_of_the_question_and_solution_but_the_request_explicitly_asks_for_a_JSON_format_for_the_question_and_solution_component_I_will_assume_the_user_wants_the_question_and_solution_as_string_values_in_a_JSON_array_as_per_the_schema_for_multiple_JSONs_I_will_provide_the_question_as_one_string_and_the_solution_as_another_string_as_two_separate_elements_in_a_JSON_array_Each_string_will_be_the_plain_text_as_per_the_Component_Instructions_but_escaped_for_JSON_string_format_Therefore_the_first_JSON_string_in_the_array_will_be_the_question_and_the_second_JSON_string_in_the_array_will_be_the_solution_The_output_will_be_a_single_JSON_array_containing_these_two_strings_This_interpretation_attempts_to_reconcile_the_contradictory_instructions_of_generating_JSON_for_question_and_solution_components_while_adhering_to_the_provided_schema_type_string_for_each_request_and_returning_a_single_JSON_array_for_multiple_JSONs_The_question_and_solution_will_be_presented_as_plain_text_strings_within_the_JSON_array_elements_as_per_Component_Instructions_and_the_schema_I_will_now_generate_the_content_for_the_question_and_solution_according_to_all_the_rules_and_instructions_above_and_then_format_it_into_a_single_JSON_array_of_two_strings_as_the_final_output_The_question_string_and_solution_string_will_be_the_plain_text_output_expected_by_the_user_for_the_question_and_solution_respectively_This_is_the_most_reasonable_interpretation_given_all_constraints_If_the_user_had_provided_a_schema_like_{\"",
+      "question": "A laboratory is evaluating the projected performance of a new prototype filtration unit, designated FS-006, which is engineered to replicate the high-efficiency characteristics observed in the `Filtration System Efficiency Test Results` for systems FS-001, FS-003, and FS-004. Based on the established quantitative relationship between initial and remaining impurities for these specific high-efficiency systems, determine the net mass of impurities that would be successfully removed by FS-006 if it were to process an initial impurity load of 35 grams. Furthermore, if the operational expenditure for FS-006 is projected at $0.50 per gram of initial impurities processed, calculate the total operational cost for this specific experimental trial.",
+      "title": "Extrapolating Filtration Performance from Efficiency Test Data",
+      "solution": "\"The 'Filtration System Efficiency Test Results' table provides data for various systems. A new filtration system, FS-006, is being evaluated. It is known to employ similar advanced filter media and operational principles as systems FS-001, FS-003, and FS-004, which are highly regarded for their consistent high performance across different initial impurity loads. If FS-006 is subjected to a trial with an initial impurity load of 28 grams, what would be the predicted remaining impurity level after filtration? (Note: All tests are conducted at a controlled temperature of 25°C, and system FS-002, though different in design, demonstrates good results for medium impurity loads, but its specifics are not relevant to FS-006's predicted performance).\"",
       "options": {
-        "A": "Post-intervention, the aggregated population-weighted average per capita CO2e emissions across all ten geopolitical entities (including Region X) would parametrically approximate 4.34 metric tons, indicative of a substantial decarbonization trajectory from the pre-intervention global average.",
-        "B": "The specific emission reduction efficacy demonstrated by the European Union's policy contributes approximately 18.59% to the total absolute CO2e emission decrement mandated for the nine initial regions to achieve their 15% per capita average reduction target.",
-        "C": "Despite the demographic and carbon footprint augmentation by Region X, the synergistic total CO2e emissions originating from China, India, and Sub-Saharan Africa would persistently constitute over 62% of the revised global aggregate emissions from all ten regions, contingent on their intrinsic per capita emission rates remaining invariant.",
-        "D": "The per capita emissions of the new Region X are lower than the per capita emissions of 8 out of the 9 initially listed regions, signifying its relative environmental efficiency.",
-        "E": "The overall reduction in total CO2e emissions from the initial state (considering only the nine original regions) to the new comprehensive state (all ten regions with updated emissions) would exceed 20%."
+        "A": "0.5 grams",
+        "B": "5 grams",
+        "C": "45 grams",
+        "D": "49.5 grams",
+        "E": "25 grams"
       },
-      "answer": [
-        "A",
-        "B",
-        "C"
-      ],
-      "prompt": "<Interpolation and Extrapolation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+      "answer": "A",
+      "prompt": "<Interpolation and Extrapolation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
       "question-type": "Problem Solving Meta"
     }
   ],
-  "prompt": "<Mean, Median, Mode, Range> - <Environment and Sustainability> - <Single Variable Equation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
   "question-type": "Problem Solving Meta"
 }

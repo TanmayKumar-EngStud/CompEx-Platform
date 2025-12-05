@@ -11,6 +11,8 @@ from io_utils import get_json, prettify, get_Component_Template, record, append_
 from api_utils import get_gemini_generator
 from content_generation_manager import manage_generated_content
 from analytics_logger import log_analytics
+from question_manager import ManageQuestionData
+from thread_creator import ThreadManager # Updated import
 import time
 try:
     from tqdm import tqdm
@@ -44,11 +46,6 @@ def log_generation_stage(exam: str,
         segments.append(detail)
     print(f"{prettify('Status', 'Blue')}: " + " | ".join(segments))
 
-
-
-from question_manager import ManageQuestionData
-from thread_creator import SectionThread
-
 class GenQ:
     """
     Coordinator class. Iterates through exams/sections and delegates 
@@ -76,6 +73,9 @@ class GenQ:
         }
         
         start_time_global = time.time()
+        
+        # Initialize ThreadManager ONCE here to persist API key state across exams/sections
+        thread_manager = ThreadManager()
 
         for exam, sections in self.prompts_dictionary.items():
             self.generated_count = 0
@@ -107,11 +107,11 @@ class GenQ:
                 
                 section_start_time = time.time()
                 
-                # Use SectionThread to process all questions in this section concurrently
-                section_thread = SectionThread(exam, section, section_data)
+                # Use persistent thread_manager to process the section
+                thread_manager.process_section(exam, section, section_data)
                 
                 # Get raw items from queue (now dicts with data and stats)
-                queue_items = section_thread.get_work_report()
+                queue_items = thread_manager.get_work_report()
                 
                 # Process items with progress bar
                 questions_data = []

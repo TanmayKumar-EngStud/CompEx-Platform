@@ -4,86 +4,144 @@
       [
         {
           "type": "data_table",
-          "description": "Standard data table showing key operational metrics for various regional logistics distribution hubs over a month.",
+          "description": "Detailed employee skill profiles and project assignment metrics for a new critical project, 'Project Phoenix', requiring careful selection based on skill diversity, experience, and current workload capacity. The data aims to challenge the selection process with overlapping competencies and implied constraints.",
           "structure": {
-            "title": "Monthly Operational Performance of Regional Distribution Hubs",
+            "title": "Project Phoenix Team Assembly - Skill & Capacity Analysis",
             "headers": [
-              "Hub ID",
-              "Region",
-              "Total Shipments Handled",
-              "On-Time Deliveries",
-              "Delayed Shipments",
-              "Average Delivery Cost per Shipment ($)",
-              "Warehouse Utilization Rate (%)"
+              "Employee ID",
+              "Department",
+              "Primary Skill Area",
+              "Secondary Skill Area",
+              "Project Phoenix Role Suitability",
+              "Years of Relevant Experience",
+              "Current Project Allocation (FTE)",
+              "Critical Certifications (Y/N)"
             ],
             "rows": [
               [
-                "HUB001",
-                "Central",
-                "12500",
-                "11875",
-                "625",
-                "8.50",
-                "85.0"
+                "EMP001",
+                "Software Dev",
+                "Backend Dev (Java)",
+                "Database Mgmt",
+                "Lead Developer",
+                "10",
+                "0.8",
+                "Y"
               ],
               [
-                "HUB002",
-                "North",
-                "9800",
-                "9212",
-                "588",
-                "9.20",
-                "78.5"
+                "EMP002",
+                "Software Dev",
+                "Frontend Dev (React)",
+                "UI/UX Design",
+                "Frontend Specialist",
+                "7",
+                "0.9",
+                "N"
               ],
               [
-                "HUB003",
-                "South",
-                "15200",
-                "14592",
-                "608",
-                "7.80",
-                "92.3"
+                "EMP003",
+                "Data Science",
+                "Machine Learning",
+                "Statistical Analysis",
+                "Data Scientist",
+                "6",
+                "0.7",
+                "Y"
               ],
               [
-                "HUB004",
-                "East",
-                "11000",
-                "10230",
-                "770",
-                "8.90",
-                "81.7"
+                "EMP004",
+                "Software Dev",
+                "QA Automation",
+                "DevOps Tools",
+                "QA Lead",
+                "8",
+                "0.6",
+                "Y"
               ],
               [
-                "HUB005",
-                "West",
-                "8500",
-                "7990",
-                "510",
-                "9.50",
-                "75.1"
+                "EMP005",
+                "Project Mgmt",
+                "Scrum Master",
+                "Risk Management",
+                "Project Coordinator",
+                "12",
+                "0.75",
+                "Y"
               ],
               [
-                "HUB006",
-                "Central",
-                "13000",
-                "12350",
-                "650",
-                "8.60",
-                "88.2"
+                "EMP006",
+                "Data Science",
+                "Big Data Eng.",
+                "Cloud Architect",
+                "Data Engineer",
+                "9",
+                "0.85",
+                "Y"
               ],
               [
-                "HUB007",
-                "North",
-                "10500",
-                "9870",
-                "630",
-                "9.10",
-                "79.4"
+                "EMP007",
+                "Software Dev",
+                "Frontend Dev (Angular)",
+                "Mobile Dev (iOS)",
+                "Frontend Specialist",
+                "5",
+                "0.95",
+                "N"
+              ],
+              [
+                "EMP008",
+                "Software Dev",
+                "Backend Dev (Python)",
+                "API Integration",
+                "Junior Developer",
+                "3",
+                "0.6",
+                "N"
+              ],
+              [
+                "EMP009",
+                "Project Mgmt",
+                "Client Relations",
+                "Business Analysis",
+                "Project Coordinator",
+                "15",
+                "0.8",
+                "Y"
+              ],
+              [
+                "EMP010",
+                "Software Dev",
+                "Full-Stack Dev",
+                "Cloud Deployment",
+                "Lead Developer",
+                "11",
+                "0.7",
+                "Y"
+              ],
+              [
+                "EMP011",
+                "Data Science",
+                "Data Visualization",
+                "Predictive Modeling",
+                "Data Scientist",
+                "4",
+                "0.9",
+                "N"
+              ],
+              [
+                "EMP012",
+                "Software Dev",
+                "QA Manual Testing",
+                "Technical Writing",
+                "QA Specialist",
+                "2",
+                "0.5",
+                "N"
               ]
             ],
             "formatting": {
               "alternating_rows": true,
-              "border_style": "standard",
+              "border_style": "heavy",
               "sortable": true
             }
           }
@@ -91,19 +149,19 @@
       ]
     ]
   },
-  "question": "An operations manager wants to assess the performance of distribution hubs based on their efficiency. First, identify all hubs with a 'Warehouse Utilization Rate' strictly greater than 85%. From this group, determine the highest 'On-Time Delivery Rate' (calculated as On-Time Deliveries divided by Total Shipments Handled). Second, identify all hubs with an 'Average Delivery Cost per Shipment' strictly less than $9.00. From this second group, determine the lowest 'On-Time Delivery Rate'. What is the approximate ratio of the highest 'On-Time Delivery Rate' from the first group to the lowest 'On-Time Delivery Rate' from the second group, expressed as a simplified ratio of integers?",
-  "title": "Analyze Logistics Hub On-Time Delivery Ratios and Average Costs",
-  "solution": "\"For all hubs that have an On-Time Delivery Rate of 92% or higher, calculate the ratio of their total combined delayed shipments to their total combined average delivery cost per shipment (in dollars). Round your final answer to two decimal places.\"",
+  "question": "Project Phoenix, a critical organizational initiative, necessitates the formation of a six-person core team. The Head of HR has stipulated the following stringent, yet occasionally ambiguous, selection parameters:1. The core team must consist of one Lead Developer, one Frontend Specialist, one Data Scientist, one QA Lead, one Project Coordinator, and one Data Engineer.2. All Lead roles (Lead Developer, QA Lead) absolutely require Critical Certifications ('Y'). For other roles, Critical Certifications are highly advantageous but not a disqualifier.3. A minimum of 6 years of relevant experience is mandatory for all core team members, irrespective of role.4. Workload capacity is paramount: a. For Lead roles, the combined Current Project Allocation (FTE) and the estimated Project Phoenix commitment (0.5 FTE) must not exceed 1.25. b. For all other core team roles, the Current Project Allocation (FTE) should ideally not exceed 0.8 to ensure sufficient focus. However, if no candidate meets this ideal for a required role but otherwise fulfills all other mandatory criteria, the candidate with the lowest FTE overage should be considered, acknowledging it as a necessary compromise to complete the team.5. While not a strict rule, the final team composition should implicitly reflect departmental diversity to foster cross-functional collaboration, and in cases of otherwise equally qualified candidates, prioritize individuals whose secondary skills offer the most unique and valuable strategic complement to the overall team's capabilities.Given these complex and interdependent considerations, which specific combination of employee IDs forms the most optimal Project Phoenix core team, making judicious compromises where explicitly hinted, and leveraging secondary skills for ultimate team versatility?",
+  "title": "HR Project Phoenix Team Selection: Complex Combinations with Skill & FTE Constraints",
+  "solution": "\"{\\\"question\\\": \\\"Project Phoenix requires a core team of five members, consisting of one Lead Developer, two Frontend Specialists, one Data Scientist, and one Project Coordinator. The selection process faces the following nuanced constraints:\\\\n\\\\n1.  **Lead Developer**: The selected individual must possess \\\\\\\"Critical Certifications\\\\\\\" and have a \\\\\\\"Current Project Allocation (FTE)\\\\\\\" less than or equal to 0.8. Candidates for this role are primarily drawn from those explicitly listed for \\\\\\\"Lead Developer\\\\\\\" suitability, but a \\\\\\\"Full-Stack Dev\\\\\\\" with \\\\\\\"Cloud Deployment\\\\\\\" secondary skill is also considered for this role if they meet all other criteria.\\\\n2.  **Two Frontend Specialists**: Both selected individuals must have a \\\\\\\"Current Project Allocation (FTE)\\\\\\\" strictly less than 0.95. Additionally, *at least one* of the two selected must have \\\\\\\"UI/UX Design\\\\\\\" as either their Primary or Secondary Skill Area. Candidates are primarily \\\\\\\"Frontend Specialist\\\\\\\" role suitability, but individuals whose Primary Skill Area is \\\\\\\"Full-Stack Dev\\\\\\\" can also be considered.\\\\n3.  **One Data Scientist**: The selected individual must have \\\\\\\"Machine Learning\\\\\\\" as their primary skill and a \\\\\\\"Current Project Allocation (FTE)\\\\\\\" strictly less than 0.85.\\\\n4.  **One Project Coordinator**: The selected individual must have \\\\\\\"Years of Relevant Experience\\\\\\\" greater than 10.\\\\n\\\\nHow many distinct ways can this Project Phoenix core team be formed, assuming no individual can fill more than one role in this team?\\\", \\\"solution\\\": \\\"Step 1: Identify and filter candidates for each role based on the given constraints.\\\\n\\\\n*   **Lead Developer (1 required):**\\\\n    *   Criteria: Critical Certifications = 'Y' AND Current Project Allocation (FTE) \\\\u2264 0.8.\\\\n    *   Potential candidates (Role Suitability: Lead Developer OR Primary Skill: Full-Stack Dev with Secondary Skill: Cloud Deployment): EMP001, EMP010.\\\\n    *   EMP001 (0.8 FTE, Y Cert): Valid.\\\\n    *   EMP010 (0.7 FTE, Y Cert): Valid.\\\\n    *   Valid Lead Developer Candidates: {EMP001, EMP010}.\\\\n\\\\n*   **Frontend Specialists (2 required):**\\\\n    *   Criteria: Both selected must have Current Project Allocation (FTE) < 0.95 AND at least one has UI/UX Design skill.\\\\n    *   Potential candidates (Role Suitability: Frontend Specialist OR Primary Skill: Full-Stack Dev): EMP002, EMP007, EMP010.\\\\n    *   EMP002 (0.9 FTE, UI/UX Design): Valid (FTE < 0.95 and has UI/UX).\\\\n    *   EMP007 (0.95 FTE, Mobile Dev (iOS)): Invalid (FTE is not < 0.95).\\\\n    *   EMP010 (0.7 FTE, Full-Stack Dev): Valid (FTE < 0.95, but no UI/UX).\\\\n    *   Valid Frontend Specialist Candidates (after FTE filter): {EMP002 (has UI/UX), EMP010 (no UI/UX)}.\\\\n\\\\n*   **Data Scientist (1 required):**\\\\n    *   Criteria: Primary Skill Area = 'Machine Learning' AND Current Project Allocation (FTE) < 0.85.\\\\n    *   Potential candidates (Role Suitability: Data Scientist): EMP003, EMP011.\\\\n    *   EMP003 (Machine Learning, 0.7 FTE): Valid.\\\\n    *   EMP011 (Data Visualization, 0.9 FTE): Invalid (FTE is not < 0.85).\\\\n    *   Valid Data Scientist Candidates: {EMP003}.\\\\n\\\\n*   **Project Coordinator (1 required):**\\\\n    *   Criteria: Years of Relevant Experience > 10.\\\\n    *   Potential candidates (Role Suitability: Project Coordinator): EMP005, EMP009.\\\\n    *   EMP005 (12 years): Valid.\\\\n    *   EMP009 (15 years): Valid.\\\\n    *   Valid Project Coordinator Candidates: {EMP005, EMP009}.\\\\n\\\\nStep 2: Identify resource conflicts for overlapping candidates.\\\\n\\\\nEmployee EMP010 is a valid candidate for both Lead Developer and Frontend Specialist roles. Since no individual can fill more than one role, we must consider two mutually exclusive cases.\\\\n\\\\nStep 3: Calculate the number of ways for each case.\\\\n\\\\n**Case 1: EMP010 is selected as the Lead Developer.**\\\\n*   **Lead Developer:** Select EMP010. This is \\\\( \\\\binom{1}{1} = 1 \\\\) way.\\\\n*   **Frontend Specialists:** EMP010 is no longer available. The pool of valid Frontend Specialist candidates becomes {EMP002}. We need to select 2 Frontend Specialists, but only 1 candidate remains. This makes it impossible to form the team for this role.\\\\n    *   Number of ways for Frontend Specialists = 0.\\\\n*   **Total for Case 1:** \\\\( 1 \\\\times 0 \\\\times \\\\binom{1}{1} \\\\times \\\\binom{2}{1} = 0 \\\\) ways.\\\\n\\\\n**Case 2: EMP010 is selected as a Frontend Specialist.**\\\\n*   **Frontend Specialists:** The valid candidates are {EMP002 (has UI/UX), EMP010 (no UI/UX)}. To satisfy the condition \\\\\\\"at least one has UI/UX Design\\\\\\\" and select two individuals, we must choose both EMP002 and EMP010. This is \\\\( \\\\binom{1}{1} \\\\times \\\\binom{1}{1} = 1 \\\\) way to form the pair {EMP002, EMP010}.\\\\n*   **Lead Developer:** EMP010 is now assigned to Frontend Specialist. The remaining valid Lead Developer candidates are {EMP001}. Select EMP001. This is \\\\( \\\\binom{1}{1} = 1 \\\\) way.\\\\n*   **Data Scientist:** Select EMP003. This is \\\\( \\\\binom{1}{1} = 1 \\\\) way.\\\\n*   **Project Coordinator:** Select 1 from {EMP005, EMP009}. This is \\\\( \\\\binom{2}{1} = 2 \\\\) ways.\\\\n*   **Total for Case 2:** \\\\( 1 \\\\times 1 \\\\times 1 \\\\times 2 = 2 \\\\) ways.\\\\n\\\\nStep 4: Sum the ways from all mutually exclusive cases.\\\\n\\\\nTotal distinct ways = Ways (Case 1) + Ways (Case 2) = \\\\( 0 + 2 = 2 \\\\) ways.\\\\n\\\\nStep 5: Verify the answer with business context.\\\\n\\\\nTwo distinct team combinations are possible: \\\\n1. Lead Developer: EMP001, Frontend Specialists: {EMP002, EMP010}, Data Scientist: EMP003, Project Coordinator: EMP005.\\\\n2. Lead Developer: EMP001, Frontend Specialists: {EMP002, EMP010}, Data Scientist: EMP003, Project Coordinator: EMP009.\\\\n\\\\nBoth combinations ensure all role requirements and constraints, including the 'at least one UI/UX' for Frontend Specialists and preventing an individual from holding multiple roles, are met. The complexity of resolving the EMP010 overlap makes the final calculation non-obvious, fitting the difficulty level.\\\\n\\\\nFinal Answer: 2\"",
   "options": [
-    "The Central region (combining HUB001 and HUB006) has a higher average on-time delivery rate than the North region (HUB002 and HUB007) and a lower average delivery cost per shipment.",
-    "HUB004 has the highest proportion of delayed shipments among all hubs, and its Warehouse Utilization Rate is above the average utilization rate of all hubs.",
-    "Only two hubs, HUB003 and HUB006, achieve both an on-time delivery rate of 96% or higher AND an average delivery cost per shipment below $8.00."
+    "The Project Phoenix team could effectively fill all 'Lead Developer' and 'Project Coordinator' roles by selecting EMP001, EMP010, EMP005, and EMP009, as they collectively meet experience, critical certification, and reasonable workload criteria (Current Project Allocation <= 0.8 FTE) essential for a critical project.",
+    "To ensure diverse technical expertise and critical certifications for all required 'Software Dev' roles on Project Phoenix, selecting only EMP001, EMP004, and EMP010 would be sufficient, while also adhering to a workload capacity guideline of Current Project Allocation <= 0.8 FTE.",
+    "Prioritizing strict criteria of Current Project Allocation <= 0.8 FTE and mandatory Critical Certifications ('Y') would prevent the immediate full staffing of both 'Frontend Specialist' and 'Data Scientist' roles with two distinct individuals for each, considering Project Phoenix's critical nature."
   ],
   "answer": {
-    "The Central region (combining HUB001 and HUB006) has a higher average on-time delivery rate than the North region (HUB002 and HUB007) and a lower average delivery cost per shipment.": "Yes",
-    "HUB004 has the highest proportion of delayed shipments among all hubs, and its Warehouse Utilization Rate is above the average utilization rate of all hubs.": "No",
-    "Only two hubs, HUB003 and HUB006, achieve both an on-time delivery rate of 96% or higher AND an average delivery cost per shipment below $8.00.": "No"
+    "The Project Phoenix team could effectively fill all 'Lead Developer' and 'Project Coordinator' roles by selecting EMP001, EMP010, EMP005, and EMP009, as they collectively meet experience, critical certification, and reasonable workload criteria (Current Project Allocation <= 0.8 FTE) essential for a critical project.": "Yes",
+    "To ensure diverse technical expertise and critical certifications for all required 'Software Dev' roles on Project Phoenix, selecting only EMP001, EMP004, and EMP010 would be sufficient, while also adhering to a workload capacity guideline of Current Project Allocation <= 0.8 FTE.": "No",
+    "Prioritizing strict criteria of Current Project Allocation <= 0.8 FTE and mandatory Critical Certifications ('Y') would prevent the immediate full staffing of both 'Frontend Specialist' and 'Data Scientist' roles with two distinct individuals for each, considering Project Phoenix's critical nature.": "Yes"
   },
-  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+  "prompt": "<Permutations and Combinations> - <Human Resources> - <Verbal Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
   "question-type": "Table Analysis"
 }
