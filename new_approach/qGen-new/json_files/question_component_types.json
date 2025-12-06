@@ -73,6 +73,16 @@
          },
          {
             "QuestionType": [
+               "Quantitative Comparison"
+            ],
+            "file-name": "qc-question-text.txt.template",
+            "variables": null,
+            "output": {
+               "question": "str"
+            }
+         },
+         {
+            "QuestionType": [
                "Sentence Equivalence",
                "Text Completion",
                "Graphic Interpretation"
@@ -99,7 +109,9 @@
                "Table Analysis",
                "Graphic Interpretation",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child"
+               "Multi-Source Reasoning Child",
+               "Two-Part Analysis Child",
+               "Quantitative Comparison"
             ],
             "file-name": "simple-question-title.txt.template",
             "variables": null,
@@ -123,7 +135,9 @@
                "Table Analysis",
                "Graphic Interpretation",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child"
+               "Multi-Source Reasoning Child",
+               "Two-Part Analysis Child",
+               "Quantitative Comparison"
             ],
             "file-name": "simple-question-solution.txt.template",
             "variables": null,
@@ -131,6 +145,17 @@
          }
       ],
       "QuestionOptions/Answer": [
+         {
+            "type": "single",
+            "QuestionType": [
+               "Quantitative Comparison"
+            ],
+            "file-name": "qc-question-answer.txt.template",
+            "variables": null,
+            "output": {
+               "answer": "str"
+            }
+         },
          {
             "type": "single",
             "QuestionType": [
@@ -206,7 +231,8 @@
             "type": "dichotomous",
             "QuestionType": [
                "Table Analysis",
-               "Multi-Source Reasoning Child"
+               "Multi-Source Reasoning Child",
+               "Multi-Source Reasoning"
             ],
             "file-name": "generic-table-analysis-options.txt.template",
             "variables": null,

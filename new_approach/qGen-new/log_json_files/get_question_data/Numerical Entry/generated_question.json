@@ -1,8 +1,15 @@
 {
-  "question": "Consider an initial philanthropic endowment, designated as \\(P_0\\), exclusively allocated for a multi-year ecological restoration initiative encompassing \\(T\\) discrete annual periods. This endowment's financial principal is subjected to an annual appreciation mechanism, and concurrently, a distinct quantity of environmental sustainability credits, denoted as \\(C_0\\), also accrues over the identical temporal horizon. For the explicit purpose of comparative fiscal and ecological analysis, it is stipulated that \\(C_0\\) is numerically equivalent to \\(P_0\\). Under the primary operational paradigm, the monetary value of the endowment undergoes a simple annual increment at a rate \\(r\\), and the environmental sustainability credits similarly experience a simple annual accrual at the identical rate \\(r\\). Alternatively, a proposed counterfactual paradigm suggests that both the endowment's monetary value and the environmental sustainability credits would not be unsubjected to an annual compound increment, each at the rate \\(r\\), over the same \\(T\\) periods. It is not inaccurate to query under which specific conditions, if any, the terminal aggregate value—defined as the linear sum of the monetary value of the endowment and the quantity of environmental sustainability credits—realized via the primary operational paradigm (simple annual increment for both monetary value and credits), would not be strictly inferior to that realized via the proposed counterfactual paradigm (compound annual increment for both monetary value and credits), assuming \\(T\\) represents a temporal expanse greater than a single annual period (i.e., \\(T > 1\\)) and all rates \\(r\\) are non-negative?",
-  "title": "Abstract valuation discrepancy in sustainable capital under varied interest regimes",
-  "solution": "\"B\"",
-  "answer": 42.17,
-  "prompt": "<Simple Interest and Compound Interest> - <Environment and Sustainability> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
-  "question-type": "Numerical Entry"
+  "question": "A regional environmental agency is assessing the effectiveness of two distinct ecosystem restoration initiatives, R1 (wetland rehabilitation) and R2 (riparian zone afforestation), planned for contiguous areas. Due to funding constraints and specific resource requirements, it has been determined that achieving complete success for both R1 and R2 within the current fiscal year are mutually exclusive events. The probability of R1 achieving complete success is 0.40. The probability of R2 achieving complete success is 0.35. A new satellite imaging system is subsequently deployed to monitor these projects. The probability that this system accurately detects any completely successful restoration (either R1 or R2) is 0.85, and this detection event is independent of the specific restoration type that succeeded. What is the probability that the satellite imaging system detects a completely successful restoration within the current fiscal year?",
+  "title": "Probability of satellite detection for mutually exclusive restoration successes",
+  "solution": "\"The final probability is 0.6375.\"",
+  "options": null,
+  "answer": 0.64,
+  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Environment and Sustainability> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "question-type": "Numerical Entry",
+  "difficulty": 1,
+  "tags": [
+    "GRE",
+    "Quants",
+    "Numerical Entry"
+  ]
 }

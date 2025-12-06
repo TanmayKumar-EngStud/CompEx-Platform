@@ -3,180 +3,41 @@
     "graph": [
       [
         {
-          "type": "line_chart",
-          "description": "This line chart illustrates the financial growth of an Employee Training Fund under two different interest calculation methods (Simple Interest and Compound Interest) over a ten-year period, starting with an initial principal of $10,000 and a 5% annual interest rate. It also includes the annual HR Department Budget Growth for the same period.",
+          "type": "table",
+          "description": "Operational performance metrics for various distribution centers, requiring calculations of ratios for efficiency assessment and trade-off analysis in logistics operations.",
           "structure": {
-            "title": "Growth of Employee Training Fund & HR Budget: Simple vs. Compound Interest (10 Years)",
-            "x_axis": {
-              "label": "Year",
-              "scale": "ordinal",
-              "ticks": [
-                "Year 1",
-                "Year 2",
-                "Year 3",
-                "Year 4",
-                "Year 5",
-                "Year 6",
-                "Year 7",
-                "Year 8",
-                "Year 9",
-                "Year 10"
-              ]
-            },
-            "y_axis": {
-              "label": "Fund Value ($)",
-              "scale": "linear",
-              "ticks": [
-                "0",
-                "2000",
-                "4000",
-                "6000",
-                "8000",
-                "10000",
-                "12000",
-                "14000",
-                "16000",
-                "18000"
-              ]
-            },
-            "series": [
+            "title": "Q3 2023 Distribution Center Performance Overview",
+            "labels": [
+              "DC Alpha",
+              "DC Beta",
+              "DC Gamma",
+              "DC Delta"
+            ],
+            "segments": [
               {
-                "name": "Simple Interest Fund Value",
-                "color": "#3498db",
-                "data": [
-                  {
-                    "x": "Year 1",
-                    "y": 10500
-                  },
-                  {
-                    "x": "Year 2",
-                    "y": 11000
-                  },
-                  {
-                    "x": "Year 3",
-                    "y": 11500
-                  },
-                  {
-                    "x": "Year 4",
-                    "y": 12000
-                  },
-                  {
-                    "x": "Year 5",
-                    "y": 12500
-                  },
-                  {
-                    "x": "Year 6",
-                    "y": 13000
-                  },
-                  {
-                    "x": "Year 7",
-                    "y": 13500
-                  },
-                  {
-                    "x": "Year 8",
-                    "y": 14000
-                  },
-                  {
-                    "x": "Year 9",
-                    "y": 14500
-                  },
-                  {
-                    "x": "Year 10",
-                    "y": 15000
-                  }
-                ]
+                "label": "Total Orders Processed",
+                "value": 55200,
+                "percentage": "22.6%"
               },
               {
-                "name": "Compound Interest Fund Value",
-                "color": "#2ecc71",
-                "data": [
-                  {
-                    "x": "Year 1",
-                    "y": 10500
-                  },
-                  {
-                    "x": "Year 2",
-                    "y": 11025
-                  },
-                  {
-                    "x": "Year 3",
-                    "y": 11576.25
-                  },
-                  {
-                    "x": "Year 4",
-                    "y": 12155.06
-                  },
-                  {
-                    "x": "Year 5",
-                    "y": 12762.82
-                  },
-                  {
-                    "x": "Year 6",
-                    "y": 13400.96
-                  },
-                  {
-                    "x": "Year 7",
-                    "y": 14071
-                  },
-                  {
-                    "x": "Year 8",
-                    "y": 14774.55
-                  },
-                  {
-                    "x": "Year 9",
-                    "y": 15513.28
-                  },
-                  {
-                    "x": "Year 10",
-                    "y": 16288.95
-                  }
-                ]
+                "label": "Items Shipped",
+                "value": 635000,
+                "percentage": "22.6%"
               },
               {
-                "name": "HR Department Budget Growth",
-                "color": "#f1c40f",
-                "data": [
-                  {
-                    "x": "Year 1",
-                    "y": 10200
-                  },
-                  {
-                    "x": "Year 2",
-                    "y": 10400
-                  },
-                  {
-                    "x": "Year 3",
-                    "y": 10600
-                  },
-                  {
-                    "x": "Year 4",
-                    "y": 10800
-                  },
-                  {
-                    "x": "Year 5",
-                    "y": 11000
-                  },
-                  {
-                    "x": "Year 6",
-                    "y": 11200
-                  },
-                  {
-                    "x": "Year 7",
-                    "y": 11400
-                  },
-                  {
-                    "x": "Year 8",
-                    "y": 11600
-                  },
-                  {
-                    "x": "Year 9",
-                    "y": 11800
-                  },
-                  {
-                    "x": "Year 10",
-                    "y": 12000
-                  }
-                ]
+                "label": "Operating Cost ($)",
+                "value": 313000,
+                "percentage": "22.6%"
+              },
+              {
+                "label": "Full-Time Staff",
+                "value": 335,
+                "percentage": "22.6%"
+              },
+              {
+                "label": "On-Time Delivery Rate (Avg %)",
+                "value": 97.625,
+                "percentage": "22.6%"
               }
             ]
           }
@@ -184,25 +45,49 @@
       ]
     ]
   },
-  "question": "Based on the provided chart, after a decade of investment, the Employee Training Fund managed with compound interest yielded approximately $____ more in total value compared to the fund managed with simple interest, clearly demonstrating the cumulative ____ of compound growth for long-term strategic HR investments.",
-  "title": "Employee Training Fund: Simple vs. Compound Interest Growth Analysis",
-  "solution": "\"In Year 7, the HR Department considered reallocating the *additional earnings* generated by the Compound Interest Fund compared to the Simple Interest Fund to an employee recognition program. Approximately what percentage of the HR Department's total budget for Year 7 would this proposed allocation represent?\"",
+  "question": "An operations review seeks to identify the distribution center that demonstrates the most compelling balance of cost-efficiency and operational excellence. Based on the performance data, DC ____ shows the lowest operating cost per order and the highest orders processed per full-time staff member, making it a strong contender for replicating best practices. However, DC ____ maintains a marginally higher on-time delivery rate, suggesting a potential trade-off between absolute cost savings and premium service levels. To truly optimize the logistics network, one must evaluate if the incremental cost efficiency gains in the former justify the slight reduction in ____, or if strategic investments should focus on improving ____ in the latter without compromising its high service standards. Therefore, the decision on which DC to prioritize for investment depends heavily on the company's immediate strategic emphasis on either ____ or service quality.",
+  "title": "DC Performance: Analyze Cost-Efficiency Ratios vs. On-Time Delivery Trade-offs",
+  "solution": "\"Step 1: Identify the characteristics for each distribution center mentioned in the prompt.The problem describes two types of distribution centers (DCs):\\n\\n*   **DC Type 1 (Cost-Efficient):** Characterized by the lowest operating cost per order AND the highest orders processed per full-time staff member.\\n*   **DC Type 2 (Service-Oriented):** Characterized by a marginally higher on-time delivery rate.\\n\\nStep 2: Recognize limitations in the provided data.The \\\"Q3 2023 Distribution Center Performance Overview\\\" table lists general performance metrics (Total Orders Processed, Operating Cost, Full-Time Staff, On-Time Delivery Rate) and various DC labels (DC Alpha, DC Beta, DC Gamma, DC Delta). However, the table provides only aggregate or average values for these metrics across all DCs, not individual data for each specific DC. This means that direct calculation and comparison to identify specific DCs (Alpha, Beta, Gamma, Delta) for \\\"lowest operating cost per order\\\" or \\\"highest orders processed per full-time staff\\\" is not possible from the given data.\\n\\nStep 3: Hypothesize DC assignments and identify trade-offs based on the prompt's descriptive text.Since specific data for individual DCs is unavailable, we will assume, for the purpose of completing the exercise, a typical scenario where a trade-off exists between cost efficiency and service quality. We will arbitrarily assign the characteristics to two of the listed DCs to complete the logical flow of the question.\\n\\n*   Let's assume **DC Alpha** is the DC that shows the \\\"lowest operating cost per order and the highest orders processed per full-time staff member\\\" (Cost-Efficient DC).\\n*   Let's assume **DC Beta** is the DC that \\\"maintains a marginally higher on-time delivery rate\\\" (Service-Oriented DC).\\n\\nStep 4: Fill in the blanks based on the hypothetical assignments and the implied trade-offs in the prompt.\\n\\n1.  \\\"Based on the performance data, DC **Alpha** shows the lowest operating cost per order and the highest orders processed per full-time staff member...\\\"\\n2.  \\\"However, DC **Beta** maintains a marginally higher on-time delivery rate...\\\"\\n3.  \\\"...if the incremental cost efficiency gains in the former justify the slight reduction in **on-time delivery rate**...\\\" (DC Alpha, being cost-efficient, is implied to have a slightly lower on-time delivery rate than DC Beta).\\n4.  \\\"...or if strategic investments should focus on improving **cost efficiency** in the latter without compromising its high service standards.\\\" (DC Beta, being service-oriented, is implied to have lower cost efficiency than DC Alpha).\\n5.  \\\"Therefore, the decision on which DC to prioritize for investment depends heavily on the company's immediate strategic emphasis on either **cost efficiency** or service quality.\\\"\\n\\nThe completed statement reflects a common business trade-off between maximizing operational cost efficiency and achieving premium service levels. The choice of which DC to prioritize for investment would indeed hinge on the company's strategic focus.\"",
   "options": [
     {
-      "A": "$800",
-      "B": "$1000",
-      "C": "$11000"
+      "A": "DC Alpha",
+      "B": "DC Beta",
+      "C": "DC Gamma"
     },
     {
-      "A": "$1289",
-      "B": "$1000",
-      "C": "$1500"
+      "A": "DC Beta",
+      "B": "DC Alpha",
+      "C": "DC Delta"
+    },
+    {
+      "A": "on-time delivery rate",
+      "B": "total orders processed",
+      "C": "operational costs"
+    },
+    {
+      "A": "cost efficiency",
+      "B": "employee retention",
+      "C": "delivery speed"
+    },
+    {
+      "A": "cost efficiency",
+      "B": "market penetration",
+      "C": "inventory turnover"
     }
   ],
   "answer": [
     "A",
+    "A",
+    "A",
+    "A",
     "A"
   ],
-  "prompt": "<Simple Interest and Compound Interest> - <Human Resources> - <Verbal Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
-  "question-type": "Graphic Interpretation"
+  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+  "question-type": "Graphic Interpretation",
+  "difficulty": 1,
+  "tags": [
+    "GMAT",
+    "Integrated Reasoning",
+    "Graphic Interpretation"
+  ]
 }

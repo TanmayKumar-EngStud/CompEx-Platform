@@ -56,13 +56,14 @@ def refine_response(response_text: str) -> str:
 
         # Remove standalone backticks that might break JSON
         text = text.replace('`', "'")
+        
+        # Escape backslashes that are not already escaped (for LaTeX)
+        # matches a backslash that is NOT followed by another backslash or control char
+        text = re.sub(r'\\(?![\\/bfnrtu"])', r'\\\\', text)
 
         # Fix common JSON formatting issues
         # Fix trailing commas before closing brackets/braces
         text = re.sub(r',(\s*[}\]])', r'\1', text)
-
-        # Fix double quotes inside strings (escape them)
-        # This is a simplified approach - real implementation would be more complex
 
         return text
 
@@ -446,9 +447,16 @@ class GeminiGenerator:
                             metadata_content, indent=2, ensure_ascii=False)
                     metadata_block = f"\nShared Metadata Context:\n{formatted_metadata}\n"
 
+                # Check for strictly chained question context
+                chained_question_block = ""
+                # We specifically look for 'generated_question' in context, which we added in question_manager.py
+                generated_question = context.get('generated_question')
+                if generated_question:
+                    chained_question_block = f"\nCONTEXT - The Question you are solving:\n{generated_question}\n"
+
                 comprehensive_prompt = f"""Mode: {component_type} Generation
 
-Original Question Prompt: {original_prompt}{metadata_block}
+Original Question Prompt: {original_prompt}{metadata_block}{chained_question_block}
 
 Component Instructions:
 {instruction_statement}
@@ -561,11 +569,10 @@ Generate the requested {component_type} component following the format specifica
                 attempt += 1
 
                 # Print error info
-                print(f"❌ Attempt {attempt}/{self.max_retries} failed for {prettify(component_type, 'Red')} "
-                      f"({prettify(question_type, 'Yellow')}): {error_msg}")
-
-                # If this was the last attempt, raise the error
+                # Print error info ONLY if this was the final attempt
                 if attempt >= self.max_retries:
+                    print(f"❌ Attempt {attempt}/{self.max_retries} failed for {prettify(component_type, 'Red')} "
+                          f"({prettify(question_type, 'Yellow')}): {error_msg}")
                     raise RuntimeError(f"Failed to generate component after {self.max_retries} attempts. "
                                        f"Last error: {error_msg}")
 

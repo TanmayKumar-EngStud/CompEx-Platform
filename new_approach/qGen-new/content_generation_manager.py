@@ -127,10 +127,42 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
             raise TypeError(
                 f"{prettify('answer', 'Yellow')} must be {prettify('str', 'Green')} for single-choice questions; got {prettify(type(answer).__name__, 'Red')}"
             )
+        
+        # Fuzzy Logic: Check if answer is a KEY (e.g., 'A') or VALUE (e.g., '5')
         if answer not in options:
-            raise ValueError(
-                f"{prettify('answer', 'Red')} key {prettify(answer, 'Magenta')} not found in provided options"
-            )
+            # Try to find the key by matching the value
+            found_key = None
+            for key, value in options.items():
+                # Check for exact string match or numeric match
+                if str(value).strip() == str(answer).strip():
+                    found_key = key
+                    break
+                # Try numeric match (e.g., 49.50 vs 49.5)
+                try:
+                    if float(str(value).strip()) == float(str(answer).strip()):
+                        found_key = key
+                        break
+                except ValueError:
+                    pass
+            
+            if found_key:
+                 # Correct the answer to be the key
+                 answer = found_key
+            else:
+                # Check if answer is a value instead of a key (e.g. 200 instead of 'C')
+                found_key_by_value = None
+                for k, v in options.items():
+                    if str(v).strip() == str(answer).strip():
+                        found_key_by_value = k
+                        break
+                
+                if found_key_by_value:
+                    answer = found_key_by_value
+                else:
+                    raise ValueError(
+                        f"{prettify('answer', 'Red')} key {prettify(answer, 'Magenta')} not found in provided options.\nAvailable Options: {prettify(json.dumps(options, indent=2), 'Yellow')}"
+                    )
+        
         # Store answer as simple label string
         result['answer'] = answer
 
@@ -142,7 +174,7 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
         missing = [key for key in answer if key not in options]
         if missing:
             raise ValueError(
-                f"{prettify('answer', 'Red')} keys {prettify(missing, 'Magenta')} not present in options"
+                f"{prettify('answer', 'Red')} keys {prettify(missing, 'Magenta')} not present in options.\nAvailable Options: {prettify(list(options.keys()), 'Yellow')}"
             )
         # Store answer as list of label strings
         result['answer'] = answer
@@ -164,12 +196,16 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
              # Convert list of objects back to dict {statement: response}
              # Assuming list items are dicts with 'statement' and 'response' keys
              try:
-                answer = {item['statement']: item['response'] for item in answer}
+                # Check structure: strict schema often returns list of 'statement' and 'response'
+                if answer and isinstance(answer[0], dict) and 'statement' in answer[0]:
+                    answer = {item['statement']: item['response'] for item in answer}
+                # Fallback: if it's just a list of boolean/string values, try to map to options by index
+                elif len(answer) == len(options):
+                     answer = {opt: ans for opt, ans in zip(options, answer)}
              except (KeyError, TypeError) as e:
-                 raise ValueError(f"Failed to convert answer list to dict: {e}. Expected list of objects with 'statement' and 'response' keys.")
+                 # If automatic conversion fails, log but proceed to strict check which will raise error
+                 pass
 
-        # For Table Analysis: options is list of statements, answer is dict {statement: bool}
-        
         if not isinstance(options, list):
             raise TypeError(
                 f"{prettify('options', 'Yellow')} must be {prettify('list', 'Green')} for dichotomous questions; got {prettify(type(options).__name__, 'Red')}"
@@ -179,20 +215,55 @@ def manage_options_answer_content(result: dict, question_type: str, generated_da
                 f"{prettify('answer', 'Yellow')} must be {prettify('dict', 'Green')} for dichotomous questions; got {prettify(type(answer).__name__, 'Red')}"
             )
         
-        # Validate answer keys match options
-        # Note: In some cases, answer might be partial or full, but ideally should cover all options
-        # For now, we just ensure answer keys are in options
+        # Validate answer keys match options (Fuzzy Match for Dichotomous Keys)
         unknown_keys = [k for k in answer.keys() if k not in options]
         if unknown_keys:
-             raise ValueError(
-                f"{prettify('answer', 'Red')} keys {prettify(unknown_keys, 'Magenta')} not found in options list"
-            )
+             # Try fuzzy matching keys (e.g. slight text variations)
+             corrected_answer = {}
+             for ans_key, ans_val in answer.items():
+                 found_opt = None
+                 if ans_key in options:
+                     found_opt = ans_key
+                 else:
+                     # Simple fuzzy match: check if one string contains the other or levenshtein-ish
+                     # This handles cases where model slightly alters the statement text
+                     for opt in options:
+                         if opt in ans_key or ans_key in opt: # Substring match
+                             found_opt = opt
+                             break
+                 
+                 if found_opt:
+                     corrected_answer[found_opt] = ans_val
+                 else:
+                     # If still not found, keep original logging
+                     pass
+             
+             if len(corrected_answer) == len(answer):
+                 answer = corrected_answer
+             else:
+                 # Re-check unknowns after fuzzy correction
+                 unknown_keys = [k for k in answer.keys() if k not in options]
+                 if unknown_keys:
+                    raise ValueError(
+                        f"{prettify('answer', 'Red')} keys {prettify(unknown_keys, 'Magenta')} not found in options list.\nAvailable Options: {prettify(json.dumps(options, indent=2), 'Yellow')}"
+                    )
         
         result['options'] = options
         result['answer'] = answer
 
     elif option_type == 'numeric':
-        # For numeric entry, there are no options, just an answer
-        if answer is None:
-             raise ValueError(f"Answer is missing for numeric question type")
+        # Numerical Entry: Answer is a number, no options validation needed
+        # Ensure answer is convertable to float/int
+        try:
+            if isinstance(answer, (int, float)):
+                 pass
+            elif isinstance(answer, str):
+                 # Try to parse if string
+                 float(answer.strip().replace(',', ''))
+            else:
+                 pass # Allow it, but maybe warn?
+        except ValueError:
+             raise ValueError(f"{prettify('answer', 'Red')} for Numerical Entry must be a number, got {prettify(answer, 'Magenta')}")
+        
+        result['options'] = None # No options for numerical entry
         result['answer'] = answer

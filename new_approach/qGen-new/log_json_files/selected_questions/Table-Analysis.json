@@ -4,164 +4,85 @@
       [
         {
           "type": "data_table",
-          "description": "Detailed employee skill profiles and project assignment metrics for a new critical project, 'Project Phoenix', requiring careful selection based on skill diversity, experience, and current workload capacity. The data aims to challenge the selection process with overlapping competencies and implied constraints.",
+          "description": "Detailed financial projections across multiple quarters, involving algebraic calculations for revenue growth and profit, requiring careful quantitative reasoning and inference for missing data.",
           "structure": {
-            "title": "Project Phoenix Team Assembly - Skill & Capacity Analysis",
+            "title": "Multi-Quarter Financial Performance and Projections with Inferred Data",
             "headers": [
-              "Employee ID",
-              "Department",
-              "Primary Skill Area",
-              "Secondary Skill Area",
-              "Project Phoenix Role Suitability",
-              "Years of Relevant Experience",
-              "Current Project Allocation (FTE)",
-              "Critical Certifications (Y/N)"
+              "Quarter",
+              "Base Revenue (R)",
+              "Operating Expenses (E)",
+              "Growth Multiplier (M)",
+              "Calculated Revenue (R_curr)",
+              "Net Profit (P)",
+              "Projected Revenue (R_next)"
             ],
             "rows": [
               [
-                "EMP001",
-                "Software Dev",
-                "Backend Dev (Java)",
-                "Database Mgmt",
-                "Lead Developer",
-                "10",
-                "0.8",
-                "Y"
+                "1",
+                "1000",
+                "400",
+                "1.08",
+                "1000",
+                "600",
+                "1080"
               ],
               [
-                "EMP002",
-                "Software Dev",
-                "Frontend Dev (React)",
-                "UI/UX Design",
-                "Frontend Specialist",
-                "7",
-                "0.9",
-                "N"
-              ],
-              [
-                "EMP003",
-                "Data Science",
-                "Machine Learning",
-                "Statistical Analysis",
-                "Data Scientist",
-                "6",
-                "0.7",
-                "Y"
-              ],
-              [
-                "EMP004",
-                "Software Dev",
-                "QA Automation",
-                "DevOps Tools",
-                "QA Lead",
-                "8",
-                "0.6",
-                "Y"
-              ],
-              [
-                "EMP005",
-                "Project Mgmt",
-                "Scrum Master",
-                "Risk Management",
-                "Project Coordinator",
-                "12",
-                "0.75",
-                "Y"
-              ],
-              [
-                "EMP006",
-                "Data Science",
-                "Big Data Eng.",
-                "Cloud Architect",
-                "Data Engineer",
-                "9",
-                "0.85",
-                "Y"
-              ],
-              [
-                "EMP007",
-                "Software Dev",
-                "Frontend Dev (Angular)",
-                "Mobile Dev (iOS)",
-                "Frontend Specialist",
-                "5",
-                "0.95",
-                "N"
-              ],
-              [
-                "EMP008",
-                "Software Dev",
-                "Backend Dev (Python)",
-                "API Integration",
-                "Junior Developer",
-                "3",
-                "0.6",
-                "N"
-              ],
-              [
-                "EMP009",
-                "Project Mgmt",
-                "Client Relations",
-                "Business Analysis",
-                "Project Coordinator",
-                "15",
-                "0.8",
-                "Y"
-              ],
-              [
-                "EMP010",
-                "Software Dev",
-                "Full-Stack Dev",
-                "Cloud Deployment",
-                "Lead Developer",
-                "11",
-                "0.7",
-                "Y"
-              ],
-              [
-                "EMP011",
-                "Data Science",
-                "Data Visualization",
-                "Predictive Modeling",
-                "Data Scientist",
-                "4",
-                "0.9",
-                "N"
-              ],
-              [
-                "EMP012",
-                "Software Dev",
-                "QA Manual Testing",
-                "Technical Writing",
-                "QA Specialist",
                 "2",
-                "0.5",
-                "N"
+                "1080",
+                "420",
+                "1.07",
+                "1155.60",
+                "735.60",
+                "1236.49"
+              ],
+              [
+                "3",
+                "1236.49",
+                "441",
+                "1.065",
+                "1316.92",
+                "875.92",
+                "1402.76"
+              ],
+              [
+                "4",
+                "1402.76",
+                "???",
+                "???",
+                "???",
+                "???",
+                "???"
               ]
             ],
             "formatting": {
               "alternating_rows": true,
-              "border_style": "heavy",
-              "sortable": true
+              "border_style": "dashed",
+              "sortable": false
             }
           }
         }
       ]
     ]
   },
-  "question": "Project Phoenix, a critical organizational initiative, necessitates the formation of a six-person core team. The Head of HR has stipulated the following stringent, yet occasionally ambiguous, selection parameters:1. The core team must consist of one Lead Developer, one Frontend Specialist, one Data Scientist, one QA Lead, one Project Coordinator, and one Data Engineer.2. All Lead roles (Lead Developer, QA Lead) absolutely require Critical Certifications ('Y'). For other roles, Critical Certifications are highly advantageous but not a disqualifier.3. A minimum of 6 years of relevant experience is mandatory for all core team members, irrespective of role.4. Workload capacity is paramount: a. For Lead roles, the combined Current Project Allocation (FTE) and the estimated Project Phoenix commitment (0.5 FTE) must not exceed 1.25. b. For all other core team roles, the Current Project Allocation (FTE) should ideally not exceed 0.8 to ensure sufficient focus. However, if no candidate meets this ideal for a required role but otherwise fulfills all other mandatory criteria, the candidate with the lowest FTE overage should be considered, acknowledging it as a necessary compromise to complete the team.5. While not a strict rule, the final team composition should implicitly reflect departmental diversity to foster cross-functional collaboration, and in cases of otherwise equally qualified candidates, prioritize individuals whose secondary skills offer the most unique and valuable strategic complement to the overall team's capabilities.Given these complex and interdependent considerations, which specific combination of employee IDs forms the most optimal Project Phoenix core team, making judicious compromises where explicitly hinted, and leveraging secondary skills for ultimate team versatility?",
-  "title": "HR Project Phoenix Team Selection: Complex Combinations with Skill & FTE Constraints",
-  "solution": "\"{\\\"question\\\": \\\"Project Phoenix requires a core team of five members, consisting of one Lead Developer, two Frontend Specialists, one Data Scientist, and one Project Coordinator. The selection process faces the following nuanced constraints:\\\\n\\\\n1.  **Lead Developer**: The selected individual must possess \\\\\\\"Critical Certifications\\\\\\\" and have a \\\\\\\"Current Project Allocation (FTE)\\\\\\\" less than or equal to 0.8. Candidates for this role are primarily drawn from those explicitly listed for \\\\\\\"Lead Developer\\\\\\\" suitability, but a \\\\\\\"Full-Stack Dev\\\\\\\" with \\\\\\\"Cloud Deployment\\\\\\\" secondary skill is also considered for this role if they meet all other criteria.\\\\n2.  **Two Frontend Specialists**: Both selected individuals must have a \\\\\\\"Current Project Allocation (FTE)\\\\\\\" strictly less than 0.95. Additionally, *at least one* of the two selected must have \\\\\\\"UI/UX Design\\\\\\\" as either their Primary or Secondary Skill Area. Candidates are primarily \\\\\\\"Frontend Specialist\\\\\\\" role suitability, but individuals whose Primary Skill Area is \\\\\\\"Full-Stack Dev\\\\\\\" can also be considered.\\\\n3.  **One Data Scientist**: The selected individual must have \\\\\\\"Machine Learning\\\\\\\" as their primary skill and a \\\\\\\"Current Project Allocation (FTE)\\\\\\\" strictly less than 0.85.\\\\n4.  **One Project Coordinator**: The selected individual must have \\\\\\\"Years of Relevant Experience\\\\\\\" greater than 10.\\\\n\\\\nHow many distinct ways can this Project Phoenix core team be formed, assuming no individual can fill more than one role in this team?\\\", \\\"solution\\\": \\\"Step 1: Identify and filter candidates for each role based on the given constraints.\\\\n\\\\n*   **Lead Developer (1 required):**\\\\n    *   Criteria: Critical Certifications = 'Y' AND Current Project Allocation (FTE) \\\\u2264 0.8.\\\\n    *   Potential candidates (Role Suitability: Lead Developer OR Primary Skill: Full-Stack Dev with Secondary Skill: Cloud Deployment): EMP001, EMP010.\\\\n    *   EMP001 (0.8 FTE, Y Cert): Valid.\\\\n    *   EMP010 (0.7 FTE, Y Cert): Valid.\\\\n    *   Valid Lead Developer Candidates: {EMP001, EMP010}.\\\\n\\\\n*   **Frontend Specialists (2 required):**\\\\n    *   Criteria: Both selected must have Current Project Allocation (FTE) < 0.95 AND at least one has UI/UX Design skill.\\\\n    *   Potential candidates (Role Suitability: Frontend Specialist OR Primary Skill: Full-Stack Dev): EMP002, EMP007, EMP010.\\\\n    *   EMP002 (0.9 FTE, UI/UX Design): Valid (FTE < 0.95 and has UI/UX).\\\\n    *   EMP007 (0.95 FTE, Mobile Dev (iOS)): Invalid (FTE is not < 0.95).\\\\n    *   EMP010 (0.7 FTE, Full-Stack Dev): Valid (FTE < 0.95, but no UI/UX).\\\\n    *   Valid Frontend Specialist Candidates (after FTE filter): {EMP002 (has UI/UX), EMP010 (no UI/UX)}.\\\\n\\\\n*   **Data Scientist (1 required):**\\\\n    *   Criteria: Primary Skill Area = 'Machine Learning' AND Current Project Allocation (FTE) < 0.85.\\\\n    *   Potential candidates (Role Suitability: Data Scientist): EMP003, EMP011.\\\\n    *   EMP003 (Machine Learning, 0.7 FTE): Valid.\\\\n    *   EMP011 (Data Visualization, 0.9 FTE): Invalid (FTE is not < 0.85).\\\\n    *   Valid Data Scientist Candidates: {EMP003}.\\\\n\\\\n*   **Project Coordinator (1 required):**\\\\n    *   Criteria: Years of Relevant Experience > 10.\\\\n    *   Potential candidates (Role Suitability: Project Coordinator): EMP005, EMP009.\\\\n    *   EMP005 (12 years): Valid.\\\\n    *   EMP009 (15 years): Valid.\\\\n    *   Valid Project Coordinator Candidates: {EMP005, EMP009}.\\\\n\\\\nStep 2: Identify resource conflicts for overlapping candidates.\\\\n\\\\nEmployee EMP010 is a valid candidate for both Lead Developer and Frontend Specialist roles. Since no individual can fill more than one role, we must consider two mutually exclusive cases.\\\\n\\\\nStep 3: Calculate the number of ways for each case.\\\\n\\\\n**Case 1: EMP010 is selected as the Lead Developer.**\\\\n*   **Lead Developer:** Select EMP010. This is \\\\( \\\\binom{1}{1} = 1 \\\\) way.\\\\n*   **Frontend Specialists:** EMP010 is no longer available. The pool of valid Frontend Specialist candidates becomes {EMP002}. We need to select 2 Frontend Specialists, but only 1 candidate remains. This makes it impossible to form the team for this role.\\\\n    *   Number of ways for Frontend Specialists = 0.\\\\n*   **Total for Case 1:** \\\\( 1 \\\\times 0 \\\\times \\\\binom{1}{1} \\\\times \\\\binom{2}{1} = 0 \\\\) ways.\\\\n\\\\n**Case 2: EMP010 is selected as a Frontend Specialist.**\\\\n*   **Frontend Specialists:** The valid candidates are {EMP002 (has UI/UX), EMP010 (no UI/UX)}. To satisfy the condition \\\\\\\"at least one has UI/UX Design\\\\\\\" and select two individuals, we must choose both EMP002 and EMP010. This is \\\\( \\\\binom{1}{1} \\\\times \\\\binom{1}{1} = 1 \\\\) way to form the pair {EMP002, EMP010}.\\\\n*   **Lead Developer:** EMP010 is now assigned to Frontend Specialist. The remaining valid Lead Developer candidates are {EMP001}. Select EMP001. This is \\\\( \\\\binom{1}{1} = 1 \\\\) way.\\\\n*   **Data Scientist:** Select EMP003. This is \\\\( \\\\binom{1}{1} = 1 \\\\) way.\\\\n*   **Project Coordinator:** Select 1 from {EMP005, EMP009}. This is \\\\( \\\\binom{2}{1} = 2 \\\\) ways.\\\\n*   **Total for Case 2:** \\\\( 1 \\\\times 1 \\\\times 1 \\\\times 2 = 2 \\\\) ways.\\\\n\\\\nStep 4: Sum the ways from all mutually exclusive cases.\\\\n\\\\nTotal distinct ways = Ways (Case 1) + Ways (Case 2) = \\\\( 0 + 2 = 2 \\\\) ways.\\\\n\\\\nStep 5: Verify the answer with business context.\\\\n\\\\nTwo distinct team combinations are possible: \\\\n1. Lead Developer: EMP001, Frontend Specialists: {EMP002, EMP010}, Data Scientist: EMP003, Project Coordinator: EMP005.\\\\n2. Lead Developer: EMP001, Frontend Specialists: {EMP002, EMP010}, Data Scientist: EMP003, Project Coordinator: EMP009.\\\\n\\\\nBoth combinations ensure all role requirements and constraints, including the 'at least one UI/UX' for Frontend Specialists and preventing an individual from holding multiple roles, are met. The complexity of resolving the EMP010 overlap makes the final calculation non-obvious, fitting the difficulty level.\\\\n\\\\nFinal Answer: 2\"",
+  "question": "The financial projections table demonstrates an initial unique calculation for Quarter 1's 'Calculated Revenue (R_curr)' and 'Projected Revenue (R_next)', where 'R_curr' equals 'Base Revenue' and 'R_next' equals 'Base Revenue * Growth Multiplier'. However, from Quarter 2 onwards, the methodology shifts, with 'Calculated Revenue (R_curr)' becoming 'Base Revenue * Growth Multiplier' and 'Projected Revenue (R_next)' becoming 'Calculated Revenue (R_curr) * Growth Multiplier'. Assuming this latter methodology (Quarters 2-3) consistently applies to subsequent quarters, and that the observed trends in 'Operating Expenses' (geometric progression) and 'Growth Multiplier' (arithmetic decrease in the decrease factor) continue, determine the projected Net Profit for Quarter 4. Furthermore, if a significant strategic initiative is planned for Quarter 5, which is projected to increase Quarter 5's Operating Expenses by an additional 7.5% from its *calculated* Quarter 5 trend value, and simultaneously reduce the Quarter 5 Growth Multiplier by a fixed 0.001 from its *calculated* Quarter 4 trend value (not its natural trend continuation), what would be the minimum 'Base Revenue' required for Quarter 5 to ensure a Net Profit equivalent to 95% of Quarter 4's projected Net Profit, assuming all other calculation rules remain consistent with the Quarter 2-4 pattern? Round your final 'Base Revenue' to two decimal places.",
+  "title": "Financial Forecasting: Q4 Net Profit & Q5 Base Revenue with Trend Analysis & Strategic Initiative",
+  "solution": "\"Step 1: Understand the calculation methodology and identify trends for Operating Expenses and Growth Multiplier. The problem states that from Quarter 2 onwards, the methodology shifts where 'Calculated Revenue (R_curr)' is 'Base Revenue * Growth Multiplier', 'Net Profit (P)' is 'Calculated Revenue (R_curr) - Operating Expenses (E)', and 'Projected Revenue (R_next)' is 'Calculated Revenue (R_curr) * Growth Multiplier'. All monetary values (Calculated Revenue, Net Profit, Projected Revenue) are rounded to two decimal places at each calculation step based on the provided table.\\n\\nTrend for Operating Expenses (E):\\nQ1 E = 400\\nQ2 E = 420 (400 * 1.05)\\nQ3 E = 441 (420 * 1.05)\\nThis is a geometric progression with a common ratio of 1.05. So, E_n = E_{n-1} * 1.05.\\n\\nTrend for Growth Multiplier (M):\\nLet d_n be the decrease factor from M_n to M_{n+1}.\\nM1 = 1.08\\nM2 = 1.07 => d1 = M1 - M2 = 1.08 - 1.07 = 0.01\\nM3 = 1.065 => d2 = M2 - M3 = 1.07 - 1.065 = 0.005\\nThe problem states an \\\"arithmetic decrease in the decrease factor\\\". This means the decrease factors (d_n) form an arithmetic progression. The common difference of this arithmetic progression is d2 - d1 = 0.005 - 0.01 = -0.005. So, dn = d_{n-1} + (-0.005).\\n\\nStep 2: Calculate Quarter 4's Projected Net Profit.\\n\\nQ4 Operating Expenses (E_Q4):\\nE_Q4 = E_Q3 * 1.05 = 441 * 1.05 = 463.05\\n\\nQ4 Growth Multiplier (M_Q4):\\nThe next decrease factor d3 = d2 + (-0.005) = 0.005 - 0.005 = 0.\\nM_Q4 = M_Q3 - d3 = 1.065 - 0 = 1.065\\n\\nQ4 Base Revenue (R_Q4):\\nR_Q4 = Projected Revenue (R_next) from Q3 = 1402.76\\n\\nQ4 Calculated Revenue (R_curr_Q4):\\nR_curr_Q4 = R_Q4 * M_Q4 = 1402.76 * 1.065 = 1494.9394. Rounded to two decimal places: 1494.94\\n\\nQ4 Net Profit (P_Q4):\\nP_Q4 = R_curr_Q4 - E_Q4 = 1494.94 - 463.05 = 1031.89\\n\\nStep 3: Calculate Quarter 5's required Base Revenue.\\n\\nTarget Net Profit for Quarter 5 (P_Q5):\\nP_Q5 = 95% of P_Q4 = 0.95 * 1031.89 = 979.2955\\n\\nQuarter 5 Operating Expenses (E_Q5):\\nFirst, calculate the trend value: E_trend_Q5 = E_Q4 * 1.05 = 463.05 * 1.05 = 486.2025\\nThen, apply the strategic initiative increase: E_Q5 = E_trend_Q5 * (1 + 0.075) = 486.2025 * 1.075 = 522.6176875\\n\\nQuarter 5 Growth Multiplier (M_Q5):\\nThe problem states to reduce the Quarter 5 Growth Multiplier by a fixed 0.001 from its *calculated* Quarter 4 trend value (M_Q4), not its natural trend continuation. So:\\nM_Q5 = M_Q4 - 0.001 = 1.065 - 0.001 = 1.064\\n\\nLet R_Q5 be the Base Revenue for Quarter 5.\\nCalculated Revenue for Quarter 5 (R_curr_Q5) = R_Q5 * M_Q5 = R_Q5 * 1.064\\n\\nSet up the equation for Q5 Net Profit:\\nP_Q5 = R_curr_Q5 - E_Q5\\n979.2955 = (R_Q5 * 1.064) - 522.6176875\\n\\nStep 4: Solve for R_Q5.\\nR_Q5 * 1.064 = 979.2955 + 522.6176875\\nR_Q5 * 1.064 = 1501.9131875\\nR_Q5 = 1501.9131875 / 1.064\\nR_Q5 = 1411.57254464...\\n\\nStep 5: Round the final Base Revenue to two decimal places.\\nR_Q5 = 1411.57\"",
   "options": [
-    "The Project Phoenix team could effectively fill all 'Lead Developer' and 'Project Coordinator' roles by selecting EMP001, EMP010, EMP005, and EMP009, as they collectively meet experience, critical certification, and reasonable workload criteria (Current Project Allocation <= 0.8 FTE) essential for a critical project.",
-    "To ensure diverse technical expertise and critical certifications for all required 'Software Dev' roles on Project Phoenix, selecting only EMP001, EMP004, and EMP010 would be sufficient, while also adhering to a workload capacity guideline of Current Project Allocation <= 0.8 FTE.",
-    "Prioritizing strict criteria of Current Project Allocation <= 0.8 FTE and mandatory Critical Certifications ('Y') would prevent the immediate full staffing of both 'Frontend Specialist' and 'Data Scientist' roles with two distinct individuals for each, considering Project Phoenix's critical nature."
+    "The projected Net Profit for Quarter 4, following the established trends and calculation rules, is approximately 1031.90.",
+    "The adjusted Growth Multiplier for Quarter 5, considering the strategic initiative, is 1.064.",
+    "To achieve a Net Profit equivalent to 95% of Quarter 4's projected Net Profit, the minimum 'Base Revenue' required for Quarter 5, rounded to two decimal places, is 1411.62."
   ],
   "answer": {
-    "The Project Phoenix team could effectively fill all 'Lead Developer' and 'Project Coordinator' roles by selecting EMP001, EMP010, EMP005, and EMP009, as they collectively meet experience, critical certification, and reasonable workload criteria (Current Project Allocation <= 0.8 FTE) essential for a critical project.": "Yes",
-    "To ensure diverse technical expertise and critical certifications for all required 'Software Dev' roles on Project Phoenix, selecting only EMP001, EMP004, and EMP010 would be sufficient, while also adhering to a workload capacity guideline of Current Project Allocation <= 0.8 FTE.": "No",
-    "Prioritizing strict criteria of Current Project Allocation <= 0.8 FTE and mandatory Critical Certifications ('Y') would prevent the immediate full staffing of both 'Frontend Specialist' and 'Data Scientist' roles with two distinct individuals for each, considering Project Phoenix's critical nature.": "Yes"
+    "The projected Net Profit for Quarter 4, following the established trends and calculation rules, is approximately 1031.90.": "Yes",
+    "The adjusted Growth Multiplier for Quarter 5, considering the strategic initiative, is 1.064.": "Yes",
+    "To achieve a Net Profit equivalent to 95% of Quarter 4's projected Net Profit, the minimum 'Base Revenue' required for Quarter 5, rounded to two decimal places, is 1411.62.": "Yes"
   },
-  "prompt": "<Permutations and Combinations> - <Human Resources> - <Verbal Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
-  "question-type": "Table Analysis"
+  "prompt": "<Algebraic Expressions and Simplification> - <Business and Finance> - <Quantitative Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
+  "question-type": "Table Analysis",
+  "difficulty": 1,
+  "tags": [
+    "GMAT",
+    "Integrated Reasoning",
+    "Table Analysis"
+  ]
 }

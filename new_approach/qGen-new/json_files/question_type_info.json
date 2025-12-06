@@ -129,5 +129,14 @@
       "options": "blank",
       "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
       "system-instruction": "gi-system-instruction.txt.template"
+   },
+   "Quantitative Comparison": {
+      "has-metadata": false,
+      "type": "simple",
+      "options": {
+         "single": 1
+      },
+      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "system-instruction": "qc-system-instruction.txt.template"
    }
 }

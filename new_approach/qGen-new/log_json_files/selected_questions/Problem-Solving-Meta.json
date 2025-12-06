@@ -4,142 +4,177 @@
       [
         {
           "type": "data_table",
-          "description": "Table showing the efficiency test results for various filtration systems, detailing initial and remaining impurity levels, and the calculated percentage of impurities removed.",
+          "description": "Monthly sales performance and advertising spend for Product Alpha over five months, providing data points to calculate variance and standard deviation of various metrics.",
           "structure": {
-            "title": "Filtration System Efficiency Test Results",
+            "title": "Product Alpha Monthly Sales and Advertising Spend",
             "headers": [
-              "System ID",
-              "Initial Impurities (grams)",
-              "Remaining Impurities (grams)",
-              "Percentage Removed"
+              "Month",
+              "Units Sold",
+              "Revenue ($)",
+              "Advertising Spend ($)"
             ],
             "rows": [
               [
-                "FS-001",
-                "20",
-                "2",
-                "90%"
+                "January",
+                "1500",
+                "75000",
+                "5000"
               ],
               [
-                "FS-002",
-                "25",
-                "5",
-                "80%"
+                "February",
+                "1700",
+                "85000",
+                "5500"
               ],
               [
-                "FS-003",
-                "30",
-                "3",
-                "90%"
+                "March",
+                "1400",
+                "70000",
+                "4800"
               ],
               [
-                "FS-004",
-                "10",
-                "1",
-                "90%"
+                "April",
+                "1900",
+                "95000",
+                "6000"
               ],
               [
-                "FS-005",
-                "40",
-                "20",
-                "50%"
+                "May",
+                "1600",
+                "80000",
+                "5200"
               ]
-            ],
-            "formatting": {
-              "alternating_rows": true,
-              "border_style": "dashed",
-              "sortable": true
-            }
+            ]
           }
         }
-      ],
+      ]
+    ],
+    "graph": [
       [
         {
-          "type": "data_table",
-          "description": "Table showing the efficiency test results for various filtration systems, detailing initial and remaining impurity levels, and the calculated percentage of impurities removed.",
+          "type": "line_chart",
+          "description": "A line chart depicting the monthly Units Sold for Product Alpha, which can be used to analyze sales variability and calculate statistical measures like standard deviation or variance.",
           "structure": {
-            "title": "Filtration System Efficiency Test Results",
-            "headers": [
-              "System ID",
-              "Initial Impurities (grams)",
-              "Remaining Impurities (grams)",
-              "Percentage Removed"
-            ],
-            "rows": [
-              [
-                "FS-001",
-                "20",
-                "2",
-                "90%"
-              ],
-              [
-                "FS-002",
-                "25",
-                "5",
-                "80%"
-              ],
-              [
-                "FS-003",
-                "30",
-                "3",
-                "90%"
-              ],
-              [
-                "FS-004",
-                "10",
-                "1",
-                "90%"
-              ],
-              [
-                "FS-005",
-                "40",
-                "20",
-                "50%"
+            "title": "Product Alpha Monthly Units Sold Trend",
+            "x_axis": {
+              "label": "Month",
+              "scale": "ordinal",
+              "ticks": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May"
               ]
-            ],
-            "formatting": {
-              "alternating_rows": true,
-              "border_style": "dashed",
-              "sortable": true
-            }
+            },
+            "y_axis": {
+              "label": "Units Sold",
+              "scale": "linear",
+              "ticks": [
+                "1400",
+                "1500",
+                "1600",
+                "1700",
+                "1800",
+                "1900"
+              ]
+            },
+            "series": [
+              {
+                "name": "Units Sold",
+                "color": "#4CAF50",
+                "data": [
+                  {
+                    "x": "January",
+                    "y": 1500,
+                    "label": "Units Sold: 1500",
+                    "value": 1500
+                  },
+                  {
+                    "x": "February",
+                    "y": 1700,
+                    "label": "Units Sold: 1700",
+                    "value": 1700
+                  },
+                  {
+                    "x": "March",
+                    "y": 1400,
+                    "label": "Units Sold: 1400",
+                    "value": 1400
+                  },
+                  {
+                    "x": "April",
+                    "y": 1900,
+                    "label": "Units Sold: 1900",
+                    "value": 1900
+                  },
+                  {
+                    "x": "May",
+                    "y": 1600,
+                    "label": "Units Sold: 1600",
+                    "value": 1600
+                  }
+                ]
+              }
+            ]
           }
         }
       ]
     ]
   },
-  "title": "Filtration system efficiency: Impurity removal and residual mass calculation",
+  "title": "Product Alpha Sales Volatility: Conditional Standard Deviation Analysis",
   "child-questions": [
     {
-      "question": "Using the provided 'Filtration System Efficiency Test Results' data, System FS-001 consistently removes 90% of initial impurities, whereas System FS-002 consistently removes 80%. If both systems were to process distinct solutions each containing an initial mass of 50 grams of impurities, calculate the absolute difference in the quantity of impurities, in grams, that would be removed by FS-001 compared to FS-002.",
-      "title": "Analysis of Filtration System Impurity Removal Rates",
-      "solution": "\"{\\\"question\\\": \\\"Filtration System FS-001 processes an initial amount of impurities as listed in the table. If Filtration System FS-003 were to process an initial amount of impurities that is twice its listed initial amount, while maintaining its removal efficiency, what would be the difference in the remaining impurities between FS-003 (under this new condition) and FS-001?\\\", \\\"options\\\": {\\\"A\\\": \\\"4 grams\\\", \\\"B\\\": \\\"2 grams\\\", \\\"C\\\": \\\"8 grams\\\", \\\"D\\\": \\\"15 grams\\\", \\\"E\\\": \\\"6 grams\\\"}, \\\"solution\\\": \\\"Step 1: Analyze given information and identify what needs to be found\\\\nWe need to determine the difference in the amount of impurities remaining after filtration for System FS-003 (under a modified condition) and System FS-001.\\\\n\\\\nFrom the 'Filtration System Efficiency Test Results' table:\\\\n- For FS-001: Initial Impurities = 20 grams, Percentage Removed = 90%\\\\n- For FS-003: Initial Impurities = 30 grams, Percentage Removed = 90%\\\\n\\\\nThe new condition for FS-003 states that its initial impurities will be twice its listed amount.\\\\n\\\\nStep 2: Set up mathematical relationship or logical framework\\\\nTo find the remaining impurities for any system, we use the formula: Remaining Impurities = Initial Impurities $\\\\\\\\times$ (1 - Percentage Removed as a decimal).\\\\nFirst, calculate the remaining impurities for FS-001.\\\\nNext, calculate the new initial impurities for FS-003.\\\\nThen, calculate the remaining impurities for FS-003 using its new initial amount.\\\\nFinally, find the absolute difference between these two remaining impurity amounts.\\\\n\\\\nStep 3: Perform calculations with proper units / Apply reasoning\\\\n- **For Filtration System FS-001:**\\\\n  Initial Impurities = 20 grams\\\\n  Percentage Removed = 90% = 0.90\\\\n  Remaining Impurities (FS-001) = $20\\\\\\\\text{ g} \\\\\\\\times (1 - 0.90) = 20\\\\\\\\text{ g} \\\\\\\\times 0.10 = 2\\\\\\\\text{ g}$\\\\n\\\\n- **For Filtration System FS-003 (under new condition):**\\\\n  Original Initial Impurities = 30 grams\\\\n  New Initial Impurities = $2 \\\\\\\\times 30\\\\\\\\text{ g} = 60\\\\\\\\text{ g}$\\\\n  Percentage Removed (remains the same) = 90% = 0.90\\\\n  Remaining Impurities (FS-003 new) = $60\\\\\\\\text{ g} \\\\\\\\times (1 - 0.90) = 60\\\\\\\\text{ g} \\\\\\\\times 0.10 = 6\\\\\\\\text{ g}$\\\\n\\\\n- **Difference in Remaining Impurities:**\\\\n  Difference = Remaining Impurities (FS-003 new) - Remaining Impurities (FS-001)\\\\n  Difference = $6\\\\\\\\text{ g} - 2\\\\\\\\text{ g} = 4\\\\\\\\text{ g}$\\\\n\\\\nStep 4: Check solution using logical reasoning\\\\nFor FS-001, 90% removal of 20g means 18g removed, leaving 2g. This is correct.\\\\nFor FS-003 with double the initial amount, it means 60g initially. 90% removal of 60g means 54g removed, leaving 6g. This is correct.\\\\nThe difference between 6g and 2g is 4g. The calculations are consistent and logical.\\\\n\\\\nStep 5: Confirm solution addresses original question\\\\nThe final calculation of 4 grams directly answers the question about the difference in remaining impurities between FS-003 (under the new condition) and FS-001.\\\"}\"",
+      "question": "Using the provided data for Product Alpha, what is the total number of units sold from January to May?",
+      "title": "Total Units Sold for Product Alpha: January to May Cumulative Sum",
+      "solution": "\"{\\\"question\\\": \\\"Using the provided data for Product Alpha, what is the total number of units sold from January to May?\\\", \\\"solution\\\": \\\"Step 1: Identify the units sold for each month from January to May using the 'Product Alpha Monthly Sales and Advertising Spend' table.\\\\nUnits Sold for January = 1500\\\\nUnits Sold for February = 1700\\\\nUnits Sold for March = 1400\\\\nUnits Sold for April = 1900\\\\nUnits Sold for May = 1600\\\\n\\\\nStep 2: Set up the mathematical relationship to find the total units sold by summing the units sold for each month.\\\\nTotal Units Sold = Units Sold (January) + Units Sold (February) + Units Sold (March) + Units Sold (April) + Units Sold (May)\\\\n\\\\nStep 3: Perform the calculation.\\\\nTotal Units Sold = 1500 + 1700 + 1400 + 1900 + 1600\\\\nTotal Units Sold = 8100 units\\\\n\\\\nStep 4: The total number of units sold from January to May is 8100 units.\\\\n\\\\nStep 5: Confirm that the solution addresses the original question by providing the cumulative sum of units sold over the specified period.\\\"}\"",
       "options": {
-        "A": "18 grams",
-        "B": "20 grams",
-        "C": "11 grams",
-        "D": "27 grams",
-        "E": "54 grams"
+        "A": "7900",
+        "B": "8100",
+        "C": "8000",
+        "D": "8200",
+        "E": "1620"
       },
-      "answer": "A",
-      "prompt": "<Rate of Change Analysis> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
-      "question-type": "Problem Solving Meta"
+      "answer": "B",
+      "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+      "question-type": "Problem Solving Meta",
+      "difficulty": 1,
+      "tags": [
+        "GRE",
+        "Quants",
+        "Problem Solving Meta"
+      ]
     },
     {
-      "question": "A laboratory is evaluating the projected performance of a new prototype filtration unit, designated FS-006, which is engineered to replicate the high-efficiency characteristics observed in the `Filtration System Efficiency Test Results` for systems FS-001, FS-003, and FS-004. Based on the established quantitative relationship between initial and remaining impurities for these specific high-efficiency systems, determine the net mass of impurities that would be successfully removed by FS-006 if it were to process an initial impurity load of 35 grams. Furthermore, if the operational expenditure for FS-006 is projected at $0.50 per gram of initial impurities processed, calculate the total operational cost for this specific experimental trial.",
-      "title": "Extrapolating Filtration Performance from Efficiency Test Data",
-      "solution": "\"The 'Filtration System Efficiency Test Results' table provides data for various systems. A new filtration system, FS-006, is being evaluated. It is known to employ similar advanced filter media and operational principles as systems FS-001, FS-003, and FS-004, which are highly regarded for their consistent high performance across different initial impurity loads. If FS-006 is subjected to a trial with an initial impurity load of 28 grams, what would be the predicted remaining impurity level after filtration? (Note: All tests are conducted at a controlled temperature of 25°C, and system FS-002, though different in design, demonstrates good results for medium impurity loads, but its specifics are not relevant to FS-006's predicted performance).\"",
+      "question": "Analyze the provided Product Alpha monthly performance data. Disregard the absolute monthly revenue figures for this calculation, but note the advertising spend and units sold. First, compute the sample standard deviation for the 'Units Sold' over the given period. Next, derive a new metric: 'Advertising Spend per Unit' for each month. Subsequently, calculate the sample standard deviation for this newly derived 'Advertising Spend per Unit' series. Finally, determine the absolute difference between these two calculated sample standard deviations. Round your final answer to two decimal places. Ensure you use the correct formula for sample standard deviation to avoid common pitfalls.",
+      "title": "Absolute difference in sample standard deviations: Units Sold vs. Ad Spend per Unit",
+      "solution": "\"The problem requires us to calculate the sample standard deviation for two different series of data and then find the absolute difference between these two values. We'll start by extracting the necessary data from the provided table.\\n\\n**Step 1: Identify and prepare the data series.**\\nFrom the table, we extract 'Units Sold' (U) and 'Advertising Spend' (A) for each month:\\n*   Units Sold (U): [1500, 1700, 1400, 1900, 1600]\\n*   Advertising Spend (A): [5000, 5500, 4800, 6000, 5200]\\nThere are $n=5$ data points.\\n\\n**Step 2: Calculate the sample standard deviation for 'Units Sold'.**\\nThe formula for sample standard deviation ($s$) is given by $s = \\\\sqrt{\\\\frac{\\\\sum_{i=1}^{n} (x_i - \\\\bar{x})^2}{n-1}}$.\\n\\nFirst, calculate the mean of 'Units Sold' ($\\\\bar{U}$):\\n$\\\\bar{U} = \\\\frac{1500 + 1700 + 1400 + 1900 + 1600}{5} = \\\\frac{8100}{5} = 1620$\\n\\nNext, calculate the squared differences from the mean:\\n*   $(1500 - 1620)^2 = (-120)^2 = 14400$\\n*   $(1700 - 1620)^2 = (80)^2 = 6400$\\n*   $(1400 - 1620)^2 = (-220)^2 = 48400$\\n*   $(1900 - 1620)^2 = (280)^2 = 78400$\\n*   $(1600 - 1620)^2 = (-20)^2 = 400$\\n\\nSum of squared differences: $14400 + 6400 + 48400 + 78400 + 400 = 148000$\\n\\nNow, calculate the sample standard deviation for 'Units Sold' ($s_U$):\\n$s_U = \\\\sqrt{\\\\frac{148000}{5-1}} = \\\\sqrt{\\\\frac{148000}{4}} = \\\\sqrt{37000} \\\\approx 192.35384$\\n\\n**Step 3: Derive the 'Advertising Spend per Unit' metric and calculate its sample standard deviation.**\\nFirst, calculate 'Advertising Spend per Unit' (ASPU) for each month by dividing 'Advertising Spend' by 'Units Sold':\\n*   January: $5000 / 1500 \\\\approx 3.33333$\\n*   February: $5500 / 1700 \\\\approx 3.23529$\\n*   March: $4800 / 1400 \\\\approx 3.42857$\\n*   April: $6000 / 1900 \\\\approx 3.15789$\\n*   May: $5200 / 1600 = 3.25000$\\n\\nThe ASPU series is approximately: $[3.33333, 3.23529, 3.42857, 3.15789, 3.25000]$\\n\\nNext, calculate the mean of ASPU ($\\\\overline{ASPU}$):\\n$\\\\overline{ASPU} = \\\\frac{3.33333 + 3.23529 + 3.42857 + 3.15789 + 3.25000}{5} = \\\\frac{16.40508}{5} \\\\approx 3.28102$\\n\\nNow, calculate the squared differences from the mean for ASPU:\\n*   $(3.33333 - 3.28102)^2 = (0.05231)^2 \\\\approx 0.0027363$\\n*   $(3.23529 - 3.28102)^2 = (-0.04573)^2 \\\\approx 0.0020912$\\n*   $(3.42857 - 3.28102)^2 = (0.14755)^2 \\\\approx 0.0217711$\\n*   $(3.15789 - 3.28102)^2 = (-0.12313)^2 \\\\approx 0.0151610$\\n*   $(3.25000 - 3.28102)^2 = (-0.03102)^2 \\\\approx 0.0009622$\\n\\nSum of squared differences: $0.0027363 + 0.0020912 + 0.0217711 + 0.0151610 + 0.0009622 \\\\approx 0.0427218$\\n\\nFinally, calculate the sample standard deviation for 'Advertising Spend per Unit' ($s_{ASPU}$):\\n$s_{ASPU} = \\\\sqrt{\\\\frac{0.0427218}{5-1}} = \\\\sqrt{\\\\frac{0.0427218}{4}} = \\\\sqrt{0.01068045} \\\\approx 0.103346$\\n\\n**Step 4: Determine the absolute difference between the two calculated sample standard deviations.**\\nAbsolute Difference $= |s_U - s_{ASPU}|$\\nAbsolute Difference $= |192.35384 - 0.103346| = 192.250494$\\n\\n**Step 5: Round the final answer to two decimal places.**\\nRounded Absolute Difference = $192.25$\\n\\nFinal Answer: 192.25\"",
       "options": {
-        "A": "0.5 grams",
-        "B": "5 grams",
-        "C": "45 grams",
-        "D": "49.5 grams",
-        "E": "25 grams"
+        "A": "192.25",
+        "B": "192.35",
+        "C": "171.95",
+        "D": "276.69",
+        "E": "0.10"
       },
-      "answer": "A",
-      "prompt": "<Interpolation and Extrapolation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
-      "question-type": "Problem Solving Meta"
+      "answer": [
+        "A"
+      ],
+      "prompt": "<Comparison of Data Points> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+      "question-type": "Problem Solving Meta",
+      "difficulty": 1,
+      "tags": [
+        "GRE",
+        "Quants",
+        "Problem Solving Meta"
+      ]
     }
   ],
-  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
-  "question-type": "Problem Solving Meta"
+  "prompt": "<Standard Deviation and Variance> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "question-type": "Problem Solving Meta",
+  "difficulty": 1,
+  "tags": [
+    "GRE",
+    "Quants",
+    "Problem Solving Meta"
+  ]
 }

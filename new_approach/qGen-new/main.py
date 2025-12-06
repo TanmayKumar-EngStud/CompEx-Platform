@@ -38,7 +38,7 @@ def log_stage(exam: str,
 
 
 # Sort exams to ensure consistent order (e.g., GMAT before GRE)
-sorted_exams = sorted(exam_definition.items(), key=lambda x: x[0])
+sorted_exams = sorted(exam_definition.items(), key=lambda x: x[0], reverse=True)
 
 for exam, sections in sorted_exams:
     log_stage(exam, detail=prettify('Preparing exam structure', 'Blue'))
@@ -170,4 +170,14 @@ with open(file_path, 'w') as json_file:
     json.dump(prompts_dictionary, json_file, indent=3)
 
 paper_gen = GenQ(prompts_dictionary)
-paper_gen.generate()
+complete_paper = paper_gen.generate()
+
+# Database Persistence
+try:
+    from db_integration import save_paper_to_db
+    print("\nStarting Database Persistence...")
+    save_paper_to_db(complete_paper, is_mock=True)
+except ImportError as e:
+    print(f"\nCould not import db_integration: {e}")
+except Exception as e:
+    print(f"\nError during database saving: {e}")

@@ -18,6 +18,7 @@ class ThreadManager:
         """
         self.work_queue = queue.Queue()
         self.work_report = queue.Queue()
+        self.stop_event = threading.Event() # Event to signal worker threads to stop
 
         for qt, qt_info in section_data.items():
             if qt == 'section':
@@ -51,14 +52,27 @@ class ThreadManager:
             t.start()
             threads.append(t)
         
+        # Block until all items in the work_queue have been processed.
+        # This includes any items that are re-queued due to failure, as task_done() is only called on success or final failure,
+        # or in our case, if we re-queue, we call task_done() on the *failed* item, but the new item keeps the count up.
+        # Wait... if we re-queue:
+        # 1. get() -> unfinished_tasks-- (Wait, get doesn't decr. task_done decr.)
+        # 2. put() -> unfinished_tasks++
+        # 3. task_done() on failed item -> unfinished_tasks--
+        # Net change: 0. So logic holds.
+        self.work_queue.join()
+
+        # Signal all threads to stop
+        self.stop_event.set()
+        
+        # Wait for all threads to terminate gracefully
         for t in threads:
             t.join()
         
-        # Check if work queue is not empty after all threads are done
-        # This could happen if all keys got blacklisted DURING this section
+        # Check if work queue is not empty (defensive check)
         if not self.work_queue.empty():
-            print(f"\n{prettify('CRITICAL', 'Red', True)}: All API keys exhausted. Terminating program.")
-            sys.exit(1)
+            print(f"\n{prettify('CRITICAL', 'Red', True)}: Work queue not empty after join. This shouldn't happen.")
+            # sys.exit(1) # Don't exit, just warn.
 
     def get_work_report(self): 
         report = []
@@ -67,17 +81,16 @@ class ThreadManager:
         return report 
 
     def _worker_action(self, api_key):
-        while True:
+        while not self.stop_event.is_set():
             # Check if this key is still valid (it might have been removed by another thread?? 
             # No, if I am running with it, I am the owner of this key instance. 
             # But if I fail, I remove myself from the global pool.)
             
             try:
-                # Non-blocking get to drain queue if threads are running
-                prompt_details = self.work_queue.get(block = False)
+                # Blocking get with timeout allows checking stop_event periodically
+                prompt_details = self.work_queue.get(block=True, timeout=1)
             except queue.Empty:
-                print(f"API Key: {api_key} is done")
-                break
+                continue # Loop back to check stop_event
             
             try:
                 # We simply use the key we were assigned
@@ -105,10 +118,11 @@ class ThreadManager:
                     # Re-queue the work so another thread can pick it up
                     self.work_queue.put(prompt_details)
                     self.work_queue.task_done() 
-                    break 
+                    break # Terminate this thread as key is dead
                 
                 print(f"Error in thread with key {api_key}: {e}")
+                print(f"Error in thread with key {api_key}: {e}")
                 import traceback
-                traceback.print_exc()
+                # traceback.print_exc()
                 self.work_report.put({'error': str(e), 'prompt_details': prompt_details, 'stats': {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}}, block=False)
                 self.work_queue.task_done()

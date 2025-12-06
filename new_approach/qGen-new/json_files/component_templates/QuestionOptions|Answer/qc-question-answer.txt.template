@@ -1,0 +1,24 @@
+STRICT RESPONSE FORMAT: JSON
+- "options" key with value as dictionary.
+- "answer" key with single correct option letter.
+
+The options for Quantitative Comparison are STANDARD and FIXED. You MUST use exactly these four:
+A: Quantity A is greater.
+B: Quantity B is greater.
+C: The two quantities are equal.
+D: The relationship cannot be determined from the information given.
+
+Output JSON:
+{
+  "options": {
+    "A": "Quantity A is greater.",
+    "B": "Quantity B is greater.",
+    "C": "The two quantities are equal.",
+    "D": "The relationship cannot be determined from the information given."
+  },
+  "answer": "[Correct Letter A, B, C, or D]"
+}
+
+CONTEXT:
+Solving the previously generated comparison.
+Select the mathematically correct relationship.

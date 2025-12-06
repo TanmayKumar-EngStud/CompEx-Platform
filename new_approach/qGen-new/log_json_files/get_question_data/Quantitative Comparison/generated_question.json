@@ -1,0 +1,20 @@
+{
+  "question": "Information: A government agency assesses the effectiveness scores of five recent policy initiatives. The scores are 10, x, 20, x, and 30. The mean of these five policy effectiveness scores is equal to the median of these five scores.\nQuantity A: The range of the five policy effectiveness scores.\nQuantity B: The mode of the five policy effectiveness scores.",
+  "title": "Policy Scores: Mean-Median Equivalence, Range vs Mode Comparison",
+  "solution": "\"The relationship cannot be determined.\"",
+  "options": {
+    "A": "Quantity A is greater.",
+    "B": "Quantity B is greater.",
+    "C": "The two quantities are equal.",
+    "D": "The relationship cannot be determined from the information given."
+  },
+  "answer": "D",
+  "prompt": "<Mean, Median, Mode, Range> - <Government Policies and Regulations> - <Single Variable Equation> - difficulty_level: <5>",
+  "question-type": "Quantitative Comparison",
+  "difficulty": 1,
+  "tags": [
+    "GRE",
+    "Quants",
+    "Quantitative Comparison"
+  ]
+}

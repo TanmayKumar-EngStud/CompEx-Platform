@@ -4,14 +4,14 @@
          "name": "Quants",
          "total": 20,
          "question types": [
+            "Quantitative Comparison",
             "Problem Solving Simple",
             "Problem Solving Meta",
-            "Data Sufficiency",
             "Numerical Entry"
          ],
-         "Problem Solving Simple": 7,
-         "Problem Solving Meta": 4,
-         "Data Sufficiency": 7,
+         "Quantitative Comparison": 7,
+         "Problem Solving Simple": 8,
+         "Problem Solving Meta": 3,
          "Numerical Entry": 2
       },
       "2": {
@@ -30,14 +30,14 @@
          "name": "Quants",
          "total": 20,
          "question types": [
+            "Quantitative Comparison",
             "Problem Solving Simple",
             "Problem Solving Meta",
-            "Data Sufficiency",
             "Numerical Entry"
          ],
-         "Problem Solving Simple": 7,
-         "Problem Solving Meta": 4,
-         "Data Sufficiency": 7,
+         "Quantitative Comparison": 7,
+         "Problem Solving Simple": 8,
+         "Problem Solving Meta": 3,
          "Numerical Entry": 2
       },
       "4": {

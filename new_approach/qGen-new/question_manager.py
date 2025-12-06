@@ -311,6 +311,35 @@ class ManageQuestionData:
         # 6. Logging and Recording
         result_buffer['prompt'] = self.prompt_details['prompt']
         result_buffer['question-type'] = self.question_type
+        
+        # Inject DB-required fields
+        try:
+             # Parse difficulty from prompt details or fallback
+             if 'difficulty' not in result_buffer:
+                 # Attempt to extract from 'difficulty_level: <N>' in nomenclature if available
+                 # But safer to use what main.py passed if accessible?
+                 # Actually main.py passes prompt string.
+                 # Let's try to parse it from the prompt text itself if needed, or rely on _inject_difficulty
+                 # See existing _inject_difficulty method below, getting called?
+                 # It's not called explicitly in generate_question, let's call it or duplicate logic
+                 # wait, _inject_difficulty is internal.
+                 # Let's just use regex on the prompt string which is in self.prompt_details['prompt']
+                 import re
+                 match = re.search(r'difficulty_level:\s*(\d+)', self.prompt_details.get('prompt', ''))
+                 if match:
+                     result_buffer['difficulty'] = int(match.group(1))
+                 else:
+                     result_buffer['difficulty'] = 1 # Default
+        except:
+             result_buffer['difficulty'] = 1
+
+        # Tags
+        result_buffer['tags'] = [
+            self.prompt_details.get('exam', 'UnknownExam'),
+            self.prompt_details.get('section', 'UnknownSection'),
+            self.question_type
+        ]
+
         record(result_buffer, fname="generated_question", addresses=[self.question_type])
         self._persist_selected_question(self.question_type, result_buffer)
         
@@ -361,6 +390,8 @@ class ManageQuestionData:
                 else:
                     flat_calls.append((comp_type, data))
 
+        generated_question_text = None
+
         for comp_type, call in flat_calls:
             # print(f"   ↳ Generating {prettify(comp_type, 'Yellow')} for {prettify(self.question_type, 'Magenta')}")
             
@@ -374,7 +405,8 @@ class ManageQuestionData:
                 'prompt_type': self.prompt_details['type'],
                 'metadata_blueprint': self.prompt_details.get('metadata-type'),
                 'metadata_content': result_buffer.get('metadata') or self.prompt_details.get('metadata'),
-                'child_prompt': bool(self.prompt_details.get('child-prompt'))
+                'child_prompt': bool(self.prompt_details.get('child-prompt')),
+                'generated_question': generated_question_text  # Inject previously generated question
             }
 
             try:
@@ -384,6 +416,14 @@ class ManageQuestionData:
                     context=context
                 )
                 
+                # Capture the generated question text if this component is the Question Text
+                if comp_type == 'QuestionText':
+                    if isinstance(generated, dict):
+                        # Try to find the text content in common keys
+                        generated_question_text = generated.get('question') or generated.get('question_text') or str(generated)
+                    else:
+                        generated_question_text = str(generated)
+
                 # Accumulate stats
                 total_stats['input_tokens'] += stats['input_tokens']
                 total_stats['output_tokens'] += stats['output_tokens']
@@ -395,6 +435,10 @@ class ManageQuestionData:
                 # print(f"      {prettify(comp_type, 'Green')}: {snippet}")
 
             except Exception as e:
+                # CRITICAL: Re-raise "Request Per Day" errors so thread_creator can blacklist the key
+                if "Request Per Day limit exceeded" in str(e):
+                    raise e
+
                 generated = {"error": str(e)}
                 print(f"      {prettify(comp_type, 'Red')}: {prettify(str(e), 'Yellow')}")
 

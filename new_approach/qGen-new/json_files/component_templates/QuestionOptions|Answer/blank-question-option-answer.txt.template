@@ -20,7 +20,7 @@ Example:-
 
 {{#if_TC-2}}
 - "options" key with value as dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2
-- "answer" key with array of correct option letters of length exactly 2. 
+- "answer" key with array of correct option letters of length exactly 2 (e.g., ["A", "D"]). CRITICAL: ONLY the letters.
 Example:-
 ```json
 {
@@ -35,7 +35,7 @@ Example:-
 
 {{#if_TC-3}}
 - "options" key with value as array of dictionaries, dictionary at index 0 will be providing options for blank 1, and at index 1 will provide options for blank 2 and index 2 will provide options for blank 3
-- "answer" key with array of correct option letters of length exactly 3.
+- "answer" key with array of correct option letters of length exactly 3 (e.g., ["A", "D", "G"]). CRITICAL: ONLY the letters.
 Example:-
 ```json
 {

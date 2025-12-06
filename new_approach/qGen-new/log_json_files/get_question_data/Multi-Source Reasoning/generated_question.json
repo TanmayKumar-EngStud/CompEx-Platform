@@ -1,846 +1,194 @@
 {
   "metadata": {
     "Source1": {
-      "para": "Over the past three fiscal years, Stellar Corp's Human Resources department has grappled with a multifaceted challenge: optimizing talent retention amidst aggressive market competition and internal restructuring efforts. Analysis indicates a concerning trend where year-on-year voluntary attrition rates have inversely correlated with new talent acquisition efficiency, particularly within high-growth divisions. For instance, Q2 FY22 saw a peak in engineering talent departures (18% annualized rate), coinciding with a 30% increase in average time-to-fill for critical roles. This period also marked a significant 25% increase in external recruitment consultant expenditure, yet without a proportional reduction in turnover. Conversely, departments that implemented targeted internal mobility programs, despite higher initial training investment (an average 15% increase in per-employee training budget), reported a 5% lower voluntary attrition rate and a 10% higher internal promotion rate. This complex interplay of investment, market dynamics, and operational outcomes demands a comprehensive, comparative analysis across various HR metrics and time periods to discern actionable insights."
+      "para": "Modern supply chain management heavily relies on optimized inventory strategies, each presenting a distinct operational paradigm and risk profile. For instance, Just-In-Time (JIT) systems prioritize minimizing inventory holding costs by receiving goods only as they are needed, inherently reducing warehousing expenses and potential obsolescence. However, JIT demands extremely reliable suppliers and robust transportation networks, making it highly susceptible to disruptions from unforeseen events like natural disasters or port strikes, which can halt production entirely. Conversely, Economic Order Quantity (EOQ) focuses on balancing ordering costs with holding costs to determine an optimal order size, aiming for cost efficiency under stable demand conditions. While EOQ can reduce overall inventory costs, it typically involves larger stock levels than JIT, increasing carrying costs and capital tie-up. Vendor-Managed Inventory (VMI) shifts the responsibility for inventory replenishment to the supplier, often leading to better stock visibility and reduced stockouts for the buyer, but it requires significant trust and data sharing, potentially exposing sensitive operational information. Each strategy, while offering unique advantages, carries inherent trade-offs in terms of capital allocation, operational resilience, and supplier relationship management, necessitating a comprehensive evaluation based on specific business context, product characteristics, and market volatility."
     },
     "Source2": {
-      "graph": [
+      "table": [
         {
-          "type": "table",
-          "description": "Detailed performance metrics for Stellar Corp's Human Resources department across fiscal years 2021-2023, broken down by department, providing data on attrition, recruitment efficiency, and investment in talent development initiatives. This table allows for complex trend analysis and comparative studies, complementing the narrative insights provided in other sources.",
+          "type": "comparison_table",
+          "description": "Comparative performance metrics for various inventory management strategies, allowing for analysis of trade-offs.",
           "structure": {
-            "title": "Stellar Corp HR Performance Metrics (FY21-FY23)",
-            "series": [
-              {
-                "name": "FY21 Engineering Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2021,
-                    "label": "FY21",
-                    "value": 2021
-                  },
-                  {
-                    "x": "Department",
-                    "y": 1,
-                    "label": "Engineering",
-                    "value": 1
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 12.0,
-                    "label": "12.0%",
-                    "value": 12.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 200,
-                    "label": "200",
-                    "value": 200
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 50,
-                    "label": "50 days",
-                    "value": 50
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 100,
-                    "label": "100k",
-                    "value": 100
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 8.0,
-                    "label": "8.0%",
-                    "value": 8.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1000,
-                    "label": "1000",
-                    "value": 1000
-                  }
-                ]
-              },
-              {
-                "name": "FY21 Marketing Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2021,
-                    "label": "FY21",
-                    "value": 2021
-                  },
-                  {
-                    "x": "Department",
-                    "y": 2,
-                    "label": "Marketing",
-                    "value": 2
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 8.0,
-                    "label": "8.0%",
-                    "value": 8.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 150,
-                    "label": "150",
-                    "value": 150
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 40,
-                    "label": "40 days",
-                    "value": 40
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 80,
-                    "label": "80k",
-                    "value": 80
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 12.0,
-                    "label": "12.0%",
-                    "value": 12.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 900,
-                    "label": "900",
-                    "value": 900
-                  }
-                ]
-              },
-              {
-                "name": "FY21 Sales Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2021,
-                    "label": "FY21",
-                    "value": 2021
-                  },
-                  {
-                    "x": "Department",
-                    "y": 3,
-                    "label": "Sales",
-                    "value": 3
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 10.0,
-                    "label": "10.0%",
-                    "value": 10.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 180,
-                    "label": "180",
-                    "value": 180
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 45,
-                    "label": "45 days",
-                    "value": 45
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 90,
-                    "label": "90k",
-                    "value": 90
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 10.0,
-                    "label": "10.0%",
-                    "value": 10.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 950,
-                    "label": "950",
-                    "value": 950
-                  }
-                ]
-              },
-              {
-                "name": "FY21 Operations Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2021,
-                    "label": "FY21",
-                    "value": 2021
-                  },
-                  {
-                    "x": "Department",
-                    "y": 4,
-                    "label": "Operations",
-                    "value": 4
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 7.0,
-                    "label": "7.0%",
-                    "value": 7.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 120,
-                    "label": "120",
-                    "value": 120
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 35,
-                    "label": "35 days",
-                    "value": 35
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 70,
-                    "label": "70k",
-                    "value": 70
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 15.0,
-                    "label": "15.0%",
-                    "value": 15.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 850,
-                    "label": "850",
-                    "value": 850
-                  }
-                ]
-              },
-              {
-                "name": "FY22 Engineering Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2022,
-                    "label": "FY22",
-                    "value": 2022
-                  },
-                  {
-                    "x": "Department",
-                    "y": 1,
-                    "label": "Engineering",
-                    "value": 1
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 18.5,
-                    "label": "18.5%",
-                    "value": 18.5
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 180,
-                    "label": "180",
-                    "value": 180
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 65,
-                    "label": "65 days",
-                    "value": 65
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 125,
-                    "label": "125k",
-                    "value": 125
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 7.0,
-                    "label": "7.0%",
-                    "value": 7.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1100,
-                    "label": "1100",
-                    "value": 1100
-                  }
-                ]
-              },
-              {
-                "name": "FY22 Marketing Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2022,
-                    "label": "FY22",
-                    "value": 2022
-                  },
-                  {
-                    "x": "Department",
-                    "y": 2,
-                    "label": "Marketing",
-                    "value": 2
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 9.0,
-                    "label": "9.0%",
-                    "value": 9.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 160,
-                    "label": "160",
-                    "value": 160
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 42,
-                    "label": "42 days",
-                    "value": 42
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 85,
-                    "label": "85k",
-                    "value": 85
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 11.0,
-                    "label": "11.0%",
-                    "value": 11.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 950,
-                    "label": "950",
-                    "value": 950
-                  }
-                ]
-              },
-              {
-                "name": "FY22 Sales Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2022,
-                    "label": "FY22",
-                    "value": 2022
-                  },
-                  {
-                    "x": "Department",
-                    "y": 3,
-                    "label": "Sales",
-                    "value": 3
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 11.0,
-                    "label": "11.0%",
-                    "value": 11.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 190,
-                    "label": "190",
-                    "value": 190
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 48,
-                    "label": "48 days",
-                    "value": 48
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 95,
-                    "label": "95k",
-                    "value": 95
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 9.0,
-                    "label": "9.0%",
-                    "value": 9.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1000,
-                    "label": "1000",
-                    "value": 1000
-                  }
-                ]
-              },
-              {
-                "name": "FY22 Operations Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2022,
-                    "label": "FY22",
-                    "value": 2022
-                  },
-                  {
-                    "x": "Department",
-                    "y": 4,
-                    "label": "Operations",
-                    "value": 4
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 7.5,
-                    "label": "7.5%",
-                    "value": 7.5
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 130,
-                    "label": "130",
-                    "value": 130
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 38,
-                    "label": "38 days",
-                    "value": 38
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 75,
-                    "label": "75k",
-                    "value": 75
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 14.0,
-                    "label": "14.0%",
-                    "value": 14.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 900,
-                    "label": "900",
-                    "value": 900
-                  }
-                ]
-              },
-              {
-                "name": "FY23 Engineering Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2023,
-                    "label": "FY23",
-                    "value": 2023
-                  },
-                  {
-                    "x": "Department",
-                    "y": 1,
-                    "label": "Engineering",
-                    "value": 1
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 13.5,
-                    "label": "13.5%",
-                    "value": 13.5
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 220,
-                    "label": "220",
-                    "value": 220
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 55,
-                    "label": "55 days",
-                    "value": 55
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 110,
-                    "label": "110k",
-                    "value": 110
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 17.0,
-                    "label": "17.0%",
-                    "value": 17.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1300,
-                    "label": "1300",
-                    "value": 1300
-                  }
-                ]
-              },
-              {
-                "name": "FY23 Marketing Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2023,
-                    "label": "FY23",
-                    "value": 2023
-                  },
-                  {
-                    "x": "Department",
-                    "y": 2,
-                    "label": "Marketing",
-                    "value": 2
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 8.5,
-                    "label": "8.5%",
-                    "value": 8.5
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 170,
-                    "label": "170",
-                    "value": 170
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 40,
-                    "label": "40 days",
-                    "value": 40
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 80,
-                    "label": "80k",
-                    "value": 80
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 12.0,
-                    "label": "12.0%",
-                    "value": 12.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1000,
-                    "label": "1000",
-                    "value": 1000
-                  }
-                ]
-              },
-              {
-                "name": "FY23 Sales Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2023,
-                    "label": "FY23",
-                    "value": 2023
-                  },
-                  {
-                    "x": "Department",
-                    "y": 3,
-                    "label": "Sales",
-                    "value": 3
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 10.0,
-                    "label": "10.0%",
-                    "value": 10.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 200,
-                    "label": "200",
-                    "value": 200
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 45,
-                    "label": "45 days",
-                    "value": 45
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 90,
-                    "label": "90k",
-                    "value": 90
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 11.0,
-                    "label": "11.0%",
-                    "value": 11.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1050,
-                    "label": "1050",
-                    "value": 1050
-                  }
-                ]
-              },
-              {
-                "name": "FY23 Operations Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2023,
-                    "label": "FY23",
-                    "value": 2023
-                  },
-                  {
-                    "x": "Department",
-                    "y": 4,
-                    "label": "Operations",
-                    "value": 4
-                  },
-                  {
-                    "x": "Voluntary Attrition Rate (%)",
-                    "y": 6.0,
-                    "label": "6.0%",
-                    "value": 6.0
-                  },
-                  {
-                    "x": "New Hires",
-                    "y": 140,
-                    "label": "140",
-                    "value": 140
-                  },
-                  {
-                    "x": "Avg Time-to-Fill (days)",
-                    "y": 35,
-                    "label": "35 days",
-                    "value": 35
-                  },
-                  {
-                    "x": "External Recruitment Spend (kUSD)",
-                    "y": 70,
-                    "label": "70k",
-                    "value": 70
-                  },
-                  {
-                    "x": "Internal Promotion Rate (%)",
-                    "y": 20.0,
-                    "label": "20.0%",
-                    "value": 20.0
-                  },
-                  {
-                    "x": "Training Budget per Employee (USD)",
-                    "y": 1050,
-                    "label": "1050",
-                    "value": 1050
-                  }
-                ]
-              }
-            ]
+            "title": "Comparative Performance Metrics of Inventory Management Strategies",
+            "headers": [
+              "Strategy",
+              "Avg. Inventory Level (Units)",
+              "Annual Holding Cost ($)",
+              "Annual Ordering Cost ($)",
+              "Lead Time Variability Tolerance (Days)",
+              "Stockout Rate (%)",
+              "Supplier Reliability Score (1-5)",
+              "Capital Tied Up ($)"
+            ],
+            "rows": [
+              [
+                "Just-In-Time (JIT)",
+                "50",
+                "2500",
+                "8000",
+                "3",
+                "5.0",
+                "4.5",
+                "10000"
+              ],
+              [
+                "Economic Order Quantity (EOQ)",
+                "300",
+                "15000",
+                "2500",
+                "5",
+                "1.5",
+                "3.5",
+                "60000"
+              ],
+              [
+                "Vendor-Managed Inventory (VMI)",
+                "200",
+                "10000",
+                "3000",
+                "4",
+                "1.0",
+                "4.8",
+                "40000"
+              ],
+              [
+                "Traditional (Safety Stock)",
+                "400",
+                "20000",
+                "2000",
+                "7",
+                "0.5",
+                "3.0",
+                "80000"
+              ]
+            ],
+            "formatting": {
+              "alternating_rows": true,
+              "border_style": "grid",
+              "sortable": true
+            }
           }
         }
       ]
     },
     "Source3": {
-      "graph": [
+      "table": [
         {
-          "type": "table",
-          "description": "Company-wide aggregated HR performance and engagement trends for Stellar Corp from FY21 to FY23, including total recruitment expenditure, overall attrition, and employee engagement scores. This table provides a high-level view of HR effectiveness and workforce sentiment, complementing departmental details and narrative insights.",
+          "type": "data_table",
+          "description": "Detailed breakdown of various operational cost components for different inventory management strategies, allowing for a more granular financial analysis.",
           "structure": {
-            "title": "Stellar Corp Company-Wide HR Trends (FY21-FY23)",
-            "series": [
-              {
-                "name": "FY21 Company-Wide Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2021,
-                    "label": "FY21",
-                    "value": 2021
-                  },
-                  {
-                    "x": "Company-wide Voluntary Attrition Rate (%)",
-                    "y": 9.25,
-                    "label": "9.25%",
-                    "value": 9.25
-                  },
-                  {
-                    "x": "Company-wide Avg Time-to-Fill (days)",
-                    "y": 42.5,
-                    "label": "42.5 days",
-                    "value": 42.5
-                  },
-                  {
-                    "x": "Total External Recruitment Spend (kUSD)",
-                    "y": 340,
-                    "label": "340k",
-                    "value": 340
-                  },
-                  {
-                    "x": "Company-wide Internal Promotion Rate (%)",
-                    "y": 11.25,
-                    "label": "11.25%",
-                    "value": 11.25
-                  },
-                  {
-                    "x": "Total HR Training Investment (kUSD)",
-                    "y": 1500,
-                    "label": "1500k",
-                    "value": 1500
-                  },
-                  {
-                    "x": "Employee Engagement Score (out of 100)",
-                    "y": 70,
-                    "label": "70",
-                    "value": 70
-                  }
-                ]
-              },
-              {
-                "name": "FY22 Company-Wide Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2022,
-                    "label": "FY22",
-                    "value": 2022
-                  },
-                  {
-                    "x": "Company-wide Voluntary Attrition Rate (%)",
-                    "y": 11.5,
-                    "label": "11.5%",
-                    "value": 11.5
-                  },
-                  {
-                    "x": "Company-wide Avg Time-to-Fill (days)",
-                    "y": 48.25,
-                    "label": "48.25 days",
-                    "value": 48.25
-                  },
-                  {
-                    "x": "Total External Recruitment Spend (kUSD)",
-                    "y": 380,
-                    "label": "380k",
-                    "value": 380
-                  },
-                  {
-                    "x": "Company-wide Internal Promotion Rate (%)",
-                    "y": 10.25,
-                    "label": "10.25%",
-                    "value": 10.25
-                  },
-                  {
-                    "x": "Total HR Training Investment (kUSD)",
-                    "y": 1700,
-                    "label": "1700k",
-                    "value": 1700
-                  },
-                  {
-                    "x": "Employee Engagement Score (out of 100)",
-                    "y": 65,
-                    "label": "65",
-                    "value": 65
-                  }
-                ]
-              },
-              {
-                "name": "FY23 Company-Wide Data",
-                "data": [
-                  {
-                    "x": "Fiscal Year",
-                    "y": 2023,
-                    "label": "FY23",
-                    "value": 2023
-                  },
-                  {
-                    "x": "Company-wide Voluntary Attrition Rate (%)",
-                    "y": 9.5,
-                    "label": "9.5%",
-                    "value": 9.5
-                  },
-                  {
-                    "x": "Company-wide Avg Time-to-Fill (days)",
-                    "y": 43.75,
-                    "label": "43.75 days",
-                    "value": 43.75
-                  },
-                  {
-                    "x": "Total External Recruitment Spend (kUSD)",
-                    "y": 350,
-                    "label": "350k",
-                    "value": 350
-                  },
-                  {
-                    "x": "Company-wide Internal Promotion Rate (%)",
-                    "y": 15.0,
-                    "label": "15.0%",
-                    "value": 15.0
-                  },
-                  {
-                    "x": "Total HR Training Investment (kUSD)",
-                    "y": 2000,
-                    "label": "2000k",
-                    "value": 2000
-                  },
-                  {
-                    "x": "Employee Engagement Score (out of 100)",
-                    "y": 75,
-                    "label": "75",
-                    "value": 75
-                  }
-                ]
-              }
-            ]
+            "title": "Detailed Operational Cost Components by Inventory Strategy (Annualized $)",
+            "headers": [
+              "Strategy",
+              "Warehousing Cost",
+              "Obsolescence Cost",
+              "Insurance Cost",
+              "Administrative Ordering Cost",
+              "Transportation Cost",
+              "Expediting Cost"
+            ],
+            "rows": [
+              [
+                "Just-In-Time (JIT)",
+                "1000",
+                "500",
+                "1000",
+                "8000",
+                "6000",
+                "1500"
+              ],
+              [
+                "Economic Order Quantity (EOQ)",
+                "8000",
+                "4000",
+                "3000",
+                "2500",
+                "4000",
+                "500"
+              ],
+              [
+                "Vendor-Managed Inventory (VMI)",
+                "5000",
+                "3000",
+                "2000",
+                "3000",
+                "4500",
+                "300"
+              ],
+              [
+                "Traditional (Safety Stock)",
+                "10000",
+                "6000",
+                "4000",
+                "2000",
+                "3500",
+                "100"
+              ]
+            ],
+            "formatting": {
+              "alternating_rows": true,
+              "border_style": "grid",
+              "sortable": true
+            }
           }
         }
       ]
     },
-    "Passage": "Over the past three fiscal years, Stellar Corp's Human Resources department has grappled with a multifaceted challenge: optimizing talent retention amidst aggressive market competition and internal restructuring efforts. Analysis indicates a concerning trend where year-on-year voluntary attrition rates have inversely correlated with new talent acquisition efficiency, particularly within high-growth divisions. For instance, Q2 FY22 saw a peak in engineering talent departures (18% annualized rate), coinciding with a 30% increase in average time-to-fill for critical roles. This period also marked a significant 25% increase in external recruitment consultant expenditure, yet without a proportional reduction in turnover. Conversely, departments that implemented targeted internal mobility programs, despite higher initial training investment (an average 15% increase in per-employee training budget), reported a 5% lower voluntary attrition rate and a 10% higher internal promotion rate. This complex interplay of investment, market dynamics, and operational outcomes demands a comprehensive, comparative analysis across various HR metrics and time periods to discern actionable insights.\nThe observed inverse correlation between attrition and acquisition efficiency, particularly notable in departments like Engineering, underscores a critical need to re-evaluate traditional HR investment models. While external recruitment spend has increased, its efficacy is questionable, suggesting diminishing returns in a competitive talent landscape. This necessitates a strategic pivot towards internal talent development and retention strategies, such as enhancing skill development programs and strengthening career pathing initiatives, despite their potentially higher upfront costs. Crucially, any such initiatives must be rigorously assessed not just by immediate cost-benefit, but by their long-term impact on overall workforce stability, employee engagement, and the cultivation of a sustainable talent pipeline, requiring granular data analysis beyond mere headcount and expenditure figures."
+    "Passage": "Effective inventory management is a cornerstone of operational efficiency and financial health for businesses across all sectors. The strategic decisions surrounding how much inventory to hold, when to replenish it, and how to manage its flow directly impact working capital, customer satisfaction, and supply chain resilience. In today's dynamic global marketplace, companies face the constant challenge of balancing the costs associated with holding excess stock—such as warehousing, insurance, and obsolescence—against the risks of stockouts, which can lead to lost sales, production delays, and damaged customer relationships. Therefore, selecting and implementing the most appropriate inventory strategy is a critical competitive differentiator, demanding a thorough understanding of various methodologies and their specific trade-offs.\nThe selection of an optimal inventory strategy is rarely a one-size-fits-all decision; rather, it's a dynamic process influenced by a multitude of internal and external factors. Companies must meticulously assess their specific operational environment, including demand variability, product perishability or obsolescence rates, supplier reliability, and the inherent stability of their supply chain. Furthermore, the strategic objectives of the business, such as market share growth, cost leadership, or product innovation, dictate the acceptable levels of risk and the prioritization of different performance metrics. This necessitates a comprehensive evaluation that integrates both quantitative data, such as holding costs and stockout rates, with qualitative considerations like supplier relationships and technological infrastructure, to ensure the chosen strategy aligns seamlessly with the overarching business model and competitive strategy."
   },
-  "title": "HR Trend Analysis: Attrition, Recruitment, and Investment Ratios FY21-23",
+  "title": "Inventory Strategy Comparison: Cost & Performance Trade-off Analysis",
   "child-questions": [
     {
-      "question": "Given Stellar Corp's stated challenge of optimizing talent retention amidst aggressive market competition and internal restructuring (Source 1), and analyzing the detailed HR performance metrics across departments (Source 2) alongside the company-wide trends (Source 3), which strategic HR investment philosophy is most strongly supported as the primary driver for significantly mitigating voluntary attrition and enhancing overall talent stability by FY23, despite its potential for higher initial investment or implementation complexities?",
-      "title": "Stellar Corp HR: Evaluate recruitment vs. internal development strategy efficacy",
-      "solution": "\"The Stellar Corp's HR department is evaluating the effectiveness of shifting investment from external recruitment to internal training initiatives. Based on the provided data, what financial implications and observed talent retention/development outcomes can be identified in the Engineering department from FY22 to FY23, particularly in light of the narrative suggesting benefits from internal mobility programs and diminishing returns from external recruitment?\"",
+      "question": "A manufacturing firm operating in a volatile global market, characterized by moderate demand fluctuations and increasing frequency of unexpected supply chain disruptions, is re-evaluating its inventory strategy. The firm's key objectives are to minimize stockouts to protect customer satisfaction, enhance overall supply chain resilience to lead time variability, and optimize working capital. However, the firm maintains a cautious stance on sharing proprietary operational data with external partners. Based on a comprehensive synthesis of the provided information, which inventory management strategy presents the most strategically balanced approach for this firm, and why would the firm need to carefully consider a specific trade-off inherent in that choice?",
+      "title": "Manufacturing Firm's Inventory: EOQ Trade-offs for Resilience, Stockouts, & Working Capital",
+      "solution": "\"Step 1: Analyze the firm's specific objectives, market conditions, and constraints.The firm operates in a volatile global market with moderate demand fluctuations and increasing supply chain disruptions. Its key objectives are: 1. Minimize stockouts to protect customer satisfaction. 2. Enhance overall supply chain resilience to lead time variability. 3. Optimize working capital. A critical constraint is the firm's cautious stance on sharing proprietary operational data with external partners.Step 2: Evaluate each inventory management strategy against the firm's criteria using data from the provided sources.1.  **Just-In-Time (JIT):**-   **Stockouts:** Highest at 5.0% (Source 2), failing the minimization objective.-   **Resilience:** Lowest Lead Time Variability Tolerance at 3 days (Source 2), highly susceptible to disruptions (Source 1), failing the resilience objective.-   **Working Capital:** Lowest capital tied up at $10,000 (Source 2) and lowest holding costs ($2,500, Source 2; $1,000 warehousing, Source 3), meeting the optimization objective.-   **Data Sharing:** Not a direct concern for the firm's constraint, but its high dependency on reliable suppliers is a risk in volatile markets (Source 1).-   **Conclusion:** Not suitable due to high stockout risk and low resilience.2.  **Traditional (Safety Stock):**-   **Stockouts:** Lowest at 0.5% (Source 2), meeting the minimization objective exceptionally well.-   **Resilience:** Highest Lead Time Variability Tolerance at 7 days (Source 2), meeting the resilience objective exceptionally well.-   **Working Capital:** Highest capital tied up at $80,000 (Source 2) and highest holding costs ($20,000, Source 2; $10,000 warehousing, Source 3), significantly failing the optimization objective.-   **Data Sharing:** Not a direct concern.-   **Conclusion:** Not suitable due to excessive capital tie-up.3.  **Vendor-Managed Inventory (VMI):**-   **Stockouts:** Very good at 1.0% (Source 2), meeting the minimization objective.-   **Resilience:** Moderate Lead Time Variability Tolerance at 4 days (Source 2).-   **Working Capital:** Good, with $40,000 capital tied up (Source 2) and moderate holding costs ($10,000, Source 2; $5,000 warehousing, Source 3), meeting the optimization objective.-   **Data Sharing:** Requires \\\"significant trust and data sharing, potentially exposing sensitive operational information\\\" (Source 1), which directly conflicts with the firm's cautious stance on sharing proprietary data.-   **Conclusion:** Not suitable due to the critical data sharing constraint.4.  **Economic Order Quantity (EOQ):**-   **Stockouts:** Good at 1.5% (Source 2), reasonably meeting the minimization objective.-   **Resilience:** Good Lead Time Variability Tolerance at 5 days (Source 2), reasonably meeting the resilience objective (better than JIT/VMI).-   **Working Capital:** Moderate, with $60,000 capital tied up (Source 2) and moderate holding costs ($15,000, Source 2; $8,000 warehousing, Source 3). While not the lowest, it's significantly better than Traditional and offers a balance given other objectives.-   **Data Sharing:** Primarily an internal calculation; does not require significant external data sharing, aligning with the firm's constraint.-   **Conclusion:** Presents the most balanced approach considering all objectives and constraints.Step 3: Select the most strategically balanced approach.Based on the comprehensive evaluation, the **Economic Order Quantity (EOQ)** strategy is the most strategically balanced approach for the firm. It offers a reasonable stockout rate (1.5%) and good resilience to lead time variability (5 days) while avoiding the critical data sharing constraint of VMI. Although its working capital optimization ($60,000 tied up) is not as aggressive as JIT, it is significantly better than Traditional and strikes a necessary balance.Step 4: Identify the specific trade-off inherent in the chosen strategy.The firm would need to carefully consider the trade-off that **EOQ's optimal performance is typically achieved under stable demand conditions**, as stated in Source 1. The firm operates in a \\\"volatile global market, characterized by moderate demand fluctuations.\\\" While EOQ can be adapted with safety stock, its core premise is less robust to significant or frequent demand shifts. This means that the calculated optimal order quantities might frequently be suboptimal, potentially leading to either excess inventory (if demand drops unexpectedly, increasing holding and obsolescence costs) or stockouts (if demand surges beyond projections), thereby challenging the firm's objectives of optimizing working capital and minimizing stockouts in its specific market environment. The firm would need to invest heavily in accurate demand forecasting and potentially dynamic adjustments to EOQ calculations to mitigate this inherent vulnerability.\"",
       "options": {
-        "A": "Marketing, which saw a 0.5% absolute reduction in voluntary attrition and a 1.0% absolute increase in internal promotion rate, alongside a 5.26% increase in per-employee training budget.",
-        "B": "Sales, experiencing a 1.0% absolute decrease in voluntary attrition and a 2.0% absolute increase in internal promotion rate, with a 5.0% rise in per-employee training budget.",
-        "C": "Engineering, which demonstrated a 5.0% absolute decrease in voluntary attrition and a 10.0% absolute increase in internal promotion rate, after an 18.18% increase in per-employee training budget.",
-        "D": "Operations, which achieved a 1.5% absolute decrease in voluntary attrition and a 6.0% absolute increase in internal promotion rate, following a 16.67% increase in per-employee training budget.",
-        "E": "The company-wide trend, showing a 2.0% absolute decrease in voluntary attrition and a 4.75% absolute increase in internal promotion rate, accompanied by a 17.65% increase in total HR training investment."
-      },
-      "answer": "C",
-      "prompt": "<Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
-      "question-type": "Multi-Source Reasoning"
-    },
-    {
-      "question": "Considering the multifaceted challenges faced by Stellar Corp's HR department, including the inverse correlation between attrition and new talent acquisition efficiency, and the advocated strategic pivot towards internal talent development, which department and fiscal year combination most accurately exemplifies a successful implementation of targeted internal mobility programs, demonstrably resulting in the benefits outlined in the narrative and justifying a reallocation of resources away from excessive external recruitment expenditures?",
-      "title": "Stellar Corp HR: Impact of Talent Investment Strategies on Attrition & Efficiency",
-      "solution": "\"{\\\"question\\\": \\\"Stellar Corp's HR department noted that targeted internal mobility programs, requiring an average 15% increase in per-employee training budget, lead to a 5 percentage point lower voluntary attrition rate and a 10 percentage point higher internal promotion rate. Assuming the Operations department's FY21 data represents its performance *before* the full impact of such programs, and its FY23 data reflects the outcomes *after* their implementation, evaluate the degree to which Operations department's changes align with these observed company-wide benefits.\\\\n\\\\nSpecifically, calculate the following for the Operations department from FY21 to FY23:\\\\n1. The actual **percentage increase in Training Budget per Employee**.\\\\n2. The actual **percentage point change in Voluntary Attrition Rate**.\\\\n3. The actual **percentage point change in Internal Promotion Rate**.\\\\n\\\\nBased on your calculations, determine if the Operations department's performance in FY23 fully meets or exceeds the stated average benefits of internal mobility programs.\\\", \\\"solution\\\": \\\"Step 1: Identify Relevant Data and Stated Benefits\\\\nFrom Source 1, the stated benefits of targeted internal mobility programs are:\\\\n*   Average 15% increase in per-employee training budget.\\\\n*   5 percentage point lower voluntary attrition rate.\\\\n*   10 percentage point higher internal promotion rate.\\\\n\\\\nFrom Source 2, the Operations department data for FY21 and FY23 are:\\\\n*   **FY21 Operations:**\\\\n    *   Voluntary Attrition Rate: 7.0%\\\\n    *   Internal Promotion Rate: 15.0%\\\\n    *   Training Budget per Employee: $850\\\\n*   **FY23 Operations:**\\\\n    *   Voluntary Attrition Rate: 6.0%\\\\n    *   Internal Promotion Rate: 20.0%\\\\n    *   Training Budget per Employee: $1050\\\\n\\\\nStep 2: Set up Calculations for Changes from FY21 to FY23\\\\n1.  **Percentage Increase in Training Budget:** ( (FY23 Budget - FY21 Budget) / FY21 Budget ) * 100%\\\\n2.  **Percentage Point Change in Attrition Rate:** FY23 Attrition Rate - FY21 Attrition Rate\\\\n3.  **Percentage Point Change in Promotion Rate:** FY23 Promotion Rate - FY21 Promotion Rate\\\\n\\\\nStep 3: Perform Calculations\\\\n1.  **Actual percentage increase in Training Budget per Employee:**\\\\n    *   `(($1050 - $850) / $850) * 100%` = `($200 / $850) * 100%` = `0.23529... * 100%` = `23.53%` (rounded to two decimal places)\\\\n\\\\n2.  **Actual percentage point change in Voluntary Attrition Rate:**\\\\n    *   `6.0% - 7.0%` = `-1.0 percentage points` (This represents a reduction of 1.0 percentage points)\\\\n\\\\n3.  **Actual percentage point change in Internal Promotion Rate:**\\\\n    *   `20.0% - 15.0%` = `+5.0 percentage points` (This represents an increase of 5.0 percentage points)\\\\n\\\\nStep 4: Compare Actual Changes with Stated Average Benefits\\\\n*   **Training Budget per Employee:** The Operations department's actual increase of 23.53% *exceeds* the average 15% increase observed for successful internal mobility programs.\\\\n*   **Voluntary Attrition Rate:** The Operations department's actual reduction of 1.0 percentage point *does not fully meet* the stated benefit of a 5 percentage point lower attrition rate.\\\\n*   **Internal Promotion Rate:** The Operations department's actual increase of 5.0 percentage points *does not fully meet* the stated benefit of a 10 percentage point higher internal promotion rate.\\\\n\\\\nStep 5: Conclude on Alignment\\\\nWhile the Operations department significantly increased its per-employee training budget beyond the average required for successful programs (23.53% vs. 15%), its corresponding improvements in voluntary attrition rate (down by 1.0 percentage point) and internal promotion rate (up by 5.0 percentage points) *did not fully meet* the more substantial benefits (5 percentage points lower attrition and 10 percentage points higher promotion) attributed to successful internal mobility programs in Source 1. Therefore, the Operations department's performance in FY23 does not fully meet or exceed the stated average benefits in terms of attrition reduction and promotion rate increase, despite exceeding the investment component.\"",
-      "options": {
-        "A": "Despite increased external recruitment expenditure in FY22, company-wide attrition rates worsened, indicating diminishing returns from this strategy.",
-        "B": "The Engineering department's reduction in voluntary attrition by 5 percentage points and increase in internal promotion by 10 percentage points from FY22 to FY23, following a substantial increase in training investment, exemplifies the success of internal mobility programs.",
-        "C": "Operations consistently maintained the lowest voluntary attrition rate and highest internal promotion rate across all three fiscal years, proving it had the most effective internal mobility programs from the outset.",
-        "D": "Company-wide employee engagement scores showed a direct inverse correlation with voluntary attrition rates across the three fiscal years, suggesting engagement is the primary driver of retention.",
-        "E": "An increase in the average time-to-fill for critical roles consistently led to a corresponding decrease in new talent acquisition efficiency, particularly within high-growth divisions like Marketing."
+        "A": "Just-In-Time (JIT) because it offers the lowest capital tied up and holding costs, aligning with working capital optimization. However, the firm would need to accept its high susceptibility to supply chain disruptions and higher stockout rates, directly conflicting with its need for resilience and minimizing stockouts.",
+        "B": "Economic Order Quantity (EOQ) because it provides a balanced approach with moderate resilience to lead time variability and a relatively low stockout rate, without extensive data sharing. The firm would need to carefully consider the trade-off of its higher capital tied up and annual holding costs compared to a leaner JIT approach, in exchange for enhanced operational stability and reduced risk in a volatile market.",
+        "C": "Vendor-Managed Inventory (VMI) because it offers the lowest stockout rate and strong supplier reliability, significantly enhancing customer satisfaction. However, this strategy is fundamentally incompatible with the firm's cautious stance on sharing proprietary operational data with external partners.",
+        "D": "Traditional (Safety Stock) because it offers the highest resilience to lead time variability and the lowest stockout rate, crucial for minimizing disruptions and stockouts. The critical trade-off is the significantly higher capital tied up and annual holding costs, which directly conflicts with the firm's objective to optimize working capital.",
+        "E": "A hybrid approach combining JIT for critical components and Traditional for high-demand items to balance agility and resilience. This strategy would require highly complex implementation and coordination, potentially negating the benefits due to increased administrative overhead and internal conflict over differing operational philosophies."
       },
       "answer": "B",
+      "prompt": "<Synthesizing Information> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+      "question-type": "Multi-Source Reasoning",
+      "difficulty": 1,
+      "tags": [
+        "GMAT",
+        "Integrated Reasoning",
+        "Multi-Source Reasoning"
+      ]
+    },
+    {
+      "question": "A manufacturing firm currently employs a 'Traditional (Safety Stock)' inventory strategy. While this approach has ensured a remarkably low stockout rate of 0.5% and high lead time variability tolerance, the board is highly concerned by the significant capital tied up ($80,000), escalating obsolescence costs ($6,000), and an overall lack of agility in responding to increasingly volatile market conditions. The firm aims to transition to an alternative strategy that not only substantially reduces capital expenditure and obsolescence but also fosters significantly stronger supplier collaboration (improving on a 3.0 reliability score) and enhances strategic responsiveness to market changes, even if it means accepting a moderately higher but still manageable stockout rate (e.g., up to 2.0%). Based on the provided data and strategic descriptions across all sources, which of the alternative inventory management strategies (Just-In-Time, Economic Order Quantity, or Vendor-Managed Inventory) would offer the most holistically balanced and strategically aligned transition for the firm, considering the intricate trade-offs and inherent operational characteristics of each approach?",
+      "title": "Inventory Strategy Transition: JIT, EOQ, VMI for Cost, Agility & Collaboration",
+      "solution": "\"Step 1: Understand the firm's current situation and desired strategic shift.\\nThe firm currently uses a 'Traditional (Safety Stock)' strategy with the following key metrics:\\n- Capital Tied Up: $80,000 (Problem: Too high)\\n- Obsolescence Cost: $6,000 (Problem: Too high)\\n- Supplier Reliability Score: 3.0 (Problem: Needs significant improvement)\\n- Stockout Rate: 0.5% (Good, but can accept up to 2.0%)\\n- Agility: Lacks agility for volatile markets.\\n\\nThe firm's goals for a new strategy are:\\n1.  Substantially reduce capital expenditure.\\n2.  Substantially reduce obsolescence costs.\\n3.  Foster significantly stronger supplier collaboration (improve > 3.0).\\n4.  Enhance strategic responsiveness to market changes/agility.\\n5.  Accept a moderately higher but manageable stockout rate (up to 2.0%).\\n\\nStep 2: Evaluate each alternative strategy (Just-In-Time, Economic Order Quantity, Vendor-Managed Inventory) against the firm's strategic goals using data from Source 1, Source 2, and Source 3.\\n\\n**Strategy A: Just-In-Time (JIT)**\\n*   **Capital Tied Up:** $10,000 (Substantially reduced from $80,000 - Goal 1 met)\\n*   **Obsolescence Cost:** $500 (Substantially reduced from $6,000 - Goal 2 met)\\n*   **Supplier Reliability Score:** 4.5 (Significantly improved from 3.0 - Goal 3 met)\\n*   **Agility:** High (Inherently designed for agility, as per Source 1 - Goal 4 met)\\n*   **Stockout Rate:** 5.0% (Fails to meet Goal 5 as it's > 2.0%)\\n\\n**Strategy B: Economic Order Quantity (EOQ)**\\n*   **Capital Tied Up:** $60,000 (Reduced, but not 'substantially' from $80,000 - Goal 1 partially met)\\n*   **Obsolescence Cost:** $4,000 (Reduced, but not 'substantially' from $6,000 - Goal 2 partially met)\\n*   **Supplier Reliability Score:** 3.5 (Marginally improved from 3.0; not 'significantly stronger' - Goal 3 partially met)\\n*   **Agility:** Low (Best for 'stable demand conditions' and 'larger stock levels,' not volatile markets - Goal 4 not met)\\n*   **Stockout Rate:** 1.5% (Meets Goal 5 as it's <= 2.0%)\\n\\n**Strategy C: Vendor-Managed Inventory (VMI)**\\n*   **Capital Tied Up:** $40,000 (Substantially reduced from $80,000 - Goal 1 met)\\n*   **Obsolescence Cost:** $3,000 (Substantially reduced from $6,000 - Goal 2 met)\\n*   **Supplier Reliability Score:** 4.8 (Highest among alternatives, significantly improved from 3.0, fostering collaboration as per Source 1 - Goal 3 met)\\n*   **Agility:** Enhanced (Shifts replenishment responsibility to supplier, leading to 'better stock visibility' and reduced stockouts, which facilitates responsiveness to market changes - Goal 4 met)\\n*   **Stockout Rate:** 1.0% (Meets Goal 5 as it's <= 2.0%)\\n\\nStep 3: Compare the performance of each alternative against all the firm's strategic goals to identify the most holistically aligned option.\\n\\n*   JIT fails on the critical stockout rate criterion, exceeding the firm's acceptable threshold.\\n*   EOQ falls short on substantially reducing capital/obsolescence costs, providing significant supplier collaboration, and enhancing agility for volatile markets.\\n*   VMI successfully meets all five strategic goals: it substantially reduces capital tied up ($40,000) and obsolescence costs ($3,000), significantly improves supplier collaboration (score 4.8), enhances agility through better visibility and shared responsibility, and maintains a manageable stockout rate (1.0%) within the acceptable range.\\n\\nStep 4: Conclude which strategy offers the most balanced and strategically aligned transition.\\n\\nBased on a comprehensive evaluation, Vendor-Managed Inventory (VMI) is the strategy that offers the most holistically balanced and strategically aligned transition for the manufacturing firm. It addresses all the board's concerns effectively while leveraging supplier collaboration for improved market responsiveness.\"",
+      "options": {
+        "A": "Just-In-Time (JIT) would be ideal for its significant reductions in capital tied up ($10,000) and obsolescence costs ($500), alongside a strong supplier reliability score (4.5), crucial for agility; but its 5.0% stockout rate significantly exceeds the acceptable limit of 2.0%.",
+        "B": "Economic Order Quantity (EOQ) offers a manageable stockout rate (1.5%) and moderate reductions in capital ($60,000) and obsolescence ($4,000), representing a safer shift; however, it lacks the substantial financial impact and agility required for increasingly volatile market conditions.",
+        "C": "Vendor-Managed Inventory (VMI) provides the most balanced solution, substantially reducing capital tied up ($40,000) and obsolescence costs ($3,000), fostering the highest supplier collaboration (4.8), and achieving a desirable stockout rate (1.0%), thereby enhancing strategic responsiveness to market volatility.",
+        "D": "While JIT significantly reduces direct inventory costs, its high administrative ordering cost ($8,000) and expediting cost ($1,500), as detailed in Source 3, make its overall operational cost profile less attractive for a holistic transition when considering the firm's broader financial health.",
+        "E": "Prioritizing strategies that offer the highest lead time variability tolerance, such as EOQ (5 days) over VMI (4 days), is paramount for resilience in volatile markets, making any aggressive reduction in capital and obsolescence costs a secondary concern for the firm."
+      },
+      "answer": [
+        "C"
+      ],
       "prompt": "<Verbal Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
-      "question-type": "Multi-Source Reasoning"
+      "question-type": "Multi-Source Reasoning",
+      "difficulty": 1,
+      "tags": [
+        "GMAT",
+        "Integrated Reasoning",
+        "Multi-Source Reasoning"
+      ]
     }
   ],
-  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Human Resources> - <table> - <table> - <table> - <Trend Analysis> - <Trend Analysis> - <Trend Analysis> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
-  "question-type": "Multi-Source Reasoning"
+  "prompt": "<Algebraic Expressions and Simplification> - <Logistics and Operations> - <table> - <table> - <table> - <Comparison and Contrast> - <Comparison and Contrast> - <Comparison and Contrast> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+  "question-type": "Multi-Source Reasoning",
+  "difficulty": 1,
+  "tags": [
+    "GMAT",
+    "Integrated Reasoning",
+    "Multi-Source Reasoning"
+  ]
 }

@@ -1,6 +1,6 @@
 STRICT RESPONSE FORMAT: JSON
 - "options" key with value as dictionary.
-- "answer" key with single correct option letter.
+- "answer" key with single correct option letter (e.g., "A", "B"). CRITICAL: Do NOT output the content/value of the option. ONLY the letter. Never output full sentences.
 - Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
 Example:-
 ```json
