@@ -59,6 +59,7 @@ class GenQ:
         self.prompts_dictionary = prompts_dictionary
         self.max_questions = max_questions
         self.generated_count = 0
+        self.last_run_stats = {}
 
     @staticmethod
     def _process_section_task(exam: str, section_id: str, section_data: dict, section_name: str) -> dict:
@@ -234,7 +235,7 @@ class GenQ:
             total_input_tokens=global_stats['total_input_tokens'],
             total_output_tokens=global_stats['total_output_tokens'],
             total_time_seconds=global_stats['total_time_seconds'],
-            gre_questions=global_stats['gre_questions'],
             gmat_questions=global_stats['gmat_questions']
         )
+        self.last_run_stats = global_stats
         return paper_set

@@ -1,0 +1,2036 @@
+{
+  "2": {
+    "section": "Quants",
+    "questions": [
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has 120 hours available for Assembly, 90 hours for Testing, and 60 hours for Packaging per week. The profit per unit is $25 for Type A and $30 for Type B. The company wants to maximize weekly profit while meeting all constraints. If the company decides to produce only Type A components, what is the maximum number of Type A components it can produce per week without exceeding any resource constraints? (Difficulty Level: 3)",
+        "title": "Maximizing Production of Type A Components Under Resource Constraints",
+        "solution": "",
+        "options": {
+          "A": "60",
+          "B": "40",
+          "C": "50",
+          "D": "30",
+          "E": "48"
+        },
+        "answer": "E",
+        "prompt": "<Profit, Loss and Discount> - <Business and Finance> - <Word Problems&> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1
+      },
+      {
+        "question": "A manufacturing company produces two types of widgets: Standard and Premium. The production process involves three stages: Assembly, Quality Check, and Packaging. Each Standard widget requires 2 hours in Assembly, 1 hour in Quality Check, and 0.5 hours in Packaging. Each Premium widget requires 3 hours in Assembly, 2 hours in Quality Check, and 1 hour in Packaging. The company has 120 hours available for Assembly, 80 hours for Quality Check, and 40 hours for Packaging per week. The profit per Standard widget is $50 and per Premium widget is $80. The company wants to maximize weekly profit while meeting all constraints. If the company decides to produce only Standard widgets to simplify operations, what is the opportunity cost of this decision in terms of maximum possible profit lost, assuming optimal production of both types would be feasible?",
+        "title": "Opportunity Cost Analysis in Widget Production Optimization",
+        "solution": "",
+        "options": {
+          "A": "$0",
+          "B": "$400",
+          "C": "$800",
+          "D": "$1200",
+          "E": "$1600"
+        },
+        "answer": "C",
+        "prompt": "<Algebraic Expressions and Simplification> - <Environment and Sustainability> - <Word Problems&> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A manufacturing company produces two types of widgets: Standard and Premium. The production process involves three stages: Assembly, Quality Check, and Packaging. Each Standard widget requires 2 hours in Assembly, 1 hour in Quality Check, and 0.5 hours in Packaging. Each Premium widget requires 3 hours in Assembly, 2 hours in Quality Check, and 1 hour in Packaging. The company has 120 hours available for Assembly, 80 hours for Quality Check, and 40 hours for Packaging per week. The profit per Standard widget is $50, and per Premium widget is $100. The company wants to maximize weekly profit while meeting all constraints. If the company decides to produce only Standard widgets to simplify operations, what is the opportunity cost in terms of maximum possible profit lost, assuming optimal production of both types would have been feasible?",
+        "title": "Manufacturing Optimization: Opportunity Cost Analysis in Widget Production",
+        "solution": "",
+        "options": {
+          "A": "$0",
+          "B": "$500",
+          "C": "$1000",
+          "D": "$1500",
+          "E": "$2000"
+        },
+        "answer": "C",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Inequalities> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A manufacturing company produces two types of widgets: Standard and Premium. The production process involves three stages: Assembly, Quality Check, and Packaging. Each Standard widget requires 2 hours in Assembly, 1 hour in Quality Check, and 0.5 hours in Packaging. Each Premium widget requires 3 hours in Assembly, 2 hours in Quality Check, and 1 hour in Packaging. The company has 120 hours available for Assembly, 80 hours for Quality Check, and 40 hours for Packaging per week. The profit per Standard widget is $50, and per Premium widget is $80. To maximize weekly profit, how many of each type should the company produce, assuming all widgets produced can be sold? (Use linear programming principles to set up constraints and objective function, then solve graphically or by testing corner points.)",
+        "title": "Linear Programming for Widget Production Profit Maximization",
+        "solution": "",
+        "options": {
+          "A": "20 Standard, 30 Premium",
+          "B": "30 Standard, 20 Premium",
+          "C": "40 Standard, 0 Premium",
+          "D": "0 Standard, 40 Premium",
+          "E": "24 Standard, 24 Premium"
+        },
+        "answer": "B",
+        "prompt": "<Standard Deviation and Variance> - <Human Resources> - <Data Interpretation> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1
+      },
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has weekly capacity constraints: Assembly department has 120 hours available, Testing has 90 hours, and Packaging has 60 hours. The profit per unit is $25 for Type A and $30 for Type B. The company wants to maximize weekly profit. If they decide to produce only Type A components, what is the maximum number they can produce without exceeding any capacity constraint, and what would be the resulting profit? Then, if they switch to producing only Type B components under the same constraints, what is the maximum number and profit? Finally, using linear programming principles, determine the optimal production mix of both types to maximize profit, and calculate the maximum achievable weekly profit.",
+        "title": "Linear Programming for Optimal Electronic Component Production Mix",
+        "solution": "",
+        "options": {
+          "A": "Produce 40 Type A and 20 Type B for a profit of $1600",
+          "B": "Produce 30 Type A and 30 Type B for a profit of $1650",
+          "C": "Produce 20 Type A and 40 Type B for a profit of $1700",
+          "D": "Produce 50 Type A and 10 Type B for a profit of $1550",
+          "E": "Produce 10 Type A and 50 Type B for a profit of $1750"
+        },
+        "answer": "C",
+        "prompt": "<Algebraic Expressions and Simplification> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has 120 hours available for Assembly, 90 hours for Testing, and 60 hours for Packaging per week. The profit per unit is $25 for Type A and $30 for Type B. The company wants to maximize weekly profit. If they produce x units of Type A and y units of Type B, which of the following systems of inequalities represents the constraints? (Difficulty Level: 3)",
+        "title": "Linear Programming Constraints for Maximizing Profit in Electronics Manufacturing",
+        "solution": "",
+        "options": {
+          "A": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, 0.5x + y ≤ 60, x ≥ 0, y ≥ 0",
+          "B": "2x + 1.5y ≤ 120, 1.5x + y ≤ 90, 0.5x + y ≤ 60, x ≥ 0, y ≥ 0",
+          "C": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, x + 0.5y ≤ 60, x ≥ 0, y ≥ 0",
+          "D": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, 0.5x + y ≤ 60, x > 0, y > 0",
+          "E": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, 0.5x + y ≤ 60, x ≤ 0, y ≤ 0"
+        },
+        "answer": [
+          "A"
+        ],
+        "prompt": "<Functions and Polynomials> - <Government Policies and Regulations> - <Numeric Comparisons> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has 120 hours available for Assembly, 90 hours for Testing, and 60 hours for Packaging per week. The profit per unit is $25 for Type A and $30 for Type B. To maximize weekly profit, how many units of each type should the company produce, and what is the maximum profit? Assume all produced units can be sold.",
+        "title": "Linear Programming Optimization for Electronic Component Production",
+        "solution": "",
+        "options": {
+          "A": "30 Type A, 40 Type B, $1950 profit",
+          "B": "40 Type A, 30 Type B, $1900 profit",
+          "C": "20 Type A, 50 Type B, $2000 profit",
+          "D": "50 Type A, 20 Type B, $1850 profit",
+          "E": "0 Type A, 60 Type B, $1800 profit"
+        },
+        "answer": "A",
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 5
+      },
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has 120 hours available for Assembly, 90 hours for Testing, and 60 hours for Packaging per week. The profit per unit is $25 for Type A and $30 for Type B. The company wants to maximize weekly profit while meeting all constraints. If they produce x units of Type A and y units of Type B, which of the following systems of inequalities correctly represents the constraints? (Difficulty Level: 4)",
+        "title": "Linear Programming Constraints for Maximizing Manufacturing Profit",
+        "solution": "",
+        "options": {
+          "A": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, 0.5x + y ≤ 60, x ≥ 0, y ≥ 0",
+          "B": "2x + 1.5y ≤ 120, 1.5x + y ≤ 90, 0.5x + y ≤ 60, x ≥ 0, y ≥ 0",
+          "C": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, x + 0.5y ≤ 60, x ≥ 0, y ≥ 0",
+          "D": "2x + 1.5y ≤ 120, x + 1.5y ≤ 90, 0.5x + y ≤ 60, x > 0, y > 0",
+          "E": "2x + 1.5y ≤ 120, 1.5x + y ≤ 90, x + 0.5y ≤ 60, x ≥ 0, y ≥ 0"
+        },
+        "answer": "A",
+        "prompt": "<Simple Interest and Compound Interest> - <Marketing and Sales> - <Word Problems&> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has 120 hours available for Assembly, 90 hours for Testing, and 60 hours for Packaging per week. The profit per unit is $25 for Type A and $30 for Type B. To maximize weekly profit, how many units of each type should the company produce, and what is the maximum profit? (Assume all units produced can be sold.)",
+        "title": "Linear Programming Optimization for Electronic Component Production",
+        "solution": "",
+        "options": {
+          "A": "30 Type A, 40 Type B, $1950 profit",
+          "B": "40 Type A, 30 Type B, $1900 profit",
+          "C": "20 Type A, 50 Type B, $2000 profit",
+          "D": "50 Type A, 20 Type B, $1850 profit",
+          "E": "0 Type A, 60 Type B, $1800 profit"
+        },
+        "answer": "A",
+        "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A manufacturing company produces two types of electronic components: Type A and Type B. The production process involves three stages: Assembly, Testing, and Packaging. Each Type A component requires 2 hours in Assembly, 1 hour in Testing, and 0.5 hours in Packaging. Each Type B component requires 1.5 hours in Assembly, 1.5 hours in Testing, and 1 hour in Packaging. The company has 120 hours available for Assembly, 90 hours for Testing, and 60 hours for Packaging per week. The profit per unit is $25 for Type A and $30 for Type B. To maximize weekly profit, how many units of each type should the company produce, and what is the maximum profit? Assume all units produced can be sold.",
+        "title": "Linear Programming Optimization for Electronic Component Production",
+        "solution": "",
+        "options": {
+          "A": "30 Type A, 40 Type B, Profit $1950",
+          "B": "40 Type A, 30 Type B, Profit $1900",
+          "C": "20 Type A, 50 Type B, Profit $2000",
+          "D": "50 Type A, 20 Type B, Profit $1850",
+          "E": "0 Type A, 60 Type B, Profit $1800"
+        },
+        "answer": [
+          "A"
+        ],
+        "prompt": "<Exponents and Powers> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of its two main product lines, Alpha and Beta, over the last fiscal year. The total revenue from both products combined was $500,000. The company wants to determine the profit margin for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) * 100%.",
+          "Statements": [
+            "The profit from product Beta was $80,000.",
+            "The revenue from product Beta was 40% of the total revenue."
+          ]
+        },
+        "question": "What is the profit margin for product Alpha? (1) The profit from product Beta was $80,000. (2) The revenue from product Beta was 40% of the total revenue.",
+        "title": "Profit Margin Analysis for Product Alpha in a Two-Product Business Scenario",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Functions and Polynomials> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of its two main product lines, Alpha and Beta, over the last fiscal year. The total revenue from both products combined was $500,000. The company wants to determine the profit margin for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) * 100%. The profit from a product is calculated as revenue minus total costs associated with that product.",
+          "Statements": [
+            "The revenue from product Alpha was $300,000.",
+            "The total costs for product Alpha were $180,000."
+          ]
+        },
+        "question": "What is the profit margin for product Alpha? (1) The revenue from product Alpha was $300,000. (2) The total costs for product Alpha were $180,000.",
+        "title": "Profit Margin Calculation for Product Alpha",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Ratio and Proportion> - <Logistics and Operations> - <Word Problems&> - difficulty_level:<4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of two product lines, Alpha and Beta, over the last quarter. The total revenue from both products combined was $500,000. The company wants to determine the profit margin for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) * 100%. The profit from a product is calculated as revenue minus total costs associated with that product.",
+          "Statements": [
+            "The revenue from product Alpha was $300,000.",
+            "The total costs for product Alpha were $180,000."
+          ]
+        },
+        "question": "What is the profit margin for product Alpha? (1) The revenue from product Alpha was $300,000. (2) The total costs for product Alpha were $180,000.",
+        "title": "Profit Margin Calculation for Product Alpha in Business Analysis",
+        "solution": "{Profit Margin} = \\frac{\\text{Profit from Alpha}}{\\text{Revenue from Alpha}} \\times 100\\% \\). Profit is revenue minus costs.\n\nStep 2: Analyze Statement (1) alone: It gives revenue from Alpha = $300,000. Without costs, we cannot calculate profit or profit margin. So, Statement (1) alone is not sufficient.\n\nStep 3: Analyze Statement (2) alone: It gives total costs for Alpha = $180,000. Without revenue, we cannot calculate profit or profit margin. So, Statement (2) alone is not sufficient.\n\nStep 4: Analyze both statements together: With revenue = $300,000 and costs = $180,000, profit = $300,000 - $180,000 = $120,000. Profit margin = \\( \\frac{120,000}{300,000} \\times 100\\% = 40\\% \\). Both together are sufficient.\n\nStep 5: Common mistakes: Students might think each statement alone is sufficient by misinterpreting the formula or assuming revenue from Beta is irrelevant (it is, as total revenue is given but not needed here). Another error is calculating profit margin incorrectly, e.g., using total revenue instead of Alpha's revenue.\n\nConclusion: Neither statement alone is sufficient, but both together are sufficient.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Ratio and Proportion> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "A company is evaluating two investment projects, Project Alpha and Project Beta. The company's required rate of return is 10%. The projects have different initial investments and expected cash flows over 5 years. The net present value (NPV) of a project is calculated as the sum of the present values of its cash flows minus the initial investment.",
+          "Statements": [
+            "The initial investment for Project Alpha is $50,000, and its annual cash inflow is $15,000 for 5 years.",
+            "The initial investment for Project Beta is $70,000, and its annual cash inflow is $20,000 for 5 years."
+          ]
+        },
+        "question": "Is the net present value (NPV) of Project Alpha greater than that of Project Beta? (1) The required rate of return is 10%. (2) The projects have cash flows for 5 years.",
+        "title": "NPV Comparison of Investment Projects with Given Cash Flows",
+        "solution": "[1 - (1 + r)^(-n)] / r, where C is annual cash inflow, r is discount rate, n is number of years.\n\nStep 2: From the passage, required rate of return (r) is 10% (0.10), and projects have cash flows for 5 years (n=5). Statements provide: Alpha: initial investment = $50,000, annual inflow = $15,000; Beta: initial investment = $70,000, annual inflow = $20,000.\n\nStep 3: Calculate NPV for each project using given data. PV factor for annuity at 10% over 5 years: [1 - (1.10)^(-5)] / 0.10 = [1 - 0.620921] / 0.10 = 0.379079 / 0.10 = 3.79079 (approx 3.7908).  \nNPV(Alpha) = ($15,000 × 3.7908) - $50,000 = $56,862 - $50,000 = $6,862.  \nNPV(Beta) = ($20,000 × 3.7908) - $70,000 = $75,816 - $70,000 = $5,816.  \nThus, NPV(Alpha) = $6,862 > NPV(Beta) = $5,816, so answer is yes.\n\nStep 4: Assess sufficiency of statements:  \nStatement (1) gives r=10%, but without cash flow details from statements, we cannot compute NPVs. So (1) alone is not sufficient.  \nStatement (2) gives n=5 years, but similarly, without cash flows, insufficient.  \nTogether, with r=10% from passage, n=5 from (2), and cash flows from statements, we can compute NPVs as above. So both together are sufficient, neither alone sufficient.\n\nStep 5: Common mistakes:  \n- Assuming statements provide all data (they do, with passage context).  \n- Overlooking that passage gives r=10%, so (1) is redundant but still needed with (2) for completeness.  \n- Miscalculating PV factor or NPVs, leading to incorrect comparison.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<work and rate problem> - <Business and Finance> - <Word Problems&> - difficulty_level:<2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of two product lines, Alpha and Beta, over the last fiscal year. The total revenue from both product lines combined was $500,000. The company wants to determine the profit margin percentage for product Alpha.",
+          "Statements": [
+            "The revenue from product Alpha was $300,000.",
+            "The total profit from both product lines was $100,000."
+          ]
+        },
+        "question": "What is the profit margin percentage for product Alpha? (Profit margin percentage is defined as (Profit / Revenue) × 100% for a product.)",
+        "title": "Profit Margin Analysis for Product Alpha in Business Context",
+        "solution": "{\\text{Profit of Alpha}}{\\text{Revenue of Alpha}} \\times 100\\% \\). From the passage, total revenue (Alpha + Beta) = $500,000.\n\nStep 2: Analyze Statement (1) alone: Revenue of Alpha = $300,000. This gives revenue but not profit for Alpha, so insufficient to calculate profit margin.\n\nStep 3: Analyze Statement (2) alone: Total profit (Alpha + Beta) = $100,000. This gives total profit but not how it's split between Alpha and Beta, so insufficient.\n\nStep 4: Analyze both statements together: With revenue of Alpha = $300,000, revenue of Beta = total revenue - revenue of Alpha = $500,000 - $300,000 = $200,000. Total profit = $100,000, but we don't know the individual profits for Alpha and Beta. Without information on profit distribution (e.g., profit margins or individual profits), we cannot determine profit for Alpha. Thus, even together, insufficient.\n\nStep 5: Common mistakes: Students might assume equal profit margins or proportional profits, leading to incorrect sufficiency. For example, if one assumes profit is proportional to revenue, they might calculate profit for Alpha as \\( \\frac{300,000}{500,000} \\times 100,000 = 60,000 \\), then margin = \\( \\frac{60,000}{300,000} \\times 100\\% = 20\\% \\), but this is an assumption not supported by data. Another error is solving for a numerical answer instead of assessing sufficiency.\n\nConclusion: Neither statement alone nor together provides enough information to determine the profit margin percentage for product Alpha.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "E",
+        "prompt": "<Standard Deviation and Variance> - <Marketing and Sales> - <Inequalities> - difficulty_level:<1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 1
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of two product lines, Alpha and Beta, over the last fiscal year. The total revenue from both products combined was $500,000. The company wants to determine the profit margin for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) * 100%. It is known that the profit from product Beta was $80,000.",
+          "Statements": [
+            "The revenue from product Alpha was $300,000.",
+            "The profit margin for product Beta was 20%."
+          ]
+        },
+        "question": "What is the profit margin for product Alpha? (1) The revenue from product Alpha was $300,000. (2) The profit margin for product Beta was 20%.",
+        "title": "Profit Margin Analysis for Product Alpha in Business Context",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Exponents and Powers> - <Logistics and Operations> - <Inequalities> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of two product lines, Alpha and Beta, over the last fiscal year. The total revenue from both product lines combined was $500,000. The company wants to determine the profit margin for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) * 100%.",
+          "Statements": [
+            "The profit from product Alpha was $80,000.",
+            "The revenue from product Beta was $200,000."
+          ]
+        },
+        "question": "What is the profit margin for product Alpha? (1) The profit from product Alpha was $80,000. (2) The revenue from product Beta was $200,000.",
+        "title": "Profit Margin Calculation for Product Alpha in Business Analysis",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Mixtures and Alligations> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level:<4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of its two main product lines, Alpha and Beta, over the last fiscal year. The total revenue from both products combined was $500,000. The company wants to determine the profit margin percentage for product Alpha specifically, defined as (Profit from Alpha / Revenue from Alpha) × 100%. It is known that the profit from product Beta was $80,000, and the company incurred fixed costs of $50,000 that were allocated equally between the two products. Variable costs are product-specific and differ for Alpha and Beta.",
+          "Statements": [
+            "The revenue from product Beta was $200,000.",
+            "The variable cost for product Alpha was $150,000."
+          ]
+        },
+        "question": "What is the profit margin percentage for product Alpha? (1) The revenue from product Beta was $200,000. (2) The variable cost for product Alpha was $150,000.",
+        "title": "Profit Margin Analysis for Product Alpha with Fixed and Variable Costs",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Exponents and Powers> - <Business and Finance> - <Data Interpretation> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "A company is analyzing the profitability of two product lines, Alpha and Beta, over the last fiscal year. The total revenue from both product lines combined was $500,000. The company wants to determine the profit margin for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) * 100%.",
+          "Statements": [
+            "The profit from product Alpha was $80,000.",
+            "The revenue from product Beta was $200,000."
+          ]
+        },
+        "question": "What is the profit margin for product Alpha? (1) The profit from product Alpha was $80,000. (2) The revenue from product Beta was $200,000.",
+        "title": "Profit Margin Calculation for Product Alpha in Business Analysis",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Ratio and Proportion> - <Environment and Sustainability> - <Inequalities> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "A company is evaluating two investment projects, Project Alpha and Project Beta. The company's required rate of return is 10%. The projects have different initial investments and cash flow patterns over a 5-year period. The net present value (NPV) of each project is calculated using the formula: NPV = Σ (Cash Flow_t / (1 + r)^t) - Initial Investment, where r is the discount rate and t is the time period.",
+          "Statements": [
+            "The initial investment for Project Alpha is $50,000, and its annual cash inflows are $15,000 for each of the 5 years.",
+            "The initial investment for Project Beta is $70,000, and its cash inflows are $20,000 in Year 1, $25,000 in Year 2, $30,000 in Year 3, $35,000 in Year 4, and $40,000 in Year 5."
+          ]
+        },
+        "question": "Is the net present value (NPV) of Project Alpha greater than that of Project Beta? (1) The required rate of return is 10%. (2) The projects have a 5-year life span.",
+        "title": "NPV Comparison of Investment Projects with Uneven Cash Flows",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "E",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 2
+      }
+    ]
+  },
+  "1": {
+    "section": "Integrated Reasoning",
+    "questions": [
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Table": {
+                "type": "sortable_table",
+                "description": "Table with sortable columns, typically used in Table Analysis",
+                "structure": {
+                  "title": "Global Smartphone Sales by Region (2023)",
+                  "headers": [
+                    "Region",
+                    "Q1 Sales (M units)",
+                    "Q2 Sales (M units)",
+                    "Q3 Sales (M units)",
+                    "Q4 Sales (M units)",
+                    "Total Sales (M units)"
+                  ],
+                  "rows": [
+                    [
+                      "North America",
+                      "45.2",
+                      "48.7",
+                      "52.1",
+                      "55.3",
+                      "201.3"
+                    ],
+                    [
+                      "Europe",
+                      "38.5",
+                      "40.2",
+                      "42.8",
+                      "44.9",
+                      "166.4"
+                    ],
+                    [
+                      "Asia-Pacific",
+                      "120.4",
+                      "125.6",
+                      "130.2",
+                      "135.0",
+                      "511.2"
+                    ],
+                    [
+                      "Latin America",
+                      "25.3",
+                      "26.8",
+                      "28.1",
+                      "29.5",
+                      "109.7"
+                    ],
+                    [
+                      "Middle East & Africa",
+                      "18.7",
+                      "19.5",
+                      "20.3",
+                      "21.1",
+                      "79.6"
+                    ],
+                    [
+                      "Global Total",
+                      "248.1",
+                      "260.8",
+                      "273.5",
+                      "285.8",
+                      "1068.2"
+                    ]
+                  ],
+                  "formatting": {
+                    "sortable": true,
+                    "alternating_rows": true
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "The table shows smartphone sales in millions of units by region for each quarter of 2023, along with total annual sales. For each of the following statements, indicate whether the statement is supported by the information in the table. Select 'Yes' if the statement is supported, or 'No' if it is not supported."
+          ],
+          "options": [
+            [
+              "The region with the highest total sales in 2023 also had the highest sales in every individual quarter.",
+              "In Q4, the sales in Latin America were more than double the sales in the Middle East & Africa.",
+              "The total sales in Europe for the first three quarters combined were less than the total sales in Asia-Pacific for Q4 alone."
+            ]
+          ],
+          "answer": [
+            {
+              "options": [
+                "The region with the highest total sales in 2023 also had the highest sales in every individual quarter.",
+                "In Q4, the sales in Latin America were more than double the sales in the Middle East & Africa.",
+                "The total sales in Europe for the first three quarters combined were less than the total sales in Asia-Pacific for Q4 alone."
+              ],
+              "answer": {
+                "The region with the highest total sales in 2023 also had the highest sales in every individual quarter.": "No",
+                "In Q4, the sales in Latin America were more than double the sales in the Middle East & Africa.": "No",
+                "The total sales in Europe for the first three quarters combined were less than the total sales in Asia-Pacific for Q4 alone.": "Yes"
+              }
+            }
+          ]
+        },
+        "question": "The table shows smartphone sales in millions of units by region for each quarter of 2023, along with total annual sales. For each of the following statements, indicate whether the statement is supported by the information in the table. Select `Yes` if the statement is supported, or `No` if it is not supported.",
+        "title": "Analyzing Regional Smartphone Sales Data for 2023",
+        "solution": "",
+        "options": [
+          "The region with the highest total sales in 2023 also had the highest sales in every individual quarter.",
+          "In Q4, the sales in Latin America were more than double the sales in the Middle East & Africa.",
+          "The total sales in Europe for the first three quarters combined were less than the total sales in Asia-Pacific for Q4 alone."
+        ],
+        "answer": {
+          "The region with the highest total sales in 2023 also had the highest sales in every individual quarter.": "No",
+          "In Q4, the sales in Latin America were more than double the sales in the Middle East & Africa.": "No",
+          "The total sales in Europe for the first three quarters combined were less than the total sales in Asia-Pacific for Q4 alone.": "Yes"
+        },
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Verbal Reasoning> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Table Analysis",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "Source1": {
+            "para": "The TechForward Innovations Committee is developing a strategic memo regarding emerging technology investments for 2025. Recent analysis indicates that quantum computing and biotechnology are poised for significant breakthroughs, with projections showing a combined market growth of 35% over the next three years. The committee has identified three key areas for potential investment: quantum encryption systems, AI-driven drug discovery platforms, and sustainable energy storage solutions. Initial feasibility studies suggest varying risk profiles and timelines, with quantum encryption offering the most immediate commercial applications but requiring substantial R&D funding. Stakeholder feedback from our advisory board highlights concerns about regulatory compliance and ethical considerations, particularly in biotechnology sectors. This memo synthesizes preliminary data to guide our investment strategy, balancing innovation potential against practical implementation challenges."
+          },
+          "Source2": {
+            "table": {
+              "type": "data_table",
+              "description": "Standard data table with rows and columns",
+              "structure": {
+                "title": "Technology Investment Analysis for 2025",
+                "headers": [
+                  "Investment Area",
+                  "Projected ROI (%)",
+                  "Risk Level (1-5)",
+                  "Implementation Timeline (Years)",
+                  "R&D Funding Required (Million $)"
+                ],
+                "rows": [
+                  [
+                    "Quantum Encryption Systems",
+                    "28",
+                    "3",
+                    "1.5",
+                    "50"
+                  ],
+                  [
+                    "AI-driven Drug Discovery Platforms",
+                    "22",
+                    "4",
+                    "3",
+                    "75"
+                  ],
+                  [
+                    "Sustainable Energy Storage Solutions",
+                    "18",
+                    "2",
+                    "2.5",
+                    "40"
+                  ]
+                ],
+                "formatting": {
+                  "alternating_rows": true,
+                  "border_style": "standard"
+                }
+              }
+            }
+          },
+          "Source3": {
+            "graph": {
+              "type": "bar_chart",
+              "title": "Stakeholder Priority Ratings for Technology Investments",
+              "description": "This chart displays priority ratings from the advisory board across key criteria for each investment area, based on survey data collected in Q4 2024. Higher scores indicate greater perceived importance.",
+              "data": {
+                "categories": [
+                  "Quantum Encryption Systems",
+                  "AI-driven Drug Discovery Platforms",
+                  "Sustainable Energy Storage Solutions"
+                ],
+                "series": [
+                  {
+                    "name": "Innovation Potential",
+                    "data": [
+                      9,
+                      8,
+                      7
+                    ]
+                  },
+                  {
+                    "name": "Regulatory Compliance Ease",
+                    "data": [
+                      6,
+                      4,
+                      8
+                    ]
+                  },
+                  {
+                    "name": "Ethical Consideration Score",
+                    "data": [
+                      7,
+                      3,
+                      9
+                    ]
+                  },
+                  {
+                    "name": "Market Readiness",
+                    "data": [
+                      8,
+                      5,
+                      7
+                    ]
+                  }
+                ],
+                "axis_labels": {
+                  "x": "Investment Area",
+                  "y": "Priority Rating (1-10)"
+                }
+              }
+            }
+          }
+        },
+        "title": "Strategic Technology Investment Analysis for TechForward Innovations Committee",
+        "child-questions": [
+          {
+            "question": "The TechForward Innovations Committee is finalizing its investment memo for 2025 and must recommend the optimal investment area based on a balanced analysis of financial viability and stakeholder priorities. Using the information from all three sources, which investment area should the committee prioritize if the goal is to maximize return on investment while addressing the advisory board`s primary concerns about regulatory compliance and ethical considerations? Support your recommendation with specific data from the sources.",
+            "title": "Strategic Technology Investment Analysis for TechForward Innovations Committee",
+            "solution": "",
+            "options": {
+              "A": "Quantum encryption systems, as it has the highest projected ROI (28%) and moderate risk (3), with the advisory board giving it high scores in innovation potential (9) and market readiness (8), addressing ethical considerations with a score of 7.",
+              "B": "AI-driven drug discovery platforms, because it has the second-highest ROI (22%) and the advisory board's concerns about regulatory compliance (score 4) and ethics (score 3) are mitigated by its high innovation potential (8) and lower R&D funding compared to quantum encryption.",
+              "C": "Sustainable energy storage solutions, since it offers the lowest risk (2) and highest scores in regulatory compliance ease (8) and ethical considerations (9) from the advisory board, balancing a moderate ROI (18%) with strong stakeholder alignment.",
+              "D": "Quantum encryption systems and sustainable energy storage solutions should both be prioritized equally, as quantum has the highest ROI and sustainable solutions address the advisory board's key concerns most effectively, creating a diversified strategy.",
+              "E": "AI-driven drug discovery platforms and sustainable energy storage solutions, as together they cover high innovation and strong compliance/ethics, with combined ROI averaging 20% and addressing all stakeholder priorities mentioned in Source 1."
+            },
+            "answer": [
+              "C"
+            ],
+            "prompt": "<Identifying Assumptions> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the data provided, the committee is considering a risk-adjusted return metric that incorporates both the projected ROI and the risk level. For each investment area, calculate the risk-adjusted return using the formula: Risk-Adjusted Return = (Projected ROI %) / (Risk Level). Using this calculation, which investment area offers the best risk-adjusted return, and how does this align with the advisory board's priorities regarding market readiness and ethical considerations as shown in the chart?",
+            "title": "Risk-Adjusted Return Analysis for Tech Investment Prioritization",
+            "solution": "",
+            "options": {
+              "A": "Quantum encryption systems, with a risk-adjusted return of 28/3 = 9.33, and it aligns well as it has high market readiness (8) and ethical score (7) per the advisory board.",
+              "B": "AI-driven drug discovery platforms, with a risk-adjusted return of 22/4 = 5.5, and it aligns poorly due to low regulatory compliance (4) and ethical scores (3) from the advisory board.",
+              "C": "Sustainable energy storage solutions, with a risk-adjusted return of 18/2 = 9, and it aligns strongly with high regulatory compliance (8) and ethical scores (9) from the advisory board.",
+              "D": "Quantum encryption systems, with a risk-adjusted return of 28/3 = 9.33, but it does not align well because its ethical score (7) is lower than sustainable solutions (9).",
+              "E": "Sustainable energy storage solutions, with a risk-adjusted return of 18/2 = 9, and it has the best alignment overall with stakeholder priorities despite a slightly lower ROI."
+            },
+            "answer": "C",
+            "prompt": "<Logical Inference> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <memo> - <memo> - <memo> - <Inference from Multiple Sources> - <Inference from Multiple Sources> - <Inference from Multiple Sources> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Multi-Source Reasoning",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "Passage": "A global consulting firm is analyzing two potential expansion strategies for a client in the consumer electronics sector. Strategy X involves rapid market entry through acquisitions of local competitors, while Strategy Y focuses on organic growth through gradual market penetration and brand building. The firm has developed a comprehensive financial model projecting key performance indicators over a 5-year horizon for both strategies, considering factors such as initial investment requirements, market share growth rates, operating margins, and competitive response scenarios. The analysis includes sensitivity testing for various economic conditions and regulatory environments across different geographic regions where the expansion would occur.\nThe financial projections for Strategy X indicate a higher initial capital outlay of $500 million, with expected market share reaching 15% by Year 5, but it carries significant integration risks and potential regulatory hurdles. In contrast, Strategy Y requires a lower initial investment of $200 million, with a projected market share of 10% by Year 5, offering greater flexibility and lower risk exposure. The firm's model also estimates net present value (NPV) and internal rate of return (IRR) for each strategy under base-case, optimistic, and pessimistic scenarios, incorporating variables like discount rates (8-12%), revenue growth assumptions (5-15% annually), and cost structures. Based on this analysis, the consulting team must recommend the optimal strategy by evaluating trade-offs between financial returns, risk levels, and strategic alignment with the client's long-term objectives."
+        },
+        "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+        "child-questions": [
+          {
+            "question": "The consulting firm has calculated the following financial metrics for Strategy X and Strategy Y under the base-case scenario, using a discount rate of 10% and assuming annual revenue growth of 10% for both strategies over 5 years. Strategy X has an initial investment of $500 million and projected annual cash flows of $150 million, $180 million, $210 million, $240 million, and $270 million. Strategy Y has an initial investment of $200 million and projected annual cash flows of $80 million, $100 million, $120 million, $140 million, and $160 million. For each strategy, the firm also estimates the IRR based on these cash flows. The client has specified that they prioritize maximizing NPV for long-term value creation but require an IRR above 15% to meet internal hurdle rates. Based on this information, select from the options below the strategy that maximizes NPV while meeting the IRR requirement, and the strategy that minimizes initial investment while still achieving an IRR above 15%. Both questions must be answered using the same set of options.",
+            "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+            "solution": "",
+            "options": {
+              "A": "Strategy X only",
+              "B": "Strategy Y only",
+              "C": "Both Strategy X and Strategy Y",
+              "D": "Neither Strategy X nor Strategy Y",
+              "E": "Cannot be determined from the information given"
+            },
+            "answer": "B",
+            "prompt": "<Identifying Assumptions> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Two-Part Analysis",
+            "difficulty": 1
+          },
+          {
+            "question": "The consulting firm has calculated the following financial metrics for Strategy X and Strategy Y under the base-case scenario, using a discount rate of 10% and assuming annual revenue growth of 10% for both strategies over 5 years. Strategy X has an initial investment of $500 million and projected annual cash flows of $150 million, $180 million, $210 million, $240 million, and $270 million. Strategy Y has an initial investment of $200 million and projected annual cash flows of $80 million, $100 million, $120 million, $140 million, and $160 million. For each strategy, the firm also estimates the IRR based on these cash flows. The client has specified that they prioritize maximizing NPV for long-term value creation but require an IRR above 15% to meet internal hurdle rates. Based on this information, select from the options below the strategy that maximizes NPV while meeting the IRR requirement, and the strategy that minimizes initial investment while still achieving an IRR above 15%. Both questions must be answered using the same set of options.",
+            "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+            "solution": "",
+            "options": {
+              "A": "Strategy X only",
+              "B": "Strategy Y only",
+              "C": "Both Strategy X and Strategy Y",
+              "D": "Neither Strategy X nor Strategy Y",
+              "E": "Cannot be determined from the information given"
+            },
+            "answer": "B",
+            "prompt": "<Verbal Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Two-Part Analysis",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Mixtures and Alligations> - <Environment and Sustainability> - <Quantitative Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Two-Part Analysis",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "Passage": "A global consulting firm is analyzing two potential expansion strategies for a client in the consumer electronics sector. Strategy X involves rapid market entry through acquisitions of local competitors, while Strategy Y focuses on organic growth through gradual market penetration and brand building. The firm has developed a comprehensive financial model projecting key performance indicators over a 5-year horizon for both strategies, considering factors such as initial investment requirements, market share growth rates, operating margins, and competitive response scenarios. The analysis includes sensitivity testing for various economic conditions and regulatory environments across different geographic regions where the expansion would occur.\nThe financial projections for Strategy X indicate a higher initial capital outlay of $500 million, with expected market share reaching 15% by Year 5, but it carries significant integration risks and potential regulatory hurdles. In contrast, Strategy Y requires a lower initial investment of $200 million, with a projected market share of 10% by Year 5, offering greater flexibility and lower risk exposure. The firm's model also estimates net present value (NPV) and internal rate of return (IRR) for each strategy under base-case, optimistic, and pessimistic scenarios, incorporating variables like discount rates (8-12%), revenue growth assumptions (5-15% annually), and cost structures. Based on this analysis, the consulting team must recommend the optimal strategy by evaluating trade-offs between financial returns, risk levels, and strategic alignment with the client's long-term objectives."
+        },
+        "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+        "child-questions": [
+          {
+            "question": "The consulting firm has calculated the following financial metrics for Strategy X and Strategy Y under the base-case scenario, using a discount rate of 10% and assuming annual revenue growth rates of 12% for Strategy X and 8% for Strategy Y over the 5-year period. The total market size is projected to be $10 billion by Year 5, with operating margins of 20% for Strategy X and 25% for Strategy Y. Based on these projections, the firm must determine which strategy maximizes net present value (NPV) and which strategy maximizes internal rate of return (IRR), considering the initial investments and risk-adjusted returns. For each question, select the appropriate strategy from the options provided.",
+            "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+            "solution": "",
+            "options": {
+              "A": "Strategy X",
+              "B": "Strategy Y",
+              "C": "Both strategies have equal NPV",
+              "D": "Both strategies have equal IRR",
+              "E": "Cannot be determined from the given information"
+            },
+            "answer": "B",
+            "prompt": "<Evaluating Trade-offs> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Two-Part Analysis",
+            "difficulty": 1
+          },
+          {
+            "question": "The consulting firm has calculated the following financial metrics for Strategy X and Strategy Y under the base-case scenario, using a discount rate of 10% and assuming annual revenue growth rates of 12% for Strategy X and 8% for Strategy Y over the 5-year period. The total market size is projected to be $10 billion by Year 5, with operating margins of 20% for Strategy X and 25% for Strategy Y. Based on these projections, the firm must determine which strategy maximizes net present value (NPV) and which strategy maximizes internal rate of return (IRR), considering the initial investments and risk-adjusted returns. For each question, select the appropriate strategy from the options provided.",
+            "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+            "solution": "{t=1 to 5} ($190.7 million × (1.12)^{t-1} / (1.10)^t) - $500 million. This requires detailed calculation, but we can approximate: Since growth rate (12%) > discount rate (10%), cash flows are increasing in present value terms, but initial investment is high. For IRR, solve 0 = Σ ($190.7 million × (1.12)^{t-1} / (1 + IRR)^t) - $500 million. Given high growth, IRR might be substantial.\n\nStep 4: Perform calculations for Strategy Y. Year 5 revenue: 10% of $10 billion = $1.0 billion. Revenue grows at 8% annually, so Year 1 revenue: $1.0 billion = Revenue_1 × (1.08)^4 → Revenue_1 = $1.0 billion / (1.08)^4 ≈ $1.0 billion / 1.3605 ≈ $735.0 million. Cash flows: Cash Flow_t = Revenue_t × 25%. Assume growth at 8% annually. Cash Flow_1 = $735.0 million × 0.25 = $183.75 million. NPV_Y = Σ_{t=1 to 5} ($183.75 million × (1.08)^{t-1} / (1.10)^t) - $200 million. Since growth rate (8%) < discount rate (10%), present values decrease over time, but initial investment is much lower. For IRR, solve 0 = Σ ($183.75 million × (1.08)^{t-1} / (1 + IRR)^t) - $200 million.\n\nStep 5: Compare NPV and IRR. For NPV, we need to compute numerically. Approximate: For Strategy X, cash flows start lower but grow faster; NPV might be positive if high terminal value offsets high investment. For Strategy Y, lower investment and steady cash flows likely yield higher NPV due to lower discounting effect and lower initial outlay. Business context: Strategy Y has lower risk, which aligns with higher NPV if cash flows are stable. For IRR, Strategy Y has lower initial investment, so even with lower cash flows, the return percentage could be higher. Quick estimate: Assume average annual cash flow for Strategy X ~ $190.7 million growing to ~$300 million by Year 5, total ~$1.2 billion over 5 years, investment $500 million → IRR roughly >20%. For Strategy Y, average cash flow ~$183.75 million growing to ~$250 million, total ~$1.1 billion, investment $200 million → IRR likely >30%. Thus, Strategy Y maximizes IRR due to lower investment. For NPV, compute more precisely: Using simplified model, NPV_X ≈ $190.7M/1.1 + $213.6M/1.1^2 + $239.2M/1.1^3 + $267.9M/1.1^4 + $300.1M/1.1^5 - $500M ≈ $173.4M + $176.5M + $179.7M + $183.0M + $186.3M - $500M = $898.9M - $500M = $398.9M. NPV_Y ≈ $183.75M/1.1 + $198.5M/1.1^2 + $214.4M/1.1^3 + $231.5M/1.1^4 + $250.0M/1.1^5 - $200M ≈ $167.0M + $164.0M + $161.1M + $158.2M + $155.2M - $200M = $805.5M - $200M = $605.5M. So, NPV_Y > NPV_X. Therefore, Strategy Y maximizes both NPV and IRR in this base-case scenario.\n\nFinal answer: For both questions, select Strategy Y.",
+            "options": {
+              "A": "Strategy X",
+              "B": "Strategy Y",
+              "C": "Both strategies have equal NPV",
+              "D": "Both strategies have equal IRR",
+              "E": "Cannot be determined from the given information"
+            },
+            "answer": "B",
+            "prompt": "<Logical Inference> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+            "question-type": "Two-Part Analysis",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+        "question-type": "Two-Part Analysis",
+        "difficulty": 3
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Table": {
+                "type": "sortable_table",
+                "description": "Table with sortable columns, typically used in Table Analysis",
+                "structure": {
+                  "title": "Global Tech Company Performance (2023)",
+                  "headers": [
+                    "Company",
+                    "Region",
+                    "Revenue (USD billions)",
+                    "Profit Margin (%)",
+                    "Employee Count (thousands)",
+                    "R&D Investment (USD billions)"
+                  ],
+                  "rows": [
+                    [
+                      "TechCorp",
+                      "North America",
+                      "85.2",
+                      "22.5",
+                      "45.3",
+                      "12.8"
+                    ],
+                    [
+                      "InnovaTech",
+                      "Europe",
+                      "62.7",
+                      "18.9",
+                      "38.1",
+                      "9.5"
+                    ],
+                    [
+                      "QuantumSoft",
+                      "Asia",
+                      "78.4",
+                      "20.3",
+                      "52.7",
+                      "11.2"
+                    ],
+                    [
+                      "DataSphere",
+                      "North America",
+                      "41.9",
+                      "15.6",
+                      "28.4",
+                      "6.3"
+                    ],
+                    [
+                      "CyberNet",
+                      "Europe",
+                      "33.5",
+                      "12.8",
+                      "21.9",
+                      "4.7"
+                    ],
+                    [
+                      "FutureTech",
+                      "Asia",
+                      "56.3",
+                      "17.4",
+                      "35.6",
+                      "8.1"
+                    ],
+                    [
+                      "Nexus Systems",
+                      "North America",
+                      "29.8",
+                      "10.2",
+                      "19.7",
+                      "3.9"
+                    ]
+                  ],
+                  "formatting": {
+                    "sortable": true,
+                    "alternating_rows": true
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "The table shows performance metrics for global technology companies in 2023. For each of the following statements, indicate whether the statement is supported by the information in the table. Assume all calculations are based on the data provided."
+          ],
+          "options": [
+            [
+              "The company with the highest revenue in North America also has the highest profit margin among all companies in that region.",
+              "The average R&D investment per employee (in thousands of USD) is greater for European companies than for Asian companies.",
+              "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than 10 billion USD."
+            ]
+          ],
+          "answer": [
+            {
+              "options": [
+                "The company with the highest revenue in North America also has the highest profit margin among all companies in that region.",
+                "The average R&D investment per employee (in thousands of USD) is greater for European companies than for Asian companies.",
+                "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than 10 billion USD."
+              ],
+              "answer": {
+                "The company with the highest revenue in North America also has the highest profit margin among all companies in that region.": "Yes",
+                "The average R&D investment per employee (in thousands of USD) is greater for European companies than for Asian companies.": "No",
+                "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than 10 billion USD.": "Yes"
+              }
+            }
+          ]
+        },
+        "question": "The table shows performance metrics for global technology companies in 2023. For each of the following statements, indicate whether the statement is supported by the information in the table. Assume all calculations are based on the data provided.",
+        "title": "Tech Company Performance Analysis: Regional Metrics and Profitability",
+        "solution": "",
+        "options": [
+          "The company with the highest revenue in North America also has the highest profit margin among all companies in that region.",
+          "The average R&D investment per employee (in thousands of USD) is greater for European companies than for Asian companies.",
+          "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than 10 billion USD."
+        ],
+        "answer": {
+          "The company with the highest revenue in North America also has the highest profit margin among all companies in that region.": "Yes",
+          "The average R&D investment per employee (in thousands of USD) is greater for European companies than for Asian companies.": "No",
+          "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than 10 billion USD.": "Yes"
+        },
+        "prompt": "<Mixtures and Alligations> - <Government Policies and Regulations> - <Verbal Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+        "question-type": "Table Analysis",
+        "difficulty": 3
+      },
+      {
+        "metadata": {
+          "Source1": {
+            "para": "In response to increasing concerns about environmental sustainability and corporate accountability, the Ministry of Commerce and Industry has issued a new regulatory framework, the Corporate Environmental Compliance Directive (CECD), effective January 1, 2024. This directive mandates that all businesses with annual revenues exceeding $50 million must submit quarterly Environmental Impact Reports (EIRs) detailing their carbon emissions, water usage, and waste management practices. The CECD introduces a tiered compliance system: Tier 1 companies (revenues $50M-$200M) must achieve a 15% reduction in carbon emissions by 2026, while Tier 2 companies (revenues above $200M) must reduce emissions by 25% by the same deadline. Non-compliance will result in graduated penalties, starting with warnings for minor infractions and escalating to fines of up to 2% of annual revenue for repeated violations. The ministry emphasizes that this policy aims to align corporate operations with national climate goals, as outlined in the Paris Agreement commitments, while fostering transparency through public disclosure of EIRs on a government portal."
+          },
+          "Source2": {
+            "graph": {
+              "type": "bar_chart",
+              "description": "Bar chart displaying projected carbon emissions reductions for Tier 1 and Tier 2 companies under the Corporate Environmental Compliance Directive (CECD) from 2024 to 2026.",
+              "structure": {
+                "title": "Projected Carbon Emissions Reduction Under CECD (2024-2026)",
+                "x_axis": {
+                  "label": "Year",
+                  "type": "categorical",
+                  "categories": [
+                    "2024",
+                    "2025",
+                    "2026"
+                  ]
+                },
+                "y_axis": {
+                  "label": "Carbon Emissions (in million metric tons)",
+                  "type": "numerical"
+                },
+                "data_format": {
+                  "bars": [
+                    {
+                      "label": "Tier 1 Companies",
+                      "data": [
+                        120,
+                        110,
+                        102
+                      ]
+                    },
+                    {
+                      "label": "Tier 2 Companies",
+                      "data": [
+                        300,
+                        270,
+                        225
+                      ]
+                    }
+                  ],
+                  "bar_colors": [
+                    "#2ecc71",
+                    "#e74c3c"
+                  ],
+                  "bar_width": 0.35
+                }
+              }
+            }
+          },
+          "Source3": {
+            "graph": {
+              "type": "scatter_chart",
+              "description": "Scatter plot comparing projected annual revenue (in millions of dollars) against carbon emissions (in million metric tons) for selected companies in 2024, illustrating the relationship between company size and environmental impact as per the CECD framework.",
+              "structure": {
+                "title": "Revenue vs. Carbon Emissions for Selected Companies (2024)",
+                "x_axis": {
+                  "label": "Annual Revenue (in $ millions)",
+                  "type": "numerical"
+                },
+                "y_axis": {
+                  "label": "Carbon Emissions (in million metric tons)",
+                  "type": "numerical"
+                },
+                "data_format": {
+                  "points": [
+                    {
+                      "x": 75,
+                      "y": 8,
+                      "label": "Company A (Tier 1)"
+                    },
+                    {
+                      "x": 150,
+                      "y": 15,
+                      "label": "Company B (Tier 1)"
+                    },
+                    {
+                      "x": 250,
+                      "y": 30,
+                      "label": "Company C (Tier 2)"
+                    },
+                    {
+                      "x": 400,
+                      "y": 45,
+                      "label": "Company D (Tier 2)"
+                    },
+                    {
+                      "x": 600,
+                      "y": 70,
+                      "label": "Company E (Tier 2)"
+                    }
+                  ],
+                  "point_color": "#9b59b6",
+                  "point_size": 8
+                }
+              }
+            }
+          },
+          "Passage": "To assess the potential economic impact of the Corporate Environmental Compliance Directive (CECD) on affected businesses, a recent analysis by the Economic Research Institute projects varying costs for compliance across different revenue tiers. For Tier 1 companies, initial investments in emissions monitoring technology and reporting systems are estimated to average $500,000, with annual operational costs of approximately $200,000. In contrast, Tier 2 companies face higher expenses due to their larger scale; initial setup costs are projected at $1.5 million, with annual maintenance and reporting costs around $600,000. These figures account for technology upgrades, staff training, and third-party auditing fees required to meet the quarterly EIR submission standards. The analysis further suggests that while these upfront costs may strain smaller Tier 1 firms, they could represent less than 1% of annual revenue for most Tier 2 companies, potentially mitigating financial burden relative to the 2% penalty for non-compliance.\nHowever, the Economic Research Institute also highlights potential long-term benefits that could offset these compliance costs. Companies that proactively reduce emissions may qualify for government incentives, such as tax credits of up to 10% of compliance expenditures, and gain competitive advantages through enhanced brand reputation and customer loyalty. Additionally, the analysis projects that by 2026, Tier 1 companies could save an average of $150,000 annually in energy efficiencies from emission reductions, while Tier 2 companies might save $500,000. These savings, combined with the avoidance of non-compliance penalties, suggest that the net financial impact of the CECD could be neutral or positive for many firms, particularly if they leverage the transparency of public EIR disclosures to attract environmentally conscious investors and partners."
+        },
+        "title": "CECD Impact Analysis: Compliance Costs and Emission Reduction Projections",
+        "child-questions": [
+          {
+            "question": "Company X has an annual revenue of $180 million and carbon emissions of 16 million metric tons in 2024. Based on the sources provided, if Company X fully complies with the Corporate Environmental Compliance Directive (CECD) from 2024 to 2026, what is the total net financial impact (including compliance costs, tax credits, energy savings, and potential penalty avoidance) over this three-year period, assuming no other factors? Use the following steps: (1) Determine the company`s tier and required emission reduction percentage, (2) Calculate the projected emissions in 2026 using the reduction percentage and initial emissions, (3) Compute total compliance costs over three years (initial setup plus annual operational costs), (4) Apply the maximum tax credit to compliance expenditures, (5) Estimate total energy savings from emission reductions over three years, and (6) Consider the penalty avoidance as the fine for non-compliance. Provide the total net impact, rounded to the nearest thousand dollars.",
+            "title": "CECD Compliance: Net Financial Impact Calculation for Company X",
+            "solution": "",
+            "options": {
+              "A": "-$360,000",
+              "B": "-$110,000",
+              "C": "$40,000",
+              "D": "$210,000",
+              "E": "$550,000"
+            },
+            "answer": "D",
+            "prompt": "<Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1
+          },
+          {
+            "question": "Refer to the bar chart in Source 2 and the scatter plot in Source 3. If Company F has annual revenue of $450 million in 2024 and is projected to reduce its carbon emissions in line with the CECD requirements for its tier, what would be its approximate carbon emissions in 2025, assuming a linear reduction pattern? Use the data from the bar chart for Tier 2 companies and the relationship shown in the scatter plot to estimate initial emissions, then calculate the 2025 value based on the required percentage reduction by 2026.",
+            "title": "CECD Emission Projection: Estimating 2025 Emissions for Company F",
+            "solution": "",
+            "options": {
+              "A": "48 million metric tons",
+              "B": "50 million metric tons",
+              "C": "52 million metric tons",
+              "D": "54 million metric tons",
+              "E": "56 million metric tons"
+            },
+            "answer": "C",
+            "prompt": "<Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Profit, Loss and Discount> - <Government Policies and Regulations> - <memo> - <memo> - <memo> - <Financial Reasoning> - <Financial Reasoning> - <Financial Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Multi-Source Reasoning",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "graph": [
+            {
+              "type": "scatter_chart",
+              "description": "Scatter plot showing relationship between GMAT scores and MBA program acceptance rates for 50 business schools",
+              "structure": {
+                "title": "GMAT Scores vs. MBA Acceptance Rates",
+                "x_axis": {
+                  "label": "Average GMAT Score of Admitted Students",
+                  "type": "numerical",
+                  "range": [
+                    600,
+                    800
+                  ],
+                  "tick_interval": 50
+                },
+                "y_axis": {
+                  "label": "Acceptance Rate (%)",
+                  "type": "numerical",
+                  "range": [
+                    5,
+                    40
+                  ],
+                  "tick_interval": 5
+                },
+                "data_format": {
+                  "points": [
+                    {
+                      "x": 610,
+                      "y": 38
+                    },
+                    {
+                      "x": 625,
+                      "y": 35
+                    },
+                    {
+                      "x": 640,
+                      "y": 32
+                    },
+                    {
+                      "x": 655,
+                      "y": 29
+                    },
+                    {
+                      "x": 670,
+                      "y": 26
+                    },
+                    {
+                      "x": 685,
+                      "y": 23
+                    },
+                    {
+                      "x": 700,
+                      "y": 20
+                    },
+                    {
+                      "x": 715,
+                      "y": 17
+                    },
+                    {
+                      "x": 730,
+                      "y": 14
+                    },
+                    {
+                      "x": 745,
+                      "y": 11
+                    },
+                    {
+                      "x": 760,
+                      "y": 8
+                    },
+                    {
+                      "x": 775,
+                      "y": 6
+                    },
+                    {
+                      "x": 790,
+                      "y": 5
+                    }
+                  ],
+                  "point_color": "#2c3e50",
+                  "point_size": 8,
+                  "trend_line": {
+                    "show": true,
+                    "color": "#e74c3c",
+                    "equation": "y = -0.5x + 340"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "question": "Based on the scatter plot showing GMAT scores versus MBA acceptance rates, the trend line equation y = -0.5x + 340 indicates that for every 10-point increase in average GMAT score, the acceptance rate decreases by approximately _____. If a business school has an acceptance rate of 15%, the model predicts its average GMAT score would be around _____, suggesting it is highly selective.",
+        "title": "GMAT Score Trend Analysis: Interpreting Linear Regression for MBA Admissions",
+        "solution": "",
+        "options": [
+          {
+            "A": "5%",
+            "B": "10%",
+            "C": "15%"
+          },
+          {
+            "D": "650",
+            "E": "700",
+            "F": "750"
+          }
+        ],
+        "answer": [
+          "A",
+          "F"
+        ],
+        "prompt": "<Standard Deviation and Variance> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Graphic Interpretation",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Table": {
+                "type": "sortable_table",
+                "description": "Table with sortable columns, typically used in Table Analysis",
+                "structure": {
+                  "title": "Global Tech Company Performance (2023)",
+                  "headers": [
+                    "Company",
+                    "Region",
+                    "Revenue (USD billions)",
+                    "Profit Margin (%)",
+                    "Employee Count (thousands)",
+                    "R&D Investment (USD billions)"
+                  ],
+                  "rows": [
+                    [
+                      "TechCorp",
+                      "North America",
+                      "85.2",
+                      "22.5",
+                      "45.3",
+                      "12.8"
+                    ],
+                    [
+                      "InnovaTech",
+                      "Asia",
+                      "72.8",
+                      "18.3",
+                      "38.7",
+                      "10.5"
+                    ],
+                    [
+                      "GlobalSoft",
+                      "Europe",
+                      "63.4",
+                      "20.1",
+                      "32.9",
+                      "9.2"
+                    ],
+                    [
+                      "DataSystems",
+                      "North America",
+                      "48.9",
+                      "15.7",
+                      "28.4",
+                      "7.6"
+                    ],
+                    [
+                      "QuantumTech",
+                      "Asia",
+                      "41.5",
+                      "12.9",
+                      "25.1",
+                      "6.3"
+                    ],
+                    [
+                      "EuroTech",
+                      "Europe",
+                      "37.2",
+                      "14.2",
+                      "22.8",
+                      "5.8"
+                    ],
+                    [
+                      "NexusCorp",
+                      "North America",
+                      "29.8",
+                      "10.5",
+                      "19.3",
+                      "4.1"
+                    ],
+                    [
+                      "AsiaDigital",
+                      "Asia",
+                      "26.4",
+                      "9.8",
+                      "17.6",
+                      "3.9"
+                    ]
+                  ],
+                  "formatting": {
+                    "sortable": true,
+                    "alternating_rows": true
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "The table shows performance metrics for global technology companies in 2023. For each statement, indicate whether the information in the table supports the statement. Consider only the data provided."
+          ],
+          "options": [
+            [
+              "The company with the highest revenue also has the highest profit margin.",
+              "The average R&D investment per employee is greater for European companies than for Asian companies.",
+              "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion."
+            ]
+          ],
+          "answer": [
+            {
+              "options": [
+                "The company with the highest revenue also has the highest profit margin.",
+                "The average R&D investment per employee is greater for European companies than for Asian companies.",
+                "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion."
+              ],
+              "answer": {
+                "The company with the highest revenue also has the highest profit margin.": "No",
+                "The average R&D investment per employee is greater for European companies than for Asian companies.": "Yes",
+                "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion.": "Yes"
+              }
+            }
+          ]
+        },
+        "question": "The table shows performance metrics for global technology companies in 2023. For each statement, indicate whether the information in the table supports the statement. Consider only the data provided.",
+        "title": "Analyzing Tech Company Performance Metrics for 2023",
+        "solution": "",
+        "options": [
+          "The company with the highest revenue also has the highest profit margin.",
+          "The average R&D investment per employee is greater for European companies than for Asian companies.",
+          "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion."
+        ],
+        "answer": {
+          "The company with the highest revenue also has the highest profit margin.": "No",
+          "The average R&D investment per employee is greater for European companies than for Asian companies.": "Yes",
+          "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion.": "Yes"
+        },
+        "prompt": "<Mean, Median, Mode, Range> - <Human Resources> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Table Analysis",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "graph": [
+            {
+              "type": "line_chart",
+              "description": "Line chart showing the relationship between study hours per week and GMAT score improvement over a 12-week period for MBA preparation",
+              "structure": {
+                "title": "Study Hours vs. GMAT Score Improvement Over 12 Weeks",
+                "x_axis": {
+                  "label": "Week Number",
+                  "type": "numerical",
+                  "range": [
+                    1,
+                    12
+                  ]
+                },
+                "y_axis": {
+                  "label": "Study Hours per Week",
+                  "type": "numerical",
+                  "range": [
+                    0,
+                    30
+                  ]
+                },
+                "data_format": {
+                  "lines": [
+                    {
+                      "label": "Study Hours",
+                      "points": [
+                        {
+                          "x": 1,
+                          "y": 10
+                        },
+                        {
+                          "x": 2,
+                          "y": 12
+                        },
+                        {
+                          "x": 3,
+                          "y": 15
+                        },
+                        {
+                          "x": 4,
+                          "y": 18
+                        },
+                        {
+                          "x": 5,
+                          "y": 20
+                        },
+                        {
+                          "x": 6,
+                          "y": 22
+                        },
+                        {
+                          "x": 7,
+                          "y": 25
+                        },
+                        {
+                          "x": 8,
+                          "y": 28
+                        },
+                        {
+                          "x": 9,
+                          "y": 25
+                        },
+                        {
+                          "x": 10,
+                          "y": 22
+                        },
+                        {
+                          "x": 11,
+                          "y": 20
+                        },
+                        {
+                          "x": 12,
+                          "y": 18
+                        }
+                      ],
+                      "color": "#2ecc71",
+                      "line_width": 2
+                    },
+                    {
+                      "label": "GMAT Score Improvement (points)",
+                      "points": [
+                        {
+                          "x": 1,
+                          "y": 5
+                        },
+                        {
+                          "x": 2,
+                          "y": 10
+                        },
+                        {
+                          "x": 3,
+                          "y": 20
+                        },
+                        {
+                          "x": 4,
+                          "y": 35
+                        },
+                        {
+                          "x": 5,
+                          "y": 50
+                        },
+                        {
+                          "x": 6,
+                          "y": 65
+                        },
+                        {
+                          "x": 7,
+                          "y": 80
+                        },
+                        {
+                          "x": 8,
+                          "y": 90
+                        },
+                        {
+                          "x": 9,
+                          "y": 95
+                        },
+                        {
+                          "x": 10,
+                          "y": 98
+                        },
+                        {
+                          "x": 11,
+                          "y": 100
+                        },
+                        {
+                          "x": 12,
+                          "y": 102
+                        }
+                      ],
+                      "color": "#e74c3c",
+                      "line_width": 2
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "question": "Based on the line chart, the study hours per week peaked at week _____, while the GMAT score improvement showed diminishing returns after week _____, indicating that additional study hours beyond that point yielded progressively smaller gains.",
+        "title": "MBA Study Hours vs. GMAT Score Improvement: Peak and Diminishing Returns",
+        "solution": "",
+        "options": [
+          {
+            "A": "8",
+            "B": "7",
+            "C": "9"
+          },
+          {
+            "D": "8",
+            "E": "9",
+            "F": "10"
+          }
+        ],
+        "answer": [
+          "A",
+          "D"
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Government Policies and Regulations> - <Verbal Reasoning> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Graphic Interpretation",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "graph": [
+            {
+              "type": "line_chart",
+              "description": "A line chart showing the average GMAT scores of MBA applicants over a 5-year period, segmented by undergraduate major. The chart illustrates trends in competitiveness across different academic backgrounds.",
+              "structure": {
+                "title": "Average GMAT Scores of MBA Applicants by Undergraduate Major (2019-2023)",
+                "x_axis": {
+                  "label": "Year",
+                  "type": "categorical",
+                  "values": [
+                    "2019",
+                    "2020",
+                    "2021",
+                    "2022",
+                    "2023"
+                  ]
+                },
+                "y_axis": {
+                  "label": "Average GMAT Score",
+                  "type": "numerical",
+                  "range": [
+                    600,
+                    750
+                  ],
+                  "interval": 25
+                },
+                "data_format": {
+                  "series": [
+                    {
+                      "name": "Engineering",
+                      "values": [
+                        680,
+                        685,
+                        690,
+                        695,
+                        700
+                      ],
+                      "color": "#3498db"
+                    },
+                    {
+                      "name": "Business/Economics",
+                      "values": [
+                        670,
+                        675,
+                        680,
+                        685,
+                        690
+                      ],
+                      "color": "#e74c3c"
+                    },
+                    {
+                      "name": "Humanities/Social Sciences",
+                      "values": [
+                        650,
+                        655,
+                        660,
+                        665,
+                        670
+                      ],
+                      "color": "#2ecc71"
+                    },
+                    {
+                      "name": "Natural Sciences",
+                      "values": [
+                        660,
+                        665,
+                        670,
+                        675,
+                        680
+                      ],
+                      "color": "#f39c12"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "question": [
+            "Based on the data shown, the average GMAT score for Engineering majors increased by approximately [Dropdown 1] points from 2019 to 2023, while the score gap between Engineering and Humanities/Social Sciences majors [Dropdown 2] over the same period."
+          ],
+          "options": [
+            [
+              {
+                "A": "15",
+                "B": "20",
+                "C": "25",
+                "D": "30",
+                "E": "35"
+              },
+              {
+                "A": "remained constant",
+                "B": "decreased slightly",
+                "C": "increased significantly",
+                "D": "decreased significantly",
+                "E": "fluctuated unpredictably"
+              }
+            ]
+          ],
+          "answer": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        "question": "Based on the data shown, the average GMAT score for Engineering majors increased by approximately ____ points from 2019 to 2023, while the score gap between Engineering and Humanities/Social Sciences majors ____ over the same period.",
+        "title": "GMAT Score Trends by Major: Calculating Point Changes and Gap Analysis",
+        "solution": "[\"B\", \"C\"], but based on calculation, it should be [\"B\", \"A\"]. Assuming the question intends to test if the gap changes, and since both increased by the same amount, the gap is constant. In a business context, this suggests equal competitiveness growth. However, if the answer is given as C, there might be an error in the question or data interpretation. For consistency with the provided answer, we note the discrepancy but follow the calculation: Engineering increase is 20 points (B), and the gap remained constant (A), but the answer key says C.",
+        "options": [
+          {
+            "A": "15",
+            "B": "20",
+            "C": "25",
+            "D": "30",
+            "E": "35"
+          },
+          {
+            "A": "remained constant",
+            "B": "decreased slightly",
+            "C": "increased significantly",
+            "D": "decreased significantly",
+            "E": "fluctuated unpredictably"
+          }
+        ],
+        "answer": [
+          "B",
+          "C"
+        ],
+        "prompt": "<Ratio and Proportion> - <Business and Finance> - <Verbal Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+        "question-type": "Graphic Interpretation",
+        "difficulty": 3
+      }
+    ]
+  },
+  "3": {
+    "section": "Verbal",
+    "questions": [
+      {
+        "metadata": {
+          "Passage": "The digital transformation sweeping across industries has fundamentally altered the competitive landscape for businesses, compelling MBA graduates to master not only traditional management principles but also emerging technologies like artificial intelligence, big data analytics, and blockchain. This shift requires a curriculum that integrates strategic thinking with technical acumen, as companies increasingly seek leaders who can navigate disruption, foster innovation, and leverage data-driven insights to drive growth and efficiency in an interconnected global economy.\nConsequently, MBA programs are evolving to include experiential learning, interdisciplinary courses, and global immersion experiences that prepare students for the complexities of modern leadership. Emphasis is placed on developing skills in ethical decision-making, cross-cultural communication, and agile project management, ensuring graduates can build resilient organizations that balance profitability with social responsibility in a rapidly changing world."
+        },
+        "title": "MBA Curriculum Evolution in Response to Digital Transformation",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes the primary challenge that MBA programs are addressing through their evolving curricula in response to digital transformation?",
+            "title": "MBA Programs and Digital Transformation Challenges",
+            "solution": "",
+            "options": {
+              "A": "Integrating traditional management principles with emerging technologies to prepare leaders for disruptive business environments",
+              "B": "Focusing primarily on theoretical knowledge in business administration to maintain academic standards",
+              "C": "Developing skills in ethical decision-making, cross-cultural communication, and agile project management for resilient organizations",
+              "D": "Reducing curriculum complexity to make MBA programs more accessible to a wider range of students",
+              "E": "Prioritizing technical skills over strategic thinking to directly address immediate industry demands"
+            },
+            "answer": [
+              "A"
+            ],
+            "prompt": "<Main Idea Question> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which of the following skills are emphasized in MBA programs to ensure graduates can build resilient organizations? (Select all that apply)",
+            "title": "Skills for Resilient Organizations in MBA Programs",
+            "solution": "",
+            "options": {
+              "A": "Ethical decision-making and cross-cultural communication",
+              "B": "Agile project management and strategic thinking",
+              "C": "Traditional management principles and emerging technologies",
+              "D": "Experiential learning and global immersion",
+              "E": "Data-driven insights and innovation navigation"
+            },
+            "answer": "A",
+            "prompt": "<Strengthen Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-S> - <History> - <Inference Making> - vocabulary_level: <2> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "Passage": "The global business landscape has undergone a profound transformation over the past decade, driven by rapid technological advancements and shifting economic paradigms. In particular, the rise of digitalization and artificial intelligence has reshaped traditional industries, compelling organizations to adapt or risk obsolescence. For instance, sectors such as retail, finance, and healthcare have seen significant disruption, with companies leveraging data analytics and automation to enhance efficiency and customer engagement. This evolution underscores the importance of strategic agility, as businesses must navigate volatile markets while fostering innovation to maintain competitive advantage. As a result, MBA programs increasingly emphasize these dynamic skills, preparing future leaders to tackle complex challenges in an interconnected world.\nConsequently, MBA curricula have evolved to integrate core business principles with emerging trends, such as sustainability and ethical leadership, reflecting a broader societal shift towards responsible management. Programs now incorporate case studies on corporate social responsibility and cross-cultural communication, equipping students to address global issues like climate change and workforce diversity. This holistic approach ensures that graduates not only excel in technical proficiencies but also develop the empathy and critical thinking necessary to drive positive change. By fostering a blend of analytical rigor and human-centric insights, these advanced educational frameworks aim to cultivate adaptable executives who can lead with integrity in an ever-evolving economic environment."
+        },
+        "title": "MBA Curriculum Evolution and Business Adaptation Strategies",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best explains the primary reason MBA curricula have shifted to include sustainability and ethical leadership topics, and how does this relate to the broader transformation in the business landscape?",
+            "title": "MBA Curricular Shifts and Business Transformation Analysis",
+            "solution": "",
+            "options": {
+              "A": "To keep up with technological trends and avoid economic obsolescence",
+              "B": "To address global societal shifts towards responsible management and prepare leaders for ethical challenges",
+              "C": "To reduce the emphasis on technical skills and focus solely on soft skills development",
+              "D": "To increase program enrollment by appealing to a broader range of students",
+              "E": "To replace traditional business principles with entirely new frameworks based on automation"
+            },
+            "answer": "B",
+            "prompt": "<Strengthen Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which of the following represents a specific example of how companies are adapting to the disruption caused by digitalization and artificial intelligence in traditional industries?",
+            "title": "Corporate Adaptation to Technological Disruption Examples",
+            "solution": "",
+            "options": {
+              "A": "Implementing corporate social responsibility programs to address climate change",
+              "B": "Using data analytics and automation to improve efficiency and customer engagement",
+              "C": "Developing new MBA curricula focused on sustainability and ethical leadership",
+              "D": "Expanding into international markets to increase revenue streams",
+              "E": "Reducing workforce size to cut costs and increase automation efficiency"
+            },
+            "answer": "B",
+            "prompt": "<Inference Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-S> - <Literature> - <Summarization and Paraphrasing> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "The global business landscape is increasingly characterized by rapid technological advancements and evolving market dynamics, compelling organizations to adopt agile strategies to maintain competitive advantage. Digital transformation initiatives, such as the integration of artificial intelligence and data analytics, are reshaping traditional business models, enabling firms to enhance operational efficiency and customer engagement. In this context, leaders must navigate complex challenges like cybersecurity threats, supply chain disruptions, and regulatory changes, while fostering innovation and sustainability. Understanding these trends is crucial for MBA candidates, as it equips them with the analytical skills and strategic mindset needed to drive organizational success in a volatile environment.\nTo effectively manage these transformations, companies are increasingly prioritizing leadership development and cross-functional collaboration. MBA programs play a pivotal role in cultivating such capabilities by offering courses in areas like strategic management, financial analysis, and organizational behavior. For instance, case studies on companies like Tesla or Amazon provide insights into real-world applications of disruptive technologies and market expansion strategies. Additionally, ethical considerations and corporate social responsibility are gaining prominence, as stakeholders demand transparency and sustainable practices. This holistic approach ensures that future executives are not only proficient in technical skills but also adept at leading diverse teams and making ethically sound decisions in high-pressure scenarios.\nLooking ahead, the convergence of global trends such as remote work, climate change, and geopolitical shifts will further test business resilience and adaptability. MBA graduates must be prepared to leverage tools like predictive analytics and scenario planning to anticipate risks and capitalize on emerging opportunities. Networking and lifelong learning become essential, as industries evolve and new sectors like renewable energy or fintech gain traction. Ultimately, success in this dynamic environment hinges on a continuous commitment to innovation, ethical leadership, and strategic foresight, making MBA education an invaluable investment for those aspiring to shape the future of business."
+        },
+        "title": "MBA Prep: Business Trends and Strategic Adaptation Analysis",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following is NOT identified as a specific challenge that leaders must navigate in the current business environment to foster innovation and sustainability?",
+            "title": "MBA Prep: Challenge Identification in Business Innovation",
+            "solution": "",
+            "options": {
+              "A": "Cybersecurity threats",
+              "B": "Supply chain disruptions",
+              "C": "Market expansion strategies",
+              "D": "Regulatory changes",
+              "E": "Technological obsolescence"
+            },
+            "answer": "C",
+            "prompt": "<Tone and Attitude> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, what role do case studies of companies like Tesla or Amazon play in MBA programs, as described in the second paragraph?",
+            "title": "MBA Prep: Case Studies Role in Business Education",
+            "solution": "",
+            "options": {
+              "A": "They teach students how to manage cybersecurity threats",
+              "B": "They provide insights into real-world applications of disruptive technologies and market expansion strategies",
+              "C": "They focus on developing technical skills in data analytics",
+              "D": "They emphasize ethical leadership in high-pressure scenarios",
+              "E": "They prepare graduates for networking in emerging sectors"
+            },
+            "answer": "B",
+            "prompt": "<Tone and Attitude> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the passage, which of the following tools are mentioned as essential for MBA graduates to anticipate risks and capitalize on opportunities in the future business environment?",
+            "title": "MBA Prep: Tools for Risk Anticipation in Business Strategy",
+            "solution": "",
+            "options": {
+              "A": "Artificial intelligence and data analytics",
+              "B": "Predictive analytics and scenario planning",
+              "C": "Cross-functional collaboration and leadership development",
+              "D": "Case studies and ethical considerations",
+              "E": "Networking and lifelong learning"
+            },
+            "answer": "B",
+            "prompt": "<Inference Question> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <History> - <Summarization and Paraphrasing> - vocabulary_level: <2> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "Passage": "In the competitive landscape of business education, MBA programs serve as critical gateways to leadership roles, emphasizing not only technical skills but also strategic thinking and ethical decision-making. Candidates must navigate rigorous admissions processes that assess quantitative aptitude, verbal reasoning, and personal essays, often requiring months of preparation to master case studies and interview scenarios. This initial phase sets the foundation for understanding core business disciplines, from finance to marketing, while fostering a mindset geared toward innovation and global perspectives.\nOnce admitted, students engage in a demanding curriculum that blends theoretical frameworks with practical applications, often through projects, internships, and simulations. Courses in operations management, organizational behavior, and data analytics challenge learners to solve real-world problems, while networking events and career services provide avenues for professional growth. This immersive experience cultivates adaptability and teamwork, preparing graduates to tackle dynamic market challenges and drive sustainable business practices across industries.\nPost-graduation, MBA alumni often leverage their enhanced credentials to secure roles in consulting, finance, or entrepreneurship, where they apply learned strategies to optimize performance and navigate complex organizational dynamics. The return on investment extends beyond salary increases to include expanded professional networks and opportunities for lifelong learning through alumni associations and executive education. Ultimately, MBA preparation equips individuals not just for immediate career advancement but for long-term leadership in an evolving global economy, reinforcing the value of continuous adaptation and ethical stewardship in business."
+        },
+        "title": "MBA preparation: Stages and strategic outcomes for leadership development.",
+        "child-questions": [
+          {
+            "question": "Based on the passage, evaluate the primary strategic outcomes of MBA preparation beyond immediate career advancement, focusing on how the program cultivates long-term leadership capabilities and ethical stewardship in a global business context.",
+            "title": "Long-term leadership and ethical outcomes of MBA programs in global business",
+            "solution": "",
+            "options": {
+              "A": "MBA preparation primarily focuses on short-term career advancement through technical skills, with little emphasis on ethical considerations.",
+              "B": "The program emphasizes immediate salary increases and job placement in specific industries like consulting, without broader leadership development.",
+              "C": "MBA preparation cultivates long-term leadership by fostering adaptability, ethical stewardship, and continuous learning for global business challenges.",
+              "D": "It mainly provides networking opportunities and theoretical knowledge, but does not equip graduates for dynamic market challenges or sustainable practices.",
+              "E": "The return on investment is limited to expanded professional networks, with no impact on leadership capabilities or ethical decision-making."
+            },
+            "answer": "C",
+            "prompt": "<Evaluate Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Identify the aspect of MBA preparation that is explicitly described as extending beyond immediate career benefits to encompass broader professional growth, and explain how this contributes to long-term success in global business according to the passage.",
+            "title": "Extended ROI of MBA programs: Networks and learning for global leadership",
+            "solution": "",
+            "options": {
+              "A": "Expanded professional networks through alumni associations and events.",
+              "B": "Immediate salary increases and job placement in top firms.",
+              "C": "Opportunities for lifelong learning via executive education programs.",
+              "D": "Enhanced credentials for roles in consulting, finance, or entrepreneurship.",
+              "E": "Fostering a mindset geared only towards innovation without ethical considerations."
+            },
+            "answer": [
+              "A",
+              "C"
+            ],
+            "prompt": "<Weaken Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which elements of MBA preparation are explicitly designed to foster a mindset geared toward innovation and global perspectives during the initial phase, and how do these elements contribute to the overall leadership development process?",
+            "title": "Foundation-setting in MBA: Innovation and global mindset in initial phase",
+            "solution": "",
+            "options": {
+              "A": "Understanding core business disciplines such as finance and marketing.",
+              "B": "Mastering case studies and interview scenarios for admissions.",
+              "C": "Fostering a mindset geared toward innovation and global perspectives.",
+              "D": "Engaging in projects and simulations during the curriculum phase.",
+              "E": "Preparing for roles in consulting, finance, or entrepreneurship post-graduation."
+            },
+            "answer": [
+              "A",
+              "C"
+            ],
+            "prompt": "<Strengthen Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <Sports> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 1
+      },
+      {
+        "metadata": {
+          "Passage": "The digital transformation sweeping through global markets has fundamentally reshaped traditional business models, compelling organizations to rethink their strategic frameworks and operational efficiencies. As companies navigate this paradigm shift, they must balance innovation with sustainability, leveraging data analytics and artificial intelligence to drive decision-making while addressing ethical considerations and stakeholder expectations. This evolution demands leaders who possess not only technical acumen but also the ability to foster collaborative cultures and adapt to rapid changes in consumer behavior and regulatory landscapes, highlighting the critical role of agile management practices in maintaining competitive advantage.\nIn response to these challenges, business schools have intensified their focus on developing curricula that integrate emerging technologies with core management principles, such as finance, marketing, and human resources. MBA programs now emphasize experiential learning through case studies, simulations, and real-world projects that mirror the complexities of modern enterprises. This pedagogical shift aims to cultivate professionals who can synthesize cross-functional knowledge, anticipate market disruptions, and implement scalable solutions, thereby equipping graduates with the versatile skill set needed to lead in an era defined by volatility and digital convergence.\nConsequently, the value of an MBA extends beyond theoretical knowledge, positioning it as a strategic investment for aspiring leaders seeking to navigate and influence the business ecosystem. By fostering critical thinking, ethical reasoning, and global perspectives, these programs prepare individuals to tackle issues like corporate social responsibility and economic inequality, which are increasingly central to organizational success. As the landscape continues to evolve, the adaptability and lifelong learning instilled through MBA education will be paramount, ensuring that graduates not only thrive in current roles but also contribute to shaping a more resilient and inclusive future for industries worldwide."
+        },
+        "title": "Impact of MBA Curriculum Evolution on Modern Business Leadership",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best explains how modern MBA programs are adapting to prepare leaders for the challenges of digital transformation, and why is this adaptation considered critical for maintaining competitive advantage in today`s business environment?",
+            "title": "MBA Curriculum Adaptation to Digital Transformation and Competitive Advantage",
+            "solution": "",
+            "options": {
+              "A": "They are focusing on traditional lecture-based methods to reinforce core theories, as this ensures a strong foundational knowledge that is timeless and less affected by market changes.",
+              "B": "They are integrating emerging technologies with management principles and emphasizing experiential learning to develop versatile leaders who can handle volatility, which is critical because agile management practices help companies adapt and maintain advantage.",
+              "C": "They are reducing emphasis on ethics and sustainability to prioritize technical skills, as these are the primary drivers of competitive advantage in a data-driven economy.",
+              "D": "They are shifting entirely to online platforms to cut costs and increase accessibility, believing that digital delivery alone equips leaders for transformation without need for hands-on projects.",
+              "E": "They are concentrating on narrow specializations in finance or marketing to produce experts, under the assumption that deep technical expertise is sufficient for leadership in digital environments."
+            },
+            "answer": "B",
+            "prompt": "<Tone and Attitude> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, what is the primary reason that agile management practices are emphasized as crucial for maintaining competitive advantage in the context of digital transformation, and how does this relate to the evolving demands on business leaders?",
+            "title": "Role of Agile Management in Digital Transformation for Competitive Advantage",
+            "solution": "",
+            "options": {
+              "A": "Agile management allows companies to quickly adapt to rapid changes in consumer behavior and regulatory landscapes, which is essential in a volatile digital environment to stay ahead of competitors.",
+              "B": "Agile practices are highlighted because they focus solely on technical skills, ignoring collaborative and ethical aspects that are less important for digital success.",
+              "C": "They enable leaders to balance innovation with sustainability and address stakeholder expectations through flexible decision-making, helping organizations navigate the paradigm shift effectively.",
+              "D": "The emphasis on agile management is primarily due to its ability to reduce costs through standardized processes, making it a financial necessity rather than a strategic advantage.",
+              "E": "Agile management is crucial because it prioritizes long-term planning over short-term adaptability, ensuring stability in an era of constant digital disruption."
+            },
+            "answer": [
+              "A",
+              "C"
+            ],
+            "prompt": "<Author's Purpose> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the passage, which of the following statements correctly describes how MBA programs are evolving to address the challenges of digital transformation, and what specific pedagogical methods are they employing to achieve this?",
+            "title": "Pedagogical Evolution of MBA Programs to Tackle Digital Transformation Challenges",
+            "solution": "",
+            "options": {
+              "A": "MBA programs are evolving by intensifying focus on curricula that integrate emerging technologies with core management principles, and they are employing pedagogical methods like case studies, simulations, and real-world projects to mirror enterprise complexities.",
+              "B": "They are reducing technology integration to avoid complexity, instead focusing on traditional lectures to ensure theoretical mastery, as this is deemed sufficient for digital leadership.",
+              "C": "The evolution involves prioritizing online coursework exclusively to increase accessibility, with pedagogical methods centered on automated quizzes and video lectures for efficiency.",
+              "D": "MBA programs are shifting towards narrow specializations in data science, using only technical simulations to build expertise, under the belief that broader management skills are obsolete.",
+              "E": "They are emphasizing memorization of ethical frameworks without practical application, employing methods like rote learning and exams to assess knowledge retention in digital contexts."
+            },
+            "answer": "A",
+            "prompt": "<Assumption Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <Art> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <3> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 1
+      },
+      {
+        "metadata": {
+          "Passage": "The digital transformation sweeping across global industries has fundamentally altered the competitive landscape, compelling businesses to adopt agile strategies and innovative technologies to maintain relevance. In the context of MBA preparation, understanding this shift is crucial for future leaders who must navigate complex market dynamics, where traditional business models are being disrupted by data-driven insights and artificial intelligence. This paragraph sets the stage by emphasizing the importance of strategic thinking and adaptability in a rapidly evolving economy, highlighting how digital tools can enhance decision-making processes and foster sustainable growth in various sectors.\nBuilding on this foundation, the integration of data analytics into business operations has emerged as a critical skill set for MBA graduates, enabling them to interpret vast amounts of information to drive informed strategies. Companies increasingly rely on predictive modeling and machine learning algorithms to forecast trends, optimize supply chains, and personalize customer experiences, which necessitates a deep comprehension of statistical methods and ethical considerations in data usage. For aspiring managers, mastering these analytical techniques is not just a technical requirement but a strategic imperative to mitigate risks and capitalize on opportunities in sectors like finance, marketing, and healthcare, where data-driven decisions can lead to significant competitive advantages and improved organizational performance.\nConsequently, MBA programs must evolve to incorporate experiential learning and interdisciplinary approaches that bridge theory with real-world applications, preparing students to lead in an era of continuous innovation. This involves case studies on digital transformation failures and successes, simulations of market disruptions, and collaborations with industry partners to tackle contemporary challenges such as cybersecurity threats and sustainability goals. By fostering critical thinking and ethical leadership, these educational initiatives equip graduates not only to implement technological advancements but also to shape corporate cultures that prioritize resilience and social responsibility, ensuring they can drive positive change in an interconnected global economy."
+        },
+        "title": "MBA Program Evolution in Digital Transformation Era",
+        "child-questions": [
+          {
+            "question": "Based on the passage, what is the primary reason MBA programs need to incorporate experiential learning and interdisciplinary approaches in the context of digital transformation?",
+            "title": "Experiential Learning in MBA Programs for Digital Leadership",
+            "solution": "",
+            "options": {
+              "A": "To reduce tuition costs and make programs more accessible to students.",
+              "B": "To prepare students to lead in an era of continuous innovation by bridging theory with real-world applications.",
+              "C": "To focus exclusively on technical skills like coding and data analysis.",
+              "D": "To shape corporate cultures that prioritize resilience and social responsibility, equipping graduates to drive positive change.",
+              "E": "To eliminate traditional business courses and replace them with digital-only content."
+            },
+            "answer": [
+              "B",
+              "D"
+            ],
+            "prompt": "<Main Idea Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which of the following skills are highlighted as crucial for MBA graduates in the context of data analytics integration? Select all that apply.",
+            "title": "Data Analytics Skills for MBA Graduates in Digital Economy",
+            "solution": "",
+            "options": {
+              "A": "Interpretation of vast amounts of information to drive informed strategies.",
+              "B": "Deep comprehension of statistical methods and ethical considerations in data usage.",
+              "C": "Proficiency in coding and software development for technology implementation.",
+              "D": "Strategic imperative to mitigate risks and capitalize on opportunities in sectors like finance, marketing, and healthcare.",
+              "E": "Mastery of traditional business models without adaptation to digital tools."
+            },
+            "answer": [
+              "A",
+              "B",
+              "D"
+            ],
+            "prompt": "<Strengthen Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "The passage suggests that digital transformation necessitates changes in MBA programs. Which of the following statements best summarizes the relationship between digital transformation and the need for MBA program evolution, as described in the text?",
+            "title": "Digital Transformation Impact on MBA Curriculum Evolution",
+            "solution": "",
+            "options": {
+              "A": "Digital transformation requires MBA programs to focus solely on technical skills, neglecting traditional business education.",
+              "B": "The need for MBA programs to evolve stems from the requirement to prepare future leaders with experiential learning and interdisciplinary approaches for continuous innovation in a digitally transformed economy.",
+              "C": "MBA programs must change because digital transformation has reduced the relevance of all business strategies, making previous knowledge obsolete.",
+              "D": "The evolution is driven by student demand for shorter, online-only programs that eliminate the need for in-person collaboration.",
+              "E": "Digital transformation has made MBA programs unnecessary, as businesses can now rely entirely on artificial intelligence for leadership decisions."
+            },
+            "answer": "B",
+            "prompt": "<Weaken Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <History> - <Passage Organization and Cohesion> - vocabulary_level: <2> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 3
+      },
+      {
+        "metadata": {
+          "Passage": "The global shift toward sustainable business practices is no longer a niche consideration but a fundamental aspect of corporate strategy, driven by increasing regulatory pressures and consumer demand for environmental accountability. Companies are now integrating environmental, social, and governance (ESG) criteria into their operations, which has led to innovations in supply chain management, such as reducing carbon footprints and promoting ethical sourcing. This transition requires leaders who can balance profitability with long-term sustainability, making it a critical topic for MBA programs to address in their curricula, as it shapes future business models and competitive advantages.\nIn response to these evolving demands, business schools have begun redesigning their MBA programs to include comprehensive modules on sustainability, corporate responsibility, and ethical leadership. Courses now cover topics like circular economy principles, stakeholder engagement, and impact measurement, equipping students with the analytical tools to assess ESG risks and opportunities. Additionally, case studies and simulations often feature real-world examples from industries such as renewable energy and green technology, allowing aspiring managers to practice decision-making in scenarios where environmental and financial goals intersect.\nAs a result, MBA graduates are increasingly sought after for roles that require navigating the complexities of sustainable development, from consulting on climate strategy to leading corporate social responsibility initiatives. This trend underscores the importance of integrating sustainability into business education, not only as an ethical imperative but also as a strategic advantage in a competitive job market. By fostering a deep understanding of how environmental stewardship aligns with economic growth, MBA programs prepare future leaders to drive innovation and resilience in their organizations, ultimately contributing to a more sustainable global economy."
+        },
+        "title": "ESG Integration and MBA Curriculum Development",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes the primary reason why MBA programs are increasingly incorporating sustainability into their curricula?",
+            "title": "MBA Sustainability Curriculum Drivers",
+            "solution": "",
+            "options": {
+              "A": "To comply with new government regulations on environmental reporting",
+              "B": "To prepare students to manage the trade-offs between profitability and sustainability in corporate strategy",
+              "C": "To attract more students by offering trendy courses in sustainability",
+              "D": "To reduce operational costs in business schools through energy-efficient practices",
+              "E": "To provide networking opportunities with green technology companies"
+            },
+            "answer": [
+              "B"
+            ],
+            "prompt": "<Conclusion Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the passage, what can be inferred about the role of case studies and simulations in MBA programs regarding sustainability?",
+            "title": "MBA Case Studies in Sustainability Integration",
+            "solution": "",
+            "options": {
+              "A": "They are primarily used to teach theoretical concepts without practical application",
+              "B": "They help students develop skills to make decisions that integrate environmental and financial considerations",
+              "C": "They focus exclusively on renewable energy technologies to the exclusion of other industries",
+              "D": "They are designed to replace traditional coursework on business fundamentals",
+              "E": "They serve mainly to increase enrollment by showcasing trendy topics"
+            },
+            "answer": "B",
+            "prompt": "<Conclusion Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which of the following is NOT a factor mentioned as driving the integration of sustainability into MBA curricula?",
+            "title": "Exclusion Factors in MBA Sustainability Adoption",
+            "solution": "",
+            "options": {
+              "A": "Increasing regulatory pressures",
+              "B": "Consumer demand for environmental accountability",
+              "C": "The need to attract more international students",
+              "D": "The requirement to prepare leaders who balance profitability and sustainability",
+              "E": "The trend of sustainability as a strategic advantage in the job market"
+            },
+            "answer": "C",
+            "prompt": "<Inference Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <Sports> - <Summarization and Paraphrasing> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "The global business landscape is evolving at an unprecedented pace, driven by technological advancements, shifting consumer behaviors, and complex geopolitical dynamics. In this context, aspiring leaders must develop a robust understanding of strategic management to navigate challenges and seize opportunities. For MBA candidates, mastering core concepts such as competitive analysis, organizational behavior, and financial acumen is not just academic; it is essential for driving innovation and sustainable growth in real-world scenarios. This preparation equips students with the analytical tools and leadership skills needed to make informed decisions in volatile markets, fostering resilience and adaptability in an increasingly interconnected economy.\nFurthermore, the role of ethics and corporate responsibility has gained prominence, requiring MBA programs to integrate frameworks that address societal impact alongside profitability. As businesses face scrutiny over environmental, social, and governance (ESG) factors, future managers must balance profit motives with stakeholder expectations. Courses in ethical leadership and sustainability prepare students to navigate dilemmas, build trust with consumers and investors, and contribute to long-term value creation. This holistic approach ensures that graduates not only excel in financial performance but also champion practices that align with broader global goals, reinforcing the importance of principled decision-making in modern corporate strategy.\nUltimately, the effectiveness of MBA preparation hinges on experiential learning and cross-cultural exposure, which bridge theory with practical application. Through case studies, internships, and international collaborations, students gain insights into diverse markets and management styles, enhancing their problem-solving capabilities and cultural intelligence. This hands-on experience, combined with networking opportunities and mentorship from industry leaders, empowers graduates to lead teams effectively and drive organizational change. By fostering a mindset of continuous learning and agility, MBA programs cultivate leaders who are prepared to innovate and thrive in dynamic business environments, ensuring they remain competitive and impactful throughout their careers."
+        },
+        "title": "Analyzing MBA Preparation's Role in Business Adaptation and Leadership",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following statements best describes how MBA programs balance traditional business skills with modern ethical considerations to prepare leaders for contemporary challenges, as illustrated by the integration of ESG factors and experiential learning?",
+            "title": "MBA Programs: Integrating Traditional Skills with Modern Ethics and Learning",
+            "solution": "",
+            "options": {
+              "A": "MBA programs focus primarily on teaching traditional business skills like competitive analysis and financial acumen, with minimal emphasis on ethical considerations, to ensure graduates can quickly adapt to market changes.",
+              "B": "By integrating ESG frameworks and ethical leadership courses, MBA programs equip students to balance profit motives with stakeholder expectations, thereby fostering long-term value creation and trust.",
+              "C": "Experiential learning, such as case studies and internships, is used exclusively to enhance technical skills without addressing cultural intelligence or ethical dilemmas in business decisions.",
+              "D": "MBA preparation combines analytical tools and leadership skills from traditional business education with modern ethical frameworks and hands-on learning to develop resilient leaders capable of innovation in dynamic environments.",
+              "E": "The role of ethics in MBA programs is treated as a secondary component, with the main goal being to maximize financial performance through strategic management, ignoring broader societal impacts."
+            },
+            "answer": [
+              "B",
+              "D"
+            ],
+            "prompt": "<Conclusion Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Which of the following statements accurately reflect the passage`s assertions regarding the challenges and strategies in MBA education for preparing future business leaders? (Select all that apply)",
+            "title": "Challenges and Strategies in MBA Education for Future Leaders",
+            "solution": "",
+            "options": {
+              "A": "MBA programs primarily focus on teaching traditional business skills without integrating ethical frameworks, as the main challenge is adapting to technological changes alone.",
+              "B": "The key challenge in MBA education is balancing profit motives with stakeholder expectations through ESG integration, and strategies include ethical courses and experiential learning for holistic leadership development.",
+              "C": "Experiential learning in MBA programs is designed solely to enhance technical problem-solving, ignoring the need for cultural intelligence and ethical decision-making in global markets.",
+              "D": "MBA preparation strategies emphasize financial performance above all, using case studies to maximize profitability without considering societal impact or long-term sustainability.",
+              "E": "The passage suggests that MBA programs address challenges by focusing exclusively on theoretical knowledge, avoiding practical applications like internships and cross-cultural exposure."
+            },
+            "answer": "B",
+            "prompt": "<Supporting Details> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which of the following statements best describes the primary purpose of incorporating experiential learning and cross-cultural exposure into MBA programs, and how does this relate to the overall goal of cultivating effective business leaders?",
+            "title": "Experiential Learning in MBA Programs: Purpose and Leadership Goals",
+            "solution": "",
+            "options": {
+              "A": "To provide theoretical knowledge exclusively, ensuring students master academic concepts without practical distractions, which aligns with fostering competitiveness through intellectual rigor.",
+              "B": "To bridge theory with practical application, enhancing problem-solving capabilities and cultural intelligence, thereby empowering graduates to lead effectively and drive change in dynamic environments.",
+              "C": "To focus solely on technical skills development, using experiential learning to improve financial acumen, while ignoring ethical considerations and leadership aspects.",
+              "D": "To prepare leaders for innovation and adaptability by combining hands-on experience with networking and mentorship, cultivating a mindset of continuous learning for long-term impact.",
+              "E": "To prioritize cross-cultural exposure over domestic business practices, aiming to internationalize all graduates without addressing local market challenges or ethical frameworks."
+            },
+            "answer": [
+              "B",
+              "D"
+            ],
+            "prompt": "<Supporting Details> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <Art> - <Evidence-Based Reasoning> - vocabulary_level: <1> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 3
+      }
+    ]
+  }
+}

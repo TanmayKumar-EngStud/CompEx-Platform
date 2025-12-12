@@ -14,7 +14,14 @@ from generator import GenQ
 
 os.system('clear')
 os.system('clear')
-MOCK_PAPER_LEVEL = 5
+try:
+    from db_integration import get_next_generation_params
+    MOCK_PAPER_LEVEL, IS_MOCK_RUN = get_next_generation_params()
+    print(f"{prettify('GEN CONFIG', 'Cyan', True)}: Difficulty={MOCK_PAPER_LEVEL}, IsMock={IS_MOCK_RUN}")
+except ImportError:
+    MOCK_PAPER_LEVEL = 1
+    IS_MOCK_RUN = False
+    print("Warning (May be fresh run): Could not load analytics for dynamic params. Defaulting to 1/False.")
 exam_definition, qt_info, prompt_component_info = get_json(
     'exam_definition', 'question_type_info', 'prompt_component_info')
 
@@ -175,11 +182,17 @@ paper_gen = GenQ(prompts_dictionary)
 complete_paper = paper_gen.generate()
 
 # Database Persistence
+# Database and Analytics Integration
 try:
-    from db_integration import save_paper_to_db
+    from db_integration import save_paper_to_db, save_analytics_record, get_next_generation_params
     print("\nStarting Database Persistence...")
-    save_paper_to_db(complete_paper, is_mock=True)
+    save_paper_to_db(complete_paper, is_mock=IS_MOCK_RUN)
+    
+    # Save Analytics
+    if paper_gen.last_run_stats:
+        save_analytics_record(paper_gen.last_run_stats, MOCK_PAPER_LEVEL, IS_MOCK_RUN)
+        
 except ImportError as e:
     print(f"\nCould not import db_integration: {e}")
 except Exception as e:
-    print(f"\nError during database saving: {e}")
+    print(f"\nError during database/analytics saving: {e}")
