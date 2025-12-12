@@ -1,0 +1,88 @@
+# Problem Solving Meta Question Generation - Technical Specification
+
+## Inherits From: {{GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Problem Solving Meta (Parent-Child)
+**Primary Cognitive Assessment**: Complex mathematical reasoning with multi-part analysis and strategic problem-solving skills
+
+## Available Modes
+
+### questionText Mode
+**Returns**: `question`
+
+### questionTitle Mode  
+**Returns**: `title`
+
+### questionSolution Mode
+**Returns**: `solution`
+
+### questionOptions Mode
+**Returns**: `options[]`, `answer`
+
+### questionMetadata Mode
+**Returns**: Shared data structure (tables, graphs, charts) for child questions
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### questionMetadata → questionText
+- Create shared context (data tables, graphs, charts) that supports multiple child questions
+- Ensure data richness allows for diverse analytical approaches
+
+### questionText → questionTitle
+- Extract core mathematical concept being tested for concise title
+- Reflect the multi-part nature of the problem
+
+### questionText → questionSolution  
+- Provide comprehensive solution methodology covering all child questions
+- Identify where students commonly make mistakes across different parts
+- Document specific error pathways and their resulting incorrect answers
+
+### questionSolution → questionOptions
+- Use documented mistake pathways to generate 4 strategic distractors per child question
+- Include the correct answer from solution for each child question
+- Ensure each incorrect option corresponds to a realistic student error
+- Maintain consistency across related child questions
+
+## Parent-Child Question Structure
+
+### Parent Question (Metadata Provider)
+- Establishes shared context (tables, graphs, scenarios)
+- Provides comprehensive data set for analysis
+- Sets up multi-dimensional problem scenario
+
+### Child Questions (Analysis Components)
+- Each child question focuses on different aspect of the shared data
+- Progressive difficulty or complementary analytical approaches
+- Independent solvability while sharing common context
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Problem Solving Meta
+- Complex business scenarios with multi-dimensional analysis
+- Data interpretation with strategic decision-making components
+- Professional contexts: financial analysis, market research, operational efficiency
+- Child questions test different business reasoning skills
+- Integration of quantitative analysis with business judgment
+{{/if_gmat}}
+
+{{#if_gre}}
+### GRE Problem Solving Meta
+- Academic research scenarios with data analysis components
+- Scientific or mathematical contexts requiring multi-step reasoning
+- Abstract mathematical concepts with practical applications
+- Child questions test different analytical and reasoning skills
+- Emphasis on logical progression and mathematical rigor
+{{/if_gre}}
+
+## Key Trap Patterns for questionOptions Mode
+- **Data Misinterpretation**: Reading wrong values, misunderstanding scales
+- **Multi-Step Errors**: Compounding mistakes across child questions
+- **Context Switching**: Confusion between different analytical approaches
+- **Computational Errors**: Arithmetic mistakes, sign errors, decimal placement
+- **Conceptual Misunderstandings**: Misapplying formulas, confusing similar concepts
+- **Procedural Errors**: Skipping steps, incorrect order of operations
+- **Partial Solution Traps**: Stopping at intermediate steps, incomplete analysis

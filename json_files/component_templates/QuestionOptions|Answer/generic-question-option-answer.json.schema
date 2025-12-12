@@ -1,0 +1,18 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "options": {
+      "type": "OBJECT",
+      "properties": {
+        "A": { "type": "STRING" },
+        "B": { "type": "STRING" },
+        "C": { "type": "STRING" },
+        "D": { "type": "STRING" },
+        "E": { "type": "STRING" }
+      },
+      "required": ["A", "B", "C", "D", "E"]
+    },
+    "answer": { "type": "STRING" }
+  },
+  "required": ["options", "answer"]
+}

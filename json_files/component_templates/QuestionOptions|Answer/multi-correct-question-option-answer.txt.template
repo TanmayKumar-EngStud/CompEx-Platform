@@ -1,0 +1,22 @@
+STRICT RESPONSE FORMAT: JSON
+- "options" key with value as dictionary.
+- "answer" key with list of correct option letters (e.g., ["A", "C"]). CRITICAL: Do NOT output the content/value of the options. ONLY the letters.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+For Example:
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2",
+    "C": "option 3",
+    "D": "option 4",
+    "E": "option 5"
+  },
+    "answer": ["A", "C"]
+}
+```
+
+**Important Notes:**
+- The "answer" field must be an array of correct option letters
+- Multiple options can be correct (typically 2-3 out of 5)
+- Each option should be independently valuable as correct or incorrect

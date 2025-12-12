@@ -1,0 +1,15 @@
+STRICT RESPONSE FORMAT:- JSON
+- "graph" key with array of graph objects.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+Example:-
+```json
+{
+   "graph": <graph_data>
+}
+```
+
+**Important Notes:**
+- Generate graphs suitable for specified question type and focused skill
+- Maintain graduate-level quality for {{#if_GMAT}}MBA preparation{{/if_GMAT}}{{#if_GRE}}Masters Studies{{/if_GRE}}
+- Use realistic data appropriate for business/academic context
+- Graph titles should be clear and descriptive

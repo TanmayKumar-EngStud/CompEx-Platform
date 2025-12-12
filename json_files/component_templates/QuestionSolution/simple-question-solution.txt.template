@@ -1,0 +1,32 @@
+RESPONSE FORMAT:- JSON
+Output a JSON object with a single key "solution" containing the full explanation.
+Write naturally as you would explain to a student.
+
+**Structure:**
+(Use \n for newlines in the JSON string)
+Step 1: {{#if_GMAT}}Extract key information from business scenario{{/if_GMAT}}{{#if_GRE}}Analyze given information and identify what needs to be found{{/if_GRE}}
+Step 2: Set up mathematical relationship or logical framework
+Step 3: Perform calculations with proper units / Apply reasoning
+Step 4: {{#if_GMAT}}Verify answer makes business sense{{/if_GMAT}}{{#if_GRE}}Check solution using logical reasoning{{/if_GRE}}
+Step 5: {{#if_GMAT}}Consider alternative solving methods{{/if_GMAT}}{{#if_GRE}}Confirm solution addresses original question{{/if_GRE}}
+
+**Important Notes:**
+- Use numbered steps with clear explanations, solution should be human readable and should be brief.
+- IMP: Provide brief step-by-step thinking/reasoning as the solution.
+- Show all calculations with proper mathematical notation
+- Use LaTeX for mathematical expressions
+- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format. Basically, Don't have LaTeX format in answer and question options.
+{{#if_GMAT}}
+- Demonstrate both direct solution and back-solving when applicable
+- Use business context to verify reasonableness
+{{/if_GMAT}}
+{{#if_GRE}}
+- Explain conceptual insights where relevant
+- Verify using alternative methods when possible
+{{/if_GRE}}
+{{#if_critical_reasoning}}
+- Break down argument structure (premises and conclusion)
+- Explain question type strategy and logical reasoning process
+- Provide systematic evaluation of each option
+- Highlight key critical reasoning insights and common traps
+{{/if_critical_reasoning}}

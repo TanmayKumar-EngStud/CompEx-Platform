@@ -1,0 +1,23 @@
+STRICT RESPONSE FORMAT: JSON
+- "options" key with value as dictionary.
+- "answer" key with single correct option letter (e.g., "A", "B"). CRITICAL: Do NOT output the content/value of the option. ONLY the letter. Never output full sentences.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+Example:-
+```json
+{
+  "options": {
+    "A": "option 1",
+    "B": "option 2",
+    "C": "option 3",
+    "D": "option 4",
+    "E": "option 5"
+  },
+  "answer": "A"
+}
+```
+
+**Important Notes:**
+- GMAT: 5 options (A-E), GRE: 4-5 options
+- Create strategic distractors based on common errors
+- One option must match the correct solution
+- No values are supposed to have LaTeX format, it should be in normal string format

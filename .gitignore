@@ -1,3 +1,14 @@
 .env
+.agent/*
 venv/
+venv_backup_old/
 compex_py/
+.DS_Store
+.vscode
+.claude
+__pycache__
+papers/
+logs/
+system_instructions/in_the_run/
+system_instructions/older_system_instructions_for_reference/
+reset.py

@@ -1,0 +1,11 @@
+{
+    "instruction_template": "Current Source to Generate: Source {source_num}\n- Source Type: {source_type}\n- Targeted Focused Skill: {focused_skill}\n- Overall Theme: {theme}\n\n{base_template}\n\nCRITICAL INSTRUCTIONS:\n- Generate ONLY Source {source_num} (not all 3 sources)\n- Format must match the template above exactly\n- This source should enable testing: {focused_skill}\n- Ensure this source provides unique information that complements the other sources\n",
+    "description": "Template for Multi-Source Reasoning (MSR) question metadata generation. This template is used to provide context and instructions when generating individual sources for MSR questions.",
+    "variables": {
+        "source_num": "The sequential number of the source being generated (1, 2, or 3)",
+        "source_type": "The type of source (e.g., passage, table, graph, chart, email, memo)",
+        "focused_skill": "The specific skill this source is designed to test",
+        "theme": "The overall theme connecting all three sources",
+        "base_template": "The base component template for the specific source type"
+    }
+}

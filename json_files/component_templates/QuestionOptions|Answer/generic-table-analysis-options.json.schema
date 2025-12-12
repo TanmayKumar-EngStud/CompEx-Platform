@@ -1,0 +1,21 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "options": {
+      "type": "ARRAY",
+      "items": { "type": "STRING" }
+    },
+    "answer": {
+      "type": "ARRAY",
+      "items": {
+        "type": "OBJECT",
+        "properties": {
+          "statement": { "type": "STRING" },
+          "response": { "type": "STRING" }
+        },
+        "required": ["statement", "response"]
+      }
+    }
+  },
+  "required": ["options", "answer"]
+}

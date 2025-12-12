@@ -1,0 +1,10 @@
+STRICT RESPONSE FORMAT:- JSON
+- "answer" key with numeric value
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+Example:-
+```json
+{
+  "answer": 23.04
+}
+```
+Note that Numeric Value provided should be of two digits, and additional two decimal points with rounded off value. 

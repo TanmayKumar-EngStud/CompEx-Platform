@@ -1,5 +1,6 @@
 generator client {
   provider                    = "prisma-client-py"
+  output                      = "../venv/lib/python3.11/site-packages/prisma"
   recursive_type_depth        = "5"
   enable_experimental_decimal = "true"
   interface                   = "sync"
@@ -232,4 +233,17 @@ model userstreaks {
   lasttestdate  DateTime? @db.Date
   higheststreak Int?      @default(0)
   users         users?    @relation(fields: [userid], references: [userid], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model analytics {
+  id                 Int      @id @default(autoincrement())
+  total_api_calls    Int
+  total_input_tokens Int
+  total_output_tokens Int
+  total_time_seconds Float
+  gre_questions      Int
+  gmat_questions     Int
+  difficulty_level   Int
+  is_mock            Boolean
+  created_at         DateTime @default(now())
 }
