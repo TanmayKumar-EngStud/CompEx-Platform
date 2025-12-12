@@ -260,7 +260,7 @@ class DB:
             problem = self.db.problems.create(data=question_data)
             self.current_problem_id = problem.problemid
 
-            options = question.get('options', [])
+            options = question.get('options') or []
             answer = question.get('answer', '')
             self.current_question_type = question.get('type', '')
             for option in options:
@@ -276,7 +276,7 @@ class DB:
                         group = chr(ord(group) + 1)
 
             # Register tags
-            self._register_problem_tags(question.get('tags', []))
+            self._register_problem_tags(question.get('tags') or [])
 
             return True
 
@@ -496,8 +496,8 @@ class DB:
 
             # Register child questions
             child_questions = (
-                parent_question.get('childQuestions', []) or
-                parent_question.get('questions', [])
+                (parent_question.get('childQuestions') or []) or
+                (parent_question.get('questions') or [])
             )
 
             for child in child_questions:

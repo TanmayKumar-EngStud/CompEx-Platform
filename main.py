@@ -1,126 +1,185 @@
-print("Startup in progress...")
-
+"""
+    main function that creates prompts based on given difficulty pool, then it will make the generate the question data by calling the generate function.
+"""
+import os
+import random
 import json
-from prisma import Prisma
-from db import DB
-import time
-from terminal_logger import start_terminal_logging, stop_terminal_logging
+from typing import Any, Optional
 
-# Import unified mock generation system
-from core.mock.unified_mock_generator import UnifiedMockGenerator
-from core.enums.exam_types import ExamType
+from difficulty_pool import get_difficulty_pool
+from io_utils import get_json, prettify
 
-class Main:
-   def __init__(self):
-      # Start terminal logging to capture all output
-      self.terminal_logger = start_terminal_logging()
-      
-      # Set default difficulty and mock settings (no persistence)
-      self._difficulty_and_is_mock = {
-         'difficulty': 3,  # Start with medium difficulty
-         'is_mock': True
-      }
-      self.db = Prisma(auto_register=True)
-      self.db.connect()
-      self.database = DB(self.db)
-      
-      print(f"Initialized - Difficulty: {self._difficulty_and_is_mock['difficulty']}, Mock: {self._difficulty_and_is_mock['is_mock']}")
+from prepare_prompts import PromptPrep
+from generator import GenQ
 
-   def generate_paper(self):
-      start_time = time.time()
-      gmat_success = False
-      gre_success = False
-      
-      print("=" * 80)
-      print("PAPER GENERATION SESSION STARTED")
-      print("=" * 80)
-      
-      # COMMENTED OUT FOR GRE VERBAL DEBUGGING
-      # try:
-      #    # GMAT Paper Generation (First) - RC ONLY
-      #    print(f"Starting GMAT paper generation - Difficulty: {self._difficulty_and_is_mock['difficulty']}")
-      #    gmat_mock = UnifiedMockGenerator(ExamType.GMAT, self._difficulty_and_is_mock['difficulty'])
-      #    GMAT_paper = gmat_mock.generate_mock_paper()
-      #    timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
-      #    gmat_filepath = f'papers/GMAT/GMAT_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json'
-      #    
-      #    with open(gmat_filepath, 'w') as f:
-      #       try:
-      #          json.dump(GMAT_paper, f, indent=2)
-      #          print(f"GMAT paper saved successfully: {gmat_filepath}")
-      #       except Exception as e:
-      #          print(f"GMAT paper storing Error: {str(e)}")
-      #          raise e
-      #    
-      #    try:
-      #       self.database.registerQuestion(GMAT_paper, isMockQuestion=self._difficulty_and_is_mock['is_mock'], difficulty=self._difficulty_and_is_mock['difficulty'])
-      #       print("GMAT questions registered in database successfully")
-      #    except Exception as e:
-      #       print(f"GMAT database registration failed: {str(e)}")
-      #       raise e
-      #       
-      #    gmat_success = True
-      #    print("GMAT paper generation completed successfully")
-      #    
-      # except Exception as e:
-      #    print(f"GMAT paper generation failed: {str(e)}")
-      #    gmat_success = False
-      
-      # Skip GMAT for debugging
-      gmat_success = True
-      print("GMAT paper generation SKIPPED for debugging")
-      
-      # Skip sleep since we're not using GMAT API
-      # print("Sleeping for 60 seconds for API rate limit reset")
-      # time.sleep(60)
-      
-      try:
-         # GRE Paper Generation - VERBAL ONLY
-         print(f"Starting GRE paper generation - Difficulty: {self._difficulty_and_is_mock['difficulty']}")
-         gre_mock = UnifiedMockGenerator(ExamType.GRE, self._difficulty_and_is_mock['difficulty'])
-         GRE_paper = gre_mock.generate_mock_paper()
-         timestamp = time.strftime("%d-%m-%H-%M", time.localtime())
-         gre_filepath = f'papers/GRE/GRE_paper-{timestamp}-difficulty-{self._difficulty_and_is_mock["difficulty"]}.json'
-         
-         with open(gre_filepath, 'w') as f:
-            try:
-               json.dump(GRE_paper, f, indent=2)
-               print(f"GRE paper saved successfully: {gre_filepath}")
-            except Exception as e:
-               print(f"GRE paper storing Error: {str(e)}")
-               raise e
+os.system('clear')
+os.system('clear')
+MOCK_PAPER_LEVEL = 5
+exam_definition, qt_info, prompt_component_info = get_json(
+    'exam_definition', 'question_type_info', 'prompt_component_info')
 
-         try:
-            self.database.registerQuestion(GRE_paper, isMockQuestion=self._difficulty_and_is_mock['is_mock'], difficulty=self._difficulty_and_is_mock['difficulty'])
-            print("GRE questions registered in database successfully")
-         except Exception as e:
-            print(f"GRE database registration failed: {str(e)}")
-            raise e
-            
-         gre_success = True
-         print("GRE paper generation completed successfully")
-         
-      except Exception as e:
-         print(f"GRE paper generation failed: {str(e)}")
-         gre_success = False
-      
-      # Note: No persistent difficulty tracking - keeping simple
-      print(f"Session used difficulty {self._difficulty_and_is_mock['difficulty']}, mock: {self._difficulty_and_is_mock['is_mock']}")
-      
-      # Session Summary
-      total_time = time.time() - start_time
-      print("=" * 80)
-      print("PAPER GENERATION SESSION SUMMARY")
-      print(f"GMAT Paper: {'SUCCESS' if gmat_success else 'FAILED'}")
-      print(f"GRE Paper: {'SUCCESS' if gre_success else 'FAILED'}")
-      print(f"Total Time: {total_time:.2f} seconds")
-      print("=" * 80)
-      
-      print(f"Time taken: {total_time:.2f} seconds")
-      
-      # Stop terminal logging
-      stop_terminal_logging()
+prompts_dictionary = {}
 
-if __name__ == "__main__":
-   main = Main()
-   main.generate_paper()
+
+def log_stage(exam: str,
+              section: Optional[str] = None,
+              detail: Optional[str] = None) -> None:
+    """Emit a colored progress line showing where generation currently is."""
+    segments = [
+        f"{prettify('Exam', 'Cyan')}: {prettify(exam, 'Green')}"
+    ]
+    if section:
+        segments.append(
+            f"{prettify('Section', 'Cyan')}: {prettify(section, 'Yellow')}"
+        )
+    if detail:
+        segments.append(detail)
+    # print(" | ".join(segments))
+
+
+# Sort exams to ensure consistent order (e.g., GMAT before GRE)
+sorted_exams = sorted(exam_definition.items(), key=lambda x: x[0], reverse=True)
+
+for exam, sections in sorted_exams:
+    log_stage(exam, detail=prettify('Preparing exam structure', 'Blue'))
+    prompts_dictionary[exam] = {}
+    for section_number, section in sections.items():
+        section_name = section['name']
+        log_stage(
+            exam,
+            section_name,
+            detail=prettify('Building prompts', 'Magenta')
+        )
+        n_items = section['total']
+        total_prompt_count = 0
+        difficulty_list = get_difficulty_pool(
+            exam, section_name, n_items+5, MOCK_PAPER_LEVEL)
+        # print(f"{exam}: {section_name}:- {difficulty_list} #AVG:- ({sum(difficulty_list)/len(difficulty_list)})")
+
+        # add to dictionary
+        prompts_dictionary[exam][section_number] = {}
+        prompts_dictionary[exam][section_number]['section'] = section_name
+        for question_type in section['question types']:
+            log_stage(
+                exam,
+                section_name,
+                detail=f"{prettify('Question type', 'Cyan')}: {prettify(question_type, 'Magenta')}"
+            )
+            question_type_info = PromptPrep._must_get(qt_info, question_type,
+                                                      '@combination-variant.json')
+            count_of_this_question_type = section[question_type]
+            prompts_dictionary[exam][section_number][question_type] = {
+                "has-metadata": question_type_info['has-metadata'],
+                'type': question_type_info['type']
+            }
+            prompts_dictionary[exam][section_number][question_type]['prompts'] = [
+            ]
+            prompt_count = 0
+
+            while prompt_count < count_of_this_question_type:
+                PromptPrep._must_get(section, question_type,
+                                     f'section({section_number}) -> {section_name}: @exam_definition.json')
+
+                current_difficulty = difficulty_list.pop()
+                nomenclature = question_type_info["nomenclature"]
+                prompt = PromptPrep._nomenclature_to_prompt_mapping(
+                    nomenclature, question_type, current_difficulty)
+                if prompt is None:
+                    raise ValueError(
+                        f"{prettify('Error:', 'Red', True)} received {prettify('None', 'Magenta')} for {prettify('prompt', 'Yellow')}\nwhere, questionType is {prettify(question_type, 'Magenta')} of {prettify(section_name, 'Magenta')}")
+
+                prompt_buffer: dict[str, Any] = {
+                    'prompt': prompt,
+                    'difficulty': current_difficulty,
+                }
+                if question_type_info.get('options'):
+                    option = question_type_info['options']
+                    if isinstance(option, dict):
+                        option = random.choices(
+                            list(option.keys()), weights=list(option.values()))[0]
+                    prompt_buffer['option'] = option
+                prompt_count += 1
+                # check if it is parent-child or simple question
+                if question_type_info.get('child-question', None):
+                    prompt_count -= 1
+                    # appending 0 because difficulty level was popped for parent question component as well.
+                    difficulty_list.append(0)
+                    child_count = PromptPrep._get_child_count(
+                        nomenclature, question_type=question_type, parent_prompt=prompt, child_info=question_type_info['child-question'])
+                    prompt_buffer['child-prompt'] = []
+                    for _ in range(child_count):
+                        prompt_count += 1
+                        child_difficulty = random.randint(
+                            max(current_difficulty-1, 1), min(current_difficulty+1, 5))
+                        child_question = question_type_info['child-question']
+                        child_nomenclature = child_question['nomenclature']
+                        child_prompt = PromptPrep._nomenclature_to_prompt_mapping(
+                            child_nomenclature, question_type, child_difficulty)
+                        child_option = question_type_info['child-question']['options']
+                        if isinstance(child_option, dict):
+                            try:
+                                child_option = random.choices(
+                                    list(child_option.keys()), weights=list(child_option.values()))[0]
+                            except:
+                                raise ValueError(
+                                    "this was the child_option that was causing \n")
+                        child_prompt_buffer = {
+                            'prompt': child_prompt,
+                            'option': child_option,
+                            'difficulty': child_difficulty
+                        }
+                        prompt_buffer['child-prompt'].append(
+                            child_prompt_buffer)
+                        difficulty_list.pop()
+                if question_type_info.get('has-metadata'):
+                    count = question_type_info.get('meta-count', 1)
+                    metadata_options_dict = PromptPrep._selective_metadata_info(
+                        question_type)
+                    if len(metadata_options_dict.keys()) == 0:
+                        raise ValueError(
+                            f"metadata of {prettify(question_type, 'Yellow')} is getting \n{prettify(json.dumps(metadata_options_dict, indent=2), 'Magenta')}\n as `metadata_options_dict`")
+                    metadata_buffer = {}
+
+                    for _ in range(count):
+                        category = random.choice(list(
+                            metadata_options_dict.keys()))
+
+                        if metadata_buffer.get(category, None) is None:
+                            metadata_buffer[category] = [
+                                random.choice(metadata_options_dict[category])]
+                        elif isinstance(metadata_buffer[category], list):
+                            metadata_buffer[category].append(
+                                random.choice(metadata_options_dict[category])
+                            )
+                        else:
+                            raise ValueError(
+                                f"Due to some reason metadata_buffer key is not being a proper list format For,\n\t'question_type': {prettify(question_type, 'Yellow')},\n\t'category': {prettify(category, 'Magenta')}\n we are getting metadata_buffer[category] as\n{prettify(metadata_buffer[category], 'Red')}")
+                    if not metadata_buffer:
+                        raise ValueError(
+                            f"metadata_buffer is being empty for {prettify(question_type, 'Red')}")
+
+                    prompt_buffer['metadata-type'] = metadata_buffer
+
+                prompts_dictionary[exam][section_number][question_type]['prompts'].append(
+                    prompt_buffer)
+            total_prompt_count += prompt_count
+        PromptPrep._remove_extra_and_shuffle_created_prompts(
+            prompts_dictionary[exam][section_number], total_prompt_count - n_items)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(script_dir, 'log_json_files/prompts_dictionary.json')
+
+with open(file_path, 'w') as json_file:
+    json.dump(prompts_dictionary, json_file, indent=3)
+
+paper_gen = GenQ(prompts_dictionary)
+complete_paper = paper_gen.generate()
+
+# Database Persistence
+try:
+    from db_integration import save_paper_to_db
+    print("\nStarting Database Persistence...")
+    save_paper_to_db(complete_paper, is_mock=True)
+except ImportError as e:
+    print(f"\nCould not import db_integration: {e}")
+except Exception as e:
+    print(f"\nError during database saving: {e}")
