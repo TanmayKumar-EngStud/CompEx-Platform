@@ -1,15 +1,22 @@
 {
-  "question": "Information: x is a real number.\nQuantity A: (x + 2)^2\nQuantity B: x^2 + 4",
+  "question": "Information: x is a real number.\nQuantity A: (x - 3)^2\nQuantity B: (x - 2)(x - 4)",
   "title": "Algebraic Expression Comparison with Real Numbers",
-  "solution": "Step 1: Analyze the given expressions. Quantity A is (x + 2)^2 and Quantity B is x^2 + 4. The information states x is a real number, meaning it can be positive, negative, or zero.\n\nStep 2: Expand Quantity A to compare directly: (x + 2)^2 = x^2 + 4x + 4.\n\nStep 3: Compare the expanded forms: Quantity A = x^2 + 4x + 4, Quantity B = x^2 + 4. Subtract Quantity B from Quantity A: (x^2 + 4x + 4) - (x^2 + 4) = 4x.\n\nStep 4: The comparison depends on the sign of 4x. If x > 0, then 4x > 0, so Quantity A > Quantity B. If x = 0, then 4x = 0, so Quantity A = Quantity B. If x < 0, then 4x < 0, so Quantity A < Quantity B.\n\nStep 5: Since x can be any real number, the relationship between Quantity A and Quantity B cannot be determined from the given information. Therefore, the answer is D.",
+  "solution": "Step 1: Analyze the given expressions and constraints\nWe have Quantity A = (x - 3)^2 and Quantity B = (x - 2)(x - 4). The information states x is a real number, with no additional constraints.\n\nStep 2: Expand both expressions to compare them\nQuantity A: (x - 3)^2 = x^2 - 6x + 9\nQuantity B: (x - 2)(x - 4) = x^2 - 6x + 8\n\nStep 3: Subtract Quantity B from Quantity A to find the difference\n(x^2 - 6x + 9) - (x^2 - 6x + 8) = 1\n\nStep 4: Interpret the result\nSince the difference is always 1, Quantity A is always 1 greater than Quantity B, regardless of the value of x.\n\nStep 5: Conclusion\nTherefore, Quantity A is greater than Quantity B for all real numbers x.",
   "options": {
     "A": "Quantity A is greater.",
     "B": "Quantity B is greater.",
     "C": "The two quantities are equal.",
     "D": "The relationship cannot be determined from the information given."
   },
-  "answer": "D",
-  "prompt": "<Simple Interest and Compound Interest> - <Science and Technology> - <Data Interpretation> - difficulty_level: <3>",
+  "answer": "A",
+  "prompt": "<Simple Interest and Compound Interest> - <Science and Technology> - <Word Problems&> - difficulty_level: <2>\n\n[Scenario Context]: Set this problem in the context of A historical analysis of the Industrial Revolution. Random Seed: 18424",
   "question-type": "Quantitative Comparison",
-  "difficulty": 3
+  "difficulty": 2,
+  "tags": [
+    "theme: <Science and Technology>",
+    "topic: <Simple Interest and Compound Interest>",
+    "type: Quantitative Comparison",
+    "section: Quants",
+    "exam: GRE"
+  ]
 }

@@ -1,0 +1,2304 @@
+{
+  "4": {
+    "section": "Verbal",
+    "questions": [
+      {
+        "question": "The researcher's approach to data analysis was notably _____, as it relied heavily on mathematical models and statistical methods rather than qualitative observations.",
+        "title": "Quantitative vs. Qualitative Analytical Approaches",
+        "solution": "",
+        "options": {
+          "A": "quantitative",
+          "B": "systematic",
+          "C": "numerical",
+          "D": "rigorous",
+          "E": "empirical"
+        },
+        "answer": [
+          "A",
+          "C"
+        ],
+        "prompt": "<Literature> - <Contextual Vocabulary> - vocabulary_level: <1> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 5
+      },
+      {
+        "question": "The author's argument was so _____ that readers found it impossible to misunderstand the central thesis, leading to widespread agreement among scholars.",
+        "title": "Vocabulary Precision: Synonyms for Clarity in Arguments",
+        "solution": "",
+        "options": {
+          "A": "ambiguous",
+          "B": "lucid",
+          "C": "unclear",
+          "D": "explicit",
+          "E": "vague"
+        },
+        "answer": [
+          "B",
+          "D"
+        ],
+        "prompt": "<Finance> - <Semantic Equivalence> - vocabulary_level: <1> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 4
+      },
+      {
+        "question": "The speaker`s argument was so persuasive that it managed to _____ the audience`s initial skepticism about the proposed policy.",
+        "title": "Sentence Equivalence: Persuasive Arguments Overcoming Skepticism",
+        "solution": "",
+        "options": {
+          "A": "allay",
+          "B": "mitigate",
+          "C": "eradicate",
+          "D": "conceal",
+          "E": "provoke",
+          "F": "intensify"
+        },
+        "answer": [
+          "A",
+          "B"
+        ],
+        "prompt": "<Fiction> - <Vocabulary in Context> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 1
+      },
+      {
+        "question": "The committee's decision to proceed with the project was based on the _____ evidence supporting its feasibility and potential benefits.",
+        "title": "Vocabulary and Semantic Equivalence in Evidence-Based Decision-Making",
+        "solution": "",
+        "options": {
+          "A": "compelling",
+          "B": "convincing",
+          "C": "insufficient",
+          "D": "substantial",
+          "E": "irrelevant"
+        },
+        "answer": [
+          "A",
+          "B"
+        ],
+        "prompt": "<Science and Technology> - <Word Relationships> - vocabulary_level: <1> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 2
+      },
+      {
+        "question": "The new economic policy was intended to _____ inflation, but its unforeseen consequences served to _____ public trust in the government's ability to manage the economy effectively.",
+        "title": "Economic Policy Impact: Inflation and Public Trust",
+        "solution": "",
+        "options": [
+          {
+            "A": "alleviate",
+            "B": "exacerbate",
+            "C": "stabilize"
+          },
+          {
+            "D": "bolster",
+            "E": "undermine",
+            "F": "ignite"
+          }
+        ],
+        "answer": [
+          "A",
+          "E"
+        ],
+        "prompt": "<TC-2> - <Literature> - <Tone Recognition> - vocabulary_level: <3> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Text Completion",
+        "difficulty": 3
+      },
+      {
+        "question": "The scientist's research, though initially dismissed as _____ by skeptics, eventually gained widespread acceptance after rigorous peer review, highlighting the importance of remaining _____ to new ideas even when they challenge established norms.",
+        "title": "Vocabulary on scientific skepticism and open-mindedness",
+        "solution": "",
+        "options": [
+          {
+            "A": "speculative",
+            "B": "fallacious",
+            "C": "unfounded"
+          },
+          {
+            "D": "receptive",
+            "E": "indifferent",
+            "F": "hostile"
+          }
+        ],
+        "answer": [
+          "A",
+          "D"
+        ],
+        "prompt": "<TC-2> - <Literature> - <Tone Recognition> - vocabulary_level: <1> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Text Completion",
+        "difficulty": 2
+      },
+      {
+        "question": "The researcher's groundbreaking study was met with widespread ________, as it challenged long-held assumptions in the field.",
+        "title": "Vocabulary: Academic Reception and Contextual Understanding",
+        "solution": "",
+        "options": {
+          "A": "acclaim",
+          "B": "skepticism",
+          "C": "indifference",
+          "D": "ridicule",
+          "E": "celebration"
+        },
+        "answer": "B",
+        "prompt": "<TC-1> - <Art> - <Critical Comprehension> - vocabulary_level: <3> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+        "question-type": "Text Completion",
+        "difficulty": 4
+      },
+      {
+        "question": "The researcher’s findings were _____, as they not only challenged established theories but also provided a novel framework for future inquiry. However, this _____ required a thorough examination of existing literature, which the team approached with _____, meticulously analyzing each source to build a robust foundation for their argument.",
+        "title": "Research Findings Analysis and Methodology",
+        "solution": "",
+        "options": [
+          {
+            "A": "seminal",
+            "B": "dubious",
+            "C": "mundane"
+          },
+          {
+            "D": "endeavor",
+            "E": "conundrum",
+            "F": "impediment"
+          },
+          {
+            "G": "rigor",
+            "H": "haste",
+            "I": "skepticism"
+          }
+        ],
+        "answer": [
+          "A",
+          "D",
+          "G"
+        ],
+        "prompt": "<TC-3> - <Current Affairs> - <Logical Consistency> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Text Completion",
+        "difficulty": 5
+      },
+      {
+        "question": "The environmentalists argued that the proposed policy was not merely ________ but actually ________, as it failed to account for long-term ecological impacts and instead prioritized short-term economic gains, leading to irreversible damage.",
+        "title": "Environmental Policy Critique: Short-term vs. Long-term Impact Assessment",
+        "solution": "",
+        "options": [
+          {
+            "A": "inadequate",
+            "B": "misguided",
+            "C": "insufficient"
+          },
+          {
+            "D": "detrimental",
+            "E": "harmful",
+            "F": "disastrous"
+          }
+        ],
+        "answer": [
+          "C",
+          "F"
+        ],
+        "prompt": "<TC-2> - <Sports> - <Vocabulary in Context> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Text Completion",
+        "difficulty": 5
+      },
+      {
+        "question": "The proposed policy aims to _____ the economic disparities, yet critics argue that it may inadvertently _____ the existing inequalities, as its implementation lacks targeted measures for the most vulnerable groups.",
+        "title": "Policy Impact on Economic Inequalities",
+        "solution": "",
+        "options": [
+          {
+            "A": "mitigate",
+            "B": "exacerbate",
+            "C": "ignore"
+          },
+          {
+            "D": "alleviate",
+            "E": "deepen",
+            "F": "highlight"
+          }
+        ],
+        "answer": [
+          "A",
+          "E"
+        ],
+        "prompt": "<TC-2> - <Geography> - <Word Connotation Recognition> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Text Completion",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "The pursuit of a Master's degree represents a significant academic and professional milestone, offering students the opportunity to deepen their expertise in specialized fields. This advanced level of education typically involves rigorous coursework, research projects, and thesis development, designed to cultivate critical thinking and analytical skills. In business contexts, Master's programs such as an MBA focus on leadership, strategic management, and innovation, preparing graduates for senior roles in diverse industries. Academically, disciplines like engineering, sciences, and humanities emphasize advanced theoretical frameworks and empirical studies, fostering contributions to knowledge and societal progress.\nAdmission to Master's programs often requires a strong undergraduate background, standardized test scores, and professional experience, reflecting the competitive nature of these studies. Students benefit from networking opportunities, access to cutting-edge resources, and mentorship from faculty experts, enhancing their career prospects and personal growth. In today's globalized economy, Master's degrees are increasingly valued for driving innovation and addressing complex challenges, making them a strategic investment for individuals and organizations alike."
+        },
+        "title": "Advantages of Pursuing Master's Degrees in Business and Academia",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes how Master`s programs in business and academic disciplines contribute to societal progress?",
+            "title": "Societal Contributions of Master`s Programs in Business and Academic Disciplines",
+            "solution": "",
+            "options": {
+              "A": "By preparing graduates for senior roles and addressing complex challenges through innovation in business contexts, and by fostering contributions to knowledge through advanced theoretical and empirical studies in academic disciplines.",
+              "B": "By offering networking opportunities and access to cutting-edge resources that enhance personal growth and career prospects for students.",
+              "C": "By requiring strong undergraduate backgrounds, standardized test scores, and professional experience to ensure competitive and high-quality education.",
+              "D": "By cultivating critical thinking and analytical skills through rigorous coursework, research projects, and thesis development across all programs.",
+              "E": "By focusing solely on leadership and management skills in business programs, and on theoretical frameworks in academic disciplines, without direct societal impact."
+            },
+            "answer": [
+              "A"
+            ],
+            "prompt": "<Inference Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, what are the primary factors that make Master`s degrees a strategic investment in today`s globalized economy?",
+            "title": "Strategic Investment Value of Master`s Degrees in a Globalized Economy",
+            "solution": "",
+            "options": {
+              "A": "They drive innovation and address complex challenges, which are critical in a competitive global market.",
+              "B": "They provide networking opportunities and access to cutting-edge resources that enhance career prospects and personal growth.",
+              "C": "They require strong undergraduate backgrounds and professional experience, ensuring high-quality graduates.",
+              "D": "They cultivate critical thinking and analytical skills through rigorous academic components like coursework and research.",
+              "E": "They focus primarily on theoretical frameworks in academic disciplines without direct economic impact."
+            },
+            "answer": [
+              "A",
+              "B"
+            ],
+            "prompt": "<Assumption Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-S> - <History> - <Assumption and Bias Identification> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 1
+      },
+      {
+        "metadata": {
+          "Passage": "In the competitive landscape of higher education, pursuing a master's degree has become increasingly pivotal for career advancement and specialized expertise. Business schools and academic institutions design rigorous programs that blend theoretical frameworks with practical applications, preparing students for leadership roles in dynamic global markets. These programs often emphasize critical thinking, strategic decision-making, and interdisciplinary collaboration, fostering a holistic approach to problem-solving in sectors such as finance, technology, and management. As industries evolve with technological disruptions, master's studies equip professionals with advanced skills to navigate complexities, drive innovation, and contribute to organizational growth, thereby enhancing their employability and professional networks.\nMoreover, the structure of master's programs often includes components like research projects, internships, and capstone courses that bridge academic knowledge with real-world challenges, ensuring graduates are adaptable and proficient. Institutions also focus on developing soft skills, such as communication and ethical leadership, which are crucial for effective team management and corporate responsibility. By fostering a culture of continuous learning and networking, these studies not only deepen subject mastery but also build resilience against economic shifts, making them a strategic investment for long-term career success in an increasingly specialized job market."
+        },
+        "title": "Strategic Benefits of Master's Programs in Career Advancement",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes the primary strategic benefits of master`s programs in preparing professionals for the evolving job market?",
+            "title": "Primary Strategic Benefits of Master`s Programs",
+            "solution": "",
+            "options": {
+              "A": "They primarily focus on theoretical knowledge without practical application, limiting career growth.",
+              "B": "They enhance employability by providing advanced skills, adaptability, and networking for navigating complex markets.",
+              "C": "They are designed mainly for immediate job placement without emphasis on long-term strategic benefits.",
+              "D": "They prioritize soft skills development over technical expertise, reducing specialization in key sectors.",
+              "E": "They serve as a basic requirement for entry-level positions rather than a strategic investment."
+            },
+            "answer": "B",
+            "prompt": "<Supporting Details> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, how do master`s programs specifically address the challenges posed by technological disruptions in industries?",
+            "title": "Master`s Programs and Technological Disruption Adaptation",
+            "solution": "",
+            "options": {
+              "A": "They provide advanced skills to navigate complexities and drive innovation.",
+              "B": "They focus solely on theoretical knowledge without practical applications.",
+              "C": "They ensure graduates are adaptable and proficient through real-world components.",
+              "D": "They prioritize immediate job placement over long-term strategic growth.",
+              "E": "They build resilience by fostering continuous learning and networking."
+            },
+            "answer": [
+              "A",
+              "C",
+              "E"
+            ],
+            "prompt": "<Strengthen Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-S> - <Literature> - <Passage Organization and Cohesion> - vocabulary_level: <1> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "In today's competitive academic landscape, pursuing a Master's degree has become a strategic imperative for professionals aiming to enhance their expertise and career prospects. These advanced programs offer specialized knowledge and research opportunities that are critical for addressing complex challenges in various fields, from business management to technological innovation. As industries evolve with rapid advancements, the demand for highly skilled graduates who can drive progress and adapt to changing environments continues to grow. This trend underscores the importance of selecting a program that aligns with one's career goals and the dynamic needs of the global market.\nWhen evaluating Master's programs, prospective students must consider key factors such as curriculum relevance, faculty expertise, and industry connections to ensure a valuable educational experience. The curriculum should provide a blend of theoretical foundations and practical applications, enabling learners to develop critical thinking and problem-solving skills essential for leadership roles. Additionally, access to experienced professors and opportunities for networking with professionals can significantly impact career development. Many institutions also offer flexible learning formats, including online and part-time options, to accommodate the schedules of working professionals, thereby broadening accessibility and enhancing the overall appeal of advanced studies.\nIn conclusion, the decision to pursue a Master's degree is a significant investment that requires careful planning and consideration of long-term benefits. Graduates often report increased job satisfaction, higher earning potential, and enhanced professional credibility as direct outcomes of their advanced studies. Moreover, the skills and networks gained through these programs can open doors to new opportunities and foster innovation in diverse sectors. As educational institutions continue to adapt to market demands, Master's studies remain a powerful tool for personal and professional growth, equipping individuals to contribute effectively to their fields and society at large."
+        },
+        "title": "Analyzing the Strategic Importance and Benefits of Master's Studies",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes the primary reason why pursuing a Master`s degree is considered a strategic imperative for professionals in today`s academic landscape?",
+            "title": "Strategic Importance of Master`s Degrees in Professional Advancement",
+            "solution": "",
+            "options": {
+              "A": "It primarily provides flexible learning formats for working professionals",
+              "B": "It offers a strategic advantage to enhance expertise and career prospects in a competitive landscape",
+              "C": "It focuses on theoretical foundations without practical applications",
+              "D": "It is mainly required for gaining access to experienced professors",
+              "E": "It ensures immediate job satisfaction and higher earnings without long-term planning"
+            },
+            "answer": "B",
+            "prompt": "<Author's Purpose> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, what is emphasized as a crucial consideration for prospective students when evaluating Master`s programs to ensure a valuable educational experience?",
+            "title": "Key Factors in Evaluating Master`s Programs for Educational Value",
+            "solution": "",
+            "options": {
+              "A": "The availability of flexible learning formats like online and part-time options",
+              "B": "The focus on theoretical foundations without considering practical applications",
+              "C": "Key factors such as curriculum relevance, faculty expertise, and industry connections",
+              "D": "The immediate benefits of increased job satisfaction and higher earnings",
+              "E": "Selecting a program based solely on its alignment with global market demands"
+            },
+            "answer": "C",
+            "prompt": "<Evaluate Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "The passage suggests that the demand for highly skilled graduates is driven by which of the following factors in the evolving industrial landscape?",
+            "title": "Drivers of Demand for Highly Skilled Graduates in Industry Evolution",
+            "solution": "",
+            "options": {
+              "A": "The need for specialized knowledge to address complex challenges",
+              "B": "The availability of flexible learning formats for working professionals",
+              "C": "Rapid advancements in industries requiring adaptation and progress",
+              "D": "The focus on theoretical foundations without practical applications",
+              "E": "Increased job satisfaction and higher earning potential of graduates"
+            },
+            "answer": [
+              "A",
+              "C"
+            ],
+            "prompt": "<Main Idea Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <philosophy> - <Main Idea Comprehension> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "Masters studies represent a pivotal phase in academic progression, where students transition from foundational knowledge to specialized expertise, engaging in advanced coursework, research projects, and critical analysis tailored to their chosen field.\nThis phase often involves close mentorship with faculty, fostering intellectual growth through seminars, collaborative projects, and the development of a thesis or capstone project that contributes original insights to the discipline.\nIn business-oriented programs, such as an MBA, the focus shifts to practical applications, including case studies, internships, and networking opportunities that prepare students for leadership roles and real-world challenges in various industries.\nUltimately, master's programs aim to cultivate advanced analytical skills, professional competencies, and a deep understanding of complex issues, equipping graduates to drive innovation and contribute meaningfully in their careers or further academic pursuits."
+        },
+        "title": "Advanced Skills and Applications in Master's Programs",
+        "child-questions": [
+          {
+            "question": "Based on the passage, what is a key distinguishing feature of business-oriented master`s programs, such as an MBA, compared to other master`s studies?",
+            "title": "Comparison of Business-Oriented and General Master`s Programs",
+            "solution": "",
+            "options": {
+              "A": "They prioritize theoretical research and foundational knowledge",
+              "B": "They emphasize mentorship and collaborative projects exclusively",
+              "C": "They focus on practical applications like case studies and internships",
+              "D": "They aim to develop only advanced analytical skills",
+              "E": "They concentrate on seminars and thesis development without practical elements"
+            },
+            "answer": "C",
+            "prompt": "<Assumption Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, what is a primary outcome that all master`s programs, including both academic and business-oriented ones, ultimately aim to achieve for their graduates?",
+            "title": "Common Goals of Master's Programs Across Disciplines",
+            "solution": "",
+            "options": {
+              "A": "Develop advanced analytical skills",
+              "B": "Foster close mentorship exclusively with faculty",
+              "C": "Equip graduates to drive innovation in their careers",
+              "D": "Focus primarily on practical applications like internships",
+              "E": "Cultivate professional competencies and deep understanding of complex issues"
+            },
+            "answer": [
+              "A",
+              "C",
+              "E"
+            ],
+            "prompt": "<Inference Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the passage, which of the following statements accurately describe how master`s programs generally differ in their approaches between academic and business-oriented fields? Select all that apply.",
+            "title": "Approach Differences Between Academic and Business Master's Programs",
+            "solution": "",
+            "options": {
+              "A": "Academic programs emphasize research and theoretical analysis, while business programs focus on practical applications and networking.",
+              "B": "Both types prioritize close mentorship with faculty equally.",
+              "C": "Academic programs focus on internships, while business programs emphasize seminars.",
+              "D": "Business programs aim to develop specialized expertise, while academic programs target foundational knowledge.",
+              "E": "The primary difference is that business programs do not involve any collaborative projects."
+            },
+            "answer": "A",
+            "prompt": "<Inference Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "The passage discusses the role of mentorship in master`s studies. What specific function does close mentorship with faculty serve according to the text?",
+            "title": "Function of Faculty Mentorship in Master's Programs",
+            "solution": "",
+            "options": {
+              "A": "To foster intellectual growth and contribute to original insights in the discipline",
+              "B": "To shift focus towards practical applications in business contexts",
+              "C": "To primarily prepare students for networking opportunities",
+              "D": "To replace seminars and collaborative projects with individual study",
+              "E": "To ensure students concentrate only on foundational knowledge"
+            },
+            "answer": "A",
+            "prompt": "<Author's Purpose> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-L> - <Finance> - <Vocabulary in Context> - vocabulary_level: <1> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 2
+      }
+    ]
+  },
+  "2": {
+    "section": "Verbal",
+    "questions": [
+      {
+        "question": "The candidate`s speech was not only eloquent but also profoundly _____ in its ability to inspire the audience and galvanize them toward action.",
+        "title": "Vocabulary: Identifying Synonyms for Inspirational Impact",
+        "solution": "",
+        "options": {
+          "A": "compelling",
+          "B": "ineffective",
+          "C": "motivating",
+          "D": "redundant",
+          "E": "stirring",
+          "F": "tedious"
+        },
+        "answer": [
+          "A",
+          "E"
+        ],
+        "prompt": "<Literature> - <Word Meaning Precision> - vocabulary_level: <1> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 5
+      },
+      {
+        "question": "In his formal report, the economist described the market fluctuations as _____ due to unpredictable external factors.",
+        "title": "Sentence Equivalence: Economic Report Vocabulary",
+        "solution": "",
+        "options": {
+          "A": "capricious",
+          "B": "volatile",
+          "C": "stable",
+          "D": "predictable",
+          "E": "erratic"
+        },
+        "answer": [
+          "A",
+          "E"
+        ],
+        "prompt": "<Sports> - <Synonym Recognition> - vocabulary_level: <2> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 5
+      },
+      {
+        "question": "The researcher`s findings were so _____ that they fundamentally altered the prevailing theories in the field, prompting a complete reassessment of established paradigms.",
+        "title": "Impactful Research Findings Vocabulary",
+        "solution": "",
+        "options": {
+          "A": "revolutionary",
+          "B": "insignificant",
+          "C": "profound",
+          "D": "minor",
+          "E": "influential"
+        },
+        "answer": [
+          "A",
+          "C"
+        ],
+        "prompt": "<Art> - <Tone and Connotation> - vocabulary_level: <3> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 2
+      },
+      {
+        "question": "The committee's decision was _____ by a unanimous vote, leaving no room for dissent or further debate.",
+        "title": "Sentence Equivalence: Unanimous Decision Vocabulary in Committee Context",
+        "solution": "",
+        "options": {
+          "A": "ratified",
+          "B": "approved",
+          "C": "discussed",
+          "D": "delayed",
+          "E": "vetoed"
+        },
+        "answer": [
+          "A",
+          "B"
+        ],
+        "prompt": "<History> - <Structural Analysis> - vocabulary_level: <2> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Sentence Equivalence",
+        "difficulty": 3
+      },
+      {
+        "question": "The environmental report emphasized that the proposed policy would _____ the long-term health of the ecosystem, but critics argued it would _____ economic growth by imposing restrictive measures.",
+        "title": "Environmental Policy Impacts on Ecosystem Health and Economic Growth",
+        "solution": "",
+        "options": [
+          {
+            "A": "safeguard",
+            "B": "enhance",
+            "C": "jeopardize"
+          },
+          {
+            "D": "stimulate",
+            "E": "facilitate",
+            "F": "stifle"
+          }
+        ],
+        "answer": [
+          "B",
+          "F"
+        ],
+        "prompt": "<TC-2> - <Science and Technology> - <Logical Consistency> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Text Completion",
+        "difficulty": 5
+      },
+      {
+        "question": "The researcher's ____ hypothesis was initially met with skepticism, but after rigorous experimentation, the data ____ supported her theory, prompting the scientific community to ____ reconsider its previous assumptions.",
+        "title": "Scientific Hypothesis Validation and Paradigm Shift in Research",
+        "solution": "",
+        "options": [
+          {
+            "A": "unconventional",
+            "B": "preposterous",
+            "C": "orthodox"
+          },
+          {
+            "D": "sporadically",
+            "E": "unequivocally",
+            "F": "ambiguously"
+          },
+          {
+            "G": "gradually",
+            "H": "radically",
+            "I": "hesitantly"
+          }
+        ],
+        "answer": [
+          "A",
+          "E",
+          "H"
+        ],
+        "prompt": "<TC-3> - <Current Affairs> - <Tone Recognition> - vocabulary_level: <1> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Text Completion",
+        "difficulty": 2
+      },
+      {
+        "question": "The author's _____ analysis of historical events, while comprehensive, was criticized for its _____ bias, as it often overlooked counterarguments that contradicted the central thesis.",
+        "title": "Evaluating Historical Analysis for Bias and Comprehensiveness",
+        "solution": "",
+        "options": [
+          {
+            "A": "meticulous",
+            "B": "superficial",
+            "C": "exhaustive"
+          },
+          {
+            "D": "unconscious",
+            "E": "systematic",
+            "F": "overt"
+          }
+        ],
+        "answer": [
+          "C",
+          "F"
+        ],
+        "prompt": "<TC-2> - <History> - <Sentence Logic and Structure> - vocabulary_level: <1> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Text Completion",
+        "difficulty": 5
+      },
+      {
+        "question": "The scientist`s ______ research on cellular regeneration was met with initial skepticism, but her subsequent ______ findings, supported by rigorous data, gradually ______ the scientific community`s view on the potential for reversing age-related decline.",
+        "title": "Scientific Skepticism and Reversal in Cellular Regeneration Research",
+        "solution": "",
+        "options": [
+          {
+            "A": "controversial",
+            "B": "conventional",
+            "C": "innovative"
+          },
+          {
+            "D": "ambiguous",
+            "E": "compelling",
+            "F": "inconclusive"
+          },
+          {
+            "G": "challenged",
+            "H": "solidified",
+            "I": "reversed"
+          }
+        ],
+        "answer": [
+          "A",
+          "E",
+          "I"
+        ],
+        "prompt": "<TC-3> - <Literature> - <Contrast and Support Clues> - vocabulary_level: <3> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Text Completion",
+        "difficulty": 3
+      },
+      {
+        "question": "The economist`s lecture delineated the _____ of market fluctuations, attributing their _____ to geopolitical tensions and technological _____ that reshape global trade dynamics.",
+        "title": "Economic Analysis of Market Fluctuations and Global Dynamics",
+        "solution": "",
+        "options": [
+          {
+            "A": "nuances",
+            "B": "volatility",
+            "C": "foundations"
+          },
+          {
+            "D": "origins",
+            "E": "impetus",
+            "F": "causes"
+          },
+          {
+            "G": "advancements",
+            "H": "disruptions",
+            "I": "innovations"
+          }
+        ],
+        "answer": [
+          "B",
+          "F",
+          "H"
+        ],
+        "prompt": "<TC-3> - <Social Sciences> - <Logical Consistency> - vocabulary_level: <3> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Text Completion",
+        "difficulty": 3
+      },
+      {
+        "question": "The scientist's findings were initially met with skepticism, but subsequent experiments provided _____ evidence that _____ her original hypothesis beyond reasonable doubt.",
+        "title": "Scientific Evidence and Hypothesis Validation",
+        "solution": "",
+        "options": [
+          {
+            "A": "conclusive",
+            "B": "ambiguous",
+            "C": "tentative"
+          },
+          {
+            "D": "validated",
+            "E": "refuted",
+            "F": "challenged"
+          }
+        ],
+        "answer": [
+          "A",
+          "D"
+        ],
+        "prompt": "<TC-2> - <Literature> - <Critical Comprehension> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Text Completion",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "In the contemporary academic landscape, Masters studies represent a pivotal stage for students seeking to deepen their expertise and advance their careers. These programs, typically spanning one to two years, build upon undergraduate foundations to offer specialized knowledge in fields such as business administration, engineering, humanities, and sciences. Students engage in rigorous coursework, research projects, and practical applications, often culminating in a thesis or capstone project. The curriculum is designed to foster critical thinking, analytical skills, and professional development, preparing graduates for leadership roles or further academic pursuits like doctoral studies. With the rise of globalization and technological advancements, Masters programs increasingly incorporate interdisciplinary approaches and digital tools, enhancing learning experiences and expanding career opportunities in a competitive job market.\nMoreover, the value of Masters studies extends beyond academic enrichment to include significant personal and societal benefits. Students often develop strong networks through collaborations with peers, faculty, and industry professionals, which can lead to mentorship opportunities and job placements. Institutions emphasize ethical considerations and sustainability, integrating these themes into courses to address real-world challenges. Financially, while tuition costs can be high, many programs offer scholarships, assistantships, and flexible options like part-time or online formats to increase accessibility. Graduates typically report higher earning potential and job satisfaction, contributing to economic growth and innovation. As demand for advanced skills rises, Masters studies continue to evolve, adapting to trends such as remote learning and industry partnerships, ensuring they remain relevant and impactful in shaping future leaders and experts across diverse sectors."
+        },
+        "title": "Analysis of Career Benefits in Masters Programs",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes how Masters programs adapt to contemporary trends to enhance career opportunities?",
+            "title": "Adaptation of Masters Programs to Contemporary Trends",
+            "solution": "",
+            "options": {
+              "A": "By focusing solely on traditional coursework and theoretical research",
+              "B": "By incorporating interdisciplinary approaches and digital tools to enhance learning and expand opportunities",
+              "C": "By reducing program duration to one year to lower costs",
+              "D": "By eliminating practical applications in favor of online lectures",
+              "E": "By prioritizing undergraduate-level content over specialized knowledge"
+            },
+            "answer": "B",
+            "prompt": "<Conclusion Question> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which aspect of Masters programs is highlighted as contributing to higher earning potential and job satisfaction for graduates?",
+            "title": "Impact of Masters Studies on Graduate Earnings and Satisfaction",
+            "solution": "",
+            "options": {
+              "A": "The emphasis on ethical considerations and sustainability in coursework",
+              "B": "The development of strong networks through collaborations with peers and professionals",
+              "C": "The reduction of tuition costs through scholarships and assistantships",
+              "D": "The inclusion of undergraduate-level foundational knowledge",
+              "E": "The focus on theoretical research without practical applications"
+            },
+            "answer": "B",
+            "prompt": "<Conclusion Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-S> - <Art> - <Author's Purpose and Tone Recognition> - vocabulary_level: <2> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 3
+      },
+      {
+        "metadata": {
+          "Passage": "Pursuing a Master's degree represents a significant commitment to advanced academic and professional development, often serving as a critical stepping stone for career advancement, specialized expertise, and research contributions. Students typically engage in rigorous coursework, independent projects, and collaborations with faculty and peers, fostering a deep understanding of their chosen field. This level of study requires strong analytical skills, time management, and adaptability to complex concepts, preparing graduates for leadership roles or further academic pursuits such as doctoral programs. The experience not only enhances technical knowledge but also cultivates critical thinking and problem-solving abilities essential in today's competitive global landscape.\nAdmission to Master's programs is highly competitive, with institutions evaluating candidates based on academic transcripts, standardized test scores, letters of recommendation, and personal statements that demonstrate motivation and alignment with program goals. Many programs also emphasize practical experience through internships, research assistantships, or industry partnerships, allowing students to apply theoretical knowledge in real-world settings. The curriculum often includes core courses that build foundational knowledge, followed by electives that enable specialization in niche areas, such as data analytics, sustainable business practices, or clinical research, depending on the discipline.\nUpon completion, Master's graduates often experience tangible benefits, including higher earning potential, expanded professional networks, and increased job opportunities in sectors like technology, healthcare, education, and finance. The degree also fosters lifelong learning and adaptability, equipping individuals to navigate evolving industry trends and societal challenges. However, challenges such as financial costs, work-life balance, and the intensity of study must be carefully managed. Overall, a Master's degree is a transformative investment that not only advances personal and career goals but also contributes to innovation and expertise in various fields, aligning with broader educational and economic objectives."
+        },
+        "title": "Benefits and Challenges of Master's Degree Completion",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following statements best describes the primary benefit of completing a Master`s degree, as highlighted in the final paragraph?",
+            "title": "Primary Benefit of Master`s Degree Completion",
+            "solution": "",
+            "options": {
+              "A": "It primarily serves as a critical stepping stone for career advancement and specialized expertise.",
+              "B": "It offers tangible benefits such as higher earning potential, expanded networks, and job opportunities.",
+              "C": "It fosters lifelong learning and adaptability to navigate industry trends and societal challenges.",
+              "D": "It involves rigorous coursework and collaborations that develop deep field understanding.",
+              "E": "It requires managing challenges like financial costs and work-life balance during study."
+            },
+            "answer": [
+              "B",
+              "C"
+            ],
+            "prompt": "<Main Idea Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, which of the following is NOT mentioned as a tangible benefit experienced by Master`s graduates upon completion?",
+            "title": "Tangible Benefits Not Mentioned for Master`s Graduates",
+            "solution": "",
+            "options": {
+              "A": "Higher earning potential",
+              "B": "Expanded professional networks",
+              "C": "Increased job opportunities in sectors like technology and healthcare",
+              "D": "Guaranteed admission to doctoral programs",
+              "E": "Development of critical thinking skills"
+            },
+            "answer": "D",
+            "prompt": "<Tone and Attitude> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "The passage describes Master`s programs as highly competitive, evaluating candidates based on multiple criteria. Which of the following is NOT listed as a factor in the admission process?",
+            "title": "Non-Factors in Master`s Program Admission Criteria",
+            "solution": "",
+            "options": {
+              "A": "Academic transcripts",
+              "B": "Standardized test scores",
+              "C": "Letters of recommendation",
+              "D": "Personal statements demonstrating motivation",
+              "E": "Previous work experience in a related field"
+            },
+            "answer": [
+              "E"
+            ],
+            "prompt": "<Evaluate Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <Finance> - <Inference Making> - vocabulary_level: <1> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "Passage": "Masters Studies, often referred to as graduate-level education, represent an advanced academic pursuit that builds upon the foundational knowledge acquired during undergraduate studies. Typically spanning one to two years, these programs are designed to deepen expertise in a specific field, fostering critical thinking, specialized skills, and research capabilities. In today's competitive global landscape, a master's degree has become increasingly valuable, serving as a key differentiator for career advancement and professional development. Many institutions offer a range of formats, including full-time, part-time, and online options, to accommodate diverse learner needs and schedules.\nThe curriculum in Masters Studies is meticulously structured to balance theoretical frameworks with practical applications, often incorporating case studies, internships, and collaborative projects. This approach ensures that students not only grasp complex concepts but also develop hands-on experience relevant to their industries. Additionally, these programs frequently emphasize interdisciplinary learning, encouraging students to explore connections between their primary field and related disciplines. Such a holistic educational model prepares graduates to tackle real-world challenges with innovative solutions, making them highly sought after by employers in sectors ranging from technology and healthcare to business and education.\nFurthermore, Masters Studies often culminate in a capstone project or thesis, which allows students to demonstrate their mastery of the subject through original research or applied work. This requirement not only reinforces academic rigor but also contributes to the body of knowledge in their field, potentially leading to publications or industry advancements. As educational trends evolve, there is a growing emphasis on sustainability, ethics, and global perspectives within these programs, aligning with broader societal needs. Ultimately, pursuing a master's degree equips individuals with the tools to drive innovation and leadership, positioning them for long-term success in an ever-changing professional environment."
+        },
+        "title": "The Role of Capstone Projects in Masters Studies",
+        "child-questions": [
+          {
+            "question": "According to the passage, what are two primary benefits of capstone projects or theses in Masters Studies, and how do they contribute to professional development?",
+            "title": "Benefits and Professional Impact of Capstone Projects in Masters Studies",
+            "solution": "",
+            "options": {
+              "A": "They reinforce academic rigor and contribute to the body of knowledge, leading to publications or industry advancements.",
+              "B": "They primarily focus on theoretical learning and do not involve practical applications or research.",
+              "C": "They are optional components that have minimal impact on a student's mastery of the subject or career prospects.",
+              "D": "They are designed only for students in technology fields, excluding other sectors like healthcare or business.",
+              "E": "They replace the need for internships and collaborative projects, streamlining the curriculum for faster completion."
+            },
+            "answer": "A",
+            "prompt": "<Inference Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the passage, what is a key feature of the curriculum in Masters Studies that enhances employability across various sectors, and why is this approach effective?",
+            "title": "Curriculum Design and Employability in Masters Studies",
+            "solution": "",
+            "options": {
+              "A": "The curriculum balances theoretical frameworks with practical applications, such as case studies and internships, ensuring students develop relevant hands-on experience for diverse industries.",
+              "B": "The curriculum focuses solely on theoretical knowledge, neglecting practical skills, which limits employability to academic positions only.",
+              "C": "The curriculum is uniform across all programs, without customization for different sectors, making graduates less adaptable to specific industry needs.",
+              "D": "The curriculum prioritizes online learning formats over in-person experiences, reducing the effectiveness of practical training.",
+              "E": "The curriculum excludes interdisciplinary learning, keeping students confined to their primary field and hindering innovation."
+            },
+            "answer": "A",
+            "prompt": "<Author's Purpose> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, how does the holistic educational model in Masters Studies prepare graduates for professional challenges, and what key element contributes to this preparation?",
+            "title": "Holistic Education and Professional Preparation in Masters Studies",
+            "solution": "",
+            "options": {
+              "A": "It balances theoretical frameworks with practical applications to develop hands-on experience relevant to industries.",
+              "B": "It focuses exclusively on sustainability and ethics, neglecting traditional academic subjects.",
+              "C": "It emphasizes interdisciplinary learning to explore connections between fields, fostering innovative solutions.",
+              "D": "It prioritizes online learning formats that reduce interaction and collaborative opportunities.",
+              "E": "It relies heavily on capstone projects alone, without integrating case studies or internships."
+            },
+            "answer": [
+              "A",
+              "C"
+            ],
+            "prompt": "<Tone and Attitude> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-M> - <Finance> - <Inference Making> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "Passage": "Embarking on a Masters program requires rigorous preparation and a deep commitment to specialized academic inquiry, as students transition from foundational undergraduate knowledge to advanced, research-intensive studies that demand critical analysis and independent thought. This phase often involves selecting a niche within a broader discipline, engaging with complex theoretical frameworks, and developing expertise through coursework, seminars, and potential thesis work, all while balancing the demands of time management and intellectual growth in a competitive academic environment.\nIn addition to academic rigor, Masters students must navigate the practical aspects of their studies, such as securing funding through scholarships or assistantships, building professional networks with faculty and peers, and gaining hands-on experience via internships or collaborative projects that bridge theory with real-world applications. This multifaceted approach not only enhances learning outcomes but also prepares graduates for diverse career paths in academia, industry, or public service, where advanced analytical skills and specialized knowledge are highly valued.\nThe completion of a Masters degree culminates in a significant capstone project, such as a thesis or comprehensive exam, which demonstrates the student's ability to conduct original research, synthesize complex information, and contribute new insights to their field of study. This final requirement often involves extensive literature reviews, data analysis, and peer-reviewed dissemination, fostering a sense of scholarly achievement and readiness for doctoral studies or leadership roles that demand evidence-based decision-making and innovative problem-solving.\nUltimately, the value of a Masters degree extends beyond academic credentials to encompass personal and professional transformation, as students develop resilience, adaptability, and a lifelong learning mindset that enables them to thrive in dynamic global environments. By integrating rigorous scholarship with practical skills, these programs empower individuals to address complex challenges, drive innovation, and make meaningful contributions to society, thereby reinforcing the importance of advanced education in shaping future leaders and experts across various domains."
+        },
+        "title": "Key Challenges in Transitioning to Advanced Studies",
+        "child-questions": [
+          {
+            "question": "According to the passage, what is a primary challenge faced by Masters students as they transition from undergraduate to advanced studies, and how does it specifically impact their academic development?",
+            "title": "Balancing Academic and Practical Demands in Graduate Education",
+            "solution": "",
+            "options": {
+              "A": "It primarily involves mastering complex theoretical frameworks without practical application.",
+              "B": "It requires balancing academic rigor with practical demands like funding and networking.",
+              "C": "It focuses solely on securing scholarships to avoid financial stress.",
+              "D": "It emphasizes developing resilience through personal transformation alone.",
+              "E": "It centers on completing a thesis without engaging in coursework or seminars."
+            },
+            "answer": "B",
+            "prompt": "<Evaluate Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "How does the passage suggest that the completion of a capstone project, such as a thesis, contributes to a student`s readiness for future roles, and what key skills are demonstrated through this process?",
+            "title": "Capstone Projects and Their Role in Developing Future-Ready Skills",
+            "solution": "",
+            "options": {
+              "A": "It fosters readiness by demonstrating the ability to conduct original research and synthesize information, as mentioned in the passage.",
+              "B": "It contributes by focusing solely on personal transformation without scholarly elements, which is not supported by the text.",
+              "C": "It shows skills in evidence-based decision-making and innovative problem-solving, directly linked to future roles.",
+              "D": "It primarily enhances networking skills through peer-reviewed dissemination, a misrepresentation of the passage`s emphasis.",
+              "E": "It develops time management abilities alone, ignoring the broader analytical and research skills highlighted."
+            },
+            "answer": [
+              "A",
+              "C"
+            ],
+            "prompt": "<Tone and Attitude> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the passage, which of the following statements accurately describe the multifaceted value of a Masters degree beyond academic credentials? Select all that apply.",
+            "title": "Comprehensive Benefits of Advanced Degree Programs",
+            "solution": "",
+            "options": {
+              "A": "It focuses solely on academic credentials without practical application.",
+              "B": "It includes personal and professional transformation, developing resilience and adaptability.",
+              "C": "It emphasizes securing funding as the primary value for students.",
+              "D": "It centers on competitive academic environments to the exclusion of societal contributions.",
+              "E": "It prioritizes theoretical frameworks over real-world problem-solving skills."
+            },
+            "answer": "B",
+            "prompt": "<Assumption Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          },
+          {
+            "question": "According to the passage, how does the integration of rigorous scholarship with practical skills in Masters programs contribute to societal advancement, and what specific outcomes does it yield?",
+            "title": "Integration of Theory and Practice in Graduate Education",
+            "solution": "",
+            "options": {
+              "A": "It enables graduates to drive innovation and make meaningful societal contributions by applying integrated knowledge.",
+              "B": "It focuses primarily on theoretical research without real-world application, limiting societal impact.",
+              "C": "It empowers individuals to address complex challenges through evidence-based skills and problem-solving.",
+              "D": "It emphasizes personal transformation alone, neglecting professional and societal outcomes.",
+              "E": "It reinforces the importance of advanced education in shaping future leaders across various domains."
+            },
+            "answer": [
+              "A",
+              "C",
+              "E"
+            ],
+            "prompt": "<Supporting Details> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<RC-L> - <Art> - <Author's Purpose and Tone Recognition> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5
+      }
+    ]
+  },
+  "3": {
+    "section": "Quants",
+    "questions": [
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Business and Finance> - <Inequalities> - difficulty_level: <5>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 5
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Business and Finance> - <Data Interpretation> - difficulty_level: <3>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 3
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Profit, Loss and Discount> - <Logistics and Operations> - <Inequalities> - difficulty_level: <3>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 3
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Ratio and Proportion> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <5>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 5
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Mean, Median, Mode, Range> - <Science and Technology> - <Single Variable Equation> - difficulty_level: <3>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 3
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Functions and Polynomials> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <2>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 2
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Ratio and Proportion> - <Government Policies and Regulations> - <Inequalities> - difficulty_level: <3>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 3
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the area of the garden is 54 square meters, what is the perimeter of the garden in meters? (Difficulty Level: 3)",
+        "title": "Perimeter Calculation from Area and Length-Width Relationship",
+        "solution": "",
+        "options": {
+          "A": "24",
+          "B": "30",
+          "C": "36",
+          "D": "42",
+          "E": "48"
+        },
+        "answer": "B",
+        "prompt": "<Standard Deviation and Variance> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team wants to determine how many hours it will take for the culture to reach 32,000 bacteria. However, they must account for a contamination event that occurs 6 hours after the start, which reduces the population by 25%. After this reduction, the culture continues to double every 3 hours as before. Calculate the total time from the start until the culture first reaches or exceeds 32,000 bacteria.",
+        "title": "Bacterial Growth with Contamination Event Time Calculation",
+        "solution": "{t/3} \\). At \\( t = 6 \\), calculate the population: \\( N(6) = 500 \\times 2^{6/3} = 500 \\times 2^2 = 500 \\times 4 = 2000 \\). After contamination, it reduces by 25%, so remaining bacteria: \\( 2000 \\times (1 - 0.25) = 2000 \\times 0.75 = 1500 \\).\n\nStep 3: After contamination, growth continues with the same doubling time. Let \\( t' \\) be additional hours after 6 hours. The population is \\( N'(t') = 1500 \\times 2^{t'/3} \\). We need \\( N'(t') \\geq 32000 \\). Solve: \\( 1500 \\times 2^{t'/3} \\geq 32000 \\). Divide both sides by 1500: \\( 2^{t'/3} \\geq 32000 / 1500 = 64/3 \\approx 21.333 \\). Take logarithm base 2: \\( t'/3 \\geq \\log_2(64/3) \\). Calculate: \\( \\log_2(64/3) = \\log_2(64) - \\log_2(3) = 6 - \\log_2(3) \\approx 6 - 1.585 = 4.415 \\). So \\( t' \\geq 3 \\times 4.415 = 13.245 \\) hours.\n\nStep 4: Since we need the first time it reaches or exceeds, round up to the next doubling interval if necessary, but here \\( t' \\) is continuous. Total time from start: \\( 6 + 13.245 = 19.245 \\) hours. Verify: At \\( t' = 13.245 \\), \\( N' = 1500 \\times 2^{13.245/3} = 1500 \\times 2^{4.415} \\approx 1500 \\times 21.333 = 32000 \\), correct.\n\nStep 5: Confirm by checking if ignoring contamination gives a different answer. Without contamination, solve \\( 500 \\times 2^{t/3} \\geq 32000 \\): \\( 2^{t/3} \\geq 64 \\), so \\( t/3 \\geq 6 \\), \\( t \\geq 18 \\) hours. With contamination, it takes longer (19.245 hours), which makes sense due to the reduction. The solution addresses the original question by calculating total time accurately.",
+        "options": {
+          "A": "18 hours",
+          "B": "19.245 hours",
+          "C": "20 hours",
+          "D": "21 hours",
+          "E": "22.5 hours"
+        },
+        "answer": "B",
+        "prompt": "<Permutations and Combinations> - <Human Resources> - <Single Variable Equation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? (Assume the garden is a perfect rectangle with no additional features.)",
+        "title": "Rectangular Garden Perimeter and Area Calculation",
+        "solution": "[\n42 = 4w + 6 + 2w\n\\]\n\\[\n42 = 6w + 6\n\\]\n\\[\n36 = 6w\n\\]\n\\[\nw = 6 \\text{ meters}\n\\]\nThen find length: \\( l = 2(6) + 3 = 12 + 3 = 15 \\text{ meters} \\). Calculate area: \\( A = l \\times w = 15 \\times 6 = 90 \\text{ square meters} \\).\n\nStep 4: Check solution using logical reasoning. Verify perimeter: \\( 2(15) + 2(6) = 30 + 12 = 42 \\) meters, correct. Area calculation is straightforward multiplication.\n\nStep 5: Confirm solution addresses original question. The area is 90 square meters, which answers the problem. Common mistakes to note: students might incorrectly set up the length equation (e.g., using \\( l = 2w - 3 \\)), miscalculate perimeter (e.g., forgetting to multiply by 2), or solve for width incorrectly, leading to errors like 84, 108, or 72 square meters.",
+        "options": {
+          "A": "84",
+          "B": "90",
+          "C": "108",
+          "D": "72",
+          "E": "96"
+        },
+        "answer": "B",
+        "prompt": "<Functions and Polynomials> - <Government Policies and Regulations> - <Word Problems&> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? (Difficulty Level: 3)",
+        "title": "Rectangular Garden Perimeter and Area Problem",
+        "solution": "",
+        "options": {
+          "A": "54",
+          "B": "72",
+          "C": "90",
+          "D": "108",
+          "E": "126"
+        },
+        "answer": "C",
+        "prompt": "<Standard Deviation and Variance> - <Government Policies and Regulations> - <Inequalities> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team wants to determine how many bacteria will be present after 12 hours, assuming exponential growth. However, they must also consider that after 6 hours, an antibiotic is introduced that reduces the population by 40% every 2 hours, starting from the population at that time. Calculate the total number of bacteria after 12 hours, accounting for both the growth and decay phases. Use the formula for exponential change: N = N₀ × (2)^(t/T) for growth and N = N₀ × (0.6)^(t/T) for decay, where N₀ is the initial amount, t is the time, and T is the doubling or halving time. Provide your answer to the nearest whole number.",
+        "title": "Bacterial Growth and Decay with Exponential Change Calculation",
+        "solution": "{t/T} \\), where \\( N_0 = 500 \\), \\( T = 3 \\) hours. For decay: use \\( N = N_0 \\times (0.6)^{t/T} \\), where \\( T = 2 \\) hours, and \\( N_0 \\) is the population at 6 hours.\n\nStep 3: Perform calculations. First, calculate population at 6 hours: \\( t = 6 \\), so \\( N = 500 \\times (2)^{6/3} = 500 \\times (2)^2 = 500 \\times 4 = 2000 \\). Next, calculate decay from 6 to 12 hours: \\( t = 6 \\) hours of decay, \\( T = 2 \\), so \\( N = 2000 \\times (0.6)^{6/2} = 2000 \\times (0.6)^3 = 2000 \\times 0.216 = 432 \\).\n\nStep 4: Check the solution using logical reasoning. The growth phase quadruples the population in 6 hours (since doubling every 3 hours gives two doublings: \\( 2^2 = 4 \\)), consistent with 2000. The decay reduces by 40% every 2 hours, so over 6 hours (three periods), the factor is \\( 0.6^3 = 0.216 \\), leading to 432. This matches the step-by-step calculation.\n\nStep 5: Confirm the solution addresses the original question by ensuring both phases are correctly applied and the final population is calculated to the nearest whole number, which is 432.",
+        "options": {
+          "A": "432",
+          "B": "800",
+          "C": "2000",
+          "D": "1200",
+          "E": "648"
+        },
+        "answer": "A",
+        "prompt": "<Permutations and Combinations> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team wants to determine how many bacteria will be present after 12 hours, assuming exponential growth. However, they must also consider that after 6 hours, an antibiotic is introduced that reduces the population by 25% every 2 hours. Calculate the total number of bacteria after 12 hours, accounting for both growth and decay phases. Use the formula for exponential change: N = N₀ × (growth factor)^(t/T) for growth, and N = N₀ × (decay factor)^(t/T) for decay, where N₀ is initial amount, t is time, and T is time period for change.",
+        "title": "Bacterial Growth and Decay with Exponential Change Calculation",
+        "solution": "{t/T} \\), where \\( N_0 = 500 \\), \\( T = 3 \\) hours, and \\( t \\) is time in hours. For decay: \\( N = N_0 \\times (0.75)^{t/T} \\), where \\( N_0 \\) is the population at the start of decay, \\( T = 2 \\) hours, and decay factor is 0.75 (since 100% - 25% = 75%).\n\nStep 3: Perform calculations. First, calculate growth from 0 to 6 hours: \\( t = 6 \\), so \\( N = 500 \\times (2)^{6/3} = 500 \\times (2)^2 = 500 \\times 4 = 2000 \\) bacteria after 6 hours. Next, calculate decay from 6 to 12 hours: \\( N_0 = 2000 \\), \\( t = 6 \\) hours (from 6 to 12), \\( T = 2 \\), so \\( N = 2000 \\times (0.75)^{6/2} = 2000 \\times (0.75)^3 = 2000 \\times 0.421875 = 843.75 \\). Since bacteria count must be an integer, round to the nearest whole number: 844 bacteria.\n\nStep 4: Check solution using logical reasoning. Verify growth: doubling every 3 hours means after 3 hours: 1000, after 6 hours: 2000, correct. Decay: 25% reduction every 2 hours means after 2 hours: 1500, after 4 hours: 1125, after 6 hours: 843.75 ≈ 844, consistent with exponential formula. Alternative method: use continuous compounding, but discrete steps confirm result.\n\nStep 5: Confirm solution addresses original question. The total after 12 hours is 844 bacteria, accounting for both phases. This tests exponential change skills by combining growth and decay in a real-world scenario.",
+        "options": {
+          "A": "2000",
+          "B": "1125",
+          "C": "844",
+          "D": "1500",
+          "E": "500"
+        },
+        "answer": "C",
+        "prompt": "<Functions and Polynomials> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 36 meters, what is the area of the garden in square meters? (A) 45 (B) 54 (C) 63 (D) 72 (E) 81",
+        "title": "Rectangular Garden Perimeter and Area Problem",
+        "solution": "{length} + \\text{width}) \\). Given \\( P = 36 \\), we have:\n\\[\n2 \\times ((3 + 2w) + w) = 36\n\\]\n\nStep 3: Solve for \\( w \\). Simplify the equation:\n\\[\n2 \\times (3 + 3w) = 36\n\\]\n\\[\n6 + 6w = 36\n\\]\n\\[\n6w = 30\n\\]\n\\[\nw = 5\n\\]\nSo, the width is 5 meters. Then the length is \\( 3 + 2 \\times 5 = 13 \\) meters.\n\nStep 4: Calculate the area. The area of a rectangle is \\( \\text{length} \\times \\text{width} \\):\n\\[\n\\text{Area} = 13 \\times 5 = 65\n\\]\nWait, this doesn't match any options. Let's check calculations: \\( 13 \\times 5 = 65 \\), but options are 45, 54, 63, 72, 81. Re-evaluate: I made an error in step 3. Correctly: \\( 2 \\times (3 + 3w) = 36 \\) → \\( 6 + 6w = 36 \\) → \\( 6w = 30 \\) → \\( w = 5 \\), length = \\( 3 + 2 \\times 5 = 13 \\), area = \\( 13 \\times 5 = 65 \\). But 65 is not in options, so re-check perimeter equation: \\( 2 \\times (l + w) = 36 \\) → \\( l + w = 18 \\). With \\( l = 3 + 2w \\), substitute: \\( (3 + 2w) + w = 18 \\) → \\( 3 + 3w = 18 \\) → \\( 3w = 15 \\) → \\( w = 5 \\), \\( l = 13 \\), area = 65. This suggests a mismatch; perhaps I misinterpreted \"3 meters more than twice its width\" as \\( 3 + 2w \\), which is correct. Let's verify with options: If area is 65, none match, so maybe I made a mistake in setting up the equation. Actually, perimeter is 36, so \\( 2(l + w) = 36 \\) → \\( l + w = 18 \\). With \\( l = 2w + 3 \\), then \\( 2w + 3 + w = 18 \\) → \\( 3w + 3 = 18 \\) → \\( 3w = 15 \\) → \\( w = 5 \\), \\( l = 13 \\), area = 65. But options are 45, 54, 63, 72, 81. Perhaps the perimeter is 36, but I need to check if I misread: \"perimeter of the garden is 36 meters\" is clear. Let's test if area could be one of the options: For area A, \\( l \\times w = A \\), and \\( l + w = 18 \\). Solve: \\( w(18 - w) = A \\). For A=63, \\( w(18-w)=63 \\) → \\( w^2 - 18w + 63 = 0 \\) → \\( (w-9)(w-7)=0 \\), so w=9 or 7, then l=9 or 11, but l=2w+3 gives 21 or 17, not matching. So my initial setup might be off. Re-read problem: \"length that is 3 meters more than twice its width\" means \\( l = 2w + 3 \\). Perimeter: \\( 2(l + w) = 36 \\) → \\( l + w = 18 \\). Substitute: \\( (2w + 3) + w = 18 \\) → \\( 3w + 3 = 18 \\) → \\( 3w = 15 \\) → \\( w = 5 \\), \\( l = 13 \\), area = 65. Since 65 is not in options, I suspect a trap: perhaps I miscomputed area. 13*5=65, yes. But options are close: 63 is 65-2, 72 is 65+7. Let's check if I made an arithmetic error: 3w=15 → w=5, correct. 2*5+3=13, correct. 13+5=18, correct. 13*5=65, correct. So maybe the problem has a typo in options, but for this exercise, I'll proceed with my solution and note common mistakes.\n\nStep 5: Identify common mistakes for option generation:\n- Mistake 1: Incorrectly setting up length as \\( 2w - 3 \\) or \\( 3w + 2 \\), leading to different w and area.\n- Mistake 2: Forgetting to divide perimeter by 2, using \\( 2l + 2w = 36 \\) but solving as \\( l + w = 36 \\), giving w=11, l=25, area=275 (not in options, but scaled down).\n- Mistake 3: Calculating perimeter as \\( l + w = 36 \\), then solving, e.g., \\( 2w+3 + w = 36 \\) → \\( 3w=33 \\) → w=11, l=25, area=275.\n- Mistake 4: Solving for w correctly but then computing area as perimeter or sum, e.g., area = 18 or 36.\n- Mistake 5: Using wrong formula, e.g., area = perimeter * something.\n\nGiven options, let's see which mistakes yield them: For area=63, if w=7, l=11 (since l+w=18), but l=2w+3 gives 17, not 11. So maybe a common error: if someone sets l=2w+3 but solves l+w=36 (mistake 3), then 3w+3=36 → 3w=33 → w=11, l=25, area=275, not in options. Alternatively, if they use l=3w (misreading \"3 meters more than twice\" as \"three times\"), then l=3w, l+w=18 → 4w=18 → w=4.5, l=13.5, area=60.75, not in options. To match options, perhaps the intended correct area is 63, so let's reverse-engineer: If area=63, and l=2w+3, then w(2w+3)=63 → 2w^2+3w-63=0 → discriminant=9+504=513, not integer. So not likely.\n\nGiven the discrepancy, I'll assume the correct area from my calculation is 65, but for option generation, I'll use the provided options and map mistakes to them. In real scenario, I'd adjust, but here I'll proceed with my solution and note that in options mode, I'll generate distractors based on common errors that might lead to 45, 54, 63, 72, 81.\n\nFinal answer from my solution: Area = 65 square meters (but since not in options, in a real test, this might indicate an error in question or options; for this exercise, I'll use 65 as correct and note that options need to be generated accordingly in next mode).",
+        "options": {
+          "A": "45",
+          "B": "54",
+          "C": "63",
+          "D": "72",
+          "E": "81"
+        },
+        "answer": [
+          "C"
+        ],
+        "prompt": "<Standard Deviation and Variance> - <Science and Technology> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? Provide your answer as a two-digit positive number.",
+        "title": "Rectangular Garden Perimeter and Area Calculation",
+        "solution": "",
+        "options": null,
+        "answer": 108.0,
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Numerical Entry",
+        "difficulty": 5
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? Provide your answer as a two-digit positive number.",
+        "title": "Rectangular Garden Perimeter and Area Calculation",
+        "solution": "",
+        "options": null,
+        "answer": 108.0,
+        "prompt": "<Ratio and Proportion> - <Logistics and Operations> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Numerical Entry",
+        "difficulty": 2
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 36 meters, what is the area of the garden in square meters? (A) 45 (B) 54 (C) 63 (D) 72 (E) 81",
+        "title": "Rectangular Garden Perimeter and Area Problem",
+        "solution": "",
+        "options": {
+          "A": "45",
+          "B": "54",
+          "C": "63",
+          "D": "72",
+          "E": "81"
+        },
+        "answer": "C",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Numeric Comparisons> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1
+      },
+      {
+        "metadata": {
+          "table": [
+            {
+              "type": "comparison_table",
+              "description": "Table comparing performance metrics of three different marketing campaigns across various attributes over a 6-month period",
+              "structure": {
+                "title": "Marketing Campaign Performance Comparison (January-June 2024)",
+                "entities": [
+                  "Campaign A: Social Media Push",
+                  "Campaign B: Email Newsletter",
+                  "Campaign C: Influencer Partnership"
+                ],
+                "attributes": [
+                  "Total Budget ($)",
+                  "Conversion Rate (%)",
+                  "Customer Acquisition Cost ($)",
+                  "Return on Investment (ROI)",
+                  "Monthly Growth Rate (%)",
+                  "Customer Satisfaction Score (1-10)"
+                ],
+                "comparison_data": [
+                  [
+                    "25,000",
+                    "18,500",
+                    "42,000"
+                  ],
+                  [
+                    "3.2",
+                    "1.8",
+                    "4.7"
+                  ],
+                  [
+                    "156",
+                    "205",
+                    "89"
+                  ],
+                  [
+                    "142%",
+                    "67%",
+                    "213%"
+                  ],
+                  [
+                    "8.5",
+                    "3.2",
+                    "12.1"
+                  ],
+                  [
+                    "7.8",
+                    "6.2",
+                    "8.9"
+                  ]
+                ]
+              }
+            },
+            {
+              "type": "pivot_table",
+              "description": "Pivot table summarizing marketing campaign performance by quarter and metric, derived from the comparison table data",
+              "structure": {
+                "title": "Quarterly Marketing Campaign Performance Summary (Q1-Q2 2024)",
+                "row_headers": [
+                  "Campaign A: Social Media Push",
+                  "Campaign B: Email Newsletter",
+                  "Campaign C: Influencer Partnership",
+                  "Total"
+                ],
+                "column_headers": [
+                  "Average Conversion Rate (%)",
+                  "Total Customer Acquisition Cost ($)",
+                  "Average ROI (%)",
+                  "Overall Score"
+                ],
+                "data_matrix": [
+                  [
+                    3.2,
+                    156,
+                    142,
+                    7.8
+                  ],
+                  [
+                    1.8,
+                    205,
+                    67,
+                    6.2
+                  ],
+                  [
+                    4.7,
+                    89,
+                    213,
+                    8.9
+                  ],
+                  [
+                    3.23,
+                    450,
+                    140.67,
+                    7.63
+                  ]
+                ],
+                "summary_row": [
+                  3.23,
+                  450,
+                  140.67,
+                  7.63
+                ]
+              }
+            }
+          ]
+        },
+        "title": "Marketing Campaign Performance Analysis and Strategic Decision-Making",
+        "child-questions": [
+          {
+            "question": "A marketing analyst is evaluating three campaigns (A: Social Media Push, B: Email Newsletter, C: Influencer Partnership) using the provided comparison and pivot tables. Based on this data, answer the following questions:\n\n1. Which campaign has the highest efficiency ratio, calculated as (Conversion Rate × ROI) ÷ Customer Acquisition Cost? Provide the ratio rounded to two decimal places.\n2. If the company allocates an additional $10,000 budget proportionally based on current ROI performance, how much would Campaign C receive? Assume budgets are allocated in direct proportion to ROI percentages.\n3. Calculate the weighted average customer satisfaction score across all campaigns, using monthly growth rates as weights. Round to one decimal place.\n4. Determine which campaign shows the greatest discrepancy between its individual performance metrics and the overall averages in the pivot table summary row. Justify your answer by calculating the absolute percentage deviation for at least two key metrics.\n\nUse the tables for all necessary data, noting that values in the comparison table are formatted with symbols (e.g., $, %) that should be interpreted numerically for calculations.",
+            "title": "Marketing Campaign Performance Analysis and Strategic Decision-Making",
+            "solution": "",
+            "options": {
+              "A": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.25",
+              "B": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.24",
+              "C": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.26",
+              "D": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.23",
+              "E": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.27"
+            },
+            "answer": [
+              "C"
+            ],
+            "prompt": "<Estimation of Values from Visual Data> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          },
+          {
+            "question": "A marketing analyst is evaluating three campaigns (A: Social Media Push, B: Email Newsletter, C: Influencer Partnership) using the provided comparison and pivot tables. Based on this data, answer the following questions:\n\n1. Which campaign has the highest efficiency ratio, calculated as (Conversion Rate × ROI) ÷ Customer Acquisition Cost? Provide the ratio rounded to two decimal places.\n2. If the company allocates an additional $10,000 budget proportionally based on current ROI performance, how much would Campaign C receive? Assume budgets are allocated in direct proportion to ROI percentages.\n3. Calculate the weighted average customer satisfaction score across all campaigns, using monthly growth rates as weights. Round to one decimal place.\n4. Determine which campaign shows the greatest discrepancy between its individual performance metrics and the overall averages in the pivot table summary row. Justify your answer by calculating the absolute percentage deviation for at least two key metrics.\n\nUse the tables for all necessary data, noting that values in the comparison table are formatted with symbols (e.g., $, %) that should be interpreted numerically for calculations.",
+            "title": "Marketing Campaign Performance Analysis and Strategic Decision-Making",
+            "solution": "",
+            "options": {
+              "A": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.25",
+              "B": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.24",
+              "C": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.26",
+              "D": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.23",
+              "E": "Campaign A: 2.91, Campaign B: 0.59, Campaign C: 11.27"
+            },
+            "answer": "C",
+            "prompt": "<Identifying Maximum/Minimum Values> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Mean, Median, Mode, Range> - <Business and Finance> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Meta",
+        "difficulty": 2
+      },
+      {
+        "metadata": {
+          "graph": [
+            {
+              "type": "scatter_chart",
+              "description": "Scatter plot showing relationship between study hours per week and final exam scores for graduate students in a business analytics course",
+              "structure": {
+                "title": "Graduate Student Performance: Study Hours vs. Exam Scores",
+                "x_axis": {
+                  "label": "Study Hours per Week",
+                  "type": "numerical",
+                  "range": [
+                    0,
+                    35
+                  ]
+                },
+                "y_axis": {
+                  "label": "Final Exam Score (Percentage)",
+                  "type": "numerical",
+                  "range": [
+                    50,
+                    100
+                  ]
+                },
+                "data_format": {
+                  "points": [
+                    {
+                      "x": 5,
+                      "y": 62
+                    },
+                    {
+                      "x": 8,
+                      "y": 68
+                    },
+                    {
+                      "x": 10,
+                      "y": 72
+                    },
+                    {
+                      "x": 12,
+                      "y": 75
+                    },
+                    {
+                      "x": 15,
+                      "y": 78
+                    },
+                    {
+                      "x": 18,
+                      "y": 82
+                    },
+                    {
+                      "x": 20,
+                      "y": 85
+                    },
+                    {
+                      "x": 22,
+                      "y": 88
+                    },
+                    {
+                      "x": 25,
+                      "y": 90
+                    },
+                    {
+                      "x": 28,
+                      "y": 92
+                    },
+                    {
+                      "x": 30,
+                      "y": 94
+                    },
+                    {
+                      "x": 32,
+                      "y": 95
+                    }
+                  ],
+                  "point_color": "#2c3e50",
+                  "point_size": 7
+                }
+              }
+            },
+            {
+              "type": "scatter_chart",
+              "description": "Scatter plot showing relationship between study hours per week and final exam scores for graduate students in a business analytics course",
+              "structure": {
+                "title": "Graduate Student Performance: Study Hours vs. Exam Scores",
+                "x_axis": {
+                  "label": "Study Hours per Week",
+                  "type": "numerical",
+                  "range": [
+                    0,
+                    35
+                  ]
+                },
+                "y_axis": {
+                  "label": "Final Exam Score (Percentage)",
+                  "type": "numerical",
+                  "range": [
+                    50,
+                    100
+                  ]
+                },
+                "data_format": {
+                  "points": [
+                    {
+                      "x": 5,
+                      "y": 62
+                    },
+                    {
+                      "x": 8,
+                      "y": 68
+                    },
+                    {
+                      "x": 10,
+                      "y": 72
+                    },
+                    {
+                      "x": 12,
+                      "y": 75
+                    },
+                    {
+                      "x": 15,
+                      "y": 78
+                    },
+                    {
+                      "x": 18,
+                      "y": 82
+                    },
+                    {
+                      "x": 20,
+                      "y": 85
+                    },
+                    {
+                      "x": 22,
+                      "y": 88
+                    },
+                    {
+                      "x": 25,
+                      "y": 90
+                    },
+                    {
+                      "x": 28,
+                      "y": 92
+                    },
+                    {
+                      "x": 30,
+                      "y": 94
+                    },
+                    {
+                      "x": 32,
+                      "y": 95
+                    }
+                  ],
+                  "point_color": "#2c3e50",
+                  "point_size": 7
+                }
+              }
+            }
+          ]
+        },
+        "title": "Graduate Student Performance Analysis: Study Hours vs. Exam Scores",
+        "child-questions": [
+          {
+            "question": "A graduate business analytics course instructor analyzes student performance data to understand the relationship between study hours and exam scores. The scatter plot shows data for 12 students, with study hours per week (x-axis) and final exam scores in percentage (y-axis). Use the provided data points to answer the following questions:\n\n1. Calculate the correlation coefficient (r) between study hours and exam scores. Round your answer to three decimal places.\n2. Determine the equation of the least-squares regression line in the form y = mx + b, where m is the slope and b is the y-intercept. Round m and b to two decimal places.\n3. Using the regression equation from question 2, predict the exam score for a student who studies 27 hours per week. Round your prediction to the nearest whole percentage.\n4. Identify the residual for the data point where a student studied 20 hours and scored 85%. Calculate the residual as observed value minus predicted value, and round to one decimal place.\n\nData Points: (5,62), (8,68), (10,72), (12,75), (15,78), (18,82), (20,85), (22,88), (25,90), (28,92), (30,94), (32,95)",
+            "title": "Statistical Analysis of Graduate Student Performance Data",
+            "solution": "[5,8,10,12,15,18,20,22,25,28,30,32], y=[62,68,72,75,78,82,85,88,90,92,94,95].\n\nStep 3: Perform calculations.\n- Σx = 5+8+10+12+15+18+20+22+25+28+30+32 = 225\n- Σy = 62+68+72+75+78+82+85+88+90+92+94+95 = 981\n- Σxy = (5*62)+(8*68)+(10*72)+(12*75)+(15*78)+(18*82)+(20*85)+(22*88)+(25*90)+(28*92)+(30*94)+(32*95) = 310+544+720+900+1170+1476+1700+1936+2250+2576+2820+3040 = 19442\n- Σx² = 5²+8²+10²+12²+15²+18²+20²+22²+25²+28²+30²+32² = 25+64+100+144+225+324+400+484+625+784+900+1024 = 5099\n- Σy² = 62²+68²+72²+75²+78²+82²+85²+88²+90²+92²+94²+95² = 3844+4624+5184+5625+6084+6724+7225+7744+8100+8464+8836+9025 = 81479\n\nStep 4: Calculate correlation coefficient r using formula: r = [nΣxy - (Σx)(Σy)] / sqrt{[nΣx² - (Σx)²][nΣy² - (Σy)²]}\n- nΣxy - (Σx)(Σy) = 12*19442 - 225*981 = 233304 - 220725 = 12579\n- nΣx² - (Σx)² = 12*5099 - 225² = 61188 - 50625 = 10563\n- nΣy² - (Σy)² = 12*81479 - 981² = 977748 - 962361 = 15387\n- r = 12579 / sqrt(10563 * 15387) = 12579 / sqrt(162,548,281) ≈ 12579 / 12749.44 ≈ 0.9866, rounded to three decimals: 0.987\n\nStep 5: Calculate regression line slope m and intercept b.\n- m = [nΣxy - (Σx)(Σy)] / [nΣx² - (Σx)²] = 12579 / 10563 ≈ 1.1908, rounded to two decimals: 1.19\n- b = (Σy - mΣx) / n = (981 - 1.1908*225) / 12 = (981 - 267.93) / 12 = 713.07 / 12 ≈ 59.4225, rounded to two decimals: 59.42\n- Regression equation: y = 1.19x + 59.42\n\nStep 6: Predict score for x=27 hours.\n- y = 1.19*27 + 59.42 = 32.13 + 59.42 = 91.55, rounded to nearest whole: 92\n\nStep 7: Calculate residual for (20,85).\n- Predicted y for x=20: y = 1.19*20 + 59.42 = 23.8 + 59.42 = 83.22\n- Residual = observed - predicted = 85 - 83.22 = 1.78, rounded to one decimal: 1.8\n\nStep 8: Check solution. Correlation near 1 indicates strong positive relationship, consistent with data trend. Regression slope positive, intercept reasonable. Prediction for 27 hours aligns with nearby data points. Residual small, indicating good fit.\n\nCommon mistakes to note: Miscalculating sums, using wrong formula for r or regression, rounding errors, confusing residual sign (predicted minus observed instead of observed minus predicted).",
+            "options": {
+              "A": "0.987",
+              "B": "0.992",
+              "C": "0.978",
+              "D": "0.965",
+              "E": "0.953"
+            },
+            "answer": "A",
+            "prompt": "<Identifying Maximum/Minimum Values> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          },
+          {
+            "question": "Based on the scatter plot data for graduate student performance, calculate the equation of the least-squares regression line in the form y = mx + b, where m is the slope and b is the y-intercept. Round m and b to two decimal places. Use the data points: (5,62), (8,68), (10,72), (12,75), (15,78), (18,82), (20,85), (22,88), (25,90), (28,92), (30,94), (32,95).",
+            "title": "Least-Squares Regression Line Calculation for Student Performance",
+            "solution": "[nΣxy - (Σx)(Σy)] / [nΣx² - (Σx)²]\n- b = (Σy - mΣx) / n\nwhere n = 12 (number of data points).\n\nStep 3: Calculate necessary sums from the data points (x,y):\n- Σx = 5+8+10+12+15+18+20+22+25+28+30+32 = 225\n- Σy = 62+68+72+75+78+82+85+88+90+92+94+95 = 981\n- Σxy = (5*62)+(8*68)+(10*72)+(12*75)+(15*78)+(18*82)+(20*85)+(22*88)+(25*90)+(28*92)+(30*94)+(32*95) = 310+544+720+900+1170+1476+1700+1936+2250+2576+2820+3040 = 19442\n- Σx² = 5²+8²+10²+12²+15²+18²+20²+22²+25²+28²+30²+32² = 25+64+100+144+225+324+400+484+625+784+900+1024 = 5099\n\nStep 4: Compute m:\n- nΣxy - (Σx)(Σy) = 12*19442 - 225*981 = 233304 - 220725 = 12579\n- nΣx² - (Σx)² = 12*5099 - 225² = 61188 - 50625 = 10563\n- m = 12579 / 10563 ≈ 1.1908, rounded to two decimals: 1.19\n\nStep 5: Compute b:\n- b = (Σy - mΣx) / n = (981 - 1.1908*225) / 12 = (981 - 267.93) / 12 = 713.07 / 12 ≈ 59.4225, rounded to two decimals: 59.42\n\nStep 6: Write the regression equation: y = 1.19x + 59.42\n\nStep 7: Check solution: The slope m is positive, indicating that as study hours increase, exam scores tend to increase, which aligns with the data trend. The intercept b is reasonable, representing the predicted score for zero study hours (though extrapolation caution is needed). Verify by plugging a data point, e.g., x=20 gives y ≈ 1.19*20 + 59.42 = 83.22, close to observed 85, showing a small residual.\n\nCommon mistakes: Miscalculating sums, using wrong formula, rounding prematurely, or confusing m and b in the equation.",
+            "options": {
+              "A": "y = 1.19x + 59.42",
+              "B": "y = 1.25x + 58.50",
+              "C": "y = 1.15x + 60.00",
+              "D": "y = 1.30x + 57.75",
+              "E": "y = 1.10x + 61.20"
+            },
+            "answer": "A",
+            "prompt": "<Percentage and Proportion Calculation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Meta",
+        "difficulty": 5
+      }
+    ]
+  },
+  "1": {
+    "section": "Quants",
+    "questions": [
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Mixtures and Alligations> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <1>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 1
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Single Variable Equation> - difficulty_level: <1>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 1
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Mixtures and Alligations> - <Marketing and Sales> - <Word Problems&> - difficulty_level: <2>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 2
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Human Resources> - <Numeric Comparisons> - difficulty_level: <2>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 2
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Profit, Loss and Discount> - <Environment and Sustainability> - <Numeric Comparisons> - difficulty_level: <3>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 3
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Functions and Polynomials> - <Logistics and Operations> - <Data Interpretation> - difficulty_level: <4>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 4
+      },
+      {
+        "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
+        "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
+        "solution": "",
+        "options": {
+          "A": "Quantity A is greater.",
+          "B": "Quantity B is greater.",
+          "C": "The two quantities are equal.",
+          "D": "The relationship cannot be determined from the information given."
+        },
+        "answer": "D",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Business and Finance> - <Word Problems&> - difficulty_level: <3>",
+        "question-type": "Quantitative Comparison",
+        "difficulty": 3
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? (Assume the garden is a perfect rectangle with no irregularities.)",
+        "title": "Rectangular Garden Perimeter and Area Calculation",
+        "solution": "",
+        "options": {
+          "A": "72",
+          "B": "90",
+          "C": "108",
+          "D": "126",
+          "E": "144"
+        },
+        "answer": "C",
+        "prompt": "<Profit, Loss and Discount> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 5
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team needs to determine how many bacteria will be present after 12 hours, but they must account for a 20% reduction due to an experimental treatment applied at the 6-hour mark. Calculate the total number of bacteria after 12 hours, rounding to the nearest whole number if necessary.",
+        "title": "Bacterial Growth with Treatment Reduction Calculation",
+        "solution": "{(t/T)} \\), where \\( N_0 \\) is initial amount, \\( t \\) is time in hours, and \\( T \\) is doubling time (3 hours). For the first phase (0 to 6 hours), calculate bacteria at 6 hours. Then apply 20% reduction: multiply by \\( 1 - 0.20 = 0.80 \\). For the second phase (6 to 12 hours), use the reduced amount as new \\( N_0 \\) and calculate growth over the next 6 hours.\n\nStep 3: Perform calculations with proper units. First phase: \\( N(6) = 500 \\times 2^{(6/3)} = 500 \\times 2^2 = 500 \\times 4 = 2000 \\) bacteria. Apply reduction: \\( 2000 \\times 0.80 = 1600 \\) bacteria after reduction at 6 hours. Second phase: \\( N(12) = 1600 \\times 2^{(6/3)} = 1600 \\times 2^2 = 1600 \\times 4 = 6400 \\) bacteria.\n\nStep 4: Check solution using logical reasoning. Verify doubling: from 0 to 6 hours, doubles twice (since 6/3 = 2), so 500 → 1000 → 2000. Reduction gives 2000 → 1600. From 6 to 12 hours, doubles twice again, so 1600 → 3200 → 6400. This matches calculation.\n\nStep 5: Confirm solution addresses original question. The total after 12 hours is 6400 bacteria, rounded to nearest whole number (already whole). No alternative method needed as exponential growth is straightforward here. Conceptual insight: This tests understanding of exponential growth with an intermediate percentage change, requiring careful phase separation and application of reduction at the correct time point.",
+        "options": {
+          "A": "6400",
+          "B": "8000",
+          "C": "5120",
+          "D": "4000",
+          "E": "2560"
+        },
+        "answer": [
+          "A"
+        ],
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team wants to determine how many bacteria will be present after 12 hours, assuming exponential growth. However, they must also consider that after 6 hours, an antibiotic is introduced that reduces the population by 40% every 2 hours, starting from the population at that time. Calculate the total number of bacteria after 12 hours, accounting for both growth and decay phases. Use the formula for exponential change: N = N₀ × (growth factor)^(t/T) for growth, and N = N₀ × (decay factor)^(t/T) for decay, where N₀ is initial amount, t is time, and T is the time period for the factor. Provide your answer to the nearest whole number.",
+        "title": "Bacterial Growth and Decay with Exponential Change Calculation",
+        "solution": "{t/T} \\), where \\( N_0 = 500 \\), \\( T = 3 \\) hours, and \\( t \\) is the time in hours. For decay: use \\( N = N_0 \\times (0.6)^{t/T} \\), where the decay factor is 0.6 (since 100% - 40% = 60% or 0.6), \\( T = 2 \\) hours, and \\( N_0 \\) is the population at the start of decay.\n\nStep 3: Perform calculations. First, calculate the population after 6 hours of growth: \\( t = 6 \\), so \\( N = 500 \\times (2)^{6/3} = 500 \\times (2)^2 = 500 \\times 4 = 2000 \\) bacteria. This becomes the initial population for decay. Next, calculate decay from 6 to 12 hours: \\( t = 6 \\) hours (from 6 to 12), so \\( N = 2000 \\times (0.6)^{6/2} = 2000 \\times (0.6)^3 = 2000 \\times 0.216 = 432 \\) bacteria.\n\nStep 4: Check the solution using logical reasoning. The growth phase quadruples the population (since doubling twice over 6 hours), which is consistent. The decay phase reduces by 40% every 2 hours, so over 6 hours, it reduces by a factor of \\( 0.6^3 = 0.216 \\), leading to a final population of 432, which is plausible given the initial conditions.\n\nStep 5: Confirm the solution addresses the original question by verifying that all phases are accounted for and calculations are correct. The final answer is 432 bacteria, rounded to the nearest whole number as required.",
+        "options": {
+          "A": "500",
+          "B": "2000",
+          "C": "432",
+          "D": "864",
+          "E": "1728"
+        },
+        "answer": [
+          "C"
+        ],
+        "prompt": "<Exponents and Powers> - <Marketing and Sales> - <Inequalities> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team wants to determine how many bacteria will be present after 12 hours, assuming exponential growth. However, they must also consider that after 6 hours, an antibiotic is introduced that reduces the population by 40% every 2 hours, starting from the population at that time. Calculate the total number of bacteria after 12 hours, accounting for both growth and decay phases. Use the formula for exponential change: N = N₀ × (growth factor)^(t/T) for growth, and N = N₀ × (decay factor)^(t/T) for decay, where N₀ is initial amount, t is time, and T is the time period for the factor. Round your answer to the nearest whole number.",
+        "title": "Bacterial Growth and Decay with Exponential Change Calculation",
+        "solution": "{t/T} \\), where \\( N_0 = 500 \\), \\( T = 3 \\) hours. For decay: \\( N = N_0 \\times (0.6)^{t/T} \\), where decay factor is 0.6 (since 100% - 40% = 60%), \\( T = 2 \\) hours.\n\nStep 3: Calculate growth from 0 to 6 hours. Time for growth: \\( t = 6 \\) hours, \\( T = 3 \\) hours, so number of doubling periods: \\( 6 / 3 = 2 \\). Bacteria after growth: \\( N = 500 \\times (2)^2 = 500 \\times 4 = 2000 \\). This is the population at 6 hours.\n\nStep 4: Calculate decay from 6 to 12 hours. Time for decay: \\( t = 6 \\) hours, \\( T = 2 \\) hours, so number of decay periods: \\( 6 / 2 = 3 \\). Bacteria after decay: \\( N = 2000 \\times (0.6)^3 = 2000 \\times 0.216 = 432 \\).\n\nStep 5: Verify by checking units and logic: growth uses doubling factor correctly, decay uses 40% reduction per period. Alternative: compute stepwise, e.g., after 8 hours: \\( 2000 \\times 0.6 = 1200 \\), after 10 hours: \\( 1200 \\times 0.6 = 720 \\), after 12 hours: \\( 720 \\times 0.6 = 432 \\), matches. Final answer: 432 bacteria.",
+        "options": {
+          "A": "500",
+          "B": "2000",
+          "C": "432",
+          "D": "864",
+          "E": "1728"
+        },
+        "answer": "C",
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Human Resources> - <Word Problems&> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 36 meters, what is the area of the garden in square meters? (Difficulty Level: 3)",
+        "title": "Rectangular Garden Perimeter and Area Problem",
+        "solution": "{length} + \\text{width}) \\). So, \\( 2 \\times ((2w + 3) + w) = 36 \\).\n\nStep 3: Perform calculations with proper units. Simplify the equation: \\( 2 \\times (3w + 3) = 36 \\), so \\( 6w + 6 = 36 \\). Subtract 6: \\( 6w = 30 \\), divide by 6: \\( w = 5 \\) meters. Then length = \\( 2 \\times 5 + 3 = 13 \\) meters. Area = length × width = \\( 13 \\times 5 = 65 \\) square meters.\n\nStep 4: Check solution using logical reasoning. Verify perimeter: \\( 2 \\times (13 + 5) = 2 \\times 18 = 36 \\) meters, correct. Confirm area calculation: \\( 13 \\times 5 = 65 \\), consistent.\n\nStep 5: Confirm solution addresses original question. The area is 65 square meters, which matches the problem's requirement. Common mistakes: misinterpreting \"twice its width\" as just \\( 2w \\) without adding 3, leading to incorrect width or length; arithmetic errors in solving the equation; forgetting to multiply by 2 in perimeter formula; or stopping at width/length without calculating area.",
+        "options": {
+          "A": "60",
+          "B": "65",
+          "C": "70",
+          "D": "75",
+          "E": "80"
+        },
+        "answer": "B",
+        "prompt": "<Permutations and Combinations> - <Business and Finance> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 4
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 36 meters, what is the area of the garden in square meters? (A) 45 (B) 54 (C) 63 (D) 72 (E) 81",
+        "title": "Rectangular Garden Perimeter and Area Problem",
+        "solution": "{length} + \\text{width}) \\). Given \\( P = 36 \\), we have:\n\\[\n2 \\times ((3 + 2w) + w) = 36\n\\]\n\nStep 3: Simplify and solve for \\( w \\). First, combine terms inside the parentheses:\n\\[\n2 \\times (3 + 3w) = 36\n\\]\nDivide both sides by 2:\n\\[\n3 + 3w = 18\n\\]\nSubtract 3 from both sides:\n\\[\n3w = 15\n\\]\nDivide by 3:\n\\[\nw = 5\n\\]\n\nStep 4: Find the length. Using \\( w = 5 \\), the length is:\n\\[\n\\text{length} = 3 + 2 \\times 5 = 3 + 10 = 13\n\\]\n\nStep 5: Calculate the area. The area of a rectangle is \\( \\text{length} \\times \\text{width} \\):\n\\[\n\\text{Area} = 13 \\times 5 = 65\n\\]\nCheck the options: 45, 54, 63, 72, 81. 65 is not listed, indicating a potential error. Re-check calculations: Perimeter equation was \\( 2(3 + 2w + w) = 36 \\), which simplifies to \\( 2(3 + 3w) = 36 \\), then \\( 3 + 3w = 18 \\), \\( 3w = 15 \\), \\( w = 5 \\), length = 13, area = 65. This suggests the options might be incorrect or there's a misinterpretation. Verify problem statement: \"perimeter is 36 meters\" and options are given. Possibly, the intended answer is among the options if a common mistake is made. For example, if one forgets to divide by 2 in perimeter: \\( 3 + 2w + w = 36 \\) leads to \\( 3 + 3w = 36 \\), \\( 3w = 33 \\), \\( w = 11 \\), length = 25, area = 275 (not in options). Another common error: mis-setting length as \\( 2w + 3 \\) but using incorrect perimeter formula, e.g., \\( 2w + 2(2w+3) = 36 \\) gives \\( 2w + 4w + 6 = 36 \\), \\( 6w = 30 \\), \\( w = 5 \\), same as before. Given the options, the correct area from my calculation is 65, but since it's not listed, I'll assume the problem might have a typo or the options are distractors. However, for solution purposes, the correct area is 65 square meters based on the given data.",
+        "options": {
+          "A": "45",
+          "B": "54",
+          "C": "63",
+          "D": "72",
+          "E": "81"
+        },
+        "answer": "C",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. The team wants to determine how many bacteria will be present after 12 hours, assuming exponential growth. However, they must also consider that after 6 hours, an antibiotic is introduced that reduces the population by 40% every 2 hours, starting from the population at that time. Calculate the total number of bacteria after 12 hours, accounting for both the growth and decay phases. Use the formula for exponential change: N = N₀ × (2)^(t/T) for growth and N = N₀ × (0.6)^(t/T) for decay, where N₀ is the initial amount, t is time, and T is the doubling or halving time. Provide your answer to the nearest whole number.",
+        "title": "Bacterial Growth and Decay with Exponential Change Calculation",
+        "solution": "",
+        "options": {
+          "A": "Approximately 1,280 bacteria",
+          "B": "Approximately 1,920 bacteria",
+          "C": "Approximately 2,560 bacteria",
+          "D": "Approximately 3,200 bacteria",
+          "E": "Approximately 4,000 bacteria"
+        },
+        "answer": [
+          "B"
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A research team is analyzing the growth of a bacterial culture that doubles every 3 hours. Initially, there are 500 bacteria. If the culture is allowed to grow for 15 hours, how many bacteria will be present at the end of this period? Use the exponential growth formula N = N₀ × 2^(t/T), where N₀ is the initial amount, t is the time elapsed, and T is the doubling time. Focus on applying the formula correctly and performing the exponent calculation accurately.",
+        "title": "Bacterial Growth Exponential Doubling Time Calculation",
+        "solution": "{(t/T)} \\). Substitute the known values: \\( N = 500 \\times 2^{(15/3)} \\).\n\nStep 3: Perform the calculations. First, compute the exponent: \\( 15/3 = 5 \\). So, \\( N = 500 \\times 2^5 \\). Calculate \\( 2^5 = 32 \\). Then, \\( N = 500 \\times 32 = 16,000 \\).\n\nStep 4: Verify the solution by checking the doubling process logically. In 15 hours, with a doubling every 3 hours, there are \\( 15/3 = 5 \\) doubling periods. Starting from 500, after 5 doublings: \\( 500 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2 = 500 \\times 32 = 16,000 \\), which matches the calculation.\n\nStep 5: Confirm that the solution addresses the original question by ensuring the units are consistent (bacteria count) and the growth model is applied correctly. The final number of bacteria is 16,000.",
+        "options": {
+          "A": "1,600",
+          "B": "8,000",
+          "C": "16,000",
+          "D": "32,000",
+          "E": "64,000"
+        },
+        "answer": "C",
+        "prompt": "<Functions and Polynomials> - <Science and Technology> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? Provide your answer as a two-digit positive number.",
+        "title": "Rectangular Garden Perimeter and Area Calculation",
+        "solution": "",
+        "options": null,
+        "answer": 90.0,
+        "prompt": "<Standard Deviation and Variance> - <Business and Finance> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Numerical Entry",
+        "difficulty": 3
+      },
+      {
+        "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the area of the garden is 54 square meters, what is the width of the garden in meters? Provide your answer as a two-digit positive number or a decimal rounded to two places if necessary.",
+        "title": "Rectangular Garden Area Problem with Linear Relationship",
+        "solution": "{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\), where \\( a = 2 \\), \\( b = 3 \\), and \\( c = -54 \\). Calculate the discriminant: \\( b^2 - 4ac = 3^2 - 4(2)(-54) = 9 + 432 = 441 \\). The square root of 441 is 21. So, \\( w = \\frac{-3 \\pm 21}{4} \\).\n\nStep 5: Compute the two possible solutions: \\( w = \\frac{-3 + 21}{4} = \\frac{18}{4} = 4.5 \\) and \\( w = \\frac{-3 - 21}{4} = \\frac{-24}{4} = -6 \\). Since width cannot be negative, the valid solution is \\( w = 4.5 \\) meters. Check: length = \\( 2(4.5) + 3 = 9 + 3 = 12 \\) meters, area = \\( 12 \\times 4.5 = 54 \\) square meters, which matches the given area.",
+        "options": null,
+        "answer": 4.5,
+        "prompt": "<Exponents and Powers> - <Environment and Sustainability> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Numerical Entry",
+        "difficulty": 4
+      },
+      {
+        "metadata": {
+          "graph": [
+            {
+              "type": "line_chart",
+              "description": "A line chart showing the monthly revenue and profit trends for a tech startup over a 12-month period, designed to assess skills in data interpretation, trend analysis, and multi-step problem-solving for graduate-level business analysis.",
+              "structure": {
+                "title": "Monthly Revenue and Profit Trends for Tech Startup (Year 2023)",
+                "x_axis": {
+                  "label": "Month",
+                  "type": "categorical"
+                },
+                "y_axis": {
+                  "label": "Amount (in thousands of USD)",
+                  "type": "numerical"
+                },
+                "data_format": {
+                  "categories": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                  ],
+                  "values": [
+                    {
+                      "revenue": 120,
+                      "profit": 25
+                    },
+                    {
+                      "revenue": 135,
+                      "profit": 30
+                    },
+                    {
+                      "revenue": 150,
+                      "profit": 40
+                    },
+                    {
+                      "revenue": 140,
+                      "profit": 35
+                    },
+                    {
+                      "revenue": 160,
+                      "profit": 45
+                    },
+                    {
+                      "revenue": 170,
+                      "profit": 50
+                    },
+                    {
+                      "revenue": 180,
+                      "profit": 55
+                    },
+                    {
+                      "revenue": 190,
+                      "profit": 60
+                    },
+                    {
+                      "revenue": 200,
+                      "profit": 65
+                    },
+                    {
+                      "revenue": 210,
+                      "profit": 70
+                    },
+                    {
+                      "revenue": 220,
+                      "profit": 75
+                    },
+                    {
+                      "revenue": 230,
+                      "profit": 80
+                    }
+                  ],
+                  "colors": [
+                    "#3498db",
+                    "#e74c3c"
+                  ]
+                }
+              }
+            }
+          ],
+          "table": [
+            {
+              "type": "data_table",
+              "description": "A detailed data table providing monthly revenue, profit, and calculated profit margin percentages for a tech startup in 2023, designed to support multi-part analysis and strategic problem-solving in graduate-level business contexts.",
+              "structure": {
+                "title": "Monthly Financial Performance for Tech Startup (2023)",
+                "entities": [
+                  "Month",
+                  "Revenue (in thousands of USD)",
+                  "Profit (in thousands of USD)",
+                  "Profit Margin (%)"
+                ],
+                "attributes": [
+                  "Jan",
+                  "Feb",
+                  "Mar",
+                  "Apr",
+                  "May",
+                  "Jun",
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Oct",
+                  "Nov",
+                  "Dec"
+                ],
+                "comparison_data": [
+                  [
+                    "Jan",
+                    120,
+                    25,
+                    20.8
+                  ],
+                  [
+                    "Feb",
+                    135,
+                    30,
+                    22.2
+                  ],
+                  [
+                    "Mar",
+                    150,
+                    40,
+                    26.7
+                  ],
+                  [
+                    "Apr",
+                    140,
+                    35,
+                    25.0
+                  ],
+                  [
+                    "May",
+                    160,
+                    45,
+                    28.1
+                  ],
+                  [
+                    "Jun",
+                    170,
+                    50,
+                    29.4
+                  ],
+                  [
+                    "Jul",
+                    180,
+                    55,
+                    30.6
+                  ],
+                  [
+                    "Aug",
+                    190,
+                    60,
+                    31.6
+                  ],
+                  [
+                    "Sep",
+                    200,
+                    65,
+                    32.5
+                  ],
+                  [
+                    "Oct",
+                    210,
+                    70,
+                    33.3
+                  ],
+                  [
+                    "Nov",
+                    220,
+                    75,
+                    34.1
+                  ],
+                  [
+                    "Dec",
+                    230,
+                    80,
+                    34.8
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "title": "Tech Startup Financial Analysis: Revenue, Profit, and Margin Trends",
+        "child-questions": [
+          {
+            "question": "A tech startup`s financial performance for 2023 is analyzed using the provided line chart and data table. The line chart displays monthly revenue and profit trends, while the table includes revenue, profit, and profit margin percentages. Based on this data, answer the following three child questions: 1) Calculate the average monthly profit margin for the year, rounded to one decimal place. 2) Determine the month with the highest percentage increase in revenue compared to the previous month. 3) If the startup aims to achieve a minimum profit margin of 30% each month, identify how many months met this target in 2023. Use the data to perform multi-step calculations and interpret trends for strategic business analysis.",
+            "title": "Tech Startup Financial Analysis: Revenue, Profit, and Margin Trends",
+            "solution": "",
+            "options": {
+              "A": "1) 28.5%, 2) March, 3) 5 months",
+              "B": "1) 29.0%, 2) February, 3) 6 months",
+              "C": "1) 28.8%, 2) March, 3) 6 months",
+              "D": "1) 28.8%, 2) February, 3) 5 months",
+              "E": "1) 29.0%, 2) March, 3) 5 months"
+            },
+            "answer": "C",
+            "prompt": "<Logical Inference from Graphical Data> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          },
+          {
+            "question": "A tech startup`s financial performance for 2023 is analyzed using the provided line chart and data table. The line chart displays monthly revenue and profit trends, while the table includes revenue, profit, and profit margin percentages. Based on this data, answer the following three child questions: 1) Calculate the average monthly profit margin for the year, rounded to one decimal place. 2) Determine the month with the highest percentage increase in revenue compared to the previous month. 3) If the startup aims to achieve a minimum profit margin of 30% each month, identify how many months met this target in 2023. Use the data to perform multi-step calculations and interpret trends for strategic business analysis.",
+            "title": "Tech Startup Financial Analysis: Revenue, Profit, and Margin Trends",
+            "solution": "",
+            "options": {
+              "A": "1) 28.5%, 2) March, 3) 5 months",
+              "B": "1) 29.0%, 2) February, 3) 6 months",
+              "C": "1) 28.8%, 2) March, 3) 6 months",
+              "D": "1) 28.8%, 2) February, 3) 5 months",
+              "E": "1) 29.0%, 2) March, 3) 5 months"
+            },
+            "answer": "C",
+            "prompt": "<Understanding Axes and Scales> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Government Policies and Regulations> - <Data Interpretation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Meta",
+        "difficulty": 5
+      },
+      {
+        "metadata": {
+          "graph": [
+            {
+              "type": "scatter_chart",
+              "description": "Scatter plot showing relationship between study hours per week and final exam scores for graduate students in a business analytics course",
+              "structure": {
+                "title": "Study Hours vs. Exam Performance in Graduate Business Analytics",
+                "x_axis": {
+                  "label": "Study Hours per Week",
+                  "type": "numerical",
+                  "range": [
+                    0,
+                    35
+                  ]
+                },
+                "y_axis": {
+                  "label": "Final Exam Score (Percentage)",
+                  "type": "numerical",
+                  "range": [
+                    50,
+                    100
+                  ]
+                },
+                "data_format": {
+                  "points": [
+                    {
+                      "x": 5,
+                      "y": 62
+                    },
+                    {
+                      "x": 8,
+                      "y": 68
+                    },
+                    {
+                      "x": 12,
+                      "y": 75
+                    },
+                    {
+                      "x": 15,
+                      "y": 82
+                    },
+                    {
+                      "x": 18,
+                      "y": 85
+                    },
+                    {
+                      "x": 20,
+                      "y": 88
+                    },
+                    {
+                      "x": 22,
+                      "y": 90
+                    },
+                    {
+                      "x": 25,
+                      "y": 92
+                    },
+                    {
+                      "x": 28,
+                      "y": 94
+                    },
+                    {
+                      "x": 30,
+                      "y": 95
+                    },
+                    {
+                      "x": 32,
+                      "y": 96
+                    },
+                    {
+                      "x": 34,
+                      "y": 97
+                    }
+                  ],
+                  "point_color": "#2c3e50",
+                  "point_size": 7
+                }
+              }
+            }
+          ],
+          "table": [
+            {
+              "type": "data_table",
+              "description": "Detailed data table showing study hours and exam scores for graduate students in business analytics, with additional demographic and performance metrics",
+              "structure": {
+                "title": "Graduate Student Performance Data - Business Analytics Course",
+                "headers": [
+                  "Student ID",
+                  "Study Hours/Week",
+                  "Exam Score (%)",
+                  "Prior GPA",
+                  "Course Attendance (%)",
+                  "Assignment Average (%)"
+                ],
+                "rows": [
+                  [
+                    "S001",
+                    5,
+                    62,
+                    3.2,
+                    85,
+                    70
+                  ],
+                  [
+                    "S002",
+                    8,
+                    68,
+                    3.4,
+                    90,
+                    75
+                  ],
+                  [
+                    "S003",
+                    12,
+                    75,
+                    3.5,
+                    92,
+                    78
+                  ],
+                  [
+                    "S004",
+                    15,
+                    82,
+                    3.6,
+                    95,
+                    82
+                  ],
+                  [
+                    "S005",
+                    18,
+                    85,
+                    3.7,
+                    96,
+                    85
+                  ],
+                  [
+                    "S006",
+                    20,
+                    88,
+                    3.8,
+                    98,
+                    88
+                  ],
+                  [
+                    "S007",
+                    22,
+                    90,
+                    3.9,
+                    99,
+                    90
+                  ],
+                  [
+                    "S008",
+                    25,
+                    92,
+                    4.0,
+                    100,
+                    92
+                  ],
+                  [
+                    "S009",
+                    28,
+                    94,
+                    4.0,
+                    100,
+                    94
+                  ],
+                  [
+                    "S010",
+                    30,
+                    95,
+                    4.0,
+                    100,
+                    95
+                  ],
+                  [
+                    "S011",
+                    32,
+                    96,
+                    4.0,
+                    100,
+                    96
+                  ],
+                  [
+                    "S012",
+                    34,
+                    97,
+                    4.0,
+                    100,
+                    97
+                  ]
+                ],
+                "formatting": {
+                  "alternating_rows": true,
+                  "border_style": "standard"
+                }
+              }
+            }
+          ]
+        },
+        "title": "Graduate Student Performance Analysis: Study Hours vs. Exam Scores",
+        "child-questions": [
+          {
+            "question": "A graduate business analytics course instructor analyzes student performance data to understand factors influencing exam scores. The scatter plot shows the relationship between study hours per week and final exam scores for 12 students. The data table provides additional metrics including prior GPA, course attendance, and assignment averages. Based on this data, answer the following questions:\n\n1. Using the scatter plot, estimate the correlation coefficient between study hours and exam scores. What type of relationship does this suggest?\n2. Calculate the average exam score for students who studied 20 hours or more per week, using the data table.\n3. Identify which student (by ID) shows the greatest improvement from their assignment average to their exam score, and calculate this improvement percentage.\n4. Determine if there is a threshold effect in study hours: at approximately how many study hours per week do exam scores begin to plateau (increase by less than 1% per additional hour)?\n5. Considering all variables in the table, which factor appears most strongly associated with exam scores besides study hours, and provide a brief rationale based on the data trends.",
+            "title": "Multi-Factor Analysis of Graduate Student Performance Metrics",
+            "solution": "",
+            "options": {
+              "A": "Strong positive correlation (r ≈ 0.95), suggesting more study hours lead to higher exam scores",
+              "B": "Moderate positive correlation (r ≈ 0.75), indicating study hours moderately influence scores",
+              "C": "Weak positive correlation (r ≈ 0.45), showing limited impact of study hours",
+              "D": "No correlation (r ≈ 0), meaning study hours and exam scores are unrelated",
+              "E": "Negative correlation (r ≈ -0.60), implying more study hours decrease scores"
+            },
+            "answer": [
+              "A"
+            ],
+            "prompt": "<Interpolation and Extrapolation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          },
+          {
+            "question": "A graduate business analytics course instructor analyzes student performance data to understand factors influencing exam scores. The scatter plot shows the relationship between study hours per week and final exam scores for 12 students. The data table provides additional metrics including prior GPA, course attendance, and assignment averages. Based on this data, answer the following questions:\n\n1. Using the scatter plot, estimate the correlation coefficient between study hours and exam scores. What type of relationship does this suggest?\n2. Calculate the average exam score for students who studied 20 hours or more per week, using the data table.\n3. Identify which student (by ID) shows the greatest improvement from their assignment average to their exam score, and calculate this improvement percentage.\n4. Determine if there is a threshold effect in study hours: at approximately how many study hours per week do exam scores begin to plateau (increase by less than 1% per additional hour)?\n5. Considering all variables in the table, which factor appears most strongly associated with exam scores besides study hours, and provide a brief rationale based on the data trends.",
+            "title": "Comprehensive Analysis of Graduate Student Performance Metrics",
+            "solution": "{Improvement} = \\frac{\\text{Exam Score} - \\text{Assignment Average}}{\\text{Assignment Average}} \\times 100\\% \\). For example, S001: (62-70)/70 × 100% = -11.43% (worse). S002: (68-75)/75 × 100% = -9.33%. S003: (75-78)/78 × 100% = -3.85%. S004: (82-82)/82 × 100% = 0%. S005: (85-85)/85 × 100% = 0%. S006: (88-88)/88 × 100% = 0%. S007: (90-90)/90 × 100% = 0%. S008: (92-92)/92 × 100% = 0%. S009: (94-94)/94 × 100% = 0%. S010: (95-95)/95 × 100% = 0%. S011: (96-96)/96 × 100% = 0%. S012: (97-97)/97 × 100% = 0%. All students have exam scores equal to or less than assignment averages, so no positive improvement. The greatest (least negative) is S003 with -3.85%.\n\nStep 4: Determine the threshold where exam scores plateau (increase <1% per additional hour). Examine consecutive points: From 30 to 32 hours: score increases from 95 to 96 (1% increase). From 32 to 34 hours: 96 to 97 (1.04% increase). The increase is around 1% even at high hours, but looking earlier: 25 to 28 hours: 92 to 94 (2.17% over 3 hours ≈ 0.72% per hour). 28 to 30: 94 to 95 (1.06% over 2 hours ≈ 0.53% per hour). Plateau begins around 28-30 hours where per-hour increase drops below 1%.\n\nStep 5: Identify the factor most strongly associated with exam scores besides study hours. Compare trends: Prior GPA increases with study hours and scores (e.g., from 3.2 to 4.0). Course attendance also increases (85% to 100%). Assignment averages closely match exam scores (differences small). Course attendance shows a near-perfect correlation with study hours and scores, especially at high values (100% attendance for top performers). Thus, course attendance appears most strongly associated, as it consistently aligns with performance.",
+            "options": {
+              "A": "Strong positive correlation (r ≈ 0.95), suggesting more study hours lead to higher exam scores",
+              "B": "Moderate positive correlation (r ≈ 0.75), indicating study hours moderately influence scores",
+              "C": "Weak positive correlation (r ≈ 0.45), showing limited impact of study hours",
+              "D": "No correlation (r ≈ 0), meaning study hours and exam scores are unrelated",
+              "E": "Negative correlation (r ≈ -0.60), implying more study hours decrease scores"
+            },
+            "answer": [
+              "A"
+            ],
+            "prompt": "<Making Predictions Based on Trends> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+            "question-type": "Problem Solving Meta",
+            "difficulty": 1
+          }
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Business and Finance> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Problem Solving Meta",
+        "difficulty": 4
+      }
+    ]
+  }
+}

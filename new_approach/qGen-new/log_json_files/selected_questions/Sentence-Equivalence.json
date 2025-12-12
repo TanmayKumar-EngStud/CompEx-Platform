@@ -1,19 +1,26 @@
 {
-  "question": "The study`s methodology was criticized for being overly _____ , lacking the flexibility to adapt to unforeseen variables in the research environment.",
-  "title": "Vocabulary in Research Methodology",
-  "solution": "Step 1: Analyze the sentence: `The study`s methodology was criticized for being overly _____ , lacking the flexibility to adapt to unforeseen variables in the research environment.` The blank needs an adjective describing a rigid or inflexible methodology.\nStep 2: Identify vocabulary for rigidity in an academic context. Words like `rigid` and `inflexible` are synonymous in this scenario, as both imply a lack of adaptability and can fit grammatically.\nStep 3: Check for equivalence: Both `rigid` and `inflexible` convey the same essential meaning of being too strict or unyielding, making the sentences logically equivalent in tone and context.\nStep 4: Document error pathways: If a test-taker confuses with `complex` or `detailed`, they might choose non-synonyms; `structured` or `systematic` are related but not synonymous with each other in this rigid sense; mixing positive/negative tones like `innovative` with `obsolete` creates mismatches.\nStep 5: Confirm solution: The two correct words are `rigid` and `inflexible`, as they are precise synonyms fitting the blank and maintaining sentence coherence.",
+  "question": "The critic`s review was so harsh that it could be described as _____ in its condemnation of the artist`s latest work.",
+  "title": "Vocabulary Precision: Harsh Condemnation Synonyms",
+  "solution": "Step 1: Analyze the sentence for contextual clues. The sentence describes a review as \"so harsh\" and \"condemnation,\" indicating the blank requires a word meaning extremely critical or severe. \nStep 2: Identify synonyms that fit this context. Words like \"scathing\" and \"vitriolic\" both convey intense criticism and match the tone of harsh condemnation. \nStep 3: Verify logical fit by testing these words in the sentence. Both \"scathing\" and \"vitriolic\" maintain the sentence's meaning of strong disapproval. \nStep 4: Consider potential errors. Mistaking it for general synonyms like \"negative\" (too vague) or \"praise\" (opposite meaning) would not create equivalent sentences. \nStep 5: Confirm that the two correct answers produce sentences with equivalent meanings and formal academic vocabulary, addressing the SE requirement.",
   "options": {
-    "A": "rigid",
-    "B": "complex",
-    "C": "inflexible",
-    "D": "structured",
-    "E": "innovative"
+    "A": "scathing",
+    "B": "negative",
+    "C": "vitriolic",
+    "D": "praise",
+    "E": "harsh"
   },
   "answer": [
     "A",
     "C"
   ],
-  "prompt": "<Science and Technology> - <Word Relationships> - vocabulary_level: <2> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+  "prompt": "<Geography> - <Logical Consistency> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.\n\n[Vocabulary Instruction]: Integrate the following words naturally into the text (or options where appropriate): Captious, Excoriate, Aspersion, Choleric, Adumbrate, Hegemony, Assiduous, Disabuse, Apposite, Mendacious.\n\n[Scenario Context]: Set this problem in the context of A rare coin auction's bidding history. Random Seed: 78019",
   "question-type": "Sentence Equivalence",
-  "difficulty": 2
+  "difficulty": 5,
+  "tags": [
+    "section: Verbal",
+    "theme: <Geography>",
+    "type: Sentence Equivalence",
+    "topic: <Logical Consistency>",
+    "exam: GRE"
+  ]
 }

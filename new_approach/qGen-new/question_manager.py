@@ -1,9 +1,11 @@
+
 import os
+import random
 import json
 import re
 from typing import Optional, List, Dict, Any, Tuple
 
-from io_utils import get_json, prettify, get_Component_Template, record
+from io_utils import get_json, prettify, get_Component_Template, record, get_Question_Template
 from api_utils import get_gemini_generator
 from content_generation_manager import manage_generated_content
 
@@ -275,6 +277,9 @@ class ManageQuestionData:
         
         # 1. Dynamic Difficulty Injection
         self._inject_difficulty()
+        
+        # 1b. Inject Context (Vocab + Scenarios)
+        self._inject_context_and_vocab()
 
         # 2. Variable initialization
         if self.question_type == 'Text Completion':
@@ -418,37 +423,87 @@ class ManageQuestionData:
         except Exception as e:
             print(f"Warning: Failed to inject difficulty instruction: {e}")
 
+    def _inject_context_and_vocab(self):
+        """
+        Injects Vocabulary and Scenario Context into the prompt *before* generation.
+        """
+        # --- VOCABULARY INJECTION ---
+        if self.question_type in ['Text Completion', 'Reading Comprehension', 'Sentence Equivalence', 'Critical Reasoning', 'Sentence Correction']:
+            try:
+                vocab_path = os.path.join(os.path.dirname(__file__), 'json_files', 'vocabulary.json')
+                if os.path.exists(vocab_path):
+                    with open(vocab_path, 'r') as f:
+                        vocab_data = json.load(f)
+
+                    exam = self.prompt_details.get('exam', 'GRE')
+                    if exam not in vocab_data: exam = 'GRE'
+                    
+                    current_difficulty = self.prompt_details.get('difficulty', 1)
+                    diff_key = str(max(1, min(5, current_difficulty)))
+                    
+                    word_list = vocab_data.get(exam, {}).get(diff_key, [])
+                    
+                    if word_list:
+                        count = 15 if self.question_type in ['Reading Comprehension', 'Critical Reasoning'] else 10
+                        selected_words = random.sample(word_list, min(len(word_list), count))
+                        
+                        vocab_instruction = f"\n\n[Vocabulary Instruction]: Integrate the following words naturally into the text (or options where appropriate): {', '.join(selected_words)}."
+                        self.prompt_details['prompt'] += vocab_instruction
+            except Exception as e:
+                print(f"Warning: Failed to inject vocabulary: {e}")
+
+        # --- SCENARIO INJECTION ---
+        try:
+            scenario_path = os.path.join(os.path.dirname(__file__), 'json_files', 'scenarios.json')
+            if os.path.exists(scenario_path):
+                with open(scenario_path, 'r') as f:
+                    scenarios_data = json.load(f)
+                
+                random_scenario = random.choice(scenarios_data['scenarios'])
+                scenario_instruction = f"\n\n[Scenario Context]: Set this problem in the context of {random_scenario}."
+                uniqueness_seed = f" Random Seed: {random.randint(10000, 99999)}"
+                
+                self.prompt_details['prompt'] += scenario_instruction + uniqueness_seed
+        except Exception as e:
+            print(f"Warning: Failed to inject scenario: {e}")
+
     def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
         result_buffer = {}
         total_stats = {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}
         
-    def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
-        result_buffer = {}
-        total_stats = {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}
-        
-        # Load System Instruction if not set
         if not self.generator_session.system_instructions_set:
              try:
-                 from io_utils import get_Question_Template, get_json
-                 qt_info = get_json('question_type_info')[0]
-                 question_config = qt_info.get(self.question_type, {})
-                 template_name = question_config.get('system-instruction')
+                 # Determine template name based on Question Type mapping
+                 q_type = self.question_type
+                 template_map = {
+                     "Data Sufficiency": "data-sufficiency-system-instruction.txt.template",
+                     "Problem Solving Simple": "problem-solving-simple-system-instruction.txt.template",
+                     "Problem Solving Meta": "problem-solving-meta-system-instruction.txt.template",
+                     "Numerical Entry": "numerical-entry-system-instruction.txt.template",
+                     "Quantitative Comparison": "qc-system-instruction.txt.template",
+                     "Text Completion": "text-completion-system-instruction.txt.template",
+                     "Reading Comprehension": "reading-comprehension-system-instruction.txt.template",
+                     "Sentence Equivalence": "sentence-equivalence-system-instruction.txt.template",
+                     "Graphic Interpretation": "gi-system-instruction.txt.template",
+                     "Table Analysis": "ta-system-instruction.txt.template",
+                     "Two-Part Analysis": "tpa-system-instruction.txt.template",
+                     "Multi-Source Reasoning": "msr-system-instruction.txt.template"
+                 }
+                 # Default to generic if not found (e.g. Critical Reasoning, Sentence Correction)
+                 template_name = template_map.get(q_type, "generic.txt.template")
                  
                  if template_name:
                      sys_instruct = get_Question_Template(
                         question_component="SystemInstruction",
                         filename=template_name,
-                        exam_type=self.prompt_details.get('exam', 'GRE'),
-                        Section_name=self.prompt_details.get('section', 'General'),
+                        exam_type=self.prompt_details['exam'],
+                        Section_name=self.prompt_details['section'],
                         question_type=self.question_type,
-                        variable=None # Added missing argument
+                        variable=None
                      )
-                     self.generator_session.set_system_instruction(sys_instruct)
-                 else:
-                     self.generator_session.set_system_instruction("You are a helpful AI assistant.")
+                     self.generator_session.set_system_instruction(sys_instruct.strip())
              except Exception as e:
                  print(f"Warning: Failed to load system instruction: {e}")
-                 self.generator_session.set_system_instruction("You are a helpful AI assistant.")
 
         # Flatten calls for processing
         flat_calls = []
