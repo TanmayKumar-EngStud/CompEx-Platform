@@ -386,6 +386,9 @@ class ManageQuestionData:
             print(f"Warning: Tag parsing failed: {e}")
             tags.append(f"type: {self.question_type}") # Fallback
 
+        # CRITICAL FIX: Assign tags to result_buffer before recording!
+        result_buffer['tags'] = list(set(tags))
+
         record(result_buffer, fname="generated_question", addresses=[self.question_type])
         self._persist_selected_question(self.question_type, result_buffer)
         

@@ -352,7 +352,15 @@
             "Science and Technology",
             "Human Resources",
             "Environment and Sustainability",
-            "Government Policies and Regulations"
+            "Government Policies and Regulations",
+            "Sustainable Energy & Climate Technology",
+            "Digital Economy & E-commerce",
+            "Healthcare Analytics & Epidemiology",
+            "Supply Chain Logistics & Global Trade",
+            "Financial Markets & Cryptocurrency",
+            "Space Exploration & Engineering",
+            "Urban Planning & Smart Cities",
+            "Agricultural Economics & Food Security"
          ]
       },
       {
@@ -372,7 +380,15 @@
             "Geography",
             "Art",
             "Literature",
-            "Fiction"
+            "Fiction",
+            "Cognitive Science & Psychology",
+            "Anthropology & Sociology",
+            "Digital Humanities & Media Studies",
+            "International Relations & Diplomacy",
+            "Environmental Ethics & Philosophy",
+            "Modern Architecture & Urban Design",
+            "Linguistics & Language Acquisition",
+            "Artificial Intelligence & Ethics"
          ]
       },
       {
@@ -383,7 +399,12 @@
          "list": [
             "Social Sciences",
             "Business",
-            "Current Affairs"
+            "Business",
+            "Current Affairs",
+            "Tech Innovation",
+            "Cultural Anthropology",
+            "Astrobiology",
+            "Neuroscience"
          ]
       }
    ],

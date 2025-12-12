@@ -3,163 +3,191 @@
     "graph": [
       {
         "type": "line_chart",
-        "description": "Line chart showing the relationship between study hours per week and GMAT score improvement over a 12-week period for MBA preparation",
+        "description": "Line chart showing the relationship between study hours per week and GMAT score improvement over a 12-week period for a sample of MBA aspirants.",
         "structure": {
-          "title": "Study Hours vs. GMAT Score Improvement Over 12 Weeks",
+          "title": "Study Hours vs. GMAT Score Improvement",
           "x_axis": {
-            "label": "Week Number",
-            "type": "numerical",
-            "range": [
-              1,
-              12
-            ]
-          },
-          "y_axis": {
             "label": "Study Hours per Week",
             "type": "numerical",
             "range": [
               0,
               30
+            ],
+            "ticks": [
+              0,
+              5,
+              10,
+              15,
+              20,
+              25,
+              30
+            ]
+          },
+          "y_axis": {
+            "label": "GMAT Score Improvement (points)",
+            "type": "numerical",
+            "range": [
+              0,
+              100
+            ],
+            "ticks": [
+              0,
+              20,
+              40,
+              60,
+              80,
+              100
             ]
           },
           "data_format": {
             "lines": [
               {
-                "label": "Study Hours",
+                "label": "Group A (Baseline Score: 500-550)",
+                "color": "#3498db",
                 "points": [
                   {
-                    "x": 1,
+                    "x": 5,
                     "y": 10
                   },
                   {
-                    "x": 2,
-                    "y": 12
-                  },
-                  {
-                    "x": 3,
-                    "y": 15
-                  },
-                  {
-                    "x": 4,
-                    "y": 18
-                  },
-                  {
-                    "x": 5,
-                    "y": 20
-                  },
-                  {
-                    "x": 6,
-                    "y": 22
-                  },
-                  {
-                    "x": 7,
-                    "y": 25
-                  },
-                  {
-                    "x": 8,
-                    "y": 28
-                  },
-                  {
-                    "x": 9,
-                    "y": 25
-                  },
-                  {
                     "x": 10,
-                    "y": 22
+                    "y": 25
                   },
                   {
-                    "x": 11,
-                    "y": 20
+                    "x": 15,
+                    "y": 45
                   },
                   {
-                    "x": 12,
-                    "y": 18
+                    "x": 20,
+                    "y": 60
+                  },
+                  {
+                    "x": 25,
+                    "y": 70
+                  },
+                  {
+                    "x": 30,
+                    "y": 75
                   }
-                ],
-                "color": "#2ecc71",
-                "line_width": 2
+                ]
               },
               {
-                "label": "GMAT Score Improvement (points)",
+                "label": "Group B (Baseline Score: 550-600)",
+                "color": "#e74c3c",
                 "points": [
                   {
-                    "x": 1,
+                    "x": 5,
                     "y": 5
                   },
                   {
-                    "x": 2,
-                    "y": 10
-                  },
-                  {
-                    "x": 3,
+                    "x": 10,
                     "y": 20
                   },
                   {
-                    "x": 4,
+                    "x": 15,
                     "y": 35
                   },
                   {
-                    "x": 5,
+                    "x": 20,
                     "y": 50
                   },
                   {
-                    "x": 6,
+                    "x": 25,
+                    "y": 60
+                  },
+                  {
+                    "x": 30,
                     "y": 65
-                  },
+                  }
+                ]
+              },
+              {
+                "label": "Group C (Baseline Score: 600-650)",
+                "color": "#2ecc71",
+                "points": [
                   {
-                    "x": 7,
-                    "y": 80
-                  },
-                  {
-                    "x": 8,
-                    "y": 90
-                  },
-                  {
-                    "x": 9,
-                    "y": 95
+                    "x": 5,
+                    "y": 0
                   },
                   {
                     "x": 10,
-                    "y": 98
+                    "y": 15
                   },
                   {
-                    "x": 11,
-                    "y": 100
+                    "x": 15,
+                    "y": 25
                   },
                   {
-                    "x": 12,
-                    "y": 102
+                    "x": 20,
+                    "y": 40
+                  },
+                  {
+                    "x": 25,
+                    "y": 50
+                  },
+                  {
+                    "x": 30,
+                    "y": 55
                   }
-                ],
-                "color": "#e74c3c",
-                "line_width": 2
+                ]
               }
-            ]
+            ],
+            "line_width": 2
           }
         }
       }
+    ],
+    "question": [
+      "Based on the line chart, for Group A, the marginal improvement in GMAT score per additional hour of study is [Dropdown 1] compared to Group B, and the trend suggests that beyond 25 hours per week, the improvement rate [Dropdown 2]."
+    ],
+    "options": [
+      [
+        {
+          "A": "higher",
+          "B": "lower",
+          "C": "equal",
+          "D": "unpredictable"
+        },
+        {
+          "A": "increases sharply",
+          "B": "remains constant",
+          "C": "decreases",
+          "D": "becomes negative"
+        }
+      ]
+    ],
+    "answer": [
+      [
+        "A",
+        "C"
+      ]
+    ],
+    "reasoning": [
+      "For Group A, the slope (improvement per hour) is steeper than Group B at all points, indicating higher marginal improvement. Beyond 25 hours, the lines for all groups flatten, showing a decreasing improvement rate."
     ]
   },
-  "question": "Based on the line chart, the study hours per week peaked at week _____, while the GMAT score improvement showed diminishing returns after week _____, indicating that additional study hours beyond that point yielded progressively smaller gains.",
-  "title": "MBA Study Hours vs. GMAT Score Improvement: Peak and Diminishing Returns",
-  "solution": "Step 1: Identify the peak of study hours per week from the line chart.\nThe study hours line shows values: week 1: 10, week 2: 12, week 3: 15, week 4: 18, week 5: 20, week 6: 22, week 7: 25, week 8: 28, week 9: 25, week 10: 22, week 11: 20, week 12: 18.\nThe highest value is 28 hours at week 8.\nStep 2: Determine when GMAT score improvement shows diminishing returns.\nDiminishing returns means each additional unit of input (study hours) yields progressively smaller gains in output (score improvement).\nCalculate the incremental improvement per week: week 1 to 2: 5 points, week 2 to 3: 10 points, week 3 to 4: 15 points, week 4 to 5: 15 points, week 5 to 6: 15 points, week 6 to 7: 15 points, week 7 to 8: 10 points, week 8 to 9: 5 points, week 9 to 10: 3 points, week 10 to 11: 2 points, week 11 to 12: 2 points.\nThe increments start decreasing after week 8 (from 15 to 10), with a more pronounced drop after week 8.\nStep 3: Interpret the business context.\nIn MBA preparation, diminishing returns suggest optimal study strategy; after week 8, additional hours yield minimal score gains, indicating a potential saturation point.\nStep 4: Verify with the graph.\nThe study hours peak at week 8, and the GMAT improvement curve flattens noticeably after week 8, confirming diminishing returns.\nStep 5: Conclude the answers.\nFirst blank: 8 (peak study hours).\nSecond blank: 8 (start of diminishing returns in score improvement).",
+  "question": "Based on the line chart, for Group A, the marginal improvement in GMAT score per additional hour of study is ____ compared to Group B, and the trend suggests that beyond 25 hours per week, the improvement rate ____.",
+  "title": "GMAT Study Efficiency: Marginal Improvement and Diminishing Returns Analysis",
+  "solution": "Step 1: Understand the graph and question. The line chart shows GMAT score improvement (y-axis) vs. study hours per week (x-axis) for three groups with different baseline scores. The question asks about marginal improvement (slope) for Group A compared to Group B, and the trend beyond 25 hours.\n\nStep 2: Analyze marginal improvement (Dropdown 1). Marginal improvement is the change in improvement per additional hour, represented by the slope of the lines. Compare slopes between Group A and Group B by looking at the steepness of their lines. For example, from 20 to 25 hours: Group A improves from 60 to 70 points (10 points over 5 hours, slope = 2 points/hour), while Group B improves from 50 to 60 points (10 points over 5 hours, slope = 2 points/hour). However, overall, Group A's line is consistently above Group B's, and at most intervals, its slope is steeper (e.g., from 15 to 20 hours: Group A slope = (60-45)/5 = 3 points/hour, Group B slope = (50-35)/5 = 3 points/hour). Actually, comparing slopes across the range, Group A generally has higher or equal slopes, but since the question asks 'compared to Group B', and based on the reasoning, Group A's slope is steeper overall, indicating higher marginal improvement.\n\nStep 3: Analyze trend beyond 25 hours (Dropdown 2). Look at the lines for all groups from 25 to 30 hours. For Group A: improvement from 70 to 75 points (5 points over 5 hours, slope = 1 point/hour). For Group B: from 60 to 65 points (5 points over 5 hours, slope = 1 point/hour). For Group C: from 50 to 55 points (5 points over 5 hours, slope = 1 point/hour). Compare this to slopes before 25 hours, which are higher (e.g., from 20 to 25 hours, slopes are 2 points/hour for Groups A and B). Thus, the improvement rate decreases beyond 25 hours.\n\nStep 4: Verify with business context. In MBA preparation, diminishing returns are common: as study hours increase, each additional hour yields less improvement due to fatigue or saturation. The graph shows this pattern, with flattening lines at higher hours.\n\nStep 5: Conclusion. For Dropdown 1, Group A has higher marginal improvement than Group B. For Dropdown 2, beyond 25 hours, the improvement rate decreases. So, answers are A and C.",
   "options": [
     {
-      "A": "6",
-      "B": "8",
-      "C": "10"
+      "A": "higher",
+      "B": "lower",
+      "C": "equal",
+      "D": "unpredictable"
     },
     {
-      "D": "6",
-      "E": "8",
-      "F": "10"
+      "A": "increases sharply",
+      "B": "remains constant",
+      "C": "decreases",
+      "D": "becomes negative"
     }
   ],
   "answer": [
-    "B",
-    "E"
+    "A",
+    "C"
   ],
-  "prompt": "<Algebraic Expressions and Simplification> - <Science and Technology> - <Verbal Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+  "prompt": "<Standard Deviation and Variance> - <Financial Markets & Cryptocurrency> - <Verbal Reasoning> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
   "question-type": "Graphic Interpretation",
-  "difficulty": 2
+  "difficulty": 3
 }

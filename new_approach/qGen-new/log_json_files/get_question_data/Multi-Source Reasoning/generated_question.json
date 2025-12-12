@@ -1,62 +1,62 @@
 {
   "metadata": {
     "Source1": {
-      "para": "The Global Technology Trends Institute (GTTI) report provides critical insights for MBA students analyzing the technology sector. Understanding these trends requires synthesizing information across multiple data sources: a descriptive passage outlining key growth areas, a bar chart showing historical adoption rates, and a line chart projecting future market sizes. This multi-source approach tests the ability to integrate qualitative and quantitative data, a vital skill for strategic decision-making in business contexts where decisions often rely on complex, interconnected information."
+      "para": "The logistics sector's response to these shifting trade dynamics has involved significant technological and strategic investments. According to a 2024 industry survey by Supply Chain Analytics Group, 68% of major logistics firms have increased their budget for digital transformation by over 20% compared to 2022. Key focus areas include predictive analytics for route optimization, blockchain for customs documentation, and AI-driven inventory management. The survey also indicates that companies prioritizing these technologies reported a 15% average reduction in shipping delays and a 12% improvement in cost efficiency. However, implementation challenges persist, with 45% of firms citing data integration issues and 30% facing cybersecurity concerns as major barriers to full adoption."
     },
     "Source2": {
       "table": {
-        "type": "sortable_table",
-        "description": "This table presents detailed enterprise adoption data by region for the same emerging technologies over the period 2019-2023, based on GTTI's survey of 500 global corporations. It complements Sources 1 and 3 by providing regional breakdowns that can be analyzed to test graph interpretation skills when comparing trends across different data formats, such as identifying which region shows the highest growth for specific technologies.",
+        "type": "data_table",
+        "description": "A table showing investment and performance metrics for digital transformation technologies in logistics firms in 2024, based on the Supply Chain Analytics Group survey.",
         "structure": {
-          "title": "Enterprise Adoption of Emerging Technologies by Region (2019-2023, Percentage Growth)",
+          "title": "Digital Transformation Investments and Outcomes in Logistics (2024)",
           "headers": [
-            "Region",
-            "Artificial Intelligence (AI)",
-            "Blockchain Technology",
-            "Quantum Computing Research",
-            "Internet of Things (IoT)",
-            "Cybersecurity Solutions"
+            "Technology",
+            "Adoption Rate (%)",
+            "Avg. Budget Increase (%)",
+            "Reduction in Delays (%)",
+            "Cost Efficiency Gain (%)",
+            "Major Challenge (%)"
           ],
           "rows": [
             [
-              "North America",
-              "40%",
-              "25%",
-              "110%",
-              "30%",
-              "45%"
+              "Predictive Analytics",
+              72,
+              25,
+              18,
+              14,
+              "Data Integration: 50"
             ],
             [
-              "Europe",
-              "35%",
-              "18%",
-              "95%",
-              "22%",
-              "38%"
+              "Blockchain",
+              45,
+              30,
+              12,
+              10,
+              "Cybersecurity: 40"
             ],
             [
-              "Asia-Pacific",
-              "50%",
-              "30%",
-              "120%",
-              "35%",
-              "55%"
+              "AI Inventory Management",
+              60,
+              22,
+              16,
+              15,
+              "Data Integration: 55"
             ],
             [
-              "Latin America",
-              "20%",
-              "15%",
-              "80%",
-              "18%",
-              "25%"
+              "IoT Sensors",
+              55,
+              18,
+              10,
+              8,
+              "Implementation Cost: 35"
             ],
             [
-              "Middle East & Africa",
-              "25%",
-              "12%",
-              "75%",
-              "20%",
-              "30%"
+              "Cloud Platforms",
+              80,
+              20,
+              14,
+              12,
+              "Cybersecurity: 25"
             ]
           ],
           "formatting": {
@@ -67,124 +67,110 @@
       }
     },
     "Source3": {
-      "graph": {
-        "type": "line_chart",
-        "description": "This line chart shows the projected market size in billions of dollars for the same emerging technologies from 2024 to 2028, based on GTTI's forecasting models. It complements Sources 1 and 2 by providing future-oriented data that requires graph interpretation to analyze trends and make comparisons, testing skills in synthesizing temporal and quantitative information across different graph types.",
+      "table": {
+        "type": "comparison_table",
+        "description": "A table comparing projected growth and risk factors for major global trade routes in 2024-2025, based on analysis from multiple industry reports.",
         "structure": {
-          "title": "Projected Market Size for Emerging Technologies (2024-2028)",
-          "x_axis": {
-            "label": "Year",
-            "type": "categorical"
-          },
-          "y_axis": {
-            "label": "Market Size (Billions USD)",
-            "type": "numerical"
-          },
-          "data_format": {
-            "categories": [
-              "2024",
-              "2025",
-              "2026",
-              "2027",
-              "2028"
+          "title": "Projected Trade Route Performance and Risks (2024-2025)",
+          "headers": [
+            "Trade Route",
+            "Projected Growth 2024 (%)",
+            "Projected Growth 2025 (%)",
+            "Primary Risk Factor",
+            "Risk Severity (High/Medium/Low)",
+            "Mitigation Strategy"
+          ],
+          "rows": [
+            [
+              "North America-Europe",
+              7.2,
+              6.8,
+              "Regulatory Changes",
+              "Medium",
+              "Enhanced Compliance Systems"
             ],
-            "values": [
-              [
-                150,
-                180,
-                220,
-                270,
-                320
-              ],
-              [
-                40,
-                50,
-                65,
-                85,
-                110
-              ],
-              [
-                5,
-                8,
-                12,
-                18,
-                25
-              ],
-              [
-                200,
-                220,
-                240,
-                260,
-                280
-              ],
-              [
-                120,
-                140,
-                165,
-                195,
-                230
-              ]
+            [
+              "Asia-Pacific",
+              2.5,
+              3.0,
+              "Geopolitical Tensions",
+              "High",
+              "Diversification of Routes"
             ],
-            "colors": [
-              "#3498db",
-              "#e74c3c",
-              "#2ecc71",
-              "#f39c12",
-              "#9b59b6"
+            [
+              "Trans-Pacific",
+              1.0,
+              2.2,
+              "Port Congestion",
+              "High",
+              "Investment in Alternative Ports"
             ],
-            "series_labels": [
-              "Artificial Intelligence (AI)",
-              "Blockchain Technology",
-              "Quantum Computing Research",
-              "Internet of Things (IoT)",
-              "Cybersecurity Solutions"
+            [
+              "Intra-Asia",
+              4.5,
+              5.0,
+              "Infrastructure Limits",
+              "Medium",
+              "Public-Private Partnerships"
+            ],
+            [
+              "Europe-Asia (via Suez)",
+              3.8,
+              4.5,
+              "Political Instability",
+              "High",
+              "Insurance and Contingency Plans"
             ]
+          ],
+          "formatting": {
+            "sortable": true,
+            "alternating_rows": true
           }
         }
       }
     },
-    "Passage": "The Global Technology Trends Institute (GTTI) report provides critical insights for MBA students analyzing the technology sector. Understanding these trends requires synthesizing information across multiple data sources: a descriptive passage outlining key growth areas, a bar chart showing historical adoption rates, and a line chart projecting future market sizes. This multi-source approach tests the ability to integrate qualitative and quantitative data, a vital skill for strategic decision-making in business contexts where decisions often rely on complex, interconnected information.\nFor instance, a strategic analysis might involve comparing AI's historical growth rate from the bar chart with its projected market size in the line chart to assess investment viability, while considering the qualitative context from the passage about automation driving adoption. Similarly, blockchain's expansion in financial services and cybersecurity's high growth rates highlight areas where regulatory and security priorities intersect. Effective synthesis enables MBA graduates to identify patterns, forecast trends, and make data-driven recommendations, such as prioritizing technologies with both high adoption and strong market projections, like AI and cybersecurity, over those with limited commercial applications, like quantum computing."
+    "Passage": "Global supply chain logistics in 2024 face unprecedented complexity, driven by a convergence of technological advancements and persistent operational challenges. As firms navigate this landscape, the integration of digital tools has become critical for maintaining competitive advantage. For instance, predictive analytics not only optimizes routing but also enhances demand forecasting, reducing excess inventory costs by up to 18% according to recent case studies. Similarly, blockchain implementations have streamlined customs clearance times by an average of 40% in pilot programs, though widespread adoption remains hindered by interoperability issues. These innovations are reshaping traditional logistics models, forcing companies to reevaluate their supplier networks and inventory strategies in real-time.\nLooking ahead, industry analysts project that sustainability and resilience will dominate supply chain priorities through 2025. Regulatory pressures, such as the EU's Carbon Border Adjustment Mechanism, are pushing firms to adopt greener logistics practices, with an estimated 25% increase in investment in eco-friendly transport modes by 2025. Concurrently, building resilience against disruptions—exemplified by the 2023 Red Sea crises—requires diversifying trade routes and bolstering risk management frameworks. For example, companies investing in multi-modal transportation networks have reported a 30% reduction in vulnerability to single-point failures. However, balancing these strategic shifts with cost containment remains a key challenge, as evidenced by the 10-15% premium often associated with sustainable and resilient supply chain configurations."
   },
-  "title": "Analyzing Global Technology Trends: Growth and Projections Synthesis",
+  "title": "Supply Chain Logistics: Tech Investments and Trade Route Analysis",
   "child-questions": [
     {
-      "question": "Based on the provided information from the GTTI report, a consulting firm is advising a global technology investment fund. The fund is considering prioritizing investments in technologies that demonstrate both strong historical adoption growth in a key market region and substantial projected future market expansion. Using Source 2 (table) and Source 3 (line chart), which technology shows the highest combined metric when comparing its growth rate in the Asia-Pacific region from 2019-2023 with its projected market size increase from 2024 to 2028? Assume the combined metric is calculated as: (Asia-Pacific growth percentage) + (Projected market size increase in billions USD from 2024 to 2028).",
-      "title": "Investment Priority Analysis: Technology Growth and Market Projections",
-      "solution": "Step 1: Extract the Asia-Pacific growth percentage for each technology from Source 2 (table).\nFor AI: 50%, Blockchain: 30%, Quantum Computing: 120%, IoT: 35%, Cybersecurity: 55%.\n\nStep 2: Extract the projected market size increase from 2024 to 2028 for each technology from Source 3 (line chart).\nFor AI: 320 - 150 = 170 billion USD.\nFor Blockchain: 110 - 40 = 70 billion USD.\nFor Quantum Computing: 25 - 5 = 20 billion USD.\nFor IoT: 280 - 200 = 80 billion USD.\nFor Cybersecurity: 230 - 120 = 110 billion USD.\n\nStep 3: Calculate the combined metric: (Asia-Pacific growth percentage) + (Projected market size increase in billions USD).\nAI: 50 + 170 = 220.\nBlockchain: 30 + 70 = 100.\nQuantum Computing: 120 + 20 = 140.\nIoT: 35 + 80 = 115.\nCybersecurity: 55 + 110 = 165.\n\nStep 4: Compare the combined metrics to find the highest value.\nThe values are: AI = 220, Blockchain = 100, Quantum Computing = 140, IoT = 115, Cybersecurity = 165.\nThe highest is AI with 220.\n\nStep 5: Verify the business context. AI has strong historical growth (50%) and the largest projected market expansion (170 billion USD), aligning with the fund's priority for technologies with both high adoption and substantial future growth.",
+      "question": "A logistics firm is evaluating its digital transformation strategy for 2025, aiming to maximize cost efficiency gains while managing implementation challenges. Based on the data in Source 2, which technology combination would yield the highest total cost efficiency gain if the firm adopts the two technologies with the highest adoption rates, but must also consider that the combined major challenge percentage (sum of percentages from the Major Challenge column) should not exceed 90% to ensure manageable risk? Additionally, considering the trade route projections in Source 3, if the firm primarily operates on the Asia-Pacific route, which is facing high geopolitical tensions, how might this influence their technology selection to mitigate risks, and what is the projected growth difference for this route between 2024 and 2025?",
+      "title": "Supply Chain Strategy: Tech Adoption and Trade Route Growth Analysis",
+      "solution": "Step 1: Identify the two technologies with the highest adoption rates from Source 2.\nThe adoption rates are: Predictive Analytics (72%), Cloud Platforms (80%), AI Inventory Management (60%), IoT Sensors (55%), Blockchain (45%). The two highest are Cloud Platforms (80%) and Predictive Analytics (72%).\n\nStep 2: Calculate the total cost efficiency gain for this combination.\nCost Efficiency Gain for Cloud Platforms: 12%\nCost Efficiency Gain for Predictive Analytics: 14%\nTotal Gain = 12% + 14% = 26%\n\nStep 3: Check if the combined major challenge percentage exceeds 90%.\nExtract challenge percentages from Major Challenge column: For Cloud Platforms, Cybersecurity: 25; for Predictive Analytics, Data Integration: 50.\nCombined = 25 + 50 = 75%, which is ≤ 90%, so the combination is valid.\n\nStep 4: Consider the Asia-Pacific trade route from Source 3.\nProjected Growth 2024: 2.5%\nProjected Growth 2025: 3.0%\nDifference = 3.0% - 2.5% = 0.5% increase.\n\nStep 5: Analyze risk influence on technology selection.\nAsia-Pacific has high geopolitical tensions (Risk Severity: High). Mitigation Strategy: Diversification of Routes. This suggests technologies that enhance route optimization and resilience, like Predictive Analytics (for routing) and Cloud Platforms (for data integration across diversified routes). The high risk reinforces selecting these technologies to mitigate disruptions.\n\nThus, the technology combination is Cloud Platforms and Predictive Analytics with a total cost efficiency gain of 26%, and the Asia-Pacific route shows a 0.5% growth increase from 2024 to 2025.",
       "options": {
-        "A": "Artificial Intelligence (AI)",
-        "B": "Blockchain Technology",
-        "C": "Quantum Computing Research",
-        "D": "Internet of Things (IoT)",
-        "E": "Cybersecurity Solutions"
+        "A": "Cloud Platforms and Predictive Analytics with a total gain of 26% and 0.5% growth difference",
+        "B": "AI Inventory Management and IoT Sensors with a total gain of 23% and 0.5% growth difference",
+        "C": "Blockchain and Cloud Platforms with a total gain of 22% and 0.5% growth difference",
+        "D": "Predictive Analytics and IoT Sensors with a total gain of 22% and 0.5% growth difference",
+        "E": "Cloud Platforms and AI Inventory Management with a total gain of 26% and 0.5% growth difference"
       },
       "answer": [
         "A"
       ],
-      "prompt": "<Logical Inference> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+      "prompt": "<Data Interpretation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
       "question-type": "Multi-Source Reasoning",
       "difficulty": 1
     },
     {
-      "question": "A technology analyst is evaluating the regional performance of emerging technologies based on the GTTI data. The analyst hypothesizes that for a technology to be considered `regionally dominant` it must meet two criteria: (1) have the highest adoption growth rate in at least one region compared to other technologies in that same region, and (2) show a projected market size in 2028 that exceeds $200 billion USD. Based on Source 2 (table) and Source 3 (line chart), which technologies satisfy both criteria for `regional dominance`? Select all that apply.",
-      "title": "Regional Dominance Criteria in Technology Adoption and Market Projections",
-      "solution": "Step 1: Identify technologies with the highest adoption growth rate in at least one region from Source 2 (table).\n- North America: Quantum Computing (110%) is highest.\n- Europe: Quantum Computing (95%) is highest.\n- Asia-Pacific: Quantum Computing (120%) is highest.\n- Latin America: Quantum Computing (80%) is highest.\n- Middle East & Africa: Quantum Computing (75%) is highest.\nThus, Quantum Computing has the highest growth in all regions, but we need to check each technology: AI (highest? no, e.g., 50% vs 120% in Asia-Pacific), Blockchain (no), IoT (no), Cybersecurity (no). Only Quantum Computing meets criterion 1.\n\nStep 2: Check projected market size in 2028 from Source 3 (line chart) for each technology.\nAI: 320 billion USD.\nBlockchain: 110 billion USD.\nQuantum Computing: 25 billion USD.\nIoT: 280 billion USD.\nCybersecurity: 230 billion USD.\nCriterion 2 requires >200 billion USD, so AI (320), IoT (280), and Cybersecurity (230) meet this.\n\nStep 3: Combine criteria to find technologies that satisfy both.\n- Quantum Computing meets criterion 1 but fails criterion 2 (25 < 200).\n- AI, IoT, and Cybersecurity meet criterion 2 but need to check criterion 1: none have the highest growth in any region (all are lower than Quantum Computing in each region).\nThus, no technology meets both criteria.\n\nStep 4: Verify by checking if any other technology could be highest in a region: For each region, compare all technologies: Quantum Computing always has the highest percentage (e.g., in North America: 110% vs AI 40%, etc.). So no other technology is highest in any region.\n\nStep 5: Conclude based on the analysis. Since no single technology satisfies both having the highest growth in at least one region and a 2028 market size exceeding $200 billion, the answer is none.",
+      "question": "Considering the data from Sources 1 and 2, if a logistics firm wants to achieve an overall cost efficiency gain of at least 25% by adopting exactly three technologies, but must keep the total major challenge percentage below 120% to avoid excessive implementation risk, which of the following combinations would satisfy both criteria? Additionally, based on Source 3, for a firm operating on the Trans-Pacific route, which has high port congestion risk, what is the projected total growth over 2024-2025, and how might this influence technology prioritization to address delay reduction?",
+      "title": "Logistics Tech Combination: Cost Efficiency and Risk Threshold Analysis",
+      "solution": "Step 1: List the cost efficiency gains and major challenge percentages for each technology from Source 2.\nCost Efficiency Gains: Predictive Analytics (14%), Blockchain (10%), AI Inventory Management (15%), IoT Sensors (8%), Cloud Platforms (12%).\nMajor Challenge Percentages: Predictive Analytics (50), Blockchain (40), AI Inventory Management (55), IoT Sensors (35), Cloud Platforms (25).\n\nStep 2: Identify combinations of exactly three technologies that achieve at least 25% total cost efficiency gain.\nCalculate total gains for potential combinations:\n- Combination 1: Predictive Analytics (14) + AI Inventory Management (15) + Cloud Platforms (12) = 41%\n- Combination 2: Predictive Analytics (14) + Blockchain (10) + Cloud Platforms (12) = 36%\n- Combination 3: AI Inventory Management (15) + Blockchain (10) + Cloud Platforms (12) = 37%\n- Combination 4: Predictive Analytics (14) + AI Inventory Management (15) + IoT Sensors (8) = 37%\n- Combination 5: AI Inventory Management (15) + IoT Sensors (8) + Cloud Platforms (12) = 35%\nAll these combinations meet the ≥25% gain requirement.\n\nStep 3: Check if total major challenge percentage is below 120% for each combination.\nCalculate challenge sums:\n- Combination 1: 50 + 55 + 25 = 130% (exceeds 120%, invalid)\n- Combination 2: 50 + 40 + 25 = 115% (valid, ≤120%)\n- Combination 3: 55 + 40 + 25 = 120% (valid, equal to 120%)\n- Combination 4: 50 + 55 + 35 = 140% (exceeds 120%, invalid)\n- Combination 5: 55 + 35 + 25 = 115% (valid, ≤120%)\nValid combinations are 2, 3, and 5.\n\nStep 4: For the Trans-Pacific route from Source 3, calculate projected total growth over 2024-2025.\nProjected Growth 2024: 1.0%\nProjected Growth 2025: 2.2%\nTotal Growth = 1.0% + 2.2% = 3.2%\n\nStep 5: Analyze technology prioritization for delay reduction given high port congestion risk.\nTrans-Pacific has high port congestion, so technologies that reduce delays are crucial. From Source 2, Reduction in Delays percentages: Predictive Analytics (18%), AI Inventory Management (16%), Cloud Platforms (14%), IoT Sensors (10%), Blockchain (12%). To address delays, prioritize technologies with higher delay reduction within the valid combinations. For example, Combination 2 (Predictive Analytics, Blockchain, Cloud Platforms) has delay reductions of 18%, 12%, 14% respectively, totaling 44% reduction, which is effective for congestion mitigation.\nThus, valid technology combinations meeting both criteria include Predictive Analytics + Blockchain + Cloud Platforms, AI Inventory Management + Blockchain + Cloud Platforms, and AI Inventory Management + IoT Sensors + Cloud Platforms, with the Trans-Pacific route showing 3.2% total growth.",
       "options": [
-        "Artificial Intelligence (AI) meets both criteria for regional dominance.",
-        "Quantum Computing Research meets both criteria for regional dominance.",
-        "Cybersecurity Solutions meets both criteria for regional dominance."
+        "A combination of Predictive Analytics, Blockchain, and Cloud Platforms achieves a total cost efficiency gain of 36% with a major challenge sum of 115%.",
+        "The Trans-Pacific route has a projected total growth of 3.2% over 2024-2025, and technologies with high delay reduction should be prioritized to mitigate port congestion.",
+        "A combination of AI Inventory Management, IoT Sensors, and Cloud Platforms yields a total cost efficiency gain of 35% but exceeds the 120% major challenge threshold."
       ],
       "answer": {
-        "Artificial Intelligence (AI) meets both criteria for regional dominance.": "No",
-        "Quantum Computing Research meets both criteria for regional dominance.": "No",
-        "Cybersecurity Solutions meets both criteria for regional dominance.": "No"
+        "A combination of Predictive Analytics, Blockchain, and Cloud Platforms achieves a total cost efficiency gain of 36% with a major challenge sum of 115%.": "Yes",
+        "The Trans-Pacific route has a projected total growth of 3.2% over 2024-2025, and technologies with high delay reduction should be prioritized to mitigate port congestion.": "Yes",
+        "A combination of AI Inventory Management, IoT Sensors, and Cloud Platforms yields a total cost efficiency gain of 35% but exceeds the 120% major challenge threshold.": "No"
       },
-      "prompt": "<Identifying Assumptions> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+      "prompt": "<Logical Inference> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
       "question-type": "Multi-Source Reasoning",
       "difficulty": 1
     }
   ],
-  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Science and Technology> - <graph> - <graph> - <graph> - <Strategic Analysis> - <Strategic Analysis> - <Strategic Analysis> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+  "prompt": "<work and rate problem> - <Supply Chain Logistics & Global Trade> - <chart> - <chart> - <chart> - <Strategic Analysis> - <Strategic Analysis> - <Strategic Analysis> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
   "question-type": "Multi-Source Reasoning",
-  "difficulty": 3
+  "difficulty": 5
 }

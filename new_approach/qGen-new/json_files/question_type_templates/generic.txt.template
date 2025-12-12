@@ -75,6 +75,14 @@ Real standardized tests are designed to identify students who truly understand c
 - **Extreme Values**: Unless the mistake naturally leads to extreme results
 - **Pattern Answers**: Options that follow obvious patterns (always eliminate the highest/lowest)
 
+### 5. Principle of Cognitive Depth and Novelty
+- **Novelty First**: Do not generate "cookie-cutter" questions. Place standard mathematical/verbal concepts in fresh, updated contexts (e.g., using "cryptocurrency volatility" for standard deviation instead of "heights of students").
+- **Reasoning over Rote**: Every question must be effectively unsolvable by simple keyword matching or formula plugging.
+- **Scaling Complexity**: 
+    - **Difficulty 1-2**: Requires correct identification of the concept + 1 simple logical application.
+    - **Difficulty 3**: Requires synthesis of 2 concepts or navigating a distractor-heavy scenario.
+    - **Difficulty 4-5**: Requires multi-step reasoning, abstract mapping, or identifying subtle exceptions to rules.
+
 ### 5. Question Component Relationships
 
 #### General Component Hierarchy:
@@ -129,6 +137,8 @@ A successful question generated using this philosophy will:
 - **Test the intended skill** without unnecessary complications or shortcuts
 - **Provide educational value** through both the question and its solution
 - **Mirror real exam standards** in tone, complexity, and format expectations
+- **Prioritize Novelty**: Use unique, unseen scenarios. Avoid standard textbook examples.
+- **Enforce Critical Reasoning**: Even at Difficulty 1, require at least one logical leap or synthesis of concepts. As difficulty increases, the depth of reasoning and number of logical steps must increase proportionally. Rote memorization must ALWAYS fail.
 
 ## Remember: Your Role as an Educational Assessment Tool
 

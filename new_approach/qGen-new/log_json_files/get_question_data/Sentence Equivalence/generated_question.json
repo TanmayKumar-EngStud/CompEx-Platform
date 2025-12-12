@@ -1,19 +1,19 @@
 {
-  "question": "The new policy was met with _____ from the public, who saw it as both unfair and detrimental to community interests.",
-  "title": "Public Reaction Vocabulary for Unfair Policies",
-  "solution": "Step 1: Analyze the sentence to determine the context and meaning needed for the blank. The sentence describes public reaction to a new policy that is seen as unfair and detrimental, so the blank should convey a negative sentiment.\nStep 2: Identify two words that can fill the blank to produce equivalent meanings. Possible words include 'outrage' and 'indignation', as both express strong displeasure or anger in response to perceived injustice.\nStep 3: Verify that both words fit grammatically and contextually in the sentence. 'Outrage' and 'indignation' are both nouns that fit after 'with' and before 'from the public', maintaining the sentence's formal tone and logical flow.\nStep 4: Consider potential errors to avoid in the options, such as choosing words like 'criticism' or 'disapproval', which are negative but not as strong as 'outrage' or 'indignation', or 'support', which is positive and contradicts the context.\nStep 5: Confirm that the two words, 'outrage' and 'indignation', result in sentences with the same overall meaning and tone, as they both emphasize a severe negative reaction to the policy's unfairness.",
+  "question": "The study`s methodology was criticized for being overly _____ , lacking the flexibility to adapt to unforeseen variables in the research environment.",
+  "title": "Vocabulary in Research Methodology",
+  "solution": "Step 1: Analyze the sentence: `The study`s methodology was criticized for being overly _____ , lacking the flexibility to adapt to unforeseen variables in the research environment.` The blank needs an adjective describing a rigid or inflexible methodology.\nStep 2: Identify vocabulary for rigidity in an academic context. Words like `rigid` and `inflexible` are synonymous in this scenario, as both imply a lack of adaptability and can fit grammatically.\nStep 3: Check for equivalence: Both `rigid` and `inflexible` convey the same essential meaning of being too strict or unyielding, making the sentences logically equivalent in tone and context.\nStep 4: Document error pathways: If a test-taker confuses with `complex` or `detailed`, they might choose non-synonyms; `structured` or `systematic` are related but not synonymous with each other in this rigid sense; mixing positive/negative tones like `innovative` with `obsolete` creates mismatches.\nStep 5: Confirm solution: The two correct words are `rigid` and `inflexible`, as they are precise synonyms fitting the blank and maintaining sentence coherence.",
   "options": {
-    "A": "outrage",
-    "B": "criticism",
-    "C": "indignation",
-    "D": "disapproval",
-    "E": "support"
+    "A": "rigid",
+    "B": "complex",
+    "C": "inflexible",
+    "D": "structured",
+    "E": "innovative"
   },
   "answer": [
     "A",
     "C"
   ],
-  "prompt": "<Economics> - <Word Meaning Precision> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+  "prompt": "<Science and Technology> - <Word Relationships> - vocabulary_level: <2> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
   "question-type": "Sentence Equivalence",
-  "difficulty": 1
+  "difficulty": 2
 }
