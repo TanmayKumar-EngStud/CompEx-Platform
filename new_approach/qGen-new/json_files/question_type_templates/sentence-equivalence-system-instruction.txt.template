@@ -59,3 +59,5 @@ When called, user prompt will specify the mode and expected output format. Each 
 - **Partial Synonymy**: Selecting one correct answer but pairing it with an incorrect word
 - **Tone/Register Confusion**: Mixing formal/informal or positive/negative words that don't create equivalent meanings
 - **Semantic Field Errors**: Choosing related words from the same semantic field that aren't actually synonymous
+
+UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

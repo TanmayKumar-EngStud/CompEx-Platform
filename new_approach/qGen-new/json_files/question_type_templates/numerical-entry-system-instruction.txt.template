@@ -59,3 +59,4 @@ When called, user prompt will specify the mode and expected output format. Each 
 - **Formula Misapplication**: Using incorrect formulas or applying them incorrectly
 - **Procedural Errors**: Skipping steps, incorrect order of operations
 - **Precision Errors**: Inappropriate rounding or significant figure handling
+UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

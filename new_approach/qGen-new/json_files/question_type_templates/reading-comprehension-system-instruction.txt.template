@@ -81,3 +81,5 @@ When called, user prompt will specify the mode and expected output format. Each 
 - **Detail Confusion**: Mixing up specific facts or attributing information incorrectly
 - **Tone/Attitude Misreading**: Misinterpreting author's perspective or purpose
 - **Scope Errors**: Choosing answers that are too broad or too narrow for the question asked
+
+UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

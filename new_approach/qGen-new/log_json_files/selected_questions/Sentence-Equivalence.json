@@ -1,25 +1,19 @@
 {
-  "question": "The art critic's protracted exegesis, predicated on a rigorous hermeneutical framework, painstakingly sought to discern the artwork's inherent conceptual _____, scrutinizing its internal structure against the artist's declared philosophical tenets and the prevailing aesthetic paradigms of the era.",
-  "title": "Exegesis of Art's Internal Conceptual Logic",
-  "solution": "\"Step 1: The prompt asks us to identify a single word that completes the sentence, describing what an art critic seeks to understand regarding an artwork's 'inherent conceptual _____' through rigorous analysis. The subsequent clause clarifies this by stating the critic 'scrutinizing its internal structure against the artist's declared philosophical tenets and the prevailing aesthetic paradigms of the era.' This implies the desired word should represent the internal consistency, logical soundness, or interconnectedness of the artwork's underlying ideas.Step 2: We need to find a noun that denotes the quality of being logically consistent and forming a unified whole within an abstract, conceptual framework. The word must fit contextually with 'inherent conceptual' and be the direct object of 'discern,' further elaborated by the act of 'scrutinizing its internal structure against...' This framework suggests we are looking for a term that signifies the absence of contradiction and the presence of harmonious logical relationships between the artwork's conceptual components and its external influences.Step 3: Considering words that convey internal logical consistency and unity in a philosophical or critical context, 'coherence' stands out as the most precise fit. 'Coherence' means the quality of being logical and consistent, forming a unified whole. 'Inherent conceptual coherence' perfectly describes the state where an artwork's fundamental ideas are logically interconnected and consistent both internally and in relation to its declared philosophical and aesthetic contexts. While other words like 'integrity' (completeness, soundness) or 'soundness' (based on valid reason) are related, 'coherence' specifically emphasizes the logical and consistent connection between various parts of a concept, which is directly addressed by the scrutiny of 'internal structure against tenets.'Step 4: Let's check the chosen word, 'coherence,' by inserting it into the sentence: 'The art critic's protracted exegesis... sought to discern the artwork's inherent conceptual coherence, scrutinizing its internal structure against the artist's declared philosophical tenets and the prevailing aesthetic paradigms of the era.' This sentence flows naturally and makes complete semantic sense. The act of 'scrutinizing internal structure against tenets' is precisely how one would assess the 'coherence' of a concept, looking for logical connections and the absence of contradictions.Step 5: The solution directly addresses the original question by providing 'coherence' as the fitting word. This term aligns with the requirement for advanced, abstract vocabulary appropriate for discussions in philosophy and art criticism, fulfilling the difficulty instructions by demanding a precise understanding of conceptual qualities rather than simple agreement. The word encapsulates the goal of a critic examining how well an artwork's ideas are logically constructed and integrated, both within themselves and with their declared intentions and environment.\"",
+  "question": "The committee's decision was _____ by a unanimous vote, leaving no room for dissent or further debate.",
+  "title": "Sentence Equivalence: Unanimous Decision Vocabulary in Committee Context",
+  "solution": "",
   "options": {
-    "A": "coherence",
-    "B": "teleology",
-    "C": "integrity",
-    "D": "resonance",
-    "E": "congruity"
+    "A": "ratified",
+    "B": "approved",
+    "C": "discussed",
+    "D": "delayed",
+    "E": "vetoed"
   },
   "answer": [
     "A",
-    "C",
-    "E"
+    "B"
   ],
-  "prompt": "<Art> - <Logical Consistency> - vocabulary_level: <2> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+  "prompt": "<History> - <Structural Analysis> - vocabulary_level: <2> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
   "question-type": "Sentence Equivalence",
-  "difficulty": 1,
-  "tags": [
-    "GRE",
-    "Verbal",
-    "Sentence Equivalence"
-  ]
+  "difficulty": 3
 }

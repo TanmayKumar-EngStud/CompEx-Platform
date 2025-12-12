@@ -1,58 +1,43 @@
 {
   "metadata": {
-    "Passage": "Quantum Innovations, a pioneering startup in the field of quantum computing, is embarking on its ambitious 'Entangled Algorithms Project.' This project, aimed at developing next-generation secure communication protocols, requires an initial capital infusion of $750,000. The company's board of directors is evaluating two distinct funding proposals, each with different financial structures that will impact the total cost of capital over the project's projected three-year development cycle. The success of this project is crucial for Quantum Innovations' market positioning against competitors in the rapidly evolving tech landscape.\nThe first funding option, Proposal Alpha, comes from Zenith Bank. It offers a straight loan of $750,000 with a simple interest rate of 8% per annum, payable over the three-year project duration. Zenith Bank has a strong track record of supporting tech startups, and this particular loan is also contingent on the company maintaining a certain liquidity ratio, which is currently met. The second option, Proposal Beta, is a structured debt instrument from 'Quantum Capital Ventures', a specialized VC firm. This proposal also provides the required $750,000, but with a compound interest rate of 7.5% per annum, compounded annually over the same three-year period. Quantum Capital Ventures also offers advisory services, though these are separate from the core funding agreement. The board's primary concern is to minimize the total financial outlay for the capital, ensuring maximum resources remain available for project execution and future innovation."
+    "Passage": "A global consulting firm is analyzing two potential expansion strategies for a client in the consumer electronics sector. Strategy X involves rapid market entry through acquisitions of local competitors, while Strategy Y focuses on organic growth through gradual market penetration and brand building. The firm has developed a comprehensive financial model projecting key performance indicators over a 5-year horizon for both strategies, considering factors such as initial investment requirements, market share growth rates, operating margins, and competitive response scenarios. The analysis includes sensitivity testing for various economic conditions and regulatory environments across different geographic regions where the expansion would occur.\nThe financial projections for Strategy X indicate a higher initial capital outlay of $500 million, with expected market share reaching 15% by Year 5, but it carries significant integration risks and potential regulatory hurdles. In contrast, Strategy Y requires a lower initial investment of $200 million, with a projected market share of 10% by Year 5, offering greater flexibility and lower risk exposure. The firm's model also estimates net present value (NPV) and internal rate of return (IRR) for each strategy under base-case, optimistic, and pessimistic scenarios, incorporating variables like discount rates (8-12%), revenue growth assumptions (5-15% annually), and cost structures. Based on this analysis, the consulting team must recommend the optimal strategy by evaluating trade-offs between financial returns, risk levels, and strategic alignment with the client's long-term objectives."
   },
-  "title": "Quantum Innovations' Capital: Simple vs. Compound Interest Funding Costs",
+  "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
   "child-questions": [
     {
-      "question": "Quantum Innovations is evaluating two distinct funding proposals for its 'Entangled Algorithms Project'. Proposal Alpha, from Zenith Bank (known for its strong track record with tech startups), offers a straight $750,000 loan at 8% simple interest per annum over a three-year duration, contingent on a liquidity ratio that Quantum Innovations currently meets. Proposal Beta, from Quantum Capital Ventures (which also offers separate advisory services), provides the same $750,000 but at 7.5% compound interest per annum, compounded annually over the identical three-year period. Given the board's primary objective to minimize the total financial outlay for the capital, which funding proposal should Quantum Innovations select?",
-      "title": "Evaluate Quantum Innovations' funding proposals: Simple vs. Compound Interest Outlay",
-      "solution": "\"Quantum Innovations should select Proposal Alpha. The total financial outlay for Proposal Alpha is $930,000, while Proposal Beta results in a total outlay of approximately $931,722.66. Since the objective is to minimize financial outlay, Proposal Alpha is the better choice.\"",
+      "question": "The consulting firm has calculated the following financial metrics for Strategy X and Strategy Y under the base-case scenario, using a discount rate of 10% and assuming annual revenue growth rates of 12% for Strategy X and 8% for Strategy Y over the 5-year period. The total market size is projected to be $10 billion by Year 5, with operating margins of 20% for Strategy X and 25% for Strategy Y. Based on these projections, the firm must determine which strategy maximizes net present value (NPV) and which strategy maximizes internal rate of return (IRR), considering the initial investments and risk-adjusted returns. For each question, select the appropriate strategy from the options provided.",
+      "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+      "solution": "",
       "options": {
-        "A": "Proposal Alpha, as its total financial outlay of $930,000 is less than Proposal Beta's $931,722.66.",
-        "B": "Proposal Beta, as its compound interest rate of 7.5% is lower than Proposal Alpha's 8%.",
-        "C": "Proposal Beta, incorrectly calculated with simple interest, resulting in a lower total outlay of $918,750.",
-        "D": "Proposal Alpha, because Zenith Bank has a strong track record of supporting tech startups.",
-        "E": "Both proposals lead to an identical total financial outlay over the three-year period."
+        "A": "Strategy X",
+        "B": "Strategy Y",
+        "C": "Both strategies have equal NPV",
+        "D": "Both strategies have equal IRR",
+        "E": "Cannot be determined from the given information"
       },
-      "answer": "A",
-      "prompt": "<Logical Inference> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+      "answer": "B",
+      "prompt": "<Evaluating Trade-offs> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
       "question-type": "Two-Part Analysis",
-      "difficulty": 1,
-      "tags": [
-        "GMAT",
-        "Integrated Reasoning",
-        "Two-Part Analysis"
-      ]
+      "difficulty": 1
     },
     {
-      "question": "Given Quantum Innovations` board of directors` primary concern to minimize the total financial outlay for the $750,000 'Entangled Algorithms Project' over its three-year development cycle, which funding proposal—Zenith Bank`s Proposal Alpha offering 8% simple interest per annum, or Quantum Capital Ventures` Proposal Beta with 7.5% compound interest per annum, compounded annually—should the company choose to achieve its objective, and what is the precise difference in the total cost of capital between the two options over the project`s duration?",
-      "title": "Quantum Innovations: Minimize project cost comparing 8% simple vs 7.5% compound interest",
-      "solution": "\"Step 1: Understand the objective and identify key information.The primary objective is to minimize the total financial outlay for Quantum Innovations' $750,000 'Entangled Algorithms Project' over a three-year development cycle. We need to compare two funding proposals:\\n\\n*   **Proposal Alpha (Zenith Bank):** $750,000 loan with 8% simple interest per annum for 3 years.\\n*   **Proposal Beta (Quantum Capital Ventures):** $750,000 loan with 7.5% compound interest per annum, compounded annually for 3 years.\\n\\nStep 2: Set up mathematical relationships for calculating total interest and total outlay for each proposal.\\n\\n*   **For Simple Interest (Proposal Alpha):**\\n    *   Interest (I) = Principal (P) \\\\(\\\\times\\\\) Rate (R) \\\\(\\\\times\\\\) Time (T)\\n    *   Total Outlay = Principal + Interest\\n\\n*   **For Compound Interest (Proposal Beta):**\\n    *   Future Value (FV) = Principal (P) \\\\(\\\\times\\\\) (1 + Rate (R))$^{\\\\text{Time (T)}}$\\n    *   Total Interest = Future Value - Principal\\n    *   Total Outlay = Future Value\\n\\nStep 3: Perform calculations for each proposal.\\n\\n**For Proposal Alpha (Zenith Bank - Simple Interest):**\\n*   Principal (P) = $750,000\\n*   Annual Rate (R) = 8% = 0.08\\n*   Time (T) = 3 years\\n\\n*   Interest = $750,000 \\\\(\\\\times\\\\) 0.08 \\\\(\\\\times\\\\) 3 = $60,000 \\\\(\\\\times\\\\) 3 = $180,000\\n*   Total Outlay (Loan + Interest) = $750,000 + $180,000 = $930,000\\n\\n**For Proposal Beta (Quantum Capital Ventures - Compound Interest):**\\n*   Principal (P) = $750,000\\n*   Annual Rate (R) = 7.5% = 0.075\\n*   Time (T) = 3 years\\n\\n*   Future Value (FV) = $750,000 \\\\(\\\\times\\\\) (1 + 0.075)$^{3}$\\n*   FV = $750,000 \\\\(\\\\times\\\\) (1.075)^{3}\\n*   FV = $750,000 \\\\(\\\\times\\\\) 1.242296875\\n*   FV = $931,722.65625\\n*   Total Outlay (Loan + Interest) = $931,722.66 (rounded to two decimal places)\\n\\nStep 4: Compare the total outlays and determine the difference.\\n\\n*   Total Outlay for Proposal Alpha = $930,000\\n*   Total Outlay for Proposal Beta = $931,722.66\\n\\nTo minimize the total financial outlay, Quantum Innovations should choose Proposal Alpha, as it results in a lower total cost.\\n\\n*   Difference in total cost = Total Outlay (Beta) - Total Outlay (Alpha)\\n*   Difference = $931,722.66 - $930,000 = $1,722.66\\n\\nStep 5: Conclude which proposal should be chosen and state the precise difference.\\n\\nQuantum Innovations should choose **Proposal Alpha** from Zenith Bank to minimize its total financial outlay. The precise difference in the total cost of capital between the two options over the project's duration is **$1,722.66**, with Proposal Alpha being cheaper.\"",
+      "question": "The consulting firm has calculated the following financial metrics for Strategy X and Strategy Y under the base-case scenario, using a discount rate of 10% and assuming annual revenue growth rates of 12% for Strategy X and 8% for Strategy Y over the 5-year period. The total market size is projected to be $10 billion by Year 5, with operating margins of 20% for Strategy X and 25% for Strategy Y. Based on these projections, the firm must determine which strategy maximizes net present value (NPV) and which strategy maximizes internal rate of return (IRR), considering the initial investments and risk-adjusted returns. For each question, select the appropriate strategy from the options provided.",
+      "title": "Expansion Strategy Analysis: NPV and IRR Trade-offs in Consumer Electronics",
+      "solution": "{t=1 to 5} ($190.7 million × (1.12)^{t-1} / (1.10)^t) - $500 million. This requires detailed calculation, but we can approximate: Since growth rate (12%) > discount rate (10%), cash flows are increasing in present value terms, but initial investment is high. For IRR, solve 0 = Σ ($190.7 million × (1.12)^{t-1} / (1 + IRR)^t) - $500 million. Given high growth, IRR might be substantial.\n\nStep 4: Perform calculations for Strategy Y. Year 5 revenue: 10% of $10 billion = $1.0 billion. Revenue grows at 8% annually, so Year 1 revenue: $1.0 billion = Revenue_1 × (1.08)^4 → Revenue_1 = $1.0 billion / (1.08)^4 ≈ $1.0 billion / 1.3605 ≈ $735.0 million. Cash flows: Cash Flow_t = Revenue_t × 25%. Assume growth at 8% annually. Cash Flow_1 = $735.0 million × 0.25 = $183.75 million. NPV_Y = Σ_{t=1 to 5} ($183.75 million × (1.08)^{t-1} / (1.10)^t) - $200 million. Since growth rate (8%) < discount rate (10%), present values decrease over time, but initial investment is much lower. For IRR, solve 0 = Σ ($183.75 million × (1.08)^{t-1} / (1 + IRR)^t) - $200 million.\n\nStep 5: Compare NPV and IRR. For NPV, we need to compute numerically. Approximate: For Strategy X, cash flows start lower but grow faster; NPV might be positive if high terminal value offsets high investment. For Strategy Y, lower investment and steady cash flows likely yield higher NPV due to lower discounting effect and lower initial outlay. Business context: Strategy Y has lower risk, which aligns with higher NPV if cash flows are stable. For IRR, Strategy Y has lower initial investment, so even with lower cash flows, the return percentage could be higher. Quick estimate: Assume average annual cash flow for Strategy X ~ $190.7 million growing to ~$300 million by Year 5, total ~$1.2 billion over 5 years, investment $500 million → IRR roughly >20%. For Strategy Y, average cash flow ~$183.75 million growing to ~$250 million, total ~$1.1 billion, investment $200 million → IRR likely >30%. Thus, Strategy Y maximizes IRR due to lower investment. For NPV, compute more precisely: Using simplified model, NPV_X ≈ $190.7M/1.1 + $213.6M/1.1^2 + $239.2M/1.1^3 + $267.9M/1.1^4 + $300.1M/1.1^5 - $500M ≈ $173.4M + $176.5M + $179.7M + $183.0M + $186.3M - $500M = $898.9M - $500M = $398.9M. NPV_Y ≈ $183.75M/1.1 + $198.5M/1.1^2 + $214.4M/1.1^3 + $231.5M/1.1^4 + $250.0M/1.1^5 - $200M ≈ $167.0M + $164.0M + $161.1M + $158.2M + $155.2M - $200M = $805.5M - $200M = $605.5M. So, NPV_Y > NPV_X. Therefore, Strategy Y maximizes both NPV and IRR in this base-case scenario.\n\nFinal answer: For both questions, select Strategy Y.",
       "options": {
-        "A": "Proposal Alpha, leading to a total cost of capital $1,722.66 lower than Proposal Beta.",
-        "B": "Proposal Beta, leading to a total cost of capital $1,722.66 lower than Proposal Alpha.",
-        "C": "Proposal Beta, leading to a total cost of capital $11,250.00 lower than Proposal Alpha.",
-        "D": "Proposal Alpha, leading to a total cost of capital $2,250.00 lower than Proposal Beta.",
-        "E": "Proposal Alpha, leading to a total cost of capital $1,800.00 lower than Proposal Beta."
+        "A": "Strategy X",
+        "B": "Strategy Y",
+        "C": "Both strategies have equal NPV",
+        "D": "Both strategies have equal IRR",
+        "E": "Cannot be determined from the given information"
       },
-      "answer": "A",
-      "prompt": "<Evaluating Trade-offs> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+      "answer": "B",
+      "prompt": "<Logical Inference> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
       "question-type": "Two-Part Analysis",
-      "difficulty": 1,
-      "tags": [
-        "GMAT",
-        "Integrated Reasoning",
-        "Two-Part Analysis"
-      ]
+      "difficulty": 1
     }
   ],
-  "prompt": "<Simple Interest and Compound Interest> - <Science and Technology> - <Verbal Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
   "question-type": "Two-Part Analysis",
-  "difficulty": 1,
-  "tags": [
-    "GMAT",
-    "Integrated Reasoning",
-    "Two-Part Analysis"
-  ]
+  "difficulty": 3
 }

@@ -1,21 +1,65 @@
 {
-  "question": "From the abstruse disquisition delineated above, what overarching inference concerning the ultimate cessation or inherent iterativity of the individual's ontological reification within the competitive milieu can be most perspicuously extrapolated, prescinding from the ephemeral valence attributed to discrete, phenomenological outcomes?",
-  "title": "Competitive Ontology: Iterative Reification vs. Final Cessation",
-  "solution": "\"{\\\"question\\\": \\\"From the abstruse disquisition delineated above, what overarching inference concerning the ultimate cessation or inherent iterativity of the individual's ontological reification within the competitive milieu can be most perspicuously extrapolated, prescinding from the ephemeral valence attributed to discrete, phenomenological outcomes?\\\", \\\"options\\\": [\\\"The competitive milieu invariably culminates in a terminal apotheosis, wherein the individual's ontological reification achieves a state of static, immutable perfection, rendering further kinetic exigency superfluous.\\\", \\\"The process of ontological reification, within the agonistic crucible, is characterized by an inherent, perpetual iterativity, eschewing any final quiescent state and instead fostering an incessant recrudescence of the impetus towards kinetic sublimity.\\\", \\\"Ontological reification is merely an ephemeral byproduct of discrete competitive triumphs and defeats, lacking any enduring or iterative existential import beyond the immediate phenomenological outcome.\\\", \\\"The competitive arena serves as a contingent environment wherein ontological reification sporadically manifests, dependent entirely upon a sporadic, rather than persistent, internal desideratum, thereby precluding any inherent iterativity.\\\", \\\"The individual's quiddity is transmuted by the competitive milieu into a state of pre-ordained fixity, where the initial exigency for self-fashioning is irrevocably extinguished upon the initial instantiation of kinetic efficacy, thus attaining cessation.\\\"], \\\"solution\\\": \\\"Step 1: The core inquiry posits whether the individual's \\\\\\\"ontological reification\\\\\\\" within the competitive context reaches a final conclusion (cessation) or perpetually renews itself (inherent iterativity), critically disregarding the transient impact of individual wins or losses.\\\\n\\\\nStep 2: To address this, we must establish a logical framework that distinguishes between processes that terminate in a definitive state and those that are self-perpetuating. The passage frames the competitive milieu as a \\\\\\\"crucible for the reification of an individual's idiosyncratic quiddity,\\\\\\\" where victory is a \\\\\\\"mere epiphenomenon to the profound, oftentimes ineffable, ontological becoming.\\\\\\\" This subordinates discrete outcomes to an underlying, deeper process of self-fashioning.\\\\n\\\\nStep 3: Analyzing the passage's explicit declarations, we find several pivotal phrases. The text refers to \\\\\\\"perpetual self-fashioning\\\\\\\" and an \\\\\\\"enduring palimpsest\\\\\\\" upon the psyche, indicating an ongoing process. Furthermore, it explicitly states that the endeavor is \\\\\\\"culminating not in a final quiescent state, but in a relentless recrudescence of the aforementioned exigency, ensuring the perpetual, albeit often obfuscatory, pursuit of that elusive, kinetic sublimity.\\\\\\\" These statements unequivocally negate cessation and affirm a continuous, iterative cycle, where transient successes or failures (anamnestic indices) merely inform future endeavors without concluding the overarching process.\\\\n\\\\nStep 4: Synthesizing this evidence, it becomes clear that the individual's ontological reification is not a journey towards a finite destination but rather a cyclical, self-renewing, and ceaseless process. The transient triumphs or defeats serve as ephemeral markers or feedback mechanisms that continually reinscribe a novel interpretative framework onto the practitioner's subsequent efforts, thereby reinforcing the iterativity rather than signifying cessation.\\\\n\\\\nStep 5: Therefore, the overarching inference is that the process of ontological reification within the competitive milieu is characterized by an inherent, perpetual iterativity, eschewing any final quiescent state and instead fostering an incessant recrudescence of the impetus towards kinetic sublimity.\\\"}\"",
-  "options": {
-    "A": "The individual's ontological reification, an intrinsically recursive psychomachia, remains perpetually unconsummated, its telos being an asymptotic approximation rather than a definitive, quiescent state of achieved quiddity, thereby necessitating an unending dialectic of actualization.",
-    "B": "The ultimate apotheosis of kinetic efficacy signifies a transient yet complete ontological closure, wherein the idiosyncratic quiddity attains a moment of definitive, albeit ephemeral, actualization, precluding further psychomachic impulsion.",
-    "C": "The profound ontological becoming, contingent upon external validation, finds its inherent cessation in the public acclamation accompanying successful competitive outcomes, thereby reifying societal rather than idiosyncratic exigencies.",
-    "D": "A singular and definitive reification of the self's quiddity is achieved through the initial, agonistic struggle, thereafter rendering subsequent competitive engagements as mere ceremonial iterations devoid of profound ontological import.",
-    "E": "The iterative nature of competition ultimately devolves into an existential futility, wherein the ceaseless pursuit of kinetic sublimity offers no enduring ontological solace, but merely a repetitive affirmation of inherent inadequacy."
+  "metadata": {
+    "Passage": "The global business landscape is evolving at an unprecedented pace, driven by technological advancements, shifting consumer behaviors, and complex geopolitical dynamics. In this context, aspiring leaders must develop a robust understanding of strategic management to navigate challenges and seize opportunities. For MBA candidates, mastering core concepts such as competitive analysis, organizational behavior, and financial acumen is not just academic; it is essential for driving innovation and sustainable growth in real-world scenarios. This preparation equips students with the analytical tools and leadership skills needed to make informed decisions in volatile markets, fostering resilience and adaptability in an increasingly interconnected economy.\nFurthermore, the role of ethics and corporate responsibility has gained prominence, requiring MBA programs to integrate frameworks that address societal impact alongside profitability. As businesses face scrutiny over environmental, social, and governance (ESG) factors, future managers must balance profit motives with stakeholder expectations. Courses in ethical leadership and sustainability prepare students to navigate dilemmas, build trust with consumers and investors, and contribute to long-term value creation. This holistic approach ensures that graduates not only excel in financial performance but also champion practices that align with broader global goals, reinforcing the importance of principled decision-making in modern corporate strategy.\nUltimately, the effectiveness of MBA preparation hinges on experiential learning and cross-cultural exposure, which bridge theory with practical application. Through case studies, internships, and international collaborations, students gain insights into diverse markets and management styles, enhancing their problem-solving capabilities and cultural intelligence. This hands-on experience, combined with networking opportunities and mentorship from industry leaders, empowers graduates to lead teams effectively and drive organizational change. By fostering a mindset of continuous learning and agility, MBA programs cultivate leaders who are prepared to innovate and thrive in dynamic business environments, ensuring they remain competitive and impactful throughout their careers."
   },
-  "answer": "A",
-  "prompt": "<Conclusion Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+  "title": "Analyzing MBA Preparation's Role in Business Adaptation and Leadership",
+  "child-questions": [
+    {
+      "question": "Based on the passage, which of the following statements best describes how MBA programs balance traditional business skills with modern ethical considerations to prepare leaders for contemporary challenges, as illustrated by the integration of ESG factors and experiential learning?",
+      "title": "MBA Programs: Integrating Traditional Skills with Modern Ethics and Learning",
+      "solution": "",
+      "options": {
+        "A": "MBA programs focus primarily on teaching traditional business skills like competitive analysis and financial acumen, with minimal emphasis on ethical considerations, to ensure graduates can quickly adapt to market changes.",
+        "B": "By integrating ESG frameworks and ethical leadership courses, MBA programs equip students to balance profit motives with stakeholder expectations, thereby fostering long-term value creation and trust.",
+        "C": "Experiential learning, such as case studies and internships, is used exclusively to enhance technical skills without addressing cultural intelligence or ethical dilemmas in business decisions.",
+        "D": "MBA preparation combines analytical tools and leadership skills from traditional business education with modern ethical frameworks and hands-on learning to develop resilient leaders capable of innovation in dynamic environments.",
+        "E": "The role of ethics in MBA programs is treated as a secondary component, with the main goal being to maximize financial performance through strategic management, ignoring broader societal impacts."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "prompt": "<Conclusion Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+      "question-type": "Reading Comprehension",
+      "difficulty": 1
+    },
+    {
+      "question": "Which of the following statements accurately reflect the passage`s assertions regarding the challenges and strategies in MBA education for preparing future business leaders? (Select all that apply)",
+      "title": "Challenges and Strategies in MBA Education for Future Leaders",
+      "solution": "",
+      "options": {
+        "A": "MBA programs primarily focus on teaching traditional business skills without integrating ethical frameworks, as the main challenge is adapting to technological changes alone.",
+        "B": "The key challenge in MBA education is balancing profit motives with stakeholder expectations through ESG integration, and strategies include ethical courses and experiential learning for holistic leadership development.",
+        "C": "Experiential learning in MBA programs is designed solely to enhance technical problem-solving, ignoring the need for cultural intelligence and ethical decision-making in global markets.",
+        "D": "MBA preparation strategies emphasize financial performance above all, using case studies to maximize profitability without considering societal impact or long-term sustainability.",
+        "E": "The passage suggests that MBA programs address challenges by focusing exclusively on theoretical knowledge, avoiding practical applications like internships and cross-cultural exposure."
+      },
+      "answer": "B",
+      "prompt": "<Supporting Details> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+      "question-type": "Reading Comprehension",
+      "difficulty": 1
+    },
+    {
+      "question": "According to the passage, which of the following statements best describes the primary purpose of incorporating experiential learning and cross-cultural exposure into MBA programs, and how does this relate to the overall goal of cultivating effective business leaders?",
+      "title": "Experiential Learning in MBA Programs: Purpose and Leadership Goals",
+      "solution": "",
+      "options": {
+        "A": "To provide theoretical knowledge exclusively, ensuring students master academic concepts without practical distractions, which aligns with fostering competitiveness through intellectual rigor.",
+        "B": "To bridge theory with practical application, enhancing problem-solving capabilities and cultural intelligence, thereby empowering graduates to lead effectively and drive change in dynamic environments.",
+        "C": "To focus solely on technical skills development, using experiential learning to improve financial acumen, while ignoring ethical considerations and leadership aspects.",
+        "D": "To prepare leaders for innovation and adaptability by combining hands-on experience with networking and mentorship, cultivating a mindset of continuous learning for long-term impact.",
+        "E": "To prioritize cross-cultural exposure over domestic business practices, aiming to internationalize all graduates without addressing local market challenges or ethical frameworks."
+      },
+      "answer": [
+        "B",
+        "D"
+      ],
+      "prompt": "<Supporting Details> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+      "question-type": "Reading Comprehension",
+      "difficulty": 1
+    }
+  ],
+  "prompt": "<RC-M> - <Art> - <Evidence-Based Reasoning> - vocabulary_level: <1> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
   "question-type": "Reading Comprehension",
-  "difficulty": 1,
-  "tags": [
-    "GMAT",
-    "Verbal",
-    "Reading Comprehension"
-  ]
+  "difficulty": 3
 }

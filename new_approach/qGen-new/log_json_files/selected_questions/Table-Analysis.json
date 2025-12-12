@@ -1,88 +1,133 @@
 {
   "metadata": {
-    "table": [
-      [
-        {
-          "type": "data_table",
-          "description": "Detailed financial projections across multiple quarters, involving algebraic calculations for revenue growth and profit, requiring careful quantitative reasoning and inference for missing data.",
+    "metadata": [
+      {
+        "Table": {
+          "type": "sortable_table",
+          "description": "Table with sortable columns, typically used in Table Analysis",
           "structure": {
-            "title": "Multi-Quarter Financial Performance and Projections with Inferred Data",
+            "title": "Global Tech Company Performance (2023)",
             "headers": [
-              "Quarter",
-              "Base Revenue (R)",
-              "Operating Expenses (E)",
-              "Growth Multiplier (M)",
-              "Calculated Revenue (R_curr)",
-              "Net Profit (P)",
-              "Projected Revenue (R_next)"
+              "Company",
+              "Region",
+              "Revenue (USD billions)",
+              "Profit Margin (%)",
+              "Employee Count (thousands)",
+              "R&D Investment (USD billions)"
             ],
             "rows": [
               [
-                "1",
-                "1000",
-                "400",
-                "1.08",
-                "1000",
-                "600",
-                "1080"
+                "TechCorp",
+                "North America",
+                "85.2",
+                "22.5",
+                "45.3",
+                "12.8"
               ],
               [
-                "2",
-                "1080",
-                "420",
-                "1.07",
-                "1155.60",
-                "735.60",
-                "1236.49"
+                "InnovaTech",
+                "Asia",
+                "72.8",
+                "18.3",
+                "38.7",
+                "10.5"
               ],
               [
-                "3",
-                "1236.49",
-                "441",
-                "1.065",
-                "1316.92",
-                "875.92",
-                "1402.76"
+                "GlobalSoft",
+                "Europe",
+                "63.4",
+                "20.1",
+                "32.9",
+                "9.2"
               ],
               [
-                "4",
-                "1402.76",
-                "???",
-                "???",
-                "???",
-                "???",
-                "???"
+                "DataSystems",
+                "North America",
+                "48.9",
+                "15.7",
+                "28.4",
+                "7.6"
+              ],
+              [
+                "QuantumTech",
+                "Asia",
+                "41.5",
+                "12.9",
+                "25.1",
+                "6.3"
+              ],
+              [
+                "EuroTech",
+                "Europe",
+                "37.2",
+                "14.2",
+                "22.8",
+                "5.8"
+              ],
+              [
+                "NexusCorp",
+                "North America",
+                "29.8",
+                "10.5",
+                "19.3",
+                "4.1"
+              ],
+              [
+                "AsiaDigital",
+                "Asia",
+                "26.4",
+                "9.8",
+                "17.6",
+                "3.9"
               ]
             ],
             "formatting": {
-              "alternating_rows": true,
-              "border_style": "dashed",
-              "sortable": false
+              "sortable": true,
+              "alternating_rows": true
             }
           }
         }
+      }
+    ],
+    "question": [
+      "The table shows performance metrics for global technology companies in 2023. For each statement, indicate whether the information in the table supports the statement. Consider only the data provided."
+    ],
+    "options": [
+      [
+        "The company with the highest revenue also has the highest profit margin.",
+        "The average R&D investment per employee is greater for European companies than for Asian companies.",
+        "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion."
       ]
+    ],
+    "answer": [
+      {
+        "options": [
+          "The company with the highest revenue also has the highest profit margin.",
+          "The average R&D investment per employee is greater for European companies than for Asian companies.",
+          "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion."
+        ],
+        "answer": {
+          "The company with the highest revenue also has the highest profit margin.": "No",
+          "The average R&D investment per employee is greater for European companies than for Asian companies.": "Yes",
+          "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion.": "Yes"
+        }
+      }
     ]
   },
-  "question": "The financial projections table demonstrates an initial unique calculation for Quarter 1's 'Calculated Revenue (R_curr)' and 'Projected Revenue (R_next)', where 'R_curr' equals 'Base Revenue' and 'R_next' equals 'Base Revenue * Growth Multiplier'. However, from Quarter 2 onwards, the methodology shifts, with 'Calculated Revenue (R_curr)' becoming 'Base Revenue * Growth Multiplier' and 'Projected Revenue (R_next)' becoming 'Calculated Revenue (R_curr) * Growth Multiplier'. Assuming this latter methodology (Quarters 2-3) consistently applies to subsequent quarters, and that the observed trends in 'Operating Expenses' (geometric progression) and 'Growth Multiplier' (arithmetic decrease in the decrease factor) continue, determine the projected Net Profit for Quarter 4. Furthermore, if a significant strategic initiative is planned for Quarter 5, which is projected to increase Quarter 5's Operating Expenses by an additional 7.5% from its *calculated* Quarter 5 trend value, and simultaneously reduce the Quarter 5 Growth Multiplier by a fixed 0.001 from its *calculated* Quarter 4 trend value (not its natural trend continuation), what would be the minimum 'Base Revenue' required for Quarter 5 to ensure a Net Profit equivalent to 95% of Quarter 4's projected Net Profit, assuming all other calculation rules remain consistent with the Quarter 2-4 pattern? Round your final 'Base Revenue' to two decimal places.",
-  "title": "Financial Forecasting: Q4 Net Profit & Q5 Base Revenue with Trend Analysis & Strategic Initiative",
-  "solution": "\"Step 1: Understand the calculation methodology and identify trends for Operating Expenses and Growth Multiplier. The problem states that from Quarter 2 onwards, the methodology shifts where 'Calculated Revenue (R_curr)' is 'Base Revenue * Growth Multiplier', 'Net Profit (P)' is 'Calculated Revenue (R_curr) - Operating Expenses (E)', and 'Projected Revenue (R_next)' is 'Calculated Revenue (R_curr) * Growth Multiplier'. All monetary values (Calculated Revenue, Net Profit, Projected Revenue) are rounded to two decimal places at each calculation step based on the provided table.\\n\\nTrend for Operating Expenses (E):\\nQ1 E = 400\\nQ2 E = 420 (400 * 1.05)\\nQ3 E = 441 (420 * 1.05)\\nThis is a geometric progression with a common ratio of 1.05. So, E_n = E_{n-1} * 1.05.\\n\\nTrend for Growth Multiplier (M):\\nLet d_n be the decrease factor from M_n to M_{n+1}.\\nM1 = 1.08\\nM2 = 1.07 => d1 = M1 - M2 = 1.08 - 1.07 = 0.01\\nM3 = 1.065 => d2 = M2 - M3 = 1.07 - 1.065 = 0.005\\nThe problem states an \\\"arithmetic decrease in the decrease factor\\\". This means the decrease factors (d_n) form an arithmetic progression. The common difference of this arithmetic progression is d2 - d1 = 0.005 - 0.01 = -0.005. So, dn = d_{n-1} + (-0.005).\\n\\nStep 2: Calculate Quarter 4's Projected Net Profit.\\n\\nQ4 Operating Expenses (E_Q4):\\nE_Q4 = E_Q3 * 1.05 = 441 * 1.05 = 463.05\\n\\nQ4 Growth Multiplier (M_Q4):\\nThe next decrease factor d3 = d2 + (-0.005) = 0.005 - 0.005 = 0.\\nM_Q4 = M_Q3 - d3 = 1.065 - 0 = 1.065\\n\\nQ4 Base Revenue (R_Q4):\\nR_Q4 = Projected Revenue (R_next) from Q3 = 1402.76\\n\\nQ4 Calculated Revenue (R_curr_Q4):\\nR_curr_Q4 = R_Q4 * M_Q4 = 1402.76 * 1.065 = 1494.9394. Rounded to two decimal places: 1494.94\\n\\nQ4 Net Profit (P_Q4):\\nP_Q4 = R_curr_Q4 - E_Q4 = 1494.94 - 463.05 = 1031.89\\n\\nStep 3: Calculate Quarter 5's required Base Revenue.\\n\\nTarget Net Profit for Quarter 5 (P_Q5):\\nP_Q5 = 95% of P_Q4 = 0.95 * 1031.89 = 979.2955\\n\\nQuarter 5 Operating Expenses (E_Q5):\\nFirst, calculate the trend value: E_trend_Q5 = E_Q4 * 1.05 = 463.05 * 1.05 = 486.2025\\nThen, apply the strategic initiative increase: E_Q5 = E_trend_Q5 * (1 + 0.075) = 486.2025 * 1.075 = 522.6176875\\n\\nQuarter 5 Growth Multiplier (M_Q5):\\nThe problem states to reduce the Quarter 5 Growth Multiplier by a fixed 0.001 from its *calculated* Quarter 4 trend value (M_Q4), not its natural trend continuation. So:\\nM_Q5 = M_Q4 - 0.001 = 1.065 - 0.001 = 1.064\\n\\nLet R_Q5 be the Base Revenue for Quarter 5.\\nCalculated Revenue for Quarter 5 (R_curr_Q5) = R_Q5 * M_Q5 = R_Q5 * 1.064\\n\\nSet up the equation for Q5 Net Profit:\\nP_Q5 = R_curr_Q5 - E_Q5\\n979.2955 = (R_Q5 * 1.064) - 522.6176875\\n\\nStep 4: Solve for R_Q5.\\nR_Q5 * 1.064 = 979.2955 + 522.6176875\\nR_Q5 * 1.064 = 1501.9131875\\nR_Q5 = 1501.9131875 / 1.064\\nR_Q5 = 1411.57254464...\\n\\nStep 5: Round the final Base Revenue to two decimal places.\\nR_Q5 = 1411.57\"",
+  "question": "The table shows performance metrics for global technology companies in 2023. For each statement, indicate whether the information in the table supports the statement. Consider only the data provided.",
+  "title": "Analyzing Tech Company Performance Metrics for 2023",
+  "solution": "",
   "options": [
-    "The projected Net Profit for Quarter 4, following the established trends and calculation rules, is approximately 1031.90.",
-    "The adjusted Growth Multiplier for Quarter 5, considering the strategic initiative, is 1.064.",
-    "To achieve a Net Profit equivalent to 95% of Quarter 4's projected Net Profit, the minimum 'Base Revenue' required for Quarter 5, rounded to two decimal places, is 1411.62."
+    "The company with the highest revenue also has the highest profit margin.",
+    "The average R&D investment per employee is greater for European companies than for Asian companies.",
+    "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion."
   ],
   "answer": {
-    "The projected Net Profit for Quarter 4, following the established trends and calculation rules, is approximately 1031.90.": "Yes",
-    "The adjusted Growth Multiplier for Quarter 5, considering the strategic initiative, is 1.064.": "Yes",
-    "To achieve a Net Profit equivalent to 95% of Quarter 4's projected Net Profit, the minimum 'Base Revenue' required for Quarter 5, rounded to two decimal places, is 1411.62.": "Yes"
+    "The company with the highest revenue also has the highest profit margin.": "No",
+    "The average R&D investment per employee is greater for European companies than for Asian companies.": "Yes",
+    "There is at least one company where the profit margin exceeds 20% and the R&D investment is less than USD 10 billion.": "Yes"
   },
-  "prompt": "<Algebraic Expressions and Simplification> - <Business and Finance> - <Quantitative Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
+  "prompt": "<Mean, Median, Mode, Range> - <Human Resources> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
   "question-type": "Table Analysis",
-  "difficulty": 1,
-  "tags": [
-    "GMAT",
-    "Integrated Reasoning",
-    "Table Analysis"
-  ]
+  "difficulty": 4
 }

@@ -1,21 +1,24 @@
 {
-  "question": "The prevailing conceptualizations of geographical space, once predominantly rooted in a taxonomic empiricism that sought to delineate static, observable features, have, through a complex epistemological _____, evolved to embrace a more dynamic understanding wherein space is seen as continually produced through social practices and power relations, thereby demanding a radical re-evaluation of its purported objectivity.",
-  "title": "Epistemological Shift in Geographical Space Conceptualization",
-  "solution": "\"STEP 1: Analyze the sentence structure and context to understand the semantic role of the missing word.The sentence describes a historical evolution in the conceptualization of geographical space, moving from a static, empirical view to a dynamic, socially constructed one. The blank needs a noun that characterizes the \\\"complex epistemological\\\" (relating to the theory of knowledge) process through which this evolution occurred. The context demands advanced, abstract vocabulary.STEP 2: Set up mathematical relationship or logical frameworkThe transition described is a transformation of understanding:Old Conceptualization (taxonomic empiricism) $\\\\xrightarrow{\\\\text{complex epistemological \\\\_\\\\_\\\\_\\\\_\\\\_}}$ New Conceptualization (space as continually produced).The missing word is the intricate mechanism or process of this knowledge-based transformation.STEP 3: Perform calculations with proper units / Apply reasoningKeywords such as \\\"complex epistemological,\\\" \\\"evolved,\\\" and \\\"radical re-evaluation\\\" indicate that the required word must convey a profound, intricate, and perhaps non-linear development in the realm of knowledge or theory. Let's consider suitable vocabulary:\\\"Progression\\\" is too simple for \\\"complex.\\\"\\\"Metamorphosis\\\" or \\\"transmutation\\\" imply a complete change in form, which is fitting for the outcome, but may not fully capture the *process* as \\\"complex.\\\"\\\"Convolution\\\" (meaning an intricate, involved, or winding process) is highly suitable. In an epistemological context, it suggests that the development of understanding was not a straightforward path but rather an intricate, complex interplay of ideas, debates, and theoretical shifts. It emphasizes the *complexity* of the process itself, aligning perfectly with \\\"complex epistemological.\\\"STEP 4: Confirm solution addresses original questionThe chosen word, \\\"convolution,\\\" fits the sentence's sophisticated tone and intellectual depth. It precisely describes the intricate and involved nature of the epistemological process that leads to a radical re-evaluation of fundamental concepts.The completed sentence: \\\"The prevailing conceptualizations of geographical space, once predominantly rooted in a taxonomic empiricism that sought to delineate static, observable features, have, through a complex epistemological **convolution**, evolved to embrace a more dynamic understanding wherein space is seen as continually produced through social practices and power relations, thereby demanding a radical re-evaluation of its purported objectivity.\\\"STEP 5: Explain conceptual insights where relevantThe concept of an \\\"epistemological convolution\\\" highlights that the evolution of scientific or philosophical understanding is rarely a simple, linear progression. Instead, it often involves complex, sometimes circuitous, developments where various theoretical strands, empirical observations, and critical analyses intertwine and interact, leading to profound shifts in how knowledge is constructed and validated. This term underscores the difficulty and intricate nature of intellectual paradigm shifts.\"",
-  "options": {
-    "A": "dialectic",
-    "B": "prolepsis",
-    "C": "aporia",
-    "D": "teleology",
-    "E": "epiphenomenon"
-  },
-  "answer": "A",
-  "prompt": "<TC-1> - <Geography> - <Transitional Logic> - vocabulary_level: <3> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+  "question": "The proposed policy aims to _____ the economic disparities, yet critics argue that it may inadvertently _____ the existing inequalities, as its implementation lacks targeted measures for the most vulnerable groups.",
+  "title": "Policy Impact on Economic Inequalities",
+  "solution": "",
+  "options": [
+    {
+      "A": "mitigate",
+      "B": "exacerbate",
+      "C": "ignore"
+    },
+    {
+      "D": "alleviate",
+      "E": "deepen",
+      "F": "highlight"
+    }
+  ],
+  "answer": [
+    "A",
+    "E"
+  ],
+  "prompt": "<TC-2> - <Geography> - <Word Connotation Recognition> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
   "question-type": "Text Completion",
-  "difficulty": 1,
-  "tags": [
-    "GRE",
-    "Verbal",
-    "Text Completion"
-  ]
+  "difficulty": 5
 }

@@ -26,3 +26,5 @@ You must generate a JSON object containing:
 ## Constraints
 *   The graph should be complex enough to require interpretation, not just reading a value.
 *   The blanks should test understanding of relationships or trends in the data.
+
+UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

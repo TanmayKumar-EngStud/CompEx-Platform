@@ -1,194 +1,141 @@
 {
   "metadata": {
     "Source1": {
-      "para": "Modern supply chain management heavily relies on optimized inventory strategies, each presenting a distinct operational paradigm and risk profile. For instance, Just-In-Time (JIT) systems prioritize minimizing inventory holding costs by receiving goods only as they are needed, inherently reducing warehousing expenses and potential obsolescence. However, JIT demands extremely reliable suppliers and robust transportation networks, making it highly susceptible to disruptions from unforeseen events like natural disasters or port strikes, which can halt production entirely. Conversely, Economic Order Quantity (EOQ) focuses on balancing ordering costs with holding costs to determine an optimal order size, aiming for cost efficiency under stable demand conditions. While EOQ can reduce overall inventory costs, it typically involves larger stock levels than JIT, increasing carrying costs and capital tie-up. Vendor-Managed Inventory (VMI) shifts the responsibility for inventory replenishment to the supplier, often leading to better stock visibility and reduced stockouts for the buyer, but it requires significant trust and data sharing, potentially exposing sensitive operational information. Each strategy, while offering unique advantages, carries inherent trade-offs in terms of capital allocation, operational resilience, and supplier relationship management, necessitating a comprehensive evaluation based on specific business context, product characteristics, and market volatility."
+      "para": "In response to increasing concerns about environmental sustainability and corporate accountability, the Ministry of Commerce and Industry has issued a new regulatory framework, the Corporate Environmental Compliance Directive (CECD), effective January 1, 2024. This directive mandates that all businesses with annual revenues exceeding $50 million must submit quarterly Environmental Impact Reports (EIRs) detailing their carbon emissions, water usage, and waste management practices. The CECD introduces a tiered compliance system: Tier 1 companies (revenues $50M-$200M) must achieve a 15% reduction in carbon emissions by 2026, while Tier 2 companies (revenues above $200M) must reduce emissions by 25% by the same deadline. Non-compliance will result in graduated penalties, starting with warnings for minor infractions and escalating to fines of up to 2% of annual revenue for repeated violations. The ministry emphasizes that this policy aims to align corporate operations with national climate goals, as outlined in the Paris Agreement commitments, while fostering transparency through public disclosure of EIRs on a government portal."
     },
     "Source2": {
-      "table": [
-        {
-          "type": "comparison_table",
-          "description": "Comparative performance metrics for various inventory management strategies, allowing for analysis of trade-offs.",
-          "structure": {
-            "title": "Comparative Performance Metrics of Inventory Management Strategies",
-            "headers": [
-              "Strategy",
-              "Avg. Inventory Level (Units)",
-              "Annual Holding Cost ($)",
-              "Annual Ordering Cost ($)",
-              "Lead Time Variability Tolerance (Days)",
-              "Stockout Rate (%)",
-              "Supplier Reliability Score (1-5)",
-              "Capital Tied Up ($)"
+      "graph": {
+        "type": "bar_chart",
+        "description": "Bar chart displaying projected carbon emissions reductions for Tier 1 and Tier 2 companies under the Corporate Environmental Compliance Directive (CECD) from 2024 to 2026.",
+        "structure": {
+          "title": "Projected Carbon Emissions Reduction Under CECD (2024-2026)",
+          "x_axis": {
+            "label": "Year",
+            "type": "categorical",
+            "categories": [
+              "2024",
+              "2025",
+              "2026"
+            ]
+          },
+          "y_axis": {
+            "label": "Carbon Emissions (in million metric tons)",
+            "type": "numerical"
+          },
+          "data_format": {
+            "bars": [
+              {
+                "label": "Tier 1 Companies",
+                "data": [
+                  120,
+                  110,
+                  102
+                ]
+              },
+              {
+                "label": "Tier 2 Companies",
+                "data": [
+                  300,
+                  270,
+                  225
+                ]
+              }
             ],
-            "rows": [
-              [
-                "Just-In-Time (JIT)",
-                "50",
-                "2500",
-                "8000",
-                "3",
-                "5.0",
-                "4.5",
-                "10000"
-              ],
-              [
-                "Economic Order Quantity (EOQ)",
-                "300",
-                "15000",
-                "2500",
-                "5",
-                "1.5",
-                "3.5",
-                "60000"
-              ],
-              [
-                "Vendor-Managed Inventory (VMI)",
-                "200",
-                "10000",
-                "3000",
-                "4",
-                "1.0",
-                "4.8",
-                "40000"
-              ],
-              [
-                "Traditional (Safety Stock)",
-                "400",
-                "20000",
-                "2000",
-                "7",
-                "0.5",
-                "3.0",
-                "80000"
-              ]
+            "bar_colors": [
+              "#2ecc71",
+              "#e74c3c"
             ],
-            "formatting": {
-              "alternating_rows": true,
-              "border_style": "grid",
-              "sortable": true
-            }
+            "bar_width": 0.35
           }
         }
-      ]
+      }
     },
     "Source3": {
-      "table": [
-        {
-          "type": "data_table",
-          "description": "Detailed breakdown of various operational cost components for different inventory management strategies, allowing for a more granular financial analysis.",
-          "structure": {
-            "title": "Detailed Operational Cost Components by Inventory Strategy (Annualized $)",
-            "headers": [
-              "Strategy",
-              "Warehousing Cost",
-              "Obsolescence Cost",
-              "Insurance Cost",
-              "Administrative Ordering Cost",
-              "Transportation Cost",
-              "Expediting Cost"
+      "graph": {
+        "type": "scatter_chart",
+        "description": "Scatter plot comparing projected annual revenue (in millions of dollars) against carbon emissions (in million metric tons) for selected companies in 2024, illustrating the relationship between company size and environmental impact as per the CECD framework.",
+        "structure": {
+          "title": "Revenue vs. Carbon Emissions for Selected Companies (2024)",
+          "x_axis": {
+            "label": "Annual Revenue (in $ millions)",
+            "type": "numerical"
+          },
+          "y_axis": {
+            "label": "Carbon Emissions (in million metric tons)",
+            "type": "numerical"
+          },
+          "data_format": {
+            "points": [
+              {
+                "x": 75,
+                "y": 8,
+                "label": "Company A (Tier 1)"
+              },
+              {
+                "x": 150,
+                "y": 15,
+                "label": "Company B (Tier 1)"
+              },
+              {
+                "x": 250,
+                "y": 30,
+                "label": "Company C (Tier 2)"
+              },
+              {
+                "x": 400,
+                "y": 45,
+                "label": "Company D (Tier 2)"
+              },
+              {
+                "x": 600,
+                "y": 70,
+                "label": "Company E (Tier 2)"
+              }
             ],
-            "rows": [
-              [
-                "Just-In-Time (JIT)",
-                "1000",
-                "500",
-                "1000",
-                "8000",
-                "6000",
-                "1500"
-              ],
-              [
-                "Economic Order Quantity (EOQ)",
-                "8000",
-                "4000",
-                "3000",
-                "2500",
-                "4000",
-                "500"
-              ],
-              [
-                "Vendor-Managed Inventory (VMI)",
-                "5000",
-                "3000",
-                "2000",
-                "3000",
-                "4500",
-                "300"
-              ],
-              [
-                "Traditional (Safety Stock)",
-                "10000",
-                "6000",
-                "4000",
-                "2000",
-                "3500",
-                "100"
-              ]
-            ],
-            "formatting": {
-              "alternating_rows": true,
-              "border_style": "grid",
-              "sortable": true
-            }
+            "point_color": "#9b59b6",
+            "point_size": 8
           }
         }
-      ]
+      }
     },
-    "Passage": "Effective inventory management is a cornerstone of operational efficiency and financial health for businesses across all sectors. The strategic decisions surrounding how much inventory to hold, when to replenish it, and how to manage its flow directly impact working capital, customer satisfaction, and supply chain resilience. In today's dynamic global marketplace, companies face the constant challenge of balancing the costs associated with holding excess stock—such as warehousing, insurance, and obsolescence—against the risks of stockouts, which can lead to lost sales, production delays, and damaged customer relationships. Therefore, selecting and implementing the most appropriate inventory strategy is a critical competitive differentiator, demanding a thorough understanding of various methodologies and their specific trade-offs.\nThe selection of an optimal inventory strategy is rarely a one-size-fits-all decision; rather, it's a dynamic process influenced by a multitude of internal and external factors. Companies must meticulously assess their specific operational environment, including demand variability, product perishability or obsolescence rates, supplier reliability, and the inherent stability of their supply chain. Furthermore, the strategic objectives of the business, such as market share growth, cost leadership, or product innovation, dictate the acceptable levels of risk and the prioritization of different performance metrics. This necessitates a comprehensive evaluation that integrates both quantitative data, such as holding costs and stockout rates, with qualitative considerations like supplier relationships and technological infrastructure, to ensure the chosen strategy aligns seamlessly with the overarching business model and competitive strategy."
+    "Passage": "To assess the potential economic impact of the Corporate Environmental Compliance Directive (CECD) on affected businesses, a recent analysis by the Economic Research Institute projects varying costs for compliance across different revenue tiers. For Tier 1 companies, initial investments in emissions monitoring technology and reporting systems are estimated to average $500,000, with annual operational costs of approximately $200,000. In contrast, Tier 2 companies face higher expenses due to their larger scale; initial setup costs are projected at $1.5 million, with annual maintenance and reporting costs around $600,000. These figures account for technology upgrades, staff training, and third-party auditing fees required to meet the quarterly EIR submission standards. The analysis further suggests that while these upfront costs may strain smaller Tier 1 firms, they could represent less than 1% of annual revenue for most Tier 2 companies, potentially mitigating financial burden relative to the 2% penalty for non-compliance.\nHowever, the Economic Research Institute also highlights potential long-term benefits that could offset these compliance costs. Companies that proactively reduce emissions may qualify for government incentives, such as tax credits of up to 10% of compliance expenditures, and gain competitive advantages through enhanced brand reputation and customer loyalty. Additionally, the analysis projects that by 2026, Tier 1 companies could save an average of $150,000 annually in energy efficiencies from emission reductions, while Tier 2 companies might save $500,000. These savings, combined with the avoidance of non-compliance penalties, suggest that the net financial impact of the CECD could be neutral or positive for many firms, particularly if they leverage the transparency of public EIR disclosures to attract environmentally conscious investors and partners."
   },
-  "title": "Inventory Strategy Comparison: Cost & Performance Trade-off Analysis",
+  "title": "CECD Impact Analysis: Compliance Costs and Emission Reduction Projections",
   "child-questions": [
     {
-      "question": "A manufacturing firm operating in a volatile global market, characterized by moderate demand fluctuations and increasing frequency of unexpected supply chain disruptions, is re-evaluating its inventory strategy. The firm's key objectives are to minimize stockouts to protect customer satisfaction, enhance overall supply chain resilience to lead time variability, and optimize working capital. However, the firm maintains a cautious stance on sharing proprietary operational data with external partners. Based on a comprehensive synthesis of the provided information, which inventory management strategy presents the most strategically balanced approach for this firm, and why would the firm need to carefully consider a specific trade-off inherent in that choice?",
-      "title": "Manufacturing Firm's Inventory: EOQ Trade-offs for Resilience, Stockouts, & Working Capital",
-      "solution": "\"Step 1: Analyze the firm's specific objectives, market conditions, and constraints.The firm operates in a volatile global market with moderate demand fluctuations and increasing supply chain disruptions. Its key objectives are: 1. Minimize stockouts to protect customer satisfaction. 2. Enhance overall supply chain resilience to lead time variability. 3. Optimize working capital. A critical constraint is the firm's cautious stance on sharing proprietary operational data with external partners.Step 2: Evaluate each inventory management strategy against the firm's criteria using data from the provided sources.1.  **Just-In-Time (JIT):**-   **Stockouts:** Highest at 5.0% (Source 2), failing the minimization objective.-   **Resilience:** Lowest Lead Time Variability Tolerance at 3 days (Source 2), highly susceptible to disruptions (Source 1), failing the resilience objective.-   **Working Capital:** Lowest capital tied up at $10,000 (Source 2) and lowest holding costs ($2,500, Source 2; $1,000 warehousing, Source 3), meeting the optimization objective.-   **Data Sharing:** Not a direct concern for the firm's constraint, but its high dependency on reliable suppliers is a risk in volatile markets (Source 1).-   **Conclusion:** Not suitable due to high stockout risk and low resilience.2.  **Traditional (Safety Stock):**-   **Stockouts:** Lowest at 0.5% (Source 2), meeting the minimization objective exceptionally well.-   **Resilience:** Highest Lead Time Variability Tolerance at 7 days (Source 2), meeting the resilience objective exceptionally well.-   **Working Capital:** Highest capital tied up at $80,000 (Source 2) and highest holding costs ($20,000, Source 2; $10,000 warehousing, Source 3), significantly failing the optimization objective.-   **Data Sharing:** Not a direct concern.-   **Conclusion:** Not suitable due to excessive capital tie-up.3.  **Vendor-Managed Inventory (VMI):**-   **Stockouts:** Very good at 1.0% (Source 2), meeting the minimization objective.-   **Resilience:** Moderate Lead Time Variability Tolerance at 4 days (Source 2).-   **Working Capital:** Good, with $40,000 capital tied up (Source 2) and moderate holding costs ($10,000, Source 2; $5,000 warehousing, Source 3), meeting the optimization objective.-   **Data Sharing:** Requires \\\"significant trust and data sharing, potentially exposing sensitive operational information\\\" (Source 1), which directly conflicts with the firm's cautious stance on sharing proprietary data.-   **Conclusion:** Not suitable due to the critical data sharing constraint.4.  **Economic Order Quantity (EOQ):**-   **Stockouts:** Good at 1.5% (Source 2), reasonably meeting the minimization objective.-   **Resilience:** Good Lead Time Variability Tolerance at 5 days (Source 2), reasonably meeting the resilience objective (better than JIT/VMI).-   **Working Capital:** Moderate, with $60,000 capital tied up (Source 2) and moderate holding costs ($15,000, Source 2; $8,000 warehousing, Source 3). While not the lowest, it's significantly better than Traditional and offers a balance given other objectives.-   **Data Sharing:** Primarily an internal calculation; does not require significant external data sharing, aligning with the firm's constraint.-   **Conclusion:** Presents the most balanced approach considering all objectives and constraints.Step 3: Select the most strategically balanced approach.Based on the comprehensive evaluation, the **Economic Order Quantity (EOQ)** strategy is the most strategically balanced approach for the firm. It offers a reasonable stockout rate (1.5%) and good resilience to lead time variability (5 days) while avoiding the critical data sharing constraint of VMI. Although its working capital optimization ($60,000 tied up) is not as aggressive as JIT, it is significantly better than Traditional and strikes a necessary balance.Step 4: Identify the specific trade-off inherent in the chosen strategy.The firm would need to carefully consider the trade-off that **EOQ's optimal performance is typically achieved under stable demand conditions**, as stated in Source 1. The firm operates in a \\\"volatile global market, characterized by moderate demand fluctuations.\\\" While EOQ can be adapted with safety stock, its core premise is less robust to significant or frequent demand shifts. This means that the calculated optimal order quantities might frequently be suboptimal, potentially leading to either excess inventory (if demand drops unexpectedly, increasing holding and obsolescence costs) or stockouts (if demand surges beyond projections), thereby challenging the firm's objectives of optimizing working capital and minimizing stockouts in its specific market environment. The firm would need to invest heavily in accurate demand forecasting and potentially dynamic adjustments to EOQ calculations to mitigate this inherent vulnerability.\"",
+      "question": "Company X has an annual revenue of $180 million and carbon emissions of 16 million metric tons in 2024. Based on the sources provided, if Company X fully complies with the Corporate Environmental Compliance Directive (CECD) from 2024 to 2026, what is the total net financial impact (including compliance costs, tax credits, energy savings, and potential penalty avoidance) over this three-year period, assuming no other factors? Use the following steps: (1) Determine the company`s tier and required emission reduction percentage, (2) Calculate the projected emissions in 2026 using the reduction percentage and initial emissions, (3) Compute total compliance costs over three years (initial setup plus annual operational costs), (4) Apply the maximum tax credit to compliance expenditures, (5) Estimate total energy savings from emission reductions over three years, and (6) Consider the penalty avoidance as the fine for non-compliance. Provide the total net impact, rounded to the nearest thousand dollars.",
+      "title": "CECD Compliance: Net Financial Impact Calculation for Company X",
+      "solution": "",
       "options": {
-        "A": "Just-In-Time (JIT) because it offers the lowest capital tied up and holding costs, aligning with working capital optimization. However, the firm would need to accept its high susceptibility to supply chain disruptions and higher stockout rates, directly conflicting with its need for resilience and minimizing stockouts.",
-        "B": "Economic Order Quantity (EOQ) because it provides a balanced approach with moderate resilience to lead time variability and a relatively low stockout rate, without extensive data sharing. The firm would need to carefully consider the trade-off of its higher capital tied up and annual holding costs compared to a leaner JIT approach, in exchange for enhanced operational stability and reduced risk in a volatile market.",
-        "C": "Vendor-Managed Inventory (VMI) because it offers the lowest stockout rate and strong supplier reliability, significantly enhancing customer satisfaction. However, this strategy is fundamentally incompatible with the firm's cautious stance on sharing proprietary operational data with external partners.",
-        "D": "Traditional (Safety Stock) because it offers the highest resilience to lead time variability and the lowest stockout rate, crucial for minimizing disruptions and stockouts. The critical trade-off is the significantly higher capital tied up and annual holding costs, which directly conflicts with the firm's objective to optimize working capital.",
-        "E": "A hybrid approach combining JIT for critical components and Traditional for high-demand items to balance agility and resilience. This strategy would require highly complex implementation and coordination, potentially negating the benefits due to increased administrative overhead and internal conflict over differing operational philosophies."
+        "A": "-$360,000",
+        "B": "-$110,000",
+        "C": "$40,000",
+        "D": "$210,000",
+        "E": "$550,000"
       },
-      "answer": "B",
-      "prompt": "<Synthesizing Information> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+      "answer": "D",
+      "prompt": "<Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
       "question-type": "Multi-Source Reasoning",
-      "difficulty": 1,
-      "tags": [
-        "GMAT",
-        "Integrated Reasoning",
-        "Multi-Source Reasoning"
-      ]
+      "difficulty": 1
     },
     {
-      "question": "A manufacturing firm currently employs a 'Traditional (Safety Stock)' inventory strategy. While this approach has ensured a remarkably low stockout rate of 0.5% and high lead time variability tolerance, the board is highly concerned by the significant capital tied up ($80,000), escalating obsolescence costs ($6,000), and an overall lack of agility in responding to increasingly volatile market conditions. The firm aims to transition to an alternative strategy that not only substantially reduces capital expenditure and obsolescence but also fosters significantly stronger supplier collaboration (improving on a 3.0 reliability score) and enhances strategic responsiveness to market changes, even if it means accepting a moderately higher but still manageable stockout rate (e.g., up to 2.0%). Based on the provided data and strategic descriptions across all sources, which of the alternative inventory management strategies (Just-In-Time, Economic Order Quantity, or Vendor-Managed Inventory) would offer the most holistically balanced and strategically aligned transition for the firm, considering the intricate trade-offs and inherent operational characteristics of each approach?",
-      "title": "Inventory Strategy Transition: JIT, EOQ, VMI for Cost, Agility & Collaboration",
-      "solution": "\"Step 1: Understand the firm's current situation and desired strategic shift.\\nThe firm currently uses a 'Traditional (Safety Stock)' strategy with the following key metrics:\\n- Capital Tied Up: $80,000 (Problem: Too high)\\n- Obsolescence Cost: $6,000 (Problem: Too high)\\n- Supplier Reliability Score: 3.0 (Problem: Needs significant improvement)\\n- Stockout Rate: 0.5% (Good, but can accept up to 2.0%)\\n- Agility: Lacks agility for volatile markets.\\n\\nThe firm's goals for a new strategy are:\\n1.  Substantially reduce capital expenditure.\\n2.  Substantially reduce obsolescence costs.\\n3.  Foster significantly stronger supplier collaboration (improve > 3.0).\\n4.  Enhance strategic responsiveness to market changes/agility.\\n5.  Accept a moderately higher but manageable stockout rate (up to 2.0%).\\n\\nStep 2: Evaluate each alternative strategy (Just-In-Time, Economic Order Quantity, Vendor-Managed Inventory) against the firm's strategic goals using data from Source 1, Source 2, and Source 3.\\n\\n**Strategy A: Just-In-Time (JIT)**\\n*   **Capital Tied Up:** $10,000 (Substantially reduced from $80,000 - Goal 1 met)\\n*   **Obsolescence Cost:** $500 (Substantially reduced from $6,000 - Goal 2 met)\\n*   **Supplier Reliability Score:** 4.5 (Significantly improved from 3.0 - Goal 3 met)\\n*   **Agility:** High (Inherently designed for agility, as per Source 1 - Goal 4 met)\\n*   **Stockout Rate:** 5.0% (Fails to meet Goal 5 as it's > 2.0%)\\n\\n**Strategy B: Economic Order Quantity (EOQ)**\\n*   **Capital Tied Up:** $60,000 (Reduced, but not 'substantially' from $80,000 - Goal 1 partially met)\\n*   **Obsolescence Cost:** $4,000 (Reduced, but not 'substantially' from $6,000 - Goal 2 partially met)\\n*   **Supplier Reliability Score:** 3.5 (Marginally improved from 3.0; not 'significantly stronger' - Goal 3 partially met)\\n*   **Agility:** Low (Best for 'stable demand conditions' and 'larger stock levels,' not volatile markets - Goal 4 not met)\\n*   **Stockout Rate:** 1.5% (Meets Goal 5 as it's <= 2.0%)\\n\\n**Strategy C: Vendor-Managed Inventory (VMI)**\\n*   **Capital Tied Up:** $40,000 (Substantially reduced from $80,000 - Goal 1 met)\\n*   **Obsolescence Cost:** $3,000 (Substantially reduced from $6,000 - Goal 2 met)\\n*   **Supplier Reliability Score:** 4.8 (Highest among alternatives, significantly improved from 3.0, fostering collaboration as per Source 1 - Goal 3 met)\\n*   **Agility:** Enhanced (Shifts replenishment responsibility to supplier, leading to 'better stock visibility' and reduced stockouts, which facilitates responsiveness to market changes - Goal 4 met)\\n*   **Stockout Rate:** 1.0% (Meets Goal 5 as it's <= 2.0%)\\n\\nStep 3: Compare the performance of each alternative against all the firm's strategic goals to identify the most holistically aligned option.\\n\\n*   JIT fails on the critical stockout rate criterion, exceeding the firm's acceptable threshold.\\n*   EOQ falls short on substantially reducing capital/obsolescence costs, providing significant supplier collaboration, and enhancing agility for volatile markets.\\n*   VMI successfully meets all five strategic goals: it substantially reduces capital tied up ($40,000) and obsolescence costs ($3,000), significantly improves supplier collaboration (score 4.8), enhances agility through better visibility and shared responsibility, and maintains a manageable stockout rate (1.0%) within the acceptable range.\\n\\nStep 4: Conclude which strategy offers the most balanced and strategically aligned transition.\\n\\nBased on a comprehensive evaluation, Vendor-Managed Inventory (VMI) is the strategy that offers the most holistically balanced and strategically aligned transition for the manufacturing firm. It addresses all the board's concerns effectively while leveraging supplier collaboration for improved market responsiveness.\"",
+      "question": "Refer to the bar chart in Source 2 and the scatter plot in Source 3. If Company F has annual revenue of $450 million in 2024 and is projected to reduce its carbon emissions in line with the CECD requirements for its tier, what would be its approximate carbon emissions in 2025, assuming a linear reduction pattern? Use the data from the bar chart for Tier 2 companies and the relationship shown in the scatter plot to estimate initial emissions, then calculate the 2025 value based on the required percentage reduction by 2026.",
+      "title": "CECD Emission Projection: Estimating 2025 Emissions for Company F",
+      "solution": "",
       "options": {
-        "A": "Just-In-Time (JIT) would be ideal for its significant reductions in capital tied up ($10,000) and obsolescence costs ($500), alongside a strong supplier reliability score (4.5), crucial for agility; but its 5.0% stockout rate significantly exceeds the acceptable limit of 2.0%.",
-        "B": "Economic Order Quantity (EOQ) offers a manageable stockout rate (1.5%) and moderate reductions in capital ($60,000) and obsolescence ($4,000), representing a safer shift; however, it lacks the substantial financial impact and agility required for increasingly volatile market conditions.",
-        "C": "Vendor-Managed Inventory (VMI) provides the most balanced solution, substantially reducing capital tied up ($40,000) and obsolescence costs ($3,000), fostering the highest supplier collaboration (4.8), and achieving a desirable stockout rate (1.0%), thereby enhancing strategic responsiveness to market volatility.",
-        "D": "While JIT significantly reduces direct inventory costs, its high administrative ordering cost ($8,000) and expediting cost ($1,500), as detailed in Source 3, make its overall operational cost profile less attractive for a holistic transition when considering the firm's broader financial health.",
-        "E": "Prioritizing strategies that offer the highest lead time variability tolerance, such as EOQ (5 days) over VMI (4 days), is paramount for resilience in volatile markets, making any aggressive reduction in capital and obsolescence costs a secondary concern for the firm."
+        "A": "48 million metric tons",
+        "B": "50 million metric tons",
+        "C": "52 million metric tons",
+        "D": "54 million metric tons",
+        "E": "56 million metric tons"
       },
-      "answer": [
-        "C"
-      ],
-      "prompt": "<Verbal Reasoning> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
+      "answer": "C",
+      "prompt": "<Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
       "question-type": "Multi-Source Reasoning",
-      "difficulty": 1,
-      "tags": [
-        "GMAT",
-        "Integrated Reasoning",
-        "Multi-Source Reasoning"
-      ]
+      "difficulty": 1
     }
   ],
-  "prompt": "<Algebraic Expressions and Simplification> - <Logistics and Operations> - <table> - <table> - <table> - <Comparison and Contrast> - <Comparison and Contrast> - <Comparison and Contrast> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+  "prompt": "<Profit, Loss and Discount> - <Government Policies and Regulations> - <memo> - <memo> - <memo> - <Financial Reasoning> - <Financial Reasoning> - <Financial Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
   "question-type": "Multi-Source Reasoning",
-  "difficulty": 1,
-  "tags": [
-    "GMAT",
-    "Integrated Reasoning",
-    "Multi-Source Reasoning"
-  ]
+  "difficulty": 2
 }

@@ -1,15 +1,10 @@
 {
-  "question": "A regional environmental agency is assessing the effectiveness of two distinct ecosystem restoration initiatives, R1 (wetland rehabilitation) and R2 (riparian zone afforestation), planned for contiguous areas. Due to funding constraints and specific resource requirements, it has been determined that achieving complete success for both R1 and R2 within the current fiscal year are mutually exclusive events. The probability of R1 achieving complete success is 0.40. The probability of R2 achieving complete success is 0.35. A new satellite imaging system is subsequently deployed to monitor these projects. The probability that this system accurately detects any completely successful restoration (either R1 or R2) is 0.85, and this detection event is independent of the specific restoration type that succeeded. What is the probability that the satellite imaging system detects a completely successful restoration within the current fiscal year?",
-  "title": "Probability of satellite detection for mutually exclusive restoration successes",
-  "solution": "\"The final probability is 0.6375.\"",
+  "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? Provide your answer as a two-digit positive number.",
+  "title": "Rectangular Garden Perimeter and Area Calculation",
+  "solution": "",
   "options": null,
-  "answer": 0.64,
-  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Environment and Sustainability> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "answer": 108.0,
+  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
   "question-type": "Numerical Entry",
-  "difficulty": 1,
-  "tags": [
-    "GRE",
-    "Quants",
-    "Numerical Entry"
-  ]
+  "difficulty": 2
 }

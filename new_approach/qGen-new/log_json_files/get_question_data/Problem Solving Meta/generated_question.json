@@ -1,180 +1,244 @@
 {
   "metadata": {
-    "table": [
-      [
-        {
-          "type": "data_table",
-          "description": "Monthly sales performance and advertising spend for Product Alpha over five months, providing data points to calculate variance and standard deviation of various metrics.",
-          "structure": {
-            "title": "Product Alpha Monthly Sales and Advertising Spend",
-            "headers": [
-              "Month",
-              "Units Sold",
-              "Revenue ($)",
-              "Advertising Spend ($)"
-            ],
-            "rows": [
-              [
-                "January",
-                "1500",
-                "75000",
-                "5000"
-              ],
-              [
-                "February",
-                "1700",
-                "85000",
-                "5500"
-              ],
-              [
-                "March",
-                "1400",
-                "70000",
-                "4800"
-              ],
-              [
-                "April",
-                "1900",
-                "95000",
-                "6000"
-              ],
-              [
-                "May",
-                "1600",
-                "80000",
-                "5200"
-              ]
-            ]
-          }
-        }
-      ]
-    ],
     "graph": [
-      [
-        {
-          "type": "line_chart",
-          "description": "A line chart depicting the monthly Units Sold for Product Alpha, which can be used to analyze sales variability and calculate statistical measures like standard deviation or variance.",
-          "structure": {
-            "title": "Product Alpha Monthly Units Sold Trend",
-            "x_axis": {
-              "label": "Month",
-              "scale": "ordinal",
-              "ticks": [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May"
-              ]
-            },
-            "y_axis": {
-              "label": "Units Sold",
-              "scale": "linear",
-              "ticks": [
-                "1400",
-                "1500",
-                "1600",
-                "1700",
-                "1800",
-                "1900"
-              ]
-            },
-            "series": [
-              {
-                "name": "Units Sold",
-                "color": "#4CAF50",
-                "data": [
-                  {
-                    "x": "January",
-                    "y": 1500,
-                    "label": "Units Sold: 1500",
-                    "value": 1500
-                  },
-                  {
-                    "x": "February",
-                    "y": 1700,
-                    "label": "Units Sold: 1700",
-                    "value": 1700
-                  },
-                  {
-                    "x": "March",
-                    "y": 1400,
-                    "label": "Units Sold: 1400",
-                    "value": 1400
-                  },
-                  {
-                    "x": "April",
-                    "y": 1900,
-                    "label": "Units Sold: 1900",
-                    "value": 1900
-                  },
-                  {
-                    "x": "May",
-                    "y": 1600,
-                    "label": "Units Sold: 1600",
-                    "value": 1600
-                  }
-                ]
-              }
+      {
+        "type": "scatter_chart",
+        "description": "Scatter plot showing relationship between study hours per week and final exam scores for graduate students in a business analytics course",
+        "structure": {
+          "title": "Study Hours vs. Exam Performance in Graduate Business Analytics",
+          "x_axis": {
+            "label": "Study Hours per Week",
+            "type": "numerical",
+            "range": [
+              0,
+              35
             ]
+          },
+          "y_axis": {
+            "label": "Final Exam Score (Percentage)",
+            "type": "numerical",
+            "range": [
+              50,
+              100
+            ]
+          },
+          "data_format": {
+            "points": [
+              {
+                "x": 5,
+                "y": 62
+              },
+              {
+                "x": 8,
+                "y": 68
+              },
+              {
+                "x": 12,
+                "y": 75
+              },
+              {
+                "x": 15,
+                "y": 82
+              },
+              {
+                "x": 18,
+                "y": 85
+              },
+              {
+                "x": 20,
+                "y": 88
+              },
+              {
+                "x": 22,
+                "y": 90
+              },
+              {
+                "x": 25,
+                "y": 92
+              },
+              {
+                "x": 28,
+                "y": 94
+              },
+              {
+                "x": 30,
+                "y": 95
+              },
+              {
+                "x": 32,
+                "y": 96
+              },
+              {
+                "x": 34,
+                "y": 97
+              }
+            ],
+            "point_color": "#2c3e50",
+            "point_size": 7
           }
         }
-      ]
+      }
+    ],
+    "table": [
+      {
+        "type": "data_table",
+        "description": "Detailed data table showing study hours and exam scores for graduate students in business analytics, with additional demographic and performance metrics",
+        "structure": {
+          "title": "Graduate Student Performance Data - Business Analytics Course",
+          "headers": [
+            "Student ID",
+            "Study Hours/Week",
+            "Exam Score (%)",
+            "Prior GPA",
+            "Course Attendance (%)",
+            "Assignment Average (%)"
+          ],
+          "rows": [
+            [
+              "S001",
+              5,
+              62,
+              3.2,
+              85,
+              70
+            ],
+            [
+              "S002",
+              8,
+              68,
+              3.4,
+              90,
+              75
+            ],
+            [
+              "S003",
+              12,
+              75,
+              3.5,
+              92,
+              78
+            ],
+            [
+              "S004",
+              15,
+              82,
+              3.6,
+              95,
+              82
+            ],
+            [
+              "S005",
+              18,
+              85,
+              3.7,
+              96,
+              85
+            ],
+            [
+              "S006",
+              20,
+              88,
+              3.8,
+              98,
+              88
+            ],
+            [
+              "S007",
+              22,
+              90,
+              3.9,
+              99,
+              90
+            ],
+            [
+              "S008",
+              25,
+              92,
+              4.0,
+              100,
+              92
+            ],
+            [
+              "S009",
+              28,
+              94,
+              4.0,
+              100,
+              94
+            ],
+            [
+              "S010",
+              30,
+              95,
+              4.0,
+              100,
+              95
+            ],
+            [
+              "S011",
+              32,
+              96,
+              4.0,
+              100,
+              96
+            ],
+            [
+              "S012",
+              34,
+              97,
+              4.0,
+              100,
+              97
+            ]
+          ],
+          "formatting": {
+            "alternating_rows": true,
+            "border_style": "standard"
+          }
+        }
+      }
     ]
   },
-  "title": "Product Alpha Sales Volatility: Conditional Standard Deviation Analysis",
+  "title": "Graduate Student Performance Analysis: Study Hours vs. Exam Scores",
   "child-questions": [
     {
-      "question": "Using the provided data for Product Alpha, what is the total number of units sold from January to May?",
-      "title": "Total Units Sold for Product Alpha: January to May Cumulative Sum",
-      "solution": "\"{\\\"question\\\": \\\"Using the provided data for Product Alpha, what is the total number of units sold from January to May?\\\", \\\"solution\\\": \\\"Step 1: Identify the units sold for each month from January to May using the 'Product Alpha Monthly Sales and Advertising Spend' table.\\\\nUnits Sold for January = 1500\\\\nUnits Sold for February = 1700\\\\nUnits Sold for March = 1400\\\\nUnits Sold for April = 1900\\\\nUnits Sold for May = 1600\\\\n\\\\nStep 2: Set up the mathematical relationship to find the total units sold by summing the units sold for each month.\\\\nTotal Units Sold = Units Sold (January) + Units Sold (February) + Units Sold (March) + Units Sold (April) + Units Sold (May)\\\\n\\\\nStep 3: Perform the calculation.\\\\nTotal Units Sold = 1500 + 1700 + 1400 + 1900 + 1600\\\\nTotal Units Sold = 8100 units\\\\n\\\\nStep 4: The total number of units sold from January to May is 8100 units.\\\\n\\\\nStep 5: Confirm that the solution addresses the original question by providing the cumulative sum of units sold over the specified period.\\\"}\"",
+      "question": "A graduate business analytics course instructor analyzes student performance data to understand factors influencing exam scores. The scatter plot shows the relationship between study hours per week and final exam scores for 12 students. The data table provides additional metrics including prior GPA, course attendance, and assignment averages. Based on this data, answer the following questions:\n\n1. Using the scatter plot, estimate the correlation coefficient between study hours and exam scores. What type of relationship does this suggest?\n2. Calculate the average exam score for students who studied 20 hours or more per week, using the data table.\n3. Identify which student (by ID) shows the greatest improvement from their assignment average to their exam score, and calculate this improvement percentage.\n4. Determine if there is a threshold effect in study hours: at approximately how many study hours per week do exam scores begin to plateau (increase by less than 1% per additional hour)?\n5. Considering all variables in the table, which factor appears most strongly associated with exam scores besides study hours, and provide a brief rationale based on the data trends.",
+      "title": "Multi-Factor Analysis of Graduate Student Performance Metrics",
+      "solution": "",
       "options": {
-        "A": "7900",
-        "B": "8100",
-        "C": "8000",
-        "D": "8200",
-        "E": "1620"
-      },
-      "answer": "B",
-      "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
-      "question-type": "Problem Solving Meta",
-      "difficulty": 1,
-      "tags": [
-        "GRE",
-        "Quants",
-        "Problem Solving Meta"
-      ]
-    },
-    {
-      "question": "Analyze the provided Product Alpha monthly performance data. Disregard the absolute monthly revenue figures for this calculation, but note the advertising spend and units sold. First, compute the sample standard deviation for the 'Units Sold' over the given period. Next, derive a new metric: 'Advertising Spend per Unit' for each month. Subsequently, calculate the sample standard deviation for this newly derived 'Advertising Spend per Unit' series. Finally, determine the absolute difference between these two calculated sample standard deviations. Round your final answer to two decimal places. Ensure you use the correct formula for sample standard deviation to avoid common pitfalls.",
-      "title": "Absolute difference in sample standard deviations: Units Sold vs. Ad Spend per Unit",
-      "solution": "\"The problem requires us to calculate the sample standard deviation for two different series of data and then find the absolute difference between these two values. We'll start by extracting the necessary data from the provided table.\\n\\n**Step 1: Identify and prepare the data series.**\\nFrom the table, we extract 'Units Sold' (U) and 'Advertising Spend' (A) for each month:\\n*   Units Sold (U): [1500, 1700, 1400, 1900, 1600]\\n*   Advertising Spend (A): [5000, 5500, 4800, 6000, 5200]\\nThere are $n=5$ data points.\\n\\n**Step 2: Calculate the sample standard deviation for 'Units Sold'.**\\nThe formula for sample standard deviation ($s$) is given by $s = \\\\sqrt{\\\\frac{\\\\sum_{i=1}^{n} (x_i - \\\\bar{x})^2}{n-1}}$.\\n\\nFirst, calculate the mean of 'Units Sold' ($\\\\bar{U}$):\\n$\\\\bar{U} = \\\\frac{1500 + 1700 + 1400 + 1900 + 1600}{5} = \\\\frac{8100}{5} = 1620$\\n\\nNext, calculate the squared differences from the mean:\\n*   $(1500 - 1620)^2 = (-120)^2 = 14400$\\n*   $(1700 - 1620)^2 = (80)^2 = 6400$\\n*   $(1400 - 1620)^2 = (-220)^2 = 48400$\\n*   $(1900 - 1620)^2 = (280)^2 = 78400$\\n*   $(1600 - 1620)^2 = (-20)^2 = 400$\\n\\nSum of squared differences: $14400 + 6400 + 48400 + 78400 + 400 = 148000$\\n\\nNow, calculate the sample standard deviation for 'Units Sold' ($s_U$):\\n$s_U = \\\\sqrt{\\\\frac{148000}{5-1}} = \\\\sqrt{\\\\frac{148000}{4}} = \\\\sqrt{37000} \\\\approx 192.35384$\\n\\n**Step 3: Derive the 'Advertising Spend per Unit' metric and calculate its sample standard deviation.**\\nFirst, calculate 'Advertising Spend per Unit' (ASPU) for each month by dividing 'Advertising Spend' by 'Units Sold':\\n*   January: $5000 / 1500 \\\\approx 3.33333$\\n*   February: $5500 / 1700 \\\\approx 3.23529$\\n*   March: $4800 / 1400 \\\\approx 3.42857$\\n*   April: $6000 / 1900 \\\\approx 3.15789$\\n*   May: $5200 / 1600 = 3.25000$\\n\\nThe ASPU series is approximately: $[3.33333, 3.23529, 3.42857, 3.15789, 3.25000]$\\n\\nNext, calculate the mean of ASPU ($\\\\overline{ASPU}$):\\n$\\\\overline{ASPU} = \\\\frac{3.33333 + 3.23529 + 3.42857 + 3.15789 + 3.25000}{5} = \\\\frac{16.40508}{5} \\\\approx 3.28102$\\n\\nNow, calculate the squared differences from the mean for ASPU:\\n*   $(3.33333 - 3.28102)^2 = (0.05231)^2 \\\\approx 0.0027363$\\n*   $(3.23529 - 3.28102)^2 = (-0.04573)^2 \\\\approx 0.0020912$\\n*   $(3.42857 - 3.28102)^2 = (0.14755)^2 \\\\approx 0.0217711$\\n*   $(3.15789 - 3.28102)^2 = (-0.12313)^2 \\\\approx 0.0151610$\\n*   $(3.25000 - 3.28102)^2 = (-0.03102)^2 \\\\approx 0.0009622$\\n\\nSum of squared differences: $0.0027363 + 0.0020912 + 0.0217711 + 0.0151610 + 0.0009622 \\\\approx 0.0427218$\\n\\nFinally, calculate the sample standard deviation for 'Advertising Spend per Unit' ($s_{ASPU}$):\\n$s_{ASPU} = \\\\sqrt{\\\\frac{0.0427218}{5-1}} = \\\\sqrt{\\\\frac{0.0427218}{4}} = \\\\sqrt{0.01068045} \\\\approx 0.103346$\\n\\n**Step 4: Determine the absolute difference between the two calculated sample standard deviations.**\\nAbsolute Difference $= |s_U - s_{ASPU}|$\\nAbsolute Difference $= |192.35384 - 0.103346| = 192.250494$\\n\\n**Step 5: Round the final answer to two decimal places.**\\nRounded Absolute Difference = $192.25$\\n\\nFinal Answer: 192.25\"",
-      "options": {
-        "A": "192.25",
-        "B": "192.35",
-        "C": "171.95",
-        "D": "276.69",
-        "E": "0.10"
+        "A": "Strong positive correlation (r ≈ 0.95), suggesting more study hours lead to higher exam scores",
+        "B": "Moderate positive correlation (r ≈ 0.75), indicating study hours moderately influence scores",
+        "C": "Weak positive correlation (r ≈ 0.45), showing limited impact of study hours",
+        "D": "No correlation (r ≈ 0), meaning study hours and exam scores are unrelated",
+        "E": "Negative correlation (r ≈ -0.60), implying more study hours decrease scores"
       },
       "answer": [
         "A"
       ],
-      "prompt": "<Comparison of Data Points> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+      "prompt": "<Interpolation and Extrapolation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
       "question-type": "Problem Solving Meta",
-      "difficulty": 1,
-      "tags": [
-        "GRE",
-        "Quants",
-        "Problem Solving Meta"
-      ]
+      "difficulty": 1
+    },
+    {
+      "question": "A graduate business analytics course instructor analyzes student performance data to understand factors influencing exam scores. The scatter plot shows the relationship between study hours per week and final exam scores for 12 students. The data table provides additional metrics including prior GPA, course attendance, and assignment averages. Based on this data, answer the following questions:\n\n1. Using the scatter plot, estimate the correlation coefficient between study hours and exam scores. What type of relationship does this suggest?\n2. Calculate the average exam score for students who studied 20 hours or more per week, using the data table.\n3. Identify which student (by ID) shows the greatest improvement from their assignment average to their exam score, and calculate this improvement percentage.\n4. Determine if there is a threshold effect in study hours: at approximately how many study hours per week do exam scores begin to plateau (increase by less than 1% per additional hour)?\n5. Considering all variables in the table, which factor appears most strongly associated with exam scores besides study hours, and provide a brief rationale based on the data trends.",
+      "title": "Comprehensive Analysis of Graduate Student Performance Metrics",
+      "solution": "{Improvement} = \\frac{\\text{Exam Score} - \\text{Assignment Average}}{\\text{Assignment Average}} \\times 100\\% \\). For example, S001: (62-70)/70 × 100% = -11.43% (worse). S002: (68-75)/75 × 100% = -9.33%. S003: (75-78)/78 × 100% = -3.85%. S004: (82-82)/82 × 100% = 0%. S005: (85-85)/85 × 100% = 0%. S006: (88-88)/88 × 100% = 0%. S007: (90-90)/90 × 100% = 0%. S008: (92-92)/92 × 100% = 0%. S009: (94-94)/94 × 100% = 0%. S010: (95-95)/95 × 100% = 0%. S011: (96-96)/96 × 100% = 0%. S012: (97-97)/97 × 100% = 0%. All students have exam scores equal to or less than assignment averages, so no positive improvement. The greatest (least negative) is S003 with -3.85%.\n\nStep 4: Determine the threshold where exam scores plateau (increase <1% per additional hour). Examine consecutive points: From 30 to 32 hours: score increases from 95 to 96 (1% increase). From 32 to 34 hours: 96 to 97 (1.04% increase). The increase is around 1% even at high hours, but looking earlier: 25 to 28 hours: 92 to 94 (2.17% over 3 hours ≈ 0.72% per hour). 28 to 30: 94 to 95 (1.06% over 2 hours ≈ 0.53% per hour). Plateau begins around 28-30 hours where per-hour increase drops below 1%.\n\nStep 5: Identify the factor most strongly associated with exam scores besides study hours. Compare trends: Prior GPA increases with study hours and scores (e.g., from 3.2 to 4.0). Course attendance also increases (85% to 100%). Assignment averages closely match exam scores (differences small). Course attendance shows a near-perfect correlation with study hours and scores, especially at high values (100% attendance for top performers). Thus, course attendance appears most strongly associated, as it consistently aligns with performance.",
+      "options": {
+        "A": "Strong positive correlation (r ≈ 0.95), suggesting more study hours lead to higher exam scores",
+        "B": "Moderate positive correlation (r ≈ 0.75), indicating study hours moderately influence scores",
+        "C": "Weak positive correlation (r ≈ 0.45), showing limited impact of study hours",
+        "D": "No correlation (r ≈ 0), meaning study hours and exam scores are unrelated",
+        "E": "Negative correlation (r ≈ -0.60), implying more study hours decrease scores"
+      },
+      "answer": [
+        "A"
+      ],
+      "prompt": "<Making Predictions Based on Trends> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+      "question-type": "Problem Solving Meta",
+      "difficulty": 1
     }
   ],
-  "prompt": "<Standard Deviation and Variance> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Business and Finance> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
   "question-type": "Problem Solving Meta",
-  "difficulty": 1,
-  "tags": [
-    "GRE",
-    "Quants",
-    "Problem Solving Meta"
-  ]
+  "difficulty": 4
 }

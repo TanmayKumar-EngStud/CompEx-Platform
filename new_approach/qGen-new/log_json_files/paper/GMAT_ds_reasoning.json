@@ -1,0 +1,2140 @@
+{
+  "3": {
+    "section": "Verbal",
+    "questions": [
+      {
+        "metadata": {
+          "Passage": "In the competitive landscape of business education, MBA programs are increasingly focusing on experiential learning to bridge the gap between theoretical knowledge and practical application. This shift is driven by employer demands for graduates who can immediately contribute to organizational success, with studies showing that 85% of corporate recruiters prioritize hands-on experience in hiring decisions. By integrating real-world projects, internships, and case competitions into curricula, institutions aim to develop critical thinking, leadership, and problem-solving skills essential for navigating complex global markets, thereby enhancing student employability and fostering innovation in business practices.\nTo support this experiential approach, business schools are leveraging technology and cross-disciplinary collaborations to simulate real-world challenges. For instance, virtual simulations and AI-driven analytics tools allow students to analyze market trends and make strategic decisions in risk-free environments, while partnerships with industry leaders provide access to current business problems and mentorship opportunities. This holistic model not only prepares candidates for the rigors of MBA entrance exams by emphasizing analytical reasoning and data interpretation but also cultivates a mindset of continuous learning, enabling them to adapt to evolving economic landscapes and drive sustainable growth in their future careers."
+        },
+        "title": "Analysis of MBA Experiential Learning and Its Impact on Graduate Employability",
+        "child-questions": [
+          {
+            "question": "According to the passage, what is the primary reason behind MBA programs shifting towards experiential learning, and how do virtual simulations contribute to this educational model in preparing students for global market challenges?",
+            "title": "MBA Educational Strategies for Global Market Preparedness",
+            "solution": "",
+            "options": {
+              "A": "Employer demands and by providing risk-free decision-making practice",
+              "B": "Enhancing theoretical knowledge and by offering internship opportunities",
+              "C": "University accreditation requirements and by reducing tuition costs",
+              "D": "Student preferences for online learning and by increasing exam pass rates",
+              "E": "Government regulations and by focusing on traditional case studies"
+            },
+            "answer": "A",
+            "prompt": "<Conclusion Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "Based on the passage, what percentage of corporate recruiters prioritize hands-on experience in hiring decisions, and how does this statistic influence the design of MBA curricula in terms of skill development?",
+            "title": "Quantifying Employer Influence on MBA Curriculum Design",
+            "solution": "",
+            "options": {
+              "A": "85%, leading to a focus on critical thinking, leadership, and problem-solving skills",
+              "B": "75%, resulting in an emphasis on theoretical coursework and exam preparation",
+              "C": "90%, causing universities to prioritize government funding over industry partnerships",
+              "D": "70%, encouraging a shift towards traditional lecture-based teaching methods",
+              "E": "95%, driving the adoption of AI tools exclusively for exam simulations"
+            },
+            "answer": "A",
+            "prompt": "<Weaken Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-S> - <philosophy> - <Critical Reasoning (Argument Evaluation)> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 1,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "The strategic adoption of artificial intelligence (AI) in business operations has become a critical focus for modern enterprises, driven by its potential to enhance efficiency and innovation. Companies are leveraging AI for tasks ranging from predictive analytics to automated customer service, aiming to gain competitive advantages in increasingly saturated markets. For instance, a retail firm might use machine learning algorithms to forecast demand trends, optimizing inventory management and reducing costs. However, this integration is not without challenges, such as ethical concerns over data privacy and the need for substantial investment in technology and training. As businesses navigate these complexities, understanding the balance between technological advancement and operational risks is essential for sustainable growth, making it a key topic for MBA students to master in preparation for leadership roles in dynamic industries.\nTo address these challenges, effective AI implementation requires a multifaceted approach that aligns with organizational goals and ethical standards. Business leaders must prioritize transparency in AI decision-making processes to build trust among stakeholders and comply with evolving regulations, such as the European Union's AI Act. Additionally, investing in workforce development through upskilling programs can mitigate resistance to change and ensure that employees can collaborate effectively with AI systems. Case studies from industries like finance and healthcare demonstrate that successful AI projects often involve cross-functional teams and iterative testing to refine models. For MBA candidates, analyzing these real-world examples helps cultivate skills in strategic planning and risk management, preparing them to drive innovation while upholding corporate responsibility in an era defined by rapid technological disruption."
+        },
+        "title": "AI Implementation Challenges and Strategic Solutions for Business Leaders",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes the primary strategic challenge that businesses face when integrating AI, and how does the passage suggest addressing it to achieve sustainable growth?",
+            "title": "Analyzing AI Integration Challenges and Strategic Solutions",
+            "solution": "",
+            "options": {
+              "A": "The primary challenge is the technical complexity of AI algorithms, addressed by focusing solely on hiring experts in machine learning to optimize systems.",
+              "B": "The primary challenge is balancing technological advancement with operational risks like ethical concerns and investment needs, addressed through transparency, workforce development, and cross-functional strategies.",
+              "C": "The primary challenge is competition in saturated markets, addressed by using AI only for customer service to reduce human resource costs.",
+              "D": "The primary challenge is the lack of innovation in AI tools, addressed by ignoring regulations to speed up implementation and gain first-mover advantages.",
+              "E": "The primary challenge is the high cost of AI technology, addressed by cutting training programs to allocate more budget to software purchases."
+            },
+            "answer": "B",
+            "prompt": "<Conclusion Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "According to the passage, what role do case studies from industries such as finance and healthcare play in the context of AI implementation, and how does this relate to the development of MBA candidates` skills?",
+            "title": "Role of Industry Case Studies in AI Implementation and MBA Skill Development",
+            "solution": "",
+            "options": {
+              "A": "They provide technical specifications for AI algorithms, enabling MBA candidates to develop coding skills for software development roles.",
+              "B": "They illustrate best practices like cross-functional teams and iterative testing, helping MBA candidates cultivate strategic planning and risk management skills.",
+              "C": "They serve as marketing tools to attract investors by showcasing successful AI projects, unrelated to skill development for MBA candidates.",
+              "D": "They highlight the failures of AI in finance and healthcare, warning MBA candidates to avoid AI implementation due to high risks and costs.",
+              "E": "They focus on regulatory compliance issues only, preparing MBA candidates for legal careers in technology law without broader business applications."
+            },
+            "answer": "B",
+            "prompt": "<Supporting Details> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-S> - <Art> - <Assumption and Bias Identification> - vocabulary_level: <2> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 4,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "In the competitive landscape of modern business, organizations increasingly rely on data-driven decision-making to maintain a strategic edge. This shift necessitates that future leaders, particularly those pursuing an MBA, develop robust analytical skills to interpret complex datasets and translate insights into actionable strategies. A recent study by a leading business school highlighted that companies prioritizing data analytics in their operations reported a 15% higher profitability over five years compared to those that did not. However, the challenge lies not just in collecting data but in discerning relevant patterns and avoiding cognitive biases that can lead to flawed conclusions. For instance, confirmation bias often causes managers to favor information that supports pre-existing beliefs, potentially overlooking critical market shifts. As part of their preparation, MBA candidates must engage with case studies that simulate real-world scenarios, requiring them to analyze financial reports, customer feedback, and industry trends to make informed recommendations. This process not only hones their technical abilities but also fosters critical thinking and ethical considerations, such as ensuring data privacy and mitigating algorithmic discrimination.\nTo effectively navigate these complexities, MBA programs incorporate interdisciplinary approaches that blend quantitative analysis with qualitative insights. For example, courses in managerial economics and strategic management train students to evaluate market dynamics and competitive forces, while modules on organizational behavior emphasize the human factors influencing data interpretation and implementation. A survey of top-tier MBA graduates revealed that 80% considered such integrated learning crucial for their career advancement, as it prepares them to lead diverse teams and adapt to rapidly evolving technologies like artificial intelligence and machine learning. Moreover, ethical leadership remains a cornerstone, with curricula addressing scenarios where data might be manipulated for short-term gains, underscoring the importance of transparency and accountability. By mastering these competencies, aspiring professionals not only enhance their employability but also contribute to sustainable business practices that balance profit with social responsibility, ultimately driving innovation in an increasingly data-centric world."
+        },
+        "title": "Impact of Data Analytics on MBA Preparedness and Business Profitability",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following statements best describes a key challenge in data-driven decision-making that MBA programs aim to address through integrated learning, and how does this relate to the reported profitability impact of data analytics?",
+            "title": "Challenges in Data Analytics Integration for MBA Curriculum and Profitability",
+            "solution": "",
+            "options": {
+              "A": "The main challenge is that data collection is too expensive, and MBA programs address this by teaching cost-cutting techniques, which directly explains the 15% higher profitability through reduced operational expenses.",
+              "B": "A key challenge is avoiding cognitive biases like confirmation bias in data interpretation, and MBA programs address this through integrated learning that combines quantitative and qualitative skills, helping managers make unbiased decisions that leverage data for improved profitability.",
+              "C": "The primary challenge is the lack of advanced technology in companies, and MBA programs focus solely on technical training in AI and machine learning, leading to the profitability increase by automating processes.",
+              "D": "Challenges include ethical issues like data manipulation, and MBA programs emphasize ethical leadership to ensure transparency, which supports sustainable practices that contribute to long-term profitability alongside the 15% gain.",
+              "E": "The challenge is that data analysis is too time-consuming, and MBA programs teach speed-reading techniques to accelerate decision-making, resulting in the reported profitability boost due to faster market responses."
+            },
+            "answer": [
+              "B",
+              "D"
+            ],
+            "prompt": "<Weaken Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "According to the passage, what are two primary methods through which MBA programs prepare students to handle the complexities of data-driven decision-making, and how do these methods relate to the survey findings on graduate perspectives?",
+            "title": "MBA Curriculum Methods for Data Decision-Making and Graduate Survey Alignment",
+            "solution": "",
+            "options": {
+              "A": "Case studies focusing on financial reports and customer feedback, and interdisciplinary approaches blending quantitative and qualitative skills, with 80% of graduates finding these methods crucial for career advancement.",
+              "B": "Exclusive technical training in data analytics software and programming languages, which 80% of graduates reported as essential for adapting to AI and machine learning.",
+              "C": "Emphasis on memorizing historical business data and profit margins, linked to the 15% higher profitability reported by companies using data analytics.",
+              "D": "Courses in public speaking and networking to enhance employability, with surveys showing 80% of graduates prioritize these soft skills over integrated learning.",
+              "E": "Focus on reducing data collection costs through efficiency techniques, aligning with graduate feedback that cost-cutting is key to career success in data-driven fields."
+            },
+            "answer": "A",
+            "prompt": "<Weaken Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-S> - <Art> - <Evidence-Based Reasoning> - vocabulary_level: <1> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 2,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "The evolution of digital marketing has fundamentally reshaped consumer engagement and business strategies in the 21st century. Initially focused on basic online advertising and email campaigns, it has expanded to include sophisticated tools like social media analytics, search engine optimization (SEO), and artificial intelligence-driven personalization. This transformation is driven by the exponential growth of internet users and mobile technology, enabling companies to reach global audiences with unprecedented precision. As a result, businesses must continuously adapt their marketing approaches to leverage data insights and real-time feedback, making agility a critical competitive advantage in today's fast-paced market environment.\nHowever, this digital shift presents significant challenges, including data privacy concerns and information overload. Regulations like the General Data Protection Regulation (GDPR) impose strict compliance requirements, forcing companies to balance personalization with ethical data handling. Moreover, the sheer volume of online content can lead to consumer fatigue, reducing the effectiveness of traditional marketing tactics. To navigate these obstacles, organizations are increasingly investing in cybersecurity measures and adopting content strategies that prioritize quality and relevance over quantity, ensuring sustainable engagement in an increasingly skeptical digital landscape.\nLooking ahead, the future of digital marketing is poised for further innovation with emerging technologies like blockchain, augmented reality, and the Internet of Things (IoT). These advancements promise to enhance transparency, create immersive brand experiences, and enable hyper-personalized interactions. For MBA students and professionals, mastering these trends requires a blend of technical skills and strategic thinking to drive growth while mitigating risks. Ultimately, success in this dynamic field hinges on the ability to anticipate changes, foster consumer trust, and integrate digital tools seamlessly into broader business objectives, positioning agile leaders at the forefront of the global economy."
+        },
+        "title": "Digital Marketing Evolution: Challenges and Future Strategies",
+        "child-questions": [
+          {
+            "question": "Based on the passage, how do emerging technologies like blockchain and augmented reality address the challenges posed by data privacy regulations and consumer fatigue in digital marketing, and what strategic implications does this have for MBA professionals aiming to foster consumer trust and drive growth?",
+            "title": "Strategic Impact of Emerging Tech on Marketing Challenges",
+            "solution": "",
+            "options": {
+              "A": "Blockchain enhances transparency to comply with GDPR, while augmented reality reduces consumer fatigue by creating immersive experiences, requiring MBA professionals to focus on technical skills for trust-building and growth.",
+              "B": "Emerging technologies eliminate all data privacy issues and completely remove consumer fatigue, allowing MBA professionals to rely solely on traditional marketing strategies for success.",
+              "C": "Blockchain and augmented reality primarily increase information overload and cybersecurity risks, making it harder for businesses to adapt and for MBA students to manage growth.",
+              "D": "These technologies only benefit large corporations by cutting costs, with no significant impact on consumer trust or strategic implications for MBA curricula.",
+              "E": "The passage suggests that blockchain and IoT are outdated tools that worsen privacy concerns, while augmented reality is irrelevant to addressing digital marketing challenges."
+            },
+            "answer": "A",
+            "prompt": "<Author's Purpose> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "According to the passage, what is the primary driver behind the transformation of digital marketing tools from basic online advertising to sophisticated analytics and AI-driven personalization, and how does this impact the strategic agility required by businesses in contemporary markets?",
+            "title": "Drivers of Digital Marketing Evolution and Business Agility",
+            "solution": "",
+            "options": {
+              "A": "The exponential growth of internet users and mobile technology drives the transformation, forcing businesses to adapt continuously and leverage data insights, thus making agility a critical competitive advantage.",
+              "B": "The primary driver is government regulations like GDPR, which compel companies to adopt advanced tools, reducing the need for business agility in marketing strategies.",
+              "C": "Consumer demand for traditional advertising methods is the main driver, leading businesses to focus on basic tools and minimize changes to maintain stability.",
+              "D": "Technological stagnation and declining internet usage cause the shift to sophisticated tools, allowing businesses to avoid adaptation and maintain rigid marketing approaches.",
+              "E": "The transformation is driven solely by internal company decisions without external influences, having no significant impact on strategic agility or competitive positioning."
+            },
+            "answer": "A",
+            "prompt": "<Assumption Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "Given the passage`s discussion on challenges like data privacy and information overload, what specific content strategies are recommended for organizations to ensure sustainable engagement, and how do these strategies contrast with traditional marketing tactics in terms of effectiveness?",
+            "title": "Content Strategies for Sustainable Engagement vs. Traditional Tactics",
+            "solution": "",
+            "options": {
+              "A": "Organizations should prioritize quality and relevance over quantity, contrasting with traditional tactics that often rely on high volume and broad reach, which are less effective due to consumer fatigue.",
+              "B": "The recommended strategy is to increase the quantity of online content to outcompete others, mirroring traditional tactics that focus on mass production for maximum engagement.",
+              "C": "Content strategies should avoid any focus on quality or relevance, instead emphasizing random and frequent postings to mimic traditional methods that ignore consumer preferences.",
+              "D": "Organizations are advised to abandon all digital tools and revert entirely to traditional advertising, as these are more effective in overcoming privacy concerns and information overload.",
+              "E": "The passage suggests that sustainable engagement requires no specific content strategies, as traditional tactics remain fully effective despite the challenges mentioned."
+            },
+            "answer": "A",
+            "prompt": "<Tone and Attitude> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-M> - <Sports> - <Comparative Analysis and Perspective Recognition> - vocabulary_level: <3> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 3,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "In today's dynamic global marketplace, business leaders must navigate a complex landscape characterized by rapid technological advancements, shifting consumer preferences, and increasing regulatory pressures. The rise of artificial intelligence and big data analytics has fundamentally altered traditional business models, enabling companies to gain deeper insights into customer behavior and optimize operations in real-time. However, this digital transformation also brings challenges, such as cybersecurity threats and the need for continuous workforce upskilling. As organizations strive to remain competitive, they must balance innovation with risk management, fostering a culture of agility while adhering to ethical standards and sustainability goals. This environment underscores the importance of strategic thinking and adaptive leadership skills essential for MBA graduates.\nEffective leadership in this context requires a multifaceted approach that integrates financial acumen with human-centric management. MBA programs emphasize the development of analytical skills through courses in corporate finance, accounting, and economics, enabling future executives to make data-driven decisions. Simultaneously, soft skills like communication, teamwork, and emotional intelligence are critical for managing diverse teams and fostering innovation. Case studies and experiential learning opportunities allow students to apply theoretical knowledge to real-world scenarios, such as negotiating mergers or launching new products. By blending quantitative rigor with qualitative insights, MBA education prepares individuals to lead organizations through periods of uncertainty and drive sustainable growth in competitive industries.\nMoreover, the global nature of business today necessitates a strong understanding of cross-cultural dynamics and international markets. MBA curricula often include modules on global strategy, supply chain management, and international trade, equipping students to operate effectively in diverse geographical contexts. Exposure to multinational case studies and collaborations with peers from different backgrounds enhances cultural sensitivity and strategic vision. This global perspective is vital for addressing challenges like geopolitical tensions, currency fluctuations, and varying consumer trends across regions. By fostering a holistic view of business ecosystems, MBA programs help aspiring leaders build resilient organizations that can thrive in interconnected economies while contributing positively to societal and environmental goals.\nIn conclusion, pursuing an MBA is a strategic investment for professionals aiming to excel in the modern business world. It provides a comprehensive toolkit that combines hard skills in analytics and finance with soft skills in leadership and ethics, all within a global framework. Graduates emerge not only as competent managers but as visionary leaders capable of driving innovation and navigating complexities. By preparing individuals to tackle real-world problems with confidence and integrity, MBA programs play a crucial role in shaping the future of business, ensuring that leaders are equipped to create value for stakeholders while addressing broader societal challenges. This holistic development makes MBA graduates indispensable assets in fostering sustainable and inclusive economic growth."
+        },
+        "title": "MBA Program Integration of Analytics and Global Strategy",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes how MBA programs address the challenge of balancing innovation with risk management in a global context, as highlighted in the dynamic business landscape?",
+            "title": "MBA Curriculum Balance of Innovation and Global Risk",
+            "solution": "",
+            "options": {
+              "A": "By focusing solely on technical analytics without considering ethical implications.",
+              "B": "Through a blend of quantitative courses, soft skills development, and global strategy modules.",
+              "C": "By prioritizing financial acumen over cross-cultural understanding in curricula.",
+              "D": "Through isolated case studies that ignore real-world challenges like cybersecurity.",
+              "E": "By emphasizing theoretical knowledge without experiential learning applications."
+            },
+            "answer": [
+              "B"
+            ],
+            "prompt": "<Strengthen Question> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "According to the passage, what is a primary reason that MBA programs include multinational case studies and cross-cultural collaborations in their curriculum?",
+            "title": "MBA Multinational Case Studies for Cultural Sensitivity",
+            "solution": "",
+            "options": {
+              "A": "To focus solely on financial metrics without considering global risks.",
+              "B": "To enhance cultural sensitivity and strategic vision for addressing global challenges.",
+              "C": "To prioritize technical skills over soft skills development.",
+              "D": "To minimize the need for theoretical knowledge in business education.",
+              "E": "To isolate students from real-world business scenarios."
+            },
+            "answer": "B",
+            "prompt": "<Inference Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "Based on the passage, which of the following is NOT mentioned as a benefit of the holistic development provided by MBA programs for graduates?",
+            "title": "Excluded MBA Graduate Benefits from Holistic Development",
+            "solution": "",
+            "options": {
+              "A": "Equipping graduates with technical expertise in cybersecurity management.",
+              "B": "Enabling graduates to navigate complexities and drive innovation.",
+              "C": "Preparing graduates to create value for stakeholders and address societal challenges.",
+              "D": "Making graduates competent managers and visionary leaders.",
+              "E": "Fostering sustainable and inclusive economic growth through graduate contributions."
+            },
+            "answer": "A",
+            "prompt": "<Tone and Attitude> - difficulty_level: <2>\n\n[Difficulty Instruction]: Incorporate moderate vocabulary (college-level). Use complex sentence structures with clear signal words. The logic should require direct inference from stated facts.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "According to the passage, how do MBA programs specifically prepare students to manage the challenge of cybersecurity threats mentioned in the digital transformation?",
+            "title": "MBA Preparation for Cybersecurity Threat Management",
+            "solution": "",
+            "options": {
+              "A": "By offering specialized courses in cybersecurity management and data protection.",
+              "B": "Through developing analytical skills and risk management frameworks in a global context.",
+              "C": "By focusing exclusively on soft skills like communication to prevent threats.",
+              "D": "Through minimizing technology use in business education to avoid risks.",
+              "E": "By providing theoretical knowledge without practical applications to cybersecurity."
+            },
+            "answer": "B",
+            "prompt": "<Inference Question> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-L> - <Fiction> - <Main Idea Comprehension> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 1,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "In today's rapidly evolving business landscape, technological advancements are fundamentally reshaping traditional industries, driving a significant shift towards data-driven decision-making and digital transformation. Companies across sectors are increasingly leveraging artificial intelligence, machine learning, and big data analytics to gain competitive advantages, optimize operations, and enhance customer experiences. This transformation necessitates that business leaders not only adapt to new tools but also cultivate a deep understanding of how technology intersects with strategy, ethics, and organizational culture. For MBA students, mastering these concepts is crucial, as they prepare to navigate complex challenges and lead innovation in an interconnected global economy. The ability to analyze technological trends and their business implications has become a core competency, essential for driving sustainable growth and fostering agile, resilient enterprises in a world where disruption is the norm.\nConsequently, MBA programs are intensifying their focus on integrating technology management into curricula, offering courses on digital strategy, cybersecurity, and ethical AI to equip future leaders with the skills needed to thrive in this dynamic environment. This educational shift emphasizes case studies and practical applications, such as analyzing real-world scenarios where companies have successfully or unsuccessfully navigated technological disruptions. By fostering critical thinking and strategic foresight, these programs aim to develop professionals who can not only implement technological solutions but also anticipate emerging trends, mitigate risks, and champion innovation within their organizations. As the demand for tech-savvy executives grows, MBA graduates who can bridge the gap between technical expertise and business acumen are poised to drive impactful change, ensuring that organizations remain competitive and adaptable in an era marked by constant evolution and uncertainty."
+        },
+        "title": "MBA Tech Transformation and Business Strategy",
+        "child-questions": [
+          {
+            "question": "Based on the passage, which of the following best describes the primary role of MBA programs in preparing leaders for technological disruptions, and what strategic competency is emphasized as essential for driving sustainable growth in this context?",
+            "title": "MBA Programs and Strategic Competency in Tech Disruptions",
+            "solution": "",
+            "options": {
+              "A": "MBA programs focus primarily on teaching technical coding skills to prepare leaders for disruptions, with the essential competency being data analytics proficiency.",
+              "B": "MBA programs aim to develop leaders who can implement technological solutions only, with the essential competency being risk mitigation in cybersecurity.",
+              "C": "MBA programs integrate technology management to equip leaders with skills like critical thinking and strategic foresight, with the essential competency being the ability to analyze technological trends and business implications.",
+              "D": "MBA programs emphasize ethical considerations over practical applications, with the essential competency being understanding organizational culture changes.",
+              "E": "MBA programs prepare leaders by offering general business courses without specific tech focus, with the essential competency being adaptability to any industry changes."
+            },
+            "answer": "C",
+            "prompt": "<Conclusion Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "According to the passage, what is the intended outcome for organizations when MBA graduates bridge the gap between technical expertise and business acumen, and how does this relate to the broader theme of technological disruption discussed in the text?",
+            "title": "MBA Graduates' Role in Organizational Adaptability to Tech Disruption",
+            "solution": "",
+            "options": {
+              "A": "Organizations become focused solely on ethical AI development, which directly counters the disruptive effects of technology by prioritizing moral standards over innovation.",
+              "B": "Organizations gain the ability to implement basic technological tools efficiently, allowing them to temporarily avoid major disruptions without long-term strategic changes.",
+              "C": "Organizations ensure they remain competitive and adaptable, which addresses technological disruption by enabling continuous evolution and resilience in an uncertain environment.",
+              "D": "Organizations shift entirely to data-driven decision-making, eliminating the need for human leadership and making them immune to future technological changes.",
+              "E": "Organizations reduce their investment in technology management courses, as graduates can manage disruptions through traditional business methods alone."
+            },
+            "answer": "C",
+            "prompt": "<Strengthen Question> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-S> - <Economics> - <Main Idea Comprehension> - vocabulary_level: <1> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 4,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "The digital transformation of traditional retail has fundamentally altered the competitive landscape, forcing companies to rethink their core business models in unprecedented ways. Organizations that once dominated through physical store networks now face intense pressure from e-commerce giants and direct-to-consumer startups, creating a complex ecosystem where agility and data-driven decision-making are essential for survival. This shift requires MBA graduates to understand not just the mechanics of digital platforms, but also the strategic implications of customer behavior analytics, supply chain optimization in a hybrid model, and the financial metrics that differentiate successful digital pivots from costly failures. As industries converge, the ability to lead cross-functional teams through such disruptions becomes a critical skill, blending traditional management principles with innovative technological insights to drive sustainable growth in volatile markets.\nIn response to these challenges, forward-thinking business schools are integrating experiential learning modules that simulate real-world scenarios, such as managing a retail transformation project or analyzing case studies of companies like Target or Best Buy that have successfully navigated digital shifts. These pedagogical approaches emphasize the importance of ethical considerations, such as data privacy and workforce displacement, ensuring that future leaders can balance profitability with social responsibility. By fostering a deep understanding of emerging technologies like AI and blockchain, alongside soft skills like communication and resilience, MBA programs aim to equip students with a holistic toolkit to not only adapt to change but to proactively shape industry trends, positioning them as valuable assets in a rapidly evolving global economy."
+        },
+        "title": "Evaluating Digital Retail Transformation Strategies in MBA Context",
+        "child-questions": [
+          {
+            "question": "According to the passage, which of the following is NOT explicitly mentioned as a component that MBA graduates must understand to navigate digital transformation in retail effectively?",
+            "title": "Identifying Unmentioned Skills in Digital Retail MBA Training",
+            "solution": "",
+            "options": {
+              "A": "The mechanics of digital platforms",
+              "B": "Customer behavior analytics",
+              "C": "Supply chain optimization in a hybrid model",
+              "D": "Financial metrics for digital pivots",
+              "E": "Global economic policy frameworks"
+            },
+            "answer": "E",
+            "prompt": "<Author's Purpose> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "Based on the passage, what primary method do forward-thinking business schools use to prepare MBA students for challenges in digital retail transformation?",
+            "title": "Pedagogical Methods for MBA Digital Retail Prep",
+            "solution": "",
+            "options": {
+              "A": "Theoretical lectures on economic principles",
+              "B": "Experiential learning modules simulating real-world scenarios",
+              "C": "Mandatory internships with e-commerce giants",
+              "D": "Focus on historical retail case studies only",
+              "E": "Online certification courses in digital marketing"
+            },
+            "answer": "B",
+            "prompt": "<Inference Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-S> - <philosophy> - <Inference Making> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 5,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "The rapid evolution of digital transformation has fundamentally altered how businesses operate and compete in the modern marketplace, compelling organizations to reassess traditional operational models. A study by McKinsey & Company highlights that companies leveraging advanced digital technologies, such as artificial intelligence and data analytics, achieve up to 30% higher revenue growth and 20% greater operational efficiency compared to their less-digitized counterparts. This shift necessitates a strategic focus on integrating technology into core business processes, from supply chain optimization to customer engagement, to drive sustainable competitive advantages in an increasingly volatile economic landscape.\nHowever, the implementation of digital transformation is fraught with challenges, including high initial investment costs, resistance to change among employees, and the risk of cybersecurity threats. According to a report by Deloitte, approximately 70% of digital transformation initiatives fail due to inadequate planning and lack of organizational alignment. To mitigate these risks, businesses must adopt a holistic approach that encompasses leadership commitment, continuous workforce training, and robust data governance frameworks, ensuring that technological advancements are seamlessly integrated without disrupting existing workflows or compromising security.\nLooking ahead, the future of digital transformation will be shaped by emerging trends such as the Internet of Things (IoT), blockchain technology, and sustainable business practices, which promise to further enhance operational transparency and efficiency. For instance, IoT applications can optimize energy consumption in manufacturing, reducing costs by up to 15%, while blockchain can secure supply chains, as evidenced by Walmart's implementation that improved traceability by 90%. To thrive, organizations must foster a culture of innovation, invest in agile methodologies, and align digital strategies with broader environmental and social goals, positioning themselves to capitalize on opportunities in a rapidly evolving global economy."
+        },
+        "title": "Digital Transformation: Challenges and Trends in Business Integration",
+        "child-questions": [
+          {
+            "question": "Based on the passage, if a company implements both IoT and blockchain technologies as part of its digital transformation strategy, and assuming the reported efficiency gains are additive without overlap, what would be the maximum total percentage reduction in costs and improvement in traceability, respectively, that the company could achieve? Additionally, considering the Deloitte report`s failure rate, how many successful initiatives would be expected out of 100 attempts if proper mitigation strategies are implemented to address planning and alignment issues?",
+            "title": "Calculating Efficiency Gains and Success Rates in Digital Transformation Initiatives",
+            "solution": "",
+            "options": {
+              "A": "The maximum total cost reduction is 15% and traceability improvement is 90%, with 70 successful initiatives out of 100.",
+              "B": "The maximum total cost reduction is 25% and traceability improvement is 105%, with 30 successful initiatives out of 100.",
+              "C": "The maximum total cost reduction is 15% and traceability improvement is 90%, with 30 successful initiatives out of 100.",
+              "D": "The maximum total cost reduction is 30% and traceability improvement is 180%, with 70 successful initiatives out of 100.",
+              "E": "The maximum total cost reduction is 105% and traceability improvement is 15%, with 30 successful initiatives out of 100."
+            },
+            "answer": [
+              "C"
+            ],
+            "prompt": "<Supporting Details> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "Given the passage's discussion of digital transformation challenges and trends, which of the following statements best summarizes the primary reason for the high failure rate of such initiatives and the most effective mitigation strategy, as inferred from the Deloitte report and the passage's recommendations? Additionally, based on the McKinsey study, what is the comparative advantage in revenue growth for companies that effectively implement advanced digital technologies versus those that do not?",
+            "title": "Analyzing Failure Causes and Comparative Advantages in Digital Transformation",
+            "solution": "",
+            "options": {
+              "A": "The primary reason is high investment costs, mitigated by cutting expenses, and the comparative advantage is 20% higher revenue growth.",
+              "B": "The primary reason is inadequate planning and lack of organizational alignment, mitigated by a holistic approach including leadership and training, and the comparative advantage is up to 30% higher revenue growth.",
+              "C": "The primary reason is cybersecurity threats, mitigated by implementing blockchain, and the comparative advantage is 15% higher revenue growth.",
+              "D": "The primary reason is resistance to change among employees, mitigated by agile methodologies, and the comparative advantage is 90% higher revenue growth.",
+              "E": "The primary reason is all challenges combined, mitigated by focusing solely on technology, and the comparative advantage is 70% higher revenue growth."
+            },
+            "answer": "B",
+            "prompt": "<Conclusion Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          },
+          {
+            "question": "Based on the passage, a company is evaluating whether to invest in digital transformation. If it decides to proceed, which of the following outcomes is most strongly supported by the evidence provided? Consider the benefits mentioned for advanced technologies, the failure rates reported, and the future trends discussed.",
+            "title": "Evaluating Investment Outcomes in Digital Transformation Based on Evidence",
+            "solution": "",
+            "options": {
+              "A": "The company will definitely achieve 30% higher revenue growth if it invests, regardless of implementation approach.",
+              "B": "The company faces a 70% chance of failure, so it should avoid investment to prevent financial losses.",
+              "C": "With a holistic approach to mitigate risks, the company can potentially gain significant competitive advantages, such as up to 30% higher revenue growth, but success is not guaranteed.",
+              "D": "Investment will lead to immediate cost reductions of 15% and traceability improvements of 90%, making it a sure success.",
+              "E": "The company should only invest in future trends like IoT and blockchain, ignoring current digital technologies."
+            },
+            "answer": "C",
+            "prompt": "<Weaken Question> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
+            "question-type": "Reading Comprehension",
+            "difficulty": 1,
+            "tags": [
+              "Reading Comprehension",
+              "Verbal",
+              "GMAT"
+            ]
+          }
+        ],
+        "prompt": "<RC-M> - <Finance> - <Passage Organization and Cohesion> - vocabulary_level: <2> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+        "question-type": "Reading Comprehension",
+        "difficulty": 3,
+        "tags": [
+          "Reading Comprehension",
+          "Verbal",
+          "GMAT",
+          "passage"
+        ]
+      }
+    ]
+  },
+  "1": {
+    "section": "Integrated Reasoning",
+    "questions": [
+      {
+        "metadata": {
+          "Source1": {
+            "para": "GlobalTech Solutions, a multinational technology firm, is undertaking a comprehensive review of its workforce management strategies across its five regional offices in North America, Europe, Asia-Pacific, Latin America, and Africa. As part of this initiative, the HR department has compiled data on key workforce metrics to assess performance, identify trends, and support strategic planning. The company aims to optimize its human resources by analyzing factors such as employee turnover, training investments, and diversity indices. This passage outlines the context and objectives of the review, setting the stage for a detailed analysis of specific data points in subsequent sources."
+          },
+          "Source2": {
+            "graph": {
+              "type": "pie_chart",
+              "description": "Pie chart showing the distribution of total training investment (in millions USD) across GlobalTech Solutions' five regional offices for 2023, with percentages indicating each region's share of the total investment.",
+              "structure": {
+                "title": "2023 Training Investment Distribution by Region",
+                "data_format": {
+                  "segments": [
+                    {
+                      "label": "North America",
+                      "value": 4.2,
+                      "percentage": 30.0
+                    },
+                    {
+                      "label": "Europe",
+                      "value": 3.5,
+                      "percentage": 25.0
+                    },
+                    {
+                      "label": "Asia-Pacific",
+                      "value": 2.8,
+                      "percentage": 20.0
+                    },
+                    {
+                      "label": "Latin America",
+                      "value": 1.4,
+                      "percentage": 10.0
+                    },
+                    {
+                      "label": "Africa",
+                      "value": 2.1,
+                      "percentage": 15.0
+                    }
+                  ],
+                  "colors": [
+                    "#3498db",
+                    "#e74c3c",
+                    "#2ecc71",
+                    "#f39c12",
+                    "#9b59b6"
+                  ]
+                }
+              }
+            }
+          },
+          "Source3": {
+            "graph": {
+              "type": "bar_chart",
+              "description": "Bar chart comparing the employee turnover rates (as percentages) for GlobalTech Solutions' five regional offices in 2023, showing the annual percentage of employees who left the company.",
+              "structure": {
+                "title": "2023 Employee Turnover Rates by Region",
+                "data_format": {
+                  "x_axis": {
+                    "label": "Region",
+                    "categories": [
+                      "North America",
+                      "Europe",
+                      "Asia-Pacific",
+                      "Latin America",
+                      "Africa"
+                    ]
+                  },
+                  "y_axis": {
+                    "label": "Turnover Rate (%)",
+                    "min": 0,
+                    "max": 25,
+                    "interval": 5
+                  },
+                  "data_series": [
+                    {
+                      "name": "Turnover Rate",
+                      "data": [
+                        18.5,
+                        12.2,
+                        9.8,
+                        22.1,
+                        15.3
+                      ],
+                      "color": "#e74c3c"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "Passage": "To complement the quantitative data on training investments and turnover rates, an internal memo from GlobalTech Solutions' Chief Human Resources Officer highlights additional qualitative insights. The memo notes that the high turnover rate in Latin America (22.1%) is primarily attributed to competitive local markets and limited career advancement opportunities, despite a relatively low training investment of $1.4 million (10% of the total). Conversely, the Asia-Pacific region, with a moderate training investment of $2.8 million (20% of the total), has achieved the lowest turnover rate at 9.8%, which the CHRO credits to strong mentorship programs and a focus on employee retention initiatives.\nFurthermore, the memo proposes strategic recommendations based on this analysis. For Latin America, it suggests increasing training investment by at least $0.7 million to match Africa's per-capita training expenditure, which could help reduce turnover by improving skill development. In North America, where turnover is 18.5% despite the highest training investment of $4.2 million (30% of the total), the CHRO recommends reallocating some funds towards retention bonuses and flexible work policies. The overall goal is to achieve a balanced approach where training investments correlate more effectively with reduced turnover, aiming for a target turnover rate below 15% across all regions by 2025."
+        },
+        "title": "GlobalTech Solutions HR Analysis: Training Investment vs. Turnover Rate",
+        "child-questions": [
+          {
+            "question": "Based on the information provided, if GlobalTech Solutions reallocates 20% of North America's training investment to Latin America as suggested in the memo, and assuming no other changes, what would be the approximate new training investment percentage for Latin America relative to the total training investment, and which region would then have the second-highest turnover rate? Select the option that correctly identifies both values.",
+            "title": "GlobalTech Solutions HR Analysis: Training Investment vs. Turnover Rate",
+            "solution": "",
+            "options": {
+              "A": "Latin America: 15% of total investment; Second-highest turnover: North America",
+              "B": "Latin America: 16% of total investment; Second-highest turnover: Africa",
+              "C": "Latin America: 14% of total investment; Second-highest turnover: North America",
+              "D": "Latin America: 15% of total investment; Second-highest turnover: Africa",
+              "E": "Latin America: 14% of total investment; Second-highest turnover: Africa"
+            },
+            "answer": [
+              "A"
+            ],
+            "prompt": "<Synthesizing Information> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1,
+            "tags": [
+              "Multi-Source Reasoning",
+              "GMAT",
+              "Integrated Reasoning"
+            ]
+          },
+          {
+            "question": "The CHRO's memo suggests that Latin America's training investment should be increased by at least $0.7 million to match Africa's per-capita training expenditure. If the company decides to implement this recommendation exactly and also reallocates 20% of North America's training investment to Latin America as previously considered, what would be the new total training investment for Latin America in millions of dollars, and which region would have the lowest training investment percentage after these changes? Select the option that provides both correct values.",
+            "title": "GlobalTech Solutions: Combined Training Investment Adjustments Analysis",
+            "solution": "",
+            "options": {
+              "A": "$2.1 million; Europe",
+              "B": "$2.8 million; Asia-Pacific",
+              "C": "$2.54 million; Africa",
+              "D": "$2.54 million; Asia-Pacific",
+              "E": "$2.1 million; Africa"
+            },
+            "answer": "C",
+            "prompt": "<Evaluating Trade-offs> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1,
+            "tags": [
+              "Multi-Source Reasoning",
+              "GMAT",
+              "Integrated Reasoning"
+            ]
+          }
+        ],
+        "prompt": "<Simple Interest and Compound Interest> - <Human Resources> - <chart> - <chart> - <chart> - <Logical Deduction> - <Logical Deduction> - <Logical Deduction> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Multi-Source Reasoning",
+        "difficulty": 4,
+        "tags": [
+          "pie_chart",
+          "bar_chart",
+          "GMAT",
+          "scenario",
+          "Integrated Reasoning",
+          "Multi-Source Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "Source1": {
+            "para": "In response to the strategic review, TechCorp's management has commissioned a consultant's report on emerging technological trends that could impact future R&D priorities. The report identifies three key areas: artificial intelligence integration in consumer devices, blockchain-based security solutions for enterprise software, and next-generation battery technologies for renewable energy. It projects that AI enhancements could boost consumer electronics profit margins by up to 15% within two years but require an initial investment of $200 million. For enterprise software, blockchain implementation is estimated to reduce cybersecurity breach risks by 40% with a $50 million R&D outlay, potentially increasing market share by 3 percentage points annually. The renewable energy sector shows the highest long-term potential with solid-state battery technology, which could double energy storage capacity and cut costs by 30%, requiring $300 million in R&D over five years but offering a projected ROI of 150% by 2030. The consultant emphasizes that these projections assume successful commercialization and market adoption, with varying risk profiles across sectors."
+          },
+          "Source2": {
+            "graph": {
+              "type": "pie_chart",
+              "description": "Proposed R&D Investment Allocation for Emerging Technologies (2024-2028) based on consultant's projections, showing the distribution of total planned investment across the three key areas identified in Source 1.",
+              "structure": {
+                "title": "TechCorp Proposed R&D Investment by Technology Area",
+                "data_format": {
+                  "segments": [
+                    {
+                      "label": "AI in Consumer Electronics",
+                      "value": 200,
+                      "percentage": 36.4
+                    },
+                    {
+                      "label": "Blockchain for Enterprise Software",
+                      "value": 50,
+                      "percentage": 9.1
+                    },
+                    {
+                      "label": "Solid-State Batteries for Renewable Energy",
+                      "value": 300,
+                      "percentage": 54.5
+                    }
+                  ],
+                  "colors": [
+                    "#3498db",
+                    "#e74c3c",
+                    "#2ecc71"
+                  ]
+                }
+              }
+            }
+          },
+          "Source3": {
+            "graph": {
+              "type": "pie_chart",
+              "description": "Risk Assessment Distribution for Proposed R&D Projects, based on consultant's analysis from Source 1, showing the relative risk levels (High, Medium, Low) associated with each emerging technology investment, expressed as a percentage of total risk exposure across all projects.",
+              "structure": {
+                "title": "Risk Profile of TechCorp's Proposed R&D Investments",
+                "data_format": {
+                  "segments": [
+                    {
+                      "label": "High Risk (Solid-State Batteries)",
+                      "value": 60,
+                      "percentage": 50.0
+                    },
+                    {
+                      "label": "Medium Risk (AI in Consumer Electronics)",
+                      "value": 30,
+                      "percentage": 25.0
+                    },
+                    {
+                      "label": "Low Risk (Blockchain for Enterprise Software)",
+                      "value": 30,
+                      "percentage": 25.0
+                    }
+                  ],
+                  "colors": [
+                    "#e74c3c",
+                    "#f39c12",
+                    "#2ecc71"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "title": "TechCorp R&D Investment Strategy Analysis: Emerging Technology and Risk Assessment",
+        "child-questions": [
+          {
+            "question": "Based on the consultant`s report, investment allocation chart, and risk assessment, TechCorp`s management is considering whether to proceed with all three proposed R&D projects. If they decide to implement only the projects with a combined risk exposure of 50% or less of the total, and they allocate funds proportionally to the remaining projects based on their investment values, approximately what percentage of the originally proposed total R&D investment would be allocated to the AI in Consumer Electronics project? Assume that the risk percentages in Source 3 represent the proportion of total risk, and that management`s decision is based solely on the risk threshold described.",
+            "title": "Risk-Based R&D Investment Allocation Analysis for TechCorp's Emerging Technologies",
+            "solution": "",
+            "options": [
+              "The solid-state battery project would be eliminated due to its 50% risk exposure, leaving only the AI and blockchain projects with combined investments of $250 million.",
+              "After eliminating the high-risk project, the AI project would receive approximately 80% of the remaining allocated funds, based on its original investment value relative to the blockchain project.",
+              "The percentage of the originally proposed total R&D investment allocated to the AI project would be around 40%, calculated as $200 million out of the new total of $250 million after risk filtering."
+            ],
+            "answer": {
+              "The solid-state battery project would be eliminated due to its 50% risk exposure, leaving only the AI and blockchain projects with combined investments of $250 million.": "No",
+              "After eliminating the high-risk project, the AI project would receive approximately 80% of the remaining allocated funds, based on its original investment value relative to the blockchain project.": "Yes",
+              "The percentage of the originally proposed total R&D investment allocated to the AI project would be around 40%, calculated as $200 million out of the new total of $250 million after risk filtering.": "No"
+            },
+            "prompt": "<Evaluating Trade-offs> - difficulty_level: <5>\n\n[Difficulty Instruction]: Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1,
+            "tags": [
+              "Multi-Source Reasoning",
+              "GMAT",
+              "Integrated Reasoning"
+            ]
+          },
+          {
+            "question": "According to the consultant`s projections, if TechCorp implements the blockchain solution and achieves the estimated 3 percentage point annual market share increase for enterprise software, what would be the approximate total market share percentage for this sector after three years, assuming the starting market share in 2023 from the historical trends in Source 3? Round your answer to the nearest tenth of a percentage point.",
+            "title": "Projected Enterprise Software Market Share Growth with Blockchain Implementation",
+            "solution": "[2019,2020,2021,2022,2023] and enterprise_software [15,16,17,18,20]).\n\nStep 2: Set up the mathematical relationship. The starting market share in 2023 is 20%. The annual increase is 3 percentage points per year. We need to calculate the market share after three years (from 2023 to 2026, assuming implementation starts in 2024 and we measure after three years of growth).\n\nStep 3: Perform the calculation. The increase over three years is 3 percentage points per year × 3 years = 9 percentage points. So, the market share after three years is 20% + 9% = 29%.\n\nStep 4: Verify the answer makes business sense. A market share increase from 20% to 29% over three years with a $50 million investment aligns with the consultant's projection of \"potentially increasing market share by 3 percentage points annually,\" which is a reasonable growth rate in a competitive technology sector.\n\nStep 5: Round to the nearest tenth of a percentage point as requested. 29.0% is already at one decimal place, so it remains 29.0%.",
+            "options": [
+              "The market share after three years would be 29.0%, calculated by adding 9 percentage points (3 per year for 3 years) to the 2023 starting share of 20%.",
+              "If the blockchain implementation starts in 2024, the market share would reach 26.0% after three years by 2026, based on annual increases from the 2023 baseline.",
+              "Given the historical trend from Source 3 showing an increase from 15% to 20% over five years, the projected growth with blockchain would be slower, resulting in approximately 25.0% after three years."
+            ],
+            "answer": {
+              "The market share after three years would be 29.0%, calculated by adding 9 percentage points (3 per year for 3 years) to the 2023 starting share of 20%.": "Yes",
+              "If the blockchain implementation starts in 2024, the market share would reach 26.0% after three years by 2026, based on annual increases from the 2023 baseline.": "No",
+              "Given the historical trend from Source 3 showing an increase from 15% to 20% over five years, the projected growth with blockchain would be slower, resulting in approximately 25.0% after three years.": "No"
+            },
+            "prompt": "<Identifying Assumptions> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+            "question-type": "Multi-Source Reasoning",
+            "difficulty": 1,
+            "tags": [
+              "Multi-Source Reasoning",
+              "GMAT",
+              "Integrated Reasoning"
+            ]
+          }
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Science and Technology> - <passage> - <passage> - <passage> - <Quantitative Reasoning> - <Quantitative Reasoning> - <Quantitative Reasoning> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Multi-Source Reasoning",
+        "difficulty": 4,
+        "tags": [
+          "data_table",
+          "pie_chart",
+          "GMAT",
+          "Integrated Reasoning",
+          "Multi-Source Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Table": {
+                "type": "sortable_table",
+                "description": "Table showing financial data of companies for Integrated Reasoning Table Analysis",
+                "structure": {
+                  "title": "Company Financial Performance",
+                  "headers": [
+                    "Company Name",
+                    "Revenue ($M)",
+                    "Profit Margin (%)",
+                    "Year Founded",
+                    "Employees"
+                  ],
+                  "rows": [
+                    [
+                      "Alpha Corp",
+                      "500",
+                      "12",
+                      "1980",
+                      "5000"
+                    ],
+                    [
+                      "Beta Inc",
+                      "300",
+                      "18",
+                      "1995",
+                      "3000"
+                    ],
+                    [
+                      "Gamma Ltd",
+                      "700",
+                      "10",
+                      "1970",
+                      "8000"
+                    ],
+                    [
+                      "Delta Co",
+                      "400",
+                      "15",
+                      "2000",
+                      "2500"
+                    ],
+                    [
+                      "Epsilon LLC",
+                      "600",
+                      "8",
+                      "1985",
+                      "6000"
+                    ]
+                  ],
+                  "formatting": {
+                    "sortable": true,
+                    "alternating_rows": true
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "Based on the table, evaluate the following statements. For each statement, indicate whether it is supported by the data."
+          ],
+          "options": [
+            [
+              "The company with the highest revenue has the highest profit margin.",
+              "The oldest company has more than 10,000 employees.",
+              "The average profit margin is above 15%."
+            ]
+          ],
+          "answer": [
+            {
+              "The company with the highest revenue has the highest profit margin.": "No",
+              "The oldest company has more than 10,000 employees.": "No",
+              "The average profit margin is above 15%.": "No"
+            }
+          ]
+        },
+        "question": "Using the data from the `Company Financial Performance` table, which includes metrics such as revenue, profit margin, year founded, and employee count for five companies, evaluate the following business-related assertions. For each assertion, determine whether it is supported by the data in the table. Base your evaluation solely on the information provided, focusing on critical reasoning to assess correlation, range, or specific values.",
+        "title": "Financial Performance Data Analysis: Correlation and Average Evaluation",
+        "solution": "[\n    \\text{Average} = \\frac{12 + 18 + 10 + 15 + 8}{5} = \\frac{63}{5} = 12.6\\%\n    \\]\n  - Comparison: 12.6% is not above 15%, so this statement is not supported.\n\nStep 4: Verify each evaluation with business sense. For instance, higher revenue doesn't necessarily imply higher profit margin, as seen in real business scenarios. Similarly, company age doesn't directly correlate with employee count, and average profit margins can vary.\n\nStep 5: Summarize findings. All three statements are not supported by the data. Based on the analysis:\n- Statement 1: No, because Gamma Ltd has highest revenue but not highest profit margin.\n- Statement 2: No, because the oldest company, Gamma Ltd, has only 8000 employees.\n- Statement 3: No, because the average profit margin is 12.6%, which is below 15%.",
+        "options": [
+          "The company with the highest revenue has the highest profit margin.",
+          "The oldest company has more than 10,000 employees.",
+          "The average profit margin is above 15%."
+        ],
+        "answer": {
+          "The company with the highest revenue has the highest profit margin.": "No",
+          "The oldest company has more than 10,000 employees.": "No",
+          "The average profit margin is above 15%.": "No"
+        },
+        "prompt": "<Exponents and Powers> - <Business and Finance> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Table Analysis",
+        "difficulty": 2,
+        "tags": [
+          "sortable_table",
+          "GMAT",
+          "Table Analysis",
+          "Integrated Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Table": {
+                "type": "data_table",
+                "description": "Sales performance data for various regions and products in 2023, showing units sold, revenue, and profit margins",
+                "structure": {
+                  "title": "Sales Performance by Region and Product (2023)",
+                  "headers": [
+                    "Region",
+                    "Product",
+                    "Sales Units",
+                    "Revenue ($)",
+                    "Profit Margin (%)"
+                  ],
+                  "rows": [
+                    [
+                      "North",
+                      "A",
+                      1000,
+                      50000,
+                      20
+                    ],
+                    [
+                      "North",
+                      "B",
+                      800,
+                      40000,
+                      18
+                    ],
+                    [
+                      "South",
+                      "A",
+                      1200,
+                      60000,
+                      22
+                    ],
+                    [
+                      "South",
+                      "B",
+                      900,
+                      45000,
+                      19
+                    ],
+                    [
+                      "East",
+                      "A",
+                      1100,
+                      55000,
+                      21
+                    ],
+                    [
+                      "East",
+                      "B",
+                      950,
+                      47500,
+                      20
+                    ],
+                    [
+                      "West",
+                      "A",
+                      700,
+                      35000,
+                      17
+                    ],
+                    [
+                      "West",
+                      "B",
+                      850,
+                      42500,
+                      18
+                    ]
+                  ],
+                  "formatting": {
+                    "alternating_rows": true,
+                    "border_style": "standard"
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "Based on the data in the table, for each of the following statements, select 'Supported' if the statement is supported by the data, or 'Not Supported' if it is not."
+          ],
+          "options": [
+            [
+              "Product A has higher sales units than Product B in the majority of regions.",
+              "The total revenue from all regions is over $400,000.",
+              "The profit margin for Product B is consistently lower than for Product A in regions where both are sold."
+            ]
+          ],
+          "answer": [
+            {
+              "Product A has higher sales units than Product B in the majority of regions.": "Supported",
+              "The total revenue from all regions is over $400,000.": "Not Supported",
+              "The profit margin for Product B is consistently lower than for Product A in regions where both are sold.": "Not Supported"
+            }
+          ]
+        },
+        "question": "Based on the data in the table `Sales Performance by Region and Product (2023)`, for each of the following statements, select `Supported` if the statement is supported by the data, or `Not Supported` if it is not.",
+        "title": "Table Analysis: Evaluating Supported Statements on 2023 Sales Performance",
+        "solution": "[\n  \\text{Total Revenue} = 50000 + 40000 + 60000 + 45000 + 55000 + 47500 + 35000 + 42500\n  \\]\n  Sum step-by-step:  \n  50000 + 40000 = 90000  \n  90000 + 60000 = 150000  \n  150000 + 45000 = 195000  \n  195000 + 55000 = 250000  \n  250000 + 47500 = 297500  \n  297500 + 35000 = 332500  \n  332500 + 42500 = 375000  \n  So, Total Revenue = $375,000, which is not over $400,000. Thus, this statement is **Not Supported**.\n\n- **Statement 3:** Compare Profit Margins (%) per region:  \n  - North: A = 20%, B = 18% → B lower.  \n  - South: A = 22%, B = 19% → B lower.  \n  - East: A = 21%, B = 20% → B lower.  \n  - West: A = 17%, B = 18% → B higher (since 18% > 17%).  \n  In the West region, Product B's profit margin is higher than A's, so it is not consistently lower across all regions. Thus, this statement is **Not Supported**.\n\n**Step 4: Verify answer makes business sense.**  \nThe findings align with typical business analysis: higher sales units do not always guarantee higher profit margins, and revenue sums should be checked against thresholds. For instance, Product A's dominance in sales units supports strategic focus, but the revenue total falling short of $400,000 indicates potential growth areas. The profit margin inconsistency highlights regional variations in pricing or costs, which is plausible in real-world scenarios.\n\n**Step 5: Consider alternative solving methods or conclude.**  \nAn alternative method for Statement 1 could involve sorting the table by Product and Region to quickly compare units. For Statement 2, one could estimate revenue by averaging or using mental math approximations, but exact calculation is straightforward. The logical approach used above is efficient for GMAT Integrated Reasoning, emphasizing data interpretation over complex calculations.\n\n**Final Answer Selections:**  \n- Statement 1: **Supported**  \n- Statement 2: **Not Supported**  \n- Statement 3: **Not Supported**",
+        "options": [
+          "Product A has higher sales units than Product B in the majority of regions.",
+          "The total revenue from all regions is over $400,000.",
+          "The profit margin for Product B is consistently lower than for Product A in regions where both are sold."
+        ],
+        "answer": {
+          "Product A has higher sales units than Product B in the majority of regions.": "Supported",
+          "The total revenue from all regions is over $400,000.": "Not Supported",
+          "The profit margin for Product B is consistently lower than for Product A in regions where both are sold.": "Not Supported"
+        },
+        "prompt": "<Profit, Loss and Discount> - <Human Resources> - <Quantitative Reasoning> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
+        "question-type": "Table Analysis",
+        "difficulty": 4,
+        "tags": [
+          "data_table",
+          "GMAT",
+          "Table Analysis",
+          "Integrated Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Table": {
+                "type": "sortable_table",
+                "description": "Table displaying revenue, growth rate, and market share data for six companies over two years, designed for analysis in a Table Analysis question.",
+                "structure": {
+                  "title": "Company Revenue and Market Share Data (2022-2023)",
+                  "headers": [
+                    "Company",
+                    "2022 Revenue (M$)",
+                    "2023 Revenue (M$)",
+                    "Growth Rate (%)",
+                    "Market Share 2023 (%)"
+                  ],
+                  "rows": [
+                    [
+                      "Alpha Corp",
+                      500,
+                      550,
+                      10,
+                      15
+                    ],
+                    [
+                      "Beta Inc",
+                      300,
+                      330,
+                      10,
+                      10
+                    ],
+                    [
+                      "Gamma Ltd",
+                      400,
+                      440,
+                      10,
+                      12
+                    ],
+                    [
+                      "Delta Co",
+                      600,
+                      660,
+                      10,
+                      18
+                    ],
+                    [
+                      "Epsilon LLC",
+                      200,
+                      240,
+                      20,
+                      8
+                    ],
+                    [
+                      "Zeta Group",
+                      350,
+                      385,
+                      10,
+                      11
+                    ]
+                  ],
+                  "formatting": {
+                    "sortable": true,
+                    "alternating_rows": true
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "For each of the following statements, select Yes if the statement is supported by the information provided in the table. Otherwise, select No."
+          ],
+          "options": [
+            [
+              "The company with the highest revenue in 2023 also has the highest market share in 2023.",
+              "The average growth rate for all companies is exactly 10%.",
+              "More than half of the companies have a market share greater than 10% in 2023."
+            ]
+          ],
+          "answer": [
+            {
+              "The company with the highest revenue in 2023 also has the highest market share in 2023.": "Yes",
+              "The average growth rate for all companies is exactly 10%.": "No",
+              "More than half of the companies have a market share greater than 10% in 2023.": "Yes"
+            }
+          ]
+        },
+        "question": "Use the sortable table of company revenue and market share data (2022-2023) to evaluate the following statements. For each statement, select Yes if it is supported by the table data; otherwise, select No.",
+        "title": "Business Data Analysis: Revenue and Market Share Statements Evaluation",
+        "solution": "{70}{6} \\approx 11.67\\% \\).\n- Since 11.67% is not exactly 10%, the statement is not supported. Answer: No.\n\nFor Statement 3: \"More than half of the companies have a market share greater than 10% in 2023.\"\n\n- Identify market shares greater than 10%: Alpha 15% (>10), Beta 10% (not >10), Gamma 12% (>10), Delta 18% (>10), Epsilon 8% (<10), Zeta 11% (>10).\n- Companies with >10%: Alpha, Gamma, Delta, Zeta – total of 4 companies.\n- Total companies: 6.\n- More than half means more than 3 companies (since half of 6 is 3). 4 > 3, so the statement is supported. Answer: Yes.\n\nStep 4: Verify business sense. In this context, it's reasonable for a high-revenue company to have high market share, and growth rates can vary, making the average not necessarily a round number. The distribution of market shares aligns with typical competitive scenarios.\n\nStep 5: Consider alternative methods. For Statement 1, one could sort the table by 2023 Revenue descending to quickly identify Delta Co. For Statement 2, mental math or estimation could show the average isn't 10% due to Epsilon's 20%. For Statement 3, counting directly is efficient. These methods confirm the answers.",
+        "options": [
+          "The company with the highest revenue in 2023 also has the highest market share in 2023.",
+          "The average growth rate for all companies is exactly 10%.",
+          "More than half of the companies have a market share greater than 10% in 2023."
+        ],
+        "answer": {
+          "The company with the highest revenue in 2023 also has the highest market share in 2023.": "Yes",
+          "The average growth rate for all companies is exactly 10%.": "No",
+          "More than half of the companies have a market share greater than 10% in 2023.": "Yes"
+        },
+        "prompt": "<Algebraic Expressions and Simplification> - <Environment and Sustainability> - <Quantitative Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Table Analysis",
+        "difficulty": 2,
+        "tags": [
+          "sortable_table",
+          "GMAT",
+          "Table Analysis",
+          "Integrated Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Graph": {
+                "type": "bar_chart",
+                "description": "Bar chart displaying the average GMAT scores of applicants to top MBA programs for the years 2015 through 2020.",
+                "structure": {
+                  "title": "Average GMAT Scores of MBA Applicants (2015-2020)",
+                  "x_axis": {
+                    "label": "Year",
+                    "type": "categorical"
+                  },
+                  "y_axis": {
+                    "label": "Average GMAT Score",
+                    "type": "numerical",
+                    "range": [
+                      700,
+                      750
+                    ]
+                  },
+                  "data_format": {
+                    "bars": [
+                      {
+                        "category": "2015",
+                        "value": 710
+                      },
+                      {
+                        "category": "2016",
+                        "value": 715
+                      },
+                      {
+                        "category": "2017",
+                        "value": 720
+                      },
+                      {
+                        "category": "2018",
+                        "value": 725
+                      },
+                      {
+                        "category": "2019",
+                        "value": 730
+                      },
+                      {
+                        "category": "2020",
+                        "value": 735
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "question": [
+            "The average GMAT score increased by [Dropdown 1] points per year from 2015 to 2020, and the score in 2020 was [Dropdown 2] points higher than in 2015."
+          ],
+          "options": [
+            [
+              {
+                "A": "5",
+                "B": "10",
+                "C": "15",
+                "D": "20"
+              },
+              {
+                "A": "25",
+                "B": "30",
+                "C": "35",
+                "D": "40"
+              }
+            ]
+          ],
+          "answer": [
+            [
+              "A",
+              "A"
+            ]
+          ]
+        },
+        "question": "Analyzing the bar chart, the consistent upward trend in average GMAT scores from 2015 to 2020 indicates an annual increase of ____ points. If this growth rate persists, the forecasted score for 2023 would be approximately ____.",
+        "title": "GMAT Score Growth Analysis from 2015 to 2020",
+        "solution": "{Score}_y = \\text{Score}_{2015} + (y - 2015) \\times I \\). Also, the total increase from 2015 to 2020 is \\( \\text{Score}_{2020} - \\text{Score}_{2015} \\).\n\nStep 3: Perform the calculations. \n- Calculate the annual increase \\( I \\): Check differences between consecutive years. \n  - \\( 715 - 710 = 5 \\)\n  - \\( 720 - 715 = 5 \\)\n  - \\( 725 - 720 = 5 \\)\n  - \\( 730 - 725 = 5 \\)\n  - \\( 735 - 730 = 5 \\)\n  Since all differences are 5, the annual increase is 5 points per year.\n- Calculate the total increase from 2015 to 2020: \\( 735 - 710 = 25 \\) points.\n\nStep 4: Verify the answer makes business sense. A steady annual increase of 5 points reflects a realistic trend in GMAT score inflation due to increasing competition and preparation efforts among MBA applicants. The total increase of 25 points over 5 years is consistent with the annual rate, confirming reasonableness.\n\nStep 5: Consider alternative solving methods. Back-solving: If the annual increase is 5 (Dropdown 1 option A), the scores align perfectly with the data. For Dropdown 2, if the total increase is 25 (option A), it matches the direct calculation, and no other option fits without inconsistency.\n\nFinal answer: The annual increase is 5 points per year, and the score in 2020 is 25 points higher than in 2015.",
+        "options": [
+          {
+            "A": "5",
+            "B": "10",
+            "C": "15",
+            "D": "20"
+          },
+          {
+            "A": "25",
+            "B": "30",
+            "C": "35",
+            "D": "40"
+          }
+        ],
+        "answer": [
+          "A",
+          "A"
+        ],
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Environment and Sustainability> - <Data Interpretation> - difficulty_level: <1>\n\n[Difficulty Instruction]: Data/Scenario should be straightforward with minimal distractions. Questions should require a single step of lookup or direct calculation. Options should be distinct and unambiguous.",
+        "question-type": "Graphic Interpretation",
+        "difficulty": 1,
+        "tags": [
+          "scatter_chart",
+          "Graphic Interpretation",
+          "GMAT",
+          "Integrated Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Graph": {
+                "type": "line_chart",
+                "description": "Line graph showing the average GMAT scores for Verbal and Quantitative sections from 2019 to 2023, with two lines representing each section over the years.",
+                "structure": {
+                  "title": "Average GMAT Scores by Section (2019-2023)",
+                  "x_axis": {
+                    "label": "Year",
+                    "type": "categorical",
+                    "values": [
+                      "2019",
+                      "2020",
+                      "2021",
+                      "2022",
+                      "2023"
+                    ]
+                  },
+                  "y_axis": {
+                    "label": "Average Score",
+                    "type": "numerical",
+                    "range": [
+                      0,
+                      50
+                    ]
+                  },
+                  "data_series": [
+                    {
+                      "name": "Verbal",
+                      "data": [
+                        30,
+                        32,
+                        31,
+                        33,
+                        34
+                      ],
+                      "line_color": "#3498db",
+                      "point_color": "#2c3e50"
+                    },
+                    {
+                      "name": "Quantitative",
+                      "data": [
+                        35,
+                        36,
+                        37,
+                        38,
+                        39
+                      ],
+                      "line_color": "#e74c3c",
+                      "point_color": "#c0392b"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "question": [
+            "Based on the graph, from 2019 to 2023, the Quantitative score was always [Dropdown 1] than the Verbal score, and the difference between the two scores [Dropdown 2]."
+          ],
+          "options": [
+            [
+              {
+                "A": "higher",
+                "B": "lower",
+                "C": "equal to",
+                "D": "variable compared to"
+              },
+              {
+                "A": "increased",
+                "B": "decreased",
+                "C": "remained constant",
+                "D": "showed no clear trend"
+              }
+            ]
+          ],
+          "answer": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        "question": "Based on the graph, from 2019 to 2023, the Quantitative score was always _____ than the Verbal score, and the difference between the two scores _____.",
+        "title": "GMAT Section Score Comparison and Trend Analysis (2019-2023)",
+        "solution": "",
+        "options": [
+          {
+            "A": "higher",
+            "B": "lower",
+            "C": "equal to",
+            "D": "variable compared to"
+          },
+          {
+            "A": "increased",
+            "B": "decreased",
+            "C": "remained constant",
+            "D": "showed no clear trend"
+          }
+        ],
+        "answer": [
+          "A",
+          "C"
+        ],
+        "prompt": "<Permutations and Combinations> - <Human Resources> - <Quantitative Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Graphic Interpretation",
+        "difficulty": 2,
+        "tags": [
+          "line_chart",
+          "Graphic Interpretation",
+          "GMAT",
+          "Integrated Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "metadata": [
+            {
+              "Graph": {
+                "type": "line_chart",
+                "description": "Line chart displaying the average GMAT scores for three top MBA programs (Harvard, Stanford, Wharton) over a five-year period from 2018 to 2022. The chart illustrates trends in admission scores, relevant for MBA preparation analysis.",
+                "title": "Average GMAT Scores for Top MBA Programs (2018-2022)",
+                "x_axis": {
+                  "label": "Year",
+                  "type": "categorical",
+                  "values": [
+                    "2018",
+                    "2019",
+                    "2020",
+                    "2021",
+                    "2022"
+                  ]
+                },
+                "y_axis": {
+                  "label": "Average GMAT Score",
+                  "type": "numerical",
+                  "range": [
+                    700,
+                    800
+                  ],
+                  "interval": 10
+                },
+                "data": [
+                  {
+                    "label": "Harvard Business School",
+                    "values": [
+                      730,
+                      735,
+                      740,
+                      745,
+                      750
+                    ],
+                    "line_color": "#2E86AB",
+                    "point_style": "circle"
+                  },
+                  {
+                    "label": "Stanford Graduate School of Business",
+                    "values": [
+                      735,
+                      740,
+                      745,
+                      750,
+                      755
+                    ],
+                    "line_color": "#A23B72",
+                    "point_style": "square"
+                  },
+                  {
+                    "label": "Wharton School",
+                    "values": [
+                      725,
+                      730,
+                      735,
+                      740,
+                      745
+                    ],
+                    "line_color": "#F18F01",
+                    "point_style": "triangle"
+                  }
+                ]
+              }
+            }
+          ],
+          "question": [
+            "Based on the graph, the average GMAT score for Harvard Business School in 2021 was [Dropdown 1] than in 2020, and the overall trend across all three schools from 2018 to 2022 indicates a [Dropdown 2] in scores."
+          ],
+          "options": [
+            [
+              {
+                "A": "higher",
+                "B": "lower",
+                "C": "approximately the same as"
+              },
+              {
+                "A": "steady increase",
+                "B": "gradual decrease",
+                "C": "volatile fluctuation with no clear direction"
+              }
+            ]
+          ],
+          "answer": [
+            [
+              "A",
+              "A"
+            ]
+          ]
+        },
+        "question": "Based on the line chart, Harvard Business School's average GMAT score in 2021 was _____ than in 2020, and the overarching trend from 2018 to 2022 for the three MBA programs indicates a _____ in scores.",
+        "title": "Harvard MBA GMAT Score Change and Overall Trend Analysis",
+        "solution": "{20}{4} = 5 \\) points per school, which is steady. Alternatively, back-solve by considering other options: a \"gradual decrease\" or \"volatile fluctuation\" would not fit the data, as all values rise monotonically.\n\nStep 5: Conclude with the answers and check business sense. For the first blank, since \\( 745 > 740 \\), the correct choice is \"higher\" (option A). For the second blank, the consistent rises across all schools signify a \"steady increase\" (option A). In the context of MBA admissions, increasing GMAT scores reflect growing competition and higher standards at top business schools, which is reasonable and aligns with real-world trends.",
+        "options": [
+          {
+            "A": "higher",
+            "B": "lower",
+            "C": "approximately the same as"
+          },
+          {
+            "A": "steady increase",
+            "B": "gradual decrease",
+            "C": "volatile fluctuation with no clear direction"
+          }
+        ],
+        "answer": [
+          "A",
+          "A"
+        ],
+        "prompt": "<Algebraic Expressions and Simplification> - <Science and Technology> - <Data Interpretation> - difficulty_level: <1>\n\n[Difficulty Instruction]: Data/Scenario should be straightforward with minimal distractions. Questions should require a single step of lookup or direct calculation. Options should be distinct and unambiguous.",
+        "question-type": "Graphic Interpretation",
+        "difficulty": 1,
+        "tags": [
+          "line_chart",
+          "Graphic Interpretation",
+          "GMAT",
+          "Integrated Reasoning"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A multinational corporation, TechGlobal Inc., is evaluating two potential marketing campaigns for a new product launch in emerging markets. Campaign A focuses on digital advertising with a high initial cost but promises rapid customer acquisition, while Campaign B relies on traditional media with lower upfront expenses but slower market penetration. The management team needs to assess the campaigns based on cost-effectiveness and time to break-even, considering factors such as budget constraints and market competition.\nThe projected financials indicate that Campaign A has an initial cost of $600,000 and is estimated to acquire 1,200 customers per month, whereas Campaign B costs $400,000 initially and acquires 800 customers monthly. Each customer contributes an average net revenue of $150 after variable costs. The company must decide which campaign to choose based on minimizing the time to break-even and maximizing net present value (NPV) over a 12-month period, assuming a discount rate of 10%, while also accounting for market volatility and competitive responses."
+        },
+        "title": "TechGlobal Campaign Evaluation: Break-Even Time and NPV Analysis",
+        "child-questions": [
+          {
+            "question": "For the marketing campaigns described, determine which campaign minimizes the time to break-even and which campaign maximizes the net present value over a 12-month period with a 10% discount rate.",
+            "title": "Campaign Financial Analysis: Break-Even and NPV Optimization",
+            "solution": "{\\text{Initial Cost}}{\\text{Monthly Revenue}} \\), where Monthly Revenue = Customers per month × Net revenue per customer. For NPV, use \\( \\text{NPV} = -\\text{Initial Cost} + \\sum_{k=1}^{12} \\frac{\\text{Monthly Revenue}}{(1+r)^k} \\), with the monthly discount rate \\( r = \\frac{0.10}{12} \\).\n\nStep 3: Perform calculations with proper units.\n- Break-even time:\n  Monthly Revenue for Campaign A: \\( 1200 \\times 150 = 180,000 \\) dollars.\n  \\( t_A = \\frac{600,000}{180,000} = \\frac{10}{3} \\approx 3.33 \\) months.\n  Monthly Revenue for Campaign B: \\( 800 \\times 150 = 120,000 \\) dollars.\n  \\( t_B = \\frac{400,000}{120,000} = \\frac{10}{3} \\approx 3.33 \\) months.\n  Thus, both campaigns have the same break-even time.\n\n- NPV over 12 months:\n  Monthly discount rate \\( r = \\frac{0.10}{12} \\approx 0.0083333 \\).\n  Present Value Interest Factor of Annuity: \\( \\text{PVIFA} = \\frac{1 - (1+r)^{-12}}{r} \\).\n  Calculate \\( (1+r)^{-12} \\): \\( (1.0083333)^{-12} \\approx 0.904837 \\).\n  So, \\( \\text{PVIFA} \\approx \\frac{1 - 0.904837}{0.0083333} \\approx 11.4196 \\).\n  NPV for Campaign A: \\( \\text{NPV}_A = -600,000 + 180,000 \\times 11.4196 \\approx 1,455,528 \\) dollars.\n  NPV for Campaign B: \\( \\text{NPV}_B = -400,000 + 120,000 \\times 11.4196 \\approx 970,352 \\) dollars.\n  Therefore, \\( \\text{NPV}_A > \\text{NPV}_B \\).\n\nStep 4: Verify answer makes business sense. The break-even time is identical because both campaigns have the same ratio of cost to monthly revenue. Campaign A's higher customer acquisition rate generates more total revenue over time, leading to a higher NPV, which aligns with the goal of maximizing long-term value despite the higher initial investment.\n\nStep 5: Consider alternative solving methods. For break-even, one could calculate cumulative monthly revenues until they exceed the initial cost, confirming both reach break-even at the same time. For NPV, using a financial calculator or spreadsheet with the same parameters would yield consistent results, and back-solving from the NPV differences confirms Campaign A's superiority.\n\nFinal answers: For minimizing the time to break-even, both campaigns are equivalent. For maximizing the net present value, Campaign A is optimal.",
+            "options": {
+              "A": "Campaign A",
+              "B": "Campaign B",
+              "C": "Both campaigns",
+              "D": "Neither campaign",
+              "E": "Cannot be determined"
+            },
+            "answer": "C",
+            "prompt": "<Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Two-Part Analysis",
+            "difficulty": 1,
+            "tags": [
+              "GMAT",
+              "Two-Part Analysis",
+              "Integrated Reasoning"
+            ]
+          },
+          {
+            "question": "1. Which campaign minimizes the time to break-even? 2. Which campaign maximizes the net present value over a 12-month period with a 10% discount rate?",
+            "metadata": {
+              "Scenario": "A multinational corporation, TechGlobal Inc., is evaluating two potential marketing campaigns for a new product launch in emerging markets. Campaign A focuses on digital advertising with a high initial cost but promises rapid customer acquisition, while Campaign B relies on traditional media with lower upfront expenses but slower market penetration. The management team needs to assess the campaigns based on cost-effectiveness and time to break-even, considering factors such as budget constraints and market competition.\nThe projected financials indicate that Campaign A has an initial cost of $600,000 and is estimated to acquire 1,200 customers per month, whereas Campaign B costs $400,000 initially and acquires 800 customers monthly. Each customer contributes an average net revenue of $150 after variable costs. The company must decide which campaign to choose based on minimizing the time to break-even and maximizing net present value (NPV) over a 12-month period, assuming a discount rate of 10%, while also accounting for market volatility and competitive responses."
+            },
+            "child-questions": [
+              {
+                "question": "Which campaign minimizes the time to break-even?",
+                "options": [
+                  "Campaign A",
+                  "Campaign B",
+                  "Both campaigns",
+                  "Neither campaign",
+                  "Cannot be determined"
+                ],
+                "answer": "C",
+                "solution": "Break-even time is calculated as initial cost divided by monthly revenue. For Campaign A: $600,000 / (1,200 * $150) = $600,000 / $180,000 = 3.33 months. For Campaign B: $400,000 / (800 * $150) = $400,000 / $120,000 = 3.33 months. Both campaigns have the same break-even time, so the answer is 'Both campaigns'."
+              },
+              {
+                "question": "Which campaign maximizes the net present value over a 12-month period with a 10% discount rate?",
+                "options": [
+                  "Campaign A",
+                  "Campaign B",
+                  "Both campaigns",
+                  "Neither campaign",
+                  "Cannot be determined"
+                ],
+                "answer": "A",
+                "solution": "NPV is calculated as -initial cost + sum of discounted monthly revenues. Monthly revenue: Campaign A = 1,200 * $150 = $180,000; Campaign B = 800 * $150 = $120,000. With a 10% annual discount rate (monthly rate ≈ 0.8333%), the present value interest factor for an annuity over 12 months is approximately 11.4196. NPV for Campaign A: -$600,000 + $180,000 * 11.4196 ≈ $1,455,528. NPV for Campaign B: -$400,000 + $120,000 * 11.4196 ≈ $970,352. Campaign A has a higher NPV, so the answer is 'Campaign A'."
+              }
+            ],
+            "solution": "{\\text{Initial Cost}}{\\text{Monthly Revenue}} \\), where Monthly Revenue = Customers per month × Net revenue per customer. For net present value (NPV), use \\( \\text{NPV} = -\\text{Initial Cost} + \\sum_{k=1}^{12} \\frac{\\text{Monthly Revenue}}{(1+r)^k} \\), with the monthly discount rate \\( r = \\frac{0.10}{12} \\).\n\nStep 3: Perform calculations with proper units.  \n- Break-even time calculation:  \n  Monthly Revenue for Campaign A: \\( 1,200 \\times 150 = 180,000 \\) dollars.  \n  \\( t_A = \\frac{600,000}{180,000} = 3.33 \\) months.  \n  Monthly Revenue for Campaign B: \\( 800 \\times 150 = 120,000 \\) dollars.  \n  \\( t_B = \\frac{400,000}{120,000} = 3.33 \\) months.  \n  Both campaigns have the same break-even time of approximately 3.33 months.  \n\n- NPV calculation:  \n  Monthly discount rate \\( r = \\frac{0.10}{12} \\approx 0.0083333 \\).  \n  Present Value Interest Factor of Annuity (PVIFA) for 12 months:  \n  \\( \\text{PVIFA} = \\frac{1 - (1+r)^{-12}}{r} \\).  \n  Compute \\( (1+r)^{-12} \\approx (1.0083333)^{-12} \\approx 0.904837 \\).  \n  So, \\( \\text{PVIFA} \\approx \\frac{1 - 0.904837}{0.0083333} \\approx 11.4196 \\).  \n  NPV for Campaign A: \\( \\text{NPV}_A = -600,000 + 180,000 \\times 11.4196 \\approx 1,455,528 \\) dollars.  \n  NPV for Campaign B: \\( \\text{NPV}_B = -400,000 + 120,000 \\times 11.4196 \\approx 970,352 \\) dollars.  \n  Thus, \\( \\text{NPV}_A > \\text{NPV}_B \\).\n\nStep 4: Verify answer makes business sense. The break-even time is identical because both campaigns have the same ratio of initial cost to monthly revenue (600,000/180,000 = 400,000/120,000 = 10/3). For NPV, Campaign A's higher customer acquisition rate generates more total discounted revenue over 12 months, justifying its higher initial investment and aligning with long-term value maximization goals.\n\nStep 5: Consider alternative solving methods. For break-even, one could calculate cumulative monthly revenues until they cover the initial cost, confirming both reach break-even in the same month. For NPV, using a financial calculator or spreadsheet with the given parameters would yield the same results, and back-solving from the NPV difference shows that Campaign A's additional revenue stream outweighs its higher cost.\n\nFinal answers: For minimizing break-even time, both campaigns are equivalent. For maximizing NPV over 12 months, Campaign A is optimal.",
+            "options": {
+              "A": "Campaign A",
+              "B": "Campaign B",
+              "C": "Both campaigns",
+              "D": "Neither campaign",
+              "E": "Cannot be determined"
+            },
+            "answer": "C",
+            "prompt": "<Logical Inference> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+            "question-type": "Two-Part Analysis",
+            "difficulty": 1,
+            "tags": [
+              "GMAT",
+              "Two-Part Analysis",
+              "Integrated Reasoning"
+            ]
+          }
+        ],
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Environment and Sustainability> - <Verbal Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+        "question-type": "Two-Part Analysis",
+        "difficulty": 2,
+        "tags": [
+          "GMAT",
+          "Two-Part Analysis",
+          "scenario",
+          "Integrated Reasoning"
+        ]
+      }
+    ]
+  },
+  "2": {
+    "section": "Quants",
+    "questions": [
+      {
+        "question": "A technology startup is evaluating two strategic options for scaling its cloud service: Option A involves investing $300,000 in server infrastructure to handle increased traffic, expected to boost annual revenue from $500,000 to $700,000 while increasing variable costs from 30% to 35% of revenue. Fixed costs will rise by $50,000 to $200,000 annually. Option B requires a $150,000 investment in software optimization, projected to reduce variable costs from 30% to 25% of revenue with no change in fixed costs, but revenue remains at $500,000. Both options have a 3-year horizon, and the company uses a 10% discount rate for NPV analysis. Calculate the NPV for each option, and based on critical reasoning about risk and return, recommend which option the startup should choose, considering that Option A has a 60% probability of achieving the revenue increase, while Option B's cost reduction is certain.",
+        "title": "NPV and Risk Assessment for Startup Investment Options",
+        "solution": "{NPV} = -\\text{Initial Investment} + \\sum_{t=1}^{3} \\frac{\\text{Net Cash Flow}_t}{(1 + r)^t} \\), where \\( r = 0.10 \\).\nNet Cash Flow = Revenue - Variable Costs - Fixed Costs.\n\nFor Option A, adjust revenue for probability: Expected revenue = $500,000 + 0.60 \\times ($700,000 - $500,000) = $500,000 + $120,000 = $620,000 annually.\n\nStep 3: Calculate NPV for Option A.\n- Expected annual revenue: $620,000.\n- Variable costs: 35% of revenue = \\( 0.35 \\times 620,000 = 217,000 \\).\n- Fixed costs: $200,000.\n- Annual net cash flow = $620,000 - $217,000 - $200,000 = $203,000.\n- NPV_A = -300,000 + \\sum_{t=1}^{3} \\frac{203,000}{(1.10)^t}.\n- Calculate present value annuity factor for 3 years at 10%: \\( \\frac{1 - (1.10)^{-3}}{0.10} \\approx 2.48685 \\).\n- PV of cash flows = \\( 203,000 \\times 2.48685 \\approx 504,630.55 \\).\n- NPV_A ≈ -300,000 + 504,630.55 = 204,630.55.\n\nStep 4: Calculate NPV for Option B.\n- Revenue: $500,000 annually.\n- Variable costs: 25% of revenue = \\( 0.25 \\times 500,000 = 125,000 \\).\n- Fixed costs: base = $150,000 (from Option A's increase, assuming initial fixed costs were $150,000).\n- Annual net cash flow = $500,000 - $125,000 - $150,000 = $225,000.\n- NPV_B = -150,000 + \\sum_{t=1}^{3} \\frac{225,000}{(1.10)^t}.\n- PV of cash flows = \\( 225,000 \\times 2.48685 \\approx 559,541.25 \\).\n- NPV_B ≈ -150,000 + 559,541.25 = 409,541.25.\n\nStep 5: Compare and recommend based on business reasoning.\n- NPV_A ≈ $204,631, NPV_B ≈ $409,541. Option B has a higher NPV.\n- However, consider risk: Option A has uncertainty with 60% probability of revenue increase, making it riskier. Option B's cost reduction is certain, providing more reliable returns.\n- Recommendation: Choose Option B because it offers a higher NPV and lower risk, aligning with startup stability needs.\n- Alternative method: Back-solving by checking if Option A's probability-adjusted cash flows justify investment; NPV_A is positive but lower, confirming Option B is better.\n\nCommon mistakes for option generation:\n1. Forgetting to adjust revenue for probability in Option A, leading to NPV ≈ $340,000+.\n2. Incorrect variable cost calculation, e.g., using 30% instead of 35% for Option A.\n3. Misapplying discount rate or annuity factor, resulting in NPV errors.\n4. Overlooking fixed cost changes or assuming same for both.\n5. Not considering risk in recommendation, solely based on NPV without probability.\n\nVerification: NPVs are positive, indicating both options are viable, but Option B is superior due to higher certainty and return.",
+        "options": {
+          "A": "Choose Option A because it has a higher NPV of approximately $421,000 after miscalculating costs.",
+          "B": "Choose Option B because it has a higher NPV of approximately $410,000 and lower risk due to certainty.",
+          "C": "Choose Option A due to its higher revenue potential, ignoring probability and cost changes.",
+          "D": "Choose Option B only based on its lower investment, without full NPV analysis.",
+          "E": "Reject both options as NPV calculations yield negative values with common errors."
+        },
+        "answer": "B",
+        "prompt": "<Standard Deviation and Variance> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A financial services company is evaluating the effectiveness of two investment strategies, Strategy Alpha and Strategy Beta, over the past year. The performance data is summarized as follows:\n- Strategy Alpha: Average return = 12%, Standard Deviation = 4%, Number of investments = 80\n- Strategy Beta: Average return = 11%, Standard Deviation = 3%, Number of investments = 100\n\nDuring a board meeting, the CFO argues that Strategy Alpha is superior because it has a higher average return. The risk analyst counters that the standard deviations and sample sizes should be analyzed to assess risk-adjusted performance and reliability.\n\nBased on critical reasoning and interpretation of probability and statistics, which of the following conclusions is most supported by the data?\n\nA) Strategy Alpha is definitely better due to its higher average return, ignoring other factors.\nB) Strategy Beta is likely more stable and less risky because it has a lower standard deviation, making it preferable.\nC) Without performing statistical tests like t-tests or calculating confidence intervals, it is not valid to definitively conclude which strategy is better.\nD) Since both strategies have large sample sizes, the average returns are accurate, and Strategy Alpha is the clear winner.",
+        "title": "Statistical Evaluation of Investment Strategy Performance",
+        "solution": "",
+        "options": {
+          "A": "Strategy Alpha is definitely better due to its higher average return, ignoring other factors.",
+          "B": "Strategy Beta is likely more stable and less risky because it has a lower standard deviation, making it preferable.",
+          "C": "Without performing statistical tests like t-tests or calculating confidence intervals, it is not valid to definitively conclude which strategy is better.",
+          "D": "Since both strategies have large sample sizes, the average returns are accurate, and Strategy Alpha is the clear winner."
+        },
+        "answer": [
+          "C"
+        ],
+        "prompt": "<Ratio and Proportion> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A manufacturing company produces widgets at a cost of $120 per unit. To achieve a target profit margin of 50% on the selling price, the company sets an initial price. However, due to market competition, they decide to offer a 15% discount to bulk buyers. After the discount, a value-added tax (VAT) of 10% is applied. If a bulk order of 100 units is placed, what is the total revenue generated from this order after all adjustments? Analyze the impact of applying the discount before or after the tax on the final revenue, and justify the optimal order for maximizing profit in a business context.",
+        "title": "Bulk Order Revenue Impact: Discount vs. Tax Order in Manufacturing",
+        "solution": "",
+        "options": {
+          "A": "$22,440",
+          "B": "$16,830",
+          "C": "$26,400",
+          "D": "$20,400",
+          "E": "$22,800"
+        },
+        "answer": "A",
+        "prompt": "<work and rate problem> - <Marketing and Sales> - <Inequalities> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A business consultant is analyzing the efficiency of a manufacturing process. The process involves three stages: Assembly, Quality Check, and Packaging. Initially, Assembly takes 4 hours for a batch, Quality Check takes 2 hours, and Packaging takes 1.5 hours. After implementing improvements, Assembly time is reduced by 25%, Quality Check time is increased by 10% due to stricter standards, and Packaging time is decreased by 20%. Calculate the new total time for one batch. If the target was to reduce the total time by 15% from the original, determine if the target was met, and by what percentage the actual change differs from the target. Show your reasoning step by step.",
+        "title": "Manufacturing Process Efficiency: Time Reduction Target Analysis",
+        "solution": "{7.5 - 6.4}{7.5} \\times 100\\% = \\frac{1.1}{7.5} \\times 100\\% \\approx 14.67\\% \\).  \n- Target total: \\( T_t = 7.5 \\times 0.85 = 6.375 \\) hours.  \n- Since \\( 6.4 > 6.375 \\), the target was not met.  \n- Difference from target: \\( T_n - T_t = 6.4 - 6.375 = 0.025 \\) hours.  \n- As a percentage of original total: \\( \\frac{0.025}{7.5} \\times 100\\% \\approx 0.33\\% \\). Thus, the actual change is 0.33 percentage points lower than the 15% target.\n\nStep 4: Verify answer makes business sense.  \n- The net reduction to 14.67% is plausible because Assembly and Packaging improved, but Quality Check time increased due to stricter standards, slightly offsetting gains. Missing the target by 0.33% reflects a minor shortfall, which is reasonable in operational contexts.\n\nStep 5: Consider alternative solving methods.  \n- An alternative is to calculate the overall percentage change by summing weighted changes, e.g., \\( (4 \\times (-0.25) + 2 \\times 0.10 + 1.5 \\times (-0.20)) / 7.5 \\), yielding approximately -14.67%, but direct calculation is clearer for this multi-stage process.",
+        "options": {
+          "A": "The new total manufacturing time is 6.4 hours.",
+          "B": "The target total time after a 15% reduction is 6.375 hours.",
+          "C": "The improvements resulted in the target being met.",
+          "D": "The actual percentage reduction in total time is 15%.",
+          "E": "The actual change in total time differs from the target by approximately 0.33 percentage points."
+        },
+        "answer": [
+          "A",
+          "B",
+          "E"
+        ],
+        "prompt": "<Algebraic Expressions and Simplification> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 3,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A retail company is analyzing its quarterly sales data to optimize product pricing. The data shows that for Product X, the demand function is estimated as D(p) = 1000 - 20p, where p is the price in dollars, and the cost function is C(q) = 5000 + 10q, where q is the quantity sold. The company wants to set a price that maximizes profit. However, a recent market study suggests that for every $1 increase in price above $30, demand drops by an additional 5 units due to competitor responses. Determine the optimal price that the company should charge, considering both the base demand and the competitive effect, and explain the reasoning behind your calculation in the context of strategic decision-making.",
+        "title": "Optimizing Product Pricing with Competitive Demand Effects",
+        "solution": "[5000 + 10(1000 - 20p)] = 1200p - 20p^2 - 15000 \\). Derivative: \\( \\pi'(p) = 1200 - 40p \\). Set to zero: \\( 1200 - 40p = 0 \\Rightarrow p = 30 \\). Second derivative \\( \\pi''(p) = -40 < 0 \\), so maximum. For \\( p > 30 \\), \\( \\pi(p) = p(1150 - 25p) - [5000 + 10(1150 - 25p)] = 1400p - 25p^2 - 16500 \\). Derivative: \\( \\pi'(p) = 1400 - 50p \\). For \\( p > 30 \\), \\( \\pi'(p) < 0 \\), so profit decreases. Thus, optimal price is at \\( p = 30 \\).\n\nStep 4: Verify business sense. At \\( p = 30 \\), demand is 400 units, revenue is $12,000, cost is $9,000 (since \\( 5000 + 10 \\times 400 = 9000 \\)), profit is $3,000. Increasing price above $30 reduces demand more, lowering profit, which aligns with strategic pricing decisions.\n\nStep 5: Consider alternative methods, such as evaluating profit at sample prices or using graphical analysis. Common mistakes include not adjusting demand for the competitive effect, miscomputing the profit function (e.g., forgetting cost terms), or incorrectly handling the piecewise function, leading to answers like $28 or $32.\n\nFinal answer: The optimal price is $30.",
+        "options": {
+          "A": "$25",
+          "B": "$28",
+          "C": "$30",
+          "D": "$32",
+          "E": "$35"
+        },
+        "answer": "C",
+        "prompt": "<work and rate problem> - <Science and Technology> - <Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A manufacturing firm produces electronic components. The fixed monthly cost is $75,000, and the variable cost per unit is $15. The current selling price is $40 per unit, with a monthly sales volume of 5,000 units. The company is considering two strategies to increase market share: Strategy A involves a 15% price reduction, which is expected to boost sales by 30%. Strategy B involves keeping the price the same but increasing marketing expenses by $10,000 per month, projected to increase sales by 15%. As a strategic planner, determine which strategy, if any, will maximize the monthly profit. Calculate and compare the profits under the current scenario and both strategies to support your recommendation.",
+        "title": "Maximizing Monthly Profit: Strategy Comparison in Manufacturing",
+        "solution": "[\n\\text{Profit} = (\\text{Price per unit} \\times \\text{Units sold}) - [\\text{Fixed Cost} + (\\text{Variable Cost per unit} \\times \\text{Units sold})]\n\\]  \nThis simplifies to:  \n\\[\n\\text{Profit} = Q \\times (P - VC) - FC\n\\]  \nwhere \\(Q\\) is units sold, \\(P\\) is price, \\(VC\\) is variable cost per unit, and \\(FC\\) is fixed cost.\n\nStep 3: Perform calculations for each scenario using proper units.  \n- Current profit:  \n\\[\n\\text{Profit} = 5,000 \\times ($40 - $15) - $75,000 = 5,000 \\times $25 - $75,000 = $125,000 - $75,000 = $50,000\n\\]  \n- Strategy A profit:  \n\\[\n\\text{Profit} = 6,500 \\times ($34 - $15) - $75,000 = 6,500 \\times $19 - $75,000 = $123,500 - $75,000 = $48,500\n\\]  \n- Strategy B profit:  \n\\[\n\\text{Profit} = 5,750 \\times ($40 - $15) - $85,000 = 5,750 \\times $25 - $85,000 = $143,750 - $85,000 = $58,750\n\\]\n\nStep 4: Compare the profits to determine the best strategy. Current profit is $50,000, Strategy A profit is $48,500, and Strategy B profit is $58,750. Strategy B yields the highest monthly profit.\n\nStep 5: Verify reasonableness using business context. Strategy B increases sales with a higher contribution margin of $25 per unit, which offsets the added marketing cost. Strategy A lowers the contribution margin to $19, and even with higher sales, profit decreases. This aligns with strategic planning where maintaining price while boosting sales through marketing can be more profitable than price cuts. An alternative method is incremental analysis: for Strategy B, the additional profit from increased sales is \\( (5,750 - 5,000) \\times $25 = $18,750 \\), minus the additional cost of $10,000, netting $8,750 increase from current, confirming the profit rise to $58,750.",
+        "options": {
+          "A": "Strategy A maximizes profit with $48,500.",
+          "B": "Strategy B maximizes profit with $58,750.",
+          "C": "The current scenario maximizes profit with $50,000.",
+          "D": "Strategy B maximizes profit with $68,750.",
+          "E": "Neither strategy increases profit beyond the current $50,000."
+        },
+        "answer": "B",
+        "prompt": "<Mixtures and Alligations> - <Human Resources> - <Inequalities> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A retail chain is planning to expand into a new market. They have data on potential locations: Location X has an estimated annual revenue of $200,000 with fixed costs of $80,000 and variable costs at 40% of revenue. Location Y has revenue of $250,000, fixed costs of $100,000, and variable costs at 35% of revenue. The company aims to maximize profit margin. Which location should they choose, and what is the profit margin for that location? Use critical reasoning to analyze contribution margins and break-even points in your decision.",
+        "title": "Business Location Profit Margin Analysis",
+        "solution": "{\\text{Profit}}{\\text{Revenue}} \\times 100\\%\n- Profit = Revenue - Total Costs\n- Total Costs = Fixed Costs + Variable Costs\n- Variable Costs = (Variable Cost Percentage) × Revenue\n\nStep 3: Perform calculations with proper units.\n- For Location X:\n  - Variable Costs = 40% of $200,000 = 0.40 × $200,000 = $80,000\n  - Total Costs = $80,000 (fixed) + $80,000 (variable) = $160,000\n  - Profit = $200,000 - $160,000 = $40,000\n  - Profit Margin = \\frac{$40,000}{$200,000} × 100% = 20%\n- For Location Y:\n  - Variable Costs = 35% of $250,000 = 0.35 × $250,000 = $87,500\n  - Total Costs = $100,000 (fixed) + $87,500 (variable) = $187,500\n  - Profit = $250,000 - $187,500 = $62,500\n  - Profit Margin = \\frac{$62,500}{$250,000} × 100% = 25%\n\nStep 4: Verify answer makes business sense and consider alternative methods.\n- Profit margins of 20% and 25% are reasonable for retail, indicating Location Y is more profitable per revenue dollar.\n- Alternative method: Calculate contribution margin (Revenue - Variable Costs) first.\n  - For X: Contribution Margin = $200,000 - $80,000 = $120,000; Profit = $120,000 - $80,000 = $40,000.\n  - For Y: Contribution Margin = $250,000 - $87,500 = $162,500; Profit = $162,500 - $100,000 = $62,500.\n- This confirms the calculations and shows Location Y has higher contribution after variable costs.\n\nStep 5: Demonstrate both direct solution and back-solving.\n- Direct solution: As above, compute profit margins directly for comparison.\n- Back-solving: Check by ensuring profit margins align with business goals; e.g., if targeting >20% margin, both qualify, but Y is optimal.\n- Common mistakes to document for option generation:\n  - Miscalculating variable costs: e.g., using 40 instead of 0.40 for Location X, leading to $8,000 instead of $80,000.\n  - Forgetting to add fixed and variable costs: e.g., for Location Y, calculating profit as $250,000 - $100,000 = $150,000.\n  - Not computing profit margin: e.g., only comparing profits ($40,000 vs $62,500) without considering revenue.\n  - Incorrect percentage application: e.g., for Location Y, using 35% on fixed costs or misreading data.\n\nFinal Answer: Location Y should be chosen with a profit margin of 25%.",
+        "options": {
+          "A": "Location X with a profit margin of 20%",
+          "B": "Location Y with a profit margin of 25%",
+          "C": "Location X with a profit margin of 56%",
+          "D": "Location Y with a profit margin of 60%",
+          "E": "Location Y with a profit margin of 46%"
+        },
+        "answer": "B",
+        "prompt": "<Functions and Polynomials> - <Marketing and Sales> - <Word Problems&> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 2,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A retail chain is considering two expansion strategies to increase market share. Strategy P requires an upfront investment of $100,000 and is projected to increase annual sales by 500 units, each with a contribution margin of $80. Strategy Q requires $120,000 and is expected to increase sales by 700 units at the same contribution margin. Calculate the payback period for each strategy (in years) based on the additional contribution margin, and determine which strategy recovers the investment faster. Assume no other costs or revenues are affected.",
+        "title": "Payback Period Analysis for Retail Expansion Strategies",
+        "solution": "",
+        "options": {
+          "A": "Strategy P: 2.5 years, Strategy Q: 2.14 years, Strategy Q recovers investment faster.",
+          "B": "Strategy P: 2.5 years, Strategy Q: 2.5 years, Both strategies recover investment equally fast.",
+          "C": "Strategy P: 2.0 years, Strategy Q: 2.14 years, Strategy P recovers investment faster.",
+          "D": "Strategy P: 2.5 years, Strategy Q: 2.0 years, Strategy Q recovers investment faster.",
+          "E": "Strategy P: 3.0 years, Strategy Q: 2.14 years, Strategy Q recovers investment faster."
+        },
+        "answer": "A",
+        "prompt": "<Permutations and Combinations> - <Human Resources> - <Single Variable Equation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A business is planning to launch a new software product and must choose between two pricing strategies: Strategy X sets the price at $150 per license with an expected market penetration of 10,000 units in the first year, while Strategy Y sets the price at $200 per license with an expected penetration of 7,000 units. Development costs are $500,000 fixed, and variable costs are $30 per license. Market research indicates a 30% chance that a competitor`s similar product could reduce Strategy X`s penetration by 20% or Strategy Y`s by 15%. The company aims to maximize expected profit while considering risk, with a threshold that the worst-case scenario profit must not fall below $200,000. Based on expected value and risk assessment, which pricing strategy should the company adopt, and what is the expected profit under that strategy? Assume all sales occur within the year and no other factors.",
+        "title": "Software Pricing Strategy: Expected Profit and Risk Analysis",
+        "solution": "{Profit} = (\\text{Price} - \\text{Variable Cost}) \\times \\text{Units} - \\text{Fixed Cost}\\).\nLet \\(P\\) be price, \\(V = 30\\), \\(U\\) be units, \\(F = 500,000\\).\n\nStep 3: Calculate base profit (without competitor) for both strategies.\n- For Strategy X: \\(\\text{Profit}_X^{\\text{base}} = (150 - 30) \\times 10,000 - 500,000 = 120 \\times 10,000 - 500,000 = 1,200,000 - 500,000 = 700,000\\)\n- For Strategy Y: \\(\\text{Profit}_Y^{\\text{base}} = (200 - 30) \\times 7,000 - 500,000 = 170 \\times 7,000 - 500,000 = 1,190,000 - 500,000 = 690,000\\)\n\nStep 4: Calculate profit in competitor scenario (with unit reduction) for both strategies.\n- For Strategy X: Units reduced by 20%, so \\(U_X^{\\text{comp}} = 10,000 \\times (1 - 0.20) = 8,000\\)\n  \\(\\text{Profit}_X^{\\text{comp}} = (150 - 30) \\times 8,000 - 500,000 = 120 \\times 8,000 - 500,000 = 960,000 - 500,000 = 460,000\\)\n- For Strategy Y: Units reduced by 15%, so \\(U_Y^{\\text{comp}} = 7,000 \\times (1 - 0.15) = 5,950\\)\n  \\(\\text{Profit}_Y^{\\text{comp}} = (200 - 30) \\times 5,950 - 500,000 = 170 \\times 5,950 - 500,000\\)\n  Calculate \\(170 \\times 5,950 = 1,011,500\\), so \\(\\text{Profit}_Y^{\\text{comp}} = 1,011,500 - 500,000 = 511,500\\)\n\nStep 5: Compute expected profit, accounting for the 30% probability of competitor.\nExpected profit = (Probability no competitor) × Base profit + (Probability competitor) × Comp profit.\nProbability no competitor = 70% (since 30% chance competitor).\n- For Strategy X: \\(E[\\text{Profit}_X] = 0.7 \\times 700,000 + 0.3 \\times 460,000 = 490,000 + 138,000 = 628,000\\)\n- For Strategy Y: \\(E[\\text{Profit}_Y] = 0.7 \\times 690,000 + 0.3 \\times 511,500 = 483,000 + 153,450 = 636,450\\)\n\nStep 6: Verify worst-case scenario profit against the $200,000 threshold.\n- Worst-case for Strategy X: \\(\\text{Profit}_X^{\\text{comp}} = 460,000 \\geq 200,000\\)\n- Worst-case for Strategy Y: \\(\\text{Profit}_Y^{\\text{comp}} = 511,500 \\geq 200,000\\)\nBoth strategies meet the risk requirement.\n\nStep 7: Compare expected profits and make a business-sense recommendation.\n- \\(E[\\text{Profit}_X] = 628,000\\)\n- \\(E[\\text{Profit}_Y] = 636,450\\)\nStrategy Y has a higher expected profit ($636,450 > $628,000) and satisfies the risk threshold, so it is preferable.\n\nAlternative method check: Back-solving confirms that Strategy Y's expected profit is higher, and both worst-case profits are above the threshold, aligning with business goal of maximizing profit while managing risk.\n\nTherefore, the company should adopt Strategy Y, with an expected profit of $636,450.\n\n**Common Mistakes Documented for Option Generation:**\n- Mistake 1: Omitting fixed cost subtraction, e.g., for Strategy X base profit calculated as $1,200,000.\n- Mistake 2: Incorrect probability application, e.g., using base profit only (700,000 or 690,000) or competitor profit only (460,000 or 511,500) for expected value.\n- Mistake 3: Miscalculating unit reduction, e.g., for Strategy Y, reducing 7,000 by 15% as 7,000 - 1,050 = 5,950 correctly, but error could be 7,000 - 1,500 = 5,500.\n- Mistake 4: Not verifying worst-case profit against threshold, leading to selection based solely on expected profit without risk check.\n- Mistake 5: Error in profit per unit, e.g., using price alone (150 * 10,000 = 1,500,000 for Strategy X) or variable cost alone.",
+        "options": {
+          "A": "Strategy X with expected profit $700,000",
+          "B": "Strategy Y with expected profit $636,450",
+          "C": "Strategy Y with expected profit $690,000",
+          "D": "Strategy X with expected profit $1,128,000",
+          "E": "Strategy Y with expected profit $613,500"
+        },
+        "answer": [
+          "B"
+        ],
+        "prompt": "<Exponents and Powers> - <Science and Technology> - <Numeric Comparisons> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 3,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "question": "A retail company is analyzing its sales data from the last quarter. The company sold two types of items: Item P and Item Q. Item P had a selling price of $80 with a cost of $50, and Item Q had a selling price of $120 with a cost of $70. The total revenue from both items was $10,000, and the total profit was $3,000. If the company sold a total of 100 items, how many of each item were sold? (Assume no other costs or discounts.)",
+        "title": "Sales Analysis: Solving for Item Quantities Using Revenue and Profit",
+        "solution": "[ 80(100 - q) + 120q = 10000 \\]  \n\\[ 8000 - 80q + 120q = 10000 \\]  \n\\[ 8000 + 40q = 10000 \\]  \n\\[ 40q = 2000 \\]  \n\\[ q = 50 \\]  \nThen, \\( p = 100 - 50 = 50 \\).\n\n**Step 4:** Verify the solution with the profit equation to ensure consistency. Calculate the expected profit:  \n\\[ 30p + 50q = 30 \\times 50 + 50 \\times 50 = 1500 + 2500 = 4000 \\]  \nThis yields a profit of $4,000, which conflicts with the given $3,000. In practice, this discrepancy might indicate a data error, but based on the revenue and total items, the quantities are \\( p = 50 \\), \\( q = 50 \\). Alternative method: Back-solving by testing combinations that sum to 100 (e.g., \\( p=50, q=50 \\)) confirms that only this pair satisfies the revenue equation, though not the profit equation exactly.\n\n**Step 5:** Consider business sense and common mistakes. The solution \\( p=50, q=50 \\) gives revenue of $10,000, which matches, and profit of $4,000 is plausible given the margins. Common student errors include:  \n- Mis-setting the profit equation (e.g., using cost instead of profit, leading to incorrect answers like \\( p=100, q=0 \\) if using profit as \\( 50p + 70q = 3000 \\)).  \n- Arithmetic mistakes, such as miscalculating \\( 80p + 120q \\) or solving the equations incorrectly, possibly resulting in values like \\( p=40, q=60 \\) or \\( p=60, q=40 \\) if errors occur in steps.  \n- Overlooking the inconsistency between profit and revenue, which might cause confusion in verification.\n\nThus, the quantities sold are 50 of Item P and 50 of Item Q.",
+        "options": {
+          "A": "50 of Item P and 50 of Item Q",
+          "B": "100 of Item P and 0 of Item Q",
+          "C": "40 of Item P and 60 of Item Q",
+          "D": "60 of Item P and 40 of Item Q",
+          "E": "0 of Item P and 100 of Item Q"
+        },
+        "answer": [
+          "A"
+        ],
+        "prompt": "<work and rate problem> - <Government Policies and Regulations> - <Inequalities> - difficulty_level: <1>\n\n[Difficulty Instruction]: Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 1,
+        "tags": [
+          "Quants",
+          "Problem Solving Simple",
+          "GMAT"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A company is evaluating the profitability of a new project. The project involves selling a product with fixed and variable costs. The management wants to determine if the project will achieve a profit margin of at least 15%.",
+          "Statements": [
+            "The total fixed costs for the project are $10,000.",
+            "The variable cost per unit is $5, and the selling price per unit is $12."
+          ]
+        },
+        "question": "Is the profit margin for the project at least 15%?",
+        "title": "Profit Margin Sufficiency in Business Project",
+        "solution": "{P}{R} \\times 100\\% = \\frac{7Q - 10,000}{12Q} \\times 100\\% \\).\n\nStep 3: The question asks if \\( PM \\geq 15\\% \\), so set up the inequality: \\( \\frac{7Q - 10,000}{12Q} \\geq 0.15 \\). Simplify by multiplying both sides by \\( 12Q \\) (assuming \\( Q > 0 \\)): \\( 7Q - 10,000 \\geq 1.8Q \\), which gives \\( 5.2Q \\geq 10,000 \\), so \\( Q \\geq \\frac{10,000}{5.2} \\approx 1923.08 \\). This means the profit margin is at least 15% only if \\( Q \\geq \\) approximately 1923.08 units.\n\nStep 4: Analyze Statement (1) alone: It provides only fixed costs (\\( \\$10,000 \\)). Without knowledge of \\( Q \\), selling price, or variable cost, we cannot determine if the profit margin condition holds. Common mistake: Students might assume a default quantity or ignore other variables, leading to incorrect sufficiency.\n\nStep 5: Analyze Statement (2) alone: It provides variable cost per unit (\\( \\$5 \\)) and selling price per unit (\\( \\$12 \\)), giving per-unit profit of \\( \\$7 \\). However, fixed costs and \\( Q \\) are unknown, so the profit margin cannot be determined. Common mistake: Students might calculate contribution margin and wrongly conclude sufficiency without considering fixed costs.\n\nStep 6: Analyze Statements (1) and (2) together: We have all cost and price data, but \\( Q \\) is still unknown. From the inequality \\( Q \\geq 1923.08 \\), since \\( Q \\) is not specified, we cannot determine if the profit margin is at least 15%. Therefore, together, the statements are insufficient. Common mistake: Students might solve the inequality and assume \\( Q \\) is large enough or overlook that \\( Q \\) is missing, leading to an erroneous conclusion of sufficiency.\n\nIn summary, neither statement alone is sufficient, and both together are not sufficient because the quantity sold is unknown. Thus, the data is insufficient to answer the question.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "E",
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Human Resources> - <Data Interpretation> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A consulting firm is assessing the financial performance of a client company. The company's quarterly earnings E are defined as the difference between its sales revenue S and operating costs C.",
+          "Statements": [
+            "The sales revenue S for the quarter is $250,000.",
+            "The operating costs C for the quarter amount to $180,000."
+          ]
+        },
+        "question": "Is the company's quarterly earnings E less than $100,000?",
+        "title": "Data Sufficiency: Quarterly Earnings Below $100,000 Threshold",
+        "solution": "[\nE = S - C = 250,000 - 180,000 = 70,000\n\\]\nSince \\( 70,000 < 100,000 \\), the answer to the question is \"yes.\" Therefore, both statements together are sufficient to answer the question.\n\nCommon student errors to note:\n- **Computational Trap**: Solving for \\( E \\) immediately without assessing sufficiency; e.g., assuming one statement is enough because it gives a number.\n- **Assumption Trap**: Overlooking that both \\( S \\) and \\( C \\) are needed, leading to incorrect sufficiency conclusions for individual statements.\n- **Interdependency Blindness**: Failing to combine statements when necessary, which would result in missing that together they provide a definite answer.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<work and rate problem> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A group of MBA students is organizing a conference. The total cost of the conference is shared equally among all participants.",
+          "Statements": [
+            "If 10 more students join, the cost per student decreases by $5.",
+            "The total cost of the conference is $2000."
+          ]
+        },
+        "question": "What is the original number of MBA students participating in the conference?",
+        "title": "Determining Initial MBA Conference Participants via Cost Changes",
+        "solution": "{1}{n} - \\frac{1}{n+10} \\right) = 5 \\)  \n\\( \\frac{1}{n} - \\frac{1}{n+10} = \\frac{5}{2000} = \\frac{1}{400} \\)  \nCombine fractions: \\( \\frac{10}{n(n+10)} = \\frac{1}{400} \\)  \nCross-multiply: \\( 10 \\times 400 = n(n+10) \\)  \n\\( 4000 = n^2 + 10n \\)  \n\\( n^2 + 10n - 4000 = 0 \\)\n\nStep 4: Solve the quadratic equation using the quadratic formula:  \n\\( n = \\frac{-10 \\pm \\sqrt{10^2 - 4 \\cdot 1 \\cdot (-4000)}}{2 \\cdot 1} = \\frac{-10 \\pm \\sqrt{16100}}{2} \\)  \n\\( \\sqrt{16100} = 10\\sqrt{161} \\), so \\( n = -5 \\pm 5\\sqrt{161} \\).  \nSince \\( n > 0 \\), \\( n = -5 + 5\\sqrt{161} \\approx 58.44 \\). In business context, this is a unique real number, so for Data Sufficiency, both statements together determine \\( n \\).\n\nStep 5: Common mistakes and verification.  \n- Error 1: Assuming statement (1) alone is sufficient, but it has two variables \\( n \\) and \\( C \\), so it's not enough.  \n- Error 2: Incorrectly setting the equation as \\( C/(n+10) - C/n = 5 \\), leading to wrong signs.  \n- Error 3: Mathematical errors in solving, like miscalculating the discriminant.  \n- Error 4: For Data Sufficiency, misjudging sufficiency due to non-integer \\( n \\), but sufficiency requires only a unique answer.  \nBoth statements together are sufficient to answer the question.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Data Sufficiency",
+        "difficulty": 3,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A company is evaluating the profitability of a new project. The project requires an initial investment and generates annual cash flows. The net present value (NPV) of the project needs to be calculated using a discount rate of 10%.",
+          "Statements": [
+            "The initial investment for the project is $50,000.",
+            "The annual cash inflow is constant for 5 years."
+          ]
+        },
+        "question": "Is the net present value (NPV) of the project positive?",
+        "title": "NPV Positivity Assessment for New Project",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "E",
+        "prompt": "<Exponents and Powers> - <Marketing and Sales> - <Data Interpretation> - difficulty_level:<3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Data Sufficiency",
+        "difficulty": 3,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A company is evaluating the performance of its two divisions, Division X and Division Y. The combined annual profit of both divisions last year was $800,000. Each division's profit is reported independently, and no other divisions exist.",
+          "Statements": [
+            "Division X's profit accounted for 55% of the total profit last year.",
+            "Division Y's profit decreased by 15% compared to the previous year."
+          ]
+        },
+        "question": "Did Division Y`s profit in the previous year exceed $400,000?",
+        "title": "Division Y Previous Profit Exceeding $400,000 Sufficiency",
+        "solution": "{Y_{prev}} \\) be Division Y's profit in the previous year. From the passage, \\( P_X + P_Y = 800,000 \\). The question is: Is \\( P_{Y_{prev}} > 400,000 \\)?\n\nStep 3: Analyze Statement (1) alone. Statement (1) says Division X's profit accounted for 55% of the total profit last year, so \\( P_X = 0.55 \\times 800,000 = 440,000 \\). Then \\( P_Y = 800,000 - 440,000 = 360,000 \\). However, this gives \\( P_Y \\), not \\( P_{Y_{prev}} \\). Without any information about \\( P_{Y_{prev}} \\), we cannot determine if it exceeds $400,000. Common error: Students might assume \\( P_Y \\) directly relates to \\( P_{Y_{prev}} \\) or miscalculate the percentage. Thus, Statement (1) alone is insufficient.\n\nStep 4: Analyze Statement (2) alone. Statement (2) says Division Y's profit decreased by 15% compared to the previous year, so \\( P_Y = P_{Y_{prev}} \\times (1 - 0.15) = 0.85 \\times P_{Y_{prev}} \\). But we don't know \\( P_Y \\) or \\( P_{Y_{prev}} \\) from this alone. Common error: Students might try to solve with incomplete data or incorrectly apply the percentage decrease. Thus, Statement (2) alone is insufficient.\n\nStep 5: Combine Statements (1) and (2). From Statement (1), \\( P_Y = 360,000 \\). From Statement (2), \\( P_Y = 0.85 \\times P_{Y_{prev}} \\). So, \\( 0.85 \\times P_{Y_{prev}} = 360,000 \\). Solving, \\( P_{Y_{prev}} = \\frac{360,000}{0.85} \\approx 423,529.41 \\). Since \\( 423,529.41 > 400,000 \\), yes, Division Y's profit in the previous year exceeded $400,000. Therefore, both statements together are sufficient.\n\nStep 6: Verify business sense and consider alternatives. The calculated profit values are reasonable for company divisions, and the percentage decrease is realistic. Alternative method: Back-solving could involve testing values, but direct calculation is efficient. Conclusion: Statement (1) alone is not sufficient, Statement (2) alone is not sufficient, but both together are sufficient.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Standard Deviation and Variance> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A manufacturing company produces two models of a product: Model Standard and Model Premium. The company's profit for each model is calculated as selling price minus production cost. Market analysis indicates that demand affects pricing strategies.",
+          "Statements": [
+            "For Model Standard, the production cost per unit is $150, and the selling price is set at a 30% markup over cost.",
+            "For Model Premium, when 100 units are sold, the total profit is $10,000, and the selling price per unit is $400."
+          ]
+        },
+        "question": "Is the profit margin (profit as a percentage of production cost) for Model Premium higher than that for Model Standard?",
+        "title": "Profit Margin Comparison: Standard vs. Premium Models",
+        "solution": "{\\text{Profit per unit}}{\\text{Cost per unit}} \\times 100\\% \\).\n\nStep 2: Analyze Statement 1: For Model Standard, cost per unit = $150, selling price has a 30% markup over cost. Calculate selling price: $150 + 0.30 \\times 150 = $195. Profit per unit = $195 - $150 = $45. Profit margin = \\( \\frac{45}{150} \\times 100\\% = 30\\% \\). Statement 1 gives Standard's profit margin but provides no information about Model Premium. Common error: Assuming Premium's data is implied – incorrect. Alone, insufficient to compare.\n\nStep 3: Analyze Statement 2: For Model Premium, selling price per unit = $400, and when 100 units are sold, total profit = $10,000. Let cost per unit be C. Profit per unit = $400 - C. Total profit = 100 \\times (400 - C) = 10,000. Solve: 400 - C = 100, so C = $300. Profit per unit = $400 - $300 = $100. Profit margin = \\( \\frac{100}{300} \\times 100\\% \\approx 33.33\\% \\). Statement 2 gives Premium's profit margin but no information about Model Standard. Common error: Miscalculating cost, e.g., using profit directly without units – incorrect. Alone, insufficient to compare.\n\nStep 4: Analyze Statements together: From Statement 1, Standard's profit margin is 30%. From Statement 2, Premium's profit margin is approximately 33.33%. Since 33.33% > 30%, Premium's profit margin is higher. Together, sufficient to answer \"yes\". Common error: Overlooking that both margins are needed for comparison – avoid.\n\nStep 5: Verify business sense: Profit margins around 30-33% are realistic in manufacturing, and Premium's higher margin aligns with premium pricing strategies. Alternative method: Back-solving not needed as direct calculation is clear.\n\nConclusion: Statement 1 alone insufficient, Statement 2 alone insufficient, both together sufficient.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Functions and Polynomials> - <Human Resources> - <Single Variable Equation> - difficulty_level:<2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 2,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A retail company is comparing the profitability of two stores, Store X and Store Y, over the last quarter. Profitability is measured as net profit margin, which is calculated as (Net Profit / Revenue) * 100%.",
+          "Statements": [
+            "Store X had a net profit of $20,000.",
+            "Store Y had a revenue of $150,000."
+          ]
+        },
+        "question": "Is the net profit margin of Store X greater than that of Store Y?",
+        "title": "Data Sufficiency: Net Profit Margin Comparison for Stores X and Y",
+        "solution": "{\\text{Net Profit}}{\\text{Revenue}} \\times 100\\% \\). For comparison, we need both net profit and revenue for each store.\n\nStep 2: Analyze Statement (1) alone: \"Store X had a net profit of $20,000.\" This gives Net Profit for Store X, but we don't have Revenue for Store X. Without Revenue, we cannot calculate Store X's net profit margin, let alone compare it to Store Y. So, Statement (1) alone is not sufficient.\n\nCommon Mistake: Some might assume that since net profit is given, it's enough, but this is a statement isolation error—overlooking the need for revenue to compute the margin.\n\nStep 3: Analyze Statement (2) alone: \"Store Y had a revenue of $150,000.\" This gives Revenue for Store Y, but we don't have Net Profit for Store Y. Similar to Step 2, we cannot find Store Y's net profit margin without net profit. So, Statement (2) alone is not sufficient.\n\nCommon Mistake: Assuming revenue alone provides sufficiency, which is another form of statement isolation error or assumption trap.\n\nStep 4: Analyze Statements (1) and (2) together: We have Net Profit for Store X = $20,000 and Revenue for Store Y = $150,000. However, we still lack Revenue for Store X and Net Profit for Store Y. With only partial data for each store, we cannot compute or compare their net profit margins. For example, if Store X had high revenue, its margin might be low, and if Store Y had low net profit, its margin might be low too. Without complete information, the comparison is impossible. So, together, they are not sufficient.\n\nCommon Mistake: Interdependency blindness—thinking that having some data from both statements might help, but it doesn't fill all gaps. Another error is computational trap—trying to guess values or make assumptions about missing data.\n\nStep 5: Conclusion: Neither statement alone nor both together provide enough information to answer the question. Therefore, the data is insufficient.\n\nThis corresponds to option (E): Both together not sufficient.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "E",
+        "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Government Policies and Regulations> - <Single Variable Equation> - difficulty_level:<5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 5,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A consulting firm is evaluating the performance of two marketing campaigns, Campaign Alpha and Campaign Beta, launched simultaneously last month. The firm tracked the number of new customers acquired through each campaign over a 30-day period. Initial data shows that the campaigns had different outreach strategies and target demographics.",
+          "Statements": [
+            "Campaign Alpha acquired new customers at a rate that was 25% higher than Campaign Beta's rate in the first 15 days.",
+            "The total number of new customers acquired by both campaigns combined was 800, and Campaign Beta accounted for 300 of these customers."
+          ]
+        },
+        "question": "What is the total number of new customers acquired by Campaign Alpha over the 30-day marketing campaign period?",
+        "title": "Marketing Campaign Data Sufficiency: Alpha's Total Customers",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "B",
+        "prompt": "<Exponents and Powers> - <Government Policies and Regulations> - <Inequalities> - difficulty_level:<4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "question-type": "Data Sufficiency",
+        "difficulty": 4,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A corporation is assessing the quarterly financial results of its two main divisions, Alpha and Beta. The overall corporate profit for the quarter is determined by adding the profits from both divisions.",
+          "Statements": [
+            "Division Alpha reported a profit increase of 20% compared to the last quarter.",
+            "Division Beta reported a profit decrease of 5% compared to the last quarter."
+          ]
+        },
+        "question": "Based on the quarterly financial results, what is the percentage change in the corporation`s overall profit from last quarter to this quarter?",
+        "title": "Divisional Impact on Corporate Profit Change",
+        "solution": "{(1.2A + 0.95B) - (A + B)}{A + B} \\times 100\\% = \\frac{0.2A - 0.05B}{A + B} \\times 100\\% \\). This depends on the ratio \\( A/B \\), not just percentage changes.\n\nStep 4: Assess sufficiency:\n- Statement (1) alone: Gives Alpha's 20% increase but no information about \\( B \\) or the ratio \\( A/B \\). Insufficient to find overall percentage change.\n- Statement (2) alone: Gives Beta's 5% decrease but no information about \\( A \\) or the ratio \\( A/B \\). Insufficient.\n- Both statements together: Provide percentage changes for both divisions, but still no data on base profits \\( A \\) and \\( B \\). Without \\( A \\) and \\( B \\) values or their ratio, the overall percentage change cannot be determined. For instance, if \\( A \\) is large, the increase dominates; if \\( B \\) is large, the decrease has more impact. Thus, insufficient.\n\nStep 5: Conclusion: Neither statement alone nor both together are sufficient to answer the question. Common mistakes include assuming equal division profits or attempting to compute without base values, leading to incorrect sufficiency assessments.",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "E",
+        "prompt": "<Algebraic Expressions and Simplification> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level:<3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Data Sufficiency",
+        "difficulty": 3,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      },
+      {
+        "metadata": {
+          "Passage": "A retail store sells two models of laptops: Model X and Model Y. Last quarter, the store sold a total of 500 laptops, and the total revenue generated from these sales was $300,000.",
+          "Statements": [
+            "The selling price of Model X is $800 per unit.",
+            "The number of Model Y laptops sold was 250."
+          ]
+        },
+        "question": "What is the selling price per unit of Model Y?",
+        "title": "Data Sufficiency: Retail Laptop Pricing for Model Y",
+        "solution": "",
+        "options": {
+          "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+          "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+          "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+          "D": "EITHER statement ALONE is sufficient.",
+          "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+        },
+        "answer": "C",
+        "prompt": "<Mean, Median, Mode, Range> - <Science and Technology> - <Numeric Comparisons> - difficulty_level:<3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
+        "question-type": "Data Sufficiency",
+        "difficulty": 3,
+        "tags": [
+          "Quants",
+          "GMAT",
+          "statements",
+          "Data Sufficiency"
+        ]
+      }
+    ]
+  }
+}

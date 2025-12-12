@@ -25,3 +25,6 @@ You must generate a JSON object containing:
 ## Constraints
 *   The table should require sorting or filtering to answer efficiently.
 *   Statements should cover different aspects of the data (e.g., correlation, range, specific value lookup).
+
+
+UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

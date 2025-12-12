@@ -90,6 +90,7 @@ for exam, sections in sorted_exams:
 
                 prompt_buffer: dict[str, Any] = {
                     'prompt': prompt,
+                    'difficulty': current_difficulty,
                 }
                 if question_type_info.get('options'):
                     option = question_type_info['options']
@@ -124,7 +125,8 @@ for exam, sections in sorted_exams:
                                     "this was the child_option that was causing \n")
                         child_prompt_buffer = {
                             'prompt': child_prompt,
-                            'option': child_option
+                            'option': child_option,
+                            'difficulty': child_difficulty
                         }
                         prompt_buffer['child-prompt'].append(
                             child_prompt_buffer)
