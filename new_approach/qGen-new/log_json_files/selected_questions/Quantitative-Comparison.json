@@ -1,7 +1,7 @@
 {
   "question": "Information: x is a real number.\nQuantity A: (x + 3)^2\nQuantity B: x^2 + 9",
   "title": "Algebraic Expression Comparison: Squaring a Sum vs. Sum of Squares",
-  "solution": "",
+  "solution": "Step 1: Expand Quantity A using the algebraic identity for squaring a sum.\nQuantity A = (x + 3)^2 = x^2 + 6x + 9\n\nStep 2: Compare the expanded form of Quantity A with Quantity B.\nQuantity A = x^2 + 6x + 9\nQuantity B = x^2 + 9\n\nStep 3: Subtract Quantity B from Quantity A to determine the relationship.\n(x^2 + 6x + 9) - (x^2 + 9) = 6x\n\nStep 4: Analyze the sign of 6x based on the given information.\nThe information states that x is a real number, but does not specify whether x is positive, negative, or zero.\n- If x > 0, then 6x > 0, so Quantity A > Quantity B.\n- If x = 0, then 6x = 0, so Quantity A = Quantity B.\n- If x < 0, then 6x < 0, so Quantity A < Quantity B.\n\nStep 5: Since the relationship depends on the value of x, and x can be any real number, the relationship cannot be determined from the given information.\nTherefore, the answer is D (The relationship cannot be determined from the information given).",
   "options": {
     "A": "Quantity A is greater.",
     "B": "Quantity B is greater.",
@@ -9,7 +9,7 @@
     "D": "The relationship cannot be determined from the information given."
   },
   "answer": "D",
-  "prompt": "<Ratio and Proportion> - <Government Policies and Regulations> - <Inequalities> - difficulty_level: <3>",
+  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Science and Technology> - <Inequalities> - difficulty_level: <3>",
   "question-type": "Quantitative Comparison",
   "difficulty": 3
 }

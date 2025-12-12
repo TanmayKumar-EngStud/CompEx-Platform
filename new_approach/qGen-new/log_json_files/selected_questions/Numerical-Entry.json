@@ -1,10 +1,10 @@
 {
   "question": "A rectangular garden has a length that is 3 meters more than twice its width. If the perimeter of the garden is 42 meters, what is the area of the garden in square meters? Provide your answer as a two-digit positive number.",
   "title": "Rectangular Garden Perimeter and Area Calculation",
-  "solution": "",
+  "solution": "Step 1: Let the width of the garden be \\(w\\) meters. According to the problem, the length is 3 meters more than twice the width, so length \\(l = 2w + 3\\) meters.\nStep 2: The perimeter of a rectangle is given by \\(P = 2(l + w)\\). Given \\(P = 42\\) meters, set up the equation: \\(2((2w + 3) + w) = 42\\).\nStep 3: Simplify the equation: \\(2(3w + 3) = 42\\), so \\(3w + 3 = 21\\), then \\(3w = 18\\), giving \\(w = 6\\) meters.\nStep 4: Find the length: \\(l = 2(6) + 3 = 15\\) meters.\nStep 5: Calculate the area: \\(A = l \\times w = 15 \\times 6 = 90\\) square meters. The answer is a two-digit positive number, 90.\n\nCommon Errors:\n- Computational Errors: Mistaking perimeter formula as \\(P = l + w\\) leads to \\(3w + 3 = 42\\), giving \\(w = 13\\) and area 377, which is incorrect.\n- Formula Misapplication: Using area formula incorrectly, e.g., \\(A = 2(l + w)\\) gives 42, not matching units.\n- Procedural Errors: Solving \\(2(2w + 3 + w) = 42\\) incorrectly, such as \\(2(3w + 3) = 42\\) mis-simplified to \\(6w + 6 = 42\\), \\(w = 6\\) (correct but error-prone).\nVerification: Check perimeter: \\(2(15 + 6) = 42\\), correct. Alternative: Solve for length directly if needed, but method above is efficient.",
   "options": null,
-  "answer": 108.0,
-  "prompt": "<Ratio and Proportion> - <Logistics and Operations> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "answer": 90,
+  "prompt": "<Mean, Median, Mode, Range> - <Environment and Sustainability> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
   "question-type": "Numerical Entry",
-  "difficulty": 2
+  "difficulty": 5
 }

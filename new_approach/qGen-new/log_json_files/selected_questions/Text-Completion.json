@@ -1,24 +1,16 @@
 {
-  "question": "The proposed policy aims to _____ the economic disparities, yet critics argue that it may inadvertently _____ the existing inequalities, as its implementation lacks targeted measures for the most vulnerable groups.",
-  "title": "Policy Impact on Economic Inequalities",
-  "solution": "",
-  "options": [
-    {
-      "A": "mitigate",
-      "B": "exacerbate",
-      "C": "ignore"
-    },
-    {
-      "D": "alleviate",
-      "E": "deepen",
-      "F": "highlight"
-    }
-  ],
-  "answer": [
-    "A",
-    "E"
-  ],
-  "prompt": "<TC-2> - <Geography> - <Word Connotation Recognition> - vocabulary_level: <3> - difficulty_level: <5>\n\n[Difficulty Instruction]: Employ archaic, obscure, or highly technical vocabulary. The syntax should be labyrinthine and dense. The logic should be abstract, requiring the identification of unstated assumptions or subtle tonal shifts. Options must be highly ambiguous, with the correct answer being only slightly better than the best distractor.",
+  "question": "In the field of quantum mechanics, the phenomenon of entanglement remains a deeply _______ concept that challenges classical notions of locality and causality.",
+  "title": "Quantum Mechanics: Entanglement as a Challenging Concept",
+  "solution": "Step 1: Analyze the sentence context to identify the blank. The sentence discusses quantum entanglement as a phenomenon that is deeply something and challenges classical notions.\nStep 2: Determine the required word type and meaning. The word should be an adjective describing the concept, suggesting it is complex, perplexing, or difficult to grasp, based on the context of challenging classical ideas.\nStep 3: Consider plausible vocabulary choices. Words like 'enigmatic', 'abstruse', or 'puzzling' fit the academic tone and meaning. For trap words, 'superficial' might be associated with depth but contradicts 'deeply', and 'trivial' is opposite in meaning as entanglement is significant.\nStep 4: Select the correct word. 'Enigmatic' means mysterious or difficult to understand, which aligns with the context of a concept that challenges classical notions, making it the most fitting choice.\nStep 5: Verify the solution by substituting the word into the sentence: 'deeply enigmatic concept' makes logical sense and maintains the formal academic style, confirming correctness.",
+  "options": {
+    "A": "enigmatic",
+    "B": "superficial",
+    "C": "trivial",
+    "D": "abstruse",
+    "E": "puzzling"
+  },
+  "answer": "A",
+  "prompt": "<TC-1> - <Literature> - <Vocabulary in Context> - vocabulary_level: <2> - difficulty_level: <4>\n\n[Difficulty Instruction]: Utilize advanced, abstract vocabulary. The text should cover dense topics (philosophy, criticism). Use nested sentence structures that require tracking the subject across phrases. Options should require distinguishing between 'true but irrelevant' and 'correct'.",
   "question-type": "Text Completion",
-  "difficulty": 5
+  "difficulty": 4
 }

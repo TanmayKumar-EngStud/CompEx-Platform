@@ -1,194 +1,215 @@
 {
   "metadata": {
-    "graph": [
-      {
-        "type": "scatter_chart",
-        "description": "Scatter plot showing relationship between study hours per week and final exam scores for graduate students in a business analytics course",
-        "structure": {
-          "title": "Study Hours vs. Exam Performance in Graduate Business Analytics",
-          "x_axis": {
-            "label": "Study Hours per Week",
-            "type": "numerical",
-            "range": [
-              0,
-              35
-            ]
-          },
-          "y_axis": {
-            "label": "Final Exam Score (Percentage)",
-            "type": "numerical",
-            "range": [
-              50,
-              100
-            ]
-          },
-          "data_format": {
-            "points": [
-              {
-                "x": 5,
-                "y": 62
-              },
-              {
-                "x": 8,
-                "y": 68
-              },
-              {
-                "x": 12,
-                "y": 75
-              },
-              {
-                "x": 15,
-                "y": 82
-              },
-              {
-                "x": 18,
-                "y": 85
-              },
-              {
-                "x": 20,
-                "y": 88
-              },
-              {
-                "x": 22,
-                "y": 90
-              },
-              {
-                "x": 25,
-                "y": 92
-              },
-              {
-                "x": 28,
-                "y": 94
-              },
-              {
-                "x": 30,
-                "y": 95
-              },
-              {
-                "x": 32,
-                "y": 96
-              },
-              {
-                "x": 34,
-                "y": 97
-              }
-            ],
-            "point_color": "#2c3e50",
-            "point_size": 7
-          }
-        }
-      }
-    ],
     "table": [
       {
-        "type": "data_table",
-        "description": "Detailed data table showing study hours and exam scores for graduate students in business analytics, with additional demographic and performance metrics",
+        "type": "comparison_table",
+        "description": "Table comparing performance metrics of three different marketing campaigns across various attributes over a 6-month period",
         "structure": {
-          "title": "Graduate Student Performance Data - Business Analytics Course",
+          "title": "Marketing Campaign Performance Comparison (January-June 2024)",
+          "entities": [
+            "Campaign A: Social Media Push",
+            "Campaign B: Email Newsletter",
+            "Campaign C: Influencer Partnership"
+          ],
+          "attributes": [
+            "Total Budget ($)",
+            "Conversion Rate (%)",
+            "Customer Acquisition Cost ($)",
+            "Return on Investment (ROI)",
+            "Engagement Score (1-100)",
+            "Monthly Growth Rate (%)"
+          ],
+          "comparison_data": [
+            [
+              "25,000",
+              "18,500",
+              "42,000"
+            ],
+            [
+              "3.2",
+              "1.8",
+              "4.7"
+            ],
+            [
+              "156.25",
+              "205.56",
+              "178.72"
+            ],
+            [
+              "142%",
+              "87%",
+              "163%"
+            ],
+            [
+              "78",
+              "65",
+              "82"
+            ],
+            [
+              "12.5",
+              "8.2",
+              "15.3"
+            ]
+          ]
+        }
+      },
+      {
+        "type": "data_table",
+        "description": "Detailed monthly performance data for three marketing campaigns showing key metrics over a 6-month period",
+        "structure": {
+          "title": "Monthly Marketing Campaign Performance Data (January-June 2024)",
           "headers": [
-            "Student ID",
-            "Study Hours/Week",
-            "Exam Score (%)",
-            "Prior GPA",
-            "Course Attendance (%)",
-            "Assignment Average (%)"
+            "Month",
+            "Campaign",
+            "Budget Spent ($)",
+            "Conversions",
+            "Total Revenue ($)",
+            "Engagement Score (1-100)"
           ],
           "rows": [
             [
-              "S001",
-              5,
-              62,
-              3.2,
-              85,
-              70
+              "January",
+              "Campaign A: Social Media Push",
+              "4,200",
+              "134",
+              "15,800",
+              "72"
             ],
             [
-              "S002",
-              8,
-              68,
-              3.4,
-              90,
-              75
+              "January",
+              "Campaign B: Email Newsletter",
+              "3,100",
+              "56",
+              "8,400",
+              "58"
             ],
             [
-              "S003",
-              12,
-              75,
-              3.5,
-              92,
-              78
+              "January",
+              "Campaign C: Influencer Partnership",
+              "7,000",
+              "329",
+              "28,500",
+              "76"
             ],
             [
-              "S004",
-              15,
-              82,
-              3.6,
-              95,
-              82
+              "February",
+              "Campaign A: Social Media Push",
+              "4,100",
+              "131",
+              "15,600",
+              "75"
             ],
             [
-              "S005",
-              18,
-              85,
-              3.7,
-              96,
-              85
+              "February",
+              "Campaign B: Email Newsletter",
+              "3,050",
+              "55",
+              "8,300",
+              "60"
             ],
             [
-              "S006",
-              20,
-              88,
-              3.8,
-              98,
-              88
+              "February",
+              "Campaign C: Influencer Partnership",
+              "7,100",
+              "334",
+              "29,000",
+              "78"
             ],
             [
-              "S007",
-              22,
-              90,
-              3.9,
-              99,
-              90
+              "March",
+              "Campaign A: Social Media Push",
+              "4,300",
+              "138",
+              "16,200",
+              "79"
             ],
             [
-              "S008",
-              25,
-              92,
-              4.0,
-              100,
-              92
+              "March",
+              "Campaign B: Email Newsletter",
+              "3,080",
+              "55",
+              "8,350",
+              "63"
             ],
             [
-              "S009",
-              28,
-              94,
-              4.0,
-              100,
-              94
+              "March",
+              "Campaign C: Influencer Partnership",
+              "7,050",
+              "331",
+              "28,800",
+              "81"
             ],
             [
-              "S010",
-              30,
-              95,
-              4.0,
-              100,
-              95
+              "April",
+              "Campaign A: Social Media Push",
+              "4,250",
+              "136",
+              "16,000",
+              "80"
             ],
             [
-              "S011",
-              32,
-              96,
-              4.0,
-              100,
-              96
+              "April",
+              "Campaign B: Email Newsletter",
+              "3,090",
+              "56",
+              "8,380",
+              "66"
             ],
             [
-              "S012",
-              34,
-              97,
-              4.0,
-              100,
-              97
+              "April",
+              "Campaign C: Influencer Partnership",
+              "7,000",
+              "329",
+              "28,500",
+              "83"
+            ],
+            [
+              "May",
+              "Campaign A: Social Media Push",
+              "4,150",
+              "133",
+              "15,700",
+              "82"
+            ],
+            [
+              "May",
+              "Campaign B: Email Newsletter",
+              "3,060",
+              "55",
+              "8,320",
+              "68"
+            ],
+            [
+              "May",
+              "Campaign C: Influencer Partnership",
+              "6,950",
+              "327",
+              "28,200",
+              "85"
+            ],
+            [
+              "June",
+              "Campaign A: Social Media Push",
+              "4,000",
+              "128",
+              "15,200",
+              "82"
+            ],
+            [
+              "June",
+              "Campaign B: Email Newsletter",
+              "3,120",
+              "56",
+              "8,450",
+              "70"
+            ],
+            [
+              "June",
+              "Campaign C: Influencer Partnership",
+              "6,900",
+              "324",
+              "28,000",
+              "87"
             ]
           ],
           "formatting": {
@@ -199,46 +220,42 @@
       }
     ]
   },
-  "title": "Graduate Student Performance Analysis: Study Hours vs. Exam Scores",
+  "title": "Marketing Campaign Performance Analysis and ROI Calculation",
   "child-questions": [
     {
-      "question": "A graduate business analytics course instructor analyzes student performance data to understand factors influencing exam scores. The scatter plot shows the relationship between study hours per week and final exam scores for 12 students. The data table provides additional metrics including prior GPA, course attendance, and assignment averages. Based on this data, answer the following questions:\n\n1. Using the scatter plot, estimate the correlation coefficient between study hours and exam scores. What type of relationship does this suggest?\n2. Calculate the average exam score for students who studied 20 hours or more per week, using the data table.\n3. Identify which student (by ID) shows the greatest improvement from their assignment average to their exam score, and calculate this improvement percentage.\n4. Determine if there is a threshold effect in study hours: at approximately how many study hours per week do exam scores begin to plateau (increase by less than 1% per additional hour)?\n5. Considering all variables in the table, which factor appears most strongly associated with exam scores besides study hours, and provide a brief rationale based on the data trends.",
-      "title": "Multi-Factor Analysis of Graduate Student Performance Metrics",
-      "solution": "",
+      "question": "A marketing analyst is evaluating three campaigns (Social Media Push, Email Newsletter, and Influencer Partnership) using the provided performance data. Based on the comparison table and detailed monthly data, answer the following questions:\n\n1. Which campaign had the highest average monthly engagement score, and what was that average value?\n2. Calculate the overall conversion rate for Campaign C (Influencer Partnership) across all six months. Express your answer as a percentage rounded to one decimal place.\n3. Determine which campaign provided the best return on investment (ROI) per dollar spent, and calculate the exact ROI percentage for that campaign.\n4. If the company wants to allocate next quarter`s budget proportionally based on each campaign`s revenue contribution, what percentage of the total budget should go to Campaign A?\n\nUse the data from both tables to support your analysis. Show all calculations and reasoning steps.",
+      "title": "Multi-Part Marketing Campaign Performance Analysis and Budget Allocation",
+      "solution": "Step 1: Identify the data needed for each question from the tables. For Q1, use engagement scores from the data table. For Q2, calculate total conversions and budget for Campaign C from the data table. For Q3, compare ROI values from the comparison table. For Q4, sum total revenues from the data table.\n\nStep 2: Q1 - Calculate average monthly engagement scores. Campaign A: (72+75+79+80+82+82)/6 = 78.33. Campaign B: (58+60+63+66+68+70)/6 = 64.17. Campaign C: (76+78+81+83+85+87)/6 = 81.67. Highest is Campaign C with 81.67.\n\nStep 3: Q2 - For Campaign C, total conversions = 329+334+331+329+327+324 = 1974. Total budget spent = 7000+7100+7050+7000+6950+6900 = 42000. Conversion rate = (1974/42000)*100 = 4.7%.\n\nStep 4: Q3 - From comparison table, ROI values: Campaign A 142%, Campaign B 87%, Campaign C 163%. Best ROI is Campaign C with 163%.\n\nStep 5: Q4 - Calculate total revenue: Campaign A = 15800+15600+16200+16000+15700+15200 = 94500. Campaign B = 8400+8300+8350+8380+8320+8450 = 50200. Campaign C = 28500+29000+28800+28500+28200+28000 = 171000. Total revenue = 94500+50200+171000 = 315700. Percentage for Campaign A = (94500/315700)*100 = 29.93% ≈ 30%.",
       "options": {
-        "A": "Strong positive correlation (r ≈ 0.95), suggesting more study hours lead to higher exam scores",
-        "B": "Moderate positive correlation (r ≈ 0.75), indicating study hours moderately influence scores",
-        "C": "Weak positive correlation (r ≈ 0.45), showing limited impact of study hours",
-        "D": "No correlation (r ≈ 0), meaning study hours and exam scores are unrelated",
-        "E": "Negative correlation (r ≈ -0.60), implying more study hours decrease scores"
+        "A": "Campaign C, 81.7; 4.7%; Campaign C, 163%; 30%",
+        "B": "Campaign A, 78.3; 4.7%; Campaign A, 142%; 30%",
+        "C": "Campaign C, 81.7; 4.7%; Campaign A, 142%; 25%",
+        "D": "Campaign C, 81.7; 4.5%; Campaign C, 163%; 30%",
+        "E": "Campaign B, 64.2; 4.7%; Campaign C, 163%; 35%"
       },
-      "answer": [
-        "A"
-      ],
-      "prompt": "<Interpolation and Extrapolation> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+      "answer": "A",
+      "prompt": "<Cross-Referencing with Textual Information> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
       "question-type": "Problem Solving Meta",
       "difficulty": 1
     },
     {
-      "question": "A graduate business analytics course instructor analyzes student performance data to understand factors influencing exam scores. The scatter plot shows the relationship between study hours per week and final exam scores for 12 students. The data table provides additional metrics including prior GPA, course attendance, and assignment averages. Based on this data, answer the following questions:\n\n1. Using the scatter plot, estimate the correlation coefficient between study hours and exam scores. What type of relationship does this suggest?\n2. Calculate the average exam score for students who studied 20 hours or more per week, using the data table.\n3. Identify which student (by ID) shows the greatest improvement from their assignment average to their exam score, and calculate this improvement percentage.\n4. Determine if there is a threshold effect in study hours: at approximately how many study hours per week do exam scores begin to plateau (increase by less than 1% per additional hour)?\n5. Considering all variables in the table, which factor appears most strongly associated with exam scores besides study hours, and provide a brief rationale based on the data trends.",
-      "title": "Comprehensive Analysis of Graduate Student Performance Metrics",
-      "solution": "{Improvement} = \\frac{\\text{Exam Score} - \\text{Assignment Average}}{\\text{Assignment Average}} \\times 100\\% \\). For example, S001: (62-70)/70 × 100% = -11.43% (worse). S002: (68-75)/75 × 100% = -9.33%. S003: (75-78)/78 × 100% = -3.85%. S004: (82-82)/82 × 100% = 0%. S005: (85-85)/85 × 100% = 0%. S006: (88-88)/88 × 100% = 0%. S007: (90-90)/90 × 100% = 0%. S008: (92-92)/92 × 100% = 0%. S009: (94-94)/94 × 100% = 0%. S010: (95-95)/95 × 100% = 0%. S011: (96-96)/96 × 100% = 0%. S012: (97-97)/97 × 100% = 0%. All students have exam scores equal to or less than assignment averages, so no positive improvement. The greatest (least negative) is S003 with -3.85%.\n\nStep 4: Determine the threshold where exam scores plateau (increase <1% per additional hour). Examine consecutive points: From 30 to 32 hours: score increases from 95 to 96 (1% increase). From 32 to 34 hours: 96 to 97 (1.04% increase). The increase is around 1% even at high hours, but looking earlier: 25 to 28 hours: 92 to 94 (2.17% over 3 hours ≈ 0.72% per hour). 28 to 30: 94 to 95 (1.06% over 2 hours ≈ 0.53% per hour). Plateau begins around 28-30 hours where per-hour increase drops below 1%.\n\nStep 5: Identify the factor most strongly associated with exam scores besides study hours. Compare trends: Prior GPA increases with study hours and scores (e.g., from 3.2 to 4.0). Course attendance also increases (85% to 100%). Assignment averages closely match exam scores (differences small). Course attendance shows a near-perfect correlation with study hours and scores, especially at high values (100% attendance for top performers). Thus, course attendance appears most strongly associated, as it consistently aligns with performance.",
+      "question": "A marketing analyst is evaluating three campaigns (Social Media Push, Email Newsletter, and Influencer Partnership) using the provided performance data. Based on the comparison table and detailed monthly data, answer the following questions:\n\n1. Which campaign had the highest average monthly engagement score, and what was that average value?\n2. Calculate the overall conversion rate for Campaign C (Influencer Partnership) across all six months. Express your answer as a percentage rounded to one decimal place.\n3. Determine which campaign provided the best return on investment (ROI) per dollar spent, and calculate the exact ROI percentage for that campaign.\n4. If the company wants to allocate next quarter`s budget proportionally based on each campaign`s revenue contribution, what percentage of the total budget should go to Campaign A?\n\nUse the data from both tables to support your analysis. Show all calculations and reasoning steps.",
+      "title": "Marketing Campaign Performance Analysis and ROI Calculation",
+      "solution": "Step 1: Identify the data needed for each question from the tables. For Q1, use engagement scores from the data table. For Q2, calculate total conversions and budget for Campaign C from the data table. For Q3, compare ROI values from the comparison table. For Q4, sum total revenues from the data table.\n\nStep 2: Q1 - Calculate average monthly engagement scores. Campaign A: (72+75+79+80+82+82)/6 = 78.33. Campaign B: (58+60+63+66+68+70)/6 = 64.17. Campaign C: (76+78+81+83+85+87)/6 = 81.67. Highest is Campaign C with 81.67.\n\nStep 3: Q2 - For Campaign C, total conversions = 329+334+331+329+327+324 = 1974. Total budget spent = 7000+7100+7050+7000+6950+6900 = 42000. Conversion rate = (1974/42000)*100 = 4.7%.\n\nStep 4: Q3 - From comparison table, ROI values: Campaign A 142%, Campaign B 87%, Campaign C 163%. Best ROI is Campaign C with 163%.\n\nStep 5: Q4 - Calculate total revenue: Campaign A = 15800+15600+16200+16000+15700+15200 = 94500. Campaign B = 8400+8300+8350+8380+8320+8450 = 50200. Campaign C = 28500+29000+28800+28500+28200+28000 = 171000. Total revenue = 94500+50200+171000 = 315700. Percentage for Campaign A = (94500/315700)*100 = 29.93% ≈ 30%.",
       "options": {
-        "A": "Strong positive correlation (r ≈ 0.95), suggesting more study hours lead to higher exam scores",
-        "B": "Moderate positive correlation (r ≈ 0.75), indicating study hours moderately influence scores",
-        "C": "Weak positive correlation (r ≈ 0.45), showing limited impact of study hours",
-        "D": "No correlation (r ≈ 0), meaning study hours and exam scores are unrelated",
-        "E": "Negative correlation (r ≈ -0.60), implying more study hours decrease scores"
+        "A": "Campaign C, 81.7; 4.7%; Campaign C, 163%; 30%",
+        "B": "Campaign A, 78.3; 4.7%; Campaign A, 142%; 30%",
+        "C": "Campaign C, 81.7; 4.7%; Campaign A, 142%; 25%",
+        "D": "Campaign C, 81.7; 4.5%; Campaign C, 163%; 30%",
+        "E": "Campaign B, 64.2; 4.7%; Campaign C, 163%; 35%"
       },
-      "answer": [
-        "A"
-      ],
-      "prompt": "<Making Predictions Based on Trends> - difficulty_level: <5>\n\n[Difficulty Instruction]: Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps.",
+      "answer": "A",
+      "prompt": "<Understanding Cumulative Data Representations> - difficulty_level: <2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
       "question-type": "Problem Solving Meta",
       "difficulty": 1
     }
   ],
-  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Business and Finance> - <Data Interpretation> - difficulty_level: <4>\n\n[Difficulty Instruction]: Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+  "prompt": "<Mean, Median, Mode, Range> - <Marketing and Sales> - <Single Variable Equation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
   "question-type": "Problem Solving Meta",
-  "difficulty": 4
+  "difficulty": 3
 }

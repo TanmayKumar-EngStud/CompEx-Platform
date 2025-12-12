@@ -1,141 +1,190 @@
 {
   "metadata": {
     "Source1": {
-      "para": "In response to increasing concerns about environmental sustainability and corporate accountability, the Ministry of Commerce and Industry has issued a new regulatory framework, the Corporate Environmental Compliance Directive (CECD), effective January 1, 2024. This directive mandates that all businesses with annual revenues exceeding $50 million must submit quarterly Environmental Impact Reports (EIRs) detailing their carbon emissions, water usage, and waste management practices. The CECD introduces a tiered compliance system: Tier 1 companies (revenues $50M-$200M) must achieve a 15% reduction in carbon emissions by 2026, while Tier 2 companies (revenues above $200M) must reduce emissions by 25% by the same deadline. Non-compliance will result in graduated penalties, starting with warnings for minor infractions and escalating to fines of up to 2% of annual revenue for repeated violations. The ministry emphasizes that this policy aims to align corporate operations with national climate goals, as outlined in the Paris Agreement commitments, while fostering transparency through public disclosure of EIRs on a government portal."
+      "para": "The Global Technology Trends Institute (GTTI) report provides critical insights for MBA students analyzing the technology sector. Understanding these trends requires synthesizing information across multiple data sources: a descriptive passage outlining key growth areas, a bar chart showing historical adoption rates, and a line chart projecting future market sizes. This multi-source approach tests the ability to integrate qualitative and quantitative data, a vital skill for strategic decision-making in business contexts where decisions often rely on complex, interconnected information."
     },
     "Source2": {
-      "graph": {
-        "type": "bar_chart",
-        "description": "Bar chart displaying projected carbon emissions reductions for Tier 1 and Tier 2 companies under the Corporate Environmental Compliance Directive (CECD) from 2024 to 2026.",
+      "table": {
+        "type": "sortable_table",
+        "description": "This table presents detailed enterprise adoption data by region for the same emerging technologies over the period 2019-2023, based on GTTI's survey of 500 global corporations. It complements Sources 1 and 3 by providing regional breakdowns that can be analyzed to test graph interpretation skills when comparing trends across different data formats, such as identifying which region shows the highest growth for specific technologies.",
         "structure": {
-          "title": "Projected Carbon Emissions Reduction Under CECD (2024-2026)",
-          "x_axis": {
-            "label": "Year",
-            "type": "categorical",
-            "categories": [
-              "2024",
-              "2025",
-              "2026"
+          "title": "Enterprise Adoption of Emerging Technologies by Region (2019-2023, Percentage Growth)",
+          "headers": [
+            "Region",
+            "Artificial Intelligence (AI)",
+            "Blockchain Technology",
+            "Quantum Computing Research",
+            "Internet of Things (IoT)",
+            "Cybersecurity Solutions"
+          ],
+          "rows": [
+            [
+              "North America",
+              "40%",
+              "25%",
+              "110%",
+              "30%",
+              "45%"
+            ],
+            [
+              "Europe",
+              "35%",
+              "18%",
+              "95%",
+              "22%",
+              "38%"
+            ],
+            [
+              "Asia-Pacific",
+              "50%",
+              "30%",
+              "120%",
+              "35%",
+              "55%"
+            ],
+            [
+              "Latin America",
+              "20%",
+              "15%",
+              "80%",
+              "18%",
+              "25%"
+            ],
+            [
+              "Middle East & Africa",
+              "25%",
+              "12%",
+              "75%",
+              "20%",
+              "30%"
             ]
-          },
-          "y_axis": {
-            "label": "Carbon Emissions (in million metric tons)",
-            "type": "numerical"
-          },
-          "data_format": {
-            "bars": [
-              {
-                "label": "Tier 1 Companies",
-                "data": [
-                  120,
-                  110,
-                  102
-                ]
-              },
-              {
-                "label": "Tier 2 Companies",
-                "data": [
-                  300,
-                  270,
-                  225
-                ]
-              }
-            ],
-            "bar_colors": [
-              "#2ecc71",
-              "#e74c3c"
-            ],
-            "bar_width": 0.35
+          ],
+          "formatting": {
+            "sortable": true,
+            "alternating_rows": true
           }
         }
       }
     },
     "Source3": {
       "graph": {
-        "type": "scatter_chart",
-        "description": "Scatter plot comparing projected annual revenue (in millions of dollars) against carbon emissions (in million metric tons) for selected companies in 2024, illustrating the relationship between company size and environmental impact as per the CECD framework.",
+        "type": "line_chart",
+        "description": "This line chart shows the projected market size in billions of dollars for the same emerging technologies from 2024 to 2028, based on GTTI's forecasting models. It complements Sources 1 and 2 by providing future-oriented data that requires graph interpretation to analyze trends and make comparisons, testing skills in synthesizing temporal and quantitative information across different graph types.",
         "structure": {
-          "title": "Revenue vs. Carbon Emissions for Selected Companies (2024)",
+          "title": "Projected Market Size for Emerging Technologies (2024-2028)",
           "x_axis": {
-            "label": "Annual Revenue (in $ millions)",
-            "type": "numerical"
+            "label": "Year",
+            "type": "categorical"
           },
           "y_axis": {
-            "label": "Carbon Emissions (in million metric tons)",
+            "label": "Market Size (Billions USD)",
             "type": "numerical"
           },
           "data_format": {
-            "points": [
-              {
-                "x": 75,
-                "y": 8,
-                "label": "Company A (Tier 1)"
-              },
-              {
-                "x": 150,
-                "y": 15,
-                "label": "Company B (Tier 1)"
-              },
-              {
-                "x": 250,
-                "y": 30,
-                "label": "Company C (Tier 2)"
-              },
-              {
-                "x": 400,
-                "y": 45,
-                "label": "Company D (Tier 2)"
-              },
-              {
-                "x": 600,
-                "y": 70,
-                "label": "Company E (Tier 2)"
-              }
+            "categories": [
+              "2024",
+              "2025",
+              "2026",
+              "2027",
+              "2028"
             ],
-            "point_color": "#9b59b6",
-            "point_size": 8
+            "values": [
+              [
+                150,
+                180,
+                220,
+                270,
+                320
+              ],
+              [
+                40,
+                50,
+                65,
+                85,
+                110
+              ],
+              [
+                5,
+                8,
+                12,
+                18,
+                25
+              ],
+              [
+                200,
+                220,
+                240,
+                260,
+                280
+              ],
+              [
+                120,
+                140,
+                165,
+                195,
+                230
+              ]
+            ],
+            "colors": [
+              "#3498db",
+              "#e74c3c",
+              "#2ecc71",
+              "#f39c12",
+              "#9b59b6"
+            ],
+            "series_labels": [
+              "Artificial Intelligence (AI)",
+              "Blockchain Technology",
+              "Quantum Computing Research",
+              "Internet of Things (IoT)",
+              "Cybersecurity Solutions"
+            ]
           }
         }
       }
     },
-    "Passage": "To assess the potential economic impact of the Corporate Environmental Compliance Directive (CECD) on affected businesses, a recent analysis by the Economic Research Institute projects varying costs for compliance across different revenue tiers. For Tier 1 companies, initial investments in emissions monitoring technology and reporting systems are estimated to average $500,000, with annual operational costs of approximately $200,000. In contrast, Tier 2 companies face higher expenses due to their larger scale; initial setup costs are projected at $1.5 million, with annual maintenance and reporting costs around $600,000. These figures account for technology upgrades, staff training, and third-party auditing fees required to meet the quarterly EIR submission standards. The analysis further suggests that while these upfront costs may strain smaller Tier 1 firms, they could represent less than 1% of annual revenue for most Tier 2 companies, potentially mitigating financial burden relative to the 2% penalty for non-compliance.\nHowever, the Economic Research Institute also highlights potential long-term benefits that could offset these compliance costs. Companies that proactively reduce emissions may qualify for government incentives, such as tax credits of up to 10% of compliance expenditures, and gain competitive advantages through enhanced brand reputation and customer loyalty. Additionally, the analysis projects that by 2026, Tier 1 companies could save an average of $150,000 annually in energy efficiencies from emission reductions, while Tier 2 companies might save $500,000. These savings, combined with the avoidance of non-compliance penalties, suggest that the net financial impact of the CECD could be neutral or positive for many firms, particularly if they leverage the transparency of public EIR disclosures to attract environmentally conscious investors and partners."
+    "Passage": "The Global Technology Trends Institute (GTTI) report provides critical insights for MBA students analyzing the technology sector. Understanding these trends requires synthesizing information across multiple data sources: a descriptive passage outlining key growth areas, a bar chart showing historical adoption rates, and a line chart projecting future market sizes. This multi-source approach tests the ability to integrate qualitative and quantitative data, a vital skill for strategic decision-making in business contexts where decisions often rely on complex, interconnected information.\nFor instance, a strategic analysis might involve comparing AI's historical growth rate from the bar chart with its projected market size in the line chart to assess investment viability, while considering the qualitative context from the passage about automation driving adoption. Similarly, blockchain's expansion in financial services and cybersecurity's high growth rates highlight areas where regulatory and security priorities intersect. Effective synthesis enables MBA graduates to identify patterns, forecast trends, and make data-driven recommendations, such as prioritizing technologies with both high adoption and strong market projections, like AI and cybersecurity, over those with limited commercial applications, like quantum computing."
   },
-  "title": "CECD Impact Analysis: Compliance Costs and Emission Reduction Projections",
+  "title": "Analyzing Global Technology Trends: Growth and Projections Synthesis",
   "child-questions": [
     {
-      "question": "Company X has an annual revenue of $180 million and carbon emissions of 16 million metric tons in 2024. Based on the sources provided, if Company X fully complies with the Corporate Environmental Compliance Directive (CECD) from 2024 to 2026, what is the total net financial impact (including compliance costs, tax credits, energy savings, and potential penalty avoidance) over this three-year period, assuming no other factors? Use the following steps: (1) Determine the company`s tier and required emission reduction percentage, (2) Calculate the projected emissions in 2026 using the reduction percentage and initial emissions, (3) Compute total compliance costs over three years (initial setup plus annual operational costs), (4) Apply the maximum tax credit to compliance expenditures, (5) Estimate total energy savings from emission reductions over three years, and (6) Consider the penalty avoidance as the fine for non-compliance. Provide the total net impact, rounded to the nearest thousand dollars.",
-      "title": "CECD Compliance: Net Financial Impact Calculation for Company X",
-      "solution": "",
+      "question": "Based on the provided information from the GTTI report, a consulting firm is advising a global technology investment fund. The fund is considering prioritizing investments in technologies that demonstrate both strong historical adoption growth in a key market region and substantial projected future market expansion. Using Source 2 (table) and Source 3 (line chart), which technology shows the highest combined metric when comparing its growth rate in the Asia-Pacific region from 2019-2023 with its projected market size increase from 2024 to 2028? Assume the combined metric is calculated as: (Asia-Pacific growth percentage) + (Projected market size increase in billions USD from 2024 to 2028).",
+      "title": "Investment Priority Analysis: Technology Growth and Market Projections",
+      "solution": "Step 1: Extract the Asia-Pacific growth percentage for each technology from Source 2 (table).\nFor AI: 50%, Blockchain: 30%, Quantum Computing: 120%, IoT: 35%, Cybersecurity: 55%.\n\nStep 2: Extract the projected market size increase from 2024 to 2028 for each technology from Source 3 (line chart).\nFor AI: 320 - 150 = 170 billion USD.\nFor Blockchain: 110 - 40 = 70 billion USD.\nFor Quantum Computing: 25 - 5 = 20 billion USD.\nFor IoT: 280 - 200 = 80 billion USD.\nFor Cybersecurity: 230 - 120 = 110 billion USD.\n\nStep 3: Calculate the combined metric: (Asia-Pacific growth percentage) + (Projected market size increase in billions USD).\nAI: 50 + 170 = 220.\nBlockchain: 30 + 70 = 100.\nQuantum Computing: 120 + 20 = 140.\nIoT: 35 + 80 = 115.\nCybersecurity: 55 + 110 = 165.\n\nStep 4: Compare the combined metrics to find the highest value.\nThe values are: AI = 220, Blockchain = 100, Quantum Computing = 140, IoT = 115, Cybersecurity = 165.\nThe highest is AI with 220.\n\nStep 5: Verify the business context. AI has strong historical growth (50%) and the largest projected market expansion (170 billion USD), aligning with the fund's priority for technologies with both high adoption and substantial future growth.",
       "options": {
-        "A": "-$360,000",
-        "B": "-$110,000",
-        "C": "$40,000",
-        "D": "$210,000",
-        "E": "$550,000"
+        "A": "Artificial Intelligence (AI)",
+        "B": "Blockchain Technology",
+        "C": "Quantum Computing Research",
+        "D": "Internet of Things (IoT)",
+        "E": "Cybersecurity Solutions"
       },
-      "answer": "D",
-      "prompt": "<Data Interpretation> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+      "answer": [
+        "A"
+      ],
+      "prompt": "<Logical Inference> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
       "question-type": "Multi-Source Reasoning",
       "difficulty": 1
     },
     {
-      "question": "Refer to the bar chart in Source 2 and the scatter plot in Source 3. If Company F has annual revenue of $450 million in 2024 and is projected to reduce its carbon emissions in line with the CECD requirements for its tier, what would be its approximate carbon emissions in 2025, assuming a linear reduction pattern? Use the data from the bar chart for Tier 2 companies and the relationship shown in the scatter plot to estimate initial emissions, then calculate the 2025 value based on the required percentage reduction by 2026.",
-      "title": "CECD Emission Projection: Estimating 2025 Emissions for Company F",
-      "solution": "",
-      "options": {
-        "A": "48 million metric tons",
-        "B": "50 million metric tons",
-        "C": "52 million metric tons",
-        "D": "54 million metric tons",
-        "E": "56 million metric tons"
+      "question": "A technology analyst is evaluating the regional performance of emerging technologies based on the GTTI data. The analyst hypothesizes that for a technology to be considered `regionally dominant` it must meet two criteria: (1) have the highest adoption growth rate in at least one region compared to other technologies in that same region, and (2) show a projected market size in 2028 that exceeds $200 billion USD. Based on Source 2 (table) and Source 3 (line chart), which technologies satisfy both criteria for `regional dominance`? Select all that apply.",
+      "title": "Regional Dominance Criteria in Technology Adoption and Market Projections",
+      "solution": "Step 1: Identify technologies with the highest adoption growth rate in at least one region from Source 2 (table).\n- North America: Quantum Computing (110%) is highest.\n- Europe: Quantum Computing (95%) is highest.\n- Asia-Pacific: Quantum Computing (120%) is highest.\n- Latin America: Quantum Computing (80%) is highest.\n- Middle East & Africa: Quantum Computing (75%) is highest.\nThus, Quantum Computing has the highest growth in all regions, but we need to check each technology: AI (highest? no, e.g., 50% vs 120% in Asia-Pacific), Blockchain (no), IoT (no), Cybersecurity (no). Only Quantum Computing meets criterion 1.\n\nStep 2: Check projected market size in 2028 from Source 3 (line chart) for each technology.\nAI: 320 billion USD.\nBlockchain: 110 billion USD.\nQuantum Computing: 25 billion USD.\nIoT: 280 billion USD.\nCybersecurity: 230 billion USD.\nCriterion 2 requires >200 billion USD, so AI (320), IoT (280), and Cybersecurity (230) meet this.\n\nStep 3: Combine criteria to find technologies that satisfy both.\n- Quantum Computing meets criterion 1 but fails criterion 2 (25 < 200).\n- AI, IoT, and Cybersecurity meet criterion 2 but need to check criterion 1: none have the highest growth in any region (all are lower than Quantum Computing in each region).\nThus, no technology meets both criteria.\n\nStep 4: Verify by checking if any other technology could be highest in a region: For each region, compare all technologies: Quantum Computing always has the highest percentage (e.g., in North America: 110% vs AI 40%, etc.). So no other technology is highest in any region.\n\nStep 5: Conclude based on the analysis. Since no single technology satisfies both having the highest growth in at least one region and a 2028 market size exceeding $200 billion, the answer is none.",
+      "options": [
+        "Artificial Intelligence (AI) meets both criteria for regional dominance.",
+        "Quantum Computing Research meets both criteria for regional dominance.",
+        "Cybersecurity Solutions meets both criteria for regional dominance."
+      ],
+      "answer": {
+        "Artificial Intelligence (AI) meets both criteria for regional dominance.": "No",
+        "Quantum Computing Research meets both criteria for regional dominance.": "No",
+        "Cybersecurity Solutions meets both criteria for regional dominance.": "No"
       },
-      "answer": "C",
-      "prompt": "<Data Interpretation> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+      "prompt": "<Identifying Assumptions> - difficulty_level: <4>\n\n[Difficulty Instruction]: Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
       "question-type": "Multi-Source Reasoning",
       "difficulty": 1
     }
   ],
-  "prompt": "<Profit, Loss and Discount> - <Government Policies and Regulations> - <memo> - <memo> - <memo> - <Financial Reasoning> - <Financial Reasoning> - <Financial Reasoning> - difficulty_level: <2>\n\n[Difficulty Instruction]: Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
+  "prompt": "<Linear Equations, Quadratic Equations and Inequalities> - <Science and Technology> - <graph> - <graph> - <graph> - <Strategic Analysis> - <Strategic Analysis> - <Strategic Analysis> - difficulty_level: <3>\n\n[Difficulty Instruction]: Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
   "question-type": "Multi-Source Reasoning",
-  "difficulty": 2
+  "difficulty": 3
 }

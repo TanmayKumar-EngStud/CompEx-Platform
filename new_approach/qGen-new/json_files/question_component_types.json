@@ -141,7 +141,9 @@
             ],
             "file-name": "simple-question-solution.txt.template",
             "variables": null,
-            "output": "str"
+            "output": {
+               "solution": "str"
+            }
          }
       ],
       "QuestionOptions/Answer": [

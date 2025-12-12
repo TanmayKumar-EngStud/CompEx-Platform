@@ -1,19 +1,19 @@
 {
-  "question": "The committee's decision was _____ by a unanimous vote, leaving no room for dissent or further debate.",
-  "title": "Sentence Equivalence: Unanimous Decision Vocabulary in Committee Context",
-  "solution": "",
+  "question": "The new policy was met with _____ from the public, who saw it as both unfair and detrimental to community interests.",
+  "title": "Public Reaction Vocabulary for Unfair Policies",
+  "solution": "Step 1: Analyze the sentence to determine the context and meaning needed for the blank. The sentence describes public reaction to a new policy that is seen as unfair and detrimental, so the blank should convey a negative sentiment.\nStep 2: Identify two words that can fill the blank to produce equivalent meanings. Possible words include 'outrage' and 'indignation', as both express strong displeasure or anger in response to perceived injustice.\nStep 3: Verify that both words fit grammatically and contextually in the sentence. 'Outrage' and 'indignation' are both nouns that fit after 'with' and before 'from the public', maintaining the sentence's formal tone and logical flow.\nStep 4: Consider potential errors to avoid in the options, such as choosing words like 'criticism' or 'disapproval', which are negative but not as strong as 'outrage' or 'indignation', or 'support', which is positive and contradicts the context.\nStep 5: Confirm that the two words, 'outrage' and 'indignation', result in sentences with the same overall meaning and tone, as they both emphasize a severe negative reaction to the policy's unfairness.",
   "options": {
-    "A": "ratified",
-    "B": "approved",
-    "C": "discussed",
-    "D": "delayed",
-    "E": "vetoed"
+    "A": "outrage",
+    "B": "criticism",
+    "C": "indignation",
+    "D": "disapproval",
+    "E": "support"
   },
   "answer": [
     "A",
-    "B"
+    "C"
   ],
-  "prompt": "<History> - <Structural Analysis> - vocabulary_level: <2> - difficulty_level: <3>\n\n[Difficulty Instruction]: Use GRE-level vocabulary. Employ complex syntax with embedded clauses and modifiers. The logic should require multi-step inference, connecting distant parts of the text.",
+  "prompt": "<Economics> - <Word Meaning Precision> - vocabulary_level: <1> - difficulty_level: <1>\n\n[Difficulty Instruction]: Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
   "question-type": "Sentence Equivalence",
-  "difficulty": 3
+  "difficulty": 1
 }

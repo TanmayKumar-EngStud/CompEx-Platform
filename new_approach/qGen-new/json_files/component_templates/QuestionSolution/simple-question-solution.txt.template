@@ -1,7 +1,9 @@
-RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)
+RESPONSE FORMAT:- JSON
+Output a JSON object with a single key "solution" containing the full explanation.
 Write naturally as you would explain to a student.
 
 **Structure:**
+(Use \n for newlines in the JSON string)
 Step 1: {{#if_GMAT}}Extract key information from business scenario{{/if_GMAT}}{{#if_GRE}}Analyze given information and identify what needs to be found{{/if_GRE}}
 Step 2: Set up mathematical relationship or logical framework
 Step 3: Perform calculations with proper units / Apply reasoning

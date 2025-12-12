@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "Passage": "A company is evaluating two investment projects, Project Alpha and Project Beta. The company's required rate of return is 10%. The projects have different initial investments and cash flow patterns over a 5-year period. The net present value (NPV) of each project is calculated using the formula: NPV = Σ (Cash Flow_t / (1 + r)^t) - Initial Investment, where r is the discount rate and t is the time period.",
+    "Passage": "A company is analyzing the profitability of two product lines, Alpha and Beta, over the last fiscal year. The total revenue from both products combined was $500,000. The company wants to determine the profit margin percentage for product Alpha, defined as (Profit from Alpha / Revenue from Alpha) × 100%. Profit is calculated as revenue minus cost.",
     "Statements": [
-      "The initial investment for Project Alpha is $50,000, and its annual cash inflows are $15,000 for each of the 5 years.",
-      "The initial investment for Project Beta is $70,000, and its cash inflows are $20,000 in Year 1, $25,000 in Year 2, $30,000 in Year 3, $35,000 in Year 4, and $40,000 in Year 5."
+      "The revenue from product Alpha was $300,000.",
+      "The total profit from both products combined was $150,000."
     ]
   },
-  "question": "Is the net present value (NPV) of Project Alpha greater than that of Project Beta? (1) The required rate of return is 10%. (2) The projects have a 5-year life span.",
-  "title": "NPV Comparison of Investment Projects with Uneven Cash Flows",
-  "solution": "",
+  "question": "What is the profit margin percentage for product Alpha? (1) The revenue from product Alpha was $300,000. (2) The total profit from both products combined was $150,000.",
+  "title": "Profit Margin Analysis for Product Alpha in Business Context",
+  "solution": "Step 1: Define variables and formula. Let R_Alpha = revenue from Alpha, R_Beta = revenue from Beta, C_Alpha = cost of Alpha, C_Beta = cost of Beta. Total revenue R_Total = R_Alpha + R_Beta = $500,000. Profit margin for Alpha = (R_Alpha - C_Alpha) / R_Alpha × 100%.\nStep 2: Analyze Statement (1) alone. R_Alpha = $300,000. From total revenue, R_Beta = $500,000 - $300,000 = $200,000. But we need C_Alpha to find profit margin. Statement (1) gives no cost information, so insufficient alone.\nStep 3: Analyze Statement (2) alone. Total profit = (R_Alpha - C_Alpha) + (R_Beta - C_Beta) = $150,000. This gives combined profit but no breakdown between Alpha and Beta, and no revenue for Alpha. So insufficient alone.\nStep 4: Analyze both statements together. From (1): R_Alpha = $300,000, R_Beta = $200,000. From (2): (R_Alpha - C_Alpha) + (R_Beta - C_Beta) = $150,000. We have two equations but three unknowns (C_Alpha, C_Beta, and profit margin for Alpha). Cannot solve for C_Alpha uniquely without additional info (e.g., cost ratio or profit for Beta). Example: If C_Beta = $100,000, then C_Alpha = $50,000, profit margin = (300,000 - 50,000)/300,000 × 100% = 83.33%. If C_Beta = $50,000, then C_Alpha = $100,000, profit margin = (300,000 - 100,000)/300,000 × 100% = 66.67%. Different values possible, so insufficient together.\nStep 5: Conclusion. Neither statement alone nor both together provide enough data to determine profit margin percentage for Alpha. Common errors: Assuming cost distribution or solving with incomplete info leads to incorrect sufficiency.",
   "options": {
     "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
     "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
@@ -17,7 +17,7 @@
     "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
   },
   "answer": "E",
-  "prompt": "<Number Properties and Fractions, Decimals, Percentages> - <Environment and Sustainability> - <Word Problems&> - difficulty_level:<2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
+  "prompt": "<Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <Marketing and Sales> - <Data Interpretation> - difficulty_level:<2>\n\n[Difficulty Instruction]: Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
   "question-type": "Data Sufficiency",
   "difficulty": 2
 }

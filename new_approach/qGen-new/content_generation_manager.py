@@ -31,9 +31,20 @@ def manage_generated_content(result: dict, question_type: str, question_componen
                 result, question_type, generated_data, option_type)
         )
     else:
-        if isinstance(generated_data, str) and question_component == 'QuestionSolution':
-            _expect(generated_data, str, question_component)
-            result['solution'] = generated_data
+        if question_component == 'QuestionSolution':
+            # Handle both string (old) and dict (new) formats for robustness
+            if isinstance(generated_data, str):
+                _expect(generated_data, str, question_component)
+                result['solution'] = generated_data
+            elif isinstance(generated_data, dict):
+                 solution_text = generated_data.get('solution', '')
+                 if not solution_text:
+                     # Fallback to checking values if key isn't 'solution' or is empty
+                     # But strict schema should enforce it.
+                     pass
+                 result['solution'] = solution_text
+            else:
+                 raise TypeError(f"QuestionSolution expected str or dict, got {type(generated_data)}")
 
         else:
             for k, v in generated_data.items():
