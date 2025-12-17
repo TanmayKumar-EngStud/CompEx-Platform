@@ -12,8 +12,7 @@ from io_utils import get_json, prettify
 from prepare_prompts import PromptPrep
 from generator import GenQ
 
-os.system('clear')
-os.system('clear')
+
 try:
     from db_integration import get_next_generation_params
     MOCK_PAPER_LEVEL, IS_MOCK_RUN = get_next_generation_params()
@@ -41,7 +40,7 @@ def log_stage(exam: str,
         )
     if detail:
         segments.append(detail)
-    # print(" | ".join(segments))
+    print(" | ".join(segments))
 
 
 # Sort exams to ensure consistent order (e.g., GMAT before GRE)

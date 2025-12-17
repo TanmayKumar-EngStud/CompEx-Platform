@@ -14,15 +14,25 @@ def main():
         prisma.usermocktestattempts.delete_many()
     
     print("Deleting Questions and Analytics...")
+    if hasattr(prisma, 'problemssettags'):
+        prisma.problemssettags.delete_many()
     if hasattr(prisma, 'problemtags'):
         prisma.problemtags.delete_many()
     if hasattr(prisma, 'problemoptions'):
         prisma.problemoptions.delete_many()
     
-    # Cascade delete might handle problemtags/options but explicit is safe
     if hasattr(prisma, 'problems'):
         prisma.problems.delete_many()
     
+    if hasattr(prisma, 'problemsset'):
+        prisma.problemsset.delete_many()
+
+    if hasattr(prisma, 'mocksections'):
+        prisma.mocksections.delete_many()
+    
+    if hasattr(prisma, 'mocktests'):
+        prisma.mocktests.delete_many()
+
     if hasattr(prisma, 'analytics'):
         prisma.analytics.delete_many()
 

@@ -1,6 +1,7 @@
 from prisma import Prisma
 import json
 import re
+import os
 from datetime import datetime
 from typing import Dict, Any, List
 
@@ -89,50 +90,60 @@ class DB:
             self.db.problemoptions.create(data=option)
 
     def _initialize_primary_tables(self):
-        """Initialize primary tables if they don't exist"""
+        """Initialize primary tables (idempotent).
+
+        IMPORTANT:
+        - Do NOT set autoincrement PKs (examtypeid/sectionid/userid) manually.
+        - Create rows only if they don't already exist (by stable natural keys).
+        """
         try:
-            with open('PrimaryTablesDefinitions.json', 'r') as f:
+            definitions_path = os.path.join(os.path.dirname(__file__), 'PrimaryTablesDefinitions.json')
+            if not os.path.exists(definitions_path):
+                definitions_path = 'PrimaryTablesDefinitions.json'
+
+            with open(definitions_path, 'r', encoding='utf-8') as f:
                 self.definitions = json.load(f)
 
-            # Initialize exam types and sections
-            for exam_name, exam_data in self.definitions['examtypes'].items():
-                # Check if exam type exists
-                existing_exam = self.db.examtypes.find_first(
-                    where={'examtypeid': exam_data['id']}
-                )
-                if not existing_exam:
-                    print(f"Exam type {exam_name} not found, creating it")
-                    exam_type = self.db.examtypes.create(data={
-                        'examtypeid': exam_data['id'],
+            # ExamTypes + Sections (keyed by name, not by provided ids)
+            for exam_name, exam_data in self.definitions.get('examtypes', {}).items():
+                exam = self.db.examtypes.find_first(where={'name': exam_name})
+                if not exam:
+                    exam = self.db.examtypes.create(data={
                         'name': exam_name,
-                        'description': exam_data['description']
+                        'description': exam_data.get('description')
                     })
-                    print(f"Exam type {exam_name} created successfully")
-                    for section_name, section_data in exam_data['sections'].items():
-                        section = self.db.sections.create(data={
-                            'sectionid': section_data['id'],
-                            'examtypeid': exam_type.examtypeid,
+
+                for section_name, section_data in exam_data.get('sections', {}).items():
+                    existing_section = self.db.sections.find_first(where={
+                        'examtypeid': exam.examtypeid,
+                        'name': section_name
+                    })
+                    if not existing_section:
+                        self.db.sections.create(data={
+                            'examtypeid': exam.examtypeid,
                             'name': section_name,
-                            'description': section_data['description']
+                            'description': section_data.get('description')
                         })
 
-            # Initialize primary user if not exists
-            existing_user = self.db.users.find_first()
-            if not existing_user:
+            # Primary user (admin) - keyed by username/email
+            existing_admin = self.db.users.find_first(where={
+                'OR': [
+                    {'username': 'admin'},
+                    {'email': 'admin@compex.com'}
+                ]
+            })
+            if not existing_admin:
                 self.db.users.create(data={
-                    'userid': 1,
                     'username': 'admin',
                     'password': 'admin',
                     'email': 'admin@compex.com',
                     'registrationdate': datetime.now()
                 })
-                print("Primary user created successfully")
-            else:
-                print("Primary user already exists")
 
         except Exception as e:
             print(f"Error initializing primary tables: {str(e)}")
             raise
+
 
     def _get_exam_section_ids(self, exam_section):
         section_components = {
@@ -178,212 +189,233 @@ class DB:
         self.current_section_id = int(section_obj.sectionid)
         return None
 
+
+    def _map_question_type(self, q: Dict[str, Any]) -> str:
+        """Map generator-facing question types to internal codes used by this DB layer."""
+        raw = q.get('type') or q.get('question-type') or q.get('question_type') or ''
+        raw = (raw or '').strip()
+
+        mapping = {
+            # GMAT
+            'Table Analysis': 'TA',
+            'Data Sufficiency': 'DS',
+            'Graphic Interpretation': 'GI',
+            'Multi-Source Reasoning': 'MSR',
+            'Two-Part Analysis': 'TPA',
+            'Problem Solving Simple': 'PS',
+            'Reading Comprehension': 'RC',
+            # GRE
+            'Numerical Entry': 'NE',
+            'Quantitative Comparison': 'QC',
+            'Sentence Equivalence': 'SE',
+            'Text Completion': 'TC',
+            'Problem Solving Meta': 'PS_META',
+        }
+        return mapping.get(raw, raw)
+
+    def _normalize_question(self, q: Dict[str, Any]) -> Dict[str, Any]:
+        """Unify incoming JSON shapes (GMAT/GRE dumps, synthetic tests, etc.)."""
+        if not isinstance(q, dict):
+            return q  # type: ignore
+
+        nq = dict(q)
+
+        # Normalize type naming
+        nq['type'] = self._map_question_type(nq)
+
+        # Normalize metadata/content naming
+        if 'metadata' in nq and 'content' not in nq:
+            nq['content'] = nq.get('metadata')
+
+        # Normalize child questions naming
+        if 'child-questions' in nq and 'childQuestions' not in nq:
+            nq['childQuestions'] = nq.get('child-questions')
+
+        return nq
+
+    def _flatten_options(self, options: Any) -> List[Dict[str, Any]]:
+        """Return a flat list of option rows with stable correctness semantics.
+
+        Each item: {option_key, option_text, group}
+        - option_key: label like 'A', 'B', ...
+        - group: used for blanks/parts (e.g., 'Blank 1'), or the label itself for MCQ dicts.
+        """
+        rows: List[Dict[str, Any]] = []
+        if options is None:
+            return rows
+
+        if isinstance(options, dict):
+            for k, v in options.items():
+                rows.append({'option_key': str(k), 'option_text': v, 'group': str(k)})
+            return rows
+
+        if isinstance(options, list):
+            # Table Analysis (statements)
+            if options and all(isinstance(x, str) for x in options):
+                for stmt in options:
+                    rows.append({'option_key': None, 'option_text': stmt, 'group': None})
+                return rows
+
+            # Text Completion (list of dicts, each dict is a blank)
+            if options and all(isinstance(x, dict) for x in options):
+                for i, blank_dict in enumerate(options, start=1):
+                    group = f"Blank {i}"
+                    for k, v in blank_dict.items():
+                        rows.append({'option_key': str(k), 'option_text': v, 'group': group})
+                return rows
+
+            # Generic nested handling
+            for i, item in enumerate(options, start=1):
+                if isinstance(item, dict):
+                    for k, v in item.items():
+                        rows.append({'option_key': str(k), 'option_text': v, 'group': str(k)})
+                elif isinstance(item, list):
+                    group = f"Part {i}"
+                    for sub in item:
+                        if isinstance(sub, dict):
+                            for k, v in sub.items():
+                                rows.append({'option_key': str(k), 'option_text': v, 'group': group})
+                        else:
+                            rows.append({'option_key': None, 'option_text': sub, 'group': group})
+                else:
+                    rows.append({'option_key': None, 'option_text': item, 'group': None})
+            return rows
+
+        rows.append({'option_key': None, 'option_text': options, 'group': None})
+        return rows
+
+    def _flatten_answer_labels(self, answers: Any) -> List[str]:
+        """Flatten answers into a list of string labels/values for matching."""
+        out: List[str] = []
+        if answers is None:
+            return out
+        if isinstance(answers, (str, int, float, bool)):
+            return [str(answers)]
+        if isinstance(answers, list):
+            for a in answers:
+                out.extend(self._flatten_answer_labels(a))
+            return out
+        if isinstance(answers, dict):
+            for v in answers.values():
+                out.extend(self._flatten_answer_labels(v))
+            return out
+        return out
+
     def _register_problem(self, exam_section, question, isChildQuestion=False, isMockQuestion=False):
-        """Register a single problem"""
+        """Register a single problem."""
         try:
             self._get_exam_section_ids(exam_section)
 
-            # Format metadata as JSON string
-            # Format solution
+            question = self._normalize_question(question)
 
-            solution = question.get('solution', '')
-            # Wrap solution in a dictionary with 'explanation' key as requested
-            if isinstance(solution, str):
-                solution = json.dumps({"explanation": solution})
-            elif isinstance(solution, (dict, list)):
-                # If it's already a dict or list, we could either wrap it or store as is
-                # The user asked for {"explanation": "..."}, so if it's a dict, we wrap it
-                solution = json.dumps({"explanation": str(solution)})
-            else:
-                solution = json.dumps({"explanation": str(solution)})
-            # Create problem with proper Prisma format
-            self.question_type = question.get('type') or question.get('question-type', '')
-            if (self.question_type == "TA"):
-                temp = ""
-                type = question.get('prompt', '').split("-")[3].strip()
-                if type == "Yes/No":
-                    temp = "Yes"
-                elif type == "Would Help/Would Not Help":
-                    temp = "Would Help"
-                elif type == "True/False":
-                    temp = "True"
-                elif type == "Inference/Conflicting":
-                    temp = "Inference"
-                elif type == "Sufficient/Insufficient":
-                    temp = "Sufficient"
-                elif type == "Valid/Invalid":
-                    temp = "Valid"
-                elif type == "Consistent/Inconsistent":
-                    temp = "Consistent"
-                elif type == "Conclusion/Assumption":
-                    temp = "Conclusion"
-                # Check if the answer values are strings that contain "Yes" or "No"
-                first_option = question['options'][0]
-                answer_value = question['answer'][first_option]
-                if isinstance(answer_value, str) and answer_value in "Yes/No":
-                    temp = "Yes"
-                question["content"]["connection_validator"] = temp
-                self.question_correction_validator = temp
+            self.question_type = question.get('type', '') or ''
+            self.current_question_type = self.question_type
 
-            # Ensure text field has a value (required field, handle null/empty)
-            question_text = question.get('question') or ''
-            if not question_text or question_text == '':
-                question_text = question.get(
-                    'title') or 'Question text not available'
+            metadata_obj = question.get('content') or question.get('metadata') or {}
+            solution_obj = question.get('solution', None)
 
-            # Ensure title field has a value (required field, handle null/empty)
-            question_title = question.get('title') or ''
-            if not question_title or question_title == '':
-                question_title = f"Question {question.get('type', 'Unknown')} - Difficulty {question.get('difficulty', 1)}"
+            question_text = (question.get('question') or question.get('text') or '').strip()
+            if not question_text:
+                question_text = question.get('title') or 'Question text not available'
+
+            question_title = (question.get('title') or '').strip()
+            if not question_title:
+                question_title = f"Question {self.question_type or 'Unknown'} - Difficulty {question.get('difficulty', 1)}"
 
             question_data = {
                 "type": self.question_type,
                 "prompt": question.get('prompt', ''),
                 "title": question_title,
-                "text": question_text,  # Ensure text field is not empty
+                "text": question_text,
                 "difficulty": question.get('difficulty', 1),
-                "sectionid": self.current_section_id,  # Reverted to schema name
-                "examtypeid": self.current_exam_id,    # Reverted to schema name
-                # Prisma will handle JSON conversion
-                "metadata": json.dumps(question.get('content', {})),
-                "solution": solution,  # Prisma will handle JSON conversion
-                "isChildren": isChildQuestion,        # Reverted to schema name
-                "isMockQuestion": isMockQuestion,     # Reverted to schema name
-                "problemsSetId": None # Explicitly initialize
+                "sectionid": self.current_section_id,
+                "examtypeid": self.current_exam_id,
+                "metadata": metadata_obj,
+                "solution": solution_obj,
+                "isChildren": isChildQuestion,
+                "isMockQuestion": isMockQuestion,
+                "problemsSetId": None
             }
 
             if isChildQuestion:
-                # Direct field assignment
-                print(f"DEBUG: Linking Child Question to ProblemSetID: {self.current_problemset_id}")
-                question_data["problemsSetId"] = self.current_problemset_id  # Reverted
+                question_data["problemsSetId"] = self.current_problemset_id
             if isMockQuestion:
-                # Direct field assignment
-                question_data["mocksectionid"] = self.current_mocksection_id # Reverted
-                question_data["mockquestionnumber"] = self.current_mockquestion_number # Reverted
+                question_data["mocksectionid"] = self.current_mocksection_id
+                question_data["mockquestionnumber"] = self.current_mockquestion_number
+
             if self.question_type == "NE":
-                question_data["metadata"] = json.dumps(
-                    {"answer": question.get('answer', '')})
+                merged = dict(metadata_obj) if isinstance(metadata_obj, dict) else {"metadata": metadata_obj}
+                merged["answer"] = question.get("answer")
+                question_data["metadata"] = merged
 
             problem = self.db.problems.create(data=question_data)
             self.current_problem_id = problem.problemid
 
-            options = question.get('options') or []
-            answer = question.get('answer', '')
-            self.current_question_type = question.get('type', '')
-            
-            if isinstance(options, dict):
-                for key, value in options.items():
-                    # For simple dict options (like TC 1 blank), key is "A", "B", etc.
-                    self._register_problem_options(value, answer, group=None, key=key)
-            elif isinstance(options, list):
-                for i, option in enumerate(options):
-                    if isinstance(option, dict):
-                        # For Text Completion with multiple blanks (list of dicts)
-                        group = f"Blank {i+1}"
-                        for key, value in option.items():
-                            self._register_problem_options(value, answer, group=group, key=key)
-                    elif isinstance(option, str):
-                        self._register_problem_options(option, answer)
-                    elif isinstance(option, int):
-                        self._register_problem_options(option, answer)
-                    elif isinstance(option, list):
-                        # Legacy/Special format
-                        group = "A"
-                        for suboption in option:
-                            self._register_problem_options(suboption, answer, group)
-                            group = chr(ord(group) + 1)
+            if self.question_type != "NE":
+                options = question.get('options')
+                answers = question.get('answer', None)
 
-            # Register tags
+                for row in self._flatten_options(options):
+                    self._register_problem_options(
+                        option=row.get('option_text'),
+                        answers=answers,
+                        group=row.get('group'),
+                        option_key=row.get('option_key')
+                    )
+
             self._register_problem_tags(question.get('tags') or [])
-
             return True
 
         except Exception as e:
             print(
-                f"Error in _register_problem: {str(e)}\n\n here is the question content: {json.dumps(question, indent=4)}")
+                f"Error in _register_problem: {str(e)}\n\n here is the question content: {json.dumps(question, indent=4, default=str)}")
             return False
 
-    def _register_problem_options(self, option_text, answers, group=None, key=None):
-        """Register problem options in the database.
+    def _register_problem_options(self, option, answers, group=None, option_key: str | None = None):
+        """Register problem options in the database."""
 
-        Args:
-            option: The option text or object
-            answers: The correct answers (can be dict, list, or single value)
-            group: Optional group identifier for the option
-        """
-        # Special handling for Table Analysis questions
         if self.current_question_type == "TA":
-            # For TA questions, answers should be a dict with format:
-            # {"group": "Acceptable/Not Acceptable", "options": {"option1": {"value": "Acceptable", "isCorrect": true}, ...}}
             answer_group = None
             is_correct = False
 
-            # Find the appropriate answer group based on the question content
-            for group_name, mapping in self.answer_type_mappings.items():
-                if mapping["positive"] in str(answers) or mapping["negative"] in str(answers):
-                    answer_group = group_name
-                    break
-
-            # Determine if this option is correct based on the answer mapping
             if isinstance(answers, dict) and option in answers:
                 answer_value = answers[option]
-                if isinstance(answer_value, dict):
-                    is_correct = answer_value.get("isCorrect", False)
-                else:
-                    # For legacy format where answer is direct value
-                    for group_name, mapping in self.answer_type_mappings.items():
-                        if answer_value == mapping["positive"]:
-                            is_correct = True
-                            break
+                for group_name, mapping in self.answer_type_mappings.items():
+                    if str(answer_value) in (mapping["positive"], mapping["negative"]):
+                        answer_group = group_name
+                        is_correct = str(answer_value) == mapping["positive"]
+                        break
 
             option_data = {
                 'optiontext': str(option),
                 'iscorrect': is_correct,
-                'problemid': self.current_problem_id,  # Direct field assignment
-                'group': answer_group if answer_group else group
+                'problemid': self.current_problem_id,
+                'group': answer_group or group
             }
-
         else:
-            is_correct = False
-            
-            # Check correctness based on key or option_text
-            if isinstance(answers, list):
-                # If key is provided (e.g., "A"), check if it's in the answer list
-                if key and key in answers:
-                    is_correct = True
-                # Fallback: check if option_text itself is in answers
-                elif str(option_text) in [str(a) for a in answers]:
-                    is_correct = True
-            elif isinstance(answers, dict):
-                # For dictionaries where keys are groups (e.g., {"Blank 1": "A"})
-                if group and group in answers:
-                    correct_val = answers[group]
-                    if isinstance(correct_val, list):
-                        is_correct = (key in correct_val) if key else (option_text in correct_val)
-                    else:
-                        is_correct = str(key if key else option_text) == str(correct_val)
-                else:
-                    # Fallback: check if key or option_text is in values
-                    is_correct = (key in answers.values()) if key else (option_text in answers.values())
+            flat_answers = set(self._flatten_answer_labels(answers))
+
+            if option_key is not None and str(option_key) in flat_answers:
+                is_correct = True
             else:
-                # Single value answer
-                is_correct = str(key if key else option_text) == str(answers)
+                is_correct = str(option) in flat_answers
+
+                if isinstance(answers, dict) and group and group in answers:
+                    target_flat = set(self._flatten_answer_labels(answers[group]))
+                    is_correct = (option_key is not None and str(option_key) in target_flat) or (str(option) in target_flat)
 
             option_data = {
-                'optiontext': str(option_text),
+                'optiontext': str(option),
                 'iscorrect': is_correct,
                 'problemid': self.current_problem_id,
                 'group': group
             }
 
-
         try:
-            self.db.problemoptions.create(
-                data=option_data
-            )
+            self.db.problemoptions.create(data=option_data)
         except Exception as e:
             print(
-                f"Error creating problem option in _register_problem_options: {str(e)} \n\n here is the option: {option} \n\n here is the answer: {answers}")
+                f"Error creating problem option in _register_problem_options: {str(e)}\n\n option: {option}\n answers: {answers}")
             return False
         return True
 
@@ -467,43 +499,40 @@ class DB:
             return False
 
     def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False):
-        """Register a problem set with its child questions"""
+        """Register a problem set with its child questions."""
         try:
             self._get_exam_section_ids(exam_section)
 
-            # Ensure required fields have values (handle null/empty)
-            title = parent_question.get('title') or ''
-            if not title or title == '':
-                title = f"{parent_question.get('type', 'Question')} - {exam_section}"
+            parent_question = self._normalize_question(parent_question)
 
-            # Determine content type and data
+            title = (parent_question.get('title') or '').strip()
+            if not title:
+                title = f"{parent_question.get('type', 'Component')} - {exam_section}"
+
+            content_obj = parent_question.get('content') or parent_question.get('metadata') or {}
+            if isinstance(content_obj, dict):
+                content_obj = dict(content_obj)
+                content_obj.setdefault('prompt', parent_question.get('prompt'))
+                content_obj.setdefault('question_type', parent_question.get('question-type') or parent_question.get('type'))
+
             problemsset_data = {
                 'type': parent_question.get('type', ''),
-                'content': json.dumps(parent_question.get('content', {})),
-                'title': title,  # Ensure title is not empty
-                # Direct field assignment (required)
-                'sectionid': self.current_section_id,     # Reverted to schema name
-                # Direct field assignment (required)
-                'examtypeid': self.current_exam_id       # Reverted to schema name
+                'content': content_obj,
+                'title': title,
+                'sectionid': self.current_section_id,
+                'examtypeid': self.current_exam_id
             }
 
             if isMockQuestion:
                 problemsset_data['mockquestionnumber'] = self.current_mockquestion_number
-                # Direct field assignment
-                problemsset_data['mocksectionid'] = self.current_mocksection_id # Reverted
+                problemsset_data['mocksectionid'] = self.current_mocksection_id
 
-            # Create problem set
-            try:
-                # Note: Prisma Python client uses lowercase for model names
-                problemsset = self.db.problemsset.create(data=problemsset_data)
-                # Prisma Python client uses schema field names (or matching aliases)
-                self.current_problemset_id = problemsset.problemsSetId
-            except Exception as e:
-                print(
-                    f"Error registering parent question component in _register_problemset: {str(e)} \n\n here is the parent question content: {json.dumps(parent_question.get('content', {}), indent=4)}")
-                return False
+            problemsset = self.db.problemsset.create(data=problemsset_data)
+            self.current_problemset_id = problemsset.problemsSetId
 
-            # Register child questions
+            # Tag the parent component as well
+            self._register_problemsset_tags(parent_question.get('tags') or [])
+
             child_questions = (
                 (parent_question.get('childQuestions') or []) or
                 (parent_question.get('questions') or []) or
@@ -514,11 +543,10 @@ class DB:
                 if not self._register_problem(exam_section, child, isChildQuestion=True, isMockQuestion=isMockQuestion):
                     raise Exception("Error registering child problem")
 
-            self.current_problemset_id += 1
             return True
 
         except Exception as e:
-            print(f"Error in _register_problemset: {str(e)}")
+            print(f"Error in _register_problemsset: {str(e)}")
             return False
 
     def having_any_empty_value(self, component):
@@ -556,7 +584,7 @@ class DB:
         return True
 
     def registerQuestion(self, paper, isMockQuestion=False, difficulty=0):
-        """Main method to register questions"""
+        """Main method to register questions."""
         if isMockQuestion:
             exam_section = list(paper.keys())[0]
             self._get_exam_section_ids(exam_section)
@@ -569,36 +597,45 @@ class DB:
                 'isactive': True
             })
             self.current_mocktest_id = current_mocktest.mocktestid
+
         for exam_section, subSections in paper.items():
             self._get_exam_section_ids(exam_section)
             for sectionNumber, questions in subSections.items():
                 print(f"sectionNumber: {sectionNumber}")
+
                 if isMockQuestion:
-                    secNo = int(sectionNumber[-1])
+                    try:
+                        secNo = int(str(sectionNumber))
+                    except Exception:
+                        secNo = int(str(sectionNumber)[-1])
+
                     current_mocksection = self.db.mocksections.create(data={
                         'mocktestid': self.current_mocktest_id,
                         'sectionnumber': secNo,
                         'sectionid': self.current_section_id
                     })
                     self.current_mocksection_id = current_mocksection.mocksectionid
+
                 try:
                     self.current_mockquestion_number = 1
                     for question in questions:
-                        # Check for parent-child questions using multiple possible keys
-                        if any(key in question for key in ['childQuestions', 'questions', 'sources', 'child-questions']):
-                            # Handle parent-child questions
-                            if not self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion):
-                                raise Exception(
-                                    f"Error registering problem set for {exam_section}")
+                        if not isinstance(question, dict):
+                            continue
+                        qn = self._normalize_question(question)
+                        is_parent = any(k in qn for k in ['childQuestions', 'child-questions', 'questions', 'sources'])
+
+                        if is_parent:
+                            if not self._register_problemsset(exam_section, qn, isMockQuestion=isMockQuestion):
+                                raise Exception(f"Error registering problem set for {exam_section}")
                         else:
-                            # Handle single questions
-                            if not self._register_problem(exam_section, question, isMockQuestion=isMockQuestion):
-                                raise Exception(
-                                    f"Error registering problem for {exam_section}")
+                            if not self._register_problem(exam_section, qn, isMockQuestion=isMockQuestion):
+                                raise Exception(f"Error registering problem for {exam_section}")
+
                         self.current_mockquestion_number += 1
                 except Exception as e:
                     print(f"Error in registerQuestion: {str(e)}")
                     return False
+
         return True
 
     def __del__(self):
