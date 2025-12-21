@@ -390,35 +390,51 @@ class ManageQuestionData:
             return tag_str.replace('<', '').replace('>', '')
 
         try:
-            prompt_parts = self.clean_prompt_for_tags.split(' - ')
-            
-            # Always add type
-            tags.append(clean_tag(f"type: {self.question_type}"))
-
-            # Topic and Theme Extraction
-            # Topic and Theme Extraction
-            if self.question_type in ['Sentence Equivalence', 'Text Completion', 'Reading Comprehension', 'Critical Reasoning']:
-                # Robust Regex Extraction for labeled nomenclature
-                # Format: Theme: <Theme> | Topic: <Topic> | ...
+            # 1. Use Pre-parsed Tags (Preferred)
+            if self.prompt_details.get('parsed_tags'):
+                parsed = self.prompt_details['parsed_tags']
+                tags.append(clean_tag(f"type: {self.question_type}"))
                 
-                theme_match = re.search(r'Theme:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
-                if theme_match:
-                    tags.append(clean_tag(f"theme: {theme_match.group(1).strip()}"))
-                    
-                topic_match = re.search(r'Topic:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
-                if topic_match:
-                    tags.append(clean_tag(f"topic: {topic_match.group(1).strip()}"))
-            
+                if 'Theme' in parsed:
+                     tags.append(clean_tag(f"theme: {parsed['Theme']}"))
+                if 'Topic' in parsed:
+                     tags.append(clean_tag(f"topic: {parsed['Topic']}"))
+                if 'Sub-topic/Focused Skill' in parsed:
+                     tags.append(clean_tag(f"sub-topic: {parsed['Sub-topic/Focused Skill']}"))
+                     
             else:
-                # Quants & Integrated Reasoning (Legacy positional format)
-                # Format: <Topic> - <Theme>
-                if len(prompt_parts) > 0:
-                    tags.append(clean_tag(f"topic: {prompt_parts[0]}"))
-                if len(prompt_parts) > 1:
-                    tags.append(clean_tag(f"theme: {prompt_parts[1]}"))
+                # 2. Fallback Parsing (Legacy)
+                prompt_parts = self.clean_prompt_for_tags.split(' - ')
+                
+                # Always add type
+                tags.append(clean_tag(f"type: {self.question_type}"))
 
-            # Removed Exam/Section tags as per request
-            
+                # Topic and Theme Extraction
+                if self.question_type in ['Sentence Equivalence', 'Text Completion', 'Reading Comprehension', 'Critical Reasoning']:
+                    # Robust Regex Extraction for labeled nomenclature
+                    theme_match = re.search(r'Theme:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
+                    if theme_match:
+                        tags.append(clean_tag(f"theme: {theme_match.group(1).strip()}"))
+                        
+                    topic_match = re.search(r'Topic:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
+                    if topic_match:
+                        tags.append(clean_tag(f"topic: {topic_match.group(1).strip()}"))
+                
+                else:
+                    # Quants & Integrated Reasoning (Legacy positional format)
+                    # Use Regex to avoid splitting issues with difficulty or extra content
+                    # Expected format: <Topic> - <Theme>
+                    
+                    # Attempt to extract Topic/Theme via explicit regex if possible
+                    # Or just be very careful with splits.
+                    # Given the "difficulty loop leak", the prompts now often contain explicit instructions too.
+                    # Best to trust the first 2 positions ONLY if they are likely cleaned.
+                    
+                    if len(prompt_parts) > 0 and 'difficulty' not in prompt_parts[0].lower():
+                        tags.append(clean_tag(f"topic: {prompt_parts[0]}"))
+                    if len(prompt_parts) > 1 and 'difficulty' not in prompt_parts[1].lower():
+                        tags.append(clean_tag(f"theme: {prompt_parts[1]}"))
+
         except Exception as e:
             print(f"Warning: Tag parsing failed: {e}")
             tags.append(f"type: {self.question_type}") # Fallback
@@ -426,8 +442,6 @@ class ManageQuestionData:
         # CRITICAL FIX: Assign tags to result_buffer before recording!
         result_buffer['tags'] = list(set(tags))
 
-        return result_buffer, stats
-        
         return result_buffer, stats
 
     def _inject_difficulty(self):
@@ -584,9 +598,20 @@ class ManageQuestionData:
             }
 
             try:
+                # Append explicit constraint prompt to the instruction
+                augmented_instruction = call['instruction statement']
+                
+                # Check for explicit instruction string (from prepare_prompts)
+                if self.prompt_details.get('instruction_str'):
+                     augmented_instruction += f"\n\n{self.prompt_details['instruction_str']}"
+                
+                # Always append the 'prompt' which contains Difficulty, Vocab, and Nomenclature
+                # Use a label that indicates this is context
+                augmented_instruction += f"\n\n[Context & Constraints]: {self.prompt_details.get('prompt', '')}"
+
                 # Use session for generation (it maintains history)
                 generated, stats = self.generator_session.generate_component(
-                    instruction_statement=call['instruction statement'],
+                    instruction_statement=augmented_instruction,
                     expected_output=call['output'],
                     context=context
                 )

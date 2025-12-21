@@ -16,7 +16,11 @@
             "Inequalities",
             "Word Problems&",
             "Numeric Comparisons",
-            "Data Interpretation"
+            "Data Interpretation",
+            "Abstract Algebra",
+            "Pure Number Theory",
+            "Coordinate Geometry",
+            "Geometry Proofs"
          ]
       },
       {
@@ -36,8 +40,54 @@
    "questionTopic": [
       {
          "QuestionType": [
-            "Data Sufficiency",
+            "Data Sufficiency"
+         ],
+         "list": {
+            "Number Properties": [
+               "Prime Factorization & Divisibility",
+               "Remainder Theorem",
+               "Odd/Even Parity Rules",
+               "LCM and GCD Properties",
+               "Perfect Squares and Cubes",
+               "Consecutive Integers",
+               "Decimal Termination Rules"
+            ],
+            "Algebra": [
+               "Absolute Value Inequalities",
+               "Quadratic Roots and Discriminants",
+               "Exponents and Roots Rules",
+               "Simultaneous Equations (2 or 3 vars)",
+               "Function Definitions and Domain",
+               "Sequence and Series (AP/GP)",
+               "Inequality Constraints"
+            ],
+            "Geometry": [
+               "Coordinate Geometry (Slopes, Distance)",
+               "Triangle Inequality Theorem",
+               "Circle Properties (Tangents, Chords)",
+               "Quadrilateral Properties (Diagonals, Area)",
+               "3D Geometry (Cylinders, Spheres)",
+               "Inscribed vs Circumscribed Shapes"
+            ],
+            "Statistics and Intersection": [
+               "Standard Deviation and Variance Changes",
+               "Mean vs Median Relationships",
+               "Set Theory (Venn Diagrams)",
+               "Permutation and Probability Constraints",
+               "Weighted Averages"
+            ],
+            "Word Problems (Non-Profit)": [
+               "Work Rate and Efficiency",
+               "Distance, Speed, Time (Relative Speed)",
+               "Mixture and Alligation Ratios",
+               "Age and Ratio Problems"
+            ]
+         }
+      },
+      {
+         "QuestionType": [
             "Problem Solving Simple",
+            "Problem Solving Meta",
             "Numerical Entry",
             "Multi-Source Reasoning",
             "Two-Part Analysis",
@@ -205,59 +255,6 @@
                "selection_problems"
             ]
          }
-      },
-      {
-         "QuestionType": [
-            "Problem Solving Meta"
-         ],
-         "list": {
-            "Number Properties and Fractions, Decimals, Percentages": [
-               "prime_factorization",
-               "divisibility_rules",
-               "LCM_GCD",
-               "fraction_operations",
-               "decimal_conversions",
-               "percentage_calculations",
-               "number_properties"
-            ],
-            "Profit, Loss and Discount": [
-               "profit_loss_calculations",
-               "cost_price_selling_price",
-               "discount_problems",
-               "markup_calculations",
-               "successive_discounts",
-               "break_even_analysis"
-            ],
-            "Mean, Median, Mode, Range": [
-               "central_tendency",
-               "data_analysis",
-               "statistical_measures",
-               "data_interpretation",
-               "distribution_analysis"
-            ],
-            "Statistics": [
-               "variance_calculations",
-               "standard_deviation",
-               "data_spread",
-               "statistical_analysis",
-               "normal_distribution",
-               "mean_median_mode_range"
-            ],
-            "Probability Rules (Basic, Independent, Mutually Exclusive, etc)": [
-               "basic_probability",
-               "conditional_probability",
-               "independent_events",
-               "mutually_exclusive_events",
-               "probability_rules"
-            ],
-            "Permutations and Combinations": [
-               "permutation_formulas",
-               "combination_calculations",
-               "counting_principles",
-               "arrangement_problems",
-               "selection_problems"
-            ]
-         }
       }
    ],
    "metadataType": [
@@ -408,22 +405,6 @@
             "Humanities (History, Art, Literature)",
             "Social Sciences (Psychology, Sociology)",
             "Business (Marketing, Strategy, Finance)"
-         ]
-      },
-      {
-         "QuestionType": [
-            "Sentence Equivalence",
-            "Text Completion"
-         ],
-         "list": [
-            "Social Sciences",
-            "Business",
-            "Business",
-            "Current Affairs",
-            "Tech Innovation",
-            "Cultural Anthropology",
-            "Astrobiology",
-            "Neuroscience"
          ]
       }
    ],

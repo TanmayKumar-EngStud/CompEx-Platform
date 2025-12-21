@@ -4,32 +4,23 @@ Output a JSON object with one key:
 
 **Structure:**
 (Use \n for newlines in the JSON string)
-Step 1: {{#if_GMAT}}Extract key information from business scenario{{/if_GMAT}}{{#if_GRE}}Analyze given information and identify what needs to be found{{/if_GRE}}
-Step 2: Set up mathematical relationship or logical framework
-Step 3: Perform calculations with proper units / Apply reasoning
-Step 4: {{#if_GMAT}}Verify answer makes business sense{{/if_GMAT}}{{#if_GRE}}Check solution using logical reasoning{{/if_GRE}}
-Step 5: Briefly explain why incorrect options are wrong (1-2 sentences).
+Step 1: Setup - Identify the core question and variables/logic.
+Step 2: Execution - Solve the problem (calculation or logical deduction).
+Step 3: Verification - Briefly check the answer.
+Step 4: Distractors - Explain why *one* or *two* wrong options are incorrect (1 sentence only).
 
 **Important Notes:**
 - "solution": The final clean explanation for the student in **Markdown** format.
-- **Use Markdown**: Use bolding for key terms, lists for steps, and clear formatting.
-- **Length Constraint**: The solution MUST be between **80 and 120 words**. Be concise but thorough.
-- **Explain Distractors**: concisely explain why other options are incorrect.
+- **Use Markdown**: Use bolding for key terms.
+- **Length Constraint**: The solution MUST be **CONCISE** (approx. 50-70 words).
+- **Be Direct**: Get straight to the point. Avoid fluff like "Let us analyze the problem".
+- **Explain Distractors**: Only briefly mention why the most plausible distractor is wrong.
 - **NO Scratchpad**: Do not output any internal reasoning or scratchpad key.
-- Show all calculations with proper mathematical notation
-- Use LaTeX for mathematical expressions
-- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format.
-{{#if_GMAT}}
-- Demonstrate both direct solution and back-solving when applicable
-- Use business context to verify reasonableness
-{{/if_GMAT}}
-{{#if_GRE}}
-- Explain conceptual insights where relevant
-- Verify using alternative methods when possible
-{{/if_GRE}}
+- Use LaTeX for mathematical expressions within single '$' symbols.
+- IMPORTANT: The final Answer should NOT be given in LaTeX form.
+
 {{#if_critical_reasoning}}
-- Break down argument structure (premises and conclusion)
-- Explain question type strategy and logical reasoning process
-- Provide systematic evaluation of each option
-- Highlight key critical reasoning insights and common traps
+- State the Conclusion.
+- State the Flaw/Assumption.
+- Explain why the Correct Option addresses it.
 {{/if_critical_reasoning}}

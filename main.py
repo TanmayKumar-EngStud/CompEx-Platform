@@ -88,7 +88,7 @@ for exam, sections in sorted_exams:
 
                 current_difficulty = difficulty_list.pop()
                 nomenclature = question_type_info["nomenclature"]
-                prompt = PromptPrep._nomenclature_to_prompt_mapping(
+                prompt, instruction_str, parsed_tags = PromptPrep._nomenclature_to_prompt_mapping(
                     nomenclature, question_type, current_difficulty)
                 if prompt is None:
                     raise ValueError(
@@ -96,6 +96,8 @@ for exam, sections in sorted_exams:
 
                 prompt_buffer: dict[str, Any] = {
                     'prompt': prompt,
+                    'instruction_str': instruction_str,
+                    'parsed_tags': parsed_tags,
                     'difficulty': current_difficulty,
                 }
                 if question_type_info.get('options'):

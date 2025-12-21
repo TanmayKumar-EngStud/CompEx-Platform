@@ -178,8 +178,8 @@ class PromptPrep:
         return choice
 
     @staticmethod
-    def _nomenclature_to_prompt_mapping(nomenclature: str, question_type: str, difficulty_level: int) -> str:
-        """Returns appropriate prompt of that nomenclature using Bucket Elimination"""
+    def _nomenclature_to_prompt_mapping(nomenclature: str, question_type: str, difficulty_level: int) -> tuple[str, str, dict]:
+        """Returns appropriate prompt of that nomenclature using Bucket Elimination, and a formatted instruction string."""
         prompt_components = PromptPrep.__extract_keywords_from_nomenclature(
             nomenclature)
         prompt_components[:] = list(
@@ -190,6 +190,8 @@ class PromptPrep:
             if 'theme' in comp_name.lower(): return 'theme'
             if 'topic' in comp_name.lower(): return 'topic'
             return 'generic'
+        
+        selected_components = {}
 
         for prompt_component in prompt_components:
             prompt_component_list = PromptPrep.__selective_component_info(
@@ -204,8 +206,6 @@ class PromptPrep:
                 # Pass the list for selection, but removal will be global lookup
                 selected_choice = PromptPrep._get_bucket_choice(topic_options, category=category)
                 if not selected_choice:
-                    # Refill happened or empty? Retrying once might be needed if refill logic wasn't auto
-                    # For now assuming refill logic in init/get handles consistency
                     topic_options = list(prompt_component_list.keys()) # Refresh
                     selected_choice = random.choice(topic_options) # Fallback
 
@@ -214,6 +214,10 @@ class PromptPrep:
                 if suffix in sp_char:
                     sp = suffix
                 selected_value += f"{prompt_component} - {selected_choice}"
+                
+                # Store Main Selection
+                label = 'Theme' if category == 'theme' else 'Topic'
+                selected_components[label] = selected_choice
 
                 # 2. Pick Sub-Topic
                 subs = f"sub-{prompt_component}"
@@ -226,11 +230,9 @@ class PromptPrep:
                      selected_sub_choice = PromptPrep._get_bucket_choice(sub_options, category='topic')
 
                 selected_value += f"> - <{subs} - {selected_sub_choice}"
+                selected_components['Sub-topic/Focused Skill'] = selected_sub_choice
                 
-                # Handling deep nesting if dict
                 if isinstance(sub_choices, dict):
-                    # Original logic was potentially recursive or just 2-level.
-                    # As per analyzing before, it seemed 2-level was generating fine.
                     pass 
 
                 nomenclature = nomenclature.replace(
@@ -243,13 +245,30 @@ class PromptPrep:
                      # Fallback
                     print(f"Bucket selection failed: {e}")
                     selected_value = random.choice(prompt_component_list)
-                    
+                
+                label = 'Theme' if category == 'theme' else 'Topic'
+                if 'theme' in prompt_component.lower(): selected_components['Theme'] = selected_value
+                elif 'skill' in prompt_component.lower(): selected_components['Sub-topic/Focused Skill'] = selected_value
+                else: selected_components['Topic'] = selected_value
+
                 nomenclature = nomenclature.replace(
                     prompt_component, selected_value)
                     
         nomenclature = nomenclature.replace('<difficulty>', f'<{difficulty_level}>').replace(
             '<vocabulary>', f'<{PromptPrep.__pick_vocab_level(difficulty_level)}>')
-        return nomenclature
+        
+        # Build Explicit Instruction String
+        instruction_parts = ["[IMPORTANT]: Make sure to fulfil the following request:"]
+        if 'Theme' in selected_components:
+            instruction_parts.append(f"*Theme*: {selected_components['Theme']}")
+        if 'Topic' in selected_components:
+            instruction_parts.append(f"*Topic*: {selected_components['Topic']}")
+        if 'Sub-topic/Focused Skill' in selected_components:
+            instruction_parts.append(f"*Sub-topic/Focused Skill*: {selected_components['Sub-topic/Focused Skill']}")
+            
+        instruction_str = " ".join(instruction_parts)
+        
+        return nomenclature, instruction_str, selected_components
         # now for every exam we are having external data.
 
     @staticmethod
