@@ -18,6 +18,11 @@ def main():
         prisma.problemssettags.delete_many()
     if hasattr(prisma, 'problemtags'):
         prisma.problemtags.delete_many()
+    
+    # Also delete the Tags definitions
+    if hasattr(prisma, 'tags'):
+        prisma.tags.delete_many()
+
     if hasattr(prisma, 'problemoptions'):
         prisma.problemoptions.delete_many()
     

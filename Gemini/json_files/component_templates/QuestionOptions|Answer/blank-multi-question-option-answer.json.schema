@@ -1,0 +1,28 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "options": {
+      "type": "ARRAY",
+      "items": {
+        "type": "OBJECT",
+        "properties": {
+          "A": { "type": "STRING" },
+          "B": { "type": "STRING" },
+          "C": { "type": "STRING" },
+          "D": { "type": "STRING" },
+          "E": { "type": "STRING" },
+          "F": { "type": "STRING" },
+          "G": { "type": "STRING" },
+          "H": { "type": "STRING" },
+          "I": { "type": "STRING" }
+        },
+        "required": ["A", "B", "C"] 
+      }
+    },
+    "answer": {
+      "type": "ARRAY",
+      "items": { "type": "STRING" }
+    }
+  },
+  "required": ["options", "answer"]
+}

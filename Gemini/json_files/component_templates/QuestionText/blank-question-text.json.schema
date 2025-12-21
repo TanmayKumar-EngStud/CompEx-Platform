@@ -1,0 +1,7 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "question": { "type": "STRING" }
+  },
+  "required": ["question"]
+}

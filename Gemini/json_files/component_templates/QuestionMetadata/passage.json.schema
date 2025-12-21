@@ -1,0 +1,7 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "para": { "type": "STRING" }
+  },
+  "required": ["para"]
+}

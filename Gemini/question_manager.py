@@ -6,8 +6,9 @@ import re
 from typing import Optional, List, Dict, Any, Tuple
 
 from io_utils import get_json, prettify, get_Component_Template, record, get_Question_Template
-from api_utils import get_gemini_generator
-from content_generation_manager import manage_generated_content
+from io_utils import get_json, prettify, get_Component_Template, record, get_Question_Template
+# API Utils removed for standalone generation
+# Content Manager removed for standalone generation
 
 all_question_structure = get_json('question_component_types')[0]
 

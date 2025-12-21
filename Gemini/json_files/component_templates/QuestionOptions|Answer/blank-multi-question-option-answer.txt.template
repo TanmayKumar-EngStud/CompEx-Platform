@@ -1,0 +1,16 @@
+STRICT RESPONSE FORMAT: JSON
+- "options" key with value as a list of dictionaries. Dictionary at index 0 provides options for blank 1, index 1 for blank 2, etc.
+- "answer" key with array of correct option letters (e.g., ["A", "F"]). CRITICAL: Do NOT output the content/value of the options. ONLY the letters.
+Example:-
+```json
+{
+  "options": [
+    { "A": "option 1", "B": "option 2", "C": "option 3" },
+    { "D": "option 4", "E": "option 5", "F": "option 6" }
+  ],
+  "answer": ["A", "F"]
+}
+```
+
+**Important Notes:**
+- TC-2/3: Multiple blanks, 3 options per blank, array answers

@@ -7,38 +7,80 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - standard_deviation> - <Biology & Ecology> - <Numeric Comparisons> - difficulty_level: <2>",
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - golden_ratio_applications> - <Political Science> - <Single Variable Equation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Political Science *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: golden_ratio_applications",
+                  "parsed_tags": {
+                     "Theme": "Political Science",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "golden_ratio_applications"
+                  },
                   "difficulty": 2,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - mixture_ratio> - <Sustainable Energy & Climate Technology> - <Numeric Comparisons> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - direct_proportion> - <Agricultural Economics & Food Security> - <Numeric Comparisons> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Agricultural Economics & Food Security *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: direct_proportion",
+                  "parsed_tags": {
+                     "Theme": "Agricultural Economics & Food Security",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "direct_proportion"
+                  },
+                  "difficulty": 1,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - probability_rules> - <Literature & Criticism> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - selection_problems> - <Medicine & Physiology> - <Word Problems&> - difficulty_level: <4>",
-                  "difficulty": 4,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - arrangement_problems> - <Geology & Meteorology> - <Single Variable Equation> - difficulty_level: <3>",
+                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - domain_range> - <Political Science> - <Geometry Proofs> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Political Science *Topic*: Geometry Proofs *Sub-topic/Focused Skill*: domain_range",
+                  "parsed_tags": {
+                     "Theme": "Political Science",
+                     "Topic": "Geometry Proofs",
+                     "Sub-topic/Focused Skill": "domain_range"
+                  },
                   "difficulty": 3,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - selection_problems> - <Healthcare Analytics & Epidemiology> - <Single Variable Equation> - difficulty_level: <2>",
+                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - graphical_solutions> - <Supply Chain Logistics & Global Trade> - <Numeric Comparisons> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: graphical_solutions",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "graphical_solutions"
+                  },
                   "difficulty": 2,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - mutually_exclusive_events> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <2>",
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - arrangement_problems> - <Space Exploration & Engineering> - <Single Variable Equation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Space Exploration & Engineering *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: arrangement_problems",
+                  "parsed_tags": {
+                     "Theme": "Space Exploration & Engineering",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "arrangement_problems"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_completion_time> - <Chemistry & Physics> - <Single Variable Equation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Chemistry & Physics *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: work_completion_time",
+                  "parsed_tags": {
+                     "Theme": "Chemistry & Physics",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "work_completion_time"
+                  },
                   "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - data_interpretation> - <Literature & Criticism> - <Coordinate Geometry> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Literature & Criticism *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: data_interpretation",
+                  "parsed_tags": {
+                     "Theme": "Literature & Criticism",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "data_interpretation"
+                  },
+                  "difficulty": 1,
                   "option": "single"
                }
             ]
@@ -48,44 +90,92 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - data_spread> - <Logistics and Operations> - <Word Problems&> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - direct_proportion> - <Sustainable Energy & Climate Technology> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - logarithmic_properties> - <Biology & Ecology> - <Inequalities> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - arrangement_problems> - <Anthropology & Archaeology> - <Pure Number Theory> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Anthropology & Archaeology *Topic*: Pure Number Theory *Sub-topic/Focused Skill*: arrangement_problems",
+                  "parsed_tags": {
+                     "Theme": "Anthropology & Archaeology",
+                     "Topic": "Pure Number Theory",
+                     "Sub-topic/Focused Skill": "arrangement_problems"
+                  },
                   "difficulty": 1,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - eulers_totient_theorem> - <Healthcare Analytics & Epidemiology> - <Inequalities> - difficulty_level: <3>",
-                  "difficulty": 3,
+                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - standard_deviation> - <Supply Chain Logistics & Global Trade> - <Geometry Proofs> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Geometry Proofs *Sub-topic/Focused Skill*: standard_deviation",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Geometry Proofs",
+                     "Sub-topic/Focused Skill": "standard_deviation"
+                  },
+                  "difficulty": 1,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - statistical_analysis> - <Sustainable Energy & Climate Technology> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_efficiency> - <Business and Finance> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - arrangement_problems> - <Agricultural Economics & Food Security> - <Numeric Comparisons> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Agricultural Economics & Food Security *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: arrangement_problems",
+                  "parsed_tags": {
+                     "Theme": "Agricultural Economics & Food Security",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "arrangement_problems"
+                  },
+                  "difficulty": 1,
                   "option": "multi"
                },
                {
-                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - exponential_equations> - <Urban Planning & Smart Cities> - <Numeric Comparisons> - difficulty_level: <4>",
-                  "difficulty": 4,
+                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - statistical_analysis> - <Philosophy & Ethics> - <Word Problems&> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy & Ethics *Topic*: Word Problems& *Sub-topic/Focused Skill*: statistical_analysis",
+                  "parsed_tags": {
+                     "Theme": "Philosophy & Ethics",
+                     "Topic": "Word Problems&",
+                     "Sub-topic/Focused Skill": "statistical_analysis"
+                  },
+                  "difficulty": 2,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - probability_rules> - <Digital Economy & E-commerce> - <Single Variable Equation> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - break_even_analysis> - <Psychology & Sociology> - <Numeric Comparisons> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Psychology & Sociology *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: break_even_analysis",
+                  "parsed_tags": {
+                     "Theme": "Psychology & Sociology",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "break_even_analysis"
+                  },
+                  "difficulty": 5,
                   "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - alligation_method> - <Philosophy & Ethics> - <Single Variable Equation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy & Ethics *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: alligation_method",
+                  "parsed_tags": {
+                     "Theme": "Philosophy & Ethics",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "alligation_method"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - Expectation> - <Healthcare Analytics & Epidemiology> - <Single Variable Equation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Healthcare Analytics & Epidemiology *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: Expectation",
+                  "parsed_tags": {
+                     "Theme": "Healthcare Analytics & Epidemiology",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "Expectation"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - weighted_average> - <History (Ancient/Modern)> - <Data Interpretation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History (Ancient/Modern) *Topic*: Data Interpretation *Sub-topic/Focused Skill*: weighted_average",
+                  "parsed_tags": {
+                     "Theme": "History (Ancient/Modern)",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "weighted_average"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
                }
             ]
          },
@@ -94,50 +184,82 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - conditional_probability> - <Urban Planning & Smart Cities> - <Data Interpretation> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - ratio_calculations> - <Biology & Ecology> - <Geometry Proofs> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Biology & Ecology *Topic*: Geometry Proofs *Sub-topic/Focused Skill*: ratio_calculations",
+                  "parsed_tags": {
+                     "Theme": "Biology & Ecology",
+                     "Topic": "Geometry Proofs",
+                     "Sub-topic/Focused Skill": "ratio_calculations"
+                  },
+                  "difficulty": 1,
                   "child-prompt": [
                      {
-                        "prompt": "<Understanding Axes and Scales> - difficulty_level: <2>",
+                        "prompt": [
+                           "<Percentage and Proportion Calculation> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Percentage and Proportion Calculation",
+                           {
+                              "Sub-topic/Focused Skill": "Percentage and Proportion Calculation"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 2
+                        "difficulty": 1
                      },
                      {
-                        "prompt": "<Percentage and Proportion Calculation> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Recognizing Outliers and Anomalies> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Recognizing Outliers and Anomalies",
+                           {
+                              "Sub-topic/Focused Skill": "Recognizing Outliers and Anomalies"
+                           }
+                        ],
                         "option": "multi",
                         "difficulty": 1
                      }
                   ],
                   "metadata-type": {
                      "charts": [
-                        "scatter_chart"
-                     ],
-                     "tables": [
-                        "pivot_table"
+                        "line_chart",
+                        "bar_chart"
                      ]
                   }
                },
                {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - combination_calculations> - <Digital Economy & E-commerce> - <Data Interpretation> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - power_calculations> - <Literature & Criticism> - <Geometry Proofs> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Literature & Criticism *Topic*: Geometry Proofs *Sub-topic/Focused Skill*: power_calculations",
+                  "parsed_tags": {
+                     "Theme": "Literature & Criticism",
+                     "Topic": "Geometry Proofs",
+                     "Sub-topic/Focused Skill": "power_calculations"
+                  },
+                  "difficulty": 5,
                   "child-prompt": [
                      {
-                        "prompt": "<Data Extraction from Graphs> - difficulty_level: <2>",
+                        "prompt": [
+                           "<Percentage and Proportion Calculation> - difficulty_level: <4>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Percentage and Proportion Calculation",
+                           {
+                              "Sub-topic/Focused Skill": "Percentage and Proportion Calculation"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 2
+                        "difficulty": 4
                      },
                      {
-                        "prompt": "<Identifying Maximum/Minimum Values> - difficulty_level: <2>",
-                        "option": "single",
-                        "difficulty": 2
+                        "prompt": [
+                           "<Data Extraction from Graphs> - difficulty_level: <5>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Data Extraction from Graphs",
+                           {
+                              "Sub-topic/Focused Skill": "Data Extraction from Graphs"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 5
                      }
                   ],
                   "metadata-type": {
                      "tables": [
-                        "pivot_table"
-                     ],
-                     "charts": [
-                        "pie_chart"
+                        "comparison_table",
+                        "comparison_table"
                      ]
                   }
                }
@@ -148,12 +270,24 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - fraction_operations> - <Biology & Ecology> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - eulers_totient_theorem> - <Business and Finance> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Business and Finance *Topic*: Number Properties and Fractions, Decimals, Percentages *Sub-topic/Focused Skill*: eulers_totient_theorem",
+                  "parsed_tags": {
+                     "Theme": "Business and Finance",
+                     "Topic": "Number Properties and Fractions, Decimals, Percentages",
+                     "Sub-topic/Focused Skill": "eulers_totient_theorem"
+                  },
+                  "difficulty": 5,
                   "option": "numeric"
                },
                {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - combination_calculations> - <Supply Chain Logistics & Global Trade> - difficulty_level: <2>",
+                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - inverse_functions> - <Medicine & Physiology> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Medicine & Physiology *Topic*: Functions and Polynomials *Sub-topic/Focused Skill*: inverse_functions",
+                  "parsed_tags": {
+                     "Theme": "Medicine & Physiology",
+                     "Topic": "Functions and Polynomials",
+                     "Sub-topic/Focused Skill": "inverse_functions"
+                  },
                   "difficulty": 2,
                   "option": "numeric"
                }
@@ -167,22 +301,42 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "Theme: <Finance> | Topic: <Logical Consistency> | vocabulary_level: <1> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "Theme: <Artificial Intelligence & Ethics> | Topic: <Structural Analysis> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Artificial Intelligence & Ethics *Sub-topic/Focused Skill*: Structural Analysis",
+                  "parsed_tags": {
+                     "Theme": "Artificial Intelligence & Ethics",
+                     "Sub-topic/Focused Skill": "Structural Analysis"
+                  },
+                  "difficulty": 4,
                   "option": "multi"
                },
                {
-                  "prompt": "Theme: <Economics> | Topic: <Semantic Equivalence> | vocabulary_level: <2> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "Theme: <Literature> | Topic: <Word Meaning Precision> | vocabulary_level: <3> | difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Literature *Sub-topic/Focused Skill*: Word Meaning Precision",
+                  "parsed_tags": {
+                     "Theme": "Literature",
+                     "Sub-topic/Focused Skill": "Word Meaning Precision"
+                  },
+                  "difficulty": 3,
                   "option": "multi"
                },
                {
-                  "prompt": "Theme: <Social Sciences (Psychology, Sociology)> | Topic: <Word Relationships> | vocabulary_level: <3> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "Theme: <Economics> | Topic: <Semantic Equivalence> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Economics *Sub-topic/Focused Skill*: Semantic Equivalence",
+                  "parsed_tags": {
+                     "Theme": "Economics",
+                     "Sub-topic/Focused Skill": "Semantic Equivalence"
+                  },
+                  "difficulty": 4,
                   "option": "multi"
                },
                {
-                  "prompt": "Theme: <Cultural Anthropology> | Topic: <Tone and Connotation> | vocabulary_level: <3> | difficulty_level: <2>",
+                  "prompt": "Theme: <Philosophy> | Topic: <Sentence Coherence> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy *Sub-topic/Focused Skill*: Sentence Coherence",
+                  "parsed_tags": {
+                     "Theme": "Philosophy",
+                     "Sub-topic/Focused Skill": "Sentence Coherence"
+                  },
                   "difficulty": 2,
                   "option": "multi"
                }
@@ -193,33 +347,69 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "TC_Type: <TC-1> | Theme: <Environmental Ethics & Philosophy> | Topic: <Semantic Relationships> | vocabulary_level: <1> | difficulty_level: <3>",
-                  "difficulty": 3,
+                  "prompt": "TC_Type: <TC-1> | Theme: <Digital Humanities & Media Studies> | Topic: <Contrast and Support Clues> | vocabulary_level: <2> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Digital Humanities & Media Studies *Topic*: TC-1 *Sub-topic/Focused Skill*: Contrast and Support Clues",
+                  "parsed_tags": {
+                     "Theme": "Digital Humanities & Media Studies",
+                     "Topic": "TC-1",
+                     "Sub-topic/Focused Skill": "Contrast and Support Clues"
+                  },
+                  "difficulty": 1,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-3> | Theme: <Artificial Intelligence & Ethics> | Topic: <Contrast and Support Clues> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "prompt": "TC_Type: <TC-2> | Theme: <Modern Architecture & Urban Design> | Topic: <Contextual Analysis> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Modern Architecture & Urban Design *Topic*: TC-2 *Sub-topic/Focused Skill*: Contextual Analysis",
+                  "parsed_tags": {
+                     "Theme": "Modern Architecture & Urban Design",
+                     "Topic": "TC-2",
+                     "Sub-topic/Focused Skill": "Contextual Analysis"
+                  },
                   "difficulty": 2,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-3> | Theme: <Finance> | Topic: <Critical Comprehension> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "prompt": "TC_Type: <TC-2> | Theme: <Digital Humanities & Media Studies> | Topic: <Sentence Logic and Structure> | vocabulary_level: <3> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Digital Humanities & Media Studies *Topic*: TC-2 *Sub-topic/Focused Skill*: Sentence Logic and Structure",
+                  "parsed_tags": {
+                     "Theme": "Digital Humanities & Media Studies",
+                     "Topic": "TC-2",
+                     "Sub-topic/Focused Skill": "Sentence Logic and Structure"
+                  },
                   "difficulty": 2,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-2> | Theme: <Geography> | Topic: <Vocabulary in Context> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "prompt": "TC_Type: <TC-3> | Theme: <International Relations & Diplomacy> | Topic: <Vocabulary in Context> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: International Relations & Diplomacy *Topic*: TC-3 *Sub-topic/Focused Skill*: Vocabulary in Context",
+                  "parsed_tags": {
+                     "Theme": "International Relations & Diplomacy",
+                     "Topic": "TC-3",
+                     "Sub-topic/Focused Skill": "Vocabulary in Context"
+                  },
                   "difficulty": 4,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-2> | Theme: <Neuroscience> | Topic: <Tone Recognition> | vocabulary_level: <2> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "TC_Type: <TC-3> | Theme: <Fiction> | Topic: <Contextual Analysis> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Fiction *Topic*: TC-3 *Sub-topic/Focused Skill*: Contextual Analysis",
+                  "parsed_tags": {
+                     "Theme": "Fiction",
+                     "Topic": "TC-3",
+                     "Sub-topic/Focused Skill": "Contextual Analysis"
+                  },
+                  "difficulty": 2,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-3> | Theme: <Geography> | Topic: <Sentence Logic and Structure> | vocabulary_level: <3> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "TC_Type: <TC-1> | Theme: <Art> | Topic: <Logical Consistency> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Art *Topic*: TC-1 *Sub-topic/Focused Skill*: Logical Consistency",
+                  "parsed_tags": {
+                     "Theme": "Art",
+                     "Topic": "TC-1",
+                     "Sub-topic/Focused Skill": "Logical Consistency"
+                  },
+                  "difficulty": 2,
                   "option": "blank"
                }
             ]
@@ -229,28 +419,58 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "RC_Type: <RC-L> | Theme: <Literature> | Topic: <Comparative Analysis and Perspective Recognition> | vocabulary_level: <1> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "RC_Type: <RC-L> | Theme: <Sports> | Topic: <Passage Organization and Cohesion> | vocabulary_level: <2> | difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sports *Topic*: RC-L *Sub-topic/Focused Skill*: Passage Organization and Cohesion",
+                  "parsed_tags": {
+                     "Theme": "Sports",
+                     "Sub-topic/Focused Skill": "Passage Organization and Cohesion",
+                     "Topic": "RC-L"
+                  },
+                  "difficulty": 5,
                   "child-prompt": [
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <2>",
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <5>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 5
+                     },
+                     {
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <4>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
                         "option": "multi",
-                        "difficulty": 2
+                        "difficulty": 4
                      },
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Inference Question> - difficulty_level: <4>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Inference Question",
+                           {
+                              "Sub-topic/Focused Skill": "Inference Question"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 1
+                        "difficulty": 4
                      },
                      {
-                        "prompt": "<Author's Purpose> - difficulty_level: <1>",
-                        "option": "single",
-                        "difficulty": 1
-                     },
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <2>",
-                        "option": "single",
-                        "difficulty": 2
+                        "prompt": [
+                           "<Strengthen Question> - difficulty_level: <5>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Strengthen Question",
+                           {
+                              "Sub-topic/Focused Skill": "Strengthen Question"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 5
                      }
                   ],
                   "metadata-type": {
@@ -260,28 +480,58 @@
                   }
                },
                {
-                  "prompt": "RC_Type: <RC-L> | Theme: <Artificial Intelligence & Ethics> | Topic: <Comparative Analysis and Perspective Recognition> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "prompt": "RC_Type: <RC-L> | Theme: <Finance> | Topic: <Assumption and Bias Identification> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Finance *Topic*: RC-L *Sub-topic/Focused Skill*: Assumption and Bias Identification",
+                  "parsed_tags": {
+                     "Theme": "Finance",
+                     "Sub-topic/Focused Skill": "Assumption and Bias Identification",
+                     "Topic": "RC-L"
+                  },
                   "difficulty": 2,
                   "child-prompt": [
                      {
-                        "prompt": "<Inference Question> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 1
+                     },
+                     {
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 1
                      },
                      {
-                        "prompt": "<Author's Purpose> - difficulty_level: <2>",
-                        "option": "single",
-                        "difficulty": 2
-                     },
-                     {
-                        "prompt": "<Evaluate Question> - difficulty_level: <1>",
-                        "option": "single",
-                        "difficulty": 1
-                     },
-                     {
-                        "prompt": "<Inference Question> - difficulty_level: <2>",
+                        "prompt": [
+                           "<Main Idea Question> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Main Idea Question",
+                           {
+                              "Sub-topic/Focused Skill": "Main Idea Question"
+                           }
+                        ],
                         "option": "multi",
                         "difficulty": 2
+                     },
+                     {
+                        "prompt": [
+                           "<Supporting Details> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Supporting Details",
+                           {
+                              "Sub-topic/Focused Skill": "Supporting Details"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 3
                      }
                   ],
                   "metadata-type": {
@@ -291,18 +541,36 @@
                   }
                },
                {
-                  "prompt": "RC_Type: <RC-S> | Theme: <Social Sciences (Psychology, Sociology)> | Topic: <Vocabulary in Context> | vocabulary_level: <3> | difficulty_level: <4>",
-                  "difficulty": 4,
+                  "prompt": "RC_Type: <RC-S> | Theme: <History> | Topic: <Evidence-Based Reasoning> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History *Topic*: RC-S *Sub-topic/Focused Skill*: Evidence-Based Reasoning",
+                  "parsed_tags": {
+                     "Theme": "History",
+                     "Sub-topic/Focused Skill": "Evidence-Based Reasoning",
+                     "Topic": "RC-S"
+                  },
+                  "difficulty": 2,
                   "child-prompt": [
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <5>",
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 5
+                        "difficulty": 3
                      },
                      {
-                        "prompt": "<Inference Question> - difficulty_level: <5>",
+                        "prompt": [
+                           "<Inference Question> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Inference Question",
+                           {
+                              "Sub-topic/Focused Skill": "Inference Question"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 5
+                        "difficulty": 2
                      }
                   ],
                   "metadata-type": {
@@ -321,38 +589,80 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - scientific_notation> - <Geology & Meteorology> - <Word Problems&> - difficulty_level: <5>",
+                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - composite_functions> - <Healthcare Analytics & Epidemiology> - <Abstract Algebra> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Healthcare Analytics & Epidemiology *Topic*: Abstract Algebra *Sub-topic/Focused Skill*: composite_functions",
+                  "parsed_tags": {
+                     "Theme": "Healthcare Analytics & Epidemiology",
+                     "Topic": "Abstract Algebra",
+                     "Sub-topic/Focused Skill": "composite_functions"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - concentration_problems> - <Psychology & Sociology> - <Inequalities> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Psychology & Sociology *Topic*: Inequalities *Sub-topic/Focused Skill*: concentration_problems",
+                  "parsed_tags": {
+                     "Theme": "Psychology & Sociology",
+                     "Topic": "Inequalities",
+                     "Sub-topic/Focused Skill": "concentration_problems"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - mixture_ratio> - <Literature & Criticism> - <Word Problems&> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Literature & Criticism *Topic*: Word Problems& *Sub-topic/Focused Skill*: mixture_ratio",
+                  "parsed_tags": {
+                     "Theme": "Literature & Criticism",
+                     "Topic": "Word Problems&",
+                     "Sub-topic/Focused Skill": "mixture_ratio"
+                  },
                   "difficulty": 5,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - central_tendency> - <Sustainable Energy & Climate Technology> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "prompt": "<questionTopic - Algebraic Expressions and Simplification> - <sub-questionTopic - algebraic_identities> - <Financial Markets & Cryptocurrency> - <Word Problems&> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Financial Markets & Cryptocurrency *Topic*: Word Problems& *Sub-topic/Focused Skill*: algebraic_identities",
+                  "parsed_tags": {
+                     "Theme": "Financial Markets & Cryptocurrency",
+                     "Topic": "Word Problems&",
+                     "Sub-topic/Focused Skill": "algebraic_identities"
+                  },
                   "difficulty": 3,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - discount_problems> - <Agricultural Economics & Food Security> - <Data Interpretation> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - scientific_notation> - <History (Ancient/Modern)> - <Pure Number Theory> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History (Ancient/Modern) *Topic*: Pure Number Theory *Sub-topic/Focused Skill*: scientific_notation",
+                  "parsed_tags": {
+                     "Theme": "History (Ancient/Modern)",
+                     "Topic": "Pure Number Theory",
+                     "Sub-topic/Focused Skill": "scientific_notation"
+                  },
+                  "difficulty": 1,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - Expectation> - <History (Ancient/Modern)> - <Word Problems&> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - mixture_ratio> - <Sustainable Energy & Climate Technology> - <Coordinate Geometry> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: mixture_ratio",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "mixture_ratio"
+                  },
+                  "difficulty": 1,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - counting_principles> - <Healthcare Analytics & Epidemiology> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - statistical_measures> - <Business and Finance> - <Inequalities> - difficulty_level: <4>",
-                  "difficulty": 4,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - Expectation> - <Medicine & Physiology> - <Data Interpretation> - difficulty_level: <4>",
-                  "difficulty": 4,
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - compound_ratios> - <Philosophy & Ethics> - <Single Variable Equation> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy & Ethics *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: compound_ratios",
+                  "parsed_tags": {
+                     "Theme": "Philosophy & Ethics",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "compound_ratios"
+                  },
+                  "difficulty": 5,
                   "option": "single"
                }
             ]
@@ -362,44 +672,92 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_completion_time> - <Business and Finance> - <Word Problems&> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - linear_equation_solving> - <Business and Finance> - <Word Problems&> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - chinese_remainder_theorem> - <Geology & Meteorology> - <Single Variable Equation> - difficulty_level: <5>",
-                  "difficulty": 5,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - permutation_formulas> - <Biology & Ecology> - <Single Variable Equation> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - discount_problems> - <Astrophysics & Astronomy> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - replacement_problems> - <Financial Markets & Cryptocurrency> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - distribution_analysis> - <Supply Chain Logistics & Global Trade> - <Single Variable Equation> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: distribution_analysis",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "distribution_analysis"
+                  },
                   "difficulty": 3,
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - golden_ratio_applications> - <Visual Arts & Architecture> - <Single Variable Equation> - difficulty_level: <5>",
-                  "difficulty": 5,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - exponential_equations> - <Business and Finance> - <Word Problems&> - difficulty_level: <2>",
+                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - annual_growth_rate> - <Visual Arts & Architecture> - <Abstract Algebra> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Visual Arts & Architecture *Topic*: Abstract Algebra *Sub-topic/Focused Skill*: annual_growth_rate",
+                  "parsed_tags": {
+                     "Theme": "Visual Arts & Architecture",
+                     "Topic": "Abstract Algebra",
+                     "Sub-topic/Focused Skill": "annual_growth_rate"
+                  },
                   "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_efficiency> - <Sustainable Energy & Climate Technology> - <Data Interpretation> - difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Data Interpretation *Sub-topic/Focused Skill*: work_efficiency",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "work_efficiency"
+                  },
+                  "difficulty": 4,
                   "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - data_analysis> - <Sustainable Energy & Climate Technology> - <Data Interpretation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Data Interpretation *Sub-topic/Focused Skill*: data_analysis",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "data_analysis"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - chinese_remainder_theorem> - <Sustainable Energy & Climate Technology> - <Word Problems&> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Word Problems& *Sub-topic/Focused Skill*: chinese_remainder_theorem",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Word Problems&",
+                     "Sub-topic/Focused Skill": "chinese_remainder_theorem"
+                  },
+                  "difficulty": 1,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - data_spread> - <Sustainable Energy & Climate Technology> - <Geometry Proofs> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Geometry Proofs *Sub-topic/Focused Skill*: data_spread",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Geometry Proofs",
+                     "Sub-topic/Focused Skill": "data_spread"
+                  },
+                  "difficulty": 1,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - weighted_average> - <Visual Arts & Architecture> - <Pure Number Theory> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Visual Arts & Architecture *Topic*: Pure Number Theory *Sub-topic/Focused Skill*: weighted_average",
+                  "parsed_tags": {
+                     "Theme": "Visual Arts & Architecture",
+                     "Topic": "Pure Number Theory",
+                     "Sub-topic/Focused Skill": "weighted_average"
+                  },
+                  "difficulty": 1,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - unit_conversions> - <Digital Economy & E-commerce> - <Data Interpretation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Digital Economy & E-commerce *Topic*: Data Interpretation *Sub-topic/Focused Skill*: unit_conversions",
+                  "parsed_tags": {
+                     "Theme": "Digital Economy & E-commerce",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "unit_conversions"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
                }
             ]
          },
@@ -408,45 +766,85 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - mutually_exclusive_events> - <Astrophysics & Astronomy> - <Word Problems&> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - fraction_operations> - <Healthcare Analytics & Epidemiology> - <Numeric Comparisons> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Healthcare Analytics & Epidemiology *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: fraction_operations",
+                  "parsed_tags": {
+                     "Theme": "Healthcare Analytics & Epidemiology",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "fraction_operations"
+                  },
                   "difficulty": 1,
                   "child-prompt": [
                      {
-                        "prompt": "<Data Extraction from Graphs> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Reading and Interpreting Labels and Legends> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Reading and Interpreting Labels and Legends",
+                           {
+                              "Sub-topic/Focused Skill": "Reading and Interpreting Labels and Legends"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 1
+                        "difficulty": 2
                      },
                      {
-                        "prompt": "<Identifying Maximum/Minimum Values> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Understanding Axes and Scales> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Understanding Axes and Scales",
+                           {
+                              "Sub-topic/Focused Skill": "Understanding Axes and Scales"
+                           }
+                        ],
                         "option": "multi",
                         "difficulty": 1
                      }
                   ],
                   "metadata-type": {
                      "charts": [
-                        "line_chart",
-                        "line_chart"
+                        "pie_chart"
+                     ],
+                     "tables": [
+                        "data_table"
                      ]
                   }
                },
                {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - normal_distribution> - <Visual Arts & Architecture> - <Single Variable Equation> - difficulty_level: <4>",
-                  "difficulty": 4,
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - inverse_proportion> - <Psychology & Sociology> - <Coordinate Geometry> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Psychology & Sociology *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: inverse_proportion",
+                  "parsed_tags": {
+                     "Theme": "Psychology & Sociology",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "inverse_proportion"
+                  },
+                  "difficulty": 2,
                   "child-prompt": [
                      {
-                        "prompt": "<Logical Inference from Graphical Data> - difficulty_level: <3>",
+                        "prompt": [
+                           "<Data Extraction from Graphs> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Data Extraction from Graphs",
+                           {
+                              "Sub-topic/Focused Skill": "Data Extraction from Graphs"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 3
+                        "difficulty": 1
                      },
                      {
-                        "prompt": "<Understanding Axes and Scales> - difficulty_level: <4>",
+                        "prompt": [
+                           "<Interpolation and Extrapolation> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Interpolation and Extrapolation",
+                           {
+                              "Sub-topic/Focused Skill": "Interpolation and Extrapolation"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 4
+                        "difficulty": 3
                      }
                   ],
                   "metadata-type": {
+                     "charts": [
+                        "pie_chart"
+                     ],
                      "tables": [
-                        "data_table",
                         "data_table"
                      ]
                   }
@@ -458,12 +856,24 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_completion_time> - <Literature & Criticism> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - conditional_probability> - <History (Ancient/Modern)> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History (Ancient/Modern) *Topic*: Probability Rules (Basic, Independent, Mutually Exclusive, etc) *Sub-topic/Focused Skill*: conditional_probability",
+                  "parsed_tags": {
+                     "Theme": "History (Ancient/Modern)",
+                     "Topic": "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+                     "Sub-topic/Focused Skill": "conditional_probability"
+                  },
+                  "difficulty": 1,
                   "option": "numeric"
                },
                {
-                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - successive_discounts> - <Sustainable Energy & Climate Technology> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - logarithmic_properties> - <Marketing and Sales> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Marketing and Sales *Topic*: Exponents and Powers *Sub-topic/Focused Skill*: logarithmic_properties",
+                  "parsed_tags": {
+                     "Theme": "Marketing and Sales",
+                     "Topic": "Exponents and Powers",
+                     "Sub-topic/Focused Skill": "logarithmic_properties"
+                  },
                   "difficulty": 1,
                   "option": "numeric"
                }
@@ -477,22 +887,42 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "Theme: <Business> | Topic: <Sentence Coherence> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "prompt": "Theme: <Artificial Intelligence & Ethics> | Topic: <Word Relationships> | vocabulary_level: <3> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Artificial Intelligence & Ethics *Sub-topic/Focused Skill*: Word Relationships",
+                  "parsed_tags": {
+                     "Theme": "Artificial Intelligence & Ethics",
+                     "Sub-topic/Focused Skill": "Word Relationships"
+                  },
                   "difficulty": 1,
                   "option": "multi"
                },
                {
-                  "prompt": "Theme: <Sports> | Topic: <Sentence Coherence> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "prompt": "Theme: <Geography> | Topic: <Logical Consistency> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Geography *Sub-topic/Focused Skill*: Logical Consistency",
+                  "parsed_tags": {
+                     "Theme": "Geography",
+                     "Sub-topic/Focused Skill": "Logical Consistency"
+                  },
                   "difficulty": 1,
                   "option": "multi"
                },
                {
-                  "prompt": "Theme: <Neuroscience> | Topic: <Contextual Vocabulary> | vocabulary_level: <2> | difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "Theme: <International Relations & Diplomacy> | Topic: <Contextual Vocabulary> | vocabulary_level: <2> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: International Relations & Diplomacy *Sub-topic/Focused Skill*: Contextual Vocabulary",
+                  "parsed_tags": {
+                     "Theme": "International Relations & Diplomacy",
+                     "Sub-topic/Focused Skill": "Contextual Vocabulary"
+                  },
+                  "difficulty": 4,
                   "option": "multi"
                },
                {
-                  "prompt": "Theme: <Art> | Topic: <Vocabulary in Context> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "prompt": "Theme: <Linguistics & Language Acquisition> | Topic: <Tone and Connotation> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Linguistics & Language Acquisition *Sub-topic/Focused Skill*: Tone and Connotation",
+                  "parsed_tags": {
+                     "Theme": "Linguistics & Language Acquisition",
+                     "Sub-topic/Focused Skill": "Tone and Connotation"
+                  },
                   "difficulty": 1,
                   "option": "multi"
                }
@@ -503,33 +933,69 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "TC_Type: <TC-1> | Theme: <Humanities (History, Art, Literature)> | Topic: <Vocabulary in Context> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "prompt": "TC_Type: <TC-3> | Theme: <International Relations & Diplomacy> | Topic: <Logical Consistency> | vocabulary_level: <1> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: International Relations & Diplomacy *Topic*: TC-3 *Sub-topic/Focused Skill*: Logical Consistency",
+                  "parsed_tags": {
+                     "Theme": "International Relations & Diplomacy",
+                     "Topic": "TC-3",
+                     "Sub-topic/Focused Skill": "Logical Consistency"
+                  },
                   "difficulty": 4,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-3> | Theme: <Science and Technology> | Topic: <Contrast and Support Clues> | vocabulary_level: <2> | difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "blank"
-               },
-               {
-                  "prompt": "TC_Type: <TC-1> | Theme: <Business (Marketing, Strategy, Finance)> | Topic: <Transitional Logic> | vocabulary_level: <3> | difficulty_level: <1>",
+                  "prompt": "TC_Type: <TC-2> | Theme: <Artificial Intelligence & Ethics> | Topic: <Logical Consistency> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Artificial Intelligence & Ethics *Topic*: TC-2 *Sub-topic/Focused Skill*: Logical Consistency",
+                  "parsed_tags": {
+                     "Theme": "Artificial Intelligence & Ethics",
+                     "Topic": "TC-2",
+                     "Sub-topic/Focused Skill": "Logical Consistency"
+                  },
                   "difficulty": 1,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-1> | Theme: <Digital Humanities & Media Studies> | Topic: <Transitional Logic> | vocabulary_level: <1> | difficulty_level: <4>",
+                  "prompt": "TC_Type: <TC-1> | Theme: <Artificial Intelligence & Ethics> | Topic: <Transitional Logic> | vocabulary_level: <2> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Artificial Intelligence & Ethics *Topic*: TC-1 *Sub-topic/Focused Skill*: Transitional Logic",
+                  "parsed_tags": {
+                     "Theme": "Artificial Intelligence & Ethics",
+                     "Topic": "TC-1",
+                     "Sub-topic/Focused Skill": "Transitional Logic"
+                  },
+                  "difficulty": 1,
+                  "option": "blank"
+               },
+               {
+                  "prompt": "TC_Type: <TC-3> | Theme: <Economics> | Topic: <Tone Recognition> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Economics *Topic*: TC-3 *Sub-topic/Focused Skill*: Tone Recognition",
+                  "parsed_tags": {
+                     "Theme": "Economics",
+                     "Topic": "TC-3",
+                     "Sub-topic/Focused Skill": "Tone Recognition"
+                  },
                   "difficulty": 4,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-2> | Theme: <History> | Topic: <Contextual Analysis> | vocabulary_level: <1> | difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "TC_Type: <TC-1> | Theme: <Anthropology & Sociology> | Topic: <Sentence Logic and Structure> | vocabulary_level: <3> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Anthropology & Sociology *Topic*: TC-1 *Sub-topic/Focused Skill*: Sentence Logic and Structure",
+                  "parsed_tags": {
+                     "Theme": "Anthropology & Sociology",
+                     "Topic": "TC-1",
+                     "Sub-topic/Focused Skill": "Sentence Logic and Structure"
+                  },
+                  "difficulty": 1,
                   "option": "blank"
                },
                {
-                  "prompt": "TC_Type: <TC-3> | Theme: <Tech Innovation> | Topic: <Transitional Logic> | vocabulary_level: <1> | difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "TC_Type: <TC-3> | Theme: <Natural Sciences (Biology, Physics, Chemistry)> | Topic: <Transitional Logic> | vocabulary_level: <3> | difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Natural Sciences (Biology, Physics, Chemistry) *Topic*: TC-3 *Sub-topic/Focused Skill*: Transitional Logic",
+                  "parsed_tags": {
+                     "Theme": "Natural Sciences (Biology, Physics, Chemistry)",
+                     "Topic": "TC-3",
+                     "Sub-topic/Focused Skill": "Transitional Logic"
+                  },
+                  "difficulty": 3,
                   "option": "blank"
                }
             ]
@@ -539,42 +1005,45 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "RC_Type: <RC-S> | Theme: <Literature> | Topic: <Comparative Analysis and Perspective Recognition> | vocabulary_level: <2> | difficulty_level: <1>",
-                  "difficulty": 1,
-                  "child-prompt": [
-                     {
-                        "prompt": "<Inference Question> - difficulty_level: <1>",
-                        "option": "single",
-                        "difficulty": 1
-                     },
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <1>",
-                        "option": "single",
-                        "difficulty": 1
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "RC_Type: <RC-M> | Theme: <Finance> | Topic: <Skimming and Scanning Techniques> | vocabulary_level: <2> | difficulty_level: <4>",
+                  "prompt": "RC_Type: <RC-M> | Theme: <Artificial Intelligence & Ethics> | Topic: <Skimming and Scanning Techniques> | vocabulary_level: <2> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Artificial Intelligence & Ethics *Topic*: RC-M *Sub-topic/Focused Skill*: Skimming and Scanning Techniques",
+                  "parsed_tags": {
+                     "Theme": "Artificial Intelligence & Ethics",
+                     "Sub-topic/Focused Skill": "Skimming and Scanning Techniques",
+                     "Topic": "RC-M"
+                  },
                   "difficulty": 4,
                   "child-prompt": [
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <5>",
+                        "prompt": [
+                           "<Inference Question> - difficulty_level: <5>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Inference Question",
+                           {
+                              "Sub-topic/Focused Skill": "Inference Question"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 5
                      },
                      {
-                        "prompt": "<Strengthen Question> - difficulty_level: <4>",
-                        "option": "multi",
-                        "difficulty": 4
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 3
                      },
                      {
-                        "prompt": "<Supporting Details> - difficulty_level: <4>",
+                        "prompt": [
+                           "<Supporting Details> - difficulty_level: <4>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Supporting Details",
+                           {
+                              "Sub-topic/Focused Skill": "Supporting Details"
+                           }
+                        ],
                         "option": "multi",
                         "difficulty": 4
                      }
@@ -586,21 +1055,34 @@
                   }
                },
                {
-                  "prompt": "RC_Type: <RC-M> | Theme: <Finance> | Topic: <Main Idea Comprehension> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "prompt": "RC_Type: <RC-S> | Theme: <Linguistics & Language Acquisition> | Topic: <Evidence-Based Reasoning> | vocabulary_level: <3> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Linguistics & Language Acquisition *Topic*: RC-S *Sub-topic/Focused Skill*: Evidence-Based Reasoning",
+                  "parsed_tags": {
+                     "Theme": "Linguistics & Language Acquisition",
+                     "Sub-topic/Focused Skill": "Evidence-Based Reasoning",
+                     "Topic": "RC-S"
+                  },
                   "difficulty": 1,
                   "child-prompt": [
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <2>",
-                        "option": "multi",
+                        "prompt": [
+                           "<Tone and Attitude> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Tone and Attitude",
+                           {
+                              "Sub-topic/Focused Skill": "Tone and Attitude"
+                           }
+                        ],
+                        "option": "single",
                         "difficulty": 2
                      },
                      {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <1>",
-                        "option": "single",
-                        "difficulty": 1
-                     },
-                     {
-                        "prompt": "<Supporting Details> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 1
                      }
@@ -612,17 +1094,96 @@
                   }
                },
                {
-                  "prompt": "RC_Type: <RC-S> | Theme: <Cognitive Science & Psychology> | Topic: <Vocabulary in Context> | vocabulary_level: <3> | difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "RC_Type: <RC-L> | Theme: <Finance> | Topic: <Summarization and Paraphrasing> | vocabulary_level: <2> | difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Finance *Topic*: RC-L *Sub-topic/Focused Skill*: Summarization and Paraphrasing",
+                  "parsed_tags": {
+                     "Theme": "Finance",
+                     "Sub-topic/Focused Skill": "Summarization and Paraphrasing",
+                     "Topic": "RC-L"
+                  },
+                  "difficulty": 3,
                   "child-prompt": [
                      {
-                        "prompt": "<Inference Question> - difficulty_level: <2>",
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <4>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 4
+                     },
+                     {
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 3
+                     },
+                     {
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 2
                      },
                      {
-                        "prompt": "<Evaluate Question> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Tone and Attitude> - difficulty_level: <4>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Tone and Attitude",
+                           {
+                              "Sub-topic/Focused Skill": "Tone and Attitude"
+                           }
+                        ],
                         "option": "single",
+                        "difficulty": 4
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "RC_Type: <RC-S> | Theme: <History> | Topic: <Passage Organization and Cohesion> | vocabulary_level: <1> | difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History *Topic*: RC-S *Sub-topic/Focused Skill*: Passage Organization and Cohesion",
+                  "parsed_tags": {
+                     "Theme": "History",
+                     "Sub-topic/Focused Skill": "Passage Organization and Cohesion",
+                     "Topic": "RC-S"
+                  },
+                  "difficulty": 1,
+                  "child-prompt": [
+                     {
+                        "prompt": [
+                           "<Author's Purpose> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Author's Purpose",
+                           {
+                              "Sub-topic/Focused Skill": "Author's Purpose"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 1
+                     },
+                     {
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
+                        "option": "multi",
                         "difficulty": 1
                      }
                   ],
@@ -644,26 +1205,42 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - compound_interest_formulas> - <Healthcare Analytics & Epidemiology> - <table> - <table> - <table> - <Trend Analysis> - <Trend Analysis> - <Trend Analysis> - difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - independent_events> - <Digital Economy & E-commerce> - <memo> - <memo> - <memo> - <Financial Reasoning> - <Financial Reasoning> - <Financial Reasoning> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Digital Economy & E-commerce *Topic*: memo *Sub-topic/Focused Skill*: Financial Reasoning",
+                  "parsed_tags": {
+                     "Theme": "Digital Economy & E-commerce",
+                     "Topic": "memo",
+                     "Sub-topic/Focused Skill": "Financial Reasoning"
+                  },
+                  "difficulty": 2,
                   "child-prompt": [
                      {
-                        "prompt": "<Synthesizing Information> - difficulty_level: <2>",
-                        "option": "multi",
-                        "difficulty": 2
+                        "prompt": [
+                           "<Logical Inference> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Logical Inference",
+                           {
+                              "Sub-topic/Focused Skill": "Logical Inference"
+                           }
+                        ],
+                        "option": "dichotomous",
+                        "difficulty": 3
                      },
                      {
-                        "prompt": "<Verbal Reasoning> - difficulty_level: <2>",
-                        "option": "single",
-                        "difficulty": 2
+                        "prompt": [
+                           "<Evaluating Trade-offs> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluating Trade-offs",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluating Trade-offs"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 1
                      }
                   ],
                   "metadata-type": {
-                     "tables": [
-                        "data_table"
-                     ],
                      "charts": [
-                        "line_chart"
+                        "pie_chart",
+                        "scatter_chart"
                      ],
                      "passage": [
                         "scenario"
@@ -671,27 +1248,47 @@
                   }
                },
                {
-                  "prompt": "<questionTopic - Algebraic Expressions and Simplification> - <sub-questionTopic - factorization> - <Supply Chain Logistics & Global Trade> - <graph> - <graph> - <graph> - <Trend Analysis> - <Trend Analysis> - <Trend Analysis> - difficulty_level: <2>",
-                  "difficulty": 2,
+                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - loan_calculations> - <Logistics and Operations> - <table> - <table> - <table> - <Financial Reasoning> - <Financial Reasoning> - <Financial Reasoning> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Logistics and Operations *Topic*: table *Sub-topic/Focused Skill*: Financial Reasoning",
+                  "parsed_tags": {
+                     "Theme": "Logistics and Operations",
+                     "Topic": "table",
+                     "Sub-topic/Focused Skill": "Financial Reasoning"
+                  },
+                  "difficulty": 1,
                   "child-prompt": [
                      {
-                        "prompt": "<Verbal Reasoning> - difficulty_level: <1>",
-                        "option": "multi",
-                        "difficulty": 1
+                        "prompt": [
+                           "<Evaluating Trade-offs> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluating Trade-offs",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluating Trade-offs"
+                           }
+                        ],
+                        "option": "dichotomous",
+                        "difficulty": 2
                      },
                      {
-                        "prompt": "<Identifying Assumptions> - difficulty_level: <3>",
+                        "prompt": [
+                           "<Data Interpretation> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Data Interpretation",
+                           {
+                              "Sub-topic/Focused Skill": "Data Interpretation"
+                           }
+                        ],
                         "option": "dichotomous",
-                        "difficulty": 3
+                        "difficulty": 2
                      }
                   ],
                   "metadata-type": {
                      "charts": [
-                        "line_chart",
-                        "line_chart"
+                        "bar_chart"
+                     ],
+                     "passage": [
+                        "scenario"
                      ],
                      "tables": [
-                        "data_table"
+                        "sortable_table"
                      ]
                   }
                }
@@ -702,39 +1299,75 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - normal_distribution> - <History (Ancient/Modern)> - <Quantitative Reasoning> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - quadratic_formulas> - <Supply Chain Logistics & Global Trade> - <Quantitative Reasoning> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Quantitative Reasoning *Sub-topic/Focused Skill*: quadratic_formulas",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Quantitative Reasoning",
+                     "Sub-topic/Focused Skill": "quadratic_formulas"
+                  },
                   "difficulty": 1,
                   "child-prompt": [
                      {
-                        "prompt": "<Verbal Reasoning> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Evaluating Trade-offs> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluating Trade-offs",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluating Trade-offs"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 1
                      },
                      {
-                        "prompt": "<Data Interpretation> - difficulty_level: <2>",
+                        "prompt": [
+                           "<Evaluating Trade-offs> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluating Trade-offs",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluating Trade-offs"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 2
                      }
                   ],
                   "metadata-type": {
                      "passage": [
-                        "passage"
+                        "scenario"
                      ]
                   }
                },
                {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_completion_time> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <1>",
-                  "difficulty": 1,
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - divisibility_rules> - <Medicine & Physiology> - <Quantitative Reasoning> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Medicine & Physiology *Topic*: Quantitative Reasoning *Sub-topic/Focused Skill*: divisibility_rules",
+                  "parsed_tags": {
+                     "Theme": "Medicine & Physiology",
+                     "Topic": "Quantitative Reasoning",
+                     "Sub-topic/Focused Skill": "divisibility_rules"
+                  },
+                  "difficulty": 2,
                   "child-prompt": [
                      {
-                        "prompt": "<Identifying Assumptions> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Verbal Reasoning> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Verbal Reasoning",
+                           {
+                              "Sub-topic/Focused Skill": "Verbal Reasoning"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 1
+                        "difficulty": 3
                      },
                      {
-                        "prompt": "<Evaluating Trade-offs> - difficulty_level: <1>",
+                        "prompt": [
+                           "<Data Interpretation> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Data Interpretation",
+                           {
+                              "Sub-topic/Focused Skill": "Data Interpretation"
+                           }
+                        ],
                         "option": "single",
-                        "difficulty": 1
+                        "difficulty": 3
                      }
                   ],
                   "metadata-type": {
@@ -750,7 +1383,29 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Algebraic Expressions and Simplification> - <sub-questionTopic - expression_simplification> - <Supply Chain Logistics & Global Trade> - <Verbal Reasoning> - difficulty_level: <3>",
+                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - statistical_measures> - <Supply Chain Logistics & Global Trade> - <Quantitative Reasoning> - difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Quantitative Reasoning *Sub-topic/Focused Skill*: statistical_measures",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Quantitative Reasoning",
+                     "Sub-topic/Focused Skill": "statistical_measures"
+                  },
+                  "difficulty": 4,
+                  "option": "dichotomous",
+                  "metadata-type": {
+                     "tables": [
+                        "sortable_table"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - permutation_formulas> - <Chemistry & Physics> - <Verbal Reasoning> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Chemistry & Physics *Topic*: Verbal Reasoning *Sub-topic/Focused Skill*: permutation_formulas",
+                  "parsed_tags": {
+                     "Theme": "Chemistry & Physics",
+                     "Topic": "Verbal Reasoning",
+                     "Sub-topic/Focused Skill": "permutation_formulas"
+                  },
                   "difficulty": 3,
                   "option": "dichotomous",
                   "metadata-type": {
@@ -760,18 +1415,14 @@
                   }
                },
                {
-                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - distribution_analysis> - <Business and Finance> - <Verbal Reasoning> - difficulty_level: <3>",
-                  "difficulty": 3,
-                  "option": "dichotomous",
-                  "metadata-type": {
-                     "tables": [
-                        "data_table"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - system_of_equations> - <Business and Finance> - <Data Interpretation> - difficulty_level: <3>",
-                  "difficulty": 3,
+                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - exponential_equations> - <Visual Arts & Architecture> - <Data Interpretation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Visual Arts & Architecture *Topic*: Data Interpretation *Sub-topic/Focused Skill*: exponential_equations",
+                  "parsed_tags": {
+                     "Theme": "Visual Arts & Architecture",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "exponential_equations"
+                  },
+                  "difficulty": 2,
                   "option": "dichotomous",
                   "metadata-type": {
                      "tables": [
@@ -786,8 +1437,30 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - work_completion_time> - <Visual Arts & Architecture> - <Quantitative Reasoning> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - permutation_formulas> - <Philosophy & Ethics> - <Verbal Reasoning> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy & Ethics *Topic*: Verbal Reasoning *Sub-topic/Focused Skill*: permutation_formulas",
+                  "parsed_tags": {
+                     "Theme": "Philosophy & Ethics",
+                     "Topic": "Verbal Reasoning",
+                     "Sub-topic/Focused Skill": "permutation_formulas"
+                  },
                   "difficulty": 1,
+                  "option": "blank",
+                  "metadata-type": {
+                     "charts": [
+                        "scatter_chart"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - investment_problems> - <Marketing and Sales> - <Data Interpretation> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Marketing and Sales *Topic*: Data Interpretation *Sub-topic/Focused Skill*: investment_problems",
+                  "parsed_tags": {
+                     "Theme": "Marketing and Sales",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "investment_problems"
+                  },
+                  "difficulty": 3,
                   "option": "blank",
                   "metadata-type": {
                      "charts": [
@@ -796,22 +1469,18 @@
                   }
                },
                {
-                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - chinese_remainder_theorem> - <Biology & Ecology> - <Data Interpretation> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - weighted_average> - <Urban Planning & Smart Cities> - <Data Interpretation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Urban Planning & Smart Cities *Topic*: Data Interpretation *Sub-topic/Focused Skill*: weighted_average",
+                  "parsed_tags": {
+                     "Theme": "Urban Planning & Smart Cities",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "weighted_average"
+                  },
                   "difficulty": 1,
                   "option": "blank",
                   "metadata-type": {
                      "charts": [
-                        "pie_chart"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - quadratic_formulas> - <Space Exploration & Engineering> - <Verbal Reasoning> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "blank",
-                  "metadata-type": {
-                     "charts": [
-                        "scatter_chart"
+                        "line_chart"
                      ]
                   }
                }
@@ -822,57 +1491,13 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Algebraic Expressions and Simplification> - <sub-questionTopic - algebraic_identities> - <Psychology & Sociology> - <Inequalities> - difficulty_level:<3>",
-                  "difficulty": 3,
-                  "option": "single",
-                  "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - Algebraic Expressions and Simplification> - <sub-questionTopic - expression_simplification> - <Space Exploration & Engineering> - <Single Variable Equation> - difficulty_level:<1>",
-                  "difficulty": 1,
-                  "option": "single",
-                  "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - percentage_calculations> - <Geology & Meteorology> - <Numeric Comparisons> - difficulty_level:<1>",
-                  "difficulty": 1,
-                  "option": "single",
-                  "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - domain_range> - <Logistics and Operations> - <Numeric Comparisons> - difficulty_level:<5>",
-                  "difficulty": 5,
-                  "option": "single",
-                  "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - pipe_and_cistern> - <Political Science> - <Numeric Comparisons> - difficulty_level:<5>",
-                  "difficulty": 5,
-                  "option": "single",
-                  "metadata-type": {
-                     "statements": [
-                        "statements"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - time_and_work> - <Psychology & Sociology> - <Word Problems&> - difficulty_level:<2>",
+                  "prompt": "<questionTopic - Statistics and Intersection> - <sub-questionTopic - Set Theory (Venn Diagrams)> - <Literature & Criticism> - <Pure Number Theory> - difficulty_level:<2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Literature & Criticism *Topic*: Pure Number Theory *Sub-topic/Focused Skill*: Set Theory (Venn Diagrams)",
+                  "parsed_tags": {
+                     "Theme": "Literature & Criticism",
+                     "Topic": "Pure Number Theory",
+                     "Sub-topic/Focused Skill": "Set Theory (Venn Diagrams)"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
@@ -882,7 +1507,61 @@
                   }
                },
                {
-                  "prompt": "<questionTopic - work and rate problem> - <sub-questionTopic - time_and_work> - <Marketing and Sales> - <Numeric Comparisons> - difficulty_level:<1>",
+                  "prompt": "<questionTopic - Geometry> - <sub-questionTopic - Inscribed vs Circumscribed Shapes> - <Business and Finance> - <Coordinate Geometry> - difficulty_level:<2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Business and Finance *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: Inscribed vs Circumscribed Shapes",
+                  "parsed_tags": {
+                     "Theme": "Business and Finance",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "Inscribed vs Circumscribed Shapes"
+                  },
+                  "difficulty": 2,
+                  "option": "single",
+                  "metadata-type": {
+                     "statements": [
+                        "statements"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Geometry> - <sub-questionTopic - Triangle Inequality Theorem> - <Logistics and Operations> - <Inequalities> - difficulty_level:<4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Logistics and Operations *Topic*: Inequalities *Sub-topic/Focused Skill*: Triangle Inequality Theorem",
+                  "parsed_tags": {
+                     "Theme": "Logistics and Operations",
+                     "Topic": "Inequalities",
+                     "Sub-topic/Focused Skill": "Triangle Inequality Theorem"
+                  },
+                  "difficulty": 4,
+                  "option": "single",
+                  "metadata-type": {
+                     "statements": [
+                        "statements"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Number Properties> - <sub-questionTopic - Consecutive Integers> - <Space Exploration & Engineering> - <Inequalities> - difficulty_level:<2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Space Exploration & Engineering *Topic*: Inequalities *Sub-topic/Focused Skill*: Consecutive Integers",
+                  "parsed_tags": {
+                     "Theme": "Space Exploration & Engineering",
+                     "Topic": "Inequalities",
+                     "Sub-topic/Focused Skill": "Consecutive Integers"
+                  },
+                  "difficulty": 2,
+                  "option": "single",
+                  "metadata-type": {
+                     "statements": [
+                        "statements"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Algebra> - <sub-questionTopic - Absolute Value Inequalities> - <Marketing and Sales> - <Abstract Algebra> - difficulty_level:<1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Marketing and Sales *Topic*: Abstract Algebra *Sub-topic/Focused Skill*: Absolute Value Inequalities",
+                  "parsed_tags": {
+                     "Theme": "Marketing and Sales",
+                     "Topic": "Abstract Algebra",
+                     "Sub-topic/Focused Skill": "Absolute Value Inequalities"
+                  },
                   "difficulty": 1,
                   "option": "single",
                   "metadata-type": {
@@ -892,8 +1571,46 @@
                   }
                },
                {
-                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - replacement_problems> - <Digital Economy & E-commerce> - <Numeric Comparisons> - difficulty_level:<1>",
-                  "difficulty": 1,
+                  "prompt": "<questionTopic - Statistics and Intersection> - <sub-questionTopic - Permutation and Probability Constraints> - <Healthcare Analytics & Epidemiology> - <Data Interpretation> - difficulty_level:<3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Healthcare Analytics & Epidemiology *Topic*: Data Interpretation *Sub-topic/Focused Skill*: Permutation and Probability Constraints",
+                  "parsed_tags": {
+                     "Theme": "Healthcare Analytics & Epidemiology",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "Permutation and Probability Constraints"
+                  },
+                  "difficulty": 3,
+                  "option": "single",
+                  "metadata-type": {
+                     "statements": [
+                        "statements"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Word Problems (Non-Profit)> - <sub-questionTopic - Work Rate and Efficiency> - <Astrophysics & Astronomy> - <Numeric Comparisons> - difficulty_level:<2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Astrophysics & Astronomy *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: Work Rate and Efficiency",
+                  "parsed_tags": {
+                     "Theme": "Astrophysics & Astronomy",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "Work Rate and Efficiency"
+                  },
+                  "difficulty": 2,
+                  "option": "single",
+                  "metadata-type": {
+                     "statements": [
+                        "statements"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "<questionTopic - Number Properties> - <sub-questionTopic - Decimal Termination Rules> - <Sustainable Energy & Climate Technology> - <Numeric Comparisons> - difficulty_level:<2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: Decimal Termination Rules",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "Decimal Termination Rules"
+                  },
+                  "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
                      "statements": [
@@ -911,109 +1628,235 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - linear_equation_solving> - <Psychology & Sociology> - <Inequalities> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - standard_deviation> - <Supply Chain Logistics & Global Trade> - <Single Variable Equation> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - loan_calculations> - <Space Exploration & Engineering> - <Data Interpretation> - difficulty_level: <4>",
-                  "difficulty": 4,
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - central_tendency> - <Supply Chain Logistics & Global Trade> - <Word Problems&> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - graphical_solutions> - <Business and Finance> - <Word Problems&> - difficulty_level: <2>",
+                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - simple_interest_calculations> - <Literature & Criticism> - <Coordinate Geometry> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Literature & Criticism *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: simple_interest_calculations",
+                  "parsed_tags": {
+                     "Theme": "Literature & Criticism",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "simple_interest_calculations"
+                  },
                   "difficulty": 2,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - counting_principles> - <Financial Markets & Cryptocurrency> - <Word Problems&> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Mean, Median, Mode, Range> - <sub-questionTopic - distribution_analysis> - <Business and Finance> - <Numeric Comparisons> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Business and Finance *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: distribution_analysis",
+                  "parsed_tags": {
+                     "Theme": "Business and Finance",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "distribution_analysis"
+                  },
+                  "difficulty": 2,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - polynomial_operations> - <Space Exploration & Engineering> - <Numeric Comparisons> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Space Exploration & Engineering *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: polynomial_operations",
+                  "parsed_tags": {
+                     "Theme": "Space Exploration & Engineering",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "polynomial_operations"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - fraction_operations> - <Digital Economy & E-commerce> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Digital Economy & E-commerce *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: fraction_operations",
+                  "parsed_tags": {
+                     "Theme": "Digital Economy & E-commerce",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "fraction_operations"
+                  },
+                  "difficulty": 3,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - graphical_solutions> - <Chemistry & Physics> - <Inequalities> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Chemistry & Physics *Topic*: Inequalities *Sub-topic/Focused Skill*: graphical_solutions",
+                  "parsed_tags": {
+                     "Theme": "Chemistry & Physics",
+                     "Topic": "Inequalities",
+                     "Sub-topic/Focused Skill": "graphical_solutions"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - composite_functions> - <Sustainable Energy & Climate Technology> - <Data Interpretation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Sustainable Energy & Climate Technology *Topic*: Data Interpretation *Sub-topic/Focused Skill*: composite_functions",
+                  "parsed_tags": {
+                     "Theme": "Sustainable Energy & Climate Technology",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "composite_functions"
+                  },
                   "difficulty": 1,
                   "option": "multi"
                },
                {
-                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - unit_conversions> - <History (Ancient/Modern)> - <Word Problems&> - difficulty_level: <5>",
+                  "prompt": "<questionTopic - Linear Equations, Quadratic Equations and Inequalities> - <sub-questionTopic - linear_equation_solving> - <History (Ancient/Modern)> - <Single Variable Equation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History (Ancient/Modern) *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: linear_equation_solving",
+                  "parsed_tags": {
+                     "Theme": "History (Ancient/Modern)",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "linear_equation_solving"
+                  },
+                  "difficulty": 2,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - successive_discounts> - <Geology & Meteorology> - <Word Problems&> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Geology & Meteorology *Topic*: Word Problems& *Sub-topic/Focused Skill*: successive_discounts",
+                  "parsed_tags": {
+                     "Theme": "Geology & Meteorology",
+                     "Topic": "Word Problems&",
+                     "Sub-topic/Focused Skill": "successive_discounts"
+                  },
                   "difficulty": 5,
                   "option": "multi"
                },
                {
-                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - unit_conversions> - <Business and Finance> - <Inequalities> - difficulty_level: <3>",
+                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - compound_interest_formulas> - <Urban Planning & Smart Cities> - <Coordinate Geometry> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Urban Planning & Smart Cities *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: compound_interest_formulas",
+                  "parsed_tags": {
+                     "Theme": "Urban Planning & Smart Cities",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "compound_interest_formulas"
+                  },
                   "difficulty": 3,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Algebraic Expressions and Simplification> - <sub-questionTopic - algebraic_identities> - <Sustainable Energy & Climate Technology> - <Data Interpretation> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Ratio and Proportion> - <sub-questionTopic - ratio_calculations> - <Urban Planning & Smart Cities> - <Inequalities> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Urban Planning & Smart Cities *Topic*: Inequalities *Sub-topic/Focused Skill*: ratio_calculations",
+                  "parsed_tags": {
+                     "Theme": "Urban Planning & Smart Cities",
+                     "Topic": "Inequalities",
+                     "Sub-topic/Focused Skill": "ratio_calculations"
+                  },
                   "difficulty": 1,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - probability_rules> - <Medicine & Physiology> - <Numeric Comparisons> - difficulty_level: <3>",
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - weighted_average> - <Visual Arts & Architecture> - <Single Variable Equation> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Visual Arts & Architecture *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: weighted_average",
+                  "parsed_tags": {
+                     "Theme": "Visual Arts & Architecture",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "weighted_average"
+                  },
+                  "difficulty": 5,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Functions and Polynomials> - <sub-questionTopic - composite_functions> - <Agricultural Economics & Food Security> - <Coordinate Geometry> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Agricultural Economics & Food Security *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: composite_functions",
+                  "parsed_tags": {
+                     "Theme": "Agricultural Economics & Food Security",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "composite_functions"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Probability Rules (Basic, Independent, Mutually Exclusive, etc)> - <sub-questionTopic - conditional_probability> - <Urban Planning & Smart Cities> - <Geometry Proofs> - difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Urban Planning & Smart Cities *Topic*: Geometry Proofs *Sub-topic/Focused Skill*: conditional_probability",
+                  "parsed_tags": {
+                     "Theme": "Urban Planning & Smart Cities",
+                     "Topic": "Geometry Proofs",
+                     "Sub-topic/Focused Skill": "conditional_probability"
+                  },
+                  "difficulty": 5,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - prime_factorization> - <Psychology & Sociology> - <Single Variable Equation> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Psychology & Sociology *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: prime_factorization",
+                  "parsed_tags": {
+                     "Theme": "Psychology & Sociology",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "prime_factorization"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - scientific_notation> - <Supply Chain Logistics & Global Trade> - <Abstract Algebra> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Abstract Algebra *Sub-topic/Focused Skill*: scientific_notation",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Abstract Algebra",
+                     "Sub-topic/Focused Skill": "scientific_notation"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - percentage_calculations> - <Chemistry & Physics> - <Numeric Comparisons> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Chemistry & Physics *Topic*: Numeric Comparisons *Sub-topic/Focused Skill*: percentage_calculations",
+                  "parsed_tags": {
+                     "Theme": "Chemistry & Physics",
+                     "Topic": "Numeric Comparisons",
+                     "Sub-topic/Focused Skill": "percentage_calculations"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - logarithmic_properties> - <Geology & Meteorology> - <Word Problems&> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Geology & Meteorology *Topic*: Word Problems& *Sub-topic/Focused Skill*: logarithmic_properties",
+                  "parsed_tags": {
+                     "Theme": "Geology & Meteorology",
+                     "Topic": "Word Problems&",
+                     "Sub-topic/Focused Skill": "logarithmic_properties"
+                  },
+                  "difficulty": 2,
+                  "option": "multi"
+               },
+               {
+                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - weighted_average> - <Supply Chain Logistics & Global Trade> - <Coordinate Geometry> - difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: weighted_average",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "weighted_average"
+                  },
+                  "difficulty": 2,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - arrangement_problems> - <Supply Chain Logistics & Global Trade> - <Data Interpretation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Supply Chain Logistics & Global Trade *Topic*: Data Interpretation *Sub-topic/Focused Skill*: arrangement_problems",
+                  "parsed_tags": {
+                     "Theme": "Supply Chain Logistics & Global Trade",
+                     "Topic": "Data Interpretation",
+                     "Sub-topic/Focused Skill": "arrangement_problems"
+                  },
+                  "difficulty": 1,
+                  "option": "single"
+               },
+               {
+                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - combination_calculations> - <Astrophysics & Astronomy> - <Coordinate Geometry> - difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Astrophysics & Astronomy *Topic*: Coordinate Geometry *Sub-topic/Focused Skill*: combination_calculations",
+                  "parsed_tags": {
+                     "Theme": "Astrophysics & Astronomy",
+                     "Topic": "Coordinate Geometry",
+                     "Sub-topic/Focused Skill": "combination_calculations"
+                  },
                   "difficulty": 3,
                   "option": "single"
                },
                {
-                  "prompt": "<questionTopic - Mixtures and Alligations> - <sub-questionTopic - weighted_average> - <Healthcare Analytics & Epidemiology> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - counting_principles> - <Digital Economy & E-commerce> - <Numeric Comparisons> - difficulty_level: <4>",
-                  "difficulty": 4,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - cost_price_selling_price> - <Anthropology & Archaeology> - <Word Problems&> - difficulty_level: <4>",
-                  "difficulty": 4,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - power_calculations> - <Visual Arts & Architecture> - <Word Problems&> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Exponents and Powers> - <sub-questionTopic - exponent_rules> - <Medicine & Physiology> - <Single Variable Equation> - difficulty_level: <1>",
+                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - cost_price_selling_price> - <Logistics and Operations> - <Single Variable Equation> - difficulty_level: <1>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Logistics and Operations *Topic*: Single Variable Equation *Sub-topic/Focused Skill*: cost_price_selling_price",
+                  "parsed_tags": {
+                     "Theme": "Logistics and Operations",
+                     "Topic": "Single Variable Equation",
+                     "Sub-topic/Focused Skill": "cost_price_selling_price"
+                  },
                   "difficulty": 1,
                   "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Profit, Loss and Discount> - <sub-questionTopic - markup_calculations> - <Anthropology & Archaeology> - <Data Interpretation> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Number Properties and Fractions, Decimals, Percentages> - <sub-questionTopic - LCM_GCD> - <Philosophy & Ethics> - <Word Problems&> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - statistical_analysis> - <Philosophy & Ethics> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Statistics> - <sub-questionTopic - standard_deviation> - <Literature & Criticism> - <Inequalities> - difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "multi"
-               },
-               {
-                  "prompt": "<questionTopic - Simple Interest and Compound Interest> - <sub-questionTopic - loan_calculations> - <Medicine & Physiology> - <Numeric Comparisons> - difficulty_level: <3>",
-                  "difficulty": 3,
-                  "option": "single"
-               },
-               {
-                  "prompt": "<questionTopic - Permutations and Combinations> - <sub-questionTopic - selection_problems> - <Sustainable Energy & Climate Technology> - <Inequalities> - difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "multi"
                }
             ]
          }
@@ -1025,106 +1868,247 @@
             "type": "parent",
             "prompts": [
                {
-                  "prompt": "RC_Type: <RC-L> | Theme: <Linguistics & Language Acquisition> | Topic: <Summarization and Paraphrasing> | vocabulary_level: <1> | difficulty_level: <4>",
+                  "prompt": "RC_Type: <RC-S> | Theme: <Environmental Ethics & Philosophy> | Topic: <Logical Structure Analysis> | vocabulary_level: <1> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Environmental Ethics & Philosophy *Topic*: RC-S *Sub-topic/Focused Skill*: Logical Structure Analysis",
+                  "parsed_tags": {
+                     "Theme": "Environmental Ethics & Philosophy",
+                     "Sub-topic/Focused Skill": "Logical Structure Analysis",
+                     "Topic": "RC-S"
+                  },
                   "difficulty": 4,
                   "child-prompt": [
                      {
-                        "prompt": "<Strengthen Question> - difficulty_level: <3>",
-                        "option": "single",
-                        "difficulty": 3
-                     },
-                     {
-                        "prompt": "<Weaken Question> - difficulty_level: <3>",
-                        "option": "single",
-                        "difficulty": 3
-                     },
-                     {
-                        "prompt": "<Assumption Question> - difficulty_level: <4>",
+                        "prompt": [
+                           "<Inference Question> - difficulty_level: <5>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Inference Question",
+                           {
+                              "Sub-topic/Focused Skill": "Inference Question"
+                           }
+                        ],
                         "option": "multi",
-                        "difficulty": 4
+                        "difficulty": 5
                      },
                      {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <4>",
-                        "option": "single",
-                        "difficulty": 4
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "RC_Type: <RC-S> | Theme: <Cognitive Science & Psychology> | Topic: <Author's Purpose and Tone Recognition> | vocabulary_level: <1> | difficulty_level: <2>",
-                  "difficulty": 2,
-                  "child-prompt": [
-                     {
-                        "prompt": "<Evaluate Question> - difficulty_level: <3>",
-                        "option": "single",
-                        "difficulty": 3
-                     },
-                     {
-                        "prompt": "<Main Idea Question> - difficulty_level: <3>",
-                        "option": "single",
-                        "difficulty": 3
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "RC_Type: <RC-M> | Theme: <Sports> | Topic: <Evidence-Based Reasoning> | vocabulary_level: <1> | difficulty_level: <2>",
-                  "difficulty": 2,
-                  "child-prompt": [
-                     {
-                        "prompt": "<Supporting Details> - difficulty_level: <1>",
-                        "option": "multi",
-                        "difficulty": 1
-                     },
-                     {
-                        "prompt": "<Main Idea Question> - difficulty_level: <3>",
-                        "option": "single",
-                        "difficulty": 3
-                     },
-                     {
-                        "prompt": "<Tone and Attitude> - difficulty_level: <1>",
-                        "option": "single",
-                        "difficulty": 1
-                     }
-                  ],
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "RC_Type: <RC-L> | Theme: <Fiction> | Topic: <Inference Making> | vocabulary_level: <2> | difficulty_level: <4>",
-                  "difficulty": 4,
-                  "child-prompt": [
-                     {
-                        "prompt": "<Supporting Details> - difficulty_level: <3>",
-                        "option": "multi",
-                        "difficulty": 3
-                     },
-                     {
-                        "prompt": "<Evaluate Question> - difficulty_level: <4>",
-                        "option": "single",
-                        "difficulty": 4
-                     },
-                     {
-                        "prompt": "<Supporting Details> - difficulty_level: <3>",
-                        "option": "single",
-                        "difficulty": 3
-                     },
-                     {
-                        "prompt": "<Strengthen Question> - difficulty_level: <5>",
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <5>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
                         "option": "single",
                         "difficulty": 5
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "RC_Type: <RC-S> | Theme: <Finance> | Topic: <Author's Purpose and Tone Recognition> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Finance *Topic*: RC-S *Sub-topic/Focused Skill*: Author's Purpose and Tone Recognition",
+                  "parsed_tags": {
+                     "Theme": "Finance",
+                     "Sub-topic/Focused Skill": "Author's Purpose and Tone Recognition",
+                     "Topic": "RC-S"
+                  },
+                  "difficulty": 2,
+                  "child-prompt": [
+                     {
+                        "prompt": [
+                           "<Inference Question> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Inference Question",
+                           {
+                              "Sub-topic/Focused Skill": "Inference Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 2
+                     },
+                     {
+                        "prompt": [
+                           "<Evaluate Question> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluate Question",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluate Question"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 2
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "RC_Type: <RC-L> | Theme: <Science and Technology> | Topic: <Inference Making> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Science and Technology *Topic*: RC-L *Sub-topic/Focused Skill*: Inference Making",
+                  "parsed_tags": {
+                     "Theme": "Science and Technology",
+                     "Sub-topic/Focused Skill": "Inference Making",
+                     "Topic": "RC-L"
+                  },
+                  "difficulty": 2,
+                  "child-prompt": [
+                     {
+                        "prompt": [
+                           "<Main Idea Question> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Main Idea Question",
+                           {
+                              "Sub-topic/Focused Skill": "Main Idea Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 3
+                     },
+                     {
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 1
+                     },
+                     {
+                        "prompt": [
+                           "<Supporting Details> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Supporting Details",
+                           {
+                              "Sub-topic/Focused Skill": "Supporting Details"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 2
+                     },
+                     {
+                        "prompt": [
+                           "<Inference Question> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Inference Question",
+                           {
+                              "Sub-topic/Focused Skill": "Inference Question"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 3
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "RC_Type: <RC-M> | Theme: <Philosophy> | Topic: <Comparative Analysis and Perspective Recognition> | vocabulary_level: <3> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy *Topic*: RC-M *Sub-topic/Focused Skill*: Comparative Analysis and Perspective Recognition",
+                  "parsed_tags": {
+                     "Theme": "Philosophy",
+                     "Sub-topic/Focused Skill": "Comparative Analysis and Perspective Recognition",
+                     "Topic": "RC-M"
+                  },
+                  "difficulty": 2,
+                  "child-prompt": [
+                     {
+                        "prompt": [
+                           "<Conclusion Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Conclusion Question",
+                           {
+                              "Sub-topic/Focused Skill": "Conclusion Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 1
+                     },
+                     {
+                        "prompt": [
+                           "<Evaluate Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluate Question",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluate Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 1
+                     },
+                     {
+                        "prompt": [
+                           "<Evaluate Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Evaluate Question",
+                           {
+                              "Sub-topic/Focused Skill": "Evaluate Question"
+                           }
+                        ],
+                        "option": "multi",
+                        "difficulty": 1
+                     }
+                  ],
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "RC_Type: <RC-L> | Theme: <Linguistics & Language Acquisition> | Topic: <Inference Making> | vocabulary_level: <3> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Linguistics & Language Acquisition *Topic*: RC-L *Sub-topic/Focused Skill*: Inference Making",
+                  "parsed_tags": {
+                     "Theme": "Linguistics & Language Acquisition",
+                     "Sub-topic/Focused Skill": "Inference Making",
+                     "Topic": "RC-L"
+                  },
+                  "difficulty": 2,
+                  "child-prompt": [
+                     {
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <2>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 2
+                     },
+                     {
+                        "prompt": [
+                           "<Author's Purpose> - difficulty_level: <3>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Author's Purpose",
+                           {
+                              "Sub-topic/Focused Skill": "Author's Purpose"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 3
+                     },
+                     {
+                        "prompt": [
+                           "<Weaken Question> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Weaken Question",
+                           {
+                              "Sub-topic/Focused Skill": "Weaken Question"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 1
+                     },
+                     {
+                        "prompt": [
+                           "<Tone and Attitude> - difficulty_level: <1>",
+                           "[IMPORTANT]: Make sure to fulfil the following request: *Sub-topic/Focused Skill*: Tone and Attitude",
+                           {
+                              "Sub-topic/Focused Skill": "Tone and Attitude"
+                           }
+                        ],
+                        "option": "single",
+                        "difficulty": 1
                      }
                   ],
                   "metadata-type": {
@@ -1140,7 +2124,42 @@
             "type": "simple",
             "prompts": [
                {
-                  "prompt": "Theme: <Art> | Topic: <Weaken the Argument> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "prompt": "Theme: <Economics> | Topic: <Boldface Structure Analysis> | vocabulary_level: <1> | difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Economics *Sub-topic/Focused Skill*: Boldface Structure Analysis",
+                  "parsed_tags": {
+                     "Theme": "Economics",
+                     "Sub-topic/Focused Skill": "Boldface Structure Analysis"
+                  },
+                  "difficulty": 3,
+                  "option": "single",
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "Theme: <Fiction> | Topic: <Strengthen the Argument> | vocabulary_level: <3> | difficulty_level: <3>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Fiction *Sub-topic/Focused Skill*: Strengthen the Argument",
+                  "parsed_tags": {
+                     "Theme": "Fiction",
+                     "Sub-topic/Focused Skill": "Strengthen the Argument"
+                  },
+                  "difficulty": 3,
+                  "option": "single",
+                  "metadata-type": {
+                     "passage": [
+                        "passage"
+                     ]
+                  }
+               },
+               {
+                  "prompt": "Theme: <Philosophy> | Topic: <Method of Reasoning> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy *Sub-topic/Focused Skill*: Method of Reasoning",
+                  "parsed_tags": {
+                     "Theme": "Philosophy",
+                     "Sub-topic/Focused Skill": "Method of Reasoning"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
@@ -1150,7 +2169,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <International Relations & Diplomacy> | Topic: <Strengthen the Argument> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "prompt": "Theme: <Humanities (History, Art, Literature)> | Topic: <Strengthen the Argument> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Humanities (History, Art, Literature) *Sub-topic/Focused Skill*: Strengthen the Argument",
+                  "parsed_tags": {
+                     "Theme": "Humanities (History, Art, Literature)",
+                     "Sub-topic/Focused Skill": "Strengthen the Argument"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
@@ -1160,7 +2184,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <Artificial Intelligence & Ethics> | Topic: <Method of Reasoning> | vocabulary_level: <3> | difficulty_level: <5>",
+                  "prompt": "Theme: <History> | Topic: <Boldface Structure Analysis> | vocabulary_level: <2> | difficulty_level: <5>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: History *Sub-topic/Focused Skill*: Boldface Structure Analysis",
+                  "parsed_tags": {
+                     "Theme": "History",
+                     "Sub-topic/Focused Skill": "Boldface Structure Analysis"
+                  },
                   "difficulty": 5,
                   "option": "single",
                   "metadata-type": {
@@ -1170,17 +2199,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <Economics> | Topic: <Complete the Argument> | vocabulary_level: <1> | difficulty_level: <2>",
-                  "difficulty": 2,
-                  "option": "single",
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "Theme: <Fiction> | Topic: <Draw a Conclusion/Inference> | vocabulary_level: <3> | difficulty_level: <4>",
+                  "prompt": "Theme: <Economics> | Topic: <Identify the Flaw in Reasoning> | vocabulary_level: <2> | difficulty_level: <4>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Economics *Sub-topic/Focused Skill*: Identify the Flaw in Reasoning",
+                  "parsed_tags": {
+                     "Theme": "Economics",
+                     "Sub-topic/Focused Skill": "Identify the Flaw in Reasoning"
+                  },
                   "difficulty": 4,
                   "option": "single",
                   "metadata-type": {
@@ -1190,17 +2214,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <Cognitive Science & Psychology> | Topic: <Resolve a Paradox/Discrepancy> | vocabulary_level: <3> | difficulty_level: <1>",
-                  "difficulty": 1,
-                  "option": "single",
-                  "metadata-type": {
-                     "passage": [
-                        "passage"
-                     ]
-                  }
-               },
-               {
-                  "prompt": "Theme: <International Relations & Diplomacy> | Topic: <Complete the Argument> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "prompt": "Theme: <Social Sciences (Psychology, Sociology)> | Topic: <Boldface Structure Analysis> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Social Sciences (Psychology, Sociology) *Sub-topic/Focused Skill*: Boldface Structure Analysis",
+                  "parsed_tags": {
+                     "Theme": "Social Sciences (Psychology, Sociology)",
+                     "Sub-topic/Focused Skill": "Boldface Structure Analysis"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
@@ -1210,7 +2229,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <Modern Architecture & Urban Design> | Topic: <Strengthen the Argument> | vocabulary_level: <3> | difficulty_level: <2>",
+                  "prompt": "Theme: <Philosophy> | Topic: <Identify the Flaw in Reasoning> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Philosophy *Sub-topic/Focused Skill*: Identify the Flaw in Reasoning",
+                  "parsed_tags": {
+                     "Theme": "Philosophy",
+                     "Sub-topic/Focused Skill": "Identify the Flaw in Reasoning"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
@@ -1220,7 +2244,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <History> | Topic: <Identify the Flaw in Reasoning> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "prompt": "Theme: <Geography> | Topic: <Identify the Assumption> | vocabulary_level: <2> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Geography *Sub-topic/Focused Skill*: Identify the Assumption",
+                  "parsed_tags": {
+                     "Theme": "Geography",
+                     "Sub-topic/Focused Skill": "Identify the Assumption"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
@@ -1230,7 +2259,12 @@
                   }
                },
                {
-                  "prompt": "Theme: <Fiction> | Topic: <Identify the Flaw in Reasoning> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "prompt": "Theme: <Anthropology & Sociology> | Topic: <Strengthen the Argument> | vocabulary_level: <1> | difficulty_level: <2>",
+                  "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Theme*: Anthropology & Sociology *Sub-topic/Focused Skill*: Strengthen the Argument",
+                  "parsed_tags": {
+                     "Theme": "Anthropology & Sociology",
+                     "Sub-topic/Focused Skill": "Strengthen the Argument"
+                  },
                   "difficulty": 2,
                   "option": "single",
                   "metadata-type": {
