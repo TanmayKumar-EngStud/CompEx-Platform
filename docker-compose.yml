@@ -6,8 +6,7 @@ services:
     env_file:
       - .env
     environment:
-      # OVERRIDE the DATABASE_URL to connect via the Host machine
-      # User's postgres is running on Host Port 5433
+      # Use host networking variable
       - DATABASE_URL=postgresql://compexe_admin:QuiZA.0310!@host.docker.internal:5433/compex
     extra_hosts:
       - "host.docker.internal:host-gateway"
@@ -15,10 +14,6 @@ services:
       # Persist logging and papers
       - ./log_json_files:/app/log_json_files
       # Map logs folder if any other exists
-
-      # Allow access to host database if needed (Linux)
-      # extra_hosts:
-      #   - "host.docker.internal:host-gateway"
 
       # For Mac/Windows, host.docker.internal works by default usually, or needs no config.
       # Essential if DATABASE_URL points to localhost on host machine.

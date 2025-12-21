@@ -50,12 +50,21 @@ def manage_generated_content(result: dict, question_type: str, question_componen
 
         else:
             for k, v in generated_data.items():
+                # PATCH: Flatten list if model returns list for question/solution
+                if k in ['question', 'solution'] and isinstance(v, list) and v:
+                     import random
+                     v = random.choice(v)
+
                 if k not in result:
                     result[k] = v
                 else:
-                    result[k] = [result[k]] if not isinstance(
-                        result[k], list) else result[k]
-                    result[k].append(v)
+                    # Prevent appending for singular fields
+                    if k in ['question', 'solution', 'answer', 'difficulty']:
+                        result[k] = v
+                    else:
+                        result[k] = [result[k]] if not isinstance(
+                            result[k], list) else result[k]
+                        result[k].append(v)
 
 def manage_metadata_content(result: dict, question_type: str, generated_data: dict, source_info: dict = None):
     """
