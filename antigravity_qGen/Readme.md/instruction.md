@@ -1,1 +1,0 @@
-Run python3 antigravity_qGen/run.py and generate the entire exam.

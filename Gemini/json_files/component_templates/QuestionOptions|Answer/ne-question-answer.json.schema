@@ -1,7 +1,0 @@
-{
-  "type": "OBJECT",
-  "properties": {
-    "answer": { "type": "NUMBER" }
-  },
-  "required": ["answer"]
-}

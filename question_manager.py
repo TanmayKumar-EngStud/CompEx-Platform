@@ -632,6 +632,11 @@ class ManageQuestionData:
                     expected_output=call['output'],
                     context=context
                 )
+
+                # PATCH: Fix model returning list for 'question' (e.g. Reading Comp) - Randomly select one
+                if isinstance(generated, dict) and 'question' in generated:
+                    if isinstance(generated['question'], list) and generated['question']:
+                        generated['question'] = random.choice(generated['question'])
                 
                 # Capture the generated question text if this component is the Question Text
                 if comp_type == 'QuestionText':
