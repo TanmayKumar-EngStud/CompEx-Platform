@@ -1,5 +1,9 @@
-RESPONSE FORMAT:- PLAIN TEXT (NOT JSON)
-Provide detailed reasoning for Data Sufficiency question without final answer choice.
+RESPONSE FORMAT:- JSON
+Output a JSON object:
+{
+  "scratchpad": "Internal reasoning and sufficiency check...",
+  "solution": "Clean explanation for student..."
+}
 
 **Structure:**
 Step 1: Understanding the Question - Identify what the question is asking for

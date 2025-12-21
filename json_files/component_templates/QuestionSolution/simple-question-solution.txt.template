@@ -1,6 +1,6 @@
 RESPONSE FORMAT:- JSON
-Output a JSON object with a single key "solution" containing the full explanation.
-Write naturally as you would explain to a student.
+Output a JSON object with one key:
+1. "solution": The final clean explanation for the student.
 
 **Structure:**
 (Use \n for newlines in the JSON string)
@@ -8,14 +8,17 @@ Step 1: {{#if_GMAT}}Extract key information from business scenario{{/if_GMAT}}{{
 Step 2: Set up mathematical relationship or logical framework
 Step 3: Perform calculations with proper units / Apply reasoning
 Step 4: {{#if_GMAT}}Verify answer makes business sense{{/if_GMAT}}{{#if_GRE}}Check solution using logical reasoning{{/if_GRE}}
-Step 5: {{#if_GMAT}}Consider alternative solving methods{{/if_GMAT}}{{#if_GRE}}Confirm solution addresses original question{{/if_GRE}}
+Step 5: Briefly explain why incorrect options are wrong (1-2 sentences).
 
 **Important Notes:**
-- Use numbered steps with clear explanations, solution should be human readable and should be brief.
-- IMP: Provide brief step-by-step thinking/reasoning as the solution.
+- "solution": The final clean explanation for the student in **Markdown** format.
+- **Use Markdown**: Use bolding for key terms, lists for steps, and clear formatting.
+- **Length Constraint**: The solution MUST be between **80 and 120 words**. Be concise but thorough.
+- **Explain Distractors**: concisely explain why other options are incorrect.
+- **NO Scratchpad**: Do not output any internal reasoning or scratchpad key.
 - Show all calculations with proper mathematical notation
 - Use LaTeX for mathematical expressions
-- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format. Basically, Don't have LaTeX format in answer and question options.
+- The final Answer should NOT be given in LaTeX form, because all the question options will be in normal JSON string format.
 {{#if_GMAT}}
 - Demonstrate both direct solution and back-solving when applicable
 - Use business context to verify reasonableness

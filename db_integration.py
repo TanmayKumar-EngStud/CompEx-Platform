@@ -67,10 +67,15 @@ def transform_exam_data(paper_data):
             
     return transformed_paper
 
-def save_paper_to_db(paper_data, is_mock=True):
+def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
     """
     Saves the full paper to the database.
     """
+    if difficulty is None:
+        try:
+            difficulty, _ = get_next_generation_params()
+        except:
+            difficulty = 1 # Fallback only if everything fails
     if not DB or not Prisma:
         print("Database client not available. Skipping DB persistence.")
         return
@@ -91,11 +96,7 @@ def save_paper_to_db(paper_data, is_mock=True):
         print(f"Persisting paper structure: {list(formatted_paper.keys())}")
         
         # Register
-        # registerQuestion(paper, isMockQuestion=True, difficulty=?)
-        # db.py iterates over the paper dict.
-        # It handles transaction internally? No, it just loops.
-        
-        success = db_instance.registerQuestion(formatted_paper, isMockQuestion=is_mock, difficulty=5) # Default difficulty 5 for mock
+        success = db_instance.registerQuestion(formatted_paper, isMockQuestion=is_mock, difficulty=difficulty)
         
         if success:
             print("Successfully saved paper to database.")
@@ -169,11 +170,16 @@ def save_analytics_record(stats: dict, difficulty: int, is_mock: bool):
     prisma = Prisma()
     try:
         prisma.connect()
+        # Conversion
+        t_in = stats.get('total_input_tokens', 0) / 1_000_000
+        t_out = stats.get('total_output_tokens', 0) / 1_000_000
+        t_time = stats.get('total_time_seconds', 0.0) / 60
+
         prisma.analytics.create(data={
             'total_api_calls': stats.get('total_api_calls', 0),
-            'total_input_tokens': stats.get('total_input_tokens', 0),
-            'total_output_tokens': stats.get('total_output_tokens', 0),
-            'total_time_seconds': stats.get('total_time_seconds', 0.0),
+            'total_input_tokens': f"{t_in:.3f}M",
+            'total_output_tokens': f"{t_out:.3f}M",
+            'total_time_minutes': float(f"{t_time:.2f}"), # Ensure float precision match
             'gre_questions': stats.get('gre_questions', 0),
             'gmat_questions': stats.get('gmat_questions', 0),
             'difficulty_level': difficulty,

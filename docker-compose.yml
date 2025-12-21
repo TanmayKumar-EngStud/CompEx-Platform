@@ -1,0 +1,34 @@
+services:
+  question-gen:
+    container_name: QuestionGen
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # OVERRIDE the DATABASE_URL to connect via the Host machine
+      # User's postgres is running on Host Port 5433
+      - DATABASE_URL=postgresql://compexe_admin:QuiZA.0310!@host.docker.internal:5433/compex
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      # Persist logging and papers
+      - ./log_json_files:/app/log_json_files
+      # Map logs folder if any other exists
+
+      # Allow access to host database if needed (Linux)
+      # extra_hosts:
+      #   - "host.docker.internal:host-gateway"
+
+      # For Mac/Windows, host.docker.internal works by default usually, or needs no config.
+      # Essential if DATABASE_URL points to localhost on host machine.
+
+      # If running with a postgres container, uncomment and link:
+      # depends_on:
+      #   - my-postgres
+      # networks:
+      #   - app-network
+
+      # networks:
+      #   app-network:
+      #     driver: bridge

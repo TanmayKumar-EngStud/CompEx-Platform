@@ -12,8 +12,7 @@ from io_utils import get_json, prettify
 from prepare_prompts import PromptPrep
 from generator import GenQ
 
-os.system('clear')
-os.system('clear')
+
 try:
     from db_integration import get_next_generation_params
     MOCK_PAPER_LEVEL, IS_MOCK_RUN = get_next_generation_params()
@@ -41,22 +40,22 @@ def log_stage(exam: str,
         )
     if detail:
         segments.append(detail)
-    # print(" | ".join(segments))
+    print(" | ".join(segments))
 
 
 # Sort exams to ensure consistent order (e.g., GMAT before GRE)
 sorted_exams = sorted(exam_definition.items(), key=lambda x: x[0], reverse=True)
 
 for exam, sections in sorted_exams:
-    log_stage(exam, detail=prettify('Preparing exam structure', 'Blue'))
+    # log_stage(exam, detail=prettify('Preparing exam structure', 'Blue'))
     prompts_dictionary[exam] = {}
     for section_number, section in sections.items():
         section_name = section['name']
-        log_stage(
-            exam,
-            section_name,
-            detail=prettify('Building prompts', 'Magenta')
-        )
+        # log_stage(
+        #     exam,
+        #     section_name,
+        #     detail=prettify('Building prompts', 'Magenta')
+        # )
         n_items = section['total']
         total_prompt_count = 0
         difficulty_list = get_difficulty_pool(
@@ -67,11 +66,11 @@ for exam, sections in sorted_exams:
         prompts_dictionary[exam][section_number] = {}
         prompts_dictionary[exam][section_number]['section'] = section_name
         for question_type in section['question types']:
-            log_stage(
-                exam,
-                section_name,
-                detail=f"{prettify('Question type', 'Cyan')}: {prettify(question_type, 'Magenta')}"
-            )
+            # log_stage(
+            #     exam,
+            #     section_name,
+            #     detail=f"{prettify('Question type', 'Cyan')}: {prettify(question_type, 'Magenta')}"
+            # )
             question_type_info = PromptPrep._must_get(qt_info, question_type,
                                                       '@combination-variant.json')
             count_of_this_question_type = section[question_type]
@@ -186,7 +185,7 @@ complete_paper = paper_gen.generate()
 try:
     from db_integration import save_paper_to_db, save_analytics_record, get_next_generation_params
     print("\nStarting Database Persistence...")
-    save_paper_to_db(complete_paper, is_mock=IS_MOCK_RUN)
+    save_paper_to_db(complete_paper, is_mock=IS_MOCK_RUN, difficulty=MOCK_PAPER_LEVEL)
     
     # Save Analytics
     if paper_gen.last_run_stats:

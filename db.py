@@ -98,23 +98,53 @@ class DB:
             for exam_name, exam_data in self.definitions['examtypes'].items():
                 # Check if exam type exists
                 existing_exam = self.db.examtypes.find_first(
-                    where={'examtypeid': exam_data['id']}
+                    where={'name': exam_name}
                 )
                 if not existing_exam:
                     print(f"Exam type {exam_name} not found, creating it")
                     exam_type = self.db.examtypes.create(data={
-                        'examtypeid': exam_data['id'],
                         'name': exam_name,
                         'description': exam_data['description']
                     })
                     print(f"Exam type {exam_name} created successfully")
-                    for section_name, section_data in exam_data['sections'].items():
-                        section = self.db.sections.create(data={
-                            'sectionid': section_data['id'],
-                            'examtypeid': exam_type.examtypeid,
-                            'name': section_name,
-                            'description': section_data['description']
-                        })
+                else:
+                    exam_type = existing_exam
+
+                # Check if sections are already initialized for this exam type
+                # Fetch all existing sections for this exam
+                existing_sections = self.db.sections.find_many(where={'examtypeid': int(exam_type.examtypeid)})
+                # Create a list of available (unclaimed) sections to match against definitions
+                available_sections = list(existing_sections)
+
+                print(f"Initializing/Verifying sections for {exam_name}...")
+                for section_key, section_data in exam_data['sections'].items():
+                    name = section_data.get('name', section_key)
+                    description = section_data.get('description', '')
+
+                    # Look for a match in available DB sections
+                    found_match = None
+                    for s in available_sections:
+                        if s.name == name:
+                            found_match = s
+                            break
+                    
+                    if found_match:
+                        # Claim it so it's not reused for the next duplicate definition
+                        available_sections.remove(found_match)
+                        print(f"Section '{name}' already exists (ID: {found_match.sectionid})")
+                    else:
+                        # No unclaimed match found, create new
+                        try:
+                            created_section = self.db.sections.create(data={
+                                'examtypeid': exam_type.examtypeid,
+                                'name': name,
+                                'description': description
+                            })
+                            print(f"Created section '{name}' for {exam_name} (ID: {created_section.sectionid})")
+                        except Exception as e:
+                            print(f"Error creating section '{name}': {e}")
+
+                print(f"Sections for {exam_name} verified.")
 
             # Initialize primary user if not exists
             existing_user = self.db.users.find_first()
@@ -186,14 +216,19 @@ class DB:
             # Format metadata as JSON string
             # Format solution
 
-            solution = question.get('solution', {})
-            if isinstance(solution, (str, dict)):
-                solution = json.dumps({"solution": solution})
+            solution = question.get('solution', '')
+            # Wrap solution in a dictionary with 'explanation' key as requested
+            if isinstance(solution, str):
+                solution = json.dumps({"explanation": solution})
+            elif isinstance(solution, (dict, list)):
+                # If it's already a dict or list, we could either wrap it or store as is
+                # The user asked for {"explanation": "..."}, so if it's a dict, we wrap it
+                solution = json.dumps({"explanation": str(solution)})
             else:
-                solution = json.dumps(solution)
+                solution = json.dumps({"explanation": str(solution)})
             # Create problem with proper Prisma format
-            self.question_type = question.get('type', '')
-            if (question.get('type', '') == "TA"):
+            self.question_type = question.get('type') or question.get('question-type', '')
+            if (self.question_type == "TA"):
                 temp = ""
                 type = question.get('prompt', '').split("-")[3].strip()
                 if type == "Yes/No":
@@ -213,10 +248,13 @@ class DB:
                 elif type == "Conclusion/Assumption":
                     temp = "Conclusion"
                 # Check if the answer values are strings that contain "Yes" or "No"
-                first_option = question['options'][0]
-                answer_value = question['answer'][first_option]
-                if isinstance(answer_value, str) and answer_value in "Yes/No":
-                    temp = "Yes"
+                try:
+                    first_option = list(question['options'])[0] if isinstance(question['options'], dict) else question['options'][0]
+                    answer_value = question['answer'][first_option]
+                    if isinstance(answer_value, str) and answer_value in "Yes/No":
+                        temp = "Yes"
+                except:
+                    pass
                 question["content"]["connection_validator"] = temp
                 self.question_correction_validator = temp
 
@@ -232,27 +270,29 @@ class DB:
                 question_title = f"Question {question.get('type', 'Unknown')} - Difficulty {question.get('difficulty', 1)}"
 
             question_data = {
-                "type": question.get('type', ''),
+                "type": self.question_type,
                 "prompt": question.get('prompt', ''),
                 "title": question_title,
                 "text": question_text,  # Ensure text field is not empty
                 "difficulty": question.get('difficulty', 1),
-                "sectionid": self.current_section_id,  # Direct field assignment
-                "examtypeid": self.current_exam_id,    # Direct field assignment
+                "sectionid": self.current_section_id,  # Reverted to schema name
+                "examtypeid": self.current_exam_id,    # Reverted to schema name
                 # Prisma will handle JSON conversion
                 "metadata": json.dumps(question.get('content', {})),
                 "solution": solution,  # Prisma will handle JSON conversion
-                "isChildren": isChildQuestion,
-                "isMockQuestion": isMockQuestion
+                "isChildren": isChildQuestion,        # Reverted to schema name
+                "isMockQuestion": isMockQuestion,     # Reverted to schema name
+                "problemsSetId": None # Explicitly initialize
             }
 
             if isChildQuestion:
                 # Direct field assignment
-                question_data["problemsSetId"] = self.current_problemset_id
+                #print(f"DEBUG: Linking Child Question to ProblemSetID: {self.current_problemset_id}")
+                question_data["problemsSetId"] = self.current_problemset_id  # Reverted
             if isMockQuestion:
                 # Direct field assignment
-                question_data["mocksectionid"] = self.current_mocksection_id
-                question_data["mockquestionnumber"] = self.current_mockquestion_number
+                question_data["mocksectionid"] = self.current_mocksection_id # Reverted
+                question_data["mockquestionnumber"] = self.current_mockquestion_number # Reverted
             if self.question_type == "NE":
                 question_data["metadata"] = json.dumps(
                     {"answer": question.get('answer', '')})
@@ -263,17 +303,28 @@ class DB:
             options = question.get('options') or []
             answer = question.get('answer', '')
             self.current_question_type = question.get('type', '')
-            for option in options:
-                if isinstance(option, str):
-                    self._register_problem_options(option, answer)
-                elif isinstance(option, int):
-                    self._register_problem_options(option, answer)
-                elif isinstance(option, list):
-                    group = "A"
-                    for suboption in option:
-                        self._register_problem_options(
-                            suboption, answer, group)
-                        group = chr(ord(group) + 1)
+            
+            if isinstance(options, dict):
+                for key, value in options.items():
+                    # For simple dict options (like TC 1 blank), key is "A", "B", etc.
+                    self._register_problem_options(value, answer, group=None, key=key)
+            elif isinstance(options, list):
+                for i, option in enumerate(options):
+                    if isinstance(option, dict):
+                        # For Text Completion with multiple blanks (list of dicts)
+                        group = f"Blank {i+1}"
+                        for key, value in option.items():
+                            self._register_problem_options(value, answer, group=group, key=key)
+                    elif isinstance(option, str):
+                        self._register_problem_options(option, answer)
+                    elif isinstance(option, int):
+                        self._register_problem_options(option, answer)
+                    elif isinstance(option, list):
+                        # Legacy/Special format
+                        group = "A"
+                        for suboption in option:
+                            self._register_problem_options(suboption, answer, group)
+                            group = chr(ord(group) + 1)
 
             # Register tags
             self._register_problem_tags(question.get('tags') or [])
@@ -285,7 +336,7 @@ class DB:
                 f"Error in _register_problem: {str(e)}\n\n here is the question content: {json.dumps(question, indent=4)}")
             return False
 
-    def _register_problem_options(self, option, answers, group=None):
+    def _register_problem_options(self, option_text, answers, group=None, key=None):
         """Register problem options in the database.
 
         Args:
@@ -307,8 +358,8 @@ class DB:
                     break
 
             # Determine if this option is correct based on the answer mapping
-            if isinstance(answers, dict) and option in answers:
-                answer_value = answers[option]
+            if isinstance(answers, dict) and option_text in answers:
+                answer_value = answers[option_text]
                 if isinstance(answer_value, dict):
                     is_correct = answer_value.get("isCorrect", False)
                 else:
@@ -319,55 +370,45 @@ class DB:
                             break
 
             option_data = {
-                'optiontext': str(option),
+                'optiontext': str(option_text),
                 'iscorrect': is_correct,
                 'problemid': self.current_problem_id,  # Direct field assignment
                 'group': answer_group if answer_group else group
             }
 
         else:
-            # Handle all other question types as before
-            correct_answers = []
-            if isinstance(answers, dict):
-                # First, check if this is a True/False or Yes/No type question with inverted structure
-                if "True" in answers or "False" in answers or "Yes" in answers or "No" in answers:
-                    for key, value in answers.items():
-                        if value == option:
-                            is_correct = key.lower() in ["true", "yes"]
-                            break
+            is_correct = False
+            
+            # Check correctness based on key or option_text
+            if isinstance(answers, list):
+                # If key is provided (e.g., "A"), check if it's in the answer list
+                if key and key in answers:
+                    is_correct = True
+                # Fallback: check if option_text itself is in answers
+                elif str(option_text) in [str(a) for a in answers]:
+                    is_correct = True
+            elif isinstance(answers, dict):
+                # For dictionaries where keys are groups (e.g., {"Blank 1": "A"})
+                if group and group in answers:
+                    correct_val = answers[group]
+                    if isinstance(correct_val, list):
+                        is_correct = (key in correct_val) if key else (option_text in correct_val)
                     else:
-                        is_correct = False
+                        is_correct = str(key if key else option_text) == str(correct_val)
                 else:
-                    # Original code for other questions where option is a key in answers dict
-                    finder = self.question_correction_validator
-                    ansVal = finder if finder else "Yes"
-                    try:
-                        if "dicotomous" in self.current_question_type.lower():
-                            # For dichotomous questions, check if option matches any value in answers dict
-                            is_correct = False
-                            for answer_key, answer_value in answers.items():
-                                if str(option).strip() == str(answer_value).strip():
-                                    is_correct = True
-                                    break
-                        else:
-                            is_correct = answers[option].lower(
-                            ).strip() == ansVal.lower().strip()
-                    except KeyError:
-                        print(
-                            f"Warning: Option '{option}' not found in answers dictionary")
-                        is_correct = False
-            elif isinstance(answers, list):
-                is_correct = option in answers
+                    # Fallback: check if key or option_text is in values
+                    is_correct = (key in answers.values()) if key else (option_text in answers.values())
             else:
-                is_correct = option == answers
+                # Single value answer
+                is_correct = str(key if key else option_text) == str(answers)
 
             option_data = {
-                'optiontext': str(option),
+                'optiontext': str(option_text),
                 'iscorrect': is_correct,
-                'problemid': self.current_problem_id  # Direct field assignment
+                'problemid': self.current_problem_id,
+                'group': group
             }
-            if group:
-                option_data['group'] = group
+
 
         try:
             self.db.problemoptions.create(
@@ -381,27 +422,29 @@ class DB:
 
     def _register_problem_tags(self, tags):
         try:
-            for tag in tags:
-                tagid = self._register_tag(tag)  # ✅
+            if not tags:
+                return True
+            tagid = self._register_tag(tags)
+            if tagid is not False:
                 tag_data = {
-                    'tagid': tagid,  # Direct field assignment
-                    'problemid': self.current_problem_id  # Direct field assignment
+                    'tagid': tagid,
+                    'problemid': self.current_problem_id
                 }
-                self.db.problemtags.create(data=tag_data)  # ❌
+                self.db.problemtags.create(data=tag_data)
         except Exception as e:
             print(
                 f"Error creating problem tags in _register_problem_tags: {str(e)}")
-            print(f"here is the value received for tagid: {tagid}")
             return False
         return True
 
     def _register_problemsset_tags(self, tags):
         try:
-            for tag in tags:
-                tagid = self._register_tag(tag)
+            if not tags:
+                return True
+            tagid = self._register_tag(tags)
+            if tagid is not False:
                 tag_data = {
-                    'tagid': tagid,  # Direct field assignment
-                    # Direct field assignment (fix: was using current_problem_id)
+                    'tagid': tagid,
                     'problemsSetId': self.current_problemset_id
                 }
                 self.db.problemssettags.create(
@@ -414,48 +457,48 @@ class DB:
         return True
 
     # ✅
-    def _register_tag(self, tag):
+    def _register_tag(self, tags_list):
         try:
-            pattern = r'\(.*?\)'
-            tag = re.sub(pattern, '', tag).strip()
+            if not tags_list:
+                return False
 
-            # remove anything after comma
-            tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag
-
-            # Truncate tag to 50 characters maximum (database limit)
-            # Try to truncate at word boundaries for better readability
-            MAX_TAG_LENGTH = 50
-            if len(tag) > MAX_TAG_LENGTH:
-                original_tag = tag
-                # Try to truncate at the last complete word within the limit
-                truncated = tag.split(',')[0]  # tag[:MAX_TAG_LENGTH]
-                last_space = truncated.rfind(' ')
-                if last_space > MAX_TAG_LENGTH * 0.7:  # Only truncate at word boundary if it's not too short
-                    tag = truncated[:last_space].strip()
-                else:
-                    tag = truncated.strip()
-                # print(f"Warning: Tag truncated from '{original_tag}' to '{tag}' (length: {len(tag)})")
-            tagid = self.db.tags.find_first(where={
-                'name': tag,
+            tag_data = {
+                'topic': 'Unknown',
+                'theme': 'Unknown',
+                'type': 'Unknown',
                 'examtypeid': self.current_exam_id,
                 'sectionid': self.current_section_id
-            })  # because two different exams/sections can have same tag
-            if tagid:
-                return tagid.tagid
+            }
+
+            for tag_str in tags_list:
+                if not isinstance(tag_str, str) or ':' not in tag_str:
+                    continue
+                
+                parts = tag_str.split(':', 1)
+                key = parts[0].strip().lower()
+                value = parts[1].strip()
+
+                if key in ['topic', 'theme', 'type']:
+                    # Truncate to 300 characters as requested
+                    tag_data[key] = value[:300]
+
+            # Find or create categorised tag
+            existing_tag = self.db.tags.find_first(where={
+                'topic': tag_data['topic'],
+                'theme': tag_data['theme'],
+                'type': tag_data['type'],
+                'examtypeid': self.current_exam_id,
+                'sectionid': self.current_section_id
+            })
+
+            if existing_tag:
+                return existing_tag.tagid
             else:
-                tag_data = {
-                    'name': tag,
-                    'examtypeid': self.current_exam_id,  # Direct field assignment
-                    'sectionid': self.current_section_id  # Direct field assignment
-                }
-                tagid = self.db.tags.create(
-                    data=tag_data
-                )
-                return tagid.tagid
+                new_tag = self.db.tags.create(data=tag_data)
+                return new_tag.tagid
         except Exception as e:
-            print(f"Error creating tag in _register_tag: {str(e)}")
-            print(f"for {self.current_mockquestion_number}")
-            print(f"here is the tag value that is causing the issue:- {tag} ")
+            print(f"Error in _register_tag (categorized): {str(e)}")
+            print(f"Tags list was: {tags_list}")
             return False
 
     def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False):
@@ -474,20 +517,21 @@ class DB:
                 'content': json.dumps(parent_question.get('content', {})),
                 'title': title,  # Ensure title is not empty
                 # Direct field assignment (required)
-                'sectionid': self.current_section_id,
+                'sectionid': self.current_section_id,     # Reverted to schema name
                 # Direct field assignment (required)
-                'examtypeid': self.current_exam_id
+                'examtypeid': self.current_exam_id       # Reverted to schema name
             }
 
             if isMockQuestion:
                 problemsset_data['mockquestionnumber'] = self.current_mockquestion_number
                 # Direct field assignment
-                problemsset_data['mocksectionid'] = self.current_mocksection_id
+                problemsset_data['mocksectionid'] = self.current_mocksection_id # Reverted
 
             # Create problem set
             try:
                 # Note: Prisma Python client uses lowercase for model names
                 problemsset = self.db.problemsset.create(data=problemsset_data)
+                # Prisma Python client uses schema field names (or matching aliases)
                 self.current_problemset_id = problemsset.problemsSetId
             except Exception as e:
                 print(
@@ -497,7 +541,8 @@ class DB:
             # Register child questions
             child_questions = (
                 (parent_question.get('childQuestions') or []) or
-                (parent_question.get('questions') or [])
+                (parent_question.get('questions') or []) or
+                (parent_question.get('child-questions') or [])
             )
 
             for child in child_questions:
@@ -575,7 +620,7 @@ class DB:
                     self.current_mockquestion_number = 1
                     for question in questions:
                         # Check for parent-child questions using multiple possible keys
-                        if any(key in question for key in ['childQuestions', 'questions', 'sources']):
+                        if any(key in question for key in ['childQuestions', 'questions', 'sources', 'child-questions']):
                             # Handle parent-child questions
                             if not self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion):
                                 raise Exception(

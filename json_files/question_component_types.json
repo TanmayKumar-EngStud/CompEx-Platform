@@ -63,7 +63,8 @@
                "Two-Part Analysis Child",
                "Table Analysis",
                "Two-Part Analysis",
-               "Multi-Source Reasoning"
+               "Multi-Source Reasoning",
+               "Critical Reasoning"
             ],
             "file-name": "simple-question-text.txt.template",
             "variables": null,
@@ -111,7 +112,8 @@
                "Multi-Source Reasoning Child",
                "Multi-Source Reasoning Child",
                "Two-Part Analysis Child",
-               "Quantitative Comparison"
+               "Quantitative Comparison",
+               "Critical Reasoning"
             ],
             "file-name": "simple-question-title.txt.template",
             "variables": null,
@@ -137,7 +139,8 @@
                "Multi-Source Reasoning Child",
                "Multi-Source Reasoning Child",
                "Two-Part Analysis Child",
-               "Quantitative Comparison"
+               "Quantitative Comparison",
+               "Critical Reasoning"
             ],
             "file-name": "simple-question-solution.txt.template",
             "variables": null,
@@ -189,7 +192,8 @@
                "Multi-Source Reasoning Child",
                "Two-Part Analysis Child",
                "Multi-Source Reasoning",
-               "Two-Part Analysis"
+               "Two-Part Analysis",
+               "Critical Reasoning"
             ],
             "file-name": "generic-question-option-answer.txt.template",
             "variables": null,

@@ -1,7 +1,7 @@
 STRICT RESPONSE FORMAT: JSON
 - "question" key with the full problem text.
 - Format the question string EXACTLY as follows:
-  "Information: [Any shared context or constraints, e.g. x > 0]\nQuantity A: [Value or Expression]\nQuantity B: [Value or Expression]"
+  "Information: [Any shared context or constraints]\nQuantity A: [Value or Expression]\nQuantity B: [Value or Expression]"
 
 INPUTS:
 Topic: {{questionTopic}}

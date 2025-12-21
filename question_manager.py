@@ -37,6 +37,14 @@ class ManageComponentTemplates:
 
     def _generate_all_templates(self):
         """Iterates through components and routes to specific internal handlers."""
+        
+        # --- BLUEPRINT INJECTION (FEATURE FLAG) ---
+        prompt_info = get_json('prompt_component_info')[0]
+        if prompt_info.get('use_blueprint', False):
+            # Insert at the START ensuring it runs first
+            if 'QuestionBlueprint' not in self.question_components:
+                self.question_components.insert(0, 'QuestionBlueprint')
+
         for question_component in self.question_components:
             component_call_buffer = {}
 
@@ -49,6 +57,9 @@ class ManageComponentTemplates:
             elif question_component == "QuestionOptions/Answer":
                 component_call_buffer[question_component] = self._handle_options(question_component)
                 
+            elif question_component == "QuestionBlueprint":
+                component_call_buffer[question_component] = self._handle_blueprint(question_component)
+
             else:
                 # Standard Generic Components
                 component_call_buffer[question_component] = self._handle_generic_component(question_component)
@@ -65,7 +76,8 @@ class ManageComponentTemplates:
             if prompt_metadata_type == 'passage':
                 # Standard Passage Logic
                 for prompt_metadata_item in self.prompt_details['metadata-type'][prompt_metadata_type]:
-                    count_number_of_passages = len(self.prompt_details.get('child-prompt', 1))
+                    child_prompts = self.prompt_details.get('child-prompt')
+                    count_number_of_passages = len(child_prompts) if isinstance(child_prompts, list) else 1
                     file_name = self.component_instruction[component_name][prompt_metadata_type]['file-name']
                     variables = self.component_instruction[component_name][prompt_metadata_type]['variables']
                     
@@ -172,6 +184,29 @@ class ManageComponentTemplates:
             })
         return buffer
 
+    def _handle_blueprint(self, component_name: str) -> Dict:
+        """Handles the Blueprint Step"""
+        file_name = "blueprint.txt.template"
+        try:
+            instruction = get_Component_Template(
+                component_name, file_name, 
+                self.prompt_details['exam'], 
+                self.prompt_details['section'], 
+                self.prompt_details['question-type'], 
+                None, 
+                rand_var=self.rand_var
+            )
+        except Exception as e:
+            # Fallback if template fails (e.g. file not found)
+            print(f"Warning: Blueprint template failed: {e}")
+            instruction = "Create a conceptual blueprint for this question. Output JSON."
+
+        return {
+            "instruction statement": instruction,
+            "output": "JSON Blueprint",
+            "file-name": file_name
+        }
+
     def _handle_options(self, component_name: str) -> Dict:
         """Handles QuestionOptions/Answer logic."""
         for category_list in self.component_instruction.get(component_name):
@@ -275,6 +310,9 @@ class ManageQuestionData:
     def get_question_data(self) -> Tuple[dict, dict]:
         """Main entry point to generate data for this question."""
         
+        # 0. Capture Clean Prompt for Tags (Prevention of Leaks)
+        self.clean_prompt_for_tags = self.prompt_details['prompt']
+
         # 1. Dynamic Difficulty Injection
         self._inject_difficulty()
         
@@ -326,7 +364,7 @@ class ManageQuestionData:
         stats['api_calls'] += child_stats['api_calls']
 
         # 6. Logging and Recording
-        result_buffer['prompt'] = self.prompt_details['prompt']
+        result_buffer['prompt'] = self.clean_prompt_for_tags
         result_buffer['question-type'] = self.question_type
         
         # Inject DB-required fields
@@ -336,7 +374,6 @@ class ManageQuestionData:
                  result_buffer['difficulty'] = self.prompt_details['difficulty']
              elif 'difficulty' not in result_buffer:
                  # Attempt to extract from 'difficulty_level: <N>' in nomenclature if available
-                 import re
                  match = re.search(r'difficulty_level:\s*(\d+)', self.prompt_details.get('prompt', ''))
                  if match:
                      result_buffer['difficulty'] = int(match.group(1))
@@ -353,28 +390,27 @@ class ManageQuestionData:
             return tag_str.replace('<', '').replace('>', '')
 
         try:
-            prompt_parts = self.prompt_details['prompt'].split(' - ')
+            prompt_parts = self.clean_prompt_for_tags.split(' - ')
             
             # Always add type
             tags.append(clean_tag(f"type: {self.question_type}"))
 
             # Topic and Theme Extraction
-            if self.question_type == 'Sentence Equivalence':
-                # Format: <Theme> - <Skill>
-                if len(prompt_parts) > 0:
-                    tags.append(clean_tag(f"theme: {prompt_parts[0]}"))
-                if len(prompt_parts) > 1:
-                    tags.append(clean_tag(f"topic: {prompt_parts[1]}")) # User requested mapping skill to topic
-            
-            elif self.question_type in ['Text Completion', 'Reading Comprehension']:
-                # Format: <Type> - <Theme> - <Skill>
-                if len(prompt_parts) > 1:
-                    tags.append(clean_tag(f"theme: {prompt_parts[1]}"))
-                if len(prompt_parts) > 2:
-                    tags.append(clean_tag(f"topic: {prompt_parts[2]}")) # User requested mapping skill to topic
+            # Topic and Theme Extraction
+            if self.question_type in ['Sentence Equivalence', 'Text Completion', 'Reading Comprehension', 'Critical Reasoning']:
+                # Robust Regex Extraction for labeled nomenclature
+                # Format: Theme: <Theme> | Topic: <Topic> | ...
+                
+                theme_match = re.search(r'Theme:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
+                if theme_match:
+                    tags.append(clean_tag(f"theme: {theme_match.group(1).strip()}"))
+                    
+                topic_match = re.search(r'Topic:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
+                if topic_match:
+                    tags.append(clean_tag(f"topic: {topic_match.group(1).strip()}"))
             
             else:
-                # Quants & Integrated Reasoning
+                # Quants & Integrated Reasoning (Legacy positional format)
                 # Format: <Topic> - <Theme>
                 if len(prompt_parts) > 0:
                     tags.append(clean_tag(f"topic: {prompt_parts[0]}"))
@@ -447,20 +483,20 @@ class ManageQuestionData:
             except Exception as e:
                 print(f"Warning: Failed to inject vocabulary: {e}")
 
-        # --- SCENARIO INJECTION ---
-        try:
-            scenario_path = os.path.join(os.path.dirname(__file__), 'json_files', 'scenarios.json')
-            if os.path.exists(scenario_path):
-                with open(scenario_path, 'r') as f:
-                    scenarios_data = json.load(f)
-                
-                random_scenario = random.choice(scenarios_data['scenarios'])
-                scenario_instruction = f"\n\n[Scenario Context]: Set this problem in the context of {random_scenario}."
-                uniqueness_seed = f" Random Seed: {random.randint(10000, 99999)}"
-                
-                self.prompt_details['prompt'] += scenario_instruction + uniqueness_seed
-        except Exception as e:
-            print(f"Warning: Failed to inject scenario: {e}")
+        # --- SCENARIO INJECTION (DISABLED TO REDUCE REPETITION) ---
+        # try:
+        #     scenario_path = os.path.join(os.path.dirname(__file__), 'json_files', 'scenarios.json')
+        #     if os.path.exists(scenario_path):
+        #         with open(scenario_path, 'r') as f:
+        #             scenarios_data = json.load(f)
+        #         
+        #         random_scenario = random.choice(scenarios_data['scenarios'])
+        #         scenario_instruction = f"\n\n[Scenario Context]: Set this problem in the context of {random_scenario}."
+        #         uniqueness_seed = f" Random Seed: {random.randint(10000, 99999)}"
+        #         
+        #         self.prompt_details['prompt'] += scenario_instruction + uniqueness_seed
+        # except Exception as e:
+        #     print(f"Warning: Failed to inject scenario: {e}")
 
     def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
         result_buffer = {}
@@ -496,6 +532,24 @@ class ManageQuestionData:
                         question_type=self.question_type,
                         variable=None
                      )
+
+                     # --- INJECT COMPLEXITY GUIDELINES ---
+                     try:
+                         # Determine domain for complexity
+                         domain = "Quants" if self.question_type in ["Data Sufficiency", "Problem Solving Simple", "Problem Solving Meta", "Numerical Entry", "Quantitative Comparison"] else \
+                                  "Verbal" if self.question_type in ["Sentence Equivalence", "Text Completion", "Reading Comprehension", "Critical Reasoning"] else \
+                                  "Integrated Reasoning"
+
+                         # Load guidelines
+                         prompt_info = get_json('prompt_component_info')[0]
+                         guidelines = prompt_info.get('complexity_guidelines', {}).get(domain, [])
+                         
+                         if guidelines:
+                             guidelines_text = "\n".join(guidelines)
+                             sys_instruct += f"\n\n## COMPLEXITY GUIDELINES (STRICT COMPLIANCE REQUIRED)\n{guidelines_text}\n"
+                     except Exception as e:
+                         print(f"Warning: Failed to inject complexity guidelines: {e}")
+
                      self.generator_session.set_system_instruction(sys_instruct.strip())
              except Exception as e:
                  print(f"Warning: Failed to load system instruction: {e}")
