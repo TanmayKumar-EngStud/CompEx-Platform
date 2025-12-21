@@ -20,3 +20,8 @@ For Example:
 - The "answer" field must be an array of correct option letters
 - Multiple options can be correct (typically 2-3 out of 5)
 - Each option should be independently valuable as correct or incorrect
+{{#if_sentence_equivalence}}
+- **SE CONSTRAINT**: You MUST generate exactly **6 options** (A, B, C, D, E, F).
+- **SE CONSTRAINT**: There must be exactly **2 correct answers**.
+- **SE CONSTRAINT**: The two correct answer choices must produce sentences with the **same meaning**.
+{{/if_sentence_equivalence}}

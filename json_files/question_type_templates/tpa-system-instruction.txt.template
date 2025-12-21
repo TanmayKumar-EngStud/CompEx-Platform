@@ -24,7 +24,7 @@ You must generate a JSON object containing:
 
 ## Constraints
 *   Ensure the options are plausible for BOTH questions.
-*   The questions should be related (e.g., "Select the strategy that minimizes cost" and "Select the strategy that maximizes speed").
+*   The questions should be related.
 
 
 UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

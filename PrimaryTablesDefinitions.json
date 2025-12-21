@@ -4,16 +4,16 @@
             "id": 1,
             "description": "Graduate Management Admission Test",
             "sections": {
-                "Quants": {
-                    "id": 1,
+                "1": {
+                    "name": "Quants",
                     "description": "Quantitative Section"
                 },
-                "Verbal": {
-                    "id": 2,
+                "2": {
+                    "name": "Verbal",
                     "description": "Verbal Section"
                 },
-                "Integrated Reasoning": {
-                    "id": 3,
+                "3": {
+                    "name": "Integrated Reasoning",
                     "description": "Integrated Reasoning Section"
                 }
             }
@@ -22,13 +22,21 @@
             "id": 2,
             "description": "Graduate Record Examination",
             "sections": {
-                "Quants": {
-                    "id": 1,
+                "1": {
+                    "name": "Quants",
                     "description": "Quantitative Section"
                 },
-                "Verbal": {
-                    "id": 2,
+                "2": {
+                    "name": "Verbal",
                     "description": "Verbal Section"
+                },
+                "3": {
+                    "name": "Verbal",
+                    "description": "Verbal Section"
+                },
+                "4": {
+                    "name": "Quants",
+                    "description": "Quantitative Section"
                 }
             }
         }

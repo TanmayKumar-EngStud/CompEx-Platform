@@ -98,23 +98,53 @@ class DB:
             for exam_name, exam_data in self.definitions['examtypes'].items():
                 # Check if exam type exists
                 existing_exam = self.db.examtypes.find_first(
-                    where={'examtypeid': exam_data['id']}
+                    where={'name': exam_name}
                 )
                 if not existing_exam:
                     print(f"Exam type {exam_name} not found, creating it")
                     exam_type = self.db.examtypes.create(data={
-                        'examtypeid': exam_data['id'],
                         'name': exam_name,
                         'description': exam_data['description']
                     })
                     print(f"Exam type {exam_name} created successfully")
-                    for section_name, section_data in exam_data['sections'].items():
-                        section = self.db.sections.create(data={
-                            'sectionid': section_data['id'],
-                            'examtypeid': exam_type.examtypeid,
-                            'name': section_name,
-                            'description': section_data['description']
-                        })
+                else:
+                    exam_type = existing_exam
+
+                # Check if sections are already initialized for this exam type
+                # Fetch all existing sections for this exam
+                existing_sections = self.db.sections.find_many(where={'examtypeid': int(exam_type.examtypeid)})
+                # Create a list of available (unclaimed) sections to match against definitions
+                available_sections = list(existing_sections)
+
+                print(f"Initializing/Verifying sections for {exam_name}...")
+                for section_key, section_data in exam_data['sections'].items():
+                    name = section_data.get('name', section_key)
+                    description = section_data.get('description', '')
+
+                    # Look for a match in available DB sections
+                    found_match = None
+                    for s in available_sections:
+                        if s.name == name:
+                            found_match = s
+                            break
+                    
+                    if found_match:
+                        # Claim it so it's not reused for the next duplicate definition
+                        available_sections.remove(found_match)
+                        print(f"Section '{name}' already exists (ID: {found_match.sectionid})")
+                    else:
+                        # No unclaimed match found, create new
+                        try:
+                            created_section = self.db.sections.create(data={
+                                'examtypeid': exam_type.examtypeid,
+                                'name': name,
+                                'description': description
+                            })
+                            print(f"Created section '{name}' for {exam_name} (ID: {created_section.sectionid})")
+                        except Exception as e:
+                            print(f"Error creating section '{name}': {e}")
+
+                print(f"Sections for {exam_name} verified.")
 
             # Initialize primary user if not exists
             existing_user = self.db.users.find_first()
@@ -218,10 +248,13 @@ class DB:
                 elif type == "Conclusion/Assumption":
                     temp = "Conclusion"
                 # Check if the answer values are strings that contain "Yes" or "No"
-                first_option = question['options'][0]
-                answer_value = question['answer'][first_option]
-                if isinstance(answer_value, str) and answer_value in "Yes/No":
-                    temp = "Yes"
+                try:
+                    first_option = list(question['options'])[0] if isinstance(question['options'], dict) else question['options'][0]
+                    answer_value = question['answer'][first_option]
+                    if isinstance(answer_value, str) and answer_value in "Yes/No":
+                        temp = "Yes"
+                except:
+                    pass
                 question["content"]["connection_validator"] = temp
                 self.question_correction_validator = temp
 
@@ -254,7 +287,7 @@ class DB:
 
             if isChildQuestion:
                 # Direct field assignment
-                print(f"DEBUG: Linking Child Question to ProblemSetID: {self.current_problemset_id}")
+                #print(f"DEBUG: Linking Child Question to ProblemSetID: {self.current_problemset_id}")
                 question_data["problemsSetId"] = self.current_problemset_id  # Reverted
             if isMockQuestion:
                 # Direct field assignment
@@ -325,8 +358,8 @@ class DB:
                     break
 
             # Determine if this option is correct based on the answer mapping
-            if isinstance(answers, dict) and option in answers:
-                answer_value = answers[option]
+            if isinstance(answers, dict) and option_text in answers:
+                answer_value = answers[option_text]
                 if isinstance(answer_value, dict):
                     is_correct = answer_value.get("isCorrect", False)
                 else:
@@ -337,7 +370,7 @@ class DB:
                             break
 
             option_data = {
-                'optiontext': str(option),
+                'optiontext': str(option_text),
                 'iscorrect': is_correct,
                 'problemid': self.current_problem_id,  # Direct field assignment
                 'group': answer_group if answer_group else group
@@ -389,27 +422,29 @@ class DB:
 
     def _register_problem_tags(self, tags):
         try:
-            for tag in tags:
-                tagid = self._register_tag(tag)  # ✅
+            if not tags:
+                return True
+            tagid = self._register_tag(tags)
+            if tagid is not False:
                 tag_data = {
-                    'tagid': tagid,  # Direct field assignment
-                    'problemid': self.current_problem_id  # Direct field assignment
+                    'tagid': tagid,
+                    'problemid': self.current_problem_id
                 }
-                self.db.problemtags.create(data=tag_data)  # ❌
+                self.db.problemtags.create(data=tag_data)
         except Exception as e:
             print(
                 f"Error creating problem tags in _register_problem_tags: {str(e)}")
-            print(f"here is the value received for tagid: {tagid}")
             return False
         return True
 
     def _register_problemsset_tags(self, tags):
         try:
-            for tag in tags:
-                tagid = self._register_tag(tag)
+            if not tags:
+                return True
+            tagid = self._register_tag(tags)
+            if tagid is not False:
                 tag_data = {
-                    'tagid': tagid,  # Direct field assignment
-                    # Direct field assignment (fix: was using current_problem_id)
+                    'tagid': tagid,
                     'problemsSetId': self.current_problemset_id
                 }
                 self.db.problemssettags.create(
@@ -422,48 +457,48 @@ class DB:
         return True
 
     # ✅
-    def _register_tag(self, tag):
+    def _register_tag(self, tags_list):
         try:
-            pattern = r'\(.*?\)'
-            tag = re.sub(pattern, '', tag).strip()
+            if not tags_list:
+                return False
 
-            # remove anything after comma
-            tag = re.sub(r' ,*', '', tag) if ' ,' in tag else tag
-
-            # Truncate tag to 50 characters maximum (database limit)
-            # Try to truncate at word boundaries for better readability
-            MAX_TAG_LENGTH = 50
-            if len(tag) > MAX_TAG_LENGTH:
-                original_tag = tag
-                # Try to truncate at the last complete word within the limit
-                truncated = tag.split(',')[0]  # tag[:MAX_TAG_LENGTH]
-                last_space = truncated.rfind(' ')
-                if last_space > MAX_TAG_LENGTH * 0.7:  # Only truncate at word boundary if it's not too short
-                    tag = truncated[:last_space].strip()
-                else:
-                    tag = truncated.strip()
-                # print(f"Warning: Tag truncated from '{original_tag}' to '{tag}' (length: {len(tag)})")
-            tagid = self.db.tags.find_first(where={
-                'name': tag,
+            tag_data = {
+                'topic': 'Unknown',
+                'theme': 'Unknown',
+                'type': 'Unknown',
                 'examtypeid': self.current_exam_id,
                 'sectionid': self.current_section_id
-            })  # because two different exams/sections can have same tag
-            if tagid:
-                return tagid.tagid
+            }
+
+            for tag_str in tags_list:
+                if not isinstance(tag_str, str) or ':' not in tag_str:
+                    continue
+                
+                parts = tag_str.split(':', 1)
+                key = parts[0].strip().lower()
+                value = parts[1].strip()
+
+                if key in ['topic', 'theme', 'type']:
+                    # Truncate to 300 characters as requested
+                    tag_data[key] = value[:300]
+
+            # Find or create categorised tag
+            existing_tag = self.db.tags.find_first(where={
+                'topic': tag_data['topic'],
+                'theme': tag_data['theme'],
+                'type': tag_data['type'],
+                'examtypeid': self.current_exam_id,
+                'sectionid': self.current_section_id
+            })
+
+            if existing_tag:
+                return existing_tag.tagid
             else:
-                tag_data = {
-                    'name': tag,
-                    'examtypeid': self.current_exam_id,  # Direct field assignment
-                    'sectionid': self.current_section_id  # Direct field assignment
-                }
-                tagid = self.db.tags.create(
-                    data=tag_data
-                )
-                return tagid.tagid
+                new_tag = self.db.tags.create(data=tag_data)
+                return new_tag.tagid
         except Exception as e:
-            print(f"Error creating tag in _register_tag: {str(e)}")
-            print(f"for {self.current_mockquestion_number}")
-            print(f"here is the tag value that is causing the issue:- {tag} ")
+            print(f"Error in _register_tag (categorized): {str(e)}")
+            print(f"Tags list was: {tags_list}")
             return False
 
     def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False):

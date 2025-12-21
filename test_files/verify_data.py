@@ -6,62 +6,83 @@ def verify():
     prisma = Prisma()
     prisma.connect()
     
-    print("--- Verification Results ---")
+    print("\n" + "="*50)
+    print("       DATABASE REGISTRATION VERIFICATION       ")
+    print("="*50)
     
-    # 1. Check Reading Comprehension (Parent-Child)
-    print("\n1. Verifying Reading Comprehension Linking:")
-    rc_problems = prisma.problems.find_many(
-        where={"type": "Reading Comprehension"},
-        take=5,
-        include={"ProblemsSet": True}
-    )
-    for p in rc_problems:
-        ps_title = p.ProblemsSet.title if p.ProblemsSet else "MISSING"
-        print(f"Problem: {p.title} | PS ID: {p.problemsSetId} | PS Title: {ps_title}")
+    # 1. Question Types and Counts
+    print("\n[1] Question Type Distribution:")
+    types_query = prisma.query_raw('SELECT type, COUNT(*) as count FROM problems GROUP BY type;')
+    for t in types_query:
+        print(f" - {t['type']}: {t['count']}")
 
-    # 2. Check Text Completion Grouping
-    print("\n2. Verifying Text Completion Grouping:")
+    # 2. Check Reading Comprehension & MSR (Parent-Child)
+    print("\n[2] Parent-Child Linking (RC & MSR):")
+    pc_types = ["Reading Comprehension", "Multi-Source Reasoning"]
+    for pc_type in pc_types:
+        problems = prisma.problems.find_many(
+            where={"type": pc_type},
+            take=3,
+            include={"ProblemsSet": True}
+        )
+        if problems:
+            print(f" -> {pc_type}:")
+            for p in problems:
+                ps_title = p.ProblemsSet.title if p.ProblemsSet else "MISSING"
+                print(f"    - Problem: {p.title[:40]}... | PS: {ps_title[:40]}...")
+        else:
+            print(f" -> {pc_type}: No records found.")
+
+    # 3. Check Text Completion Grouping
+    print("\n[3] Text Completion Grouping:")
     tc_problems = prisma.problems.find_many(
         where={"type": "Text Completion"},
         take=2,
         include={"problemoptions": True}
     )
-    for p in tc_problems:
-        print(f"Problem: {p.title}")
-        groups = {}
-        for opt in p.problemoptions:
-            grp = opt.group or "None"
-            groups[grp] = groups.get(grp, 0) + 1
-        print(f"  Options per group: {groups}")
-        correct_count = sum(1 for opt in p.problemoptions if opt.iscorrect)
-        print(f"  Correct options: {correct_count}")
+    if tc_problems:
+        for p in tc_problems:
+            groups = {}
+            for opt in p.problemoptions:
+                grp = opt.group or "None"
+                groups[grp] = groups.get(grp, 0) + 1
+            print(f" - {p.title[:40]}...: Groups={groups}, Total Options={len(p.problemoptions)}")
+    else:
+        print(" - No Text Completion records found.")
 
-    # 3. Check Sentence Equivalence (Multiple Correct)
-    print("\n3. Verifying Sentence Equivalence (Multiple Correct):")
-    se_problems = prisma.problems.find_many(
-        where={"type": "Sentence Equivalence"},
-        take=2,
-        include={"problemoptions": True}
-    )
-    for p in se_problems:
-        correct_opts = [opt.optiontext for opt in p.problemoptions if opt.iscorrect]
-        print(f"Problem: {p.title} | Correct Options: {correct_opts}")
+    # 4. Check Data Sufficiency & Problem Solving (Simple)
+    print("\n[4] Simple Questions (DS, PS):")
+    simple_types = ["Data Sufficiency", "Problem Solving Simple"]
+    for stype in simple_types:
+        count = prisma.problems.count(where={"type": stype})
+        print(f" - {stype}: {count} records found.")
 
-    # 4. Check Solutions formatting
-    print("\n4. Verifying Solutions Formatting:")
-    p = prisma.problems.find_first()
-    if p:
-        print(f"Sample Solution (First 100 chars): {str(p.solution)[:100]}...")
+    # 5. Check Solution Format
+    print("\n[5] Solution JSON Format Check:")
+    sample = prisma.problems.find_first()
+    if sample:
+        sol = sample.solution
+        is_valid = isinstance(sol, dict) and "explanation" in sol
+        status = "PASSED" if is_valid else "FAILED (Not in {'explanation': '...'} format)"
+        print(f" - Format Check: {status}")
+        if is_valid:
+            print(f" - Sample Preview: {str(sol['explanation'])[:80]}...")
 
-    # 5. Missing values check
-    print("\n5. Checking for Missing Values (Difficulty/Tags):")
+    # 6. Data Integrity (Difficulty & Tags)
+    print("\n[6] Data Integrity:")
     missing_diff = prisma.problems.count(where={"difficulty": None})
-    total_problems = prisma.problems.count()
-    print(f"Problems with missing difficulty: {missing_diff} / {total_problems}")
+    total = prisma.problems.count()
+    tag_count = prisma.tags.count()
+    sample_tag = prisma.tags.find_first()
     
-    # Check if tags are registered
-    tag_count = prisma.tagid.count() if hasattr(prisma, 'tagid') else prisma.tags.count()
-    print(f"Total tags in database: {tag_count}")
+    print(f" - Problems with missing difficulty: {missing_diff} / {total}")
+    print(f" - Total unique categorized tags registered: {tag_count}")
+    if sample_tag:
+        print(f" - Sample Tag: Type={sample_tag.type}, Theme={sample_tag.theme}, Topic={sample_tag.topic}")
+
+    print("\n" + "="*50)
+    print("VERIFICATION COMPLETE")
+    print("="*50 + "\n")
 
     prisma.disconnect()
 

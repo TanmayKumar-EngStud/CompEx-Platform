@@ -39,25 +39,33 @@
       "nomenclature": "<questionTopic> - <questionTheme> - difficulty_level: <difficulty>",
       "system-instruction": "numerical-entry-system-instruction.txt.template"
    },
+   "Critical Reasoning": {
+      "has-metadata": true,
+      "meta-count": 1,
+      "type": "simple",
+      "options": "single",
+      "nomenclature": "Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
+      "system-instruction": "critical-reasoning-system-instruction.txt.template"
+   },
    "Sentence Equivalence": {
       "has-metadata": false,
       "type": "simple",
       "options": "multi",
-      "nomenclature": "<questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
+      "nomenclature": "Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
       "system-instruction": "sentence-equivalence-system-instruction.txt.template"
    },
    "Text Completion": {
       "has-metadata": false,
       "type": "simple",
       "options": "blank",
-      "nomenclature": "<TC_QuestionType> - <questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
+      "nomenclature": "TC_Type: <TC_QuestionType> | Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
       "system-instruction": "text-completion-system-instruction.txt.template"
    },
    "Reading Comprehension": {
       "has-metadata": true,
       "meta-count": 1,
       "type": "parent",
-      "nomenclature": "<RC_QuestionType> - <questionTheme> - <focused_skill> - vocabulary_level: <vocabulary> - difficulty_level: <difficulty>",
+      "nomenclature": "RC_Type: <RC_QuestionType> | Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
       "system-instruction": "reading-comprehension-system-instruction.txt.template",
       "child-question": {
          "options": {

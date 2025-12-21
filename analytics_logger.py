@@ -20,9 +20,9 @@ def log_analytics(model_used: str, total_api_calls: int, total_input_tokens: int
     Args:
         model_used: Name of the model used
         total_api_calls: Total number of API calls made
-        total_input_tokens: Total input tokens consumed
-        total_output_tokens: Total output tokens generated
-        total_time_seconds: Total time taken in seconds
+        total_input_tokens: Total input tokens consumed (raw int)
+        total_output_tokens: Total output tokens generated (raw int)
+        total_time_seconds: Total time taken in seconds (raw float)
         gre_questions: Number of GRE questions generated
         gmat_questions: Number of GMAT questions generated
         csv_path: Path to CSV file (defaults to log_json_files/analytics.csv)
@@ -40,14 +40,19 @@ def log_analytics(model_used: str, total_api_calls: int, total_input_tokens: int
     # Check if file exists to determine if we need to write headers
     file_exists = os.path.exists(csv_path)
     
+    # Conversion Logic
+    minutes = total_time_seconds / 60
+    input_millions = total_input_tokens / 1_000_000
+    output_millions = total_output_tokens / 1_000_000
+    
     # Prepare row data
     row = {
         'datetime': datetime.now().isoformat(),
         'model_used': model_used,
         'total_api_calls': total_api_calls,
-        'total_input_tokens': total_input_tokens,
-        'total_output_tokens': total_output_tokens,
-        'total_time_seconds': round(total_time_seconds, 2),
+        'total_input_tokens': f"{input_millions:.3f}M",
+        'total_output_tokens': f"{output_millions:.3f}M",
+        'total_time_minutes': f"{minutes:.2f}",
         'gre_questions': gre_questions,
         'gmat_questions': gmat_questions
     }
@@ -55,7 +60,7 @@ def log_analytics(model_used: str, total_api_calls: int, total_input_tokens: int
     # Write to CSV
     with open(csv_path, 'a', newline='', encoding='utf-8') as f:
         fieldnames = ['datetime', 'model_used', 'total_api_calls', 'total_input_tokens',
-                      'total_output_tokens', 'total_time_seconds', 'gre_questions', 'gmat_questions']
+                      'total_output_tokens', 'total_time_minutes', 'gre_questions', 'gmat_questions']
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         
         # Write header if file is new

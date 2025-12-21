@@ -1,0 +1,18 @@
+[COMMAND_START]
+SYSTEM_INSTRUCTION:
+{system_instruction}
+
+--------------------------------------------------------------------------------
+
+COMPONENT_INSTRUCTION:
+{component_instruction}
+
+--------------------------------------------------------------------------------
+
+OUTPUT_FORMAT:
+{expected_output}
+
+--------------------------------------------------------------------------------
+
+Generate the content in strict JSON format.
+[COMMAND_END]

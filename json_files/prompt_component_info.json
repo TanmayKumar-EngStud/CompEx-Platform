@@ -1,4 +1,5 @@
 {
+   "use_blueprint": false,
    "difficulty": 5,
    "vocabulary": 3,
    "questionStyle": [
@@ -13,7 +14,6 @@
          "list": [
             "Single Variable Equation",
             "Inequalities",
-            "Geometric Properties*",
             "Word Problems&",
             "Numeric Comparisons",
             "Data Interpretation"
@@ -53,7 +53,11 @@
                "fraction_operations",
                "decimal_conversions",
                "percentage_calculations",
-               "number_properties"
+               "percentage_calculations",
+               "number_properties",
+               "eulers_totient_theorem",
+               "chinese_remainder_theorem",
+               "perfect_squares_cubes"
             ],
             "Ratio and Proportion": [
                "direct_proportion",
@@ -61,7 +65,9 @@
                "ratio_calculations",
                "proportion_solving",
                "scale_problems",
-               "unit_conversions"
+               "unit_conversions",
+               "golden_ratio_applications",
+               "compound_ratios"
             ],
             "Simple Interest and Compound Interest": [
                "simple_interest_calculations",
@@ -177,8 +183,8 @@
                "data_interpretation",
                "distribution_analysis"
             ],
-            "Standard Deviation and Variance": [
-               "variance_calculations",
+            "Statistics": [
+               "Expectation",
                "standard_deviation",
                "data_spread",
                "statistical_analysis",
@@ -229,12 +235,13 @@
                "data_interpretation",
                "distribution_analysis"
             ],
-            "Standard Deviation and Variance": [
+            "Statistics": [
                "variance_calculations",
                "standard_deviation",
                "data_spread",
                "statistical_analysis",
-               "normal_distribution"
+               "normal_distribution",
+               "mean_median_mode_range"
             ],
             "Probability Rules (Basic, Independent, Mutually Exclusive, etc)": [
                "basic_probability",
@@ -349,10 +356,6 @@
             "Business and Finance",
             "Marketing and Sales",
             "Logistics and Operations",
-            "Science and Technology",
-            "Human Resources",
-            "Environment and Sustainability",
-            "Government Policies and Regulations",
             "Sustainable Energy & Climate Technology",
             "Digital Economy & E-commerce",
             "Healthcare Analytics & Epidemiology",
@@ -360,7 +363,19 @@
             "Financial Markets & Cryptocurrency",
             "Space Exploration & Engineering",
             "Urban Planning & Smart Cities",
-            "Agricultural Economics & Food Security"
+            "Agricultural Economics & Food Security",
+            "Astrophysics & Astronomy",
+            "Biology & Ecology",
+            "Medicine & Physiology",
+            "Chemistry & Physics",
+            "Geology & Meteorology",
+            "Psychology & Sociology",
+            "Anthropology & Archaeology",
+            "Political Science",
+            "History (Ancient/Modern)",
+            "Literature & Criticism",
+            "Visual Arts & Architecture",
+            "Philosophy & Ethics"
          ]
       },
       {
@@ -375,7 +390,7 @@
             "Finance",
             "Science and Technology",
             "Sports",
-            "philosophy",
+            "Philosophy",
             "History",
             "Geography",
             "Art",
@@ -388,7 +403,11 @@
             "Environmental Ethics & Philosophy",
             "Modern Architecture & Urban Design",
             "Linguistics & Language Acquisition",
-            "Artificial Intelligence & Ethics"
+            "Artificial Intelligence & Ethics",
+            "Natural Sciences (Biology, Physics, Chemistry)",
+            "Humanities (History, Art, Literature)",
+            "Social Sciences (Psychology, Sociology)",
+            "Business (Marketing, Strategy, Finance)"
          ]
       },
       {
@@ -455,11 +474,27 @@
             "Vocabulary in Context",
             "Passage Organization and Cohesion",
             "Evidence-Based Reasoning",
-            "Critical Reasoning (Argument Evaluation)",
             "Comparative Analysis and Perspective Recognition",
             "Skimming and Scanning Techniques",
             "Assumption and Bias Identification",
             "Summarization and Paraphrasing"
+         ]
+      },
+      {
+         "QuestionType": [
+            "Critical Reasoning"
+         ],
+         "list": [
+            "Identify the Assumption",
+            "Strengthen the Argument",
+            "Weaken the Argument",
+            "Evaluate the Argument",
+            "Draw a Conclusion/Inference",
+            "Resolve a Paradox/Discrepancy",
+            "Identify the Flaw in Reasoning",
+            "Complete the Argument",
+            "Boldface Structure Analysis",
+            "Method of Reasoning"
          ]
       },
       {
@@ -572,5 +607,26 @@
             "memo"
          ]
       }
-   ]
+   ],
+   "complexity_guidelines": {
+      "Quants": [
+         "**CONCEPTUAL DEPTH OVER CALCULATION**: The difficulty must stem from *conceptual understanding*, not arithmetic tediousness.",
+         "**NO TEDIOUS ARITHMETIC**: focus more on the conceptual depth instead of tedious calculations.",
+         "**LOGICAL LEAPS**: A hard question requires synthesizing two concepts (e.g., Geometry + Number Properties) rather than just applying one complex formula.",
+         "**AVOID ROTE FORMULAS**: Questions should not be solvable by simply plugging numbers into a formula. Require the user to manipulate the formula or understand its derivation.",
+         "**STRICT SCOPE (GRE)**: Use ONLY High School Arithmetic, Algebra, Geometry, and Data Analysis. DO NOT include Calculus, Differential Equations, Linear Algebra, or Matrix Rank.",
+         "**STRICT SCOPE (GMAT)**: Use ONLY Arithmetic, Algebra, and Data Analysis. NO Geometry in Quantitative Reasoning. NO Calculus."
+      ],
+      "Verbal": [
+         "**STRUCTURAL COMPLEXITY**: Use sophisticated sentence structures: double negatives, concessive clauses (for example, 'Although...', 'Albeit...'), and subtle shifts in tone but avoid overusing high vocabulary words.",
+         "**DIVERSE TOPICS**: Do NOT rely on 'Masters Studies' or 'Research hypotheses'. Use diverse contexts: History, Art, Economics, Astronomy, Sociology.",
+         "**NUANCE OVER OBSCURITY**: For vocabulary, test secondary meanings of common words (e.g., 'flag' as 'to decline') rather than just obscure archaic words.",
+         "**LOGICAL COHESION**: In Reading Comprehension, ensure questions test *structure* and *inference* (why did the author include this?) rather than just fact retrieval."
+      ],
+      "Integrated Reasoning": [
+         "**DATA SYNTHESIS**: Require the user to combine data from the text AND the chart to find the answer.",
+         "**REAL-WORLD AMBIGUITY**: Include real-world constraints.",
+         "**AVOID SIMPLE LOOKUP**: The answer should never be explicitly stated in one cell of a table. It must be derived."
+      ]
+   }
 }

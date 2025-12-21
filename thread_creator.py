@@ -90,7 +90,9 @@ class ThreadManager:
                 self.work_queue.task_done()
                 
             except Exception as e:
+                import traceback
                 print(f"Error in thread {thread_id}: {e}")
+                print(traceback.format_exc())
                 # Log error
                 self.work_report.put({
                     'error': str(e), 

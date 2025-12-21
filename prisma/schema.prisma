@@ -168,7 +168,9 @@ model sections {
 
 model tags {
   tagid           Int               @id @default(autoincrement())
-  name            String            @db.VarChar(50)
+  topic           String            @db.VarChar(300)
+  theme           String            @db.VarChar(300)
+  type            String            @db.VarChar(300)
   examtypeid      Int
   sectionid       Int
   problemssettags problemssettags[]
@@ -238,9 +240,9 @@ model userstreaks {
 model analytics {
   id                 Int      @id @default(autoincrement())
   total_api_calls    Int
-  total_input_tokens Int
-  total_output_tokens Int
-  total_time_seconds Float
+  total_input_tokens String
+  total_output_tokens String
+  total_time_minutes Float
   gre_questions      Int
   gmat_questions     Int
   difficulty_level   Int

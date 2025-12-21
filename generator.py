@@ -235,7 +235,8 @@ class GenQ:
             total_input_tokens=global_stats['total_input_tokens'],
             total_output_tokens=global_stats['total_output_tokens'],
             total_time_seconds=global_stats['total_time_seconds'],
-            gmat_questions=global_stats['gmat_questions']
+            gmat_questions=global_stats['gmat_questions'],
+            gre_questions=global_stats['gre_questions']
         )
         self.last_run_stats = global_stats
         return paper_set

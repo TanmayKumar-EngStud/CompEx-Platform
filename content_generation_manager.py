@@ -37,14 +37,16 @@ def manage_generated_content(result: dict, question_type: str, question_componen
                 _expect(generated_data, str, question_component)
                 result['solution'] = generated_data
             elif isinstance(generated_data, dict):
-                 solution_text = generated_data.get('solution', '')
-                 if not solution_text:
-                     # Fallback to checking values if key isn't 'solution' or is empty
-                     # But strict schema should enforce it.
-                     pass
-                 result['solution'] = solution_text
+                 # Sanitization: Extract only the 'solution' part, ignore 'scratchpad'
+                 result['solution'] = generated_data.get('solution', '')
+
             else:
                  raise TypeError(f"QuestionSolution expected str or dict, got {type(generated_data)}")
+
+        elif question_component == 'QuestionBlueprint':
+            # Store blueprint as is (could be dict or string)
+            # result['blueprint'] = generated_data
+            pass # we won't be storing the blueprint
 
         else:
             for k, v in generated_data.items():

@@ -2,9 +2,9 @@
     "Quants": {
         "1": "Construct a straightforward problem requiring direct application of a single formula or concept. Use clear, unambiguous language with integer values to minimize calculation errors. Ensure the solution path is linear and obvious.",
         "2": "Create a problem requiring a two-step calculation or logical deduction. Use standard phrasing but introduce one minor variable or condition. Options should include one obvious outlier to reward basic estimation.",
-        "3": "Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap (e.g., stopping one step early).",
-        "4": "Construct a complex problem involving multiple mathematical concepts (e.g., geometry + algebra). Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
-        "5": "Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording (e.g., double negatives, passive voice) to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps."
+        "3": "Design a problem requiring at least three distinct steps. Use wording that includes minor misdirection or extraneous information to test focus. Options must include a 'common error' trap.",
+        "4": "Construct a complex problem involving multiple mathematical concepts. Use dense, technical wording. Options should include 'partial answer' traps that correspond to intermediate results.",
+        "5": "Create a highly abstract problem, potentially using variables instead of numbers. Use convoluted wording to obscure the underlying logic. The problem should be solvable via a conceptual shortcut, but the 'brute force' method should be tedious. Options must include specific 'logical flaw' traps."
     },
     "Verbal": {
         "1": "Use common, high-frequency vocabulary. Sentence structures should be simple or compound, avoiding nested clauses. The logic should rely on literal comprehension of the text.",
@@ -16,7 +16,7 @@
     "Integrated Reasoning": {
         "1": "Data/Scenario should be straightforward with minimal distractions. Questions should require a single step of lookup or direct calculation. Options should be distinct and unambiguous.",
         "2": "Introduce minor irrelevant data in the table/graph/passage. Questions requires combining 2 pieces of information. Options may include one obvious distractor.",
-        "3": "Data should be dense (e.g., multiple columns, complex graph legends). Questions require multi-step synthesis (e.g., sort table then calculate average). Options include common calculation error traps.",
+        "3": "Data should be dense. Questions require multi-step synthesis. Options include common calculation error traps.",
         "4": "Scenario involves conflicting or nuanced information from multiple sources. Questions require evaluating trade-offs or inferring unstated implications. Options are close, requiring precise logic.",
         "5": "Highly complex data sets with potential ambiguities or 'missing' data that must be inferred. Questions require synthesizing information across all sources/tabs. Options are subtle, testing deep understanding of the scenario's constraints."
     }
