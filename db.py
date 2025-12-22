@@ -164,7 +164,7 @@ class DB:
             print(f"Error initializing primary tables: {str(e)}")
             raise
 
-    def _get_exam_section_ids(self, exam_section):
+    def _get_exam_section_ids(self, exam_section, section_id=None):
         section_components = {
             "V": "Verbal",
             "Q": "Quants",
@@ -198,20 +198,29 @@ class DB:
         if not exam:
             raise ValueError(f"Exam type not found: '{exam_name}'")
 
-        section_obj = self.db.sections.find_first(
-            where={'name': section_name, 'examtypeid': exam.examtypeid})
-        if not section_obj:
-            raise ValueError(
-                f"Section not found: '{section_name}' for exam '{exam_name}'")
-
         self.current_exam_id = int(exam.examtypeid)
-        self.current_section_id = int(section_obj.sectionid)
+        if section_id:
+            self.current_section_id = int(section_id)
+        else:
+            section_obj = self.db.sections.find_first(
+                where={'name': section_name, 'examtypeid': exam.examtypeid})
+            if not section_obj:
+                raise ValueError(
+                    f"Section not found: '{section_name}' for exam '{exam_name}'")
+            self.current_section_id = int(section_obj.sectionid)
         return None
 
-    def _register_problem(self, exam_section, question, isChildQuestion=False, isMockQuestion=False):
+    def _register_problem(self, exam_section, question, isChildQuestion=False, isMockQuestion=False, section_id=None):
         """Register a single problem"""
         try:
-            self._get_exam_section_ids(exam_section)
+            self._get_exam_section_ids(exam_section, section_id=section_id)
+
+            # PATCH: Flatten lists for singular fields if provided as [v1, v2]
+            import random
+            for field in ['question', 'solution', 'title']:
+                val = question.get(field)
+                if isinstance(val, list) and val:
+                    question[field] = random.choice(val)
 
             # Format metadata as JSON string
             # Format solution
@@ -267,7 +276,10 @@ class DB:
             # Ensure title field has a value (required field, handle null/empty)
             question_title = question.get('title') or ''
             if not question_title or question_title == '':
-                question_title = f"Question {question.get('type', 'Unknown')} - Difficulty {question.get('difficulty', 1)}"
+                question_title = f"Question {self.question_type or 'Unknown'} - Difficulty {question.get('difficulty', 1)}"
+
+            # Robust metadata/content extraction
+            metadata_payload = question.get('metadata') or question.get('content', {})
 
             question_data = {
                 "type": self.question_type,
@@ -278,7 +290,7 @@ class DB:
                 "sectionid": self.current_section_id,  # Reverted to schema name
                 "examtypeid": self.current_exam_id,    # Reverted to schema name
                 # Prisma will handle JSON conversion
-                "metadata": json.dumps(question.get('content', {})),
+                "metadata": json.dumps(metadata_payload),
                 "solution": solution,  # Prisma will handle JSON conversion
                 "isChildren": isChildQuestion,        # Reverted to schema name
                 "isMockQuestion": isMockQuestion,     # Reverted to schema name
@@ -501,10 +513,10 @@ class DB:
             print(f"Tags list was: {tags_list}")
             return False
 
-    def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False):
+    def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False, section_id=None):
         """Register a problem set with its child questions"""
         try:
-            self._get_exam_section_ids(exam_section)
+            self._get_exam_section_ids(exam_section, section_id=section_id)
 
             # Ensure required fields have values (handle null/empty)
             title = parent_question.get('title') or ''
@@ -512,9 +524,12 @@ class DB:
                 title = f"{parent_question.get('type', 'Question')} - {exam_section}"
 
             # Determine content type and data
+            # Robust metadata/content extraction
+            metadata_payload = parent_question.get('metadata') or parent_question.get('content', {})
+
             problemsset_data = {
-                'type': parent_question.get('type', ''),
-                'content': json.dumps(parent_question.get('content', {})),
+                'type': parent_question.get('type') or parent_question.get('question-type', ''),
+                'content': json.dumps(metadata_payload),
                 'title': title,  # Ensure title is not empty
                 # Direct field assignment (required)
                 'sectionid': self.current_section_id,     # Reverted to schema name
@@ -534,8 +549,10 @@ class DB:
                 # Prisma Python client uses schema field names (or matching aliases)
                 self.current_problemset_id = problemsset.problemsSetId
             except Exception as e:
+                # Use metadata_payload if available for logging
+                error_content = parent_question.get('metadata') or parent_question.get('content', {})
                 print(
-                    f"Error registering parent question component in _register_problemset: {str(e)} \n\n here is the parent question content: {json.dumps(parent_question.get('content', {}), indent=4)}")
+                    f"Error registering parent question component in _register_problemsset: {str(e)} \n\n here is the parent question content: {json.dumps(error_content, indent=4)}")
                 return False
 
             # Register child questions
@@ -546,7 +563,7 @@ class DB:
             )
 
             for child in child_questions:
-                if not self._register_problem(exam_section, child, isChildQuestion=True, isMockQuestion=isMockQuestion):
+                if not self._register_problem(exam_section, child, isChildQuestion=True, isMockQuestion=isMockQuestion, section_id=section_id):
                     raise Exception("Error registering child problem")
 
             self.current_problemset_id += 1
@@ -605,9 +622,10 @@ class DB:
             })
             self.current_mocktest_id = current_mocktest.mocktestid
         for exam_section, subSections in paper.items():
-            self._get_exam_section_ids(exam_section)
             for sectionNumber, questions in subSections.items():
-                print(f"sectionNumber: {sectionNumber}")
+                section_id = int(sectionNumber) if str(sectionNumber).isdigit() else None
+                self._get_exam_section_ids(exam_section, section_id=section_id)
+                print(f"sectionNumber: {sectionNumber} -> DB SectionID: {self.current_section_id}")
                 if isMockQuestion:
                     secNo = int(sectionNumber[-1])
                     current_mocksection = self.db.mocksections.create(data={
@@ -622,12 +640,12 @@ class DB:
                         # Check for parent-child questions using multiple possible keys
                         if any(key in question for key in ['childQuestions', 'questions', 'sources', 'child-questions']):
                             # Handle parent-child questions
-                            if not self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion):
+                            if not self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion, section_id=section_id):
                                 raise Exception(
                                     f"Error registering problem set for {exam_section}")
                         else:
                             # Handle single questions
-                            if not self._register_problem(exam_section, question, isMockQuestion=isMockQuestion):
+                            if not self._register_problem(exam_section, question, isMockQuestion=isMockQuestion, section_id=section_id):
                                 raise Exception(
                                     f"Error registering problem for {exam_section}")
                         self.current_mockquestion_number += 1

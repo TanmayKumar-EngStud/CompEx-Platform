@@ -1,8 +1,15 @@
 from prisma import Prisma
 
 def main():
+    print("Connecting to Prisma...")
     prisma = Prisma()
-    prisma.connect()
+    try:
+        prisma.connect()
+        print("Connected successfully!")
+    except Exception as e:
+        print(f"Error connecting to database: {e}")
+        print("Tip: Check your DATABASE_URL in .env. If running locally, ensure it uses 'localhost' instead of 'host.docker.internal'.")
+        return
 
     print("Deleting User Attempts...")
     # Synchronous calls
@@ -43,6 +50,6 @@ def main():
 
     print("Database cleared successfully.")
     prisma.disconnect()
-
+    
 if __name__ == '__main__':
     main()

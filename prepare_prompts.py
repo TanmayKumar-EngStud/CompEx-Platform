@@ -213,7 +213,7 @@ class PromptPrep:
                 suffix = selected_choice[-1]
                 if suffix in sp_char:
                     sp = suffix
-                selected_value += f"{prompt_component} - {selected_choice}"
+                selected_value += f"{selected_choice}"
                 
                 # Store Main Selection
                 label = 'Theme' if category == 'theme' else 'Topic'

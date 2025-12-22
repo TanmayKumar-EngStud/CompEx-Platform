@@ -51,7 +51,7 @@ def manage_generated_content(result: dict, question_type: str, question_componen
         else:
             for k, v in generated_data.items():
                 # PATCH: Flatten list if model returns list for question/solution
-                if k in ['question', 'solution'] and isinstance(v, list) and v:
+                if k in ['question', 'solution', 'title'] and isinstance(v, list) and v:
                      import random
                      v = random.choice(v)
 
@@ -59,7 +59,7 @@ def manage_generated_content(result: dict, question_type: str, question_componen
                     result[k] = v
                 else:
                     # Prevent appending for singular fields
-                    if k in ['question', 'solution', 'answer', 'difficulty']:
+                    if k in ['question', 'solution', 'answer', 'difficulty', 'title']:
                         result[k] = v
                     else:
                         result[k] = [result[k]] if not isinstance(
