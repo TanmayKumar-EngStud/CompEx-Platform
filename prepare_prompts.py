@@ -182,8 +182,8 @@ class PromptPrep:
         """Returns appropriate prompt of that nomenclature using Bucket Elimination, and a formatted instruction string."""
         prompt_components = PromptPrep.__extract_keywords_from_nomenclature(
             nomenclature)
-        prompt_components[:] = list(
-            set(prompt_components) - {'difficulty', 'vocabulary'})
+        # Maintaining order and allowing duplicates (e.g., multiple source_info in MSR)
+        prompt_components[:] = [c for c in prompt_components if c not in {'difficulty', 'vocabulary'}]
 
         # Determine Category for counting/elimination
         def _get_category(comp_name):
@@ -251,20 +251,55 @@ class PromptPrep:
                 elif 'skill' in prompt_component.lower(): selected_components['Sub-topic/Focused Skill'] = selected_value
                 else: selected_components['Topic'] = selected_value
 
+                # --- Graph Randomization Injection ---
+                is_graph_tag = any(term in selected_value.lower() for term in ['graph', 'chart'])
+                display_value = selected_value
+                if is_graph_tag:
+                    graph_types = prompt_component_info.get('graphTypes', [])
+                    if graph_types:
+                        selected_graph = random.choice(graph_types)
+                        display_value = f"{selected_value} ({selected_graph})"
+                        if 'Graph Types' not in selected_components:
+                            selected_components['Graph Types'] = []
+                        selected_components['Graph Types'].append(selected_graph)
+
                 nomenclature = nomenclature.replace(
-                    prompt_component, selected_value)
+                    f"<{prompt_component}>", f"<{display_value}>", 1)
                     
         nomenclature = nomenclature.replace('<difficulty>', f'<{difficulty_level}>').replace(
             '<vocabulary>', f'<{PromptPrep.__pick_vocab_level(difficulty_level)}>')
         
+        # --- Dichotomous Type Logic ---
+        dichotomous_pair = None
+        # Check if question type is dichotomous
+        dichotomous_registry = prompt_component_info.get('dichotomousPairs', [])
+        for entry in dichotomous_registry:
+            if question_type in entry.get('QuestionType', []):
+                dichotomous_pair = random.choice(entry.get('list', []))
+                break
+        
+        if dichotomous_pair:
+             selected_components['dichotomous-type'] = {
+                 "positive": dichotomous_pair['positive'],
+                 "negative": dichotomous_pair['negative']
+             }
+             # Add to nomenclature for the model to see
+             label = dichotomous_pair.get('label', 'Yes/No')
+             nomenclature += f" - <Dichotomous Type: {label}>"
+
         # Build Explicit Instruction String
-        instruction_parts = ["[IMPORTANT]: Make sure to fulfil the following request:"]
+        instruction_parts = [
+            "[IMPORTANT]: Make sure to fulfil the following request:",
+            "*Constraint*: The 'question' text MUST NOT exceed 60 words."
+        ]
         if 'Theme' in selected_components:
             instruction_parts.append(f"*Theme*: {selected_components['Theme']}")
         if 'Topic' in selected_components:
             instruction_parts.append(f"*Topic*: {selected_components['Topic']}")
         if 'Sub-topic/Focused Skill' in selected_components:
             instruction_parts.append(f"*Sub-topic/Focused Skill*: {selected_components['Sub-topic/Focused Skill']}")
+        if 'Graph Types' in selected_components:
+            instruction_parts.append(f"*Requested Visuals*: {', '.join(selected_components['Graph Types'])}")
             
         instruction_str = " ".join(instruction_parts)
         

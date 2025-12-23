@@ -11,14 +11,15 @@ D: The relationship cannot be determined from the information given.
 Output JSON:
 {
   "options": {
-    "A": "Quantity A is greater.",
-    "B": "Quantity B is greater.",
-    "C": "The two quantities are equal.",
-    "D": "The relationship cannot be determined from the information given."
+    "A": { "text": "Quantity A is greater.", "explanation": "Brief **Markdown** explanation why A is greater." },
+    "B": { "text": "Quantity B is greater.", "explanation": "Brief explanation..." },
+    "C": { "text": "The two quantities are equal.", "explanation": "Brief explanation..." },
+    "D": { "text": "The relationship cannot be determined from the information given.", "explanation": "Brief explanation..." }
   },
-  "answer": "[Correct Letter A, B, C, or D]"
+  "answer": "A"
 }
 
 CONTEXT:
 Solving the previously generated comparison.
 Select the mathematically correct relationship.
+**Explanation**: Provide a VERY brief explanation for each of the 4 options (A-D) based on your comparison. Use Markdown for emphasis (like **bold** or _italic_ or <u>underline</u>) use them only when necessary.

@@ -4,11 +4,46 @@
     "options": {
       "type": "OBJECT",
       "properties": {
-        "A": { "type": "STRING" },
-        "B": { "type": "STRING" },
-        "C": { "type": "STRING" },
-        "D": { "type": "STRING" },
-        "E": { "type": "STRING" }
+        "A": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING" },
+            "explanation": { "type": "STRING" }
+          },
+          "required": ["text", "explanation"]
+        },
+        "B": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING" },
+            "explanation": { "type": "STRING" }
+          },
+          "required": ["text", "explanation"]
+        },
+        "C": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING" },
+            "explanation": { "type": "STRING" }
+          },
+          "required": ["text", "explanation"]
+        },
+        "D": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING" },
+            "explanation": { "type": "STRING" }
+          },
+          "required": ["text", "explanation"]
+        },
+        "E": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING" },
+            "explanation": { "type": "STRING" }
+          },
+          "required": ["text", "explanation"]
+        }
       },
       "required": ["A", "B", "C", "D", "E"]
     },

@@ -596,18 +596,87 @@
          "**LOGICAL LEAPS**: A hard question requires synthesizing two concepts (e.g., Geometry + Number Properties) rather than just applying one complex formula.",
          "**AVOID ROTE FORMULAS**: Questions should not be solvable by simply plugging numbers into a formula. Require the user to manipulate the formula or understand its derivation.",
          "**STRICT SCOPE (GRE)**: Use ONLY High School Arithmetic, Algebra, Geometry, and Data Analysis. DO NOT include Calculus, Differential Equations, Linear Algebra, or Matrix Rank.",
-         "**STRICT SCOPE (GMAT)**: Use ONLY Arithmetic, Algebra, and Data Analysis. NO Geometry in Quantitative Reasoning. NO Calculus."
+         "**STRICT SCOPE (GMAT)**: Use ONLY Arithmetic, Algebra, and Data Analysis. NO Geometry in Quantitative Reasoning. NO Calculus.",
+         "**CONCISE QUESTION TEXT**: The 'question' text MUST NOT exceed 60 words."
       ],
       "Verbal": [
          "**STRUCTURAL COMPLEXITY**: Use sophisticated sentence structures: double negatives, concessive clauses (for example, 'Although...', 'Albeit...'), and subtle shifts in tone but avoid overusing high vocabulary words.",
          "**DIVERSE TOPICS**: Do NOT rely on 'Masters Studies' or 'Research hypotheses'. Use diverse contexts: History, Art, Economics, Astronomy, Sociology.",
          "**NUANCE OVER OBSCURITY**: For vocabulary, test secondary meanings of common words (e.g., 'flag' as 'to decline') rather than just obscure archaic words.",
-         "**LOGICAL COHESION**: In Reading Comprehension, ensure questions test *structure* and *inference* (why did the author include this?) rather than just fact retrieval."
+         "**LOGICAL COHESION**: In Reading Comprehension, ensure questions test *structure* and *inference* (why did the author include this?) rather than just fact retrieval.",
+         "**CONCISE QUESTION TEXT**: The 'question' text MUST NOT exceed 60 words."
       ],
       "Integrated Reasoning": [
          "**DATA SYNTHESIS**: Require the user to combine data from the text AND the chart to find the answer.",
          "**REAL-WORLD AMBIGUITY**: Include real-world constraints.",
-         "**AVOID SIMPLE LOOKUP**: The answer should never be explicitly stated in one cell of a table. It must be derived."
+         "**AVOID SIMPLE LOOKUP**: The answer should never be explicitly stated in one cell of a table. It must be derived.",
+         "**CONCISE QUESTION TEXT**: The 'question' text MUST NOT exceed 60 words."
       ]
-   }
+   },
+   "dichotomousPairs": [
+      {
+         "QuestionType": [
+            "Table Analysis",
+            "Multi-Source Reasoning",
+            "Two-Part Analysis"
+         ],
+         "list": [
+            {
+               "positive": "Yes",
+               "negative": "No",
+               "label": "Yes/No"
+            },
+            {
+               "positive": "Would Help",
+               "negative": "Would Not Help",
+               "label": "Would Help/Would Not Help"
+            },
+            {
+               "positive": "True",
+               "negative": "False",
+               "label": "True/False"
+            },
+            {
+               "positive": "Inference",
+               "negative": "Conflicting",
+               "label": "Inference/Conflicting"
+            },
+            {
+               "positive": "Sufficient",
+               "negative": "Insufficient",
+               "label": "Sufficient/Insufficient"
+            },
+            {
+               "positive": "Valid",
+               "negative": "Invalid",
+               "label": "Valid/Invalid"
+            },
+            {
+               "positive": "Consistent",
+               "negative": "Inconsistent",
+               "label": "Consistent/Inconsistent"
+            },
+            {
+               "positive": "Conclusion",
+               "negative": "Assumption",
+               "label": "Conclusion/Assumption"
+            },
+            {
+               "positive": "Acceptable",
+               "negative": "Not Acceptable",
+               "label": "Acceptable/Not Acceptable"
+            }
+         ]
+      }
+   ],
+   "graphTypes": [
+      "Bar Chart",
+      "Line Graph",
+      "Pie Chart",
+      "Scatter Plot",
+      "Horizontal Bar Chart",
+      "Area Chart",
+      "Stacked Bar Chart",
+      "Donut Chart"
+   ]
 }

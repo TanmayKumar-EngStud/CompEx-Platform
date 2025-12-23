@@ -21,7 +21,6 @@ class DB:
         self.current_mockquestion_number = None
         self.question_type = ""
         self.current_question_type = ""
-        self.question_correction_validator = ""
 
         # Define answer type mappings
         self.answer_type_mappings = {
@@ -37,56 +36,6 @@ class DB:
         }
         return None
 
-    def process_table_analysis_answers(self, problem_id: int, answer_data: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """
-        Process Table Analysis answers and prepare them for database insertion.
-
-        Args:
-            problem_id: The ID of the problem
-            answer_data: Dictionary containing answer group and options
-
-        Returns:
-            List of dictionaries containing processed options ready for database insertion
-        """
-        processed_options = []
-
-        # Get the answer group and options
-        group = answer_data.get('group')
-        options = answer_data.get('options', {})
-
-        # Get the mapping for this answer type
-        mapping = self.answer_type_mappings.get(group)
-        if not mapping:
-            raise ValueError(f"Unknown answer group type: {group}")
-
-        # Process each option
-        for option_text, option_data in options.items():
-            is_correct = option_data.get('isCorrect', False)
-            value = option_data.get('value')
-
-            processed_options.append({
-                'problemid': problem_id,
-                'optiontext': option_text,
-                'iscorrect': is_correct,
-                'group': group
-            })
-
-        return processed_options
-
-    def create_problem_options(self, problem_id: int, answer_data: Dict[str, Any]) -> None:
-        """
-        Create problem options in the database.
-
-        Args:
-            problem_id: The ID of the problem
-            answer_data: Dictionary containing answer data
-        """
-        processed_options = self.process_table_analysis_answers(
-            problem_id, answer_data)
-
-        # Create all options in the database
-        for option in processed_options:
-            self.db.problemoptions.create(data=option)
 
     def _initialize_primary_tables(self):
         """Initialize primary tables if they don't exist"""
@@ -237,35 +186,6 @@ class DB:
                 solution = json.dumps({"explanation": str(solution)})
             # Create problem with proper Prisma format
             self.question_type = question.get('type') or question.get('question-type', '')
-            if (self.question_type == "TA"):
-                temp = ""
-                type = question.get('prompt', '').split("-")[3].strip()
-                if type == "Yes/No":
-                    temp = "Yes"
-                elif type == "Would Help/Would Not Help":
-                    temp = "Would Help"
-                elif type == "True/False":
-                    temp = "True"
-                elif type == "Inference/Conflicting":
-                    temp = "Inference"
-                elif type == "Sufficient/Insufficient":
-                    temp = "Sufficient"
-                elif type == "Valid/Invalid":
-                    temp = "Valid"
-                elif type == "Consistent/Inconsistent":
-                    temp = "Consistent"
-                elif type == "Conclusion/Assumption":
-                    temp = "Conclusion"
-                # Check if the answer values are strings that contain "Yes" or "No"
-                try:
-                    first_option = list(question['options'])[0] if isinstance(question['options'], dict) else question['options'][0]
-                    answer_value = question['answer'][first_option]
-                    if isinstance(answer_value, str) and answer_value in "Yes/No":
-                        temp = "Yes"
-                except:
-                    pass
-                question["content"]["connection_validator"] = temp
-                self.question_correction_validator = temp
 
             # Ensure text field has a value (required field, handle null/empty)
             question_text = question.get('question') or ''
@@ -278,8 +198,24 @@ class DB:
             if not question_title or question_title == '':
                 question_title = f"Question {self.question_type or 'Unknown'} - Difficulty {question.get('difficulty', 1)}"
 
-            # Robust metadata/content extraction
-            metadata_payload = question.get('metadata') or question.get('content', {})
+            # Robut metadata/content extraction (OPTIMIZED)
+            original_metadata = question.get('metadata') or question.get('content', {})
+            if not isinstance(original_metadata, dict):
+                original_metadata = {"data": original_metadata}
+
+            # Prepare metadata_payload (ensuring order)
+            metadata_payload = {}
+            
+            # 1. Capture explicit dichotomous-type from question or metadata
+            dichotomous_info = question.get('dichotomous-type') or original_metadata.get('dichotomous-type')
+            if dichotomous_info:
+                metadata_payload['dichotomous-type'] = dichotomous_info
+
+            # 2. Add original metadata, but EXCLUDE redundant fields for dichotomous questions
+            for k, v in original_metadata.items():
+                if dichotomous_info and k in ['answer', 'options', 'questions', 'dichotomous-type']:
+                    continue
+                metadata_payload[k] = v
 
             question_data = {
                 "type": self.question_type,
@@ -314,19 +250,50 @@ class DB:
 
             options = question.get('options') or []
             answer = question.get('answer', '')
-            self.current_question_type = question.get('type', '')
+            # Use self.question_type which was already set in line 239
             
-            if isinstance(options, dict):
+            # --- Data Sufficiency Standard Options ---
+            if self.question_type == "Data Sufficiency":
+                 ds_options = {
+                      "A": "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.",
+                      "B": "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.",
+                      "C": "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient.",
+                      "D": "EITHER statement ALONE is sufficient.",
+                      "E": "Statements (1) and (2) TOGETHER are NOT sufficient."
+                 }
+                 explanations = question.get('explanations', {})
+                 for key, text in ds_options.items():
+                      self._register_problem_options(text, answer, group=None, key=key, explanation=explanations.get(key))
+            
+            # --- Dichotomous Options Registration ---
+            if dichotomous_info:
+                pos = dichotomous_info.get('positive')
+                neg = dichotomous_info.get('negative')
+                self._register_problem_options(pos, answer, group="Dichotomous")
+                self._register_problem_options(neg, answer, group="Dichotomous")
+            
+            elif isinstance(options, dict):
                 for key, value in options.items():
-                    # For simple dict options (like TC 1 blank), key is "A", "B", etc.
-                    self._register_problem_options(value, answer, group=None, key=key)
+                    # Check if value is nested (text + explanation)
+                    if isinstance(value, dict) and 'text' in value:
+                        self._register_problem_options(value['text'], answer, group=None, key=key, explanation=value.get('explanation'))
+                    else:
+                        self._register_problem_options(value, answer, group=None, key=key)
             elif isinstance(options, list):
                 for i, option in enumerate(options):
                     if isinstance(option, dict):
                         # For Text Completion with multiple blanks (list of dicts)
-                        group = f"Blank {i+1}"
-                        for key, value in option.items():
-                            self._register_problem_options(value, answer, group=group, key=key)
+                        if 'text' in option and 'explanation' in option:
+                             # This is a flat option with explanation
+                             self._register_problem_options(option['text'], answer, explanation=option.get('explanation'))
+                        else:
+                             # Multiple blanks
+                             group = f"Blank {i+1}"
+                             for key, value in option.items():
+                                 if isinstance(value, dict) and 'text' in value:
+                                      self._register_problem_options(value['text'], answer, group=group, key=key, explanation=value.get('explanation'))
+                                 else:
+                                      self._register_problem_options(value, answer, group=group, key=key)
                     elif isinstance(option, str):
                         self._register_problem_options(option, answer)
                     elif isinstance(option, int):
@@ -348,43 +315,59 @@ class DB:
                 f"Error in _register_problem: {str(e)}\n\n here is the question content: {json.dumps(question, indent=4)}")
             return False
 
-    def _register_problem_options(self, option_text, answers, group=None, key=None):
+    def _register_problem_options(self, option_text, answers, group=None, key=None, explanation=None):
         """Register problem options in the database.
 
         Args:
-            option: The option text or object
+            option_text: The option text
             answers: The correct answers (can be dict, list, or single value)
             group: Optional group identifier for the option
+            key: Optional key (like 'A', 'B')
+            explanation: Optional brief explanation for this option
         """
-        # Special handling for Table Analysis questions
-        if self.current_question_type == "TA":
-            # For TA questions, answers should be a dict with format:
-            # {"group": "Acceptable/Not Acceptable", "options": {"option1": {"value": "Acceptable", "isCorrect": true}, ...}}
+        # Special handling for Dichotomous questions (Mapping based)
+        if group == "Dichotomous":
+            # Determine if this option is correct based on the answer mapping
+            is_correct = (str(option_text).strip().lower() == str(answers).strip().lower())
+            
+            option_data = {
+                'optiontext': str(option_text),
+                'iscorrect': is_correct,
+                'explanation': explanation,
+                'problemid': self.current_problem_id,
+                'group': group
+            }
+        
+        # Table Analysis (TA) Special Handling
+        elif self.question_type == "TA":
             answer_group = None
             is_correct = False
+            ta_explanation = explanation
 
-            # Find the appropriate answer group based on the question content
-            for group_name, mapping in self.answer_type_mappings.items():
-                if mapping["positive"] in str(answers) or mapping["negative"] in str(answers):
+            # Find the appropriate answer group
+            mapping = None
+            for group_name, map_item in self.answer_type_mappings.items():
+                if map_item["positive"] in str(answers) or map_item["negative"] in str(answers):
                     answer_group = group_name
+                    mapping = map_item
                     break
 
-            # Determine if this option is correct based on the answer mapping
-            if isinstance(answers, dict) and option_text in answers:
-                answer_value = answers[option_text]
-                if isinstance(answer_value, dict):
-                    is_correct = answer_value.get("isCorrect", False)
-                else:
-                    # For legacy format where answer is direct value
-                    for group_name, mapping in self.answer_type_mappings.items():
-                        if answer_value == mapping["positive"]:
-                            is_correct = True
-                            break
+            # If answers is a list of objects (TA new format)
+            if isinstance(answers, list) and mapping:
+                 for ans_item in answers:
+                      if isinstance(ans_item, dict) and ans_item.get('statement') == option_text:
+                           # Check if response matches the "Positive" value for this TA type
+                           response = ans_item.get('response')
+                           if str(response).strip().lower() == str(mapping["positive"]).strip().lower():
+                                is_correct = True
+                           ta_explanation = ans_item.get('explanation')
+                           break
 
             option_data = {
                 'optiontext': str(option_text),
                 'iscorrect': is_correct,
-                'problemid': self.current_problem_id,  # Direct field assignment
+                'explanation': ta_explanation,
+                'problemid': self.current_problem_id,
                 'group': answer_group if answer_group else group
             }
 
@@ -393,14 +376,11 @@ class DB:
             
             # Check correctness based on key or option_text
             if isinstance(answers, list):
-                # If key is provided (e.g., "A"), check if it's in the answer list
                 if key and key in answers:
                     is_correct = True
-                # Fallback: check if option_text itself is in answers
                 elif str(option_text) in [str(a) for a in answers]:
                     is_correct = True
             elif isinstance(answers, dict):
-                # For dictionaries where keys are groups (e.g., {"Blank 1": "A"})
                 if group and group in answers:
                     correct_val = answers[group]
                     if isinstance(correct_val, list):
@@ -408,19 +388,17 @@ class DB:
                     else:
                         is_correct = str(key if key else option_text) == str(correct_val)
                 else:
-                    # Fallback: check if key or option_text is in values
                     is_correct = (key in answers.values()) if key else (option_text in answers.values())
             else:
-                # Single value answer
                 is_correct = str(key if key else option_text) == str(answers)
 
             option_data = {
                 'optiontext': str(option_text),
                 'iscorrect': is_correct,
+                'explanation': explanation,
                 'problemid': self.current_problem_id,
                 'group': group
             }
-
 
         try:
             self.db.problemoptions.create(
@@ -428,7 +406,7 @@ class DB:
             )
         except Exception as e:
             print(
-                f"Error creating problem option in _register_problem_options: {str(e)} \n\n here is the option: {option} \n\n here is the answer: {answers}")
+                f"Error creating problem option in _register_problem_options: {str(e)} \n\n here is the option_text: {option_text} \n\n here is the answer: {answers}")
             return False
         return True
 
@@ -525,7 +503,23 @@ class DB:
 
             # Determine content type and data
             # Robust metadata/content extraction
-            metadata_payload = parent_question.get('metadata') or parent_question.get('content', {})
+            original_metadata = parent_question.get('metadata') or parent_question.get('content', {})
+            if not isinstance(original_metadata, dict):
+                original_metadata = {"data": original_metadata}
+
+            # Prepare metadata_payload (ensuring order)
+            metadata_payload = {}
+            
+            # 1. Capture explicit dichotomous-type from question or metadata
+            dichotomous_info = parent_question.get('dichotomous-type') or original_metadata.get('dichotomous-type')
+            if dichotomous_info:
+                metadata_payload['dichotomous-type'] = dichotomous_info
+
+            # 2. Add original metadata, but EXCLUDE redundant fields for dichotomous sets
+            for k, v in original_metadata.items():
+                if dichotomous_info and k in ['answer', 'options', 'questions', 'dichotomous-type']:
+                    continue
+                metadata_payload[k] = v
 
             problemsset_data = {
                 'type': parent_question.get('type') or parent_question.get('question-type', ''),
@@ -622,10 +616,39 @@ class DB:
             })
             self.current_mocktest_id = current_mocktest.mocktestid
         for exam_section, subSections in paper.items():
-            for sectionNumber, questions in subSections.items():
-                section_id = int(sectionNumber) if str(sectionNumber).isdigit() else None
+            # 1. Resolve section name and exam for this component (e.g., "GRE_V" -> "GRE", "Verbal")
+            exam_name = exam_section.split('_')[0]
+            short_section = exam_section.split('_')[1] if '_' in exam_section else ""
+            section_components = {"V": "Verbal", "Q": "Quants", "IR": "Integrated Reasoning"}
+            full_section_name = section_components.get(short_section, "")
+
+            # 2. Get sorted list of sections from the paper JSON
+            sorted_paper_section_keys = sorted(subSections.keys(), key=lambda x: int(x) if str(x).isdigit() else x)
+
+            # 3. Get matching DB sections for this exam ordered by ID
+            exam_obj = self.db.examtypes.find_first(where={'name': exam_name})
+            if not exam_obj:
+                print(f"Warning: Exam {exam_name} not found during registration. Skipping.")
+                continue
+
+            matching_db_sections = self.db.sections.find_many(
+                where={'name': full_section_name, 'examtypeid': int(exam_obj.examtypeid)},
+                order={'sectionid': 'asc'}
+            )
+
+            # 4. Iterate and map
+            for i, sectionNumber in enumerate(sorted_paper_section_keys):
+                questions = subSections[sectionNumber]
+                
+                # Fetch the correct DB Section ID by index (part 1, part 2, etc.)
+                if i < len(matching_db_sections):
+                    section_id = int(matching_db_sections[i].sectionid)
+                else:
+                    # Fallback to the first/last if mapping gets weird, but usually indices should match
+                    section_id = int(matching_db_sections[-1].sectionid) if matching_db_sections else None
+
                 self._get_exam_section_ids(exam_section, section_id=section_id)
-                print(f"sectionNumber: {sectionNumber} -> DB SectionID: {self.current_section_id}")
+                print(f"Paper Section '{sectionNumber}' -> DB SectionID: {self.current_section_id} ({exam_name} {full_section_name})")
                 if isMockQuestion:
                     secNo = int(sectionNumber[-1])
                     current_mocksection = self.db.mocksections.create(data={

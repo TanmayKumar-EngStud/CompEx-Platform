@@ -5,12 +5,21 @@ Example:-
 ```json
 {
   "options": [
-    { "A": "option 1", "B": "option 2", "C": "option 3" },
-    { "D": "option 4", "E": "option 5", "F": "option 6" }
+    { 
+      "A": { "text": "option 1", "explanation": "Brief **Markdown** explanation." }, 
+      "B": { "text": "option 2", "explanation": "..." }, 
+      "C": { "text": "option 3", "explanation": "..." } 
+    },
+    { 
+      "D": { "text": "option 4", "explanation": "..." }, 
+      "E": { "text": "option 5", "explanation": "..." }, 
+      "F": { "text": "option 6", "explanation": "..." } 
+    }
   ],
   "answer": ["A", "F"]
 }
 ```
 
 **Important Notes:**
-- TC-2/3: Multiple blanks, 3 options per blank, array answers
+- TC-2/3: Multiple blanks, 3 options per blank, array answers.
+- **Explanation**: Provide a VERY brief explanation for EVERY option in every blank. Use Markdown for emphasis (like **bold** or _italic_ or <u>underline</u>) use them only when necessary.

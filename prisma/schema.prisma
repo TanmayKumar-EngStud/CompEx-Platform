@@ -25,6 +25,7 @@ model ProblemsSet {
   sections           sections          @relation(fields: [sectionid], references: [sectionid])
   problems           problems[]
   problemssettags    problemssettags[]
+  popularityIndex    Float             @default(0)
 }
 
 model examtypes {
@@ -100,6 +101,7 @@ model problemoptions {
   problemid                   Int?
   optiontext                  String
   iscorrect                   Boolean?
+  explanation                 String?
   group                       String?
   problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: Cascade, onUpdate: Cascade)
   userattempt_selectedoptions userattempt_selectedoptions[]
@@ -125,6 +127,7 @@ model problems {
   isMockQuestion       Boolean          @default(false)
   solution             Json?
   mockquestionnumber   Int?
+  popularityIndex      Float            @default(0)
   problemoptions       problemoptions[]
   examtypes            examtypes?       @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
   mocksections         mocksections?    @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: Cascade, onUpdate: Cascade)

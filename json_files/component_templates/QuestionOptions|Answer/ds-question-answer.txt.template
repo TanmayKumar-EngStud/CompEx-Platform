@@ -4,7 +4,14 @@ STRICT RESPONSE FORMAT:- JSON
 Example:-
 ```json
 {
-  "answer": "A"
+  "answer": "A",
+  "explanations": {
+    "A": "Brief explanation on why (1) is sufficient and (2) is not.",
+    "B": "Brief explanation...",
+    "C": "Brief explanation...",
+    "D": "Brief explanation...",
+    "E": "Brief explanation..."
+  }
 }
 ```
 
@@ -15,4 +22,4 @@ C: "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is suff
 D: "EITHER statement ALONE is sufficient."
 E: "Statements (1) and (2) TOGETHER are NOT sufficient."
 
-So based on that you need to return the correct answer.
+So based on that you need to return the correct answer along with brief explanations for each of the 5 options (A-E) explaining why they are correct or incorrect for this specific problem. Use Markdown for emphasis (like **bold** or _italic_ or <u>underline</u>) use them only when necessary.

@@ -85,6 +85,18 @@ def manage_metadata_content(result: dict, question_type: str, generated_data: di
     else:
         # Standard metadata handling
         for key, value in generated_data.items():
+            # Avoid nesting a key named 'metadata' inside the metadata dict
+            if key == 'metadata':
+                if isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, dict):
+                             manage_metadata_content(result, question_type, item, source_info)
+                        else:
+                             metadata.setdefault('info', []).append(item)
+                elif isinstance(value, dict):
+                    manage_metadata_content(result, question_type, value, source_info)
+                continue
+
             if key == 'para' or key == 'passage':
                 existing = metadata.get('Passage', '')
                 separator = '\n' if existing else ''
@@ -94,8 +106,20 @@ def manage_metadata_content(result: dict, question_type: str, generated_data: di
                     raise TypeError(
                         f"{prettify('statements', 'Yellow')} must be a list; got {prettify(type(value).__name__, 'Red')}")
                 metadata['Statements'] = value
+            elif key in ['question', 'options', 'answer', 'solution']:
+                # For Table Analysis and some IR types, the model returns these in metadata.
+                # We should store them in the top-level result instead of burying them in metadata.
+                if key not in result or not result[key]:
+                    result[key] = value
             else:
-                metadata.setdefault(key, []).append(value)
+                # Store other keys. If it's a single item (like Table), don't always wrap in list
+                # unless there's already something there.
+                if key not in metadata:
+                    metadata[key] = value
+                else:
+                    if not isinstance(metadata[key], list):
+                        metadata[key] = [metadata[key]]
+                    metadata[key].append(value)
 
 def manage_options_answer_content(result: dict, question_type: str, generated_data: Union[str, dict], option_type: str):
     """

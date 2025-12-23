@@ -5,18 +5,14 @@
       "type": "ARRAY",
       "items": {
         "type": "OBJECT",
-        "properties": {
-          "A": { "type": "STRING" },
-          "B": { "type": "STRING" },
-          "C": { "type": "STRING" },
-          "D": { "type": "STRING" },
-          "E": { "type": "STRING" },
-          "F": { "type": "STRING" },
-          "G": { "type": "STRING" },
-          "H": { "type": "STRING" },
-          "I": { "type": "STRING" }
-        },
-        "required": ["A", "B", "C"] 
+        "additionalProperties": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING" },
+            "explanation": { "type": "STRING" }
+          },
+          "required": ["text", "explanation"]
+        }
       }
     },
     "answer": {

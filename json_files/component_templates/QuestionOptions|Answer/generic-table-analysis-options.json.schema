@@ -11,9 +11,10 @@
         "type": "OBJECT",
         "properties": {
           "statement": { "type": "STRING" },
-          "response": { "type": "STRING" }
+          "response": { "type": "STRING" },
+          "explanation": { "type": "STRING" }
         },
-        "required": ["statement", "response"]
+        "required": ["statement", "response", "explanation"]
       }
     }
   },

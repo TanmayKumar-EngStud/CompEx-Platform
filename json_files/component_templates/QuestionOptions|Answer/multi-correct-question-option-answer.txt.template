@@ -5,20 +5,21 @@ STRICT RESPONSE FORMAT: JSON
 For Example:
 ```json
 {
-  "options": {
-    "A": "option 1",
-    "B": "option 2",
-    "C": "option 3",
-    "D": "option 4",
-    "E": "option 5"
-  },
+    "options": {
+        "A": { "text": "Option A...", "explanation": "**Markdown** explanation..." },
+        "B": { "text": "Option B...", "explanation": "..." },
+        "C": { "text": "Option C...", "explanation": "..." },
+        "D": { "text": "Option D...", "explanation": "..." },
+        "E": { "text": "Option E...", "explanation": "..." }
+    },
     "answer": ["A", "C"]
 }
 ```
 
 **Important Notes:**
-- The "answer" field must be an array of correct option letters
-- Multiple options can be correct (typically 2-3 out of 5)
+- The "answer" field must be an array- **Explanation**: Provide a VERY brief explanation for EVERY option (correct and incorrect). Use Markdown for emphasis (like **bold** or _italic_ or <u>underline</u>) Use them only when necessary.
+- All correct options must be logically derivable from the content.
+- Distractors should represent typical misunderstandings of the data.
 - Each option should be independently valuable as correct or incorrect
 {{#if_sentence_equivalence}}
 - **SE CONSTRAINT**: You MUST generate exactly **6 options** (A, B, C, D, E, F).

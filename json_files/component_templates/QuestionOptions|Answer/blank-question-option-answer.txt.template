@@ -50,6 +50,7 @@ Example:-
 {{/if_TC-3}}
 
 **Important Notes:**
+- **Explanation**: Provide a VERY brief explanation for EVERY option (in every blank). Use Markdown for emphasis (like **bold** or _italic_ or <u>underline</u>) use them only when necessary.
 {{#if_TC-1}}
 - TC-1: Single blank, 5 options, single answer
 {{/if_TC-1}}

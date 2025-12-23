@@ -12,10 +12,13 @@ Example:
         "Statement 2 text...",
         "Statement 3 text..."
     ],
-  "answer": {
-    "Statement 1 text...": "Yes",
-    "Statement 2 text...": "No",
-    "Statement 3 text...": "Yes"
-  }
+  "answer": [
+    { "statement": "Statement 1 text...", "response": "Yes", "explanation": "Brief **Markdown** explanation why Yes is correct." },
+    { "statement": "Statement 2 text...", "response": "No", "explanation": "Brief explanation..." },
+    { "statement": "Statement 3 text...", "response": "Yes", "explanation": "Brief explanation..." }
+  ]
 }
 ```
+**Important Notes:**
+- Each statement must be independent.
+- **Explanation**: Provide a VERY brief explanation for why the chosen response is correct for each statement. Use Markdown for emphasis (like **bold** or _italic_ or <u>underline</u>) use them only when necessary.

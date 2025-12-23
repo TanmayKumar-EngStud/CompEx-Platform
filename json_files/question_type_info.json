@@ -4,7 +4,7 @@
       "meta-count": 1,
       "type": "simple",
       "options": "single",
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level:<difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "data-sufficiency-system-instruction.txt.template"
    },
    "Problem Solving Simple": {
@@ -14,14 +14,14 @@
          "single": 2,
          "multi": 1
       },
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "problem-solving-simple-system-instruction.txt.template"
    },
    "Problem Solving Meta": {
       "has-metadata": true,
       "meta-count": 2,
       "type": "parent",
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "problem-solving-meta-system-instruction.txt.template",
       "child-question": {
          "type": "child",
@@ -29,14 +29,14 @@
             "single": 2,
             "multi": 1
          },
-         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+         "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]"
       }
    },
    "Numerical Entry": {
       "has-metadata": false,
       "type": "simple",
       "options": "numeric",
-      "nomenclature": "<questionTopic> - <questionTheme> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Difficulty: <difficulty>]",
       "system-instruction": "numerical-entry-system-instruction.txt.template"
    },
    "Critical Reasoning": {
@@ -44,28 +44,28 @@
       "meta-count": 1,
       "type": "simple",
       "options": "single",
-      "nomenclature": "Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
+      "nomenclature": "[Theme: <questionTheme>] | [Skill: <focused_skill>] | [Vocabulary: <vocabulary>] | [Difficulty: <difficulty>]",
       "system-instruction": "critical-reasoning-system-instruction.txt.template"
    },
    "Sentence Equivalence": {
       "has-metadata": false,
       "type": "simple",
       "options": "multi",
-      "nomenclature": "Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
+      "nomenclature": "[Theme: <questionTheme>] | [Skill: <focused_skill>] | [Vocabulary: <vocabulary>] | [Difficulty: <difficulty>]",
       "system-instruction": "sentence-equivalence-system-instruction.txt.template"
    },
    "Text Completion": {
       "has-metadata": false,
       "type": "simple",
       "options": "blank",
-      "nomenclature": "TC_Type: <TC_QuestionType> | Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
+      "nomenclature": "[Type: <TC_QuestionType>] | [Theme: <questionTheme>] | [Skill: <focused_skill>] | [Vocabulary: <vocabulary>] | [Difficulty: <difficulty>]",
       "system-instruction": "text-completion-system-instruction.txt.template"
    },
    "Reading Comprehension": {
       "has-metadata": true,
       "meta-count": 1,
       "type": "parent",
-      "nomenclature": "RC_Type: <RC_QuestionType> | Theme: <questionTheme> | Topic: <focused_skill> | vocabulary_level: <vocabulary> | difficulty_level: <difficulty>",
+      "nomenclature": "[Type: <RC_QuestionType>] | [Theme: <questionTheme>] | [Skill: <focused_skill>] | [Vocabulary: <vocabulary>] | [Difficulty: <difficulty>]",
       "system-instruction": "reading-comprehension-system-instruction.txt.template",
       "child-question": {
          "options": {
@@ -73,14 +73,14 @@
             "multi": 1
          },
          "type": "child",
-         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+         "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]"
       }
    },
    "Multi-Source Reasoning": {
       "has-metadata": true,
       "meta-count": 3,
       "type": "parent",
-      "nomenclature": "<questionTopic> - <questionTheme> - <source_info> - <source_info> - <source_info> - <focused_skill> - <focused_skill> - <focused_skill> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Source: <source_info>] | [Source: <source_info>] | [Source: <source_info>] | [Skill: <focused_skill>] | [Skill: <focused_skill>] | [Skill: <focused_skill>] | [Difficulty: <difficulty>]",
       "system-instruction": "msr-system-instruction.txt.template",
       "child-question": {
          "question-type": "Multi-Source Reasoning Child",
@@ -90,7 +90,7 @@
             "dichotomous": 1
          },
          "type": "child",
-         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+         "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]"
       }
    },
    "Multi-Source Reasoning Child": {
@@ -100,26 +100,26 @@
          "multi": 1,
          "dichotomous": 1
       },
-      "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>",
+      "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]",
       "system-instruction": "problem-solving-simple-system-instruction.txt.template"
    },
    "Two-Part Analysis": {
       "has-metadata": true,
       "meta-count": 1,
       "type": "parent",
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "tpa-system-instruction.txt.template",
       "child-question": {
          "question-type": "Two-Part Analysis Child",
          "options": "single",
          "type": "child",
-         "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>"
+         "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]"
       }
    },
    "Two-Part Analysis Child": {
       "type": "child",
       "options": "single",
-      "nomenclature": "<child-focused_skill> - difficulty_level: <difficulty>",
+      "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]",
       "system-instruction": "problem-solving-simple-system-instruction.txt.template"
    },
    "Table Analysis": {
@@ -127,7 +127,7 @@
       "meta-count": 1,
       "type": "simple",
       "options": "dichotomous",
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "ta-system-instruction.txt.template"
    },
    "Graphic Interpretation": {
@@ -135,7 +135,7 @@
       "meta-count": 1,
       "type": "simple",
       "options": "blank",
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "gi-system-instruction.txt.template"
    },
    "Quantitative Comparison": {
@@ -144,7 +144,7 @@
       "options": {
          "single": 1
       },
-      "nomenclature": "<questionTopic> - <questionTheme> - <questionStyle> - difficulty_level: <difficulty>",
+      "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "qc-system-instruction.txt.template"
    }
 }

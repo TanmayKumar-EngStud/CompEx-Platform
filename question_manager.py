@@ -298,11 +298,16 @@ class ManageQuestionData:
                  target_question_type: Optional[str] = None):
         self.prompt_details = prompt_details
         
-        # DEFENSIVE FIX: Ensure prompt is a string, not a tuple
-        # This fixes "AttributeError: 'tuple' object has no attribute 'split'"
-        if isinstance(self.prompt_details.get('prompt'), tuple):
-             self.prompt_details['prompt'] = self.prompt_details['prompt'][0]
-             
+        # DEFENSIVE FIX: Ensure prompt is a string, and extract extra info if tuple
+        prompt_val = self.prompt_details.get('prompt')
+        if isinstance(prompt_val, tuple):
+             self.prompt_details['prompt'] = prompt_val[0]
+             # If instruction_str or parsed_tags not already present, extract them
+             if not self.prompt_details.get('instruction_str') and len(prompt_val) > 1:
+                 self.prompt_details['instruction_str'] = prompt_val[1]
+             if not self.prompt_details.get('parsed_tags') and len(prompt_val) > 2:
+                 self.prompt_details['parsed_tags'] = prompt_val[2]
+
         self.generator_session = generator_session
         self.target_question_type = target_question_type
         self.question_type = prompt_details['question-type']
@@ -401,6 +406,10 @@ class ManageQuestionData:
                 parsed = self.prompt_details['parsed_tags']
                 tags.append(clean_tag(f"type: {self.question_type}"))
                 
+                if 'dichotomous-type' in parsed:
+                     # Inject into result_buffer so it's saved in JSON
+                     result_buffer['dichotomous-type'] = parsed['dichotomous-type']
+                     
                 if 'Theme' in parsed:
                      tags.append(clean_tag(f"theme: {parsed['Theme']}"))
                 if 'Topic' in parsed:
@@ -409,37 +418,8 @@ class ManageQuestionData:
                      tags.append(clean_tag(f"sub-topic: {parsed['Sub-topic/Focused Skill']}"))
                      
             else:
-                # 2. Fallback Parsing (Legacy)
-                prompt_parts = self.clean_prompt_for_tags.split(' - ')
-                
-                # Always add type
+                # No tags available and no metadata provided - This should be rare with new pipeline
                 tags.append(clean_tag(f"type: {self.question_type}"))
-
-                # Topic and Theme Extraction
-                if self.question_type in ['Sentence Equivalence', 'Text Completion', 'Reading Comprehension', 'Critical Reasoning']:
-                    # Robust Regex Extraction for labeled nomenclature
-                    theme_match = re.search(r'Theme:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
-                    if theme_match:
-                        tags.append(clean_tag(f"theme: {theme_match.group(1).strip()}"))
-                        
-                    topic_match = re.search(r'Topic:\s*(.*?)(?:\s*\||$)', self.clean_prompt_for_tags)
-                    if topic_match:
-                        tags.append(clean_tag(f"topic: {topic_match.group(1).strip()}"))
-                
-                else:
-                    # Quants & Integrated Reasoning (Legacy positional format)
-                    # Use Regex to avoid splitting issues with difficulty or extra content
-                    # Expected format: <Topic> - <Theme>
-                    
-                    # Attempt to extract Topic/Theme via explicit regex if possible
-                    # Or just be very careful with splits.
-                    # Given the "difficulty loop leak", the prompts now often contain explicit instructions too.
-                    # Best to trust the first 2 positions ONLY if they are likely cleaned.
-                    
-                    if len(prompt_parts) > 0 and 'difficulty' not in prompt_parts[0].lower():
-                        tags.append(clean_tag(f"topic: {prompt_parts[0]}"))
-                    if len(prompt_parts) > 1 and 'difficulty' not in prompt_parts[1].lower():
-                        tags.append(clean_tag(f"theme: {prompt_parts[1]}"))
 
         except Exception as e:
             print(f"Warning: Tag parsing failed: {e}")
@@ -514,20 +494,6 @@ class ManageQuestionData:
             except Exception as e:
                 print(f"Warning: Failed to inject vocabulary: {e}")
 
-        # --- SCENARIO INJECTION (DISABLED TO REDUCE REPETITION) ---
-        # try:
-        #     scenario_path = os.path.join(os.path.dirname(__file__), 'json_files', 'scenarios.json')
-        #     if os.path.exists(scenario_path):
-        #         with open(scenario_path, 'r') as f:
-        #             scenarios_data = json.load(f)
-        #         
-        #         random_scenario = random.choice(scenarios_data['scenarios'])
-        #         scenario_instruction = f"\n\n[Scenario Context]: Set this problem in the context of {random_scenario}."
-        #         uniqueness_seed = f" Random Seed: {random.randint(10000, 99999)}"
-        #         
-        #         self.prompt_details['prompt'] += scenario_instruction + uniqueness_seed
-        # except Exception as e:
-        #     print(f"Warning: Failed to inject scenario: {e}")
 
     def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
         result_buffer = {}
@@ -690,9 +656,10 @@ class ManageQuestionData:
                     'section': self.prompt_details['section'],
                     'question-type': child_prompt.get('question-type', self.prompt_details['question-type']),
                     'option': child_prompt['option'],
-                    'prompt': child_prompt['prompt'],
-                    'metadata': parent_metadata
+                    'prompt': child_prompt['prompt']
                 }
+                # Optimization: Don't copy bulky parent metadata to children.
+                # If the child needs context, it relies on the shared generator_session.
                 # Recursion: Create a new manager for the child
                 # Ideally, we SHARE the session so the child knows the parent Context?
                 # YES. "Multi rounded conversation". The child is part of the same flow usually.

@@ -35,17 +35,9 @@
             "explanation": { "type": "STRING" }
           },
           "required": ["text", "explanation"]
-        },
-        "E": {
-          "type": "OBJECT",
-          "properties": {
-            "text": { "type": "STRING" },
-            "explanation": { "type": "STRING" }
-          },
-          "required": ["text", "explanation"]
         }
       },
-      "required": ["A", "B", "C", "D", "E"]
+      "required": ["A", "B", "C", "D"]
     },
     "answer": { "type": "STRING" }
   },
