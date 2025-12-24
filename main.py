@@ -88,8 +88,19 @@ for exam, sections in sorted_exams:
 
                 current_difficulty = difficulty_list.pop()
                 nomenclature = question_type_info["nomenclature"]
-                prompt, instruction_str, parsed_tags = PromptPrep._nomenclature_to_prompt_mapping(
-                    nomenclature, question_type, current_difficulty)
+                
+                try:
+                    prompt, instruction_str, parsed_tags = PromptPrep._nomenclature_to_prompt_mapping(
+                        nomenclature, question_type, current_difficulty)
+                except ValueError as e:
+                    print(f"\n{prettify('FATAL ERROR', 'Red', True)}: {prettify('Tag Validation Failed', 'Yellow')}")
+                    print(f"{prettify('Exam', 'Cyan')}: {exam}")
+                    print(f"{prettify('Section', 'Cyan')}: {section_name}")
+                    print(f"{prettify('Type', 'Cyan')}: {question_type}")
+                    print(f"{prettify('Details', 'Red')}: {e}")
+                    import sys
+                    sys.exit(1)
+
                 if prompt is None:
                     raise ValueError(
                         f"{prettify('Error:', 'Red', True)} received {prettify('None', 'Magenta')} for {prettify('prompt', 'Yellow')}\nwhere, questionType is {prettify(question_type, 'Magenta')} of {prettify(section_name, 'Magenta')}")
@@ -121,8 +132,20 @@ for exam, sections in sorted_exams:
                             max(current_difficulty-1, 1), min(current_difficulty+1, 5))
                         child_question = question_type_info['child-question']
                         child_nomenclature = child_question['nomenclature']
-                        child_prompt = PromptPrep._nomenclature_to_prompt_mapping(
-                            child_nomenclature, question_type, child_difficulty)
+                        
+                        try:
+                            # Reverted to passing Parent Type for fetching context
+                            child_prompt = PromptPrep._nomenclature_to_prompt_mapping(
+                                child_nomenclature, child_question.get('question-type', question_type), child_difficulty)
+                        except ValueError as e:
+                            print(f"\n{prettify('FATAL ERROR (Child)', 'Red', True)}: {prettify('Tag Validation Failed', 'Yellow')}")
+                            print(f"{prettify('Exam', 'Cyan')}: {exam}")
+                            print(f"{prettify('Section', 'Cyan')}: {section_name}")
+                            print(f"{prettify('Parent Type', 'Cyan')}: {question_type}")
+                            print(f"{prettify('Details', 'Red')}: {e}")
+                            import sys
+                            sys.exit(1)
+
                         child_option = question_type_info['child-question']['options']
                         if isinstance(child_option, dict):
                             try:
@@ -134,7 +157,8 @@ for exam, sections in sorted_exams:
                         child_prompt_buffer = {
                             'prompt': child_prompt,
                             'option': child_option,
-                            'difficulty': child_difficulty
+                            'difficulty': child_difficulty,
+                            'question-type': child_question.get('question-type', question_type)
                         }
                         prompt_buffer['child-prompt'].append(
                             child_prompt_buffer)

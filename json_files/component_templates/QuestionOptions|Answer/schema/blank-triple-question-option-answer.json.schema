@@ -1,0 +1,31 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "options": {
+      "type": "ARRAY",
+      "description": "A list containing EXACTLY THREE dictionaries, one for each blank.",
+      "items": {
+        "type": "OBJECT",
+        "description": "Dictionary of options (A-C blank 1, D-F blank 2, G-I blank 3).",
+        "additionalProperties": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING", "description": "Option text" },
+            "explanation": { "type": "STRING", "description": "Reasoning" }
+          },
+          "required": ["text", "explanation"]
+        }
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "answer": {
+      "type": "ARRAY",
+      "description": "Array containing EXACTLY THREE correct option letters.",
+      "items": { "type": "STRING", "pattern": "^[A-Z]$" },
+      "minItems": 3,
+      "maxItems": 3
+    }
+  },
+  "required": ["options", "answer"]
+}

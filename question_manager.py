@@ -38,12 +38,6 @@ class ManageComponentTemplates:
     def _generate_all_templates(self):
         """Iterates through components and routes to specific internal handlers."""
         
-        # --- BLUEPRINT INJECTION (FEATURE FLAG) ---
-        prompt_info = get_json('prompt_component_info')[0]
-        if prompt_info.get('use_blueprint', False):
-            # Insert at the START ensuring it runs first
-            if 'QuestionBlueprint' not in self.question_components:
-                self.question_components.insert(0, 'QuestionBlueprint')
 
         for question_component in self.question_components:
             component_call_buffer = {}
@@ -57,8 +51,6 @@ class ManageComponentTemplates:
             elif question_component == "QuestionOptions/Answer":
                 component_call_buffer[question_component] = self._handle_options(question_component)
                 
-            elif question_component == "QuestionBlueprint":
-                component_call_buffer[question_component] = self._handle_blueprint(question_component)
 
             else:
                 # Standard Generic Components
@@ -184,28 +176,6 @@ class ManageComponentTemplates:
             })
         return buffer
 
-    def _handle_blueprint(self, component_name: str) -> Dict:
-        """Handles the Blueprint Step"""
-        file_name = "blueprint.txt.template"
-        try:
-            instruction = get_Component_Template(
-                component_name, file_name, 
-                self.prompt_details['exam'], 
-                self.prompt_details['section'], 
-                self.prompt_details['question-type'], 
-                None, 
-                rand_var=self.rand_var
-            )
-        except Exception as e:
-            # Fallback if template fails (e.g. file not found)
-            print(f"Warning: Blueprint template failed: {e}")
-            instruction = "Create a conceptual blueprint for this question. Output JSON."
-
-        return {
-            "instruction statement": instruction,
-            "output": "JSON Blueprint",
-            "file-name": file_name
-        }
 
     def _handle_options(self, component_name: str) -> Dict:
         """Handles QuestionOptions/Answer logic."""
@@ -223,33 +193,24 @@ class ManageComponentTemplates:
                 variables = category_list['variables']
                 output = category_list['output']
 
-                # Special handling for blank options to select correct template (single vs multi)
+                # Dynamic Schema Allocation for Blanks
                 if self.prompt_details['option'] == 'blank':
-                    # Determine number of blanks from variables or context
-                    # variables is usually None for options in config, but we need to check prompt_details or similar
-                    # Actually, for Text Completion, the number of blanks is usually in the question type or determined elsewhere.
-                    # But here we need to pick the template.
-                    # Let's check prompt_details['question-type'] or variables if available.
-                    # Wait, variables is passed to get_Component_Template.
-                    # In config, variables is null for options.
-                    # We need a way to know if it's TC-1, TC-2, TC-3.
-                    # This information might be in self.prompt_details['variables'] if it exists?
-                    # Let's assume we can infer it or use a default.
-                    # Actually, the template had {{#if_TC-1}}, which implies the variable is passed to the template.
-                    # We can check self.rand_var or variables passed to get_Component_Template.
-                    # But get_Component_Template is called *after* this selection.
+                    parsed_tags = self.prompt_details.get('parsed_tags', {})
+                    sub_topic = parsed_tags.get('Sub-topic/Focused Skill', '') if parsed_tags else ''
+                    # Also check instruction/prompt for type hints if tags parsed incorrectly
+                    instruction_str = self.prompt_details.get('instruction_str', '')
                     
-                    # Workaround: Check if 'TC-1' is in self.rand_var (if available) or just default to multi if unsure?
-                    # Or better, check the question type subtype if available.
-                    # For now, let's try to detect it from self.rand_var if possible.
-                    is_single_blank = False
-                    if self.rand_var and 'TC-1' in self.rand_var:
-                         is_single_blank = True
-                    
-                    if is_single_blank:
-                        file_name = 'blank-single-question-option-answer.txt.template'
-                    else:
-                        file_name = 'blank-multi-question-option-answer.txt.template'
+                    if 'TC-1' in sub_topic or 'TC-1' in instruction_str:
+                         file_name = 'blank-single-question-option-answer.txt.template'
+                    elif 'TC-2' in sub_topic or 'TC-2' in instruction_str:
+                         file_name = 'blank-double-question-option-answer.txt.template' 
+                    elif 'TC-3' in sub_topic or 'TC-3' in instruction_str:
+                         file_name = 'blank-triple-question-option-answer.txt.template'
+                    elif self.prompt_details['question-type'] == 'Graphic Interpretation':
+                         # Default GI to double blank for now
+                         file_name = 'blank-double-question-option-answer.txt.template'
+
+                # Unified template handles single/multi blank selection via conditionals
 
                 return {
                     'instruction statement': get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, rand_var=self.rand_var),
@@ -393,37 +354,51 @@ class ManageQuestionData:
         except:
              result_buffer['difficulty'] = 1
 
-        # Tags
         # Tags Parsing Logic
         tags = []
+        q_type_meta = self.prompt_details.get('type') # 'parent', 'child', or 'simple' (implied)
+        result_buffer['options_type'] = self.prompt_details.get('option', 'single')
+
         def clean_tag(tag_str: str) -> str:
             """Removes < and > from tag strings"""
             return tag_str.replace('<', '').replace('>', '')
 
         try:
-            # 1. Use Pre-parsed Tags (Preferred)
-            if self.prompt_details.get('parsed_tags'):
-                parsed = self.prompt_details['parsed_tags']
-                tags.append(clean_tag(f"type: {self.question_type}"))
+            parsed = self.prompt_details.get('parsed_tags', {})
+            theme = parsed.get('Theme')
+            topic = parsed.get('Topic')
+            skill = parsed.get('Sub-topic/Focused Skill') or parsed.get('Focused Skill') or parsed.get('sub-topic')
+            
+            if q_type_meta == 'child':
+                # Requirement: child only gets sub-topic
+                if skill:
+                    tags.append(clean_tag(f"sub-topic: {skill}"))
+            
+            elif q_type_meta == 'parent':
+                # Requirement: parent gets type, theme, topic
+                tags.append(clean_tag(f"question-type: {self.question_type}"))
+                if theme:
+                    tags.append(clean_tag(f"theme: {theme}"))
                 
-                if 'dichotomous-type' in parsed:
-                     # Inject into result_buffer so it's saved in JSON
-                     result_buffer['dichotomous-type'] = parsed['dichotomous-type']
-                     
-                if 'Theme' in parsed:
-                     tags.append(clean_tag(f"theme: {parsed['Theme']}"))
-                if 'Topic' in parsed:
-                     tags.append(clean_tag(f"topic: {parsed['Topic']}"))
-                if 'Sub-topic/Focused Skill' in parsed:
-                     tags.append(clean_tag(f"sub-topic: {parsed['Sub-topic/Focused Skill']}"))
-                     
+                # Fallback: if Topic is missing, use Skill (common in Verbal)
+                effective_topic = topic or skill
+                if effective_topic:
+                    tags.append(clean_tag(f"topic: {effective_topic}"))
+            
             else:
-                # No tags available and no metadata provided - This should be rare with new pipeline
-                tags.append(clean_tag(f"type: {self.question_type}"))
+                # Simple requirement: all three [question-type, theme, topic]
+                tags.append(clean_tag(f"question-type: {self.question_type}"))
+                if theme:
+                    tags.append(clean_tag(f"theme: {theme}"))
+                
+                # Fallback: if Topic is missing, use Skill
+                effective_topic = topic or skill
+                if effective_topic:
+                    tags.append(clean_tag(f"topic: {effective_topic}"))
 
         except Exception as e:
             print(f"Warning: Tag parsing failed: {e}")
-            tags.append(f"type: {self.question_type}") # Fallback
+            tags.append(f"question-type: {self.question_type}") # Fallback
 
         # CRITICAL FIX: Assign tags to result_buffer before recording!
         result_buffer['tags'] = list(set(tags))
@@ -580,65 +555,105 @@ class ManageQuestionData:
                 'generated_question': generated_question_text  # Inject previously generated question
             }
 
-            try:
-                # Append explicit constraint prompt to the instruction
-                augmented_instruction = call['instruction statement']
-                
-                # Check for explicit instruction string (from prepare_prompts)
-                if self.prompt_details.get('instruction_str'):
-                     augmented_instruction += f"\n\n{self.prompt_details['instruction_str']}"
-                
-                # Always append the 'prompt' which contains Difficulty, Vocab, and Nomenclature
-                # Use a label that indicates this is context
-                augmented_instruction += f"\n\n[Context & Constraints]: {self.prompt_details.get('prompt', '')}"
-
-                # Use session for generation (it maintains history)
-                generated, stats = self.generator_session.generate_component(
-                    instruction_statement=augmented_instruction,
-                    expected_output=call['output'],
-                    context=context
-                )
-
-                # PATCH: Fix model returning list for 'question' (e.g. Reading Comp) - Randomly select one
-                if isinstance(generated, dict) and 'question' in generated:
-                    if isinstance(generated['question'], list) and generated['question']:
-                        generated['question'] = random.choice(generated['question'])
-                
-                # Capture the generated question text if this component is the Question Text
-                if comp_type == 'QuestionText':
-                    if isinstance(generated, dict):
-                        # Try to find the text content in common keys
-                        generated_question_text = generated.get('question') or generated.get('question_text') or str(generated)
-                    else:
-                        generated_question_text = str(generated)
-
-                # Accumulate stats
-                total_stats['input_tokens'] += stats['input_tokens']
-                total_stats['output_tokens'] += stats['output_tokens']
-                total_stats['api_calls'] += 1
-                
-                # # Preview logging
-                # preview = json.dumps(generated, ensure_ascii=False) if isinstance(generated, (dict, list)) else str(generated)
-                # snippet = (preview[:200] + '...') if len(preview) > 200 else preview
-                # print(f"      {prettify(comp_type, 'Green')}: {snippet}")
-
-            except Exception as e:
-                # CRITICAL: Re-raise "Request Per Day" errors so thread_creator can blacklist the key
-                if "Request Per Day limit exceeded" in str(e):
-                    raise e
-
-                generated = {"error": str(e)}
-                print(f"      {prettify(comp_type, 'Red')}: {prettify(str(e), 'Yellow')}")
-
             source_info = None
             if comp_type == 'QuestionMetadata' and self.question_type == 'Multi-Source Reasoning':
                 source_info = {k: call.get(k) for k in ['source_number', 'source_type', 'focused_skill'] if k in call}
             
-            manage_generated_content(
-                result_buffer, self.question_type, comp_type, generated,
-                option_type=self.prompt_details.get('option'),
-                source_info=source_info
-            )
+            # --- COMPONENT GENERATION & RETRY LOOP ---
+            max_attempts = 2
+            attempt = 1
+            last_error = None
+
+            # Base instruction for the component
+            augmented_instruction = call['instruction statement']
+            if self.prompt_details.get('instruction_str'):
+                 augmented_instruction += f"\n\n{self.prompt_details['instruction_str']}"
+            augmented_instruction += f"\n\n[Context & Constraints]: {self.prompt_details.get('prompt', '')}"
+            
+            while attempt <= max_attempts:
+                try:
+                    # Append explicit constraint prompt to the instruction
+                    current_instruction = augmented_instruction
+                    if attempt > 1:
+                        # Construct detailed retry prompt
+                        try:
+                            val_str = json.dumps(generated, indent=2)
+                        except:
+                            val_str = str(generated)
+                        
+                        current_instruction = (
+                            f"[CRITICAL RETRY]: The previous attempt failed validation.\n"
+                            f"Error: {str(last_error)}\n"
+                            f"Value Received: {val_str}\n"
+                            f"Retry generating this component. Ensure it follows the schema exactly.\n\n"
+                            f"JSON SCHEMA:\n{json.dumps(call['output'], indent=2)}\n\n"
+                            f"COMPONENT TEMPLATE:\n"
+                            f"{augmented_instruction}"
+                        )
+
+                    # Use session for generation (it maintains history)
+                    generated, stats = self.generator_session.generate_component(
+                        instruction_statement=current_instruction,
+                        expected_output=call['output'],
+                        context=context
+                    )
+
+                    # Accumulate stats
+                    total_stats['input_tokens'] += stats['input_tokens']
+                    total_stats['output_tokens'] += stats['output_tokens']
+                    total_stats['api_calls'] += 1
+
+                    # Internal logic for question text capture
+                    if isinstance(generated, dict) and 'question' in generated:
+                        if isinstance(generated['question'], list) and generated['question']:
+                            generated['question'] = random.choice(generated['question'])
+                    
+                    # VALIDATION & MANAGEMENT
+                    manage_generated_content(
+                        result_buffer, self.question_type, comp_type, generated,
+                        option_type=self.prompt_details.get('option'),
+                        source_info=source_info,
+                        exam_type=self.prompt_details.get('exam'),
+                        file_name=call.get('file-name')
+                    )
+
+                    # Success!
+                    if attempt > 1:
+                        print(f"      {prettify('regeneration worked ✅', 'Green')}")
+                    
+                    # Capture the generated question text if this component is the Question Text
+                    if comp_type == 'QuestionText':
+                        if isinstance(generated, dict):
+                            generated_question_text = generated.get('question') or generated.get('question_text') or str(generated)
+                        else:
+                            generated_question_text = str(generated)
+                    
+                    break # Exit retry loop on success
+
+                except (TypeError, ValueError) as e:
+                    last_error = e
+                    if attempt < max_attempts:
+                        print(f"      {prettify('Correction Needed', 'Yellow')}: {str(e)}")
+                        attempt += 1
+                        continue
+                    else:
+                        error_label = prettify("didn't worked ❌", "Red")
+                        print(f"      {error_label}")
+                        # Final failure: print received data as requested
+                        try:
+                            item_data = json.dumps(generated, indent=2)
+                        except:
+                            item_data = str(generated)
+                        print(f"      {prettify('Final Value Received:', 'Yellow')}\n{item_data}")
+                        raise e
+
+                except Exception as e:
+                    # CRITICAL: Re-raise "Request Per Day" errors so thread_creator can blacklist the key
+                    if "Request Per Day limit exceeded" in str(e):
+                        raise e
+                    # Generic error fallback
+                    print(f"      {prettify(comp_type, 'Red')}: {prettify(str(e), 'Yellow')}")
+                    raise e
         
         return result_buffer, total_stats
 
@@ -649,7 +664,12 @@ class ManageQuestionData:
             parent_metadata = result_buffer.get('metadata')
             child_prompt_data = []
             
-            for child_prompt in self.prompt_details.get('child-prompt'):
+            child_prompts = self.prompt_details.get('child-prompt')
+            if not child_prompts:
+                 print(f"      {prettify('Warning:', 'Yellow')} Parent question had no 'child-prompt' list. Skipping children.")
+                 return total_child_stats
+
+            for child_prompt in child_prompts:
                 child_prompt_details = {
                     'type': 'child',
                     'exam': self.prompt_details['exam'],

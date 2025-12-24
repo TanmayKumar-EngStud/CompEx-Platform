@@ -323,6 +323,7 @@ class GeminiGenerator:
             'json_files', 
             'component_templates', 
             safe_component_type, 
+            'schema',
             schema_filename
         )
         

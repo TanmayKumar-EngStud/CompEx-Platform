@@ -36,7 +36,7 @@ model examtypes {
   mocktests   mocktests[]
   problems    problems[]
   sections    sections[]
-  tags        tags[]
+  tag_scopes  tag_scopes[]
 }
 
 model mocktestrankings {
@@ -128,6 +128,7 @@ model problems {
   solution             Json?
   mockquestionnumber   Int?
   popularityIndex      Float            @default(0)
+  options_type         String?          @db.VarChar(50)
   problemoptions       problemoptions[]
   examtypes            examtypes?       @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
   mocksections         mocksections?    @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: Cascade, onUpdate: Cascade)
@@ -139,20 +140,20 @@ model problems {
 
 model problemssettags {
   problemsSetId Int
-  tagid         Int
+  tagScopeId    Int
   ProblemsSet   ProblemsSet @relation(fields: [problemsSetId], references: [problemsSetId], onDelete: Cascade)
-  tags          tags        @relation(fields: [tagid], references: [tagid], onDelete: Cascade)
+  tag_scopes    tag_scopes  @relation(fields: [tagScopeId], references: [tagScopeId], onDelete: Cascade)
 
-  @@id([tagid, problemsSetId])
+  @@id([tagScopeId, problemsSetId])
 }
 
 model problemtags {
-  problemid Int
-  tagid     Int
-  problems  problems @relation(fields: [problemid], references: [problemid], onDelete: Cascade, onUpdate: Cascade)
-  tags      tags     @relation(fields: [tagid], references: [tagid], onDelete: Cascade, onUpdate: Cascade)
+  problemid  Int
+  tagScopeId Int
+  problems   problems   @relation(fields: [problemid], references: [problemid], onDelete: Cascade, onUpdate: Cascade)
+  tag_scopes tag_scopes @relation(fields: [tagScopeId], references: [tagScopeId], onDelete: Cascade, onUpdate: Cascade)
 
-  @@id([problemid, tagid])
+  @@id([problemid, tagScopeId])
 }
 
 model sections {
@@ -166,20 +167,28 @@ model sections {
   performance           performance[]
   problems              problems[]
   examtypes             examtypes?              @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
-  tags                  tags[]
+  tag_scopes            tag_scopes[]
 }
 
 model tags {
   tagid           Int               @id @default(autoincrement())
-  topic           String            @db.VarChar(300)
-  theme           String            @db.VarChar(300)
-  type            String            @db.VarChar(300)
+  name            String            @unique @db.VarChar(300)
+  category        String            @db.VarChar(100)
+  tag_scopes      tag_scopes[]
+}
+
+model tag_scopes {
+  tagScopeId      Int               @id @default(autoincrement())
+  tagid           Int
   examtypeid      Int
   sectionid       Int
-  problemssettags problemssettags[]
-  problemtags     problemtags[]
+  tags            tags              @relation(fields: [tagid], references: [tagid], onDelete: Cascade, onUpdate: Cascade)
   examtypes       examtypes         @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade, onUpdate: Cascade)
   sections        sections          @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade, onUpdate: Cascade)
+  problemssettags problemssettags[]
+  problemtags     problemtags[]
+
+  @@unique([tagid, examtypeid, sectionid])
 }
 
 model userattempt_selectedoptions {

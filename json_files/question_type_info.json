@@ -10,10 +10,7 @@
    "Problem Solving Simple": {
       "has-metadata": false,
       "type": "simple",
-      "options": {
-         "single": 2,
-         "multi": 1
-      },
+      "options": "single",
       "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
       "system-instruction": "problem-solving-simple-system-instruction.txt.template"
    },

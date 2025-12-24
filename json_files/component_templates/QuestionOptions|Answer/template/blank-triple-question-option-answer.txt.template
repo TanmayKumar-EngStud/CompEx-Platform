@@ -1,0 +1,19 @@
+STRICT RESPONSE FORMAT: JSON
+
+- "options" key with value as a list of dictionaries. Index 0 for blank 1, index 1 for blank 2, index 2 for blank 3.
+- "answer" key with an array containing exactly THREE correct option letters (e.g., ["A", "D", "G"]). CRITICAL: ONLY the letters.
+Example:-
+```json
+{
+  "options": [
+    { "A": { "text": "...", "explanation": "..." }, "B": { "text": "...", "explanation": "..." }, "C": { "text": "...", "explanation": "..." } },
+    { "D": { "text": "...", "explanation": "..." }, "E": { "text": "...", "explanation": "..." }, "F": { "text": "...", "explanation": "..." } },
+    { "G": { "text": "...", "explanation": "..." }, "H": { "text": "...", "explanation": "..." }, "I": { "text": "...", "explanation": "..." } }
+  ],
+  "answer": ["A", "D", "G"]
+}
+```
+
+**Important Notes:**
+- TC-3: 3 blanks, 3 options per blank.
+- **Explanation**: Provide a VERY brief explanation (max 1 sentence) for EVERY option in every blank. Use Markdown for emphasis (like **bold**) only when necessary.

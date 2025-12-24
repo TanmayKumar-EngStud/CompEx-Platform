@@ -12,5 +12,23 @@
          "value": "RC-L",
          "count": 4
       }
+   ],
+   "RC-S": [
+      {
+         "value": "RC-S",
+         "count": 2
+      }
+   ],
+   "RC-M": [
+      {
+         "value": "RC-M",
+         "count": 3
+      }
+   ],
+   "RC-L": [
+      {
+         "value": "RC-L",
+         "count": 4
+      }
    ]
 }

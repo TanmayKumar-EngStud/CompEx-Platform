@@ -1,0 +1,31 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "options": {
+      "type": "ARRAY",
+      "description": "A list containing EXACTLY TWO dictionaries, one for each blank.",
+      "items": {
+        "type": "OBJECT",
+        "description": "Dictionary of options (A-C for blank 1, D-F for blank 2).",
+        "additionalProperties": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING", "description": "Option text" },
+            "explanation": { "type": "STRING", "description": "Reasoning" }
+          },
+          "required": ["text", "explanation"]
+        }
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "answer": {
+      "type": "ARRAY",
+      "description": "Array containing EXACTLY TWO correct option letters (one for each blank).",
+      "items": { "type": "STRING", "pattern": "^[A-Z]$" },
+      "minItems": 2,
+      "maxItems": 2
+    }
+  },
+  "required": ["options", "answer"]
+}

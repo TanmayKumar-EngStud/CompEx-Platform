@@ -1,0 +1,18 @@
+STRICT RESPONSE FORMAT: JSON
+
+- "options" key with value as a list of dictionaries. Dictionary at index 0 provides 3 options for blank 1, index 1 for blank 2.
+- "answer" key with an array containing exactly TWO correct option letters (e.g., ["A", "D"]). CRITICAL: ONLY the letters.
+Example:-
+```json
+{
+  "options": [
+    { "A": { "text": "...", "explanation": "..." }, "B": { "text": "...", "explanation": "..." }, "C": { "text": "...", "explanation": "..." } },
+    { "D": { "text": "...", "explanation": "..." }, "E": { "text": "...", "explanation": "..." }, "F": { "text": "...", "explanation": "..." } }
+  ],
+  "answer": ["A", "D"]
+}
+```
+
+**Important Notes:**
+- TC-2 / Graphic Interpretation: 2 blanks, 3 options per blank (normally).
+- **Explanation**: Provide a VERY brief explanation (max 1 sentence) for EVERY option in every blank. Use Markdown for emphasis (like **bold**) only when necessary.

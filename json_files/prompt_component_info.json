@@ -1,5 +1,4 @@
 {
-   "use_blueprint": false,
    "difficulty": 5,
    "vocabulary": 3,
    "questionStyle": [
@@ -86,10 +85,24 @@
       },
       {
          "QuestionType": [
+            "Multi-Source Reasoning"
+         ],
+         "list": [
+            "Integrated Reasoning",
+            "Strategic Decision Making",
+            "Resource Allocation",
+            "Data-Driven Analysis",
+            "Business Analytics",
+            "Operational Research",
+            "Policy Analysis",
+            "Logistical Planning"
+         ]
+      },
+      {
+         "QuestionType": [
             "Problem Solving Simple",
             "Problem Solving Meta",
             "Numerical Entry",
-            "Multi-Source Reasoning",
             "Two-Part Analysis",
             "Table Analysis",
             "Graphic Interpretation",
@@ -562,7 +575,9 @@
       {
          "QuestionType": [
             "Two-Part Analysis",
-            "Multi-Source Reasoning"
+            "Two-Part Analysis Child",
+            "Multi-Source Reasoning",
+            "Multi-Source Reasoning Child"
          ],
          "list": [
             "Evaluating Trade-offs",

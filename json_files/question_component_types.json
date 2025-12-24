@@ -158,6 +158,7 @@
             "file-name": "qc-question-answer.txt.template",
             "variables": null,
             "output": {
+               "options": "dict",
                "answer": "str"
             }
          },
@@ -169,7 +170,8 @@
             "file-name": "ds-question-answer.txt.template",
             "variables": null,
             "output": {
-               "answer": "str"
+               "answer": "str",
+               "explanations": "dict"
             }
          },
          {
@@ -207,11 +209,10 @@
             "QuestionType": [
                "Problem Solving Meta",
                "Sentence Equivalence",
-               "Reading Comprehension",
-               "Problem Solving Simple",
                "Multi-Source Reasoning Child",
                "Multi-Source Reasoning",
-               "Two-Part Analysis"
+               "Two-Part Analysis",
+               "Reading Comprehension"
             ],
             "file-name": "multi-correct-question-option-answer.txt.template",
             "variables": null,
@@ -226,7 +227,7 @@
                "Text Completion",
                "Graphic Interpretation"
             ],
-            "file-name": "blank-question-option-answer.txt.template",
+            "file-name": "blank-single-question-option-answer.txt.template",
             "variables": null,
             "output": {
                "options": "dict",
@@ -243,7 +244,7 @@
             "file-name": "generic-table-analysis-options.txt.template",
             "variables": null,
             "output": {
-               "options": "list",
+               "options": "dict",
                "answer": "dict"
             }
          }

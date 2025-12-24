@@ -84,7 +84,12 @@ class DeepseekSession:
         component_type = context.get('component_type', 'Unknown') if context else 'Unknown'
         
         # Build prompt
-        user_content = f"Instruction for {component_type}:\n{instruction_statement}"
+        user_content = (
+            f"### focus: STRICTLY generate ONLY the requested {component_type}. "
+            f"Do NOT wrap in any root keys (like 'child-questions', 'metadata'). "
+            f"Do NOT repeat previous components or generate the whole question structure.\n"
+            f"Instruction for {component_type}:\n{instruction_statement}"
+        )
         if context and context.get('metadata_content'):
              user_content += f"\n\nMetadata Context:\n{json.dumps(context['metadata_content'], indent=2)}"
 
@@ -146,5 +151,15 @@ class DeepseekSession:
         try:
             return json.loads(content)
         except json.JSONDecodeError:
-            # If plain string was expected or fallback
-            return content
+            # OPTIMIZATION: Model often returns unescaped backslashes in LaTeX (e.g. \( or \frac)
+            # which are invalid in JSON strings. Attempt to fix by escaping them.
+            try:
+                # Find all single backslashes not followed by a valid escape char
+                # Valid: ["\/bfnrtu]
+                import re
+                # This regex finds \ that is NOT followed by our valid set
+                fixed_content = re.sub(r'\\(?![\\"/bfnrtu])', r'\\\\', content)
+                return json.loads(fixed_content)
+            except:
+                # If still failing, return raw for retry logic to handle
+                return content

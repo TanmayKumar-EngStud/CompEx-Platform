@@ -180,10 +180,18 @@ class PromptPrep:
     @staticmethod
     def _nomenclature_to_prompt_mapping(nomenclature: str, question_type: str, difficulty_level: int) -> tuple[str, str, dict]:
         """Returns appropriate prompt of that nomenclature using Bucket Elimination, and a formatted instruction string."""
+        
+        # Detect Child Context from raw nomenclature BEFORE replacements
+        is_child_context = 'child-focused_skill' in nomenclature or 'child' in question_type.lower()
+
         prompt_components = PromptPrep.__extract_keywords_from_nomenclature(
             nomenclature)
         # Maintaining order and allowing duplicates (e.g., multiple source_info in MSR)
-        prompt_components[:] = [c for c in prompt_components if c not in {'difficulty', 'vocabulary'}]
+        # EXCLUDE mandatory categories that are handled by manual mapping
+        prompt_components = [c for c in prompt_components if c not in {
+            'difficulty', 'vocabulary', 'questionTheme', 'questionTopic', 
+            'child-focused_skill', 'focused_skill', 'TC_QuestionType', 'RC_QuestionType'
+        }]
 
         # Determine Category for counting/elimination
         def _get_category(comp_name):
@@ -191,7 +199,54 @@ class PromptPrep:
             if 'topic' in comp_name.lower(): return 'topic'
             return 'generic'
         
-        selected_components = {}
+        selected_components = {
+            'Theme': None,
+            'Topic': None,
+            'Sub-topic/Focused Skill': None
+        }
+
+        # --- MANDATORY CATEGORY MAPPING ---
+        # 1. Theme
+        if 'questionTheme' in nomenclature:
+            theme_options = PromptPrep.__selective_component_info('questionTheme', question_type)
+            selected_theme = PromptPrep._get_bucket_choice(theme_options, category='theme')
+            selected_components['Theme'] = selected_theme
+            nomenclature = nomenclature.replace('<questionTheme>', selected_theme)
+        
+        # 2. Topic
+        if 'questionTopic' in nomenclature:
+            topic_options = PromptPrep.__selective_component_info('questionTopic', question_type)
+            # Handle possible dict structure for topics
+            if isinstance(topic_options, dict):
+                topic_keys = list(topic_options.keys())
+                selected_topic = PromptPrep._get_bucket_choice(topic_keys, category='topic')
+                
+                # Handle Sub-topic
+                sub_choices = topic_options[selected_topic]
+                sub_options = list(sub_choices.keys()) if isinstance(sub_choices, dict) else list(sub_choices)
+                selected_sub = PromptPrep._get_bucket_choice(sub_options, category='topic')
+                
+                selected_components['Topic'] = selected_topic
+                selected_components['Sub-topic/Focused Skill'] = selected_sub
+                
+                # Replace topic in nomenclature (handle potential sub-topic placeholders if any)
+                display_topic = f"{selected_topic} > - <sub-questionTopic - {selected_sub}" if 'sub-questionTopic' in nomenclature else selected_topic
+                nomenclature = nomenclature.replace('<questionTopic>', display_topic)
+            else:
+                selected_topic = PromptPrep._get_bucket_choice(topic_options, category='topic')
+                selected_components['Topic'] = selected_topic
+                nomenclature = nomenclature.replace('<questionTopic>', selected_topic)
+
+        # 3. Skill (Verbal / Child)
+        for skill_tag in ['focused_skill', 'child-focused_skill', 'TC_QuestionType', 'RC_QuestionType']:
+             if skill_tag in nomenclature:
+                skill_options = PromptPrep.__selective_component_info(skill_tag, question_type)
+                selected_skill = PromptPrep._get_bucket_choice(skill_options, category='topic')
+                selected_components['Sub-topic/Focused Skill'] = selected_skill
+                # Consistency: Use Skill as Topic for Verbal if Topic is empty
+                if not selected_components.get('Topic'):
+                    selected_components['Topic'] = selected_skill
+                nomenclature = nomenclature.replace(f'<{skill_tag}>', selected_skill)
 
         for prompt_component in prompt_components:
             prompt_component_list = PromptPrep.__selective_component_info(
@@ -215,9 +270,10 @@ class PromptPrep:
                     sp = suffix
                 selected_value += f"{selected_choice}"
                 
-                # Store Main Selection
+                # Store Main Selection (PROTECTED)
                 label = 'Theme' if category == 'theme' else 'Topic'
-                selected_components[label] = selected_choice
+                if not selected_components.get(label):
+                    selected_components[label] = selected_choice
 
                 # 2. Pick Sub-Topic
                 subs = f"sub-{prompt_component}"
@@ -230,7 +286,9 @@ class PromptPrep:
                      selected_sub_choice = PromptPrep._get_bucket_choice(sub_options, category='topic')
 
                 selected_value += f"> - <{subs} - {selected_sub_choice}"
-                selected_components['Sub-topic/Focused Skill'] = selected_sub_choice
+                # Update Skill if it's currently None
+                if selected_components.get('Sub-topic/Focused Skill') is None:
+                    selected_components['Sub-topic/Focused Skill'] = selected_sub_choice
                 
                 if isinstance(sub_choices, dict):
                     pass 
@@ -246,10 +304,17 @@ class PromptPrep:
                     print(f"Bucket selection failed: {e}")
                     selected_value = random.choice(prompt_component_list)
                 
-                label = 'Theme' if category == 'theme' else 'Topic'
-                if 'theme' in prompt_component.lower(): selected_components['Theme'] = selected_value
-                elif 'skill' in prompt_component.lower(): selected_components['Sub-topic/Focused Skill'] = selected_value
-                else: selected_components['Topic'] = selected_value
+                # PROTECTED assignment to selected_components
+                if 'theme' in prompt_component.lower():
+                    if not selected_components.get('Theme'):
+                        selected_components['Theme'] = selected_value
+                elif 'skill' in prompt_component.lower():
+                    if not selected_components.get('Sub-topic/Focused Skill'):
+                        selected_components['Sub-topic/Focused Skill'] = selected_value
+                else:
+                    # Generic component (like Style) should NOT overwrite Topic if Topic already exists
+                    if not selected_components.get('Topic'):
+                        selected_components['Topic'] = selected_value
 
                 # --- Graph Randomization Injection ---
                 is_graph_tag = any(term in selected_value.lower() for term in ['graph', 'chart'])
@@ -303,6 +368,27 @@ class PromptPrep:
             
         instruction_str = " ".join(instruction_parts)
         
+        # --- Fail-Fast Tag Validation ---
+        q_meta = qt_info.get(question_type, {}).get('type', 'simple')
+        
+        # Override: If nomenclature implies child (has child skill) or type explicitly says child
+        if is_child_context:
+            q_meta = 'child'
+        
+        missing = []
+        
+        if q_meta in ['simple', 'parent']:
+            if not selected_components.get('Theme'): missing.append('Theme')
+            if not selected_components.get('Topic'): missing.append('Topic')
+        elif q_meta == 'child':
+            if not selected_components.get('Sub-topic/Focused Skill'):
+                missing.append('Sub-topic/Focused Skill')
+        
+        if missing:
+            raise ValueError(f"CRITICAL: Prompt Mapping failed for {prettify(question_type, 'Magenta')}. "
+                             f"Missing mandatory tag categories: {prettify(missing, 'Red')}. "
+                             f"Current Tags: {selected_components}")
+
         return nomenclature, instruction_str, selected_components
         # now for every exam we are having external data.
 
@@ -311,27 +397,48 @@ class PromptPrep:
         default_value = 2
         if (child_info.get('child-count', None)):
             return child_info.get('child-count')
-        prompt_components = PromptPrep.__extract_keywords_from_nomenclature(
-            nomenclature)
-        prompt_respective_values = PromptPrep.__extract_keywords_from_nomenclature(
-            parent_prompt)
-        child_question_count = get_json('child_question_count')[0]
-        merged_list = list(set(prompt_components) &
-                           set(child_question_count.keys()))
-        if len(merged_list) > 1:
-            print(
-                f"{warn} For capturing total child questions for {prettify(question_type, 'Yellow', True)} \n\twith nomenclature :- {prettify(nomenclature, 'Magenta')}\nThese are the {len(merged_list)} identifiers for child-count {prettify(merged_list, 'Red', True)}\nTaking the first one for identification")
-        if len(merged_list) == 0:
-            # it means these are the parent-child questions with default child count
-            return default_value
-        identifier = merged_list[0]
-        idx = prompt_components.index(identifier)
-        selected_prompt_value = prompt_respective_values[idx]
-        for options in child_question_count[identifier]:
-            if options['value'] == selected_prompt_value:
-                return options['count']
+            
+        # Parse [Label: <Placeholder>] from nomenclature
+        # Matches [Type: <RC_QuestionType>] -> ('Type', 'RC_QuestionType')
+        nomenclature_pairs = re.findall(r'\[([^:]+):\s*<([^>]+)>\]', nomenclature)
+        nom_map = {label.strip(): placeholder.strip() for label, placeholder in nomenclature_pairs}
+        
+        # Parse [Label: Value] from parent_prompt
+        # Matches [Type: RC-M] -> ('Type', 'RC-M')
+        # Uses greedy match for values but respects closing ]
+        prompt_pairs = re.findall(r'\[([^:]+):\s*([^\]]+)\]', parent_prompt)
+        prompt_map = {label.strip(): value.strip() for label, value in prompt_pairs}
+
+        child_question_count_keys = get_json('child_question_count')[0].keys()
+        
+        # Find which placeholder in nomenclature corresponds to a key in child_question_count
+        target_placeholder = None
+        for placeholder in nom_map.values():
+            if placeholder in child_question_count_keys:
+                target_placeholder = placeholder
+                break
+        
+        if not target_placeholder:
+             # Default fallback if no dependent count identifier found
+             return default_value
+             
+        # Find the Label for this Placeholder
+        target_label = next((k for k, v in nom_map.items() if v == target_placeholder), None)
+        
+        if not target_label or target_label not in prompt_map:
+             # Should not happen if prompt follows nomenclature
+             print(f"{warn} Could not find label '{target_label}' in generated prompt for child count lookup.")
+             return default_value
+             
+        selected_value = prompt_map[target_label]
+        
+        child_count_data = get_json('child_question_count')[0]
+        for option in child_count_data[target_placeholder]:
+             if option['value'] == selected_value:
+                 return option['count']
+
         raise ValueError(
-            f"{warn} child count for {prettify(identifier, 'Yellow')} : {prettify(selected_prompt_value, 'Magenta')} was not found, issue is in {prettify('child_question_count.json','Cyan')}'s formatting\nThis is the prompt that we got:-\n\t{prettify(parent_prompt, 'Green')}")
+            f"{warn} child count for {prettify(target_placeholder, 'Yellow')} : {prettify(selected_value, 'Magenta')} was not found, issue is in {prettify('child_question_count.json','Cyan')}'s formatting\nThis is the prompt that we got:-\n\t{prettify(parent_prompt, 'Green')}")
 
     @staticmethod
     def _remove_extra_and_shuffle_created_prompts(section_prompt_dictionary: str, extras: int):

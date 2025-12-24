@@ -117,7 +117,15 @@ def _get_Template(file_path: str,
     if exam_type is None:
         raise ValueError("exam_type was not mentioned, received None")
     other_file_path = file_path
-    file_path = os.path.join(file_path, filename)
+    # Resolve path based on file extension (check for template/schema subfolders first)
+    if filename.endswith('.template'):
+        candidate = os.path.join(file_path, 'template', filename)
+        file_path = candidate if os.path.exists(candidate) else os.path.join(file_path, filename)
+    elif filename.endswith('.schema'):
+        candidate = os.path.join(file_path, 'schema', filename)
+        file_path = candidate if os.path.exists(candidate) else os.path.join(file_path, filename)
+    else:
+        file_path = os.path.join(file_path, filename)
     try:
         with open(file_path, 'r') as f:
             component_template = f.read()
@@ -140,7 +148,10 @@ def _get_Template(file_path: str,
         component_template = component_template.replace(
             f'<{variable}>', replaced_value)
 
-    generic_template = os.path.join(other_file_path, 'generic.txt.template')
+    # Check both root and template folder for generic template
+    generic_template = os.path.join(other_file_path, 'template', 'generic.txt.template')
+    if not os.path.exists(generic_template):
+        generic_template = os.path.join(other_file_path, 'generic.txt.template')
     try:
         with open(generic_template) as f:
             generic_philosophy_template = f.read()

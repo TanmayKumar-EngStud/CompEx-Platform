@@ -186,6 +186,7 @@ class DB:
                 solution = json.dumps({"explanation": str(solution)})
             # Create problem with proper Prisma format
             self.question_type = question.get('type') or question.get('question-type', '')
+            self.current_options_type = str(question.get('options_type', 'single'))
 
             # Ensure text field has a value (required field, handle null/empty)
             question_text = question.get('question') or ''
@@ -230,7 +231,8 @@ class DB:
                 "solution": solution,  # Prisma will handle JSON conversion
                 "isChildren": isChildQuestion,        # Reverted to schema name
                 "isMockQuestion": isMockQuestion,     # Reverted to schema name
-                "problemsSetId": None # Explicitly initialize
+                "problemsSetId": None, # Explicitly initialize
+                "options_type": self.current_options_type # New column
             }
 
             if isChildQuestion:
@@ -265,13 +267,7 @@ class DB:
                  for key, text in ds_options.items():
                       self._register_problem_options(text, answer, group=None, key=key, explanation=explanations.get(key))
             
-            # --- Dichotomous Options Registration ---
-            if dichotomous_info:
-                pos = dichotomous_info.get('positive')
-                neg = dichotomous_info.get('negative')
-                self._register_problem_options(pos, answer, group="Dichotomous")
-                self._register_problem_options(neg, answer, group="Dichotomous")
-            
+            # --- Options Registration ---
             elif isinstance(options, dict):
                 for key, value in options.items():
                     # Check if value is nested (text + explanation)
@@ -305,8 +301,16 @@ class DB:
                             self._register_problem_options(suboption, answer, group)
                             group = chr(ord(group) + 1)
 
+            # Register dichotomous choice labels if applicable
+            if dichotomous_info:
+                pos = dichotomous_info.get('positive')
+                neg = dichotomous_info.get('negative')
+                # These are labels, their specific correctness is determined per statement stored above
+                self._register_problem_options(pos, None, group="Dichotomous Choice")
+                self._register_problem_options(neg, None, group="Dichotomous Choice")
+
             # Register tags
-            self._register_problem_tags(question.get('tags') or [])
+            self._register_tags_to_entity(question.get('tags') or [], self.current_problem_id, 'problem', is_child=isChildQuestion)
 
             return True
 
@@ -338,8 +342,9 @@ class DB:
                 'group': group
             }
         
-        # Table Analysis (TA) Special Handling
-        elif self.question_type == "TA":
+        # Dichotomous / Table Analysis (TA) Special Handling
+        # If options_type is dichotomous, use mapping-based logic
+        elif self.current_options_type == "dichotomous":
             answer_group = None
             is_correct = False
             ta_explanation = explanation
@@ -347,20 +352,40 @@ class DB:
             # Find the appropriate answer group
             mapping = None
             for group_name, map_item in self.answer_type_mappings.items():
-                if map_item["positive"] in str(answers) or map_item["negative"] in str(answers):
+                if isinstance(answers, dict):
+                    # Check if any response in the answers dict matches positive/negative
+                    if any(str(val).strip().lower() in [str(map_item["positive"]).lower(), str(map_item["negative"]).lower()] for val in answers.values()):
+                        answer_group = group_name
+                        mapping = map_item
+                        break
+                elif isinstance(answers, list) and answers:
+                     # Check first item if it's a mapping
+                     mapping_item = answers[0]
+                     if isinstance(mapping_item, dict):
+                          if any(str(val).strip().lower() in [str(map_item["positive"]).lower(), str(map_item["negative"]).lower()] for val in mapping_item.values()):
+                               answer_group = group_name
+                               mapping = map_item
+                               break
+                elif str(mapping["positive"]) in str(answers) or str(mapping["negative"]) in str(answers):
                     answer_group = group_name
                     mapping = map_item
                     break
 
-            # If answers is a list of objects (TA new format)
-            if isinstance(answers, list) and mapping:
+            # If answers is a dict (New format: {statement: response})
+            if isinstance(answers, dict) and mapping:
+                response = answers.get(option_text)
+                if response:
+                    if str(response).strip().lower() == str(mapping["positive"]).strip().lower():
+                        is_correct = True
+            
+            # If answers is a list of objects (TA old format)
+            elif isinstance(answers, list) and mapping:
                  for ans_item in answers:
                       if isinstance(ans_item, dict) and ans_item.get('statement') == option_text:
                            # Check if response matches the "Positive" value for this TA type
                            response = ans_item.get('response')
                            if str(response).strip().lower() == str(mapping["positive"]).strip().lower():
                                 is_correct = True
-                           ta_explanation = ans_item.get('explanation')
                            break
 
             option_data = {
@@ -410,86 +435,111 @@ class DB:
             return False
         return True
 
-    def _register_problem_tags(self, tags):
-        try:
-            if not tags:
-                return True
-            tagid = self._register_tag(tags)
-            if tagid is not False:
-                tag_data = {
-                    'tagid': tagid,
-                    'problemid': self.current_problem_id
-                }
-                self.db.problemtags.create(data=tag_data)
-        except Exception as e:
-            print(
-                f"Error creating problem tags in _register_problem_tags: {str(e)}")
-            return False
-        return True
-
-    def _register_problemsset_tags(self, tags):
-        try:
-            if not tags:
-                return True
-            tagid = self._register_tag(tags)
-            if tagid is not False:
-                tag_data = {
-                    'tagid': tagid,
-                    'problemsSetId': self.current_problemset_id
-                }
-                self.db.problemssettags.create(
-                    data=tag_data
-                )
-        except Exception as e:
-            print(
-                f"Error creating problemset tags in _register_problemsset_tags: {str(e)}")
-            return False
-        return True
-
-    # ✅
-    def _register_tag(self, tags_list):
+    def _register_tags_to_entity(self, tags_list: List[str], entity_id: int, entity_type: str, is_child: bool = False):
+        """Generic tag registration for either a Problem or a ProblemsSet.
+        
+        Args:
+            tags_list: List of 'category: value' strings
+            entity_id: The ID of the problem or problemsset
+            entity_type: 'problem' or 'problemsset'
+            is_child: Whether the problem is a child question (only relevant for 'problem' type)
+        """
         try:
             if not tags_list:
-                return False
+                return True
+            
+            # 1. Tag Validator Logic
+            categories_found = set()
+            for t in tags_list:
+                if isinstance(t, str) and ':' in t:
+                    cat = t.split(':', 1)[0].strip().lower()
+                    if cat == 'question-type': cat = 'type'
+                    categories_found.add(cat)
+            
+            # Check requirements based on context
+            if entity_type == 'problem' and is_child:
+                if 'sub-topic' not in categories_found:
+                    print(f"⚠️  WARNING: Category 'sub-topic' is missing for child question ID {entity_id}")
+            else:
+                # Top-level question (Simple or Parent/ProblemsSet)
+                required = ['type', 'theme', 'topic']
+                missing = [r for r in required if r not in categories_found]
+                if missing:
+                    ctx = f"ProblemsSet {entity_id}" if entity_type == 'problemsset' else f"Problem {entity_id}"
+                    print(f"⚠️  WARNING: Categories {missing} are missing for {ctx} (Exam: {self.current_exam_id}, Section: {self.current_section_id})")
 
-            tag_data = {
-                'topic': 'Unknown',
-                'theme': 'Unknown',
-                'type': 'Unknown',
-                'examtypeid': self.current_exam_id,
-                'sectionid': self.current_section_id
-            }
-
-            for tag_str in tags_list:
+            # 2. Registration Logic
+            for tag_str in set(tags_list):
                 if not isinstance(tag_str, str) or ':' not in tag_str:
                     continue
                 
                 parts = tag_str.split(':', 1)
-                key = parts[0].strip().lower()
+                category = parts[0].strip().lower()
                 value = parts[1].strip()
-
-                if key in ['topic', 'theme', 'type']:
-                    # Truncate to 300 characters as requested
-                    tag_data[key] = value[:300]
-
-            # Find or create categorised tag
-            existing_tag = self.db.tags.find_first(where={
-                'topic': tag_data['topic'],
-                'theme': tag_data['theme'],
-                'type': tag_data['type'],
-                'examtypeid': self.current_exam_id,
-                'sectionid': self.current_section_id
-            })
-
-            if existing_tag:
-                return existing_tag.tagid
-            else:
-                new_tag = self.db.tags.create(data=tag_data)
-                return new_tag.tagid
+                if category == 'question-type': category = 'type'
+                
+                scope_id = self._get_or_create_tag_id(category, value)
+                if scope_id:
+                    if entity_type == 'problem':
+                        # Idempotency check for problems
+                        existing = self.db.problemtags.find_unique(where={
+                            'problemid_tagScopeId': {
+                                'problemid': entity_id,
+                                'tagScopeId': scope_id
+                            }
+                        })
+                        if not existing:
+                            self.db.problemtags.create(data={
+                                'problemid': entity_id,
+                                'tagScopeId': scope_id
+                            })
+                    else: # entity_type == 'problemsset'
+                        # Idempotency check for problemsset
+                        existing = self.db.problemssettags.find_unique(where={
+                            'tagScopeId_problemsSetId': {
+                                'tagScopeId': scope_id,
+                                'problemsSetId': entity_id
+                            }
+                        })
+                        if not existing:
+                            self.db.problemssettags.create(data={
+                                'problemsSetId': entity_id,
+                                'tagScopeId': scope_id
+                            })
+            return True
         except Exception as e:
-            print(f"Error in _register_tag (categorized): {str(e)}")
-            print(f"Tags list was: {tags_list}")
+            print(f"Error in _register_tags_to_entity ({entity_type}): {str(e)}")
             return False
+
+    def _get_or_create_tag_id(self, category: str, name: str) -> int:
+        """Finds or creates a global tag and links it to the current scope."""
+        try:
+            # 1. Ensure Global Tag exists
+            tag = self.db.tags.find_unique(where={'name': name})
+            if not tag:
+                tag = self.db.tags.create(data={'name': name, 'category': category})
+            
+            # 2. Ensure TagScope exists for current exam/section
+            scope = self.db.tag_scopes.find_unique(where={
+                'tagid_examtypeid_sectionid': {
+                    'tagid': tag.tagid,
+                    'examtypeid': self.current_exam_id,
+                    'sectionid': self.current_section_id
+                }
+            })
+            if not scope:
+                scope = self.db.tag_scopes.create(data={
+                    'tagid': tag.tagid,
+                    'examtypeid': self.current_exam_id,
+                    'sectionid': self.current_section_id
+                })
+            
+            return scope.tagScopeId
+        except Exception as e:
+            print(f"Error in _get_or_create_tag_id: {str(e)}")
+            return None
+
+    # ✅
 
     def _register_problemsset(self, exam_section, parent_question, isMockQuestion=False, section_id=None):
         """Register a problem set with its child questions"""
@@ -555,6 +605,9 @@ class DB:
                 (parent_question.get('questions') or []) or
                 (parent_question.get('child-questions') or [])
             )
+
+            # Register tags for the ProblemSet (Parent)
+            self._register_tags_to_entity(parent_question.get('tags') or [], self.current_problemset_id, 'problemsset', is_child=False)
 
             for child in child_questions:
                 if not self._register_problem(exam_section, child, isChildQuestion=True, isMockQuestion=isMockQuestion, section_id=section_id):

@@ -1,0 +1,31 @@
+{
+  "type": "OBJECT",
+  "properties": {
+    "options": {
+      "type": "ARRAY",
+      "description": "A list containing EXACTLY ONE dictionary, representing the options for the single blank.",
+      "items": {
+        "type": "OBJECT",
+        "description": "Dictionary of options (A-E) for the blank.",
+        "additionalProperties": {
+          "type": "OBJECT",
+          "properties": {
+            "text": { "type": "STRING", "description": "Option text" },
+            "explanation": { "type": "STRING", "description": "Reasoning" }
+          },
+          "required": ["text", "explanation"]
+        }
+      },
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "answer": {
+      "type": "ARRAY",
+      "description": "Array containing EXACTLY ONE correct option letter.",
+      "items": { "type": "STRING", "pattern": "^[A-Z]$" },
+      "minItems": 1,
+      "maxItems": 1
+    }
+  },
+  "required": ["options", "answer"]
+}

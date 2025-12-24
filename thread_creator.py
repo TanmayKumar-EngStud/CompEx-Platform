@@ -32,11 +32,7 @@ class ThreadManager:
                     'exam': exam,
                     'section': section,
                     'question-type': qt,
-                    'option': prompt_data.get('option'),
-                    'prompt': prompt_data.get('prompt'),
-                    'difficulty': prompt_data.get('difficulty', 1), # Added explicit propagation
-                    'child-prompt': prompt_data.get('child-prompt'),
-                    'metadata-type': prompt_data.get('metadata-type')
+                    **prompt_data
                 }
                 self.work_queue.put(prompt_details)
         
