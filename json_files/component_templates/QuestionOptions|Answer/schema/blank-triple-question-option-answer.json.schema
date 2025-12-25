@@ -2,26 +2,103 @@
   "type": "OBJECT",
   "properties": {
     "options": {
-      "type": "ARRAY",
-      "description": "A list containing EXACTLY THREE dictionaries, one for each blank.",
-      "items": {
-        "type": "OBJECT",
-        "description": "Dictionary of options (A-C blank 1, D-F blank 2, G-I blank 3).",
-        "additionalProperties": {
+      "type": "OBJECT",
+      "properties": {
+        "blank 1": {
           "type": "OBJECT",
           "properties": {
-            "text": { "type": "STRING", "description": "Option text" },
-            "explanation": { "type": "STRING", "description": "Reasoning" }
+            "A": { 
+              "type": "OBJECT", 
+              "properties": { 
+                "text": { "type": "STRING" }, 
+                "explanation": { "type": "STRING" } 
+              },
+              "required": ["text", "explanation"] 
+            },
+            "B": {
+              "type": "OBJECT", 
+              "properties": { 
+                "text": { "type": "STRING" }, 
+                "explanation": { "type": "STRING" } 
+              },
+              "required": ["text", "explanation"] 
+            },
+            "C": {
+              "type": "OBJECT", 
+              "properties": { 
+                "text": { "type": "STRING" }, 
+                "explanation": { "type": "STRING" } 
+              },
+              "required": ["text", "explanation"] 
+            }
           },
-          "required": ["text", "explanation"]
-        }
-      },
-      "minItems": 3,
-      "maxItems": 3
+          "required": ["A", "B", "C"]
+        },
+        "blank 2": {
+          "type": "OBJECT",
+          "properties": {
+            "D": {
+              "type": "OBJECT",
+              "properties": {
+                "text": { "type": "STRING" },
+                "explanation": { "type": "STRING" }
+              },
+              "required": ["text", "explanation"]
+            },
+            "E": {
+              "type": "OBJECT",
+              "properties": {
+                "text": { "type": "STRING" },
+                "explanation": { "type": "STRING" }
+              },
+              "required": ["text", "explanation"]
+            },
+            "F": {
+              "type": "OBJECT",
+              "properties": {
+                "text": { "type": "STRING" },
+                "explanation": { "type": "STRING" }
+              },
+              "required": ["text", "explanation"]
+            }
+          },
+          "required": ["D", "E", "F"]
+        },
+        "blank 3": {
+          "type": "OBJECT",
+          "properties": {
+            "G": {
+              "type": "OBJECT",
+              "properties": {
+                "text": { "type": "STRING" },
+                "explanation": { "type": "STRING" }
+              },
+              "required": ["text", "explanation"]
+            },
+            "H": {
+              "type": "OBJECT",
+              "properties": {
+                "text": { "type": "STRING" },
+                "explanation": { "type": "STRING" }
+              },
+              "required": ["text", "explanation"]
+            },
+            "I": {
+              "type": "OBJECT",
+              "properties": {
+                "text": { "type": "STRING" },
+                "explanation": { "type": "STRING" }
+              },
+              "required": ["text", "explanation"]
+            }
+          },
+          "required": ["G", "H", "I"]
+        },
+        "required": ["blank 1", "blank 2", "blank 3"]
+      }
     },
     "answer": {
       "type": "ARRAY",
-      "description": "Array containing EXACTLY THREE correct option letters.",
       "items": { "type": "STRING", "pattern": "^[A-Z]$" },
       "minItems": 3,
       "maxItems": 3

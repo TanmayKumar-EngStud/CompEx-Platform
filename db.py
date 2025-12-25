@@ -271,8 +271,20 @@ class DB:
             elif isinstance(options, dict):
                 for key, value in options.items():
                     # Check if value is nested (text + explanation)
-                    if isinstance(value, dict) and 'text' in value:
-                        self._register_problem_options(value['text'], answer, group=None, key=key, explanation=value.get('explanation'))
+                    if isinstance(value, dict):
+                        if 'text' in value:
+                            # Standard single option with explanation
+                            self._register_problem_options(value['text'], answer, group=None, key=key, explanation=value.get('explanation'))
+                        else:
+                            # Nested group (e.g., "blank 1": { "A": {...}, "B": {...} })
+                            # Treat 'key' as the group name (e.g. "blank 1")
+                            group_name = key
+                            for sub_key, sub_value in value.items():
+                                if isinstance(sub_value, dict) and 'text' in sub_value:
+                                     self._register_problem_options(sub_value['text'], answer, group=group_name, key=sub_key, explanation=sub_value.get('explanation'))
+                                else:
+                                     # Fallback for simple key-value within group
+                                     self._register_problem_options(sub_value, answer, group=group_name, key=sub_key)
                     else:
                         self._register_problem_options(value, answer, group=None, key=key)
             elif isinstance(options, list):
