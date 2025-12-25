@@ -25,7 +25,6 @@
       {
          "QuestionType": [
             "Multi-Source Reasoning",
-            "Two-Part Analysis",
             "Table Analysis",
             "Graphic Interpretation"
          ],
@@ -316,7 +315,8 @@
       {
          "QuestionType": [
             "Graphic Interpretation",
-            "Multi-Source Reasoning"
+            "Multi-Source Reasoning",
+            "Two-Part Analysis"
          ],
          "category": "charts",
          "list": [
@@ -329,7 +329,8 @@
       {
          "QuestionType": [
             "Table Analysis",
-            "Multi-Source Reasoning"
+            "Multi-Source Reasoning",
+            "Two-Part Analysis"
          ],
          "category": "tables",
          "list": [
@@ -575,7 +576,6 @@
       {
          "QuestionType": [
             "Two-Part Analysis",
-            "Two-Part Analysis Child",
             "Multi-Source Reasoning",
             "Multi-Source Reasoning Child"
          ],

@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "categories": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+        },
+        "options": {
+            "type": "object",
+            "patternProperties": {
+                "^[A-Z]$": {
+                    "type": "object",
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        },
+                        "explanation": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "text",
+                        "explanation"
+                    ]
+                }
+            }
+        },
+        "answer": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "categories",
+        "options",
+        "answer"
+    ]
+}

@@ -172,20 +172,41 @@ for exam, sections in sorted_exams:
                             f"metadata of {prettify(question_type, 'Yellow')} is getting \n{prettify(json.dumps(metadata_options_dict, indent=2), 'Magenta')}\n as `metadata_options_dict`")
                     metadata_buffer = {}
 
-                    for _ in range(count):
-                        category = random.choice(list(
-                            metadata_options_dict.keys()))
+                    if question_type == "Two-Part Analysis":
+                        # Enforce Passage + (Table OR Chart)
+                        # We expect metadata_options_dict to contain 'passage', 'tables', 'charts'
+                        
+                        # 1. Passage
+                        if 'passage' in metadata_options_dict:
+                            category = 'passage'
+                            if metadata_buffer.get(category) is None:
+                                metadata_buffer[category] = [random.choice(metadata_options_dict[category])]
+                            else:
+                                metadata_buffer[category].append(random.choice(metadata_options_dict[category]))
+                        
+                        # 2. Table or Chart
+                        visual_categories = [k for k in metadata_options_dict.keys() if k in ['tables', 'charts']]
+                        if visual_categories:
+                            category = random.choice(visual_categories)
+                            if metadata_buffer.get(category) is None:
+                                metadata_buffer[category] = [random.choice(metadata_options_dict[category])]
+                            else:
+                                metadata_buffer[category].append(random.choice(metadata_options_dict[category]))
+                    else:
+                        for _ in range(count):
+                            category = random.choice(list(
+                                metadata_options_dict.keys()))
 
-                        if metadata_buffer.get(category, None) is None:
-                            metadata_buffer[category] = [
-                                random.choice(metadata_options_dict[category])]
-                        elif isinstance(metadata_buffer[category], list):
-                            metadata_buffer[category].append(
-                                random.choice(metadata_options_dict[category])
-                            )
-                        else:
-                            raise ValueError(
-                                f"Due to some reason metadata_buffer key is not being a proper list format For,\n\t'question_type': {prettify(question_type, 'Yellow')},\n\t'category': {prettify(category, 'Magenta')}\n we are getting metadata_buffer[category] as\n{prettify(metadata_buffer[category], 'Red')}")
+                            if metadata_buffer.get(category, None) is None:
+                                metadata_buffer[category] = [
+                                    random.choice(metadata_options_dict[category])]
+                            elif isinstance(metadata_buffer[category], list):
+                                metadata_buffer[category].append(
+                                    random.choice(metadata_options_dict[category])
+                                )
+                            else:
+                                raise ValueError(
+                                    f"Due to some reason metadata_buffer key is not being a proper list format For,\n\t'question_type': {prettify(question_type, 'Yellow')},\n\t'category': {prettify(category, 'Magenta')}\n we are getting metadata_buffer[category] as\n{prettify(metadata_buffer[category], 'Red')}")
                     if not metadata_buffer:
                         raise ValueError(
                             f"metadata_buffer is being empty for {prettify(question_type, 'Red')}")

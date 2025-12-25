@@ -21,6 +21,7 @@ class DB:
         self.current_mockquestion_number = None
         self.question_type = ""
         self.current_question_type = ""
+        self.current_dichotomous_mapping = None
 
         # Define answer type mappings
         self.answer_type_mappings = {
@@ -208,9 +209,20 @@ class DB:
             metadata_payload = {}
             
             # 1. Capture explicit dichotomous-type from question or metadata
+            #    Or derive from 'categories' list for Dynamic TPA
             dichotomous_info = question.get('dichotomous-type') or original_metadata.get('dichotomous-type')
+            
+            # Dynamic TPA Logic: Check for 'categories' in question or content
+            categories = question.get('categories') or original_metadata.get('categories')
+            if not dichotomous_info and categories and isinstance(categories, list) and len(categories) == 2:
+                 dichotomous_info = {
+                     "positive": categories[0],
+                     "negative": categories[1]
+                 }
+
             if dichotomous_info:
                 metadata_payload['dichotomous-type'] = dichotomous_info
+                self.current_dichotomous_mapping = dichotomous_info # Store for options registration
 
             # 2. Add original metadata, but EXCLUDE redundant fields for dichotomous questions
             for k, v in original_metadata.items():
@@ -327,8 +339,10 @@ class DB:
             return True
 
         except Exception as e:
-            print(
-                f"Error in _register_problem: {str(e)}\n\n here is the question content: {json.dumps(question, indent=4)}")
+            print(f"Error in _register_problem: {str(e)}")
+            # print(f"here is the question content: {json.dumps(question, indent=4)}")
+            import traceback
+            traceback.print_exc()
             return False
 
     def _register_problem_options(self, option_text, answers, group=None, key=None, explanation=None):
@@ -363,25 +377,35 @@ class DB:
 
             # Find the appropriate answer group
             mapping = None
-            for group_name, map_item in self.answer_type_mappings.items():
-                if isinstance(answers, dict):
-                    # Check if any response in the answers dict matches positive/negative
-                    if any(str(val).strip().lower() in [str(map_item["positive"]).lower(), str(map_item["negative"]).lower()] for val in answers.values()):
+            
+            # 1. Dynamic Mapping Check
+            if self.current_dichotomous_mapping:
+                 mapping = self.current_dichotomous_mapping
+                 answer_group = "Dichotomous Choice" # Or derived?
+                 # Actually, we don't strictly need a group name from mappings for Dynamic TPA
+                 # But we can use "Dichotomous Pair"
+            
+            # 2. Static Mapping Check (Fallback)
+            if not mapping:
+                for group_name, map_item in self.answer_type_mappings.items():
+                    if isinstance(answers, dict):
+                        # Check if any response in the answers dict matches positive/negative
+                        if any(str(val).strip().lower() in [str(map_item["positive"]).lower(), str(map_item["negative"]).lower()] for val in answers.values()):
+                            answer_group = group_name
+                            mapping = map_item
+                            break
+                    elif isinstance(answers, list) and answers:
+                         # Check first item if it's a mapping
+                         mapping_item = answers[0]
+                         if isinstance(mapping_item, dict):
+                              if any(str(val).strip().lower() in [str(map_item["positive"]).lower(), str(map_item["negative"]).lower()] for val in mapping_item.values()):
+                                   answer_group = group_name
+                                   mapping = map_item
+                                   break
+                    elif str(mapping["positive"]) in str(answers) or str(mapping["negative"]) in str(answers):
                         answer_group = group_name
                         mapping = map_item
                         break
-                elif isinstance(answers, list) and answers:
-                     # Check first item if it's a mapping
-                     mapping_item = answers[0]
-                     if isinstance(mapping_item, dict):
-                          if any(str(val).strip().lower() in [str(map_item["positive"]).lower(), str(map_item["negative"]).lower()] for val in mapping_item.values()):
-                               answer_group = group_name
-                               mapping = map_item
-                               break
-                elif str(mapping["positive"]) in str(answers) or str(mapping["negative"]) in str(answers):
-                    answer_group = group_name
-                    mapping = map_item
-                    break
 
             # If answers is a dict (New format: {statement: response})
             if isinstance(answers, dict) and mapping:

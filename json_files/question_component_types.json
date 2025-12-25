@@ -60,7 +60,6 @@
                "Reading Comprehension",
                "Numerical Entry",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child",
                "Table Analysis",
                "Two-Part Analysis",
                "Multi-Source Reasoning",
@@ -111,7 +110,6 @@
                "Graphic Interpretation",
                "Multi-Source Reasoning Child",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child",
                "Quantitative Comparison",
                "Critical Reasoning"
             ],
@@ -138,7 +136,6 @@
                "Graphic Interpretation",
                "Multi-Source Reasoning Child",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child",
                "Quantitative Comparison",
                "Critical Reasoning"
             ],
@@ -192,9 +189,8 @@
                "Problem Solving Simple",
                "Problem Solving Meta",
                "Multi-Source Reasoning Child",
-               "Two-Part Analysis Child",
                "Multi-Source Reasoning",
-               "Two-Part Analysis",
+               "Multi-Source Reasoning",
                "Critical Reasoning"
             ],
             "file-name": "generic-question-option-answer.txt.template",
@@ -211,7 +207,7 @@
                "Sentence Equivalence",
                "Multi-Source Reasoning Child",
                "Multi-Source Reasoning",
-               "Two-Part Analysis",
+               "Multi-Source Reasoning",
                "Reading Comprehension"
             ],
             "file-name": "multi-correct-question-option-answer.txt.template",
@@ -239,6 +235,21 @@
             "QuestionType": [
                "Table Analysis",
                "Multi-Source Reasoning Child",
+               "Multi-Source Reasoning",
+               "Two-Part Analysis"
+            ],
+            "file-name": "tpa-dichotomous-options.txt.template",
+            "variables": null,
+            "output": {
+               "categories": "List[str]",
+               "options": "dict",
+               "answer": "dict"
+            }
+         },
+         {
+            "type": "dichotomous",
+            "QuestionType": [
+               "Table Analysis",
                "Multi-Source Reasoning"
             ],
             "file-name": "generic-table-analysis-options.txt.template",

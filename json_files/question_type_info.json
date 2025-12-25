@@ -102,22 +102,11 @@
    },
    "Two-Part Analysis": {
       "has-metadata": true,
-      "meta-count": 1,
-      "type": "parent",
+      "meta-count": 2,
+      "type": "simple",
+      "options": "dichotomous",
       "nomenclature": "[Topic: <questionTopic>] | [Theme: <questionTheme>] | [Style: <questionStyle>] | [Difficulty: <difficulty>]",
-      "system-instruction": "tpa-system-instruction.txt.template",
-      "child-question": {
-         "question-type": "Two-Part Analysis Child",
-         "options": "single",
-         "type": "child",
-         "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]"
-      }
-   },
-   "Two-Part Analysis Child": {
-      "type": "child",
-      "options": "single",
-      "nomenclature": "[Skill: <child-focused_skill>] | [Difficulty: <difficulty>]",
-      "system-instruction": "problem-solving-simple-system-instruction.txt.template"
+      "system-instruction": "tpa-system-instruction.txt.template"
    },
    "Table Analysis": {
       "has-metadata": true,

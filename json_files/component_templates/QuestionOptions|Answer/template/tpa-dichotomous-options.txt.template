@@ -1,0 +1,41 @@
+Generate the options and answer for the Two-Part Analysis question based on the provided metadata (Passage + Table/Graph).
+
+## Objective
+Identify two distinct, contrasting categories or properties relative to the scenario (e.g., "Efficient/Inefficient", "Profit/Loss", "Increase/Decrease") and classify a set of statements into these two categories.
+
+## Output Format
+Return a JSON object with:
+1.  `categories`: A list of exactly two strings representing two distinct categories. [Cat1, Cat2].
+2.  `options`: A dictionary where keys are letters ("A", "B", "C", "D", "E") and values are objects containing "text" (the statement) and "explanation".
+3.  `answer`: A dictionary mapping each Statement Text (from options) to its correct Category.
+
+**Example Format**:
+```json
+{
+  "categories": ["Cat1", "Cat2"],
+  "options": {
+    "A": {
+      "text": "High initial investment required.",
+      "explanation": "This represents a financial risk due to upfront costs."
+    },
+    "B": {
+      "text": "Long-term market dominance.",
+      "explanation": "This acts as a strategic benefit."
+    },
+    "C": {
+      "text": "Potential for regulatory hurdles.",
+      "explanation": "Regulations introduce uncertainty and risk."
+    }
+  },
+  "answer": {
+    "High initial investment required.": "Cat1",
+    "Long-term market dominance.": "Cat2",
+    "Potential for regulatory hurdles.": "Cat1"
+  }
+}
+```
+
+## Constraints
+- Categories must be distinct and mutually exclusive in the context.
+- Provide 3-5 distinct statements as options.
+- Ensure the mapping in `answer` is logically sound based on the provided scenario.
