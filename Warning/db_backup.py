@@ -692,111 +692,78 @@ class DB:
 
     def registerQuestion(self, paper, isMockQuestion=False, difficulty=0):
         """Main method to register questions"""
-        
-        # 1. Group input paper by Exam Type
-        # Format: { "GMAT": { "GMAT_Q": {...}}, "GRE": { "GRE_V": {...}} }
-        exam_groups = {}
-        for exam_section_key, subSections in paper.items():
-            # exam_section_key e.g., "GMAT_Q" or "GRE_V"
-            parts = exam_section_key.split('_')
-            exam_name = parts[0]
-            
-            if exam_name not in exam_groups:
-                exam_groups[exam_name] = {}
-            exam_groups[exam_name][exam_section_key] = subSections
+        if isMockQuestion:
+            exam_section = list(paper.keys())[0]
+            self._get_exam_section_ids(exam_section)
+            current_mocktest = self.db.mocktests.create(data={
+                'difficulty': difficulty,
+                'examtypeid': self.current_exam_id,
+                'date': datetime.now(),
+                'starttime': datetime.now(),
+                'endtime': datetime.now(),
+                'isactive': True
+            })
+            self.current_mocktest_id = current_mocktest.mocktestid
+        for exam_section, subSections in paper.items():
+            # 1. Resolve section name and exam for this component (e.g., "GRE_V" -> "GRE", "Verbal")
+            exam_name = exam_section.split('_')[0]
+            short_section = exam_section.split('_')[1] if '_' in exam_section else ""
+            section_components = {"V": "Verbal", "Q": "Quants", "IR": "Integrated Reasoning"}
+            full_section_name = section_components.get(short_section, "")
 
-        # 2. Iterate each Exam Group
-        for exam_name, group_paper in exam_groups.items():
-            print(f"\\n--- Processing Exam Group: {exam_name} ---")
-            
-            # Setup Mock Test for this Exam Group (if applicable)
-            if isMockQuestion:
-                # Find examtypeid for this exam_name
-                exam_obj = self.db.examtypes.find_first(where={'name': exam_name})
-                if not exam_obj:
-                    print(f"Warning: Exam {exam_name} not found. Skipping Mock Creation.")
-                    continue
+            # 2. Get sorted list of sections from the paper JSON
+            sorted_paper_section_keys = sorted(subSections.keys(), key=lambda x: int(x) if str(x).isdigit() else x)
+
+            # 3. Get matching DB sections for this exam ordered by ID
+            exam_obj = self.db.examtypes.find_first(where={'name': exam_name})
+            if not exam_obj:
+                print(f"Warning: Exam {exam_name} not found during registration. Skipping.")
+                continue
+
+            matching_db_sections = self.db.sections.find_many(
+                where={'name': full_section_name, 'examtypeid': int(exam_obj.examtypeid)},
+                order={'sectionid': 'asc'}
+            )
+
+            # 4. Iterate and map
+            for i, sectionNumber in enumerate(sorted_paper_section_keys):
+                questions = subSections[sectionNumber]
                 
-                # Create Mock Test
-                current_mocktest = self.db.mocktests.create(data={
-                    'difficulty': difficulty,
-                    'examtypeid': exam_obj.examtypeid,
-                    'date': datetime.now(),
-                    'starttime': datetime.now(),
-                    'endtime': datetime.now(),
-                    'isactive': True
-                })
-                self.current_mocktest_id = current_mocktest.mocktestid
-                print(f"Created Mock Test ID: {self.current_mocktest_id} for {exam_name}")
+                # Fetch the correct DB Section ID by index (part 1, part 2, etc.)
+                if i < len(matching_db_sections):
+                    section_id = int(matching_db_sections[i].sectionid)
+                else:
+                    # Fallback to the first/last if mapping gets weird, but usually indices should match
+                    section_id = int(matching_db_sections[-1].sectionid) if matching_db_sections else None
 
-            # 3. Register Sections in this Group
-            for exam_section, subSections in group_paper.items():
-                print(f"Processing Section Group: {exam_section}")
-                short_section = exam_section.split('_')[1] if '_' in exam_section else ""
-                section_components = {"V": "Verbal", "Q": "Quants", "IR": "Integrated Reasoning"}
-                full_section_name = section_components.get(short_section, "")
-
-                # Get sorted list of sections from the paper JSON
-                sorted_paper_section_keys = sorted(subSections.keys(), key=lambda x: int(x) if str(x).isdigit() else x)
-
-                # Get matching DB sections for this exam ordered by ID
-                # Re-fetch exam_obj if not already fetched (e.g. if isMockQuestion=False)
-                exam_obj = self.db.examtypes.find_first(where={'name': exam_name})
-                if not exam_obj:
-                    print(f"Warning: Exam {exam_name} not found during registration. Skipping.")
-                    continue
-
-                matching_db_sections = self.db.sections.find_many(
-                    where={'name': full_section_name, 'examtypeid': int(exam_obj.examtypeid)},
-                    order={'sectionid': 'asc'}
-                )
-
-                # Iterate and map
-                for i, sectionNumber in enumerate(sorted_paper_section_keys):
-                    questions = subSections[sectionNumber]
-                    
-                    # Fetch the correct DB Section ID by index (part 1, part 2, etc.)
-                    if i < len(matching_db_sections):
-                        section_id = int(matching_db_sections[i].sectionid)
-                    else:
-                        # Fallback to the first/last if mapping gets weird, but usually indices should match
-                        section_id = int(matching_db_sections[-1].sectionid) if matching_db_sections else None
-
-                    self._get_exam_section_ids(exam_section, section_id=section_id)
-                    print(f"Paper Section '{sectionNumber}' -> DB SectionID: {self.current_section_id} ({exam_name} {full_section_name})")
-                    if isMockQuestion:
-                        # Extract basic number from "1" or "section 1"
-                        secNo_str = ''.join(filter(str.isdigit, str(sectionNumber)))
-                        secNo = int(secNo_str) if secNo_str else (i + 1)
-                        
-                        current_mocksection = self.db.mocksections.create(data={
-                            'mocktestid': self.current_mocktest_id,
-                            'sectionnumber': secNo,
-                            'sectionid': self.current_section_id
-                        })
-                        self.current_mocksection_id = current_mocksection.mocksectionid
-                    try:
-                        self.current_mockquestion_number = 1
-                        for question in questions:
-                            # Check for parent-child questions using multiple possible keys
-                            if any(key in question for key in ['childQuestions', 'questions', 'sources', 'child-questions']):
-                                # Handle parent-child questions
-                                if not self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion, section_id=section_id):
-                                    raise Exception(
-                                        f"Error registering problem set for {exam_section}")
-                            else:
-                                # Handle single questions
-                                if not self._register_problem(exam_section, question, isMockQuestion=isMockQuestion, section_id=section_id):
-                                    # raise Exception(f"Error registering problem for {exam_section}")
-                                    print(f"Failed to register question in {exam_section}")
-
-                            if isMockQuestion:
-                                self.current_mockquestion_number += 1
-                                
-                    except Exception as e:
-                        print(f"Error processing section {sectionNumber}: {e}")
-                        continue
-
+                self._get_exam_section_ids(exam_section, section_id=section_id)
+                print(f"Paper Section '{sectionNumber}' -> DB SectionID: {self.current_section_id} ({exam_name} {full_section_name})")
+                if isMockQuestion:
+                    secNo = int(sectionNumber[-1])
+                    current_mocksection = self.db.mocksections.create(data={
+                        'mocktestid': self.current_mocktest_id,
+                        'sectionnumber': secNo,
+                        'sectionid': self.current_section_id
+                    })
+                    self.current_mocksection_id = current_mocksection.mocksectionid
+                try:
+                    self.current_mockquestion_number = 1
+                    for question in questions:
+                        # Check for parent-child questions using multiple possible keys
+                        if any(key in question for key in ['childQuestions', 'questions', 'sources', 'child-questions']):
+                            # Handle parent-child questions
+                            if not self._register_problemsset(exam_section, question, isMockQuestion=isMockQuestion, section_id=section_id):
+                                raise Exception(
+                                    f"Error registering problem set for {exam_section}")
+                        else:
+                            # Handle single questions
+                            if not self._register_problem(exam_section, question, isMockQuestion=isMockQuestion, section_id=section_id):
+                                raise Exception(
+                                    f"Error registering problem for {exam_section}")
+                        self.current_mockquestion_number += 1
+                except Exception as e:
+                    print(f"Error in registerQuestion: {str(e)}")
+                    return False
         return True
 
     def __del__(self):
