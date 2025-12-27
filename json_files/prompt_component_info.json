@@ -625,6 +625,7 @@
          "**DATA SYNTHESIS**: Require the user to combine data from the text AND the chart to find the answer.",
          "**REAL-WORLD AMBIGUITY**: Include real-world constraints.",
          "**AVOID SIMPLE LOOKUP**: The answer should never be explicitly stated in one cell of a table. It must be derived.",
+         "**GRAPH COMPLEXITY**: Each graph or chart MUST contain at least 7 distinct data points (points, categories, or segments) to ensure sufficient depth for analysis.",
          "**CONCISE QUESTION TEXT**: The 'question' text MUST NOT exceed 60 words."
       ]
    },

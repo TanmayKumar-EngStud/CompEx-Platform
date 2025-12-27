@@ -37,6 +37,7 @@
                     "color": { "type": "STRING" },
                     "data": {
                       "type": "ARRAY",
+                      "minItems": 7,
                       "items": {
                         "type": "OBJECT",
                         "properties": {
@@ -50,11 +51,12 @@
                   }
                 }
               },
-              "categories": { "type": "ARRAY", "items": { "type": "STRING" } },
-              "values": { "type": "ARRAY", "items": { "type": "NUMBER" } },
-              "labels": { "type": "ARRAY", "items": { "type": "STRING" } },
+              "categories": { "type": "ARRAY", "minItems": 7, "items": { "type": "STRING" } },
+              "values": { "type": "ARRAY", "minItems": 7, "items": { "type": "NUMBER" } },
+              "labels": { "type": "ARRAY", "minItems": 7, "items": { "type": "STRING" } },
               "segments": {
                 "type": "ARRAY",
+                "minItems": 7,
                 "items": {
                   "type": "OBJECT",
                   "properties": {

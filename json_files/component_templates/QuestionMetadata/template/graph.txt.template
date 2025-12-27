@@ -13,3 +13,4 @@ Example:-
 - Maintain graduate-level quality for {{#if_GMAT}}MBA preparation{{/if_GMAT}}{{#if_GRE}}Masters Studies{{/if_GRE}}
 - Use realistic data appropriate for business/academic context
 - Graph titles should be clear and descriptive
+- **Data Requirement:** Each graph MUST contain at least 7 distinct data points (points in a series, categories/values, or segments in a pie chart) to ensure sufficient complexity.

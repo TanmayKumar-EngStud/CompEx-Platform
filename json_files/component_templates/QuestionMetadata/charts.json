@@ -1,24 +1,47 @@
 {
    "line_chart": {
       "type": "line_chart",
-      "description": "Line graph showing trends over time or continuous data",
+      "description": "Line graph showing trends over time or continuous data. MUST have at least 7 data points.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Monthly Revenue Growth",
          "x_axis": {
-            "label": "Time/Continuous Variable",
+            "label": "Month",
             "type": "continuous"
          },
          "y_axis": {
-            "label": "Values",
+            "label": "Revenue ($k)",
             "type": "numerical"
          },
          "data_format": {
             "points": [
-               { "x": 0, "y": 25 },
-               { "x": 1, "y": 45 },
-               { "x": 2, "y": 30 },
-               { "x": 3, "y": 60 },
-               { "x": 4, "y": 55 }
+               {
+                  "x": "Jan",
+                  "y": 25
+               },
+               {
+                  "x": "Feb",
+                  "y": 45
+               },
+               {
+                  "x": "Mar",
+                  "y": 30
+               },
+               {
+                  "x": "Apr",
+                  "y": 60
+               },
+               {
+                  "x": "May",
+                  "y": 55
+               },
+               {
+                  "x": "Jun",
+                  "y": 70
+               },
+               {
+                  "x": "Jul",
+                  "y": 65
+               }
             ],
             "line_color": "#3498db",
             "point_color": "#2c3e50"
@@ -27,65 +50,146 @@
    },
    "bar_chart": {
       "type": "bar_chart",
-      "description": "You need to create chart in this format, here you need to give description, this is an example format of bar_chart development",
+      "description": "Bar chart comparing different categories. MUST have at least 7 categories.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Global Sales by Region",
          "x_axis": {
-            "label": "Categories",
+            "label": "Regions",
             "type": "categorical"
          },
          "y_axis": {
-            "label": "Values",
+            "label": "Sales Volume",
             "type": "numerical"
          },
          "data_format": {
             "categories": [
-               "Category 1",
-               "Category 2",
-               "Category 3",
-               "Category 4"
+               "North America",
+               "Europe",
+               "Asia Pacific",
+               "Latin America",
+               "Middle East",
+               "Africa",
+               "Oceania"
             ],
-            "values": [25, 45, 30, 60],
-            "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"]
+            "values": [
+               250,
+               450,
+               300,
+               600,
+               550,
+               200,
+               150
+            ],
+            "colors": [
+               "#3498db",
+               "#e74c3c",
+               "#2ecc71",
+               "#f39c12",
+               "#9b59b6",
+               "#34495e",
+               "#1abc9c"
+            ]
          }
       }
    },
    "pie_chart": {
       "type": "pie_chart",
-      "description": "Circular pie chart showing proportional data sum of all the percentages should be equal to 100.",
+      "description": "Circular pie chart showing proportional data. MUST have at least 7 segments.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Market Share Distribution",
          "data_format": {
             "segments": [
-               { "label": "Segment 1", "value": 30, "percentage": 25.0 },
-               { "label": "Segment 2", "value": 45, "percentage": 37.5 },
-               { "label": "Segment 3", "value": 25, "percentage": 20.8 },
-               { "label": "Segment 4", "value": 20, "percentage": 16.7 }
+               {
+                  "label": "Competitor A",
+                  "value": 30,
+                  "percentage": "20.0%"
+               },
+               {
+                  "label": "Competitor B",
+                  "value": 45,
+                  "percentage": "30.0%"
+               },
+               {
+                  "label": "Competitor C",
+                  "value": 25,
+                  "percentage": "16.7%"
+               },
+               {
+                  "label": "Competitor D",
+                  "value": 20,
+                  "percentage": "13.3%"
+               },
+               {
+                  "label": "Competitor E",
+                  "value": 15,
+                  "percentage": "10.0%"
+               },
+               {
+                  "label": "Competitor F",
+                  "value": 10,
+                  "percentage": "6.7%"
+               },
+               {
+                  "label": "Others",
+                  "value": 5,
+                  "percentage": "3.3%"
+               }
             ],
-            "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"]
+            "colors": [
+               "#3498db",
+               "#e74c3c",
+               "#2ecc71",
+               "#f39c12",
+               "#9b59b6",
+               "#34495e",
+               "#1abc9c"
+            ]
          }
       }
    },
    "scatter_chart": {
       "type": "scatter_chart",
-      "description": "Scatter plot showing relationship between two variables",
+      "description": "Scatter plot showing relationship between two variables. MUST have at least 7 data points.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Advertising Spend vs. Conversion Rate",
          "x_axis": {
-            "label": "X Variable",
+            "label": "Monthly Ad Spend ($k)",
             "type": "numerical"
          },
          "y_axis": {
-            "label": "Y Variable",
+            "label": "Conversion Rate (%)",
             "type": "numerical"
          },
          "data_format": {
             "points": [
-               { "x": 10, "y": 25 },
-               { "x": 20, "y": 45 },
-               { "x": 30, "y": 30 },
-               { "x": 40, "y": 60 },
-               { "x": 50, "y": 55 }
+               {
+                  "x": 10,
+                  "y": 2.5
+               },
+               {
+                  "x": 20,
+                  "y": 4.1
+               },
+               {
+                  "x": 30,
+                  "y": 3.8
+               },
+               {
+                  "x": 40,
+                  "y": 6.2
+               },
+               {
+                  "x": 50,
+                  "y": 5.9
+               },
+               {
+                  "x": 60,
+                  "y": 7.5
+               },
+               {
+                  "x": 70,
+                  "y": 7.1
+               }
             ],
             "point_color": "#3498db",
             "point_size": 6
@@ -94,49 +198,91 @@
    },
    "horizontal_bar_chart": {
       "type": "horizontal_bar_chart",
-      "description": "Horizontal bar chart with categorical data",
+      "description": "Horizontal bar chart with categorical data. MUST have at least 7 categories.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Customer Satisfaction Scores by Department",
          "x_axis": {
-            "label": "Values",
+            "label": "Satisfaction Score (1-10)",
             "type": "numerical"
          },
          "y_axis": {
-            "label": "Categories",
+            "label": "Departments",
             "type": "categorical"
          },
          "data_format": {
             "categories": [
-               "Category 1",
-               "Category 2",
-               "Category 3",
-               "Category 4"
+               "Support",
+               "Sales",
+               "Engineering",
+               "Marketing",
+               "HR",
+               "Finance",
+               "Legal"
             ],
-            "values": [25, 45, 30, 60],
-            "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"]
+            "values": [
+               8.5,
+               7.2,
+               9.1,
+               6.8,
+               7.9,
+               8.2,
+               7.5
+            ],
+            "colors": [
+               "#3498db",
+               "#e74c3c",
+               "#2ecc71",
+               "#f39c12",
+               "#9b59b6",
+               "#34495e",
+               "#1abc9c"
+            ]
          }
       }
    },
    "area_chart": {
       "type": "area",
-      "description": "Area chart showing cumulative data over time",
+      "description": "Area chart showing cumulative data over time. MUST have at least 7 data points.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Platform User Growth",
          "x_axis": {
-            "label": "Time/Continuous Variable",
+            "label": "Quarter",
             "type": "continuous"
          },
          "y_axis": {
-            "label": "Values",
+            "label": "Active Users (Millions)",
             "type": "numerical"
          },
          "data_format": {
             "points": [
-               { "x": 0, "y": 25 },
-               { "x": 1, "y": 45 },
-               { "x": 2, "y": 30 },
-               { "x": 3, "y": 60 },
-               { "x": 4, "y": 55 }
+               {
+                  "x": "Q1",
+                  "y": 2.5
+               },
+               {
+                  "x": "Q2",
+                  "y": 4.5
+               },
+               {
+                  "x": "Q3",
+                  "y": 3.0
+               },
+               {
+                  "x": "Q4",
+                  "y": 6.0
+               },
+               {
+                  "x": "Q5",
+                  "y": 5.5
+               },
+               {
+                  "x": "Q6",
+                  "y": 8.0
+               },
+               {
+                  "x": "Q7",
+                  "y": 7.2
+               }
             ],
             "fill_color": "#3498db",
             "line_color": "#2c3e50",
@@ -146,33 +292,65 @@
    },
    "stacked_bar_chart": {
       "type": "stacked_bar_chart",
-      "description": "Stacked bar chart showing multiple data series",
+      "description": "Stacked bar chart showing multiple data series. MUST have at least 7 categories/points.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Revenue Breakdown by Product Line",
          "x_axis": {
-            "label": "Categories",
+            "label": "Time Period",
             "type": "categorical"
          },
          "y_axis": {
-            "label": "Values",
+            "label": "Revenue ($k)",
             "type": "numerical"
          },
          "data_format": {
-            "categories": ["Category 1", "Category 2", "Category 3"],
+            "categories": [
+               "Period 1",
+               "Period 2",
+               "Period 3",
+               "Period 4",
+               "Period 5",
+               "Period 6",
+               "Period 7"
+            ],
             "series": [
                {
-                  "name": "Series 1",
-                  "values": [20, 30, 25],
+                  "name": "Product A",
+                  "values": [
+                     20,
+                     30,
+                     25,
+                     40,
+                     35,
+                     50,
+                     45
+                  ],
                   "color": "#3498db"
                },
                {
-                  "name": "Series 2",
-                  "values": [15, 20, 18],
+                  "name": "Product B",
+                  "values": [
+                     15,
+                     20,
+                     18,
+                     25,
+                     22,
+                     30,
+                     28
+                  ],
                   "color": "#e74c3c"
                },
                {
-                  "name": "Series 3",
-                  "values": [10, 15, 12],
+                  "name": "Product C",
+                  "values": [
+                     10,
+                     15,
+                     12,
+                     18,
+                     16,
+                     22,
+                     20
+                  ],
                   "color": "#2ecc71"
                }
             ]
@@ -181,17 +359,56 @@
    },
    "donut_chart": {
       "type": "donut_chart",
-      "description": "Donut chart (pie chart with center hollow)",
+      "description": "Donut chart showing proportional data. MUST have at least 7 segments.",
       "structure": {
-         "title": "Chart Title",
+         "title": "Operating Expense Breakdown",
          "data_format": {
             "segments": [
-               { "label": "Segment 1", "value": 30, "percentage": 25.0 },
-               { "label": "Segment 2", "value": 45, "percentage": 37.5 },
-               { "label": "Segment 3", "value": 25, "percentage": 20.8 },
-               { "label": "Segment 4", "value": 20, "percentage": 16.7 }
+               {
+                  "label": "Rent",
+                  "value": 30,
+                  "percentage": "25.0%"
+               },
+               {
+                  "label": "Salaries",
+                  "value": 45,
+                  "percentage": "37.5%"
+               },
+               {
+                  "label": "Utilities",
+                  "value": 10,
+                  "percentage": "8.3%"
+               },
+               {
+                  "label": "Marketing",
+                  "value": 15,
+                  "percentage": "12.5%"
+               },
+               {
+                  "label": "Software",
+                  "value": 10,
+                  "percentage": "8.3%"
+               },
+               {
+                  "label": "Travel",
+                  "value": 5,
+                  "percentage": "4.2%"
+               },
+               {
+                  "label": "Insurance",
+                  "value": 5,
+                  "percentage": "4.2%"
+               }
             ],
-            "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"],
+            "colors": [
+               "#3498db",
+               "#e74c3c",
+               "#2ecc71",
+               "#f39c12",
+               "#9b59b6",
+               "#34495e",
+               "#1abc9c"
+            ],
             "inner_radius": 0.4
          }
       }
