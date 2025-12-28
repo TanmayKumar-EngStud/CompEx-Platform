@@ -255,7 +255,7 @@ class DB:
                 # Direct field assignment
                 question_data["mocksectionid"] = self.current_mocksection_id # Reverted
                 question_data["mockquestionnumber"] = self.current_mockquestion_number # Reverted
-            if self.question_type == "NE":
+            if self.question_type in ["NE", "Numerical Entry"]:
                 question_data["metadata"] = json.dumps(
                     {"answer": question.get('answer', '')})
 
@@ -280,6 +280,11 @@ class DB:
                       self._register_problem_options(text, answer, group=None, key=key, explanation=explanations.get(key))
             
             # --- Options Registration ---
+            # PATCH: Handle Numerical Entry or numeric types with null/empty options
+            if (self.question_type in ["NE", "Numerical Entry"] or self.current_options_type == "numeric") and not options:
+                if answer is not None and str(answer).strip() != "":
+                    self._register_problem_options(str(answer), answer)
+            
             elif isinstance(options, dict):
                 for key, value in options.items():
                     # Check if value is nested (text + explanation)

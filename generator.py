@@ -55,14 +55,16 @@ class GenQ:
     """
     def __init__(self,
                  prompts_dictionary: dict,
-                 max_questions: int = 1) -> None:
+                 max_questions: int = 1,
+                 context_label: str = "") -> None:
         self.prompts_dictionary = prompts_dictionary
         self.max_questions = max_questions
+        self.context_label = context_label
         self.generated_count = 0
         self.last_run_stats = {}
 
     @staticmethod
-    def _process_section_task(exam: str, section_id: str, section_data: dict, section_name: str) -> dict:
+    def _process_section_task(exam: str, section_id: str, section_data: dict, section_name: str, context_label: str = "") -> dict:
         """
         Worker function to process a single section including thread management and stats.
         Returns a dict with results and stats.
@@ -117,7 +119,8 @@ class GenQ:
         section_end_time = time.time()
         section_stats['time_taken'] = section_end_time - section_start_time
         
-        print(f"🏁 Finished Section: {prettify(exam, 'Green')} - {prettify(section_name, 'Yellow')} "
+        prefix = f"{prettify(context_label, 'Magenta')} " if context_label else ""
+        print(f"{prefix}🏁 Finished Section: {prettify(exam, 'Green')} - {prettify(section_name, 'Yellow')} "
               f"({section_stats['questions_generated']} Qs in {section_stats['time_taken']:.2f}s)")
 
         return {
@@ -169,7 +172,7 @@ class GenQ:
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_parallel_sections) as executor:
             # Submit all tasks
             future_to_task = {
-                executor.submit(self._process_section_task, t[0], t[1], t[2], t[3]): t 
+                executor.submit(self._process_section_task, t[0], t[1], t[2], t[3], self.context_label): t 
                 for t in tasks
             }
             

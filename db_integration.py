@@ -1,10 +1,50 @@
 import sys
+import re
 import os
 import json
 from contextlib import contextmanager
+from io_utils import prettify
 
 from db import DB
 from prisma import Prisma
+import time
+
+# Singleton Prisma Client
+_prisma_client = None
+
+def get_prisma_client():
+    global _prisma_client
+    if _prisma_client is None:
+        t0 = time.time()
+        print(f"{prettify('DB', 'Yellow')}: Instantiating Prisma Client object...")
+        
+        # AUTO-FIX: Detect and fix host.docker.internal on local execution
+        # This prevents the 5-10s DNS timeout on Mac/Linux hosts
+        current_url = os.environ.get('DATABASE_URL', '')
+        if 'host.docker.internal' in current_url:
+            print(f"{prettify('DB Fix', 'Magenta')}: Detected 'host.docker.internal' while running locally.")
+            print(f"{prettify('DB Fix', 'Magenta')}: Auto-switching to '127.0.0.1' for speed...")
+            os.environ['DATABASE_URL'] = current_url.replace('host.docker.internal', '127.0.0.1')
+            
+        _prisma_client = Prisma()
+        print(f"{prettify('DB', 'Green')}: Client instantiated in {time.time() - t0:.4f}s")
+    
+    if not _prisma_client.is_connected():
+        # Log which URL we are trying to connect to (Mask password)
+        url = os.environ.get('DATABASE_URL', 'Not Set')
+        masked_url = re.sub(r':([^@]+)@', ':****@', url) if url else "None"
+        
+        print(f"{prettify('DB', 'Yellow')}: Connecting to database engine at {masked_url}...")
+        t1 = time.time()
+        try:
+            _prisma_client.connect()
+            elapsed = time.time() - t1
+            print(f"{prettify('DB', 'Green')}: Engine connected in {elapsed:.4f}s")
+        except Exception as e:
+            print(f"{prettify('DB Error', 'Red')}: Connection failed: {e}")
+            raise e
+            
+    return _prisma_client
 
 SECTION_MAPPING = {
     # Schema: Exam -> Section ID -> Name
@@ -81,9 +121,9 @@ def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
         return
 
     print("Initializing Database Connection...")
-    prisma = Prisma()
+    # Use Singleton
     try:
-        prisma.connect()
+        prisma = get_prisma_client()
         db_instance = DB(prisma)
         
         # Transform data
@@ -105,9 +145,10 @@ def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
             
     except Exception as e:
         print(f"Database Error: {e}")
-    finally:
-        if prisma.is_connected():
-            prisma.disconnect()
+    # Do not disconnect singleton client
+    # finally:
+    #     if prisma.is_connected():
+    #         prisma.disconnect()
 
 def get_next_generation_params():
     """
@@ -115,38 +156,15 @@ def get_next_generation_params():
     Returns: (difficulty: int, is_mock: bool)
     """
     print("Fetching last run analytics...")
-    prisma = Prisma()
+    
     try:
-        prisma.connect()
+        prisma = get_prisma_client()
         # Fetch last record
         last_record = prisma.analytics.find_first(order={'created_at': 'desc'})
         
         if last_record:
             # Logic: difficulty % 5 + 1
             new_difficulty = (last_record.difficulty_level % 5) + 1
-            # Logic: flip is_mock if it was True, else ? 
-            # User said: "if for the last record had is_mock = True, for this time's generation will have is_mock as false"
-            # "if there is no record ... is_mock = False"
-            # Wait, user logic is slightly ambiguous for the False case.
-            # "if last record had is_mock = True -> this time False"
-            # It implies a toggle? Or just "True -> False"? What if last was False?
-            # User said: "thus storing the questions in the database as independent questions ... if the question is stored as mock paper..."
-            # It sounds like a toggle: True -> False -> True? 
-            # "fetching the last record ... difficulty_level%5+1; and if for the last record had is_mock = True, for this time's generation will have is_mock as false... if there is no record ... is_mock = False"
-            # This implies incomplete logic in description. 
-            # I will assume TOGGLE behavior: True <-> False.
-            # Rationale: If last was False, next should be True?
-            # Let's re-read: "if for the last record had is_mock = True, for this time's generation will have is_mock as false"
-            # It doesn't explicitly say "if last was False, make it True".
-            # BUT, generally these are cycles.
-            # However, start state is False.
-            # If start is False. Next should be True?
-            # User instruction: "if there is no record in the analyitics table, then we will be having is_mock = False and difficulty_level as 1"
-            # So sequence: 
-            # 1. No record -> Mock=False, Diff=1.
-            # 2. Next run -> Last=False. ? 
-            # If logic is ONLY "if last=True then False", then False -> False forever? That breaks the "mock logic".
-            # It must be a toggle.
             new_is_mock = not last_record.is_mock
         else:
             # Default
@@ -158,18 +176,15 @@ def get_next_generation_params():
     except Exception as e:
         print(f"Analytics Fetch Error: {e}")
         return 1, False # Fallback
-    finally:
-        if prisma.is_connected():
-            prisma.disconnect()
+    # Do not disconnect singleton
 
 def save_analytics_record(stats: dict, difficulty: int, is_mock: bool):
     """
     Saves the run statistics to the analytics table.
     """
     print("Saving Analytics...")
-    prisma = Prisma()
     try:
-        prisma.connect()
+        prisma = get_prisma_client()
         # Conversion
         t_in = stats.get('total_input_tokens', 0) / 1_000_000
         t_out = stats.get('total_output_tokens', 0) / 1_000_000
@@ -188,6 +203,3 @@ def save_analytics_record(stats: dict, difficulty: int, is_mock: bool):
         print("Analytics saved successfully.")
     except Exception as e:
         print(f"Analytics Save Error: {e}")
-    finally:
-        if prisma.is_connected():
-            prisma.disconnect()

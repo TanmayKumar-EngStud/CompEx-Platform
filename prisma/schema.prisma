@@ -18,8 +18,8 @@ model ProblemsSet {
   title              String
   type               String
   content            Json
-  mocksectionid      Int?
   mockquestionnumber Int?
+  mocksectionid      Int?
   popularityIndex    Float             @default(0)
   examtypes          examtypes         @relation(fields: [examtypeid], references: [examtypeid])
   mocksections       mocksections?     @relation(fields: [mocksectionid], references: [mocksectionid])
@@ -51,12 +51,12 @@ model mocktestrankings {
 
 model mocktests {
   mocktestid           Int                    @id @default(autoincrement())
-  difficulty           Int                    @default(0)
   examtypeid           Int?
   date                 DateTime               @db.Date
   starttime            DateTime               @db.Time(6)
   endtime              DateTime               @db.Time(6)
   isactive             Boolean?               @default(true)
+  difficulty           Int                    @default(0)
   mocksections         mocksections[]
   mocktestrankings     mocktestrankings[]
   examtypes            examtypes?             @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade)
@@ -101,15 +101,13 @@ model problemoptions {
   problemid                   Int?
   optiontext                  String
   iscorrect                   Boolean?
-  explanation                 String?
   group                       String?
+  explanation                 String?
   problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: Cascade)
   userattempt_selectedoptions userattempt_selectedoptions[]
 }
 
 model problems {
-  type                 String?
-  prompt               String?
   problemid            Int              @id @default(autoincrement())
   sectionid            Int?
   examtypeid           Int?
@@ -123,12 +121,14 @@ model problems {
   addedDate            DateTime?        @default(now()) @db.Timestamp(6)
   isChildren           Boolean          @default(false)
   problemsSetId        Int?
-  mocksectionid        Int?
   isMockQuestion       Boolean          @default(false)
   solution             Json?
   mockquestionnumber   Int?
-  popularityIndex      Float            @default(0)
+  mocksectionid        Int?
   options_type         String?          @db.VarChar(50)
+  popularityIndex      Float            @default(0)
+  prompt               String?
+  type                 String?
   problemoptions       problemoptions[]
   examtypes            examtypes?       @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade)
   mocksections         mocksections?    @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: Cascade)
@@ -228,18 +228,19 @@ model usermocktestattempts {
 }
 
 model users {
-  userid               Int                    @id @default(autoincrement())
-  username             String                 @unique @db.VarChar(50)
-  password             String                 @db.VarChar(100)
-  email                String                 @unique @db.VarChar(100)
-  registrationdate     DateTime?              @default(now()) @db.Timestamp(6)
-  isverified           Boolean                @default(false)
-  otp                  String?                @db.VarChar(6)
-  mocktestrankings     mocktestrankings[]
-  performance          performance[]
-  userattempts         userattempts[]
-  usermocktestattempts usermocktestattempts[]
-  userstreaks          userstreaks[]
+  userid                Int                     @id @default(autoincrement())
+  username              String                  @unique @db.VarChar(50)
+  password              String                  @db.VarChar(100)
+  email                 String                  @unique @db.VarChar(100)
+  registrationdate      DateTime?               @default(now()) @db.Timestamp(6)
+  isverified            Boolean                 @default(false)
+  otp                   String?                 @db.VarChar(6)
+  mocktestrankings      mocktestrankings[]
+  performance           performance[]
+  user_difficulty_stats user_difficulty_stats[]
+  userattempts          userattempts[]
+  usermocktestattempts  usermocktestattempts[]
+  userstreaks           userstreaks[]
 }
 
 model userstreaks {
@@ -262,4 +263,17 @@ model analytics {
   difficulty_level    Int
   is_mock             Boolean
   created_at          DateTime @default(now())
+}
+
+model user_difficulty_stats {
+  id             Int      @id @default(autoincrement())
+  userid         Int
+  difficulty     Int
+  total_attempts Int      @default(0)
+  total_correct  Int      @default(0)
+  total_time     Float    @default(0)
+  last_updated   DateTime @default(now()) @db.Timestamp(6)
+  users          users    @relation(fields: [userid], references: [userid], onDelete: Cascade)
+
+  @@unique([userid, difficulty])
 }

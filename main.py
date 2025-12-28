@@ -6,26 +6,46 @@ import random
 import json
 from typing import Any, Optional
 
+print("Importing difficulty_pool...", flush=True)
 from difficulty_pool import get_difficulty_pool
+print("Importing io_utils...", flush=True)
 from io_utils import get_json, prettify
 
+print("Importing prepare_prompts...", flush=True)
 from prepare_prompts import PromptPrep
+print("Importing generator...", flush=True)
 from generator import GenQ
 
 
+# Moved DB initialization into main execution block to prevent import-time stalls
+# try:
+#     from db_integration import get_next_generation_params
+#     MOCK_PAPER_LEVEL, IS_MOCK_RUN = get_next_generation_params()
+#     print(f"{prettify('GEN CONFIG', 'Cyan', True)}: Difficulty={MOCK_PAPER_LEVEL}, IsMock={IS_MOCK_RUN}")
+# except ImportError:
+#     MOCK_PAPER_LEVEL = 1
+#     IS_MOCK_RUN = False
+#     print("Warning (May be fresh run): Could not load analytics for dynamic params. Defaulting to 1/False.")
+exam_definition, qt_info, prompt_component_info = get_json(
+    'exam_definition', 'question_type_info', 'prompt_component_info')
+
+prompts_dictionary = {}
+print("running")
+
+# Fetch DB params (Moved from top-level to run after start)
 try:
+    print(f"{prettify('STATUS', 'Yellow')}: Fetching dynamic generation parameters from Database...")
     from db_integration import get_next_generation_params
     MOCK_PAPER_LEVEL, IS_MOCK_RUN = get_next_generation_params()
     print(f"{prettify('GEN CONFIG', 'Cyan', True)}: Difficulty={MOCK_PAPER_LEVEL}, IsMock={IS_MOCK_RUN}")
 except ImportError:
     MOCK_PAPER_LEVEL = 1
     IS_MOCK_RUN = False
-    print("Warning (May be fresh run): Could not load analytics for dynamic params. Defaulting to 1/False.")
-exam_definition, qt_info, prompt_component_info = get_json(
-    'exam_definition', 'question_type_info', 'prompt_component_info')
-
-prompts_dictionary = {}
-
+    print("Warning: Could not import db_integration. Defaulting to 1/False.")
+except Exception as e:
+    MOCK_PAPER_LEVEL = 1
+    IS_MOCK_RUN = False
+    print(f"Warning: DB Fetch failed ({e}). Defaulting to 1/False.")
 
 def log_stage(exam: str,
               section: Optional[str] = None,

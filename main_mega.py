@@ -12,6 +12,8 @@ import os
 import random
 import json
 import logging
+import threading
+import time
 import concurrent.futures
 from typing import Any, Optional, Dict
 
@@ -181,9 +183,11 @@ def generate_single_paper(set_index: int, difficulty: int, is_mock: bool):
                      current_prompts[exam][section_number], total_prompt_count - n_items)
 
         # 2. Generate Content using GenQ
-        # print(f"[Set {set_index}] Prompt preparation complete. Invoking Generator...")
+        print(f"\n[Set {set_index}] ✅ Prompts Prepared. Total Active Threads: {threading.active_count()}")
+        print(f"[Set {set_index}] Invoking Generator for {len(current_prompts)} exams...")
+        
         # Note: GenQ constructor takes the dictionary
-        gen = GenQ(current_prompts)
+        gen = GenQ(current_prompts, context_label=f"[Set {set_index}]")
         
         # IMPORTANT: GenQ.generate() writes files to 'log_json_files/paper/'. 
         # We want to move or save them to 'mega_papers'.
@@ -207,7 +211,7 @@ def generate_single_paper(set_index: int, difficulty: int, is_mock: bool):
                 # here we want tailored files.
                 pass
 
-        print(f"[Set {set_index}] Saving to Database...")
+        print(f"[Set {set_index}] 💾 Saving generated paper to Database... (Threads Active: {threading.active_count()})")
         save_paper_to_db(complete_paper, is_mock=is_mock, difficulty=difficulty)
         
         if gen.last_run_stats:
@@ -227,7 +231,9 @@ def main():
     
     # Using ThreadPoolExecutor for I/O bound tasks (API calls)
     # Be mindful of API rate limits!
-    max_workers = 3 # Limit concurrency to avoid rate limits
+    # User requested parallel execution for all sets. 
+    # We cap at 10 to be safe, but allow up to NUMBER_OF_SETS.
+    max_workers = min(NUMBER_OF_SETS, 10)
     
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = []

@@ -11,16 +11,14 @@ import time
 import threading
 import re
 from typing import Dict, Any, Optional, Union, List, get_origin, Tuple
-from google import genai
-from google.genai import types
+# from google import genai
+# from google.genai import types
 from dotenv import load_dotenv
 
 from io_utils import prettify, record
 
 # Load environment variables from the root directory
-# Get the project root directory (two levels up from qGen-new)
-project_root = os.path.dirname(os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))))
+project_root = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(project_root, '.env')
 load_dotenv(dotenv_path)
 
@@ -207,10 +205,13 @@ class GeminiGenerator:
     def _initialize_api_client(self):
         """Initialize the Gemini API client."""
         try:
+            from google import genai
             api_key = self._get_api_key(self.api_key_index)
             self.client = genai.Client(api_key=api_key)
             # print(
             #     f"✅ Gemini generator initialized with API key index {self.api_key_index}")
+        except ImportError:
+             raise RuntimeError("google-genai package not found. Please install it or use DeepSeek.")
         except Exception as e:
             raise RuntimeError(
                 f"Failed to initialize Gemini API client: {str(e)}")
@@ -229,6 +230,7 @@ class GeminiGenerator:
     def _create_chat_instance(self, system_instructions: str) -> Any:
         """Create a chat instance with system instructions."""
         try:
+            from google.genai import types
             config = types.GenerateContentConfig(
                 system_instruction=system_instructions
             )
@@ -241,10 +243,14 @@ class GeminiGenerator:
         except Exception as e:
             raise RuntimeError(f"Failed to create chat instance: {str(e)}")
 
-    def _dict_to_schema(self, schema_dict: Dict[str, Any]) -> types.Schema:
+    def _dict_to_schema(self, schema_dict: Dict[str, Any]) -> Any:
         """
         Recursively convert a dictionary to a Gemini types.Schema object.
         """
+        try:
+             from google.genai import types
+        except ImportError:
+             raise RuntimeError("google-genai package not found.")
         type_str = schema_dict.get("type", "STRING").upper()
         
         # Map string types to Gemini Type enums
@@ -303,7 +309,7 @@ class GeminiGenerator:
         
         return types.Schema(**schema_args)
 
-    def _load_schema(self, template_filename: str, component_type: str) -> Optional[types.Schema]:
+    def _load_schema(self, template_filename: str, component_type: str) -> Optional[Any]:
         """
         Load JSON schema from file corresponding to the template.
         """

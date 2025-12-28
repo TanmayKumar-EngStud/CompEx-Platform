@@ -9,8 +9,8 @@ from dotenv import load_dotenv
 from io_utils import prettify
 
 # Load environment variables
-project_root = os.path.dirname(os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))))
+# Load environment variables
+project_root = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(project_root, '.env')
 load_dotenv(dotenv_path)
 
