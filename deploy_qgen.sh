@@ -16,30 +16,33 @@ ssh -i $KEY_FILE root@$SERVER_IP "sudo -i -u $USER bash -c '
   
   # Navigate to App Directory
   if [ ! -d \"$APP_DIR\" ]; then
-    echo \"Error: Directory $APP_DIR does not exist. Please clone the repo first.\"
-    exit 1
+    echo \"Directory $APP_DIR does not exist. Cloning...\"
+    GIT_SSH_COMMAND=\"ssh -i /home/deploy/.ssh/qgen_deploy_key -o StrictHostKeyChecking=no\" git clone git@github.com:TanmayKumar-EngStud/QGen-py-compex.git \"$APP_DIR\" || { echo \"Error: Clone failed.\"; exit 1; }
   fi
   
-  cd $APP_DIR || exit 1
+  cd \"$APP_DIR\" || exit 1
   
   # Pull Latest Code
   echo \"Pulling latest code...\"
-  git reset --hard origin/main || { echo \"Error: git reset failed.\"; exit 1; }
-  git pull origin main || { echo \"Error: git pull failed.\"; exit 1; }
+  # Detect branch (main or master)
+  BRANCH=\$(git rev-parse --abbrev-ref HEAD)
+  echo \"Current branch: \$BRANCH\"
+  git reset --hard origin/\$BRANCH || { echo \"Error: git reset failed.\"; exit 1; }
+  GIT_SSH_COMMAND=\"ssh -i /home/deploy/.ssh/qgen_deploy_key -o StrictHostKeyChecking=no\" git pull origin \$BRANCH || { echo \"Error: git pull failed.\"; exit 1; }
   
   # Build and Setup Container
   echo \"Building QGen container...\"
   # We use --no-cache to ensure all code changes are picked up
-  docker-compose build question-gen
+  docker compose build question-gen
   
   # Setup but do NOT run as requested
   echo \"Cleaning up existing container (if any)...\"
-  docker-compose stop question-gen || true
-  docker-compose rm -f question-gen || true
+  docker compose stop question-gen || true
+  docker compose rm -f question-gen || true
   
   # Create the container but do not start it
   echo \"Creating container (stopped state)...\"
-  docker-compose up --no-start question-gen
+  docker compose up --no-start question-gen
   
   echo \"Setup Complete! Container is ready but NOT running.\"
 '"
