@@ -5,39 +5,38 @@ import json
 from contextlib import contextmanager
 from io_utils import prettify
 
-from db import DB
+from pathlib import Path
+
+# Add main prisma client to path
+sys.path.insert(0, str(Path(__file__).parent / "compex-db_prisma" / "generated"))
 from prisma import Prisma
 import time
 
 # Singleton Prisma Client
 _prisma_client = None
 
-def get_prisma_client():
+async def get_prisma_client():
     global _prisma_client
     if _prisma_client is None:
         t0 = time.time()
         print(f"{prettify('DB', 'Yellow')}: Instantiating Prisma Client object...")
         
-        # AUTO-FIX: Detect and fix host.docker.internal on local execution
-        # This prevents the 5-10s DNS timeout on Mac/Linux hosts
         current_url = os.environ.get('DATABASE_URL', '')
         if 'host.docker.internal' in current_url:
-            print(f"{prettify('DB Fix', 'Magenta')}: Detected 'host.docker.internal' while running locally.")
-            print(f"{prettify('DB Fix', 'Magenta')}: Auto-switching to '127.0.0.1' for speed...")
+            print(f"{prettify('DB Fix', 'Magenta')}: Detected 'host.docker.internal'. Auto-switching to '127.0.0.1'...")
             os.environ['DATABASE_URL'] = current_url.replace('host.docker.internal', '127.0.0.1')
             
         _prisma_client = Prisma()
         print(f"{prettify('DB', 'Green')}: Client instantiated in {time.time() - t0:.4f}s")
     
     if not _prisma_client.is_connected():
-        # Log which URL we are trying to connect to (Mask password)
         url = os.environ.get('DATABASE_URL', 'Not Set')
         masked_url = re.sub(r':([^@]+)@', ':****@', url) if url else "None"
         
         print(f"{prettify('DB', 'Yellow')}: Connecting to database engine at {masked_url}...")
         t1 = time.time()
         try:
-            _prisma_client.connect()
+            await _prisma_client.connect()
             elapsed = time.time() - t1
             print(f"{prettify('DB', 'Green')}: Engine connected in {elapsed:.4f}s")
         except Exception as e:
@@ -107,13 +106,13 @@ def transform_exam_data(paper_data):
             
     return transformed_paper
 
-def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
+async def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
     """
     Saves the full paper to the database.
     """
     if difficulty is None:
         try:
-            difficulty, _ = get_next_generation_params()
+            difficulty, _ = await get_next_generation_params()
         except:
             difficulty = 1 # Fallback only if everything fails
     if not DB or not Prisma:
@@ -123,7 +122,7 @@ def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
     print("Initializing Database Connection...")
     # Use Singleton
     try:
-        prisma = get_prisma_client()
+        prisma = await get_prisma_client()
         db_instance = DB(prisma)
         
         # Transform data
@@ -136,7 +135,7 @@ def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
         print(f"Persisting paper structure: {list(formatted_paper.keys())}")
         
         # Register
-        success = db_instance.registerQuestion(formatted_paper, isMockQuestion=is_mock, difficulty=difficulty)
+        success = await db_instance.registerQuestion(formatted_paper, isMockQuestion=is_mock, difficulty=difficulty)
         
         if success:
             print("Successfully saved paper to database.")
@@ -150,7 +149,7 @@ def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
     #     if prisma.is_connected():
     #         prisma.disconnect()
 
-def get_next_generation_params():
+async def get_next_generation_params():
     """
     Fetches the last analytics record to determine the next difficulty and mock status.
     Returns: (difficulty: int, is_mock: bool)
@@ -158,16 +157,15 @@ def get_next_generation_params():
     print("Fetching last run analytics...")
     
     try:
-        prisma = get_prisma_client()
+        prisma = await get_prisma_client()
         # Fetch last record
-        last_record = prisma.analytics.find_first(order={'created_at': 'desc'})
+        last_record = await prisma.analytics.find_first(order={'created_at': 'desc'})
         
         if last_record:
             # Logic: difficulty % 5 + 1
             new_difficulty = (last_record.difficulty_level % 5) + 1
             new_is_mock = not last_record.is_mock
         else:
-            # Default
             new_difficulty = 1
             new_is_mock = False
             
@@ -178,19 +176,19 @@ def get_next_generation_params():
         return 1, False # Fallback
     # Do not disconnect singleton
 
-def save_analytics_record(stats: dict, difficulty: int, is_mock: bool):
+async def save_analytics_record(stats: dict, difficulty: int, is_mock: bool):
     """
     Saves the run statistics to the analytics table.
     """
     print("Saving Analytics...")
     try:
-        prisma = get_prisma_client()
+        prisma = await get_prisma_client()
         # Conversion
         t_in = stats.get('total_input_tokens', 0) / 1_000_000
         t_out = stats.get('total_output_tokens', 0) / 1_000_000
         t_time = stats.get('total_time_seconds', 0.0) / 60
 
-        prisma.analytics.create(data={
+        await prisma.analytics.create(data={
             'total_api_calls': stats.get('total_api_calls', 0),
             'total_input_tokens': f"{t_in:.3f}M",
             'total_output_tokens': f"{t_out:.3f}M",

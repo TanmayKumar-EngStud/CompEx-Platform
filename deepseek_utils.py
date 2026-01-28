@@ -2,13 +2,13 @@
 import os
 import json
 import time
+import asyncio
 from typing import Dict, Any, Optional, Union, List, Tuple
-from openai import OpenAI
+from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
 from io_utils import prettify
 
-# Load environment variables
 # Load environment variables
 project_root = os.path.dirname(os.path.abspath(__file__))
 dotenv_path = os.path.join(project_root, '.env')
@@ -17,31 +17,31 @@ load_dotenv(dotenv_path)
 import threading
 
 # Global Singleton State
-_client_instance = None
+_async_client_instance = None
 _client_lock = threading.Lock()
 _model_quants = "deepseek-reasoner"
 _model_verbal = "deepseek-chat"
 
-def get_deepseek_client() -> OpenAI:
-    """Thread-safe singleton accessor for OpenAI client."""
-    global _client_instance, _model_quants, _model_verbal
+def get_deepseek_client() -> AsyncOpenAI:
+    """Thread-safe singleton accessor for AsyncOpenAI client."""
+    global _async_client_instance, _model_quants, _model_verbal
     
-    if _client_instance is None:
+    if _async_client_instance is None:
         with _client_lock:
             # Double-check locking
-            if _client_instance is None:
+            if _async_client_instance is None:
                 api_key = os.getenv("Deepseek_API_KEY")
                 if not api_key:
                     raise ValueError("Deepseek_API_KEY invalid or missing in .env")
                 
-                _client_instance = OpenAI(
+                _async_client_instance = AsyncOpenAI(
                     api_key=api_key,
                     base_url="https://api.deepseek.com"
                 )
                 _model_quants = os.getenv("MODEL_Quants", "deepseek-reasoner")
                 _model_verbal = os.getenv("MODEL_Verbal", "deepseek-chat")
                 
-    return _client_instance
+    return _async_client_instance
 
 def get_deepseek_model(question_type: str) -> Tuple[str, float]:
     """Returns (model_name, temperature) based on question type."""
@@ -73,7 +73,7 @@ class DeepseekSession:
             self.messages.insert(0, {"role": "system", "content": instruction})
             self.system_instructions_set = True
 
-    def generate_component(self, 
+    async def generate_component(self, 
                           instruction_statement: str, 
                           expected_output: Union[str, Dict], 
                           context: Optional[Dict] = None) -> Tuple[Union[str, Dict], Dict]:
@@ -97,15 +97,8 @@ class DeepseekSession:
 
         # 2. Call API
         try:
-            # Check if json mode is requested (implicit if expected_output is dict or we want structured data)
-            # User output instructions usually ask for JSON.
             # Deepseek supports json_object response_format.
             use_json = True 
-            
-            # Deepseek Reasoner (deepseek-reasoner) limitation check:
-            # If using 'deepseek-reasoner', check docs or assume it behaves like R1.
-            # R1 might warn on system prompt or high temp. 
-            # Use beta features if needed, but 'chat.completions.create' is standard.
             
             kwargs = {
                 "model": self.model,
@@ -116,7 +109,7 @@ class DeepseekSession:
             if use_json:
                 kwargs["response_format"] = {"type": "json_object"}
 
-            response = self.client.chat.completions.create(**kwargs)
+            response = await self.client.chat.completions.create(**kwargs)
             
             content = response.choices[0].message.content
             
@@ -155,9 +148,7 @@ class DeepseekSession:
             # which are invalid in JSON strings. Attempt to fix by escaping them.
             try:
                 # Find all single backslashes not followed by a valid escape char
-                # Valid: ["\/bfnrtu]
                 import re
-                # This regex finds \ that is NOT followed by our valid set
                 fixed_content = re.sub(r'\\(?![\\"/bfnrtu])', r'\\\\', content)
                 return json.loads(fixed_content)
             except:

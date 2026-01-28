@@ -6,10 +6,14 @@ import re
 from typing import Optional, List, Dict, Any, Tuple
 
 from io_utils import get_json, prettify, get_Component_Template, record, get_Question_Template
-from api_utils import get_gemini_generator
 from content_generation_manager import manage_generated_content
+from db_artilaries import artilaries
 
-all_question_structure = get_json('question_component_types')[0]
+all_question_structure = None
+
+async def initialize_question_manager():
+    global all_question_structure
+    all_question_structure = await artilaries.get_question_component_mapping()
 
 class ManageComponentTemplates:
     """
@@ -31,13 +35,10 @@ class ManageComponentTemplates:
         
         # This list will hold the final result
         self.templates = []
-        
-        # Trigger generation immediately
-        self._generate_all_templates()
 
-    def _generate_all_templates(self):
+    async def generate_all_templates(self):
         """Iterates through components and routes to specific internal handlers."""
-        
+        from io_utils import async_get_Component_Template
 
         for question_component in self.question_components:
             component_call_buffer = {}
@@ -46,21 +47,22 @@ class ManageComponentTemplates:
                 continue
             
             elif question_component == "QuestionMetadata":
-                component_call_buffer[question_component] = self._handle_metadata(question_component)
+                component_call_buffer[question_component] = await self._handle_metadata(question_component)
                 
             elif question_component == "QuestionOptions/Answer":
-                component_call_buffer[question_component] = self._handle_options(question_component)
+                component_call_buffer[question_component] = await self._handle_options(question_component)
                 
 
             else:
                 # Standard Generic Components
-                component_call_buffer[question_component] = self._handle_generic_component(question_component)
+                component_call_buffer[question_component] = await self._handle_generic_component(question_component)
 
             if component_call_buffer:
                 self.templates.append(component_call_buffer)
 
-    def _handle_metadata(self, component_name: str) -> List[Dict]:
+    async def _handle_metadata(self, component_name: str) -> List[Dict]:
         """Handles logic for QuestionMetadata, including MSR and standard passages."""
+        from io_utils import async_get_Component_Template
         buffer = []
         prompt_metadata_types = list(self.prompt_details['metadata-type'].keys())
         
@@ -74,28 +76,32 @@ class ManageComponentTemplates:
                     variables = self.component_instruction[component_name][prompt_metadata_type]['variables']
                     
                     for para_no in range(1, count_number_of_passages+1):
+                        template_text = await async_get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, prompt_metadata_type, prompt_metadata_item, rand_var=self.rand_var)
                         buffer.append({
-                            "instruction statement": f"Generate para {para_no} of {count_number_of_passages}:\n{get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, prompt_metadata_type, prompt_metadata_item, rand_var=self.rand_var)}",
+                            "instruction statement": f"Generate para {para_no} of {count_number_of_passages}:\n{template_text}",
                             "output": self.component_instruction[component_name][prompt_metadata_type]['output']
                         })
             else:
                 # Special handling for Multi-Source Reasoning (MSR)
                 if self.question_type == 'Multi-Source Reasoning':
-                    buffer.extend(self._handle_msr_metadata(component_name, prompt_metadata_type))
+                    buffer.extend(await self._handle_msr_metadata(component_name, prompt_metadata_type))
                 else:
                     # Standard non-MSR metadata (Tables, Charts, etc.)
                     for prompt_metadata_item in self.prompt_details['metadata-type'][prompt_metadata_type]:
                         file_name = self.component_instruction[component_name][prompt_metadata_type]['file-name']
                         variables = self.component_instruction[component_name][prompt_metadata_type]['variables']
+                        template_text = await async_get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, prompt_metadata_type, prompt_metadata_item, rand_var=self.rand_var)
                         buffer.append({
-                            "instruction statement": get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, prompt_metadata_type, prompt_metadata_item, rand_var=self.rand_var),
+                            "instruction statement": template_text,
                             "output": self.component_instruction[component_name][prompt_metadata_type]['output'],
                             'file-name': file_name
                         })
         return buffer
 
-    def _handle_msr_metadata(self, component_name: str, prompt_metadata_type: str) -> List[Dict]:
+    async def _handle_msr_metadata(self, component_name: str, prompt_metadata_type: str) -> List[Dict]:
         """Specific logic for extracting MSR sources and skills."""
+        from io_utils import async_get_Component_Template
+        from db_artilaries import artilaries
         buffer = []
         prompt_text = self.prompt_details.get('prompt', '')
         parts = prompt_text.split(' - ')
@@ -143,7 +149,7 @@ class ManageComponentTemplates:
             file_name = self.component_instruction[component_name][meta_type]['file-name']
             variables = self.component_instruction[component_name][meta_type]['variables']
             
-            base_template = get_Component_Template(
+            base_template = await async_get_Component_Template(
                 component_name, file_name, 
                 self.prompt_details['exam'], self.prompt_details['section'], 
                 self.prompt_details['question-type'], variables, 
@@ -153,14 +159,15 @@ class ManageComponentTemplates:
             
             theme = parts[1] if len(parts) > 1 else 'Business scenario'
             
-            msr_template_path = os.path.join(
-                os.path.dirname(os.path.abspath(__file__)),
-                'json_files', 'component_templates', 'QuestionMetadata', 'msr_source_instructions.json'
-            )
-            with open(msr_template_path, 'r', encoding='utf-8') as f:
-                msr_config = json.load(f)
+            # Fetch MSF config from DB
+            msr_config = await artilaries.get_component_data('QuestionMetadata', 'msr_source_instructions.json')
+            if msr_config:
+                 msr_config_dict = json.loads(msr_config)
+            else:
+                 # Fallback
+                 msr_config_dict = {'instruction_template': "{base_template}\n\n[MSR Source {source_num}]: {source_type} focused on {focused_skill} in {theme} context."}
             
-            instruction_with_context = msr_config['instruction_template'].format(
+            instruction_with_context = msr_config_dict['instruction_template'].format(
                 source_num=source_num, source_type=source_type,
                 focused_skill=focused_skill, theme=theme,
                 base_template=base_template
@@ -177,8 +184,9 @@ class ManageComponentTemplates:
         return buffer
 
 
-    def _handle_options(self, component_name: str) -> Dict:
+    async def _handle_options(self, component_name: str) -> Dict:
         """Handles QuestionOptions/Answer logic."""
+        from io_utils import async_get_Component_Template
         for category_list in self.component_instruction.get(component_name):
             if category_list.get('type', None) is None:
                 raise ValueError(f"{prettify(component_name, 'Yellow')} missing type")
@@ -211,17 +219,19 @@ class ManageComponentTemplates:
                          file_name = 'blank-double-question-option-answer.txt.template'
 
                 # Unified template handles single/multi blank selection via conditionals
+                template_text = await async_get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, rand_var=self.rand_var)
 
                 return {
-                    'instruction statement': get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, rand_var=self.rand_var),
+                    'instruction statement': template_text,
                     'output': output,
                     'file-name': file_name,
                     'option-type': self.prompt_details['option']
                 }
         raise ValueError(f"No matching option instruction found for component '{component_name}', option type '{self.prompt_details['option']}', question type '{self.prompt_details['question-type']}'")
 
-    def _handle_generic_component(self, component_name: str) -> Dict:
+    async def _handle_generic_component(self, component_name: str) -> Dict:
         """Handles other components via recursion through instruction list."""
+        from io_utils import async_get_Component_Template
         if self.component_instruction.get(component_name, None) is None:
             raise ValueError(f"Component instruction {prettify(component_name, 'Magenta')} not found.")
         
@@ -238,7 +248,7 @@ class ManageComponentTemplates:
                 variables = component_instruction_option['variables']
                 
                 result = {
-                    'instruction statement': get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, rand_var=self.rand_var),
+                    'instruction statement': await async_get_Component_Template(component_name, file_name, self.prompt_details['exam'], self.prompt_details['section'], self.prompt_details['question-type'], variables, rand_var=self.rand_var),
                     'output': component_instruction_option['output'],
                     'file-name': file_name
                 }
@@ -279,17 +289,17 @@ class ManageQuestionData:
         )
         self.rand_var = None
 
-    def get_question_data(self) -> Tuple[dict, dict]:
+    async def get_question_data(self) -> Tuple[dict, dict]:
         """Main entry point to generate data for this question."""
         
         # 0. Capture Clean Prompt for Tags (Prevention of Leaks)
         self.clean_prompt_for_tags = self.prompt_details['prompt']
 
         # 1. Dynamic Difficulty Injection
-        self._inject_difficulty()
+        await self._inject_difficulty()
         
         # 1b. Inject Context (Vocab + Scenarios)
-        self._inject_context_and_vocab()
+        await self._inject_context_and_vocab()
 
         # 2. Variable initialization
         if self.question_type == 'Text Completion':
@@ -303,32 +313,20 @@ class ManageQuestionData:
                 question_components.remove('QuestionMetadata')
 
         # 3. Get Templates (Using the new class)
-        # The constructor calculates templates immediately
+        # The constructor no longer calculates templates immediately
         template_manager = ManageComponentTemplates(
             question_components=question_components,
             prompt_details=self.prompt_details,
             component_instruction=component_instruction,
             rand_var=self.rand_var
         )
+        await template_manager.generate_all_templates()
         component_calls = template_manager.templates
 
-        # 4. Generate Content via Deepseek Session
-        # First, ensure system instruction is set if not already
-        if hasattr(self.generator_session, 'set_system_instruction'):
-             # We can load the system instruction from api_utils logic or just use a default one valid for the session
-             # The session manages it. But ideally we pass it.
-             # For now, let's assume the session or the generator method handles "SystemInstruction" concept if we were using Gemini.
-             # With Deepseek, we set it once.
-             # Let's extract the system instruction using helper or just set a generic one.
-             # Actually, api_utils had `_load_system_instructions`. We can replicate that or import it.
-             # But simplicity: "You are an expert exam question generator."
-             # Or better: call internal method to load it.
-             pass 
-
-        result_buffer, stats = self._generate_components(component_calls)
+        result_buffer, stats = await self._generate_components(component_calls)
 
         # 5. Handle Recursion (Child Questions)
-        child_stats = self._handle_child_questions(result_buffer)
+        child_stats = await self._handle_child_questions(result_buffer)
         
         # Accumulate child stats
         stats['input_tokens'] += child_stats['input_tokens']
@@ -405,13 +403,14 @@ class ManageQuestionData:
 
         return result_buffer, stats
 
-    def _inject_difficulty(self):
+    async def _inject_difficulty(self):
+        from db_artilaries import artilaries
         try:
-            difficulty_levels = get_json('difficulty_levels')[0]
+            difficulty_levels = await artilaries.get_difficulty_levels()
             qt = self.question_type
             
             # Determine Domain
-            if qt in ["Data Sufficiency", "Problem Solving Simple", "Problem Solving Meta", "Numerical Entry"]:
+            if qt in ["Data Sufficiency", "Problem Solving Simple", "Problem Solving Meta", "Numerical Entry", "Quantitative Comparison"]:
                 domain = "Quants"
             elif qt in ["Sentence Equivalence", "Text Completion", "Reading Comprehension"]:
                 domain = "Verbal"
@@ -435,18 +434,16 @@ class ManageQuestionData:
         except Exception as e:
             print(f"Warning: Failed to inject difficulty instruction: {e}")
 
-    def _inject_context_and_vocab(self):
+    async def _inject_context_and_vocab(self):
         """
         Injects Vocabulary and Scenario Context into the prompt *before* generation.
         """
+        from db_artilaries import artilaries
         # --- VOCABULARY INJECTION ---
         if self.question_type in ['Text Completion', 'Reading Comprehension', 'Sentence Equivalence', 'Critical Reasoning', 'Sentence Correction']:
             try:
-                vocab_path = os.path.join(os.path.dirname(__file__), 'json_files', 'vocabulary.json')
-                if os.path.exists(vocab_path):
-                    with open(vocab_path, 'r') as f:
-                        vocab_data = json.load(f)
-
+                vocab_data = await artilaries.get_config('vocabulary')
+                if vocab_data:
                     exam = self.prompt_details.get('exam', 'GRE')
                     if exam not in vocab_data: exam = 'GRE'
                     
@@ -470,7 +467,9 @@ class ManageQuestionData:
                 print(f"Warning: Failed to inject vocabulary: {e}")
 
 
-    def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
+    async def _generate_components(self, component_calls: list) -> Tuple[dict, dict]:
+        from io_utils import async_get_Question_Template
+        from db_artilaries import artilaries
         result_buffer = {}
         total_stats = {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}
         
@@ -496,7 +495,7 @@ class ManageQuestionData:
                  template_name = template_map.get(q_type, "generic.txt.template")
                  
                  if template_name:
-                     sys_instruct = get_Question_Template(
+                     sys_instruct = await async_get_Question_Template(
                         question_component="SystemInstruction",
                         filename=template_name,
                         exam_type=self.prompt_details['exam'],
@@ -507,14 +506,15 @@ class ManageQuestionData:
 
                      # --- INJECT COMPLEXITY GUIDELINES ---
                      try:
+                         # Load guidelines from DB
+                         all_guidelines = await artilaries.get_complexity_guidelines()
+                         
                          # Determine domain for complexity
                          domain = "Quants" if self.question_type in ["Data Sufficiency", "Problem Solving Simple", "Problem Solving Meta", "Numerical Entry", "Quantitative Comparison"] else \
                                   "Verbal" if self.question_type in ["Sentence Equivalence", "Text Completion", "Reading Comprehension", "Critical Reasoning"] else \
                                   "Integrated Reasoning"
 
-                         # Load guidelines
-                         prompt_info = get_json('prompt_component_info')[0]
-                         guidelines = prompt_info.get('complexity_guidelines', {}).get(domain, [])
+                         guidelines = all_guidelines.get(domain, [])
                          
                          if guidelines:
                              guidelines_text = "\n".join(guidelines)
@@ -562,102 +562,50 @@ class ManageQuestionData:
             # --- COMPONENT GENERATION & RETRY LOOP ---
             max_attempts = 2
             attempt = 1
-            last_error = None
-
-            # Base instruction for the component
-            augmented_instruction = call['instruction statement']
-            if self.prompt_details.get('instruction_str'):
-                 augmented_instruction += f"\n\n{self.prompt_details['instruction_str']}"
-            augmented_instruction += f"\n\n[Context & Constraints]: {self.prompt_details.get('prompt', '')}"
-            
             while attempt <= max_attempts:
                 try:
-                    # Append explicit constraint prompt to the instruction
-                    current_instruction = augmented_instruction
-                    if attempt > 1:
-                        # Construct detailed retry prompt
-                        try:
-                            val_str = json.dumps(generated, indent=2)
-                        except:
-                            val_str = str(generated)
-                        
-                        current_instruction = (
-                            f"[CRITICAL RETRY]: The previous attempt failed validation.\n"
-                            f"Error: {str(last_error)}\n"
-                            f"Value Received: {val_str}\n"
-                            f"Retry generating this component. Ensure it follows the schema exactly.\n\n"
-                            f"JSON SCHEMA:\n{json.dumps(call['output'], indent=2)}\n\n"
-                            f"COMPONENT TEMPLATE:\n"
-                            f"{augmented_instruction}"
-                        )
-
-                    # Use session for generation (it maintains history)
-                    generated, stats = self.generator_session.generate_component(
-                        instruction_statement=current_instruction,
+                    # Async generation call
+                    parsed_data, stats = await self.generator_session.generate_component(
+                        instruction_statement=call['instruction statement'],
                         expected_output=call['output'],
                         context=context
                     )
-
+                    
                     # Accumulate stats
                     total_stats['input_tokens'] += stats['input_tokens']
                     total_stats['output_tokens'] += stats['output_tokens']
                     total_stats['api_calls'] += 1
-
-                    # Internal logic for question text capture
-                    if isinstance(generated, dict) and 'question' in generated:
-                        if isinstance(generated['question'], list) and generated['question']:
-                            generated['question'] = random.choice(generated['question'])
                     
-                    # VALIDATION & MANAGEMENT
-                    manage_generated_content(
-                        result_buffer, self.question_type, comp_type, generated,
-                        option_type=self.prompt_details.get('option'),
-                        source_info=source_info,
-                        exam_type=self.prompt_details.get('exam'),
-                        file_name=call.get('file-name')
-                    )
-
-                    # Success!
-                    if attempt > 1:
-                        print(f"      {prettify('regeneration worked ✅', 'Green')}")
-                    
-                    # Capture the generated question text if this component is the Question Text
-                    if comp_type == 'QuestionText':
-                        if isinstance(generated, dict):
-                            generated_question_text = generated.get('question') or generated.get('question_text') or str(generated)
-                        else:
-                            generated_question_text = str(generated)
-                    
-                    break # Exit retry loop on success
-
-                except (TypeError, ValueError) as e:
-                    last_error = e
-                    if attempt < max_attempts:
-                        print(f"      {prettify('Correction Needed', 'Yellow')}: {str(e)}")
-                        attempt += 1
-                        continue
+                    # Store result
+                    if comp_type == 'QuestionMetadata':
+                         if 'metadata' not in result_buffer:
+                              result_buffer['metadata'] = []
+                         
+                         if self.question_type == 'Multi-Source Reasoning' and source_info:
+                              parsed_data.update(source_info)
+                         
+                         result_buffer['metadata'].append(parsed_data)
                     else:
-                        error_label = prettify("didn't worked ❌", "Red")
-                        print(f"      {error_label}")
-                        # Final failure: print received data as requested
-                        try:
-                            item_data = json.dumps(generated, indent=2)
-                        except:
-                            item_data = str(generated)
-                        print(f"      {prettify('Final Value Received:', 'Yellow')}\n{item_data}")
-                        raise e
-
+                         # For question and options, we might want to capture the text for chaining
+                         if comp_type == 'QuestionText':
+                              generated_question_text = parsed_data.get('question_text')
+                         
+                         result_buffer.update(parsed_data)
+                    
+                    break # Success, exit retry loop
+                    
                 except Exception as e:
-                    # CRITICAL: Re-raise "Request Per Day" errors so thread_creator can blacklist the key
-                    if "Request Per Day limit exceeded" in str(e):
-                        raise e
-                    # Generic error fallback
-                    print(f"      {prettify(comp_type, 'Red')}: {prettify(str(e), 'Yellow')}")
-                    raise e
-        
+                    print(f"      {prettify('Error:', 'Red')} Component {comp_type} generation failed (Attempt {attempt}/{max_attempts}): {e}")
+                    attempt += 1
+                    if attempt > max_attempts:
+                         print(f"      {prettify('Critical:', 'Red', True)} {comp_type} failed after {max_attempts} attempts.")
+                         # We could raise or just return partial data. 
+                         # For now, let's keep partial results but mark it as failed in stats?
+                         total_stats['failed'] = True
+
         return result_buffer, total_stats
 
-    def _handle_child_questions(self, result_buffer: dict) -> dict:
+    async def _handle_child_questions(self, result_buffer: dict) -> dict:
         total_child_stats = {'input_tokens': 0, 'output_tokens': 0, 'api_calls': 0}
         
         if self.prompt_details.get('type') == 'parent':
@@ -678,23 +626,13 @@ class ManageQuestionData:
                     'option': child_prompt['option'],
                     'prompt': child_prompt['prompt']
                 }
-                # Optimization: Don't copy bulky parent metadata to children.
-                # If the child needs context, it relies on the shared generator_session.
-                # Recursion: Create a new manager for the child
-                # Ideally, we SHARE the session so the child knows the parent Context?
-                # YES. "Multi rounded conversation". The child is part of the same flow usually.
-                # If child questions are part of the same "Conversation" (e.g. Reading Comp), share session.
-                # If they are independent items just grouped, maybe new session?
-                # User said: "Multi rounded conversation ... for every question(simple and parent) ... on different thread".
-                # This implies one thread/session per Top Level Question.
-                # So child questions should share the session.
-                
+
                 child_manager = ManageQuestionData(
                     prompt_details=child_prompt_details,
                     generator_session=self.generator_session, # Share session
                     target_question_type=self.target_question_type
                 )
-                child_data, child_stats = child_manager.get_question_data()
+                child_data, child_stats = await child_manager.get_question_data()
                 child_prompt_data.append(child_data)
                 
                 # Accumulate stats

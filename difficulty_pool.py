@@ -1,24 +1,33 @@
 import random
 from collections import deque
-from typing import List, Dict
+from typing import List, Dict, Any
 
-from io_utils import get_json
-
-_RAW_DIST = get_json('difficulty_distribution')[0]
-
+from db_artilaries import artilaries
 
 _DIST: Dict[str, Dict[str, Dict[int, Dict[str, float]]]] = {}
-# exam_name could be "GRE", "GMAT", ...
-for exam_name, exam_list in _RAW_DIST.items():
-    # each {"name":"Quants","Quants":{ ... }}
-    for section_blob in exam_list:
-        sec_name = section_blob["name"]
-        _DIST.setdefault(exam_name, {})
-        _DIST[exam_name][sec_name] = {
-            int(lvl): ratios
-            for lvl, ratios in section_blob[sec_name].items()
-        }
 
+async def initialize_difficulty_pool():
+    """Fetches difficulty distribution from DB and populates _DIST."""
+    global _DIST
+    # Get raw data from DB config
+    raw_dist = await artilaries.get_config('difficulty_distribution')
+    if not raw_dist:
+        raise ValueError("Could not load 'difficulty_distribution' from Artilaries DB.")
+    
+    # Process raw dictionary (it matches the structure provided in the prompt)
+    # raw_dist is { "GRE": [ ... ], "GMAT": [ ... ] }
+    for exam_name, exam_list in raw_dist.items():
+        for section_blob in exam_list:
+            sec_name = section_blob["name"]
+            _DIST.setdefault(exam_name, {})
+            
+            # The structure is: { "name": "Quants", "Quants": { "1": {...} } }
+            # So we access section_blob[sec_name]
+            if sec_name in section_blob:
+                _DIST[exam_name][sec_name] = {
+                    int(lvl): ratios
+                    for lvl, ratios in section_blob[sec_name].items()
+                }
 
 def _split_counts(total: int, ratio: Dict[str, float]) -> List[int]:
     """Return [#easy, #medium, #hard] adding up to total."""
@@ -48,7 +57,24 @@ def get_difficulty_pool(exam: str,
         n_items:
             number of questions (to tell how big the pool is)
     """
-    ratio = _DIST[exam][section][mock_level]
+    if not _DIST:
+        raise RuntimeError("Difficulty pool not initialized. Call initialize_difficulty_pool() first.")
+        
+    # Safety checks
+    if exam not in _DIST:
+        print(f"Warning: Exam '{exam}' not found in difficulty distribution. Using default/fallback.")
+        # Return a simple balanced pool if exam not found
+        return deque([3] * n_items)
+        
+    if section not in _DIST[exam]:
+         print(f"Warning: Section '{section}' not found in difficulty distribution for '{exam}'. Using default/fallback.")
+         return deque([3] * n_items)
+
+    ratio = _DIST[exam][section].get(mock_level)
+    if not ratio:
+         # Fallback distribution
+         ratio = {"easy": 0.33, "medium": 0.33, "hard": 0.34}
+
     easy, medium, hard = _split_counts(n_items, ratio)
     counts = {
         1: easy,

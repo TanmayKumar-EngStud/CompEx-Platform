@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+# Add main prisma client to path
+sys.path.insert(0, str(Path(__file__).parent / "compex-db_prisma" / "generated"))
 from prisma import Prisma
 import json
 import re

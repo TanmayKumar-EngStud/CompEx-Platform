@@ -169,6 +169,77 @@ def _get_Template(file_path: str,
     return component_template
 
 
+from db_artilaries import artilaries
+
+async def async_get_Component_Template(question_component: QuestionComponent,
+                                     filename: str,
+                                     exam_type: str,
+                                     Section_name: str,
+                                     question_type: str,
+                                     variable: Optional[str],
+                                     type: Optional[str] = None,
+                                     item: Optional[str] = None,
+                                     rand_var: Optional[str] = None) -> str:
+    """Fetch component template from database."""
+    category = str.replace(question_component, '/', '|')
+    template_content = await artilaries.get_component_template(category, filename)
+    
+    if not template_content:
+        # Fallback to sync disk read
+        return get_Component_Template(question_component, filename, exam_type, Section_name, question_type, variable, type, item, rand_var)
+
+    if variable not in [None, '']:
+        if type is None:
+            raise ValueError(f"Missing metadata type for component {prettify(question_component, 'Yellow')}")
+        
+        data_json = await artilaries.get_component_data(category, f"{type}.json")
+        if not data_json:
+             raise FileNotFoundError(f"Data file {type}.json not found in DB for category {category}")
+        
+        replaced_value_dict = json.loads(data_json)
+        if replaced_value_dict.get(item, None) is None:
+            raise ValueError(f"Item {item} not found in {type}.json for component {question_component}")
+        
+        replaced_value = json.dumps(replaced_value_dict.get(item), indent=2)
+        template_content = template_content.replace(f'<{variable}>', replaced_value)
+
+    # Generic philosophy template
+    generic_philosophy_template = await artilaries.get_component_template(category, "generic.txt.template")
+    if generic_philosophy_template:
+        template_content = template_content.replace("{{GENERIC_PHILOSOPHY_TEMPLATE}}", generic_philosophy_template)
+    
+    return build_template(
+        exam_type,
+        question_type.lower().replace(' ', '_'),
+        Section_name.lower().replace(' ', '_'),
+        rand_var,
+        template_content
+    )
+
+async def async_get_Question_Template(question_component: QuestionComponent,
+                                    filename: str,
+                                    exam_type: str,
+                                    Section_name: str,
+                                    question_type: str,
+                                    variable: Optional[str],
+                                    type: Optional[str] = None,
+                                    item: Optional[str] = None,
+                                    rand_var: Optional[str] = None) -> str:
+    """Fetch question type template from database."""
+    template_content = await artilaries.get_system_template(filename)
+    if not template_content:
+        # Fallback
+        return get_Question_Template(question_component, filename, exam_type, Section_name, question_type, variable, type, item, rand_var)
+    
+    return build_template(
+        exam_type,
+        question_type.lower().replace(' ', '_'),
+        Section_name.lower().replace(' ', '_'),
+        rand_var,
+        template_content
+    )
+
+
 def get_Component_Template(question_component: QuestionComponent,
                            filename: str,
                            exam_type: str,

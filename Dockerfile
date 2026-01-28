@@ -22,10 +22,12 @@ COPY . .
 
 # Fix Prisma Schema for Docker: Remove custom output path to use default (site-packages)
 # The local setup uses a venv path which isn't valid here
-RUN sed -i '/output *= *"\.\.\/venv\/lib\/python3.11\/site-packages\/prisma"/d' prisma/schema.prisma
+RUN sed -i '/output *= *"\.\.\/venv\/lib\/python3.11\/site-packages\/prisma"/d' artilaries_prisma/schema.prisma
+RUN sed -i '/output *= *"\.\.\/venv\/lib\/python3.11\/site-packages\/prisma"/d' compex-db_prisma/schema.prisma
 
-# Generate Prisma Client
-RUN prisma generate
+# Generate Prisma Clients
+RUN prisma generate --schema=artilaries_prisma/schema.prisma
+RUN prisma generate --schema=compex-db_prisma/schema.prisma
 
 # Make entrypoint executable
 RUN chmod +x entrypoint.sh

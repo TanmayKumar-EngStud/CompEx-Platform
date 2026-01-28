@@ -6,27 +6,26 @@ services:
     env_file:
       - .env
     environment:
-      # Use host networking variable
-      - DATABASE_URL=postgresql://compexe_admin:QuiZA.0310!@host.docker.internal:5433/compex
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
+      - DATABASE_URL=postgresql://compexe_admin:QuiZA.0310!@my-postgres:5432/artilaries
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
-      # Persist logging and papers
       - ./log_json_files:/app/log_json_files
-      # Map logs folder if any other exists
+    depends_on:
+      - my-postgres
 
-      # For Mac/Windows, host.docker.internal works by default usually, or needs no config.
-      # Essential if DATABASE_URL points to localhost on host machine.
+  my-postgres:
+    image: postgres:15
+    container_name: my-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: compexe_admin
+      POSTGRES_PASSWORD: QuiZA.0310!
+      POSTGRES_DB: artilaries
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
-      # If running with a postgres container, uncomment and link:
-      # depends_on:
-      #   - my-postgres
-      # networks:
-      #   - app-network
-
-      # networks:
-      #   app-network:
-      #     driver: bridge
+volumes:
+  postgres_data:
