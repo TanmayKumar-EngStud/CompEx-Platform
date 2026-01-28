@@ -17,9 +17,17 @@ class ArtilariesDB:
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(ArtilariesDB, cls).__new__(cls)
+            
+            # Use environment variable with fallback
+            db_url = os.environ.get("DATABASE_URL_ARTILARIES", "postgresql://compexe_admin:QuiZA.0310!@localhost:5433/artilaries")
+            
+            # Handle host.docker.internal for local docker runs
+            if 'host.docker.internal' in db_url:
+                db_url = db_url.replace('host.docker.internal', '127.0.0.1')
+                
             cls._db = Prisma(
                 datasource={
-                    'url': 'postgresql://compexe_admin:QuiZA.0310!@localhost:5433/artilaries'
+                    'url': db_url
                 }
             )
         return cls._instance
