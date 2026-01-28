@@ -33,16 +33,16 @@ ssh -i $KEY_FILE root@$SERVER_IP "sudo -i -u $USER bash -c '
   # Build and Setup Container
   echo \"Building QGen container...\"
   # We use --no-cache to ensure all code changes are picked up
-  docker compose build question-gen
+  docker compose -f docker-compose.server.yml build question-gen
   
   # Setup but do NOT run as requested
   echo \"Cleaning up existing container (if any)...\"
-  docker compose stop question-gen || true
-  docker compose rm -f question-gen || true
+  docker compose -f docker-compose.server.yml stop question-gen || true
+  docker compose -f docker-compose.server.yml rm -f question-gen || true
   
   # Create the container but do not start it
   echo \"Creating container (stopped state)...\"
-  docker compose up --no-start question-gen
+  docker compose -f docker-compose.server.yml up --no-start question-gen
   
   echo \"Setup Complete! Container is ready but NOT running.\"
 '"

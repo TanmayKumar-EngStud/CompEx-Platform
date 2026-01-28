@@ -1,0 +1,10 @@
+services:
+  question-gen:
+    container_name: QuestionGen
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    network_mode: host
+    volumes:
+      - ./log_json_files:/app/log_json_files
