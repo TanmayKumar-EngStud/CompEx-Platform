@@ -1,0 +1,172 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://compexe_admin:QuiZA.0310!@localhost:5433/artilaries"
+}
+
+generator client {
+  provider = "prisma-client-py"
+  output   = "./generated/prisma"
+}
+
+model Category {
+  id                     Int                     @id @default(autoincrement())
+  name                   String                  @unique
+  difficultyDescriptions DifficultyDescription[]
+  sections               Section[]
+  complexityGuidelines   ComplexityGuideline[]
+}
+
+model DifficultyLevel {
+  id                     Int                     @id @default(autoincrement())
+  level                  Int                     @unique
+  difficultyDescriptions DifficultyDescription[]
+  vocabulary             Vocabulary[]
+}
+
+model DifficultyDescription {
+  id                Int             @id @default(autoincrement())
+  categoryId        Int
+  difficultyLevelId Int
+  description       String
+  category          Category        @relation(fields: [categoryId], references: [id])
+  difficultyLevel   DifficultyLevel @relation(fields: [difficultyLevelId], references: [id])
+}
+
+model Exam {
+  id         Int          @id @default(autoincrement())
+  name       String       @unique
+  stages     Stage[]
+  vocabulary Vocabulary[]
+}
+
+model Stage {
+  id          Int       @id @default(autoincrement())
+  examId      Int
+  stageNumber Int
+  exam        Exam      @relation(fields: [examId], references: [id])
+  sections    Section[]
+}
+
+model Section {
+  id             Int                        @id @default(autoincrement())
+  stageId        Int
+  categoryId     Int
+  totalQuestions Int
+  stage          Stage                      @relation(fields: [stageId], references: [id])
+  category       Category                   @relation(fields: [categoryId], references: [id])
+  typeCounts     SectionQuestionTypeCount[]
+}
+
+model QuestionType {
+  id                        Int                           @id @default(autoincrement())
+  name                      String                        @unique
+  type                      String
+  options                   String
+  nomenclature              String
+  systemInstructionTemplate String
+  sectionCounts             SectionQuestionTypeCount[]
+  promptComponents          QuestionTypePromptComponent[]
+}
+
+model SectionQuestionTypeCount {
+  id             Int          @id @default(autoincrement())
+  sectionId      Int
+  questionTypeId Int
+  count          Int
+  section        Section      @relation(fields: [sectionId], references: [id])
+  questionType   QuestionType @relation(fields: [questionTypeId], references: [id])
+}
+
+model PromptComponent {
+  id     Int                    @id @default(autoincrement())
+  name   String                 @unique
+  values PromptComponentValue[]
+}
+
+model PromptComponentValue {
+  id            Int                           @id @default(autoincrement())
+  componentId   Int
+  value         String
+  component     PromptComponent               @relation(fields: [componentId], references: [id])
+  questionTypes QuestionTypePromptComponent[]
+}
+
+model QuestionTypePromptComponent {
+  id               Int                  @id @default(autoincrement())
+  questionTypeId   Int
+  componentValueId Int
+  questionType     QuestionType         @relation(fields: [questionTypeId], references: [id])
+  componentValue   PromptComponentValue @relation(fields: [componentValueId], references: [id])
+}
+
+model Vocabulary {
+  id                Int             @id @default(autoincrement())
+  word              String
+  definition        String?
+  examId            Int
+  difficultyLevelId Int
+  exam              Exam            @relation(fields: [examId], references: [id])
+  difficultyLevel   DifficultyLevel @relation(fields: [difficultyLevelId], references: [id])
+}
+
+model ComplexityGuideline {
+  id         Int      @id @default(autoincrement())
+  categoryId Int
+  guideline  String
+  category   Category @relation(fields: [categoryId], references: [id])
+}
+
+model SystemTemplate {
+  id      Int    @id @default(autoincrement())
+  name    String @unique
+  content String
+}
+
+model ComponentCategory {
+  id        Int                 @id @default(autoincrement())
+  name      String              @unique
+  templates ComponentTemplate[]
+  schemas   ComponentSchema[]
+  data      ComponentData[]
+}
+
+model ComponentTemplate {
+  id         Int               @id @default(autoincrement())
+  categoryId Int
+  name       String
+  content    String
+  category   ComponentCategory @relation(fields: [categoryId], references: [id])
+
+  @@unique([categoryId, name])
+}
+
+model ComponentSchema {
+  id         Int               @id @default(autoincrement())
+  categoryId Int
+  name       String
+  content    String
+  category   ComponentCategory @relation(fields: [categoryId], references: [id])
+
+  @@unique([categoryId, name])
+}
+
+model ComponentData {
+  id         Int               @id @default(autoincrement())
+  categoryId Int
+  name       String
+  content    String
+  category   ComponentCategory @relation(fields: [categoryId], references: [id])
+
+  @@unique([categoryId, name])
+}
+
+model QuestionComponentMapping {
+  id      Int    @id @default(autoincrement())
+  content String
+}
+
+model Config {
+  id      Int    @id @default(autoincrement())
+  key     String @unique
+  content String
+}

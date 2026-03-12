@@ -1,0 +1,23 @@
+{
+   "python.defaultInterpreterPath": "./venv/bin/python",
+   "python.pythonPath": "./venv/bin/python",
+   "python.terminal.activateEnvironment": true,
+   "python.terminal.activateEnvInCurrentTerminal": true,
+   "python.venvPath": "./venv",
+   "python.terminal.executeInFileDir": false,
+   "terminal.integrated.cwd": "${workspaceFolder}",
+   "python.analysis.autoImportCompletions": true,
+   "python.analysis.extraPaths": ["./venv/lib/python3.11/site-packages"],
+   "terminal.integrated.defaultProfile.osx": "zsh",
+   "terminal.integrated.profiles.osx": {
+      "zsh": {
+         "path": "zsh",
+         "args": ["-c", "source ./venv/bin/activate && exec zsh"]
+      }
+   },
+   "files.associations": {
+      "*.json": "jsonc",
+      "*.md": "markdown",
+      "*.txt": "plaintext"
+   }
+}

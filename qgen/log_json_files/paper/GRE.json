@@ -1,0 +1,44 @@
+{
+  "1": {
+    "section": "Quants",
+    "questions": [
+      {
+        "question": "The average of five numbers is 24. If one number is removed, the average of the remaining four is 22. What is the value of the removed number?",
+        "title": "Average Problem: Value of Removed Number",
+        "solution": "**Setup**: Total sum of five numbers is $24 \\times 5 = 120$. Sum of remaining four is $22 \\times 4 = 88$.\n**Execution**: Removed number = $120 - 88 = 32$.\n**Verification**: Adding 32 to 88 gives 120, consistent with the original average.\n**Distractors**: Subtracting averages directly (24 - 22 = 2) is incorrect as it disregards the number of elements.",
+        "options": {
+          "A": {
+            "text": "32",
+            "explanation": "Correct: Removed number = total sum of five (120) minus sum of four (88) = 32."
+          },
+          "B": {
+            "text": "2",
+            "explanation": "Incorrect: Subtracting averages directly (24 - 22) ignores the number of elements."
+          },
+          "C": {
+            "text": "12",
+            "explanation": "Incorrect: May result from miscomputing 24 × 5 as 100 instead of 120."
+          },
+          "D": {
+            "text": "24",
+            "explanation": "Incorrect: Confuses the removed number with the original average, not considering the change."
+          },
+          "E": {
+            "text": "8",
+            "explanation": "Incorrect: Could come from using 24 × 4 = 96 and subtracting 88, but this miscalculates the sums."
+          }
+        },
+        "answer": "A",
+        "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Marketing and Sales] | [Style: <Single Variable Equation>] | [Difficulty: <3>]",
+        "question-type": "Problem Solving Simple",
+        "difficulty": 3,
+        "options_type": "single",
+        "tags": [
+          "topic: Linear Equations, Quadratic Equations and Inequalities",
+          "theme: Marketing and Sales",
+          "question-type: Problem Solving Simple"
+        ]
+      }
+    ]
+  }
+}
