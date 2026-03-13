@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$5$",
+    "B": "$4$",
+    "C": "$6$",
+    "D": "$3$",
+    "E": "$7$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. The investment grows as $2000(1.10)^n$. We need $2000(1.10)^n > 3000$, i.e., $(1.10)^n > 1.5$. Checking: $1.10^4 = 1.4641 < 1.5$ and $1.10^5 = 1.61051 > 1.5$. Thus, the minimum number of complete years is $5$.",
+    "B": "Incorrect. This might come from solving $2000(1.10)^n = 3000$ to get $n \\approx 4.25$ and rounding down, but the question requires the value to *exceed* $\\$3000$. At $n=4$, $2000(1.10)^4 = 2000 \\times 1.4641 = 2928.20 < 3000$.",
+    "C": "Incorrect. This could result from using simple interest: $2000(1 + 0.10n) > 3000$ gives $n > 5$, so $n=6$. However, interest is compounded annually, not simple.",
+    "D": "Incorrect. At $n=3$, $2000(1.10)^3 = 2000 \\times 1.331 = 2662 < 3000$, which does not exceed $\\$3000$.",
+    "E": "Incorrect. This might stem from misapplying the 'rule of 72' for doubling (approximately $72/10 = 7.2$ years), but here the investment only needs to increase by $50\\%$, not double."
+  }
+}

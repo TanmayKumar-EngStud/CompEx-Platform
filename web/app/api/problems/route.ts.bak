@@ -1,0 +1,178 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getProblemsForPagination } from "@/features/question-solving/services/question-queries";
+
+/**
+ * GET /api/problems - Retrieve problems with pagination and filtering
+ *
+ * Query Parameters:
+ * - userid: number - User ID for tracking attempts
+ * - examName: string - Exam type (GRE, GMAT, CAT)
+ * - sectionName: string - Section name (varies by exam)
+ * - tags: string[] - Array of tags for filtering
+ * - page: number - Page number for pagination (optional - if provided, enables page-specific fetching)
+ * - pageSize: number - Number of items per page (optional - if provided, enables page-specific fetching)
+ * - questionIds: string - Comma-separated list of specific question IDs to fetch (optional)
+ */
+export async function GET(request: NextRequest) {
+   const { searchParams } = request.nextUrl;
+   const userid = parseInt(searchParams.get("userid") || "1");
+   const examNameRaw = searchParams.get("examName") || "GRE";
+   const sectionNameRaw = searchParams.get("sectionName") || "quants";
+   const examName = examNameRaw.toUpperCase();
+   const sectionName = sectionNameRaw.toLowerCase();
+
+   const topicsParam = searchParams.get("topics");
+   const themesParam = searchParams.get("themes");
+   const typesParam = searchParams.get("types");
+   const page = searchParams.get("page") ? parseInt(searchParams.get("page")!) : null;
+   const pageSize = searchParams.get("pageSize") ? parseInt(searchParams.get("pageSize")!) : null;
+   const questionIdsParam = searchParams.get("questionIds");
+
+   const topics = topicsParam ? JSON.parse(topicsParam) : null;
+   const themes = themesParam ? JSON.parse(themesParam) : null;
+   const types = typesParam ? JSON.parse(typesParam) : null;
+
+   const filters = { topics, themes, types };
+
+   // Parse specific question IDs if provided
+   const specificQuestionIds = questionIdsParam ?
+      questionIdsParam.split(',').map(id => parseInt(id.trim())) : null;
+
+   const examtypeid = ["GMAT", "GRE", "CAT"].indexOf(examName) + 1;
+   let sectionid: number | number[] = -1;
+
+   switch (examtypeid) {
+      case 1:
+         // GMAT
+         sectionid = ["quants", "verbal", "integrated reasoning"].indexOf(sectionName) + 1;
+         break;
+      case 2:
+         // GRE
+         sectionid = sectionName === "quants" ? [4, 7] : [5, 6];
+         break;
+      case 3:
+         // CAT
+         sectionid = ["DI", "LR", "VA", "RC"].indexOf(sectionName) + 8;
+         break;
+      default:
+         console.error(
+            `Invalid exam type in api/problems/route.ts, examtypeid: ${examtypeid} (raw: ${examNameRaw})`
+         );
+   }
+
+   try {
+      // Handle specific question IDs request (for cache system)
+      if (specificQuestionIds && specificQuestionIds.length > 0) {
+         console.log(`🎯 Fetching specific questions by IDs: ${specificQuestionIds.slice(0, 5).join(', ')}${specificQuestionIds.length > 5 ? '...' : ''}`);
+
+         // Use pagination service to get both individual problems and problem sets
+         const { problemData: allProblems } = await getProblemsForPagination(userid, examtypeid, sectionid, filters);
+
+         // Filter to only include problems/sets that contain our target question IDs
+         const filteredProblems = allProblems.filter((item: any) => {
+            if ('problems' in item && 'isExpanded' in item) {
+               // For problem sets, check if any child problems match our IDs
+               return item.problems.some((child: any) => specificQuestionIds.includes(Number(child.problemid)));
+            } else {
+               // For individual problems, check if the ID matches
+               return specificQuestionIds.includes(Number(item.problemid));
+            }
+         });
+
+         return NextResponse.json({
+            problemData: filteredProblems,
+            totalProblems: filteredProblems.length,
+            requestType: 'specific_ids',
+            pagination: {
+               examName,
+               sectionName,
+               topics,
+               themes,
+               types,
+               questionIds: specificQuestionIds,
+            },
+         });
+      }
+
+      // Get all problems (existing behavior)
+      const { problemData, totalProblems } = await getProblemsForPagination(
+         userid,
+         examtypeid,
+         sectionid,
+         filters
+      );
+
+      // Handle page-specific fetching (for cache system)
+      if (page !== null && pageSize !== null) {
+         console.log(`📄 Page-specific request: page ${page}, size ${pageSize}`);
+
+         const startIndex = (page - 1) * pageSize;
+         const endIndex = startIndex + pageSize;
+         const paginatedData = problemData.slice(startIndex, endIndex);
+
+         return NextResponse.json({
+            problemData: paginatedData,
+            totalProblems,
+            requestType: 'paginated',
+            pagination: {
+               examName,
+               sectionName,
+               topics,
+               themes,
+               types,
+               page,
+               pageSize,
+               startIndex,
+               endIndex,
+               hasNextPage: endIndex < totalProblems,
+               hasPreviousPage: page > 1,
+            },
+         });
+      }
+
+      // Return all data (legacy behavior)
+      return NextResponse.json({
+         problemData,
+         totalProblems,
+         requestType: 'all_data',
+         pagination: {
+            examName,
+            sectionName,
+            topics,
+            themes,
+            types,
+         },
+      });
+   } catch (error) {
+      console.error(`Error fetching problems:`, error);
+      return NextResponse.json(
+         {
+            error: "Error fetching problems, probably Docker for DB is not running!",
+         },
+         { status: 500 }
+      );
+   }
+}
+
+/**
+ * POST /api/problems - Legacy endpoint for backward compatibility
+ * @deprecated Use GET /api/problems with query parameters instead
+ */
+export async function POST(req: NextRequest) {
+   const { userid, examName, sectionName, topics, themes, types } = await req.json();
+
+   // Redirect to GET method with query parameters
+   const searchParams = new URLSearchParams({
+      userid: userid.toString(),
+      examName: examName || "GRE",
+      sectionName: sectionName || "quants",
+      topics: JSON.stringify(topics || []),
+      themes: JSON.stringify(themes || []),
+      types: JSON.stringify(types || []),
+   });
+
+   const url = new URL(`/api/problems?${searchParams}`, req.url);
+   const getRequest = new NextRequest(url, { method: "GET" });
+
+   return GET(getRequest);
+}

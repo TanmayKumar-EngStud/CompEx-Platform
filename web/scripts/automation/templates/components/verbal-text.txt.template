@@ -1,0 +1,32 @@
+[COMPONENT: QuestionText]
+[EXAM: {{exam_type}}]
+[SECTION: {{section_name}}]
+[TOPIC: {{topic}}]
+[THEME: {{scenario}}]
+[DIFFICULTY: {{difficulty}}]
+
+## INSTRUCTION
+Generate the question text (Passage/Argument + Stem) for a {{topic}} problem.
+
+## SCENARIO
+Context: {{scenario}}
+
+## FORMATTING RULES
+- **Text Completion**: Sentence(s) with blank(s) indicated by `[BLANK]`.
+- **Sentence Equivalence**: A single sentence with one blank. The blank must be fillable by two distinct words that result in the same meaning.
+- **Reading Comprehension**: A dense academic passage (150-200 words).
+- **Critical Reasoning**: A formal argument (Premise -> Conclusion).
+
+## COMPLEXITY GUIDELINES (STRICT COMPLIANCE REQUIRED)
+1. **CONCISE QUESTION TEXT**: The 'question' text MUST NOT exceed 60 words (except for RC passages).
+2. **STRUCTURAL COMPLEXITY**: Use sophisticated sentence structures: double negatives, concessive clauses (e.g., 'Although...', 'Albeit...'), and subtle shifts in tone.
+3. **NUANCE OVER OBSCURITY**: Test secondary meanings of common words (e.g., 'flag' as 'to decline') rather than just obscure archaic words.
+4. **LOGICAL LEAPS**: The difficulty must stem from conceptual depth, not just length.
+
+## OUTPUT
+JSON with 'question_text'.
+
+## EXAMPLE STRUCTURE
+{
+  "question_text": "Although the novel was initially [BLANK] by critics for its convoluted plot, it later achieved cult status..."
+}

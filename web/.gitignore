@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+.venv/
+.pnpm-store
+
+# Next.js
+/.next/
+/out/
+
+# Production
+build/
+dist/
+
+# Misc
+.DS_Store
+*.pem
+*.log
+.env
+.env*.local
+.env.production
+
+# Team 
+.ai-plans/
+.claude/
+
+.vercel
+*.tsbuildinfo
+
+# Uploads
+/public/uploads/
+
+# Build artifacts
+public/build-info.json
+shared/lib/build-info.ts
+
+# Fumadocs generated content
+.source
+
+# IDE
+.vscode/
+
+# Private keys & secrets (never commit these)
+deploy_key
+deploy_key.pub
+git_deploy_key
+git_deploy_key.pub
+cloud_init.txt
+
+# Database dumps
+*.sql
+db_dump.sql
+
+# Backups
+backups/

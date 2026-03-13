@@ -1,0 +1,5 @@
+{
+  "topic": "Arithmetic: Percentages and Compound Interest",
+  "theme": "Investment Portfolio Growth Analysis",
+  "difficulty_guidelines": "The problem must involve calculating a compound annual growth rate (CAGR) and comparing it to a weighted average of component returns. It requires solving for an unknown principal amount in one portfolio, given the final values of two portfolios with different multi-year return structures."
+}

@@ -1,0 +1,403 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-arm64-openssl-1.1.x", "linux-musl-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ProblemsSet {
+  problemsSetId      Int               @id @default(autoincrement())
+  sectionid          Int
+  examtypeid         Int
+  title              String
+  type               String
+  content            Json
+  mockquestionnumber Int?
+  mocksectionid      Int?
+  popularityIndex    Float             @default(0)
+  examtypes          examtypes         @relation(fields: [examtypeid], references: [examtypeid])
+  mocksections       mocksections?     @relation(fields: [mocksectionid], references: [mocksectionid])
+  sections           sections          @relation(fields: [sectionid], references: [sectionid])
+  problems           problems[]
+  problemssettags    problemssettags[]
+}
+
+model analytics {
+  id                  Int      @id @default(autoincrement())
+  total_api_calls     Int
+  total_input_tokens  String
+  total_output_tokens String
+  total_time_minutes  Float
+  gre_questions       Int
+  gmat_questions      Int
+  difficulty_level    Int
+  is_mock             Boolean
+  created_at          DateTime @default(now())
+}
+
+model examtypes {
+  examtypeid  Int           @id @default(autoincrement())
+  name        String        @db.VarChar(100)
+  description String?
+  ProblemsSet ProblemsSet[]
+  mocktests   mocktests[]
+  problems    problems[]
+  sections    sections[]
+  tag_scopes  tag_scopes[]
+}
+
+model mocksections {
+  mocksectionid Int           @id @default(autoincrement())
+  mocktestid    Int
+  sectionnumber Int
+  sectionid     Int
+  ProblemsSet   ProblemsSet[]
+  mocktests     mocktests     @relation(fields: [mocktestid], references: [mocktestid], onDelete: Cascade)
+  sections      sections      @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade)
+  problems      problems[]
+}
+
+model mocktestrankings {
+  rankingid  Int        @id @default(autoincrement())
+  userid     Int?
+  mocktestid Int?
+  rank        Int?
+  totalscore  Decimal?   @db.Decimal(5, 2)
+  percentile  Decimal?   @db.Decimal(5, 2)
+  rankingdate DateTime?  @default(now()) @db.Timestamp(6)
+  mocktests   mocktests? @relation(fields: [mocktestid], references: [mocktestid], onDelete: Cascade)
+  users       users?     @relation(fields: [userid], references: [userid], onDelete: Cascade)
+}
+
+model mocktests {
+  mocktestid           Int                    @id @default(autoincrement())
+  examtypeid           Int?
+  date                 DateTime               @db.Date
+  starttime            DateTime               @db.Time(6)
+  endtime              DateTime               @db.Time(6)
+  isactive             Boolean?               @default(true)
+  difficulty           Int                    @default(0)
+  mocksections         mocksections[]
+  mocktestrankings     mocktestrankings[]
+  examtypes            examtypes?             @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade)
+  usermocktestattempts usermocktestattempts[]
+}
+
+model mocktestsectionscores {
+  scoreid              Int                   @id @default(autoincrement())
+  attemptid            Int?
+  sectionid            Int?
+  score                Decimal?              @db.Decimal(5, 2)
+  usermocktestattempts usermocktestattempts? @relation(fields: [attemptid], references: [attemptid], onDelete: Cascade)
+  sections             sections?             @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade)
+}
+
+model performance {
+  userid              Int
+  sectionid           Int
+  correctcount        Int?                     @default(0)
+  incorrectcount      Int?                     @default(0)
+  partialcorrectcount Int?                     @default(0)
+  averagespeed        Unsupported("interval")?
+  sections            sections                 @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade)
+  users               users                    @relation(fields: [userid], references: [userid], onDelete: Cascade)
+
+  @@id([userid, sectionid])
+}
+
+model problemoptions {
+  optionid                    Int                           @id @default(autoincrement())
+  problemid                   Int?
+  optiontext                  String
+  iscorrect                   Boolean?
+  group                       String?
+  explanation                 String?
+  problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: Cascade)
+  userattempt_selectedoptions userattempt_selectedoptions[]
+}
+
+model problems {
+  problemid            Int              @id @default(autoincrement())
+  sectionid            Int?
+  examtypeid           Int?
+  title                String           @db.VarChar(200)
+  text                 String
+  difficulty           Int?
+  correctattemptscount Int?             @default(0)
+  totalattemptscount   Int?             @default(0)
+  metadata             Json?
+  creationdate         DateTime?        @default(now()) @db.Timestamp(6)
+  addedDate            DateTime?        @default(now()) @db.Timestamp(6)
+  isChildren           Boolean          @default(false)
+  problemsSetId        Int?
+  isMockQuestion       Boolean          @default(false)
+  solution             Json?
+  mockquestionnumber   Int?
+  mocksectionid        Int?
+  options_type         String?          @db.VarChar(50)
+  popularityIndex      Float            @default(0)
+  prompt               String?
+  type                 String?
+  problemoptions       problemoptions[]
+  examtypes            examtypes?       @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade)
+  mocksections         mocksections?    @relation(fields: [mocksectionid], references: [mocksectionid], onDelete: Cascade)
+  ProblemsSet          ProblemsSet?     @relation(fields: [problemsSetId], references: [problemsSetId], onDelete: Cascade)
+  sections             sections?        @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade)
+  problemtags          problemtags[]
+  userattempts         userattempts[]
+}
+
+model problemssettags {
+  problemsSetId Int
+  tagScopeId    Int
+  ProblemsSet   ProblemsSet @relation(fields: [problemsSetId], references: [problemsSetId], onDelete: Cascade)
+  tag_scopes    tag_scopes  @relation(fields: [tagScopeId], references: [tagScopeId], onDelete: Cascade)
+
+  @@id([tagScopeId, problemsSetId])
+}
+
+model problemtags {
+  problemid  Int
+  tagScopeId Int
+  problems   problems   @relation(fields: [problemid], references: [problemid], onDelete: Cascade)
+  tag_scopes tag_scopes @relation(fields: [tagScopeId], references: [tagScopeId], onDelete: Cascade)
+
+  @@id([problemid, tagScopeId])
+}
+
+model sections {
+  sectionid             Int                     @id @default(autoincrement())
+  examtypeid            Int?
+  name                  String                  @db.VarChar(100)
+  description           String?
+  ProblemsSet           ProblemsSet[]
+  mocksections          mocksections[]
+  mocktestsectionscores mocktestsectionscores[]
+  performance           performance[]
+  problems              problems[]
+  examtypes             examtypes?              @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade)
+  tag_scopes            tag_scopes[]
+}
+
+model tag_scopes {
+  tagScopeId      Int               @id @default(autoincrement())
+  tagid           Int
+  examtypeid      Int
+  sectionid       Int
+  problemssettags problemssettags[]
+  problemtags     problemtags[]
+  examtypes            examtypes              @relation(fields: [examtypeid], references: [examtypeid], onDelete: Cascade)
+  sections             sections               @relation(fields: [sectionid], references: [sectionid], onDelete: Cascade)
+  tags                 tags                   @relation(fields: [tagid], references: [tagid], onDelete: Cascade)
+  user_tag_performance user_tag_performance[]
+
+  @@unique([tagid, examtypeid, sectionid])
+}
+
+model tags {
+  tagid      Int          @id @default(autoincrement())
+  name       String       @unique @db.VarChar(300)
+  category   String       @db.VarChar(100)
+  tag_scopes tag_scopes[]
+}
+
+model user_difficulty_stats {
+  id             Int      @id @default(autoincrement())
+  userid         Int
+  difficulty     Int
+  is_mock        Boolean  @default(false)
+  total_attempts Int      @default(0)
+  total_correct  Int      @default(0)
+  total_time     Float    @default(0)
+  last_updated   DateTime @default(now()) @db.Timestamp(6)
+  users          users    @relation(fields: [userid], references: [userid], onDelete: Cascade)
+
+  @@unique([userid, difficulty, is_mock])
+}
+
+model user_tag_performance {
+  userid             Int
+  tagScopeId         Int
+  is_mock            Boolean    @default(false)
+  total_attempts     Int        @default(0)
+  total_correct      Int        @default(0)
+  total_time_seconds Float      @default(0)
+  tag_scopes         tag_scopes @relation(fields: [tagScopeId], references: [tagScopeId], onDelete: Cascade)
+
+  @@id([userid, tagScopeId, is_mock])
+}
+
+model user_overall_performance {
+  userid               Int
+  is_mock              Boolean  @default(false)
+  total_attempts       Int      @default(0)
+  total_correct        Int      @default(0)
+  total_incorrect      Int      @default(0)
+  correct_total_time   Float    @default(0)
+  incorrect_total_time Float    @default(0)
+  last_updated         DateTime @default(now()) @db.Timestamp(6)
+  users                users    @relation(fields: [userid], references: [userid], onDelete: Cascade)
+
+  @@id([userid, is_mock])
+}
+
+model mock_community_aggregates {
+  mocktestid         Int      @id
+  min_score          Float    @default(0)
+  max_score          Float    @default(0)
+  avg_score          Float    @default(0)
+  q1                 Float    @default(0)
+  median             Float    @default(0)
+  q3                 Float    @default(0)
+  participants_count Int      @default(0)
+  last_updated       DateTime @default(now()) @db.Timestamp(6)
+}
+
+model mock_score_distribution_stats {
+  mocktestid Int
+  score      Int
+  frequency  Int @default(0)
+
+  @@id([mocktestid, score])
+}
+
+model userattempt_selectedoptions {
+  id             Int            @id @default(autoincrement())
+  userattemptid  Int
+  optionid       Int
+  problemoptions problemoptions @relation(fields: [optionid], references: [optionid], onDelete: Cascade)
+  userattempts   userattempts   @relation(fields: [userattemptid], references: [attemptid], onDelete: Cascade)
+
+  @@unique([userattemptid, optionid])
+}
+
+model userattempts {
+  attemptid                   Int                           @id @default(autoincrement())
+  userid                      Int?
+  problemid                   Int?
+  timetaken                   String?
+  attemptdate                 DateTime?                     @default(now()) @db.Timestamp(6)
+  partialcorrectnessscore     Decimal?                      @db.Decimal(5, 2)
+  iscorrect                   Boolean?
+  userattempt_selectedoptions userattempt_selectedoptions[]
+  problems                    problems?                     @relation(fields: [problemid], references: [problemid], onDelete: Cascade)
+  users                       users?                        @relation(fields: [userid], references: [userid], onDelete: Cascade)
+}
+
+model usermocktestattempts {
+  attemptid             Int                     @id @default(autoincrement())
+  userid                Int?
+  mocktestid            Int?
+  starttime             DateTime                @db.Timestamp(6)
+  endtime               DateTime?               @db.Timestamp(6)
+  totalscore            Decimal?                @db.Decimal(5, 2)
+  isofficialattempt     Boolean?                @default(true)
+  mocktestsectionscores mocktestsectionscores[]
+  mocktests             mocktests?              @relation(fields: [mocktestid], references: [mocktestid], onDelete: Cascade)
+  users                 users?                  @relation(fields: [userid], references: [userid], onDelete: Cascade)
+}
+
+model users {
+  userid                Int                     @id @default(autoincrement())
+  username              String                  @unique @db.VarChar(50)
+  password              String                  @db.VarChar(100)
+  email                 String                  @unique @db.VarChar(100)
+  registrationdate      DateTime?               @default(now()) @db.Timestamp(6)
+  isverified            Boolean                 @default(false)
+  otp                   String?                 @db.VarChar(6)
+  image_url             String?                 @db.Text
+  mocktestrankings      mocktestrankings[]
+  performance              performance[]
+  user_difficulty_stats    user_difficulty_stats[]
+  user_overall_performance user_overall_performance[]
+  userattempts             userattempts[]
+  usermocktestattempts     usermocktestattempts[]
+  userstreaks              userstreaks[]
+  userfeedback             userfeedback[]
+  questionFeedbacks        QuestionFeedback[]
+  userCollectibles         UserCollectible[]
+}
+
+model userstreaks {
+  streakid      Int       @id @default(autoincrement())
+  userid        Int?
+  currentstreak Int?      @default(0)
+  lasttestdate  DateTime? @db.Date
+  higheststreak Int?      @default(0)
+  users         users?    @relation(fields: [userid], references: [userid], onDelete: Cascade)
+}
+
+model userfeedback {
+  feedbackid Int      @id @default(autoincrement())
+  userid     Int?
+  type       String   @db.VarChar(50)
+  content    String   @db.Text
+  url        String?  @db.Text
+  createdat  DateTime @default(now()) @db.Timestamp(6)
+  users      users?   @relation(fields: [userid], references: [userid], onDelete: Cascade)
+}
+
+// Question feedback: 1-10 rating for quality assessment
+model QuestionFeedback {
+  feedbackId    Int      @id @default(autoincrement())
+  questionId    Int
+  userId        Int?
+  rating        Int      // 1-10 scale
+  comment       String?  // Optional feedback comment
+  isHelpful     Boolean? // Thumbs up/down
+  createdAt     DateTime @default(now()) @db.Timestamp(6)
+  users         users?   @relation(fields: [userId], references: [userid], onDelete: Cascade)
+  
+  @@index([questionId])
+}
+
+// Track average rating and variance for each question
+model QuestionQualityMetrics {
+  questionId        Int      @id
+  avgRating         Float    @default(0)
+  ratingCount       Int      @default(0)
+  variance          Float    @default(0)  // Statistical variance
+  qualityScore      Float    @default(0)  // Computed quality index
+  lastCalculatedAt  DateTime @default(now()) @db.Timestamp(6)
+}
+
+// User collectibles (badges, stickers earned through feedback)
+model UserCollectible {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  collectibleType String   // e.g., "quality_hunter", "speed_demon", "streak_king"
+  collectibleName String   // Human readable name
+  collectibleIcon String?  // URL or emoji for the icon
+  description     String?  // How user earned it
+  earnedAt        DateTime @default(now()) @db.Timestamp(6)
+  isDisplayed     Boolean  @default(true)
+  users           users    @relation(fields: [userId], references: [userid], onDelete: Cascade)
+  
+  @@index([userId])
+}
+
+// Collectible definitions
+model CollectibleType {
+  id             Int      @id @default(autoincrement())
+  type           String   @unique @db.VarChar(100)
+  name           String
+  icon           String?  // AI-generated icon URL
+  description    String
+  triggerRule    String   // JSON describing how to earn
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now()) @db.Timestamp(6)
+}
+
+// Feedback rewards configuration
+model FeedbackRewardConfig {
+  id              Int      @id @default(autoincrement())
+  name            String   @unique
+  description     String
+  ratingThreshold Float    // Minimum rating variance success
+  collectibleType String?  // What collectible to award
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now()) @db.Timestamp(6)
+}

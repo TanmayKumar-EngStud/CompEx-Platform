@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "problemCategories": "Problem Categories",
+    "problems": "Problems",
+    "preferenceSettings": "Preference Settings:"
+  },
+  "labels": {
+    "enableBookmarks": "Enable bookmarks:",
+    "showTimer": "Show timer:",
+    "showDifficulty": "Show difficulty:",
+    "showQuestionTags": "Show question tags:",
+    "shuffleQuestions": "Shuffle Questions:",
+    "displaySolvedQuestions": "Display solved questions:"
+  },
+  "buttons": {
+    "shuffle": "Shuffle"
+  },
+  "messages": {
+    "loadingCategories": "Loading categories...",
+    "loadingProblems": "Loading problems...",
+    "noCategoriesAvailable": "No categories available ☹️",
+    "shuffleTooltip": "Shuffle questions (solved questions will move to end)"
+  },
+  "examSections": {
+    "GRE": [
+      "quants",
+      "verbal"
+    ],
+    "GMAT": [
+      "Quants",
+      "Verbal",
+      "Integrated Reasoning"
+    ]
+  },
+  "defaultSections": {
+    "GRE": "quants",
+    "GMAT": "Quants"
+  }
+}

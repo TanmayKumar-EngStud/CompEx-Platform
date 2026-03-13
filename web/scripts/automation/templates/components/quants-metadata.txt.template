@@ -1,0 +1,21 @@
+[COMPONENT: QuestionMetadata]
+[EXAM: {{exam_type}}]
+[SECTION: {{section_name}}]
+
+## INSTRUCTION
+Select a high-rigor topic and theme for a new {{exam_type}} {{section_name}} question.
+
+## SELECTION CRITERIA
+- **Topic**: Must be a core {{exam_type}} concept (e.g., Prime Factorization, Geometry: Coordinate, Statistics: Weighted Averages).
+- **Theme/Scenario**: A "business-inspired" or "scientific" real-world application (e.g., "Yield optimization in a solar farm", "Risk assessment in a high-frequency trading algorithm").
+- **Difficulty Guidelines**: Provide specific constraints for {{difficulty}} level (e.g., "Must involve at least one quadratic constraint", "Must require the use of the Remainder Theorem").
+
+## OUTPUT
+A JSON object with 'topic', 'theme', and 'difficulty_guidelines'.
+
+## EXAMPLE STRUCTURE
+{
+  "topic": "Number Properties: Prime Factorization",
+  "theme": "Cryptographic Key Generation",
+  "difficulty_guidelines": "The problem must require finding the number of distinct prime factors of a product of three composite numbers."
+}

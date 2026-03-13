@@ -1,0 +1,5 @@
+{
+  "topic": "Number Properties: Divisibility and Remainders",
+  "theme": "Optimizing batch processing cycles in a high-frequency trading system",
+  "difficulty_guidelines": "The problem must require finding a number that leaves different remainders when divided by three distinct primes. Solving requires setting up a system of congruences and applying the Chinese Remainder Theorem concept, with the final step involving a constraint on the number's size and the condition that the number is the smallest positive integer meeting all criteria."
+}

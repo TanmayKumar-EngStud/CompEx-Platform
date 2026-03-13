@@ -1,0 +1,139 @@
+{
+  "personas": [
+    {
+      "name": "TheStruggler",
+      "goal": "Improve from 145 to 160",
+      "behavior": "Aggressive",
+      "errorRate": 0.7,
+      "feedbackStyle": "Emotional",
+      "focus": "AI Coach and Explanations",
+      "traits": ["Easily frustrated", "Needs step-by-step help", "Uses AI coach every time"]
+    },
+    {
+      "name": "TheSpeedRunner",
+      "goal": "Finish 50 questions in 30 mins",
+      "behavior": "Hyper-fast",
+      "errorRate": 0.15,
+      "feedbackStyle": "Technical",
+      "focus": "Performance and Lag",
+      "traits": ["Ignores animations", "Clicks 'Next' before text loads", "Tests UI responsiveness"]
+    },
+    {
+      "name": "TheESLLearner",
+      "goal": "Master GRE Verbal",
+      "behavior": "Meticulous",
+      "errorRate": 0.4,
+      "feedbackStyle": "Nuanced",
+      "focus": "Vocabulary and Grammar",
+      "traits": ["Struggles with idioms", "Highlights text often", "Asks AI for synonyms"]
+    },
+    {
+      "name": "TheSkeptic",
+      "goal": "Find errors in AI logic",
+      "behavior": "Critical",
+      "errorRate": 0.05,
+      "feedbackStyle": "Argumentative",
+      "focus": "Accuracy of Explanations",
+      "traits": ["Downvotes explanations", "Double-checks math with calculators", "Tries to trick the AI"]
+    },
+    {
+      "name": "TheImpatientExec",
+      "goal": "Get predicted score in < 2 mins",
+      "behavior": "Dismissive",
+      "errorRate": 0.3,
+      "feedbackStyle": "Short",
+      "focus": "Landing Page UX",
+      "traits": ["Skips tutorials", "Abandons if load time > 2s", "Only reads headers"]
+    },
+    {
+      "name": "TheDataNerd",
+      "goal": "Analyze weakness patterns",
+      "behavior": "Analytical",
+      "errorRate": 0.2,
+      "feedbackStyle": "Structured",
+      "focus": "Analytics Dashboard",
+      "traits": ["Spends 10 mins on charts", "Compares accuracy across days", "Wants more CSV exports"]
+    },
+    {
+      "name": "TheMathWhiz",
+      "goal": "Perfect Quant score",
+      "behavior": "Confident",
+      "errorRate": 0.01,
+      "feedbackStyle": "Minimal",
+      "focus": "Advanced Difficulty Problems",
+      "traits": ["Solves questions in < 30s", "Gets bored of 'Easy' questions", "Tests 800-level logic"]
+    },
+    {
+      "name": "TheRageQuitter",
+      "goal": "None",
+      "behavior": "Unstable",
+      "errorRate": 0.5,
+      "feedbackStyle": "Hostile",
+      "focus": "Error Handling",
+      "traits": ["Quits if a button fails once", "Reports bugs for minor typos", "Hates 'Loading' states"]
+    },
+    {
+      "name": "TheStreakHunter",
+      "goal": "Hit 365-day streak",
+      "behavior": "Obsessive",
+      "errorRate": 0.2,
+      "feedbackStyle": "Encouraging",
+      "focus": "Gamification Systems",
+      "traits": ["Uses app at 11:59 PM", "Obsesses over badges", "Shares progress on socials"]
+    },
+    {
+      "name": "TheMobileFirstUser",
+      "goal": "Study on the subway",
+      "behavior": "Distracted",
+      "errorRate": 0.35,
+      "feedbackStyle": "Practical",
+      "focus": "Mobile Responsiveness",
+      "traits": ["Uses app with one hand", "Experiences spotty internet", "Tests small-screen tap targets"]
+    },
+    {
+      "name": "TheSecurityAuditor",
+      "goal": "Ensure user data is safe",
+      "behavior": "Paranoid",
+      "errorRate": 0.0,
+      "feedbackStyle": "Formal",
+      "focus": "Auth and Data Privacy",
+      "traits": ["Checks for SQL injection", "Tests session timeouts", "Hates exposed internal IDs"]
+    },
+    {
+      "name": "TheAccessibilitySpecialist",
+      "goal": "Make Compex usable by everyone",
+      "behavior": "Empathetic",
+      "errorRate": 0.1,
+      "feedbackStyle": "Detailed",
+      "focus": "ARIA and Contrast",
+      "traits": ["Uses screen readers", "Checks color contrast", "Tests keyboard navigation"]
+    },
+    {
+      "name": "TheMagooshTraitor",
+      "goal": "Find a reason to switch from Magoosh",
+      "behavior": "Comparing",
+      "errorRate": 0.2,
+      "feedbackStyle": "Judgmental",
+      "focus": "Competitive Edge",
+      "traits": ["Obsessed with video quality", "Wants 'Study Plans'", "Compares pricing constantly"]
+    },
+    {
+      "name": "TheParent",
+      "goal": "Pay for a tool that actually works",
+      "behavior": "Results-Oriented",
+      "errorRate": 0.0,
+      "feedbackStyle": "Blunt",
+      "focus": "Score Improvement Proof",
+      "traits": ["Wants progress reports sent to email", "Focuses on ROI", "Checks 'Guarantee' policies"]
+    },
+    {
+      "name": "TheAPIIntegrator",
+      "goal": "Export data to Notion/Obsidian",
+      "behavior": "Technical",
+      "errorRate": 0.05,
+      "feedbackStyle": "Dry",
+      "focus": "Data Portability",
+      "traits": ["Checks API documentation", "Wants JSON exports", "Tests webhook reliability"]
+    }
+  ]
+}

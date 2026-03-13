@@ -1,0 +1,3 @@
+{
+  "question_text": "A manufacturing company produces two components, A and B. The daily production quantities, $x$ (for A) and $y$ (for B), in hundreds of units, must satisfy the following conditions to maintain optimal profit margin: $$2x + y \\leq 12$$ $$|x - y| \\leq 3$$ $$x \\geq 2, \\quad y \\geq 1$$ If the profit margin (in thousands of dollars) is given by $P = 3x + 4y$, what is the maximum possible profit margin, subject to these constraints?"
+}

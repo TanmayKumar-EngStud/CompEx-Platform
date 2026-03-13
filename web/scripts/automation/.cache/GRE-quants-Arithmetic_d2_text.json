@@ -1,0 +1,3 @@
+{
+  "question_text": "Let $A$ and $B$ represent the number of units produced of product A and product B, respectively, per day. Each unit of A requires $2$ tons of steel and $3$ hours of machining time. Each unit of B requires $4$ tons of steel and $1$ hour of machining time. The company has at most $100$ tons of steel and at most $60$ hours of machining time available daily. The constraints are $2A+4B \\leq 100$ (steel) and $3A+B \\leq 60$ (machining time). If the company must produce at least $5$ units of A, i.e., $A \\geq 5$, what is the maximum possible value of $B$?"
+}

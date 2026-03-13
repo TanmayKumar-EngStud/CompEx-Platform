@@ -1,0 +1,5 @@
+# This is your Prisma migration file lockfile.
+# Please don't edit this file manually.
+# It is created by Prisma and will be updated automatically.
+
+migration_lock.toml: {}

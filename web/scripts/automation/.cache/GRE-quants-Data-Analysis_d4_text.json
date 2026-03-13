@@ -1,0 +1,3 @@
+{
+  "question_text": "A pharmaceutical company produces two drugs: Drug X and Drug Y. Each batch of Drug X requires 3 hours on Machine A and 2 hours on Machine B. Each batch of Drug Y requires 1 hour on Machine A and 4 hours on Machine B. Machine A is available for at most 60 hours per week, and Machine B is available for at most 80 hours per week. The company must produce at least 5 batches of Drug X and at least 10 batches of Drug Y per week. If the profit per batch of Drug X is $200 and the profit per batch of Drug Y is $300, what is the maximum possible profit per week, in dollars?"
+}

@@ -1,0 +1,22 @@
+[COMPONENT: QuestionMetadata]
+[EXAM: {{exam_type}}]
+[SECTION: {{section_name}}]
+
+## INSTRUCTION
+Select a high-rigor theme and topic for a new {{exam_type}} {{section_name}} question.
+Target Topic: {{requested_topic}} (If provided, YOU MUST USE THIS TOPIC).
+
+## SELECTION CRITERIA
+- **Topic**: Critical Reasoning, Text Completion, or Reading Comprehension.
+- **Theme**: Academic subjects (e.g., "The economic impact of the Black Death", "Quantum entanglement paradoxes", "Victorian ethical philosophy").
+- **Difficulty**: {{difficulty}}/5. 5 = Extremely dense, convoluted logic/vocabulary.
+
+## OUTPUT
+A JSON object with 'topic', 'theme', and 'difficulty_guidelines'.
+
+## EXAMPLE STRUCTURE
+{
+  "topic": "Critical Reasoning: Weaken the Argument",
+  "theme": "Urban Planning Paradox",
+  "difficulty_guidelines": "The argument should involve a cause-and-effect confusion that makes the distractor tempting."
+}

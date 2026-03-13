@@ -1,0 +1,10 @@
+{
+  "options": {
+    "A": "Functional MRI studies reveal that the vmPFC exhibits comparable levels of activation during non-moral decision-making tasks that require the anticipation of social approval or disapproval.",
+    "B": "The rarity of circumscribed vmPFC lesions means that clinical data often reflect damage to interconnected regions, thereby obfuscating the specific contribution of the vmPFC.",
+    "C": "The neuroscientists in question have been criticized in the past for promulgating reductionist theories that inappropriately localize complex cognitive functions.",
+    "D": "The experimental paradigms used to elicit moral reasoning are inherently confounded, as they simultaneously trigger both emotional arousal and cognitive evaluation, making it impossible to attribute activation solely to moral processing.",
+    "E": "Individuals who consistently adopt a utilitarian framework in moral dilemmas display attenuated vmPFC activity, suggesting that divergent cognitive strategies engage distinct neural pathways."
+  },
+  "answer": "A"
+}

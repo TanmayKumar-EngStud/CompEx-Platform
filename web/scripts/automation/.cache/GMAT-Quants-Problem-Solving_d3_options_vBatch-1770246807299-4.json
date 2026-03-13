@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$x < \\frac{5}{3}$ or $x > 5$",
+    "B": "$x > 5$",
+    "C": "$\\frac{5}{3} \\le x \\le 5$",
+    "D": "$x < 0$ or $x > \\frac{10}{3}$",
+    "E": "$x < -5$ or $x > 5$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. Substituting $k=5$ gives $|3x-10|>5$. This absolute inequality splits into two: $3x-10>5$ or $3x-10<-5$. Solving yields $x>5$ or $x<\\frac{5}{3}$, which matches option A.",
+    "B": "Incorrect. This option only includes the branch $x>5$ and omits the branch $x<\\frac{5}{3}$.",
+    "C": "Incorrect. This option gives the solution to $|3x-10|\\le5$, i.e., the condition for the transaction *not* being flagged as high-risk.",
+    "D": "Incorrect. This likely results from mistakenly using $|3x-k|>k$ instead of $|3x-2k|>k$ (forgetting the factor of 2), leading to $|3x-5|>5$ and solutions $x<0$ or $x>\\frac{10}{3}$.",
+    "E": "Incorrect. This likely results from mishandling the absolute value, e.g., interpreting $|3x-2k|$ as $|3x|-2k$, which gives $|3x|>3k$ and then $|x|>k$, so $x<-5$ or $x>5$."
+  }
+}

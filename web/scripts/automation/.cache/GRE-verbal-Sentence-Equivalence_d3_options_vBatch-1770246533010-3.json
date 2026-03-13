@@ -1,0 +1,10 @@
+{
+  "options": {
+    "A": "The study's participants were all volunteers who were already predisposed to energy conservation, potentially biasing the outcomes.",
+    "B": "Historical data indicate that the Jevons paradox has been observed consistently in markets for transportation and lighting but not for major household appliances.",
+    "C": "Households that achieve lower utility bills through efficiency upgrades frequently allocate the savings to purchase other goods whose manufacture and use are energy-intensive.",
+    "D": "As energy-efficient appliances become more prevalent, the resulting reduction in aggregate energy demand can drive down energy prices, which in turn incentivizes greater overall energy use.",
+    "E": "The increased affordability of operating energy-efficient appliances leads to a marked rise in the total number of such appliances in households, offsetting the per-unit savings."
+  },
+  "answer": "E"
+}

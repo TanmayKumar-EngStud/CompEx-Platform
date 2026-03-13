@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$1$",
+    "B": "$\\frac{1}{2}$",
+    "C": "$\\frac{3}{4}$",
+    "D": "$\\frac{4}{3}$",
+    "E": "$\\frac{2}{5}$"
+  },
+  "answer": "C",
+  "explanations": {
+    "A": "Incorrect. This ratio is obtained from the first condition alone, but it contradicts the second condition when substituted back.",
+    "B": "Incorrect. This may result from a miscalculation in setting up or solving the weighted average equations.",
+    "C": "Correct. Solving the system of equations derived from both conditions yields $\\frac{x}{y} = \\frac{3}{4}$.",
+    "D": "Incorrect. This is the reciprocal of the correct ratio, often chosen by those who mistakenly invert the variables.",
+    "E": "Incorrect. This could arise from misinterpreting the overall return as a simple average of the individual returns."
+  }
+}

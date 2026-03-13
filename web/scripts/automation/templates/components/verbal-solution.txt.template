@@ -1,0 +1,31 @@
+[COMPONENT: QuestionSolution]
+[EXAM: {{exam_type}}]
+[TEXT: {{question_text}}]
+[OPTIONS: {{options}}]
+[ANSWER: {{answer}}]
+
+## INSTRUCTION
+Generate a "Gold Standard" explanation for the correct answer and distractors.
+
+## FORMATTING RULES
+The solution must follow this STRICT MARKDOWN FORMAT:
+
+**Setup:**
+(Deconstruct the problem. Identify the core argument, premises, and conclusion. Identify the blank's required meaning.)
+
+**Execution:**
+(Derive the correct answer logically. Explain the thought process step-by-step.)
+
+**Verification:**
+(Plug the answer back in/Test the conclusion. Verify it meets all constraints.)
+
+**Distractors:**
+(Explain why EACH incorrect option is wrong, identifying the specific error type like 'Out of Scope', 'Reverse Logic', or 'Too Extreme'.)
+
+## OUTPUT
+JSON with 'solution'.
+
+## EXAMPLE STRUCTURE
+{
+  "solution": "### Analysis\nThe word 'Although' indicates a contrast... \n\n### Correct Answer\n(B) lambasted means criticized harshly...\n\n### Distractors\n(A) panegyrized means praised..."
+}

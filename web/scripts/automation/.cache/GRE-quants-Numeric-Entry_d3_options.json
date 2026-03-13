@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$33$",
+    "B": "$38$",
+    "C": "$30$",
+    "D": "$9$",
+    "E": "$28$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. The maximum occurs at the vertex $(3,6)$ yielding $P=3(3)+4(6)=9+24=33$.",
+    "B": "Incorrect. This would be the profit if one ignored the constraint $|x-y|\\\\le 3$ and took the point $(2,8)$, but that point violates $|2-8|=6>3$.",
+    "C": "Incorrect. This might come from a miscalculation at the optimum, e.g., computing $3\\\\times3=6$ instead of $9$, giving $6+24=30$.",
+    "D": "Incorrect. This is the sum $x+y$ at the optimum $(3,6)$, not the profit $3x+4y$.",
+    "E": "Incorrect. This results from mistakenly assuming $x=y$ and solving $2x+x=12$ to get $x=4$, $y=4$, giving $P=3(4)+4(4)=28$."
+  }
+}

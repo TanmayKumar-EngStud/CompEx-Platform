@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$4.5$",
+    "B": "$4.6$",
+    "C": "$4.9$",
+    "D": "$5.4$",
+    "E": "$2\\sqrt{3301} - 110$"
+  },
+  "answer": "E",
+  "explanations": {
+    "A": "Incorrect. This is the rate if both the initial deposit and the additional deposit were made at the beginning and compounded for two years, i.e., $12000(1+\\frac{r}{100})^2 = 13104$. However, the additional deposit is made after the first year, so this misinterpretation leads to the wrong answer.",
+    "B": "Incorrect. This might come from calculating simple interest on the total deposit: Total interest $= 13104 - 12000 = 1104$ over 2 years, so annual interest $= 552$, and rate $= 552/12000 = 0.046 = 4.6\\%$. But the interest is compounded, not simple, and the additional deposit is not present for the full two years.",
+    "C": "Incorrect. This is a close approximation to the true rate but is not exact. Plugging $r=4.9$ into the equation gives $(10000 \\times 1.049 + 2000) \\times 1.049 = 12490 \\times 1.049 = 13102.01 \\neq 13104$.",
+    "D": "Incorrect. This could result from forgetting to compound the interest on the additional deposit, i.e., using $10000(1+\\frac{r}{100})^2 + 2000 = 13104$, which yields $r \\approx 5.38\\%$. Alternatively, it could stem from a miscalculation in the quadratic formula.",
+    "E": "Correct. The equation modeling the situation is $10000(1+\\frac{r}{100})^2 + 2000(1+\\frac{r}{100}) = 13104$, which simplifies to $r^2 + 220r - 1104 = 0$. Solving via the quadratic formula gives $r = \\frac{-220 + \\sqrt{220^2 + 4 \\cdot 1104}}{2} = -110 + 2\\sqrt{3301}$, which is the exact value."
+  }
+}

@@ -1,0 +1,129 @@
+@tailwind base;
+/* Force Rebuild */
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 221.2 83.2% 53.3%;
+      --primary-foreground: 210 40% 98%;
+      --primary-light: 221.2 83.2% 63.3%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+      --secondary-light: 210 40% 85%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 221.2 83.2% 53.3%;
+
+      --radius: 0.5rem;
+
+      /* Fumadocs layout */
+      --fd-layout-width: 1400px;
+
+      /* Fumadocs primary color (match site primary blue) */
+      --fd-primary: 221.2 83.2% 53.3%;
+      --fd-primary-foreground: 210 40% 98%;
+      --fd-ring: 221.2 83.2% 53.3%;
+
+      /* Chart colors for data visualization */
+      --chart-1: 221.2 83.2% 53.3%;
+      --chart-2: 142.1 76.2% 36.3%;
+      --chart-3: 47.9 95.8% 53.1%;
+      --chart-4: 346.8 77.2% 49.8%;
+      --chart-5: 262.1 83.3% 57.8%;
+   }
+
+   .dark {
+      --background: 222.2 47.4% 11.2%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 47.4% 13.2%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 9.8%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 217.2 91.2% 59.8%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+      --primary-light: 217.2 91.2% 70%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+      --primary-light: 217.2 91.2% 69.8%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 224.3 76.3% 48%;
+
+      /* Fumadocs primary color (match site primary blue in dark mode) */
+      --fd-primary: 217.2 91.2% 59.8%;
+      --fd-primary-foreground: 222.2 47.4% 11.2%;
+      --fd-ring: 224.3 76.3% 48%;
+
+      /* Chart colors for data visualization in dark mode */
+      --chart-1: 217.2 91.2% 59.8%;
+      --chart-2: 142.1 70.6% 45.3%;
+      --chart-3: 47.9 95.8% 53.1%;
+      --chart-4: 346.8 77.2% 49.8%;
+      --chart-5: 262.1 83.3% 67.8%;
+   }
+}
+
+@layer base {
+   * {
+      @apply border-solid border-[hsl(var(--border))];
+   }
+   body {
+      @apply text-[hsl(var(--foreground))];
+   }
+}
+
+@layer utilities {
+   .animate-gradient {
+      background-size: 200% auto;
+      animation: gradient 3s linear infinite;
+   }
+
+   @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+   }
+
+   .no-scrollbar::-webkit-scrollbar {
+      display: none;
+   }
+   .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+   }
+}

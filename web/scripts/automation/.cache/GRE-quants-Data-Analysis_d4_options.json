@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$6800$",
+    "B": "$6200$",
+    "C": "$7200$",
+    "D": "$5000$",
+    "E": "$6300$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. Let $x$ = batches of Drug X, $y$ = batches of Drug Y. The constraints are: $3x + y \\le 60$, $2x + 4y \\le 80$, $x \\ge 5$, $y \\ge 10$, and profit $P = 200x + 300y$. Graphing the feasible region and checking corner points: Intersection of $3x+y=60$ and $2x+4y=80$ gives $(x,y) = (16,12)$. Checking constraints: $3(16)+12=60 \\le 60$, $2(16)+4(12)=80 \\le 80$, $16 \\ge 5$, $12 \\ge 10$. Profit = $200(16)+300(12) = 3200+3600=6800$. Other corners: $(5,10)$ gives $P=4000$; $(5,17.5)$ (from $2x+4y=80$) gives $P=6250$ but $y=17.5$ is feasible; $(\\frac{50}{3},10)$ (from $3x+y=60$) gives $P \\approx 6333.33$. The maximum is $6800$.",
+    "B": "Incorrect. This distractor arises from miscalculating the intersection point of the two constraints. Solving $3x+y=60$ and $2x+4y=80$ incorrectly (e.g., multiplying the first by 4 and subtracting, but making an arithmetic error) might yield a point like $(14,18)$, giving profit $200(14)+300(18)=2800+5400=8200$, which violates the second constraint. Alternatively, it might come from using the point $(10,15)$ (which satisfies the first constraint but not the second) and computing $200(10)+300(15)=2000+4500=6500$, close but not the maximum.",
+    "C": "Incorrect. This value ($7200$) might be obtained by ignoring the minimum constraints and using the intersection of the two machine constraints ($16,12$), but then incorrectly computing the profit as $200(12)+300(16)=2400+4800=7200$ (swapping the profit coefficients).",
+    "D": "Incorrect. This is a 'trap' answer from focusing on only one constraint or the minimums. For example, if one only considers the minimum production ($x=5$, $y=10$), the profit is $4000$. Alternatively, if one uses the maximum possible batches of Drug Y from Machine B's constraint ($2x+4y \\le 80$, with $x=5$, gives $y \\le 17.5$), and takes $y=17.5$, but forgets to check Machine A, the profit would be $200(5)+300(17.5)=1000+5250=6250$. $5000$ is not a value from any logical corner point.",
+    "E": "Incorrect. This distractor comes from a misstep in solving the system. For instance, solving $3x+y=60$ and $2x+4y=80$ by multiplying the first by 2 and subtracting from the second incorrectly might yield $y=10$, then $x=\\frac{50}{3}$, giving profit $200(\\frac{50}{3})+300(10)=\\frac{10000}{3}+3000 \\approx 6333.33$. Rounding or a slight miscalculation could lead to $6300$. This point is feasible but does not yield the maximum profit."
+  }
+}

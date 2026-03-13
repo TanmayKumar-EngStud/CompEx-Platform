@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editors
+*.code-workspace
+
+# Env files (never commit secrets)
+.env
+.env.*
+.env.local
+
+# Setup script (local use only)
+setup-monorepo.sh

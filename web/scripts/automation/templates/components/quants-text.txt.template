@@ -1,0 +1,21 @@
+[COMPONENT: QuestionText]
+[EXAM: {{exam_type}}]
+[SECTION: {{section_name}}]
+[TOPIC: {{topic}}]
+[DIFFICULTY: {{difficulty}}]
+
+## INSTRUCTION
+Generate the question stem (text) for a {{topic}} problem at a difficulty level {{difficulty}}.
+Ensure the question requires multiple logical steps. 
+The scenario should be "{{scenario}}" (if applicable, otherwise use a standard academic scenario).
+
+## CONSTRAINTS
+- Language: Formal academic tone.
+- Length: Concise, avoid unnecessary fluff.
+- Math: Use double-escaped LaTeX for all symbols and formulas.
+- Output: A JSON object with a single key 'question_text'.
+
+## EXAMPLE STRUCTURE
+{
+  "question_text": "If $x$ is a positive integer such that $x^2 - 5x + 6 = 0$, what is the sum of all possible values of $x$?"
+}

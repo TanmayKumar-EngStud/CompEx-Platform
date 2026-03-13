@@ -1,0 +1,3 @@
+{
+  "question_text": "In a satellite transmission system, an error-correcting code is represented by a positive integer $N$ that satisfies the following conditions:\n- $N$ is divisible by both $12$ and $15$.\n- $N$ has exactly $20$ positive divisors.\nWhat is the remainder when the smallest possible value of $N$ is divided by $7$?"
+}

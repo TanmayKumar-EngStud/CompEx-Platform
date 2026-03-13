@@ -1,0 +1,67 @@
+{
+   "name": "GRE_Verbal",
+   "type": "object",
+   "oneOf": [
+     {
+       "type": "object",
+       "properties": {
+         "content": { "type": "object" }
+       },
+         "title": { "type": "string" },
+         "questionNumber": { "type": "number" },
+         "tag": {
+           "type": "array",
+           "items": { "type": "string" }
+         },
+       "required": ["content","title", "questionNumber", "tag"],
+       "additionalProperties": false
+     },
+     {
+       "type": "object",
+       "properties": {
+         "text": { "type": "string" },
+         "title": { "type": "string" },
+         "difficulty": { "type": "number" },
+         "solution": { "type": "object" },
+         "answer": {
+           "type": "array",
+           "items": { "type": "string" }
+         },
+         "options": {
+           "type": "array",
+           "items": { "type": "string" }
+         },
+         "tag": {
+           "type": "array",
+           "items": { "type": "string" }
+         }
+       },
+       "required": ["text", "title", "difficulty", "solution", "answer", "options", "tag"],
+       "additionalProperties": false
+     },
+     {
+       "type": "object",
+       "properties": {
+         "text": { "type": "string" },
+         "title": { "type": "string" },
+         "difficulty": { "type": "number" },
+         "tag": {
+           "type": "array",
+           "items": { "type": "string" }
+         },
+         "solution": { "type": "object" },
+         "answer": {
+           "type": "array",
+           "items": { "type": "string" }
+         },
+         "options": {
+           "type": "array",
+           "items": { "type": "string" }
+         },
+         "metaData": { "type": "object" }
+       },
+       "required": ["text", "title", "difficulty", "tag", "solution", "answer", "options", "metaData"],
+       "additionalProperties": false
+     }
+   ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "options": {
+      "type": "object",
+      "properties": {
+        "A": { "type": "string" },
+        "B": { "type": "string" },
+        "C": { "type": "string" },
+        "D": { "type": "string" },
+        "E": { "type": "string" }
+      },
+      "required": ["A", "B", "C", "D", "E"],
+      "additionalProperties": false
+    },
+    "answer": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "E"]
+    },
+    "explanations": {
+      "type": "object",
+      "properties": {
+        "A": { "type": "string" },
+        "B": { "type": "string" },
+        "C": { "type": "string" },
+        "D": { "type": "string" },
+        "E": { "type": "string" }
+      },
+      "required": ["A", "B", "C", "D", "E"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["options", "answer", "explanations"],
+  "additionalProperties": false
+}

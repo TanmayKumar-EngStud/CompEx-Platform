@@ -1,0 +1,5 @@
+{
+  "topic": "Probability & Combinatorics: Counting Techniques",
+  "theme": "Portfolio Risk Assessment in Financial Trading",
+  "difficulty_guidelines": "The problem must require the application of the Fundamental Counting Principle, followed by a calculation of a probability that is the ratio of two combinatorial expressions. The solution must account for 'at least' conditions and include an intermediate step of calculating a complementary probability. The numbers involved should be large enough to prevent brute force but manageable with factorial/cancellation methods."
+}

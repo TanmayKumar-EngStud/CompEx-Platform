@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "solution": {
+      "type": "string",
+      "minLength": 50,
+      "description": "The full step-by-step solution text in Markdown with LaTeX."
+    }
+  },
+  "required": ["solution"],
+  "additionalProperties": false
+}

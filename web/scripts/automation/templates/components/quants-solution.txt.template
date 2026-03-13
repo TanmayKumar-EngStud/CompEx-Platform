@@ -1,0 +1,25 @@
+[COMPONENT: QuestionSolution]
+[EXAM: {{exam_type}}]
+[STEM: {{question_text}}]
+[OPTIONS: {{options}}]
+[ANSWER: {{answer}}]
+
+## INSTRUCTION
+Generate a step-by-step solution for the question above.
+
+## LOGICAL STRUCTURE
+1. **Goal Discovery**: State what needs to be found.
+2. **Property Identification**: List the mathematical properties or formulas relevant to the problem.
+3. **Drafting/Logical Steps**: Show the sequential steps to reach the result.
+4. **Distractor Analysis**: Briefly explain why the trap answers (A-E excluding correct) were included and how to avoid them.
+5. **Final Verification**: Confirm the answer matches the identified correct option.
+
+## CONSTRAINTS
+- Math: Use double-escaped LaTeX.
+- Tone: Instructional and encouraging.
+- Output: A JSON object with a 'solution' key.
+
+## EXAMPLE STRUCTURE
+{
+  "solution": "### Step 1: Goal Discovery\nWe need to find the sum of all $x$ such that...\n\n### Step 2: Property Identification\nWe use the quadratic formula...\n\n### Step 3: Calculation\n$x=2$ or $x=3$. Sum = $5$.\n\n### Step 4: Distractor Analysis\nOption B ($3$) is a common error where the student finds only one root..."
+}

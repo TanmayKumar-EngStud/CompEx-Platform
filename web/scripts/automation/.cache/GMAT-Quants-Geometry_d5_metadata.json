@@ -1,0 +1,5 @@
+{
+  "topic": "Statistics: Weighted Averages",
+  "theme": "Investment Portfolio Performance Analysis",
+  "difficulty_guidelines": "The problem must require calculating a weighted average from two distinct data sets (e.g., two time periods with different amounts of capital), incorporating percentage changes, and solving for an unknown initial value. It must involve setting up and solving a single-variable equation derived from the weighted average formula."
+}

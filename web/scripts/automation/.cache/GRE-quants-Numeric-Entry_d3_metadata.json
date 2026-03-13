@@ -1,0 +1,5 @@
+{
+  "topic": "Algebra: Systems of Inequalities & Absolute Values",
+  "theme": "Optimizing a Manufacturing Process for Profit Margin",
+  "difficulty_guidelines": "Must involve analyzing two linear inequalities for integer constraints, incorporate an absolute value condition for a secondary parameter, and require solving a composite system to find the maximum value of a linear expression. The solution path must include testing integer points within the feasible region and evaluating a condition that eliminates some candidates."
+}

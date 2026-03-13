@@ -1,0 +1,3 @@
+{
+  "question_text": "An analyst is evaluating the performance of two investment portfolios, Portfolio X and Portfolio Y, over the same period. The average annual return for Portfolio X is $r_x\\%$, and the average annual return for Portfolio Y is $r_y\\%$, where $r_x > r_y > 0$. The total capital invested across both portfolios is $$C$$ dollars. If the overall average annual return for the combined capital is exactly the arithmetic mean of $r_x$ and $r_y$, what is the ratio of the amount invested in Portfolio X to the amount invested in Portfolio Y?"
+}

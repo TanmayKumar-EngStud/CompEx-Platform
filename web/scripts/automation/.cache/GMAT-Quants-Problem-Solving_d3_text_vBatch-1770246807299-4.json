@@ -1,0 +1,3 @@
+{
+  "question_text": "In a high-frequency trading algorithm, a risk assessment model flags a transaction as high-risk if the expression $|3x - 2k|$ is greater than $k$, where $x$ represents the price deviation (in percentage points) from a target, and $k$ is a positive constant. If $k = 5$, which of the following represents the complete set of price deviations $x$ for which the transaction is flagged as high-risk?"
+}

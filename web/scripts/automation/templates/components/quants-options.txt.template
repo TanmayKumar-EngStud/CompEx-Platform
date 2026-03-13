@@ -1,0 +1,36 @@
+[COMPONENT: QuestionOptions/Answer]
+[EXAM: {{exam_type}}]
+[SECTION: {{section_name}}]
+[STEM: {{question_text}}]
+
+## INSTRUCTION
+Given the question stem above, generate 5 multiple-choice options (A to E) and identify the correct answer.
+
+## OPTION QUALITY RULES
+1. **The Correct Answer**: Must be mathematically unique and non-ambiguous.
+2. **Plausible distractors**: 
+   - Option B: Mistake in the first step of the logical derivation.
+   - Option C: Miscalculation (e.g., $2 \times 3 = 5$) or sign error.
+   - Option D: "Trap" answer (e.g., giving the value of $x$ when the question asked for $x+y$).
+   - Option E: Misinterpretation of a geometric constraint or statistical property.
+
+## CONSTRAINTS
+- Math: Use double-escaped LaTeX for all values.
+- Output: A JSON object with 'options' (A-E mapping) and 'answer' (the key of the correct option).
+
+## EXAMPLE STRUCTURE
+{
+  "options": {
+    "A": "$5$",
+    "B": "$3$",
+    "C": "$2$",
+    "D": "$-1$",
+    "E": "$0$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. Sum of roots $x=2$ and $x=3$ is $5$.",
+    "B": "Incorrect. This is one of the roots but not the sum.",
+    ...
+  }
+}

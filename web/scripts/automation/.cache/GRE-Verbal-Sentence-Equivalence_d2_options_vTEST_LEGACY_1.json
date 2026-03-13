@@ -1,0 +1,33 @@
+{
+  "options": {
+    "A": {
+      "text": "speculative",
+      "explanation": "See solution."
+    },
+    "B": {
+      "text": "definitive",
+      "explanation": "See solution."
+    },
+    "C": {
+      "text": "conjectural",
+      "explanation": "See solution."
+    },
+    "D": {
+      "text": "authoritative",
+      "explanation": "See solution."
+    },
+    "E": {
+      "text": "equivocal",
+      "explanation": "See solution."
+    },
+    "F": {
+      "text": "ambiguous",
+      "explanation": "See solution."
+    }
+  },
+  "answer": [
+    "A",
+    "C"
+  ],
+  "explanations": {}
+}

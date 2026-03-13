@@ -1,0 +1,5 @@
+{
+  "topic": "Statistics: Weighted Averages",
+  "theme": "Performance evaluation of two investment portfolios",
+  "difficulty_guidelines": "The problem must require setting up a weighted average equation with two groups, where the weights are the number of investments in each portfolio. It must involve integer constraints and a given total number of investments, and require solving for an unknown average or number of investments."
+}

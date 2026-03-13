@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$2$",
+    "B": "$4$",
+    "C": "$5$",
+    "D": "$6$",
+    "E": "$0$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. The smallest positive integer N divisible by both 12 and 15 is a multiple of LCM(12,15)=60. N must have exactly 20 divisors. The prime factorization of such an N must include at least $2^2$, $3$, and $5$. For N to have exactly 20 divisors, its prime exponents must satisfy $(a+1)(b+1)(c+1)=20$ with $a\\ge2$, $b\\ge1$, $c\\ge1$. The only possibility is $a=4$, $b=1$, $c=1$, giving $N=2^4 \\cdot 3 \\cdot 5 = 240$. $240 \\div 7 = 34$ remainder $2$.",
+    "B": "Incorrect. This would be the remainder if $N=60$ (the LCM), but $60$ has only $12$ divisors, not $20$.",
+    "C": "Incorrect. This might come from miscalculating $240$ divided by $7$ as $7 \\times 35 = 245$, so remainder $5$, but $7 \\times 34 = 238$, so the correct remainder is $2$.",
+    "D": "Incorrect. This is the remainder when the number of divisors $(20)$ is divided by $7$, but the question asks for the remainder when $N$ is divided by $7$.",
+    "E": "Incorrect. This would imply $N$ is a multiple of $7$, but $240$ is not divisible by $7$. Possibly from mistakenly using a larger candidate like $420$, which is divisible by $7$ but has $24$ divisors."
+  }
+}

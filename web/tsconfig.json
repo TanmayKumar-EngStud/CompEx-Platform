@@ -1,0 +1,101 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/.source": [
+        "./.source"
+      ],
+      "@/features/*": [
+        "./features/*"
+      ],
+      "@/shared/*": [
+        "./shared/*"
+      ],
+      "@/app/*": [
+        "./app/*"
+      ],
+      "@/ui/*": [
+        "./shared/components/ui/*"
+      ],
+      "@/components/*": [
+        "./shared/components/*"
+      ],
+      "@/hooks/*": [
+        "./shared/hooks/*"
+      ],
+      "@/lib/*": [
+        "./shared/lib/*"
+      ],
+      "@/stores/*": [
+        "./shared/stores/*"
+      ],
+      "@/question-solving/*": [
+        "./features/question-solving/*"
+      ],
+      "@/exam-management/*": [
+        "./features/exam-management/*"
+      ],
+      "@/user-analytics/*": [
+        "./features/user-analytics/*"
+      ]
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    ".source/**/*.ts",
+    "mdx-components.tsx",
+    "source.config.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "features/**/*.ts",
+    "features/**/*.tsx",
+    "shared/**/*.ts",
+    "shared/**/*.tsx",
+    "lib/**/*.ts",
+    "scripts/**/*.ts",
+    "prisma/**/*.ts",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "next/types/**/*.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "sourceMap": true,
+  "exclude": [
+    "node_modules",
+    ".next",
+    "public",
+    "images",
+    "assets",
+    "dummy_paper",
+    "docs",
+    "dist",
+    "coverage",
+    "tests"
+  ]
+}

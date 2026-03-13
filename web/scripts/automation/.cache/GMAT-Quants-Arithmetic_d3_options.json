@@ -1,0 +1,17 @@
+{
+  "options": {
+    "A": "$1$",
+    "B": "$\\frac{r_y}{r_x}$",
+    "C": "$\\frac{r_x}{r_y}$",
+    "D": "$-1$",
+    "E": "$\\text{Cannot be determined}$"
+  },
+  "answer": "A",
+  "explanations": {
+    "A": "Correct. Let the amounts invested in X and Y be $A_x$ and $A_y$, respectively. The overall average return is the weighted average: $\\frac{A_x r_x + A_y r_y}{A_x + A_y}$. Setting this equal to the arithmetic mean $\\frac{r_x + r_y}{2}$ and solving yields $A_x = A_y$, so the ratio $A_x/A_y = 1$.",
+    "B": "Incorrect. This might arise from mistakenly assuming that the amounts are inversely proportional to the returns to achieve the arithmetic mean.",
+    "C": "Incorrect. This could result from an algebraic error such as misplacing terms and then ignoring a negative sign.",
+    "D": "Incorrect. This would come from a sign error in the algebra, but amounts invested cannot be negative.",
+    "E": "Incorrect. The ratio is uniquely determined; equal investment in each portfolio is required regardless of the specific values of $r_x$ and $r_y$ (as long as $r_x > r_y > 0$)."
+  }
+}

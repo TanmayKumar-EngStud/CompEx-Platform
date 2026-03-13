@@ -1,0 +1,37 @@
+[COMPONENT: QuestionOptions/Answer]
+[EXAM: {{exam_type}}]
+[SECTION: {{section_name}}]
+[TEXT: {{question_text}}]
+
+## INSTRUCTION
+Generate 5 options (A-E) and the correct answer for the provided text.
+
+## FORMATTING RULES
+- **Sentence Equivalence**: generate 6 options (A-F). Two must be correct synonyms.
+- **Other Types**: generate 5 options (A-E). Only one correct.
+
+## QUALITY RULES
+- **Vocabulary**: Options must use high-level GRE/GMAT vocabulary (e.g., "esoteric", "mitigate", "exacerbate").
+- **Distractors**: 
+  - Must be plausible in context but incorrect in tone or meaning.
+  - For CR: A distractor might strengthen instead of weaken, or be irrelevant.
+  - **Structure**: Each option must include a 'text' and a specific 'explanation' of why it is correct/incorrect.
+
+## OUTPUT
+JSON with 'options' (A-F) and 'answer' (Array).
+
+## EXAMPLE STRUCTURE
+{
+  "options": {
+    "A": {
+      "text": "panegyrized",
+      "explanation": "Incorrect. Means praised elaborately, fitting the positive tone but missing the nuance of..."
+    },
+    "B": {
+      "text": "lambasted",
+      "explanation": "Correct. Fits the context of harsh criticism."
+    },
+    ...
+  },
+  "answer": ["B", "E"]
+}
