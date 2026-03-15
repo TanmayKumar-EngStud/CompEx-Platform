@@ -85,7 +85,6 @@ const Home: React.FC = () => {
    );
 
    const { userId } = useAttemptsStore();
-   const router = useRouter();
 
    return (
       <div className="flex flex-col min-h-screen font-sans selection:bg-primary/20">
