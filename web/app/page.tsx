@@ -10,26 +10,6 @@ import { Vflow } from "@/shared/components/layouts/flows";
 import { useAttemptsStore } from "@/shared/stores/problems/attempts";
 import { BarChart3, Target, Clock, Layers, CheckCircle2, Bot, Users, Trophy, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/shared/components/ui/card";
-import dynamic from "next/dynamic";
-
-const DiagnosticSprint = dynamic(
-   () => import("@/shared/components/marketing/DiagnosticSprint").then(mod => ({ default: mod.DiagnosticSprint })),
-   {
-      ssr: false,
-      loading: () => (
-         <Card className="w-full max-w-2xl mx-auto border-border bg-card shadow-sm">
-            <CardContent className="p-8 text-center py-16">
-               <div className="inline-flex p-3 rounded-full bg-muted mb-6">
-                  <div className="w-8 h-8 rounded-full bg-muted-foreground/20 animate-pulse" />
-               </div>
-               <div className="h-7 w-56 bg-muted rounded mx-auto mb-4 animate-pulse" />
-               <div className="h-4 w-80 bg-muted rounded mx-auto mb-8 animate-pulse" />
-               <div className="h-12 w-full bg-muted rounded-lg animate-pulse" />
-            </CardContent>
-         </Card>
-      ),
-   }
-);
 
 const content = {
    left: {
@@ -129,9 +109,6 @@ const Home: React.FC = () => {
                      </a>
                   </div>
 
-                  <div className="mt-20">
-                     <DiagnosticSprint />
-                  </div>
                </div>
             </section>
 
