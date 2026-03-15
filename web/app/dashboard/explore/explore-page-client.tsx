@@ -215,13 +215,15 @@ export default function ExplorePageClient({ tags }: ExplorePageClientProps) {
         const sections: Record<string, { topics: ExploreTag[], types: ExploreTag[] }> = {};
 
         currentExamTags.forEach(tag => {
-            if (!sections[tag.sectionName]) {
-                sections[tag.sectionName] = { topics: [], types: [] };
+            // Normalise to lowercase so "Verbal" and "verbal" merge into one group
+            const key = tag.sectionName.toLowerCase();
+            if (!sections[key]) {
+                sections[key] = { topics: [], types: [] };
             }
             if (tag.category === "topic") {
-                sections[tag.sectionName].topics.push(tag);
+                sections[key].topics.push(tag);
             } else if (tag.category === "type") {
-                sections[tag.sectionName].types.push(tag);
+                sections[key].types.push(tag);
             }
         });
 
