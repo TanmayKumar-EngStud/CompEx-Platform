@@ -2,16 +2,15 @@
 
 import React from "react";
 import { Check, Zap, Crown, Users } from "lucide-react";
-import { motion } from "framer-motion";
 import { ButtonP, ButtonS } from "@/shared/components/ui/button";
 import { useRouter } from "next/navigation";
 
-const PricingCard = ({ 
-  title, 
-  price, 
-  period, 
-  features, 
-  highlighted, 
+const PricingCard = ({
+  title,
+  price,
+  period,
+  features,
+  highlighted,
   icon: Icon,
   buttonText = "Get Started",
   buttonAction,
@@ -28,64 +27,62 @@ const PricingCard = ({
   originalPrice?: string;
 }) => {
   return (
-    <motion.div
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-      className={`relative flex flex-col rounded-2xl p-8 ${
+    <div
+      className={`relative flex flex-col rounded-xl p-8 border transition-colors duration-200 ${
         highlighted
-          ? "bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800 text-white shadow-2xl border-4 border-purple-400"
-          : "bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700"
+          ? "bg-foreground text-background border-foreground shadow-xl"
+          : "bg-card text-card-foreground border-border hover:border-primary/30"
       }`}
     >
       {highlighted && (
-        <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-1 rounded-full text-sm font-bold">
-          MOST POPULAR
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap">
+          Most Popular
         </div>
       )}
-      
-      <div className="flex items-center gap-3 mb-4">
-        <div className={`p-3 rounded-xl ${highlighted ? "bg-white/20" : "bg-purple-100 dark:bg-purple-900"}`}>
-          <Icon className={`w-6 h-6 ${highlighted ? "text-white" : "text-purple-600 dark:text-purple-400"}`} />
+
+      <div className="flex items-center gap-3 mb-6">
+        <div className={`p-2 rounded-lg ${highlighted ? "bg-white/15" : "bg-muted"}`}>
+          <Icon className={`w-5 h-5 ${highlighted ? "text-background" : "text-primary"}`} />
         </div>
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <h3 className="text-xl font-semibold">{title}</h3>
       </div>
 
-      <div className="mb-6">
+      <div className="mb-8">
         {originalPrice && (
           <div className="flex items-center gap-2 mb-1">
-            <span className={`text-xl line-through opacity-60 ${highlighted ? "text-white" : "text-gray-500"}`}>
+            <span className={`text-base line-through ${highlighted ? "text-background/50" : "text-muted-foreground"}`}>
               ${originalPrice}
             </span>
-            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold">
-              LAUNCH OFFER
+            <span className={`text-xs font-semibold px-2 py-0.5 rounded ${highlighted ? "bg-background/20 text-background" : "bg-primary/10 text-primary"}`}>
+              Launch offer
             </span>
           </div>
         )}
         <div className="flex items-baseline gap-1">
-          <span className="text-5xl font-bold">${price}</span>
-          {period && <span className={`text-lg ${highlighted ? "text-white/80" : "text-gray-500"}`}>/{period}</span>}
+          <span className="text-4xl font-bold">${price}</span>
+          {period && <span className={`text-sm ${highlighted ? "text-background/60" : "text-muted-foreground"}`}>/{period}</span>}
         </div>
       </div>
 
-      <ul className="space-y-3 mb-8 flex-grow">
+      <ul className="space-y-2.5 mb-8 flex-grow">
         {features.map((feature, idx) => (
-          <li key={idx} className="flex items-start gap-2">
-            <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${highlighted ? "text-green-300" : "text-green-600"}`} />
-            <span className={highlighted ? "text-white" : "text-gray-700 dark:text-gray-300"}>{feature}</span>
+          <li key={idx} className="flex items-start gap-2.5 text-sm">
+            <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${highlighted ? "text-background/80" : "text-primary"}`} />
+            <span className={highlighted ? "text-background/90" : "text-foreground/80"}>{feature}</span>
           </li>
         ))}
       </ul>
 
       {highlighted ? (
-        <ButtonP onClick={buttonAction} className="w-full py-6 text-lg font-bold bg-white text-purple-700 hover:bg-gray-100">
+        <ButtonP onClick={buttonAction} className="w-full py-2.5 font-semibold bg-background text-foreground hover:bg-background/90 transition-colors">
           {buttonText}
         </ButtonP>
       ) : (
-        <ButtonS onClick={buttonAction} className="w-full py-6 text-lg font-bold">
+        <ButtonS onClick={buttonAction} className="w-full py-2.5 font-semibold">
           {buttonText}
         </ButtonS>
       )}
-    </motion.div>
+    </div>
   );
 };
 
@@ -127,7 +124,6 @@ export default function PricingPage() {
       ],
       buttonText: "Upgrade to Pro",
       buttonAction: () => {
-        // TODO: Implement Stripe checkout
         alert("Stripe checkout coming soon!");
       }
     },
@@ -149,104 +145,81 @@ export default function PricingPage() {
       ],
       buttonText: "Get Team Plan",
       buttonAction: () => {
-        // TODO: Implement Stripe checkout
         alert("Stripe checkout coming soon!");
       }
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-indigo-100 dark:from-gray-900 dark:via-purple-900/20 dark:to-indigo-900/20 py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-background py-20 px-4">
+      <div className="max-w-5xl mx-auto">
+
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-            Simple, Transparent Pricing
+        <div className="text-center mb-14">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">Pricing</p>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
+            Simple, transparent pricing.
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Start free, upgrade when you're ready. No hidden fees, cancel anytime.
+          <p className="text-base text-muted-foreground max-w-md mx-auto">
+            Start free, upgrade when you&apos;re ready. No hidden fees, cancel anytime.
           </p>
-        </motion.div>
+        </div>
 
         {/* Launch Offer Banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2 }}
-          className="bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-xl p-6 mb-12 text-center shadow-lg"
-        >
-          <h2 className="text-2xl font-bold mb-2">🎉 Launch Offer - First 30 Days Only!</h2>
-          <p className="text-lg">Get <strong>50% OFF</strong> all paid plans. Use code: <code className="bg-white/20 px-3 py-1 rounded">LAUNCH50</code></p>
-        </motion.div>
+        <div className="border border-primary/30 bg-primary/5 rounded-lg p-4 mb-10 text-center">
+          <p className="text-sm font-medium text-foreground">
+            <span className="font-semibold text-primary">Launch offer — first 30 days only:</span>{" "}
+            50% off all paid plans with code{" "}
+            <code className="font-mono bg-muted px-1.5 py-0.5 rounded text-foreground text-xs">LAUNCH50</code>
+          </p>
+        </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {plans.map((plan, idx) => (
-            <motion.div
-              key={plan.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * idx }}
-            >
-              <PricingCard {...plan} />
-            </motion.div>
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {plans.map((plan) => (
+            <PricingCard key={plan.title} {...plan} />
           ))}
         </div>
 
-        {/* FAQ Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg"
-        >
-          <h2 className="text-3xl font-bold mb-6 text-center">Common Questions</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+        {/* FAQ */}
+        <div className="border border-border rounded-xl p-8 bg-card">
+          <h2 className="font-serif text-2xl font-bold mb-8 text-foreground">Common questions</h2>
+          <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 q: "Can I cancel anytime?",
-                a: "Yes! No hidden fees. Cancel from your account settings anytime."
+                a: "Yes. No hidden fees — cancel directly from your account settings, no questions asked."
               },
               {
                 q: "What payment methods do you accept?",
-                a: "We accept all major credit cards, debit cards, Apple Pay, and Google Pay via Stripe."
+                a: "All major credit and debit cards, plus Apple Pay and Google Pay via Stripe."
               },
               {
                 q: "Is my payment information secure?",
-                a: "Absolutely. We use Stripe for payments and never store your card details."
+                a: "We use Stripe for all payments and never store your card details on our servers."
               },
               {
                 q: "Can I switch plans later?",
-                a: "Yes! Upgrade or downgrade your plan anytime from your account settings."
+                a: "Yes. Upgrade or downgrade at any time from your account settings."
               }
             ].map((faq, idx) => (
-              <div key={idx} className="space-y-2">
-                <h3 className="font-bold text-lg text-gray-900 dark:text-white">{faq.q}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{faq.a}</p>
+              <div key={idx}>
+                <h3 className="font-semibold text-sm text-foreground mb-1.5">{faq.q}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Footer CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Start with our free plan and upgrade when you're ready
+        <div className="text-center mt-12">
+          <p className="text-sm text-muted-foreground mb-4">
+            Start with our free plan and upgrade when you&apos;re ready.
           </p>
-          <ButtonP onClick={() => router.push("/dashboard")} className="px-8 py-4 text-lg">
-            Get Started Free →
+          <ButtonP onClick={() => router.push("/dashboard")} className="px-8 py-2.5 text-sm font-semibold">
+            Get started free →
           </ButtonP>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
