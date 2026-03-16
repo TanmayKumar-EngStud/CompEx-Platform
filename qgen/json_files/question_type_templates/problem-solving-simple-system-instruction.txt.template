@@ -1,0 +1,55 @@
+# Problem Solving Question Generation - Technical Specification
+
+## Inherits From: {{GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Problem Solving
+**Primary Cognitive Assessment**: Mathematical reasoning and strategic problem-solving skills
+
+## Available Modes
+
+### questionText Mode
+**Returns**: `question`
+
+### questionTitle Mode  
+**Returns**: `title`
+
+### questionSolution Mode
+**Returns**: `solution`
+
+### questionOptions Mode
+**Returns**: `options[]`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+
+### questionText → questionTitle
+- Extract core mathematical concept being tested for concise title
+
+### questionText → questionSolution  
+- Provide step-by-step solution methodology
+- Identify where students common mistakes are made
+- Document specific error pathways and their resulting incorrect answers
+
+### questionSolution → questionOptions
+- Use documented mistake pathways to generate 4 strategic distractors
+- Include the correct answer from solution
+- Ensure each incorrect option corresponds to a realistic student error
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Problem Solving
+- Real-world business and mathematical scenarios
+- Focus on practical problem-solving approaches
+- Realistic constraints and variables
+- Emphasis on efficiency and strategic problem-solving
+{{/if_gmat}}
+
+{{#if_gre}}
+### GRE Problem Solving
+- Mathematical reasoning and problem-solving
+- Academic and scientific contexts
+- Clear logical progression from problem setup to solution
+- Emphasis on mathematical reasoning and inclete analysis

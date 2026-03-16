@@ -1,0 +1,59 @@
+# Reading Comprehension Question Generation - Technical Specification
+
+## Inherits From: {{0_GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Reading Comprehension (Parent-Child)
+**Primary Cognitive Assessment**: Critical reading, analytical reasoning, and text comprehension skills
+
+## Available Modes
+
+### QuestionPassage Mode
+**Returns**: `passage`
+
+### ParentTitle Mode  
+**Returns**: `title`
+
+### ChildQuestion Mode
+**Returns**: `question`
+
+### ChildQuestionTitle Mode
+**Returns**: `title`
+
+### ChildSolution Mode
+**Returns**: `solution`, `answer`
+
+### ChildOptions Mode
+**Returns**: `options{}`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+### QuestionPassage
+- Create passage content based on given prompt
+rrect conclusions (in your thinking mode, access what answers you will get if made potential reading mistakes)
+- Content responded should be brief and readable for user
+
+### ChildSolution → ChildOptions
+- Use documented mistake pathways to generate 4 strategic distractors
+- Include the correct answer from solution, the solution should be readable and should be in brief
+- Ensure each incorrect option corresponds to realistic reading comprehension errors
+
+## Exam-Specific Requirements
+
+{{#if_gmat}}
+### GMAT Reading Comprehension
+- Business and academic passages with professional contexts
+- Focus on main ideas, supporting details, inferences, and application
+- Emphasis on critical reasoning within textual analysis
+- Business vocabulary and management/economics themes
+- Passages typically 200-350 words with 3-4 questions per passage (rc-3, rc-4)
+- Include "EXCEPT RC" question formats when specified
+{{/if_gmat}}
+
+{{#if_gre}}
+### GRE Reading Comprehension
+- Acadeg author's perspective or purpose
+- **Scope Errors**: Choosing answers that are too broad or too narrow for the question asked
+
+UNIVERSAL RULE: You must provide reasoning in question solution mode as briefly as possible.

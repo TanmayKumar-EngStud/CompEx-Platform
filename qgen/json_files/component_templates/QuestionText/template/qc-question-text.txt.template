@@ -1,0 +1,18 @@
+STRICT RESPONSE FORMAT: JSON
+- "question" key with the full problem text.
+- Format the question string EXACTLY as follows:
+"Information: [Any shared context or constraints]
+Quantity A: [Value or Expression]
+Quantity B: [Value or Expression]"
+
+INPUTS:
+Topic: {{questionTopic}}
+Theme: {{questionTheme}}
+Style: {{questionStyle}}
+Difficulty: {{difficulty}}
+
+INSTRUCTIONS:
+Create a Quantitative Comparison problem based on the above inputs.
+Ensure Quantity A and Quantity B are distinct expressions.
+If utilizing "Information", ensure it provides necessary constraints.
+Do NOT solve the problem in the question text.

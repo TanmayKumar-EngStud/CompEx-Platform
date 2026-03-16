@@ -1,0 +1,25 @@
+STRICT RESPONSE FORMAT:- JSON
+- "answer" key with single correct option letter.
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+Example:-
+```json
+{
+  "answer": "A",
+  "explanations": {
+    "A": "Brief explanation on why (1) is sufficient and (2) is not.",
+    "B": "Brief explanation...",
+    "C": "Brief explanation...",
+    "D": "Brief explanation...",
+    "E": "Brief explanation..."
+  }
+}
+```
+
+for Data sufficiency questions, these are the standard options that are always the same:- 
+A: "Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient."
+B: "Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient."
+C: "BOTH statements TOGETHER are sufficient, but NEITHER statement alone is sufficient."
+D: "EITHER statement ALONE is sufficient."
+E: "Statements (1) and (2) TOGETHER are NOT sufficient."
+
+So based on that you need to return the 

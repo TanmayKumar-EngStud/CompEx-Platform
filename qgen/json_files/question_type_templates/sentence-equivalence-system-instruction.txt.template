@@ -1,0 +1,46 @@
+# Sentence Equivalence Question Generation - Technical Specification
+
+## Inherits From: {{0_GENERIC_PHILOSOPHY_TEMPLATE}}
+
+## Question Style: Sentence Equivalence
+**Primary Cognitive Assessment**: Vocabulary precision and semantic equivalence reasoning
+
+## Available Modes
+
+### questionText Mode
+**Returns**: `question`
+
+### questionTitle Mode  
+**Returns**: `title`
+
+### questionSolution Mode
+**Returns**: `solution`
+
+### questionOptions Mode
+**Returns**: `options[]`, `answer`
+
+## Mode Execution
+When called, user prompt will specify the mode and expected output format. Each mode will process input according to the specified requirements and return the response as per Prompt's request either as JSON or as Plain Text.
+
+## Inter-Mode Coordination Strategy
+### questionText
+- Should be a sentence or 2-3 sentences where there is one blank '_______', only prepare a 2-3 sentences if and only if reference of tone/context is required to fill that blank with answer. Bunerate 4 strategic distractors
+- Include the two correct synonymous answers from solution, the solution should be readable and should be in brief
+- Ensure each incorrect option corresponds to realistic vocabulary or semantic reasoning errors
+
+## Exam-Specific Requirements
+
+{{#if_gre}}
+### GRE Sentence Equivalence
+- Single sentence with one blank and six answer choices
+- Must select exactly TWO choices that create sentences with equivalent meanings
+- Both selected words must be synonymous in the given context
+- Academic vocabulary appropriate for graduate-level study
+- Focus on precise word meaning and contextual synonymy
+- Emphasis on nuanced vocabulary distinctions and semantic relationships
+- Must select BOTH correct answers to receive credit (no partial credit)
+{{/if_gre}}
+
+## Key Trap Patterns for questionOptions Mode
+- **False Synonymy**: Pairing words that are synonymous in general but not in this specific context
+- **Contextual Mismatch**: Choosing words 

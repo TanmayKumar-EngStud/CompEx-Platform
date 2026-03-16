@@ -1,0 +1,24 @@
+STRICT RESPONSE FORMAT: JSON
+- "options" key with value as dictionary (A-E).
+- "answer" key with a LIST of correct option letters (e.g., ["A", "C"]).
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+
+Example:-
+```json
+{
+  "options": {
+    "A": { "text": "choice 1", "explanation": "Brief explanation..." },
+    "B": { "text": "choice 2", "explanation": "..." },
+    "C": { "text": "choice 3", "explanation": "..." },
+    "D": { "text": "choice 4", "explanation": "..." },
+    "E": { "text": "choice 5", "explanation": "..." }
+  },
+  "answer": ["A", "C"]
+}
+```
+
+**Important Notes:**
+- Create strategic distractors.
+- **Explanation**: Provide a VERY brief explanation for EVERY option (A-E).
+- Multiple options can be correct. The "answer" must be a list of letters.
+- No LaTeX format; use normal string f

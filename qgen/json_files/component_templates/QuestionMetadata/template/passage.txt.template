@@ -1,0 +1,14 @@
+STRICT RESPONSE FORMAT:- JSON
+- "para" key with value as string for that particular paragraph
+- Return the JSON object directly. Do NOT wrap it in any root key like 'metadata' or 'content'.
+Example:-
+
+```json
+{
+    "para": "complete paragraph which is being asked sequentially for that passage should come here"
+}
+```
+**Important Notes:**
+- Generate paragraphs which are in sync of the content that is being asked in the main instruction prompt.
+- Maintain the conceptual level and quality for question that is being prepared
+- Create realistic content appropriate for business/academic context

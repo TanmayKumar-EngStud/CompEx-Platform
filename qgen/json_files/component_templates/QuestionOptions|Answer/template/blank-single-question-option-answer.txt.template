@@ -1,0 +1,21 @@
+STRICT RESPONSE FORMAT: JSON
+
+in "text" provide the option value.
+in "explanation" provide the reasoning for the option as brief as possible.
+Example:-
+```json
+{
+  "options": 
+    {
+      "blank 1": { 
+        "A": { "text": "option value for A", "explanation": "Brief **Markdown** explanation." }, 
+        "B": { "text": "option value for B", "explanation": "Brief **Markdown** explanation." }, 
+        "C": { "text": "option value for C", "explanation": "Brief **Markdown** explanation." },
+        "D": { "text": "option value for D", "explanation": "Brief **Markdown** explanation." },
+        "E": { "text": "option value for E", "explanation": "Brief **Markdown** explanation." },
+        "F": { "text": "option value for F", "explanation": "Brief **Markdown** explanation." },
+      }
+    },
+  "answer": ["A"]
+}
+```
