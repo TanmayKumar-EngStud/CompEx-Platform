@@ -116,7 +116,8 @@ export default function ExploreDetailClient({ tag }: ExploreDetailClientProps) {
         setExamName,
         setSectionName,
         setSectionIndex,
-        setPage
+        setPage,
+        resetPagination
     } = usePaginationStore();
 
     const { userId } = useAttemptsStore();
@@ -176,6 +177,12 @@ export default function ExploreDetailClient({ tag }: ExploreDetailClientProps) {
         initializeService({}, userId);
         ensurePreferencesInitialized();
 
+        // Cleanup: Reset pagination filters when leaving the targeted training page
+        return () => {
+            console.log("🧹 Cleaning up training mode for:", tag.name);
+            resetPagination();
+        };
+
     }, [
         tag,
         userId,
@@ -187,6 +194,7 @@ export default function ExploreDetailClient({ tag }: ExploreDetailClientProps) {
         setSelectedTopics,
         setSelectedTypes,
         setPage,
+        resetPagination,
         clearProblems,
         clearCache,
         setStart,
