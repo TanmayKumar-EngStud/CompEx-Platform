@@ -1,1 +1,180 @@
-{"data_table": {"type": "data_table", "description": "Standard data table with rows and columns", "structure": {"title": "Table Title", "headers": ["Column 1", "Column 2", "Column 3", "Column 4"], "rows": [["Data 1", "Data 2", "Data 3", "Data 4"], ["Data 5", "Data 6", "Data 7", "Data 8"]], "formatting": {"alternating_rows": true, "border_style": "standard"}}}, "pivot_table": {"type": "pivot_table", "description": "Pivot table with summarized data across dimensions", "structure": {"title": "Pivot Table Title", "row_headers": ["Region", "Quarter"], "column_headers": ["Product A", "Product B", "Product C"], "data": [["100", "150", "200"], ["250", "300", "350"]], "totals": {"row_totals": ["450", "850"], "column_totals": ["350", "450", "550"]}}}, "comparison_table": {"type": "comparison_table", "description": "Comparison table for entities across attributes", "structure": {"title": "Product Comparison", "entities": ["Product A", "Product B", "Product C"], "attributes": ["Price", "Features", "Warranty", "Customer Rating"], "data": [["$99", "5 features", "1 year", "4.5/5"], ["$149", "8 features", "2 years", "4.7/5"], ["$199", "10 features", "3 years", "4.9/5"]]}}}
+{
+  "data_table": {
+    "type": "data_table",
+    "description": "Standard data table with rows and columns",
+    "structure": {
+      "title": "Table Title",
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "rows": [
+        [
+          "Data 1",
+          "Data 2",
+          "Data 3",
+          "Data 4"
+        ],
+        [
+          "Data 5",
+          "Data 6",
+          "Data 7",
+          "Data 8"
+        ]
+      ],
+      "formatting": {
+        "alternating_rows": true,
+        "border_style": "standard"
+      }
+    }
+  },
+  "pivot_table": {
+    "type": "pivot_table",
+    "description": "Pivot table with summarized data across dimensions",
+    "structure": {
+      "title": "Pivot Table Title",
+      "row_headers": [
+        "Region",
+        "Quarter"
+      ],
+      "column_headers": [
+        "Product A",
+        "Product B",
+        "Product C"
+      ],
+      "data": [
+        [
+          "100",
+          "150",
+          "200"
+        ],
+        [
+          "250",
+          "300",
+          "350"
+        ]
+      ],
+      "totals": {
+        "row_totals": [
+          "450",
+          "850"
+        ],
+        "column_totals": [
+          "350",
+          "450",
+          "550"
+        ]
+      }
+    }
+  },
+  "comparison_table": {
+    "type": "comparison_table",
+    "description": "Comparison table for entities across attributes",
+    "structure": {
+      "title": "Product Comparison",
+      "entities": [
+        "Product A",
+        "Product B",
+        "Product C"
+      ],
+      "attributes": [
+        "Price",
+        "Features",
+        "Warranty",
+        "Customer Rating"
+      ],
+      "data": [
+        [
+          "$99",
+          "5 features",
+          "1 year",
+          "4.5/5"
+        ],
+        [
+          "$149",
+          "8 features",
+          "2 years",
+          "4.7/5"
+        ],
+        [
+          "$199",
+          "10 features",
+          "3 years",
+          "4.9/5"
+        ]
+      ]
+    }
+  },
+  "sortable_table": {
+    "type": "sortable_table",
+    "description": "GMAT-style sortable table where each column can be sorted independently. MUST have at least 6 rows of data to allow meaningful analysis.",
+    "structure": {
+      "title": "Regional Sales Performance",
+      "headers": [
+        "Region",
+        "Q1 Sales ($k)",
+        "Q2 Sales ($k)",
+        "Growth (%)",
+        "Units Sold"
+      ],
+      "rows": [
+        [
+          "North",
+          "120",
+          "145",
+          "20.8",
+          "1200"
+        ],
+        [
+          "South",
+          "95",
+          "88",
+          "-7.4",
+          "980"
+        ],
+        [
+          "East",
+          "200",
+          "230",
+          "15.0",
+          "2100"
+        ],
+        [
+          "West",
+          "175",
+          "190",
+          "8.6",
+          "1850"
+        ],
+        [
+          "Central",
+          "60",
+          "72",
+          "20.0",
+          "720"
+        ],
+        [
+          "Pacific",
+          "140",
+          "155",
+          "10.7",
+          "1480"
+        ]
+      ],
+      "sortable_columns": [
+        "Q1 Sales ($k)",
+        "Q2 Sales ($k)",
+        "Growth (%)",
+        "Units Sold"
+      ],
+      "formatting": {
+        "default_sort_column": "Q1 Sales ($k)",
+        "default_sort_order": "descending",
+        "alternating_rows": true,
+        "border_style": "standard"
+      }
+    }
+  }
+}

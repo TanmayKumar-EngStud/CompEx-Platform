@@ -1,1 +1,307 @@
-{"line_chart": {"type": "line_chart", "description": "Line graph showing trends over time or continuous data. MUST have at least 7 data points.", "structure": {"title": "Monthly Revenue Growth", "x_axis": {"label": "Month", "type": "continuous"}, "y_axis": {"label": "Revenue ($k)", "type": "numerical"}, "data_format": {"points": [{"x": "Jan", "y": 25}, {"x": "Feb", "y": 45}, {"x": "Mar", "y": 30}, {"x": "Apr", "y": 60}, {"x": "May", "y": 55}, {"x": "Jun", "y": 75}, {"x": "Jul", "y": 80}], "line_color": "#3498db", "line_width": 2}}}, "bar_chart": {"type": "bar_chart", "description": "Bar graph displaying categorical comparisons. MUST have at least 7 categories.", "structure": {"title": "Sales by Product Category", "x_axis": {"label": "Product Category", "type": "categorical"}, "y_axis": {"label": "Sales ($)", "type": "numerical"}, "data_format": {"bars": [{"category": "Electronics", "value": 120}, {"category": "Clothing", "value": 95}, {"category": "Home", "value": 75}, {"category": "Sports", "value": 60}, {"category": "Books", "value": 45}, {"category": "Toys", "value": 55}, {"category": "Beauty", "value": 70}], "bar_color": "#2ecc71", "bar_width": 0.7}}}, "scatter_plot": {"type": "scatter_plot", "description": "Scatter plot showing correlation between two variables. MUST have at least 7 data points.", "structure": {"title": "Marketing Spend vs Conversion Rate", "x_axis": {"label": "Conversion Rate (%)", "type": "numerical"}, "y_axis": {"label": "Conversion Rate (%)", "type": "numerical"}, "data_format": {"points": [{"x": 10, "y": 2.5}, {"x": 20, "y": 4.1}, {"x": 30, "y": 3.8}, {"x": 40, "y": 6.2}, {"x": 50, "y": 5.9}, {"x": 60, "y": 7.5}, {"x": 70, "y": 7.1}], "point_color": "#3498db", "point_size": 6}}}, "horizontal_bar_chart": {"type": "horizontal_bar_chart", "description": "Horizontal bar chart for category comparison. MUST have at least 7 categories.", "structure": {"title": "Employee Performance Ratings", "x_axis": {"label": "Rating Score", "type": "numerical"}, "y_axis": {"label": "Department", "type": "categorical"}, "data_format": {"bars": [{"category": "Sales", "value": 85}, {"category": "Marketing", "value": 92}, {"category": "Engineering", "value": 88}, {"category": "Operations", "value": 78}, {"category": "Finance", "value": 95}, {"category": "HR", "value": 82}, {"category": "Support", "value": 80}], "bar_color": "#e74c3c"}}}, "pie_chart": {"type": "pie_chart", "description": "Pie chart showing distribution of categories. MUST have at least 7 segments.", "structure": {"title": "Budget Distribution", "data_format": {"segments": [{"label": "Salaries", "value": 45, "percentage": "37.5%"}, {"label": "Operations", "value": 25, "percentage": "20.8%"}, {"label": "Marketing", "value": 20, "percentage": "16.7%"}, {"label": "R&D", "value": 15, "percentage": "12.5%"}, {"label": "Travel", "value": 10, "percentage": "8.3%"}, {"label": "Training", "value": 10, "percentage": "8.3%"}, {"label": "Travel", "value": 5, "percentage": "4.2%"}, {"label": "Insurance", "value": 5, "percentage": "4.2%"}], "colors": ["#3498db", "#e74c3c", "#2ecc71", "#f39c12", "#9b59b6", "#34495e", "#1abc9c"], "inner_radius": 0.4}}}}
+{
+  "line_chart": {
+    "type": "line_chart",
+    "description": "Line graph showing trends over time or continuous data. MUST have at least 7 data points.",
+    "structure": {
+      "title": "Monthly Revenue Growth",
+      "x_axis": {
+        "label": "Month",
+        "type": "continuous"
+      },
+      "y_axis": {
+        "label": "Revenue ($k)",
+        "type": "numerical"
+      },
+      "data_format": {
+        "points": [
+          {
+            "x": "Jan",
+            "y": 25
+          },
+          {
+            "x": "Feb",
+            "y": 45
+          },
+          {
+            "x": "Mar",
+            "y": 30
+          },
+          {
+            "x": "Apr",
+            "y": 60
+          },
+          {
+            "x": "May",
+            "y": 55
+          },
+          {
+            "x": "Jun",
+            "y": 75
+          },
+          {
+            "x": "Jul",
+            "y": 80
+          }
+        ],
+        "line_color": "#3498db",
+        "line_width": 2
+      }
+    }
+  },
+  "bar_chart": {
+    "type": "bar_chart",
+    "description": "Bar graph displaying categorical comparisons. MUST have at least 7 categories.",
+    "structure": {
+      "title": "Sales by Product Category",
+      "x_axis": {
+        "label": "Product Category",
+        "type": "categorical"
+      },
+      "y_axis": {
+        "label": "Sales ($)",
+        "type": "numerical"
+      },
+      "data_format": {
+        "bars": [
+          {
+            "category": "Electronics",
+            "value": 120
+          },
+          {
+            "category": "Clothing",
+            "value": 95
+          },
+          {
+            "category": "Home",
+            "value": 75
+          },
+          {
+            "category": "Sports",
+            "value": 60
+          },
+          {
+            "category": "Books",
+            "value": 45
+          },
+          {
+            "category": "Toys",
+            "value": 55
+          },
+          {
+            "category": "Beauty",
+            "value": 70
+          }
+        ],
+        "bar_color": "#2ecc71",
+        "bar_width": 0.7
+      }
+    }
+  },
+  "scatter_plot": {
+    "type": "scatter_plot",
+    "description": "Scatter plot showing correlation between two variables. MUST have at least 7 data points.",
+    "structure": {
+      "title": "Marketing Spend vs Conversion Rate",
+      "x_axis": {
+        "label": "Conversion Rate (%)",
+        "type": "numerical"
+      },
+      "y_axis": {
+        "label": "Conversion Rate (%)",
+        "type": "numerical"
+      },
+      "data_format": {
+        "points": [
+          {
+            "x": 10,
+            "y": 2.5
+          },
+          {
+            "x": 20,
+            "y": 4.1
+          },
+          {
+            "x": 30,
+            "y": 3.8
+          },
+          {
+            "x": 40,
+            "y": 6.2
+          },
+          {
+            "x": 50,
+            "y": 5.9
+          },
+          {
+            "x": 60,
+            "y": 7.5
+          },
+          {
+            "x": 70,
+            "y": 7.1
+          }
+        ],
+        "point_color": "#3498db",
+        "point_size": 6
+      }
+    }
+  },
+  "horizontal_bar_chart": {
+    "type": "horizontal_bar_chart",
+    "description": "Horizontal bar chart for category comparison. MUST have at least 7 categories.",
+    "structure": {
+      "title": "Employee Performance Ratings",
+      "x_axis": {
+        "label": "Rating Score",
+        "type": "numerical"
+      },
+      "y_axis": {
+        "label": "Department",
+        "type": "categorical"
+      },
+      "data_format": {
+        "bars": [
+          {
+            "category": "Sales",
+            "value": 85
+          },
+          {
+            "category": "Marketing",
+            "value": 92
+          },
+          {
+            "category": "Engineering",
+            "value": 88
+          },
+          {
+            "category": "Operations",
+            "value": 78
+          },
+          {
+            "category": "Finance",
+            "value": 95
+          },
+          {
+            "category": "HR",
+            "value": 82
+          },
+          {
+            "category": "Support",
+            "value": 80
+          }
+        ],
+        "bar_color": "#e74c3c"
+      }
+    }
+  },
+  "pie_chart": {
+    "type": "pie_chart",
+    "description": "Pie chart showing distribution of categories. MUST have at least 7 segments.",
+    "structure": {
+      "title": "Budget Distribution",
+      "data_format": {
+        "segments": [
+          {
+            "label": "Salaries",
+            "value": 45,
+            "percentage": "37.5%"
+          },
+          {
+            "label": "Operations",
+            "value": 25,
+            "percentage": "20.8%"
+          },
+          {
+            "label": "Marketing",
+            "value": 20,
+            "percentage": "16.7%"
+          },
+          {
+            "label": "R&D",
+            "value": 15,
+            "percentage": "12.5%"
+          },
+          {
+            "label": "Travel",
+            "value": 10,
+            "percentage": "8.3%"
+          },
+          {
+            "label": "Training",
+            "value": 10,
+            "percentage": "8.3%"
+          },
+          {
+            "label": "Travel",
+            "value": 5,
+            "percentage": "4.2%"
+          },
+          {
+            "label": "Insurance",
+            "value": 5,
+            "percentage": "4.2%"
+          }
+        ],
+        "colors": [
+          "#3498db",
+          "#e74c3c",
+          "#2ecc71",
+          "#f39c12",
+          "#9b59b6",
+          "#34495e",
+          "#1abc9c"
+        ],
+        "inner_radius": 0.4
+      }
+    }
+  },
+  "scatter_chart": {
+    "type": "scatter_chart",
+    "description": "Scatter chart showing correlation or distribution between two quantitative variables. MUST have at least 7 data points.",
+    "structure": {
+      "title": "Advertising Spend vs. Revenue",
+      "x_axis": {
+        "label": "Advertising Spend ($k)",
+        "type": "numerical"
+      },
+      "y_axis": {
+        "label": "Revenue ($k)",
+        "type": "numerical"
+      },
+      "data_format": {
+        "points": [
+          {
+            "x": 5,
+            "y": 20
+          },
+          {
+            "x": 10,
+            "y": 38
+          },
+          {
+            "x": 15,
+            "y": 35
+          },
+          {
+            "x": 20,
+            "y": 55
+          },
+          {
+            "x": 25,
+            "y": 60
+          },
+          {
+            "x": 30,
+            "y": 72
+          },
+          {
+            "x": 35,
+            "y": 68
+          }
+        ],
+        "point_color": "#9b59b6",
+        "point_size": 6
+      }
+    }
+  }
+}

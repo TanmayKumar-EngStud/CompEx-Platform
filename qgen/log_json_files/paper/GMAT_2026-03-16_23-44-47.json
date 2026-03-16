@@ -1,0 +1,2780 @@
+{
+  "GMAT": {
+    "1": {
+      "section": "Integrated Reasoning",
+      "questions": [
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"table\": {\n    \"type\": \"data_table\",\n    \"description\": \"Quarterly unit sales for five product lines across three regions and total units sold.\",\n    \"structure\": {\n      \"title\": \"Quarterly Sales by Product Line and Region\",\n      \"headers\": [\n        \"Product Line\",\n        \"North America (Units)\",\n        \"Europe (Units)\",\n        \"Asia (Units)\",\n        \"Total Units\"\n      ],\n      \"rows\": [\n        [\n          \"Alpha\",\n          \"12,400\",\n          \"9,850\",\n          \"15,200\",\n          \"37,450\"\n        ],\n        [\n          \"Beta\",\n          \"8,750\",\n          \"7,300\",\n          \"10,600\",\n          \"26,650\"\n        ],\n        [\n          \"Gamma\",\n          \"5,200\",\n          \"4,950\",\n          \"6,800\",\n          \"16,950\"\n        ],\n        [\n          \"Delta\",\n          \"9,150\",\n          \"8,400\",\n          \"12,350\",\n          \"29,900\"\n        ],\n        [\n          \"Epsilon\",\n          \"6,800\",\n          \"5,600\",\n          \"8,900\","
+            }
+          ],
+          "question": "Using the quarterly sales table, determine for each statement whether it is supported by the data. Answer Yes if supported, No if not.",
+          "title": "Quarterly Product Line Sales Analysis – Region Comparison",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Urban Planning & Smart Cities] | [Style: <Data Interpretation>] | [Difficulty: <3>] - <Dichotomous Type: Conclusion/Assumption>",
+          "question-type": "Table Analysis",
+          "difficulty": 3,
+          "options_type": "dichotomous",
+          "tags": [
+            "question-type: Table Analysis",
+            "theme: Urban Planning & Smart Cities",
+            "topic: Mean, Median, Mode, Range"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "table": {
+                "type": "sortable_table",
+                "description": "GMAT-style sortable table where each column can be sorted independently. Contains realistic academic funding data for analysis.",
+                "structure": {
+                  "title": "University Department Research Funding (FY2022‑FY2023)",
+                  "headers": [
+                    "Department",
+                    "FY2022 Funding ($k)",
+                    "FY2023 Funding ($k)",
+                    "% Change",
+                    "Faculty Count"
+                  ],
+                  "rows": [
+                    [
+                      "Physics",
+                      "480",
+                      "540",
+                      "12.5",
+                      "22"
+                    ],
+                    [
+                      "Chemistry",
+                      "420",
+                      "398",
+                      "-5.2",
+                      "20"
+                    ],
+                    [
+                      "Biology",
+                      "560",
+                      "610",
+                      "8.9",
+                      "25"
+                    ],
+                    [
+                      "Computer Science",
+                      "720",
+                      "845",
+                      "17.4",
+                      "30"
+                    ],
+                    [
+                      "Mathematics",
+                      "310",
+                      "295",
+                      "-4.8",
+                      "15"
+                    ],
+                    [
+                      "Engineering",
+                      "950",
+                      "1020",
+                      "7.4",
+                      "40"
+                    ]
+                  ],
+                  "sortable_columns": [
+                    "FY2022 Funding ($k)",
+                    "FY2023 Funding ($k)",
+                    "% Change",
+                    "Faculty Count"
+                  ],
+                  "formatting": {
+                    "default_sort_column": "FY2023 Funding ($k)",
+                    "default_sort_order": "descending",
+                    "alternating_rows": true,
+                    "border_style": "standard"
+                  }
+                }
+              }
+            }
+          ],
+          "question": "Based on the FY2022‑FY2023 research funding data for the six university departments, indicate for each of the three statements whether it is supported by the table.",
+          "title": "Evaluating Department Funding Changes Using FY2022‑FY2023 Data",
+          "questionsolution": "",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Visual Arts & Architecture] | [Style: <Quantitative Reasoning>] | [Difficulty: <5>] - <Dichotomous Type: Acceptable/Not Acceptable>",
+          "question-type": "Table Analysis",
+          "difficulty": 5,
+          "options_type": "dichotomous",
+          "tags": [
+            "question-type: Table Analysis",
+            "topic: Simple Interest and Compound Interest",
+            "theme: Visual Arts & Architecture"
+          ]
+        },
+        {
+          "metadata": [
+            [
+              "Product",
+              "Q1 Sales",
+              "Q2 Sales",
+              "Q3 Sales",
+              "Q4 Sales",
+              "Advertising Spend (k$)"
+            ]
+          ],
+          "question": "The table lists quarterly sales units and annual advertising spend (in thousands of dollars) for five product lines. Using this information, indicate for each of the three statements whether it is true or false.",
+          "title": "Quarterly Sales and Advertising Spend Analysis for Product Lines",
+          "questionsolution": "",
+          "prompt": "[Topic: Functions and Polynomials] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Quantitative Reasoning>] | [Difficulty: <4>] - <Dichotomous Type: Inference/Conflicting>",
+          "question-type": "Table Analysis",
+          "difficulty": 4,
+          "options_type": "dichotomous",
+          "tags": [
+            "question-type: Table Analysis",
+            "topic: Functions and Polynomials",
+            "theme: Supply Chain Logistics & Global Trade"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": ""
+            }
+          ],
+          "question": "According to the scatter chart, the advertising spend that yields a revenue closest to $55k is _____, and the projected revenue when the spend is increased to $28k is _____.",
+          "questiontitle": "",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"blank 1\": {\n      \"A\": { \"text\": \"$15k\", \"explanation\": \"Revenue at $15k spend is $35k, far from $55k.\" },\n      \"B\": { \"text\": \"$20k\", \"explanation\": \"Revenue exactly $55k at $20k spend, the closest match.\" },\n      \"C\": { \"text\": \"$25k\", \"explanation\": \"Revenue $60k, higher than $55k.\" }\n    },\n    \"blank 2\": {\n      \"D\": { \"text\": \"$62k\", \"explanation\": \"Underestimates the trend between $25k and $30k.\" },\n      \"E\": { \"text\": \"$67k\", \"explanation\": \"Linear interpolation gives about $67.2k, rounded to $67k.\" },",
+          "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Chemistry & Physics] | [Style: <Data Interpretation>] | [Difficulty: <5>]",
+          "question-type": "Graphic Interpretation",
+          "difficulty": 5,
+          "options_type": "blank",
+          "tags": [
+            "theme: Chemistry & Physics",
+            "topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "question-type: Graphic Interpretation"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": ""
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"sortable_table\",\n      \"description\": \"GMAT-style sortable table showing financial and timeline data for multiple construction projects. Must have at least 6 rows for meaningful analysis.\",\n      \"structure\": {\n        \"title\": \"Construction Project Summary\",\n        \"headers\": [\n          \"Project\",\n          \"Phase\",\n          \"Budget ($k)\",\n          \"Actual Spend ($k)\",\n          \"Variance (%)\",\n          \"Duration (months)\"\n        ],\n        \"rows\": [\n          [\n            \"Alpha\",\n            \"Planning\",\n            \"150\",\n            \"140\",\n            \"-6.7\",\n            \"3\"\n          ],\n          [\n            \"Alpha\",\n            \"Execution\",\n            \"800\",\n            \"845\",\n            \"5.6\",\n            \"12\"\n          ],\n          [\n            \"Beta\",\n            \"Planning\",\n            \"120\",\n            \"115\",\n            \"-"
+            },
+            {
+              "para": "Acme Construction Corp is overseeing three major infrastructure projects—Alpha, Beta, and Gamma—each comprising a planning phase and an execution phase. For each phase the firm records the budgeted amount, actual spending, percentage variance, and duration in months, using these data to evaluate performance, control costs, and assess schedule adherence."
+            }
+          ],
+          "questiontext": "{\n  \"question\": \"Based on the passage and the table, determine for each project phase whether it is (i) under budget (actual spend ≤ budget) or over budget, and (ii) short duration (≤6 months) or long duration (>6 months).",
+          "title": "Construction Project Phase Budget and Schedule Classification",
+          "questionsolution": "{\n  \"solution\": \"**Step 1 – Setup:** Identify two tests: (i) *budget* – actual spend ≤ budget = **under**, otherwise **over**; (ii) *duration* – months ≤ 6 = **short**, otherwise **long**.\\n**Step 2 – Execution:**\\n- Alpha Planning: 140 ≤ 150 → **under**, 3 ≤ 6 → **short**.\\n- Alpha Execution: 845 > 800 → **over**, 12 > 6 → **long**.\\n- Beta Planning: 115 ≤ 120 → **under**, 3 ≤ 6 → **short**.\\n**Step 3 – Verification:** All comparisons follow the definitions, confirming the classifications.\\n**Step 4 – Distractor:** Assuming a negative variance means over budget is wrong",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Anthropology & Archaeology] | [Style: <>] | [Difficulty: <1>] - <Dichotomous Type: Conclusion/Assumption>",
+          "question-type": "Two-Part Analysis",
+          "difficulty": 1,
+          "options_type": "dichotomous",
+          "tags": [
+            "topic: Simple Interest and Compound Interest",
+            "theme: Anthropology & Archaeology",
+            "question-type: Two-Part Analysis"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Quarterly sales (in $ thousands) for three product lines across five regions and international market\",\n      \"structure\": {\n        \"title\": \"Quarterly Sales by Region\",\n        \"headers\": [\"Region\", \"Q1\", \"Q2\", \"Q3\", \"Q4\"],\n        \"rows\": [\n          [\"North\", \"120\", \"135\", \"150\", \"165\"],\n          [\"South\", \"95\", \"110\", \""
+            },
+            {
+              "para": "TechNova Inc., a global consumer electronics manufacturer, tracks the performance of its three flagship product lines—Smartphones, Tablets, and Wearables—across five major regions (North, South, East, West, and International) over the four quarters of fiscal year 2024. The company’s quarterly sales figures, expressed in thousands of dollars, are compiled in a data table, while a separate line chart illustrates the quarterly market‑share percentages for each product line within the International region. Management uses these data sources to assess regional demand trends, allocate marketing budgets, and decide whether to adjust production volumes for the upcoming fiscal year."
+            }
+          ],
+          "question": "Based on the passage and the quarterly sales table, classify each product line (Smartphones, Tablets, Wearables) as having an Increasing sales trend or a Not‑Increasing sales trend in the International region from Q1 through Q4.",
+          "title": "TechNova International Sales Trend Classification – Increasing vs Not‑Increasing",
+          "solution": "**Step 1 – Setup:** Identify the International‑region sales for each product line (Q1‑Q4). \n**Step 2 – Execution:** Check the monotonic condition $Q2>Q1$, $Q3>Q2$, $Q4>Q3$ for Smartphones, Tablets, Wearables. \n**Step 3 – Verification:** All three inequalities hold for Smartphones and Wearables, but Tablets fail at Q2→Q3. \n**Step 4 – Distractor:** Assuming market‑share growth implies sales growth is incorrect. \n**Answer:** Smartphones – Increasing; Tablets – Not‑Increasing; Wearables – Increasing.",
+          "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Psychology & Sociology] | [Style: <>] | [Difficulty: <2>] - <Dichotomous Type: Sufficient/Insufficient>",
+          "question-type": "Two-Part Analysis",
+          "difficulty": 2,
+          "options_type": "dichotomous",
+          "tags": [
+            "topic: Number Properties and Fractions, Decimals, Percentages",
+            "theme: Psychology & Sociology",
+            "question-type: Two-Part Analysis"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"bar_chart\",\n      \"description\": \"Bar chart showing quarterly profit (in $ millions) for eight product lines across the fiscal year 2025.\",\n      \"structure\": {\n        \"title\": \"2025 Quarterly Profit by Product Line\",\n        \"x_axis\": \"Product Line\",\n        \"y_axis\": \"Profit (million $)\",\n        \"data_format\": {\n          \"categories\": [\n            {\n              \"label\": \"Alpha\",\n              \"value\":"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"sortable_table\",\n      \"description\": \"GMAT-style sortable table showing quarterly operating expenses (in $ thousands) for seven departments in FY2025. Allows analysis of expense patterns across quarters.\",\n      \"structure\": {\n        \"title\": \"FY2025 Quarterly Operating Expenses by Department\",\n        \"headers\": [\n          \"Department\",\n          \"Q1 Expense ($k)\",\n          \"Q2 Expense ($k)\",\n          \"Q3 Expense ($k)\",\n          \"Q4 Expense ($k)\",\n          \"Total Expense ($k)\"\n        ],\n        \"rows\": [\n          [\n            \"Research\",\n            \"210\",\n            \"225\",\n            \"240\",\n            \"255\",\n            \"930\"\n          ],\n          [\n            \"Marketing\",\n            \"150\",\n            \"165\",\n            \"180\",\n            \"195\",\n            \"690\"\n          ],\n          [\n            \"Sales\",\n            \"300\",\n            \"320\",\n            \"340\",\n            \"360\",\n            \"1,320\"\n          ],\n          [\n            \"Human Resources\",\n            \"80\",\n            \"85\",\n            \"90\",\n            \"95\",\n            \"350\"\n          ],\n          [\n            \"Information Technology\",\n            \"190\",\n            \"200\",\n            \"210\",\n            \"220\",\n            \"820\"\n          ],\n          ["
+            },
+            {
+              "para": "Acme Corp, a multinational consumer electronics manufacturer, tracks its financial performance across product lines and internal departments. The bar chart below shows the quarterly profit (in millions of dollars) for eight of its product lines during fiscal year 2025, while the sortable table lists the quarterly operating expenses (in thousands of dollars) for seven corporate departments for the same period."
+            }
+          ],
+          "questiontext": "",
+          "title": "Analyzing Profit vs. Expense Ratios Across Product Lines and Departments",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Psychology & Sociology] | [Style: <>] | [Difficulty: <4>] - <Dichotomous Type: Inference/Conflicting>",
+          "question-type": "Two-Part Analysis",
+          "difficulty": 4,
+          "options_type": "dichotomous",
+          "tags": [
+            "theme: Psychology & Sociology",
+            "topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "question-type: Two-Part Analysis"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": {\n    \"type\": \"grouped_bar_chart\",\n    \"description\": \"Bar chart showing quarterly sales (in $ thousands) for three product categories over four quarters.\",\n    \"structure\": {\n      \"title\": \"Quarterly Sales by Product Category\",\n      \"x_axis\": {\n        \"label\": \"Quarter\",\n        \"categories\": [\n          \"Q1\",\n          \"Q2\",\n          \"Q3\",\n          \"Q4\"\n        ]\n      },\n      \"y_axis\": {\n        \"label\": \"Sales ($k)\",\n        \"type\": \"numerical\"\n      },\n      \"series\": [\n        {\n          \"name\": \"Electronics\",\n          \"values\": [\n            120,\n            150,\n            130,\n            160\n          ]\n        },\n        {\n          \"name\": \"Furniture\",\n          \"values\": [\n            80,\n            95,\n            85,\n            100\n          ]\n        },\n        {\n          \"name\": \"Office Supplies\",\n          \"values\": [\n            60,\n            70,\n            65,"
+            }
+          ],
+          "question": "Based on the chart, the total sales for Electronics in Q2 exceed those for Furniture in Q1 by _____ thousand dollars, and the combined sales of Office Supplies and Furniture in Q4 are _____ thousand dollars less than Electronics sales in the same quarter.",
+          "title": "Quarterly Sales Comparison – Electronics vs Furniture & Office Supplies",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options",
+          "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Space Exploration & Engineering] | [Style: <Data Interpretation>] | [Difficulty: <4>]",
+          "question-type": "Graphic Interpretation",
+          "difficulty": 4,
+          "options_type": "blank",
+          "tags": [
+            "topic: Mean, Median, Mode, Range",
+            "theme: Space Exploration & Engineering",
+            "question-type: Graphic Interpretation"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"line_chart\",\n      \"description\": \"Line chart displaying quarterly sales (in $ thousands) for three product lines over two years (8 quarters).\",\n      \"structure\": {\n        \"title\": \"Quarterly Sales by Product Line (2023‑2024)\",\n        \"x_axis\": {\n          \"label\": \"Quarter\",\n          \"type\": \"categorical\",\n          \"categories\": [\"Q1‑23\", \"Q2‑23\", \"Q3‑23\", \"Q4‑23\", \"Q1‑24\", \"Q2‑24\", \"Q3‑24\", \"Q4‑24\"]\n        },\n        \"y_axis\": {\n          \"label\": \"Sales ($k)\",\n          \"type\": \"numerical\"\n        },\n        \"data_format\": {\n          \"series\": [\n            {\n              \"name\": \"Alpha\",\n              \"points\": [\n                { \"x\": \"Q1‑23\", \"y\": 120 },\n                { \"x\": \"Q2‑23\", \"y\": 135 },"
+            }
+          ],
+          "question": "According to the chart, the total sales of product line Alpha over the first two quarters of 2024 is _____ thousand dollars, which is _____ percent higher than its total sales for the same period in 2023.",
+          "title": "Alpha Product Line Quarterly Sales Growth Comparison (2023‑2024)",
+          "questionsolution": "",
+          "options": {
+            "blank 1": {
+              "A": {
+                "text": "300",
+                "explanation": "Sum of Q1‑24 and Q2‑24 would be 300, which is too low."
+              },
+              "B": {
+                "text": "315",
+                "explanation": "Correct sum: 150 + 165 = 315."
+              },
+              "C": {
+                "text": "330",
+                "explanation": "Sum of 330 exceeds the actual data."
+              }
+            },
+            "blank 2": {
+              "D": {
+                "text": "20%",
+                "explanation": "Percent increase is higher than 20%."
+              },
+              "E": {
+                "text": "24%",
+                "explanation": "Correct increase: (315‑255)/255 ≈ 23.5% → 24%."
+              },
+              "F": {
+                "text": "28%",
+                "explanation": "28% overstates the growth."
+              }
+            }
+          },
+          "answer": [
+            "B",
+            "E"
+          ],
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Digital Economy & E-commerce] | [Style: <Verbal Reasoning>] | [Difficulty: <2>]",
+          "question-type": "Graphic Interpretation",
+          "difficulty": 2,
+          "options_type": "blank",
+          "tags": [
+            "topic: Simple Interest and Compound Interest",
+            "theme: Digital Economy & E-commerce",
+            "question-type: Graphic Interpretation"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A bakery produces two types of pastries: croissants and muffins. Each day, the total number of pastries baked is 120. The number of croissants baked is always twice the number of muffins baked, unless a special order requires a different ratio.",
+              "statements": [
+                "The bakery baked 80 croissants today.",
+                "The bakery received a special order today."
+              ]
+            }
+          ],
+          "question": "Given the passage, is it possible to determine the number of muffins baked today? (1) The bakery baked 80 croissants today. (2) The bakery received a special order today.",
+          "title": "Bakery Pastry Ratio: Determining Muffin Count from Croissant Data",
+          "questionsolution": "",
+          "answer": "A",
+          "explanations": {
+            "A": "Statement (1) gives croissants = 80, so muffins = 120‑80 = 40; (2) adds no new info.",
+            "B": "Statement (2) only indicates a possible ratio change, still no numbers.",
+            "C": "Both together are unnecessary because (1) alone already determines muffins.",
+            "D": "Statement (2) alone cannot determine muffins, so not each is sufficient.",
+            "E": "Combined, the statements do determine muffins, so they are not insufficient."
+          },
+          "prompt": "[Topic: Statistics and Intersection] | [Theme: Urban Planning & Smart Cities] | [Style: <Inequalities>] | [Difficulty: <1>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Urban Planning & Smart Cities",
+            "question-type: Data Sufficiency",
+            "topic: Statistics and Intersection"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has a length that is 3 meters longer than its width. The garden's area is 70 square meters.",
+              "statements": [
+                "The width of the garden is an integer number of meters.",
+                "The perimeter of the garden is less than 40 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm needs to determine the width of a rectangular garden whose length exceeds its width by 3 meters and whose area is 70 square meters. Which of the following statements, if true, would be sufficient to determine the exact width?",
+          "title": "Landscaping Firm: Determining Garden Width from Area and Length Difference",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Geometry] | [Theme: Psychology & Sociology] | [Style: <Coordinate Geometry>] | [Difficulty: <1>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Geometry",
+            "theme: Psychology & Sociology",
+            "question-type: Data Sufficiency"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has a length that is 3 meters longer than its width. The garden is surrounded by a fence that uses 24 meters of material.",
+              "statements": [
+                "The width of the garden is 6 meters.",
+                "The area of the garden is 72 square meters."
+              ]
+            }
+          ],
+          "question": "A company wants to install a fence around a rectangular garden for its annual employee picnic. The garden's length exceeds its width by 3 meters, and the fence material used totals 24 meters. Based on the two statements below, which is sufficient to determine the total cost of the fence if the cost per meter is $15?",
+          "title": "Fence Cost Determination for Corporate Picnic Garden Using Perimeter Data",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"answer\": \"E\",\n  \"explanations\": {\n    \"A\": \"Statement (1) gives width 6, implying length 9 and perimeter 30, which conflicts with the given 24‑meter fence, so it",
+          "prompt": "[Topic: Statistics and Intersection] | [Theme: Visual Arts & Architecture] | [Style: <Coordinate Geometry>] | [Difficulty: <5>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "question-type: Data Sufficiency",
+            "topic: Statistics and Intersection",
+            "theme: Visual Arts & Architecture"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has length L meters and width W meters. The area of the garden is 120 square meters.",
+              "statements": [
+                "The length L is 15 meters.",
+                "The width W is 8 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping company plans to install a fence around a rectangular garden whose area is 120 square meters. To determine the total cost, they need the garden's perimeter. Is the perimeter determinable from the information given?",
+          "title": "Fence Installation Cost: Determining Perimeter from Garden Area",
+          "questionsolution": "{\n  \"solution\": \"Step 1: **Setup** – Need the **perimeter** $P=2(L+W)$; given **area** $L\\\\times W=120$.\\nStep 2: **Execution** – Statement 1 gives $L=15$, so $W=120/15",
+          "answer": "D",
+          "explanations": {
+            "A": "Statement 1 alone gives L=15, yielding W=8 and the perimeter, so statement 2 is also sufficient.",
+            "B": "Statement 2 alone gives W=8, yielding L=15 and the perimeter, so statement 1 is also sufficient.",
+            "C": "Both together are sufficient, but each alone already determines the perimeter, so this is false.",
+            "D": "Each statement individually provides enough information to compute the missing dimension and thus the perimeter.",
+            "E": "Together they determine the perimeter, so this is false."
+          },
+          "prompt": "[Topic: Word Problems (Non-Profit)] | [Theme: Logistics and Operations] | [Style: <Abstract Algebra>] | [Difficulty: <3>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Logistics and Operations",
+            "topic: Word Problems (Non-Profit)",
+            "question-type: Data Sufficiency"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A quadratic equation x^2 + bx + c = 0 has two distinct integer roots.",
+              "statements": [
+                "The product of the roots is 12.",
+                "The sum of the roots is 7."
+              ]
+            }
+          ],
+          "question": "A financial analyst uses the quadratic model x^2 + bx + c = 0 to forecast profit, knowing it has two distinct integer roots. Determine whether each statement alone or together is sufficient to determine the exact value of b.",
+          "title": "Profit Forecast Quadratic: Determining Coefficient b from Root Sum and Product",
+          "questionsolution": "{\n  \"solution\": \"**Step 1:** For $x^2+bx+c=0$, roots $r_1,r_2$ satisfy $r_1+r_2=-b$ and $r_1r_2=c$. \\n**Step 2:** Statement (2) gives $r_1+r_2=7$, so $b=-",
+          "questionoptions_answer": "{\n  \"answer\": \"B\",\n  \"explanations\":",
+          "prompt": "[Topic: Geometry] | [Theme: History (Ancient/Modern)] | [Style: <Abstract Algebra>] | [Difficulty: <3>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Geometry",
+            "theme: History (Ancient/Modern)",
+            "question-type: Data Sufficiency"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has length L meters and width W meters. The garden is surrounded by a fence.",
+              "statements": [
+                "The area of the garden is 120 square meters.",
+                "The perimeter of the garden is 44 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm needs to determine the dimensions of a rectangular garden. Is the information in statement (1) alone sufficient, statement (2) alone sufficient, both together sufficient, each alone sufficient, or both together insufficient to uniquely determine length and width?",
+          "title": "Landscaping Project: Determining Garden Dimensions from Area and Perimeter",
+          "questionsolution": "{\n  \"solution\": \"**Setup:** Need to decide if statements determine length $L$ and width $W$ of a rectangle. **Execution:** From (1) $L\\cdot W=120$; from (2) $2(L+W)=44\\Rightarrow L+W=22$. Solve $t^2-22t+120=0$ gives $t=12$ and $10$, so $L=12$, $W=10$. **Verification:** Both dimensions are unique. **Distractors:** (A) is wrong because area alone allows many $(L,W)$ pairs; (D) is wrong",
+          "answer": "C",
+          "explanations": {
+            "A": "Area alone does not fix dimensions; many length‑width pairs give 120.",
+            "B": "Perimeter alone leaves infinite possibilities; many pairs sum to 22.",
+            "C": "Together they give L+W=22 and L·W=120, yielding the unique pair (12,10).",
+            "D": "Neither single statement determines both dimensions.",
+            "E": "Both statements actually are sufficient, so this option is false."
+          },
+          "prompt": "[Topic: Geometry] | [Theme: Marketing and Sales] | [Style: <Inequalities>] | [Difficulty: <3>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Geometry",
+            "question-type: Data Sufficiency",
+            "theme: Marketing and Sales"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "In triangle ABC, points D and E lie on sides AB and AC respectively such that AD = 3 cm, DB = 5 cm, AE = 4 cm, and EC = 6 cm.",
+              "statements": [
+                "DE = 5 cm.",
+                "Area of triangle ADE = 6 cm²."
+              ]
+            }
+          ],
+          "question": "A construction firm needs to know if the length of segment DE can be determined from the given information. Using the passage and the two statements, is the length of DE uniquely determined?",
+          "title": "Construction Firm: Determining Segment Length DE from Triangle Segments",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"answer\": \"D\",\n  \"explanations\": {\n    \"A\": \"Statement (1) gives DE directly, but statement (2) also determines DE, so this option is false.\",\n    \"B\": \"Statement (2) determines DE via a right‑triangle, but statement (1) does as, so this option is false.\",\n    \"C\": \"Both statements together determine DE, yet each alone already does, making this option false.\",\n    \"D\": \"Each statement individually provides enough information to compute DE (statement 1 directly, statement 2 via a 3‑4‑5 right triangle).\",\n    \"E\": \"The statements together do determine DE",
+          "prompt": "[Topic: Algebra] | [Theme: Philosophy & Ethics] | [Style: <Single Variable Equation>] | [Difficulty: <1>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Philosophy & Ethics",
+            "question-type: Data Sufficiency",
+            "topic: Algebra"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has a length that is 3 meters longer than its width. The garden is surrounded by a fence, and the total length of the fence is 30 meters.",
+              "statements": [
+                "The width of the garden is 6 meters.",
+                "The area of the garden is 72 square meters."
+              ]
+            }
+          ],
+          "question": "Based on the information above, which of the following statements is sufficient to determine the width of the garden?",
+          "title": "Garden Fence Perimeter: Determining Width via Data Sufficiency",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Number Properties] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Pure Number Theory>] | [Difficulty: <4>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Financial Markets & Cryptocurrency",
+            "question-type: Data Sufficiency",
+            "topic: Number Properties"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "A market research firm conducted a survey to assess consumer attitudes toward a new eco-friendly product line. Participants were asked a series of dichotomous (True/False) statements, such as \"I would purchase a product if it were certified as carbon-neutral\" and \"I am willing to pay a premium for sustainable packaging.\" The firm collected responses from 1,200 respondents across three regions—North America, Europe, and Asia-Pacific—recording the proportion of \"True\" answers for each statement. Preliminary analysis indicated that while overall agreement with sustainability claims was high, notable regional variations existed, especially regarding willingness to pay extra for eco-friendly packaging.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"bar_chart\",\n      \"description\": \"Bar chart comparing the proportion of 'True' responses to three sustainability statements across three regions. Each bar represents a region‑statement combination, providing at",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "The survey results revealed that 78% of North American respondents answered \"True\" to the statement \"I would purchase a product if it were certified as carbon‑neutral,\" compared with 71% in Europe and 65% in Asia‑Pacific. For the claim \"I am willing to pay a premium for sustainable packaging,\" the \"True\" rates were 62% in North America, 58% in Europe, and 49% in Asia‑Pacific. Overall, 84% of all participants agreed with the environmental benefit statement, while only 55% affirmed willingness to pay extra for eco‑friendly packaging, indicating a notable gap between belief and purchasing intent.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "The research team employed a stratified sampling technique to ensure proportional representation from each of the three regions. Within each region, respondents were recruited through online panels and in‑person intercepts at retail locations, aiming for a balanced mix of age, gender, and income levels. The questionnaire presented ten dichotomous statements, each followed by a simple True/False response option, and was administered in the participants' native language to minimize comprehension bias."
+            },
+            {
+              "para": "After data cleaning, the team calculated the proportion of \"True\" responses for each statement within each region, producing a matrix that highlighted both overall agreement and regional disparities. These percentages were then organized into a comparative table and visualized in a bar chart, enabling analysts to quickly identify which sustainability claims resonated most strongly in each market and to assess the gap between environmental belief and willingness to pay a premium."
+            }
+          ],
+          "title": "Regional True‑Response Rate Analysis for Eco‑Friendly Product Survey",
+          "child-questions": [
+            {
+              "question": "Based on the survey, which region shows the greatest gap between agreement with the environmental benefit statement and willingness to pay a premium for sustainable packaging, and what is the magnitude of that gap in percentage points?",
+              "title": "Regional Gap Analysis: Environmental Benefit Agreement vs Premium Willingness",
+              "questionsolution": "{\n  \"solution\": \"**Step 1:** Define gap = %True for carbon‑neutral statement minus %True for premium statement for each region.\\n**Step 2:** Calculate: North America 78‑62=16, Europe 71‑58=13, Asia‑Pacific 65‑49=16.\\n**Step 3:** The greatest gap is 16 percentage points; North America is the first region with this maximum.\\n**Step 4:** Distractor “",
+              "options": {
+                "A": {
+                  "text": "North America – 16 percentage points",
+                  "explanation": "Correct calculation of the largest gap."
+                },
+                "B": {
+                  "text": "Europe – 13 percentage points",
+                  "explanation": "Europe's gap is smaller than the maximum."
+                },
+                "C": {
+                  "text": "Asia‑Pacific – 16 percentage points",
+                  "explanation": "Tie in magnitude but not the first region with that gap."
+                },
+                "D": {
+                  "text": "North America – 13 percentage points",
+                  "explanation": "Incorrect gap value for North America."
+                },
+                "E": {
+                  "text": "Europe – 16 percentage points",
+                  "explanation": "Europe does not have a 16‑point gap."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Verbal Reasoning] | [Difficulty: <5>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Considering the two survey statements—(1) willingness to purchase a carbon‑neutral product and (2) willingness to pay a premium for sustainable packaging—which region shows the highest combined proportion of “True” responses when the two percentages are added together?",
+              "title": "Regional Combined True‑Response Sum for Sustainability Survey Statements",
+              "solution": "**Step 1:** Extract the two percentages per region: NA = 78% & 62%, EU = 71% & 58%, AP = 65% & 49%.\n**Step 2:** Compute combined sums: NA = 140%, EU = 129%, AP = 114%.\n**Step 3:** The largest sum is 140% for North America.\n**Step 4:** Distractor: Europe’s 129% is lower than North America’s total, so it is not the maximum.",
+              "options": {
+                "A": {
+                  "text": "North America – 140%",
+                  "explanation": "Sum of 78% and 62% is highest."
+                },
+                "B": {
+                  "text": "Europe – 129%",
+                  "explanation": "Lower than North America."
+                },
+                "C": {
+                  "text": "Asia‑Pacific – 114%",
+                  "explanation": "Lowest sum."
+                },
+                "D": {
+                  "text": "All regions have equal sums",
+                  "explanation": "Incorrect; sums differ."
+                },
+                "E": {
+                  "text": "None of the above",
+                  "explanation": "There is a correct region."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Evaluating Trade-offs] | [Difficulty: <5>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Topic: Strategic Decision Making] | [Theme: Marketing and Sales] | [Source: <graph>] | [Source: <email>] | [Source: <memo>] | [Skill: Logical Deduction] | [Skill: Logical Deduction] | [Skill: Logical Deduction] | [Difficulty: <5>] - <Dichotomous Type: True/False>",
+          "question-type": "Multi-Source Reasoning",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "question-type: Multi-Source Reasoning",
+            "topic: Strategic Decision Making",
+            "theme: Marketing and Sales"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "A recent consumer behavior study conducted by MarketInsights Inc. surveyed 1,200 adults across three metropolitan regions to assess preferences between two competing smartphone models, Alpha and Beta. Participants were asked whether they would purchase Alpha over Beta given a price reduction of 10%, and responses were recorded as \"Yes\" or \"No\". The researchers noted that overall, 58% of respondents indicated a willingness to switch to Alpha, citing improved camera quality as the primary reason, while 42% remained loyal to Beta, emphasizing battery longevity. The study also highlighted demographic variations: younger adults (18‑34) were more inclined toward Alpha, whereas older participants (55+) favored Beta. These findings were intended to inform the companies' pricing and feature‑development strategies for the upcoming fiscal year.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "graph": [
+                {
+                  "type": "line_chart",
+                  "title": "Monthly Preference Shift for Smartphone Alpha (Yes Responses)",
+                  "description": "Line graph showing percentage of respondents willing to switch to Alpha each month after a 10% price reduction.",
+                  "x_axis": {
+                    "label": "Month",
+                    "type": "continuous"
+                  },
+                  "y_axis": {
+                    "label": "Percentage (%)",
+                    "type": "numerical"
+                  },
+                  "data": [
+                    {
+                      "x": "Jan",
+                      "y": 55
+                    },
+                    {
+                      "x": "Feb",
+                      "y": 57
+                    },
+                    {
+                      "x": "Mar",
+                      "y": 60
+                    },
+                    {
+                      "x": "Apr",
+                      "y": 62
+                    },
+                    {
+                      "x": "May",
+                      "y": 58
+                    },
+                    {
+                      "x": "Jun",
+                      "y": 59
+                    },
+                    {
+                      "x": "Jul",
+                      "y": 61
+                    }
+                  ],
+                  "line_color": "#1f77b4",
+                  "line_width": 2
+                }
+              ],
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"bar_chart\",\n      \"title\": \"Preference Share by Age Group for Smartphones Alpha and Beta\",\n      \"description\": \"Bar chart comparing the percentage of respondents willing to purchase Alpha versus Beta across age categories after a 10% price reduction.\",\n      \"x_axis\": {\n        \"label",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "The research team also segmented the respondents by income level, revealing that high‑income participants (annual earnings above $100,000) were 12 percentage points more likely to favor Alpha than low‑income participants, whereas middle‑income groups showed a modest 4‑point advantage for Beta. Additionally, the survey captured purchase intent after a simulated promotional campaign, indicating that a 15% discount on Alpha would boost its overall market share to 65%, while a comparable discount on Beta would only raise its share to 48%. These nuanced insights were intended to guide targeted marketing initiatives and price‑elasticity modeling for the upcoming product launch.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "table": [
+                {
+                  "type": "data_table",
+                  "description": "Monthly preference percentages for smartphones Alpha and Beta based on survey responses after a 10% price reduction.",
+                  "structure": {
+                    "title": "Monthly Preference Percentages for Smartphones Alpha and Beta",
+                    "headers": [
+                      "Month",
+                      "Alpha Preference (%)",
+                      "Beta Preference (%)"
+                    ],
+                    "rows": [
+                      [
+                        "Jan",
+                        "55",
+                        "45"
+                      ],
+                      [
+                        "Feb",
+                        "57",
+                        "43"
+                      ],
+                      [
+                        "Mar",
+                        "60",
+                        "40"
+                      ],
+                      [
+                        "Apr",
+                        "62",
+                        "38"
+                      ],
+                      [
+                        "May",
+                        "58",
+                        "42"
+                      ],
+                      [
+                        "Jun",
+                        "59",
+                        "41"
+                      ],
+                      [
+                        "Jul",
+                        "61",
+                        "39"
+                      ]
+                    ],
+                    "formatting": {
+                      "alternating_rows": true,
+                      "border_style": "standard"
+                    }
+                  }
+                }
+              ],
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"comparison_table\",\n      \"description\": \"Comparison of key attributes and performance metrics for smartphones Alpha and Beta.\",\n      \"structure\": {\n        \"title\": \"Feature and Market Comparison: Alpha vs Beta\",\n        \"headers\": [\n          \"Attribute\",\n          \"Alpha\",\n          \"Beta\"\n        ],\n        \"rows\": [\n          [\n            \"Price after 10% discount ($)\",\n            \"699\",\n            \"749\"\n          ],\n          [\n            \"Camera Megapixels\",\n            \"48 MP\",\n            \"42 MP\"\n          ],\n          [\n            \"Battery Capacity (mAh)\",\n            \"4000\",\n            \"4200\"\n          ],\n          [\n            \"Average User Rating (out of 5)\",\n            \"4.3",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "raw_content": "{\n  \"para\": \"A recent consumer behavior study conducted by MarketInsights Inc. surveyed 1,200 adults across three metropolitan regions to assess preferences between two competing smartphone models, Alpha and Beta. Participants were asked whether they would purchase Alpha over Beta given a price reduction of 10%, and responses were recorded as \\\"Yes\\\" or \\\"No\\\". The researchers noted that overall, 58% of respondents indicated a willingness to switch to Alpha, citing improved camera quality as the primary reason, while 42% remained loyal to Beta"
+            },
+            {
+              "para": "The study also revealed distinct demographic trends: respondents aged 18‑34 showed a 12‑point higher preference for Alpha, primarily due to its advanced camera features, whereas those 55 and older favored Beta by 9 points, citing longer battery life. Regional analysis indicated that the West Coast had the highest Alpha adoption at 65%, while the Midwest remained Beta‑leaning at 55%. These insights suggest targeted marketing strategies, such as emphasizing camera capabilities to younger urban markets and battery endurance to older suburban consumers."
+            }
+          ],
+          "title": "Smartphone Preference Analysis: Interpreting Survey Data & Trend Graphs",
+          "child-questions": [
+            {
+              "question": "Considering the overall 58% willingness to switch to Alpha, the monthly increase shown in the line chart, and the feature comparison table, which age‑group should the company target with a 15% price cut to maximize Alpha’s market share, and what is the projected share?",
+              "title": "Age‑Group Targeting for Alpha Smartphone Using Survey & Trend Data",
+              "solution": "Step 1: **Setup** – Identify the **target age group** (young adults 18‑34) and note the **15 % discount** effect (projected share 65 %).\nStep 2: **Execution** – Add the baseline 58 % willingness to switch to Alpha to the 7 % increase from the discount: $58\\% + 7\\% = 65\\%$.\nStep 3: **Verification** – The resulting 65 % matches the study’s projected market share for Alpha after the discount.\nStep 4: **Distractor** – The older‑age group is incorrect because they prefer Beta despite the price cut.",
+              "questionoptions_answer": "",
+              "prompt": "[Skill: Data Interpretation] | [Difficulty: <1>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "dichotomous",
+              "tags": []
+            },
+            {
+              "question": "Using the passage, the monthly preference line chart, and the feature comparison table, identify which demographic segment (age group) should receive a 15% price cut on Alpha to maximize market share, and state the projected overall share for Alpha after the discount.",
+              "title": "Target Age Group Selection for Alpha Smartphone Using Percentage Projection",
+              "questionsolution": "",
+              "questionoptions_answer": "",
+              "prompt": "[Skill: Synthesizing Information] | [Difficulty: <1>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "dichotomous",
+              "tags": []
+            }
+          ],
+          "prompt": "[Topic: Resource Allocation] | [Theme: Marketing and Sales] | [Source: <email>] | [Source: <passage>] | [Source: <chart>] | [Skill: Trend Analysis] | [Skill: Trend Analysis] | [Skill: Trend Analysis] | [Difficulty: <1>] - <Dichotomous Type: Conclusion/Assumption>",
+          "question-type": "Multi-Source Reasoning",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Multi-Source Reasoning",
+            "topic: Resource Allocation",
+            "theme: Marketing and Sales"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Acme Corp. recently completed a quarterly performance review for its three regional divisions—North, South, and West—over the past six months. The management team noted that while sales figures for the North and South divisions showed a steady upward trend, the West division's reported revenues fluctuated dramatically, with a sharp increase in March followed by a steep decline in April. To investigate, the analysts cross‑referenced the sales data with the inventory turnover logs and the customer satisfaction survey scores. The inventory logs for the North and South divisions aligned closely with the sales spikes, indicating consistent demand and supply. However, the West division's inventory records showed a high turnover in March despite the sales surge, suggesting possible data entry errors or unrecorded bulk orders. Moreover, the satisfaction scores for the West division dipped in April, whereas the North and South scores remained stable. The team must determine whether the West division's performance data is consistent across sources or reflects inconsistencies that could affect strategic decisions.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"line_chart",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "Acme Corp. recently completed a quarterly performance review for its three regional divisions—North, South, and West—over the past six months. The management team noted that while sales figures for the North and South divisions showed a steady upward trend, the West division's reported revenues fluctuated dramatically, with a sharp increase in March followed by a steep decline in April. To investigate, the analysts cross‑referenced the sales data with the inventory turnover logs and the customer satisfaction survey scores. The inventory logs for the North and South divisions aligned closely with the sales spikes, indicating consistent demand and supply. However, the West division's inventory records showed a high turnover in March despite the sales surge, suggesting possible data entry errors or unrecorded bulk orders. Moreover, the satisfaction scores for the West division dipped in April, whereas the North and South scores remained stable. The team must determine whether the West division's performance data is consistent across sources or reflects inconsistencies that could affect strategic decisions.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Monthly sales (in $ thousands) and inventory turnover ratios for Acme Corp.'s three regional divisions.\",\n      \"structure\": {\n        \"title\": \"Quarterly Performance Metrics (Jan–Jun)\",\n        \"headers\": [\n          \"Month\",\n          \"North Sales\",\n          \"South Sales\",\n          \"West Sales\",\n          \"North Inventory Turnover\",\n          \"South Inventory Turnover\",\n          \"West Inventory Turnover\"\n        ],\n        \"rows\": [\n          [\n            \"Jan\",\n            \"120\",\n            \"115\",\n            \"118\",\n            \"4.2\",\n            \"4.0\",\n            \"4.1\"\n          ],\n          [\n            \"Feb\",\n            \"130\",\n            \"125\",\n            \"122\",\n            \"4.3\",\n            \"4.1\",\n            \"4.2\"\n          ],\n          [\n            \"Mar\",\n            \"145\",\n            \"140\",\n            \"190\",\n            \"4.5\",\n            \"4.3\",\n            \"7.8\"\n          ],\n          [\n            \"Apr\",\n            \"150\",\n            \"148\",\n            \"95\",\n            \"4.6\",\n            \"4.4\",\n            \"2.9\"\n          ],\n          [\n            \"May\",\n            \"160\",\n            \"158\",\n            \"105\",\n            \"4.7\",\n            \"4.5\",\n            \"3.2\"\n          ],",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Monthly sales (in $ thousands) and inventory turnover ratios for Acme Corp.'s three regional divisions.\",\n      \"structure\": {\n        \"title\": \"Quarterly Performance Metrics (Jan–Jun)\",\n        \"headers\": [\n          \"Month\",\n          \"North Sales\",\n          \"South Sales\",\n          \"West Sales\",\n          \"North Inventory Turnover\",\n          \"South Inventory Turnover\",\n          \"West Inventory Turnover\"\n        ],\n        \"rows\": [\n          [\n            \"Jan\",\n            \"120\",\n            \"115\",\n            \"118\",\n            \"4.2\",\n            \"4.0\",\n            \"4.1\"\n          ],\n          [\n            \"Feb\",\n            \"130\",\n            \"125\",\n            \"122\",\n            \"4.3\",\n            \"4.1\",\n            \"4.2\"\n          ],\n          [\n            \"Mar\",\n            \"145\",\n            \"140\",\n            \"190\",\n            \"4.5\",\n            \"4.3\",\n            \"7.8\"\n          ],\n          [\n            \"Apr\",\n            \"150\",\n            \"148\",\n            \"95\",\n            \"4.6\",\n            \"4.4\",\n            \"2.9\"\n          ],\n          [\n            \"May\",\n            \"160\",\n            \"158\",\n            \"105\",\n            \"4.7\",\n            \"4.5\",\n            \"3.2\"\n          ],\n          [\n            \"Jun\",\n            \"170\",\n            \"165\",\n            \"112\",\n            \"4.8\",\n            \"4.6\",\n            \"3.5\"\n          ]",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "Acme Corp. recently completed a quarterly performance review for its three regional divisions—North, South, and West—over the past six months. The management team noted that while sales figures for the North and South divisions showed a steady upward trend, the West division's reported revenues fluctuated dramatically, with a sharp increase in March followed by a steep decline in April. To investigate, the analysts cross‑referenced the sales data with the inventory turnover logs and the customer satisfaction survey scores. The inventory logs for the North and South divisions aligned closely with the sales spikes, indicating consistent demand and supply. However, the West division's inventory records showed a high turnover in March despite the sales surge, suggesting possible data entry errors or unrecorded bulk orders."
+            },
+            {
+              "para": "Furthermore, the customer satisfaction survey showed the West division's score dropping from 78 in March to 62 in April, while the North and South divisions stayed in the high 70s. These inconsistencies prompt the team to evaluate whether the West division's sales surge, inventory turnover spike, and satisfaction dip are internally consistent or reflect reporting errors that could affect strategic decisions."
+            }
+          ],
+          "title": "Acme Corp. West Division Consistency Analysis of Sales, Inventory, and Satisfaction",
+          "child-questions": [
+            {
+              "question": "Using the passage, the sales‑inventory table (Jan‑Jun), and the satisfaction‑trend graph, decide whether the West division’s March sales increase is consistent with its inventory turnover and customer‑satisfaction scores, and explain the implication for strategic planning.",
+              "questiontitle": "{\n  \"title\": \"Acme",
+              "solution": "**Step 1 – Setup:** The question asks if West’s March sales jump (190 k) aligns with its inventory turnover (7.8) and satisfaction (78). **Step 2 – Execution:** Compare with North/South (turnover ≈4.5, satisfaction ≈70‑75). The West turnover is unusually high, and satisfaction later falls to 62, indicating a mismatch. **Step 3 – Verification:** April data shows turnover dropping to 2.9 and satisfaction to 62, confirming the inconsistency. **Step 4 – Distractor:** The choice that the data is consistent is wrong because the inventory turnover spike does not match the stable patterns of the other divisions.",
+              "options": {},
+              "answer": "B",
+              "prompt": "[Skill: Verbal Reasoning] | [Difficulty: <2>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, the sales‑inventory table (Jan‑Jun), and the satisfaction‑trend graph, determine whether the West division’s March sales surge is consistent with its inventory turnover and customer‑satisfaction scores, and state the most likely implication for strategic planning.",
+              "title": "Acme West Division Consistency Check: Sales, Inventory, Satisfaction",
+              "questionsolution": "",
+              "questionoptions_answer": "",
+              "prompt": "[Skill: Verbal Reasoning] | [Difficulty: <2>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "dichotomous",
+              "tags": []
+            }
+          ],
+          "prompt": "[Topic: Resource Allocation] | [Theme: Logistics and Operations] | [Source: <chart>] | [Source: <table>] | [Source: <graph>] | [Skill: Trend Analysis] | [Skill: Trend Analysis] | [Skill: Trend Analysis] | [Difficulty: <2>] - <Dichotomous Type: Consistent/Inconsistent>",
+          "question-type": "Multi-Source Reasoning",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "question-type: Multi-Source Reasoning",
+            "theme: Logistics and Operations",
+            "topic: Resource Allocation"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "section": "Quants",
+      "questions": [
+        {
+          "question": "Company A sells a product for $120 each. Fixed costs are $30,000 and variable cost per unit is $45. If the company offers a 10% discount on the selling price, how many units must it sell to achieve a profit of $15,000?",
+          "title": "Profit Target with Discounted Pricing in a Manufacturing Business",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Digital Economy & E-commerce] | [Style: <Numeric Comparisons>] | [Difficulty: <5>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "topic: Simple Interest and Compound Interest",
+            "theme: Digital Economy & E-commerce",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "question": "A startup’s monthly revenue follows R(t)=1200+150t, where t is months after launch. After how many months will the revenue exceed $3000, and what is the smallest integer month count that satisfies this condition?",
+          "title": "Revenue Growth Inequality: Determining Minimum Month for $3000 Threshold",
+          "questionsolution": "",
+          "options": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          },
+          "answer": "A",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Urban Planning & Smart Cities] | [Style: <Geometry Proofs>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Urban Planning & Smart Cities",
+            "question-type: Problem Solving Simple",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Profit Margins: Linear Equation Application in Business Forecasting",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"250\", \"explanation\": \"Correct: solves 20x - 2000 = 3000.\" },\n    \"B",
+          "prompt": "[Topic: Mixtures and Alligations] | [Theme: Astrophysics & Astronomy] | [Style: <Coordinate Geometry>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Mixtures and Alligations",
+            "theme: Astrophysics & Astronomy",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Production Costs: Linear Programming for Profit Maximization",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Business and Finance] | [Style: <Numeric Comparisons>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Profit, Loss and Discount",
+            "question-type: Problem Solving Simple",
+            "theme: Business and Finance"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question\": \"A startup",
+          "title": "Startup Break‑Even Point Analysis Using Linear Cost‑Revenue Model",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"400 units\", \"explanation\": \"Correct calculation\" },\n    \"B\": { \"text\": \"200 units\", \"explanation\": \"Forgot fixed cost\" },\n    \"C\": { \"text\": \"800 units\",",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Word Problems&>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Healthcare Analytics & Epidemiology",
+            "question-type: Problem Solving Simple",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "question": "A startup’s monthly revenue follows R = 12,000 + 3,000·n, where n is the number of new customers acquired that month. If the company wants to increase revenue by at least $15,000 compared to the previous month, what is the minimum number of new customers it must acquire? Assume the previous month’s revenue was $27,000.",
+          "title": "Startup Revenue Growth: Minimum New Customers Needed to Increase Revenue by $15,000",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"10\", \"explanation\": \"Correct: solves inequality 12000+3000n≥42000 gives n≥10.\" },\n    \"B\": { \"text\": \"9\", \"explanation\": \"Off by one: 9 yields revenue $39,000, short of $42,",
+          "prompt": "[Topic: Statistics] | [Theme: Medicine & Physiology] | [Style: <Single Variable Equation>] | [Difficulty: <2>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "theme: Medicine & Physiology",
+            "question-type: Problem Solving Simple",
+            "topic: Statistics"
+          ]
+        },
+        {
+          "question": "A company sells two models of widgets. Model A costs $12 and sells 150 units per month; Model B costs $20 and sells 90 units per month. If the company wants to increase total monthly revenue by 10% without changing prices, by what percentage must the sales of Model B increase, assuming Model A sales stay the same?",
+          "title": "Revenue Growth: Calculating Required Sales Increase for Model B",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Anthropology & Archaeology] | [Style: <Inequalities>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Anthropology & Archaeology",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "question": "A startup sells a subscription service for $120 per year. If the company wants to increase total annual revenue by 15% without changing the price, by what percent must the number of subscribers increase? Assume current subscriber count is 8,000.",
+          "title": "Subscription Revenue Growth: Required Percent Increase in Subscribers",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"15%\", \"explanation\": \"Correct: revenue change directly mirrors subscriber change.\" },\n    \"B\": { \"text\": \"10%\", \"explanation\": \"Incorrect: yields only a $96,000 increase, not 15%",
+          "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Political Science] | [Style: <Abstract Algebra>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Political Science",
+            "topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)"
+          ]
+        },
+        {
+          "question": "A company sells two products, A and B. Product A yields $30 profit per unit, product B yields $45 profit per unit. The firm must allocate exactly 120 units total, and the total profit must be at least $4,200. What is the minimum number of product B units that must be produced?",
+          "title": "Profit Allocation Optimization: Minimum Units of Product B",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "40",
+              "explanation": "Meets profit and unit constraints with minimal B."
+            },
+            "B": {
+              "text": "30",
+              "explanation": "Profit falls short of $4,200."
+            },
+            "C": {
+              "text": "45",
+              "explanation": "Satisfies profit but not minimal B."
+            },
+            "D": {
+              "text": "50",
+              "explanation": "Higher than needed; not the minimum."
+            },
+            "E": {
+              "text": "35",
+              "explanation": "Result of mis‑setting the inequality."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: Ratio and Proportion] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Word Problems&>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Supply Chain Logistics & Global Trade",
+            "topic: Ratio and Proportion"
+          ]
+        },
+        {
+          "question": "A startup’s monthly revenue R (in thousands) follows R = -2t^2 + 12t + 20, where t is months after product release. During which month does the revenue reach its maximum, and what is that maximum revenue?",
+          "title": "Startup Revenue Optimization: Find Month of Maximum Quarterly Revenue",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {",
+          "prompt": "[Topic: Functions and Polynomials] | [Theme: Visual Arts & Architecture] | [Style: <Single Variable Equation>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "topic: Functions and Polynomials",
+            "theme: Visual Arts & Architecture"
+          ]
+        },
+        {
+          "question": "A startup offers a subscription service at $25 per month. Its monthly fixed costs are $8,000 and the variable cost per subscriber is $7. To cover costs and earn a profit of $5,000, what is the minimum number of subscribers needed?",
+          "title": "Subscription Service Break‑Even Profit Calculation",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "723",
+              "explanation": "Correct calculation of break‑even profit."
+            },
+            "B": {
+              "text": "720",
+              "explanation": "Rounded down, insufficient profit."
+            },
+            "C": {
+              "text": "730",
+              "explanation": "Overestimates due to adding extra subscribers."
+            },
+            "D": {
+              "text": "750",
+              "explanation": "Ignores variable cost impact."
+            },
+            "E": {
+              "text": "800",
+              "explanation": "Assumes higher profit margin than required."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Medicine & Physiology] | [Style: <Single Variable Equation>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Mean, Median, Mode, Range",
+            "theme: Medicine & Physiology",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "question": "A company`s profit P (in thousands) follows P = 5x^2 - 40x + 80, where x is the number of months after launch. In which month does profit first exceed 200 thousand?",
+          "title": "Quadratic Profit Growth: First Month Profitceeding $200k",
+          "questionsolution": "{\n  \"solution\": \"Step 1: **Setup** – Need the smallest integer $x$ such that $5x^2-40x+80>200$.  \\nStep 2: **Execution** – Rearrange to $x^2-8x-24>0$, roots $x=4\\\\pm2\\\\sqrt{10}\\\\approx-2.3,10.3$.  \\nStep 3: **Verification** – For $x=10$, $P=180$ (not >200); for $x=11$, $P=5\\\\cdot121-440+80=205$ (>200).  \\nStep 4: **Distractor** – Choosing",
+          "options": {
+            "A": {
+              "text": "10",
+              "explanation": "Profit is $180k, not >$200k."
+            },
+            "B": {
+              "text": "11",
+              "explanation": "Correct: profit $205k exceeds $200k."
+            },
+            "C": {
+              "text": "12",
+              "explanation": "Profit $260k, but not the first month exceeding $200k."
+            },
+            "D": {
+              "text": "13",
+              "explanation": "Profit $325k, later month; earlier month already exceeds threshold."
+            },
+            "E": {
+              "text": "14",
+              "explanation": "Profit $400k, also later month; earliest month is earlier."
+            }
+          },
+          "answer": "B",
+          "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Word Problems&>] | [Difficulty: <2>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "topic: Profit, Loss and Discount",
+            "question-type: Problem Solving Simple",
+            "theme: Supply Chain Logistics & Global Trade"
+          ]
+        },
+        {
+          "question": "An investment firm offers a 5-year bond with annual coupon 4% of its $10,000 face value. The bond is sold at a price that yields a 6% annual return. If the firm wants to increase the price by 5% while keeping the yield unchanged, by what percentage must the coupon rate be adjusted?",
+          "title": "Bond Pricing: Adjusting Coupon Rate to Increase Price while Maintaining Yield",
+          "questionsolution": "",
+          "options": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          },
+          "answer": "A",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Philosophy & Ethics] | [Style: <Single Variable Equation>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Philosophy & Ethics",
+            "question-type: Problem Solving Simple",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "question": "Company A sells a product for $120 each. Fixed costs are $30,000 and variable cost per unit is $45. If the company wants to achieve a profit that is 25% of its total revenue, how many units must it sell?",
+          "title": "Profit Target as Percentage of Revenue – Break‑Even Analysis",
+          "questionsolution": "{\n  \"solution\": \"Step 1: Let **x** be units. Revenue = $120x, total cost = $30,000 + $45x. Desired profit = 0.25·Revenue = $30x.\\nStep 2: Profit = Revenue – Cost = $120x – ($30,000 + $45x) = $75x – $30,000. Set $75x – $30,000 = $30x → $",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Logistics and Operations] | [Style: <Data Interpretation>] | [Difficulty: <5>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "theme: Logistics and Operations",
+            "question-type: Problem Solving Simple",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Production Costs: Linear Inequalities in Manufacturing Budget",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "$x \\le 40$",
+              "explanation": "Ignores the budget constraint on $y$."
+            },
+            "B": {
+              "text": "$x + 2y \\le 100$",
+              "explanation": "Satisfies both cost and resource limits."
+            },
+            "C": {
+              "text": "$2x + y \\ge 80$",
+              "explanation": "Reverses inequality direction."
+            },
+            "D": {
+              "text": "$x - y \\ge 20$",
+              "explanation": "Does not reflect total cost."
+            },
+            "E": {
+              "text": "$3x + 3y \\le 150$",
+              "explanation": "Over‑simplifies and scales incorrectly."
+            }
+          },
+          "answer": "B",
+          "prompt": "[Topic: work and rate problem] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Abstract Algebra>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: work and rate problem",
+            "question-type: Problem Solving Simple",
+            "theme: Supply Chain Logistics & Global Trade"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Inventory Turnover: Applying Linear Inequalities to Forecast Stock Levels",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Medicine & Physiology] | [Style: <Pure Number Theory>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Profit, Loss and Discount",
+            "theme: Medicine & Physiology",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "question": "A startup’s monthly recurring revenue (MRR) grew from $120,000 to $150,000 over three months. If the growth rate is assumed constant each month, what is the approximate monthly percentage increase in MRR? Round to the nearest tenth of a percent.",
+          "title": "Constant Monthly Growth Rate of Startup Recurring Revenue",
+          "solution": "Step 1: Identify **initial MRR** = $120,000, **final MRR** = $150,000, period = 3 months, and constant **monthly growth rate** r.\nStep 2: Apply compound growth: $120,000·(1+r)^3 = $150,000 → (1+r)^3 = 1.25 → 1+r = 1.25^{1/3} ≈ 1.076 → r ≈ 0.076 = **7.6%**.\nStep 3: Verify: 120,000·1.076^3 ≈ 150,000, confirming the rate.\nStep 4: Distractor: The linear‑increase option (10%) ignores compounding, so it is wrong.",
+          "options": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          },
+          "answer": "A",
+          "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: History (Ancient/Modern)] | [Style: <Numeric Comparisons>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Number Properties and Fractions, Decimals, Percentages",
+            "theme: History (Ancient/Modern)",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question\": \"A startup sells a software subscription for $120 per year. Variable cost per subscriber is $30, and fixed costs are $18,000 annually. The firm aims for",
+          "title": "Break‑even analysis for a SaaS startup subscription model",
+          "solution": "Step 1: **Setup** – Price = $120, variable cost = $30, fixed cost = $18,000. Contribution margin = $120 − $30 = $90 per subscriber.\nStep 2: **Execution** – Break‑even units = $18,000 ÷ $90 = **200** subscribers.\nStep 3: **Verification** – 200 × $90 = $18,000, matching fixed costs.\nStep 4: **Distractor** – Using $18,000 ÷ $120 = 150 ignores variable cost, so it’s incorrect.",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"200\", \"explanation\": \"Correct break‑even using contribution margin $90.\" },\n    \"B\": { \"text\": \"150\", \"explanation\": \"Divides fixed cost by price, ignoring variable cost.\" },\n    \"C\": { \"text\": \"250\", \"explanation\": \"Uses an incorrect variable cost, yielding a lower margin.\" },\n    \"D\": { \"text\": \"300\", \"explanation\": \"Adds fixed cost to variable cost before",
+          "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Urban Planning & Smart Cities] | [Style: <Geometry Proofs>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Mean, Median, Mode, Range",
+            "theme: Urban Planning & Smart Cities",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Production Mix: Linear Programming Cost Minimization",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Inequalities>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Number Properties and Fractions, Decimals, Percentages",
+            "theme: Financial Markets & Cryptocurrency",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Production Mix: Linear Programming Cost Minimization",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Philosophy & Ethics] | [Style: <Numeric Comparisons>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Philosophy & Ethics",
+            "topic: Simple Interest and Compound Interest",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Production Mix: Linear Programming Cost Minimization in a Manufacturing Firm",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: work and rate problem] | [Theme: Biology & Ecology] | [Style: <Data Interpretation>] | [Difficulty: <2>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "topic: work and rate problem",
+            "question-type: Problem Solving Simple",
+            "theme: Biology & Ecology"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "section": "Verbal",
+      "questions": [
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid expansion of digital marketplaces has ostensibly democratized access to global consumers, the underlying logistics networks remain constrained by legacy infrastructures, which, albeit efficient in traditional supply chains, often falter under the volatile demand spikes characteristic of e‑commerce surges."
+            },
+            {
+              "para": "Nevertheless, firms that proactively integrate adaptive routing algorithms and invest in modular warehousing solutions can mitigate these bottlenecks, thereby converting the very volatility that challenges conventional operations into a strategic advantage that sustains competitive differentiation."
+            }
+          ],
+          "questiontitle": "",
+          "child-questions": [
+            {
+              "question": "According to the passage, how do adaptive routing algorithms and modular warehousing transform volatility in e‑commerce logistics into a strategic advantage?",
+              "title": "Optimizing E‑Commerce Logistics: Adaptive Routing and Volatility Management",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Mitigate bottlenecks, turning volatility into advantage",
+                  "explanation": "Correct"
+                },
+                "B": {
+                  "text": "Raise inventory holding costs",
+                  "explanation": "Incorrect cost focus"
+                },
+                "C": {
+                  "text": "Eliminate need for routing",
+                  "explanation": "Incorrect feasibility"
+                },
+                "D": {
+                  "text": "Reduce demand volatility itself",
+                  "explanation": "Incorrect effect"
+                },
+                "E": {
+                  "text": "Focus solely on cost reduction",
+                  "explanation": "Incorrect scope"
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Which of the following best describes how adaptive routing algorithms and modular warehousing convert demand volatility into a competitive advantage, according to the passage?",
+              "title": "Adaptive Routing & Modular Warehousing: Transforming Volatility into Competitive Advantage",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Mitigate bottlenecks, turning volatility into advantage",
+                  "explanation": "Correct"
+                },
+                "B": {
+                  "text": "Increase inventory holding costs",
+                  "explanation": "Incorrect – focuses on cost, not advantage"
+                },
+                "C": {
+                  "text": "Eliminate need for routing",
+                  "explanation": "Incorrect – unrealistic, routing still needed"
+                },
+                "D": {
+                  "text": "Reduce demand volatility itself",
+                  "explanation": "Incorrect – they adapt to volatility, not eliminate it"
+                },
+                "E": {
+                  "text": "Focus solely on cost reduction",
+                  "explanation": "Incorrect – ignores strategic advantage"
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: Economics] | [Skill: Logical Structure Analysis] | [Vocabulary: <balance-sheet>] | [Difficulty: <3>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Reading Comprehension",
+            "topic: Logical Structure Analysis",
+            "theme: Economics"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although many firms have embraced telecommuting, the shift has engendered both unforeseen efficiencies and subtle erosions of communal identity; indeed, while productivity metrics often rise, informal knowledge exchange—once a byproduct of hallway conversations—has become fragmented, prompting managers to devise digital rituals that attempt to preserve a sense of belonging amidst dispersed workspaces."
+            },
+            {
+              "para": "Consequently, organizations are experimenting with structured virtual coffee breaks, asynchronous brainstorming boards, and AI‑mediated mentorship pairings; these interventions aim to recapture the serendipitous insights of physical proximity while acknowledging the temporal flexibility that remote work affords, yet their long‑term impact on employee cohesion remains an open question."
+            }
+          ],
+          "title": "Statistical Correlation of Remote Productivity and Employee Cohesion",
+          "child-questions": [
+            {
+              "question": "According to the passage, what is the primary challenge managers face when attempting to maintain employee cohesion in remote work environments?",
+              "title": "Quantitative Assessment of Managerial Challenge in Remote Work Cohesion",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Preserving a sense of belonging while informal knowledge exchange becomes fragmented.",
+                  "explanation": "Matches the passage's main challenge."
+                },
+                "B": {
+                  "text": "Increasing overall productivity metrics in remote settings.",
+                  "explanation": "Productivity rises; it's not the challenge."
+                },
+                "C": {
+                  "text": "Reducing the cost of digital communication tools.",
+                  "explanation": "Cost is not discussed as a primary issue."
+                },
+                "D": {
+                  "text": "Ensuring employees work the same hours across time zones.",
+                  "explanation": "Temporal flexibility is a benefit, not the core challenge."
+                },
+                "E": {
+                  "text": "Maintaining physical office space for occasional meetings.",
+                  "explanation": "The passage focuses on digital rituals, not physical space."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Inference Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, what is the primary difficulty managers face in maintaining employee cohesion in remote work environments?",
+              "title": "Critical Reasoning: Managerial Challenge in Remote Cohesion",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Preserving a sense of belonging while informal knowledge exchange becomes fragmented.",
+                  "explanation": "Matches the passage's primary managerial challenge."
+                },
+                "B": {
+                  "text": "Increasing overall productivity metrics in remote settings.",
+                  "explanation": "Productivity rises; it's not the difficulty highlighted."
+                },
+                "C": {
+                  "text": "Reducing the cost of digital communication tools.",
+                  "explanation": "Cost considerations are not mentioned as a core issue."
+                },
+                "D": {
+                  "text": "Ensuring employees work the same hours across time zones.",
+                  "explanation": "Temporal flexibility is a benefit, not the main challenge."
+                },
+                "E": {
+                  "text": "Maintaining physical office space for occasional meetings.",
+                  "explanation": "The passage focuses on digital rituals, not physical space."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Assumption Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Art] | [Skill: Assumption and Bias Identification] | [Vocabulary: <breach>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Art",
+            "question-type: Reading Comprehension",
+            "topic: Assumption and Bias Identification"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although many firms have embraced remote work as a permanent fixture, the shift has not been without its paradoxes; while employee autonomy has increased, the erosion of spontaneous collaboration has prompted managers to devise hybrid solutions that reconcile flexibility with the need for cohesive team dynamics, thereby reshaping traditional notions of workplace productivity."
+            },
+            {
+              "para": "Consequently, organizations are investing in digital collaboration platforms that simulate informal encounters, such as virtual coffee rooms and AI‑mediated brainstorming sessions, while also instituting periodic in‑person retreats to reinforce social bonds, a dual strategy that seeks to mitigate the isolation of remote work without sacrificing the efficiency gains that flexibility affords."
+            }
+          ],
+          "title": "Hybrid Work Strategy: Analyzing Productivity Gains vs. Collaboration Costs",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why do organizations combine AI‑mediated brainstorming tools with periodic in‑person retreats in their hybrid work strategy?",
+              "title": "Hybrid Work: Cost-Benefit of AI Tools vs. In-Person Retreats",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To balance remote efficiency with face‑to‑face social benefits",
+                  "explanation": "Correct: captures both efficiency and social bonding goals."
+                },
+                "B": {
+                  "text": "To reduce overall technology costs by limiting AI usage",
+                  "explanation": "Incorrect: passage emphasizes investment, not cost reduction."
+                },
+                "C": {
+                  "text": "To comply with legal requirements for in‑person meetings",
+                  "explanation": "Incorrect: no legal mandate is mentioned."
+                },
+                "D": {
+                  "text": "To replace all virtual communication with physical meetings",
+                  "explanation": "Incorrect: AI tools remain integral, not replaced."
+                },
+                "E": {
+                  "text": "To increase employee autonomy by eliminating any scheduled gatherings",
+                  "explanation": "Incorrect: retreats are scheduled, reducing autonomy."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, which statement best explains why firms invest in both digital collaboration platforms and scheduled in‑person retreats within their hybrid work model?",
+              "title": "Hybrid Work Investment: Cost‑Benefit Reasoning for Digital Platforms and In‑Person Retreats",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To balance remote efficiency with face‑to‑face social benefits",
+                  "explanation": "Correct: captures both efficiency and social bonding goals."
+                },
+                "B": {
+                  "text": "To cut overall technology spending by limiting AI usage",
+                  "explanation": "Incorrect: passage emphasizes investment, not cost reduction."
+                },
+                "C": {
+                  "text": "To meet regulatory mandates requiring periodic in‑person meetings",
+                  "explanation": "Incorrect: no legal requirement is mentioned."
+                },
+                "D": {
+                  "text": "To replace all virtual communication with physical gatherings",
+                  "explanation": "Incorrect: AI tools remain integral, not replaced."
+                },
+                "E": {
+                  "text": "To increase employee autonomy by eliminating any scheduled gatherings",
+                  "explanation": "Incorrect: retreats are scheduled, reducing autonomy."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Literature] | [Skill: Evidence-Based Reasoning] | [Vocabulary: <anchor (as in: stabilize)>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "question-type: Reading Comprehension",
+            "theme: Literature",
+            "topic: Evidence-Based Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the corporation had long prided itself on its dominance in fossil-fuel markets, it now confronts a paradoxical demand: to sustain growth while simultaneously curbing carbon emissions, a challenge that has compelled senior executives to endorse a sweeping diversification into renewable technologies, even as skeptics argue that such a pivot may dilute core competencies and erode shareholder confidence."
+            },
+            {
+              "para": "In response, the board allocated a substantial portion of its capital budget to green investments, commissioning a joint venture with a leading solar firm to develop offshore wind farms, while simultaneously instituting a rigorous performance‑tracking system that ties executive bonuses to measurable reductions in the company's carbon footprint, a move that aims to reconcile profitability with environmental stewardship despite lingering doubts about market volatility and regulatory uncertainty."
+            }
+          ],
+          "questiontitle": "",
+          "child-questions": [
+            {
+              "question": "What primary strategic reason does the board give for linking executive bonuses to carbon‑reduction metrics, and how does this reflect its attempt to balance profitability with environmental stewardship?",
+              "title": "Strategic Incentive Alignment: Carbon‑Reduction Bonus Impact on Profitability",
+              "questionsolution": "{\n  \"solution\": \"**Step 1:** Identify core question – why tie bonuses to carbon‑reduction metrics and what it shows about profit‑environment balance.\\n**Step 2:** Execution – the board uses bonuses to *align",
+              "options": {
+                "A": {
+                  "text": "To align executive incentives with carbon‑reduction targets, ensuring profit goals support environmental stewardship.",
+                  "explanation": "Correct – directly ties bonuses to sustainability objectives."
+                },
+                "B": {
+                  "text": "To boost short‑term sales by rewarding higher production volumes.",
+                  "explanation": "Incorrect – focuses on sales, not carbon metrics."
+                },
+                "C": {
+                  "text": "To satisfy a legal mandate requiring bonuses to be linked to emissions data.",
+                  "explanation": "Incorrect – no such legal requirement is mentioned."
+                },
+                "D": {
+                  "text": "To cut operational costs by using carbon‑reduction metrics as a proxy for staff reductions.",
+                  "explanation": "Incorrect – metrics aim at emissions, not workforce cuts."
+                },
+                "E": {
+                  "text": "To attract investors by showcasing a novel compensation scheme unrelated to performance.",
+                  "explanation": "Incorrect – the scheme is performance‑based, not merely a marketing tool."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Strengthen Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, what is the most plausible rationale for the board’s decision to partner with a leading solar firm in developing offshore wind farms, and how does this partnership support the company’s broader strategic objective of reconciling profitability with environmental stewardship?",
+              "questiontitle": "",
+              "solution": "**Step 1:** Identify core question – why the board partners with a solar firm for offshore wind and how this serves profit‑environment balance.\n**Step 2:** Execution – the joint venture provides technical expertise, spreads capital risk, creates new renewable revenue streams, and enhances ESG credentials, directly supporting the board’s stated objective of reconciling profitability with stewardship.\n**Step 3:** Verification – these outcomes align with the passage’s description of the partnership’s strategic purpose.\n**Step 4:** Distractor – the choice that the partnership mainly aims to boost short‑term sales is wrong because the passage emphasizes long‑term sustainability, not immediate sales gains.",
+              "options": {
+                "A": {
+                  "text": "To combine capital with the solar firm's technical expertise, sharing risk and creating renewable revenue that aligns profit with sustainability.",
+                  "explanation": "Correct – captures the partnership’s strategic purpose."
+                },
+                "B": {
+                  "text": "To boost short‑term sales of existing fossil‑fuel products through cross‑selling to renewable customers.",
+                  "explanation": "Incorrect – focus is on sales, not sustainability."
+                },
+                "C": {
+                  "text": "To satisfy a government mandate requiring offshore wind capacity to be owned by a solar firm.",
+                  "explanation": "Incorrect – no such mandate is mentioned."
+                },
+                "D": {
+                  "text": "To diversify the asset portfolio, stabilizing earnings and enhancing ESG credentials, thereby supporting profit‑environment balance.",
+                  "explanation": "Correct – aligns diversification with strategic objective."
+                },
+                "E": {
+                  "text": "To cut labor costs by automating wind‑farm operations with the solar firm's software.",
+                  "explanation": "Incorrect – labor cost reduction is not the stated goal."
+                }
+              },
+              "answer": [
+                "A",
+                "D"
+              ],
+              "prompt": "[Skill: Inference Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Social Sciences (Psychology, Sociology)] | [Skill: Inference Making] | [Vocabulary: <amplify>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "question-type: Reading Comprehension",
+            "theme: Social Sciences (Psychology, Sociology)",
+            "topic: Inference Making"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, the proliferation of remote work has reshaped corporate culture, prompting organizations to reevaluate traditional notions of collaboration, productivity, and employee engagement. While some firms have embraced virtual platforms to foster flexibility and broaden talent pools, others grapple with challenges such as maintaining cohesive team dynamics and ensuring equitable access to resources across geographically dispersed workforces."
+            },
+            {
+              "para": "Consequently, managers are experimenting with hybrid models that blend in‑person and remote interactions, leveraging data‑driven performance metrics to balance autonomy with accountability. These approaches aim to preserve the benefits of virtual work while mitigating isolation, fostering a culture where innovation thrives regardless of physical location."
+            }
+          ],
+          "title": "Assessing Hybrid Work Model Efficiency Through Data‑Driven Performance Metrics",
+          "child-questions": [
+            {
+              "question": "According to the passage, which of the following statements most accurately reflects how data‑driven performance metrics influence the balance between autonomy and accountability in hybrid work models?",
+              "title": "Impact of Data‑Driven Metrics on Autonomy‑Accountability Balance in Hybrid Work",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "They supply objective criteria that let employees work freely while enabling managers to monitor outcomes.",
+                  "explanation": "Correct: aligns with passage’s claim about balancing autonomy and accountability."
+                },
+                "B": {
+                  "text": "They remove all managerial oversight in hybrid settings.",
+                  "explanation": "Incorrect: passage states metrics complement, not replace, oversight."
+                },
+                "C": {
+                  "text": "They prioritize autonomy at the expense of accountability.",
+                  "explanation": "Incorrect: passage emphasizes a balance, not a one‑sided focus."
+                },
+                "D": {
+                  "text": "They concentrate solely on in‑person interactions, ignoring remote data.",
+                  "explanation": "Incorrect: passage highlights data‑driven metrics for both remote and in‑person work."
+                },
+                "E": {
+                  "text": "They increase employee isolation by reducing human feedback.",
+                  "explanation": "Incorrect: passage suggests metrics mitigate isolation, not exacerbate it."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Inference Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, what is the primary reason managers blend in‑person and remote work in hybrid models?",
+              "title": "Primary Reason for Blending In‑Person and Remote Work in Hybrid Models",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"To balance employee autonomy with managerial accountability using data‑driven metrics.\",\n      \"explanation\": \"Correct: directly reflects the passage's stated primary reason.\"\n    },\n    \"B\": {\n      \"text\": \"To eliminate the need for any managerial oversight in remote work.\",\n      \"explanation\": \"Incorrect: passage says metrics complement, not replace, oversight.\"\n    },\n    \"C\": {\n      \"text\": \"To prioritize in‑person collaboration over virtual interactions.\",\n      \"explanation\": \"Incorrect: passage emphasizes blending both, not prioritizing one.\"\n    },\n    \"D\": {\n      \"text\": \"To reduce operational costs by cutting office space.\",\n      \"explanation\": \"Incorrect: cost reduction is not mentioned as the primary motive.\"\n    },\n    \"E\": {\n      \"text\": \"To increase employee isolation to encourage independent work.\",\n      \"explanation\": \"Incorrect",
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: International Relations & Diplomacy] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <bracket (as in: tax)>] | [Difficulty: <3>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Comparative Analysis and Perspective Recognition",
+            "question-type: Reading Comprehension",
+            "theme: International Relations & Diplomacy"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, multinational corporations have increasingly adopted flexible work arrangements, citing both employee satisfaction and cost efficiency as primary drivers. However, the shift has also raised concerns about maintaining corporate culture and ensuring equitable access to resources across geographically dispersed teams."
+            },
+            {
+              "para": "Empirical studies indicate that while remote work can boost individual productivity, it often hampers spontaneous collaboration and knowledge sharing, leading to slower innovation cycles. Companies are therefore experimenting with hybrid models, leveraging digital collaboration platforms and periodic in‑person retreats to balance flexibility with cohesion."
+            }
+          ],
+          "title": "Hybrid work impact on productivity: a cost‑benefit analysis",
+          "child-questions": [
+            {
+              "question": "According to the passage, why do corporations favor hybrid work arrangements even though remote work can increase individual productivity?",
+              "title": "Cost‑benefit reasoning of hybrid work models in corporate strategy",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To preserve collaboration and corporate culture while retaining flexibility.",
+                  "explanation": "Correct: balances the need for spontaneous interaction with remote benefits."
+                },
+                "B": {
+                  "text": "Because remote work dramatically cuts operational costs.",
+                  "explanation": "Incorrect: cost reduction is not the primary reason for hybrid adoption."
+                },
+                "C": {
+                  "text": "Since employees overwhelmingly prefer in‑person meetings.",
+                  "explanation": "Incorrect: the passage cites employee satisfaction with flexibility, not a preference for in‑person."
+                },
+                "D": {
+                  "text": "Because hybrid models eliminate the need for digital collaboration tools.",
+                  "explanation": "Incorrect: the passage mentions leveraging digital platforms, not eliminating them."
+                },
+                "E": {
+                  "text": "Since hybrid work removes any productivity concerns.",
+                  "explanation": "Incorrect: the passage notes remote work can boost individual productivity but may hinder overall innovation."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Tone and Attitude] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, which of the following best explains why corporations adopt hybrid work models despite the productivity gains of fully remote work?",
+              "title": "Hybrid work adoption: cost‑benefit reasoning in corporate strategy",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To maintain collaboration and corporate culture while offering flexibility.",
+                  "explanation": "Correct: balances need for interaction with remote benefits."
+                },
+                "B": {
+                  "text": "Because remote work eliminates all operational costs.",
+                  "explanation": "Incorrect: cost reduction is not the primary driver for hybrid adoption."
+                },
+                "C": {
+                  "text": "Since employees prefer in‑person meetings over remote work.",
+                  "explanation": "Incorrect: passage cites employee satisfaction with flexibility, not a preference for in‑person."
+                },
+                "D": {
+                  "text": "Because hybrid models remove the need for digital collaboration tools.",
+                  "explanation": "Incorrect: passage mentions leveraging digital platforms, not eliminating them."
+                },
+                "E": {
+                  "text": "Since hybrid work guarantees higher overall productivity than remote work.",
+                  "explanation": "Incorrect: passage notes remote work can boost individual productivity but may hinder overall innovation."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Tone and Attitude] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Humanities (History, Art, Literature)] | [Skill: Passage Organization and Cohesion] | [Vocabulary: <curve (as in: demand/supply)>] | [Difficulty: <1>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Humanities (History, Art, Literature)",
+            "question-type: Reading Comprehension",
+            "topic: Passage Organization and Cohesion"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid adoption of remote work was initially heralded as a temporary response to an unprecedented crisis, it has since evolved into a structural transformation that reshapes corporate culture; indeed, while some executives argue that virtual collaboration erodes informal networking, recent studies suggest that, when coupled with deliberate digital rituals, it can foster a more inclusive environment that transcends geographic boundaries."
+            },
+            {
+              "para": "Nevertheless, the transition is not without obstacles; organizations must grapple with disparities in digital infrastructure, the erosion of spontaneous mentorship moments, and the heightened demand for robust cybersecurity protocols, prompting scholars to advocate for hybrid models that blend the flexibility of remote work with the relational richness of occasional in‑person gatherings."
+            }
+          ],
+          "title": "Cost‑Benefit Analysis of Hybrid Work: Inference on Organizational Efficiency",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why do scholars recommend hybrid work models even though remote work can foster inclusivity and flexibility?",
+              "title": "Hybrid Work Model ROI: Evaluating Efficiency Gains vs. Infrastructure Costs",
+              "questionsolution": "",
+              "options": {
+                "A": {},
+                "B": {},
+                "C": {},
+                "D": {},
+                "E": {}
+              },
+              "answer": "C",
+              "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, which factor most strongly justifies adopting a hybrid work model despite the inclusivity benefits of fully remote arrangements?",
+              "title": "Hybrid Work Justification: Evaluating Cost‑Benefit Trade‑offs in Organizational Strategy",
+              "questionsolution": "",
+              "options": {
+                "A": {},
+                "B": {},
+                "C": {},
+                "D": {},
+                "E": {}
+              },
+              "answer": "C",
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: History] | [Skill: Logical Structure Analysis] | [Vocabulary: <document>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: History",
+            "question-type: Reading Comprehension",
+            "topic: Logical Structure Analysis"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid adoption of remote work was initially hailed as a panacea for urban congestion, recent data reveal a more nuanced reality: while commuter traffic has indeed dwindled, the attendant decline in downtown foot traffic has strained small businesses that once thrived on office workers' patronage, thereby prompting city planners to reconsider zoning policies that had long favored high‑density commercial districts."
+            },
+            {
+              "para": "In response, several municipalities have launched pilot programs that incentivize mixed‑use development, offering tax credits to firms that integrate co‑working spaces with retail outlets, while also funding digital platforms that connect remote employees with local services, a strategy aimed at revitalizing urban economies without reverting to pre‑pandemic commuting patterns."
+            }
+          ],
+          "questiontitle": "",
+          "child-questions": [
+            {
+              "question": "Which of the following best explains why city planners are promoting mixed‑use development in response to reduced downtown foot traffic?",
+              "title": "Impact of Mixed‑Use Development Incentives on Urban Economic Revitalization",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To boost downtown foot traffic and support small businesses by integrating work and retail spaces.",
+                  "explanation": "Correct – aligns with planners’ goal to revitalize urban economies."
+                },
+                "B": {
+                  "text": "To reduce the need for digital platforms connecting remote workers to local services.",
+                  "explanation": "Incorrect – planners are actually funding such platforms."
+                },
+                "C": {
+                  "text": "To revert commuting patterns to pre‑pandemic levels.",
+                  "explanation": "Incorrect – goal is to avoid returning to old commuting patterns."
+                },
+                "D": {
+                  "text": "To increase high‑density office space exclusively.",
+                  "explanation": "Incorrect – mixed‑use, not solely office, is emphasized."
+                },
+                "E": {
+                  "text": "To lower tax revenues by offering credits.",
+                  "explanation": "Incorrect – credits are incentives, not revenue reduction goals."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Which inference best explains why city planners are shifting from high‑density commercial zoning to mixed‑use development incentives in the wake of reduced downtown foot traffic?",
+              "title": "Inference on Planner Shift to Mixed‑Use Zoning Amid Declining Foot Traffic",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To revitalize downtown economies by integrating work and retail spaces.",
+                  "explanation": "Correct – aligns with planners’ goal to boost foot traffic."
+                },
+                "B": {
+                  "text": "To eliminate the need for digital platforms linking remote workers to local services.",
+                  "explanation": "Incorrect – planners are funding such platforms."
+                },
+                "C": {
+                  "text": "To revert commuting patterns to pre‑pandemic levels.",
+                  "explanation": "Incorrect – goal is to avoid returning to old commuting patterns."
+                },
+                "D": {
+                  "text": "To increase high‑density office space exclusively.",
+                  "explanation": "Incorrect – mixed‑use, not solely office, is emphasized."
+                },
+                "E": {
+                  "text": "To reduce tax revenues by offering credits.",
+                  "explanation": "Incorrect – credits are incentives, not revenue‑cutting measures."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: Humanities (History, Art, Literature)] | [Skill: Inference Making] | [Vocabulary: <bottom-line>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Humanities (History, Art, Literature)",
+            "question-type: Reading Comprehension",
+            "topic: Inference Making"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid adoption of remote work has ostensibly increased employee autonomy, it simultaneously erodes the informal networks that traditionally foster innovation, prompting executives to reevaluate how collaborative culture can be sustained in a predominantly virtual environment."
+            },
+            {
+              "para": "Consequently, many firms are piloting hybrid models that blend synchronous video collaborations with periodic in‑person retreats, aiming to preserve serendipitous encounters while leveraging digital tools for efficiency, yet the effectiveness of such strategies remains a subject of ongoing empirical scrutiny."
+            }
+          ],
+          "title": "Evaluating the Efficiency Trade‑off in Hybrid Remote Work Models",
+          "child-questions": [
+            {
+              "question": "According to the passage, which of the following best describes the primary challenge executives face when implementing hybrid work models?",
+              "title": "Hybrid Work Model Challenge: Balancing Innovation and Efficiency",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Maintaining informal innovation networks while integrating digital efficiency tools.",
+                  "explanation": "Correct: captures the core challenge of balancing innovation and efficiency."
+                },
+                "B": {
+                  "text": "Reducing employee autonomy to increase supervision.",
+                  "explanation": "Incorrect: passage notes increased autonomy, not reduced."
+                },
+                "C": {
+                  "text": "Eliminating the need for any in‑person interaction.",
+                  "explanation": "Incorrect: hybrid models retain periodic in‑person retreats."
+                },
+                "D": {
+                  "text": "Cutting costs by removing all video collaborations.",
+                  "explanation": "Incorrect: video collaboration is a key component of hybrid work."
+                },
+                "E": {
+                  "text": "Standardizing work schedules across all locations.",
+                  "explanation": "Incorrect: focus is on collaboration, not schedule uniformity."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Strengthen Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, which inference best explains why executives remain skeptical about the long‑term effectiveness of hybrid work models?",
+              "title": "Hybrid Work Model Effectiveness: Critical Reasoning Inference",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Hybrid models may not fully replicate spontaneous interactions that drive innovation.",
+                  "explanation": "Correct: captures the core skepticism about loss of informal networks."
+                },
+                "B": {
+                  "text": "Employees prefer fully remote work over any in‑person meetings.",
+                  "explanation": "Incorrect: passage notes hybrid includes periodic in‑person retreats."
+                },
+                "C": {
+                  "text": "The cost of video‑conference software outweighs productivity gains.",
+                  "explanation": "Incorrect: cost is not mentioned as a concern."
+                },
+                "D": {
+                  "text": "Hybrid schedules create scheduling conflicts that hinder collaboration.",
+                  "explanation": "Plausible: scheduling issues can undermine effectiveness, matching passage's uncertainty."
+                },
+                "E": {
+                  "text": "Hybrid models eliminate the need for any digital tools, reducing efficiency.",
+                  "explanation": "Incorrect: digital tools are emphasized as essential for efficiency."
+                }
+              },
+              "answer": [
+                "A",
+                "D"
+              ],
+              "prompt": "[Skill: Inference Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: Science and Technology] | [Skill: Logical Structure Analysis] | [Vocabulary: <adverse>] | [Difficulty: <3>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Reading Comprehension",
+            "topic: Logical Structure Analysis",
+            "theme: Science and Technology"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, the multinational corporation OrionTech has pursued a deliberate diversification strategy, expanding beyond its traditional hardware manufacturing into software services and data analytics. This shift was motivated by a combination of market saturation in the hardware sector and the rising demand for integrated digital solutions among enterprise clients. By leveraging its existing engineering expertise, OrionTech aims to create synergistic offerings that enhance customer loyalty while opening new revenue streams."
+            },
+            {
+              "para": "However, the transition has not been without challenges. OrionTech's legacy corporate culture, rooted in product-centric engineering, initially resisted the shift toward service-oriented mindsets, leading to internal friction and slower adoption of agile methodologies. Moreover, the company faced stiff competition from established software firms, necessitating substantial investment in talent acquisition and R&D to develop differentiated analytics platforms that can integrate seamlessly with its hardware ecosystem."
+            }
+          ],
+          "title": "OrionTech Diversification: Quantitative Impact Assessment of Service Expansion",
+          "child-questions": [
+            {
+              "question": "Considering OrionTech`s shift from hardware to integrated digital services, which of the following best explains why the company`s legacy product‑centric culture hindered its adoption of agile methodologies?",
+              "title": "OrionTech Cultural Resistance: Quantitative Analysis of Agile Adoption Barriers",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "The culture prioritized long‑term hardware roadmaps, conflicting with agile’s iterative, rapid‑feedback cycles.",
+                  "explanation": "Correct: product‑centric mindset resists short‑term, flexible methods."
+                },
+                "B": {
+                  "text": "The company lacked sufficient capital to fund agile training programs.",
+                  "explanation": "Incorrect: financial resources were not the main obstacle."
+                },
+                "C": {
+                  "text": "Market demand for digital services was too low to justify agile processes.",
+                  "explanation": "Incorrect: demand was actually rising, prompting the shift."
+                },
+                "D": {
+                  "text": "Competition from software firms forced OrionTech to focus on speed rather than flexibility.",
+                  "explanation": "Incorrect: external competition, not internal culture, was cited."
+                },
+                "E": {
+                  "text": "The legacy engineering teams were already proficient in agile, so no change was needed.",
+                  "explanation": "Incorrect: they were not proficient; resistance was the issue."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Assumption Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, what is the main strategic advantage OrionTech aims to achieve by combining software services and data analytics with its existing hardware offerings?",
+              "title": "OrionTech Strategic Synergy: Assessing Value of Integrated Services",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"\", \"explanation\": \"\" },\n    \"B\": { \"text\": \"\", \"explanation\": \"\" },\n    \"C\": { \"text\":",
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Linguistics & Language Acquisition] | [Skill: Main Idea Comprehension] | [Vocabulary: <agent>] | [Difficulty: <3>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Reading Comprehension",
+            "theme: Linguistics & Language Acquisition",
+            "topic: Main Idea Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In 2023, Acme Corp. faced a strategic crossroads after its flagship product's sales plateaued in North America, prompting senior executives to evaluate three potential growth avenues: expanding into emerging Asian markets, diversifying its product line with eco‑friendly alternatives, or investing in advanced AI‑driven customer analytics to boost retention."
+            }
+          ],
+          "question": "Given the plateau, which option should Acme prioritize if its goal is to maximize sustainable revenue growth over the next five years, considering market saturation, regulatory trends, and data‑driven customer insights?",
+          "title": "Acme Corp Growth Strategy: Prioritizing Sustainable Revenue Growth",
+          "solution": "Step 1: Setup – Identify the goal (**maximize sustainable revenue growth**) over $5$ years and the three options.\nStep 2: Execution – Evaluate each option against **market saturation**, **regulatory trends**, and **data‑driven insights**; AI‑driven analytics directly improves retention with lower external risk.\nStep 3: Verification – The analytics path yields the highest incremental revenue without costly market entry.\nStep 4: Distractors – Expanding to Asia ignores saturation; eco‑friendly diversification faces uncertain regulation.\n**Conclusion:** Choose AI‑driven customer analytics.\n**Flaw/Assumption:** Assuming new markets automatically grow revenue.\n**Correct Option Addresses It:** Leverages existing customers for steady, data‑backed growth.",
+          "options": {
+            "A": {
+              "text": "Invest in AI-driven customer analytics",
+              "explanation": "Correct: Directly boosts retention with low market risk."
+            },
+            "B": {
+              "text": "Expand into emerging Asian markets",
+              "explanation": "Incorrect: High entry cost and uncertain demand."
+            },
+            "C": {
+              "text": "Diversify with eco‑friendly products",
+              "explanation": "Incorrect: Regulatory uncertainty and longer ROI."
+            },
+            "D": {
+              "text": "Increase advertising spend in North America",
+              "explanation": "Incorrect: Does not address plateau root cause."
+            },
+            "E": {
+              "text": "Form a joint venture with a competitor",
+              "explanation": "Incorrect: Complex integration and limited control."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Social Sciences (Psychology, Sociology)] | [Skill: Evaluate the Argument] | [Vocabulary: <assemble>] | [Difficulty: <3>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Evaluate the Argument",
+            "theme: Social Sciences (Psychology, Sociology)",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In 2023, Acme Corp. implemented a hybrid remote‑on‑site work model, aiming to reduce office overhead while maintaining collaborative innovation. The company tracked quarterly productivity, employee satisfaction, and cost savings, finding that while overall output remained stable, satisfaction rose 12% and overhead fell 18%."
+            }
+          ],
+          "question": "Given that Acme Corp`s hybrid model kept overall productivity stable while employee satisfaction increased 12% and overhead costs dropped 18%, which inference best explains the relationship between employee satisfaction and cost savings?",
+          "title": "Hybrid Work Model: Analyzing Satisfaction‑Cost Savings Relationship",
+          "solution": "Step 1: **Setup** – The question asks which inference best explains the link between a $12\\%$ rise in **employee satisfaction** and an $18\\%$ drop in **overhead** while productivity stays stable.\nStep 2: **Execution** – Higher satisfaction typically lowers turnover and absenteeism, cutting space and administrative costs, thus reducing overhead without affecting output.\nStep 3: **Verification** – Since productivity is unchanged, cost savings cannot stem from lower output, supporting the satisfaction‑cost link.\nStep 4: **Distractor** – An option claiming the drop in overhead caused the satisfaction rise is wrong because cost savings alone don’t boost morale.\n**Conclusion**: The correct inference is that improved satisfaction contributed to cost savings.\n**Flaw/Assumption**: Assuming correlation implies causation.\n**Correct Option**: It explicitly ties satisfaction to mechanisms that lower overhead.",
+          "options": {
+            "A": {
+              "text": "Higher employee satisfaction reduced turnover and absenteeism, lowering overhead costs.",
+              "explanation": "Correct: links satisfaction to cost‑saving mechanisms."
+            },
+            "B": {
+              "text": "The 18% overhead reduction directly boosted employee satisfaction by 12%.",
+              "explanation": "Wrong: cost savings alone rarely improve morale."
+            },
+            "C": {
+              "text": "Increased productivity drove both higher satisfaction and lower overhead.",
+              "explanation": "Wrong: productivity stayed stable."
+            },
+            "D": {
+              "text": "External market trends simultaneously improved satisfaction and cut overhead.",
+              "explanation": "Wrong: no evidence of market influence."
+            },
+            "E": {
+              "text": "The changes are coincidental and unrelated.",
+              "explanation": "Wrong: logical link exists between satisfaction and cost reductions."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Sports] | [Skill: Strengthen the Argument] | [Vocabulary: <appraise>] | [Difficulty: <1>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Sports",
+            "topic: Strengthen the Argument",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Despite the rapid expansion of digital platforms, many mid‑size manufacturing firms still rely on legacy ERP systems, which hampers their ability to integrate real‑time data analytics into supply‑chain decision making. Recent case studies indicate that firms that transition to cloud‑based, modular solutions experience a 12% reduction in inventory holding costs within the first year, yet the migration process often encounters resistance due to concerns over data security and employee retraining."
+            }
+          ],
+          "question": "Which of the following most plausibly explains the primary resistance mid‑size manufacturers exhibit when shifting from legacy ERP systems to cloud‑based, modular solutions, given the concerns highlighted in the passage?",
+          "title": "Identifying Primary Resistance to Cloud ERP Migration in Mid‑Size Manufacturing",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Data security concerns",
+              "explanation": "Correct: passage cites security worries as a key resistance."
+            },
+            "B": {
+              "text": "Higher upfront licensing costs",
+              "explanation": "Incorrect: cost is mentioned as a benefit, not a resistance."
+            },
+            "C": {
+              "text": "Limited internet bandwidth",
+              "explanation": "Incorrect: internet issues are not discussed in the passage."
+            },
+            "D": {
+              "text": "Employee retraining challenges",
+              "explanation": "Partially plausible but secondary to security concerns."
+            },
+            "E": {
+              "text": "Regulatory compliance complexities",
+              "explanation": "Incorrect: not referenced as a primary barrier."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Fiction] | [Skill: Draw a Conclusion/Inference] | [Vocabulary: <acquire>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Fiction",
+            "topic: Draw a Conclusion/Inference",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In the third quarter of 2025, Acme Corp experienced a 12% increase in net revenue, driven primarily by the launch of its new AI-powered analytics platform, which attracted 3,500 new enterprise customers. However, the company's operating expenses rose by 8% due to higher R&D investment and expanded marketing efforts in Europe and Asia. The CFO noted that while profit margins improved, the rapid scaling introduced supply chain bottlenecks that delayed hardware component deliveries."
+            }
+          ],
+          "question": "Considering the CFO`s observation that profit margins rose while operating expenses increased, which factor most plausibly contributed to the supply‑chain bottlenecks that delayed hardware deliveries?",
+          "title": "Identifying the Primary Cause of Acme Corp's Supply‑Chain Bottlenecks",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Rapid scaling of hardware production to meet new customer demand",
+              "explanation": "Correct: scaling creates bottlenecks."
+            },
+            "B": {
+              "text": "12% increase in net revenue",
+              "explanation": "Revenue growth does not directly cause delays."
+            },
+            "C": {
+              "text": "Expanded marketing efforts in Europe and Asia",
+              "explanation": "Marketing affects demand, not supply chain flow."
+            },
+            "D": {
+              "text": "Higher R&D investment",
+              "explanation": "R&D spending is unrelated to hardware delivery timing."
+            },
+            "E": {
+              "text": "Improved profit margins",
+              "explanation": "Higher margins reflect profitability, not bottlenecks."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Evaluate the Argument] | [Vocabulary: <comparable>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Evaluate the Argument",
+            "theme: Natural Sciences (Biology, Physics, Chemistry)",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In the rapidly evolving renewable energy sector, firms must balance capital investment decisions with regulatory compliance, market demand forecasts, and technological innovation cycles, all while navigating geopolitical tensions that can affect supply chain stability and financing costs."
+            }
+          ],
+          "question": "Considering the paragraph, which of the following factors would most likely cause a renewable energy firm to delay a new capital investment in a solar plant?",
+          "title": "Renewable Energy Investment Delay: Identifying the Primary Risk Factor",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Financing costs rise because of geopolitical tensions",
+              "explanation": "Correct: Higher costs can postpone investment."
+            },
+            "B": {
+              "text": "Market demand for solar exceeds forecasts",
+              "explanation": "Incorrect: Strong demand encourages investment, not delay."
+            },
+            "C": {
+              "text": "Rapid tech innovation shortens build time",
+              "explanation": "Incorrect: Faster tech would accelerate, not delay."
+            },
+            "D": {
+              "text": "Regulatory compliance becomes streamlined",
+              "explanation": "Incorrect: Easier compliance reduces delay risk."
+            },
+            "E": {
+              "text": "Supply chain remains stable",
+              "explanation": "Incorrect: Stability removes a delay factor."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Science and Technology] | [Skill: Boldface Structure Analysis] | [Vocabulary: <asset-backed>] | [Difficulty: <1>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Boldface Structure Analysis",
+            "theme: Science and Technology",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "During the third quarter of 2023, Acme Corp. implemented a hybrid supply‑chain model that combined just‑in‑time inventory with strategic safety stock at regional distribution centers, aiming to reduce lead‑time variability while maintaining service levels amid fluctuating demand for its flagship product line."
+            }
+          ],
+          "question": "Given Acme Corp's hybrid supply‑chain model that blends just‑in‑time inventory with safety stock at regional centers, which statement most accurately reflects a likely trade‑off the company faces in maintaining service levels amid fluctuating demand?",
+          "title": "Supply‑Chain Trade‑off: Balancing Service Level and Safety Stock Costs",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"\", \"explanation\": \"\" },\n    \"B\": { \"text\": \"\", \"explanation\": \"\" },\n    \"C\": { \"text\": \"\", \"explanation\": \"\" },\n    \"D\": { \"text\": \"\", \"explanation\": \"\" },\n    \"E\": { \"text\": \"\", \"explanation\": \"\" }\n  },\n  \"",
+          "prompt": "[Theme: History] | [Skill: Complete the Argument] | [Vocabulary: <clarify>] | [Difficulty: <3>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: History",
+            "topic: Complete the Argument",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In the fiscal year 2023, Acme Corp. reported a 12% increase in net revenue, driven primarily by its expansion into emerging markets and the launch of a new line of eco‑friendly products, while operating expenses rose only 4% due to efficiency improvements in its supply chain."
+            }
+          ],
+          "question": "Considering Acme Corp's 12% revenue rise and only 4% expense increase in 2023, which conclusion best demonstrates the impact of its supply‑chain efficiency on overall profitability?",
+          "title": "Assessing Supply‑Chain Efficiency Impact on Acme Corp's Profitability",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Profit margin improved because expense growth was far lower than revenue growth.",
+              "explanation": "Correct: lower expense increase boosts profitability."
+            },
+            "B": {
+              "text": "Revenue growth alone guarantees higher profitability.",
+              "explanation": "Incorrect: ignores expense side."
+            },
+            "C": {
+              "text": "Operating expenses rose faster than revenue, reducing profit.",
+              "explanation": "Incorrect: expense increase was only 4% vs 12% revenue."
+            },
+            "D": {
+              "text": "Supply‑chain efficiency had no effect on profitability.",
+              "explanation": "Incorrect: efficiency limited expense growth."
+            },
+            "E": {
+              "text": "Profitability remained unchanged despite revenue rise.",
+              "explanation": "Incorrect: profit margin increased."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Cognitive Science & Psychology] | [Skill: Complete the Argument] | [Vocabulary: <churning>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Cognitive Science & Psychology",
+            "topic: Complete the Argument",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "During the fiscal year 2023, Acme Corp. implemented a hybrid remote‑on‑site work model, citing a 12% reduction in operating costs and a 7% increase in employee productivity. However, a subsequent internal survey revealed that 18% of staff felt disconnected from corporate culture, prompting senior leadership to consider a phased reintegration of weekly in‑person meetings."
+            }
+          ],
+          "question": "Based on the passage, which of the following best explains why senior leadership is considering weekly in‑person meetings?",
+          "title": "Evaluating Hybrid Work Model Trade‑offs: Cost Reduction, Productivity Gains, and Cultural Disconnection",
+          "solution": "Step 1: **Setup** – The question asks why senior leadership is considering weekly in‑person meetings. Key factors: 12% cost reduction, 7% productivity rise, and 18% staff feeling culturally disconnected.\nStep 2: **Execution** – Since cost and productivity are already positive, the only unresolved issue is cultural disconnection, which meetings can mitigate.\nStep 3: **Verification** – No evidence suggests cost or productivity are declining, so they cannot justify the change.\nStep 4: **Distractor** – The option linking meetings to further cost cuts is wrong because costs are already down.\n**Conclusion:** Leadership’s motive is to address cultural disconnection.\n**Flaw/Assumption:** Assuming financial metrics alone drive the decision.\n**Correct Option:** Directly targets the cultural issue, which the passage highlights.",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"To improve employee productivity, which has already increased by 7%.\",\n      \"explanation\": \"Productivity is already up, so this does not drive the decision.\"\n    },\n    \"B\": {\n      \"text\": \"To further reduce operating costs beyond the 12% already achieved.\",\n      \"explanation\": \"Costs are already lower; the passage does not cite cost concerns.\"\n    },\n    \"C\": {\n      \"text\": \"To address the cultural disconnection reported by 18% of staff.\",\n      \"explanation\": \"Correct – the passage highlights cultural disengagement as the issue.\"\n    },\n    \"D\": {\n      \"text\": \"To comply with new government regulations on remote work.\",\n      \"explanation\": \"No regulations are mentioned in the passage.\"\n    },\n    \"E\": {\n      \"text\": \"To increase the number of remote‑work days for employees.\",\n      \"explanation\": \"The plan is to reintegrate in‑person meetings, not expand remote days.\"\n    }\n  },",
+          "prompt": "[Theme: Anthropology & Sociology] | [Skill: Identify the Flaw in Reasoning] | [Vocabulary: <apprehension>] | [Difficulty: <5>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "topic: Identify the Flaw in Reasoning",
+            "theme: Anthropology & Sociology",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, the proliferation of digital communication tools has reshaped the way organizations manage their workforce. Companies that once relied on centralized offices now increasingly adopt hybrid models, allowing employees to split their time between remote and on‑site work. This shift has prompted managers to rethink performance metrics, collaboration practices, and the cultivation of corporate identity."
+            },
+            {
+              "para": "Empirical studies indicate that hybrid arrangements can boost employee satisfaction and reduce overhead costs, yet they also introduce challenges in maintaining consistent communication and equitable evaluation. To address these issues, firms are investing in integrated platforms that synchronize project timelines, track deliverables, and foster virtual team cohesion, thereby striving to balance flexibility with organizational coherence."
+            }
+          ],
+          "title": "Analyzing Hybrid Workforce Impacts on Performance Metrics and Cost Efficiency",
+          "child-questions": [
+            {
+              "question": "According to the passage, why is it essential for firms adopting hybrid work models to invest in integrated platforms that synchronize project timelines and track deliverables?",
+              "title": "Hybrid Workforce Cost-Benefit Analysis: Evaluating Integrated Platform ROI",
+              "solution": "**Step 1: Setup** – The question asks why firms using hybrid models must invest in integrated platforms that synchronize timelines and track deliverables. \n**Step 2: Execution** – Hybrid work creates communication gaps and uneven performance data; platforms provide a single source of truth, ensuring consistent coordination, equitable evaluation, and cost‑effective oversight. \n**Step 3: Verification** – The passage links these platforms directly to maintaining cohesion and balancing flexibility with organizational coherence. \n**Step 4: Distractors** – The option suggesting investment is needed to *increase physical office space* is wrong because the passage emphasizes virtual, not spatial, solutions.",
+              "options": {
+                "A": {
+                  "text": "They ensure consistent communication and equitable performance evaluation.",
+                  "explanation": "Correct: matches passage."
+                },
+                "B": {
+                  "text": "They allow firms to expand physical office space.",
+                  "explanation": "Wrong: passage focuses on virtual coordination."
+                },
+                "C": {
+                  "text": "They enable reduction of employee salaries.",
+                  "explanation": "Wrong: no salary discussion in passage."
+                },
+                "D": {
+                  "text": "They help firms comply with government regulations.",
+                  "explanation": "Wrong: regulation not mentioned."
+                },
+                "E": {
+                  "text": "They improve brand marketing efforts.",
+                  "explanation": "Wrong: marketing not addressed."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, which inference most accurately describes why firms implementing hybrid work models must prioritize virtual team cohesion tools that synchronize timelines and track deliverables?",
+              "title": "Inference on Prioritizing Virtual Cohesion Tools for Hybrid Workforce Management",
+              "solution": "**Step 1: Setup** – The passage ties hybrid work to *communication challenges* and the need for *virtual cohesion tools*.\n**Step 2: Execution** – Infer that firms must prioritize these tools to ensure consistent coordination and equitable performance assessment across remote and on‑site staff.\n**Step 3: Verification** – The text explicitly cites “maintaining consistent communication” and “balancing flexibility with organizational coherence.”\n**Step 4: Distractors** – The choice that tools are needed to expand physical office space is incorrect because the passage focuses on virtual, not spatial, solutions.",
+              "options": {
+                "A": {
+                  "text": "They ensure consistent communication and equitable performance evaluation across hybrid teams.",
+                  "explanation": "Correct: aligns with passage."
+                },
+                "B": {
+                  "text": "They allow firms to reduce overall staffing levels.",
+                  "explanation": "Incorrect: passage does not discuss staffing cuts."
+                },
+                "C": {
+                  "text": "They help companies increase physical office space.",
+                  "explanation": "Incorrect: focus is on virtual, not spatial, solutions."
+                },
+                "D": {
+                  "text": "They enable compliance with international trade regulations.",
+                  "explanation": "Incorrect: regulations not mentioned."
+                },
+                "E": {
+                  "text": "They improve external brand marketing campaigns.",
+                  "explanation": "Incorrect: marketing not addressed."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Digital Humanities & Media Studies] | [Skill: Inference Making] | [Vocabulary: <admonish>] | [Difficulty: <1>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Reading Comprehension",
+            "topic: Inference Making",
+            "theme: Digital Humanities & Media Studies"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In 2022, Acme Corp. implemented a hybrid remote‑in‑office schedule, aiming to boost employee satisfaction while maintaining productivity. A post‑implementation survey revealed that 68% of staff preferred the hybrid model, citing reduced commute times, whereas 22% reported challenges coordinating meetings across time zones."
+            }
+          ],
+          "question": "If Acme Corp wants to address the 22% of employees who reported coordination challenges while preserving the 68% satisfaction with the hybrid model, which strategy would most effectively balance both goals?",
+          "title": "Hybrid Work Strategy: Balancing 68% Satisfaction vs 22% Coordination Issues",
+          "solution": "Step 1: **Setup** – Identify the issue: 68% satisfaction vs 22% coordination problems across time zones.\nStep 2: **Execution** – Choose overlapping **core hours** so teams share a window while keeping hybrid flexibility.\nStep 3: **Verification** – This preserves satisfaction and eases scheduling, meeting both goals.\nStep 4: **Distractor** – \"Mandate full‑time office\" drops satisfaction, so it’s wrong.\n**Conclusion:** Adopt overlapping core hours.\n**Flaw/Assumption:** Assuming a single schedule works for all zones.\n**Correct Option:** Balances flexibility with shared time, addressing both satisfaction and coordination.",
+          "options": {
+            "A": {
+              "text": "Introduce overlapping core working hours for all teams.",
+              "explanation": "Aligns schedules, preserving hybrid flexibility while easing coordination."
+            },
+            "B": {
+              "text": "Require all staff to work full‑time on‑site.",
+              "explanation": "Eliminates remote benefits, reducing satisfaction."
+            },
+            "C": {
+              "text": "Assign each employee a fixed 8‑hour shift without overlap.",
+              "explanation": "Leaves no shared time, worsening coordination."
+            },
+            "D": {
+              "text": "Rotate weekly between remote and office days for each employee.",
+              "explanation": "Creates inconsistency, increasing scheduling complexity."
+            },
+            "E": {
+              "text": "Implement a strict no‑meeting policy on remote days.",
+              "explanation": "Limits collaboration, harming productivity."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Economics] | [Skill: Complete the Argument] | [Vocabulary: <demographic>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Economics",
+            "topic: Complete the Argument",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In early 2023, Acme Corp, a mid-sized manufacturer of consumer electronics, faced declining market share due to intensified competition and rapid technological change. To address these challenges, the executive team commissioned a comprehensive market analysis, which highlighted the need for product diversification, adoption of sustainable materials, and a shift toward direct-to-consumer sales channels."
+            }
+          ],
+          "question": "Considering the market analysis findings, which single strategic action should Acme Corp prioritize to most effectively counter its declining market share?",
+          "questiontitle": "",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Expand product line with premium features",
+              "explanation": "Focuses on product but but may not address market reach."
+            },
+            "B": {
+              "text": "Increase advertising spend on traditional media",
+              "explanation": "Higher spend without channel change yields limited share gain."
+            },
+            "C": {
+              "text": "Adopt sustainable materials across all products",
+              "explanation": "Good for branding but slower impact on share."
+            },
+            "D": {
+              "text": "Shift to direct‑to‑consumer sales channels",
+              "explanation": "Directly expands market reach and improves margins, addressing share loss."
+            },
+            "E": {
+              "text": "Form strategic alliances with overseas manufacturers",
+              "explanation": "May reduce costs but does not target consumer access."
+            }
+          },
+          "answer": "D",
+          "prompt": "[Theme: Environmental Ethics & Philosophy] | [Skill: Identify the Flaw in Reasoning] | [Vocabulary: <denote>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Identify the Flaw in Reasoning",
+            "theme: Environmental Ethics & Philosophy",
+            "question-type: Critical Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although many firms have heralded remote work as a panacea for productivity woes, the reality reveals a more nuanced tableau; the shift has simultaneously amplified employee autonomy while eroding spontaneous collaboration, prompting managers to devise hybrid protocols that balance flexibility with the need for cohesive team dynamics."
+            },
+            {
+              "para": "Consequently, organizations are investing in digital collaboration platforms that embed asynchronous communication tools, yet they must also cultivate a culture of intentional check‑ins; without such deliberate practices, the benefits of remote autonomy risk being offset by diminished collective problem‑solving and a gradual erosion of shared organizational identity."
+            }
+          ],
+          "title": "Assessing Remote Work Productivity Metrics and Hybrid Collaboration Strategies",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why do organizations need to cultivate intentional check‑ins alongside digital collaboration tools, and how does this practice mitigate the risk of eroding shared organizational identity?",
+              "title": "Risk Mitigation through Intentional Check‑ins in Hybrid Remote Work",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Intentional check‑ins reinforce shared norms and collective identity, counteracting fragmentation.",
+                  "explanation": "Correct: they maintain cohesion."
+                },
+                "B": {
+                  "text": "Check‑ins primarily serve to monitor employee performance.",
+                  "explanation": "Incorrect: focus is on identity, not monitoring."
+                },
+                "C": {
+                  "text": "They replace the need for any digital collaboration platform.",
+                  "explanation": "Incorrect: tools remain necessary."
+                },
+                "D": {
+                  "text": "Check‑ins reduce the autonomy that remote work provides.",
+                  "explanation": "Incorrect: they complement, not limit autonomy."
+                },
+                "E": {
+                  "text": "They eliminate the need for asynchronous communication.",
+                  "explanation": "Incorrect: asynchronous tools still essential."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, why are intentional check‑ins essential alongside digital collaboration platforms for maintaining a shared organizational identity in hybrid remote work environments?",
+              "title": "Risk Mitigation Analysis: Intentional Check‑ins in Hybrid Remote Work",
+              "solution": "Step 1: **Setup** – The question asks why intentional check‑ins are needed alongside digital platforms to preserve a shared organizational identity.\nStep 2: **Execution** – Check‑ins reinforce common norms and culture, counteracting the isolation that digital tools alone can create, thus maintaining cohesion.\nStep 3: **Verification** – This reasoning aligns with the passage’s claim that without deliberate practices, identity erodes.\nStep 4: **Distractors** – The most plausible wrong choice suggests check‑ins are only for performance monitoring, which misses the identity‑preservation purpose.",
+              "options": {
+                "A": {
+                  "text": "They reinforce shared norms and culture, preserving organizational identity.",
+                  "explanation": "Correct: aligns with passage."
+                },
+                "B": {
+                  "text": "They serve primarily to monitor employee performance.",
+                  "explanation": "Incorrect: focus is on identity, not monitoring."
+                },
+                "C": {
+                  "text": "They eliminate the need for any digital collaboration tools.",
+                  "explanation": "Incorrect: tools remain essential."
+                },
+                "D": {
+                  "text": "They reduce the autonomy that remote work provides.",
+                  "explanation": "Incorrect: they complement, not limit autonomy."
+                },
+                "E": {
+                  "text": "They replace asynchronous communication entirely.",
+                  "explanation": "Incorrect: asynchronous tools still needed."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Anthropology & Sociology] | [Skill: Summarization and Paraphrasing] | [Vocabulary: <claim>] | [Difficulty: <1>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Summarization and Paraphrasing",
+            "question-type: Reading Comprehension",
+            "theme: Anthropology & Sociology"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, the rise of remote work has reshaped corporate culture, prompting managers to rethink traditional performance metrics. While some firms have adopted output‑based evaluations, others cling to time‑tracked assessments, arguing that presence correlates with productivity. This tension highlights a broader debate about trust, accountability, and the evolving definition of work in a digital age."
+            },
+            {
+              "para": "Emerging hybrid models attempt to balance flexibility with collaboration, leveraging digital platforms that track project milestones while offering periodic in‑person meetings. Proponents argue that such approaches foster innovation and maintain team cohesion, whereas critics warn that inconsistent schedules may erode shared norms and complicate performance appraisal."
+            }
+          ],
+          "title": "Assessing Remote Work Performance Metrics: Output vs. Time‑Based Evaluation",
+          "child-questions": [
+            {
+              "question": "Based on the passage, which evaluation approach—output‑based or time‑tracked—best supports the author`s view of trust and accountability in remote work, and why does the author consider flexibility important for performance appraisal?",
+              "title": "Quantitative Assessment of Remote Work Metrics: Output vs. Time‑Based Evaluation",
+              "solution": "Step 1: **Setup** – Identify that the passage contrasts *output‑based* and *time‑tracked* evaluations and links trust and accountability to flexibility. \nStep 2: **Execution** – The author favors *output‑based* because it rewards results regardless of location, aligning with trust, while flexibility is needed to adapt appraisal to varied schedules. \nStep 3: **Verification** – This matches the passage’s emphasis on evolving work definitions. \nStep 4: **Distractor** – The *time‑tracked* option is wrong because it assumes presence equals productivity, contrary to the author’s argument.",
+              "options": {
+                "A": {
+                  "text": "Output‑based evaluation; aligns with trust and flexibility",
+                  "explanation": "Correct – author stresses results over presence."
+                },
+                "B": {
+                  "text": "Time‑tracked evaluation; ensures accountability through hours logged",
+                  "explanation": "Incorrect – author argues presence does not equal productivity."
+                },
+                "C": {
+                  "text": "Hybrid evaluation; combines output and time metrics",
+                  "explanation": "Distractor – not presented as the best approach."
+                },
+                "D": {
+                  "text": "No evaluation; trusts employees implicitly",
+                  "explanation": "Distractor – author still discusses performance metrics."
+                },
+                "E": {
+                  "text": "Peer‑review evaluation; relies on colleague feedback",
+                  "explanation": "Distractor – not mentioned in the passage."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, which of the following statements best captures the author`s main concern about time‑tracked evaluations in remote work?",
+              "title": "Evaluating Remote Work Metrics: Trust Implications of Time‑Tracked vs Output‑Based",
+              "questionsolution": "",
+              "questionoptions_answer": "",
+              "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Art] | [Skill: Skimming and Scanning Techniques] | [Vocabulary: <domain>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Skimming and Scanning Techniques",
+            "theme: Art",
+            "question-type: Reading Comprehension"
+          ]
+        }
+      ]
+    }
+  }
+}

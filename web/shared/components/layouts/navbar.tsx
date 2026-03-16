@@ -29,14 +29,19 @@ const Navbar: React.FC = () => {
     const pathname = usePathname();
     const { userId, setUserId } = useAttemptsStore();
     const { streakData, loading: streakLoading } = useStreak();
-    const [isInitialized, setIsInitialized] = useState(false);
+    // If we already have a userId from Zustand, we consider it initialized immediately
+    const [isInitialized, setIsInitialized] = useState(() => userId !== 0);
 
 
     // Sync auth state on mount
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const res = await fetch("/api/auth/me");
+                // Ensure auth is never cached so changing login states are always reflected
+                const res = await fetch("/api/auth/me", { 
+                    cache: 'no-store',
+                    headers: { 'Cache-Control': 'no-cache' }
+                });
                 if (res.ok) {
                     const data = await res.json();
                     setUserId(data.userid);

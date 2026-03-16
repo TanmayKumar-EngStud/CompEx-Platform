@@ -1,0 +1,3228 @@
+{
+  "GRE": {
+    "1": {
+      "section": "Quants",
+      "Quantitative Comparison": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Digital Economy & E-commerce] | [Style: <Inequalities>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Economy & E-commerce *Topic*: Number Properties and Fractions, Decimals, Percentages *Sub-topic/Focused Skill*: perfect_squares_cubes",
+            "parsed_tags": {
+              "Theme": "Digital Economy & E-commerce",
+              "Topic": "Number Properties and Fractions, Decimals, Percentages",
+              "Sub-topic/Focused Skill": "perfect_squares_cubes"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Digital Economy & E-commerce] | [Style: <Single Variable Equation>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Economy & E-commerce *Topic*: Mean, Median, Mode, Range *Sub-topic/Focused Skill*: statistical_measures",
+            "parsed_tags": {
+              "Theme": "Digital Economy & E-commerce",
+              "Topic": "Mean, Median, Mode, Range",
+              "Sub-topic/Focused Skill": "statistical_measures"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Astrophysics & Astronomy] | [Style: <Inequalities>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Astrophysics & Astronomy *Topic*: Mean, Median, Mode, Range *Sub-topic/Focused Skill*: central_tendency",
+            "parsed_tags": {
+              "Theme": "Astrophysics & Astronomy",
+              "Topic": "Mean, Median, Mode, Range",
+              "Sub-topic/Focused Skill": "central_tendency"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Astrophysics & Astronomy] | [Style: <Word Problems&>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Astrophysics & Astronomy *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: ratio_calculations",
+            "parsed_tags": {
+              "Theme": "Astrophysics & Astronomy",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "ratio_calculations"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Literature & Criticism] | [Style: <Word Problems&>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Literature & Criticism *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: simple_interest_calculations",
+            "parsed_tags": {
+              "Theme": "Literature & Criticism",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "simple_interest_calculations"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Functions and Polynomials] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Word Problems&>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Financial Markets & Cryptocurrency *Topic*: Functions and Polynomials *Sub-topic/Focused Skill*: composite_functions",
+            "parsed_tags": {
+              "Theme": "Financial Markets & Cryptocurrency",
+              "Topic": "Functions and Polynomials",
+              "Sub-topic/Focused Skill": "composite_functions"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Exponents and Powers] | [Theme: Space Exploration & Engineering] | [Style: <Pure Number Theory>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Space Exploration & Engineering *Topic*: Exponents and Powers *Sub-topic/Focused Skill*: exponent_rules",
+            "parsed_tags": {
+              "Theme": "Space Exploration & Engineering",
+              "Topic": "Exponents and Powers",
+              "Sub-topic/Focused Skill": "exponent_rules"
+            },
+            "difficulty": 2,
+            "option": "single"
+          }
+        ]
+      },
+      "Problem Solving Simple": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Political Science] | [Style: <Geometry Proofs>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Political Science *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: inverse_proportion",
+            "parsed_tags": {
+              "Theme": "Political Science",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "inverse_proportion"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Algebraic Expressions and Simplification] | [Theme: Business and Finance] | [Style: <Pure Number Theory>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Algebraic Expressions and Simplification *Sub-topic/Focused Skill*: algebraic_identities",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Algebraic Expressions and Simplification",
+              "Sub-topic/Focused Skill": "algebraic_identities"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mixtures and Alligations] | [Theme: Marketing and Sales] | [Style: <Inequalities>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Marketing and Sales *Topic*: Mixtures and Alligations *Sub-topic/Focused Skill*: weighted_average",
+            "parsed_tags": {
+              "Theme": "Marketing and Sales",
+              "Topic": "Mixtures and Alligations",
+              "Sub-topic/Focused Skill": "weighted_average"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Word Problems&>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Supply Chain Logistics & Global Trade *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: profit_loss_calculations",
+            "parsed_tags": {
+              "Theme": "Supply Chain Logistics & Global Trade",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "profit_loss_calculations"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Data Interpretation>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Healthcare Analytics & Epidemiology *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: successive_discounts",
+            "parsed_tags": {
+              "Theme": "Healthcare Analytics & Epidemiology",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "successive_discounts"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mixtures and Alligations] | [Theme: Visual Arts & Architecture] | [Style: <Coordinate Geometry>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Visual Arts & Architecture *Topic*: Mixtures and Alligations *Sub-topic/Focused Skill*: alligation_method",
+            "parsed_tags": {
+              "Theme": "Visual Arts & Architecture",
+              "Topic": "Mixtures and Alligations",
+              "Sub-topic/Focused Skill": "alligation_method"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Medicine & Physiology] | [Style: <Pure Number Theory>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Medicine & Physiology *Topic*: Linear Equations, Quadratic Equations and Inequalities *Sub-topic/Focused Skill*: linear_equation_solving",
+            "parsed_tags": {
+              "Theme": "Medicine & Physiology",
+              "Topic": "Linear Equations, Quadratic Equations and Inequalities",
+              "Sub-topic/Focused Skill": "linear_equation_solving"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Statistics] | [Theme: Philosophy & Ethics] | [Style: <Numeric Comparisons>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Philosophy & Ethics *Topic*: Statistics *Sub-topic/Focused Skill*: statistical_analysis",
+            "parsed_tags": {
+              "Theme": "Philosophy & Ethics",
+              "Topic": "Statistics",
+              "Sub-topic/Focused Skill": "statistical_analysis"
+            },
+            "difficulty": 3,
+            "option": "single"
+          }
+        ]
+      },
+      "Problem Solving Meta": {
+        "has-metadata": true,
+        "type": "parent",
+        "prompts": [
+          {
+            "prompt": "[Topic: work and rate problem] | [Theme: Geology & Meteorology] | [Style: <Pure Number Theory>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Geology & Meteorology *Topic*: work and rate problem *Sub-topic/Focused Skill*: work_efficiency",
+            "parsed_tags": {
+              "Theme": "Geology & Meteorology",
+              "Topic": "work and rate problem",
+              "Sub-topic/Focused Skill": "work_efficiency"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "pivot_table"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Cross-Referencing with Textual Information] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Cross-Referencing with Textual Information *Sub-topic/Focused Skill*: Cross-Referencing with Textual Information",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Cross-Referencing with Textual Information",
+                  "Sub-topic/Focused Skill": "Cross-Referencing with Textual Information"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Correlation Recognition] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Correlation Recognition *Sub-topic/Focused Skill*: Correlation Recognition",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Correlation Recognition",
+                  "Sub-topic/Focused Skill": "Correlation Recognition"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: History (Ancient/Modern)] | [Style: <Numeric Comparisons>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: History (Ancient/Modern) *Topic*: Number Properties and Fractions, Decimals, Percentages *Sub-topic/Focused Skill*: eulers_totient_theorem",
+            "parsed_tags": {
+              "Theme": "History (Ancient/Modern)",
+              "Topic": "Number Properties and Fractions, Decimals, Percentages",
+              "Sub-topic/Focused Skill": "eulers_totient_theorem"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "charts": [
+                "scatter_chart"
+              ],
+              "tables": [
+                "comparison_table"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "multi",
+                "prompt": "[Skill: Comparison of Data Points] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Comparison of Data Points *Sub-topic/Focused Skill*: Comparison of Data Points",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Comparison of Data Points",
+                  "Sub-topic/Focused Skill": "Comparison of Data Points"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Comparison of Data Points] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Comparison of Data Points *Sub-topic/Focused Skill*: Comparison of Data Points",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Comparison of Data Points",
+                  "Sub-topic/Focused Skill": "Comparison of Data Points"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Psychology & Sociology] | [Style: <Word Problems&>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Psychology & Sociology *Topic*: Linear Equations, Quadratic Equations and Inequalities *Sub-topic/Focused Skill*: system_of_equations",
+            "parsed_tags": {
+              "Theme": "Psychology & Sociology",
+              "Topic": "Linear Equations, Quadratic Equations and Inequalities",
+              "Sub-topic/Focused Skill": "system_of_equations"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "comparison_table"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Logical Inference from Graphical Data] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Logical Inference from Graphical Data *Sub-topic/Focused Skill*: Logical Inference from Graphical Data",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Logical Inference from Graphical Data",
+                  "Sub-topic/Focused Skill": "Logical Inference from Graphical Data"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "multi",
+                "prompt": "[Skill: Percentage and Proportion Calculation] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Percentage and Proportion Calculation *Sub-topic/Focused Skill*: Percentage and Proportion Calculation",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Percentage and Proportion Calculation",
+                  "Sub-topic/Focused Skill": "Percentage and Proportion Calculation"
+                },
+                "difficulty": 5
+              }
+            ]
+          }
+        ]
+      },
+      "Numerical Entry": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Functions and Polynomials] | [Theme: Psychology & Sociology] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Psychology & Sociology *Topic*: Functions and Polynomials *Sub-topic/Focused Skill*: composite_functions",
+            "parsed_tags": {
+              "Theme": "Psychology & Sociology",
+              "Topic": "Functions and Polynomials",
+              "Sub-topic/Focused Skill": "composite_functions"
+            },
+            "difficulty": 5,
+            "option": "numeric"
+          },
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Political Science] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Political Science *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: golden_ratio_applications",
+            "parsed_tags": {
+              "Theme": "Political Science",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "golden_ratio_applications"
+            },
+            "difficulty": 2,
+            "option": "numeric"
+          }
+        ]
+      }
+    },
+    "2": {
+      "section": "Verbal",
+      "Sentence Equivalence": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Theme: Science and Technology] | [Skill: Logical Consistency] | [Vocabulary: <brevity>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Science and Technology *Topic*: Logical Consistency *Sub-topic/Focused Skill*: Logical Consistency",
+            "parsed_tags": {
+              "Theme": "Science and Technology",
+              "Topic": "Logical Consistency",
+              "Sub-topic/Focused Skill": "Logical Consistency"
+            },
+            "difficulty": 3,
+            "option": "multi"
+          },
+          {
+            "prompt": "[Theme: Digital Humanities & Media Studies] | [Skill: Word Meaning Precision] | [Vocabulary: <antecedent>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Humanities & Media Studies *Topic*: Word Meaning Precision *Sub-topic/Focused Skill*: Word Meaning Precision",
+            "parsed_tags": {
+              "Theme": "Digital Humanities & Media Studies",
+              "Topic": "Word Meaning Precision",
+              "Sub-topic/Focused Skill": "Word Meaning Precision"
+            },
+            "difficulty": 3,
+            "option": "multi"
+          },
+          {
+            "prompt": "[Theme: Science and Technology] | [Skill: Synonym Recognition] | [Vocabulary: <archaic>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Science and Technology *Topic*: Synonym Recognition *Sub-topic/Focused Skill*: Synonym Recognition",
+            "parsed_tags": {
+              "Theme": "Science and Technology",
+              "Topic": "Synonym Recognition",
+              "Sub-topic/Focused Skill": "Synonym Recognition"
+            },
+            "difficulty": 4,
+            "option": "multi"
+          },
+          {
+            "prompt": "[Theme: Geography] | [Skill: Word Relationships] | [Vocabulary: <competent>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Geography *Topic*: Word Relationships *Sub-topic/Focused Skill*: Word Relationships",
+            "parsed_tags": {
+              "Theme": "Geography",
+              "Topic": "Word Relationships",
+              "Sub-topic/Focused Skill": "Word Relationships"
+            },
+            "difficulty": 5,
+            "option": "multi"
+          }
+        ]
+      },
+      "Text Completion": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Type: TC-2] | [Theme: Geography] | [Skill: Transitional Logic] | [Vocabulary: <coincide>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Geography *Topic*: Transitional Logic *Sub-topic/Focused Skill*: TC-2",
+            "parsed_tags": {
+              "Theme": "Geography",
+              "Topic": "Transitional Logic",
+              "Sub-topic/Focused Skill": "TC-2"
+            },
+            "difficulty": 4,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-1] | [Theme: Science and Technology] | [Skill: Critical Comprehension] | [Vocabulary: <ameliorate>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Science and Technology *Topic*: Critical Comprehension *Sub-topic/Focused Skill*: TC-1",
+            "parsed_tags": {
+              "Theme": "Science and Technology",
+              "Topic": "Critical Comprehension",
+              "Sub-topic/Focused Skill": "TC-1"
+            },
+            "difficulty": 3,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-3] | [Theme: Artificial Intelligence & Ethics] | [Skill: Word Connotation Recognition] | [Vocabulary: <aspect>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Word Connotation Recognition *Sub-topic/Focused Skill*: TC-3",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Word Connotation Recognition",
+              "Sub-topic/Focused Skill": "TC-3"
+            },
+            "difficulty": 1,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-2] | [Theme: Cognitive Science & Psychology] | [Skill: Contextual Analysis] | [Vocabulary: <adjacent>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Cognitive Science & Psychology *Topic*: Contextual Analysis *Sub-topic/Focused Skill*: TC-2",
+            "parsed_tags": {
+              "Theme": "Cognitive Science & Psychology",
+              "Topic": "Contextual Analysis",
+              "Sub-topic/Focused Skill": "TC-2"
+            },
+            "difficulty": 4,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-2] | [Theme: Cognitive Science & Psychology] | [Skill: Transitional Logic] | [Vocabulary: <cease>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Cognitive Science & Psychology *Topic*: Transitional Logic *Sub-topic/Focused Skill*: TC-2",
+            "parsed_tags": {
+              "Theme": "Cognitive Science & Psychology",
+              "Topic": "Transitional Logic",
+              "Sub-topic/Focused Skill": "TC-2"
+            },
+            "difficulty": 3,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-1] | [Theme: Digital Humanities & Media Studies] | [Skill: Vocabulary in Context] | [Vocabulary: <acknowledge>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Humanities & Media Studies *Topic*: Vocabulary in Context *Sub-topic/Focused Skill*: TC-1",
+            "parsed_tags": {
+              "Theme": "Digital Humanities & Media Studies",
+              "Topic": "Vocabulary in Context",
+              "Sub-topic/Focused Skill": "TC-1"
+            },
+            "difficulty": 1,
+            "option": "blank"
+          }
+        ]
+      },
+      "Reading Comprehension": {
+        "has-metadata": true,
+        "type": "parent",
+        "prompts": [
+          {
+            "prompt": "[Type: RC-S] | [Theme: Social Sciences (Psychology, Sociology)] | [Skill: Skimming and Scanning Techniques] | [Vocabulary: <admonish>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Social Sciences (Psychology, Sociology) *Topic*: Skimming and Scanning Techniques *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Social Sciences (Psychology, Sociology)",
+              "Topic": "Skimming and Scanning Techniques",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Tone and Attitude] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Tone and Attitude *Sub-topic/Focused Skill*: Tone and Attitude",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Tone and Attitude",
+                  "Sub-topic/Focused Skill": "Tone and Attitude"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Strengthen Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Strengthen Question *Sub-topic/Focused Skill*: Strengthen Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Strengthen Question",
+                  "Sub-topic/Focused Skill": "Strengthen Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Linguistics & Language Acquisition] | [Skill: Inference Making] | [Vocabulary: <mitigate>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Linguistics & Language Acquisition *Topic*: Inference Making *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Linguistics & Language Acquisition",
+              "Topic": "Inference Making",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Literature] | [Skill: Assumption and Bias Identification] | [Vocabulary: <credulous>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Literature *Topic*: Assumption and Bias Identification *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Literature",
+              "Topic": "Assumption and Bias Identification",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Assumption Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Assumption Question *Sub-topic/Focused Skill*: Assumption Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Assumption Question",
+                  "Sub-topic/Focused Skill": "Assumption Question"
+                },
+                "difficulty": 1
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Economics] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <contract (as in: shrink)>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Economics *Topic*: Comparative Analysis and Perspective Recognition *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Economics",
+              "Topic": "Comparative Analysis and Perspective Recognition",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: International Relations & Diplomacy] | [Skill: Author's Purpose and Tone Recognition] | [Vocabulary: <catalyst>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: International Relations & Diplomacy *Topic*: Author's Purpose and Tone Recognition *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "International Relations & Diplomacy",
+              "Topic": "Author's Purpose and Tone Recognition",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Conclusion Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Conclusion Question *Sub-topic/Focused Skill*: Conclusion Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Conclusion Question",
+                  "Sub-topic/Focused Skill": "Conclusion Question"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Assumption Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Assumption Question *Sub-topic/Focused Skill*: Assumption Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Assumption Question",
+                  "Sub-topic/Focused Skill": "Assumption Question"
+                },
+                "difficulty": 1
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Modern Architecture & Urban Design] | [Skill: Skimming and Scanning Techniques] | [Vocabulary: <clarity>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Modern Architecture & Urban Design *Topic*: Skimming and Scanning Techniques *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Modern Architecture & Urban Design",
+              "Topic": "Skimming and Scanning Techniques",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Conclusion Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Conclusion Question *Sub-topic/Focused Skill*: Conclusion Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Conclusion Question",
+                  "Sub-topic/Focused Skill": "Conclusion Question"
+                },
+                "difficulty": 5
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Evidence-Based Reasoning] | [Vocabulary: <administer>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Natural Sciences (Biology, Physics, Chemistry) *Topic*: Evidence-Based Reasoning *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Natural Sciences (Biology, Physics, Chemistry)",
+              "Topic": "Evidence-Based Reasoning",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Inference Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Inference Question *Sub-topic/Focused Skill*: Inference Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Inference Question",
+                  "Sub-topic/Focused Skill": "Inference Question"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Business (Marketing, Strategy, Finance)] | [Skill: Main Idea Comprehension] | [Vocabulary: <adjust>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business (Marketing, Strategy, Finance) *Topic*: Main Idea Comprehension *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Business (Marketing, Strategy, Finance)",
+              "Topic": "Main Idea Comprehension",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Artificial Intelligence & Ethics] | [Skill: Skimming and Scanning Techniques] | [Vocabulary: <catalyst>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Skimming and Scanning Techniques *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Skimming and Scanning Techniques",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Assumption Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Assumption Question *Sub-topic/Focused Skill*: Assumption Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Assumption Question",
+                  "Sub-topic/Focused Skill": "Assumption Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Conclusion Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Conclusion Question *Sub-topic/Focused Skill*: Conclusion Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Conclusion Question",
+                  "Sub-topic/Focused Skill": "Conclusion Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Main Idea Comprehension] | [Vocabulary: <air (as in: impression of quality/manner)>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Natural Sciences (Biology, Physics, Chemistry) *Topic*: Main Idea Comprehension *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Natural Sciences (Biology, Physics, Chemistry)",
+              "Topic": "Main Idea Comprehension",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Supporting Details] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Supporting Details *Sub-topic/Focused Skill*: Supporting Details",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Supporting Details",
+                  "Sub-topic/Focused Skill": "Supporting Details"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "3": {
+      "section": "Quants",
+      "Quantitative Comparison": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Statistics] | [Theme: Urban Planning & Smart Cities] | [Style: <Word Problems&>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Urban Planning & Smart Cities *Topic*: Statistics *Sub-topic/Focused Skill*: Expectation",
+            "parsed_tags": {
+              "Theme": "Urban Planning & Smart Cities",
+              "Topic": "Statistics",
+              "Sub-topic/Focused Skill": "Expectation"
+            },
+            "difficulty": 1,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Functions and Polynomials] | [Theme: Visual Arts & Architecture] | [Style: <Pure Number Theory>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Visual Arts & Architecture *Topic*: Functions and Polynomials *Sub-topic/Focused Skill*: composite_functions",
+            "parsed_tags": {
+              "Theme": "Visual Arts & Architecture",
+              "Topic": "Functions and Polynomials",
+              "Sub-topic/Focused Skill": "composite_functions"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Business and Finance] | [Style: <Abstract Algebra>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Number Properties and Fractions, Decimals, Percentages *Sub-topic/Focused Skill*: decimal_conversions",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Number Properties and Fractions, Decimals, Percentages",
+              "Sub-topic/Focused Skill": "decimal_conversions"
+            },
+            "difficulty": 1,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: History (Ancient/Modern)] | [Style: <Single Variable Equation>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: History (Ancient/Modern) *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: successive_discounts",
+            "parsed_tags": {
+              "Theme": "History (Ancient/Modern)",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "successive_discounts"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Anthropology & Archaeology] | [Style: <Coordinate Geometry>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Anthropology & Archaeology *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: annual_growth_rate",
+            "parsed_tags": {
+              "Theme": "Anthropology & Archaeology",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "annual_growth_rate"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Word Problems&>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Financial Markets & Cryptocurrency *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: selection_problems",
+            "parsed_tags": {
+              "Theme": "Financial Markets & Cryptocurrency",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "selection_problems"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Data Interpretation>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Healthcare Analytics & Epidemiology *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: investment_problems",
+            "parsed_tags": {
+              "Theme": "Healthcare Analytics & Epidemiology",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "investment_problems"
+            },
+            "difficulty": 5,
+            "option": "single"
+          }
+        ]
+      },
+      "Problem Solving Simple": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Digital Economy & E-commerce] | [Style: <Abstract Algebra>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Economy & E-commerce *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: selection_problems",
+            "parsed_tags": {
+              "Theme": "Digital Economy & E-commerce",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "selection_problems"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Exponents and Powers] | [Theme: Agricultural Economics & Food Security] | [Style: <Inequalities>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Agricultural Economics & Food Security *Topic*: Exponents and Powers *Sub-topic/Focused Skill*: scientific_notation",
+            "parsed_tags": {
+              "Theme": "Agricultural Economics & Food Security",
+              "Topic": "Exponents and Powers",
+              "Sub-topic/Focused Skill": "scientific_notation"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Exponents and Powers] | [Theme: Logistics and Operations] | [Style: <Data Interpretation>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Logistics and Operations *Topic*: Exponents and Powers *Sub-topic/Focused Skill*: scientific_notation",
+            "parsed_tags": {
+              "Theme": "Logistics and Operations",
+              "Topic": "Exponents and Powers",
+              "Sub-topic/Focused Skill": "scientific_notation"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Space Exploration & Engineering] | [Style: <Word Problems&>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Space Exploration & Engineering *Topic*: Linear Equations, Quadratic Equations and Inequalities *Sub-topic/Focused Skill*: linear_equation_solving",
+            "parsed_tags": {
+              "Theme": "Space Exploration & Engineering",
+              "Topic": "Linear Equations, Quadratic Equations and Inequalities",
+              "Sub-topic/Focused Skill": "linear_equation_solving"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Business and Finance] | [Style: <Numeric Comparisons>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Probability Rules (Basic, Independent, Mutually Exclusive, etc) *Sub-topic/Focused Skill*: conditional_probability",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+              "Sub-topic/Focused Skill": "conditional_probability"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Political Science] | [Style: <Data Interpretation>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Political Science *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: compound_interest_formulas",
+            "parsed_tags": {
+              "Theme": "Political Science",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "compound_interest_formulas"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Statistics] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Abstract Algebra>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Financial Markets & Cryptocurrency *Topic*: Statistics *Sub-topic/Focused Skill*: standard_deviation",
+            "parsed_tags": {
+              "Theme": "Financial Markets & Cryptocurrency",
+              "Topic": "Statistics",
+              "Sub-topic/Focused Skill": "standard_deviation"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mixtures and Alligations] | [Theme: Logistics and Operations] | [Style: <Data Interpretation>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Logistics and Operations *Topic*: Mixtures and Alligations *Sub-topic/Focused Skill*: alligation_method",
+            "parsed_tags": {
+              "Theme": "Logistics and Operations",
+              "Topic": "Mixtures and Alligations",
+              "Sub-topic/Focused Skill": "alligation_method"
+            },
+            "difficulty": 4,
+            "option": "single"
+          }
+        ]
+      },
+      "Problem Solving Meta": {
+        "has-metadata": true,
+        "type": "parent",
+        "prompts": [
+          {
+            "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Marketing and Sales] | [Style: <Coordinate Geometry>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Marketing and Sales *Topic*: Mean, Median, Mode, Range *Sub-topic/Focused Skill*: data_analysis",
+            "parsed_tags": {
+              "Theme": "Marketing and Sales",
+              "Topic": "Mean, Median, Mode, Range",
+              "Sub-topic/Focused Skill": "data_analysis"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "data_table"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Rate of Change Analysis] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Rate of Change Analysis *Sub-topic/Focused Skill*: Rate of Change Analysis",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Rate of Change Analysis",
+                  "Sub-topic/Focused Skill": "Rate of Change Analysis"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Identifying Maximum/Minimum Values] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Identifying Maximum/Minimum Values *Sub-topic/Focused Skill*: Identifying Maximum/Minimum Values",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Identifying Maximum/Minimum Values",
+                  "Sub-topic/Focused Skill": "Identifying Maximum/Minimum Values"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Psychology & Sociology] | [Style: <Data Interpretation>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Psychology & Sociology *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: compound_interest_formulas",
+            "parsed_tags": {
+              "Theme": "Psychology & Sociology",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "compound_interest_formulas"
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "data_table"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "multi",
+                "prompt": "[Skill: Understanding Cumulative Data Representations] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Understanding Cumulative Data Representations *Sub-topic/Focused Skill*: Understanding Cumulative Data Representations",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Understanding Cumulative Data Representations",
+                  "Sub-topic/Focused Skill": "Understanding Cumulative Data Representations"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Rate of Change Analysis] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Rate of Change Analysis *Sub-topic/Focused Skill*: Rate of Change Analysis",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Rate of Change Analysis",
+                  "Sub-topic/Focused Skill": "Rate of Change Analysis"
+                },
+                "difficulty": 2
+              }
+            ]
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Pure Number Theory>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Financial Markets & Cryptocurrency *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: loan_calculations",
+            "parsed_tags": {
+              "Theme": "Financial Markets & Cryptocurrency",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "loan_calculations"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "charts": [
+                "bar_chart"
+              ],
+              "tables": [
+                "data_table"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Understanding Cumulative Data Representations] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Understanding Cumulative Data Representations *Sub-topic/Focused Skill*: Understanding Cumulative Data Representations",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Understanding Cumulative Data Representations",
+                  "Sub-topic/Focused Skill": "Understanding Cumulative Data Representations"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Problem Solving Meta",
+                "option": "single",
+                "prompt": "[Skill: Rate of Change Analysis] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Rate of Change Analysis *Sub-topic/Focused Skill*: Rate of Change Analysis",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Rate of Change Analysis",
+                  "Sub-topic/Focused Skill": "Rate of Change Analysis"
+                },
+                "difficulty": 5
+              }
+            ]
+          }
+        ]
+      },
+      "Numerical Entry": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Functions and Polynomials] | [Theme: Business and Finance] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Functions and Polynomials *Sub-topic/Focused Skill*: domain_range",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Functions and Polynomials",
+              "Sub-topic/Focused Skill": "domain_range"
+            },
+            "difficulty": 5,
+            "option": "numeric"
+          },
+          {
+            "prompt": "[Topic: work and rate problem] | [Theme: Digital Economy & E-commerce] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Economy & E-commerce *Topic*: work and rate problem *Sub-topic/Focused Skill*: work_completion_time",
+            "parsed_tags": {
+              "Theme": "Digital Economy & E-commerce",
+              "Topic": "work and rate problem",
+              "Sub-topic/Focused Skill": "work_completion_time"
+            },
+            "difficulty": 1,
+            "option": "numeric"
+          }
+        ]
+      }
+    },
+    "4": {
+      "section": "Verbal",
+      "Sentence Equivalence": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Theme: Artificial Intelligence & Ethics] | [Skill: Vocabulary in Context] | [Vocabulary: <analogous>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Vocabulary in Context *Sub-topic/Focused Skill*: Vocabulary in Context",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Vocabulary in Context",
+              "Sub-topic/Focused Skill": "Vocabulary in Context"
+            },
+            "difficulty": 4,
+            "option": "multi"
+          },
+          {
+            "prompt": "[Theme: Geography] | [Skill: Word Meaning Precision] | [Vocabulary: <agile>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Geography *Topic*: Word Meaning Precision *Sub-topic/Focused Skill*: Word Meaning Precision",
+            "parsed_tags": {
+              "Theme": "Geography",
+              "Topic": "Word Meaning Precision",
+              "Sub-topic/Focused Skill": "Word Meaning Precision"
+            },
+            "difficulty": 3,
+            "option": "multi"
+          },
+          {
+            "prompt": "[Theme: Environmental Ethics & Philosophy] | [Skill: Vocabulary in Context] | [Vocabulary: <colloquial>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Environmental Ethics & Philosophy *Topic*: Vocabulary in Context *Sub-topic/Focused Skill*: Vocabulary in Context",
+            "parsed_tags": {
+              "Theme": "Environmental Ethics & Philosophy",
+              "Topic": "Vocabulary in Context",
+              "Sub-topic/Focused Skill": "Vocabulary in Context"
+            },
+            "difficulty": 1,
+            "option": "multi"
+          },
+          {
+            "prompt": "[Theme: International Relations & Diplomacy] | [Skill: Vocabulary in Context] | [Vocabulary: <aid>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: International Relations & Diplomacy *Topic*: Vocabulary in Context *Sub-topic/Focused Skill*: Vocabulary in Context",
+            "parsed_tags": {
+              "Theme": "International Relations & Diplomacy",
+              "Topic": "Vocabulary in Context",
+              "Sub-topic/Focused Skill": "Vocabulary in Context"
+            },
+            "difficulty": 1,
+            "option": "multi"
+          }
+        ]
+      },
+      "Text Completion": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Type: TC-1] | [Theme: Art] | [Skill: Sentence Logic and Structure] | [Vocabulary: <accurate>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Art *Topic*: Sentence Logic and Structure *Sub-topic/Focused Skill*: TC-1",
+            "parsed_tags": {
+              "Theme": "Art",
+              "Topic": "Sentence Logic and Structure",
+              "Sub-topic/Focused Skill": "TC-1"
+            },
+            "difficulty": 5,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-1] | [Theme: Humanities (History, Art, Literature)] | [Skill: Contrast and Support Clues] | [Vocabulary: <contact>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Humanities (History, Art, Literature) *Topic*: Contrast and Support Clues *Sub-topic/Focused Skill*: TC-1",
+            "parsed_tags": {
+              "Theme": "Humanities (History, Art, Literature)",
+              "Topic": "Contrast and Support Clues",
+              "Sub-topic/Focused Skill": "TC-1"
+            },
+            "difficulty": 1,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-1] | [Theme: Finance] | [Skill: Transitional Logic] | [Vocabulary: <convey>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Finance *Topic*: Transitional Logic *Sub-topic/Focused Skill*: TC-1",
+            "parsed_tags": {
+              "Theme": "Finance",
+              "Topic": "Transitional Logic",
+              "Sub-topic/Focused Skill": "TC-1"
+            },
+            "difficulty": 4,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-3] | [Theme: Artificial Intelligence & Ethics] | [Skill: Transitional Logic] | [Vocabulary: <capacity>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Transitional Logic *Sub-topic/Focused Skill*: TC-3",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Transitional Logic",
+              "Sub-topic/Focused Skill": "TC-3"
+            },
+            "difficulty": 3,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-1] | [Theme: Economics] | [Skill: Word Connotation Recognition] | [Vocabulary: <opaque>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Economics *Topic*: Word Connotation Recognition *Sub-topic/Focused Skill*: TC-1",
+            "parsed_tags": {
+              "Theme": "Economics",
+              "Topic": "Word Connotation Recognition",
+              "Sub-topic/Focused Skill": "TC-1"
+            },
+            "difficulty": 4,
+            "option": "blank"
+          },
+          {
+            "prompt": "[Type: TC-2] | [Theme: Finance] | [Skill: Transitional Logic] | [Vocabulary: <auspicious>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Finance *Topic*: Transitional Logic *Sub-topic/Focused Skill*: TC-2",
+            "parsed_tags": {
+              "Theme": "Finance",
+              "Topic": "Transitional Logic",
+              "Sub-topic/Focused Skill": "TC-2"
+            },
+            "difficulty": 3,
+            "option": "blank"
+          }
+        ]
+      },
+      "Reading Comprehension": {
+        "has-metadata": true,
+        "type": "parent",
+        "prompts": [
+          {
+            "prompt": "[Type: RC-M] | [Theme: Art] | [Skill: Main Idea Comprehension] | [Vocabulary: <address (as in: deal with)>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Art *Topic*: Main Idea Comprehension *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Art",
+              "Topic": "Main Idea Comprehension",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Supporting Details] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Supporting Details *Sub-topic/Focused Skill*: Supporting Details",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Supporting Details",
+                  "Sub-topic/Focused Skill": "Supporting Details"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Humanities (History, Art, Literature)] | [Skill: Logical Structure Analysis] | [Vocabulary: <adhere (as in: stick to)>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Humanities (History, Art, Literature) *Topic*: Logical Structure Analysis *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Humanities (History, Art, Literature)",
+              "Topic": "Logical Structure Analysis",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Strengthen Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Strengthen Question *Sub-topic/Focused Skill*: Strengthen Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Strengthen Question",
+                  "Sub-topic/Focused Skill": "Strengthen Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Linguistics & Language Acquisition] | [Skill: Evidence-Based Reasoning] | [Vocabulary: <propriety>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Linguistics & Language Acquisition *Topic*: Evidence-Based Reasoning *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Linguistics & Language Acquisition",
+              "Topic": "Evidence-Based Reasoning",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Assumption Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Assumption Question *Sub-topic/Focused Skill*: Assumption Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Assumption Question",
+                  "Sub-topic/Focused Skill": "Assumption Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Linguistics & Language Acquisition] | [Skill: Assumption and Bias Identification] | [Vocabulary: <compelling>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Linguistics & Language Acquisition *Topic*: Assumption and Bias Identification *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Linguistics & Language Acquisition",
+              "Topic": "Assumption and Bias Identification",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Sports] | [Skill: Passage Organization and Cohesion] | [Vocabulary: <conflict>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Sports *Topic*: Passage Organization and Cohesion *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Sports",
+              "Topic": "Passage Organization and Cohesion",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Inference Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Inference Question *Sub-topic/Focused Skill*: Inference Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Inference Question",
+                  "Sub-topic/Focused Skill": "Inference Question"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 1
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Economics] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <approach>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Economics *Topic*: Comparative Analysis and Perspective Recognition *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Economics",
+              "Topic": "Comparative Analysis and Perspective Recognition",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Conclusion Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Conclusion Question *Sub-topic/Focused Skill*: Conclusion Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Conclusion Question",
+                  "Sub-topic/Focused Skill": "Conclusion Question"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Environmental Ethics & Philosophy] | [Skill: Vocabulary in Context] | [Vocabulary: <adverse>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Environmental Ethics & Philosophy *Topic*: Vocabulary in Context *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Environmental Ethics & Philosophy",
+              "Topic": "Vocabulary in Context",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 1
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Fiction] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <censure>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Fiction *Topic*: Comparative Analysis and Perspective Recognition *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Fiction",
+              "Topic": "Comparative Analysis and Perspective Recognition",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Inference Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Inference Question *Sub-topic/Focused Skill*: Inference Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Inference Question",
+                  "Sub-topic/Focused Skill": "Inference Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Economics] | [Skill: Main Idea Comprehension] | [Vocabulary: <aggravate>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Economics *Topic*: Main Idea Comprehension *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Economics",
+              "Topic": "Main Idea Comprehension",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 1
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Philosophy] | [Skill: Summarization and Paraphrasing] | [Vocabulary: <accolade>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Philosophy *Topic*: Summarization and Paraphrasing *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Philosophy",
+              "Topic": "Summarization and Paraphrasing",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Tone and Attitude] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Tone and Attitude *Sub-topic/Focused Skill*: Tone and Attitude",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Tone and Attitude",
+                  "Sub-topic/Focused Skill": "Tone and Attitude"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Conclusion Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Conclusion Question *Sub-topic/Focused Skill*: Conclusion Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Conclusion Question",
+                  "Sub-topic/Focused Skill": "Conclusion Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "GMAT": {
+    "1": {
+      "section": "Integrated Reasoning",
+      "Multi-Source Reasoning": {
+        "has-metadata": true,
+        "type": "parent",
+        "prompts": [
+          {
+            "prompt": "[Topic: Data-Driven Analysis] | [Theme: Healthcare Analytics & Epidemiology] | [Source: <table>] | [Source: <graph>] | [Source: <table>] | [Skill: Comparison and Contrast] | [Skill: Comparison and Contrast] | [Skill: Comparison and Contrast] | [Difficulty: <1>] - <Dichotomous Type: Yes/No>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Healthcare Analytics & Epidemiology *Topic*: Data-Driven Analysis *Sub-topic/Focused Skill*: Comparison and Contrast",
+            "parsed_tags": {
+              "Theme": "Healthcare Analytics & Epidemiology",
+              "Topic": "Data-Driven Analysis",
+              "Sub-topic/Focused Skill": "Comparison and Contrast",
+              "dichotomous-type": {
+                "positive": "Yes",
+                "negative": "No"
+              }
+            },
+            "difficulty": 1,
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "sortable_table"
+              ],
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Multi-Source Reasoning Child",
+                "option": "single",
+                "prompt": "[Skill: Data Interpretation] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Data Interpretation *Sub-topic/Focused Skill*: Data Interpretation",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Data Interpretation",
+                  "Sub-topic/Focused Skill": "Data Interpretation"
+                },
+                "difficulty": 1
+              },
+              {
+                "question-type": "Multi-Source Reasoning Child",
+                "option": "dichotomous",
+                "prompt": "[Skill: Identifying Assumptions] | [Difficulty: <1>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Identifying Assumptions *Sub-topic/Focused Skill*: Identifying Assumptions",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Identifying Assumptions",
+                  "Sub-topic/Focused Skill": "Identifying Assumptions"
+                },
+                "difficulty": 1
+              }
+            ]
+          },
+          {
+            "prompt": "[Topic: Operational Research] | [Theme: Geology & Meteorology] | [Source: <chart>] | [Source: <passage>] | [Source: <email>] | [Skill: Logical Deduction] | [Skill: Logical Deduction] | [Skill: Logical Deduction] | [Difficulty: <2>] - <Dichotomous Type: Inference/Conflicting>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Geology & Meteorology *Topic*: Operational Research *Sub-topic/Focused Skill*: Logical Deduction",
+            "parsed_tags": {
+              "Theme": "Geology & Meteorology",
+              "Topic": "Operational Research",
+              "Sub-topic/Focused Skill": "Logical Deduction",
+              "dichotomous-type": {
+                "positive": "Inference",
+                "negative": "Conflicting"
+              }
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "sortable_table"
+              ],
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Multi-Source Reasoning Child",
+                "option": "dichotomous",
+                "prompt": "[Skill: Data Interpretation] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Data Interpretation *Sub-topic/Focused Skill*: Data Interpretation",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Data Interpretation",
+                  "Sub-topic/Focused Skill": "Data Interpretation"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Multi-Source Reasoning Child",
+                "option": "dichotomous",
+                "prompt": "[Skill: Identifying Assumptions] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Identifying Assumptions *Sub-topic/Focused Skill*: Identifying Assumptions",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Identifying Assumptions",
+                  "Sub-topic/Focused Skill": "Identifying Assumptions"
+                },
+                "difficulty": 2
+              }
+            ]
+          },
+          {
+            "prompt": "[Topic: Data-Driven Analysis] | [Theme: Political Science] | [Source: <email>] | [Source: <passage>] | [Source: <chart>] | [Skill: Trend Analysis] | [Skill: Trend Analysis] | [Skill: Trend Analysis] | [Difficulty: <2>] - <Dichotomous Type: Sufficient/Insufficient>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Political Science *Topic*: Data-Driven Analysis *Sub-topic/Focused Skill*: Trend Analysis",
+            "parsed_tags": {
+              "Theme": "Political Science",
+              "Topic": "Data-Driven Analysis",
+              "Sub-topic/Focused Skill": "Trend Analysis",
+              "dichotomous-type": {
+                "positive": "Sufficient",
+                "negative": "Insufficient"
+              }
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "charts": [
+                "bar_chart"
+              ],
+              "tables": [
+                "data_table"
+              ],
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Multi-Source Reasoning Child",
+                "option": "multi",
+                "prompt": "[Skill: Logical Inference] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Logical Inference *Sub-topic/Focused Skill*: Logical Inference",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Logical Inference",
+                  "Sub-topic/Focused Skill": "Logical Inference"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Multi-Source Reasoning Child",
+                "option": "multi",
+                "prompt": "[Skill: Identifying Assumptions] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Identifying Assumptions *Sub-topic/Focused Skill*: Identifying Assumptions",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Identifying Assumptions",
+                  "Sub-topic/Focused Skill": "Identifying Assumptions"
+                },
+                "difficulty": 2
+              }
+            ]
+          }
+        ]
+      },
+      "Two-Part Analysis": {
+        "has-metadata": true,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Agricultural Economics & Food Security] | [Style: <>] | [Difficulty: <5>] - <Dichotomous Type: Yes/No>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Agricultural Economics & Food Security *Topic*: Number Properties and Fractions, Decimals, Percentages *Sub-topic/Focused Skill*: LCM_GCD",
+            "parsed_tags": {
+              "Theme": "Agricultural Economics & Food Security",
+              "Topic": "Number Properties and Fractions, Decimals, Percentages",
+              "Sub-topic/Focused Skill": "LCM_GCD",
+              "dichotomous-type": {
+                "positive": "Yes",
+                "negative": "No"
+              }
+            },
+            "difficulty": 5,
+            "option": "dichotomous",
+            "metadata-type": {
+              "charts": [
+                "pie_chart"
+              ],
+              "tables": [
+                "data_table"
+              ],
+              "passage": [
+                "scenario"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Chemistry & Physics] | [Style: <>] | [Difficulty: <3>] - <Dichotomous Type: Acceptable/Not Acceptable>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Chemistry & Physics *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: counting_principles",
+            "parsed_tags": {
+              "Theme": "Chemistry & Physics",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "counting_principles",
+              "dichotomous-type": {
+                "positive": "Acceptable",
+                "negative": "Not Acceptable"
+              }
+            },
+            "difficulty": 3,
+            "option": "dichotomous",
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "sortable_table"
+              ],
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Space Exploration & Engineering] | [Style: <>] | [Difficulty: <2>] - <Dichotomous Type: Conclusion/Assumption>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Space Exploration & Engineering *Topic*: Simple Interest and Compound Interest *Sub-topic/Focused Skill*: loan_calculations",
+            "parsed_tags": {
+              "Theme": "Space Exploration & Engineering",
+              "Topic": "Simple Interest and Compound Interest",
+              "Sub-topic/Focused Skill": "loan_calculations",
+              "dichotomous-type": {
+                "positive": "Conclusion",
+                "negative": "Assumption"
+              }
+            },
+            "difficulty": 2,
+            "option": "dichotomous",
+            "metadata-type": {
+              "charts": [
+                "line_chart"
+              ],
+              "tables": [
+                "data_table"
+              ],
+              "passage": [
+                "scenario"
+              ]
+            }
+          }
+        ]
+      },
+      "Table Analysis": {
+        "has-metadata": true,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Space Exploration & Engineering] | [Style: <Quantitative Reasoning>] | [Difficulty: <5>] - <Dichotomous Type: Consistent/Inconsistent>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Space Exploration & Engineering *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: successive_discounts",
+            "parsed_tags": {
+              "Theme": "Space Exploration & Engineering",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "successive_discounts",
+              "dichotomous-type": {
+                "positive": "Consistent",
+                "negative": "Inconsistent"
+              }
+            },
+            "difficulty": 5,
+            "option": "dichotomous",
+            "metadata-type": {
+              "tables": [
+                "sortable_table"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Exponents and Powers] | [Theme: Logistics and Operations] | [Style: <Data Interpretation>] | [Difficulty: <1>] - <Dichotomous Type: Sufficient/Insufficient>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Logistics and Operations *Topic*: Exponents and Powers *Sub-topic/Focused Skill*: power_calculations",
+            "parsed_tags": {
+              "Theme": "Logistics and Operations",
+              "Topic": "Exponents and Powers",
+              "Sub-topic/Focused Skill": "power_calculations",
+              "dichotomous-type": {
+                "positive": "Sufficient",
+                "negative": "Insufficient"
+              }
+            },
+            "difficulty": 1,
+            "option": "dichotomous",
+            "metadata-type": {
+              "tables": [
+                "sortable_table"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Political Science] | [Style: <Quantitative Reasoning>] | [Difficulty: <5>] - <Dichotomous Type: Conclusion/Assumption>",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Political Science *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: unit_conversions",
+            "parsed_tags": {
+              "Theme": "Political Science",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "unit_conversions",
+              "dichotomous-type": {
+                "positive": "Conclusion",
+                "negative": "Assumption"
+              }
+            },
+            "difficulty": 5,
+            "option": "dichotomous",
+            "metadata-type": {
+              "tables": [
+                "sortable_table"
+              ]
+            }
+          }
+        ]
+      },
+      "Graphic Interpretation": {
+        "has-metadata": true,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Algebraic Expressions and Simplification] | [Theme: Marketing and Sales] | [Style: <Verbal Reasoning>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Marketing and Sales *Topic*: Algebraic Expressions and Simplification *Sub-topic/Focused Skill*: algebraic_identities",
+            "parsed_tags": {
+              "Theme": "Marketing and Sales",
+              "Topic": "Algebraic Expressions and Simplification",
+              "Sub-topic/Focused Skill": "algebraic_identities"
+            },
+            "difficulty": 3,
+            "option": "blank",
+            "metadata-type": {
+              "charts": [
+                "scatter_chart"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Space Exploration & Engineering] | [Style: <Verbal Reasoning>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Space Exploration & Engineering *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: selection_problems",
+            "parsed_tags": {
+              "Theme": "Space Exploration & Engineering",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "selection_problems"
+            },
+            "difficulty": 3,
+            "option": "blank",
+            "metadata-type": {
+              "charts": [
+                "pie_chart"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Verbal Reasoning>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Healthcare Analytics & Epidemiology *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: proportion_solving",
+            "parsed_tags": {
+              "Theme": "Healthcare Analytics & Epidemiology",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "proportion_solving"
+            },
+            "difficulty": 3,
+            "option": "blank",
+            "metadata-type": {
+              "charts": [
+                "bar_chart"
+              ]
+            }
+          }
+        ]
+      },
+      "Data Sufficiency": {
+        "has-metadata": true,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: Algebra] | [Theme: Business and Finance] | [Style: <Word Problems&>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Algebra *Sub-topic/Focused Skill*: Function Definitions and Domain",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Algebra",
+              "Sub-topic/Focused Skill": "Function Definitions and Domain"
+            },
+            "difficulty": 3,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Algebra] | [Theme: Literature & Criticism] | [Style: <Numeric Comparisons>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Literature & Criticism *Topic*: Algebra *Sub-topic/Focused Skill*: Exponents and Roots Rules",
+            "parsed_tags": {
+              "Theme": "Literature & Criticism",
+              "Topic": "Algebra",
+              "Sub-topic/Focused Skill": "Exponents and Roots Rules"
+            },
+            "difficulty": 3,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Number Properties] | [Theme: Business and Finance] | [Style: <Word Problems&>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Number Properties *Sub-topic/Focused Skill*: Consecutive Integers",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Number Properties",
+              "Sub-topic/Focused Skill": "Consecutive Integers"
+            },
+            "difficulty": 4,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Geometry] | [Theme: Logistics and Operations] | [Style: <Word Problems&>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Logistics and Operations *Topic*: Geometry *Sub-topic/Focused Skill*: Coordinate Geometry (Slopes, Distance)",
+            "parsed_tags": {
+              "Theme": "Logistics and Operations",
+              "Topic": "Geometry",
+              "Sub-topic/Focused Skill": "Coordinate Geometry (Slopes, Distance)"
+            },
+            "difficulty": 5,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Statistics and Intersection] | [Theme: History (Ancient/Modern)] | [Style: <Numeric Comparisons>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: History (Ancient/Modern) *Topic*: Statistics and Intersection *Sub-topic/Focused Skill*: Permutation and Probability Constraints",
+            "parsed_tags": {
+              "Theme": "History (Ancient/Modern)",
+              "Topic": "Statistics and Intersection",
+              "Sub-topic/Focused Skill": "Permutation and Probability Constraints"
+            },
+            "difficulty": 4,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Word Problems (Non-Profit)] | [Theme: Visual Arts & Architecture] | [Style: <Coordinate Geometry>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Visual Arts & Architecture *Topic*: Word Problems (Non-Profit) *Sub-topic/Focused Skill*: Mixture and Alligation Ratios",
+            "parsed_tags": {
+              "Theme": "Visual Arts & Architecture",
+              "Topic": "Word Problems (Non-Profit)",
+              "Sub-topic/Focused Skill": "Mixture and Alligation Ratios"
+            },
+            "difficulty": 1,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Statistics and Intersection] | [Theme: Philosophy & Ethics] | [Style: <Word Problems&>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Philosophy & Ethics *Topic*: Statistics and Intersection *Sub-topic/Focused Skill*: Standard Deviation and Variance Changes",
+            "parsed_tags": {
+              "Theme": "Philosophy & Ethics",
+              "Topic": "Statistics and Intersection",
+              "Sub-topic/Focused Skill": "Standard Deviation and Variance Changes"
+            },
+            "difficulty": 3,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          },
+          {
+            "prompt": "[Topic: Word Problems (Non-Profit)] | [Theme: Medicine & Physiology] | [Style: <Inequalities>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Medicine & Physiology *Topic*: Word Problems (Non-Profit) *Sub-topic/Focused Skill*: Age and Ratio Problems",
+            "parsed_tags": {
+              "Theme": "Medicine & Physiology",
+              "Topic": "Word Problems (Non-Profit)",
+              "Sub-topic/Focused Skill": "Age and Ratio Problems"
+            },
+            "difficulty": 4,
+            "option": "single",
+            "metadata-type": {
+              "statements": [
+                "statements"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "2": {
+      "section": "Quants",
+      "Problem Solving Simple": {
+        "has-metadata": false,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Topic: work and rate problem] | [Theme: Sustainable Energy & Climate Technology] | [Style: <Pure Number Theory>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Sustainable Energy & Climate Technology *Topic*: work and rate problem *Sub-topic/Focused Skill*: pipe_and_cistern",
+            "parsed_tags": {
+              "Theme": "Sustainable Energy & Climate Technology",
+              "Topic": "work and rate problem",
+              "Sub-topic/Focused Skill": "pipe_and_cistern"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Biology & Ecology] | [Style: <Numeric Comparisons>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Biology & Ecology *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: selection_problems",
+            "parsed_tags": {
+              "Theme": "Biology & Ecology",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "selection_problems"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Marketing and Sales] | [Style: <Word Problems&>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Marketing and Sales *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: profit_loss_calculations",
+            "parsed_tags": {
+              "Theme": "Marketing and Sales",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "profit_loss_calculations"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Astrophysics & Astronomy] | [Style: <Coordinate Geometry>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Astrophysics & Astronomy *Topic*: Mean, Median, Mode, Range *Sub-topic/Focused Skill*: central_tendency",
+            "parsed_tags": {
+              "Theme": "Astrophysics & Astronomy",
+              "Topic": "Mean, Median, Mode, Range",
+              "Sub-topic/Focused Skill": "central_tendency"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Exponents and Powers] | [Theme: Marketing and Sales] | [Style: <Word Problems&>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Marketing and Sales *Topic*: Exponents and Powers *Sub-topic/Focused Skill*: scientific_notation",
+            "parsed_tags": {
+              "Theme": "Marketing and Sales",
+              "Topic": "Exponents and Powers",
+              "Sub-topic/Focused Skill": "scientific_notation"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Geometry Proofs>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Healthcare Analytics & Epidemiology *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: break_even_analysis",
+            "parsed_tags": {
+              "Theme": "Healthcare Analytics & Epidemiology",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "break_even_analysis"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Visual Arts & Architecture] | [Style: <Word Problems&>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Visual Arts & Architecture *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: successive_discounts",
+            "parsed_tags": {
+              "Theme": "Visual Arts & Architecture",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "successive_discounts"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Agricultural Economics & Food Security] | [Style: <Pure Number Theory>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Agricultural Economics & Food Security *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: break_even_analysis",
+            "parsed_tags": {
+              "Theme": "Agricultural Economics & Food Security",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "break_even_analysis"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Geology & Meteorology] | [Style: <Coordinate Geometry>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Geology & Meteorology *Topic*: Profit, Loss and Discount *Sub-topic/Focused Skill*: markup_calculations",
+            "parsed_tags": {
+              "Theme": "Geology & Meteorology",
+              "Topic": "Profit, Loss and Discount",
+              "Sub-topic/Focused Skill": "markup_calculations"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Algebraic Expressions and Simplification] | [Theme: Urban Planning & Smart Cities] | [Style: <Word Problems&>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Urban Planning & Smart Cities *Topic*: Algebraic Expressions and Simplification *Sub-topic/Focused Skill*: algebraic_manipulation",
+            "parsed_tags": {
+              "Theme": "Urban Planning & Smart Cities",
+              "Topic": "Algebraic Expressions and Simplification",
+              "Sub-topic/Focused Skill": "algebraic_manipulation"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Word Problems&>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Financial Markets & Cryptocurrency *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: scale_problems",
+            "parsed_tags": {
+              "Theme": "Financial Markets & Cryptocurrency",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "scale_problems"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mixtures and Alligations] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Geometry Proofs>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Healthcare Analytics & Epidemiology *Topic*: Mixtures and Alligations *Sub-topic/Focused Skill*: concentration_problems",
+            "parsed_tags": {
+              "Theme": "Healthcare Analytics & Epidemiology",
+              "Topic": "Mixtures and Alligations",
+              "Sub-topic/Focused Skill": "concentration_problems"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Chemistry & Physics] | [Style: <Abstract Algebra>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Chemistry & Physics *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: permutation_formulas",
+            "parsed_tags": {
+              "Theme": "Chemistry & Physics",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "permutation_formulas"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Functions and Polynomials] | [Theme: Space Exploration & Engineering] | [Style: <Data Interpretation>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Space Exploration & Engineering *Topic*: Functions and Polynomials *Sub-topic/Focused Skill*: domain_range",
+            "parsed_tags": {
+              "Theme": "Space Exploration & Engineering",
+              "Topic": "Functions and Polynomials",
+              "Sub-topic/Focused Skill": "domain_range"
+            },
+            "difficulty": 1,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: work and rate problem] | [Theme: Biology & Ecology] | [Style: <Numeric Comparisons>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Biology & Ecology *Topic*: work and rate problem *Sub-topic/Focused Skill*: work_completion_time",
+            "parsed_tags": {
+              "Theme": "Biology & Ecology",
+              "Topic": "work and rate problem",
+              "Sub-topic/Focused Skill": "work_completion_time"
+            },
+            "difficulty": 4,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mixtures and Alligations] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Geometry Proofs>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Supply Chain Logistics & Global Trade *Topic*: Mixtures and Alligations *Sub-topic/Focused Skill*: replacement_problems",
+            "parsed_tags": {
+              "Theme": "Supply Chain Logistics & Global Trade",
+              "Topic": "Mixtures and Alligations",
+              "Sub-topic/Focused Skill": "replacement_problems"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Ratio and Proportion] | [Theme: Psychology & Sociology] | [Style: <Coordinate Geometry>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Psychology & Sociology *Topic*: Ratio and Proportion *Sub-topic/Focused Skill*: golden_ratio_applications",
+            "parsed_tags": {
+              "Theme": "Psychology & Sociology",
+              "Topic": "Ratio and Proportion",
+              "Sub-topic/Focused Skill": "golden_ratio_applications"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Permutations and Combinations] | [Theme: Sustainable Energy & Climate Technology] | [Style: <Single Variable Equation>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Sustainable Energy & Climate Technology *Topic*: Permutations and Combinations *Sub-topic/Focused Skill*: arrangement_problems",
+            "parsed_tags": {
+              "Theme": "Sustainable Energy & Climate Technology",
+              "Topic": "Permutations and Combinations",
+              "Sub-topic/Focused Skill": "arrangement_problems"
+            },
+            "difficulty": 2,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Business and Finance] | [Style: <Pure Number Theory>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business and Finance *Topic*: Probability Rules (Basic, Independent, Mutually Exclusive, etc) *Sub-topic/Focused Skill*: conditional_probability",
+            "parsed_tags": {
+              "Theme": "Business and Finance",
+              "Topic": "Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+              "Sub-topic/Focused Skill": "conditional_probability"
+            },
+            "difficulty": 5,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Mixtures and Alligations] | [Theme: Medicine & Physiology] | [Style: <Data Interpretation>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Medicine & Physiology *Topic*: Mixtures and Alligations *Sub-topic/Focused Skill*: replacement_problems",
+            "parsed_tags": {
+              "Theme": "Medicine & Physiology",
+              "Topic": "Mixtures and Alligations",
+              "Sub-topic/Focused Skill": "replacement_problems"
+            },
+            "difficulty": 3,
+            "option": "single"
+          },
+          {
+            "prompt": "[Topic: Statistics] | [Theme: Biology & Ecology] | [Style: <Numeric Comparisons>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Biology & Ecology *Topic*: Statistics *Sub-topic/Focused Skill*: statistical_analysis",
+            "parsed_tags": {
+              "Theme": "Biology & Ecology",
+              "Topic": "Statistics",
+              "Sub-topic/Focused Skill": "statistical_analysis"
+            },
+            "difficulty": 3,
+            "option": "single"
+          }
+        ]
+      }
+    },
+    "3": {
+      "section": "Verbal",
+      "Reading Comprehension": {
+        "has-metadata": true,
+        "type": "parent",
+        "prompts": [
+          {
+            "prompt": "[Type: RC-L] | [Theme: Artificial Intelligence & Ethics] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <authorize>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Comparative Analysis and Perspective Recognition *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Comparative Analysis and Perspective Recognition",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Strengthen Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Strengthen Question *Sub-topic/Focused Skill*: Strengthen Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Strengthen Question",
+                  "Sub-topic/Focused Skill": "Strengthen Question"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Supporting Details] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Supporting Details *Sub-topic/Focused Skill*: Supporting Details",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Supporting Details",
+                  "Sub-topic/Focused Skill": "Supporting Details"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Fiction] | [Skill: Logical Structure Analysis] | [Vocabulary: <doctrine>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Fiction *Topic*: Logical Structure Analysis *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Fiction",
+              "Topic": "Logical Structure Analysis",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 5
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Artificial Intelligence & Ethics] | [Skill: Evidence-Based Reasoning] | [Vocabulary: <concurrent>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Evidence-Based Reasoning *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Evidence-Based Reasoning",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 2
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Inference Making] | [Vocabulary: <backlog>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Natural Sciences (Biology, Physics, Chemistry) *Topic*: Inference Making *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Natural Sciences (Biology, Physics, Chemistry)",
+              "Topic": "Inference Making",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Tone and Attitude] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Tone and Attitude *Sub-topic/Focused Skill*: Tone and Attitude",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Tone and Attitude",
+                  "Sub-topic/Focused Skill": "Tone and Attitude"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Evaluate Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Evaluate Question *Sub-topic/Focused Skill*: Evaluate Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Evaluate Question",
+                  "Sub-topic/Focused Skill": "Evaluate Question"
+                },
+                "difficulty": 5
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Summarization and Paraphrasing] | [Vocabulary: <defunct>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Natural Sciences (Biology, Physics, Chemistry) *Topic*: Summarization and Paraphrasing *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "Natural Sciences (Biology, Physics, Chemistry)",
+              "Topic": "Summarization and Paraphrasing",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Inference Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Inference Question *Sub-topic/Focused Skill*: Inference Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Inference Question",
+                  "Sub-topic/Focused Skill": "Inference Question"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Tone and Attitude] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Tone and Attitude *Sub-topic/Focused Skill*: Tone and Attitude",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Tone and Attitude",
+                  "Sub-topic/Focused Skill": "Tone and Attitude"
+                },
+                "difficulty": 4
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-M] | [Theme: History] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <arduous>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: History *Topic*: Comparative Analysis and Perspective Recognition *Sub-topic/Focused Skill*: RC-M",
+            "parsed_tags": {
+              "Theme": "History",
+              "Topic": "Comparative Analysis and Perspective Recognition",
+              "Sub-topic/Focused Skill": "RC-M"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Conclusion Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Conclusion Question *Sub-topic/Focused Skill*: Conclusion Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Conclusion Question",
+                  "Sub-topic/Focused Skill": "Conclusion Question"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Anthropology & Sociology] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <abortive>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Anthropology & Sociology *Topic*: Comparative Analysis and Perspective Recognition *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Anthropology & Sociology",
+              "Topic": "Comparative Analysis and Perspective Recognition",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Assumption Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Assumption Question *Sub-topic/Focused Skill*: Assumption Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Assumption Question",
+                  "Sub-topic/Focused Skill": "Assumption Question"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 5
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Artificial Intelligence & Ethics] | [Skill: Passage Organization and Cohesion] | [Vocabulary: <bracket (as in: category)>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Artificial Intelligence & Ethics *Topic*: Passage Organization and Cohesion *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Artificial Intelligence & Ethics",
+              "Topic": "Passage Organization and Cohesion",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Supporting Details] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Supporting Details *Sub-topic/Focused Skill*: Supporting Details",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Supporting Details",
+                  "Sub-topic/Focused Skill": "Supporting Details"
+                },
+                "difficulty": 2
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Business (Marketing, Strategy, Finance)] | [Skill: Logical Structure Analysis] | [Vocabulary: <curtail>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Business (Marketing, Strategy, Finance) *Topic*: Logical Structure Analysis *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Business (Marketing, Strategy, Finance)",
+              "Topic": "Logical Structure Analysis",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 5,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Inference Question] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Inference Question *Sub-topic/Focused Skill*: Inference Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Inference Question",
+                  "Sub-topic/Focused Skill": "Inference Question"
+                },
+                "difficulty": 5
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Author's Purpose] | [Difficulty: <5>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Author's Purpose *Sub-topic/Focused Skill*: Author's Purpose",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Author's Purpose",
+                  "Sub-topic/Focused Skill": "Author's Purpose"
+                },
+                "difficulty": 5
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-L] | [Theme: Digital Humanities & Media Studies] | [Skill: Vocabulary in Context] | [Vocabulary: <accolade>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Humanities & Media Studies *Topic*: Vocabulary in Context *Sub-topic/Focused Skill*: RC-L",
+            "parsed_tags": {
+              "Theme": "Digital Humanities & Media Studies",
+              "Topic": "Vocabulary in Context",
+              "Sub-topic/Focused Skill": "RC-L"
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Strengthen Question] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Strengthen Question *Sub-topic/Focused Skill*: Strengthen Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Strengthen Question",
+                  "Sub-topic/Focused Skill": "Strengthen Question"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Assumption Question] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Assumption Question *Sub-topic/Focused Skill*: Assumption Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Assumption Question",
+                  "Sub-topic/Focused Skill": "Assumption Question"
+                },
+                "difficulty": 2
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: History] | [Skill: Main Idea Comprehension] | [Vocabulary: <afford>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: History *Topic*: Main Idea Comprehension *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "History",
+              "Topic": "Main Idea Comprehension",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 2,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Supporting Details] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Supporting Details *Sub-topic/Focused Skill*: Supporting Details",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Supporting Details",
+                  "Sub-topic/Focused Skill": "Supporting Details"
+                },
+                "difficulty": 2
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <2>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 2
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Modern Architecture & Urban Design] | [Skill: Evidence-Based Reasoning] | [Vocabulary: <benefit>] | [Difficulty: <3>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Modern Architecture & Urban Design *Topic*: Evidence-Based Reasoning *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Modern Architecture & Urban Design",
+              "Topic": "Evidence-Based Reasoning",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 3,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Weaken Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Weaken Question *Sub-topic/Focused Skill*: Weaken Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Weaken Question",
+                  "Sub-topic/Focused Skill": "Weaken Question"
+                },
+                "difficulty": 3
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <3>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 3
+              }
+            ]
+          },
+          {
+            "prompt": "[Type: RC-S] | [Theme: Fiction] | [Skill: Author's Purpose and Tone Recognition] | [Vocabulary: <attenuate>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Fiction *Topic*: Author's Purpose and Tone Recognition *Sub-topic/Focused Skill*: RC-S",
+            "parsed_tags": {
+              "Theme": "Fiction",
+              "Topic": "Author's Purpose and Tone Recognition",
+              "Sub-topic/Focused Skill": "RC-S"
+            },
+            "difficulty": 4,
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            },
+            "child-prompt": [
+              {
+                "question-type": "Reading Comprehension",
+                "option": "multi",
+                "prompt": "[Skill: Supporting Details] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Supporting Details *Sub-topic/Focused Skill*: Supporting Details",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Supporting Details",
+                  "Sub-topic/Focused Skill": "Supporting Details"
+                },
+                "difficulty": 4
+              },
+              {
+                "question-type": "Reading Comprehension",
+                "option": "single",
+                "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+                "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: None *Topic*: Main Idea Question *Sub-topic/Focused Skill*: Main Idea Question",
+                "parsed_tags": {
+                  "Theme": null,
+                  "Topic": "Main Idea Question",
+                  "Sub-topic/Focused Skill": "Main Idea Question"
+                },
+                "difficulty": 4
+              }
+            ]
+          }
+        ]
+      },
+      "Critical Reasoning": {
+        "has-metadata": true,
+        "type": "simple",
+        "prompts": [
+          {
+            "prompt": "[Theme: History] | [Skill: Identify the Assumption] | [Vocabulary: <basis>] | [Difficulty: <1>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: History *Topic*: Identify the Assumption *Sub-topic/Focused Skill*: Identify the Assumption",
+            "parsed_tags": {
+              "Theme": "History",
+              "Topic": "Identify the Assumption",
+              "Sub-topic/Focused Skill": "Identify the Assumption"
+            },
+            "difficulty": 1,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Modern Architecture & Urban Design] | [Skill: Identify the Flaw in Reasoning] | [Vocabulary: <comply>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Modern Architecture & Urban Design *Topic*: Identify the Flaw in Reasoning *Sub-topic/Focused Skill*: Identify the Flaw in Reasoning",
+            "parsed_tags": {
+              "Theme": "Modern Architecture & Urban Design",
+              "Topic": "Identify the Flaw in Reasoning",
+              "Sub-topic/Focused Skill": "Identify the Flaw in Reasoning"
+            },
+            "difficulty": 5,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Finance] | [Skill: Evaluate the Argument] | [Vocabulary: <alert>] | [Difficulty: <4>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Finance *Topic*: Evaluate the Argument *Sub-topic/Focused Skill*: Evaluate the Argument",
+            "parsed_tags": {
+              "Theme": "Finance",
+              "Topic": "Evaluate the Argument",
+              "Sub-topic/Focused Skill": "Evaluate the Argument"
+            },
+            "difficulty": 4,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Anthropology & Sociology] | [Skill: Boldface Structure Analysis] | [Vocabulary: <detriment>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Anthropology & Sociology *Topic*: Boldface Structure Analysis *Sub-topic/Focused Skill*: Boldface Structure Analysis",
+            "parsed_tags": {
+              "Theme": "Anthropology & Sociology",
+              "Topic": "Boldface Structure Analysis",
+              "Sub-topic/Focused Skill": "Boldface Structure Analysis"
+            },
+            "difficulty": 2,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Complete the Argument] | [Vocabulary: <astute>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Natural Sciences (Biology, Physics, Chemistry) *Topic*: Complete the Argument *Sub-topic/Focused Skill*: Complete the Argument",
+            "parsed_tags": {
+              "Theme": "Natural Sciences (Biology, Physics, Chemistry)",
+              "Topic": "Complete the Argument",
+              "Sub-topic/Focused Skill": "Complete the Argument"
+            },
+            "difficulty": 2,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Environmental Ethics & Philosophy] | [Skill: Boldface Structure Analysis] | [Vocabulary: <approximate>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Environmental Ethics & Philosophy *Topic*: Boldface Structure Analysis *Sub-topic/Focused Skill*: Boldface Structure Analysis",
+            "parsed_tags": {
+              "Theme": "Environmental Ethics & Philosophy",
+              "Topic": "Boldface Structure Analysis",
+              "Sub-topic/Focused Skill": "Boldface Structure Analysis"
+            },
+            "difficulty": 5,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Digital Humanities & Media Studies] | [Skill: Method of Reasoning] | [Vocabulary: <accrue>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Digital Humanities & Media Studies *Topic*: Method of Reasoning *Sub-topic/Focused Skill*: Method of Reasoning",
+            "parsed_tags": {
+              "Theme": "Digital Humanities & Media Studies",
+              "Topic": "Method of Reasoning",
+              "Sub-topic/Focused Skill": "Method of Reasoning"
+            },
+            "difficulty": 5,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Sports] | [Skill: Method of Reasoning] | [Vocabulary: <allocation>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Sports *Topic*: Method of Reasoning *Sub-topic/Focused Skill*: Method of Reasoning",
+            "parsed_tags": {
+              "Theme": "Sports",
+              "Topic": "Method of Reasoning",
+              "Sub-topic/Focused Skill": "Method of Reasoning"
+            },
+            "difficulty": 2,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Sports] | [Skill: Complete the Argument] | [Vocabulary: <arbitrary>] | [Difficulty: <2>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Sports *Topic*: Complete the Argument *Sub-topic/Focused Skill*: Complete the Argument",
+            "parsed_tags": {
+              "Theme": "Sports",
+              "Topic": "Complete the Argument",
+              "Sub-topic/Focused Skill": "Complete the Argument"
+            },
+            "difficulty": 2,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          },
+          {
+            "prompt": "[Theme: Environmental Ethics & Philosophy] | [Skill: Complete the Argument] | [Vocabulary: <benevolent>] | [Difficulty: <5>]",
+            "instruction_str": "[IMPORTANT]: Make sure to fulfil the following request: *Constraint*: The 'question' text MUST NOT exceed 60 words. *Theme*: Environmental Ethics & Philosophy *Topic*: Complete the Argument *Sub-topic/Focused Skill*: Complete the Argument",
+            "parsed_tags": {
+              "Theme": "Environmental Ethics & Philosophy",
+              "Topic": "Complete the Argument",
+              "Sub-topic/Focused Skill": "Complete the Argument"
+            },
+            "difficulty": 5,
+            "option": "single",
+            "metadata-type": {
+              "passage": [
+                "passage"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

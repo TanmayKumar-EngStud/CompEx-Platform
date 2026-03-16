@@ -266,8 +266,10 @@ class PromptPrep:
                 nomenclature = nomenclature.replace('<questionTopic>', selected_topic)
 
         # 3. Skill (Verbal / Child)
+        # Use exact template-variable match <tag> to avoid 'focused_skill' matching
+        # as a substring inside 'child-focused_skill' (which caused a false positive lookup)
         for skill_tag in ['focused_skill', 'child-focused_skill', 'TC_QuestionType', 'RC_QuestionType']:
-             if skill_tag in nomenclature:
+             if f'<{skill_tag}>' in nomenclature:
                 skill_options = await PromptPrep.__selective_component_info(skill_tag, question_type)
                 selected_skill = await PromptPrep._get_bucket_choice(skill_options, category='topic')
                 selected_components['Sub-topic/Focused Skill'] = selected_skill

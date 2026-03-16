@@ -580,17 +580,43 @@ class ManageQuestionData:
                     if comp_type == 'QuestionMetadata':
                          if 'metadata' not in result_buffer:
                               result_buffer['metadata'] = []
-                         
-                         if self.question_type == 'Multi-Source Reasoning' and source_info:
+
+                         # Guard: if LLM returned string, wrap in dict
+                         if isinstance(parsed_data, str):
+                              parsed_data = {'raw_content': parsed_data}
+
+                         if isinstance(parsed_data, dict) and self.question_type == 'Multi-Source Reasoning' and source_info:
                               parsed_data.update(source_info)
-                         
+
                          result_buffer['metadata'].append(parsed_data)
                     else:
-                         # For question and options, we might want to capture the text for chaining
-                         if comp_type == 'QuestionText':
-                              generated_question_text = parsed_data.get('question_text')
-                         
-                         result_buffer.update(parsed_data)
+                         # For question and options/answer, we expect a dict based on expected_output.
+                         # If it's a raw string, wrap it.
+                         if isinstance(parsed_data, str):
+                              parsed_data = {comp_type.lower().replace('/', '_'): parsed_data}
+
+                         if isinstance(parsed_data, dict):
+                              # Sometimes the LLM returns {"question": "..."} instead of {"questiontext": "..."}
+                              # To be safe, we merge whatever dictionary keys it returned into result_buffer,
+                              # AND we also attempt to capture it under `generated_question_text` for chaining.
+                              if comp_type == 'QuestionText':
+                                   # Get the first value in the dict as the fallback question text
+                                   fallback_text = list(parsed_data.values())[0] if parsed_data else ""
+                                   generated_question_text = parsed_data.get('question_text') or \
+                                                             parsed_data.get('questiontext') or \
+                                                             parsed_data.get('question') or \
+                                                             fallback_text
+                                   # Force standard key names for DB
+                                   parsed_data['questiontext'] = generated_question_text
+
+                              elif comp_type == 'QuestionSolution':
+                                   fallback_sol = list(parsed_data.values())[0] if parsed_data else ""
+                                   sol_text = parsed_data.get('solution') or parsed_data.get('questionsolution') or fallback_sol
+                                   parsed_data['questionsolution'] = sol_text
+
+                              result_buffer.update(parsed_data)
+                         else:
+                              print(f"      {prettify('Warning:', 'Yellow')} {comp_type} returned unexpected type {type(parsed_data).__name__} — skipping.")
                     
                     break # Success, exit retry loop
                     
@@ -599,9 +625,15 @@ class ManageQuestionData:
                     attempt += 1
                     if attempt > max_attempts:
                          print(f"      {prettify('Critical:', 'Red', True)} {comp_type} failed after {max_attempts} attempts.")
-                         # We could raise or just return partial data. 
-                         # For now, let's keep partial results but mark it as failed in stats?
                          total_stats['failed'] = True
+                    else:
+                        # On rate-limit (429): wait 10s before retry so Mercury's
+                        # server-side window has time to clear — last-resort safety net
+                        err_str = str(e)
+                        if '429' in err_str or 'rate_limit' in err_str.lower():
+                            import asyncio as _aio
+                            print(f"      {prettify('Backoff:', 'Yellow')} 429 detected — waiting 10s before retry...")
+                            await _aio.sleep(10)
 
         return result_buffer, total_stats
 

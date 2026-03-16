@@ -1,0 +1,2725 @@
+{
+  "GMAT": {
+    "1": {
+      "section": "Integrated Reasoning",
+      "questions": [
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n    \"table\": {\n        \"type\": \"data_table\",\n        \"description\": \"Quarterly sales figures and annual advertising spend for six global regions.\",\n        \"structure\": {\n            \"title\": \"Regional Sales and Advertising Spend\",\n            \"headers\": [\n                \"Region\",\n                \"Q1 Sales ($k)\",\n                \"Q2 Sales ($k)\",\n                \"Q3 Sales ($k)\",\n                \"Q4 Sales ($k)\",\n                \"Annual Advertising Spend ($k)\"\n            ],\n            \"rows\": [\n                [\n                    \"North America\",\n                    \"480\",\n                    \"515\",\n                    \"530\",\n                    \"560\",\n                    \"210\"\n                ],\n                [\n                    \"Europe\",\n                    \"420\",\n                    \"445\",\n                    \"460\",\n                    \"495\",\n                    \"190\"\n                ],\n                [\n                    \"Asia‑Pacific\",\n                    \"350\",\n                    \"380\",\n                    \"410\",\n                    \"440\",\n                    \"175\"\n                ],\n                [\n                    \"Latin America\",\n                    \"210\",\n                    \"225\",\n                    \"240\",\n                    \"260\",\n                    \"120\"\n                ],\n                [\n                    \"Middle East & Africa\",\n                    \"150\",\n                    \"165\",\n                    \"180\",\n                    \"200\",\n                    \"95\"\n                ],\n                [\n                    \"Oceania\",\n                    \"95\",\n                    \"105\",\n                    \"115\",\n                    \"130\",\n                    \"60\"\n                ]\n            ],\n            \"format"
+            }
+          ],
+          "question": "Considering the quarterly sales and annual advertising spend for each region, determine which of the three statements below is supported by the data.",
+          "title": "Regional Sales vs Advertising Spend Analysis",
+          "solution": "**Step 1 – Setup:** We need to see which region’s sales are most efficient relative to its advertising spend.\n**Step 2 – Execution:** Add the four quarterly sales for each region to get annual sales, then divide by the annual advertising spend to obtain a sales‑to‑ad‑spend ratio.\n**Step 3 – Verification:** North America’s ratio (~2.33) exceeds all others, confirming it is the most efficient.\n**Step 4 – Distractor:** The claim that Asia‑Pacific has the highest ad spend is false because its spend ($175k) is lower than North America’s $210k and Europe’s $190k.",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Urban Planning & Smart Cities] | [Style: <Quantitative Reasoning>] | [Difficulty: <1>] - <Dichotomous Type: True/False>",
+          "question-type": "Table Analysis",
+          "difficulty": 1,
+          "options_type": "dichotomous",
+          "tags": [
+            "question-type: Table Analysis",
+            "topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "theme: Urban Planning & Smart Cities"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": {\n    \"type\": \"stacked_bar_chart\",\n    \"description\": \"Stacked bar chart showing quarterly sales (in $ thousands) for four quarters across five regions.\",\n    \"structure\": {\n      \"title\": \"Quarterly Sales by Region and Quarter\",\n      \"x_axis\": {\n        \"label\": \"Region\",\n        \"categories\": [\"North\", \"South"
+            }
+          ],
+          "question": "In Q3, the region with the greatest increase in sales compared to Q2 is ____; the total sales across all regions in Q4 amount to ____ thousand dollars.",
+          "title": "Quarterly Sales Increase and Total Q4 Sales by Region",
+          "questionsolution": "{\n  \"solution\": \"**Step 1:**",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Geology & Meteorology] | [Style: <Quantitative Reasoning>] | [Difficulty: <3>]",
+          "question-type": "Graphic Interpretation",
+          "difficulty": 3,
+          "options_type": "blank",
+          "tags": [
+            "theme: Geology & Meteorology",
+            "topic: Profit, Loss and Discount",
+            "question-type: Graphic Interpretation"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"table\": {\n    \"type\": \"sortable_table\",\n    \"description\": \"GMAT-style sortable table with 7 product entries and 5 columns, allowing independent sorting for analysis.\",\n    \"structure\": {\n      \"title\": \"Quarterly Product Performance\",\n      \"headers\": [\n        \"Product\",\n        \"Q1 Revenue ($M)\",\n        \"Q2 Revenue ($M)\",\n        \"Market Share (%)\",\n        \"Units Sold (k)\"\n      ],\n      \"rows\": [\n        [\n          \"Alpha\",\n          \"45.2\",\n          \"52.8\",\n          \"12.5\",\n          \"310\"\n        ],\n        [\n          \"Beta\",\n          \"38.0\",\n          \"36.5\",\n          \"9.8\",\n          \"275\""
+            }
+          ],
+          "question": "Using the data in the Quarterly Product Performance table, indicate for each statement whether it is supported by the information provided.",
+          "title": "Quarterly Product Performance – Revenue and Market Share Analysis",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Chemistry & Physics] | [Style: <Verbal Reasoning>] | [Difficulty: <4>] - <Dichotomous Type: True/False>",
+          "question-type": "Table Analysis",
+          "difficulty": 4,
+          "options_type": "dichotomous",
+          "tags": [
+            "theme: Chemistry & Physics",
+            "question-type: Table Analysis",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"table\": {\n    \"type\": \"sortable_table\",\n    \"description\": \"GMAT-style sortable table where each column can be sorted independently. Contains realistic production data for analysis.\",\n    \"structure\": {\n      \"title\": \"Factory Production and Quality Metrics\",\n      \"headers\": [\n        \"Factory\",\n        \"Q1 Output (units)\",\n        \"Q2 Output (units)\",\n        \"Q3 Output (units)\",\n        \"Defect Rate (%)\"\n      ],\n      \"rows\": [\n        [\n          \"Alpha\",\n          \"15200\",\n          \"15800\",\n          \"16200\",\n          \"1.8\"\n        ],\n        [\n          \"Beta\",\n          \"13400\",\n          \"14000\",\n          \"13800\",\n          \"2.3\"\n        ],\n        [\n          \"Gamma\",\n          \"17600\",\n          \"18100\",\n          \"17900\",\n          \"1.5\"\n        ],\n        [\n          \"Delta\",\n          \"11900\",\n          \"12400\",\n          \"12300\",\n          \"2.7\"\n        ],\n        [\n          \"Epsilon\",\n          \"14500\",\n          \"14900\",\n          \"15100\",\n          \"2.0\"\n        ],\n        [\n          \"Zeta\",\n          \"16200\",\n          \"16700\",\n          \"16500\",\n          \"1.9"
+            }
+          ],
+          "question": "The table shows quarterly output (units) and defect rates for six factories. Which of the following statements is supported by the data?",
+          "title": "Factory Output and Defect Rate Comparison Across Six Plants",
+          "questionsolution": "{\n  \"solution\": \"**Step 1 – Setup:** Identify the claim in each statement and locate the relevant columns (Q3 Output, Defect Rate, Q2 Output). \\n**Step 2 – Execution:** Gamma’s Q3 = 17900 (largest), Gamma’s defect rate = 1.5% (smallest), Zeta’s Q2 = 16700 > Alpha’s Q3 = 16200. \\n**Step 3 – Verification:** The data confirm only the first claim. \\n**Step",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Marketing and Sales] | [Style: <Verbal Reasoning>] | [Difficulty: <4>] - <Dichotomous Type: Valid/Invalid>",
+          "question-type": "Table Analysis",
+          "difficulty": 4,
+          "options_type": "dichotomous",
+          "tags": [
+            "question-type: Table Analysis",
+            "theme: Marketing and Sales",
+            "topic: Permutations and Combinations"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "graph": [
+                {
+                  "type": "bar_chart",
+                  "description": "Bar chart displaying average monthly operating costs (in thousands of dollars) for eight company departments during the fiscal year.",
+                  "structure": {
+                    "title": "Average Monthly Operating Costs by Department",
+                    "x_axis": {
+                      "label": "Department",
+                      "type": "categorical"
+                    },
+                    "y_axis": {
+                      "label": "Cost (Thousands $)",
+                      "type": "numerical"
+                    },
+                    "data_format": {
+                      "bars": [
+                        {
+                          "category": "Research & Development",
+                          "value": 210
+                        },
+                        {
+                          "category": "Marketing",
+                          "value": 165
+                        },
+                        {
+                          "category": "Sales",
+                          "value": 190
+                        },
+                        {
+                          "category": "Human Resources",
+                          "value": 95
+                        },
+                        {
+                          "category": "Information Technology",
+                          "value": 130
+                        },
+                        {
+                          "category": "Finance",
+                          "value": 80
+                        },
+                        {
+                          "category": "Operations",
+                          "value": 175
+                        },
+                        {
+                          "category": "Customer Service",
+                          "value": 110
+                        }
+                      ],
+                      "bar_color": "#4a90e2",
+                      "bar_width": 0.6
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Quarterly operating costs (in thousands of dollars) for each department.\",\n      \"structure\": {\n        \"title\": \"Quarterly Operating Costs by Department\",\n        \"headers\": [\n          \"Department\",\n          \"Q1\",\n          \"Q2\",\n          \"Q3\",\n          \"Q4\"\n        ],\n        \"rows\": [\n          [\n            \"Research & Development\",\n            55,\n            52,\n            53,\n            50\n          ],\n          [\n            \"Marketing\",\n            40"
+            },
+            {
+              "para": "Acme Solutions, a mid‑size technology firm, monitors its departmental expenses to improve budgeting. The company tracks average monthly operating costs for eight departments—Research & Development, Marketing, Sales, Human Resources, Information Technology, Finance, Operations, and Customer Service—shown in a bar chart. In addition, quarterly operating costs (in thousands of dollars) for each department are recorded in a table, allowing comparison of cost trends across the fiscal year."
+            }
+          ],
+          "question": "Based on the passage, bar chart, and table, classify each of the following statements as either 'Supported by data' or 'Not supported by data'.",
+          "title": "Department Cost Data: Supported vs. Unsupported Statement Classification",
+          "solution": "Step 1: **Setup** – Identify the two data sources: the bar chart (average monthly costs) and the table (quarterly costs). \nStep 2: **Execution** – For each statement, check whether the numbers or trends match either source; a statement is **Supported** only if the exact figure or direction appears in the chart or table. \nStep 3: **Verification** – Cross‑check that no hidden assumptions (e.g., averaging quarterly data to monthly) are made. \nStep 4: **Distractor** – The most plausible wrong choice assumes the quarterly total equals the monthly average, which the data do not support.",
+          "prompt": "[Topic: work and rate problem] | [Theme: Literature & Criticism] | [Style: <>] | [Difficulty: <2>] - <Dichotomous Type: Valid/Invalid>",
+          "question-type": "Two-Part Analysis",
+          "difficulty": 2,
+          "options_type": "dichotomous",
+          "tags": [
+            "topic: work and rate problem",
+            "question-type: Two-Part Analysis",
+            "theme: Literature & Criticism"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"line_chart\",\n      \"description\": \"Line graph showing monthly production output (in thousands of units) for a manufacturing plant over eight consecutive months.\",\n      \"structure\": {\n        \"title\": \"Monthly Production Output\",\n        \"x_axis\": {\n          \"label\": \"Month\",\n          \"type\": \"continuous\"\n        },\n        \"y_axis\": {"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Quarterly sales figures and annual advertising spend for three product lines in a consumer electronics company.\",\n      \"structure\": {\n        \"title\": \"Product Line Sales and Advertising Spend\",\n        \"headers\": [\n          \"Product Line\",\n          \"Q1 Sales ($k)\",\n          \"Q2 Sales ($k)\",\n          \"Q3 Sales ($k)\",\n          \"Q4 Sales ($k)\",\n          \"Annual Advertising Spend ($k)\"\n        ],\n        \"rows\": [\n          [\n            \"Smartphones\",\n            120,\n            135,\n            150,\n            165,\n            80\n          ],\n          [\n            \"Tablets\",\n            70,\n            78,\n            85,\n            92,\n            45\n          ],\n          [\n            \"Wearables\",\n            45,\n            52,\n            60,\n            68,\n            30\n          ]"
+            },
+            {
+              "para": "Acme Electronics operates a manufacturing plant that produces three product lines—Smartphones, Tablets, and Wearables. The plant’s monthly production output, measured in thousands of units, is shown in the line chart for the eight months from January to August. Concurrently, the company tracks quarterly sales (in thousands of dollars) and annual advertising spend for each product line, as displayed in the data table. Management wants to assess how production trends relate to sales performance and marketing investment."
+            }
+          ],
+          "questiontext": "",
+          "title": "Analyzing Production Output vs Sales and Advertising Spend for Product Lines",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Visual Arts & Architecture] | [Style: <>] | [Difficulty: <1>] - <Dichotomous Type: Sufficient/Insufficient>",
+          "question-type": "Two-Part Analysis",
+          "difficulty": 1,
+          "options_type": "dichotomous",
+          "tags": [
+            "theme: Visual Arts & Architecture",
+            "topic: Profit, Loss and Discount",
+            "question-type: Two-Part Analysis"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"bar_chart\",\n      \"description\": \"Bar chart showing quarterly R&D expenditure across seven departments.\",\n      \"structure\": {\n        \"title\": \"Quarterly R&D Expenditure by Department (in $ thousands)\",\n        \"x_axis\": {\n          \"label\": \"Department\",\n          \"type\": \"categorical\"\n        },\n        \"y_axis\": {\n          \"label\": \"Expenditure ($ thousands)\",\n          \"type\": \"numerical\"\n        },\n        \"data_format\": {\n          \"bars\": [\n            {\n              \"category\": \"Materials\",\n              \"value\": 210\n            },\n            {\n              \"category\": \"Software\",\n              \"value\": 340\n            },\n            {\n              \"category\": \"Hardware\",\n              \"value\": 275\n            },\n            {\n              \"category\": \"Testing\",\n              \""
+            },
+            {
+              "raw_content": "{\n  \"table\": {\n    \"type\": \"data_table\",\n    \"description\": \"Annual sales performance by region across four quarters (in millions of dollars).\",\n    \"structure\": {\n      \"title\": \"Regional Quarterly Sales (2024)\",\n      \"headers\": [\n        \"Region\",\n        \"Q1 Sales\",\n        \"Q2 Sales\",\n        \"Q3 Sales\",\n        \"Q4 Sales\"\n      ],\n      \"rows\": [\n        [\n          \"North America\",\n          125.4,\n          138.7,\n          142.3,\n          151.0\n        ],\n        [\n          \"Europe\",\n          98.2,\n          102.5,\n          107.8,\n          112.4\n        ],\n        [\n          \"Asia-Pacific\",\n          87.9,\n          93.1,\n          99.6,\n          105.2\n        ],\n        [\n          \"Latin America\",\n          45.6,\n          48.3,\n          51.0,\n          54.7\n        ],\n        [\n          \"Middle East\",\n          22.1,\n          23.5,\n          24.8,\n          26.3\n        ],\n        [\n          \"Africa\",\n          15.4,\n          16.2,\n          17.0,\n          18.5"
+            },
+            {
+              "para": "TechNova Inc., a global technology firm, allocates its annual budget between research and development (R&D) and sales operations. The company’s R&D spending is broken down by department—Materials, Software, Hardware, Testing, Design, Marketing, and Support—while its sales performance is tracked quarterly across six regions: North America, Europe, Asia‑Pacific, Latin America, Middle East, and Africa. Management wants to assess how departmental R&D investment correlates with regional sales growth to guide future resource allocation."
+            }
+          ],
+          "question": "Based on the passage, the R&D expenditure bar chart, and the regional quarterly sales table, classify each of the following statements as either Supported by the data or Not Supported by the data.",
+          "title": "TechNova R&D vs Regional Sales Correlation – Supported/Not Supported Classification",
+          "solution": "**Step 1 – Setup:** Identify R&D spend per department (e.g., Software $340k) and quarterly sales per region (e.g., North America Q4 $151M).\n**Step 2 – Execution:** Compute each region’s sales growth (Q4‑Q1) and compare with total R&D spend; look for matching trends.\n**Step 3 – Verification:** If a statement’s claim aligns with the observed trend, label it *Supported*; otherwise *Not Supported*.\n**Step 4 – Distractor:** The claim that “Software spending directly caused North America’s Q4 sales” is incorrect because the data show correlation, not causation.",
+          "prompt": "[Topic: work and rate problem] | [Theme: Literature & Criticism] | [Style: <>] | [Difficulty: <2>] - <Dichotomous Type: Consistent/Inconsistent>",
+          "question-type": "Two-Part Analysis",
+          "difficulty": 2,
+          "options_type": "dichotomous",
+          "tags": [
+            "topic: work and rate problem",
+            "question-type: Two-Part Analysis",
+            "theme: Literature & Criticism"
+          ]
+        },
+        {
+          "metadata": [
+            [
+              "Q1 2023",
+              "Q2 2023",
+              "Q3 2023",
+              "Q4 2023",
+              "Q1 2024",
+              "Q2 2024",
+              "Q3 2024",
+              "Q4 2024"
+            ]
+          ],
+          "question": "Based on the chart, the total sales of Product B increased by _____% from Q2 2023 to Q4 2024, while the combined sales of Products A and C in Q1 2024 were _____% lower than the combined sales in Q4 2023.",
+          "title": "Quarterly Sales Trend Analysis for Product Lines A, B, and C",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Marketing and Sales] | [Style: <Quantitative Reasoning>] | [Difficulty: <5>]",
+          "question-type": "Graphic Interpretation",
+          "difficulty": 5,
+          "options_type": "blank",
+          "tags": [
+            "theme: Marketing and Sales",
+            "topic: Mean, Median, Mode, Range",
+            "question-type: Graphic Interpretation"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden measures 20 meters in length and an unknown width w. The garden is to be divided into two equal-area sections by a fence that runs parallel to the length, and a new tree will be planted at the midpoint of the fence.",
+              "statements": [
+                "The width w of the garden is an integer number of meters.",
+                "The total area of the garden is 300 square meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm plans to install a fence dividing the garden into two equal-area sections parallel to its length. To determine the length of the fence, which of the following statements, if true, would be sufficient?",
+          "title": "Landscaping Fence Length Determination – Area Division Sufficiency",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Geometry] | [Theme: Sustainable Energy & Climate Technology] | [Style: <Abstract Algebra>] | [Difficulty: <2>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "theme: Sustainable Energy & Climate Technology",
+            "topic: Geometry",
+            "question-type: Data Sufficiency"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"grouped_bar_chart\",\n      \"description\": \"Bar chart showing quarterly sales (in $ thousands) for two product lines across four quarters.\",\n      \"structure\": {\n        \"title\": \"Quarterly Sales of Product A and B\",\n        \"x_axis\": {\n          \"label\": \"Quarter\",\n          \"categories\": [\"Q1\", \"Q2\", \"Q3\", \"Q4\"]\n        },\n        \"y_axis\": {\n          \"label\": \"Sales ($k)\",\n          \"type\": \"numerical\"\n        },\n        \""
+            }
+          ],
+          "question": "Based on the chart, the total sales of Product A in Q3 are _____ thousand dollars, which is _____ percent higher than Product B's sales in the same quarter.",
+          "title": "Quarterly Sales Comparison: Product A vs B Percent Difference in Q3",
+          "solution": "**Step 1 – Setup:** Read Q3 values from the bar chart: Product A = 55 k, Product B = 45 k.  \n**Step 2 – Execution:** Difference = 55 − 45 = 10 k. Percent higher = (10 / 45) × 100 ≈ 22 %.  \n**Step 3 – Verification:** 45 k × 1.22 ≈ 55 k, confirming the calculation.  \n**Step 4 – Distractor:** The 30 % choice is incorrect because it would require a difference of 13.5 k, not the 10 k shown.  \n**Answer:** 55 thousand dollars, 22 percent higher.",
+          "options": {
+            "blank 1": {
+              "A": {
+                "text": "55",
+                "explanation": "Chart shows Product A Q3 bar at 55 k."
+              },
+              "B": {
+                "text": "50",
+                "explanation": "Bar is lower than the chart value."
+              },
+              "C": {
+                "text": "60",
+                "explanation": "Bar exceeds the chart value."
+              }
+            },
+            "blank 2": {
+              "D": {
+                "text": "22",
+                "explanation": "Difference 10 k ÷ 45 k ≈ 22 %."
+              },
+              "E": {
+                "text": "20",
+                "explanation": "Rounded down; actual percent is higher."
+              },
+              "F": {
+                "text": "25",
+                "explanation": "Too high; would need 11.25 k difference."
+              }
+            }
+          },
+          "answer": [
+            "A",
+            "D"
+          ],
+          "prompt": "[Topic: Profit, Loss and Discount] | [Theme: Visual Arts & Architecture] | [Style: <Verbal Reasoning>] | [Difficulty: <4>]",
+          "question-type": "Graphic Interpretation",
+          "difficulty": 4,
+          "options_type": "blank",
+          "tags": [
+            "theme: Visual Arts & Architecture",
+            "topic: Profit, Loss and Discount",
+            "question-type: Graphic Interpretation"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has length L meters and width W meters. The garden's area is 120 square meters, and its perimeter is 44 meters.",
+              "statements": [
+                "L is 12 meters.",
+                "W is 10 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm needs to determine the dimensions of a rectangular garden to order materials. The garden’s area is 120 m² and its perimeter is 44 m. Statement 1: L = 12 m. Statement 2: W = 10 m. Are the statements sufficient to determine the garden’s length L?",
+          "title": "Landscape Design: Determining Garden Length from Area and Perimeter",
+          "questionsolution": "",
+          "answer": "D",
+          "explanations": {
+            "A": "Statement 1 gives L=12, but statement 2 (W=10) also determines L, so the claim that (2) is not sufficient is false.",
+            "B": "Statement 2 gives W=10, which leads to L=12, and statement 1 also determines L, making the claim that (1) is not sufficient false.",
+            "C": "Each statement alone already determines L, so they are not both needed together.",
+            "D": "Either statement alone provides enough information to compute L uniquely.",
+            "E": "Both statements together do determine L, so the claim of insufficiency is incorrect."
+          },
+          "prompt": "[Topic: Number Properties] | [Theme: Healthcare Analytics & Epidemiology] | [Style: <Single Variable Equation>] | [Difficulty: <1>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Number Properties",
+            "question-type: Data Sufficiency",
+            "theme: Healthcare Analytics & Epidemiology"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has integer side lengths measured in meters. Its area is 84 square meters.",
+              "statements": [
+                "The length of the garden is 12 meters.",
+                "The width of the garden is 7 meters."
+              ]
+            }
+          ],
+          "questiontext": "{\n  \"question\": \"A landscaping firm needs to calculate the fence cost for a rectangular garden with area 84 m². Is the information in statement (1) alone sufficient, statement (2) alone sufficient, both together sufficient, each alone sufficient",
+          "title": "Landscaping Fence Cost: Determining Garden Dimensions from Area",
+          "questionsolution": "{\n  \"solution\": \"**Step 1:** The problem asks for the fence cost, which depends on the perimeter $P=2(L+W)$. We know the area $L\\\\times W=84$ and that $L,W$ are integers.\\n**Step 2:** Statement (1) gives $L=12$, so $W=84/12=7$ and $P=2(12+7)=38$. Statement (2) gives $W=7$, so $L=84/7=12$ and the same $P$. Each statement alone determines the perimeter.\\n**Step 3:** Both calculations give $P=38$, confirming sufficiency.\\n**Step 4:** Option C is wrong because you do not need both statements; either one already yields the",
+          "answer": "D",
+          "explanations": {
+            "A": "Statement (1) does determine the perimeter, but statement (2) also does, so (2) is not insufficient.",
+            "B": "Statement (2) determines the perimeter, but statement (1) also does, so (1) is not insufficient.",
+            "C": "Both statements together are sufficient, yet each alone already suffices, making this option incorrect.",
+            "D": "Either statement alone provides the missing dimension, allowing calculation of the perimeter and fence cost.",
+            "E": "Since each statement alone is sufficient, the pair is certainly sufficient, making this option false."
+          },
+          "prompt": "[Topic: Statistics and Intersection] | [Theme: Chemistry & Physics] | [Style: <Word Problems&>] | [Difficulty: <2>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "theme: Chemistry & Physics",
+            "topic: Statistics and Intersection",
+            "question-type: Data Sufficiency"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has a length that is 2 meters longer than its width. The garden is surrounded by a fence that uses 30 meters of material.",
+              "statements": [
+                "The width of the garden is 5 meters.",
+                "The length of the garden is 12 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm needs to calculate the garden's area to estimate seed cost. Based on the information given, what is the area of the garden in square meters?",
+          "title": "Landscaping Firm Estimates Garden Area from Fence Length",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Statistics and Intersection] | [Theme: Philosophy & Ethics] | [Style: <Abstract Algebra>] | [Difficulty: <4>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Philosophy & Ethics",
+            "topic: Statistics and Intersection",
+            "question-type: Data Sufficiency"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden measures 30 meters in length and an unknown width w meters. The garden is to be divided into three equal-area sections by planting two parallel rows of trees that run the length of the garden. The total number of trees to be planted is 60, and the trees are spaced equally along each row.",
+              "statements": [
+                "The width w of the garden is 20 meters.",
+                "Each row of trees contains 30 trees."
+              ]
+            }
+          ],
+          "questiontext": "",
+          "title": "Garden Layout Planning: Assessing Width and Tree Distribution Sufficiency",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Algebra] | [Theme: Medicine & Physiology] | [Style: <Word Problems&>] | [Difficulty: <3>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Medicine & Physiology",
+            "question-type: Data Sufficiency",
+            "topic: Algebra"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has length L meters and width W meters. Its area is 120 square meters and its perimeter is 44 meters.",
+              "statements": [
+                "The length L is 15 meters.",
+                "The width W is 8 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm is designing a rectangular garden for a client. The garden’s area is 120 m² and its perimeter is 44 m. To determine the garden’s length, which of the following statements is sufficient? (1) The length is 15 m. (2) The width is 8 m.",
+          "title": "Landscaping Firm: Data Sufficiency for Garden Length Determination",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Algebra] | [Theme: Astrophysics & Astronomy] | [Style: <Pure Number Theory>] | [Difficulty: <3>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Astrophysics & Astronomy",
+            "question-type: Data Sufficiency",
+            "topic: Algebra"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden is surrounded by a fence. The garden's length is twice its width. The total length of the fence is 60 meters.",
+              "statements": [
+                "The width of the garden is 10 meters.",
+                "The area of the garden is 200 square meters."
+              ]
+            }
+          ],
+          "question": "A landscaping company must order fencing material. To compute the total cost, they need the garden`s width. Based on the two statements, is each sufficient to determine the width?",
+          "title": "Fence Procurement: Determining Garden Width via Data Sufficiency",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"answer\": \"D\",\n  \"explanations\": {\n    \"A\": \"Statement (1) gives width directly, but statement (2) also determines width using area and length‑width relation.\",\n    \"B\": \"Statement (2) determines width via area and length‑width relation, and statement (1) also gives width directly.\",\n    \"C\": \"Each statement alone suffices; they are not required together.\",\n    \"D\": \"Either statement alone provides enough information to compute the width.\",\n    \"E\": \"Both statements together are sufficient, contrary to this option.\"",
+          "prompt": "[Topic: Algebra] | [Theme: Biology & Ecology] | [Style: <Single Variable Equation>] | [Difficulty: <1>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Biology & Ecology",
+            "question-type: Data Sufficiency",
+            "topic: Algebra"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "passage": "A rectangular garden has length L meters and width W meters. The garden is surrounded by a fence, and a path of uniform width runs inside the garden parallel to its sides.",
+              "statements": [
+                "The area of the garden is 120 square meters.",
+                "The perimeter of the garden is 44 meters."
+              ]
+            }
+          ],
+          "question": "A landscaping firm is designing a rectangular garden with a uniform interior path. The garden’s outer dimensions are L by W. The area of the garden is 120 m² and its perimeter is 44 m. Using the two statements, can you determine the width of the path?",
+          "title": "Landscaping Firm: Determining Interior Path Width from Garden Area and Perimeter",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"answer\": \"E\",\n  \"explanations\": {\n    \"A\": \"Area alone yields many L‑W pairs; cannot find path width.\",\n    \"B\": \"Perimeter alone yields many L‑W pairs; cannot find path width.\",\n    \"C\": \"Even with L and W known, no information about the interior path width is given.\",\n    \"D\": \"Neither statement by determines the path width.\",\n    \"E\": \"Both area and perimeter determine outer dimensions but give no data on the",
+          "prompt": "[Topic: Number Properties] | [Theme: Geology & Meteorology] | [Style: <Data Interpretation>] | [Difficulty: <4>]",
+          "question-type": "Data Sufficiency",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Geology & Meteorology",
+            "question-type: Data Sufficiency",
+            "topic: Number Properties"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "EcoTech Manufacturing conducts a quarterly quality audit on its line of solar panels, classifying each unit as either Acceptable or Not Acceptable based on performance metrics such as power output, durability, and visual defects. The audit team records the total number of panels inspected, the proportion that meet the Acceptable criteria, and notes any recurring issues that lead to a Not Acceptable rating. In the most recent quarter, the plant processed 12,000 panels, with 9,600 deemed Acceptable and 2,400 labeled Not Acceptable. The team also documented the primary reasons for rejection: 1,200 panels failed the power output test, 800 exhibited surface blemishes, and 400 did not pass the durability stress test. Management uses this dichotomous data to assess compliance with industry standards, allocate resources for process improvements, and report overall product quality to stakeholders.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "EcoTech Manufacturing conducts a quarterly quality audit on its line of solar panels, classifying each unit as either Acceptable or Not Acceptable based on performance metrics such as power output, durability, and visual defects. The audit team records the total number of panels inspected, the proportion that meet the Acceptable criteria, and notes any recurring issues that lead to a Not Acceptable rating. In the most recent quarter, the plant processed 12,000 panels, with 9,600 deemed Acceptable and 2,400 labeled Not Acceptable. The team also documented the primary reasons for rejection: 1,200 panels failed the power output test, 800 exhibited surface blemishes, and 400 did not pass the durability stress test. Management uses this dichotomous data to assess compliance with industry standards, allocate resources for process improvements, and report overall product quality to stakeholders.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Quarterly quality audit results showing trend of Acceptable vs Not Acceptable panels.\",\n      \"structure\": {\n        \"title\": \"Quarterly Panel Acceptance Trend\",\n        \"headers\": [\n          \"Quarter\",\n          \"Total Panels\",\n          \"Acceptable\",\n          \"Not Acceptable\",\n          \"% Acceptable\"\n        ],\n        \"rows\": [\n          [\n            \"Q1 2023\",\n            12000,\n            9600,\n            2400,\n            80\n          ],\n          [\n            \"Q2 2023\",\n            11500,\n            9200,\n            230",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"type\": \"data_table\",\n      \"description\": \"Quarterly quality audit results showing trend of Acceptable vs Not Acceptable panels.\",\n      \"structure\": {\n        \"title\": \"Quarterly Panel Acceptance Trend",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "EcoTech Manufacturing conducts a quarterly quality audit on its line of solar panels, classifying each unit as either Acceptable or Not Acceptable based on performance metrics such as power output, durability, and visual defects. The audit team records the total number of panels inspected, the proportion that meet the Acceptable criteria, and notes any recurring issues that lead to a Not Acceptable rating."
+            },
+            {
+              "para": "In the most recent quarter, the plant processed 12,000 panels, with 9,600 deemed Acceptable and 2,400 labeled Not Acceptable. The team also documented the primary reasons for rejection: 1,200 panels failed the power output test, 800 exhibited surface blemishes, and 400 did not pass the durability stress test. Management uses this dichotomous data to assess compliance with industry standards, allocate resources for process improvements, and report overall product quality to stakeholders."
+            }
+          ],
+          "title": "EcoTech Solar Panel Quality Audit: Analyzing Acceptable vs Not Acceptable Rates",
+          "child-questions": [
+            {
+              "question": "Using the passage description, the quarterly acceptance table, and the defect comparison graph, determine (a) the overall Not Acceptable rate for the most recent quarter, (b) the defect category accounting for the largest share of rejections, and (c) the projected Not Acceptable count for the next quarter if the same defect proportions persist and total production rises by 5%.",
+              "title": "EcoTech Solar Panel Quality Audit: Calculating Not Acceptable Rate and Forecast",
+              "questionsolution": "",
+              "categories": [
+                "Acceptable Quality Indicators",
+                "Not Acceptable Defect Indicators"
+              ],
+              "options": {
+                "A": {
+                  "text": "Panels passing the power output test.",
+                  "explanation": "Meets performance standards, indicating acceptable quality."
+                },
+                "B": {
+                  "text": "Panels with surface blemishes.",
+                  "explanation": "Visual defects cause a not acceptable rating."
+                },
+                "C": {
+                  "text": "Panels meeting durability stress test standards.",
+                  "explanation": "Durability compliance signals acceptable status."
+                },
+                "D": {
+                  "text": "Panels failing the power output test.",
+                  "explanation": "Failure to meet power criteria results in not acceptable classification."
+                },
+                "E": {
+                  "text": "Panels with no visual defects.",
+                  "explanation": "Absence of visual issues contributes to acceptable rating."
+                }
+              },
+              "answer": {
+                "Panels passing the power output test.": "Acceptable Quality Indicators",
+                "Panels with surface blemishes.": "Not Acceptable Defect Indicators",
+                "Panels meeting durability stress test standards.": "Acceptable Quality Indicators",
+                "Panels failing the power output test.": "Not Acceptable Defect Indicators",
+                "Panels with no visual defects.": "Acceptable Quality Indicators"
+              },
+              "prompt": "[Skill: Data Interpretation] | [Difficulty: <3>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "dichotomous",
+              "tags": []
+            },
+            {
+              "question": "Using the passage, the quarterly acceptance table, and the defect comparison graph, calculate (a) the overall Not Acceptable rate for the most recent quarter, (b) the defect category that accounts for the largest share of rejections, and (c) the projected Not Acceptable count for the next quarter if total production rises by 5% and defect proportions stay the same.",
+              "title": "EcoTech Solar Panel Audit: Not Acceptable Rate, Defect Share, and Forecast",
+              "questionsolution": "{\n  \"solution\": \"**Step 1:** Total panels = 12,000; Not Acceptable = 2,400 → rate = 2,400/12,000 = 0.20 (20%).\\n**Step 2:** Defect counts: power‑output 1,200, surface blemishes 800, durability 400 → power‑output is the largest share.\\n**Step 3:** Next‑quarter panels = 12,000 × 1.05 = 12,600; projected Not Acceptable = 0.20 × 12,600",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"20% Not Acceptable rate, power‑output defect largest, projected 2,520 Not Acceptable panels.\",\n      \"explanation\": \"Correct calculations for rate, defect share, and forecast.\"\n    },\n    \"B\": {\n      \"text\": \"20% Not Acceptable rate, surface blemishes largest, projected 2,520 Not Acceptable panels.\",\n      \"explanation\": \"Defect category is incorrect; power‑output has the highest count.\"\n    },\n    \"C\": {\n      \"text\": \"24% Not Acceptable rate, power‑output defect largest, projected 2,520 Not Acceptable panels.\",\n      \"explanation\": \"Rate miscalculated; 2,400/12,000 = 20%, not 24%.\"\n    },\n    \"D\": {\n      \"text\": \"20% Not Acceptable rate",
+              "prompt": "[Skill: Identifying Assumptions] | [Difficulty: <3>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Topic: Integrated Reasoning] | [Theme: Marketing and Sales] | [Source: <graph>] | [Source: <graph>] | [Source: <table>] | [Skill: Inference from Multiple Sources] | [Skill: Inference from Multiple Sources] | [Skill: Inference from Multiple Sources] | [Difficulty: <3>] - <Dichotomous Type: Acceptable/Not Acceptable>",
+          "question-type": "Multi-Source Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Marketing and Sales",
+            "question-type: Multi-Source Reasoning",
+            "topic: Integrated Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Acme Corp's regional sales team has been struggling to meet its quarterly targets in the Midwest. The team manager, Laura, reviewed the latest performance metrics and identified three potential interventions: (1) increasing the frequency of weekly sales training webinars, (2) reallocating 15% of the advertising budget from TV spots to targeted social media ads, and (3) implementing a mandatory daily reporting system for each salesperson. Laura wants to know which of these actions would help improve sales performance and which would not.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "{\n  \"table\": {\n    \"title\": \"Quarterly Sales Performance and Intervention Metrics\",\n    \"headers\": [\n      \"Quarter\",\n      \"Sales ($k)\",\n      \"Training",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"line_chart\",\n      \"description\": \"Line chart comparing quarterly sales revenue with the shift of 15% advertising budget from TV to targeted social media ads across seven quarters.\",\n      \"structure\": {\n        \"title\": \"Quarterly Sales Revenue vs. Advertising Reallocation\",\n        \"x_axis\": {\n          \"label\": \"Quarter\",\n          \"type\": \"categorical\"\n        },\n        \"y_axis\": {\n          \"label\": \"Sales ($k)\",\n          \"type\": \"numerical\"\n        },\n        \"data_format\": {\n          \"points\": [\n            { \"x\": \"Q1\", \"y\": 112 },\n            { \"x\": \"Q2\", \"y\": 118 },\n            { \"x\": \"Q3\", \"y\": 124 },\n            { \"x\": \"Q4\", \"y\": 130 },\n            {",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "raw_content": "{\n    \"para\": \"Later that month, the sales analytics team compiled a detailed report showing the",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "table": {
+                "title": "Quarterly Sales and Intervention Metrics",
+                "headers": [
+                  "Quarter",
+                  "Sales ($k)",
+                  "Training Webinars (hrs/week)",
+                  "Social Media Ad Spend ($k)",
+                  "Daily Reporting (Yes/No)",
+                  "Growth (%)"
+                ],
+                "rows": [
+                  [
+                    "Q1",
+                    "112",
+                    "1",
+                    "30",
+                    "No",
+                    "N/A"
+                  ],
+                  [
+                    "Q2",
+                    "118",
+                    "2",
+                    "35",
+                    "No",
+                    "5.4"
+                  ],
+                  [
+                    "Q3",
+                    "124",
+                    "2",
+                    "45",
+                    "Yes",
+                    "5.1"
+                  ],
+                  [
+                    "Q4",
+                    "130",
+                    "3",
+                    "55",
+                    "Yes",
+                    "4.8"
+                  ],
+                  [
+                    "Q5",
+                    "138",
+                    "3",
+                    "65",
+                    "Yes",
+                    "6.2"
+                  ],
+                  [
+                    "Q6",
+                    "145",
+                    "3",
+                    "70",
+                    "Yes",
+                    "5.1"
+                  ]
+                ]
+              },
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"table\": [\n    {\n      \"title\": \"Quarterly Sales Performance and Intervention Metrics\",\n      \"headers\": [\n        \"Quarter\",\n        \"Sales ($k)\",\n        \"Training Webinars (hrs/week)\",\n        \"Social Media Ad Spend ($k)\",\n        \"Daily Reporting (Yes/No)\",\n        \"Growth (%)\"\n      ],\n      \"rows\": [\n        [\n          \"Q1\",\n          \"112\",\n          \"1\",\n          \"30\",\n          \"No\",\n          \"N/A\"\n        ],\n        [\n          \"Q2\",\n          \"118\",\n          \"2\",\n          \"35\",\n          \"No\",\n          \"5.4\"\n        ],\n        [\n          \"Q3\",\n          \"124\",\n          \"2\",\n          \"45\",\n          \"Yes\",\n          \"5.",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "Acme Corp's regional sales team has been struggling to meet its quarterly targets in the Midwest. The team manager, Laura, reviewed the latest performance metrics and identified three potential interventions: (1) increasing the frequency of weekly sales training webinars, (2) reallocating 15% of the advertising budget from TV spots to targeted social media ads, and (3) implementing a mandatory daily reporting system for each salesperson. Laura wants to know which of these actions would help improve sales performance and which would not."
+            },
+            {
+              "para": "To evaluate the impact of each proposed intervention, the analytics team compiled a six‑quarter dataset that recorded total sales in thousands of dollars, the number of weekly training webinar hours, the amount allocated to targeted social‑media advertising, and whether daily reporting was in place. They also generated a line chart showing sales trends alongside the quarterly shift of 15% of the TV advertising budget to social media, allowing a side‑by‑side comparison of revenue growth under the different strategies."
+            }
+          ],
+          "title": "Acme Corp Sales Intervention Impact: Identify Helpful vs. Unhelpful Strategies",
+          "child-questions": [
+            {
+              "question": "Using the passage, the six‑quarter sales table, and the line chart of advertising reallocation, determine which of the three interventions—(1) weekly training webinars, (2) shifting 15% of TV ad budget to social media, (3) mandatory daily reporting—would help increase sales and which would not. Explain your reasoning.",
+              "title": "Acme Corp Sales Intervention Evaluation: Binary Impact Assessment",
+              "solution": "Step 1: **Setup** – Identify the variables: quarterly sales, weekly training hours, social‑media ad spend, and daily‑reporting status. \nStep 2: **Execution** – The table shows sales increase as training hours rise and ad spend shifts to social media; after reporting starts (Q3), sales growth plateaus. \nStep 3: **Verification** – Correlation exists for training and ad spend, not for reporting. \nStep 4: **Distractor** – The choice that daily reporting helps is wrong because sales do not improve after its implementation.",
+              "prompt": "[Skill: Identifying Assumptions] | [Difficulty: <4>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "dichotomous",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, the six‑quarter sales table, and the line chart of advertising reallocation, which of the three interventions—(1) weekly training webinars, (2) shifting 15% of TV ad budget to social media, (3) mandatory daily reporting—would help increase sales and which would not? Provide a brief justification.",
+              "title": "Acme Corp Sales Intervention Impact: Binary Helpful/Unhelpful Assessment",
+              "solution": "Step 1: **Setup** – Identify variables: quarterly sales, weekly training hours, social‑media ad spend, and daily‑reporting status.\nStep 2: **Execution** – Table shows sales rise with more training and higher ad spend; after reporting begins (Q3), growth flattens, indicating reporting adds no benefit.\nStep 3: **Verification** – Correlation exists for training and ad spend, not for reporting.\nStep 4: **Distractor** – The claim that daily reporting helps is wrong because sales do not improve after its implementation.",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"Increasing weekly training webinars would boost sales.\",\n      \"explanation\": \"Training correlates with higher sales in the data.\"\n    },\n    \"B\": {\n      \"text\": \"Reallocating 15% of TV ad budget to social media would boost sales.\",\n      \"explanation\": \"Ad spend shift shows positive trend but less direct than training.\"\n    },\n    \"C\": {\n      \"text\": \"Implementing mandatory daily reporting would boost sales.\",\n      \"explanation\": \"Sales plateau after reporting starts, indicating no benefit.\"\n    },\n    \"D\": {\n      \"text\": \"Reducing training webinars would improve sales.\",\n      \"explanation\": \"Less training contradicts observed sales increase.\"\n    },\n    \"E\": {\n      \"text\": \"Cutting social media ad spend would increase",
+              "prompt": "[Skill: Data Interpretation] | [Difficulty: <4>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Topic: Operational Research] | [Theme: Agricultural Economics & Food Security] | [Source: <chart>] | [Source: <memo>] | [Source: <memo>] | [Skill: Logical Deduction] | [Skill: Logical Deduction] | [Skill: Logical Deduction] | [Difficulty: <4>] - <Dichotomous Type: Would Help/Would Not Help>",
+          "question-type": "Multi-Source Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Operational Research",
+            "theme: Agricultural Economics & Food Security",
+            "question-type: Multi-Source Reasoning"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "The quarterly sales report for Acme Corp. shows a mixed pattern of performance across its three regional divisions. While the North region consistently exceeded its revenue targets by an average of 12% over the past four quarters, the South region displayed a fluctuating trend, meeting targets in Q1 and Q3 but falling short by 8% and 15% in Q2 and Q4 respectively. The East region, however, maintained a stable trajectory, aligning closely with its projected figures each quarter, with deviations never exceeding 3% in either direction.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "raw_content": "",
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "raw_content": "{\n  \"graph\": [\n    {\n      \"type\": \"line_chart\",\n      \"",
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "The quarterly sales report for Acme Corp. shows a mixed pattern of performance across its three regional divisions. While the North region consistently exceeded its revenue targets by an average of 12% over the past four quarters, the South region displayed a fluctuating trend, meeting targets in Q1 and Q3 but falling short by 8% and 15% in Q2 and Q4 respectively. The East region, however, maintained a stable trajectory, aligning closely with its projected figures each quarter, with deviations never exceeding 3% in either direction.",
+              "source_number": 1,
+              "source_type": "passage",
+              "focused_skill": "Data Interpretation"
+            },
+            {
+              "table": [
+                {
+                  "type": "data_table",
+                  "description": "Quarterly revenue performance as a percentage of target for each regional division.",
+                  "structure": {
+                    "title": "Quarterly Revenue Performance (% of Target) by Region",
+                    "headers": [
+                      "Region",
+                      "Q1",
+                      "Q2",
+                      "Q3",
+                      "Q4"
+                    ],
+                    "rows": [
+                      [
+                        "North",
+                        "+12",
+                        "+12",
+                        "+12",
+                        "+12"
+                      ],
+                      [
+                        "South",
+                        "+5",
+                        "-8",
+                        "+7",
+                        "-15"
+                      ],
+                      [
+                        "East",
+                        "+2",
+                        "+1",
+                        "+3",
+                        "-1"
+                      ]
+                    ],
+                    "formatting": {
+                      "alternating_rows": true,
+                      "border_style": "standard"
+                    }
+                  }
+                }
+              ],
+              "source_number": 2,
+              "source_type": "table",
+              "focused_skill": "Trend Analysis"
+            },
+            {
+              "table": [
+                {
+                  "type": "data_table",
+                  "description": "Quarterly revenue performance as a percentage of target for each regional division.",
+                  "structure": {
+                    "title": "Quarterly Revenue Performance (% of Target) by Region",
+                    "headers": [
+                      "Region",
+                      "Q1",
+                      "Q2",
+                      "Q3",
+                      "Q4"
+                    ],
+                    "rows": [
+                      [
+                        "North",
+                        "+12",
+                        "+12",
+                        "+12",
+                        "+12"
+                      ],
+                      [
+                        "South",
+                        "+5",
+                        "-8",
+                        "+7",
+                        "-15"
+                      ],
+                      [
+                        "East",
+                        "+2",
+                        "+1",
+                        "+3",
+                        "-1"
+                      ]
+                    ],
+                    "formatting": {
+                      "alternating_rows": true,
+                      "border_style": "standard"
+                    }
+                  }
+                }
+              ],
+              "source_number": 3,
+              "source_type": "graph",
+              "focused_skill": "Comparison and Contrast"
+            },
+            {
+              "para": "The quarterly sales report for Acme Corp. shows a mixed pattern of performance across its three regional divisions. While the North region consistently exceeded its revenue targets by an average of 12% over the past four quarters, the South region displayed a fluctuating trend, meeting targets in Q1 and Q3 but falling short by 8% and 15% in Q2 and Q4 respectively. The East region, however, maintained a stable trajectory, aligning closely with its projected figures each quarter, with deviations never exceeding 3% in either direction."
+            },
+            {
+              "para": "In addition to the quarterly figures, Acme Corp. tracked monthly marketing spend and customer acquisition costs for each region, noting that the North region's higher spend correlated with its over‑performance, while the South region's variable spend mirrored its inconsistent results. The East region maintained a modest, steady marketing budget, aligning with its stable revenue outcomes."
+            }
+          ],
+          "title": "Acme Corp. Regional Revenue Consistency and Marketing Spend Analysis",
+          "child-questions": [
+            {
+              "question": "Using the passage, the quarterly revenue table, and the line chart of monthly marketing spend, identify the region whose marketing investment most consistently aligns with its revenue performance throughout the year, and calculate that region’s average percentage deviation from target across the four quarters.",
+              "title": "Acme Corp. Regional Revenue Consistency vs Marketing Spend Analysis",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"North region – average deviation +12%\",\n      \"explanation\": \"Correct: North consistently exceeds targets and spend matches performance.\"\n    },\n    \"B\": {\n      \"text\": \"South region – average deviation -4%\",\n      \"explanation",
+              "prompt": "[Skill: Data Interpretation] | [Difficulty: <3>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, the quarterly revenue table, and the line chart of monthly marketing spend, which region shows the most consistent correlation between its marketing investment and revenue performance, and what is that region’s average percentage deviation from target across the four quarters?",
+              "title": "Acme Corp. Regional Marketing Spend vs Revenue Consistency Analysis",
+              "questionsolution": "",
+              "questionoptions_answer": "",
+              "prompt": "[Skill: Synthesizing Information] | [Difficulty: <3>]",
+              "question-type": "Multi-Source Reasoning Child",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Topic: Resource Allocation] | [Theme: Healthcare Analytics & Epidemiology] | [Source: <table>] | [Source: <chart>] | [Source: <graph>] | [Skill: Comparison and Contrast] | [Skill: Comparison and Contrast] | [Skill: Comparison and Contrast] | [Difficulty: <3>] - <Dichotomous Type: Consistent/Inconsistent>",
+          "question-type": "Multi-Source Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Resource Allocation",
+            "question-type: Multi-Source Reasoning",
+            "theme: Healthcare Analytics & Epidemiology"
+          ]
+        }
+      ]
+    },
+    "2": {
+      "section": "Quants",
+      "questions": [
+        {
+          "question": "A company sells two products, A and B. Product A yields $120 profit per unit, product B $80. The firm must allocate exactly 200 units total, and the total profit must be at least $18,000. If at least 30 units of product A must be produced, how many units of product B should be made to meet the profit target?",
+          "title": "Profit Allocation Optimization for Product Mix in Manufacturing",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Financial Markets & Cryptocurrency] | [Style: <Data Interpretation>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Financial Markets & Cryptocurrency",
+            "question-type: Problem Solving Simple",
+            "topic: Linear Equations, Quadratic Equations and Inequalities"
+          ]
+        },
+        {
+          "question": "A company’s quarterly profit follows P = 5x^2 - 30x + 45, where x is the number of months after the start of the year. In which quarter does the profit first exceed $200?",
+          "title": "Quarterly Profit Threshold: Identify First Quarter Profit Exceeds $200",
+          "questionsolution": "{\n  \"solution\": \"**Step 1:** Set inequality $5x^2-30x+45>200$.\\",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Permutations and Combinations] | [Theme: Political Science] | [Style: <Geometry Proofs>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Permutations and Combinations",
+            "question-type: Problem Solving Simple",
+            "theme: Political Science"
+          ]
+        },
+        {
+          "question": "Company A sells a product for $120 each. Fixed costs total $30,000 and the variable cost per unit is $45. To achieve a profit of at least $15,000, what is the minimum number of units the company must sell?",
+          "title": "Profit Target Calculation for Fixed and Variable Costs in Business Pricing",
+          "questionsolution": "",
+          "options": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          },
+          "answer": "C",
+          "prompt": "[Topic: Ratio and Proportion] | [Theme: Marketing and Sales] | [Style: <Single Variable Equation>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Ratio and Proportion",
+            "question-type: Problem Solving Simple",
+            "theme: Marketing and Sales"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question\": \"A startup’s monthly revenue comes from two subscription tiers. Tier 1 users",
+          "title": "Startup Subscription Revenue Optimization Using Linear Equations",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"80\",\n      \"explanation\": \"Revenue would be $7,400, not $8,000.\"\n    },\n    \"B\": {\n      \"text\": \"90\",\n      \"explanation\": \"Revenue would be $7,800, not $8,000.\"\n    },\n    \"",
+          "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Business and Finance] | [Style: <Data Interpretation>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Linear Equations, Quadratic Equations and Inequalities",
+            "question-type: Problem Solving Simple",
+            "theme: Business and Finance"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Production Mix: Linear Inequalities in Business Decision-Making",
+          "questionsolution": "",
+          "options": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          },
+          "answer": "C",
+          "prompt": "[Topic: Mean, Median, Mode, Range] | [Theme: Business and Finance] | [Style: <Numeric Comparisons>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Business and Finance",
+            "topic: Mean, Median, Mode, Range"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question",
+          "title": "Optimizing Production Mix: Linear Programming in a Manufacturing Firm",
+          "questionsolution": "",
+          "options": {
+            "A": {},
+            "B": {},
+            "C": {},
+            "D": {},
+            "E": {}
+          },
+          "answer": "C",
+          "prompt": "[Topic: work and rate problem] | [Theme: Geology & Meteorology] | [Style: <Coordinate Geometry>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: work and rate problem",
+            "question-type: Problem Solving Simple",
+            "theme: Geology & Meteorology"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question\": \"A retailer’s monthly sales are $150,000. The manager proposes a 10% price increase that is expected to reduce the number of units sold by 5%. Assuming unit price and quantity are the only variables, what is the approximate percentage change in total sales revenue?\"",
+          "title": "Retail Price Increase Impact on Revenue Percentage Change",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"Increase of about 4.5%\",\n      \"explanation\": \"Correct: 1.10 × 0.95 = 1.045 → 4.5% rise.\"\n    },\n    \"B\": {\n      \"text\": \"Decrease of about 4.5%\",\n      \"explanation\": \"Incorrect sign; revenue rises, not falls.\"\n    },\n    \"C\": {\n      \"text\": \"Increase of about 5%\",\n      \"explanation\": \"Ignores the 5% quantity drop.\"\n    },\n    \"D\": {\n      \"text\": \"Decrease of about 5%\",\n      \"explanation\": \"Both direction and magnitude wrong.\"\n    },\n    \"E\": {\n      \"text\": \"No change\",\n      \"explanation\": \"Assumes price and quantity changes cancel exactly.\"\n    }\n  },\n  \"answer",
+          "prompt": "[Topic: Mixtures and Alligations] | [Theme: Anthropology & Archaeology] | [Style: <Numeric Comparisons>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Anthropology & Archaeology",
+            "topic: Mixtures and Alligations"
+          ]
+        },
+        {
+          "question": "A company's quarterly profit follows P = 5k^2 - 40k + 100, where k is the number of months after the start of the year. In which quarter does the profit first exceed $200?",
+          "title": "Quarterly Profit Exceeds $200 – Quadratic Analysis in Business Context",
+          "questionsolution": "{\n  \"solution\": \"**Step 1:** Set $5k^2-40k+100>200$.\\n**Step 2:** Simplify to $k^2-8k-",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Literature & Criticism] | [Style: <Inequalities>] | [Difficulty: <5>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "topic: Number Properties and Fractions, Decimals, Percentages",
+            "theme: Literature & Criticism"
+          ]
+        },
+        {
+          "question": "ABC Corp sells a product for $120 each. Fixed costs are $30,000 per month. Variable cost per unit is $45. If the company wants to achieve a profit of at least $15,000, what is the minimum number of units it must sell in a month?",
+          "title": "ABC Corp Profit Target and Break‑Even Quantity Calculation",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "600 units",
+              "explanation": "Correct: profit = 75x - 30,000 ≥ 15,000 → x ≥ 600."
+            },
+            "B": {
+              "text": "500 units",
+              "explanation": "Incorrect: ignores fixed cost, using only variable profit."
+            },
+            "C": {
+              "text": "650 units",
+              "explanation": "Incorrect: misapplies profit target, adding extra units unnecessarily."
+            },
+            "D": {
+              "text": "750 units",
+              "explanation": "Incorrect: overestimates profit per unit, leading to higher break‑even."
+            },
+            "E": {
+              "text": "800 units",
+              "explanation": "Incorrect: assumes revenue must cover both costs and profit separately."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Space Exploration & Engineering] | [Style: <Numeric Comparisons>] | [Difficulty: <2>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "topic: Simple Interest and Compound Interest",
+            "question-type: Problem Solving Simple",
+            "theme: Space Exploration & Engineering"
+          ]
+        },
+        {
+          "question": "Company A sells a product for $120 each. Fixed costs are $30,000 and variable cost per unit is $45. If the company wants to achieve a profit of $15,000, what is the minimum number of units it must sell?",
+          "title": "Profit Target Calculation for Product Pricing in Business Context",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"500\", \"explanation\": \"Ignores fixed cost\" },\n    \"B\": { \"text\": \"600\", \"explanation",
+          "prompt": "[Topic: work and rate problem] | [Theme: Urban Planning & Smart Cities] | [Style: <Inequalities>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: work and rate problem",
+            "theme: Urban Planning & Smart Cities",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "question": "Company A sells widgets for $12 each and gadgets for $20 each. In a month it sold 150 widgets and 80 gadgets, earning a profit of $2,400. If the price of widgets rises by $3 and the number sold drops by 20%, while gadget sales stay the same, what is the new total profit?",
+          "title": "Profit Impact of Price Increase and Quantity Decrease in Widget Sales",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Linear Equations, Quadratic Equations and Inequalities] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Single Variable Equation>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Supply Chain Logistics & Global Trade",
+            "topic: Linear Equations, Quadratic Equations and Inequalities"
+          ]
+        },
+        {
+          "question": "A startup sells a subscription service for $45 per month. Fixed monthly costs are $12,000 and variable cost per subscriber is $8. If the company wants to achieve a profit of $20,000 in a month, what is the minimum number of subscribers needed? Assume all costs are incurred monthly.",
+          "title": "Subscription Profit Breakeven Analysis for Startup",
+          "solution": "Step 1: **Setup** – Let $n$ be the number of subscribers. Profit = Revenue – Costs = $45n - (12000 + 8n)$. \nStep 2: **Execution** – Set profit to $20{,}000$: $45n - 12000 - 8n = 20{,}000 \\Rightarrow 37n = 32{,}000 \\Rightarrow n = \\frac{32{,}000}{37} \\approx 864.86$. \nStep 3: **Verification** – With $n = 865$, profit = $45(865) - (12000 + 8(865)) = 20{,}025$, meeting the target. \nStep 4: **Distractors** – Ignoring fixed costs gives $n \\approx 540$, which underestimates the needed subscribers.",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"\", \"explanation\": \"\" },\n    \"B\": { \"text\": \"\", \"explanation\": \"\" },\n    \"C\": { \"text\": \"\", \"explanation\": \"\" },\n    \"D\": { \"text\": \"\", \"explanation\": \"\" },\n    \"E\": { \"text\": \"\", \"explanation\": \"\" }\n  },\n  \"answer\": \"",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Medicine & Physiology] | [Style: <Coordinate Geometry>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "topic: Simple Interest and Compound Interest",
+            "theme: Medicine & Physiology",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "question": "A startup charges a monthly subscription that rises by 5% each year. The first‑year monthly fee is $120. To ensure a single subscriber pays more than $400 over three years, what is the minimum total amount the subscriber must pay over the three‑year period?",
+          "title": "Subscription Pricing Growth: Minimum Total Payment Over Three Years",
+          "questionsolution": "",
+          "answer": "C",
+          "prompt": "[Topic: Functions and Polynomials] | [Theme: Logistics and Operations] | [Style: <Geometry Proofs>] | [Difficulty: <5>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "theme: Logistics and Operations",
+            "question-type: Problem Solving Simple",
+            "topic: Functions and Polynomials"
+          ]
+        },
+        {
+          "question": "A company sells two products, A and B. Product A yields a profit of $12 per unit, product B yields $20 per unit. In a month the company sold a total of 150 units and earned $2,040 profit. How many units of product B were sold?",
+          "title": "Profit Allocation Problem: Solving Linear Equations for Product Mix",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Astrophysics & Astronomy] | [Style: <Inequalities>] | [Difficulty: <5>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "theme: Astrophysics & Astronomy"
+          ]
+        },
+        {
+          "question": "A company`s profit margin is 12% when revenue is $500,000. If the company wants to increase profit by $30,000 without changing costs, what must the new revenue be?",
+          "title": "Profit Margin Revenue Adjustment for Target Profit Increase",
+          "solution": "**Step 1 – Setup:** Original revenue $500{,}000$, margin $12\\%$ → profit $60{,}000$, cost $440{,}000$. Desired profit $60{,}000+30{,}000=90{,}000$.\n**Step 2 – Execution:** New revenue $R = \\text{cost}+\\text{desired profit}=440{,}000+90{,}000=530{,}000$.\n**Step 3 – Verification:** $530{,}000-440{,}000=90{,}000$ profit, meeting the $30{,}000$ increase.\n**Step 4 – Distractor:** $560{,}000$ assumes the margin stays $12\\%$ and adds $30{,}000$ profit, ignoring that costs stay fixed.",
+          "options": {
+            "A": {
+              "text": "530,000",
+              "explanation": "Correct calculation using fixed costs."
+            },
+            "B": {
+              "text": "560,000",
+              "explanation": "Assumes margin stays 12% and adds profit."
+            },
+            "C": {
+              "text": "500,000",
+              "explanation": "No change in revenue; profit unchanged."
+            },
+            "D": {
+              "text": "540,000",
+              "explanation": "Adds $30,000 profit to original profit only."
+            },
+            "E": {
+              "text": "550,000",
+              "explanation": "Misapplies 12% margin to new profit target."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)] | [Theme: Space Exploration & Engineering] | [Style: <Data Interpretation>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "topic: Probability Rules (Basic, Independent, Mutually Exclusive, etc)",
+            "theme: Space Exploration & Engineering"
+          ]
+        },
+        {
+          "question": "A company’s profit P (in thousands) is modeled by P = 5x^2 - 40x + 60, where x is the number of months after launch. In which month does the profit first exceed $10,000?",
+          "title": "Profit Threshold Timing: Determine First Month Profit > $10k",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"Month 1\", \"explanation\": \"Correct: profit at x=1 is $25k > $10k.\" },\n    \"B\": { \"text\": \"Month 2\", \"explanation\": \"Incorrect: profit already exceeds $10k earlier.\" },\n    \"C\": { \"text\": \"Month 3\", \"explanation\": \"Incorrect: later month, not the first occurrence.\" },",
+          "prompt": "[Topic: Number Properties and Fractions, Decimals, Percentages] | [Theme: Medicine & Physiology] | [Style: <Abstract Algebra>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "theme: Medicine & Physiology",
+            "question-type: Problem Solving Simple",
+            "topic: Number Properties and Fractions, Decimals, Percentages"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Revenue Forecasting with Exponential Growth Model",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "$146,933",
+              "explanation": "Correct: $100,000 × (1.08)^5."
+            },
+            "B": {
+              "text": "$140,000",
+              "explanation": "Incorrect: assumes linear $8,000 per year."
+            },
+            "C": {
+              "text": "$150,000",
+              "explanation": "Incorrect: rounds up without exact exponent."
+            },
+            "D": {
+              "text": "$130,000",
+              "explanation": "Incorrect: uses 5% growth rate."
+            },
+            "E": {
+              "text": "$120,000",
+              "explanation": "Incorrect: applies simple interest."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: Algebraic Expressions and Simplification] | [Theme: Marketing and Sales] | [Style: <Data Interpretation>] | [Difficulty: <1>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Marketing and Sales",
+            "topic: Algebraic Expressions and Simplification"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question\": \"A startup allocates its monthly marketing budget between online ads and print ads. Online ads cost $200 per campaign and generate 150 leads; print ads cost $500 per campaign and generate 400 leads. The startup spends $4,500 total and obtains exactly",
+          "title": "Marketing Budget Allocation: Solving Campaign Mix via Linear Equations",
+          "questionsolution": "",
+          "questionoptions_answer": "",
+          "prompt": "[Topic: Mixtures and Alligations] | [Theme: Anthropology & Archaeology] | [Style: <Inequalities>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "question-type: Problem Solving Simple",
+            "theme: Anthropology & Archaeology",
+            "topic: Mixtures and Alligations"
+          ]
+        },
+        {
+          "questiontext": "",
+          "title": "Optimizing Quarterly Sales Forecast Using Linear Regression Error Bounds",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "$5,200",
+              "explanation": "Ignores variance term."
+            },
+            "B": {
+              "text": "$6,800",
+              "explanation": "Uses wrong confidence level."
+            },
+            "C": {
+              "text": "$7,500",
+              "explanation": "Correct application of error bound."
+            },
+            "D": {
+              "text": "$8,300",
+              "explanation": "Adds extra margin mistakenly."
+            },
+            "E": {
+              "text": "$9,000",
+              "explanation": "Overestimates standard error."
+            }
+          },
+          "answer": "C",
+          "prompt": "[Topic: work and rate problem] | [Theme: Astrophysics & Astronomy] | [Style: <Geometry Proofs>] | [Difficulty: <4>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: work and rate problem",
+            "question-type: Problem Solving Simple",
+            "theme: Astrophysics & Astronomy"
+          ]
+        },
+        {
+          "questiontext": "{\n  \"question\": \"A company`s quarterly revenue grew 12% from Q1 to Q2, while its operating expenses increased by 8% over the same period. If the profit margin in Q1 was 15%, what is the profit margin",
+          "title": "Profit Margin Change After Revenue and Expense Growth",
+          "solution": "**Step 1:** Let Q1 revenue = $R$. Profit = $0.15R$, expenses = $0.85R$. **Step 2:** Q2 revenue = $1.12R$, expenses = $0.85R\\times1.08=0.918R$. Profit = $1.12R-0.918R=0.202R$. Margin = $\\frac{0.202R}{1.12R}=0.1804\\approx18\\%$. **Step 3:** Margin rose from 15% to ~18%, confirming growth. **Step 4:** A distractor of 16% ignores the expense increase, under‑estimating profit.",
+          "options": {
+            "A": {
+              "text": "18%",
+              "explanation": "Correct calculation of profit margin."
+            },
+            "B": {
+              "text": "16%",
+              "explanation": "Ignores expense increase, underestimates profit."
+            },
+            "C": {
+              "text": "20%",
+              "explanation": "Assumes revenue growth equals profit growth."
+            },
+            "D": {
+              "text": "14%",
+              "explanation": "Subtracts expense increase from original margin."
+            },
+            "E": {
+              "text": "22%",
+              "explanation": "Adds revenue and expense growth incorrectly."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: work and rate problem] | [Theme: Medicine & Physiology] | [Style: <Data Interpretation>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: work and rate problem",
+            "theme: Medicine & Physiology",
+            "question-type: Problem Solving Simple"
+          ]
+        },
+        {
+          "question": "Company A sells a product for $120 each. Fixed costs are $30,000 and variable cost per unit is $45. If the company wants to achieve a profit of $15,000, what is the minimum number of units it must sell?",
+          "title": "Profit Target Calculation for Product Pricing in Business Scenario",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "600",
+              "explanation": "Correct calculation of units needed."
+            },
+            "B": {
+              "text": "500",
+              "explanation": "Omits fixed cost in profit equation."
+            },
+            "C": {
+              "text": "450",
+              "explanation": "Uses profit target incorrectly."
+            },
+            "D": {
+              "text": "700",
+              "explanation": "Overestimates contribution per unit."
+            },
+            "E": {
+              "text": "800",
+              "explanation": "Adds extra margin unnecessarily."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Topic: Simple Interest and Compound Interest] | [Theme: Supply Chain Logistics & Global Trade] | [Style: <Inequalities>] | [Difficulty: <3>]",
+          "question-type": "Problem Solving Simple",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Simple Interest and Compound Interest",
+            "question-type: Problem Solving Simple",
+            "theme: Supply Chain Logistics & Global Trade"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "section": "Verbal",
+      "questions": [
+        {
+          "metadata": [
+            {
+              "para": "Although many firms have embraced remote work, the shift has not uniformly benefited all metropolitan areas; while some cities have seen a decline in office‑space demand, others have leveraged the change to diversify their economies, attracting tech startups and co‑working hubs. Consequently, policymakers must balance the potential for reduced commuter traffic against the risk of eroding traditional commercial tax bases."
+            },
+            {
+              "para": "Yet the benefits of remote work are unevenly distributed; employees in lower‑cost regions experience higher disposable income, while those in high‑cost urban cores face rising living expenses without commensurate wage growth. To mitigate these disparities, city leaders are experimenting with hybrid office mandates, subsidized transit passes, and incentives for firms that retain a physical presence, aiming to preserve urban vitality while embracing the new work paradigm."
+            }
+          ],
+          "questiontitle": "",
+          "child-questions": [
+            {
+              "question": "Based on the passage, which factor primarily drives city leaders to adopt hybrid office mandates, subsidized transit passes, and incentives for firms maintaining a physical presence?",
+              "title": "Urban Policy Decision: Factors Influencing Hybrid Office Mandates",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To increase tax revenue by attracting more corporate headquarters.",
+                  "explanation": "Focuses on revenue, not the equity issue highlighted."
+                },
+                "B": {
+                  "text": "To reduce traffic congestion and lower commuter emissions.",
+                  "explanation": "Mentioned but secondary to socioeconomic concerns."
+                },
+                "C": {
+                  "text": "To boost the profitability of co‑working space providers.",
+                  "explanation": "Economic benefit to providers, not the main driver."
+                },
+                "D": {
+                  "text": "To address income and cost disparities between low‑cost regions and high‑cost urban cores.",
+                  "explanation": "Directly reflects the passage's primary motivation."
+                },
+                "E": {
+                  "text": "To comply with federal mandates on remote‑work policies.",
+                  "explanation": "No federal mandate is referenced in the passage."
+                }
+              },
+              "answer": [
+                "D"
+              ],
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, what primary challenge are city leaders trying to mitigate by implementing hybrid office mandates, subsidized transit passes, and incentives for firms retaining a physical presence?",
+              "title": "Urban Policy: Identifying Primary Challenge of Hybrid Office Strategies",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To increase tax revenue by attracting more corporate headquarters.",
+                  "explanation": "Focuses on revenue, not the equity issue highlighted."
+                },
+                "B": {
+                  "text": "To reduce traffic congestion and lower commuter emissions.",
+                  "explanation": "Mentioned but secondary to socioeconomic concerns."
+                },
+                "C": {
+                  "text": "To boost profitability of co‑working space providers.",
+                  "explanation": "Economic benefit to providers, not the main driver."
+                },
+                "D": {
+                  "text": "To address income and cost disparities between low‑cost regions and high‑cost urban cores.",
+                  "explanation": "Directly reflects the passage's primary motivation."
+                },
+                "E": {
+                  "text": "To comply with federal mandates on remote‑work policies.",
+                  "explanation": "No federal mandate is referenced in the passage."
+                }
+              },
+              "answer": [
+                "D"
+              ],
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Literature] | [Skill: Vocabulary in Context] | [Vocabulary: <earmark>] | [Difficulty: <5>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "theme: Literature",
+            "topic: Vocabulary in Context",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid expansion of digital marketplaces has been hailed as a catalyst for consumer empowerment, it simultaneously engenders a paradox wherein the very mechanisms that lower transaction costs also obscure the true value of labor, thereby prompting policymakers to reconsider the balance between innovation and equitable remuneration."
+            },
+            {
+              "para": "Consequently, scholars argue that a nuanced regulatory framework—one that incentivizes transparency through mandatory disclosure of algorithmic pricing models while safeguarding competitive dynamism—could reconcile the tension between market efficiency and the preservation of fair labor standards, thereby fostering a more sustainable digital economy."
+            }
+          ],
+          "title": "Balancing Market Efficiency and Labor Equity in Digital Marketplace Regulation",
+          "child-questions": [
+            {
+              "question": "Based on the passage, which of the following best captures the authors` recommendation for reconciling market efficiency with fair labor standards in digital marketplaces?",
+              "title": "Digital Marketplace Regulation: Efficiency‑Equity Trade‑off Analysis",
+              "questionsolution": "",
+              "options": {
+                "A": {},
+                "B": {},
+                "C": {},
+                "D": {},
+                "E": {}
+              },
+              "answer": "A",
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, which strategy does the author propose to align market efficiency with fair labor standards in digital marketplaces?",
+              "title": "Digital Marketplace Trade‑off: Balancing Efficiency and Labor Equity",
+              "questionsolution": "{\n  \"solution\": \"Step 1: Identify that the question asks for the author’s recommended strategy.\\nStep 2: The passage states the author advocates a **nuanced regulatory framework** that **mandates disclosure of algorithmic pricing** and **incentivizes transparency** while preserving competition.\\nStep 3: This directly matches the asked strategy, confirming the answer.\\nStep 4: Distractor A misreads “lower transaction",
+              "options": {
+                "A": {
+                  "text": "Mandate disclosure of algorithmic pricing models while preserving competitive dynamics.",
+                  "explanation": "Correct – matches the passage’s suggested nuanced regulatory framework."
+                },
+                "B": {
+                  "text": "Eliminate all regulations to maximize market efficiency.",
+                  "explanation": "Incorrect – ignores the need for labor equity."
+                },
+                "C": {
+                  "text": "Impose price caps on digital marketplace transactions.",
+                  "explanation": "Incorrect – not mentioned and could hinder competition."
+                },
+                "D": {
+                  "text": "Require firms to increase wages without any transparency measures.",
+                  "explanation": "Incorrect – lacks the transparency component emphasized."
+                },
+                "E": {
+                  "text": "Adopt a voluntary code of conduct for labor standards without enforcement.",
+                  "explanation": "Incorrect – insufficient to reconcile efficiency and fairness."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <1>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: Modern Architecture & Urban Design] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <allocation>] | [Difficulty: <1>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "theme: Modern Architecture & Urban Design",
+            "topic: Comparative Analysis and Perspective Recognition",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although many firms have embraced remote work as a permanent fixture, the shift has not uniformly enhanced employee cohesion; indeed, while virtual collaboration tools facilitate communication, they often mask underlying disparities in access to technology, thereby creating a paradox where productivity gains coexist with a subtle erosion of shared organizational identity."
+            },
+            {
+              "para": "Consequently, managers are compelled to redesign performance metrics that capture not only output but also the quality of interpersonal interactions, fostering hybrid rituals—such as virtual coffee breaks and periodic in‑person retreats—that aim to rebuild the tacit knowledge and trust that are difficult to quantify yet essential for sustained collaborative success."
+            }
+          ],
+          "title": "Remote‑Work Productivity‑Cohesion Trade‑off in Organizational Metrics",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why do managers need to redesign performance metrics to incorporate interpersonal interaction quality, and how might hybrid rituals such as virtual coffee breaks and periodic in‑person retreats address the erosion of shared organizational identity?",
+              "title": "Quantifying Remote‑Work Productivity‑Cohesion Trade‑off in Performance Metrics",
+              "solution": "Step 1: **Setup** – The passage notes that **remote work** erodes shared identity, so managers must add interpersonal quality to **performance metrics**.\nStep 2: **Execution** – **Hybrid rituals** (virtual coffee breaks, in‑person retreats) foster informal contact, rebuilding **tacit knowledge** and **trust**.\nStep 3: **Verification** – These activities directly address the cohesion gap identified.\nStep 4: **Distractors** – Assuming technology alone fixes the problem ignores the social dimension.",
+              "options": {
+                "A": {},
+                "B": {},
+                "C": {},
+                "D": {},
+                "E": {}
+              },
+              "answer": "A",
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, why do managers need to redesign performance metrics to capture interpersonal interaction quality, and in what ways can hybrid rituals such as virtual coffee breaks and periodic in‑person retreats counteract the erosion of shared organizational identity?",
+              "title": "Metric Weighting for Remote‑Work Productivity‑Cohesion Trade‑off",
+              "questionsolution": "{\n  \"solution\": \"Step",
+              "options": {
+                "A": {},
+                "B": {},
+                "C": {},
+                "D": {},
+                "E": {}
+              },
+              "answer": "A",
+              "prompt": "[Skill: Inference Question] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Humanities (History, Art, Literature)] | [Skill: Inference Making] | [Vocabulary: <contingent>] | [Difficulty: <5>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "theme: Humanities (History, Art, Literature)",
+            "topic: Inference Making",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, GreenTech Industries has pivoted from a solely profit-driven model toward a hybrid strategy that intertwines financial performance with environmental stewardship. This transition, catalyzed by mounting regulatory pressures and evolving consumer preferences, has led the firm to invest heavily in renewable energy technologies, redesign its supply chain for lower carbon emissions, and embed sustainability metrics into executive compensation packages."
+            },
+            {
+              "para": "Consequently, GreenTech's quarterly reports now feature a dual-bottom-line approach, presenting both net profit and a composite sustainability score. While the financial indicators have shown modest growth, the sustainability metrics reveal a 27% reduction in carbon intensity and a 15% increase in renewable energy procurement, prompting analysts to debate whether the hybrid model can sustain long-term competitive advantage without compromising shareholder returns."
+            }
+          ],
+          "title": "Analyzing GreenTech's Dual-Bottom-Line: Effect of 27% Carbon Reduction on Competitive Advantage",
+          "child-questions": [
+            {
+              "question": "Based on the passage, what is the most plausible reason why GreenTech`s 27% carbon intensity reduction could enhance its long‑term competitive advantage without sacrificing shareholder returns?",
+              "title": "Impact of 27% Carbon Reduction on GreenTech's Competitive Edge",
+              "solution": "Step 1: **Setup** – Identify why a 27% carbon‑intensity cut could boost advantage advantage while keeping shareholder returns stable. \nStep 2: **Execution** – The cut cuts operating costs, enhances brand reputation, meets stricter regulations, and attracts ESG‑focused investors, all of which can grow market share without reducing profit margins. \nStep 3: **Verification** – This matches the passage’s dual‑bottom‑line focus. \nStep 4: **Distractor** – The choice that the reduction harms profit is wrong because cost savings offset any margin loss.",
+              "options": {
+                "A": {
+                  "text": "It lowers operating costs, improving profit margins while enhancing sustainability credentials.",
+                  "explanation": "Cost savings directly support profitability."
+                },
+                "B": {
+                  "text": "It allows the company to increase product prices significantly, boosting revenue.",
+                  "explanation": "Price hikes are not indicated in the passage."
+                },
+                "C": {
+                  "text": "It attracts ESG‑focused investors, expanding capital access without diluting equity.",
+                  "explanation": "Investor interest adds financial advantage."
+                },
+                "D": {
+                  "text": "It reduces the need for regulatory compliance, eliminating legal expenses.",
+                  "explanation": "Regulations still apply; the reduction helps meet them."
+                },
+                "E": {
+                  "text": "It guarantees a 27% increase in market share due to consumer preference.",
+                  "explanation": "Market share gains are not guaranteed."
+                }
+              },
+              "answer": [
+                "A",
+                "C"
+              ],
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Which of the following best explains how GreenTech`s dual‑bottom‑line reporting aligns with its strategic shift toward sustainability?",
+              "title": "Dual‑Bottom‑Line Reporting: Alignment with GreenTech's Sustainability Strategy",
+              "solution": "Step 1: **Setup** – Determine why dual‑bottom‑line reporting supports GreenTech’s sustainability shift. \nStep 2: **Execution** – The report links profit with a sustainability score, highlighting cost savings and attracting ESG‑focused investors, thereby reinforcing the hybrid strategy. \nStep 3: **Verification** – This aligns with the passage’s description of dual‑bottom‑line focus. \nStep 4: **Distractors** – Option B is wrong because the passage never mentions price hikes; Option E is wrong because market‑share gains are not guaranteed.",
+              "options": {
+                "A": {
+                  "text": "It integrates financial performance with sustainability metrics, signaling commitment to both profit and environmental goals.",
+                  "explanation": "Correct: reflects dual-bottom-line alignment."
+                },
+                "B": {
+                  "text": "It focuses solely on financial results, ignoring environmental impact.",
+                  "explanation": "Incorrect: ignores sustainability component."
+                },
+                "C": {
+                  "text": "It replaces profit reporting with sustainability scores, eliminating financial transparency.",
+                  "explanation": "Incorrect: profit still reported."
+                },
+                "D": {
+                  "text": "It uses sustainability scores to justify higher product prices, boosting revenue.",
+                  "explanation": "Incorrect: price strategy not mentioned."
+                },
+                "E": {
+                  "text": "It isolates sustainability data in a separate report, preventing stakeholder insight.",
+                  "explanation": "Incorrect: data is combined, not isolated."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Literature] | [Skill: Logical Structure Analysis] | [Vocabulary: <competency>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Literature",
+            "topic: Logical Structure Analysis",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, the rapid adoption of remote work has fundamentally reshaped corporate culture, prompting organizations to reevaluate traditional notions of collaboration, productivity, and employee engagement. While some executives argue that virtual environments erode informal networking opportunities, recent studies suggest that digital communication tools can foster new forms of interaction that are both efficient and inclusive, especially when complemented by intentional virtual social initiatives."
+            },
+            {
+              "para": "Nevertheless, the transition to a predominantly digital workspace is not without obstacles; disparities in technology access, varying digital literacy levels, and the blurring of work-life boundaries can undermine the promised gains. To address these issues, forward‑thinking firms are implementing structured onboarding programs, offering flexible scheduling policies, and leveraging data‑driven analytics to monitor employee well‑being, thereby creating a more resilient and adaptable organizational ecosystem."
+            }
+          ],
+          "questiontitle": "",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why do forward‑thinking firms emphasize data‑driven analytics when implementing remote work policies?",
+              "title": "Remote Work Analytics: Evaluating Data‑Driven Employee Well‑Being Metrics",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To monitor employee well‑being and adjust policies for a resilient ecosystem",
+                  "explanation": "Correct: aligns with passage emphasis on analytics for well‑being."
+                },
+                "B": {
+                  "text": "To cut operational costs by automating all management tasks",
+                  "explanation": "Incorrect: passage mentions benefits, not cost‑cutting automation."
+                },
+                "C": {
+                  "text": "To increase the speed of virtual networking among employees",
+                  "explanation": "Incorrect: networking is discussed as a challenge, not a primary analytics goal."
+                },
+                "D": {
+                  "text": "To comply with government regulations on remote work",
+                  "explanation": "Incorrect: no regulatory compliance is mentioned in the passage."
+                },
+                "E": {
+                  "text": "To replace human managers with AI decision‑making",
+                  "explanation": "Incorrect: passage talks about analytics supporting managers, not replacing them."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Assumption Question] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, what primary benefit do forward‑thinking firms seek by integrating data‑driven analytics into their remote‑work strategies?",
+              "title": "Quantitative Remote Work Analytics: Assessing Employee Well‑Being Impact",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To monitor employee well‑being and adjust policies for a resilient ecosystem",
+                  "explanation": "Correct: matches passage emphasis on analytics for well‑being."
+                },
+                "B": {
+                  "text": "To reduce operational costs by automating all management tasks",
+                  "explanation": "Incorrect: passage does not mention cost‑cutting automation."
+                },
+                "C": {
+                  "text": "To accelerate virtual networking speed among employees",
+                  "explanation": "Incorrect: networking is presented as a challenge, not a primary analytics goal."
+                },
+                "D": {
+                  "text": "To ensure compliance with government remote‑work regulations",
+                  "explanation": "Incorrect: no regulatory compliance is discussed."
+                },
+                "E": {
+                  "text": "To replace human managers with AI decision‑making",
+                  "explanation": "Incorrect: analytics support managers, not replace them."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Supporting Details] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Anthropology & Sociology] | [Skill: Main Idea Comprehension] | [Vocabulary: <catalyst>] | [Difficulty: <5>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "topic: Main Idea Comprehension",
+            "question-type: Reading Comprehension",
+            "theme: Anthropology & Sociology"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid adoption of remote work was initially framed as a temporary response to a global crisis, many firms now regard it as a permanent restructuring of corporate culture; consequently, managers must reconcile the benefits of geographic flexibility with the challenges of sustaining cohesive team dynamics, a tension that has prompted a surge in investment toward digital collaboration platforms."
+            },
+            {
+              "para": "Albeit the proliferation of virtual workspaces has yielded measurable gains in individual output, it simultaneously obscures traditional metrics of collective performance; as a result, organizations are increasingly deploying advanced analytics and AI-driven dashboards to quantify collaboration efficacy, thereby navigating the paradox of heightened autonomy versus the need for transparent accountability."
+            }
+          ],
+          "title": "Analyzing Remote Work Impact on Collaboration Metrics and Organizational Efficiency",
+          "child-questions": [
+            {
+              "question": "Considering the passage, what is the most significant tension that organizations must resolve when adopting AI‑driven collaboration analytics for remote teams?",
+              "title": "Quantitative Tension in AI-Driven Remote Collaboration Analytics",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Maintaining employee privacy while collecting detailed performance data",
+                  "explanation": "Relevant concern but not the central tension highlighted."
+                },
+                "B": {
+                  "text": "Ensuring cost‑effectiveness of AI tools versus their implementation speed",
+                  "explanation": "Financial trade‑off, secondary to the core issue."
+                },
+                "C": {
+                  "text": "Balancing geographic flexibility with cohesive team dynamics",
+                  "explanation": "Important earlier tension, but less specific to AI analytics adoption."
+                },
+                "D": {
+                  "text": "Reconciling heightened autonomy with the need for transparent accountability",
+                  "explanation": "Directly reflects the paradox described in the passage."
+                },
+                "E": {
+                  "text": "Integrating AI analytics with existing legacy IT systems",
+                  "explanation": "Technical integration challenge, not the primary tension."
+                }
+              },
+              "answer": [
+                "D"
+              ],
+              "prompt": "[Skill: Conclusion Question] | [Difficulty: <2>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, which factor most directly creates a conflict between the autonomy afforded by remote work and the need for measurable team performance when implementing AI‑driven analytics?",
+              "title": "Assessing Autonomy‑Performance Trade‑off in AI‑Driven Remote Collaboration Metrics",
+              "solution": "**Step 1:** Identify that the question asks which factor creates conflict between autonomy and measurable performance when using AI analytics.\n**Step 2:** The passage states that heightened autonomy clashes with the need for transparent accountability.\n**Step 3:** Verify that this directly matches the described paradox.\n**Step 4:** Distractor A concerns privacy, not the core tension; Distractor C mentions geographic flexibility, which is less specific to AI analytics.",
+              "options": {
+                "A": {
+                  "text": "Ensuring employee privacy while collecting detailed performance data",
+                  "explanation": "Relevant concern but not the primary conflict described."
+                },
+                "B": {
+                  "text": "Balancing cost‑effectiveness of AI tools versus implementation speed",
+                  "explanation": "Financial trade‑off, secondary to the autonomy‑performance tension."
+                },
+                "C": {
+                  "text": "Maintaining geographic flexibility while preserving team cohesion",
+                  "explanation": "Related to remote work but not specific to AI‑driven analytics."
+                },
+                "D": {
+                  "text": "Reconciling heightened autonomy with the need for transparent accountability",
+                  "explanation": "Directly captures the paradox highlighted in the passage."
+                },
+                "E": {
+                  "text": "Integrating AI analytics with legacy IT infrastructure",
+                  "explanation": "Technical integration issue, not the core conflict."
+                }
+              },
+              "answer": [
+                "D"
+              ],
+              "prompt": "[Skill: Main Idea Question] | [Difficulty: <2>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Cognitive Science & Psychology] | [Skill: Inference Making] | [Vocabulary: <amplify>] | [Difficulty: <2>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "theme: Cognitive Science & Psychology",
+            "topic: Inference Making",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although many firms have hailed remote work as a catalyst for heightened productivity, the reality is more nuanced; while some employees thrive in the autonomy it offers, others experience a subtle erosion of collaborative spirit, which, albeit unintentional, can undermine the very innovation that such flexibility was meant to foster."
+            },
+            {
+              "para": "Consequently, managers are increasingly experimenting with hybrid models that blend in‑person interaction with remote flexibility, seeking to preserve the serendipitous exchanges that spark creativity while still granting employees the latitude to manage their own schedules, a balance that, if achieved, could reconcile the competing demands of efficiency and collaborative vitality."
+            }
+          ],
+          "title": "Optimizing Hybrid Work Models: Balancing Productivity and Collaboration",
+          "child-questions": [
+            {
+              "question": "Which of the following best explains why managers might adopt hybrid work models despite concerns about collaborative erosion?",
+              "title": "Hybrid Work Adoption: Quantitative Trade‑off Analysis of Productivity vs Collaboration",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"Hybrid models retain in‑person interaction, preserving spontaneous collaboration while offering remote flexibility.\",\n      \"explanation\": \"Correct: balances collaboration and flexibility.\"\n    },\n    \"B\": {\n      \"text\": \"Hybrid models reduce overall costs by eliminating office space entirely.\",\n      \"explanation\": \"Incorrect: hybrid still uses office space.\"\n    },\n    \"C\": {\n      \"text\": \"Hybrid models simplify performance monitoring through standardized schedules.\",\n      \"explanation\": \"Incorrect: standardization is not primary driver.\"\n    },\n    \"D\": {\n      \"text\": \"Hybrid models increase employee autonomy",
+              "prompt": "[Skill: Assumption Question] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Which of the following best explains why managers might adopt hybrid work models despite concerns about collaborative erosion?",
+              "title": "Hybrid Work Decision: Quantitative Trade‑off of Productivity vs Collaboration",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"Retains in‑person interaction while offering remote flexibility\",\n      \"explanation\": \"Correct: balances collaboration and flexibility\"\n    },\n    \"B\": {\n      \"text\": \"Eliminates all office costs\",\n      \"explanation\": \"Incorrect: hybrid still uses office space\"\n    },\n    \"C\": {\n      \"text\": \"Standardizes schedules for easier monitoring\",\n      \"explanation\": \"Incorrect: not primary driver for adoption\"\n    },\n    \"D\": {\n      \"text\": \"Increases employee autonomy",
+              "prompt": "[Skill: Supporting Details] | [Difficulty: <3>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Comparative Analysis and Perspective Recognition] | [Vocabulary: <anchor (as in: stabilize)>] | [Difficulty: <3>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "topic: Comparative Analysis and Perspective Recognition",
+            "question-type: Reading Comprehension",
+            "theme: Natural Sciences (Biology, Physics, Chemistry)"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid adoption of remote work was initially framed as a temporary response to an unprecedented crisis, many corporations now regard it as a permanent restructuring of organizational culture, recognizing that the flexibility it affords can simultaneously enhance employee satisfaction and erode traditional mechanisms of informal mentorship, thereby compelling managers to devise novel strategies for fostering cohesion across dispersed teams."
+            },
+            {
+              "para": "In response, several firms have implemented hybrid models that blend in‑person collaboration with virtual interaction, leveraging digital platforms to simulate spontaneous brainstorming sessions while instituting regular check‑ins to mitigate isolation; nevertheless, critics argue that such approaches may inadvertently privilege employees with superior home office setups, potentially widening socioeconomic disparities within the workforce."
+            }
+          ],
+          "title": "Evaluating Hybrid Work Models: Cost‑Benefit Analysis of Organizational Cohesion",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why would managers continue to adopt hybrid work models despite concerns that they may widen socioeconomic disparities among employees?",
+              "title": "Hybrid Work Adoption: Cost‑Benefit Reasoning and Socioeconomic Impact",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Benefits to cohesion and satisfaction outweigh disparity risks",
+                  "explanation": "Correct: aligns with passage reasoning."
+                },
+                "B": {
+                  "text": "Cost reduction through office space cuts",
+                  "explanation": "Incorrect: not emphasized in passage."
+                },
+                "C": {
+                  "text": "Eliminate all socioeconomic differences",
+                  "explanation": "Incorrect: unrealistic goal not stated."
+                },
+                "D": {
+                  "text": "Remote work is a temporary trend",
+                  "explanation": "Incorrect: passage says hybrid is permanent."
+                },
+                "E": {
+                  "text": "Legal mandates force hybrid adoption",
+                  "explanation": "Incorrect: no legal pressure mentioned."
+                }
+              },
+              "answer": "A",
+              "prompt": "[Skill: Supporting Details] | [Difficulty: <2>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "According to the passage, why do firms continue implementing hybrid work models despite criticism that they may increase socioeconomic disparities among employees?",
+              "title": "Hybrid Work Adoption: Cost‑Benefit Analysis of Cohesion vs Disparity",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"Managers value cohesion and satisfaction despite disparity concerns\", \"explanation\": \"Correct: aligns with passage reasoning.\" },\n    \"B\": { \"text\": \"Hybrid models cut operational costs significantly\", \"explanation\": \"Incorrect: cost reduction not emphasized.\" },\n    \"C\": { \"text\": \"Hybrid work eliminates all socioeconomic gaps\", \"explanation\": \"Incorrect: unrealistic claim not stated.\" },\n    \"D\": { \"text\": \"Remote work is only a temporary measure\", \"explanation\": \"Incorrect: passage says hybrid is permanent.\" },\n    \"E\": { \"text\": \"Legal regulations force hybrid adoption\", \"explanation\": \"Incorrect",
+              "prompt": "[Skill: Author's Purpose] | [Difficulty: <2>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Economics] | [Skill: Evidence-Based Reasoning] | [Vocabulary: <collect>] | [Difficulty: <2>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "topic: Evidence-Based Reasoning",
+            "theme: Economics",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the rapid expansion of digital platforms has ostensibly democratized access to global markets, the underlying algorithmic structures often reinforce existing inequities; firms that can leverage advanced data analytics tend to capture disproportionate shares of consumer attention, thereby marginalizing smaller competitors whose resources are insufficient to sustain continuous optimization cycles."
+            },
+            {
+              "para": "Consequently, policymakers are urged to consider regulatory frameworks that promote data transparency and equitable algorithmic governance, ensuring that market entry barriers are lowered and that innovation is not monopolized by a handful of data-rich enterprises."
+            }
+          ],
+          "title": "Analyzing Algorithmic Market Concentration and Regulatory Implications in Digital Platforms",
+          "child-questions": [
+            {
+              "question": "Which statement most accurately reflects the author's view on how algorithmic structures affect market competition and the role of policy?",
+              "title": "Algorithmic Market Concentration and Policy: Herfindahl Index Analysis",
+              "questionsolution": "{\n  \"solution\": \"",
+              "options": {
+                "A": {
+                  "text": "Algorithmic structures tend to concentrate market power, and policymakers should enforce transparency to level the playing field.",
+                  "explanation": "Matches the author's view on concentration and need for policy."
+                },
+                "B": {
+                  "text": "Algorithmic structures have no impact on competition; policy is unnecessary.",
+                  "explanation": "Contradicts the passage's claim of inequities."
+                },
+                "C": {
+                  "text": "The author argues that smaller firms can easily compete without data analytics.",
+                  "explanation": "Opposite of the passage's point about resource constraints."
+                },
+                "D": {
+                  "text": "Regulatory frameworks that promote data transparency can mitigate the inequities caused by algorithmic dominance.",
+                  "explanation": "Reflects the author's call for policy intervention."
+                },
+                "E": {
+                  "text": "The passage suggests that market concentration is solely due to consumer preferences, not algorithmic design.",
+                  "explanation": "Ignores the algorithmic cause highlighted in the text."
+                }
+              },
+              "answer": [
+                "A",
+                "D"
+              ],
+              "prompt": "[Skill: Tone and Attitude] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, why does the author argue that regulatory frameworks promoting data transparency are essential for maintaining fair competition in digital markets?",
+              "title": "Regulatory Transparency: Market Concentration via Herfindahl Index",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Algorithmic structures concentrate market power, so transparency can level the playing field.",
+                  "explanation": "Matches author’s claim on concentration and need for policy."
+                },
+                "B": {
+                  "text": "Consumer preferences alone determine outcomes; policy is unnecessary.",
+                  "explanation": "Contradicts passage’s emphasis on algorithmic inequities."
+                },
+                "C": {
+                  "text": "Smaller firms already have equal data analytics access, so no regulation needed.",
+                  "explanation": "Opposes the passage’s point about resource constraints."
+                },
+                "D": {
+                  "text": "Data transparency reduces information asymmetry, mitigating inequities from algorithmic dominance.",
+                  "explanation": "Reflects author’s call for regulatory intervention."
+                },
+                "E": {
+                  "text": "Regulatory frameworks mainly aim to increase tax revenue, not competition.",
+                  "explanation": "Irrelevant to the passage’s focus on market fairness."
+                }
+              },
+              "answer": [
+                "A",
+                "D"
+              ],
+              "prompt": "[Skill: Tone and Attitude] | [Difficulty: <5>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Business (Marketing, Strategy, Finance)] | [Skill: Assumption and Bias Identification] | [Vocabulary: <coordinate>] | [Difficulty: <5>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "theme: Business (Marketing, Strategy, Finance)",
+            "question-type: Reading Comprehension",
+            "topic: Assumption and Bias Identification"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the early nineteenth‑century textile mills were lauded for their unprecedented productivity, they simultaneously engendered a paradoxical decline in artisanal craftsmanship, as the relentless rhythm of mechanized looms eclipsed the nuanced skill of hand‑woven fabrics; this tension between industrial efficiency and traditional artistry continues to inform contemporary debates on sustainable manufacturing practices."
+            },
+            {
+              "para": "In response, contemporary firms have begun integrating circular economy principles—such as modular design, material recyclability, and localized production hubs—to reconcile the scale advantages of automation with the preservation of artisanal techniques, thereby seeking to satisfy both market efficiency and the growing consumer preference for ethically sourced, heritage‑inspired goods."
+            }
+          ],
+          "title": "Industrial Efficiency vs Artisanal Craftsmanship in Sustainable Manufacturing",
+          "child-questions": [
+            {
+              "question": "Which of the following best explains why contemporary firms adopt circular‑economy practices such as modular design and localized hubs, according to the passage?",
+              "title": "Cost‑Benefit Reasoning for Circular‑Economy Adoption in Business",
+              "solution": "Step 1: **Setup** – The question asks for the reason firms adopt circular‑economy practices.  \nStep 2: **Execution** – The passage states firms seek to reconcile automation’s scale advantages with preserving artisanal techniques and to satisfy growing consumer demand for ethically sourced, heritage‑inspired goods.  \nStep 3: **Verification** – This aligns directly with the text’s explanation of balancing market efficiency and consumer preferences.  \nStep 4: **Distractor** – The option suggesting firms adopt solely for cost reduction is wrong because the passage emphasizes ethical and artistic motives, not just expense.",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"To balance efficiency with consumer demand for ethical, heritage‑inspired goods\", \"explanation\": \"Correct: matches passage.\"\" },\n    \"B\": { \"text\": \"To lower production costs through economies of scale\", \"explanation\": \"Incorrect: passage emphasizes ethical/artistic motives, not cost.\" },\n    \"C\": { \"text\": \"To comply with government environmental regulations\", \"explanation\": \"Incorrect: regulation not mentioned as primary driver.\" },\n    \"D\": { \"text\": \"To showcase cutting‑edge technological innovation\", \"explanation\": \"Incorrect: focus is on preserving tradition, not tech showcase.\" },\n    \"E\": { \"text\": \"To increase short‑term profit margins\", \"explanation\": \"Incorrect: passage stresses long‑term sustainability over short‑term profit.\" }\n  },\n  \"answer\": \"A\"\n}",
+              "prompt": "[Skill: Tone and Attitude] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "What primary challenge do contemporary firms aim to address by integrating circular‑economy principles such as modular design and localized production hubs, according to the passage?",
+              "title": "Strategic Trade‑off Analysis: Circular‑Economy Integration Challenge",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Balancing market efficiency with consumer demand for ethical, heritage‑inspired goods",
+                  "explanation": "Correct: matches the passage's primary challenge."
+                },
+                "B": {
+                  "text": "Reducing production costs through economies of scale",
+                  "explanation": "Incorrect: focus is on ethical/artisan goals, not cost."
+                },
+                "C": {
+                  "text": "Complying with government environmental regulations",
+                  "explanation": "Incorrect: regulations not cited as the main driver."
+                },
+                "D": {
+                  "text": "Showcasing cutting‑edge technological innovation",
+                  "explanation": "Incorrect: emphasis is on preserving tradition, not tech showcase."
+                },
+                "E": {
+                  "text": "Increasing short‑term profit margins",
+                  "explanation": "Incorrect: passage stresses long‑term sustainability over short‑term profit."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Author's Purpose] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Philosophy] | [Skill: Vocabulary in Context] | [Vocabulary: <cohesive>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "theme: Philosophy",
+            "topic: Vocabulary in Context",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "During the fiscal year 2023, GreenTech Solutions, a mid‑size manufacturer of renewable‑energy components, announced a comprehensive overhaul of its supply‑chain logistics to reduce carbon emissions by 30% within three years. The initiative includes partnering with regional suppliers who adhere to certified green practices, investing in electric delivery fleets, and implementing real‑time emissions monitoring across all distribution centers."
+            }
+          ],
+          "question": "Considering GreenTech Solutions' goal to cut carbon emissions by 30% through real‑time monitoring, partnering with certified suppliers, and electric fleets, which factor is most likely to impede the timely implementation of the emissions‑tracking system across its distribution centers?",
+          "title": "Primary Barrier to GreenTech's Real‑Time Emissions Monitoring Implementation",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "IT infrastructure gaps",
+              "explanation": "Focuses on technology but the system can be upgraded."
+            },
+            "B": {
+              "text": "Supplier certification shortage",
+              "explanation": "Suppliers can be vetted later; not immediate blocker."
+            },
+            "C": {
+              "text": "Staff training deficiencies",
+              "explanation": "Without trained personnel, real‑time monitoring cannot be used effectively."
+            },
+            "D": {
+              "text": "Electric fleet cost",
+              "explanation": "Cost is financial, not a timing issue for monitoring rollout."
+            },
+            "E": {
+              "text": "Regulatory delays",
+              "explanation": "Regulations affect reporting, not system implementation speed."
+            }
+          },
+          "answer": "C",
+          "prompt": "[Theme: Geography] | [Skill: Identify the Assumption] | [Vocabulary: <abstract>] | [Difficulty: <3>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "topic: Identify the Assumption",
+            "theme: Geography"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Acme Corp recently implemented a tiered pricing strategy for its flagship software, segmenting customers into small, medium, and large enterprises. The strategy aimed to increase revenue by capturing price-sensitive small firms while preserving premium margins for larger clients. Early sales data indicate a 12% rise in total revenue, but a 5% decline in average contract size for the small segment."
+            }
+          ],
+          "question": "Given Acme Corp’s tiered pricing results, which of the following most plausibly explains the observed 12% total‑revenue increase despite a 5% drop in average contract size for small‑enterprise customers?",
+          "title": "Analyzing Tiered Pricing Revenue Impact for Acme Corp",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Increased market share among small firms offsetting the lower contract size.",
+              "explanation": "Correct: higher volume can raise total revenue despite smaller contracts."
+            },
+            "B": {
+              "text": "Higher prices for large enterprises alone drove the revenue gain.",
+              "explanation": "Incorrect: large‑client margin preservation is assumed constant, not a driver."
+            },
+            "C": {
+              "text": "A reduction in discounting for medium‑size customers boosted overall sales.",
+              "explanation": "Incorrect: medium segment not mentioned in the data."
+            },
+            "D": {
+              "text": "Improved operational efficiency reduced costs, inflating profit margins.",
+              "explanation": "Incorrect: the metric discussed is revenue, not profit."
+            },
+            "E": {
+              "text": "A seasonal market upswing unrelated to pricing caused the rise.",
+              "explanation": "Incorrect: the passage attributes the rise to the tiered pricing strategy."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Cognitive Science & Psychology] | [Skill: Strengthen the Argument] | [Vocabulary: <critical-mass>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "theme: Cognitive Science & Psychology",
+            "topic: Strengthen the Argument"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In 2023, GreenTech Industries announced a strategic pivot toward sustainable sourcing, committing to procure 80% of its raw materials from certified eco‑friendly suppliers within five years. The initiative, driven by rising consumer demand for green products and tightening regulatory standards, aims to reduce the company's carbon footprint while maintaining profitability."
+            }
+          ],
+          "question": "Considering GreenTech’s pledge to source 80% of raw materials from certified eco‑friendly suppliers within five years, which of the following most accurately reflects a potential challenge the company might face in balancing carbon‑reduction goals with profitability?",
+          "title": "Balancing Sustainable Sourcing Targets and Profitability for GreenTech",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Higher procurement costs from eco‑friendly suppliers may compress profit margins.",
+              "explanation": "Correct – cost increase directly pressures profitability."
+            },
+            "B": {
+              "text": "Consumer demand for green products will automatically increase revenue, offsetting costs.",
+              "explanation": "Incorrect – demand does not guarantee sufficient revenue to cover higher costs."
+            },
+            "C": {
+              "text": "Regulatory standards will relax, making sustainability less relevant.",
+              "explanation": "Incorrect – current trend is tightening regulations, not relaxation."
+            },
+            "D": {
+              "text": "Switching suppliers will improve supply chain efficiency, reducing costs.",
+              "explanation": "Incorrect – new sustainable suppliers often require transition time and may not be more efficient."
+            },
+            "E": {
+              "text": "Eco‑friendly certification guarantees lower material quality, boosting sales.",
+              "explanation": "Incorrect – lower quality is not a guaranteed outcome and would not boost sales."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: History] | [Skill: Weaken the Argument] | [Vocabulary: <allude>] | [Difficulty: <3>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "theme: History",
+            "topic: Weaken the Argument"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In recent years, multinational corporations have increasingly adopted hybrid work models, balancing remote flexibility with in‑office collaboration. A 2023 survey of 1,200 executives revealed that 68% of firms reported higher employee satisfaction, yet 42% cited challenges in maintaining corporate culture. Analysts suggest that effective digital communication tools and clear performance metrics are essential to mitigate these issues."
+            }
+          ],
+          "question": "Based on the survey, which of the following strategies most directly addresses the 42% of firms that struggle with maintaining corporate culture in a hybrid model?",
+          "title": "Hybrid Work Culture Challenge: Selecting Strategy for 42% of Firms",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"Deploy a unified digital communication platform with integrated performance dashboards.\",\n      \"explanation\": \"Correct: directly ties communication tools and metrics to cultural maintenance.\"\n    },\n    \"B\": {\n      \"text\": \"Increase in‑office days to five per week.\",\n      \"explanation\": \"Incorrect: assumes physical presence alone fixes culture.\"\n    },\n    \"C\": {\n      \"text\": \"Offer higher salaries to remote employees.\",\n      \"explanation\": \"Incorrect: financial incentives don't address cultural cohesion.\"\n    },\n    \"D\": {",
+          "prompt": "[Theme: Art] | [Skill: Evaluate the Argument] | [Vocabulary: <amalgamate>] | [Difficulty: <2>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "theme: Art",
+            "question-type: Critical Reasoning",
+            "topic: Evaluate the Argument"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In the rapidly evolving landscape of global supply chains, firms increasingly rely on integrated digital platforms to synchronize production, inventory, and distribution across multiple regions, balancing cost efficiency with the need for resilience against disruptions such as geopolitical tensions or natural disasters."
+            }
+          ],
+          "question": "According to the passage, why might a firm choose to invest in a more resilient digital supply‑chain platform rather than solely pursuing the lowest possible production cost when faced with heightened geopolitical tensions?",
+          "title": "Cost‑Benefit Reasoning for Resilient Digital Supply‑Chain Investment",
+          "solution": "**Step 1: Setup** – Identify the core issue: choosing resilience over minimal cost amid geopolitical risk. \n**Step 2: Execution** – Recognize that disruptions raise *expected loss* $L$, while a resilient platform reduces $L$ at a higher upfront cost $C_{high}$. \n**Step 3: Verification** – Compare total expected cost: $C_{high}+L_{reduced}$ vs $C_{low}+L_{high}$. \n**Step 4: Distractors** – The option suggesting \"lower cost always wins\" ignores $L$.\n**Conclusion** – Investing in resilience minimizes total expected cost. \n**Flaw/Assumption** – Assuming cost is the sole factor. \n**Correct option** – Addresses risk by accounting for potential loss.",
+          "options": {
+            "A": {
+              "text": "Invest in resilient platform despite higher upfront cost.",
+              "explanation": "Correct: accounts for risk‑adjusted total cost."
+            },
+            "B": {
+              "text": "Choose lowest cost platform ignoring risk.",
+              "explanation": "Incorrect: overlooks potential loss from disruptions."
+            },
+            "C": {
+              "text": "Delay any investment until risk materializes.",
+              "explanation": "Incorrect: postpones mitigation, increasing exposure."
+            },
+            "D": {
+              "text": "Outsource risk to third‑party insurers only.",
+              "explanation": "Incorrect: insurance may not cover all operational impacts."
+            },
+            "E": {
+              "text": "Focus solely on inventory turnover speed.",
+              "explanation": "Incorrect: ignores resilience and cost‑benefit balance."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Anthropology & Sociology] | [Skill: Identify the Assumption] | [Vocabulary: <acclimate>] | [Difficulty: <3>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "topic: Identify the Assumption",
+            "theme: Anthropology & Sociology"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Acme Corp, a mid-sized electronics manufacturer, recently faced a sharp increase in component costs due to a geopolitical trade embargo affecting its primary supplier in Southeast Asia. To maintain profit margins, the firm considered three strategies: renegotiating contracts, sourcing alternatives from a different region, or investing in vertical integration."
+            }
+          ],
+          "question": "Considering the trade embargo and Acme Corp’s need to preserve profit margins, which of the three proposed strategies—renegotiating contracts, sourcing alternatives from a different region, or investing in vertical integration—most effectively balances short‑term cost control with long‑term competitive advantage?",
+          "title": "Strategic Cost‑Benefit Analysis: Acme Corp’s Supply‑Chain Decision",
+          "solution": "**Step 1 – Setup:** Identify the goal: balance *short‑term cost control* with *long‑term competitive advantage*.\n**Step 2 – Execution:** Evaluate each option. Renegotiating contracts offers immediate savings but limited strategic gain. Vertical integration provides future control but requires large upfront investment and time. Sourcing alternatives from another region reduces costs quickly **and** diversifies supply, enhancing resilience.\n**Step 3 – Verification:** The alternative strategy meets both criteria.\n**Step 4 – Distractor:** Renegotiating contracts fails the long‑term advantage test.\n**Conclusion:** Choose *sourcing alternatives*. \n**Flaw/Assumption:** Assuming cost alone drives advantage; diversification adds strategic value. \n**Correct Option:** It addresses immediate cost reduction **and** builds long‑term supply‑chain strength.",
+          "options": {
+            "A": {
+              "text": "Source alternatives from a different region",
+              "explanation": "Balances immediate cost reduction and supply diversification."
+            },
+            "B": {
+              "text": "Renegotiate contracts with current supplier",
+              "explanation": "Provides short‑term savings but limited long‑term advantage."
+            },
+            "C": {
+              "text": "Invest in vertical integration",
+              "explanation": "High upfront cost and time, may not address immediate margin pressure."
+            },
+            "D": {
+              "text": "Pass the cost increase to customers",
+              "explanation": "Risks demand loss; not a strategic supply‑chain solution."
+            },
+            "E": {
+              "text": "Reduce product quality to cut costs",
+              "explanation": "Undermines brand value; not a viable long‑term strategy."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Finance] | [Skill: Evaluate the Argument] | [Vocabulary: <dichotomy>] | [Difficulty: <4>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "theme: Finance",
+            "topic: Evaluate the Argument"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "EcoTech Industries, a mid‑size manufacturer of electronic components, announced in Q2 2025 a strategic shift toward renewable energy sources. The company plans to invest $120 million over the next three years to retrofit its factories with solar panels and wind turbines, aiming to reduce its carbon footprint by 35 % while maintaining a projected annual revenue growth of 8 %."
+            }
+          ],
+          "question": "Considering EcoTech's $120 million investment to retrofit factories with solar panels and wind turbines, which of the following most likely represents a strategic challenge that could impede its goal of maintaining an 8 % annual revenue growth while cutting carbon emissions by 35 %?",
+          "title": "Strategic Risk Assessment of EcoTech's $120M Renewable Investment",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Insufficient capital allocation for R&D",
+              "explanation": "R&D funding is unrelated to renewable retrofitting."
+            },
+            "B": {
+              "text": "Higher operational costs due to maintenance of new equipment",
+              "explanation": "Maintenance can erode profit margins, threatening revenue growth."
+            },
+            "C": {
+              "text": "Regulatory delays in permitting solar and wind installations",
+              "explanation": "Delays postpone benefits, affecting both carbon reduction and revenue targets."
+            },
+            "D": {
+              "text": "Increased competition from low‑cost overseas manufacturers",
+              "explanation": "Competition impacts market share but not directly the retrofit project."
+            },
+            "E": {
+              "text": "Currency exchange rate fluctuations affecting import of components",
+              "explanation": "Exchange rates affect costs but are less central than operational challenges."
+            }
+          },
+          "answer": "B",
+          "prompt": "[Theme: Anthropology & Sociology] | [Skill: Resolve a Paradox/Discrepancy] | [Vocabulary: <corporate>] | [Difficulty: <1>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 1,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "topic: Resolve a Paradox/Discrepancy",
+            "theme: Anthropology & Sociology"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although many analysts have hailed remote work as a panacea for urban congestion, the reality is more nuanced; while it reduces commuter traffic, it also erodes the tax base of city centers, thereby challenging municipal budgets that depend on office‑related revenues."
+            },
+            {
+              "para": "Moreover, firms that embraced flexible schedules report mixed productivity outcomes; some departments experience heightened collaboration through digital tools, while others struggle with coordination across time zones, prompting managers to redesign performance metrics and invest in asynchronous communication platforms."
+            }
+          ],
+          "title": "Assessing Remote Work's Fiscal Impact and Productivity Trade‑offs in Urban Business Context",
+          "child-questions": [
+            {
+              "question": "According to the passage, what is the primary challenge that municipal budgets face as a result of increased remote work, and how does this relate to firms` efforts to redesign performance metrics?",
+              "title": "Fiscal Impact of Remote Work on Municipal Budgets and Metric Redesign",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"Erosion of the urban tax base, prompting firms to redesign metrics to address productivity shifts.\", \"explanation\": \"Correct: matches passage.\".\" },\n    \"B\": { \"text\": \"Increased traffic congestion, leading firms to invest in commuting incentives.\", \"explanation\": \"Incorrect: passage says traffic decreases.\" },\n    \"C\": { \"text\": \"Higher office rent revenues, causing firms to cut remote work policies.\", \"explanation\": \"Incorrect: tax base erodes, not rises.\" },\n    \"D\": { \"text\": \"Reduced demand for digital tools, forcing firms to revert to face‑to‑face meetings.\", \"explanation\": \"Incorrect: passage notes heightened digital collaboration.\" },\n    \"E\": { \"text\": \"Improved municipal services, allowing firms to maintain existing performance metrics.\", \"explanation\": \"Incorrect: municipal budgets are challenged, not improved.\" }\n  },\n  \"answer\": \"A\"\n}",
+              "prompt": "[Skill: Supporting Details] | [Difficulty: <2>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, which factor most directly undermines municipal fiscal stability due to remote work, and what implication does this have for companies adjusting their performance measurement systems?",
+              "title": "Remote Work Fiscal Impact on Municipal Budgets and Metric Redesign",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "Erosion of the urban tax base, prompting firms to redesign metrics to address productivity shifts.",
+                  "explanation": "Correct: matches passage."
+                },
+                "B": {
+                  "text": "Increased traffic congestion, leading firms to invest in commuting incentives.",
+                  "explanation": "Incorrect: passage says traffic decreases."
+                },
+                "C": {
+                  "text": "Higher office rent revenues, causing firms to cut remote work policies.",
+                  "explanation": "Incorrect: tax base erodes, not rises."
+                },
+                "D": {
+                  "text": "Reduced demand for digital tools, forcing firms to revert to face‑to‑face meetings.",
+                  "explanation": "Incorrect: passage notes heightened digital collaboration."
+                },
+                "E": {
+                  "text": "Improved municipal services, allowing firms to maintain existing performance metrics.",
+                  "explanation": "Incorrect: municipal budgets are challenged, not improved."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Inference Question] | [Difficulty: <2>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-L] | [Theme: Linguistics & Language Acquisition] | [Skill: Logical Structure Analysis] | [Vocabulary: <automate>] | [Difficulty: <2>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 2,
+          "options_type": "single",
+          "tags": [
+            "topic: Logical Structure Analysis",
+            "theme: Linguistics & Language Acquisition",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "Although the global market has experienced unprecedented volatility, firms that prioritize sustainable supply chains have demonstrated a modest yet consistent increase in consumer trust, thereby offsetting short‑term profit fluctuations; this trend suggests that long‑term strategic investments in environmental stewardship may outweigh immediate financial pressures."
+            },
+            {
+              "para": "Consequently, analysts recommend integrating lifecycle assessment metrics into quarterly reporting, as empirical evidence indicates that transparent disclosure of carbon footprints not only enhances stakeholder confidence but also attracts premium investment capital, thereby reinforcing the competitive advantage of firms that embed sustainability into their core operational strategies."
+            }
+          ],
+          "questiontitle": "",
+          "child-questions": [
+            {
+              "question": "According to the passage, why do analysts recommend embedding lifecycle assessment metrics in quarterly reports for firms that prioritize sustainable supply chains?",
+              "title": "Sustainability ROI: Why Embed Lifecycle Metrics in Quarterly Reports",
+              "questionsolution": "",
+              "options": {
+                "A": {
+                  "text": "To improve transparency of carbon footprints, which builds stakeholder confidence and attracts premium capital.",
+                  "explanation": "Correct – aligns with passage claim."
+                },
+                "B": {
+                  "text": "To comply with government regulations on emissions reporting.",
+                  "explanation": "Incorrect – regulation not mentioned."
+                },
+                "C": {
+                  "text": "To reduce short‑term profit fluctuations by cutting operational costs.",
+                  "explanation": "Incorrect – focus is on confidence, not cost cutting."
+                },
+                "D": {
+                  "text": "To demonstrate long‑term strategic commitment to environmental stewardship, enhancing competitive advantage.",
+                  "explanation": "Correct – matches passage rationale."
+                },
+                "E": {
+                  "text": "To increase market share through aggressive advertising of sustainability initiatives.",
+                  "explanation": "Incorrect – advertising not discussed."
+                }
+              },
+              "answer": [
+                "A",
+                "D"
+              ],
+              "prompt": "[Skill: Author's Purpose] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, which statement best explains why integrating lifecycle assessment metrics into quarterly reports is expected to strengthen a firm’s competitive advantage?",
+              "title": "Sustainability Reporting: Inference on Competitive Advantage",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"To comply with government emissions regulations.\",\n      \"explanation\": \"Incorrect – regulation not mentioned.\"\n    },\n    \"B\": {\n      \"text\": \"To reduce short‑term profit volatility by cutting costs.\",\n      \"explanation\": \"Incorrect – focus is on confidence, not cost.\"\n    },\n    \"C\": {\n      \"text\": \"To enhance stakeholder confidence and attract premium capital.\",\n      \"explanation\": \"Incorrect – passage stresses strategic commitment, not just confidence.\"\n    },",
+              "prompt": "[Skill: Weaken Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-M] | [Theme: Business (Marketing, Strategy, Finance)] | [Skill: Logical Structure Analysis] | [Vocabulary: <detriment>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Logical Structure Analysis",
+            "theme: Business (Marketing, Strategy, Finance)",
+            "question-type: Reading Comprehension"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In the early 2020s, several multinational corporations adopted a hybrid remote‑in‑office model, citing employee productivity data that showed a 12% increase in output when teams could choose their work environment. However, a subsequent internal audit revealed that the same data, when disaggregated by department, indicated a 7% decline in collaborative project success rates for R&D units, prompting senior leadership to reevaluate the balance between flexibility and structured teamwork."
+            }
+          ],
+          "question": "Based on the audit findings, which of the following actions would most effectively address the decline in R&D collaborative success while preserving the productivity gains of the hybrid model?",
+          "title": "Optimizing Hybrid Work: Strategies to Boost R&D Collaboration",
+          "questionsolution": "",
+          "options": {
+            "A": {
+              "text": "Schedule regular, mandatory in‑person sprint meetings for R&D while keeping flexible remote days",
+              "explanation": "Targets collaboration without removing flexibility."
+            },
+            "B": {
+              "text": "Eliminate remote work entirely for all departments",
+              "explanation": "Overly restrictive; would lose productivity gains."
+            },
+            "C": {
+              "text": "Increase individual performance bonuses based on output",
+              "explanation": "Focuses on output, not collaboration."
+            },
+            "D": {
+              "text": "Require R&D teams to use only asynchronous communication tools",
+              "explanation": "Reduces real‑time interaction, worsening collaboration."
+            },
+            "E": {
+              "text": "Shift R&D projects to external contractors",
+              "explanation": "Does not address internal teamwork issues."
+            }
+          },
+          "answer": "A",
+          "prompt": "[Theme: Artificial Intelligence & Ethics] | [Skill: Boldface Structure Analysis] | [Vocabulary: <bearish (as in: pessimistic market)>] | [Difficulty: <5>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "theme: Artificial Intelligence & Ethics",
+            "topic: Boldface Structure Analysis"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "In 2023, Acme Corp. expanded its renewable energy portfolio by acquiring two solar farms in the Southwest, increasing its generation capacity by 15% and reducing its carbon intensity by 8% per megawatt-hour. The acquisitions were financed through a mix of green bonds and retained earnings, and the company projects a 5% annual growth in clean energy revenue over the next five years."
+            }
+          ],
+          "question": "Considering Acme Corp’s 15% capacity increase and 8% carbon intensity reduction, which of the following statements most accurately reflects the likely impact on its projected clean‑energy revenue growth over the next five years?",
+          "title": "Acme Corp Renewable Capacity Expansion and Revenue Growth Impact",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"\", \"explanation\": \"\" },\n    \"B\": { \"text\": \"\", \"explanation\": \"\" },\n    \"C\": { \"text\": \"\",",
+          "prompt": "[Theme: Environmental Ethics & Philosophy] | [Skill: Identify the Flaw in Reasoning] | [Vocabulary: <accountability>] | [Difficulty: <3>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 3,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "topic: Identify the Flaw in Reasoning",
+            "theme: Environmental Ethics & Philosophy"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "para": "It is not uncommon for analysts to claim that artificial intelligence will render many traditional occupations obsolete, yet recent studies suggest that the technology often augments rather than replaces human labor. Although skeptics emphasize the displacement risk, the data reveal that sectors embracing AI have simultaneously generated new roles requiring hybrid skill sets, thereby reshaping the employment landscape without necessarily diminishing overall job availability."
+            },
+            {
+              "para": "Furthermore, longitudinal analyses indicate that organizations integrating AI-driven decision support systems experience measurable gains in productivity, yet they also report heightened demand for continuous employee training and interdisciplinary collaboration. This dual effect underscores a nuanced reality: while automation streamlines routine tasks, it simultaneously cultivates a labor market that values adaptability, critical thinking, and the ability to interpret complex algorithmic outputs."
+            }
+          ],
+          "title": "Assessing AI's Dual Impact on Employment Trends and Productivity Gains",
+          "child-questions": [
+            {
+              "question": "Based on the passage, why does the adoption of AI-driven decision support systems simultaneously boost productivity while raising the demand for continuous employee training and interdisciplinary collaboration?",
+              "title": "AI Adoption: Analyzing Productivity Gains vs Training Costs",
+              "questionsolution": "{\n  \"solution\": \"**Step",
+              "options": {
+                "A": {
+                  "text": "AI automates routine tasks, freeing employees to focus on higher‑value work, which raises productivity, but the new tools require ongoing training and cross‑functional teamwork to interpret algorithmic outputs.",
+                  "explanation": "Correct: captures both productivity boost and training need."
+                },
+                "B": {
+                  "text": "AI replaces all human labor, so productivity rises automatically without any need for training.",
+                  "explanation": "Wrong: AI augments, not fully replaces, human work."
+                },
+                "C": {
+                  "text": "AI only improves hardware speed, which has no impact on employee skill requirements.",
+                  "explanation": "Wrong: skill requirements arise from interpreting AI outputs."
+                },
+                "D": {
+                  "text": "AI decision support systems reduce the need for collaboration because they provide all answers directly.",
+                  "explanation": "Wrong: interdisciplinary collaboration is emphasized in the passage."
+                },
+                "E": {
+                  "text": "AI lowers productivity because it creates confusion, and training is only needed for compliance.",
+                  "explanation": "Wrong: passage states productivity gains, not losses."
+                }
+              },
+              "answer": [
+                "A"
+              ],
+              "prompt": "[Skill: Evaluate Question] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "multi",
+              "tags": []
+            },
+            {
+              "question": "Based on the passage, why does the implementation of AI‑driven decision support systems simultaneously raise productivity and increase the demand for continuous employee training and interdisciplinary collaboration?",
+              "title": "AI Adoption: Analyzing Productivity Gains vs Training Investment",
+              "questionsolution": "",
+              "questionoptions_answer": "{\n  \"options\": {\n    \"A\": {\n      \"text\": \"AI automates routine tasks, requiring training to interpret outputs\",\n      \"explanation\": \"Correct\"\n    },\n    \"B\": {\n      \"text\": \"AI replaces all human labor, no training needed\",\n      \"explanation\": \"Incorrect\"\n    },\n    \"C\": {\n      \"text\": \"AI only speeds hardware, no skill change\",\n      \"explanation\": \"Incorrect\"\n    },\n    \"D\": {\n      \"text\": \"AI eliminates need for collaboration\",\n      \"explanation\": \"Incorrect\"\n    },\n    \"E\": {\n      \"text\": \"AI lowers productivity, training only for compliance\",",
+              "prompt": "[Skill: Tone and Attitude] | [Difficulty: <4>]",
+              "question-type": "Reading Comprehension",
+              "difficulty": 1,
+              "options_type": "single",
+              "tags": []
+            }
+          ],
+          "prompt": "[Type: RC-S] | [Theme: Natural Sciences (Biology, Physics, Chemistry)] | [Skill: Inference Making] | [Vocabulary: <apprehensive>] | [Difficulty: <4>]",
+          "question-type": "Reading Comprehension",
+          "difficulty": 4,
+          "options_type": "single",
+          "tags": [
+            "topic: Inference Making",
+            "question-type: Reading Comprehension",
+            "theme: Natural Sciences (Biology, Physics, Chemistry)"
+          ]
+        },
+        {
+          "metadata": [
+            {
+              "raw_content": ""
+            }
+          ],
+          "question": "A company`s quarterly report shows a 12% increase in revenue but a 5% drop in net profit. Which of the following explanations most plausibly accounts for this discrepancy?",
+          "title": "Analyzing Revenue Growth vs Profit Decline in Quarterly Report",
+          "questionsolution": "",
+          "questionoptions_answer": "{\n  \"options\": {\n    \"A\": { \"text\": \"\", \"explanation\": \"Correct\" },\n    \"B\": { \"text\": \"\", \"explanation\": \"Distractor\" },\n    \"C\": { \"text\": \"\", \"",
+          "prompt": "[Theme: Linguistics & Language Acquisition] | [Skill: Evaluate the Argument] | [Vocabulary: <affirm>] | [Difficulty: <5>]",
+          "question-type": "Critical Reasoning",
+          "difficulty": 5,
+          "options_type": "single",
+          "tags": [
+            "question-type: Critical Reasoning",
+            "theme: Linguistics & Language Acquisition",
+            "topic: Evaluate the Argument"
+          ]
+        }
+      ]
+    }
+  }
+}

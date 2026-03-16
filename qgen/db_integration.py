@@ -10,6 +10,7 @@ from pathlib import Path
 # Add main prisma client to path
 sys.path.insert(0, str(Path(__file__).parent / "compex-db_prisma" / "generated"))
 from prisma import Prisma
+from db import DB
 import time
 
 # Singleton Prisma Client
@@ -36,7 +37,7 @@ async def get_prisma_client():
         print(f"{prettify('DB', 'Yellow')}: Connecting to database engine at {masked_url}...")
         t1 = time.time()
         try:
-            await _prisma_client.connect()
+            _prisma_client.connect()  # sync Prisma client — no await
             elapsed = time.time() - t1
             print(f"{prettify('DB', 'Green')}: Engine connected in {elapsed:.4f}s")
         except Exception as e:
@@ -134,8 +135,8 @@ async def save_paper_to_db(paper_data, is_mock=True, difficulty=None):
 
         print(f"Persisting paper structure: {list(formatted_paper.keys())}")
         
-        # Register
-        success = await db_instance.registerQuestion(formatted_paper, isMockQuestion=is_mock, difficulty=difficulty)
+        # Register — registerQuestion() is a sync method on the sync Prisma client
+        success = db_instance.registerQuestion(formatted_paper, isMockQuestion=is_mock, difficulty=difficulty)
         
         if success:
             print("Successfully saved paper to database.")
@@ -158,8 +159,8 @@ async def get_next_generation_params():
     
     try:
         prisma = await get_prisma_client()
-        # Fetch last record
-        last_record = await prisma.analytics.find_first(order={'created_at': 'desc'})
+        # Fetch last record — sync Prisma client
+        last_record = prisma.analytics.find_first(order={'created_at': 'desc'})
         
         if last_record:
             # Logic: difficulty % 5 + 1
@@ -188,7 +189,7 @@ async def save_analytics_record(stats: dict, difficulty: int, is_mock: bool):
         t_out = stats.get('total_output_tokens', 0) / 1_000_000
         t_time = stats.get('total_time_seconds', 0.0) / 60
 
-        await prisma.analytics.create(data={
+        prisma.analytics.create(data={  # sync Prisma client — no await
             'total_api_calls': stats.get('total_api_calls', 0),
             'total_input_tokens': f"{t_in:.3f}M",
             'total_output_tokens': f"{t_out:.3f}M",

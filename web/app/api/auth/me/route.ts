@@ -27,7 +27,9 @@ export async function GET(req: NextRequest) {
             return response;
         }
 
-        return NextResponse.json(user);
+        const response = NextResponse.json(user);
+        response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+        return response;
     } catch (error) {
         console.error("Error fetching current user:", error);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
