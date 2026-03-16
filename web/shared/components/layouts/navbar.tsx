@@ -72,6 +72,13 @@ const Navbar: React.FC = () => {
             </Link>
         );
 
+        // If not initialized, render a skeleton to avoid layout shift,
+        // OR render nothing until auth state is known if pathname requires it.
+        // We'll render the logo out of caution.
+        if (!isInitialized) {
+            return [logo];
+        }
+
         if (userId === 0) return [
             logo,
             <Link
@@ -112,6 +119,7 @@ const Navbar: React.FC = () => {
             </Link>
         );
 
+        if (!isInitialized) return [];
         if (userId === 0) return []; // Logo moves to the right for unauthenticated
         return [logo];
     };
@@ -147,43 +155,22 @@ const Navbar: React.FC = () => {
         ];
     };
 
-    // Show unauthenticated layout immediately while auth check is in progress
-    // This prevents the navbar from being invisible during API compilation/cold start
-    if (!isInitialized) {
-        return (
-            <Header
-                leftItems={[
-                    <Link href="/" key="logo-left" className="no-underline">
-                        <BrandLogo />
-                    </Link>,
-                    <Link
-                        key="learn"
-                        href="/learn"
-                        className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
-                    >
-                        Learn
-                    </Link>,
-                ]}
-                centerItems={[]}
-                rightItems={[
-                    <Link href="/login" key="login" passHref>
-                        <ButtonS className="h-9 px-6 text-sm">Log in</ButtonS>
-                    </Link>,
-                    <Link href="/signup?force=true" key="signup" passHref>
-                        <ButtonP className="h-9 px-6 text-sm">Sign up</ButtonP>
-                    </Link>,
-                    <ThemeToggle key="theme" />,
-                ]}
-                gap={4}
-            />
-        );
-    }
+    // Show a skeleton or loading state for the right-side auth actions while initializing
+    // This prevents the navbar from showing "Log in" and flashing to the user's profile
+    const renderRightItemsWithHydration = () => {
+        if (!isInitialized) {
+            return [
+                <div key="loading-placeholder" className="h-9 w-32 animate-pulse bg-muted rounded-md" />
+            ];
+        }
+        return renderRight();
+    };
 
     return (
         <Header
             leftItems={renderLeft()}
             centerItems={renderCenter()}
-            rightItems={renderRight()}
+            rightItems={renderRightItemsWithHydration()}
             gap={userId === 0 ? 4 : 8}
         />
     );
