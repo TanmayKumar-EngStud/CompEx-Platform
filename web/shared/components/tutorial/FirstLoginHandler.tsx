@@ -5,7 +5,7 @@ import { AccountSettingsModal } from "@/shared/components/interactive/AccountSet
 import { useTutorialStore } from "@/shared/stores/tutorial-store";
 
 export function FirstLoginHandler() {
-    const { isFirstLogin, setFirstLogin, startTour, globalTourCompleted } = useTutorialStore();
+    const { isFirstLogin, setFirstLogin, startTour, globalTourCompleted, completeAllTours } = useTutorialStore();
     const [showSettings, setShowSettings] = useState(false);
     const [userId, setUserId] = useState<number>(0);
     const [currentUser, setCurrentUser] = useState<any>(null);
@@ -17,16 +17,23 @@ export function FirstLoginHandler() {
 
         const fetchUser = async () => {
             try {
-                const res = await fetch("/api/auth/me");
+                const res = await fetch("/api/auth/me", { cache: 'no-store' });
                 if (res.ok) {
                     const data = await res.json();
-                    setUserId(data.userid);
-                    setCurrentUser({
-                        username: data.username,
-                        email: data.email,
-                        image_url: data.image_url
-                    });
-                    setShowSettings(true);
+                    
+                    if (data.isNewUser) {
+                        setUserId(data.userid);
+                        setCurrentUser({
+                            username: data.username,
+                            email: data.email,
+                            image_url: data.image_url
+                        });
+                        setShowSettings(true);
+                    } else {
+                        // Not a new user, bypass all tutorials automatically
+                        completeAllTours();
+                        setFirstLogin(false);
+                    }
                 }
             } catch (error) {
                 console.error("Failed to fetch user for onboarding", error);
@@ -34,7 +41,7 @@ export function FirstLoginHandler() {
         };
 
         fetchUser();
-    }, [isFirstLogin]);
+    }, [isFirstLogin, completeAllTours, setFirstLogin]);
 
     const handleSettingsClose = () => {
         setShowSettings(false);

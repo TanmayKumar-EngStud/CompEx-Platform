@@ -28,6 +28,7 @@ interface TutorialState {
     endTour: () => void;
     resetTour: (tourName: string) => void;
     resetAllTours: () => void;
+    completeAllTours: () => void;
 }
 
 const STORAGE_KEY = "compex-tutorial-state";
@@ -135,6 +136,16 @@ export const useTutorialStore = create<TutorialState>((set, get) => {
             if (typeof window !== "undefined") {
                 localStorage.removeItem(STORAGE_KEY);
             }
+        },
+
+        completeAllTours: () => {
+            const completedState = {
+                isFirstLogin: false,
+                globalTourCompleted: true,
+                pageTours: { explore: true, problems: true, mock: true, profile: true }
+            };
+            set(completedState);
+            saveState(completedState);
         },
     };
 });

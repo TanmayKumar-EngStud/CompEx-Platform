@@ -18,6 +18,7 @@ export async function GET(req: NextRequest) {
                 username: true,
                 email: true,
                 image_url: true,
+                registrationdate: true,
             } as any
         });
 
@@ -27,7 +28,18 @@ export async function GET(req: NextRequest) {
             return response;
         }
 
-        const response = NextResponse.json(user);
+        // A user is considered "new" if they registered within the last 24 hours
+        // This is used by the frontend to determine if the tutorial overlay should be shown
+        const isNewUser = user.registrationdate 
+            ? Date.now() - new Date(user.registrationdate).getTime() < 24 * 60 * 60 * 1000
+            : false;
+
+        const responsePayload = {
+            ...user,
+            isNewUser
+        };
+
+        const response = NextResponse.json(responsePayload);
         response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
         return response;
     } catch (error) {

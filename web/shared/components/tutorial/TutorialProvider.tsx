@@ -173,6 +173,24 @@ export const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         }
     };
 
+    const handleSkip = () => {
+        if (!activeTour) {
+            endTour();
+            return;
+        }
+        if (activeTour === "welcome") {
+            completeGlobalTour();
+        } else if (
+            activeTour === "explore" ||
+            activeTour === "problems" ||
+            activeTour === "mock" ||
+            activeTour === "profile"
+        ) {
+            completePageTour(activeTour);
+        }
+        endTour();
+    };
+
     const showOverlay = isTourRunning && step && !step.noOverlay && targetRect;
     const showTooltip = isTourRunning && step && (targetRect || step.fixedPosition);
 
@@ -193,7 +211,7 @@ export const TutorialProvider: React.FC<{ children: React.ReactNode }> = ({ chil
                     totalSteps={tour?.steps.length || 0}
                     onNext={handleNext}
                     onPrev={prevStep}
-                    onSkip={endTour}
+                    onSkip={handleSkip}
                     targetRect={targetRect}
                     highlightPadding={step.highlightPadding ?? 8}
                 />
